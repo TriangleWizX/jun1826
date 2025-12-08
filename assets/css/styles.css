@@ -147,15 +147,12 @@ img {
 
 /* Brand takes full row and centers the logo */
 .site-header .navbar-brand {
-  flex: 1 0 0;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  margin-right: 0; /* override Bootstrap's default spacing */
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--primary-color);
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
+  flex: 0 0 auto;
+  margin-right: 1rem; /* leave room for the nav links/toggler */
+  padding: 0;
 }
 
 /* Nav Enhancements */
@@ -1004,8 +1001,11 @@ body.has-sticky-cta {
 }
 
 .retro-stage-wrapper {
-  width: 100%;
-  height: 150px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(180px, 25vw, 260px);
+  height: clamp(60px, 8vw, 90px);
   position: relative;
   /* 1. The Background Layer (Repeats) */
   background-image: url('assets/images/logo-2dfighter-bg-only.png'); 
@@ -1021,6 +1021,7 @@ body.has-sticky-cta {
   /* 2. The Logo Layer (Does not repeat, stays in middle) */
   width: auto;
   height: 90%; /* Scales logo relative to banner height */
+  max-width: 100%;
 }
 
 /* Creates a responsive grid with 3 columns */
