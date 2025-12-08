@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BJJ Anatomy Quiz | Sensei Sandy BJJ</title>
+    <meta name="description" content="Play the interactive BJJ Anatomy Quiz to learn essential skeletal structures for Brazilian Jiu-Jitsu safety and technique. A fun educational game for kids and adults in Tannersville & Kingston.">
+    <meta property="og:title" content="BJJ Anatomy Quiz | Sensei Sandy BJJ" />
+<meta property="og:description" content="Test your knowledge of the body mechanics used in Brazilian Jiu-Jitsu." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://senseisandy.com/bjj_anatomy_game" />
+<meta property="og:image" content="https://senseisandy.com/assets/images/BJJAnatomyWeb.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BJJ Anatomy Quiz Game" />
+<meta name="twitter:description" content="Test your knowledge of the body parts used in Brazilian Jiu-Jitsu." />
+<meta name="twitter:image" content="https://senseisandy.com/assets/images/BJJAnatomyWeb.png" />
+    <style>
+        :root {
+            --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --color-bg: #1a1a1a;
+            --color-text: #ffffff;
+            --color-accent: #ffd700;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: var(--color-bg);
+            font-family: var(--font-main);
+            user-select: none;
+            -webkit-user-select: none;
+            /* Prevents scrolling/zooming gestures on mobile */
+            touch-action: none; 
+        }
+
+        /* Utility for accessibility & SEO (Hides text visually but keeps it readable for bots) */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        #game-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            /* Ensure taps register immediately */
+            touch-action: none;
+        }
+
+        /* UI Overlay Layer */
+        #ui-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #prompt {
+            margin-top: 20px;
+            /* Adaptive font size: minimum 16px, preferred 5vw, max 24px */
+            font-size: clamp(16px, 5vw, 24px);
+            font-weight: 700;
+            color: var(--color-text);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            max-width: 600px;
+            width: 85%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            pointer-events: auto;
+        }
+
+        #score {
+            margin-top: 10px;
+            font-size: clamp(14px, 4vw, 18px);
+            color: var(--color-accent);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        #feedback {
+            position: absolute;
+            bottom: 15%; /* Moved up slightly to make room for links */
+            font-size: clamp(20px, 6vw, 32px);
+            font-weight: 800;
+            color: var(--color-text);
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+            min-height: 40px;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        /* Footer Links Styling */
+        #footer-links {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            /* CRITICAL: Re-enable pointer events for links */
+            pointer-events: auto; 
+            opacity: 0.8;
+        }
+
+        #footer-links a {
+            color: var(--color-accent);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        #footer-links a:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+        #error-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            text-align: center;
+            z-index: 9999;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="error-box">
+        <h3>Image Load Error</h3>
+        <p id="error-message"></p>
+        <p><small>Ensure "BlankBJJAnatomyWeb.png" is in the folder and you are running a local server.</small></p>
+    </div>
+
+    <div class="visually-hidden">
+        <h1>BJJ Anatomy Quiz & Educational Game</h1>
+        <p>Welcome to the Sensei Sandy BJJ Anatomy Quiz, an interactive educational game designed to help Brazilian Jiu-Jitsu students, kids, and parents learn the major bones of the human body. Understanding anatomy is crucial for martial arts safety, proper technique, and injury prevention.</p>
+        
+        <h2>Why Learn Anatomy for Jiu-Jitsu?</h2>
+        <p>In BJJ, we use our bodies to control opponents and apply leverage. Knowing the difference between a joint (like the elbow or knee) and a bone (like the ribcage or skull) helps students train safer.</p>
+        <ul>
+            <li><strong>Safety:</strong> Students learn which areas are fragile and need protection.</li>
+            <li><strong>Communication:</strong> Helps kids tell their coach exactly where they feel pressure (e.g., "my shoulder" instead of "my arm").</li>
+            <li><strong>Technique:</strong> Leverage works best when applied to specific skeletal structures.</li>
+        </ul>
+
+        <h2>Bones You Will Learn in this Game</h2>
+        <p>This quiz tests your reaction time and knowledge of the following skeletal parts:</p>
+        <ul>
+            <li><strong>Skull:</strong> The helmet that protects the brain. Always protect your head!</li>
+            <li><strong>Spine:</strong> The central pillar of your body posture. Keep it straight and strong.</li>
+            <li><strong>Shoulder:</strong> A mobile joint used for framing and creating space.</li>
+            <li><strong>Ribcage:</strong> The shield for your heart and lungs. Do not squeeze too hard!</li>
+            <li><strong>Pelvis (Hips):</strong> The center of gravity. "Hips are everything" in BJJ.</li>
+            <li><strong>Elbow & Wrist:</strong> Common targets for armlocks and control grips.</li>
+            <li><strong>Knee & Ankle:</strong> Essential for base, balance, and standing up safely.</li>
+        </ul>
+        <p>Play the game, beat your high score, and become a smarter grappler on the mats in Tannersville and Kingston, NY.</p>
+    </div>
+
+    <div id="ui-layer">
+        <div id="prompt">Loading...</div>
+        <div id="score">Score: 0</div>
+        <div id="feedback"></div>
+
+        <div id="footer-links">
+            <a href="https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu" target="_blank">What is BJJ?</a>
+            <span style="color:white;">|</span>
+            <a href="https://senseisandy.com" target="_blank">SenseiSandy.com</a>
+        </div>
+    </div>
+
+    <canvas id="game-container"></canvas>
+
+    <script type="module">
+        import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+
+        // --- CONFIGURATION ---
+        const DEBUG = false; 
+        const IMAGE_PATH = 'BlankBJJAnatomyWeb.png';
+        
+        const PLANE_WIDTH = 10.0; 
+        const PLANE_HEIGHT = 10.0; 
+        
+        // --- BONE CONFIGURATION ---
+        const BONES_CONFIG = {
+            skull:    { type: 'single', y:  3.6, w: 2.2, h: 2.2 },
+            spine:    { type: 'single', y:  0.5, w: 0.8, h: 2.5 },
+            shoulder: { type: 'dual', x: 1.6, y: 2.5, w: 1.0, h: 1.0 },
+            ribcage:  { type: 'dual', x: 0.9, y:  1.2, w: 0.8, h: 1.4 },
+            pelvis:   { type: 'single', y: -1.5, w: 2.2, h: 1.4 },
+            elbow:    { type: 'dual', x: 2.3, y:  0.6, w: 1.0, h: 1.0 },
+            wrist:    { type: 'dual', x: 2.5, y: -0.9, w: 1.0, h: 1.0 },
+            knee:     { type: 'dual', x: 1.1, y: -2.9, w: 0.9, h: 0.9 },
+            ankle:    { type: 'dual', x: 1.1, y: -4.2, w: 1.0, h: 0.9 }
+        };
+
+        const BONE_KEYS = Object.keys(BONES_CONFIG);
+
+        // --- STATE ---
+        let scene, camera, renderer, raycaster;
+        let anatomyPlane;
+        let hitboxes = [];
+        let currentTarget = null;
+        let score = 0;
+        let isProcessingInput = false;
+        
+        // UI References
+        const elPrompt = document.getElementById('prompt');
+        const elScore = document.getElementById('score');
+        const elFeedback = document.getElementById('feedback');
+        const elErrorBox = document.getElementById('error-box');
+        const elErrorMessage = document.getElementById('error-message');
+
+        // --- INITIALIZATION ---
+        function init() {
+            initScene();
+            loadAssetsAndStart();
+            window.addEventListener('resize', resize);
+            
+            const canvas = document.getElementById('game-container');
+            // Listen for pointerdown to handle both mouse and touch efficiently
+            canvas.addEventListener('pointerdown', handlePointerDown);
+        }
+
+        function initScene() {
+            const container = document.getElementById('game-container');
+            
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x222222);
+
+            // Camera bounds will be set by resize() immediately after init
+            camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
+            camera.position.z = 10;
+            camera.lookAt(0, 0, 0);
+
+            renderer = new THREE.WebGLRenderer({ canvas: container, antialias: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            const light = new THREE.AmbientLight(0xffffff, 1.2);
+            scene.add(light);
+
+            raycaster = new THREE.Raycaster();
+        }
+
+        function loadAssetsAndStart() {
+            const loader = new THREE.TextureLoader();
+            loader.load(
+                IMAGE_PATH,
+                (texture) => {
+                    texture.colorSpace = THREE.SRGBColorSpace;
+                    createAnatomyPlane(texture);
+                    createHitboxes();
+                    resize(); // Force initial sizing check
+                    animate();
+                    nextTurn();
+                },
+                undefined,
+                (err) => {
+                    console.error("Texture Load Error:", err);
+                    showError(err);
+                    createAnatomyPlane(null);
+                    createHitboxes();
+                    resize();
+                    animate();
+                    nextTurn();
+                }
+            );
+        }
+
+        function showError(eventOrError) {
+            elErrorBox.style.display = 'block';
+            let msg = "Could not load image.";
+            if (eventOrError.type === 'error') {
+                msg += " (Network/CORS error). Are you running local server?";
+            } else {
+                msg += " Check filename: " + IMAGE_PATH;
+            }
+            elErrorMessage.textContent = msg;
+        }
+
+        function createAnatomyPlane(texture) {
+            const geometry = new THREE.PlaneGeometry(PLANE_WIDTH, PLANE_HEIGHT);
+            let material;
+            if (texture) {
+                material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+            } else {
+                material = new THREE.MeshBasicMaterial({ color: 0xff00ff });
+            }
+            anatomyPlane = new THREE.Mesh(geometry, material);
+            scene.add(anatomyPlane);
+        }
+
+        function createHitboxes() {
+            const debugMat = new THREE.MeshBasicMaterial({ 
+                color: 0x00ff00, 
+                transparent: true, 
+                opacity: 0.5, 
+                depthTest: false,
+                side: THREE.DoubleSide
+            });
+            
+            const invisibleMat = new THREE.MeshBasicMaterial({ 
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0,
+                depthWrite: false,
+                side: THREE.DoubleSide
+            });
+
+            const mat = DEBUG ? debugMat : invisibleMat;
+
+            BONE_KEYS.forEach(key => {
+                const config = BONES_CONFIG[key];
+                
+                const createMesh = (x, y, w, h) => {
+                    const geometry = new THREE.PlaneGeometry(w, h);
+                    const mesh = new THREE.Mesh(geometry, mat.clone());
+                    mesh.position.set(x, y, 0.1); 
+                    mesh.userData = { boneName: key };
+                    scene.add(mesh);
+                    hitboxes.push(mesh);
+                };
+
+                if (config.type === 'single') {
+                    createMesh(0, config.y, config.w, config.h);
+                } else if (config.type === 'dual') {
+                    createMesh(config.x, config.y, config.w, config.h);
+                    createMesh(-config.x, config.y, config.w, config.h);
+                }
+            });
+        }
+
+        // --- GAME LOGIC ---
+        function setTarget(boneName) {
+            currentTarget = boneName;
+            elPrompt.textContent = "Tap the " + boneName.toUpperCase();
+            elFeedback.textContent = ""; 
+        }
+
+        function nextTurn() {
+            isProcessingInput = false;
+            const rndIndex = Math.floor(Math.random() * BONE_KEYS.length);
+            setTarget(BONE_KEYS[rndIndex]);
+        }
+
+        function handlePointerDown(event) {
+            if (isProcessingInput) return;
+            event.preventDefault(); // Prevent standard touch actions
+
+            const mouse = new THREE.Vector2();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(hitboxes);
+
+            if (intersects.length > 0) {
+                const hit = intersects[0].object;
+                const hitName = hit.userData.boneName;
+                validateHit(hit, hitName);
+            }
+        }
+
+        function validateHit(mesh, hitName) {
+            if (hitName === currentTarget) {
+                isProcessingInput = true;
+                score++;
+                elScore.textContent = `Score: ${score}`;
+                elFeedback.textContent = "Correct!";
+                elFeedback.style.color = "#4cd137"; 
+                flashMesh(mesh, 0x4cd137);
+                setTimeout(() => nextTurn(), 800);
+            } else {
+                elFeedback.textContent = "Try again";
+                elFeedback.style.color = "#e84118"; 
+                flashMesh(mesh, 0xe84118);
+            }
+        }
+
+        function flashMesh(mesh, colorHex) {
+            mesh.material.opacity = 0.6;
+            mesh.material.color.setHex(colorHex);
+            if (!DEBUG) mesh.material.transparent = true;
+
+            setTimeout(() => {
+                if (!DEBUG) {
+                    mesh.material.opacity = 0;
+                    mesh.material.color.setHex(0xffffff); 
+                } else {
+                    mesh.material.color.setHex(0x00ff00);
+                    mesh.material.opacity = 0.5;
+                }
+            }, 300);
+        }
+
+        // --- ADAPTIVE RESIZE ---
+        function resize() {
+            const aspect = window.innerWidth / window.innerHeight;
+            
+            // How much padding around the image? (1.1 = 10% padding)
+            const MARGIN = 1.1; 
+            
+            // The visual space we MUST display (The plane size + margin)
+            const targetW = PLANE_WIDTH * MARGIN;
+            const targetH = PLANE_HEIGHT * MARGIN;
+
+            let camWidth, camHeight;
+
+            // Contain Logic:
+            // If screen aspect is wider than content aspect, height is the limiter.
+            // If screen aspect is narrower than content aspect, width is the limiter.
+            
+            if (aspect >= targetW / targetH) {
+                // Landscape / Wide
+                camHeight = targetH;
+                camWidth = camHeight * aspect;
+            } else {
+                // Portrait / Mobile
+                camWidth = targetW;
+                camHeight = camWidth / aspect;
+            }
+
+            // Update Orthographic Camera
+            camera.left = -camWidth / 2;
+            camera.right = camWidth / 2;
+            camera.top = camHeight / 2;
+            camera.bottom = -camHeight / 2;
+
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (anatomyPlane) {
+                const time = Date.now() * 0.001;
+                const yOffset = Math.sin(time) * 0.05;
+                anatomyPlane.position.y = yOffset;
+                hitboxes.forEach(hb => {
+                    const key = hb.userData.boneName;
+                    const config = BONES_CONFIG[key];
+                    hb.position.y = config.y + yOffset;
+                });
+            }
+            renderer.render(scene, camera);
+        }
+
+        init();
+    </script>
+</body>
+</html>
