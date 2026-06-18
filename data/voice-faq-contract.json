@@ -1,0 +1,13 @@
+{
+  "version": "2026-03-17",
+  "description": "Contract for voice-style FAQ sections rendered in static HTML.",
+  "fields": {
+    "section_title": "string",
+    "question": "string",
+    "answer": "string",
+    "audience": "string|null",
+    "tag": "string|null",
+    "render_order": "number"
+  },
+  "required": ["section_title", "question", "answer", "render_order"]
+}

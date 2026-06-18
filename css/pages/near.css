@@ -1,0 +1,669 @@
+/* pages/near.css
+   Near-town page-owned local landing page styles.
+   Source: assets/css/ss.css migration split. */
+
+body.page-near {
+  --ss-scope-near: 1;
+}
+
+body.page-near .near-hero {
+  --ss-near-hero: 1;
+}
+
+.ss-near-breadcrumbs {
+  width: min(1040px, calc(100% - 2rem));
+  margin: 1.25rem auto 0;
+  color: var(--ss-muted);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.ss-near-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ss-near-breadcrumbs a {
+  color: var(--ss-muted);
+  text-decoration: none;
+}
+
+.ss-near-breadcrumbs a::after {
+  content: "/";
+  margin-left: 0.45rem;
+  color: rgba(79, 67, 60, 0.55);
+}
+
+.ss-near-breadcrumbs a:hover,
+.ss-near-breadcrumbs a:focus-visible {
+  color: var(--ss-green);
+}
+
+.ss-local-route-links {
+  background: #fffdf9;
+}
+
+.ss-local-route-links h2 {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.ss-local-next-links .ss-link-grid {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ss-local-next-links .ss-link-grid a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ss-local-next-links .ss-inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ss-local-route-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.ss-local-route-group {
+  min-width: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ss-border);
+}
+
+.ss-local-route-group h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+}
+
+.ss-local-route-group ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ss-local-route-group li {
+  margin: 0;
+}
+
+.ss-local-route-group a {
+  color: var(--ss-ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.ss-local-route-group a:hover,
+.ss-local-route-group a:focus-visible {
+  color: var(--ss-green);
+}
+
+.ss-local-intent,
+.ss-local-proof {
+  background: #fffdf9;
+}
+
+.ss-windham-decision-strip {
+  background:
+    radial-gradient(circle at top left, rgba(0, 221, 224, 0.09), transparent 22rem),
+    #f9f7f2;
+}
+
+.ss-windham-decision-grid,
+.ss-windham-first-visit-grid,
+.ss-windham-schedule-grid,
+.ss-windham-proof-media {
+  margin-top: 1.5rem;
+}
+
+.ss-windham-decision-card,
+.ss-windham-step-card,
+.ss-windham-schedule-card,
+.ss-windham-review-card {
+  height: 100%;
+  border-radius: var(--ss-r2);
+  border: 1px solid var(--ss-border);
+  box-shadow: var(--ss-shadow-soft);
+}
+
+.ss-windham-decision-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: clamp(1.1rem, 2vw, 1.45rem);
+}
+
+.ss-windham-decision-card h3,
+.ss-windham-step-card h3,
+.ss-windham-schedule-card h3 {
+  margin-bottom: 0.45rem;
+}
+
+.ss-windham-decision-card--wide {
+  align-items: flex-start;
+}
+
+.ss-text-link,
+.ss-windham-text-link a {
+  color: var(--ss-green);
+  font-weight: 800;
+  text-decoration-thickness: 0.08em;
+}
+
+.ss-windham-first-visit {
+  background: #ffffff;
+}
+
+.ss-windham-step-card,
+.ss-windham-schedule-card {
+  padding: clamp(1.1rem, 2vw, 1.45rem);
+}
+
+.ss-windham-inline-note {
+  margin-top: 1.25rem;
+  color: var(--ss-muted);
+  max-width: 72ch;
+}
+
+.ss-windham-review {
+  padding-top: 0;
+}
+
+.ss-windham-review-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(246, 255, 255, 0.98));
+}
+
+.ss-windham-review-card .ss-stars {
+  color: var(--ss-green);
+  letter-spacing: 0.12em;
+}
+
+.ss-windham-review-card blockquote {
+  margin: 0 0 0.85rem;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.25rem);
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.ss-windham-schedule-preview {
+  background: #fffdf9;
+}
+
+.ss-windham-text-link {
+  margin-top: 1rem;
+}
+
+.ss-windham-final-cta {
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.ss-woodstock-hero-shell {
+  display: grid;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.ss-woodstock-hero-copy,
+.ss-woodstock-hero-aside {
+  border-radius: var(--ss-r2);
+  border: 1px solid var(--ss-border);
+  box-shadow: var(--ss-shadow-soft);
+}
+
+.ss-woodstock-hero-copy {
+  padding: clamp(1.35rem, 3vw, 2.2rem);
+  background:
+    radial-gradient(circle at top right, rgba(40, 159, 161, 0.08), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 247, 242, 0.98));
+}
+
+.ss-woodstock-hero-copy .ss-eyebrow {
+  margin-bottom: 0.9rem;
+}
+
+.ss-woodstock-hero-copy h1 {
+  max-width: 12ch;
+}
+
+.ss-woodstock-hero-copy .lead {
+  max-width: 56ch;
+}
+
+.ss-woodstock-hero-aside {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: clamp(1.15rem, 2.5vw, 1.6rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 241, 237, 0.96));
+}
+
+.ss-woodstock-hero-aside-label,
+.ss-woodstock-hero-aside-kicker {
+  margin: 0;
+  color: var(--ss-green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ss-woodstock-hero-aside-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ss-woodstock-hero-aside-list li {
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(54, 43, 36, 0.1);
+}
+
+.ss-woodstock-hero-aside-list li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.ss-woodstock-hero-aside-list strong {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: var(--ss-ink);
+}
+
+.ss-woodstock-hero-aside-list span {
+  color: var(--ss-muted);
+}
+
+.ss-woodstock-hero-aside-spotlight {
+  padding: 1rem 1rem 1.05rem;
+  border-radius: calc(var(--ss-r2) - 0.35rem);
+  background: rgba(17, 106, 66, 0.06);
+}
+
+.ss-woodstock-hero-aside-spotlight p {
+  margin: 0.45rem 0 0;
+  color: var(--ss-ink);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.ss-local-intent-grid,
+.ss-proof-grid {
+  margin-top: 1.5rem;
+}
+
+.ss-local-intent-card,
+.ss-local-proof .ss-card {
+  height: 100%;
+  border-radius: var(--ss-r2);
+}
+
+.ss-local-intent-card h3 {
+  margin-bottom: 0.65rem;
+}
+
+.ss-local-intent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.ss-local-intent-actions .ss-btn {
+  min-height: 50px;
+}
+
+.ss-proof-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.ss-proof-grid figure {
+  margin: 0;
+}
+
+.ss-proof-grid blockquote {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 750;
+}
+
+.ss-proof-grid figcaption {
+  margin-top: 0.85rem;
+  color: var(--ss-muted);
+  font-size: 0.92rem;
+}
+
+@media (min-width: 992px) {
+  .ss-woodstock-hero-shell {
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ss-woodstock-hero-copy h1 {
+    max-width: 14ch;
+  }
+}
+
+/* Near page templates */
+.page-near .near-section,
+.page-near .near-hero,
+.page-near .near-card,
+.page-near .near-buttons {
+  text-align: center;
+}
+
+.page-near .near-section p,
+.page-near .near-hero p,
+.page-near .near-card p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-near .near-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.page-near .near-list li {
+  justify-content: center;
+}
+
+.page-near .near-list .near-icon {
+  margin-right: 0.5rem;
+}
+
+.page-near .near-stack {
+  gap: var(--ss-space-3);
+}
+
+.page-near .near-hero .small,
+.page-near .near-hero .lead,
+.page-near .near-hero .near-cta-note,
+.page-near .near-hero .near-cta-line {
+  margin: 0;
+}
+
+.page-near .near-section p:last-child,
+.page-near .near-card p:last-child {
+  margin-bottom: 0;
+}
+
+.page-near .near-hero,
+.page-near .near-section,
+.page-near .near-card {
+  text-align: left;
+}
+
+.page-near .near-section p,
+.page-near .near-hero p,
+.page-near .near-card p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.near-index-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.near-distance-group {
+  grid-column: span 12;
+}
+
+.near-distance-group h3 {
+  margin-bottom: 10px;
+}
+
+.near-distance-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.near-distance-group li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ss-hairline);
+}
+
+.near-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 158, 163, 0.32);
+  background: rgba(31, 158, 163, 0.1);
+  color: var(--ss-accent-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.near-section.alt,
+.bg-light,
+.bg-body-tertiary {
+  background: var(--ss-surface-alt) !important;
+}
+
+.lane-card,
+.how-card,
+.near-distance-group {
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-r2);
+  background: var(--ss-surface-solid);
+  box-shadow: var(--ss-shadow-soft);
+  padding: clamp(18px, 2.2vw, 26px);
+}
+
+.lane-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.lane-card > * {
+  min-width: 0;
+}
+
+.lane-card__list,
+.lane-card__list li,
+.lane-card__header p,
+.lane-card__header h3,
+.lane-card__micro {
+  overflow-wrap: anywhere;
+}
+
+.lane-card__actions .btn {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.ss-calendly,
+#calendlyInline {
+  border: 1px solid var(--ss-border) !important;
+  border-radius: var(--ss-r2) !important;
+  background: var(--ss-surface-solid);
+}
+
+input,
+select,
+textarea,
+.form-control,
+.form-select,
+.ss-input,
+.ss-textarea {
+  min-height: 46px;
+  border-radius: 12px !important;
+  border: 1px solid var(--ss-border) !important;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(31, 158, 163, 0.64) !important;
+  box-shadow: var(--ss-ring) !important;
+}
+
+@media (max-width: 991px) {
+  .ss-header__utility-inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ss-header__utility-links {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ss-hero__surface,
+  .hero-content-card,
+  .ss-book-hero__surface,
+  .near-hero > .container {
+    width: 100%;
+  }
+
+  .page-near .near-hero,
+  .page-near .near-section,
+  .page-near .near-card {
+    text-align: center;
+  }
+
+  .page-near .near-section p,
+  .page-near .near-hero p,
+  .page-near .near-card p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .near-buttons,
+  .near-hero .near-meta {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 840px) {
+  .ss-local-next-links .ss-link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-local-route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+   .ss-windham-decision-grid .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .near-distance-group {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1080px) {
+  .near-distance-group {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 768px) {
+  .ss-proof-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ss-local-intent-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .ss-local-intent-actions .ss-btn {
+    width: 100%;
+  }
+
+  .ss-windham-review-card blockquote {
+    font-size: 1rem;
+  }
+}
+
+body.page-near .ss-local-route-links,
+body.page-near .ss-local-intent,
+body.page-near .ss-local-proof,
+body.page-near .ss-windham-first-visit,
+body.page-near .ss-windham-schedule-preview {
+  background: #fffaf2;
+}
+
+body.page-near .ss-windham-review-card {
+  background: linear-gradient(135deg, #fffaf2, #efe8dc);
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  box-shadow: 0 14px 34px rgba(33, 29, 24, 0.08);
+}
+
+body.page-near .ss-local-intent-card,
+body.page-near .ss-local-proof .ss-card,
+body.page-near .ss-windham-decision-card,
+body.page-near .ss-windham-step-card,
+body.page-near .ss-windham-schedule-card {
+  background: #fffaf2;
+  border-color: rgba(33, 29, 24, 0.12);
+  box-shadow: 0 12px 28px rgba(33, 29, 24, 0.08);
+}
+
+body.page-near .ss-local-route-links h2,
+body.page-near .ss-local-intent-card h3,
+body.page-near .ss-windham-review-card blockquote,
+body.page-near .ss-proof-grid figcaption {
+  color: #211d18;
+}
+
+body.page-near .ss-proof-grid figcaption,
+body.page-near .ss-windham-inline-note,
+body.page-near .ss-windham-review-card p {
+  color: #756b5f;
+}

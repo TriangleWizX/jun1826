@@ -1,0 +1,130 @@
+.ss-schedule-consistency {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+}
+
+.ss-schedule-consistency .ss-section-head {
+  max-width: 780px;
+  margin-bottom: 1.5rem;
+}
+
+.ss-schedule-consistency-intro {
+  margin: 0;
+  color: var(--ss-muted, #4F433C);
+  line-height: 1.55;
+}
+
+.ss-schedule-consistency .ss-lane-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ss-schedule-consistency .ss-lane-card,
+.ss-schedule-summary-card {
+  background: var(--ss-surface, #fff);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 32px rgba(54, 43, 36, 0.08);
+}
+
+.ss-schedule-consistency .ss-lane-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.25rem;
+}
+
+.ss-schedule-consistency .ss-lane-card h3,
+.ss-schedule-summary-card h3 {
+  margin: 0;
+  color: var(--ss-ink, #362B24);
+  line-height: 1.1;
+}
+
+.ss-schedule-consistency .ss-lane-card p,
+.ss-schedule-summary-card p {
+  margin: 0;
+  color: var(--ss-muted, #4F433C);
+}
+
+.ss-schedule-consistency .ss-lane-card a {
+  color: var(--ss-orange, #E05500);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.ss-card-label {
+  color: var(--ss-orange, #E05500);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ss-schedule-consistency-summary {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.ss-schedule-summary-card {
+  padding: 1.1rem 1.15rem;
+}
+
+.ss-schedule-summary-card--saturday {
+  background: linear-gradient(180deg, rgba(224, 85, 0, 0.08), #fff);
+}
+
+.ss-schedule-consistency-actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.ss-btn {
+  min-height: 48px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ss-btn-primary {
+  background: var(--ss-orange, #E05500);
+  border: 1px solid var(--ss-orange, #E05500);
+  color: #fff;
+}
+
+.ss-btn-secondary,
+.ss-btn-tertiary {
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  color: var(--ss-ink, #362B24);
+}
+
+@media (min-width: 768px) {
+  .ss-schedule-consistency .ss-lane-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-schedule-consistency-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-schedule-consistency-actions {
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+  }
+}
+
+@media (min-width: 992px) {
+  .ss-schedule-consistency .ss-lane-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ss-schedule-consistency-summary {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

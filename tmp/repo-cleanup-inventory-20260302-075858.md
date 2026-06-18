@@ -1,0 +1,151 @@
+# Repo Cleanup Baseline Inventory
+
+Generated: 2026-03-02T07:58:58.698133
+
+## Summary Counts
+- tracked entries: 30
+- untracked entries: 305
+- entries with M: 28
+- entries with D: 9
+- entries with A: 1
+- entries with R: 0
+
+## Tracked Changes (status + path)
+-  M .htaccess
+- MD 6weekgrandslam.html
+- MD adult.html
+- MM after-school.html
+- MD antibully.html
+- MM archive/classes.html
+- MM archive/curriculum.html
+-  M archive/openingpress.html
+-  M archive/parking-page.shtml
+-  M archive/thank-you.html
+- MM assets/css/styles.css
+- MM bio.html
+-  D bjj_anatomy_game.html
+- AD blackbelttrack.html
+- MM contact.html
+-  M curriculum/index.html
+- MM faqs.html
+- MD how-to-start.html
+-  M index.html
+- MM js/script.js
+- MM kids.html
+- MD privates.html
+-  M robots.txt
+- MM safety.html
+- MD samuraibreak.html
+- MM schedule.html
+-  M sitemap.xml
+- MD stretches.html
+- MM teens.html
+- MM waiver.html
+
+## Untracked Top-Level Directories
+- "assets
+- .env.example
+- .github
+- .gitignore
+- .tmb
+- .vscode
+- 317d30b7f6ebe58a05d50487fa82be84.txt
+- CHANGELOG.md
+- README.md
+- _includes
+- adult-bjj.html
+- adults.html
+- after-booking-promise.html
+- analytics-event-map.md
+- anti-bully.html
+- api
+- apres-ski-jiu-jitsu.html
+- archive
+- assets
+- bjj-stretches.html
+- black-belt-track.html
+- blog
+- blog-sitemap.xml
+- book-free-intro
+- cairo-ny-jiu-jitsu.html
+- catskill-ny-jiu-jitsu.html
+- catskills-jiu-jitsu.html
+- ch9sdfpu2ajh2rzbs1ed516zrfep9451.txt
+- clean.html
+- config
+- consistency-pass-notes.md
+- core-promise-full.html
+- crawl-reports
+- cta-decision.html
+- cta-footer.html
+- cta-header.html
+- cta-hero.html
+- cta-primary.html
+- cta-row.html
+- data
+- docs
+- favicon.ico
+- footer-include-no-proof.html
+- footer-include.html
+- free-intro-promise.html
+- half-day-jiu-jitsu-hour.html
+- hunter-ny-jiu-jitsu.html
+- images
+- iron-clad-web-dev-brief.md
+- jobs
+- js
+- lane-picker.html
+- my-promise-full.html
+- my-promise-short.html
+- nav-include.html
+- near
+- nearby-towns.html
+- offer-atoms.md
+- offer-block.html
+- options-pricing.html
+- package.json
+- pages-sitemap.xml
+- partials
+- partners-hospitality-hunter-windham.html
+- partners-schools-parents.html
+- partners-wellness-pt-referrals.html
+- playlist.raw.json
+- pricing-module-fragment.html
+- pricing-module.html
+- private-lessons.html
+- programs.html
+- report-card.html
+- safety-promise.html
+- samurai-break.html
+- schedule-block.html
+- school-families-jiu-jitsu.html
+- scribners-jiu-jitsu.html
+- scribners-partner-handoff.md
+- scripts
+- sensei-bully.html
+- sensei-jiu-jitsu.html
+- sensei-studio.html
+- show-up-kit.html
+- snippets
+- snippets.md
+- success-stories.html
+- tannersville-bjj-video-library.html
+- tannersville-ny-jiu-jitsu.html
+- thanks.html
+- tools
+- ubersuggest
+- video-sitemap.xml
+- videos
+- winter-compliance-protocol.html
+
+## Likely Generated/Temp Paths
+- crawl-reports/
+
+## Candidate Source Allowlist Roots
+- blog/
+- near/
+- _includes/
+- assets/
+- docs/
+- tools/
+- scripts/

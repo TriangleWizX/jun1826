@@ -1,0 +1,16 @@
+<!-- WebP picture helper (use as a copy/paste base; keep width/height and loading attributes updated per image) -->
+<picture>
+  <source
+    type="image/webp"
+    srcset="/img/kids-hero-640.webp 640w,
+            /img/kids-hero-960.webp 960w,
+            /img/kids-hero-1440.webp 1440w"
+    sizes="(max-width: 720px) 92vw, 980px">
+  <img
+    src="/img/kids-hero-960.jpg"
+    width="1440" height="900"
+    alt="Kids jiu-jitsu class in Tannersville"
+    loading="lazy"
+    decoding="async"
+   >
+</picture>

@@ -1,0 +1,294 @@
+.page-camp-clinics {
+  --camp-hero-bg: radial-gradient(circle at top left, rgba(40, 159, 161, 0.12), transparent 34rem),
+    radial-gradient(circle at 90% 10%, rgba(107, 76, 48, 0.12), transparent 18rem),
+    var(--ss-bg, #fbfaf8);
+}
+
+.page-camp-clinics .partner-hero.camp-hero {
+  position: relative;
+  overflow: clip;
+  background: var(--camp-hero-bg);
+}
+
+.page-camp-clinics .partner-hero.camp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 250, 242, 0.62));
+  pointer-events: none;
+}
+
+.page-camp-clinics .camp-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-camp-clinics .camp-hero-grid {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
+
+.page-camp-clinics .camp-hero-copy {
+  max-width: 44rem;
+}
+
+.page-camp-clinics .camp-hero h1 {
+  max-width: 12ch;
+  margin-top: 0.35rem;
+  font-size: clamp(2.6rem, 6vw, 5.9rem);
+  line-height: 0.93;
+  letter-spacing: -0.055em;
+}
+
+.page-camp-clinics .camp-hero .lead {
+  max-width: 39rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  line-height: 1.55;
+  color: var(--ss-muted, #4f433c);
+}
+
+.page-camp-clinics .camp-hero-actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.page-camp-clinics .camp-btn-primary,
+.page-camp-clinics .camp-btn-secondary {
+  min-height: 50px;
+  border-radius: 999px;
+  padding-inline: 1.15rem;
+  font-weight: 800;
+  transition:
+    transform 220ms cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 220ms cubic-bezier(0.32, 0.72, 0, 1),
+    background-color 220ms cubic-bezier(0.32, 0.72, 0, 1),
+    border-color 220ms cubic-bezier(0.32, 0.72, 0, 1),
+    color 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.page-camp-clinics .camp-btn-primary:hover,
+.page-camp-clinics .camp-btn-primary:focus-visible,
+.page-camp-clinics .camp-btn-secondary:hover,
+.page-camp-clinics .camp-btn-secondary:focus-visible {
+  transform: translateY(-1px);
+}
+
+.page-camp-clinics .camp-hero-points {
+  display: grid;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 1.35rem 0 0;
+  padding: 0;
+}
+
+.page-camp-clinics .camp-hero-points li {
+  position: relative;
+  padding: 0.9rem 1rem 0.9rem 2.6rem;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 250, 242, 0.76);
+  box-shadow: 0 10px 24px rgba(33, 29, 24, 0.05);
+  color: var(--ss-text, #1f1712);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.page-camp-clinics .camp-hero-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 1rem;
+  top: 0.9rem;
+  color: var(--ss-green, #116a42);
+  font-weight: 900;
+}
+
+.page-camp-clinics .camp-hero-visual {
+  position: relative;
+}
+
+.page-camp-clinics .camp-hero-media-shell {
+  position: relative;
+  padding: 0.85rem;
+  border-radius: 2rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 250, 242, 0.74)),
+    rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  box-shadow: 0 24px 60px rgba(33, 29, 24, 0.12);
+}
+
+.page-camp-clinics .camp-hero-media-frame {
+  overflow: hidden;
+  border-radius: calc(2rem - 0.45rem);
+  background: #e9e2d8;
+  aspect-ratio: 16 / 10;
+}
+
+.page-camp-clinics .camp-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.page-camp-clinics .camp-hero-float {
+  position: absolute;
+  max-width: 15rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  background: rgba(255, 250, 242, 0.92);
+  box-shadow: 0 18px 42px rgba(33, 29, 24, 0.12);
+  color: var(--ss-ink, #362b24);
+}
+
+.page-camp-clinics .camp-hero-float span {
+  display: block;
+  color: var(--ss-muted, #4f433c);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-camp-clinics .camp-hero-float strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.page-camp-clinics .camp-hero-float--top {
+  top: 1.15rem;
+  left: 1.15rem;
+}
+
+.page-camp-clinics .camp-hero-float--bottom {
+  right: 1.15rem;
+  bottom: 1.15rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  max-width: 18rem;
+}
+
+.page-camp-clinics .camp-hero-float--bottom div {
+  min-width: 0;
+}
+
+.page-camp-clinics .camp-hero-float--bottom strong {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.page-camp-clinics .camp-hero-float--bottom span {
+  margin-top: 0.1rem;
+  white-space: nowrap;
+}
+
+.page-camp-clinics .camp-hero-specs {
+  padding: 0 0 clamp(2.25rem, 5vw, 4rem);
+}
+
+.page-camp-clinics .camp-spec-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.page-camp-clinics .camp-spec-card {
+  padding: 1rem 1rem 1.05rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  background: rgba(255, 250, 242, 0.88);
+  box-shadow: 0 10px 24px rgba(33, 29, 24, 0.05);
+}
+
+.page-camp-clinics .camp-spec-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ss-green, #116a42);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-camp-clinics .camp-spec-kicker i {
+  font-size: 0.85rem;
+}
+
+.page-camp-clinics .camp-spec-card strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.35rem;
+  line-height: 1.05;
+  color: var(--ss-ink, #362b24);
+}
+
+.page-camp-clinics .camp-spec-card p {
+  margin: 0.55rem 0 0;
+  color: var(--ss-muted, #4f433c);
+  line-height: 1.45;
+}
+
+@media (max-width: 991.98px) {
+  .page-camp-clinics .camp-hero-media-frame {
+    aspect-ratio: 16 / 11;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-camp-clinics .partner-hero.camp-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .page-camp-clinics .camp-hero-float {
+    max-width: none;
+    left: 0.85rem;
+    right: 0.85rem;
+  }
+
+  .page-camp-clinics .camp-hero-float--top {
+    top: 0.85rem;
+  }
+
+  .page-camp-clinics .camp-hero-float--bottom {
+    bottom: 0.85rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-camp-clinics .camp-hero-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .page-camp-clinics .camp-spec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .page-camp-clinics .camp-hero-grid {
+    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+  }
+
+  .page-camp-clinics .camp-hero-points {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .page-camp-clinics .camp-spec-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .page-camp-clinics .camp-hero-media-shell {
+    transform: translateY(0.5rem);
+  }
+}

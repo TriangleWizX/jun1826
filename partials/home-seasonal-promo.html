@@ -1,0 +1,114 @@
+<section class="ss-seasonal-promo" aria-label="Summer training promo" data-seasonal-promo>
+  <div class="ss-seasonal-promo__inner">
+    <p class="ss-seasonal-promo__eyebrow mb-1" data-seasonal-eyebrow>Summer in Tannersville</p>
+    <h2 class="ss-seasonal-promo__title h4 mb-2" data-seasonal-title>Train This Summer at Sensei Sandy BJJ</h2>
+    <p class="ss-seasonal-promo__body mb-2" data-seasonal-body>
+      Beginner-friendly Brazilian Jiu Jitsu for kids, teens, adults, families, and Catskills visitors.
+      Easy to start whether you live here full time, stay for the season, or are just in town for a week.
+    </p>
+
+    <ul class="ss-seasonal-promo__chips list-unstyled mb-3" aria-label="Summer highlights" data-seasonal-chips>
+      <li>Locals + visitors welcome</li>
+      <li>Private Lessons 4 • Youth Class 5 • Adults 6</li>
+      <li>Calm first class</li>
+    </ul>
+
+    <div class="ss-seasonal-promo__actions">
+      <a
+        href="/summer-jiu-jitsu-tannersville"
+        class="btn btn-primary ss-btn ss-btn--primary"
+        data-seasonal-primary
+        data-seasonal-event="homepage_summer_promo_click"
+      >See Summer Options</a>
+      <a
+        href="/schedule"
+        class="btn btn-outline-primary ss-btn ss-btn--secondary"
+        data-seasonal-secondary
+        data-seasonal-event="homepage_summer_intro_click"
+      >Book Your Intro</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function setupHomeSeasonalPromo() {
+    const root = document.querySelector('[data-seasonal-promo]');
+    if (!root) return;
+
+    const defaults = {
+      enabled: true,
+      eyebrow: 'Summer in Tannersville',
+      title: 'Train This Summer at Sensei Sandy BJJ',
+      body: 'Beginner-friendly Brazilian Jiu Jitsu for kids, teens, adults, families, and Catskills visitors. Easy to start whether you live here full time, stay for the season, or are just in town for a week.',
+      primary: { label: 'See Summer Options', href: '/summer-jiu-jitsu-tannersville' },
+      secondary: { label: 'Book Your Intro', href: '/schedule' },
+      chips: ['Locals + visitors welcome', 'Private Lessons 4 • Youth Class 5 • Adults 6', 'Calm first class'],
+      trackView: true
+    };
+
+    const cfg = Object.assign({}, defaults, window.SS_SEASONAL_PROMO_CONFIG || {});
+    if (!cfg.enabled) {
+      root.remove();
+      return;
+    }
+
+    const setText = (selector, value) => {
+      const el = root.querySelector(selector);
+      if (el && value) el.textContent = value;
+    };
+
+    setText('[data-seasonal-eyebrow]', cfg.eyebrow);
+    setText('[data-seasonal-title]', cfg.title);
+    setText('[data-seasonal-body]', cfg.body);
+
+    const primary = root.querySelector('[data-seasonal-primary]');
+    const secondary = root.querySelector('[data-seasonal-secondary]');
+    if (primary && cfg.primary) {
+      primary.textContent = cfg.primary.label || defaults.primary.label;
+      primary.setAttribute('href', cfg.primary.href || defaults.primary.href);
+    }
+    if (secondary && cfg.secondary) {
+      secondary.textContent = cfg.secondary.label || defaults.secondary.label;
+      secondary.setAttribute('href', cfg.secondary.href || defaults.secondary.href);
+    }
+
+    const chips = root.querySelector('[data-seasonal-chips]');
+    if (chips) {
+      const items = Array.isArray(cfg.chips) ? cfg.chips.slice(0, 3) : defaults.chips;
+      chips.innerHTML = '';
+      items.forEach((label) => {
+        const li = document.createElement('li');
+        li.textContent = label;
+        chips.appendChild(li);
+      });
+    }
+
+    const fire = (eventName) => {
+      if (!eventName) return;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, { page_path: window.location.pathname });
+      }
+      if (Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: eventName, page_path: window.location.pathname });
+      }
+    };
+
+    root.addEventListener('click', (event) => {
+      const cta = event.target.closest('[data-seasonal-event]');
+      if (!cta) return;
+      fire(cta.getAttribute('data-seasonal-event'));
+    });
+
+    if (cfg.trackView !== false) {
+      const viewKey = 'homepage_summer_promo_view_fired_v1';
+      try {
+        if (!sessionStorage.getItem(viewKey)) {
+          fire('homepage_summer_promo_view');
+          sessionStorage.setItem(viewKey, '1');
+        }
+      } catch (error) {
+        fire('homepage_summer_promo_view');
+      }
+    }
+  })();
+</script>

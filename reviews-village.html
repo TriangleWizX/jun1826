@@ -1,0 +1,268 @@
+<section class="order-4 w-100 ss-reviews-village ss-section ss-section--tight" aria-label="Reviews village"
+  data-reviews-village>
+  <div class="container ss-container">
+    <div class="ss-reviews-village__header">
+      <p class="ss-eyebrow">Local Proof</p>
+      <h2 class="ss-reviews-village__title">Families and adults start here because the room feels calm, clear, and
+        respectful.</h2>
+      <p class="ss-reviews-village__lede">Three quick reasons people trust the room before they book.</p>
+    </div>
+
+    <div class="ss-reviews-village__grid" data-reviews-grid>
+      <article class="ss-reviews-village__card ss-card">
+        <p class="ss-stars mb-2">★★★★★</p>
+        <p class="ss-card__quote">“As a smaller grappler, I felt safe and welcomed.”</p>
+        <cite class="ss-card__name">Kelly Chan</cite>
+      </article>
+      <article class="ss-reviews-village__card ss-card">
+        <p class="ss-stars mb-2">★★★★★</p>
+        <p class="ss-card__quote">“Every time I've been in his classes, he has provided clear instruction for all levels, as well as drills to integrate new skills.”</p>
+        <cite class="ss-card__name">Jason M</cite>
+      </article>
+      <article class="ss-reviews-village__card ss-card">
+        <p class="ss-stars mb-2">★★★★★</p>
+        <p class="ss-card__quote">“A welcoming community with no big egos.”</p>
+        <cite class="ss-card__name">Adam Mastropaolo</cite>
+      </article>
+    </div>
+
+    <div class="ss-reviews-village__footer">
+      <div class="ss-reviews-village__footer-actions">
+        <a class="ss-proof-chip" data-reviews-chip href="/bjj-glossary/updates">
+          <strong>Actively maintained</strong>: 141 plain-English BJJ terms for beginners
+        </a>
+        <a class="btn btn-outline-primary ss-btn ss-btn--secondary"
+          href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu"
+          target="_blank" rel="noopener">Read all Google reviews →</a>
+        <a class="btn btn-primary ss-btn" href="/book-free-intro" data-reviews-reserve hidden>Reserve Free Intro</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  (function renderReviewsVillage() {
+    const script = document.currentScript;
+    const section = script && script.previousElementSibling;
+    if (!section || !section.matches("[data-reviews-village]")) return;
+
+    const grid = section.querySelector("[data-reviews-grid]");
+    const headerTitle = section.querySelector(".ss-reviews-village__title");
+    const headerLede = section.querySelector(".ss-reviews-village__lede");
+    const footerChip = section.querySelector("[data-reviews-chip]");
+    const reserveCta = section.querySelector("[data-reviews-reserve]");
+    if (!grid || !headerTitle || !headerLede) return;
+
+    const reviews = {
+      kelly: {
+        tags: ["safety", "trust"],
+        quote: "As a smaller grappler, I felt safe and welcomed.",
+        author: "Kelly Chan"
+      },
+      christopher: {
+        tags: ["safety", "beginner", "trust"],
+        quote: "Sandy makes you feel comfortable getting on the mats if it's your first time or even if you are a seasoned practitioner.",
+        author: "Tess Robinson"
+      },
+      roberto: {
+        tags: ["beginner", "confidence", "trust"],
+        quote: "Every time I've been in his classes, he has provided clear instruction for all levels, as well as drills to integrate new skills.",
+        author: "Jason M"
+      },
+      tess: {
+        tags: ["beginner", "adult", "trust"],
+        quote: "Sandy makes you feel comfortable getting on the mats if it's your first time or even if you are a seasoned practitioner.",
+        author: "Tess Robinson"
+      },
+      phillip: {
+        tags: ["safety", "trust", "value"],
+        quote: "I have been doing BJJ since the 1990s and can't think of a safer, more ethical or skilled academy.",
+        author: "Phillip Johansen"
+      },
+      adamM: {
+        tags: ["trust", "community"],
+        quote: "A welcoming community with no big egos.",
+        author: "Adam Mastropaolo"
+      },
+      douglas: {
+        tags: ["beginner", "adult", "trust"],
+        quote: "I've rarely encountered an instructor as caring, chill, beginner-friendly, optimistic, and good at explaining the fundamentals of jiu-jitsu as Sensei Sandy.",
+        author: "Douglas Hopson"
+      },
+      jason: {
+        tags: ["structure", "trust"],
+        quote: "Every time I've been in his classes, he has provided clear instruction for all levels, as well as drills to integrate new skills.",
+        author: "Jason M"
+      },
+      clearLevels: {
+        tags: ["confidence", "structure", "trust"],
+        quote: "Clear and engaging for both beginners and competitive athletes.",
+        author: "Kelly Chan"
+      },
+      jared: {
+        tags: ["parent", "trust", "structure"],
+        quote: "I have 2 kids in the class twice a week. They entered the class with no experience and now look forward to going after school.",
+        author: "Jared Goodrich"
+      },
+      caroline: {
+        tags: ["parent", "confidence", "trust"],
+        quote: "My 8yr old loves the classes. Since starting just over a month ago, his focus at home and class has drastically improved.",
+        author: "caroline cosgrove"
+      },
+      jessie: {
+        tags: ["parent", "trust", "structure"],
+        quote: "Class at Sensei Sandy BJJ has become such a large part of my family's routine.",
+        author: "Jessie Moriarty"
+      },
+      richard: {
+        tags: ["adult", "value", "trust"],
+        quote: "I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.",
+        author: "Richard Scarponi"
+      },
+      adamD: {
+        tags: ["value", "trust", "adult"],
+        quote: "He promotes a relaxed and calm atmosphere while delivering high level Jiu Jitsu that is digestible for both beginners and advanced practitioners alike.",
+        author: "Adam Duthie"
+      }
+    };
+
+    const pageConfigs = {
+      home: {
+        title: "Families and adults start here because the room feels calm, clear, and respectful.",
+        lede: "Three quick reasons people trust the room before they book.",
+        cards: ["jessie", "kelly", "richard"],
+        showFooterChip: false,
+        showReserveCta: true
+      },
+      booking: {
+        title: "Safety proof before the first visit.",
+        lede: "These are the kinds of reviews people read when they want the room to feel calm, supervised, and beginner-safe.",
+        cards: ["kelly", "christopher", "phillip"]
+      },
+      pricing: {
+        title: "Proof that the room is worth committing to.",
+        lede: "This page stays focused on trust, long-term value, and a room people feel good about paying for.",
+        cards: ["richard", "phillip", "adamD"]
+      },
+      kids: {
+        title: "What parents notice first.",
+        lede: "Parent proof stays visible without forcing families through a long wall of reviews on mobile.",
+        cards: ["jared", "caroline", "jessie"]
+      },
+      teens: {
+        title: "Proof for shy or unsure teen first days.",
+        lede: "Teen families usually want confidence on day one, beginner-safe coaching, and clear structure that beats screen-time drift.",
+        cards: ["roberto", "christopher", "clearLevels"]
+      },
+      adults: {
+        title: "Proof adults can start even if they feel rusty.",
+        lede: "Adults usually want calm beginner coaching, safe training standards, and real long-term value from each session.",
+        cards: ["richard", "phillip", "douglas"]
+      },
+      private: {
+        title: "Proof private lessons are worth booking.",
+        lede: "Private clients usually want value, clear session structure, and confidence before stepping into group class.",
+        cards: ["richard", "jason", "roberto"]
+      },
+      partnerSchools: {
+        title: "What school families notice before they book.",
+        lede: "Parents and school partners usually want calm structure, clear coaching, and visible confidence gains for kids and teens.",
+        cards: ["jared", "caroline", "jessie"],
+        showFooterChip: false
+      },
+      partnerWellness: {
+        title: "Proof for cautious beginners and trusted referrals.",
+        lede: "Providers usually want signs that first-timers will feel safe, oriented, and coached at a pace that does not overwhelm them.",
+        cards: ["kelly", "roberto", "douglas"],
+        showFooterChip: false
+      },
+      partnerHospitality: {
+        title: "Guest-proof for a low-friction local recommendation.",
+        lede: "Hospitality partners usually want evidence that visitors will feel welcomed fast, whether they are complete beginners or just trying something new in town.",
+        cards: ["christopher", "tess", "adamM"],
+        showFooterChip: false
+      },
+      near: {
+        title: "What nearby families say after the drive in.",
+        lede: "Visitors from Windham, Hunter, and the surrounding towns usually want a room that feels calm, clear, and beginner-safe.",
+        cards: ["kelly", "roberto", "adamM"],
+        showFooterChip: false
+      },
+      campClinics: {
+        title: "Proof camps can share with directors and parents.",
+        lede: "Camp leaders and parents usually want calm structure, youth-friendly coaching, and a room that feels organized from the first minute.",
+        cards: ["jared", "caroline", "jessie"],
+        showFooterChip: false
+      }
+    };
+
+    const resolvePageKey = () => {
+      const body = document.body;
+      const path = window.location.pathname.replace(/\/$/, "") || "/";
+      const audience = (body.dataset.audience || "").toLowerCase();
+
+      if (body.classList.contains("page-home") || path === "/") return "home";
+      if (body.classList.contains("page-options-pricing") || path === "/options-pricing") return "pricing";
+      if (path === "/book-free-intro") return "booking";
+      if (
+        body.classList.contains("page-partners-schools") ||
+        path === "/partners-schools-parents" ||
+        path === "/school-families-jiu-jitsu"
+      ) return "partnerSchools";
+      if (
+        body.classList.contains("page-partners-wellness") ||
+        path === "/partners-wellness-pt-referrals"
+      ) return "partnerWellness";
+      if (
+        body.classList.contains("page-partners-hospitality") ||
+        path === "/partners-hospitality-hunter-windham"
+      ) return "partnerHospitality";
+      if (body.classList.contains("page-near")) return "near";
+      if (
+        body.classList.contains("page-camp-clinics") ||
+        path === "/camp-clinics"
+      ) return "campClinics";
+      if (
+        body.classList.contains("page-private-lessons") ||
+        path === "/private-lessons"
+      ) return "private";
+      if (audience === "kids" || path === "/kids") return "kids";
+      if (audience === "teens" || path === "/teens") return "teens";
+      if (audience === "adults" || path === "/adult-bjj") return "adults";
+      return "home";
+    };
+
+    const escapeHtml = (value) =>
+      String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    const pageKey = resolvePageKey();
+    const config = pageConfigs[pageKey] || pageConfigs.home;
+    const cards = config.cards.map((id) => reviews[id]).filter(Boolean);
+    if (!cards.length) return;
+
+    headerTitle.textContent = config.title;
+    headerLede.textContent = config.lede;
+    section.setAttribute("data-reviews-page", pageKey);
+    if (footerChip) {
+      footerChip.hidden = config.showFooterChip === false;
+    }
+    if (reserveCta) {
+      reserveCta.hidden = config.showReserveCta !== true;
+    }
+    grid.innerHTML = cards
+      .map(
+        (review) => `
+          <article class="ss-reviews-village__card ss-card">
+            <p class="ss-stars mb-2">★★★★★</p>
+            <p class="ss-card__quote">"${escapeHtml(review.quote)}"</p>
+            <cite class="ss-card__name">${escapeHtml(review.author)}</cite>
+          </article>
+        `
+      )
+      .join("");
+  })();
+</script>

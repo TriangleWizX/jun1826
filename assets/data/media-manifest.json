@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-05-24",
+  "notes": "reference_status values are derived by scripts/qa-media-manifest.mjs and should not be hand-edited for cleanup decisions.",
+  "groups": [
+    {
+      "group_id": "spring-armor-drop-48hr",
+      "canonical_source": "assets/images/spring-armor-drop-48hr.png",
+      "fingerprinted_outputs": [
+        "assets/images/spring-armor-drop-48hr.1b6dfd.png"
+      ],
+      "dated_aliases": [],
+      "reference_status": "derived-from-scan",
+      "notes": "Canonical editable PNG with fingerprinted production variant."
+    },
+    {
+      "group_id": "yam-2026-05-11-192446-042",
+      "canonical_source": "assets/images/IMG_20260511_192446_042.jpg",
+      "fingerprinted_outputs": [],
+      "dated_aliases": [
+        "assets/images/IMG_20260511_192446_042.webp",
+        "assets/yam-of-the-day/yam-2026-05-11-youth.webp"
+      ],
+      "reference_status": "derived-from-scan",
+      "notes": "Source capture and YAM alias mapping for student-hub runtime pattern."
+    },
+    {
+      "group_id": "hero-home-social",
+      "canonical_source": "assets/images/IMG_20260415_172726_009.webp",
+      "fingerprinted_outputs": [
+        "assets/images/IMG_20260415_172726_009.f9acc0.webp",
+        "assets/images/hero.fa67a7.jpg"
+      ],
+      "dated_aliases": [],
+      "reference_status": "derived-from-scan",
+      "notes": "Homepage, OG/Twitter, and hero variants currently in use across pages."
+    },
+    {
+      "group_id": "class-kids-coaching",
+      "canonical_source": "assets/images/class-kids-coaching-master.jpg",
+      "fingerprinted_outputs": [
+        "assets/images/class-kids-coaching-1200.2fc9ee.webp"
+      ],
+      "dated_aliases": [
+        "assets/images/class-kids-coaching-800.webp",
+        "assets/images/class-kids-coaching-1200.webp",
+        "assets/images/class-kids-coaching-1600.webp"
+      ],
+      "reference_status": "derived-from-scan",
+      "notes": "Responsive hero derivatives used in first-class expectation blocks and local pages."
+    },
+    {
+      "group_id": "community-cleanmat-social-proof",
+      "canonical_source": "assets/images/community.webp",
+      "fingerprinted_outputs": [
+        "assets/images/community.cfa9e4.webp",
+        "assets/images/cleanmat.b6efb4.webp"
+      ],
+      "dated_aliases": [
+        "assets/images/cleanmat.webp"
+      ],
+      "reference_status": "derived-from-scan",
+      "notes": "Promo and camp page proof images with fingerprinted outputs."
+    },
+    {
+      "group_id": "private-lessons-og-581083693",
+      "canonical_source": "assets/images/581083693_122131050512978766_247680542636433259_n.webp",
+      "fingerprinted_outputs": [
+        "assets/images/581083693_122131050512978766_247680542636433259_n.ead0d7.webp"
+      ],
+      "dated_aliases": [],
+      "reference_status": "derived-from-scan",
+      "notes": "Private lessons and concierge page OG/hero mapping."
+    }
+  ]
+}

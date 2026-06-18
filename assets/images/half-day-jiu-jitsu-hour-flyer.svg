@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-label="Half-Day Jiu-Jitsu Hour flyer">
+  <defs>
+    <style>
+      .h1 { font: 800 54px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      .h2 { font: 700 28px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      .p  { font: 500 22px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      .small { font: 500 18px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      .muted { fill: #475569; }
+      .ink { fill: #0f172a; }
+      .accent { fill: #68963c; }
+      .card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="1200" fill="#ffffff"/>
+
+  <text x="450" y="110" text-anchor="middle" class="h1 ink">HALF-DAY</text>
+  <text x="450" y="175" text-anchor="middle" class="h1 ink">JIU-JITSU HOUR</text>
+
+  <text x="450" y="245" text-anchor="middle" class="h2 muted">MONDAY 12/22 • TUESDAY 12/23</text>
+  <text x="450" y="290" text-anchor="middle" class="h2 ink">2:00 PM – 3:00 PM</text>
+  <text x="450" y="340" text-anchor="middle" class="p ink">Snow Leopards (Age 6–8) &amp; Yetis (Age 9–12)</text>
+
+  <rect x="70" y="385" width="760" height="170" rx="16" class="card"/>
+  <text x="100" y="435" class="h2 ink">THE BUDDY PACK</text>
+  <text x="100" y="475" class="p muted">(MON + TUES)</text>
+  <text x="100" y="520" class="p ink">$35 each + a buddy ($10) + snacks ($5 each)</text>
+  <text x="100" y="565" class="h2 accent">$99 Total</text>
+
+  <rect x="70" y="585" width="500" height="250" rx="16" class="card"/>
+  <text x="100" y="635" class="h2 ink">Located in the heart of Tannersville, NY</text>
+  <text x="110" y="685" class="p ink">• 2 Hours of Quiet Shopping</text>
+  <text x="110" y="725" class="p ink">• You handle the lift ticket, we protect the ACL</text>
+  <text x="110" y="765" class="p ink">• Low impact, ground-based stability training</text>
+  <text x="110" y="815" class="small muted">Beginners welcome • Normal gym clothes OK • No experience needed</text>
+
+  <rect x="590" y="585" width="240" height="250" rx="16" class="card"/>
+  <text x="710" y="635" text-anchor="middle" class="h2 ink">PRICING</text>
+  <text x="710" y="690" text-anchor="middle" class="p ink">Single Day: $35</text>
+  <text x="710" y="730" text-anchor="middle" class="p ink">Two Days: $60</text>
+  <text x="710" y="770" text-anchor="middle" class="p ink">Buddy Pack: $99</text>
+  <text x="710" y="820" text-anchor="middle" class="small muted">Strict cap: 16</text>
+
+  <rect x="70" y="865" width="760" height="270" rx="16" class="card"/>
+  <text x="450" y="915" text-anchor="middle" class="h2 ink">6045 Main St • 2nd Floor (above Antique &amp; Artisan Center)</text>
+  <text x="450" y="955" text-anchor="middle" class="h2 ink">Tannersville, NY</text>
+  <text x="450" y="1015" text-anchor="middle" class="p muted">HAPPY KIDS GAMING IN REAL LIFE WITH EACH OTHER</text>
+  <text x="450" y="1070" text-anchor="middle" class="p ink">Led by Sensei Sandy Nunez — 1st Degree BJJ Black Belt</text>
+  <text x="450" y="1110" text-anchor="middle" class="small muted">Clockwork Jiu Jitsu NYC lineage</text>
+  <text x="450" y="1160" text-anchor="middle" class="small muted">Reserve: senseisandy.com/half-day-jiu-jitsu-hour</text>
+</svg>

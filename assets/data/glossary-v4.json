@@ -1,0 +1,121 @@
+[
+  {
+    "id": "closed-guard",
+    "term": "Closed Guard",
+    "aliases": ["Basic Closed Guard"],
+    "type": "Position",
+    "meta": {"rank": "White", "gi": true, "ibjjf_legal": true},
+    "graph_coords": {"x": 120, "y": 320},
+    "connections": {
+      "parents": [],
+      "children": ["scissor-sweep", "armbar", "triangle-choke"],
+      "counters": ["knee-slice-pass"]
+    },
+    "drill_logic": {
+      "success_rate": "high",
+      "combo_starter": true
+    }
+  },
+  {
+    "id": "butterfly-guard",
+    "term": "Butterfly Guard",
+    "aliases": ["Butterfly"],
+    "type": "Position",
+    "meta": {"rank": "Blue", "gi": true, "ibjjf_legal": true},
+    "graph_coords": {"x": 260, "y": 280},
+    "connections": {
+      "parents": [],
+      "children": ["scissor-sweep", "armbar"],
+      "counters": ["knee-slice-pass"]
+    },
+    "drill_logic": {
+      "success_rate": "medium",
+      "combo_starter": true
+    }
+  },
+  {
+    "id": "scissor-sweep",
+    "term": "Scissor Sweep",
+    "aliases": ["Kani Basami (Sweep var.)"],
+    "type": "Transition",
+    "meta": {"rank": "White", "gi": true, "ibjjf_legal": true},
+    "graph_coords": {"x": 200, "y": 420},
+    "connections": {
+      "parents": ["closed-guard", "butterfly-guard"],
+      "children": ["mount", "side-control"],
+      "counters": ["bullfighter-pass"]
+    },
+    "drill_logic": {
+      "success_rate": "high",
+      "combo_starter": false
+    }
+  },
+  {
+    "id": "mount",
+    "term": "Mount",
+    "aliases": ["High Mount"],
+    "type": "Position",
+    "meta": {"rank": "Blue", "gi": true, "ibjjf_legal": true},
+    "graph_coords": {"x": 280, "y": 520},
+    "connections": {
+      "parents": ["scissor-sweep", "side-control"],
+      "children": ["cross-collar-choke", "armbar"],
+      "counters": ["upa" ]
+    },
+    "drill_logic": {
+      "success_rate": "high",
+      "combo_starter": false
+    }
+  },
+  {
+    "id": "armbar",
+    "term": "Armbar",
+    "aliases": ["Juji Gatame"],
+    "type": "Submission",
+    "meta": {"rank": "Blue", "gi": true, "ibjjf_legal": true},
+    "graph_coords": {"x": 180, "y": 520},
+    "connections": {
+      "parents": ["closed-guard", "mount"],
+      "children": ["side-control"],
+      "counters": ["stack-pass"]
+    },
+    "drill_logic": {
+      "success_rate": "high",
+      "combo_starter": false
+    }
+  },
+  {
+    "id": "side-control",
+    "term": "Side Control",
+    "aliases": ["Side Mount"],
+    "type": "Position",
+    "meta": {"rank": "Purple", "gi": true, "ibjjf_legal": true},
+    "graph_coords": {"x": 360, "y": 400},
+    "connections": {
+      "parents": ["scissor-sweep", "armbar"],
+      "children": ["mount", "kesa-gatame"],
+      "counters": ["roll-to-half-guard"]
+    },
+    "drill_logic": {
+      "success_rate": "medium",
+      "combo_starter": false
+    }
+  },
+  {
+    "id": "cross-collar-choke",
+    "term": "Cross Collar Choke",
+    "aliases": [],
+    "type": "Submission",
+    "meta": {"rank": "Blue", "gi": true, "ibjjf_legal": true},
+    "graph_coords": {"x": 360, "y": 600},
+    "connections": {
+      "parents": ["mount"],
+      "children": ["back-take"],
+      "counters": ["pull-guard"]
+    },
+    "drill_logic": {
+      "success_rate": "high",
+      "combo_starter": false
+    }
+  }
+]

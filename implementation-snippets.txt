@@ -1,0 +1,49 @@
+GLOBAL LOGO IMPLEMENTATION SNIPPETS
+
+1) HEADER BRAND MARKUP
+
+<a class="navbar-brand ssbjj-brand" href="/" aria-label="Sensei Sandy BJJ home">
+  <picture>
+    <source
+      srcset="/assets/img/brand/sensei-sandy-bjj-logo-256.webp 256w,
+              /assets/img/brand/sensei-sandy-bjj-logo-512.webp 512w"
+      sizes="52px"
+      type="image/webp">
+    <img
+      class="ssbjj-brand__logo"
+      src="/assets/img/brand/sensei-sandy-bjj-logo-256.png"
+      width="52"
+      height="52"
+      alt=""
+      decoding="async">
+  </picture>
+  <span class="ssbjj-brand__name">Sensei Sandy BJJ</span>
+</a>
+
+
+2) FOOTER BRAND MARKUP
+
+<a class="ssbjj-footer-brand" href="/" aria-label="Sensei Sandy BJJ home">
+  <img
+    class="ssbjj-footer-brand__logo"
+    src="/assets/img/brand/sensei-sandy-bjj-logo-256.png"
+    width="72"
+    height="72"
+    alt=""
+    loading="lazy"
+    decoding="async">
+  <span class="ssbjj-brand__name">Sensei Sandy BJJ</span>
+</a>
+
+
+3) HEAD FAVICON LINKS
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+4) JSON-LD LOGO PROPERTY
+
+"logo": "https://senseisandy.com/assets/img/brand/sensei-sandy-bjj-logo-512.png"

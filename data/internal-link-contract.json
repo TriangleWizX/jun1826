@@ -1,0 +1,12 @@
+{
+  "version": "2026-03-17",
+  "description": "Priority internal-link contract for money pages and local landing pages.",
+  "fields": {
+    "source_page": "string",
+    "target_page": "string",
+    "anchor_text": "string",
+    "priority": "high|medium|low",
+    "status": "planned|published"
+  },
+  "required": ["source_page", "target_page", "anchor_text", "priority", "status"]
+}

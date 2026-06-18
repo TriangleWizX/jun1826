@@ -1,0 +1,33 @@
+{
+  "display": {
+    "moduleHeading": "After Free Intro",
+    "moduleTitle": "Tuition Tracks (Commitment = Savings)"
+  },
+  "tracks": {
+    "coreCulture12Weeks": {
+      "name": "Core Culture (12 Weeks)",
+      "prices": {
+        "youth": 550,
+        "adult": 715
+      }
+    },
+    "liferAnnual": {
+      "name": "Lifer Annual",
+      "prices": {
+        "youth": 1650,
+        "adult": 2150
+      }
+    }
+  },
+  "guarantee": {
+    "label": "30-Day Money-Back Guarantee",
+    "details": "If it is not a fit in the first 30 days, we refund you."
+  },
+  "policies": {
+    "reschedule": "Cancel or reschedule by text"
+  },
+  "templates": {
+    "contactValueLine": "If you want hard numbers, start with a Free Intro, then choose the {coreName} plan (Youth (Kids + Teens) {coreYouth} · Adult {coreAdult}), or choose the Black Belt Track (Annual Membership) for best value.",
+    "quickFaqCost": "{coreName}: Youth {coreYouth}, Adult {coreAdult}. Lifer Annual Track: Youth {liferYouth}, Adult {liferAdult}."
+  }
+}

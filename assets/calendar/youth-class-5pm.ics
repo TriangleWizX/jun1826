@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sensei Sandy BJJ//Youth Class 5 PM//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:youth-class-5pm@senseisandy.com
+DTSTAMP:20260415T120000Z
+SUMMARY:Sensei Sandy BJJ - Youth Class (5:00 PM)
+DTSTART;TZID=America/New_York:20260420T170000
+DTEND;TZID=America/New_York:20260420T175000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,FR
+LOCATION:Sensei Sandy BJJ\, 6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485
+DESCRIPTION:Arrive 10 minutes early. The 5 PM youth class combines kids and teens with clear coaching and controlled training.
+END:VEVENT
+END:VCALENDAR

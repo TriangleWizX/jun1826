@@ -1,0 +1,15 @@
+# SenseiSandy utility cron jobs
+# Install with:
+#   crontab jobs/cron.example
+#
+# This file assumes the repo path below. Update if moved.
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+REPO_DIR=/home/twizss/Documents/ssbjjweb/tmb
+
+# Refresh cached reviews every 48 hours (within 24-72h target window).
+12 3 */2 * * cd "$REPO_DIR" && /usr/bin/php jobs/refresh_reviews.php >> "$REPO_DIR/data/reviews-refresh.log" 2>&1
+
+# Nightly SQLite backup + rotation.
+17 2 * * * cd "$REPO_DIR" && /usr/bin/bash jobs/backup_db.sh >> "$REPO_DIR/data/backup-db.log" 2>&1
+

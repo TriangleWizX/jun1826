@@ -1,0 +1,33 @@
+.env
+data/*.sqlite
+data/*.sqlite-*
+data/backups/*.gz
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.history/
+
+# Python cache
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Node/cache
+node_modules/
+.npm/
+
+# Local QA and scratch outputs
+tmp/qa-*
+tmp/*.csv
+tmp/*.html
+tmp/*.png
+tmp/*.jpg
+tmp/*.jpeg
+tmp/*.webp
+tmp/*.log
+tmp/*.json
+
+# Thumbnail caches
+.tmb/

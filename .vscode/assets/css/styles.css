@@ -1,0 +1,1283 @@
+/* =========================================
+   1. ROOT VARIABLES & PALETTE (MOM-OPTIMIZED)
+   ========================================= */
+:root {
+  /* Primary: Deep Teal - Signals Trust, Stability, and Calm */
+  --primary-color: #006d77; 
+  
+  /* Secondary: Soft Mint/Sage - Signals Growth and Safety */
+  --secondary-color: #e6fffa;
+  
+  /* Accent/Buttons: Energetic Amber - High Visibility, Warmth, Action */
+  --accent-color: #f59e0b;
+  --button-color: #f59e0b;
+  --button-hover: #d97706;
+  
+  /* Text & Backgrounds */
+  --text-color: #334155; /* Softer than pure black for readability */
+  --heading-color: #0f172a;
+  --background-color: #ffffff;
+  
+  /* Typography */
+  --font-main: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  
+  /* Spacing */
+  --section-padding: clamp(3rem, 5vw, 5rem);
+}
+
+/* =========================================
+   2. RESET & GLOBAL TYPOGRAPHY
+   ========================================= */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  font-size: clamp(1rem, 1rem + 0.2vw, 1.125rem);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--button-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   3. NAVIGATION & HEADER
+   ========================================= */
+/* Added from Inline Styles: Fixed Bars */
+.top-bar-wrapper {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1040; /* Above Bootstrap navbar */
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* =========================================
+   UPDATE FOR SECTION 3: BOTTOM BAR LAYOUT
+   ========================================= */
+
+.bottom-bar-wrapper {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1040;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Force the navigation to stay on one line */
+.bottom-bar-wrapper nav {
+  flex-wrap: nowrap !important; /* Overrides Bootstrap's wrapping */
+  white-space: nowrap;          /* Prevents text from breaking */
+  width: 100%;
+  justify-content: center;
+}
+
+/* Optional: Ensure container uses full width if needed to fit items */
+.bottom-bar-wrapper .container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.top-bar {
+  font-size: 0.9rem;
+}
+
+.top-bar .form-control-sm {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+}
+
+.top-bar a { color: #fff; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Make the brand act like a full-width banner */
+.site-header .navbar .container-fluid {
+  display: flex;
+  align-items: center;
+}
+
+/* Brand takes full row and centers the logo */
+.site-header .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  padding: 0;
+  height: clamp(56px, 8vw, 72px); /* scales with viewport, matches navbar height */
+  max-width: clamp(190px, 24vw, 260px);
+}
+
+/* Nav Enhancements */
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+.navbar-nav .nav-link:hover {
+    color: #006d77;
+}
+/* Highlight the Kids Section */
+.nav-highlight {
+    color: #006d77 !important;
+    font-weight: 700 !important;
+}
+
+/* Retro logo styling */
+.navbar-logo-retro {
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated; /* keeps that 2D fighter vibe if it’s low-res */
+}
+
+.navbar-fighter-logo {
+  max-height: 56px;    /* tweak between 48–64px based on how detailed the art is */
+  height: auto;
+  width: auto;         /* let it be a nice wide horizontal strip */
+  image-rendering: pixelated;  /* keeps that 2D fighter / sprite vibe */
+}
+@media (min-width: 992px) {
+  .navbar-fighter-logo {
+    max-height: 64px;
+  }
+}
+
+/* Mobile Optimization for Fixed Bars */
+@media (max-width: 991.98px) {
+  .top-bar-wrapper, .bottom-bar-wrapper {
+    position: fixed; 
+  }
+}
+
+/* =========================================
+   4. BUTTONS (HIGH CONVERSION)
+   ========================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.875rem 1.75rem;
+  border-radius: 50px; /* Soft, friendly pill shape */
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Primary Button (Orange/Amber) */
+.btn-primary {
+  background-color: var(--button-color) !important;
+  border-color: var(--button-color) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4); /* Glow effect */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--button-hover) !important;
+  border-color: var(--button-hover) !important;
+  transform: translateY(-2px);
+  color: #fff !important;
+}
+
+/* Outline Button (Updated to Orange to match brand request) */
+.btn-outline,
+.btn-outline-primary {
+  background: transparent;
+  border: 2px solid var(--button-color) !important;
+  color: var(--button-color) !important;
+}
+
+.btn-outline:hover,
+.btn-outline-primary:hover {
+  background: var(--button-color) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* Icon spacing inside buttons */
+.btn i {
+  margin: 0 6px;
+}
+
+/* Lead Capture Form Buttons (from inline styles) */
+.topbar-lead-form .btn-action {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.topbar-lead-form .btn-action:hover {
+  background-color: var(--button-hover);
+}
+
+/* =========================================
+   5. CTA PILLS (Updated to Orange Style)
+   ========================================= */
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  /* Keep original small sizing so it fits in the bar */
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem; 
+  border-radius: 50rem;
+  
+  /* Update to Orange Button Colors */
+  background-color: var(--button-color);
+  border: 1px solid var(--button-color);
+  color: #fff;
+  
+  /* Add subtle shadow to match main buttons */
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+  
+  text-decoration: none;
+  font-weight: 700; /* Made slightly bolder to match button style */
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cta-pill:hover,
+.cta-pill:focus {
+  /* Darker orange on hover */
+  background-color: var(--button-hover);
+  border-color: var(--button-hover);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px); /* Slight pop effect */
+}
+
+/* Mobile specific sizing remains the same */
+@media (max-width: 991.98px) {
+  .cta-pill {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+}
+/* =========================================
+   6. MOM-OPTIMIZED HERO SECTION (SPLIT)
+   ========================================= */
+.hero.hero--parents .hero__inner { 
+  margin: 0 auto; 
+  text-align: center; 
+}
+.hero.hero--parents .hero__cta { 
+  justify-content: center; 
+}
+
+.vp-center {
+  margin: 0 auto; 
+  text-align: center;
+  justify-content: center;
+}
+    
+.hero-split {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(to bottom, #ffffff 0%, var(--secondary-color) 100%);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% Text, 50% Image */
+  gap: 4rem;
+  align-items: center;
+}
+
+/* --- LEFT COLUMN: TEXT --- */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align for desktop */
+}
+
+.hero-headline {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  color: var(--heading-color);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline span {
+  color: var(--primary-color);
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Underline effect for key terms */
+.hero-headline span::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: var(--accent-color);
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.hero-subhead {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+
+/* --- TRUST BADGES (New Feature) --- */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 109, 119, 0.1);
+  border: 1px solid rgba(0, 109, 119, 0.1);
+}
+
+.badge-item i {
+  color: var(--accent-color); /* Orange icons for visibility */
+  font-size: 1.1rem;
+}
+
+/* --- CTA GROUP --- */
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* --- RIGHT COLUMN: IMAGE --- */
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  border-radius: 24px; /* Soft corners */
+  box-shadow: 20px 20px 0px rgba(0, 109, 119, 0.1); /* Offset shadow */
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+/* Floating Review Bubble */
+.floating-review {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  max-width: 220px;
+  z-index: 2;
+}
+
+.review-stars { color: var(--accent-color); font-size: 0.9rem; margin-bottom: 0.5rem; }
+.review-text { font-size: 0.85rem; font-weight: 700; color: var(--heading-color); margin: 0; }
+.review-author { font-size: 0.75rem; color: #777; display: block; margin-top: 5px; }
+
+/* =========================================
+   7. HERO VIDEO SECTION (The Logic)
+   ========================================= */
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  min-height: 85vh; /* Tall enough to look impressive */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 20px;
+}
+
+/* 1. Background Video Positioning */
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers screen without stretching */
+}
+
+/* 2. The Readability Scrim (Overlay) */
+/* We use a gradient from dark teal to black for high contrast */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 40, 50, 0.7) 0%, rgba(0, 109, 119, 0.9) 100%);
+  z-index: 1;
+  backdrop-filter: blur(2px); /* Optional: lightly blurs video to focus on text */
+}
+
+/* 3. Content Styling */
+.hero-content-container {
+  position: relative;
+  z-index: 2; /* Sits on top of overlay */
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Headlines */
+.hero__title {
+  /* EXISTING STYLES */
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem); /* Reduced min-size slightly for "Instruction" to fit on mobile */
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  
+  /* NEW READABILITY FIXES */
+  color: #ffffff; /* Overrides the global dark teal H1 */
+  text-shadow: 0 5px 15px rgba(0,0,0,0.8); /* Stronger, darker shadow for contrast */
+  letter-spacing: 0.5px; /* Adds a tiny bit of breathing room */
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #f1f5f9;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.text-highlight {
+  color: var(--accent-color); /* Uses your Amber/Orange */
+}
+
+/* Badges List */
+.hero__badges {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem; /* Row gap vs Column gap */
+}
+
+.hero__badges li {
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle glass pill */
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Testimonial Box */
+.hero__quote {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e293b; /* Dark text for readability inside the box */
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.hero__quote blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-family: Georgia, serif;
+}
+
+.hero__quote figcaption {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-color); /* Teal */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* CTA Buttons */
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Meta Info (Location) */
+.hero__meta {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 999px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.hero__meta .divider {
+  margin: 0 8px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Boost visibility for helper notes that were muted */
+p.small.text-muted.mb-3 {
+  color: var(--heading-color) !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-size: 0.95rem;
+}
+
+/* Hero helper lines: keep readable on dark overlay */
+.hero__inner > p.small.text-muted.mb-3 {
+  color: #fff !important;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero__inner p.small.text-muted {
+  color: #f8fafc !important;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero__inner p.small.text-muted.mb-0 {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Step list callout: keeps the "What happens after I click?" block readable on light or busy backgrounds */
+.cta-steps {
+  background: linear-gradient(135deg, rgba(0, 109, 119, 0.92), rgba(0, 75, 83, 0.95));
+  color: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  text-align: left;
+  max-width: 720px;
+  margin: 1rem auto 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cta-steps p,
+.cta-steps li {
+  color: #f8fafc !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.cta-steps p {
+  margin-bottom: 0.35rem;
+}
+
+.cta-steps ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.cta-steps ul li + li {
+  margin-top: 0.25rem;
+}
+
+/* Mobile Stack */
+@media (max-width: 768px) {
+ .hero-video-section {
+    padding-top: 6rem; /* Clear the sticky header */
+    min-height: 100vh;
+    align-items: flex-start;
+ }
+
+ .hero__badges {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+ }
+
+ .hero__cta {
+    width: 100%;
+    flex-direction: column;
+ }
+  
+ .btn {
+    width: 100%;
+ }
+
+ .hero__quote {
+    padding: 1rem;
+    font-size: 0.95rem;
+ }
+}
+
+/* =========================================
+   8. MOBILE OPTIMIZATION
+   ========================================= */
+@media (max-width: 991px) {
+ .hero-grid {
+    grid-template-columns: 1fr; /* Stack to single column */
+    gap: 2.5rem;
+    text-align: center;
+ }
+
+ .hero-text {
+    align-items: center; /* Center align everything */
+    order: 1; /* Text comes first */
+ }
+
+ .hero-image {
+    order: 2; /* Image comes second */
+    margin: 0 1rem; /* Add side margin */
+ }
+
+ .hero-headline {
+    font-size: 2.5rem;
+ }
+
+ .trust-badges {
+    justify-content: center;
+ }
+  
+ .cta-group {
+    justify-content: center;
+    width: 100%;
+ }
+
+ .btn {
+    width: 100%; /* Full width buttons on phone */
+    max-width: 400px;
+ }
+
+ /* Hide floating review on very small screens to save space */
+ .floating-review {
+    display: none; 
+ }
+  
+ /* On tablet/large phone, keep it but move it */
+  @media (min-width: 600px) {
+   .floating-review { display: block; left: 50%; transform: translateX(-50%); bottom: -20px; }
+  }
+}
+
+/* =========================================
+   9. UTILITY & SECTION STYLES
+   ========================================= */
+.section { padding: var(--section-padding) 1rem; }
+
+/* Trust Strip (Below Hero) */
+.trust-strip {
+  background: var(--heading-color);
+  color: #fff;
+  padding: 1.5rem 0;
+}
+
+.trust-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.trust-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Schedule Table Modernization */
+.schedule-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.schedule thead th {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+}
+
+.schedule tbody tr:nth-child(even) {
+  background: var(--secondary-color);
+}
+
+ul {
+  list-style-type: none; /* Removes default bullet points */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+/* Footer */
+.site-footer {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.site-footer a { color: #a5f3fc; } /* Light cyan links on dark teal */
+
+/* =========================================
+   10. STICKY CENTERED CTA (Unified & Orange)
+   ========================================= */
+.sticky-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 20px; /* Distance from bottom */
+  transform: translateX(-50%); /* Perfect centering */
+  z-index: 9999; /* Ensures it stays on top of video/images */
+  
+  width: 90%;       /* Wide touch target on mobile */
+  max-width: 450px; /* Clean button size on desktop */
+  
+  background-color: var(--button-color) !important; /* Forces Orange */
+  color: white !important;
+  font-weight: bold;
+  
+  padding: 0.8rem 1.5rem;
+  border-radius: 50rem !important; /* Pill shape */
+  
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Lift it off the page */
+  border: 2px solid #fff; /* White border makes it pop against dark mats/video */
+  
+  /* Animation for attention */
+  animation: floatUp 1s ease-out;
+  text-decoration: none;
+  text-align: center;
+}
+
+.sticky-cta:hover {
+  background-color: var(--button-hover) !important;
+  color: #fff !important;
+}
+
+/* Ensure the button doesn't cover the footer on desktop if preferred */
+@media (min-width: 992px) {
+ .sticky-cta {
+    bottom: 30px;
+    /* Hide sticky CTA on large desktop if you prefer nav button only */
+    /* display: none; */ 
+ }
+}
+
+/* Adjust body padding for sticky CTA */
+body.has-sticky-cta {
+    padding-bottom: 80px; /* Add extra space so content isn't covered */
+}
+
+/* Pulse Animation to catch the eye */
+.btn-animated {
+  animation: subtle-pulse 2s infinite;
+}
+
+@keyframes subtle-pulse {
+  0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+  70% { transform: translateX(-50%) scale(1.02); box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+  100% { transform: translateX(-50%) scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+/* Animation for standard buttons (centered via margin auto, not absolute positioning) */
+@keyframes btn-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+/* Apply simpler pulse to non-fixed buttons */
+.hero__cta .btn-animated,
+.text-center .btn-animated {
+    animation: btn-pulse 2s infinite;
+    transform: none; /* remove translate used for fixed positioning */
+}
+
+/* =========================================
+   11. UTILITIES & HELPER CLASSES
+   ========================================= */
+
+/* Text alignment utility (restore Bootstrap behavior) */
+.text-center {
+  text-align: center!important;
+}
+
+/* Flex centering utility for intentional use */
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Spacing Utility (Matches Bootstrap mt-4) */
+.mt-4 {
+  margin-top: 1.5rem!important;
+}
+
+/* Subnote Styling - "Risk Reversal" Text */
+.cta-subnote-sm {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b; /* Slate grey for readability/trust */
+  font-weight: 600;
+  margin-top: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.cta-subnote-sm i {
+  color: var(--primary-color); /* Teal checkmarks/icons */
+}
+
+/* =========================================
+   12. THE VILLAGE & SAFETY SECTION
+   ========================================= */
+.village-section {
+  background: linear-gradient(to bottom, #ffffff, var(--secondary-color));
+}
+
+.village-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 109, 119, 0.08);
+  height: 100%;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.village-card:hover {
+  transform: translateY(-5px);
+}
+
+.village-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border: 3px solid var(--accent-color);
+}
+
+.village-quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.village-name {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Safety Micro-Section */
+.safety-panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.safety-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.safety-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color); /* Teal checkmarks */
+}
+
+/* Override Bootstrap Warning to match Brand Amber */
+.bg-warning {
+  background-color: var(--accent-color) !important;
+  color: #fff !important; /* White text usually looks better on amber */
+}
+
+/* Make the Guide Badge in Nav Stand Out */
+.nav-link i.bi-shield-check {
+    color: var(--accent-color);
+    margin-right: 4px;
+}
+
+/* =========================================
+   13. RESPONSIVE VIDEO WRAPPER
+   ========================================= */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* Forces 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px; /* Matches your rounded corners theme */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  background-color: #000;
+  width: 100%;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#grand-slam-curriculum .card {
+  position: relative;
+}
+
+#grand-slam-curriculum .card-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+  opacity: 0.75;
+}
+
+.card-safety .card-title::before {
+  content: "🛡️ ";
+}
+
+.card-movement .card-title::before {
+  content: "↔️ ";
+}
+
+.card-positions .card-title::before {
+  content: "📍 ";
+}
+
+.card-escapes .card-title::before {
+  content: "🚪 ";
+}
+
+.card-sweeps .card-title::before {
+  content: "🔁 ";
+}
+
+.card-sparring .card-title::before {
+  content: "🎯 ";
+}
+
+.retro-stage-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 6px 12px;
+  /* 1. The Background Layer (Repeats) */
+  background-image: url('assets/images/logo-2dfighter-bg-only.webp'); 
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.retro-logo-center {
+  position: relative;
+  transform: none;
+  /* 2. The Logo Layer (Does not repeat, stays in middle) */
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Creates a responsive grid with 3 columns */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  text-align: center; /* Centers the Heading and Label */
+}
+
+/* Makes the bullet points look professional */
+.list-centered {
+  display: inline-block; /* Keeps the list block centered */
+  text-align: left;      /* Keeps the text readable */
+  padding-left: 1.2rem;  /* Ensures bullets aren't cut off */
+}
+
+/* Optional: Adds spacing to the card content */
+.card {
+  padding: 1.5rem;
+  border: 1px solid #ddd; /* Basic border */
+  border-radius: 8px;
+}
+
+/* Page specific overrides */
+    .stretch-card {
+      transition: transform 0.2s;
+      border: 1px solid #eee;
+    }
+    .stretch-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+      border-color: var(--bs-primary);
+    }
+    .step-number {
+      background-color: var(--bs-primary);
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+      background: #000;
+      color: #fff;
+    }
+    .skip-link:focus {
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+
+/* Quick Pricing Snapshot component */
+.pricing-snapshot {
+  background: radial-gradient(circle at 18% 22%, rgba(0, 109, 119, 0.08), transparent 42%), linear-gradient(135deg, #f8fafc 0%, #e6fffa 100%);
+  border: 1px solid rgba(0, 109, 119, 0.12);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-snapshot::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -70px;
+  top: -90px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18), transparent 65%);
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.pricing-snapshot__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(0, 109, 119, 0.08);
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.pricing-snapshot__items {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-snapshot__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed rgba(0, 109, 119, 0.18);
+}
+
+.pricing-snapshot__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pricing-snapshot__label {
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.pricing-snapshot__price {
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.pricing-snapshot__note {
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 576px) {
+  .pricing-snapshot {
+    padding: 1.25rem;
+  }
+  .pricing-snapshot__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+/* =========================================
+   Contact page: location link visibility
+   ========================================= */
+#contact-form .how-card .mt-3 {
+  margin-top: 1.25rem;
+}
+
+#contact-form .how-card .mt-3 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid var(--button-color);
+  color: var(--button-color);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0, 109, 119, 0.12);
+  transition: all 0.2s ease;
+}
+
+#contact-form .how-card .mt-3 a:hover,
+#contact-form .how-card .mt-3 a:focus {
+  background: var(--button-color);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0, 109, 119, 0.15);
+}

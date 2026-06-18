@@ -1,0 +1,138 @@
+<!-- LEAD CAPTURE FORM SECTION -->
+<section class="w-100 ss-section ss-book-form-section" id="booking-form" style="order: 2;" data-booking-router>
+  <div class="container">
+    <div class="ss-double-bezel-shell ss-fade-up">
+      <div class="ss-form-card ss-double-bezel-core ss-form-card-inner">
+        <div class="row align-items-center">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h3 class="h4 mb-2" style="font-family: 'Lexend', sans-serif; font-weight: 800; color: var(--ss-ink); letter-spacing: -0.02em;"> Reserve Free Intro </h3>
+            <p class="mb-0 text-muted small"> We'll follow up with times that work for you. Planning around a break? <a href="/holiday-schedule">Check holiday hours before booking.</a></p>
+          </div>
+          <div class="col-lg-8">
+            <form id="onsite-booking-form" class="row g-3 align-items-end needs-validation" novalidate>
+              <div class="position-absolute top-0 start-0 opacity-0 pe-none" aria-hidden="true" style="position: absolute; left: -9999px;">
+                <label for="website">Leave this field empty</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              
+              <!-- Choose a lane -->
+              <div class="col-12 mb-2">
+                <label class="form-label small fw-bold text-muted mb-1">Starting lane:</label>
+                <div class="row g-2" role="group" aria-label="Starting lanes">
+                  <div class="col-6 col-md-3">
+                    <input type="radio" class="btn-check" name="interest_lane" id="lane-youth" value="kids" checked required>
+                    <label class="btn btn-outline-secondary w-100 py-2.5 d-flex flex-column align-items-center justify-content-center" for="lane-youth" style="border-radius: 12px; font-size: 0.85rem;">
+                      <span class="fw-bold">Kids</span>
+                      <span style="font-size: 0.7rem; opacity: 0.8;">Ages 5–9</span>
+                    </label>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <input type="radio" class="btn-check" name="interest_lane" id="lane-teens" value="teens" required>
+                    <label class="btn btn-outline-secondary w-100 py-2.5 d-flex flex-column align-items-center justify-content-center" for="lane-teens" style="border-radius: 12px; font-size: 0.85rem;">
+                      <span class="fw-bold">Teens</span>
+                      <span style="font-size: 0.7rem; opacity: 0.8;">Ages 10–17</span>
+                    </label>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <input type="radio" class="btn-check" name="interest_lane" id="lane-adults" value="adults" required>
+                    <label class="btn btn-outline-secondary w-100 py-2.5 d-flex flex-column align-items-center justify-content-center" for="lane-adults" style="border-radius: 12px; font-size: 0.85rem;">
+                      <span class="fw-bold">Adults</span>
+                      <span style="font-size: 0.7rem; opacity: 0.8;">Ages 18+</span>
+                    </label>
+                  </div>
+                  <div class="col-6 col-md-3">
+                    <input type="radio" class="btn-check" name="interest_lane" id="lane-private" value="private" required>
+                    <label class="btn btn-outline-secondary w-100 py-2.5 d-flex flex-column align-items-center justify-content-center" for="lane-private" style="border-radius: 12px; font-size: 0.85rem;">
+                      <span class="fw-bold">Private</span>
+                      <span style="font-size: 0.7rem; opacity: 0.8;">First step</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="name" class="form-label small fw-bold text-muted mb-1">First name</label>
+                <input type="text" class="form-control" id="name" name="name" required placeholder="First name">
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label small fw-bold text-muted mb-1">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="Email address">
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label small fw-bold text-muted mb-1">Mobile number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Mobile number">
+              </div>
+              <div class="col-md-6">
+                <label for="trained" class="form-label small fw-bold text-muted mb-1">Have you trained before?</label>
+                <select class="form-select" id="trained" name="trained_before" required>
+                  <option value="" disabled selected>Select an option...</option>
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </div>
+
+              <input type="hidden" id="interest_lane" name="interest_lane_hidden" value="kids">
+
+              <div class="col-12 mt-4 text-center">
+                <button type="submit" class="btn btn-primary w-100 mb-2">
+                  <span>Reserve Free Intro</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ms-1">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                <a class="btn btn-link text-decoration-none text-muted small mt-1 d-inline-flex align-items-center justify-content-center gap-1" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20interested%20in%20a%20Free%20Intro.">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                  Text Sandy
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="mt-3 text-center text-muted small d-flex align-items-center justify-content-center gap-1">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-1">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          We respect your privacy. Your info is never shared.
+        </div>
+      </div>
+    </div>
+    <p class="ss-booking-status text-center mt-3" data-booking-status hidden aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- CALENDLY EMBED SECTION -->
+<section class="w-100 ss-section ss-calendly-section" id="calendly-step" style="order: 4;" hidden>
+  <div class="container">
+    <div class="ss-calendly-wrapper">
+      <h2 class="h3 mb-3 text-center" style="font-family: 'Lexend', sans-serif; font-weight: 800; letter-spacing: -0.02em;">Step 3: Pick a time</h2>
+      <div id="calendly-embed-onsite" class="ss-calendly-embed">
+        <div class="text-center p-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2 fw-semibold">Finding available intro times&hellip;</p>
+          <p class="small text-muted mt-2 mb-0">While this loads, the first visit stays simple: room tour, safety walkthrough, Beginner Lane.</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p class="fw-semibold mb-0 text-muted">
+          Times not loading? <a href="sms:+19177368649?body=Hi%20Sandy%2C%20times%20aren%27t%20loading.%20I%27d%20like%20to%20book%20a%20Free%20Intro%20by%20text." class="text-decoration-underline" style="color: var(--ss-teal);">Text Sandy</a> with your age, goal, and best day.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIRMATION SECTION -->
+<section class="w-100 ss-section ss-confirmation-section" id="confirmation-step" style="order: 4;" hidden>
+  <div class="container">
+    <div class="ss-double-bezel-shell ss-fade-up">
+      <div class="ss-form-card ss-double-bezel-core p-4 p-md-5" id="confirmation-content" style="background-color: var(--ss-surface);">
+        <!-- Dynamically rendered by JS -->
+      </div>
+    </div>
+  </div>
+</section>

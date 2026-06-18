@@ -1,0 +1,43 @@
+<section class="ss-location ss-section--tight" id="location" aria-labelledby="ss-location-title" data-ss-location-reviews>
+  <h2 class="ss-location__title" id="ss-location-title">Find us</h2>
+  <p class="ss-location__meta">Sensei Sandy BJJ · 6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485</p>
+  <p class="ss-location__parking">Parking: street parking on Main Street and municipal lots within a short walk.</p>
+
+  <div class="ss-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.8872272702065!2d-74.13495!3d42.195478699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ddad923f824fc1%3A0x7b2f25b6317b39f3!2sSensei%20Sandy%20BJJ!5e0!3m2!1sen!2sus!4v1770402155501!5m2!1sen!2sus"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      title="Sensei Sandy BJJ on Google Maps"
+      width="600"
+      height="450"></iframe>
+  </div>
+
+  <div class="ss-map__actions ss-actions">
+    <a
+      class="btn ss-btn ss-btn--primary"
+      target="_blank"
+      rel="noopener"
+      href="https://www.google.com/maps/search/?api=1&query=Sensei+Sandy+BJJ&query_place_id=ChIJwU-CP5Kt3YkR8zl7MbYlL3s">
+      Open in Google Maps
+    </a>
+    <a
+      class="btn ss-btn ss-btn--secondary"
+      target="_blank"
+      rel="noopener"
+      href="https://www.google.com/maps/dir/?api=1&destination=Sensei+Sandy+BJJ&destination_place_id=ChIJwU-CP5Kt3YkR8zl7MbYlL3s&travelmode=driving">
+      Get Directions
+    </a>
+  </div>
+
+</section>
+<script>
+  (function dedupeLocationAndReviews() {
+    const blocks = document.querySelectorAll('[data-ss-location-reviews]');
+    if (blocks.length < 2) return;
+    blocks.forEach((block, index) => {
+      if (index > 0) block.remove();
+    });
+  })();
+</script>

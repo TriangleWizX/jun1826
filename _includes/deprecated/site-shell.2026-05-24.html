@@ -1,0 +1,340 @@
+<!-- SITE_SHELL_START -->
+<header class="ss-header" role="banner">
+  <div class="ss-header__utility">
+    <div class="ss-container ss-header__utility-inner">
+      <span class="ss-header__utility-location">Tannersville, NY</span>
+      <div class="ss-header__utility-links">
+        <a href="/schedule" aria-label="View schedule">Schedule</a>
+        <a href="/blog" aria-label="Read the blog">Blog</a>
+        <span>
+          <span class="ss-header__utility-contactlabel">Call</span>
+          <a href="tel:+19177368649" data-primary-phone-link data-primary-phone-aria-call="Call {phone}" aria-label="Call Sensei Sandy BJJ">(917) 736-8649</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<nav class="ss-nav navbar navbar-expand-lg" role="navigation" aria-label="Primary site navigation">
+  <div class="ss-container">
+    <a class="navbar-brand ssbjj-brand" href="/" aria-label="Sensei Sandy BJJ home">
+      <picture>
+        <source
+          srcset="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp 256w,
+                  /assets/img/brand/sensei-sandy-bjj-logo-512.webp 512w"
+          sizes="52px"
+          type="image/webp">
+        <img
+          class="ssbjj-brand__logo"
+          src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png"
+          width="52"
+          height="52"
+          alt=""
+          decoding="async">
+      </picture>
+      <span class="ssbjj-brand__name">Sensei Sandy BJJ</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item dropdown d-none d-lg-block">
+          <button
+            class="nav-link dropdown-toggle"
+            type="button"
+            id="programsDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >Programs</button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="programsDropdown">
+            <li><a class="dropdown-item" href="/programs">Compare Programs</a></li>
+            <li><a class="dropdown-item" href="/kids">Kids Jiu-Jitsu</a></li>
+            <li><a class="dropdown-item" href="/teen-jiu-jitsu-tannersville-ny">Teen Jiu-Jitsu</a></li>
+            <li><a class="dropdown-item" href="/adult-bjj">Adult Jiu-Jitsu</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/private-lessons">Private Lessons</a></li>
+          </ul>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" href="/programs">Programs</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" href="/kids">Kids</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" href="/teen-jiu-jitsu-tannersville-ny">Teens</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" href="/adult-bjj">Adults</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/schedule">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/options-pricing">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bjj-glossary">BJJ Glossary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/student-hub">Student Hub</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" href="/private-lessons">Private Lessons</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="btn btn-primary ss-btn ss-btn--primary"
+            href="/book-free-intro"
+            data-cta-target="intro"
+            data-cta-src="nav"
+            data-cta-label="Reserve Free Intro"
+            data-event="book_free_intro_click"
+            data-location="tannersville"
+          ><span data-cta-text>Reserve Free Intro</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- LANE_PICKER_START -->
+<div class="ss-lanes" role="navigation" aria-label="Program quick links">
+  <div class="ss-container">
+    <div class="ss-lane-picker-chips" role="list">
+      <a class="ss-chip" role="listitem" href="/private-lessons">Private Lessons</a>
+      <a class="ss-chip" role="listitem" href="/after-school">Youth Class</a>
+      <a class="ss-chip" role="listitem" href="/adult-bjj">Adult Class</a>
+      <a class="ss-chip" role="listitem" href="/programs">All Programs</a>
+    </div>
+  </div>
+</div>
+<!-- LANE_PICKER_END -->
+
+<script>
+  (function ensureBootstrapBundle() {
+    if (window.bootstrap && window.bootstrap.Collapse) return;
+    if (document.querySelector('script[src*="bootstrap.bundle.min.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+    script.crossOrigin = 'anonymous';
+    script.defer = true;
+    document.body.appendChild(script);
+  })();
+</script>
+<script>
+  (function desktopDropdownFix() {
+    const isDesktop = () => !(window.matchMedia && window.matchMedia('(max-width: 991.98px)').matches);
+
+    function closeAllFallback() {
+      document.querySelectorAll('.dropdown.show, .dropdown-menu.show').forEach(function (el) {
+        el.classList.remove('show');
+      });
+      document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(function (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    function toggleFallback(toggle) {
+      const dropdown = toggle.closest('.dropdown');
+      const menu = dropdown ? dropdown.querySelector('.dropdown-menu') : document.querySelector(`#${toggle.getAttribute('aria-controls')}`);
+      if (!menu) return;
+      const isOpen = menu.classList.contains('show');
+
+      // Close others
+      closeAllFallback();
+
+      if (!isOpen) {
+        menu.classList.add('show');
+        if (dropdown) dropdown.classList.add('show');
+        toggle.setAttribute('aria-expanded', 'true');
+      } else {
+        menu.classList.remove('show');
+        if (dropdown) dropdown.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // Click handler on document
+    document.addEventListener('click', function (event) {
+      const toggle = event.target.closest('[data-bs-toggle="dropdown"]');
+      console.debug && console.debug('site-shell dropdown click', { toggle: !!toggle, hasBootstrap: !!(window.bootstrap && window.bootstrap.Dropdown) });
+      if (!toggle) return;
+      if (!isDesktop()) return; // only manage desktop behavior
+
+      // If Bootstrap's Dropdown is available, use it and prevent default navigation
+      if (window.bootstrap && window.bootstrap.Dropdown) {
+        event.preventDefault();
+        window.bootstrap.Dropdown.getOrCreateInstance(toggle).toggle();
+        return;
+      }
+
+      // Bootstrap not loaded — use fallback toggle behavior
+      event.preventDefault();
+      toggleFallback(toggle);
+    }, true);
+
+    // Close fallback dropdowns when clicking elsewhere
+    document.addEventListener('click', function (event) {
+      if (event.target.closest('[data-bs-toggle="dropdown"]')) return;
+      if (event.target.closest('.dropdown-menu')) return;
+      closeAllFallback();
+    }, false);
+
+    // Close on escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAllFallback();
+    });
+  })();
+</script>
+<script>
+  (function closeMobileNavOnSelection() {
+    const nav = document.getElementById('mainNav');
+    const toggler = document.querySelector('.navbar-toggler');
+    if (!nav) return;
+
+    const shouldClose = () =>
+      window.matchMedia('(max-width: 991.98px)').matches &&
+      nav.classList.contains('show');
+
+    nav.addEventListener('click', (event) => {
+      const link = event.target.closest('a.nav-link, .dropdown-menu a.dropdown-item, .navbar-nav .btn');
+      if (!link) return;
+      if (link.matches('[data-bs-toggle="dropdown"], .dropdown-toggle')) return;
+      if (!shouldClose()) return;
+
+      // Close via Bootstrap if available, otherwise manual fallback
+      if (window.bootstrap && window.bootstrap.Collapse) {
+        window.bootstrap.Collapse.getOrCreateInstance(nav).hide();
+      } else {
+        nav.classList.remove('show');
+        if (toggler) toggler.setAttribute('aria-expanded', 'false');
+      }
+
+      // Robust cleanup of state-lock classes and leftover backdrops
+      document.body.classList.remove('modal-open', 'nav-open', 'menu-open');
+      document.querySelectorAll('.modal-backdrop, .offcanvas-backdrop, .nav-backdrop').forEach(b => b.remove());
+    });
+  })();
+</script>
+<script>
+  (function ensureDropdownsInitialized() {
+    function attachAll() {
+      if (!window.bootstrap || !window.bootstrap.Dropdown) return;
+      document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(function (el) {
+        try {
+          if (!el._ss_dropdown_attached_) {
+            // Ensure Bootstrap Dropdown instance exists so clicks toggle reliably
+            window.bootstrap.Dropdown.getOrCreateInstance(el);
+            el._ss_dropdown_attached_ = true;
+          }
+        } catch (e) {
+          // ignore
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        attachAll();
+      }, { once: true });
+    } else {
+      attachAll();
+    }
+
+    // Also run after window load in case bootstrap is injected later
+    window.addEventListener('load', attachAll);
+  })();
+</script>
+<script>
+  (function loadSiteScripts() {
+    const scripts = [
+      '/js/site-config.611f21.js?v=20260213',
+      '/js/link-utils.js?v=20260428',
+      '/js/cta-config.js?v=20260217',
+      '/js/content-config.js?v=20260214',
+      '/js/analytics-events.js?v=20260215'
+    ];
+    const loadNext = (idx) => {
+      if (idx >= scripts.length) return;
+      const script = document.createElement('script');
+      script.src = scripts[idx];
+      script.defer = true;
+      script.onload = () => loadNext(idx + 1);
+      document.body.appendChild(script);
+    };
+    loadNext(0);
+
+    const loadCalendlyIfNeeded = () => {
+      if (document.querySelector('script[src*="calendly-intent.js"]')) return;
+      const calendlyScript = document.createElement('script');
+      calendlyScript.src = '/js/calendly-intent.1b837b.js?v=20260210';
+      calendlyScript.defer = true;
+      document.body.appendChild(calendlyScript);
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadCalendlyIfNeeded, { once: true });
+    } else {
+      loadCalendlyIfNeeded();
+    }
+  })();
+</script>
+<script>
+  (function highlightActiveNav() {
+    const nav = document.getElementById('mainNav');
+    if (!nav) return;
+
+    const currentPath = (window.location.pathname.replace(/\.html?$/, '').replace(/\/$/, '') || '/');
+
+    const programPaths = new Set([
+      '/programs',
+      '/kids',
+      '/teen-jiu-jitsu-tannersville-ny',
+      '/adult-bjj',
+      '/private-lessons'
+    ]);
+
+    nav.querySelectorAll('a.nav-link, .dropdown-menu a.dropdown-item').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('#')) return;
+
+      let linkPath = href.replace(/\.html$/, '');
+      if (!linkPath.startsWith('/')) linkPath = '/' + linkPath;
+      linkPath = linkPath.replace(/\/$/, '') || '/';
+
+      const matchesDirect = currentPath === linkPath;
+      const matchesSection = linkPath !== '/' && currentPath.startsWith(linkPath + '/');
+      const marksPrograms = link.classList.contains('dropdown-toggle') && programPaths.has(currentPath);
+      const markActive = matchesDirect || matchesSection || marksPrograms || (linkPath === '/nearby-towns' && currentPath.startsWith('/near/'));
+
+      if (markActive) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+        const dropdownToggle = link.closest('.dropdown-menu')?.previousElementSibling;
+        if (dropdownToggle?.classList.contains('nav-link')) {
+          dropdownToggle.classList.add('active');
+          dropdownToggle.setAttribute('aria-current', 'page');
+        }
+      }
+    });
+  })();
+  (function setNavAudienceStatus() {
+    const statusEl = document.getElementById('navViewingStatus');
+    if (!statusEl) return;
+    const audience = (document.body?.dataset?.audience || 'mixed').toLowerCase();
+    const labelMap = {
+      youth: 'Youth',
+      kids: 'Youth',
+      teens: 'Youth',
+      adults: 'Adults',
+      adult: 'Adults',
+      mixed: 'Mixed (Youth + Adults)'
+    };
+    const label = labelMap[audience] || 'Mixed';
+    statusEl.textContent = `You’re viewing: ${label}`;
+  })();
+</script>
+<!-- SITE_SHELL_END -->

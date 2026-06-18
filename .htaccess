@@ -1,36 +1,550 @@
+Options -MultiViews
 RewriteEngine On
 RewriteBase /
 
-# 1. Force HTTPS and Force non-www (senseisandy.com)
-# This prevents duplicate content on www versions
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} ^www\. [NC]
+# IndexNow key file for Ahrefs verification:
+# allow public direct access and bypass all rewrite/canonical chains.
+<Files "ch9sdfpu2ajh2rzbs1ed516zrfep9451.txt">
+  Require all granted
+  ForceType text/plain
+  AddDefaultCharset UTF-8
+</Files>
+RewriteRule ^ch9sdfpu2ajh2rzbs1ed516zrfep9451\.txt$ - [L]
+
+# --- Canonical host / protocol ---
+# Collapse www to the canonical HTTPS host before any scheme-only rewrite can add an extra hop.
+RewriteCond %{HTTP_HOST} ^www\.senseisandy\.com$ [NC]
 RewriteRule ^ https://senseisandy.com%{REQUEST_URI} [L,R=301,NE]
 
-# 2. Redirect /index.html (or /index) to Root (/)
-# This prevents "senseisandy.com/index" from appearing
-RewriteCond %{THE_REQUEST} \s/+(index\.html|index)[\s?] [NC]
-RewriteRule ^ / [R=301,L]
+# Force HTTPS + non-www in one hop, including proxied SSL requests.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.senseisandy\.com$ [NC]
+RewriteRule ^ https://senseisandy.com%{REQUEST_URI} [L,R=301,NE]
 
-# 3. Redirect external .html requests to Clean URLs (excluding index)
-# Example: /schedule.html -> /schedule
+# --- Emergency booking-link trust leak fix ---
+# --- Manual legacy exceptions (intentionally not in managed JSON) ---
+# MANUAL_LEGACY_EXCEPTION: query-conditioned booking cleanup requires RewriteCond + QSD behavior.
+# Tracked schedule booking URLs are intentionally collapsed to the clean booking page.
+# This prevents SSI query-state errors from appearing before the booking CTA.
+RewriteCond %{REQUEST_URI} ^/book-free-intro(?:\.html|/)?$ [NC]
+RewriteCond %{QUERY_STRING} (^|&)(day=(monday|tuesday|wednesday|friday|saturday)|lane=mixed|source_page=schedule)(&|$) [NC]
+RewriteRule ^book-free-intro(?:\.html|/)?$ https://senseisandy.com/book-free-intro [R=302,L,NE,QSD]
+
+# BEGIN AUTO_LEGACY_REDIRECTS
+# Managed by: npm run redirects:sync
+# Source of truth: config/legacy-redirects.json
+# Keep this block above internal /videos rewrites so aliases win over stale files.
+RewriteRule ^adult/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^adults/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^adults\-bjj/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^anti\-bully/?$ https://senseisandy.com/sensei-bully [L,R=301,NE]
+RewriteRule ^antibully/?$ https://senseisandy.com/sensei-bully [L,R=301,NE]
+RewriteRule ^bios/?$ https://senseisandy.com/bio [L,R=301,NE]
+RewriteRule ^bjj\-glossary/anti\-bullying/?$ https://senseisandy.com/bjj-glossary/bully-proof [L,R=301,NE]
+RewriteRule ^bjj\-glossary/beginner\-on\-ramp/?$ https://senseisandy.com/bjj-glossary/beginner-lane [L,R=301,NE]
+RewriteRule ^bjj\-glossary/bjj\-safety/?$ https://senseisandy.com/bjj-glossary/safety [L,R=301,NE]
+RewriteRule ^bjj\-glossary/bridge\-and\-roll/?$ https://senseisandy.com/bjj-glossary/upa-escape [L,R=301,NE]
+RewriteRule ^bjj\-glossary/bullyproof/?$ https://senseisandy.com/bjj-glossary/bully-proof [L,R=301,NE]
+RewriteRule ^bjj\-glossary/first\-class\-lane/?$ https://senseisandy.com/bjj-glossary/beginner-lane [L,R=301,NE]
+RewriteRule ^bjj\-glossary/juji\-gatame/?$ https://senseisandy.com/bjj-glossary/armbar [L,R=301,NE]
+RewriteRule ^bjj\-glossary/jujigatame/?$ https://senseisandy.com/bjj-glossary/armbar [L,R=301,NE]
+RewriteRule ^bjj\-glossary/nogi/?$ https://senseisandy.com/bjj-glossary/no-gi [L,R=301,NE]
+RewriteRule ^bjj\-glossary/rnc/?$ https://senseisandy.com/bjj-glossary/rear-naked-choke [L,R=301,NE]
+RewriteRule ^bjj\-glossary/safe\-training/?$ https://senseisandy.com/bjj-glossary/safety [L,R=301,NE]
+RewriteRule ^bjj\-glossary/straight\-arm\-lock/?$ https://senseisandy.com/bjj-glossary/armbar [L,R=301,NE]
+RewriteRule ^bjj\-glossary/upa/?$ https://senseisandy.com/bjj-glossary/upa-escape [L,R=301,NE]
+RewriteRule ^blackbelttrack/?$ https://senseisandy.com/black-belt-track [L,R=301,NE]
+RewriteRule ^blog/bio\-ginastica/?$ https://senseisandy.com/blog/bioginastica-movement-no-gi [L,R=301,NE]
+RewriteRule ^blog/ginastica/?$ https://senseisandy.com/blog/bioginastica-movement-no-gi [L,R=301,NE]
+RewriteRule ^blog/jiu\-jitsu\-sensei/?$ https://senseisandy.com/blog/bjj-sensei [L,R=301,NE]
+RewriteRule ^blog/martial\-arts\-near\-hunter\-ny\-grappling\-not\-striking/?$ https://senseisandy.com/martial-arts-hunter-ny [L,R=301,NE]
+RewriteRule ^blog/onteora\-park\-summer\-activities/?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
+RewriteRule ^blog/onteora\-park\-summer\-activities\-tannersville\-athletics/?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
+RewriteRule ^blog/sensei\-sandy\-open\-mat/?$ https://senseisandy.com/bjj-glossary/open-mat [L,R=301,NE]
+RewriteRule ^book\-free\-introadults/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^book\-free\-introkids/?$ https://senseisandy.com/kids [L,R=301,NE]
+RewriteRule ^book\-free\-introteens/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteRule ^cairo\-jiu\-jitsu/?$ https://senseisandy.com/near/cairo-ny [L,R=301,NE]
+RewriteRule ^cairo\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/cairo-ny [L,R=301,NE]
+RewriteRule ^catskill\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
+RewriteRule ^catskill\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
+RewriteRule ^checkout/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^classes/?$ https://senseisandy.com/bjj-classes-tannersville-ny [L,R=301,NE]
+RewriteRule ^contacts/?$ https://senseisandy.com/contact [L,R=301,NE]
+RewriteRule ^core\-culture/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
+RewriteRule ^curriculum/?$ https://senseisandy.com/bjj-classes-tannersville-ny [L,R=301,NE]
+RewriteRule ^faq/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
+RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
+RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
+RewriteRule ^faqs\.html/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
+RewriteRule ^glossary/collar\-tie/?$ https://senseisandy.com/bjj-glossary/collar-tie [L,R=301,NE]
+RewriteRule ^glossary/guard\-pass/?$ https://senseisandy.com/bjj-glossary/guard-pass [L,R=301,NE]
+RewriteRule ^glossary/guard\-retention/?$ https://senseisandy.com/bjj-glossary/guard-retention [L,R=301,NE]
+RewriteRule ^glossary/hooks/?$ https://senseisandy.com/bjj-glossary/hooks [L,R=301,NE]
+RewriteRule ^glossary/knee\-line/?$ https://senseisandy.com/bjj-glossary/knee-line [L,R=301,NE]
+RewriteRule ^glossary/knee\-shield/?$ https://senseisandy.com/bjj-glossary/knee-shield [L,R=301,NE]
+RewriteRule ^glossary/lapel\-grip/?$ https://senseisandy.com/bjj-glossary/lapel-grip [L,R=301,NE]
+RewriteRule ^glossary/pressure/?$ https://senseisandy.com/bjj-glossary/pressure [L,R=301,NE]
+RewriteRule ^glossary/scramble/?$ https://senseisandy.com/bjj-glossary/scramble [L,R=301,NE]
+RewriteRule ^glossary/turtle/?$ https://senseisandy.com/bjj-glossary/turtle [L,R=301,NE]
+RewriteRule ^glossary/wrist\-control/?$ https://senseisandy.com/bjj-glossary/wrist-control [L,R=301,NE]
+RewriteRule ^how\-it\-works/?$ https://senseisandy.com/ [L,R=301,NE]
+RewriteRule ^how\-to\-start/?$ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteRule ^hunter\-jiu\-jitsu/?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteRule ^hunter\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteRule ^jiu\-jitsu\-sandy/?$ https://senseisandy.com/sensei-jiu-jitsu [L,R=301,NE]
+RewriteRule ^kids\-bjj/?$ https://senseisandy.com/kids [L,R=301,NE]
+RewriteRule ^kids\.html/?$ https://senseisandy.com/kids [L,R=301,NE]
+RewriteRule ^mountain\-pass/?$ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteRule ^near/elka\-park\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/esopus\-creek\-phoenicia/?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
+RewriteRule ^near/haines\-falls/?$ https://senseisandy.com/near/haines-falls-ny [L,R=301,NE]
+RewriteRule ^near/hunter\-mountain/?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteRule ^near/jewett\-east\-jewett\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/jewett\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/kaaterskill\-falls/?$ https://senseisandy.com/near/palenville-ny [L,R=301,NE]
+RewriteRule ^near/lanesville\-ny/?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
+RewriteRule ^near/lexington\-ny/?$ https://senseisandy.com/near/windham-ny [L,R=301,NE]
+RewriteRule ^near/onteora\-park\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/saugerties\-ny/?$ https://senseisandy.com/near/woodstock-ny [L,R=301,NE]
+RewriteRule ^near/tannersville\-ny/?$ https://senseisandy.com/bjj-classes-tannersville-ny [L,R=301,NE]
+RewriteRule ^near/windham\-mountain/?$ https://senseisandy.com/near/windham-mountain-club [L,R=301,NE]
+RewriteRule ^openingpress/?$ https://senseisandy.com/archive/openingpress [L,R=301,NE]
+RewriteRule ^options/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
+RewriteRule ^partners\-schools\-parents/?$ https://senseisandy.com/school-families-jiu-jitsu [L,R=301,NE]
+RewriteRule ^pricing/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
+RewriteRule ^privates/?$ https://senseisandy.com/private-lessons [L,R=301,NE]
+RewriteRule ^programs/?$ https://senseisandy.com/bjj-classes-tannersville-ny [L,R=301,NE]
+RewriteRule ^raffle\-donation/?$ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteRule ^safety/?$ https://senseisandy.com/jiu-jitsu-safety-tannersville-ny [L,R=301,NE]
+RewriteRule ^safety\.html/?$ https://senseisandy.com/jiu-jitsu-safety-tannersville-ny [L,R=301,NE]
+RewriteRule ^samuraibreak/?$ https://senseisandy.com/samurai-break [L,R=301,NE]
+RewriteRule ^schedule\.html/?$ https://senseisandy.com/schedule [L,R=301,NE]
+RewriteRule ^schedules/?$ https://senseisandy.com/schedule [L,R=301,NE]
+RewriteRule ^start\-here/?$ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteRule ^stretches/?$ https://senseisandy.com/bjj-stretches [L,R=301,NE]
+RewriteRule ^summer/?$ https://senseisandy.com/summer-jiu-jitsu-tannersville [L,R=301,NE]
+RewriteRule ^tannersville\-bjj\-video\-library/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^tannersville\-jiu\-jitsu/?$ https://senseisandy.com/bjj-classes-tannersville-ny [L,R=301,NE]
+RewriteRule ^teens/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteRule ^teens\-bjj/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteRule ^teens\.html/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteRule ^videos/25\-2025\-MZI3kDzmaU8/?$ https://senseisandy.com/videos/25-2025-mzi3kdzmau8 [L,R=301,NE]
+RewriteRule ^videos/25\-for\-2025\-mzi3kdzmau8/?$ https://senseisandy.com/videos/25-2025-mzi3kdzmau8 [L,R=301,NE]
+RewriteRule ^videos/25\-for\-2025\-MZI3kDzmaU8/?$ https://senseisandy.com/videos/25-2025-mzi3kdzmau8 [L,R=301,NE]
+RewriteRule ^videos/4pm\-class\-5wXyFR6f2yc/?$ https://senseisandy.com/videos/4pm-class-5wxyfr6f2yc [L,R=301,NE]
+RewriteRule ^videos/4pm\-kid\-takedowns\-in\-tannersville\-isrhsakxmco/?$ https://senseisandy.com/videos/4pm-kid-takedowns-tannersville-isrhsakxmco [L,R=301,NE]
+RewriteRule ^videos/4pm\-kid\-takedowns\-in\-tannersville\-IsRHsAKxmCo/?$ https://senseisandy.com/videos/4pm-kid-takedowns-tannersville-isrhsakxmco [L,R=301,NE]
+RewriteRule ^videos/4pm\-kid\-takedowns\-tannersville\-IsRHsAKxmCo/?$ https://senseisandy.com/videos/4pm-kid-takedowns-tannersville-isrhsakxmco [L,R=301,NE]
+RewriteRule ^videos/4pm\-kids\-5K\-uN3MYncU/?$ https://senseisandy.com/videos/4pm-kids-5k-un3myncu [L,R=301,NE]
+RewriteRule ^videos/5pm\-\-HuSzeaTXuY/?$ https://senseisandy.com/videos/5pm-teens-jmr7m3e5com [L,R=301,NE]
+RewriteRule ^videos/5pm\-teens\-Jmr7M3E5CoM/?$ https://senseisandy.com/videos/5pm-teens-jmr7m3e5com [L,R=301,NE]
+RewriteRule ^videos/6\-pm\-bjj\-class\-preview\-session\-1\-l5hh632g2h4\-l5hh632g2h4/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-1-l5hh632g2h4 [L,R=301,NE]
+RewriteRule ^videos/6\-pm\-bjj\-class\-preview\-session\-2\-lqtzpvkiw7y\-lqtzpvkiw7y/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-2-lqtzpvkiw7y [L,R=301,NE]
+RewriteRule ^videos/6pm\-adults\-NS5gBmsJW9I/?$ https://senseisandy.com/videos/6pm-adults-ns5gbmsjw9i [L,R=301,NE]
+RewriteRule ^videos/6pm\-L5hh632g2h4/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-1-l5hh632g2h4 [L,R=301,NE]
+RewriteRule ^videos/6pm\-lQtzpVkiW7Y/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-2-lqtzpvkiw7y [L,R=301,NE]
+RewriteRule ^videos/adult\-brazilian\-jiu\-jitsu\-beginner\-class\-mat\-returns\-lAtXJ0ov1SA/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/angle\-b\-cows\-sharks\-and\-bears\-oh\-my\-in\-tannersville\-brazilian\-jiu\-jitsu\-class\-TIparvZ3974/?$ https://senseisandy.com/videos/angle-b-cows-sharks-bears-oh-my-tannersville-tiparvz3974 [L,R=301,NE]
+RewriteRule ^videos/angle\-b\-cows\-sharks\-and\-bears\-oh\-my\-in\-tannersville\-tiparvz3974/?$ https://senseisandy.com/videos/angle-b-cows-sharks-bears-oh-my-tannersville-tiparvz3974 [L,R=301,NE]
+RewriteRule ^videos/angle\-b\-cows\-sharks\-and\-bears\-oh\-my\-in\-tannersville\-TIparvZ3974/?$ https://senseisandy.com/videos/angle-b-cows-sharks-bears-oh-my-tannersville-tiparvz3974 [L,R=301,NE]
+RewriteRule ^videos/angle\-b\-cows\-sharks\-bears\-oh\-my\-tannersville\-TIparvZ3974/?$ https://senseisandy.com/videos/angle-b-cows-sharks-bears-oh-my-tannersville-tiparvz3974 [L,R=301,NE]
+RewriteRule ^videos/bjj\-brazilian\-jiu\-jitsu\-kata\-gatame\-sabado\-gigante\-i2\-ZxD8UKcc/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/bjj\-class\-breakdown\-bed\-sheet\-takedown\-bridge\-and\-roll\-cxcaeoxc1e4/?$ https://senseisandy.com/videos/bjj-class-breakdown-bed-sheet-takedown-bridge-roll-cxcaeoxc1e4 [L,R=301,NE]
+RewriteRule ^videos/bjj\-class\-breakdown\-bed\-sheet\-takedown\-bridge\-and\-roll\-CxcAeOXc1E4/?$ https://senseisandy.com/videos/bjj-class-breakdown-bed-sheet-takedown-bridge-roll-cxcaeoxc1e4 [L,R=301,NE]
+RewriteRule ^videos/bjj\-class\-breakdown\-bed\-sheet\-takedown\-bridge\-and\-roll\-mount\-escape\-shin\-ride\-crackdown\-CxcAeOXc1E4/?$ https://senseisandy.com/videos/bjj-class-breakdown-bed-sheet-takedown-bridge-roll-cxcaeoxc1e4 [L,R=301,NE]
+RewriteRule ^videos/bjj\-class\-breakdown\-bed\-sheet\-takedown\-bridge\-roll\-CxcAeOXc1E4/?$ https://senseisandy.com/videos/bjj-class-breakdown-bed-sheet-takedown-bridge-roll-cxcaeoxc1e4 [L,R=301,NE]
+RewriteRule ^videos/bjj\-front\-headlock\-fundamentals\-chin\-strap\-guillotine\-finish\-PAodMOpIVNk/?$ https://senseisandy.com/videos/bjj-front-headlock-fundamentals-chin-strap-guillotine-finish-paodmopivnk [L,R=301,NE]
+RewriteRule ^videos/bjj\-front\-headlock\-fundamentals\-chin\-strap\-guillotine\-finish\-shoulder\-pressure\-escape\-PAodMOpIVNk/?$ https://senseisandy.com/videos/bjj-front-headlock-fundamentals-chin-strap-guillotine-finish-paodmopivnk [L,R=301,NE]
+RewriteRule ^videos/bjj\-front\-headlock\-fundamentals\-chin\-strap\-guillotine\-paodmopivnk/?$ https://senseisandy.com/videos/bjj-front-headlock-fundamentals-chin-strap-guillotine-finish-paodmopivnk [L,R=301,NE]
+RewriteRule ^videos/bjj\-front\-headlock\-fundamentals\-chin\-strap\-guillotine\-PAodMOpIVNk/?$ https://senseisandy.com/videos/bjj-front-headlock-fundamentals-chin-strap-guillotine-finish-paodmopivnk [L,R=301,NE]
+RewriteRule ^videos/bjj\-fundamentals\-catskills\-belt\-tie\-breakfalls\-mount\-escape\-ecxeL1PO6UE/?$ https://senseisandy.com/videos/bjj-fundamentals-catskills-belt-tie-breakfalls-mount-escape-ecxel1po6ue [L,R=301,NE]
+RewriteRule ^videos/bjj\-fundamentals\-in\-the\-catskills\-belt\-tie\-breakfalls\-ecxel1po6ue/?$ https://senseisandy.com/videos/bjj-fundamentals-catskills-belt-tie-breakfalls-mount-escape-ecxel1po6ue [L,R=301,NE]
+RewriteRule ^videos/bjj\-fundamentals\-in\-the\-catskills\-belt\-tie\-breakfalls\-ecxeL1PO6UE/?$ https://senseisandy.com/videos/bjj-fundamentals-catskills-belt-tie-breakfalls-mount-escape-ecxel1po6ue [L,R=301,NE]
+RewriteRule ^videos/bjj\-fundamentals\-in\-the\-catskills\-belt\-tie\-breakfalls\-mount\-escape\-crackdown\-crucifix\-ecxeL1PO6UE/?$ https://senseisandy.com/videos/bjj-fundamentals-catskills-belt-tie-breakfalls-mount-escape-ecxel1po6ue [L,R=301,NE]
+RewriteRule ^videos/bjj\-pressure\-concepts\-paint\-brush\-elbow\-chest\-compression\-kcbwC0dJXP4/?$ https://senseisandy.com/videos/bjj-pressure-concepts-paint-brush-elbow-chest-compression-kcbwc0djxp4 [L,R=301,NE]
+RewriteRule ^videos/bjj\-pressure\-concepts\-paint\-brush\-elbow\-chest\-compression\-north\-south\-control\-kcbwC0dJXP4/?$ https://senseisandy.com/videos/bjj-pressure-concepts-paint-brush-elbow-chest-compression-kcbwc0djxp4 [L,R=301,NE]
+RewriteRule ^videos/brazilian\-jiu\-jitsu\-beginner\-intro\-wednesday\-no\-gi\-RWEVpph8AeI/?$ https://senseisandy.com/videos/brazilian-jiu-jitsu-beginner-intro-wednesday-no-gi-rwevpph8aei [L,R=301,NE]
+RewriteRule ^videos/brazilian\-jiu\-jitsu\-teens\-wednesday\-no\-gi\-EtZMjYZFgKk/?$ https://senseisandy.com/videos/brazilian-jiu-jitsu-teens-wednesday-no-gi-etzmjyzfgkk [L,R=301,NE]
+RewriteRule ^videos/breakfalls\-beginners\-3\-safe\-get\-ups\-arm\-triangle\-Ioek3l5oqhY/?$ https://senseisandy.com/videos/breakfalls-beginners-3-safe-get-ups-arm-triangle-ioek3l5oqhy [L,R=301,NE]
+RewriteRule ^videos/breakfalls\-for\-beginners\-3\-safe\-get\-ups\-arm\-triangle\-finish\-bjj\-class\-games\-Ioek3l5oqhY/?$ https://senseisandy.com/videos/breakfalls-beginners-3-safe-get-ups-arm-triangle-ioek3l5oqhy [L,R=301,NE]
+RewriteRule ^videos/breakfalls\-for\-beginners\-3\-safe\-get\-ups\-arm\-triangle\-ioek3l5oqhy/?$ https://senseisandy.com/videos/breakfalls-beginners-3-safe-get-ups-arm-triangle-ioek3l5oqhy [L,R=301,NE]
+RewriteRule ^videos/breakfalls\-for\-beginners\-3\-safe\-get\-ups\-arm\-triangle\-Ioek3l5oqhY/?$ https://senseisandy.com/videos/breakfalls-beginners-3-safe-get-ups-arm-triangle-ioek3l5oqhy [L,R=301,NE]
+RewriteRule ^videos/cow\-tip\-takedown\-chest\-control\-plus\-50\-escape\-rr8NoQAaumU/?$ https://senseisandy.com/videos/cow-tip-takedown-chest-control-plus-50-escape-rr8noqaaumu [L,R=301,NE]
+RewriteRule ^videos/cow\-tip\-takedown\-chest\-to\-chest\-control\-plus\-50\-50\-escape\-game\-bjj\-class\-rr8NoQAaumU/?$ https://senseisandy.com/videos/cow-tip-takedown-chest-control-plus-50-escape-rr8noqaaumu [L,R=301,NE]
+RewriteRule ^videos/cow\-tip\-takedown\-chest\-to\-chest\-control\-plus\-50\-50\-escape\-rr8noqaaumu/?$ https://senseisandy.com/videos/cow-tip-takedown-chest-control-plus-50-escape-rr8noqaaumu [L,R=301,NE]
+RewriteRule ^videos/cow\-tip\-takedown\-chest\-to\-chest\-control\-plus\-50\-50\-escape\-rr8NoQAaumU/?$ https://senseisandy.com/videos/cow-tip-takedown-chest-control-plus-50-escape-rr8noqaaumu [L,R=301,NE]
+RewriteRule ^videos/friday\-9\-30am\-Hc\-5NaiXKFw/?$ https://senseisandy.com/videos/friday-9-30am-hc-5naixkfw [L,R=301,NE]
+RewriteRule ^videos/friday\-tannersville\-kids\-bjj\-qf48JtbhJug/?$ https://senseisandy.com/videos/friday-tannersville-kids-bjj-qf48jtbhjug [L,R=301,NE]
+RewriteRule ^videos/friday\-tIcb1N\-nMgc/?$ https://senseisandy.com/videos/friday-ticb1n-nmgc [L,R=301,NE]
+RewriteRule ^videos/front\-headlock\-escapes\-spinning\-turtle\-rear\-body\-lock\-escapes\-50\-50\-safety\-drills\-bjj\-class\-s7jVPeRXqrg/?$ https://senseisandy.com/videos/front-headlock-escapes-spinning-turtle-rear-body-lock-s7jvperxqrg [L,R=301,NE]
+RewriteRule ^videos/front\-headlock\-escapes\-spinning\-turtle\-rear\-body\-lock\-s7jVPeRXqrg/?$ https://senseisandy.com/videos/front-headlock-escapes-spinning-turtle-rear-body-lock-s7jvperxqrg [L,R=301,NE]
+RewriteRule ^videos/games\-loRFy\-ndeNk/?$ https://senseisandy.com/videos/games-lorfy-ndenk [L,R=301,NE]
+RewriteRule ^videos/gi\-brazilian\-jiu\-jitsu\-thursday\-teens\-and\-adults\-AzptM1ssKTA/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/hair\-grab\-self\-defense\-duck\-and\-hug\-takedown\-mount\-escape\-db1lfepopv4/?$ https://senseisandy.com/videos/hair-grab-self-defense-duck-hug-takedown-mount-db1lfepopv4 [L,R=301,NE]
+RewriteRule ^videos/hair\-grab\-self\-defense\-duck\-and\-hug\-takedown\-mount\-escape\-db1LFEPOPv4/?$ https://senseisandy.com/videos/hair-grab-self-defense-duck-hug-takedown-mount-db1lfepopv4 [L,R=301,NE]
+RewriteRule ^videos/hair\-grab\-self\-defense\-duck\-and\-hug\-takedown\-mount\-escape\-youth\-adult\-bjj\-class\-db1LFEPOPv4/?$ https://senseisandy.com/videos/hair-grab-self-defense-duck-hug-takedown-mount-db1lfepopv4 [L,R=301,NE]
+RewriteRule ^videos/hair\-grab\-self\-defense\-duck\-hug\-takedown\-mount\-db1LFEPOPv4/?$ https://senseisandy.com/videos/hair-grab-self-defense-duck-hug-takedown-mount-db1lfepopv4 [L,R=301,NE]
+RewriteRule ^videos/high\-elbow\-guillotine\-front\-headlock\-control\-bjj\-class\-games\-sparring\-deep\-dive\-N0S6\-u9KmHg/?$ https://senseisandy.com/videos/high-elbow-guillotine-front-headlock-control-bjj-class-n0s6-u9kmhg [L,R=301,NE]
+RewriteRule ^videos/high\-elbow\-guillotine\-front\-headlock\-control\-bjj\-class\-N0S6\-u9KmHg/?$ https://senseisandy.com/videos/high-elbow-guillotine-front-headlock-control-bjj-class-n0s6-u9kmhg [L,R=301,NE]
+RewriteRule ^videos/hip\-bump\-sweep\-cross\-collar\-choke\-mount\-detail\-FeorkwVXnrE/?$ https://senseisandy.com/videos/hip-bump-sweep-cross-collar-choke-mount-detail-feorkwvxnre [L,R=301,NE]
+RewriteRule ^videos/hip\-bump\-sweep\-cross\-collar\-choke\-mount\-detail\-spiderweb\-armbar\-bjj\-class\-breakdown\-FeorkwVXnrE/?$ https://senseisandy.com/videos/hip-bump-sweep-cross-collar-choke-mount-detail-feorkwvxnre [L,R=301,NE]
+RewriteRule ^videos/hip\-bump\-sweep\-cross\-collar\-choke\-mount\-detail\-spiderweb\-feorkwvxnre/?$ https://senseisandy.com/videos/hip-bump-sweep-cross-collar-choke-mount-detail-feorkwvxnre [L,R=301,NE]
+RewriteRule ^videos/hip\-bump\-sweep\-cross\-collar\-choke\-mount\-detail\-spiderweb\-FeorkwVXnrE/?$ https://senseisandy.com/videos/hip-bump-sweep-cross-collar-choke-mount-detail-feorkwvxnre [L,R=301,NE]
+RewriteRule ^videos/how\-stand\-up\-safely\-bjj\-kickstand\-head\-position\-zmmVEl\-pf2U/?$ https://senseisandy.com/videos/how-stand-up-safely-bjj-kickstand-head-position-zmmvel-pf2u [L,R=301,NE]
+RewriteRule ^videos/how\-to\-stand\-up\-safely\-in\-bjj\-kickstand\-head\-position\-3\-get\-ups\-loop\-choke\-finish\-zmmVEl\-pf2U/?$ https://senseisandy.com/videos/how-stand-up-safely-bjj-kickstand-head-position-zmmvel-pf2u [L,R=301,NE]
+RewriteRule ^videos/how\-to\-stand\-up\-safely\-in\-bjj\-kickstand\-head\-position\-3\-zmmvel\-pf2u/?$ https://senseisandy.com/videos/how-stand-up-safely-bjj-kickstand-head-position-zmmvel-pf2u [L,R=301,NE]
+RewriteRule ^videos/how\-to\-stand\-up\-safely\-in\-bjj\-kickstand\-head\-position\-3\-zmmVEl\-pf2U/?$ https://senseisandy.com/videos/how-stand-up-safely-bjj-kickstand-head-position-zmmvel-pf2u [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-breakfalls\-grip\-breaking\-pogo\-stick\-pass\-takedown\-cross\-body\-pin\-uk16CCtsKk8/?$ https://senseisandy.com/videos/kids-adults-bjj-class-breakfalls-grip-breaking-pogo-uk16cctskk8 [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-breakfalls\-grip\-breaking\-pogo\-stick\-uk16cctskk8/?$ https://senseisandy.com/videos/kids-adults-bjj-class-breakfalls-grip-breaking-pogo-uk16cctskk8 [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-breakfalls\-grip\-breaking\-pogo\-stick\-uk16CCtsKk8/?$ https://senseisandy.com/videos/kids-adults-bjj-class-breakfalls-grip-breaking-pogo-uk16cctskk8 [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-breakfalls\-grip\-breaking\-pogo\-uk16CCtsKk8/?$ https://senseisandy.com/videos/kids-adults-bjj-class-breakfalls-grip-breaking-pogo-uk16cctskk8 [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-snap\-downs\-loop\-choke\-PksQic7GArU/?$ https://senseisandy.com/videos/kids-adults-bjj-class-snap-downs-loop-choke-pksqic7garu [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-snap\-downs\-loop\-choke\-seatbelt\-back\-control\-closed\-guard\-live\-rounds\-PksQic7GArU/?$ https://senseisandy.com/videos/kids-adults-bjj-class-snap-downs-loop-choke-pksqic7garu [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-snap\-downs\-loop\-choke\-seatbelt\-back\-pksqic7garu/?$ https://senseisandy.com/videos/kids-adults-bjj-class-snap-downs-loop-choke-pksqic7garu [L,R=301,NE]
+RewriteRule ^videos/kids\-adults\-bjj\-class\-snap\-downs\-loop\-choke\-seatbelt\-back\-PksQic7GArU/?$ https://senseisandy.com/videos/kids-adults-bjj-class-snap-downs-loop-choke-pksqic7garu [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfall\-don\-t\-fall\-like\-a\-banana\-stability\-ball\-wrestling\-lkW9SJ9v2TI/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfall-dont-fall-lkw9sj9v2ti [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfall\-don\-t\-fall\-like\-a\-lkw9sj9v2ti/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfall-dont-fall-lkw9sj9v2ti [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfall\-don\-t\-fall\-like\-a\-lkW9SJ9v2TI/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfall-dont-fall-lkw9sj9v2ti [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfall\-dont\-fall\-lkW9SJ9v2TI/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfall-dont-fall-lkw9sj9v2ti [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfalls\-grip\-breaks\-recovery\-drills\-retention\-games\-y1lu5dHnQak/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfalls-grip-breaks-y1lu5dhnqak [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfalls\-grip\-breaks\-recovery\-y1lu5dhnqak/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfalls-grip-breaks-y1lu5dhnqak [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfalls\-grip\-breaks\-recovery\-y1lu5dHnQak/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfalls-grip-breaks-y1lu5dhnqak [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-class\-side\-breakfalls\-grip\-breaks\-y1lu5dHnQak/?$ https://senseisandy.com/videos/kids-bjj-safety-class-side-breakfalls-grip-breaks-y1lu5dhnqak [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-skills\-hair\-pull\-escape\-grip\-break\-game\-balance\-wars\-gi\-folding\-EeNqfgRycfE/?$ https://senseisandy.com/videos/kids-bjj-safety-skills-hair-pull-escape-grip-eenqfgrycfe [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-skills\-hair\-pull\-escape\-grip\-break\-game\-eenqfgrycfe/?$ https://senseisandy.com/videos/kids-bjj-safety-skills-hair-pull-escape-grip-eenqfgrycfe [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-skills\-hair\-pull\-escape\-grip\-break\-game\-EeNqfgRycfE/?$ https://senseisandy.com/videos/kids-bjj-safety-skills-hair-pull-escape-grip-eenqfgrycfe [L,R=301,NE]
+RewriteRule ^videos/kids\-bjj\-safety\-skills\-hair\-pull\-escape\-grip\-EeNqfgRycfE/?$ https://senseisandy.com/videos/kids-bjj-safety-skills-hair-pull-escape-grip-eenqfgrycfe [L,R=301,NE]
+RewriteRule ^videos/kids\-brazilian\-jiu\-jitsu\-thursday\-D\-X1qvoLp\-A/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/kids\-self\-defense\-brazilian\-jiu\-jitsu\-kingston\-ny\-6SWUFme4fb0/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/kids\-teens\-adult\-brazilian\-jiu\-jitsu\-friday\-night\-fMJTbQBn3fg/?$ https://senseisandy.com/videos/kids-teens-adult-brazilian-jiu-jitsu-friday-night-fmjtbqbn3fg [L,R=301,NE]
+RewriteRule ^videos/kids\-teens\-and\-adult\-brazilian\-jiu\-jitsu\-friday\-night\-in\-fmjtbqbn3fg/?$ https://senseisandy.com/videos/kids-teens-adult-brazilian-jiu-jitsu-friday-night-fmjtbqbn3fg [L,R=301,NE]
+RewriteRule ^videos/kids\-teens\-and\-adult\-brazilian\-jiu\-jitsu\-friday\-night\-in\-fMJTbQBn3fg/?$ https://senseisandy.com/videos/kids-teens-adult-brazilian-jiu-jitsu-friday-night-fmjtbqbn3fg [L,R=301,NE]
+RewriteRule ^videos/kids\-teens\-and\-adult\-brazilian\-jiu\-jitsu\-friday\-night\-in\-tannersville\-ny\-fMJTbQBn3fg/?$ https://senseisandy.com/videos/kids-teens-adult-brazilian-jiu-jitsu-friday-night-fmjtbqbn3fg [L,R=301,NE]
+RewriteRule ^videos/knee\-pick\-takedown\-leg\-drag\-pass\-north\-south\-choke\-kinking\-gts61f1ad9o/?$ https://senseisandy.com/videos/knee-pick-takedown-leg-drag-pass-north-south-gts61f1ad9o [L,R=301,NE]
+RewriteRule ^videos/knee\-pick\-takedown\-leg\-drag\-pass\-north\-south\-choke\-kinking\-gtS61f1Ad9o/?$ https://senseisandy.com/videos/knee-pick-takedown-leg-drag-pass-north-south-gts61f1ad9o [L,R=301,NE]
+RewriteRule ^videos/knee\-pick\-takedown\-leg\-drag\-pass\-north\-south\-choke\-kinking\-the\-hose\-bjj\-class\-gtS61f1Ad9o/?$ https://senseisandy.com/videos/knee-pick-takedown-leg-drag-pass-north-south-gts61f1ad9o [L,R=301,NE]
+RewriteRule ^videos/knee\-pick\-takedown\-leg\-drag\-pass\-north\-south\-gtS61f1Ad9o/?$ https://senseisandy.com/videos/knee-pick-takedown-leg-drag-pass-north-south-gts61f1ad9o [L,R=301,NE]
+RewriteRule ^videos/live\-sparring\-bulldog\-hangman\-choke\-finish\-north\-south\-jrsCqOtsL0k/?$ https://senseisandy.com/videos/live-sparring-bulldog-hangman-choke-finish-north-south-jrscqotsl0k [L,R=301,NE]
+RewriteRule ^videos/live\-sparring\-bulldog\-hangman\-choke\-finish\-north\-south\-pressure\-bjj\-mindset\-talk\-jrsCqOtsL0k/?$ https://senseisandy.com/videos/live-sparring-bulldog-hangman-choke-finish-north-south-jrscqotsl0k [L,R=301,NE]
+RewriteRule ^videos/magic\-moves\-cow\-tipping\-and\-shark\-attacks\-on\-a\-tuesday\-in\-tannersville\-Ioek3l5oqhY/?$ https://senseisandy.com/videos/breakfalls-beginners-3-safe-get-ups-arm-triangle-ioek3l5oqhy [L,R=301,NE]
+RewriteRule ^videos/monday\-tannersville\-jiu\-jitsu\-vPCr667CyAg/?$ https://senseisandy.com/videos/monday-tannersville-jiu-jitsu-vpcr667cyag [L,R=301,NE]
+RewriteRule ^videos/peterson\-roll\-escape\-paint\-brush\-choke\-reverse\-power\-nelson\-bjj\-class\-breakdown\-PtRaLTY9r64/?$ https://senseisandy.com/videos/peterson-roll-escape-paint-brush-choke-reverse-power-ptralty9r64 [L,R=301,NE]
+RewriteRule ^videos/peterson\-roll\-escape\-paint\-brush\-choke\-reverse\-power\-PtRaLTY9r64/?$ https://senseisandy.com/videos/peterson-roll-escape-paint-brush-choke-reverse-power-ptralty9r64 [L,R=301,NE]
+RewriteRule ^videos/private\-video\-VXzRG\-G8rtU/?$ https://senseisandy.com/videos/private-video-vxzrg-g8rtu [L,R=301,NE]
+RewriteRule ^videos/rear\-bear\-hug\-body\-lock\-defense\-seatbelt\-back\-WsWXnsiAvUU/?$ https://senseisandy.com/videos/rear-bear-hug-body-lock-defense-seatbelt-back-wswxnsiavuu [L,R=301,NE]
+RewriteRule ^videos/rear\-bear\-hug\-rear\-body\-lock\-defense\-seatbelt\-back\-control\-grip\-breaks\-sparring\-rules\-WsWXnsiAvUU/?$ https://senseisandy.com/videos/rear-bear-hug-body-lock-defense-seatbelt-back-wswxnsiavuu [L,R=301,NE]
+RewriteRule ^videos/rear\-bear\-hug\-rear\-body\-lock\-defense\-seatbelt\-back\-control\-wswxnsiavuu/?$ https://senseisandy.com/videos/rear-bear-hug-body-lock-defense-seatbelt-back-wswxnsiavuu [L,R=301,NE]
+RewriteRule ^videos/rear\-bear\-hug\-rear\-body\-lock\-defense\-seatbelt\-back\-control\-WsWXnsiAvUU/?$ https://senseisandy.com/videos/rear-bear-hug-body-lock-defense-seatbelt-back-wswxnsiavuu [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-mata\-le\-o\-details\-guard\-retention\-basics\-beginner\-bjj\-class\-BeINaONoezg/?$ https://senseisandy.com/videos/rear-naked-choke-mata-leao-details-guard-retention-beinaonoezg [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-mata\-le\-o\-details\-guard\-retention\-basics\-beinaonoezg/?$ https://senseisandy.com/videos/rear-naked-choke-mata-leao-details-guard-retention-beinaonoezg [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-mata\-le\-o\-details\-guard\-retention\-basics\-BeINaONoezg/?$ https://senseisandy.com/videos/rear-naked-choke-mata-leao-details-guard-retention-beinaonoezg [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-mata\-leao\-details\-guard\-retention\-BeINaONoezg/?$ https://senseisandy.com/videos/rear-naked-choke-mata-leao-details-guard-retention-beinaonoezg [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-rnc\-mount\-escape\-spiderweb\-armbar\-bjj\-class\-breakdown\-P8UneaZvoWk/?$ https://senseisandy.com/videos/rear-naked-choke-rnc-mount-escape-spiderweb-armbar-p8uneazvowk [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-rnc\-mount\-escape\-spiderweb\-armbar\-bjj\-p8uneazvowk/?$ https://senseisandy.com/videos/rear-naked-choke-rnc-mount-escape-spiderweb-armbar-p8uneazvowk [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-rnc\-mount\-escape\-spiderweb\-armbar\-bjj\-P8UneaZvoWk/?$ https://senseisandy.com/videos/rear-naked-choke-rnc-mount-escape-spiderweb-armbar-p8uneazvowk [L,R=301,NE]
+RewriteRule ^videos/rear\-naked\-choke\-rnc\-mount\-escape\-spiderweb\-armbar\-P8UneaZvoWk/?$ https://senseisandy.com/videos/rear-naked-choke-rnc-mount-escape-spiderweb-armbar-p8uneazvowk [L,R=301,NE]
+RewriteRule ^videos/safe\-stand\-ups\-knee\-pick\-bulldog\-front\-headlock\-B8X5bI\-3THU/?$ https://senseisandy.com/videos/safe-stand-ups-knee-pick-bulldog-front-headlock-b8x5bi-3thu [L,R=301,NE]
+RewriteRule ^videos/safe\-stand\-ups\-knee\-pick\-bulldog\-front\-headlock\-north\-b8x5bi\-3thu/?$ https://senseisandy.com/videos/safe-stand-ups-knee-pick-bulldog-front-headlock-b8x5bi-3thu [L,R=301,NE]
+RewriteRule ^videos/safe\-stand\-ups\-knee\-pick\-bulldog\-front\-headlock\-north\-B8X5bI\-3THU/?$ https://senseisandy.com/videos/safe-stand-ups-knee-pick-bulldog-front-headlock-b8x5bi-3thu [L,R=301,NE]
+RewriteRule ^videos/safe\-stand\-ups\-knee\-pick\-bulldog\-front\-headlock\-north\-south\-choke\-bjj\-class\-B8X5bI\-3THU/?$ https://senseisandy.com/videos/safe-stand-ups-knee-pick-bulldog-front-headlock-b8x5bi-3thu [L,R=301,NE]
+RewriteRule ^videos/safe\-tai\-otoshi\-rear\-body\-lock\-defense\-youth\-handcuff\-ride\-n\-yodtnn8f8/?$ https://senseisandy.com/videos/safe-tai-otoshi-rear-body-lock-defense-youth-n-yodtnn8f8 [L,R=301,NE]
+RewriteRule ^videos/safe\-tai\-otoshi\-rear\-body\-lock\-defense\-youth\-handcuff\-ride\-N\-YODTNN8F8/?$ https://senseisandy.com/videos/safe-tai-otoshi-rear-body-lock-defense-youth-n-yodtnn8f8 [L,R=301,NE]
+RewriteRule ^videos/safe\-tai\-otoshi\-rear\-body\-lock\-defense\-youth\-handcuff\-ride\-passing\-cheat\-code\-adults\-N\-YODTNN8F8/?$ https://senseisandy.com/videos/safe-tai-otoshi-rear-body-lock-defense-youth-n-yodtnn8f8 [L,R=301,NE]
+RewriteRule ^videos/safe\-tai\-otoshi\-rear\-body\-lock\-defense\-youth\-N\-YODTNN8F8/?$ https://senseisandy.com/videos/safe-tai-otoshi-rear-body-lock-defense-youth-n-yodtnn8f8 [L,R=301,NE]
+RewriteRule ^videos/shoulder\-hold\-saturday\-no\-gi\-brazilian\-jiu\-jitsu\-in\-kingston\-W63Qn5XsFg8/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/single\-leg\-takedown\-mount\-escape\-kimura\-back\-control\-OQcvaTFQoRc/?$ https://senseisandy.com/videos/single-leg-takedown-mount-escape-kimura-back-control-oqcvatfqorc [L,R=301,NE]
+RewriteRule ^videos/single\-leg\-takedown\-mount\-escape\-kimura\-from\-back\-control\-oqcvatfqorc/?$ https://senseisandy.com/videos/single-leg-takedown-mount-escape-kimura-back-control-oqcvatfqorc [L,R=301,NE]
+RewriteRule ^videos/single\-leg\-takedown\-mount\-escape\-kimura\-from\-back\-control\-OQcvaTFQoRc/?$ https://senseisandy.com/videos/single-leg-takedown-mount-escape-kimura-back-control-oqcvatfqorc [L,R=301,NE]
+RewriteRule ^videos/single\-leg\-takedown\-mount\-escape\-kimura\-from\-back\-control\-youth\-adult\-bjj\-class\-OQcvaTFQoRc/?$ https://senseisandy.com/videos/single-leg-takedown-mount-escape-kimura-back-control-oqcvatfqorc [L,R=301,NE]
+RewriteRule ^videos/spar\-3cD3E6czrXU/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/teens\-brazilian\-jiu\-jitsu\-chokes\-self\-defense\-LFeW\-qWwdgQ/?$ https://senseisandy.com/videos/teens-brazilian-jiu-jitsu-chokes-self-defense-lfew-qwwdgq [L,R=301,NE]
+RewriteRule ^videos/tuesday\-tannersville\-brazilian\-jiu\-jitsu\-xXScA476zuE/?$ https://senseisandy.com/videos/tuesday-tannersville-brazilian-jiu-jitsu-xxsca476zue [L,R=301,NE]
+RewriteRule ^videos/wednesday\-GFcByYHrou4/?$ https://senseisandy.com/videos/wednesday-gfcbyyhrou4 [L,R=301,NE]
+# END AUTO_LEGACY_REDIRECTS
+
+
+# --- Legacy aliases (high-value + booking slugs) ---
+# Hard-canonical high-value entry routes in one hop.
+RewriteCond %{THE_REQUEST} \s/+contact\.html[\s?] [NC]
+RewriteRule ^contact(?:\.html)?/?$ https://senseisandy.com/contact [L,R=301,NE,NC]
+RewriteCond %{THE_REQUEST} \s/+book-free-intro(?:/index\.html|\.html)[\s?] [NC]
+RewriteRule ^book-free-intro(?:/index\.html|\.html)$ https://senseisandy.com/book-free-intro [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/kids(?:/index\.html|/)?$ https://senseisandy.com/kids [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/teens(?:/index\.html|/)?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/adults(?:/index\.html|/)?$ https://senseisandy.com/adult-bjj [L,R=301,NE,NC]
+RewriteRule ^adults(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE,NC]
+RewriteRule ^options(?:\.html)?/?$ https://senseisandy.com/options-pricing [L,R=301,NE,NC]
+RewriteRule ^tannersville-bjj-video-library(?:\.html)?/?$ https://senseisandy.com/bjj-videos [L,R=301,NE,NC]
+RewriteRule ^partners-schools-parents(?:\.html)?/?$ https://senseisandy.com/school-families-jiu-jitsu [L,R=301,NE,NC]
+
+# Serve calendar feed files directly and skip rewrite chains.
+RewriteRule ^calendar/private-4pm\.ics$ /assets/calendar/private-lessons-4pm.ics [L,NC]
+RewriteRule ^calendar/youth-5pm\.ics$ /assets/calendar/youth-class-5pm.ics [L,NC]
+RewriteRule ^calendar/adult-6pm\.ics$ /assets/calendar/adult-class-6pm.ics [L,NC]
+RewriteRule ^calendar/saturday\.ics$ /assets/calendar/saturday-block.ics [L,NC]
+RewriteRule ^assets/calendar/(?:adults-lane|kids-lane|saturday-block|teens-lane)\.ics$ - [L,NC]
+
+# Utility backend API routes.
+RewriteRule ^api/?$ /api/index.php [L,QSA]
+RewriteRule ^api/(.*)$ /api/index.php?path=$1 [L,QSA]
+
+# Canonicalize legacy booking slugs that missed the lane slash.
+RewriteRule ^book-free-introkids(?:\.html)?/?$ https://senseisandy.com/kids [L,R=301,NE,NC]
+RewriteRule ^book-free-introteens(?:\.html)?/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE,NC]
+RewriteRule ^book-free-introadults(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE,NC]
+
+# Tracked schedule booking URLs are intentionally collapsed to the clean booking page.
+# This prevents SSI query-state errors from appearing before the booking CTA.
+
+# Keyworded canonical hubs.
+RewriteRule ^videos\.html/?$ https://senseisandy.com/bjj-videos [L,R=301,NE,NC]
+RewriteRule ^bjj-faqs(?:\.html|/)$ https://senseisandy.com/bjj-faqs [L,R=301,NE,NC]
+RewriteRule ^bjj-faqs$ /bjj-faqs.html [L]
+
+# Convert legacy filter query variants into canonical hub URLs.
+RewriteCond %{QUERY_STRING} (^|&)filter=kids(&|$) [NC]
+RewriteRule ^videos/?$ https://senseisandy.com/videos/kids [L,R=301,NE,QSD]
+RewriteCond %{QUERY_STRING} (^|&)filter=teens(&|$) [NC]
+RewriteRule ^videos/?$ https://senseisandy.com/videos/teens [L,R=301,NE,QSD]
+RewriteCond %{QUERY_STRING} (^|&)filter=adults(&|$) [NC]
+RewriteRule ^videos/?$ https://senseisandy.com/videos/adults [L,R=301,NE,QSD]
+RewriteCond %{QUERY_STRING} (^|&)filter=safety(&|$) [NC]
+RewriteRule ^videos/?$ https://senseisandy.com/videos/self-defense [L,R=301,NE,QSD]
+RewriteCond %{QUERY_STRING} (^|&)filter=technique(&|$) [NC]
+RewriteRule ^videos/?$ https://senseisandy.com/videos/submissions [L,R=301,NE,QSD]
+RewriteCond %{QUERY_STRING} (^|&)filter=vibes(&|$) [NC]
+RewriteRule ^videos/?$ https://senseisandy.com/bjj-videos [L,R=301,NE,QSD]
+RewriteCond %{QUERY_STRING} (^|&)filter=[^&]+(&|$) [NC]
+RewriteRule ^videos/?$ https://senseisandy.com/bjj-videos [L,R=301,NE,QSD]
+RewriteRule ^videos/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+
+# Canonicalize legacy video HTML URLs to clean URLs only for direct requests.
+# Prevents redirect loops when /videos and /videos/<slug> are internally rewritten to .html files.
+RewriteCond %{THE_REQUEST} \s/+videos/index\.html[\s?] [NC]
+RewriteRule ^videos/index\.html$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteCond %{THE_REQUEST} \s/+videos/([a-z0-9-]+)\.html[\s?] [NC]
+RewriteRule ^videos/([a-z0-9-]+)\.html$ https://senseisandy.com/videos/$1 [L,R=301,NE,NC]
+
+# Resolve video clean URLs directly to generated HTML files.
+# This serves both hub and watch routes from static .html outputs.
+RewriteRule ^videos$ /videos/index.html [L]
+RewriteRule ^videos/(kids|teens|adults|breakfalls|takedowns|guard-passing|escapes|submissions|self-defense)/?$ /videos/$1.html [L]
+RewriteCond %{DOCUMENT_ROOT}/videos/$1.html -f
+RewriteRule ^videos/([a-z0-9-]+)/?$ /videos/$1.html [L,NC]
+
+# Canonicalize mixed-case video watch URLs to lowercase to avoid split signals.
+# Uses Apache expression to compare original URI with lowercase URI.
+RewriteCond expr "tolower(%{REQUEST_URI}) != %{REQUEST_URI}"
+RewriteRule ^videos/(.+)$ https://senseisandy.com${tolower:%{REQUEST_URI}} [L,R=301,NE]
+
+# Redirect legacy start URLs to the canonical booking page (all variants, incl. trailing slash).
+RewriteCond %{REQUEST_URI} ^/(?:how-to-start|start-here)/index\.html?$ [NC]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteCond %{REQUEST_URI} ^/(?:how-to-start|start-here)(?:\.html)?/?$ [NC]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^ https://senseisandy.com/book-free-intro [L,R=301,NE]
+
+# Redirect legacy slugs to new keyworded URLs (single hop, includes .html + trailing slash).
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^adult(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^classes(?:\.html)?/?$ https://senseisandy.com/programs [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^antibully(?:\.html)?/?$ https://senseisandy.com/bully-proof-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^blackbelttrack(?:\.html)?/?$ https://senseisandy.com/black-belt-track [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^privates(?:\.html)?/?$ https://senseisandy.com/private-lessons [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^samuraibreak(?:\.html)?/?$ https://senseisandy.com/samurai-break [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^stretches(?:\.html)?/?$ https://senseisandy.com/bjj-stretches [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^blog/ginastica/index\.html?$ https://senseisandy.com/blog/bioginastica-movement-no-gi [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^blog/bio-ginastica/index\.html?$ https://senseisandy.com/blog/bioginastica-movement-no-gi [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^blog/onteora-park-summer-activities-tannersville-athletics/index\.html?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^blog/onteora-park-summer-activities/index\.html?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
+
+# --- Near legacy aliases ---
+# Consolidate scaled near-town pages into canonical hubs/pages.
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^cairo-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/near/cairo-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^catskill-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^hunter-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/tannersville-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes-tannersville-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/hunter-mountain(?:/index\.html|/)?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/windham-mountain(?:/index\.html|/)?$ https://senseisandy.com/near/windham-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/esopus-creek-phoenicia(?:/index\.html|/)?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/kaaterskill-falls(?:/index\.html|/)?$ https://senseisandy.com/near/palenville-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/jewett-east-jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/elka-park-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/onteora-park-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/lanesville-ny(?:/index\.html|/)?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/lexington-ny(?:/index\.html|/)?$ https://senseisandy.com/near/windham-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^near/saugerties-ny(?:/index\.html|/)?$ https://senseisandy.com/near/woodstock-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^checkout(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+
+
+# --- Static assets / security headers / caching ---
+# Backward compatibility for legacy fingerprinted image URLs (e.g. name.abc123.webp).
+# If the unhashed file exists, internally serve it instead of returning 404.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/assets/images/$1.$2 -f
+RewriteRule ^assets/images/(.+)\.[0-9a-f]{6}\.(png|jpe?g|webp|gif|svg|avif)$ /assets/images/$1.$2 [L,NC]
+
+# Normalize /home to the canonical root in one hop.
+RewriteRule ^home/?$ / [R=301,L,NE]
+
+# Add explicit noindex headers for template/redirect pages.
+SetEnvIf Request_URI "^/near/template(?:\.html)?$" NOINDEX=1
+SetEnvIf Request_URI "^/curriculum(?:/index\.html|/)?$" NOINDEX=1
+SetEnvIfNoCase Request_URI "^/checkout(?:/|\.html)?$" NOINDEX_TXN=1
+SetEnvIfNoCase Request_URI "^/waiver(?:\.html)?/?$" FORCE_INDEX=1
+SetEnvIfNoCase Request_URI "^/blog/confidence-protocol(?:/index\.html|/)?$" FORCE_INDEX=1
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive" env=NOINDEX_TXN
+  Header always unset X-Robots-Tag env=FORCE_INDEX
+  Header always set X-Robots-Tag "index, follow" env=FORCE_INDEX
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Report-To "{\"group\":\"csp-endpoint\",\"max_age\":10886400,\"endpoints\":[{\"url\":\"https://senseisandy.com/api/csp-reports\"}]}"
+  Header always set Reporting-Endpoints "csp-endpoint=\"https://senseisandy.com/api/csp-reports\""
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://formspree.io; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://assets.calendly.com https://embed.tawk.to https://*.tawk.to; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://assets.calendly.com https://fonts.googleapis.com; img-src 'self' data: blob: https://www.googletagmanager.com https://www.google-analytics.com https://*.ytimg.com https://i.ytimg.com https://tawk.link https://*.tawk.to; font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://assets.calendly.com https://calendly.com https://formspree.io https://embed.tawk.to https://va.tawk.to https://*.tawk.to wss://*.tawk.to; frame-src https://assets.calendly.com https://calendly.com https://www.youtube.com https://www.youtube-nocookie.com https://maps.google.com https://embed.tawk.to https://*.tawk.to; manifest-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; upgrade-insecure-requests; report-uri /api/csp-reports; report-to csp-endpoint"
+  Header always set Vary "Accept-Encoding"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Long cache for fingerprinted static assets.
+  <FilesMatch "\\.[0-9a-f]{6}\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Short cache for HTML (edge-friendly).
+  <FilesMatch "\\.(?:html)$">
+    Header set Cache-Control "public, max-age=300, s-maxage=300"
+  </FilesMatch>
+
+  # Default cache for non-fingerprinted static assets.
+  <FilesMatch "\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
+    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript application/json image/svg+xml text/plain text/xml application/xml
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain text/xml application/xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header merge Vary "Accept"
+</IfModule>
+
+FileETag MTime Size
+
+<IfModule mod_mime.c>
+  AddType text/calendar .ics
+</IfModule>
+
+# Block access to editor/git artifacts (security + avoids accidental indexing)
+RewriteCond %{REQUEST_URI} !^/\.well-known(?:/|$) [NC]
+RewriteRule (^|/)\. - [F]
+
+# Serve minified site CSS (keeps HTML unchanged)
+RewriteRule ^assets/css/styles\.css$ /assets/css/styles.min.css [L]
+
+# Allow SSI fragments (nav/footer) to render inside .html pages
+Options +IncludesNOEXEC
+SSIErrorMsg ""
+DirectoryIndex index.html
+AddType text/html .html
+AddOutputFilter INCLUDES .html
+
+# Redirect legacy curriculum URLs in one hop
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^curriculum(?:\.html)?/?$ https://senseisandy.com/programs [L,R=301,NE]
+
+# 1. Collapse index hits to the canonical directory/root in a single hop
+RewriteCond %{THE_REQUEST} \s+/index(?:\.html?)?[\s?] [NC]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^index(?:\.html?)?$ https://senseisandy.com/ [L,R=301,NE]
+RewriteCond %{THE_REQUEST} \s/+(.+?)/index(?:\.html?)?[\s?] [NC]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^ https://senseisandy.com/%1 [L,R=301,NE]
+
+# 1b. Fix old press URL in one hop (was moved into /archive/)
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^openingpress(?:\.html)?/?$ https://senseisandy.com/archive/openingpress [L,R=301,NE]
+
+# 1c. Catch known aliases with optional .html in one hop to final canonical targets.
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^mountain-pass(?:\.html)?/?$ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^bio(?:\.html|/)$ https://senseisandy.com/bio [L,R=301,NE,NC]
+
+# 2. Redirect explicit .html requests (except index) to clean URLs on the canonical host
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteCond %{REQUEST_URI} !/index\.html$ [NC]
-RewriteRule ^ /%1 [R=301,L,NE]
+RewriteCond %{REQUEST_URI} !^/index\.html?$ [NC]
+RewriteCond %{REQUEST_URI} !^/(?:nav-include|footer-include|cta-hero|cta-decision|cta-footer|cta-header|offer-block|schedule-block|pricing-module-fragment|safety-promise|_includes/[^/]+|partials/[^/]+)\.html$ [NC]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^ https://senseisandy.com/%1 [L,R=301,NE]
 
-# 4. Handle Specific Aliases & Misspellings
-RewriteRule ^faq/?$ /faqs [L,R=301]
-RewriteRule ^bios/?$ /bio [L,R=301]
-RewriteRule ^class/?$ /classes [L,R=301]
-RewriteRule ^curriculum/?$ /classes [L,R=301]
-RewriteRule ^schedules/?$ /schedule [L,R=301]
-RewriteRule ^press/?$ /openingpress [L,R=301]
-RewriteRule ^presses/?$ /openingpress [L,R=301]
-RewriteRule ^contacts/?$ /contact [L,R=301]
-RewriteRule ^private-lessons/?$ /privates [L,R=301]
+# 3. Handle specific aliases & misspellings in one hop to the canonical URL
+RewriteCond %{REQUEST_URI} ^/blog/gi-vs-no-gi-bjj-cheat-code/$ [NC]
+RewriteRule ^blog/gi-vs-no-gi-bjj-cheat-code/$ https://senseisandy.com/blog/gi-vs-no-gi-bjj-cheat-code [L,R=301,NE,QSA]
 
-# 5. Magic Mapping (The "Engine")
-# Internally serves .html files when clean URLs are requested
+# --- Trailing slash / index / .html normalization ---
+# 4a. Remove trailing slash for all non-root URLs (canonical: no trailing slash).
+RewriteCond %{REQUEST_URI} !^/book-free-intro/$ [NC,OR]
+RewriteCond %{QUERY_STRING} !(^|&)src=[^&]+(&|$) [NC]
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} ^/(.+)/$
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^ https://senseisandy.com/%1 [L,R=301,NE]
+
+# 4b. Serve directory index when requesting a directory without a trailing slash.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^(.+)$ $1/index.html [L]
+
+# 4c. Harden explicit clean route for top-level hunter comparison page.
+# This avoids edge-case misses when generic .html fallback is bypassed upstream.
+RewriteRule ^martial-arts-hunter-ny/?$ /martial-arts-hunter-ny.html [L]
+RewriteRule ^teen-jiu-jitsu-tannersville-ny/?$ /teen-jiu-jitsu-tannersville-ny.html [L]
+RewriteRule ^jiu-jitsu-safety-tannersville-ny/?$ /jiu-jitsu-safety-tannersville-ny.html [L]
+
+# 5. Internally serve .html files when clean URLs are requested
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]

@@ -1,0 +1,393 @@
+/* =========================================
+   Sensei Sandy Global Theme (Bootstrap 5)
+   Goals: centered spacing, high contrast, low conflict
+   Palette: #116A42 #289FA1 #00DDE0 #8B522E #306061 #362B24
+========================================= */
+
+:root{
+  /* Brand */
+  --ss-green:#116A42;
+  --ss-teal:#289FA1;
+  --ss-cyan:#00DDE0;
+  --ss-brown:#8B522E;
+  --ss-deepteal:#306061;
+  --ss-ink:#362B24;
+
+  /* Neutrals */
+  --ss-bg:#0b0c0f;
+  --ss-surface:#121316;
+  --ss-surface-2:#16181d;
+  --ss-text:rgba(255,255,255,.92);
+  --ss-muted:rgba(255,255,255,.72);
+  --ss-border:rgba(255,255,255,.12);
+
+  /* Layout */
+  --ss-max:1120px;
+  --ss-pad-x:clamp(16px,3vw,22px);
+  --ss-pad-y:clamp(44px,5vw,72px);
+  --ss-radius:18px;
+  --ss-radius-lg:24px;
+  --ss-shadow:0 18px 55px rgba(0,0,0,.45);
+
+  /* CTA */
+  --ss-cta:var(--ss-green);
+  --ss-cta-hover:#0D5233;
+
+  /* Focus */
+  --ss-focus:rgba(0,221,224,.55);
+}
+
+/* ===== Base ===== */
+html,body{overflow-x:hidden}
+body{
+  background:
+    radial-gradient(1100px 520px at 18% 10%, rgba(40,159,161,.18), transparent 58%),
+    radial-gradient(900px 420px at 85% 5%, rgba(0,221,224,.12), transparent 60%),
+    linear-gradient(180deg, #07080a, #0b0c0f 42%, #0b0c0f 100%);
+  color:var(--ss-text);
+  font-family: var(--font-main, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif);
+  line-height:1.55;
+}
+
+a{color:var(--ss-text); text-decoration:none}
+a:hover{color:var(--ss-cyan)}
+:focus-visible{
+  outline:3px solid var(--ss-focus) !important;
+  outline-offset:3px !important;
+  box-shadow:none !important;
+}
+
+/* ===== Layout helpers ===== */
+.ss-shell{
+  max-width:var(--ss-max);
+  margin:0 auto;
+  padding-left:var(--ss-pad-x);
+  padding-right:var(--ss-pad-x);
+}
+
+.ss-section{
+  padding: var(--ss-pad-y) 0;
+}
+
+.ss-copy{
+  max-width: 68ch;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ss-center{
+  text-align:center;
+}
+.ss-center .ss-copy{ text-align:center; }
+
+/* Reduce Bootstrap container fights */
+.container{max-width: var(--ss-max) !important}
+
+/* ===== Headings / type ===== */
+h1,h2,h3,h4{
+  color:var(--ss-text);
+  font-family: var(--font-heading, var(--font-main));
+  letter-spacing:-0.02em;
+}
+.lead, .text-muted{
+  color: var(--ss-muted) !important;
+}
+
+/* ===== Navbar (555-like: simple, high contrast, centered) ===== */
+.site-header,
+.navbar{
+  background: rgba(11,12,15,.92) !important;
+  border-bottom: 1px solid var(--ss-border);
+  backdrop-filter: blur(12px);
+}
+
+.navbar-nav .nav-link{
+  color: rgba(255,255,255,.86) !important;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: .86rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus{
+  color: var(--ss-cyan) !important;
+}
+
+/* ===== Buttons (single source of truth) ===== */
+.btn{
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em;
+  padding: .85rem 1.35rem;
+  border-width: 1px !important;
+}
+
+.btn-primary{
+  background: var(--ss-cta) !important;
+  border-color: var(--ss-cta) !important;
+  color:#fff !important;
+  box-shadow: 0 10px 28px rgba(17, 106, 66,.30);
+}
+.btn-primary:hover,
+.btn-primary:focus{
+  background: var(--ss-cta-hover) !important;
+  border-color: var(--ss-cta-hover) !important;
+  transform: translateY(-1px);
+}
+.btn-outline-primary{
+  background: transparent !important;
+  border-color: rgba(255,255,255,.22) !important;
+  color: rgba(255,255,255,.92) !important;
+}
+.btn-outline-primary:hover{
+  background: rgba(255,255,255,.08) !important;
+  border-color: rgba(255,255,255,.30) !important;
+}
+
+/* CTA rows like 555: primary + secondary + microcopy */
+.ss-cta-row{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top: 14px;
+}
+.ss-cta-micro{
+  margin-top:10px;
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color: var(--ss-muted);
+}
+
+/* ===== Cards ===== */
+.card,
+.ss-card,
+.lane-card,
+.action-card,
+.image-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) !important;
+  border: 1px solid var(--ss-border) !important;
+  border-radius: var(--ss-radius-lg) !important;
+  box-shadow: var(--ss-shadow);
+  color: var(--ss-text);
+}
+.card *{color:inherit}
+
+/* ===== Section panels ===== */
+.ss-panel{
+  border:1px solid var(--ss-border);
+  background: rgba(255,255,255,.04);
+  border-radius: var(--ss-radius-lg);
+  box-shadow: var(--ss-shadow);
+  padding: clamp(18px,3vw,26px);
+}
+
+/* ===== Forms ===== */
+.form-control, .form-select{
+  border-radius: 14px !important;
+  border: 1px solid var(--ss-border) !important;
+  background: rgba(255,255,255,.06) !important;
+  color: var(--ss-text) !important;
+}
+.form-control::placeholder{ color: rgba(255,255,255,.55) }
+
+/* ===== Footer ===== */
+.site-footer{
+  background: rgba(11,12,15,.96) !important;
+  border-top: 1px solid var(--ss-border);
+}
+.site-footer a:hover{ color: var(--ss-cyan) }
+
+/* ===== Mobile: enforce centered spacing + 1-column CTAs ===== */
+@media (max-width: 768px){
+  .ss-section{ padding: clamp(34px,7vw,52px) 0; }
+  .ss-cta-row{ flex-direction: column; align-items: stretch; }
+  .ss-cta-row .btn{ width: 100%; max-width: 420px; }
+}
+
+/* Mobile Utility Actions */
+.mobile-utility-actions {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.mobile-utility-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.25rem;
+  border: 2px dashed rgba(54, 43, 36, 0.16);
+  border-radius: 999px;
+  color: #1f1a17;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 5vw, 1.65rem);
+  text-decoration: none;
+  background: #fff;
+}
+
+/* =========================================================
+   Sensei Sandy Mobile Nav Click Fix
+   Fixes mobile dropdown links becoming unclickable after open
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+  .navbar,
+  .site-header,
+  .ss-header,
+  .ss-main-nav {
+    position: relative;
+    z-index: 1050;
+  }
+
+  .navbar-collapse,
+  .ss-mobile-menu,
+  .collapse.show {
+    position: relative;
+    z-index: 1060;
+    pointer-events: auto;
+  }
+
+  .navbar-collapse a,
+  .ss-mobile-menu a,
+  .nav-link,
+  .dropdown-item {
+    position: relative;
+    z-index: 1070;
+    pointer-events: auto;
+    touch-action: manipulation;
+  }
+
+  .ss-sticky-mobile-bar,
+  .mobile-sticky-cta,
+  .bottom-action-bar {
+    z-index: 1040;
+  }
+}
+
+/* Youth YAM Proof Styles */
+.yam-proof {
+  margin: clamp(2.5rem, 6vw, 5rem) auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border-radius: 24px;
+  background: #fff7ed;
+  border: 1px solid rgba(120, 53, 15, 0.14);
+}
+
+.yam-proof__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a3412;
+  margin-bottom: 0.5rem;
+}
+
+.yam-proof h2 {
+  margin: 0 0 0.75rem !important;
+  font-size: clamp(1.65rem, 4vw, 2.5rem) !important;
+  line-height: 1.05 !important;
+  color: #1c1917 !important;
+}
+
+.yam-proof__intro {
+  max-width: 62ch;
+  margin: 0 0 1.35rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #44403c !important;
+}
+
+.yam-proof__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.yam-card {
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
+  border: none !important;
+}
+
+.yam-card figure {
+  margin: 0;
+}
+
+.yam-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.yam-card figcaption {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.yam-card figcaption strong {
+  font-size: 1rem;
+  color: #1c1917 !important;
+}
+
+.yam-card figcaption span {
+  font-size: 0.9rem;
+  color: #57534e !important;
+}
+
+.yam-proof__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 575.98px) {
+  .yam-proof {
+    border-radius: 0;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+/* Links Section Styling */
+.ss-links {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  border-radius: 1rem;
+  background: #FBFAF8;
+}
+
+.ss-links h2 {
+  margin: 0 0 .75rem;
+  color: #362B24;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.15;
+}
+
+.ss-links ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.ss-links li + li {
+  margin-top: .55rem;
+}
+
+.ss-links a {
+  color: #306061;
+  font-weight: 700;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+
+.ss-links a:hover,
+.ss-links a:focus-visible {
+  color: #116A42;
+}

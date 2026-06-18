@@ -1,0 +1,22 @@
+source_path,decision,target_path,priority,reason
+/near/cairo-ny,MERGE_301,/cairo-ny-jiu-jitsu,P1,Duplicate intent and location already covered by stronger top-level town page
+/near/catskill-ny,MERGE_301,/catskill-ny-jiu-jitsu,P1,Duplicate intent and location already covered by stronger top-level town page
+/near/hunter-ny,MERGE_301,/hunter-ny-jiu-jitsu,P1,Duplicate intent and location already covered by stronger top-level town page
+/near/tannersville-ny,MERGE_301,/tannersville-ny-jiu-jitsu,P1,Duplicate intent and location already covered by stronger top-level town page
+/near/hunter-mountain,MERGE_301,/hunter-ny-jiu-jitsu,P1,Landmark variant overlaps Hunter town intent
+/near/windham-mountain,MERGE_301,/near/windham-ny,P1,Landmark variant overlaps Windham town intent
+/near/esopus-creek-phoenicia,MERGE_301,/near/phoenicia-ny,P1,Landmark variant overlaps Phoenicia corridor intent
+/near/kaaterskill-falls,MERGE_301,/near/palenville-ny,P1,Landmark page overlaps 23A gateway audience and route
+/near/jewett-ny,MERGE_301,/near/east-jewett-ny,P1,Very similar template and overlapping Mountaintop intent
+/near/jewett-east-jewett-ny,MERGE_301,/near/east-jewett-ny,P1,Already redirect shell; consolidate on one canonical Mountaintop URL
+/near/haines-falls-ny,MERGE_301,/hunter-ny-jiu-jitsu,P2,Close-proximity micro-town with near-identical section structure
+/near/elka-park-ny,MERGE_301,/near/east-jewett-ny,P2,Micro-area variant; preserve value in Mountaintop hub
+/near/onteora-park-ny,MERGE_301,/near/east-jewett-ny,P2,Micro-area variant; preserve value in Mountaintop hub
+/near/lanesville-ny,MERGE_301,/near/phoenicia-ny,P2,Adjacent corridor and overlapping route story
+/near/lexington-ny,MERGE_301,/near/windham-ny,P2,Adjacent western corridor and overlapping route story
+/near/saugerties-ny,MERGE_301,/near/woodstock-ny,P2,Similar long-drive Ulster audience; consolidate on stronger arts corridor page
+/near/east-jewett-ny,KEEP_ENRICH,/near/east-jewett-ny,P1,Use as Mountaintop hub page
+/near/palenville-ny,KEEP_ENRICH,/near/palenville-ny,P1,Use as 23A gateway hub page
+/near/windham-ny,KEEP_ENRICH,/near/windham-ny,P1,Use as western corridor hub page
+/near/phoenicia-ny,KEEP_ENRICH,/near/phoenicia-ny,P1,Use as Route 214 / Esopus corridor hub page
+/near/woodstock-ny,KEEP_ENRICH,/near/woodstock-ny,P2,Use as Ulster long-drive hub page

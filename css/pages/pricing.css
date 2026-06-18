@@ -1,0 +1,341 @@
+/* assets/css/pages/pricing.css
+   Pricing page overhaul for Mobile and Desktop CRO.
+   Combines sticky actions, responsive hero, and card-based decision grids. */
+
+/* =========================
+   1) CORE LAYOUT & HERO
+   ========================= */
+
+.ss-pricing-hero {
+  padding: 2rem 1rem 1.25rem;
+  background: var(--ss-bg);
+}
+
+.ss-pricing-hero h1 {
+  font-size: clamp(2.25rem, 8vw, 3.25rem);
+  line-height: .98;
+  letter-spacing: -.04em;
+  color: var(--ss-ink);
+  margin-bottom: 1rem;
+}
+
+.ss-lead {
+  font-size: 1.06rem;
+  color: var(--ss-muted);
+  margin-bottom: 1.5rem;
+}
+
+.ss-hero-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .65rem;
+  margin-bottom: 1.5rem;
+}
+
+.ss-price-snapshot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65rem;
+}
+
+.ss-price-snapshot div {
+  background: var(--ss-surface);
+  border: 1px solid var(--ss-border);
+  border-radius: 1rem;
+  padding: .9rem;
+}
+
+.ss-price-snapshot span,
+.ss-price-snapshot small {
+  display: block;
+  color: var(--ss-muted);
+  font-size: .82rem;
+}
+
+.ss-price-snapshot strong {
+  display: block;
+  color: var(--ss-ink);
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: .2rem 0;
+}
+
+/* =========================
+   2) PRICING CARDS & COMPONENTS
+   ========================= */
+
+.ss-price-card,
+.ss-pricing-card {
+  background: var(--ss-surface);
+  border: 1px solid var(--ss-border);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: var(--ss-shadow-1);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.ss-recommended,
+.ss-featured-card,
+.ss-featured {
+  border: 2px solid var(--ss-green);
+  background: linear-gradient(180deg, var(--ss-surface) 0%, var(--ss-bg) 100%);
+}
+
+.ss-card-kicker,
+.ss-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: .35rem .65rem;
+  background: rgba(17, 106, 66, .10);
+  color: var(--ss-green);
+  font-weight: 900;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: .75rem;
+}
+
+.ss-price {
+  font-size: 2.4rem;
+  line-height: 1;
+  font-weight: 950;
+  color: var(--ss-ink);
+  margin: .5rem 0 0;
+}
+
+.ss-price span,
+.ss-price-note {
+  display: block;
+  color: var(--ss-muted);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: .2rem;
+}
+
+.ss-price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--ss-border);
+}
+
+.ss-price-row:last-child {
+  border-bottom: 0;
+}
+
+.ss-price-row strong {
+  color: var(--ss-ink);
+}
+
+.ss-checklist,
+.ss-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+}
+
+.ss-checklist li,
+.ss-check-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: .65rem;
+  color: var(--ss-text);
+}
+
+.ss-checklist li::before,
+.ss-check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ss-teal);
+  font-weight: 950;
+}
+
+/* =========================
+   3) STICKY MOBILE ACTIONS
+   ========================= */
+
+.ss-mobile-pricing-bar {
+  position: fixed;
+  z-index: 1040;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none; /* Shown in media query */
+  gap: .5rem;
+  padding: .65rem;
+  background: rgba(255, 255, 255, .96);
+  border-top: 1px solid var(--ss-border);
+  box-shadow: 0 -10px 24px rgba(54, 43, 36, .12);
+}
+
+.ss-mobile-pricing-bar a {
+  flex: 1;
+  text-align: center;
+  border-radius: 999px;
+  padding: .8rem .6rem;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: .94rem;
+}
+
+.ss-mobile-primary {
+  background: var(--ss-green);
+  color: #fff;
+}
+
+.ss-mobile-secondary {
+  background: var(--ss-surface2);
+  color: var(--ss-ink);
+}
+
+/* =========================
+   4) COMMUNITY & OTHER
+   ========================= */
+
+.ss-community-rate {
+  padding: 1.5rem 0;
+}
+
+.ss-community-rate-inner {
+  background: var(--ss-surface2);
+  border: 1px solid var(--ss-border);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.ss-eyebrow {
+  margin: 0 0 .5rem;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ss-teal);
+}
+
+.options-pricing-curriculum-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.options-pricing-curriculum-table .table {
+  min-width: 760px;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   5) RESPONSIVE OVERRIDES
+   ========================= */
+
+@media (max-width: 767.98px) {
+  body.page-options-pricing {
+    font-size: 16px;
+    padding-bottom: 82px;
+  }
+
+  body.page-options-pricing .ss-mobile-actions {
+    display: none !important;
+  }
+
+  .ss-mobile-pricing-bar {
+    display: flex;
+  }
+
+  .btn,
+  .accordion-button,
+  .ss-mobile-pricing-bar a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ss-price-card,
+  .ss-pricing-card {
+    margin-bottom: 1rem;
+  }
+
+  .ss-section {
+    padding: 2.25rem 0;
+  }
+
+  .accordion-button {
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .options-pricing-curriculum-table-note {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--ss-muted);
+    margin: 0 0 0.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .ss-pricing-hero {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  .ss-pricing-hero h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: .96;
+    letter-spacing: -0.055em;
+    max-width: 860px;
+  }
+
+  .ss-pricing-hero .lead {
+    font-size: 1.25rem;
+    max-width: 720px;
+  }
+
+  .ss-hero-actions {
+    grid-template-columns: auto auto auto;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .ss-price-summary-card {
+    background: var(--ss-surface);
+    border: 1px solid var(--ss-border);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: var(--ss-shadow-2);
+    position: sticky;
+    top: 110px;
+  }
+
+  .ss-pricing-card {
+    padding: 2rem;
+    box-shadow: var(--ss-shadow-2);
+  }
+
+  .ss-pricing-card h3 {
+    font-size: 2rem;
+    letter-spacing: -0.035em;
+    margin-top: .75rem;
+  }
+
+  .ss-price {
+    font-size: 2.75rem;
+    margin: 1rem 0;
+  }
+
+  .ss-community-rate-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+
+  .ss-community-rate-actions {
+    flex: 0 0 auto;
+  }
+}

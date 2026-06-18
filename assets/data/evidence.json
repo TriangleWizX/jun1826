@@ -1,0 +1,146 @@
+[
+  {
+    "id": "cdc-kids-benefits",
+    "title": "CDC: Health Benefits of Physical Activity for Children",
+    "url": "https://www.cdc.gov/physical-activity-basics/health-benefits/children.html",
+    "sourceType": "Federal health source",
+    "fact": "Physical activity supports children’s academic performance, brain health, muscular fitness, heart and lung health, and bone strength.",
+    "bestFor": ["kids", "after-school", "student-hub"],
+    "claimType": "kids-health"
+  },
+  {
+    "id": "cdc-kids-guidelines",
+    "title": "CDC: Child and Adolescent Physical Activity Guidelines",
+    "url": "https://www.cdc.gov/physical-activity-education/guidelines/index.html",
+    "sourceType": "Federal health source",
+    "fact": "Children and adolescents ages 6 to 17 should get 60 minutes or more of moderate-to-vigorous physical activity daily.",
+    "bestFor": ["kids"],
+    "claimType": "kids-health"
+  },
+  {
+    "id": "aap-martial-arts-safety",
+    "title": "AAP: Martial Arts for Children and Adolescents",
+    "url": "https://www.aap.org/globalassets/publications/coya/martial-arts.1.0.pdf",
+    "sourceType": "Pediatric medical source",
+    "fact": "Martial arts can be a safe and effective way for children to gain physical fitness, balance, and coordination when taught in a structured environment.",
+    "bestFor": ["kids"],
+    "claimType": "kids-safety"
+  },
+  {
+    "id": "hhs-youth-sports-strategy",
+    "title": "HHS: National Youth Sports Strategy",
+    "url": "https://odphp.health.gov/sites/default/files/2020-09/YSS_Report_OnePager_2020-08-31_web.pdf",
+    "sourceType": "Federal health source",
+    "fact": "Youth sports can support physical, mental, emotional, and social benefits when taught in a safe, inclusive environment.",
+    "bestFor": ["kids"],
+    "claimType": "kids-development"
+  },
+  {
+    "id": "cdc-school-connectedness",
+    "title": "CDC: School Connectedness",
+    "url": "https://www.cdc.gov/healthyyouth/protective/school_connectedness.htm",
+    "sourceType": "Federal health source",
+    "fact": "Connectedness has long-lasting effects on youth health and well-being.",
+    "bestFor": ["teens", "student-hub"],
+    "claimType": "teen-wellbeing"
+  },
+  {
+    "id": "cdc-adolescent-mental-health",
+    "title": "CDC: Adolescent Mental Health",
+    "url": "https://www.cdc.gov/healthyyouth/mental-health/index.htm",
+    "sourceType": "Federal health source",
+    "fact": "Protective relationships and strong bonds can support adolescent mental health.",
+    "bestFor": ["teens"],
+    "claimType": "teen-wellbeing"
+  },
+  {
+    "id": "hhs-youth-sports-mental-health",
+    "title": "HHS: Youth Sports Mental Health Resource",
+    "url": "https://health.gov/our-work/nutrition-physical-activity/national-youth-sports-strategy/mental-health-benefits-sports-youth",
+    "sourceType": "Federal health source",
+    "fact": "Youth sports can support mental, emotional, and social health when the environment is positive and structured.",
+    "bestFor": ["teens"],
+    "claimType": "teen-wellbeing"
+  },
+  {
+    "id": "surgeon-general-social-connection",
+    "title": "U.S. Surgeon General: Advisory on Social Connection",
+    "url": "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf",
+    "sourceType": "Federal health source",
+    "fact": "Social connection is a public health priority, not a soft extra.",
+    "bestFor": ["teens", "student-hub"],
+    "claimType": "social-connection"
+  },
+  {
+    "id": "cdc-adult-benefits",
+    "title": "CDC: Health Benefits of Physical Activity for Adults",
+    "url": "https://www.cdc.gov/physical-activity-basics/health-benefits/adults.html",
+    "sourceType": "Federal health source",
+    "fact": "Physical activity can help adults feel better, function better, and sleep better.",
+    "bestFor": ["adult-bjj"],
+    "claimType": "adult-health"
+  },
+  {
+    "id": "cdc-adult-guidelines",
+    "title": "CDC: Adult Physical Activity Guidelines",
+    "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html",
+    "sourceType": "Federal health source",
+    "fact": "Adults need 150 minutes of moderate-intensity activity each week plus at least 2 days of muscle-strengthening activity.",
+    "bestFor": ["adult-bjj"],
+    "claimType": "adult-health"
+  },
+  {
+    "id": "nih-exercise-benefits",
+    "title": "NIH: Benefits of Exercise",
+    "url": "https://www.nia.nih.gov/health/exercise-and-physical-activity/benefits-exercise-and-physical-activity",
+    "sourceType": "National institute source",
+    "fact": "Physical activity can help reduce feelings of depression and anxiety, improve sleep, and support emotional well-being.",
+    "bestFor": ["adult-bjj"],
+    "claimType": "adult-wellbeing"
+  },
+  {
+    "id": "cdc-active-people",
+    "title": "CDC: Active People, Healthy Nation",
+    "url": "https://www.cdc.gov/physical-activity/activepeoplehealthynation/index.html",
+    "sourceType": "Federal health source",
+    "fact": "Regular movement supports better sleep, thinking, learning, and emotional health.",
+    "bestFor": ["adult-bjj", "student-hub"],
+    "claimType": "adult-health"
+  },
+  {
+    "id": "nij-de-escalation",
+    "title": "NIJ: De-escalation Training",
+    "url": "https://nij.ojp.gov/topics/articles/de-escalation-training-policing",
+    "sourceType": "Federal law enforcement source",
+    "fact": "De-escalation training is designed to help officers slow down, communicate, and create safer outcomes.",
+    "bestFor": ["law-enforcement-bjj"],
+    "claimType": "leo-safety"
+  },
+  {
+    "id": "perf-icat-guide",
+    "title": "PERF: ICAT Training Guide",
+    "url": "https://www.policeforum.org/icat-guide",
+    "sourceType": "Law enforcement research source",
+    "fact": "A rigorous ICAT evaluation found reductions in overall use of force and injuries to officers and members of the public.",
+    "bestFor": ["law-enforcement-bjj"],
+    "claimType": "leo-safety"
+  },
+  {
+    "id": "doj-cops-procedural-justice",
+    "title": "DOJ COPS: Procedural Justice",
+    "url": "https://cops.ojp.gov/procedural-justice",
+    "sourceType": "Federal law enforcement source",
+    "fact": "BJJ should be framed as a physical control layer that supports communication and decision-making, not as a replacement for de-escalation.",
+    "bestFor": ["law-enforcement-bjj"],
+    "claimType": "leo-procedural-justice"
+  },
+  {
+    "id": "marietta-police-bjj",
+    "title": "Marietta Police Department: BJJ Training Data",
+    "url": "https://www.mariettaga.gov/1435/BJJ-Training-Data",
+    "sourceType": "Local law enforcement source",
+    "fact": "Officers trained in BJJ showed significant reductions in use of force injuries and worker compensation claims.",
+    "bestFor": ["law-enforcement-bjj"],
+    "claimType": "leo-safety"
+  }
+]

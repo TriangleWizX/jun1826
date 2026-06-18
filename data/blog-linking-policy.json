@@ -1,0 +1,41 @@
+{
+  "monitorAllBlogPosts": true,
+  "monitoredPosts": [
+    "/blog/beginner-friendly-bjj-tannersville-links",
+    "/blog/seated-guard-basics"
+  ],
+  "requirements": {
+    "minLinksOut": 5,
+    "minContextualBlogLinks": 2,
+    "minMoneyPageLinks": 1,
+    "minHubPageLinks": 1,
+    "requireAllServiceLinks": true,
+    "requiredServicePages": [
+      "/kids",
+      "/teen-jiu-jitsu-tannersville-ny",
+      "/adult-bjj",
+      "/schedule"
+    ],
+    "requiredAutoBlocks": [
+      "START_TRAINING_LINKS_START",
+      "RELATED_POSTS_START"
+    ]
+  },
+  "moneyPages": [
+    "/schedule",
+    "/book-free-intro"
+  ],
+  "hubPages": [
+    "/blog",
+    "/sensei-jiu-jitsu",
+    "/curriculum"
+  ],
+  "pillarPages": [
+    "/",
+    "/tannersville-ny-jiu-jitsu",
+    "/kids",
+    "/teen-jiu-jitsu-tannersville-ny",
+    "/adult-bjj",
+    "/schedule"
+  ]
+}

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sensei Sandy BJJ//Teens Lane//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:teens-lane@senseisandy.com
+DTSTAMP:20260213T120000Z
+SUMMARY:Sensei Sandy BJJ - Teens Lane (5:00 PM)
+DTSTART;TZID=America/New_York:20260216T170000
+DTEND;TZID=America/New_York:20260216T175000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,FR
+LOCATION:Sensei Sandy BJJ\, 6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485
+DESCRIPTION:Arrive 10 minutes early. Beginner Lane pacing with safety-first coaching.
+END:VEVENT
+END:VCALENDAR

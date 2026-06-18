@@ -1,0 +1,51 @@
+name: URL Live Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Base URL to audit (defaults to production)
+        required: false
+        type: string
+  schedule:
+    - cron: '0 9 * * 1'
+
+jobs:
+  live-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
+
+      - name: Run redirect audit
+        run: |
+          if [ -n "${{ inputs.base_url }}" ]; then
+            npm run qa:redirects -- --base-url "${{ inputs.base_url }}"
+          else
+            npm run qa:redirects
+          fi
+
+      - name: Run live internal-link audit
+        run: |
+          if [ -n "${{ inputs.base_url }}" ]; then
+            npm run qa:links:live -- --base-url "${{ inputs.base_url }}"
+          else
+            npm run qa:links:live
+          fi
+
+      - name: Upload crawl reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crawl-reports
+          path: crawl-reports/*.csv
+          if-no-files-found: ignore

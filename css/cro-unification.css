@@ -1,0 +1,605 @@
+:root {
+  --ss-cro-focus: #0b57d0;
+  --ss-cro-primary: #116A42;
+  --ss-cro-text: #2f2924;
+}
+
+.ss-decision-card {
+  border: 1px solid rgba(15, 12, 8, 0.14);
+  border-radius: 16px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 12px 24px rgba(15, 12, 8, 0.08);
+}
+
+.ss-decision-card__meta {
+  font-size: 0.84rem;
+  color: rgba(47, 41, 36, 0.82);
+  margin-bottom: 0.45rem;
+}
+
+.ss-decision-card__title {
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+}
+
+.ss-decision-card__times {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ss-cro-text);
+}
+
+.ss-decision-card__flow {
+  margin: 0 0 0.75rem;
+  font-size: 0.84rem;
+  color: rgba(47, 41, 36, 0.82);
+}
+
+.ss-decision-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ss-decision-card__actions .btn {
+  min-height: 48px;
+}
+
+.ss-proof-carousel {
+  border: 1px solid rgba(15, 12, 8, 0.12);
+  border-radius: 16px;
+  background: #fff;
+  padding: 1rem;
+}
+
+.ss-proof-carousel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.ss-proof-carousel__controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.ss-proof-carousel__control {
+  min-width: 40px;
+  min-height: 40px;
+  border: 1px solid rgba(15, 12, 8, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: #1b1714;
+  font-weight: 700;
+}
+
+.ss-proof-carousel__control[aria-pressed="true"] {
+  background: #1b1714;
+  color: #fff;
+}
+
+.ss-proof-carousel__slide {
+  display: none;
+}
+
+.ss-proof-carousel__slide.is-active {
+  display: block;
+}
+
+.ss-proof-carousel__quote {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ss-proof-carousel__name {
+  margin-top: 0.5rem;
+  font-size: 0.84rem;
+  color: rgba(47, 41, 36, 0.82);
+}
+
+.ss-proof-carousel__footer {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Schedule table action priority */
+.schedule-module__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.schedule-module__actions a {
+  min-height: 48px;
+  padding: 0.5rem 0.68rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-module__actions [data-schedule-table-book] {
+  background: var(--ss-cro-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.schedule-module__actions [data-schedule-table-book]:hover,
+.schedule-module__actions [data-schedule-table-book]:focus-visible {
+  background: #bf4800;
+  color: #fff;
+}
+
+.schedule-module__actions [data-schedule-table-calendar],
+.schedule-module__actions [data-schedule-table-directions] {
+  border-color: rgba(15, 12, 8, 0.2);
+  color: rgba(15, 12, 8, 0.78);
+  background: #fff;
+  font-weight: 600;
+}
+
+.schedule-module__actions [data-schedule-table-calendar]::before {
+  content: "+";
+  margin-right: 0.2rem;
+}
+
+.schedule-module__actions [data-schedule-table-directions]::before {
+  content: "\2197";
+  margin-right: 0.25rem;
+}
+
+.schedule-module__actions a:hover {
+  transform: translateY(-1px);
+}
+
+.schedule-module__actions a:active {
+  transform: translateY(0);
+}
+
+.schedule-module__actions a:focus-visible,
+.ss-proof-carousel__control:focus-visible,
+.ss-decision-card__actions .btn:focus-visible,
+.options-pricing-sticky-rail .btn:focus-visible {
+  outline: 3px solid var(--ss-cro-focus);
+  outline-offset: 2px;
+}
+
+.page-options-pricing .options-pricing-layout {
+  display: block;
+}
+
+.options-pricing-sticky-rail {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .page-options-pricing .options-pricing-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .options-pricing-sticky-rail {
+    display: block;
+    position: sticky;
+    top: 96px;
+    border: 1px solid rgba(15, 12, 8, 0.14);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 14px 24px rgba(15, 12, 8, 0.08);
+    padding: 0.9rem;
+  }
+
+  .options-pricing-sticky-rail .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ss-proof-carousel__quote {
+    font-size: 0.94rem;
+  }
+}
+
+/* 2026-03 homepage adaptation layer */
+:root {
+  --ss-adapt-primary: #116A42;
+  --ss-adapt-light: #f8f7f5;
+  --ss-adapt-dark: #1a1a1a;
+  --ss-adapt-radius: 1rem;
+  --ss-adapt-radius-lg: 1.5rem;
+}
+
+body {
+  font-family: "Lexend", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.ss-header--glass,
+.ss-nav--glass {
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  backdrop-filter: blur(12px);
+  background: rgba(248, 247, 245, 0.86) !important;
+}
+
+.ss-nav--glass {
+  top: 42px;
+}
+
+@media (max-width: 991.98px) {
+  .ss-header--glass {
+    position: static;
+  }
+
+  .ss-nav--glass {
+    top: 0;
+  }
+}
+
+.ss-btn--primary,
+.btn-primary {
+  background: var(--ss-adapt-primary) !important;
+  border-color: var(--ss-adapt-primary) !important;
+  box-shadow: 0 12px 26px rgba(17, 106, 66, 0.28) !important;
+}
+
+.ss-home-hero__bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.ss-home-hero__bullets li {
+  margin: 0;
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  background: #fff;
+  font-size: 0.84rem;
+}
+
+.ss-announcement-bar__inner {
+  border-radius: var(--ss-adapt-radius-lg);
+  background: #fff;
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  padding: 0.9rem 1rem;
+}
+
+.ss-adapt-accordion details,
+.ss-footer__details {
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  border-radius: var(--ss-adapt-radius);
+  background: #fff;
+  padding: 0.1rem 0.85rem;
+}
+
+.ss-adapt-accordion summary,
+.ss-footer__details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.75rem 0;
+}
+
+.ss-adapt-accordion summary::-webkit-details-marker,
+.ss-footer__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.ss-adapt-accordion details + details,
+.ss-footer__details + .ss-footer__details {
+  margin-top: 0.65rem;
+}
+
+.ss-proof-carousel {
+  border-radius: var(--ss-adapt-radius-lg);
+  background: var(--ss-adapt-dark);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f8f7f5;
+}
+
+.ss-proof-carousel h2,
+.ss-proof-carousel .text-muted,
+.ss-proof-carousel__name,
+.ss-proof-carousel__footer p {
+  color: rgba(248, 247, 245, 0.84) !important;
+}
+
+.ss-proof-carousel__control {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.ss-proof-carousel__footer .btn {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #fff !important;
+}
+
+#home-faq .ss-accordion__item[open] {
+  background: #fff;
+}
+
+#home-faq .ss-accordion__item {
+  border-radius: var(--ss-adapt-radius);
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  margin-bottom: 0.6rem;
+  padding: 0 1rem;
+}
+
+.ss-footer__accordion {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.ss-footer__quick {
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  border-radius: var(--ss-adapt-radius);
+  padding: 0.7rem 0.9rem;
+  background: #fff;
+}
+
+.ss-mobile-home-stack,
+.ss-mobile-lane-cards {
+  display: none;
+}
+
+.ss-mobile-hero-facts {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .page-home.page-home-mobile-layer .ss-header__utility-location,
+  .page-home.page-home-mobile-layer .ss-header__utility-toprow,
+  .page-home.page-home-mobile-layer .ss-lanes {
+    display: none !important;
+  }
+
+  .page-home.page-home-mobile-layer .ss-header__utility {
+    position: static;
+    background: #f8f7f5 !important;
+    border-bottom: 0;
+    padding-top: 0.2rem;
+    padding-bottom: 0.15rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .page-home.page-home-mobile-layer .ss-header__utility-inner {
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .page-home.page-home-mobile-layer .ss-header__utility-links {
+    justify-content: center;
+    gap: 0;
+  }
+
+  .page-home.page-home-mobile-layer .ss-header__utility-contactrow {
+    width: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    gap: 0 !important;
+  }
+
+  .page-home.page-home-mobile-layer .ss-header__utility-contactlabel,
+  .page-home.page-home-mobile-layer .ss-header__utility-divider,
+  .page-home.page-home-mobile-layer .ss-header__utility-contactaction--call,
+  .page-home.page-home-mobile-layer .ss-header__utility-contactrow [data-primary-phone] {
+    display: none;
+  }
+
+  .page-home.page-home-mobile-layer .ss-header__utility-contactaction--text {
+    min-height: 30px;
+    padding: 0.36rem 0.8rem;
+    font-size: 0.76rem;
+    border-color: rgba(54, 43, 36, 0.18);
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(54, 43, 36, 0.08);
+  }
+
+  .page-home.page-home-mobile-layer .ss-nav {
+    border-top: 1px solid rgba(54, 43, 36, 0.08);
+  }
+
+  .page-home.page-home-mobile-layer .ss-nav .ss-container {
+    min-height: 52px;
+  }
+
+  .page-home.page-home-mobile-layer .ss-nav .navbar-brand {
+    font-size: 0.96rem;
+    font-weight: 700;
+  }
+
+  .page-home.page-home-mobile-layer .ss-nav .navbar-toggler {
+    min-width: 42px;
+    min-height: 42px;
+    padding: 0.32rem 0.58rem;
+  }
+
+  .page-home.page-home-mobile-layer .ss-home-hero__actions {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .page-home.page-home-mobile-layer .ss-home-hero__actions .btn {
+    width: 100%;
+  }
+
+  .page-home.page-home-mobile-layer .ss-home-hero__panel > .ss-home-hero__bullets,
+  .page-home.page-home-mobile-layer .ss-home-hero__panel > p.small.text-muted {
+    display: none;
+  }
+
+  .ss-mobile-hero-facts {
+    display: block;
+    margin-top: 0.6rem;
+  }
+
+  .page-home.page-home-mobile-layer #announcement-bar,
+  .page-home.page-home-mobile-layer #hero-expanded-details,
+  .page-home.page-home-mobile-layer #home-links,
+  .page-home.page-home-mobile-layer #about,
+  .page-home.page-home-mobile-layer #meet-instructor,
+  .page-home.page-home-mobile-layer #what-youll-learn,
+  .page-home.page-home-mobile-layer .ss-section[aria-label="Schedule sensei conclusion"],
+  .page-home.page-home-mobile-layer #offer-block-home,
+  .page-home.page-home-mobile-layer #free-intro-steps,
+  .page-home.page-home-mobile-layer #why-different,
+  .page-home.page-home-mobile-layer #home-closing-cta-line {
+    display: none !important;
+  }
+
+  .page-home.page-home-mobile-layer .ss-mobile-home-stack {
+    display: block;
+    padding-top: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+
+  .ss-mobile-home-stack__card {
+    border: 1px solid rgba(54, 43, 36, 0.16);
+    border-radius: var(--ss-adapt-radius-lg);
+    background: #fff;
+    padding: 0.9rem;
+  }
+
+  .ss-mobile-home-stack__actions {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .ss-mobile-home-stack__actions .btn {
+    width: 100%;
+  }
+
+  .page-home.page-home-mobile-layer .ss-desktop-lane-grid {
+    display: none;
+  }
+
+  .page-home.page-home-mobile-layer .ss-mobile-lane-cards {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 85%;
+    gap: 0.8rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .page-home.page-home-mobile-layer .ss-mobile-lane-card {
+    scroll-snap-align: start;
+    border: 1px solid rgba(54, 43, 36, 0.16);
+    border-radius: var(--ss-adapt-radius);
+    background: #fff;
+    padding: 0.85rem;
+  }
+
+  .page-home.page-home-mobile-layer .ss-mobile-lane-card details {
+    margin-top: 0.35rem;
+    border-top: 1px solid rgba(54, 43, 36, 0.12);
+    padding-top: 0.35rem;
+  }
+
+  .page-home.page-home-mobile-layer .ss-mobile-lane-card summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .page-home.page-home-mobile-layer .ss-mobile-lane-card summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .page-home.page-home-mobile-layer #local-easy .ss-module-copy > p:not(.ss-eyebrow):not(.fw-semibold),
+  .page-home.page-home-mobile-layer #local-easy .ss-module-copy .ss-media-frame {
+    display: none;
+  }
+
+  .page-home.page-home-mobile-layer #local-easy .ss-actions {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .page-home.page-home-mobile-layer #local-easy .ss-actions .btn {
+    width: 100%;
+  }
+
+  .page-home.page-home-mobile-layer .ss-footer__grid > .col-12.col-lg-3 .mt-3,
+  .page-home.page-home-mobile-layer .ss-footer__quick,
+  .page-home.page-home-mobile-layer .ss-footer hr,
+  .page-home.page-home-mobile-layer .ss-footer section[aria-label="Popular paths"] {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   Sensei Sandy Mobile Nav Click Fix (Nuclear Edition)
+   Fixes mobile dropdown links becoming unclickable
+   ========================================================= */
+@media (max-width: 991.98px) {
+  .navbar,
+  .site-header,
+  .ss-header,
+  .ss-nav,
+  .ss-nav--glass,
+  .ss-header--glass {
+    z-index: 99999 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    overflow: visible !important;
+    contain: none !important;
+  }
+
+  .navbar-collapse,
+  .ss-mobile-menu,
+  .collapse.show {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0;
+    right: 0;
+    background: #fffdf9 !important;
+    border-bottom: 1px solid rgba(54, 43, 36, 0.14) !important;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12) !important;
+    z-index: 100000 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .navbar-collapse a,
+  .ss-mobile-menu a,
+  .nav-link,
+  .dropdown-item {
+    position: relative !important;
+    z-index: 100001 !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  .ss-mobile-actions,
+  .mobile-sticky-cta,
+  .ss-sticky-mobile-bar,
+  .bottom-action-bar,
+  .mobile-bottom-bar,
+  .cta-bar {
+    z-index: 90000 !important;
+  }
+}
+

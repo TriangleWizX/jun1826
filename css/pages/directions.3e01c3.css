@@ -1,0 +1,424 @@
+/* ==========================================
+   Sensei Sandy BJJ - Directions Page V2 Style
+   ========================================== */
+
+/* Variables / Theme overrides for Directions */
+:root {
+  --ss-directions-card-bg: var(--ss-surface, #FFFFFF);
+  --ss-directions-card-shadow: 0 16px 40px rgba(54, 43, 36, 0.06);
+}
+
+/* Page Base */
+body.page-directions {
+  background-color: var(--ss-bg, #FBFAF8);
+  color: var(--ss-text, #1F1712);
+  font-family: 'Inter', sans-serif;
+  font-display: swap;
+}
+
+/* Typography Scale & Hierarchy */
+.page-location.page-directions h1,
+.page-location.page-directions h2,
+.page-location.page-directions h3 {
+  color: var(--ss-ink, #362B24);
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.page-location.page-directions h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+.page-location.page-directions h1 em {
+  font-style: italic;
+}
+
+.page-location.page-directions h2 {
+  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.page-location.page-directions h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.5rem;
+}
+
+/* Hero Section Refactoring */
+.page-location.page-directions .hero-video-section {
+  background: radial-gradient(circle at 50% 0%, rgba(40, 159, 161, 0.08), transparent 45rem), var(--ss-bg, #FBFAF8) !important;
+  padding: clamp(3rem, 7vw, 6.5rem) 0 !important;
+  border-bottom: 1px solid var(--ss-border);
+}
+
+.page-location.page-directions .hero-content-container {
+  max-width: 900px;
+}
+
+.page-location.page-directions .hero-content-card {
+  background: var(--ss-directions-card-bg) !important;
+  border: 1px solid var(--ss-border) !important;
+  border-radius: 28px !important;
+  padding: clamp(1.5rem, 4.5vw, 4rem) !important;
+  box-shadow: var(--ss-directions-card-shadow) !important;
+  text-align: center;
+}
+
+.page-location.page-directions .hero-kicker {
+  font-family: 'Inter', sans-serif;
+  color: var(--ss-orange, #E05500);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.page-location.page-directions .directions-hero-support {
+  margin-top: 1.5rem;
+  color: var(--ss-muted, #4F433C);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.page-location.page-directions .directions-hero-support a {
+  color: var(--ss-teal, #289FA1);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.page-location.page-directions .directions-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* Custom premium buttons */
+.page-location.page-directions .btn-primary {
+  background-color: var(--ss-ink, #362B24);
+  border-color: var(--ss-ink, #362B24);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(54, 43, 36, 0.08);
+}
+
+.page-location.page-directions .btn-primary:hover {
+  background-color: #261e1a;
+  border-color: #261e1a;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(54, 43, 36, 0.14);
+}
+
+.page-location.page-directions .btn-outline-dark {
+  background-color: #fff;
+  border-color: var(--ss-border);
+  color: var(--ss-ink, #362B24);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.page-location.page-directions .btn-outline-dark:hover {
+  background-color: var(--ss-surface2, #F4F1ED);
+  border-color: var(--ss-ink, #362B24);
+  color: var(--ss-ink, #362B24);
+  transform: translateY(-2px);
+}
+
+/* Section design details */
+.page-location.page-directions section.py-5 {
+  padding-top: clamp(3rem, 6vw, 5rem) !important;
+  padding-bottom: clamp(3rem, 6vw, 5rem) !important;
+}
+
+/* Arrival plan grid & cards */
+.page-location.page-directions .directions-arrival-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 6px 20px rgba(54, 43, 36, 0.03);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-location.page-directions .directions-arrival-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(54, 43, 36, 0.06);
+}
+
+.page-location.page-directions .directions-step-kicker,
+.page-location.page-directions .directions-lane-kicker {
+  font-family: 'Inter', sans-serif;
+  color: var(--ss-orange, #E05500);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-location.page-directions .directions-arrival-card p.mb-3 {
+  color: var(--ss-muted, #4F433C);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.page-location.page-directions .directions-arrival-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+  min-height: 40px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.88rem;
+  border-radius: 6px;
+}
+
+/* Map Card */
+.page-location.page-directions .directions-map-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 6px 20px rgba(54, 43, 36, 0.03);
+}
+
+.page-location.page-directions .directions-map-details {
+  border: 1px solid var(--ss-border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  background: var(--ss-bg, #FBFAF8);
+  margin-top: 1.5rem;
+}
+
+.page-location.page-directions .directions-map-details summary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  cursor: pointer;
+  outline: none;
+  font-size: 0.98rem;
+}
+
+.page-location.page-directions .directions-map-details summary:hover {
+  color: var(--ss-orange, #E05500);
+}
+
+/* Checklist items for parking & entry */
+.page-location.page-directions .directions-checklist {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.25rem;
+}
+
+.page-location.page-directions .directions-checklist li {
+  position: relative;
+  padding-left: 1.85rem;
+  margin-bottom: 0.95rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ss-muted, #4F433C);
+}
+
+.page-location.page-directions .directions-checklist li strong {
+  color: var(--ss-ink, #362B24);
+}
+
+.page-location.page-directions .directions-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0px;
+  color: var(--ss-teal, #289FA1);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+/* Town navigation cards */
+.page-location.page-directions .directions-town-card {
+  display: block;
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border);
+  border-radius: 16px;
+  padding: 2rem;
+  color: var(--ss-text, #1F1712);
+  text-decoration: none;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+  height: 100%;
+}
+
+.page-location.page-directions .directions-town-card h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: normal;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.4rem;
+}
+
+.page-location.page-directions .directions-town-card p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.page-location.page-directions .directions-town-card:hover,
+.page-location.page-directions .directions-town-card:focus-visible {
+  color: var(--ss-text, #1F1712);
+  border-color: var(--ss-teal, #289FA1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(54, 43, 36, 0.05);
+}
+
+/* Lane selection cards */
+.page-location.page-directions .directions-lane-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  height: 100%;
+  box-shadow: 0 6px 20px rgba(54, 43, 36, 0.03);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+}
+
+.page-location.page-directions .directions-lane-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(54, 43, 36, 0.06);
+}
+
+.page-location.page-directions .directions-lane-card h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: normal;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.75rem;
+}
+
+.page-location.page-directions .directions-lane-card p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.page-location.page-directions .directions-lane-card .btn {
+  margin-top: auto;
+  min-height: 44px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FAQ Accordion */
+.page-location.page-directions .directions-faq .accordion-item {
+  border: 1px solid var(--ss-border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  background: var(--ss-surface, #FFFFFF);
+  box-shadow: 0 4px 12px rgba(54, 43, 36, 0.02);
+}
+
+.page-location.page-directions .directions-faq .accordion-button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  padding: 1.35rem 1.65rem;
+  background: var(--ss-surface, #FFFFFF);
+  border: none;
+  font-size: 1.02rem;
+}
+
+.page-location.page-directions .directions-faq .accordion-button:focus {
+  box-shadow: none;
+}
+
+.page-location.page-directions .directions-faq .accordion-button:not(.collapsed) {
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-ink, #362B24);
+  box-shadow: none;
+}
+
+.page-location.page-directions .directions-faq .accordion-body {
+  padding: 1.35rem 1.65rem;
+  color: var(--ss-muted, #4F433C);
+  font-size: 1rem;
+  line-height: 1.6;
+  background: var(--ss-surface, #FFFFFF);
+  border-top: 1px solid var(--ss-border);
+}
+
+.page-location.page-directions .directions-faq .accordion-body a {
+  color: var(--ss-teal, #289FA1);
+  font-weight: 700;
+}
+
+/* Mobile sticky action bar overrides */
+.page-location.page-directions .directions-mobile-sticky .mobile-sticky-cta__inner {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-radius: 18px;
+}
+
+.page-location.page-directions .directions-mobile-sticky .mobile-sticky-cta__primary,
+.page-location.page-directions .directions-mobile-sticky .mobile-sticky-cta__action {
+  min-height: 46px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border-radius: 12px;
+}
+
+.page-location.page-directions .directions-mobile-sticky .mobile-sticky-cta__primary {
+  background-color: var(--ss-orange, #E05500);
+  border-color: var(--ss-orange, #E05500);
+}
+
+/* Media Queries */
+@media (min-width: 576px) {
+  .page-location.page-directions .directions-hero-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-location.page-directions .ss-mobile-actionbar {
+    display: none;
+  }
+
+  body.page-location.page-directions {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "steps": [
+    {
+      "id": "book",
+      "label": "Reserve Free Intro (Beginner Friendly)",
+      "href": "/book-free-intro"
+    },
+    {
+      "id": "confirm",
+      "label": "Confirmation"
+    },
+    {
+      "id": "show-up-kit",
+      "label": "Show-Up Kit",
+      "href": "/show-up-kit"
+    },
+    {
+      "id": "waiver",
+      "label": "Waiver",
+      "href": "/waiver"
+    }
+  ],
+  "duration": "~2 minutes",
+  "offerChecklist": [
+    "Booking confirmation right away.",
+    "Show-Up Kit with directions and what to wear.",
+    "Quick waiver (about 2 minutes) before class."
+  ],
+  "copy": {
+    "waiverLead": "Complete this waiver after you book your Free Intro (tour, safety walkthrough, first class).",
+    "waiverDuration": "This takes about 2 minutes.",
+    "waiverNext": "What happens next: once submitted, we confirm your spot and send your Show-Up Kit with arrival instructions.",
+    "bookMicrocopy": "Beginner Lane, coached partner practice, reschedule by text."
+  }
+}

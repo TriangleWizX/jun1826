@@ -1,0 +1,253 @@
+{
+  "clusters": {
+    "belts-promotions": {
+      "label": "Belts and Promotions",
+      "startHere": "/blog/bjj-belts-stripes-promotions",
+      "pillarTargets": [
+        "/kids",
+        "/teen-jiu-jitsu-tannersville-ny",
+        "/adult-bjj",
+        "/schedule"
+      ],
+      "links": [
+        "/blog/bjj-promotions-how-often",
+        "/blog/kids-teens-bjj-belts-ranks-stripes-promotions",
+        "/blog/bjj-black-belt-degree-time"
+      ]
+    },
+    "beginners-local": {
+      "label": "Beginners and Local Discovery",
+      "startHere": "/blog/beginners-guide-bjj-human-chess",
+      "pillarTargets": [
+        "/tannersville-ny-jiu-jitsu",
+        "/schedule",
+        "/adult-bjj"
+      ],
+      "links": [
+        "/blog/bjj-beginners-over-40-catskills",
+        "/blog/cairo-ny-bjj-specialist",
+        "/blog/tannersville-bjj-tuesday",
+        "/blog/things-to-do-near-hunter-ny-private-bjj-coaching"
+      ]
+    },
+    "training-longevity": {
+      "label": "Training and Longevity",
+      "startHere": "/blog/bjj-36-techniques",
+      "pillarTargets": [
+        "/adult-bjj",
+        "/schedule"
+      ],
+      "links": [
+        "/blog/bio-switch-nervous-system",
+        "/blog/bioginastica-movement-no-gi",
+        "/blog/neck-cranks-bjj-longevity-guide",
+        "/blog/gain-points-system",
+        "/blog/kinetic-chess-onteora-park",
+        "/blog/wrestle-ups-scramble"
+      ]
+    },
+    "sensei-local-support": {
+      "label": "Sensei and Local Support",
+      "startHere": "/blog/bjj-sensei",
+      "pillarTargets": [
+        "/tannersville-ny-jiu-jitsu",
+        "/kids",
+        "/teen-jiu-jitsu-tannersville-ny",
+        "/adult-bjj",
+        "/schedule"
+      ],
+      "links": [
+        "/blog/schedule-sensei-weekly-template",
+        "/blog/what-does-sensei-mean-in-bjj",
+        "/blog/after-school-jiu-jitsu",
+        "/blog/after-school-jiu-jitsu-calm-routine-catskills",
+        "/blog/jiu-jitsu-near-windham-mountain-club",
+        "/blog/jiu-jitsu-near-windham-mountain-club-ski-families",
+        "/blog/martial-arts-windham-ny",
+        "/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu",
+        "/martial-arts-hunter-ny",
+        "/blog/kids-martial-arts-haines-falls",
+        "/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu"
+      ]
+    }
+  },
+  "postClusterMap": {
+    "/blog/bjj-promotions-how-often": "belts-promotions",
+    "/blog/bjj-belts-stripes-promotions": "belts-promotions",
+    "/blog/kids-teens-bjj-belts-ranks-stripes-promotions": "belts-promotions",
+    "/blog/bjj-black-belt-degree-time": "belts-promotions",
+    "/blog/beginners-guide-bjj-human-chess": "beginners-local",
+    "/blog/bjj-beginners-over-40-catskills": "beginners-local",
+    "/blog/cairo-ny-bjj-specialist": "beginners-local",
+    "/blog/tannersville-bjj-tuesday": "beginners-local",
+    "/blog/things-to-do-near-hunter-ny-private-bjj-coaching": "beginners-local",
+    "/blog/bjj-36-techniques": "training-longevity",
+    "/blog/bio-switch-nervous-system": "training-longevity",
+    "/blog/bioginastica-movement-no-gi": "training-longevity",
+    "/blog/neck-cranks-bjj-longevity-guide": "training-longevity",
+    "/blog/gain-points-system": "training-longevity",
+    "/blog/kinetic-chess-onteora-park": "training-longevity",
+    "/blog/wrestle-ups-scramble": "training-longevity",
+    "/blog/bjj-sensei": "sensei-local-support",
+    "/blog/what-does-sensei-mean-in-bjj": "sensei-local-support",
+    "/blog/schedule-sensei-weekly-template": "sensei-local-support",
+    "/blog/after-school-jiu-jitsu": "sensei-local-support",
+    "/blog/after-school-jiu-jitsu-calm-routine-catskills": "sensei-local-support",
+    "/blog/jiu-jitsu-near-windham-mountain-club": "sensei-local-support",
+    "/blog/jiu-jitsu-near-windham-mountain-club-ski-families": "sensei-local-support",
+    "/blog/martial-arts-windham-ny": "sensei-local-support",
+    "/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu": "sensei-local-support",
+    "/blog/kids-martial-arts-haines-falls": "sensei-local-support",
+    "/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu": "sensei-local-support"
+  },
+  "priorityTargets": [
+    {
+      "path": "/bjj-glossary",
+      "minInlinks": 3
+    },
+    {
+      "path": "/bjj-glossary/guard",
+      "minInlinks": 2
+    },
+    {
+      "path": "/bjj-glossary/armbar",
+      "minInlinks": 2
+    },
+    {
+      "path": "/black-belt-track",
+      "minInlinks": 5
+    },
+    {
+      "path": "/bjj-stretches",
+      "minInlinks": 5
+    },
+    {
+      "path": "/blog/beginner-friendly-bjj-tannersville-links",
+      "minInlinks": 5
+    },
+    {
+      "path": "/blog/seated-guard-basics",
+      "minInlinks": 5
+    },
+    {
+      "path": "/blog/wrestle-ups-scramble",
+      "minInlinks": 5
+    },
+    {
+      "path": "/blog/bjj-promotions-how-often",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/bjj-belts-stripes-promotions",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/kids-teens-bjj-belts-ranks-stripes-promotions",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/beginners-guide-bjj-human-chess",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/bjj-beginners-over-40-catskills",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/cairo-ny-bjj-specialist",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/tannersville-bjj-tuesday",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/things-to-do-near-hunter-ny-private-bjj-coaching",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/bjj-36-techniques",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/bio-switch-nervous-system",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/bioginastica-movement-no-gi",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/neck-cranks-bjj-longevity-guide",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/gain-points-system",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/kinetic-chess-onteora-park",
+      "minInlinks": 4
+    },
+    {
+      "path": "/near/haines-falls-ny",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/bjj-sensei",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/what-does-sensei-mean-in-bjj",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/schedule-sensei-weekly-template",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/after-school-jiu-jitsu",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/after-school-jiu-jitsu-calm-routine-catskills",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/jiu-jitsu-near-windham-mountain-club",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/jiu-jitsu-near-windham-mountain-club-ski-families",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/martial-arts-windham-ny",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu",
+      "minInlinks": 4
+    },
+    {
+      "path": "/martial-arts-hunter-ny",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/kids-martial-arts-haines-falls",
+      "minInlinks": 4
+    },
+    {
+      "path": "/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu",
+      "minInlinks": 4
+    }
+  ],
+  "customAnchorVariants": {
+    "/blog/what-does-sensei-mean-in-bjj": [
+      "what sensei means in BJJ",
+      "sensei meaning in Brazilian Jiu-Jitsu",
+      "why BJJ students say sensei",
+      "sensei definition for beginners"
+    ]
+  }
+}

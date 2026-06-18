@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/twizss/Documents/ssbjjweb/tmb/.venv/bin/headroom init hook ensure --profile init-tmb-a7043043 --marker headroom-init-codex",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/twizss/Documents/ssbjjweb/tmb/.venv/bin/headroom init hook ensure --profile init-tmb-a7043043 --marker headroom-init-codex",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

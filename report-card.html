@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.acabc1.png">
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.253689.png">
+  <link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="Digital Twin Report Card. Track habits, skill reps, and confidence gains across the lane you train in.  Train with beginner-friendly coaching in." />
+  <title>Digital Twin Report Card | Sensei Sandy BJJ</title>
+  <link rel="canonical" href="https://senseisandy.com/report-card" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sensei Sandy BJJ" />
+  <meta property="og:url" content="https://senseisandy.com/report-card" />
+  <meta property="og:title" content="Digital Twin Report Card | Sensei Sandy BJJ" />
+  <meta property="og:description" content="Digital Twin Report Card. Track habits, skill reps, and confidence gains across the lane you train in." />
+  <meta property="og:image" content="https://senseisandy.com/assets/images/social/ssbjj-card-1200x628.jpg" />
+  <meta property="og:image:alt" content="Sensei Sandy BJJ in Tannersville, NY" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SenseiSandyBJJ" />
+  <meta name="twitter:creator" content="@SenseiSandyBJJ" />
+  <meta name="twitter:title" content="Digital Twin Report Card | Sensei Sandy BJJ" />
+  <meta name="twitter:description" content="Digital Twin Report Card. Track habits, skill reps, and confidence gains across the lane you train in." />
+  <meta name="twitter:image" content="https://senseisandy.com/assets/images/social/ssbjj-card-1200x628.jpg" />
+  <meta name="twitter:image:alt" content="Sensei Sandy BJJ in Tannersville, NY" />
+  <meta name="twitter:url" content="https://senseisandy.com/report-card" />
+  <!--#include virtual="/_includes/analytics-head.html" -->
+  <link rel="dns-prefetch" href="//analytics.ahrefs.com">
+<!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+  </noscript>
+  <link
+    rel="preload"
+    as="style"
+    href="/assets/css/ss.min.150a3a.css?v=20260303"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/ss.min.150a3a.css?v=20260303" />
+  </noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="/assets/css/evidence.min.80c37e.css">
+</head>
+<body>
+  <!--#include virtual="/nav-include.html" -->
+  <div id="scrollProgress"></div>
+
+  <nav class="ss-breadcrumbs container" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span aria-hidden="true">›</span>
+    <a href="/parent-resources">Parent Resources</a>
+    <span aria-hidden="true">›</span>
+    <span>Digital Twin Report Card</span>
+  </nav>
+
+  <style>
+    /* Premium Dashboard Styles for Digital Twin Report Card */
+    :root {
+      --ss-rc-cream: #FBFAF8;
+      --ss-rc-white: #FFFFFF;
+      --ss-rc-dark: #1F1712;
+      --ss-rc-muted: #4F433C;
+      --ss-rc-gold: #C5A880;
+      --ss-rc-gold-dark: #8B522E;
+      --ss-rc-blue: #289FA1;
+      --ss-rc-blue-light: #ebf8ff;
+      --ss-rc-border: rgba(54, 43, 36, 0.12);
+      --ss-rc-shadow: 0 8px 22px rgba(31, 23, 18, 0.05);
+      --ss-rc-shadow-hover: 0 16px 36px rgba(31, 23, 18, 0.10);
+      --ss-rc-radius: 18px;
+      --ss-rc-radius-sm: 12px;
+    }
+
+    body {
+      background-color: var(--ss-rc-cream);
+      color: var(--ss-rc-dark);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ss-main {
+      position: relative;
+      overflow-x: hidden;
+      padding-bottom: 4rem;
+    }
+
+    /* Background Watermarks */
+    .rc-watermark-left,
+    .rc-watermark-right {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.035;
+    }
+    .rc-watermark-left {
+      left: -60px;
+      top: 15%;
+      width: 400px;
+      height: 400px;
+      color: var(--ss-rc-dark);
+    }
+    .rc-watermark-right {
+      right: -60px;
+      top: 5%;
+      width: 450px;
+      height: 600px;
+      color: var(--ss-rc-blue);
+      opacity: 0.045;
+    }
+
+    /* Page Header */
+    .rc-page-header {
+      text-align: center;
+      margin: 2.5rem auto 3.5rem;
+      z-index: 1;
+      position: relative;
+      max-width: 800px;
+      padding: 0 1.5rem;
+    }
+    .rc-page-eyebrow {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ss-rc-gold-dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .rc-page-eyebrow::before,
+    .rc-page-eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background-color: var(--ss-rc-gold);
+      opacity: 0.7;
+    }
+    .rc-page-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+      color: var(--ss-rc-dark);
+    }
+    .rc-page-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      color: var(--ss-rc-muted);
+      margin-bottom: 1.2rem;
+    }
+    .rc-page-divider {
+      width: 35px;
+      height: 2px;
+      background-color: var(--ss-rc-gold);
+      margin: 0 auto;
+    }
+
+    /* Dashboard Layout */
+    .rc-dashboard-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Cards Base */
+    .rc-card {
+      background: var(--ss-rc-white);
+      border: 1px solid var(--ss-rc-border);
+      border-radius: var(--ss-rc-radius);
+      box-shadow: var(--ss-rc-shadow);
+      padding: 1.5rem;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .rc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--ss-rc-shadow-hover);
+    }
+
+    .rc-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.8rem;
+      color: var(--ss-rc-gold-dark);
+    }
+    .rc-card-header i {
+      font-size: 1.05rem;
+      opacity: 0.85;
+    }
+    .rc-card-label {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ss-rc-muted);
+    }
+
+    /* Form Inputs */
+    .rc-value-input {
+      border: none;
+      background: transparent;
+      width: 100%;
+      font-family: 'Lexend', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ss-rc-dark);
+      padding: 2px 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, background-color 0.2s;
+      border-radius: 4px;
+    }
+    .rc-value-input:hover {
+      background-color: var(--ss-rc-cream);
+    }
+    .rc-value-input:focus {
+      outline: none;
+      background-color: var(--ss-rc-cream);
+      border-bottom: 1px solid var(--ss-rc-gold);
+    }
+
+    .rc-card-subtext {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: var(--ss-rc-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Summary Row Grid */
+    .rc-summary-row {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* Overall Grade Card styling */
+    .rc-card--grade {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+    .rc-card--grade .rc-card-label {
+      margin-bottom: 0.5rem;
+    }
+    .rc-grade-wreath {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .laurel-wreath {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .rc-grade-value {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 3rem;
+      color: var(--ss-rc-dark);
+      font-weight: 400;
+      line-height: 1;
+      z-index: 1;
+      transform: translateY(-2px);
+    }
+    .rc-grade-percent {
+      font-family: 'Lexend', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ss-rc-dark);
+      margin-top: 0.25rem;
+      line-height: 1.1;
+    }
+    .rc-grade-status {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      color: var(--ss-rc-muted);
+      font-weight: 500;
+    }
+    .rc-grade-star {
+      color: var(--ss-rc-gold);
+      font-size: 0.8rem;
+      margin-top: 0.15rem;
+    }
+
+    /* stripes progress bar */
+    .rc-stripes-container {
+      display: flex;
+      gap: 5px;
+      margin: 0.65rem 0 0.4rem;
+      height: 8px;
+      width: 100%;
+      max-width: 120px;
+    }
+    .rc-stripe-block {
+      flex: 1;
+      background-color: var(--ss-rc-border);
+      border-radius: 2px;
+      transition: background-color 0.2s, transform 0.1s;
+      cursor: pointer;
+    }
+    .rc-stripe-block.active {
+      background-color: var(--ss-rc-blue);
+    }
+    .rc-stripe-block:hover {
+      background-color: var(--ss-rc-gold);
+      transform: scaleY(1.2);
+    }
+
+    /* Avatars row */
+    .rc-avatars-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 0.6rem;
+    }
+    .rc-avatar-placeholder {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--ss-rc-cream);
+      border: 1.5px solid var(--ss-rc-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.2s, z-index 0.2s;
+    }
+    .rc-avatar-placeholder:hover {
+      transform: scale(1.15);
+      z-index: 2;
+    }
+    .rc-avatar-placeholder svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--ss-rc-muted);
+      opacity: 0.6;
+    }
+
+    /* Main Rows */
+    .rc-main-row {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 1.5rem;
+    }
+    .rc-main-right-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Performance card */
+    .rc-card--performance {
+      padding: 1.8rem;
+    }
+    .rc-performance-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+      color: var(--ss-rc-gold-dark);
+      border-bottom: 1px solid var(--ss-rc-border);
+      padding-bottom: 0.75rem;
+    }
+    .rc-performance-header i {
+      font-size: 1.15rem;
+    }
+
+    .rc-domains-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .rc-domain-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.35rem 0.5rem;
+      border-radius: var(--ss-rc-radius-sm);
+      transition: background-color 0.2s;
+    }
+    .rc-domain-row:hover {
+      background-color: var(--ss-rc-cream);
+    }
+    .rc-domain-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--ss-rc-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--ss-rc-white);
+      color: var(--ss-rc-muted);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .rc-domain-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--ss-rc-dark);
+      width: 150px;
+      flex-shrink: 0;
+    }
+    .rc-slider-container {
+      flex-grow: 1;
+      padding: 8px 0;
+      cursor: ew-resize;
+      position: relative;
+    }
+    .rc-slider-track {
+      height: 6px;
+      background-color: var(--ss-rc-border);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+    .rc-slider-fill {
+      height: 100%;
+      background-color: var(--ss-rc-muted);
+      border-radius: 3px;
+      transition: width 0.1s ease;
+    }
+    .rc-domain-row:hover .rc-slider-fill {
+      background-color: var(--ss-rc-blue);
+    }
+    .rc-domain-percent {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ss-rc-muted);
+      width: 45px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .rc-domain-grade-badge {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 20px;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+      text-transform: uppercase;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Badges styles */
+    .grade-a-plus, .grade-a, .grade-a-minus {
+      background-color: #E2F0D9;
+      color: #385723;
+    }
+    .grade-b-plus, .grade-b {
+      background-color: #FFF2CC;
+      color: #7F6000;
+    }
+    .grade-c-plus, .grade-c {
+      background-color: #FCE4D6;
+      color: #C65911;
+    }
+    .grade-d-plus, .grade-d {
+      background-color: #F8CBAD;
+      color: #C00000;
+    }
+    .grade-f {
+      background-color: #E7E6E6;
+      color: #595959;
+    }
+
+    .rc-performance-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.76rem;
+      color: var(--ss-rc-muted);
+      margin-top: 1.2rem;
+      border-top: 1px solid var(--ss-rc-border);
+      padding-top: 0.8rem;
+      opacity: 0.8;
+    }
+
+    /* Grading Table */
+    .rc-grading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      margin-top: 0.4rem;
+    }
+    .rc-grading-table th {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ss-rc-muted);
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--ss-rc-border);
+    }
+    .rc-grading-table td {
+      padding: 7px 10px;
+      border-bottom: 1px solid rgba(54, 43, 36, 0.05);
+      color: var(--ss-rc-dark);
+    }
+    .rc-grading-table tr:last-child td {
+      border-bottom: none;
+    }
+    .rc-grading-table tr:nth-child(even) {
+      background-color: rgba(54, 43, 36, 0.02);
+    }
+    .rc-table-badge {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 12px;
+      display: inline-block;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    /* Feedback block */
+    .rc-feedback-container {
+      position: relative;
+      min-height: 120px;
+      margin-top: 0.6rem;
+    }
+    .rc-feedback-textarea {
+      width: 100%;
+      min-height: 120px;
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--ss-rc-dark);
+      resize: vertical;
+      padding: 4px;
+      z-index: 1;
+      position: relative;
+    }
+    .rc-feedback-textarea:focus {
+      outline: none;
+    }
+    .lotus-watermark {
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      width: 90px;
+      height: 90px;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+      color: var(--ss-rc-gold-dark);
+    }
+
+    /* Bottom Grid */
+    .rc-bottom-row {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 1.5rem;
+    }
+
+    /* Steps Grid */
+    .rc-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+    .rc-step-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rc-step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: var(--ss-rc-muted);
+      color: var(--ss-rc-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .rc-step-item p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      color: var(--ss-rc-muted);
+      margin: 0;
+    }
+
+    /* Action Card (cinematic gradient background) */
+    .rc-card--action {
+      background: linear-gradient(135deg, #442f24 0%, #362B24 100%);
+      color: var(--ss-rc-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2.2rem 1.5rem;
+    }
+    .rc-action-bg-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.035;
+      background-image: radial-gradient(var(--ss-rc-gold) 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+    }
+    .rc-action-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .rc-action-logo {
+      width: 32px;
+      height: 32px;
+      color: var(--ss-rc-gold);
+      margin-bottom: 0.75rem;
+    }
+    .rc-action-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.85rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 1.4rem;
+      color: var(--ss-rc-white);
+      letter-spacing: 0.01em;
+    }
+    .rc-action-buttons {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      justify-content: center;
+    }
+    .rc-btn {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 30px;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .rc-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+    .rc-btn:active {
+      transform: translateY(1px) scale(0.98);
+    }
+    .rc-btn--primary {
+      background-color: var(--ss-rc-gold-dark);
+      color: var(--ss-rc-white) !important;
+      border: 1px solid var(--ss-rc-gold-dark);
+      box-shadow: 0 4px 12px rgba(139, 82, 46, 0.3);
+    }
+    .rc-btn--primary:hover {
+      background-color: #9d5d34;
+      border-color: #9d5d34;
+      box-shadow: 0 6px 16px rgba(139, 82, 46, 0.45);
+    }
+    .rc-btn--secondary {
+      background-color: var(--ss-rc-white);
+      color: var(--ss-rc-dark) !important;
+      border: 1px solid var(--ss-rc-border);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .rc-btn--secondary:hover {
+      background-color: var(--ss-rc-cream);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Footer branding system */
+    .rc-footer-branding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 3.5rem;
+      margin-bottom: 2rem;
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--ss-rc-muted);
+      opacity: 0.6;
+    }
+    .rc-footer-logo {
+      width: 18px;
+      height: 18px;
+      color: var(--ss-rc-gold);
+    }
+
+    /* Domain tip Tooltips */
+    .rc-domain-row {
+      position: relative;
+    }
+    .rc-domain-row::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: 105%;
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background-color: var(--ss-rc-dark);
+      color: var(--ss-rc-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      z-index: 10;
+      line-height: 1.35;
+    }
+    .rc-domain-row:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Copy/Guide card at the bottom */
+    .report-card-copy {
+      max-width: 1200px;
+      margin: 2rem auto 3rem;
+      background: var(--ss-rc-white);
+      border: 1px solid var(--ss-rc-border);
+      border-radius: var(--ss-rc-radius);
+      box-shadow: var(--ss-rc-shadow);
+      padding: 2rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--ss-rc-muted);
+      position: relative;
+      z-index: 1;
+    }
+    .report-card-copy h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.95rem;
+      font-weight: 400;
+      color: var(--ss-rc-dark);
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .report-card-copy p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .report-card-copy ul {
+      margin-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .report-card-copy li {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .rc-summary-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .rc-summary-row .rc-card--grade {
+        grid-column: span 2;
+      }
+      .rc-main-row {
+        grid-template-columns: 1fr;
+      }
+      .rc-bottom-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .rc-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .rc-summary-row {
+        grid-template-columns: 1fr;
+      }
+      .rc-summary-row .rc-card--grade {
+        grid-column: span 1;
+      }
+      .rc-steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .rc-action-buttons {
+        flex-direction: column;
+      }
+    }
+
+    /* Print styling */
+    @media print {
+      @page {
+        size: letter portrait;
+        margin: 0.5in;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .ss-breadcrumbs,
+      .ss-nav,
+      .ss-footer,
+      #scrollProgress,
+      .rc-watermark-left,
+      .rc-watermark-right,
+      .rc-performance-footer,
+      .rc-btn,
+      .ss-footer-branding {
+        display: none !important;
+      }
+      .rc-dashboard-grid {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+      }
+      .rc-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        background: white !important;
+        page-break-inside: avoid;
+      }
+      .rc-value-input {
+        background: transparent !important;
+      }
+    }
+  </style>
+
+  <main class="ss-main">
+    <!-- SVG Vector Watermarks -->
+    <!-- Left mountains watermark -->
+    <svg class="rc-watermark-left" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.3" stroke-linecap="round">
+      <path d="M 0 90 L 25 50 L 45 70 L 75 30 L 100 90 Z" />
+      <path d="M 10 90 L 30 65 L 42 75 L 55 60 L 68 80 L 85 55 L 100 90" stroke-dasharray="1 2" />
+    </svg>
+
+    <!-- Right bamboo watermark -->
+    <svg class="rc-watermark-right" viewBox="0 0 100 150" fill="none" stroke="currentColor" stroke-width="0.3" stroke-linecap="round">
+      <path d="M 90 150 Q 80 100 85 50 Q 88 20 80 0" />
+      <path d="M 91 150 Q 81 100 86 50 Q 89 20 81 0" stroke-width="0.1" />
+      <path d="M 88 120 L 83 120" stroke-width="1" />
+      <path d="M 86 90 L 81 90" stroke-width="1" />
+      <path d="M 85 60 L 80 60" stroke-width="1" />
+      <path d="M 87 30 L 82 30" stroke-width="1" />
+      <path d="M 85 90 Q 60 80 40 90" />
+      <path d="M 40 90 Q 30 92 20 88" />
+      <path d="M 40 90 Q 45 80 30 85 C 25 87 35 93 40 90 Z" fill="currentColor" opacity="0.4" />
+      <path d="M 20 88 Q 22 78 12 80 C 8 81 15 90 20 88 Z" fill="currentColor" opacity="0.4" />
+      <path d="M 85 60 Q 65 40 50 45" />
+      <path d="M 50 45 Q 40 45 30 40" />
+      <path d="M 50 45 Q 52 35 40 38 C 35 40 42 48 50 45 Z" fill="currentColor" opacity="0.4" />
+      <path d="M 30 40 Q 32 30 20 32 C 15 33 22 43 30 40 Z" fill="currentColor" opacity="0.4" />
+      <path d="M 87 30 Q 100 15 110 20" />
+    </svg>
+
+    <header class="rc-page-header">
+      <div class="rc-page-eyebrow">Digital Twin</div>
+      <h1 class="rc-page-title">Digital Twin Report Card</h1>
+      <p class="rc-page-subtitle">Clear insight. Calm progress. Better Jiu-Jitsu.</p>
+      <div class="rc-page-divider"></div>
+    </header>
+
+    <div class="rc-dashboard-grid">
+      <!-- Top Summary Row -->
+      <section class="rc-summary-row" aria-label="Student Summary Info">
+        <!-- Overall Grade Card -->
+        <div class="rc-card rc-card--grade">
+          <span class="rc-card-label">Overall Grade</span>
+          <div class="rc-grade-wreath">
+            <!-- Wreath SVG -->
+            <svg class="laurel-wreath" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(197, 168, 128, 0.15)" stroke-width="2" stroke-dasharray="4 4" />
+              <path d="M 60,106 C 36,106 16,86 16,60 C 16,40 29,22 46,16" fill="none" stroke="#C5A880" stroke-width="2" stroke-linecap="round" />
+              <path d="M 60,106 Q 52,102 54,96 C 56,90 62,94 60,106" fill="#C5A880" />
+              <path d="M 45,101 Q 38,94 42,90 C 46,86 50,92 45,101" fill="#C5A880" />
+              <path d="M 32,92 Q 25,83 30,79 C 35,75 38,82 32,92" fill="#C5A880" />
+              <path d="M 23,79 Q 18,68 24,66 C 30,64 30,72 23,79" fill="#C5A880" />
+              <path d="M 18,63 Q 16,50 22,50 C 28,50 26,58 18,63" fill="#C5A880" />
+              <path d="M 18,47 Q 20,34 27,36 C 34,38 30,46 18,47" fill="#C5A880" />
+              <path d="M 24,31 Q 29,20 36,25 C 43,30 36,37 24,31" fill="#C5A880" />
+              <path d="M 35,19 Q 42,10 48,17 C 54,24 46,28 35,19" fill="#C5A880" />
+              <path d="M 48,13 Q 56,7 60,16 C 64,25 56,26 48,13" fill="#C5A880" />
+              
+              <path d="M 60,106 C 84,106 104,86 104,60 C 104,40 91,22 74,16" fill="none" stroke="#C5A880" stroke-width="2" stroke-linecap="round" />
+              <path d="M 60,106 Q 68,102 66,96 C 64,90 58,94 60,106" fill="#C5A880" />
+              <path d="M 75,101 Q 82,94 78,90 C 74,86 70,92 75,101" fill="#C5A880" />
+              <path d="M 88,92 Q 95,83 90,79 C 85,75 82,82 88,92" fill="#C5A880" />
+              <path d="M 97,79 Q 102,68 96,66 C 90,64 90,72 97,79" fill="#C5A880" />
+              <path d="M 102,63 Q 104,50 98,50 C 92,50 94,58 102,63" fill="#C5A880" />
+              <path d="M 102,47 Q 100,34 93,36 C 86,38 90,46 102,47" fill="#C5A880" />
+              <path d="M 96,31 Q 91,20 84,25 C 77,30 84,37 96,31" fill="#C5A880" />
+              <path d="M 85,19 Q 78,10 72,17 C 66,24 74,28 85,19" fill="#C5A880" />
+              <path d="M 72,13 Q 64,7 60,16 C 56,25 64,26 72,13" fill="#C5A880" />
+            </svg>
+            <div class="rc-grade-value">A+</div>
+          </div>
+          <div class="rc-grade-percent">97%</div>
+          <div class="rc-grade-status">Excellent</div>
+          <div class="rc-grade-star">★</div>
+        </div>
+
+        <!-- Student Info Card -->
+        <div class="rc-card rc-card--student">
+          <div class="rc-card-header">
+            <i class="bi bi-person"></i>
+            <span class="rc-card-label">Student</span>
+          </div>
+          <input id="student-name" type="text" class="rc-value-input" value="Alex Morgan" aria-label="Student name input">
+          <span class="rc-card-subtext">Student ID SSBJJ-0427</span>
+        </div>
+
+        <!-- Level/Belt Info Card -->
+        <div class="rc-card rc-card--level">
+          <div class="rc-card-header">
+            <i class="bi bi-award"></i>
+            <span class="rc-card-label">Level</span>
+          </div>
+          <input id="level" type="text" class="rc-value-input" value="Blue Belt" aria-label="Level input">
+          <div class="rc-stripes-container" data-stripes="2" aria-label="Belt stripes selector">
+            <span class="rc-stripe-block active" role="button" aria-label="Set stripes to 1"></span>
+            <span class="rc-stripe-block active" role="button" aria-label="Set stripes to 2"></span>
+            <span class="rc-stripe-block" role="button" aria-label="Set stripes to 3"></span>
+            <span class="rc-stripe-block" role="button" aria-label="Set stripes to 4"></span>
+          </div>
+          <span class="rc-card-subtext" id="stripes-text">Stripe 2 of 4</span>
+        </div>
+
+        <!-- Coaches Info Card -->
+        <div class="rc-card rc-card--coaches">
+          <div class="rc-card-header">
+            <i class="bi bi-people"></i>
+            <span class="rc-card-label">Coaches</span>
+          </div>
+          <input id="coaches" type="text" class="rc-value-input" value="Sensei Sandy" aria-label="Coaches input">
+          <div class="rc-avatars-row">
+            <div class="rc-avatar-placeholder" title="Sensei Sandy">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div class="rc-avatar-placeholder" title="Coach Alex">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule Info Card -->
+        <div class="rc-card rc-card--schedule">
+          <div class="rc-card-header">
+            <i class="bi bi-calendar3"></i>
+            <span class="rc-card-label">Schedule</span>
+          </div>
+          <input id="schedule" type="text" class="rc-value-input" value="Mon, Wed, Fri" aria-label="Schedule input">
+          <span class="rc-card-subtext">6:00 AM &bull; No-Gi: Sat 9:00 AM</span>
+        </div>
+      </section>
+
+      <!-- Main Domain and Details Row -->
+      <div class="rc-main-row">
+        <!-- Domain Performance Section (Sliders) -->
+        <section class="rc-card rc-card--performance" aria-labelledby="performance-title">
+          <div class="rc-performance-header">
+            <i class="bi bi-bar-chart-line"></i>
+            <span class="rc-card-label" id="performance-title">Domain Performance</span>
+          </div>
+          <div class="rc-domains-list">
+            <!-- Feet to Floor -->
+            <div class="rc-domain-row" data-tip="Takedown accuracy, posture maintenance, and stance stability.">
+              <div class="rc-domain-icon"><i class="bi bi-chevron-double-down"></i></div>
+              <span class="rc-domain-name">Feet to Floor</span>
+              <div class="rc-slider-container" data-score="90" aria-label="Feet to Floor slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 90%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">90%</span>
+              <span class="rc-domain-grade-badge grade-a">A</span>
+            </div>
+
+            <!-- Pinning -->
+            <div class="rc-domain-row" data-tip="Positional control, weight distribution, and chest-to-chest connection.">
+              <div class="rc-domain-icon"><i class="bi bi-lock"></i></div>
+              <span class="rc-domain-name">Pinning</span>
+              <div class="rc-slider-container" data-score="85" aria-label="Pinning slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">85%</span>
+              <span class="rc-domain-grade-badge grade-b">B</span>
+            </div>
+
+            <!-- Pin Escapes -->
+            <div class="rc-domain-row" data-tip="Hip escape spacing, frame structure, and timing of weight shifts.">
+              <div class="rc-domain-icon"><i class="bi bi-unlock"></i></div>
+              <span class="rc-domain-name">Pin Escapes</span>
+              <div class="rc-slider-container" data-score="70" aria-label="Pin Escapes slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 70%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">70%</span>
+              <span class="rc-domain-grade-badge grade-c">C</span>
+            </div>
+
+            <!-- Base Retention -->
+            <div class="rc-domain-row" data-tip="Three points of contact, posture recovery, and defensive balance.">
+              <div class="rc-domain-icon"><i class="bi bi-shield-lock"></i></div>
+              <span class="rc-domain-name">Base Retention</span>
+              <div class="rc-slider-container" data-score="95" aria-label="Base Retention slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 95%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">95%</span>
+              <span class="rc-domain-grade-badge grade-a-plus">A+</span>
+            </div>
+
+            <!-- Guard Passing -->
+            <div class="rc-domain-row" data-tip="Torreando control, pressure passing, and leg clearance.">
+              <div class="rc-domain-icon"><i class="bi bi-arrow-right-circle"></i></div>
+              <span class="rc-domain-name">Guard Passing</span>
+              <div class="rc-slider-container" data-score="60" aria-label="Guard Passing slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 60%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">60%</span>
+              <span class="rc-domain-grade-badge grade-f">F</span>
+            </div>
+
+            <!-- Guard Retention -->
+            <div class="rc-domain-row" data-tip="Knee-to-elbow connection, hip movement, and open guard recovery.">
+              <div class="rc-domain-icon"><i class="bi bi-shield-check"></i></div>
+              <span class="rc-domain-name">Guard Retention</span>
+              <div class="rc-slider-container" data-score="75" aria-label="Guard Retention slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">75%</span>
+              <span class="rc-domain-grade-badge grade-c-plus">C+</span>
+            </div>
+
+            <!-- Guard -->
+            <div class="rc-domain-row" data-tip="Closed and open guard offensive control and grip configurations.">
+              <div class="rc-domain-icon"><i class="bi bi-shield"></i></div>
+              <span class="rc-domain-name">Guard</span>
+              <div class="rc-slider-container" data-score="80" aria-label="Guard slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 80%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">80%</span>
+              <span class="rc-domain-grade-badge grade-b">B</span>
+            </div>
+
+            <!-- Submissions -->
+            <div class="rc-domain-row" data-tip="Submission control setups, joint lock and choke execution.">
+              <div class="rc-domain-icon"><i class="bi bi-key"></i></div>
+              <span class="rc-domain-name">Submissions</span>
+              <div class="rc-slider-container" data-score="50" aria-label="Submissions slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 50%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">50%</span>
+              <span class="rc-domain-grade-badge grade-f">F</span>
+            </div>
+
+            <!-- Submission Escapes -->
+            <div class="rc-domain-row" data-tip="Early posture defense, hitchhiker structures, and tap timing.">
+              <div class="rc-domain-icon"><i class="bi bi-key-fill"></i></div>
+              <span class="rc-domain-name">Submission Escapes</span>
+              <div class="rc-slider-container" data-score="65" aria-label="Submission Escapes slider">
+                <div class="rc-slider-track">
+                  <div class="rc-slider-fill" style="width: 65%;"></div>
+                </div>
+              </div>
+              <span class="rc-domain-percent">65%</span>
+              <span class="rc-domain-grade-badge grade-d">D</span>
+            </div>
+          </div>
+          <div class="rc-performance-footer">
+            <i class="bi bi-info-circle"></i>
+            <span>Hover a row for domain tips. Drag bars to adjust values.</span>
+          </div>
+        </section>
+
+        <!-- Sidebar stack (Grading details & Feedback) -->
+        <div class="rc-main-right-stack">
+          <!-- Grading Legend Card -->
+          <section class="rc-card rc-card--grading-system" aria-labelledby="grading-legend-title">
+            <div class="rc-card-header">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M6 7h12M6 7l-2 8h4l-2-8M18 7l-2 8h4l-2-8M12 21h-4m8 0h-4"/></svg>
+              <span class="rc-card-label" id="grading-legend-title">Grading System</span>
+            </div>
+            <table class="rc-grading-table">
+              <thead>
+                <tr>
+                  <th>Grade</th>
+                  <th>Score Range</th>
+                  <th>Verbal Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="rc-table-badge grade-a-plus">A+</span></td>
+                  <td>97 – 100</td>
+                  <td>Excellent</td>
+                </tr>
+                <tr>
+                  <td><span class="rc-table-badge grade-a">A</span></td>
+                  <td>93 – 96</td>
+                  <td>Outstanding</td>
+                </tr>
+                <tr>
+                  <td><span class="rc-table-badge grade-b">B</span></td>
+                  <td>85 – 92</td>
+                  <td>Very Good</td>
+                </tr>
+                <tr>
+                  <td><span class="rc-table-badge grade-c">C</span></td>
+                  <td>75 – 84</td>
+                  <td>Good</td>
+                </tr>
+                <tr>
+                  <td><span class="rc-table-badge grade-d">D</span></td>
+                  <td>65 – 74</td>
+                  <td>Satisfactory</td>
+                </tr>
+                <tr>
+                  <td><span class="rc-table-badge grade-f">F</span></td>
+                  <td>0 – 64</td>
+                  <td>Fair</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Remarks Card -->
+          <section class="rc-card rc-card--feedback" aria-labelledby="remarks-title">
+            <div class="rc-card-header">
+              <i class="bi bi-quote" aria-hidden="true"></i>
+              <span class="rc-card-label" id="remarks-title">Feedback & Remarks</span>
+            </div>
+            <div class="rc-feedback-container">
+              <div class="rc-feedback-textarea" contenteditable="true" aria-label="Feedback and remarks editor">Excellent work on retaining guard this week. Needs more focus on hip movement during pin escapes. Keep drilling the shrimp!</div>
+              <!-- Vector Lotus Watermark -->
+              <svg class="lotus-watermark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                <path d="M12 21a9 9 0 0 0 9-9c0-5-9-10-9-10S3 7 3 12a9 9 0 0 0 9 9z"/>
+                <path d="M12 21c2 0 3-4 3-9s-1-9-3-9-3 4-3 9 1 9 3 9z"/>
+                <path d="M3 12h18"/>
+              </svg>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Bottom Layout Row -->
+      <div class="rc-bottom-row">
+        <!-- Instructions Card -->
+        <section class="rc-card rc-card--how-to-use" aria-labelledby="how-to-use-title">
+          <div class="rc-card-header">
+            <i class="bi bi-book" aria-hidden="true"></i>
+            <span class="rc-card-label" id="how-to-use-title">How to use the digital twin report card</span>
+          </div>
+          <div class="rc-steps-grid">
+            <div class="rc-step-item">
+              <div class="rc-step-number">1</div>
+              <p>Adjust domain scores based on weekly training.</p>
+            </div>
+            <div class="rc-step-item">
+              <div class="rc-step-number">2</div>
+              <p>Record belt level, stripe, and primary coach(es).</p>
+            </div>
+            <div class="rc-step-item">
+              <div class="rc-step-number">3</div>
+              <p>Write one win and one correction to focus on.</p>
+            </div>
+            <div class="rc-step-item">
+              <div class="rc-step-number">4</div>
+              <p>Print or save the final card and track progress.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Action Card (gold-brown background) -->
+        <section class="rc-card rc-card--action" aria-label="Book a free intro class">
+          <div class="rc-action-bg-pattern"></div>
+          <div class="rc-action-content">
+            <svg class="rc-action-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 21a9 9 0 0 0 9-9c0-5-9-10-9-10S3 7 3 12a9 9 0 0 0 9 9z"/>
+              <path d="M12 21c2 0 3-4 3-9s-1-9-3-9-3 4-3 9 1 9 3 9z"/>
+              <path d="M3 12h18"/>
+            </svg>
+            <h2 class="rc-action-title">Keep Showing Up.<br>The Process Works.</h2>
+            <div class="rc-action-buttons">
+              <a href="/book-free-intro" class="rc-btn rc-btn--primary">
+                Reserve Free Intro <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="/show-up-kit" class="rc-btn rc-btn--secondary">
+                <i class="bi bi-briefcase" aria-hidden="true"></i> Preview Show-Up Kit
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Center Branding Footer -->
+      <footer class="rc-footer-branding" aria-label="Report card values">
+        <span>Discipline</span>
+        <span aria-hidden="true">&bull;</span>
+        <span>Purpose</span>
+        <span aria-hidden="true">&bull;</span>
+        <svg class="rc-footer-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M12 21a9 9 0 0 0 9-9c0-5-9-10-9-10S3 7 3 12a9 9 0 0 0 9 9z"/>
+          <path d="M12 21c2 0 3-4 3-9s-1-9-3-9-3 4-3 9 1 9 3 9z"/>
+          <path d="M3 12h18"/>
+        </svg>
+        <span aria-hidden="true">&bull;</span>
+        <span>Progress</span>
+        <span aria-hidden="true">&bull;</span>
+        <span>Community</span>
+      </footer>
+    </div>
+
+    <!-- Guide SEO copy block -->
+    <section class="report-card-copy" aria-labelledby="report-card-guide-title">
+      <h2 id="report-card-guide-title">How To Use the Digital Twin Report Card</h2>
+      <p>Use the wider <a href="/parent-resources">Parent Resources hub</a> for safety answers, schedule planning, and other family-facing next steps that connect to this tracker.</p>
+      <p>
+        The Sensei Sandy BJJ Digital Twin Report Card is a quick way to review training priorities and performance trends for one student, one class lane, or one weekly coaching cycle. Each domain score is editable, so coaches can update values in real time after drills, positional rounds, or notes from live sparring. The final output gives families and students a simple snapshot of what is improving, what is stable, and what needs focused reps next week.
+      </p>
+      <p>
+        This report card format is designed for beginner-friendly Brazilian Jiu-Jitsu coaching in Tannersville, NY, where clear standards and calm communication matter. Instead of vague feedback, each category maps to observable habits like base retention, pin escapes, guard passing, and submissions. That structure helps reduce confusion for new students and gives returning students a predictable progression path.
+      </p>
+      <ul>
+        <li>Use the score sliders to adjust each domain based on recent class performance.</li>
+        <li>Record the current belt level, class schedule, and coach so each review is traceable.</li>
+        <li>Write one specific win and one specific correction in the remarks box.</li>
+        <li>Print the final card for at-home practice goals and next-session accountability.</li>
+      </ul>
+      <p>
+        If you are comparing progress over multiple weeks, keep domain definitions consistent and avoid changing grading thresholds mid-cycle. Consistency makes the report card useful for coaching decisions, parent updates, and long-term skill development across kids, teens, and adults.
+      </p>
+      <p>
+        Keep exploring: <a href="/schedule">Schedule</a> · <a href="/bjj-classes-tannersville-ny">BJJ Classes</a> · <a href="/options-pricing">Options / Pricing</a> · <a href="/private-lessons">Private Lessons</a> · <a href="/contact">Contact</a> · <a href="/blog">Blog</a>
+      </p>
+    </section>
+
+    <!--#include virtual="/cta-footer.html" -->
+  </main>
+
+  <!--#include virtual="/footer-include.html" -->
+
+  <!-- Interactivity Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sliders = document.querySelectorAll('.rc-slider-container');
+      const overallGradeVal = document.querySelector('.rc-grade-value');
+      const overallGradePercent = document.querySelector('.rc-grade-percent');
+      const overallGradeStatus = document.querySelector('.rc-grade-status');
+
+      if (!sliders.length) return;
+
+      // Grade thresholds mapped to mockup verbal rating & colors
+      function getGradeInfo(score) {
+        if (score >= 97) return { letter: 'A+', class: 'grade-a-plus', rating: 'Excellent' };
+        if (score >= 93) return { letter: 'A', class: 'grade-a', rating: 'Outstanding' };
+        if (score >= 90) return { letter: 'A-', class: 'grade-a-minus', rating: 'Outstanding' };
+        if (score >= 85) return { letter: 'B+', class: 'grade-b-plus', rating: 'Very Good' };
+        if (score >= 80) return { letter: 'B', class: 'grade-b', rating: 'Very Good' };
+        if (score >= 75) return { letter: 'C+', class: 'grade-c-plus', rating: 'Good' };
+        if (score >= 70) return { letter: 'C', class: 'grade-c', rating: 'Good' };
+        if (score >= 65) return { letter: 'D', class: 'grade-d', rating: 'Satisfactory' };
+        return { letter: 'F', class: 'grade-f', rating: 'Fair' };
+      }
+
+      // Calculate and update the dynamic average Overall Grade
+      function updateOverallGrade() {
+        let sum = 0;
+        sliders.forEach(slider => {
+          sum += Number(slider.dataset.score || 60);
+        });
+        const avg = Math.round(sum / sliders.length);
+        const gradeInfo = getGradeInfo(avg);
+
+        if (overallGradeVal) overallGradeVal.textContent = gradeInfo.letter;
+        if (overallGradePercent) overallGradePercent.textContent = `${avg}%`;
+        if (overallGradeStatus) overallGradeStatus.textContent = gradeInfo.rating;
+      }
+
+      // Set value of a domain score slider
+      function setSliderValue(container, percent) {
+        const value = Math.min(100, Math.max(0, Math.round(percent)));
+        container.dataset.score = value;
+        container.setAttribute('aria-valuenow', value);
+
+        // Update fill bar
+        const fill = container.querySelector('.rc-slider-fill');
+        if (fill) fill.style.width = `${value}%`;
+
+        // Update percent label
+        const row = container.closest('.rc-domain-row');
+        const label = row.querySelector('.rc-domain-percent');
+        if (label) label.textContent = `${value}%`;
+
+        // Update letter grade badge
+        const badge = row.querySelector('.rc-domain-grade-badge');
+        if (badge) {
+          const gradeInfo = getGradeInfo(value);
+          badge.textContent = gradeInfo.letter;
+          // Drop-in replace class names
+          badge.className = 'rc-domain-grade-badge ' + gradeInfo.class;
+        }
+
+        updateOverallGrade();
+      }
+
+      let activeSlider = null;
+
+      const pointerMoveHandler = (event) => {
+        if (!activeSlider) return;
+        updateSliderFromEvent(activeSlider, event);
+      };
+
+      const pointerUpHandler = () => {
+        activeSlider = null;
+        window.removeEventListener('pointermove', pointerMoveHandler);
+      };
+
+      function updateSliderFromEvent(container, event) {
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const percent = (x / rect.width) * 100;
+        setSliderValue(container, percent);
+      }
+
+      sliders.forEach(container => {
+        const initial = Number(container.dataset.score || 60);
+        container.setAttribute('tabindex', '0');
+        container.setAttribute('role', 'slider');
+        container.setAttribute('aria-valuemin', '0');
+        container.setAttribute('aria-valuemax', '100');
+
+        setSliderValue(container, initial);
+
+        container.addEventListener('pointerdown', (event) => {
+          event.preventDefault();
+          activeSlider = container;
+          updateSliderFromEvent(container, event);
+          window.addEventListener('pointermove', pointerMoveHandler);
+          window.addEventListener('pointerup', pointerUpHandler, { once: true });
+        });
+
+        container.addEventListener('keydown', (event) => {
+          const current = Number(container.dataset.score || 60);
+          if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+            setSliderValue(container, current + 5);
+            event.preventDefault();
+          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+            setSliderValue(container, current - 5);
+            event.preventDefault();
+          } else if (event.key === 'Home') {
+            setSliderValue(container, 0);
+            event.preventDefault();
+          } else if (event.key === 'End') {
+            setSliderValue(container, 100);
+            event.preventDefault();
+          }
+        });
+      });
+
+      // Level Stripe interactive selector
+      const stripeBlocks = document.querySelectorAll('.rc-stripe-block');
+      const stripesText = document.getElementById('stripes-text');
+
+      stripeBlocks.forEach((block, index) => {
+        block.addEventListener('click', () => {
+          const count = index + 1;
+          const container = block.closest('.rc-stripes-container');
+          container.dataset.stripes = count;
+
+          const siblingBlocks = container.querySelectorAll('.rc-stripe-block');
+          siblingBlocks.forEach((sib, sIdx) => {
+            if (sIdx < count) {
+              sib.classList.add('active');
+            } else {
+              sib.classList.remove('active');
+            }
+          });
+
+          if (stripesText) {
+            stripesText.textContent = `Stripe ${count} of 4`;
+          }
+        });
+      });
+
+      // Run initial Overall Grade computation
+      updateOverallGrade();
+    });
+  </script>
+
+  <script src="/assets/js/ss-evidence-registry.01466d.js" defer></script>
+  <script src="/assets/js/ss-evidence-accordion.c9619a.js" defer></script>
+</body>
+</html>

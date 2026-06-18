@@ -1,0 +1,1477 @@
+/* pages/teens.css
+   Teen program page-owned responsive and audience rules.
+   Source: assets/css/ss.css migration split. */
+
+body[data-audience="teens"] {
+  --ss-scope-teens: 1;
+}
+
+body[data-audience="teens"] .hero-content-card {
+  --ss-teens-hero: 1;
+}
+
+/* Teens page centering */
+body.page-programs[data-audience="teens"] #proof-highlights .container,
+body.page-programs[data-audience="teens"] .lane-intro .container,
+body.page-programs[data-audience="teens"] #outcome .container,
+body.page-programs[data-audience="teens"] #first-day .container,
+body.page-programs[data-audience="teens"] #first-day + section .container {
+  max-width: 980px;
+  text-align: center;
+}
+
+body.page-programs[data-audience="teens"] #proof-highlights p,
+body.page-programs[data-audience="teens"] .lane-intro p,
+body.page-programs[data-audience="teens"] #outcome p,
+body.page-programs[data-audience="teens"] #first-day + section p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+body.page-programs[data-audience="teens"] #proof-highlights .card-body {
+  text-align: center;
+}
+
+body.page-programs[data-audience="teens"] #proof-highlights blockquote {
+  border-left: 0 !important;
+  padding-left: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+body.page-programs[data-audience="teens"] .lane-intro .list-unstyled.ms-3,
+body.page-programs[data-audience="teens"] #outcome .list-unstyled.ms-3 {
+  margin-left: auto !important;
+  margin-right: auto;
+  max-width: 760px;
+  text-align: center;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+body.page-programs[data-audience="teens"] #outcome .text-center .list-unstyled {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+body.page-programs[data-audience="teens"] .lane-intro .bg-light.rounded-3 {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+body.page-programs[data-audience="teens"] .lane-intro .d-flex.flex-column.flex-sm-row {
+  justify-content: center !important;
+  align-items: center;
+}
+
+body.page-programs[data-audience="teens"] #first-day details {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+body.page-programs[data-audience="teens"] #first-day summary {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.page-programs[data-audience="teens"] #first-day ol {
+  margin: 0 auto;
+  max-width: 760px;
+  text-align: center;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+body.page-programs[data-audience="teens"] #first-day ol li {
+  text-align: center;
+}
+
+/* --- Mobile CRO Patch --- */
+
+.ss-teen-mobile-hero {
+  padding: 2rem 0 1.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(224,85,0,.12), transparent 34%),
+    linear-gradient(180deg, #fff, var(--ss-bg));
+}
+
+.ss-teen-mobile-hero h1 {
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+  margin: .35rem 0 .75rem;
+  color: var(--ss-ink);
+}
+
+.ss-hero-lead {
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--ss-muted);
+  margin-bottom: 1rem;
+}
+
+.ss-mobile-trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: 1rem 0 1.15rem;
+}
+
+.ss-mobile-trust-chips span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ss-border);
+  border-radius: 999px;
+  padding: .45rem .65rem;
+  background: var(--ss-surface);
+  color: var(--ss-ink);
+  font-size: .88rem;
+  font-weight: 800;
+}
+
+.ss-mobile-hero-actions {
+  display: grid;
+  gap: .65rem;
+  margin: 1rem 0;
+}
+
+.ss-mobile-note {
+  font-size: .92rem;
+  line-height: 1.35;
+  color: var(--ss-muted);
+  margin: .75rem 0 0;
+}
+
+.ss-mobile-section {
+  padding: 1.35rem 0;
+}
+
+.ss-mobile-card {
+  background: var(--ss-surface);
+  border: 1px solid var(--ss-border);
+  border-radius: 1.15rem;
+  padding: 1rem;
+  box-shadow: 0 12px 28px rgba(54,43,36,.08);
+}
+
+.ss-mobile-card h2,
+.ss-day-one-mobile h2,
+.ss-mobile-faq h2 {
+  font-size: clamp(1.45rem, 6vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -.03em;
+  margin-bottom: .75rem;
+  color: var(--ss-ink);
+}
+
+.ss-check-list {
+  display: grid;
+  gap: .45rem;
+  padding-left: 1.15rem;
+  margin: .85rem 0;
+}
+
+.ss-check-list li {
+  font-weight: 750;
+}
+
+.ss-text-link {
+  display: inline-flex;
+  font-weight: 900;
+  color: var(--ss-orange);
+  text-decoration: none;
+  margin-top: .25rem;
+}
+
+.ss-mobile-steps {
+  display: grid;
+  gap: .65rem;
+  margin-top: 1rem;
+}
+
+.ss-mobile-step {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: .7rem;
+  align-items: start;
+  background: var(--ss-surface);
+  border: 1px solid var(--ss-border);
+  border-radius: 1rem;
+  padding: .85rem;
+}
+
+.ss-mobile-step span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--ss-orange);
+  color: #fff;
+  font-weight: 950;
+}
+
+.ss-mobile-step p {
+  margin: .18rem 0 0;
+  line-height: 1.35;
+}
+
+.ss-mini-stack {
+  display: grid;
+  gap: .65rem;
+  margin: 1rem 0;
+}
+
+.ss-mini-stack div {
+  border: 1px solid var(--ss-border);
+  border-radius: .9rem;
+  padding: .75rem;
+  background: var(--ss-surface2);
+}
+
+.ss-mini-stack strong {
+  display: block;
+  color: var(--ss-ink);
+  margin-bottom: .15rem;
+}
+
+.ss-mini-stack p {
+  margin: 0;
+  color: var(--ss-muted);
+}
+
+.ss-mobile-faq details {
+  background: var(--ss-surface);
+  border: 1px solid var(--ss-border);
+  border-radius: 1rem;
+  padding: .85rem 1rem;
+  margin-bottom: .65rem;
+}
+
+.ss-mobile-faq summary {
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--ss-ink);
+}
+
+.ss-mobile-faq details p {
+  margin: .6rem 0 0;
+  color: var(--ss-muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 767.98px) {
+  .ss-desktop-only,
+  .ss-video-hub-links,
+  .ss-long-fact-shield,
+  .ss-nearby-link-cluster {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .ss-teen-mobile-hero,
+  .ss-mobile-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* --- Desktop CRO Patch --- */
+
+@media (min-width: 992px) {
+  .popular-paths,
+  .ss-popular-paths {
+    display: none;
+  }
+
+  .ss-teen-hero {
+    padding: 5.5rem 0 4.5rem;
+  }
+
+  .ss-teen-hero-grid,
+  .ss-day-one-grid,
+  .ss-proof-layout,
+  .ss-band-grid,
+  .ss-yam-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(340px, .65fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .ss-teen-hero h1 {
+    max-width: 780px;
+    font-size: clamp(3rem, 5vw, 5.35rem);
+    line-height: .94;
+    letter-spacing: -.055em;
+    margin-bottom: 1.1rem;
+  }
+
+  .ss-lead {
+    max-width: 680px;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: var(--ss-muted);
+  }
+
+  .ss-proof-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+
+  .ss-proof-pills span {
+    border: 1px solid var(--ss-border);
+    background: var(--ss-surface);
+    border-radius: 999px;
+    padding: .55rem .85rem;
+    font-weight: 800;
+    color: var(--ss-ink);
+  }
+
+  .ss-hero-actions {
+    display: flex;
+    gap: .85rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .ss-microcopy {
+    max-width: 620px;
+    color: var(--ss-muted);
+    font-weight: 650;
+  }
+
+  .ss-intro-card {
+    position: sticky;
+    top: 96px;
+    background: var(--ss-surface);
+    border: 1px solid var(--ss-border);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 50px rgba(54, 43, 36, .12);
+  }
+
+  .ss-intro-card h2 {
+    font-size: 1.45rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .ss-intro-card ul {
+    margin: 0 0 1.25rem;
+    padding-left: 1.2rem;
+  }
+
+  .ss-intro-card li {
+    margin: .45rem 0;
+    font-weight: 700;
+  }
+
+  .ss-card-kicker {
+    color: var(--ss-orange);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 900;
+    font-size: .78rem;
+    margin-bottom: .4rem;
+  }
+
+  .ss-card-link {
+    display: block;
+    text-align: center;
+    margin-top: .9rem;
+    font-weight: 850;
+    color: var(--ss-ink);
+  }
+
+  .ss-after-hero-links {
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+    padding: .9rem 1rem;
+    border-top: 1px solid var(--ss-border);
+    border-bottom: 1px solid var(--ss-border);
+    background: var(--ss-surface2);
+  }
+
+  .ss-after-hero-links a {
+    color: var(--ss-ink);
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .ss-section-head {
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+  }
+
+  .ss-section-head h2 {
+    font-size: clamp(2rem, 3.4vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -.035em;
+  }
+
+  .ss-card-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .ss-card-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ss-card,
+  .ss-stat-card,
+  .ss-price-card {
+    background: var(--ss-surface);
+    border: 1px solid var(--ss-border);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    box-shadow: 0 12px 30px rgba(54, 43, 36, .08);
+  }
+
+  .ss-stat-card strong {
+    display: block;
+    font-size: 1.35rem;
+    line-height: 1.05;
+    color: var(--ss-ink);
+    margin-bottom: .45rem;
+  }
+
+  .ss-stat-card span {
+    color: var(--ss-muted);
+    font-weight: 650;
+  }
+
+  .ss-proof-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .ss-step-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: .85rem;
+  }
+
+  .ss-step-list li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: .8rem;
+    align-items: center;
+    background: var(--ss-surface);
+    border: 1px solid var(--ss-border);
+    border-radius: 1rem;
+    padding: .95rem;
+  }
+
+  .ss-step-list span {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: var(--ss-orange);
+    color: #fff;
+    font-weight: 950;
+  }
+
+  .ss-step-list p {
+    margin: 0;
+    font-weight: 750;
+  }
+
+  .ss-free-intro-band {
+    background: var(--ss-ink);
+    color: #fff;
+  }
+
+  .ss-free-intro-band .ss-eyebrow,
+  .ss-free-intro-band p {
+    color: #fff;
+  }
+
+  .ss-band-actions {
+    display: grid;
+    gap: .85rem;
+  }
+
+  .ss-pricing-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .925fr .925fr;
+    gap: 1rem;
+  }
+
+  .ss-price {
+    font-size: 3rem;
+    font-weight: 950;
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--ss-ink);
+    margin: .65rem 0;
+  }
+
+  .ss-featured {
+    border: 2px solid var(--ss-orange);
+  }
+
+  .ss-yam-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .85rem;
+  }
+
+  .ss-yam-mini-grid figure {
+    margin: 0;
+    background: var(--ss-surface);
+    border: 1px solid var(--ss-border);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .ss-yam-mini-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ss-yam-mini-grid figcaption {
+    padding: .75rem;
+    font-weight: 850;
+    color: var(--ss-ink);
+  }
+
+  .ss-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .ss-link-card {
+    color: var(--ss-ink);
+    text-decoration: none;
+  }
+
+  .ss-link-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* --- Teen page rebuild: new class-based layout --- */
+
+body.page-programs[data-audience="teens"] .teens-page {
+  position: relative;
+  overflow-x: clip;
+  padding-bottom: clamp(2rem, 4vw, 4rem);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(224, 85, 0, 0.10), transparent 18rem),
+    radial-gradient(circle at 92% 8%, rgba(40, 159, 161, 0.08), transparent 16rem),
+    linear-gradient(180deg, #fffdf9 0%, #fbfaf8 48%, #f4f1ed 100%);
+  color: var(--ss-text);
+  text-align: left;
+  font-family: "Inter", sans-serif;
+}
+
+body.page-programs[data-audience="teens"] .teens-page .container {
+  max-width: 1160px;
+}
+
+body.page-programs[data-audience="teens"] .teens-page h1,
+body.page-programs[data-audience="teens"] .teens-page h2,
+body.page-programs[data-audience="teens"] .teens-page h3 {
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+body.page-programs[data-audience="teens"] .teens-page p {
+  text-wrap: pretty;
+}
+
+body.page-programs[data-audience="teens"] .teens-page section {
+  position: relative;
+}
+
+body.page-programs[data-audience="teens"] .teens-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 0.95rem;
+  padding: 0.42rem 0.78rem;
+  border: 1px solid rgba(224, 85, 0, 0.14);
+  border-radius: 999px;
+  background: rgba(224, 85, 0, 0.09);
+  color: var(--ss-orange);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body.page-programs[data-audience="teens"] .teens-btn {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.9rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: "Lexend", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+body.page-programs[data-audience="teens"] .teens-btn:hover {
+  transform: translateY(-2px);
+}
+
+body.page-programs[data-audience="teens"] .teens-btn:active {
+  transform: translateY(1px);
+}
+
+body.page-programs[data-audience="teens"] .teens-btn--primary {
+  background: var(--ss-orange);
+  border-color: var(--ss-orange);
+  color: #fff;
+  box-shadow: 0 16px 30px rgba(224, 85, 0, 0.22);
+}
+
+body.page-programs[data-audience="teens"] .teens-btn--primary:hover,
+body.page-programs[data-audience="teens"] .teens-btn--primary:focus-visible {
+  background: #c94c00;
+  border-color: #c94c00;
+  color: #fff;
+}
+
+body.page-programs[data-audience="teens"] .teens-btn--ghost {
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(54, 43, 36, 0.14);
+  color: var(--ss-ink);
+  box-shadow: 0 10px 24px rgba(54, 43, 36, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+body.page-programs[data-audience="teens"] .teens-btn--ghost:hover,
+body.page-programs[data-audience="teens"] .teens-btn--ghost:focus-visible {
+  background: #fff;
+  border-color: rgba(224, 85, 0, 0.22);
+  color: var(--ss-orange);
+}
+
+body.page-programs[data-audience="teens"] .teens-hero {
+  padding: clamp(2.25rem, 5vw, 4.75rem) 0 clamp(2rem, 4vw, 4rem);
+}
+
+body.page-programs[data-audience="teens"] .teens-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+body.page-programs[data-audience="teens"] .teens-hero-copy {
+  min-width: 0;
+}
+
+body.page-programs[data-audience="teens"] .teens-hero h1 {
+  margin: 0;
+  max-width: 11.5ch;
+  font-size: clamp(2.75rem, 6vw, 5.35rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+body.page-programs[data-audience="teens"] .teens-hero h1 span {
+  color: var(--ss-orange);
+}
+
+body.page-programs[data-audience="teens"] .teens-lede {
+  max-width: 55ch;
+  margin: 1rem 0 0;
+  color: var(--ss-muted);
+  font-size: clamp(1.05rem, 1.55vw, 1.2rem);
+  line-height: 1.6;
+}
+
+body.page-programs[data-audience="teens"] .teens-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.45rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.92rem 1rem;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 12px 24px rgba(54, 43, 36, 0.06);
+}
+
+body.page-programs[data-audience="teens"] .teens-trust-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 999px;
+  background: rgba(40, 159, 161, 0.12);
+  color: var(--ss-teal);
+  font-size: 1rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-trust-item strong {
+  display: block;
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.15;
+}
+
+body.page-programs[data-audience="teens"] .teens-trust-item span {
+  display: block;
+  margin-top: 0.16rem;
+  color: var(--ss-muted);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+body.page-programs[data-audience="teens"] .teens-hero-media {
+  position: relative;
+  padding: 0.9rem;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(circle at top right, rgba(0, 221, 224, 0.1), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 241, 237, 0.95));
+  box-shadow: 0 24px 50px rgba(54, 43, 36, 0.1);
+}
+
+body.page-programs[data-audience="teens"] .teens-hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  aspect-ratio: 543 / 380;
+}
+
+body.page-programs[data-audience="teens"] .teens-hero-badge {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 999px;
+  background: rgba(251, 250, 248, 0.94);
+  box-shadow: 0 12px 24px rgba(54, 43, 36, 0.12);
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+body.page-programs[data-audience="teens"] .teens-hero-badge i {
+  color: var(--ss-orange);
+}
+
+body.page-programs[data-audience="teens"] .teens-trio,
+body.page-programs[data-audience="teens"] .teens-yam,
+body.page-programs[data-audience="teens"] .teens-pricing,
+body.page-programs[data-audience="teens"] .teens-faq,
+body.page-programs[data-audience="teens"] .teens-final {
+  padding: clamp(1.9rem, 4vw, 4rem) 0;
+}
+
+body.page-programs[data-audience="teens"] .teens-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(180deg, #fff 0%, #fcfbf8 100%);
+  box-shadow: 0 14px 30px rgba(54, 43, 36, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+body.page-programs[data-audience="teens"] .teens-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(224, 85, 0, 0.2);
+  box-shadow: 0 18px 38px rgba(54, 43, 36, 0.12);
+}
+
+body.page-programs[data-audience="teens"] .teens-card-heading {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.15;
+}
+
+body.page-programs[data-audience="teens"] .teens-step-list,
+body.page-programs[data-audience="teens"] .teens-fit-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-step-item {
+  display: grid;
+  grid-template-columns: 2rem 2.35rem 1fr;
+  gap: 0.8rem;
+  align-items: start;
+  padding: 0.85rem;
+  border: 1px solid rgba(54, 43, 36, 0.08);
+  border-radius: 1rem;
+  background: var(--ss-surface2);
+}
+
+body.page-programs[data-audience="teens"] .teens-step-num {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--ss-orange);
+  color: #fff;
+  font-family: "Lexend", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+body.page-programs[data-audience="teens"] .teens-step-icon {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.9rem;
+  background: rgba(40, 159, 161, 0.12);
+  color: var(--ss-teal);
+  font-size: 0.95rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-step-copy h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+body.page-programs[data-audience="teens"] .teens-step-copy p {
+  margin: 0.28rem 0 0;
+  max-width: none;
+  color: var(--ss-muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+body.page-programs[data-audience="teens"] .teens-schedule-eyebrow {
+  margin: 0 0 0.85rem;
+  color: var(--ss-teal);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.page-programs[data-audience="teens"] .teens-schedule-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-schedule-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+body.page-programs[data-audience="teens"] .teens-schedule-row strong,
+body.page-programs[data-audience="teens"] .teens-schedule-row span {
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+}
+
+body.page-programs[data-audience="teens"] .teens-schedule-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ss-muted);
+}
+
+body.page-programs[data-audience="teens"] .teens-schedule-row i {
+  color: var(--ss-orange);
+  font-size: 0.9rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-schedule-note {
+  margin-top: 1rem;
+  padding: 0.82rem 1rem;
+  border-left: 3px solid var(--ss-orange);
+  border-radius: 0 1rem 1rem 0;
+  background: rgba(224, 85, 0, 0.07);
+  color: var(--ss-ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+body.page-programs[data-audience="teens"] .teens-fit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.82rem 0.9rem;
+  border: 1px solid rgba(54, 43, 36, 0.08);
+  border-radius: 1rem;
+  background: var(--ss-surface2);
+}
+
+body.page-programs[data-audience="teens"] .teens-fit-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  background: rgba(224, 85, 0, 0.12);
+  color: var(--ss-orange);
+  font-size: 0.95rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-fit-item span {
+  color: var(--ss-ink);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-panel,
+body.page-programs[data-audience="teens"] .teens-pricing-card,
+body.page-programs[data-audience="teens"] .teens-final-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(circle at top right, rgba(0, 221, 224, 0.08), transparent 18rem),
+    radial-gradient(circle at bottom left, rgba(224, 85, 0, 0.08), transparent 18rem),
+    linear-gradient(180deg, #fff 0%, #f4f1ed 100%);
+  box-shadow: 0 18px 42px rgba(54, 43, 36, 0.08);
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-intro {
+  max-width: 54rem;
+  margin-bottom: 1.4rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-intro h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-intro p {
+  max-width: 62ch;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  color: var(--ss-orange);
+  font-family: "Lexend", sans-serif;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-card {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 24px rgba(54, 43, 36, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(224, 85, 0, 0.18);
+  box-shadow: 0 16px 30px rgba(54, 43, 36, 0.1);
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-avatar {
+  position: relative;
+  flex: none;
+  width: 78px;
+  height: 78px;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-avatar img {
+  display: block;
+  width: 78px;
+  height: 78px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-badge {
+  position: absolute;
+  right: -0.25rem;
+  bottom: -0.25rem;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: var(--ss-orange);
+  color: #fff;
+  font-size: 0.76rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-name {
+  margin: 0;
+  font-size: 1rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-role {
+  margin: 0.2rem 0 0.35rem;
+  color: var(--ss-orange);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-copy {
+  margin: 0;
+  max-width: none;
+  color: var(--ss-muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-dots {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  padding-top: 0.35rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(54, 43, 36, 0.18);
+}
+
+body.page-programs[data-audience="teens"] .teens-yam-dot.active {
+  width: 1.6rem;
+  background: var(--ss-orange);
+}
+
+body.page-programs[data-audience="teens"] .teens-pricing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr) minmax(240px, 0.7fr);
+  gap: 1.15rem;
+  align-items: center;
+}
+
+body.page-programs[data-audience="teens"] .teens-pricing-copy h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+}
+
+body.page-programs[data-audience="teens"] .teens-price {
+  margin: 0.8rem 0 0.1rem;
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(3rem, 6vw, 4.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+body.page-programs[data-audience="teens"] .teens-price-period {
+  margin: 0 0 0.85rem;
+  color: var(--ss-muted);
+  font-weight: 700;
+}
+
+body.page-programs[data-audience="teens"] .teens-pricing-copy p:last-of-type {
+  max-width: 38ch;
+}
+
+body.page-programs[data-audience="teens"] .teens-pricing-actions,
+body.page-programs[data-audience="teens"] .teens-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-pricing-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(54, 43, 36, 0.08);
+  border-radius: 1rem;
+  background: var(--ss-surface2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+body.page-programs[data-audience="teens"] .teens-feature:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(54, 43, 36, 0.08);
+}
+
+body.page-programs[data-audience="teens"] .teens-feature i {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.9rem;
+  background: rgba(40, 159, 161, 0.12);
+  color: var(--ss-teal);
+  font-size: 0.95rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-feature strong {
+  display: block;
+  color: var(--ss-ink);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+body.page-programs[data-audience="teens"] .teens-feature span {
+  display: block;
+  margin-top: 0.16rem;
+  color: var(--ss-muted);
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+body.page-programs[data-audience="teens"] .teens-pricing-media {
+  display: grid;
+  place-items: center;
+}
+
+body.page-programs[data-audience="teens"] .teens-pricing-media img {
+  display: block;
+  width: min(100%, 281px);
+  height: auto;
+  filter: saturate(0.98) contrast(1.03);
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-item {
+  overflow: hidden;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.15rem;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(54, 43, 36, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(224, 85, 0, 0.18);
+  box-shadow: 0 14px 30px rgba(54, 43, 36, 0.1);
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-item summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  background: rgba(224, 85, 0, 0.1);
+  color: var(--ss-orange);
+  font-size: 1.1rem;
+  font-weight: 900;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-item[open] summary::after {
+  content: "–";
+  background: rgba(40, 159, 161, 0.12);
+  color: var(--ss-teal);
+}
+
+body.page-programs[data-audience="teens"] .teens-faq-answer {
+  padding: 0 1.1rem 1rem;
+  max-width: none;
+  color: var(--ss-muted);
+  line-height: 1.6;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-card {
+  background:
+    radial-gradient(circle at top right, rgba(0, 221, 224, 0.08), transparent 18rem),
+    radial-gradient(circle at bottom left, rgba(224, 85, 0, 0.08), transparent 18rem),
+    linear-gradient(180deg, #fff 0%, #f4f1ed 100%);
+}
+
+body.page-programs[data-audience="teens"] .teens-final-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.66fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-brand {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background: rgba(40, 159, 161, 0.08);
+}
+
+body.page-programs[data-audience="teens"] .teens-final-brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-copy h2 {
+  margin: 0;
+  color: var(--ss-ink);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.02;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-copy p {
+  max-width: 44ch;
+  color: var(--ss-muted);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-actions .teens-btn--ghost {
+  background: #fff;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-badges {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.82rem 0.9rem;
+  border: 1px solid rgba(54, 43, 36, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 22px rgba(54, 43, 36, 0.06);
+}
+
+body.page-programs[data-audience="teens"] .teens-final-badge i {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(224, 85, 0, 0.12);
+  color: var(--ss-orange);
+  font-size: 0.95rem;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-badge span {
+  color: var(--ss-ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-art {
+  display: grid;
+  place-items: center end;
+}
+
+body.page-programs[data-audience="teens"] .teens-final-art img {
+  display: block;
+  width: min(100%, 320px);
+  height: auto;
+  filter: drop-shadow(0 16px 28px rgba(54, 43, 36, 0.18));
+}
+
+@media (max-width: 1099.98px) {
+  body.page-programs[data-audience="teens"] .teens-hero-grid,
+  body.page-programs[data-audience="teens"] .teens-pricing-grid,
+  body.page-programs[data-audience="teens"] .teens-final-inner {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-programs[data-audience="teens"] .teens-pricing-media,
+  body.page-programs[data-audience="teens"] .teens-final-art {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.page-programs[data-audience="teens"] .teens-page .container {
+    padding-inline: 1rem;
+  }
+
+  body.page-programs[data-audience="teens"] .teens-page h1 {
+    max-width: 12ch;
+  }
+
+  body.page-programs[data-audience="teens"] .teens-hero {
+    padding-top: 1.5rem;
+  }
+
+  body.page-programs[data-audience="teens"] .teens-card,
+  body.page-programs[data-audience="teens"] .teens-yam-panel,
+  body.page-programs[data-audience="teens"] .teens-pricing-card,
+  body.page-programs[data-audience="teens"] .teens-final-card {
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+
+  body.page-programs[data-audience="teens"] .teens-hero-actions,
+  body.page-programs[data-audience="teens"] .teens-pricing-actions,
+  body.page-programs[data-audience="teens"] .teens-final-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  body.page-programs[data-audience="teens"] .teens-btn {
+    width: 100%;
+  }
+
+  body.page-programs[data-audience="teens"] .teens-final-badges {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 479.98px) {
+  body.page-programs[data-audience="teens"] .teens-yam-cards,
+  body.page-programs[data-audience="teens"] .teens-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,4 @@
+url,status_code,location,source_count,sample_source,error
+https://senseisandy.com/foobar-0.1.tar.gz,404,,2,.venv/lib/python3.12/site-packages/setuptools/tests/indexes/test_links_priority/external.html,broken_internal_link_404
+https://senseisandy.com/.venv/lib/python3.12/site-packages/setuptools/tests/indexes/external.html,404,,1,.venv/lib/python3.12/site-packages/setuptools/tests/indexes/test_links_priority/simple/foobar/index.html,broken_internal_link_404
+https://senseisandy.com/foobar-0.1.tar.gz,404,,2,.venv/lib/python3.12/site-packages/setuptools/tests/indexes/test_links_priority/simple/foobar/index.html,broken_internal_link_404

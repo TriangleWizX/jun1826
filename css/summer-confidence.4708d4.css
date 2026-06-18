@@ -1,0 +1,581 @@
+/* =========================================================
+   Sensei Sandy BJJ
+   Summer Confidence Bootcamp / Pre-Camp Express CSS
+   Page: /summer-jiu-jitsu-tannersville
+   ========================================================= */
+
+.ss-summer-confidence-page {
+  --ss-orange: #E05500;
+  --ss-orange-dark: #C94C00;
+  --ss-teal: #289FA1;
+  --ss-cyan: #00DDE0;
+  --ss-brown: #8B522E;
+  --ss-slate: #306061;
+  --ss-ink: #362B24;
+  --ss-bg: #FBFAF8;
+  --ss-surface: #FFFFFF;
+  --ss-surface2: #F4F1ED;
+  --ss-text: #1F1712;
+  --ss-muted: #4F433C;
+  --ss-border: rgba(54, 43, 36, 0.14);
+  --ss-shadow: 0 18px 42px rgba(54, 43, 36, 0.08);
+  --ss-shadow-soft: 0 10px 28px rgba(54, 43, 36, 0.07);
+  --ss-radius: 1.35rem;
+
+  background: var(--ss-bg);
+  color: var(--ss-text);
+  overflow-x: hidden;
+}
+
+/* ---------- Typography ---------- */
+
+.ss-summer-confidence-page h1,
+.ss-summer-confidence-page h2,
+.ss-summer-confidence-page h3,
+.ss-summer-confidence-page h4 {
+  color: var(--ss-ink);
+  letter-spacing: -0.025em;
+}
+
+.ss-summer-confidence-page .fw-black {
+  font-weight: 900;
+}
+
+.ss-summer-confidence-page .lead {
+  color: var(--ss-muted);
+}
+
+.ss-summer-confidence-page .eyebrow {
+  color: var(--ss-orange);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.ss-summer-confidence-page .text-body-secondary {
+  color: var(--ss-muted) !important;
+}
+
+/* ---------- Sections ---------- */
+
+.ss-summer-confidence-page .ss-section {
+  padding: 4.25rem 0;
+}
+
+.ss-summer-confidence-page .ss-section-tight {
+  padding: 3rem 0;
+}
+
+.ss-summer-confidence-page .ss-hero {
+  background:
+    radial-gradient(circle at top left, rgba(40, 159, 161, 0.16), transparent 38%),
+    linear-gradient(135deg, #ffffff 0%, #fbfaf8 42%, #f4f1ed 100%);
+  border-bottom: 1px solid var(--ss-border);
+}
+
+.ss-summer-confidence-page .bg-white {
+  background: #ffffff !important;
+}
+
+/* ---------- Cards ---------- */
+
+.ss-summer-confidence-page .ss-card,
+.ss-summer-confidence-page .ss-hero-card {
+  background: var(--ss-surface);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius);
+  box-shadow: var(--ss-shadow);
+}
+
+.ss-summer-confidence-page .ss-card-soft {
+  background: var(--ss-surface2);
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius);
+}
+
+.ss-summer-confidence-page article.ss-card {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.ss-summer-confidence-page article.ss-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 46px rgba(54, 43, 36, 0.11);
+  border-color: rgba(224, 85, 0, 0.26);
+}
+
+/* ---------- Pills ---------- */
+
+.ss-summer-confidence-page .ss-kicker-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.35rem 0;
+}
+
+.ss-summer-confidence-page .ss-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--ss-border);
+  background: #fffaf2;
+  color: var(--ss-ink);
+  border-radius: 999px;
+  padding: 0.48rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(54, 43, 36, 0.04);
+}
+
+/* ---------- Buttons ---------- */
+
+.ss-summer-confidence-page .btn {
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ss-summer-confidence-page .btn-lg {
+  min-height: 54px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.ss-summer-confidence-page .btn-primary {
+  background: var(--ss-orange);
+  border-color: var(--ss-orange);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(224, 85, 0, 0.22);
+}
+
+.ss-summer-confidence-page .btn-primary:hover,
+.ss-summer-confidence-page .btn-primary:focus {
+  background: var(--ss-orange-dark);
+  border-color: var(--ss-orange-dark);
+  color: #ffffff;
+}
+
+.ss-summer-confidence-page .btn-outline-primary {
+  border-color: var(--ss-teal);
+  color: var(--ss-slate);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.ss-summer-confidence-page .btn-outline-primary:hover,
+.ss-summer-confidence-page .btn-outline-primary:focus {
+  background: var(--ss-teal);
+  border-color: var(--ss-teal);
+  color: #ffffff;
+}
+
+.ss-summer-confidence-page .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.72);
+  color: #ffffff;
+}
+
+.ss-summer-confidence-page .btn-outline-light:hover,
+.ss-summer-confidence-page .btn-outline-light:focus {
+  background: #fffaf2;
+  color: var(--ss-ink);
+}
+
+/* ---------- Focus States ---------- */
+
+.ss-summer-confidence-page a:focus-visible,
+.ss-summer-confidence-page button:focus-visible,
+.ss-summer-confidence-page input:focus-visible,
+.ss-summer-confidence-page select:focus-visible,
+.ss-summer-confidence-page textarea:focus-visible {
+  outline: 3px solid rgba(0, 221, 224, 0.7);
+  outline-offset: 3px;
+}
+
+/* ---------- Form ---------- */
+
+.ss-summer-confidence-page form.ss-card {
+  box-shadow: 0 22px 52px rgba(54, 43, 36, 0.1);
+}
+
+.ss-summer-confidence-page label,
+.ss-summer-confidence-page .form-label {
+  font-weight: 900;
+  color: var(--ss-ink);
+  margin-bottom: 0.35rem;
+}
+
+.ss-summer-confidence-page .form-control,
+.ss-summer-confidence-page .form-select {
+  min-height: 48px;
+  border-radius: 0.9rem;
+  border: 1px solid var(--ss-border);
+  padding: 0.78rem 0.9rem;
+  color: var(--ss-text);
+  background-color: #fffaf2;
+}
+
+.ss-summer-confidence-page textarea.form-control {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.ss-summer-confidence-page .form-control::placeholder {
+  color: rgba(79, 67, 60, 0.64);
+}
+
+.ss-summer-confidence-page .form-control:focus,
+.ss-summer-confidence-page .form-select:focus {
+  border-color: var(--ss-teal);
+  box-shadow: 0 0 0 0.22rem rgba(40, 159, 161, 0.16);
+}
+
+.ss-summer-confidence-page .form-text {
+  color: var(--ss-muted);
+  font-size: 0.88rem;
+}
+
+.ss-summer-confidence-page .form-check {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ss-summer-confidence-page .form-check-input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0;
+  border-color: rgba(54, 43, 36, 0.3);
+}
+
+.ss-summer-confidence-page .form-check-input:checked {
+  background-color: var(--ss-orange);
+  border-color: var(--ss-orange);
+}
+
+.ss-summer-confidence-page .form-check-label {
+  font-weight: 750;
+  color: var(--ss-text);
+}
+
+.ss-summer-confidence-page input:required,
+.ss-summer-confidence-page select:required,
+.ss-summer-confidence-page textarea:required {
+  scroll-margin-top: 7rem;
+}
+
+.ss-summer-confidence-page button[disabled] {
+  opacity: 0.72;
+  cursor: wait;
+}
+
+/* ---------- Price Cards ---------- */
+
+.ss-summer-confidence-page .ss-price {
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  font-weight: 950;
+  color: var(--ss-ink);
+  line-height: 1;
+  margin-bottom: 0.65rem;
+}
+
+/* ---------- Side Rail ---------- */
+
+.ss-summer-confidence-page .ss-side-rail {
+  position: sticky;
+  top: 1rem;
+}
+
+.ss-summer-confidence-page dl.row dt {
+  color: var(--ss-ink);
+  font-weight: 900;
+}
+
+.ss-summer-confidence-page dl.row dd {
+  color: var(--ss-muted);
+}
+
+/* ---------- Scorecard Table ---------- */
+
+.ss-summer-confidence-page .ss-score-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--ss-border);
+  background: #fffaf2;
+  box-shadow: var(--ss-shadow-soft);
+}
+
+.ss-summer-confidence-page .ss-score-table th,
+.ss-summer-confidence-page .ss-score-table td {
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid var(--ss-border);
+  vertical-align: middle;
+}
+
+.ss-summer-confidence-page .ss-score-table tr:last-child th,
+.ss-summer-confidence-page .ss-score-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.ss-summer-confidence-page .ss-score-table thead th {
+  background: var(--ss-surface2);
+  color: var(--ss-ink);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ss-summer-confidence-page .ss-score-table tbody th {
+  color: var(--ss-ink);
+  font-weight: 850;
+}
+
+.ss-summer-confidence-page .ss-score-table td {
+  min-width: 72px;
+  background:
+    linear-gradient(#fffaf2, #fffaf2) padding-box,
+    radial-gradient(circle, rgba(40, 159, 161, 0.14), transparent 55%) border-box;
+}
+
+/* ---------- Dark CTA ---------- */
+
+.ss-summer-confidence-page .ss-dark-cta {
+  background:
+    radial-gradient(circle at top right, rgba(0, 221, 224, 0.18), transparent 34%),
+    linear-gradient(135deg, #362B24 0%, #306061 100%);
+  color: #ffffff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(54, 43, 36, 0.18);
+}
+
+.ss-summer-confidence-page .ss-dark-cta h2,
+.ss-summer-confidence-page .ss-dark-cta p {
+  color: #ffffff;
+}
+
+.ss-summer-confidence-page .ss-dark-cta .eyebrow {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+/* ---------- FAQ Accordion ---------- */
+
+.ss-summer-confidence-page .accordion {
+  --bs-accordion-border-color: var(--ss-border);
+  --bs-accordion-border-radius: 1rem;
+  --bs-accordion-inner-border-radius: 1rem;
+}
+
+.ss-summer-confidence-page .accordion-item {
+  border-color: var(--ss-border);
+  overflow: hidden;
+}
+
+.ss-summer-confidence-page .accordion-button {
+  font-weight: 900;
+  color: var(--ss-ink);
+  background: #fffaf2;
+  padding: 1rem 1.15rem;
+}
+
+.ss-summer-confidence-page .accordion-button:not(.collapsed) {
+  background: var(--ss-surface2);
+  color: var(--ss-ink);
+  box-shadow: none;
+}
+
+.ss-summer-confidence-page .accordion-button:focus {
+  box-shadow: 0 0 0 0.22rem rgba(40, 159, 161, 0.16);
+  border-color: var(--ss-teal);
+}
+
+.ss-summer-confidence-page .accordion-body {
+  color: var(--ss-muted);
+  line-height: 1.65;
+}
+
+/* ---------- Mobile Sticky CTA ---------- */
+
+.ss-summer-confidence-page .ss-mobile-cta {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .ss-summer-confidence-page .ss-mobile-cta {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    z-index: 1030;
+    background: rgba(251, 250, 248, 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--ss-border);
+    padding: 0.75rem;
+    box-shadow: 0 -10px 28px rgba(54, 43, 36, 0.1);
+  }
+
+  .ss-summer-confidence-page .ss-mobile-cta .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ss-summer-confidence-page {
+    padding-bottom: 0;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 991.98px) {
+  .ss-summer-confidence-page .ss-side-rail {
+    position: static;
+  }
+
+  .ss-summer-confidence-page .display-4 {
+    font-size: clamp(2.35rem, 7vw, 3.25rem);
+  }
+
+  .ss-summer-confidence-page .display-6 {
+    font-size: clamp(1.85rem, 5vw, 2.35rem);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ss-summer-confidence-page .ss-section {
+    padding: 3.25rem 0;
+  }
+
+  .ss-summer-confidence-page .ss-section-tight {
+    padding: 2.25rem 0;
+  }
+
+  .ss-summer-confidence-page .ss-hero {
+    padding-top: 3rem;
+  }
+
+  .ss-summer-confidence-page .lead.fs-4 {
+    font-size: 1.15rem !important;
+  }
+
+  .ss-summer-confidence-page .fs-5 {
+    font-size: 1rem !important;
+  }
+
+  .ss-summer-confidence-page .ss-card,
+  .ss-summer-confidence-page .ss-hero-card,
+  .ss-summer-confidence-page .ss-card-soft {
+    border-radius: 1.1rem;
+  }
+
+  .ss-summer-confidence-page .ss-kicker-row {
+    gap: 0.45rem;
+  }
+
+  .ss-summer-confidence-page .ss-pill {
+    font-size: 0.82rem;
+    padding: 0.42rem 0.62rem;
+  }
+
+  .ss-summer-confidence-page .btn-lg {
+    width: 100%;
+  }
+
+  .ss-summer-confidence-page .ss-score-table {
+    font-size: 0.9rem;
+  }
+
+  .ss-summer-confidence-page .ss-score-table th,
+  .ss-summer-confidence-page .ss-score-table td {
+    padding: 0.68rem 0.7rem;
+  }
+
+  .ss-summer-confidence-page form.ss-card {
+    padding: 1.15rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .ss-summer-confidence-page .ss-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ss-summer-confidence-page .ss-score-table {
+    font-size: 0.84rem;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-summer-confidence-page *,
+  .ss-summer-confidence-page *::before,
+  .ss-summer-confidence-page *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- Form Nudge ---------- */
+
+.ss-summer-confidence-page .ss-form-nudge {
+  background: rgba(224, 85, 0, 0.08);
+  border: 1px solid rgba(224, 85, 0, 0.18);
+  border-radius: 1rem;
+  color: var(--ss-ink);
+  font-weight: 800;
+  padding: 0.9rem 1rem;
+  margin: 0;
+}
+
+.ss-summer-confidence-page .ss-score-table {
+  background: #fffaf2;
+}
+
+.ss-summer-confidence-page .ss-score-table td {
+  background: #fffaf2;
+}
+
+.ss-summer-confidence-page {
+  --ss-bg: #f7f3ec;
+  --ss-surface: #fffaf2;
+  --ss-surface2: #efe8dc;
+  --ss-text: #211d18;
+  --ss-muted: #756b5f;
+  --ss-border: rgba(33, 29, 24, 0.12);
+  --ss-ink: #211d18;
+}
+
+.ss-summer-confidence-page .ss-hero,
+.ss-summer-confidence-page .ss-section,
+.ss-summer-confidence-page .bg-white {
+  background: #f7f3ec !important;
+}
+
+.ss-summer-confidence-page .ss-card,
+.ss-summer-confidence-page .ss-hero-card,
+.ss-summer-confidence-page .ss-card-soft,
+.ss-summer-confidence-page .form-control,
+.ss-summer-confidence-page .form-select,
+.ss-summer-confidence-page .accordion-item,
+.ss-summer-confidence-page .accordion-button,
+.ss-summer-confidence-page .ss-pill {
+  background: #fffaf2;
+  border-color: rgba(33, 29, 24, 0.12);
+}
+
+.ss-summer-confidence-page .btn-outline-primary {
+  background: #fffaf2;
+}
+
+.ss-summer-confidence-page .accordion-button:not(.collapsed) {
+  background: #efe8dc;
+}

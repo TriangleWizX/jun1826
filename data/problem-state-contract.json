@@ -1,0 +1,13 @@
+{
+  "version": "2026-03-17",
+  "description": "Contract for problem-state intro content blocks.",
+  "fields": {
+    "persona": "string",
+    "problem": "string",
+    "fit_statement": "string",
+    "cta_label": "string|null",
+    "cta_url": "string|null",
+    "render_order": "number"
+  },
+  "required": ["persona", "problem", "fit_statement", "render_order"]
+}

@@ -1,0 +1,1604 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lexend:wght@400;500;600;700;800&display=swap");
+
+body.page-black-belt-concierge {
+  --bbc-ink: #17110d;
+  --bbc-espresso: #24160f;
+  --bbc-coffee: #3a2418;
+  --bbc-paper: #fbf6ed;
+  --bbc-paper-deep: #f1e6d6;
+  --bbc-mist: #e8f6f3;
+  --bbc-sage: #86aa91;
+  --bbc-teal: #289fa1;
+  --bbc-green: #116a42;
+  --bbc-line: rgba(58, 36, 24, 0.14);
+  --bbc-shadow: 0 28px 80px rgba(36, 22, 15, 0.14);
+  --bbc-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(40, 159, 161, 0.12), transparent 22rem),
+    linear-gradient(180deg, #fffaf2 0%, var(--bbc-paper) 48%, #eee0cf 100%);
+  color: var(--bbc-ink);
+  font-family: "Lexend", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+body.page-black-belt-concierge::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1020;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image:
+    linear-gradient(rgba(23, 17, 13, 0.8) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 17, 13, 0.55) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+}
+
+body.page-black-belt-concierge h1,
+body.page-black-belt-concierge h2,
+body.page-black-belt-concierge .bbc-price {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+body.page-black-belt-concierge h2 {
+  font-size: clamp(2.4rem, 6vw, 5.4rem);
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+body.page-black-belt-concierge .ss-main > .bbc-hero,
+body.page-black-belt-concierge .bbc-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(820px, calc(100vh - 64px));
+  padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 16%, rgba(0, 221, 224, 0.18), transparent 18rem),
+    radial-gradient(circle at 20% 80%, rgba(134, 170, 145, 0.2), transparent 22rem),
+    linear-gradient(135deg, #17110d 0%, #26170f 48%, #123b39 100%);
+  color: #fff9ef;
+}
+
+body.page-black-belt-concierge .bbc-hero::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  z-index: -1;
+  border: 1px solid rgba(255, 249, 239, 0.12);
+  border-radius: 2.25rem;
+}
+
+body.page-black-belt-concierge .bbc-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+  height: 10rem;
+  background: linear-gradient(180deg, transparent, var(--bbc-paper));
+}
+body.page-black-belt-concierge .bbc-hero .ss-container,
+body.page-black-belt-concierge .bbc-section .container,
+body.page-black-belt-concierge .bbc-section .ss-container {
+  width: min(1160px, calc(100vw - 40px)) !important;
+  max-width: 1160px !important;
+}
+
+body.page-black-belt-concierge .bbc-hero .row,
+body.page-black-belt-concierge .bbc-section .row {
+  min-width: 0;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.page-black-belt-concierge .bbc-hero [class*="col-"],
+body.page-black-belt-concierge .bbc-section [class*="col-"] {
+  min-width: 0;
+}
+
+
+body.page-black-belt-concierge .bbc-hero .row {
+  align-items: end;
+  row-gap: 2rem;
+}
+
+body.page-black-belt-concierge .bbc-hero h1 {
+  max-width: 11ch;
+  margin: 1rem 0 0;
+  color: #fff9ef;
+  font-size: clamp(3.6rem, 8vw, 7.2rem);
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+body.page-black-belt-concierge .bbc-hero .lead {
+  max-width: 43rem;
+  margin-top: 1.5rem;
+  color: rgba(255, 249, 239, 0.86);
+  font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+  line-height: 1.72;
+}
+
+body.page-black-belt-concierge .bbc-kicker,
+body.page-black-belt-concierge .bbc-section .eyebrow,
+body.page-black-belt-concierge .bbc-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(40, 159, 161, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  color: #9ee8e9;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+body.page-black-belt-concierge .bbc-section .eyebrow {
+  margin-bottom: 1rem;
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--bbc-green);
+}
+
+body.page-black-belt-concierge .bbc-hero-offer,
+body.page-black-belt-concierge .bbc-card,
+body.page-black-belt-concierge .bbc-mini-card,
+body.page-black-belt-concierge .bbc-review,
+body.page-black-belt-concierge .bbc-price-card,
+body.page-black-belt-concierge .bbc-form-shell,
+body.page-black-belt-concierge .bbc-note {
+  border: 1px solid var(--bbc-line);
+  border-radius: 2rem;
+  background: rgba(255, 252, 246, 0.88);
+  box-shadow: var(--bbc-shadow);
+}
+
+body.page-black-belt-concierge .bbc-hero-offer {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-color: rgba(255, 249, 239, 0.14);
+  background:
+    linear-gradient(145deg, rgba(255, 249, 239, 0.15), rgba(255, 249, 239, 0.05)),
+    rgba(16, 13, 11, 0.44);
+  color: #fff9ef;
+}
+
+body.page-black-belt-concierge .bbc-hero-offer::before {
+  content: "";
+  position: absolute;
+  inset: 0.55rem;
+  border: 1px solid rgba(255, 249, 239, 0.1);
+  border-radius: 1.55rem;
+  pointer-events: none;
+}
+
+body.page-black-belt-concierge .bbc-hero-offer__list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.25rem 0 0;
+}
+
+body.page-black-belt-concierge .bbc-hero-offer__item {
+  position: relative;
+  display: block;
+  padding-left: 1.45rem;
+  color: rgba(255, 249, 239, 0.74);
+}
+
+body.page-black-belt-concierge .bbc-hero-offer__item::before {
+  content: "";
+  position: absolute;
+  top: 0.48rem;
+  left: 0.15rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--bbc-teal);
+  box-shadow: 0 0 0 0.35rem rgba(40, 159, 161, 0.16);
+}
+
+body.page-black-belt-concierge .bbc-hero-offer__item strong {
+  display: block;
+  color: #fff9ef;
+  white-space: normal;
+}
+
+body.page-black-belt-concierge .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 52px;
+  border-radius: 999px;
+  padding: 0.9rem 1rem 0.9rem 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  transition:
+    transform 700ms var(--bbc-ease),
+    box-shadow 700ms var(--bbc-ease),
+    background-color 700ms var(--bbc-ease),
+    border-color 700ms var(--bbc-ease),
+    color 700ms var(--bbc-ease);
+}
+
+body.page-black-belt-concierge .btn::after {
+  content: "→";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  font-weight: 800;
+}
+
+body.page-black-belt-concierge .btn:hover,
+body.page-black-belt-concierge .btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 44px rgba(31, 23, 18, 0.18);
+}
+
+body.page-black-belt-concierge .btn:active {
+  transform: translateY(1px);
+}
+
+body.page-black-belt-concierge .btn-primary,
+body.page-black-belt-concierge .btn.btn-primary {
+  border-color: var(--bbc-green);
+  background: linear-gradient(135deg, var(--bbc-green), #0d4f36);
+  color: #fffaf4;
+}
+
+body.page-black-belt-concierge .btn-outline-light::after,
+body.page-black-belt-concierge .btn-outline-secondary::after {
+  background: rgba(17, 17, 17, 0.08);
+}
+
+body.page-black-belt-concierge .bbc-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+body.page-black-belt-concierge .bbc-trust-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.15rem;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(255, 249, 239, 0.22);
+  background: rgba(255, 249, 239, 0.08);
+  color: inherit;
+  font-size: 0.84rem;
+}
+
+body.page-black-belt-concierge .bbc-hero-microcopy {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: rgba(255, 249, 239, 0.72);
+  font-size: 0.95rem;
+}
+
+body.page-black-belt-concierge .bbc-section {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  position: relative;
+}
+
+body.page-black-belt-concierge .bbc-section--soft {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(40, 159, 161, 0.12), transparent 20rem),
+    var(--bbc-paper);
+}
+
+body.page-black-belt-concierge .bbc-section--dark {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(40, 159, 161, 0.15), transparent 18rem),
+    linear-gradient(135deg, #17110d, #2b1a12 56%, #123735);
+  color: #fff9ef;
+}
+
+body.page-black-belt-concierge .bbc-section--dark h2,
+body.page-black-belt-concierge .bbc-section--dark h3,
+body.page-black-belt-concierge .bbc-section--dark p,
+body.page-black-belt-concierge .bbc-section--dark li {
+  color: inherit;
+}
+
+body.page-black-belt-concierge .bbc-section--dark .bbc-card,
+body.page-black-belt-concierge .bbc-section--dark .bbc-price-card,
+body.page-black-belt-concierge .bbc-section--dark .bbc-note {
+  border-color: rgba(255, 249, 239, 0.14);
+  background: rgba(255, 249, 239, 0.08);
+  color: #fff9ef;
+}
+
+body.page-black-belt-concierge .bbc-intro {
+  max-width: 760px;
+  color: #57483d;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+body.page-black-belt-concierge .bbc-card,
+body.page-black-belt-concierge .bbc-mini-card,
+body.page-black-belt-concierge .bbc-review,
+body.page-black-belt-concierge .bbc-price-card,
+body.page-black-belt-concierge .bbc-form-shell,
+body.page-black-belt-concierge .bbc-note {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body.page-black-belt-concierge .bbc-card h3,
+body.page-black-belt-concierge .bbc-mini-card strong,
+body.page-black-belt-concierge .bbc-value-group h3 {
+  color: var(--bbc-espresso);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+body.page-black-belt-concierge .bbc-section--dark .bbc-card h3,
+body.page-black-belt-concierge .bbc-section--dark .bbc-mini-card strong,
+body.page-black-belt-concierge .bbc-section--dark .bbc-value-group h3 {
+  color: #fff9ef;
+}
+
+body.page-black-belt-concierge .bbc-card ul,
+body.page-black-belt-concierge .bbc-clean-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.page-black-belt-concierge .bbc-card li,
+body.page-black-belt-concierge .bbc-clean-list li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--bbc-line);
+}
+
+body.page-black-belt-concierge .bbc-card li:last-child,
+body.page-black-belt-concierge .bbc-clean-list li:last-child {
+  border-bottom: 0;
+}
+
+body.page-black-belt-concierge .bbc-accent {
+  color: var(--bbc-teal);
+  font-weight: 800;
+}
+
+body.page-black-belt-concierge .bbc-scarcity {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--bbc-line);
+  background: rgba(255, 249, 239, 0.76);
+}
+
+body.page-black-belt-concierge .bbc-scarcity .bbc-trust-row {
+  justify-content: center;
+  margin-top: 0;
+}
+
+body.page-black-belt-concierge .bbc-scarcity .bbc-trust-row span {
+  border-color: rgba(17, 106, 66, 0.18);
+  background: rgba(255, 255, 255, 0.7);
+  color: #31251d;
+}
+
+body.page-black-belt-concierge .bbc-review blockquote {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+body.page-black-belt-concierge .bbc-review figcaption {
+  color: #6a594d;
+  font-weight: 700;
+}
+
+body.page-black-belt-concierge .bbc-price {
+  display: block;
+  color: var(--bbc-espresso);
+  font-size: clamp(3.2rem, 8vw, 6.6rem);
+  line-height: 0.9;
+}
+
+body.page-black-belt-concierge .bbc-price-card {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(246, 237, 224, 0.88)),
+    radial-gradient(circle at 90% 10%, rgba(40, 159, 161, 0.12), transparent 16rem);
+}
+
+body.page-black-belt-concierge .bbc-ladder,
+body.page-black-belt-concierge .bbc-value-group {
+  display: grid;
+  gap: 0.85rem;
+}
+
+body.page-black-belt-concierge .bbc-ladder-row,
+body.page-black-belt-concierge .bbc-value-row,
+body.page-black-belt-concierge .bbc-value-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--bbc-line);
+}
+
+body.page-black-belt-concierge .bbc-ladder-row strong,
+body.page-black-belt-concierge .bbc-value-row strong {
+  white-space: normal;
+}
+
+body.page-black-belt-concierge .bbc-value-total {
+  border-bottom: 0;
+  font-weight: 800;
+}
+
+body.page-black-belt-concierge .bbc-value-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+body.page-black-belt-concierge .bbc-value-table th,
+body.page-black-belt-concierge .bbc-value-table td {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--bbc-line);
+  overflow-wrap: anywhere;
+}
+
+body.page-black-belt-concierge .bbc-value-table th {
+  color: #6a594d;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+body.page-black-belt-concierge .bbc-value-table td:last-child,
+body.page-black-belt-concierge .bbc-value-table th:last-child {
+  text-align: right;
+  font-weight: 800;
+}
+
+body.page-black-belt-concierge .bbc-timeline {
+  counter-reset: bbc-week;
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.page-black-belt-concierge .bbc-timeline li {
+  counter-increment: bbc-week;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+
+body.page-black-belt-concierge .bbc-timeline li::before {
+  content: counter(bbc-week);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: var(--bbc-ink);
+  color: #fff9ef;
+  font-weight: 800;
+}
+
+body.page-black-belt-concierge .bbc-fit-card--not {
+  background: rgba(255, 248, 239, 0.66);
+}
+
+body.page-black-belt-concierge .bbc-form-shell {
+  background: rgba(255, 252, 246, 0.94);
+}
+
+body.page-black-belt-concierge .bbc-form-shell input,
+body.page-black-belt-concierge .bbc-form-shell select,
+body.page-black-belt-concierge .bbc-form-shell textarea {
+  min-height: 3.25rem;
+  border: 1px solid rgba(58, 36, 24, 0.16);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--bbc-ink);
+}
+
+body.page-black-belt-concierge .bbc-form-shell textarea {
+  min-height: 10rem;
+}
+
+body.page-black-belt-concierge .bbc-form-shell input:focus,
+body.page-black-belt-concierge .bbc-form-shell select:focus,
+body.page-black-belt-concierge .bbc-form-shell textarea:focus {
+  border-color: var(--bbc-teal);
+  box-shadow: 0 0 0 0.22rem rgba(40, 159, 161, 0.16);
+}
+
+body.page-black-belt-concierge .bbc-form-shell .alert {
+  border: 1px solid rgba(40, 159, 161, 0.22);
+  border-radius: 1.25rem;
+  background: rgba(232, 246, 243, 0.76);
+  color: #244f50;
+}
+
+body.page-black-belt-concierge .bbc-note {
+  background: rgba(232, 246, 243, 0.7);
+  color: #244f50;
+}
+
+body.page-black-belt-concierge .bbc-sticky-cta {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1010;
+  display: none;
+  border: 1px solid rgba(58, 36, 24, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.92);
+  box-shadow: 0 18px 50px rgba(36, 22, 15, 0.18);
+  padding: 0.5rem;
+  backdrop-filter: blur(18px);
+}
+
+body.page-black-belt-concierge .bbc-sticky-cta__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+body.page-black-belt-concierge .bbc-sticky-cta .btn {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 0.75rem 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+body.page-black-belt-concierge .bbc-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 900ms var(--bbc-ease),
+    transform 900ms var(--bbc-ease);
+  will-change: opacity, transform;
+}
+
+body.page-black-belt-concierge .bbc-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991.98px) {
+  body.page-black-belt-concierge .bbc-hero {
+    min-height: auto;
+    padding-top: 4.5rem;
+  }
+
+  body.page-black-belt-concierge .bbc-hero h1 {
+    font-size: clamp(3.1rem, 14.5vw, 5.2rem);
+  }
+}
+
+@media (max-width: 767.98px) {
+  html,
+  body.page-black-belt-concierge {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body.page-black-belt-concierge .bbc-hero .ss-container,
+  body.page-black-belt-concierge .bbc-section .container,
+  body.page-black-belt-concierge .bbc-section .ss-container {
+    width: min(100%, calc(100vw - 28px)) !important;
+    max-width: calc(100vw - 28px) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-black-belt-concierge .bbc-hero::before {
+    inset: 0.55rem;
+    border-radius: 1.5rem;
+  }
+
+  body.page-black-belt-concierge .bbc-hero {
+    padding-top: 3.2rem;
+    padding-bottom: 3.25rem;
+  }
+
+  body.page-black-belt-concierge .bbc-hero h1 {
+    max-width: 8.5ch;
+    margin-top: 0.75rem;
+    font-size: clamp(3.45rem, 13.4vw, 4.8rem);
+    line-height: 0.88;
+  }
+
+  body.page-black-belt-concierge .bbc-hero .lead {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  body.page-black-belt-concierge .bbc-kicker {
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.62rem 0.85rem;
+    text-align: center;
+  }
+
+  body.page-black-belt-concierge .bbc-section {
+    padding: 4rem 0;
+  }
+
+  body.page-black-belt-concierge .bbc-hero .row,
+  body.page-black-belt-concierge .bbc-section .row,
+  body.page-black-belt-concierge .bbc-form-shell .row {
+    --bs-gutter-x: 0 !important;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  body.page-black-belt-concierge .bbc-hero [class*="col-"],
+  body.page-black-belt-concierge .bbc-section [class*="col-"],
+  body.page-black-belt-concierge .bbc-form-shell [class*="col-"] {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.page-black-belt-concierge .bbc-hero-offer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.page-black-belt-concierge .bbc-hero-offer__list {
+    gap: 0.65rem;
+  }
+
+  body.page-black-belt-concierge .bbc-hero-offer__item {
+    padding-left: 1.35rem;
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  body.page-black-belt-concierge .bbc-card,
+  body.page-black-belt-concierge .bbc-mini-card,
+  body.page-black-belt-concierge .bbc-review,
+  body.page-black-belt-concierge .bbc-price-card,
+  body.page-black-belt-concierge .bbc-form-shell,
+  body.page-black-belt-concierge .bbc-note {
+    border-radius: 1.45rem;
+  }
+
+  body.page-black-belt-concierge .bbc-card *,
+  body.page-black-belt-concierge .bbc-mini-card *,
+  body.page-black-belt-concierge .bbc-review *,
+  body.page-black-belt-concierge .bbc-price-card *,
+  body.page-black-belt-concierge .bbc-form-shell *,
+  body.page-black-belt-concierge .bbc-note * {
+    max-width: 100%;
+  }
+
+  body.page-black-belt-concierge .bbc-ladder-row,
+  body.page-black-belt-concierge .bbc-value-row,
+  body.page-black-belt-concierge .bbc-value-total {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  body.page-black-belt-concierge .bbc-value-table {
+    display: block;
+    overflow-x: auto;
+    table-layout: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.page-black-belt-concierge .bbc-value-table th,
+  body.page-black-belt-concierge .bbc-value-table td {
+    min-width: 9rem;
+    padding-right: 0.75rem;
+  }
+
+  body.page-black-belt-concierge .bbc-value-table th:last-child,
+  body.page-black-belt-concierge .bbc-value-table td:last-child {
+    min-width: 5rem;
+  }
+
+  body.page-black-belt-concierge .bbc-timeline li {
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+  }
+
+  body.page-black-belt-concierge .bbc-form-shell input,
+  body.page-black-belt-concierge .bbc-form-shell select,
+  body.page-black-belt-concierge .bbc-form-shell textarea {
+    width: 100%;
+  }
+
+  body.page-black-belt-concierge .bbc-sticky-cta {
+    display: block;
+  }
+
+  body.page-black-belt-concierge {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-black-belt-concierge .btn,
+  body.page-black-belt-concierge .bbc-reveal {
+    transition: none;
+  }
+
+  body.page-black-belt-concierge .bbc-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================================
+   BLACK BELT CONCIERGE: CONTAINER AND OVERFLOW REFACTOR
+   ========================================================= */
+
+.page-black-belt-concierge,
+.page-black-belt-concierge *,
+.page-black-belt-concierge *::before,
+.page-black-belt-concierge *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent one oversized child from widening the whole page */
+.page-black-belt-concierge {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.page-black-belt-concierge main,
+.page-black-belt-concierge section,
+.page-black-belt-concierge .container,
+.page-black-belt-concierge .container-fluid {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Critical Bootstrap grid fix */
+.page-black-belt-concierge :where(
+  .row,
+  .row > *,
+  [class*="col-"],
+  .d-flex > *,
+  .card,
+  .card-body,
+  form,
+  fieldset
+) {
+  min-width: 0;
+}
+
+/* Cards must grow with their contents */
+.page-black-belt-concierge :where(
+  .card,
+  .card-body,
+  .offer-card,
+  .pricing-card,
+  .proof-card,
+  .application-card,
+  .concierge-card,
+  .bbc-card,
+  .bbc-mini-card,
+  .bbc-review,
+  .bbc-price-card,
+  .bbc-form-shell,
+  .bbc-note
+) {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+/* Allow every text-bearing element to wrap */
+.page-black-belt-concierge :where(
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  label,
+  span,
+  strong,
+  small,
+  blockquote,
+  td,
+  th
+) {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Responsive headings and prices */
+.page-black-belt-concierge h1 {
+  font-size: clamp(2rem, 6vw, 4.75rem);
+  line-height: 1.02;
+}
+
+.page-black-belt-concierge h2 {
+  font-size: clamp(1.65rem, 4vw, 3rem);
+  line-height: 1.08;
+}
+
+.page-black-belt-concierge :where(
+  .price,
+  .offer-price,
+  .pricing-price,
+  .display-price,
+  .bbc-price,
+  .bbc-hero-offer__price
+) {
+  max-width: 100%;
+  font-size: clamp(2.25rem, 8vw, 5rem);
+  line-height: 0.95;
+  overflow-wrap: anywhere;
+}
+
+/* Buttons and CTA rows */
+.page-black-belt-concierge :where(
+  .hero-actions,
+  .cta-row,
+  .button-row,
+  .form-actions,
+  .btn-group,
+  .d-flex,
+  .bbc-trust-row
+) {
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.page-black-belt-concierge :where(.btn, button, [role="button"]) {
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+/* Badges and benefit pills */
+.page-black-belt-concierge :where(
+  .badge,
+  .pill,
+  .chip,
+  .trust-pill,
+  .feature-pill,
+  .bbc-kicker,
+  .bbc-pill
+) {
+  max-width: 100%;
+  height: auto;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Replace rigid feature rows with an adaptive grid */
+.page-black-belt-concierge :where(
+  .offer-facts,
+  .hero-facts,
+  .feature-grid,
+  .benefit-grid,
+  .stats-grid,
+  .bbc-hero-offer__list
+) {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  width: 100%;
+}
+
+/* Value and pricing rows */
+.page-black-belt-concierge :where(
+  .value-row,
+  .price-row,
+  .comparison-row,
+  .included-row,
+  .bbc-ladder-row,
+  .bbc-value-row,
+  .bbc-value-total,
+  .bbc-hero-offer__item
+) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(7rem, auto);
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.page-black-belt-concierge :where(
+  .value-row,
+  .price-row,
+  .comparison-row,
+  .included-row,
+  .bbc-ladder-row,
+  .bbc-value-row,
+  .bbc-value-total,
+  .bbc-hero-offer__item
+) > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Tables stay inside their cards */
+.page-black-belt-concierge .table-responsive,
+.page-black-belt-concierge .concierge-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-black-belt-concierge table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.page-black-belt-concierge td:first-child,
+.page-black-belt-concierge th:first-child {
+  width: auto;
+}
+
+.page-black-belt-concierge td:last-child,
+.page-black-belt-concierge th:last-child {
+  width: clamp(7rem, 28%, 13rem);
+  text-align: right;
+}
+
+/* Form containment */
+.page-black-belt-concierge form,
+.page-black-belt-concierge fieldset,
+.page-black-belt-concierge .form-group,
+.page-black-belt-concierge .form-floating {
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-black-belt-concierge :where(
+  input,
+  select,
+  textarea,
+  .form-control,
+  .form-select,
+  .ss-input,
+  .ss-textarea
+) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.page-black-belt-concierge textarea {
+  resize: vertical;
+}
+
+/* Media containment */
+.page-black-belt-concierge :where(
+  img,
+  svg,
+  video,
+  canvas,
+  iframe
+) {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile restructuring */
+@media (max-width: 767.98px) {
+  .page-black-belt-concierge .container,
+  .page-black-belt-concierge .container-fluid {
+    padding-inline: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .page-black-belt-concierge :where(
+    .value-row,
+    .price-row,
+    .comparison-row,
+    .included-row,
+    .bbc-ladder-row,
+    .bbc-value-row,
+    .bbc-value-total,
+    .bbc-hero-offer__item
+  ) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+  }
+
+  .page-black-belt-concierge :where(
+    .value-row,
+    .price-row,
+    .comparison-row,
+    .included-row,
+    .bbc-ladder-row,
+    .bbc-value-row,
+    .bbc-value-total,
+    .bbc-hero-offer__item
+  ) > :last-child {
+    text-align: left;
+  }
+
+  .page-black-belt-concierge :where(
+    .hero-actions,
+    .cta-row,
+    .button-row,
+    .form-actions
+  ) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .page-black-belt-concierge :where(
+    .hero-actions,
+    .cta-row,
+    .button-row,
+    .form-actions
+  ) .btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   BLACK BELT CONCIERGE: CONTRAST AND TEXT-VISIBILITY FIX
+   Keep this after every other concierge rule.
+   ========================================================= */
+
+.page-black-belt-concierge main {
+  --bbc-ink: #1f1712;
+  --bbc-copy: #4b4039;
+  --bbc-muted: #65574e;
+
+  --bbc-surface: #ffffff;
+  --bbc-surface-soft: #fff8ef;
+  --bbc-border: rgba(54, 43, 36, 0.18);
+
+  --bbc-dark: #17282a;
+  --bbc-dark-2: #244244;
+  --bbc-on-dark: #fdfbf7;
+  --bbc-on-dark-muted: #dbe7e7;
+
+  /* Accessible darkened brand colors */
+  --bbc-orange: #c74400;
+  --bbc-orange-hover: #9b3500;
+  --bbc-teal: #176b6d;
+  --bbc-teal-hover: #0f5557;
+  --bbc-cyan-light: #8ffcff;
+
+  color: var(--bbc-copy);
+  background: var(--bbc-surface-soft);
+}
+
+/* ---------------------------------------------------------
+   Default light-section colors
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main section {
+  --bbc-local-text: var(--bbc-copy);
+  --bbc-local-heading: var(--bbc-ink);
+  --bbc-local-muted: var(--bbc-muted);
+
+  color: var(--bbc-local-text);
+}
+
+.page-black-belt-concierge main section :where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+) {
+  color: var(--bbc-local-heading);
+}
+
+.page-black-belt-concierge main section :where(
+  p,
+  li,
+  dt,
+  dd,
+  label,
+  legend,
+  blockquote,
+  figcaption,
+  small
+) {
+  color: inherit;
+}
+
+.page-black-belt-concierge main section :where(
+  .text-muted,
+  .form-text,
+  .help-text,
+  .eyebrow,
+  .section-kicker,
+  .microcopy,
+  .fine-print
+) {
+  color: var(--bbc-local-muted) !important;
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   Normalize the major dark sections
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main > section:first-of-type,
+.page-black-belt-concierge main :is(
+  .concierge-hero,
+  .bbc-hero,
+  .hero--concierge,
+  .concierge-pricing,
+  .pricing-band,
+  .founding-beta,
+  .founding-beta-section,
+  .concierge-final-cta,
+  .final-cta,
+  .final-cta-section,
+  .ss-final-cta,
+  .cta-band,
+  .section-dark,
+  .theme-dark,
+  .bg-dark,
+  .bg-black,
+  .text-bg-dark,
+  .bbc-section--dark,
+  [data-theme="dark"]
+) {
+  --bbc-local-text: var(--bbc-on-dark);
+  --bbc-local-heading: #ffffff;
+  --bbc-local-muted: var(--bbc-on-dark-muted);
+
+  color: var(--bbc-local-text);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(40, 159, 161, 0.22),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      var(--bbc-dark),
+      var(--bbc-dark-2)
+    ) !important;
+}
+
+/* Force inherited Bootstrap/global colors to follow dark sections */
+.page-black-belt-concierge main :is(
+  .concierge-hero,
+  .bbc-hero,
+  .hero--concierge,
+  .concierge-pricing,
+  .pricing-band,
+  .founding-beta,
+  .founding-beta-section,
+  .concierge-final-cta,
+  .final-cta,
+  .final-cta-section,
+  .ss-final-cta,
+  .cta-band,
+  .section-dark,
+  .theme-dark,
+  .bg-dark,
+  .bg-black,
+  .text-bg-dark,
+  .bbc-section--dark,
+  [data-theme="dark"]
+) :where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  dt,
+  dd,
+  blockquote,
+  figcaption
+) {
+  color: inherit !important;
+}
+
+/* Muted text must remain visible on dark backgrounds */
+.page-black-belt-concierge main :is(
+  .concierge-hero,
+  .bbc-hero,
+  .hero--concierge,
+  .concierge-pricing,
+  .pricing-band,
+  .founding-beta,
+  .founding-beta-section,
+  .concierge-final-cta,
+  .final-cta,
+  .final-cta-section,
+  .ss-final-cta,
+  .cta-band,
+  .section-dark,
+  .theme-dark,
+  .bg-dark,
+  .bg-black,
+  .text-bg-dark,
+  .bbc-section--dark,
+  [data-theme="dark"]
+) :where(
+  .text-muted,
+  .form-text,
+  .help-text,
+  .eyebrow,
+  .section-kicker,
+  .microcopy,
+  .fine-print
+) {
+  color: var(--bbc-on-dark-muted) !important;
+  opacity: 1 !important;
+}
+
+/* ---------------------------------------------------------
+   Light cards inside dark sections
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main :where(
+  .card,
+  .card-body,
+  .offer-card,
+  .fit-card,
+  .proof-card,
+  .review-card,
+  .timeline-card,
+  .value-card,
+  .pricing-card,
+  .application-card,
+  .concierge-card,
+  .form-card
+) {
+  --bbc-local-text: var(--bbc-copy);
+  --bbc-local-heading: var(--bbc-ink);
+  --bbc-local-muted: var(--bbc-muted);
+
+  color: var(--bbc-local-text) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .offer-card,
+  .fit-card,
+  .proof-card,
+  .review-card,
+  .timeline-card,
+  .value-card,
+  .pricing-card,
+  .application-card,
+  .concierge-card,
+  .form-card
+) {
+  background: var(--bbc-surface) !important;
+  border-color: var(--bbc-border) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .card,
+  .offer-card,
+  .fit-card,
+  .proof-card,
+  .review-card,
+  .timeline-card,
+  .value-card,
+  .pricing-card,
+  .application-card,
+  .concierge-card,
+  .form-card
+) :where(h1, h2, h3, h4, h5, h6, strong) {
+  color: var(--bbc-ink) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .card,
+  .offer-card,
+  .fit-card,
+  .proof-card,
+  .review-card,
+  .timeline-card,
+  .value-card,
+  .pricing-card,
+  .application-card,
+  .concierge-card,
+  .form-card
+) :where(p, li, label, blockquote, figcaption) {
+  color: var(--bbc-copy) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .card,
+  .offer-card,
+  .fit-card,
+  .proof-card,
+  .review-card,
+  .timeline-card,
+  .value-card,
+  .pricing-card,
+  .application-card,
+  .concierge-card,
+  .form-card
+) :where(.text-muted, .form-text, .microcopy, small) {
+  color: var(--bbc-muted) !important;
+  opacity: 1 !important;
+}
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main a:not(.btn) {
+  color: var(--bbc-teal);
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.18em;
+}
+
+.page-black-belt-concierge main a:not(.btn):hover {
+  color: var(--bbc-teal-hover);
+}
+
+.page-black-belt-concierge main :is(
+  .concierge-hero,
+  .bbc-hero,
+  .hero--concierge,
+  .concierge-pricing,
+  .pricing-band,
+  .founding-beta,
+  .founding-beta-section,
+  .concierge-final-cta,
+  .final-cta,
+  .final-cta-section,
+  .ss-final-cta,
+  .cta-band,
+  .section-dark,
+  .theme-dark,
+  .bg-dark,
+  .bg-black,
+  .text-bg-dark,
+  .bbc-section--dark,
+  [data-theme="dark"]
+) a:not(.btn) {
+  color: var(--bbc-cyan-light) !important;
+}
+
+/* Restore dark links inside light cards */
+.page-black-belt-concierge main :where(
+  .card,
+  .offer-card,
+  .fit-card,
+  .proof-card,
+  .review-card,
+  .timeline-card,
+  .value-card,
+  .pricing-card,
+  .application-card,
+  .concierge-card,
+  .form-card
+) a:not(.btn) {
+  color: var(--bbc-teal) !important;
+}
+
+/* ---------------------------------------------------------
+   Accessible CTA buttons
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main :where(
+  .btn-primary,
+  .btn-orange,
+  .cta-primary
+) {
+  color: #ffffff !important;
+  background-color: var(--bbc-orange) !important;
+  border-color: var(--bbc-orange) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .btn-primary,
+  .btn-orange,
+  .cta-primary
+):hover {
+  color: #ffffff !important;
+  background-color: var(--bbc-orange-hover) !important;
+  border-color: var(--bbc-orange-hover) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .btn-secondary,
+  .btn-teal
+) {
+  color: #ffffff !important;
+  background-color: var(--bbc-teal) !important;
+  border-color: var(--bbc-teal) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .btn-outline-primary,
+  .btn-outline-secondary
+) {
+  color: var(--bbc-teal) !important;
+  background: #ffffff !important;
+  border-color: var(--bbc-teal) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .btn-outline-primary,
+  .btn-outline-secondary
+):hover {
+  color: #ffffff !important;
+  background: var(--bbc-teal) !important;
+}
+
+/* ---------------------------------------------------------
+   Badges, facts, chips, and pills
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main :where(
+  .badge,
+  .pill,
+  .chip,
+  .trust-pill,
+  .feature-pill,
+  .fact-pill
+) {
+  color: var(--bbc-ink) !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  opacity: 1 !important;
+}
+
+.page-black-belt-concierge main :where(
+  .badge.bg-dark,
+  .badge.text-bg-dark
+) {
+  color: #ffffff !important;
+  background: var(--bbc-dark) !important;
+}
+
+.page-black-belt-concierge main :where(
+  .badge.bg-warning,
+  .badge.bg-info,
+  .badge.bg-light
+) {
+  color: var(--bbc-ink) !important;
+}
+
+/* ---------------------------------------------------------
+   Value table
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main table {
+  color: var(--bbc-copy) !important;
+  background: #ffffff !important;
+}
+
+.page-black-belt-concierge main table thead th {
+  color: #ffffff !important;
+  background: var(--bbc-dark-2) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+.page-black-belt-concierge main table tbody :where(th, td) {
+  color: var(--bbc-copy) !important;
+  background: #ffffff !important;
+  border-color: var(--bbc-border) !important;
+}
+
+.page-black-belt-concierge main table tbody tr:nth-child(even) :where(th, td) {
+  background: #f7f1e9 !important;
+}
+
+.page-black-belt-concierge main table tfoot :where(th, td),
+.page-black-belt-concierge main table .total-row :where(th, td) {
+  color: var(--bbc-ink) !important;
+  background: #e4f1f1 !important;
+  font-weight: 800;
+}
+
+/* ---------------------------------------------------------
+   Application form
+   --------------------------------------------------------- */
+
+.page-black-belt-concierge main form :where(
+  label,
+  legend,
+  .form-check-label
+) {
+  color: var(--bbc-ink) !important;
+  opacity: 1 !important;
+}
+
+.page-black-belt-concierge main form :where(
+  input,
+  select,
+  textarea,
+  .form-control,
+  .form-select
+) {
+  color: var(--bbc-ink) !important;
+  background-color: #ffffff !important;
+  border-color: rgba(54, 43, 36, 0.38) !important;
+  opacity: 1 !important;
+}
+
+.page-black-belt-concierge main form :where(
+  input,
+  select,
+  textarea,
+  .form-control,
+  .form-select
+)::placeholder {
+  color: #6a5c53 !important;
+  opacity: 1 !important;
+}
+
+.page-black-belt-concierge main form option {
+  color: var(--bbc-ink);
+  background: #ffffff;
+}
+
+.page-black-belt-concierge main form :where(
+  input,
+  select,
+  textarea,
+  .form-control,
+  .form-select
+):focus {
+  color: var(--bbc-ink) !important;
+  background-color: #ffffff !important;
+  border-color: var(--bbc-teal) !important;
+  box-shadow: 0 0 0 0.25rem rgba(23, 107, 109, 0.22) !important;
+}
+
+.page-black-belt-concierge main input:-webkit-autofill,
+.page-black-belt-concierge main input:-webkit-autofill:hover,
+.page-black-belt-concierge main input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--bbc-ink) !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+}
+
+/* Keyboard visibility */
+.page-black-belt-concierge main :where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--bbc-cyan-light) !important;
+  outline-offset: 3px;
+}
+
+
