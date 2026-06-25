@@ -25,7 +25,7 @@ Phone CTA:
 
 ## Brand and UX Rules
 
-Write and design for nervous beginners, parents, and returning adults.
+Write and design for first-time students, parents, and returning adults.
 
 Prioritize:
 - Calm

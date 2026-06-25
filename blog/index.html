@@ -9,17 +9,17 @@
 <link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
 <link href="/site.webmanifest" rel="manifest"/>
 <title>BJJ Blog in Tannersville, NY | Sensei Sandy Brazilian Jiu-Jitsu</title>
-<meta content="Read calm, practical Brazilian Jiu-Jitsu guides for kids, teens, adults, and families near Tannersville, Hunter, Windham, and the Catskills." name="description">
+<meta content="Read calm, practical Brazilian Jiu-Jitsu guides for kids, teens, adults, and families near Tannersville, Hunter, Windham, and the Catskills." name="description"/>
 <meta content="BJJ Blog in Tannersville, NY | Sensei Sandy Brazilian Jiu-Jitsu" name="twitter:title"/>
 <meta content="Read calm, practical Brazilian Jiu-Jitsu guides for kids, teens, adults, and families near Tannersville, Hunter, Windham, and the Catskills." name="twitter:description"/>
 <meta content="/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
 <meta content="website" property="og:type"/>
 <script async="" data-key="7wa4kb0Phyu0r+dNkM/tTQ" src="https://analytics.ahrefs.com/analytics.js"></script>
-<link href="https://senseisandy.com/blog" rel="canonical">
+<link href="https://senseisandy.com/blog" rel="canonical"/>
 <meta content="https://senseisandy.com/blog" property="og:url"/>
 <meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" property="og:image"/>
 <meta content="index, follow" name="robots"/>
-<meta content="BJJ Blog in Tannersville, NY | Sensei Sandy Brazilian Jiu-Jitsu" property="og:title">
+<meta content="BJJ Blog in Tannersville, NY | Sensei Sandy Brazilian Jiu-Jitsu" property="og:title"/>
 <meta content="Read calm, practical Brazilian Jiu-Jitsu guides for kids, teens, adults, and families near Tannersville, Hunter, Windham, and the Catskills." property="og:description"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">
@@ -58,210 +58,528 @@
 <!--#include virtual="/_includes/analytics-head.html" -->
 <link href="//analytics.ahrefs.com" rel="dns-prefetch"/>
 <!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
-<link as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<link as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <noscript>
-<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </noscript>
-<link as="style" href="/assets/css/ss.min.150a3a.css?v=20260303" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<link as="style" href="/assets/css/ss.min.892da8.css?v=20260303" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <noscript>
-<link href="/assets/css/ss.min.150a3a.css?v=20260303" rel="stylesheet">
+<link href="/assets/css/ss.min.892da8.css?v=20260303" rel="stylesheet"/>
 </noscript>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Lexend:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Lexend:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/assets/css/evidence.min.80c37e.css" rel="stylesheet"/>
 <link href="/assets/css/schedule-consistency.e5bd8a.css" rel="stylesheet"/>
-
 <link href="/assets/css/blog.a23eb8.css?v=20260611" rel="stylesheet"/>
 <link href="/assets/css/blog-cro.min.361b96.css" rel="stylesheet"/>
 <style>
-  .page-blog .ss-blog-status {
-    margin: 0 0 1.25rem;
-    color: var(--ss-muted);
-    font-size: 0.92rem;
-    font-weight: 700;
+  /* Premium Editorial Luxury Design System */
+  :root {
+    --ss-bg: #FDFBF7;
+    --ss-surface: #FFFFFF;
+    --ss-ink: #1F1712;
+    --ss-muted: #6B5C51;
+    --ss-border: rgba(31, 23, 18, 0.08);
+    --ss-accent: #116A42;
+    --bezier-smooth: cubic-bezier(0.32, 0.72, 0, 1);
   }
 
-  .page-blog .ss-blog-pagination {
-    flex-wrap: wrap;
-    gap: 0.55rem;
+  body.page-blog {
+    background-color: var(--ss-bg);
+    color: var(--ss-ink);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    position: relative;
   }
 
-  .page-blog .ss-blog-pagination .ss-btn {
-    min-width: 3rem;
+  /* Grain overlay */
+  body.page-blog::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');
+    opacity: 0.025;
   }
 
-  .page-blog .ss-blog-pagination .ss-btn[aria-current="page"] {
-    background: linear-gradient(135deg, #155d3f 0%, #1d7b5c 100%);
-    border-color: rgba(17, 106, 66, 0.9);
-    color: #fff;
-    box-shadow: 0 18px 34px rgba(17, 106, 66, 0.22);
+  /* Massive Typography */
+  h1, h2, h3, .heading-serif {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
-  .page-blog .ss-blog-pagination .ss-btn[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
+  /* Eyebrows */
+  .premium-eyebrow {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    background: rgba(31, 23, 18, 0.05);
+    color: var(--ss-ink);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Spacing & Sections */
+  .section-pad {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   @media (min-width: 768px) {
-    .page-blog .ss-blog-hero {
-      display: block;
+    .section-pad {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
     }
   }
+
+  /* Reveal Animations */
+  .ss-reveal {
+    opacity: 0;
+    transform: translateY(4rem);
+    filter: blur(8px);
+    transition: opacity 1s var(--bezier-smooth), transform 1s var(--bezier-smooth), filter 1s var(--bezier-smooth);
+    will-change: transform, opacity, filter;
+  }
+
+  .ss-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* Asymmetrical Bento Grid */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .bento-grid {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+    }
+    .bento-card-large { grid-column: span 8; }
+    .bento-card-small { grid-column: span 4; }
+    .bento-card-medium { grid-column: span 6; }
+  }
+
+  /* Double-Bezel Card Architecture */
+  .doppelrand-shell {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--ss-border);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .doppelrand-core {
+    background: var(--ss-surface);
+    border-radius: calc(2rem - 0.5rem);
+    padding: 2.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .doppelrand-core h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: var(--ss-ink);
+    text-decoration: none;
+  }
+  
+  .doppelrand-core h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .doppelrand-core p {
+    color: var(--ss-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  /* Button-in-Button Architecture */
+  .premium-btn {
+    display: inline-flex;
+    align-items: center;
+    background: var(--ss-ink);
+    color: var(--ss-bg);
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.4s var(--bezier-smooth);
+    width: max-content;
+    margin-top: auto;
+  }
+  
+  .premium-btn:hover {
+    color: var(--ss-bg);
+  }
+
+  .premium-btn-icon-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    transition: transform 0.4s var(--bezier-smooth);
+  }
+
+  .premium-btn:active {
+    transform: scale(0.98);
+  }
+
+  .premium-btn:hover .premium-btn-icon-wrapper {
+    transform: translateX(4px) scale(1.05);
+  }
+
+  /* Hero Section */
+  .editorial-hero {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  
+  @media(min-width: 768px) {
+    .editorial-hero {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+      padding: 8rem 2rem;
+    }
+  }
+
+  .editorial-hero-text {
+    flex: 1;
+  }
+
+  .editorial-hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media(min-width: 768px) {
+    .editorial-hero-text h1 {
+      font-size: 5.5rem;
+    }
+  }
+
+  .editorial-hero-text p.lead-text {
+    font-size: 1.25rem;
+    color: var(--ss-muted);
+    max-width: 480px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  /* Hide old elements */
+  .ss-mobile-blog-hero, .ss-blog-desktop-shell > .ss-blog-hero {
+    display: none !important;
+  }
+  
+  /* Pagination updates */
+  .page-blog .ss-blog-pagination .ss-btn {
+    border-radius: 999px;
+    transition: transform 0.3s var(--bezier-smooth);
+  }
+  .page-blog .ss-blog-pagination .ss-btn[aria-current="page"] {
+    background: var(--ss-ink);
+    color: var(--ss-bg);
+    border-color: var(--ss-ink);
+    box-shadow: none;
+  }
+  .page-blog .ss-blog-pagination .ss-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Fix blog archive visibility globally and match width */
+  .ss-blog-desktop-shell {
+    display: block !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+  }
+  @media(min-width: 768px) {
+    .ss-blog-desktop-shell {
+      padding: 0 2rem !important;
+    }
+  }
+  .ss-mobile-archive {
+    display: none !important;
+  }
+
+/* =========================================================
+   BLOG ARCHIVE LAYOUT RESET
+   ========================================================= */
+
+/* 1. Restore a proper desktop content width */
+.page-blog,
+.ss-blog-main,
+.ss-blog-latest {
+  width: 100%;
+  min-width: 0;
+}
+
+.ss-blog-desktop-shell {
+  width: min(1180px, calc(100% - 40px)) !important;
+  max-width: 1180px !important;
+  margin-inline: auto !important;
+  padding: 0 !important;
+  display: block !important; /* override the old grid */
+}
+
+/* 2. Remove any carousel, stack, or perspective treatment */
+#blog-post-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(18px, 2.4vw, 30px) !important;
+  width: 100% !important;
+  margin: 32px 0 0 !important;
+  padding: 0 !important;
+
+  overflow: visible !important;
+  perspective: none !important;
+  transform: none !important;
+}
+
+/* 3. Reset cards that are being positioned or overlapped */
+.ss-post-card {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 270px;
+
+  margin: 0 !important;
+  transform: none !important;
+  translate: none !important;
+  rotate: none !important;
+  scale: none !important;
+
+  opacity: 1 !important;
+  visibility: visible;
+  z-index: auto !important;
+
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+
+  /* Since we use doppelrand inside the card, we remove its layout restrictions */
+}
+
+/* We also reset the Doppelrand shell to fit nicely in the grid */
+.doppelrand-shell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.doppelrand-core {
+  padding: clamp(22px, 2.4vw, 30px);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove decorative inner frames that consume too much width */
+.ss-post-card::before {
+  pointer-events: none;
+}
+
+/* 4. Make article typography readable */
+.doppelrand-core .premium-eyebrow {
+  margin-bottom: 14px;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.doppelrand-core h3 {
+  max-width: 22ch;
+  margin: 0 0 14px;
+  font-size: clamp(1.25rem, 1.6vw, 1.65rem);
+  line-height: 1.12;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.doppelrand-core p {
+  margin: 0;
+  max-width: 48ch;
+  font-size: 0.95rem;
+  line-height: 1.58;
+  text-wrap: pretty;
+  margin-bottom: 26px;
+}
+
+.doppelrand-core .premium-btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* 5. Tighten the archive section */
+.ss-blog-latest {
+  padding-block: clamp(64px, 8vw, 104px);
+}
+
+/* 6. Pagination should read as navigation, not decoration */
+#blog-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 42px;
+}
+
+#blog-pagination button,
+#blog-pagination span {
+  min-width: 42px;
+  min-height: 42px;
+  display: inline-grid;
+  place-items: center;
+
+  padding: 8px 13px;
+  border: 1px solid rgba(35, 65, 54, 0.18);
+  border-radius: 999px !important;
+  background: #fff;
+  font-size: 0.78rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+#blog-pagination .ss-btn-primary,
+#blog-pagination [aria-current="page"] {
+  background: #2d2925 !important;
+  color: #fff !important;
+  border-color: #2d2925 !important;
+  box-shadow: none !important;
+}
+
+/* 7. Tablet */
+@media (max-width: 900px) {
+  #blog-post-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* 8. Mobile */
+@media (max-width: 620px) {
+  .ss-blog-desktop-shell {
+    width: min(100% - 28px, 1180px) !important;
+  }
+
+  #blog-post-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .ss-post-card {
+    min-height: 0 !important;
+  }
+  
+  .doppelrand-core {
+    padding: 22px;
+  }
+
+  .doppelrand-core h3 {
+    max-width: none;
+  }
+}
+
+/* 9. Respect pagination hiding without reintroducing stacking */
+.ss-post-card[hidden] {
+  display: none !important;
+}
 </style>
 </head>
 <body class="page-blog">
 <!--#include virtual="/nav-include.html" -->
 <div id="scrollProgress"></div>
 <main class="ss-main" id="main-content" role="main">
-<section class="ss-mobile-blog-hero">
-  <div class="ss-shell ss-mobile-blog-hero__frame ss-reveal">
-    <div class="ss-core p-4 p-sm-5">
-  <p class="ss-eyebrow">BJJ in Tannersville, NY</p>
-
-  <h1>Learn Jiu-Jitsu before your first class.</h1>
-
-  <p>
-    Calm, practical guides for adults, kids, teens, and families near Hunter, Windham, Haines Falls, and the Catskills.
-  </p>
-
-  <div class="ss-mobile-hero-actions">
-    <a class="ss-btn ss-btn-primary ss-btn-rich" data-track="blog_hero_free_intro_click" href="/book-free-intro"><span class="ss-btn-rich__label">Reserve Free Intro</span><span aria-hidden="true" class="ss-btn-rich__icon">↗</span></a>
-    <a class="ss-btn ss-btn-soft ss-btn-rich" data-track="blog_hero_text_click" href="sms:+19177368649"><span class="ss-btn-rich__label">Text Sandy</span><span aria-hidden="true" class="ss-btn-rich__icon">→</span></a>
-  </div>
-
-  <nav class="ss-mobile-lane-chips" aria-label="Choose a class lane">
-    <a data-track="blog_lane_kids_chip_click" href="/schedule">Youth 5:00 PM</a>
-    <a data-track="blog_lane_adults_chip_click" href="/adult-bjj">Adults 6:00 PM</a>
-    <a data-track="blog_lane_privates_chip_click" href="/private-lessons">Private 4:00 PM</a>
-    <a data-track="blog_schedule_chip_click" href="/schedule">Schedule</a>
-  </nav>
-    </div>
-  </div>
+<section class="editorial-hero section-pad ss-reveal">
+<div class="editorial-hero-text">
+<span class="premium-eyebrow">BJJ Knowledge Library</span>
+<h1>Read the guides that make first semi-private class feel clear.</h1>
+<p class="lead-text">A calm, editorial library for beginners and families who want to understand the room, the semi-private class lanes, and the next best step before they walk in.</p>
+<div class="d-flex gap-3 flex-wrap">
+<a class="premium-btn" href="/free-bjj-intro-tannersville-ny">
+        Book Free Goal Mapping
+        <span class="premium-btn-icon-wrapper">↗</span>
+</a>
+<a class="premium-btn" href="sms:+19177368649" style="background: transparent; border: 1px solid var(--ss-border); color: var(--ss-ink);">
+        Text Sandy
+        <span class="premium-btn-icon-wrapper" style="background: rgba(0,0,0,0.05); color: var(--ss-ink);">→</span>
+</a>
+</div>
+</div>
 </section>
 <div class="ss-blog-desktop-shell">
-  <div class="ss-blog-main">
-<section class="ss-blog-hero ss-reveal">
-  <div class="ss-blog-hero__inner">
-    <div class="ss-blog-hero__grid">
-      <div class="ss-blog-hero__panel">
-        <p class="ss-eyebrow">BJJ Knowledge Library</p>
-        <h1>Read the guides that make first class feel clear.</h1>
-        <p class="ss-blog-hero__lead">
-          A calm, editorial library for beginners and families who want to understand the room, the class lanes, and the next best step before they walk in.
-        </p>
-
-        <div class="ss-blog-hero__actions">
-          <a class="ss-btn ss-btn-primary ss-btn-rich" data-track="blog_hero_free_intro_click" href="/book-free-intro"><span class="ss-btn-rich__label">Reserve Free Intro</span><span aria-hidden="true" class="ss-btn-rich__icon">↗</span></a>
-          <a class="ss-btn ss-btn-soft ss-btn-rich" data-track="blog_hero_text_click" href="sms:+19177368649"><span class="ss-btn-rich__label">Text Sandy</span><span aria-hidden="true" class="ss-btn-rich__icon">→</span></a>
-        </div>
-
-        <div class="ss-blog-hero__meta" aria-label="Quick guide to the blog">
-          <span class="ss-hero-chip--accent">Beginners first</span>
-          <span>Kids, teens, adults</span>
-          <span>Safety basics</span>
-          <span>Local to Tannersville</span>
-        </div>
-      </div>
-
-      <div class="ss-blog-hero__card">
-        <div class="ss-blog-hero__art" aria-hidden="true">
-          <img alt="" loading="lazy" src="/assets/images/blog.79fab0.png"/>
-        </div>
-        <ul class="ss-blog-hero__card-list">
-          <li>Start with a first-class walkthrough for a clear first visit.</li>
-          <li>Use the topic lanes to find the guide that matches your situation.</li>
-          <li>Move from reading to booking with one clear next step.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="ss-mobile-start ss-reveal">
-  <p class="ss-eyebrow">Start Here</p>
-  <h2>Pick the guide that fits your next step.</h2>
-
-  <div class="ss-mobile-card-stack">
-    <a class="ss-mobile-card ss-priority-card" data-track="blog_start_first_class_click" href="/blog/exactly-what-happens-first-bjj-class-minute-by-minute">
-      <span>First Class Guide</span>
-      <strong>See what happens on your first visit.</strong>
-      <small>Arrival, room tour, safety basics, and class flow.</small>
-    </a>
-
-    <a class="ss-mobile-card" data-track="blog_start_kids_click" href="/kids">
-      <span>Kids</span>
-      <strong>Confidence, listening, and safe movement.</strong>
-      <small>Start with the 5:00 PM Youth Class.</small>
-    </a>
-
-    <a class="ss-mobile-card" data-track="blog_start_teens_click" href="/teen-jiu-jitsu-tannersville-ny">
-      <span>Teens</span>
-      <strong>Composure, skill, and steady progress.</strong>
-      <small>Wednesday keeps the 5:00 PM lane and runs No-Gi.</small>
-    </a>
-
-    <a class="ss-mobile-card" data-track="blog_start_adults_click" href="/adult-bjj">
-      <span>Adults</span>
-      <strong>Calm technical training for real life.</strong>
-      <small>Start with the 6:00 PM Adult Class.</small>
-    </a>
-  </div>
-</section>
-
-<section class="ss-mobile-reassurance ss-reveal">
-  <p class="ss-eyebrow">First Visit</p>
-  <h2>Your first class is simple.</h2>
-
-  <ul>
-    <li>Meet Sandy.</li>
-    <li>See the room.</li>
-    <li>Learn the safety basics.</li>
-    <li>Try controlled beginner-friendly movement.</li>
-    <li>Choose the class lane that fits.</li>
-  </ul>
-
-  <a class="ss-btn ss-btn-primary ss-btn-rich" data-track="blog_reassurance_free_intro_click" href="/book-free-intro"><span class="ss-btn-rich__label">Reserve Free Intro</span><span aria-hidden="true" class="ss-btn-rich__icon">↗</span></a>
-</section>
-
+<div class="ss-blog-main">
 <section class="ss-mobile-featured ss-reveal">
-  <p class="ss-eyebrow">Best Reads</p>
-  <h2>Read these before you step on the mat.</h2>
-
-  <div class="ss-mobile-card-stack">
-    <a class="ss-mobile-card" data-track="blog_featured_first_class_click" href="/blog/exactly-what-happens-first-bjj-class-minute-by-minute">
-      <span>First Class</span>
-      <strong>What Happens in Your First BJJ Class</strong>
-      <small>A clear walkthrough of the first visit.</small>
-    </a>
-
-    <a class="ss-mobile-card" data-track="blog_featured_schedule_click" href="/schedule">
-      <span>Schedule</span>
-      <strong>Find the class that fits this week.</strong>
-      <small>Kids, teens, adults, and Saturday no-gi.</small>
-    </a>
-
-    <a class="ss-mobile-card" data-track="blog_featured_glossary_click" href="/bjj-glossary">
-      <span>Glossary</span>
-      <strong>Learn the words before class.</strong>
-      <small>Simple BJJ terms explained clearly.</small>
-    </a>
-
-    <a class="ss-mobile-card" data-track="blog_featured_show_up_click" href="/show-up-kit">
-      <span>Show-Up Kit</span>
-      <strong>Arrive prepared and comfortable.</strong>
-      <small>What to bring, wear, and expect.</small>
-    </a>
-  </div>
+<p class="ss-eyebrow">Best Reads</p>
+<h2>Read these before you step on the mat.</h2>
+<div class="ss-mobile-card-stack">
+<a class="ss-mobile-card" data-track="blog_featured_first_class_click" href="/blog/exactly-what-happens-first-bjj-class-minute-by-minute">
+<span>First Semi-Private Class</span>
+<strong>Your First BJJ Semi-Private Class: Minute-by-Minute</strong>
+<small>Goal Mapping, safety signals, and guided skill-based resistance.</small>
+</a>
+<a class="ss-mobile-card" data-track="blog_featured_schedule_click" href="/schedule">
+<span>Schedule</span>
+<strong>Find the semi-private class that fits this week.</strong>
+<small>Kids, teens, adults, and Saturday no-gi.</small>
+</a>
+<a class="ss-mobile-card" data-track="blog_featured_glossary_click" href="/bjj-glossary">
+<span>Glossary</span>
+<strong>Learn the words before semi-private class.</strong>
+<small>Simple BJJ terms explained clearly.</small>
+</a>
+<a class="ss-mobile-card" data-track="blog_featured_show_up_click" href="/show-up-kit">
+<span>Show-Up Kit</span>
+<strong>Arrive prepared and comfortable.</strong>
+<small>What to bring, wear, and expect.</small>
+</a>
+</div>
 </section>
-
 <section aria-labelledby="browse-topic-title" class="ss-browse-topics ss-reveal">
 <p class="ss-eyebrow">Browse by Topic</p>
 <h2 id="browse-topic-title">Find the guide that fits your question.</h2>
 <div class="ss-lane-grid">
 <a class="ss-lane-card" data-track="blog_topic_starting_click" href="/blog/tags/starting-jiu-jitsu">
 <span class="ss-lane-label">Starting Jiu-Jitsu</span>
-<strong>First class guides, beginner tips, and what to wear.</strong>
+<strong>First semi-private class guides, beginner tips, and what to wear.</strong>
 <span class="ss-lane-cta">Read Beginner Guides</span>
 </a>
 <a class="ss-lane-card" data-track="blog_topic_youth_click" href="/blog/tags/youth">
@@ -284,120 +602,28 @@
 <section class="ss-blog-latest ss-reveal" id="blog-latest-posts">
 <p class="ss-eyebrow">All Posts</p>
 <h2>Browse the full blog archive.</h2>
-<p class="ss-blog-section-intro">Use the archive to explore every Sensei Sandy BJJ guide, update, class note, and local training article.</p>
+<p class="ss-blog-section-intro">Use the archive to explore every Sensei Sandy BJJ guide, update, semi-private class note, and local training article.</p>
 <p aria-live="polite" class="ss-blog-status" id="blog-page-status"></p>
-<div aria-live="polite" class="ss-post-grid" id="blog-post-grid"></div>
+<div aria-live="polite" class="ss-post-grid bento-grid" id="blog-post-grid"></div>
 <nav aria-label="Blog pages" class="mt-4 d-flex justify-content-center">
 <div aria-label="Pagination controls" class="ss-blog-pagination d-flex justify-content-center" id="blog-pagination" role="group"></div>
 </nav>
 </section>
-<details class="ss-mobile-archive" data-track="blog_archive_open">
-<summary>View all blog posts</summary>
-<ul class="ss-mobile-archive-list">
-<li><a href="/blog/spring-fling-is-here">Spring Fling Is Here</a></li>
-<li><a href="/blog/hunter-elementary-tuesday-drop-off-bjj">How to Request Tuesday After-School Drop-Off to Sensei Sandy BJJ From Hunter Elementary</a></li>
-<li><a href="/blog/sensei-rules">Sensei Rules: 5 Core Rules for Safe, Clean Jiu Jitsu Class</a></li>
-<li><a href="/bully-proof-jiu-jitsu-tannersville-ny">Bully-Proof Jiu-Jitsu: Rules for Kids, Parents, and Schools</a></li>
-<li><a href="/blog/water-before-training-how-much-when">How Much Water to Drink Before Training (And When to Drink It)</a></li>
-<li><a href="/blog/confidence-protocol">The 2026 Confidence Protocol: 30-Day Immersion</a></li>
-<li><a href="/blog/beginner-friendly-bjj-tannersville-links">Sensei Sandy BJJ (Tannersville, NY): Calm, beginner-friendly BJJ for real life</a></li>
-<li><a href="/blog/sanda-vs-jiu-jitsu-for-mma">Sanda vs Jiu Jitsu for MMA: What Transfers, What Breaks, What to Train First</a></li>
-<li><a href="/blog/what-is-sanda-sanshou">What Is Sanda (Sanshou)? A Simple Explanation for Jiu Jitsu People</a></li>
-<li><a href="/blog/sanda-vs-jiu-jitsu">Sanda vs Jiu Jitsu: Which Should Beginners Start First?</a></li>
-<li><a href="/blog/schedule-sensei-reset-protocol">Schedule Sensei Reset: Keep Your Rhythm After a Busy Week</a></li>
-<li><a href="/blog/schedule-sensei-weekly-template">Schedule Sensei Weekly Template</a></li>
-<li><a href="/blog/things-to-do-near-hunter-ny-private-bjj-coaching">Things to Do Near Hunter, NY: Beginner-Friendly Private BJJ Coaching</a></li>
-<li><a href="/blog/kids-teens-bjj-belts-ranks-stripes-promotions">Kids and Teens BJJ Belts: Ranks, Stripes, and Promotions (Parent Guide)</a></li>
-<li><a href="/blog/sensei-mma-bjj">Sensei MMA BJJ: From MMA Games to Brazilian Jiu-Jitsu (Gi First)</a></li>
-<li><a href="/blog/bjj-36-techniques">BJJ 36 Techniques: Full List + How to Train Them</a></li>
-<li><a href="/blog/schedule-sensei">Schedule Sensei: Simple Time Management That Makes Training Stick</a></li>
-<li><a href="/blog/can-you-beat-sensei-without-a-black-belt">How Sensei Helps Newer Students Learn</a></li>
-<li><a href="/blog/bjj-black-belt-degree-time">BJJ Black Belt Degree Time: Timeline + Real Example</a></li>
-<li><a href="/blog/bjj-promotions-how-often">How Often Are BJJ Promotions? Belts, Stripes, and Real Timelines</a></li>
-<li><a href="/blog/beginners-guide-bjj-human-chess">Human Chess: Beginner's Guide to BJJ</a></li>
-<li><a href="/blog/bio-switch-nervous-system">The Bio-Switch: Command Your Nervous System</a></li>
-<li><a href="/blog/bjj-beginners-over-40-catskills">BJJ for Beginners Over 40</a></li>
-<li><a href="/blog/cairo-ny-bjj-specialist">Cairo, NY: Neighbors Drive 18 Minutes to Sensei Sandy BJJ</a></li>
-<li><a href="/blog/gain-points-system">The "Gain Points" System</a></li>
-<li><a href="/blog/growth-over-gold-bjj-mindset">Growth Over Gold: A New BJJ Mindset</a></li>
-<li><a href="/blog/kinetic-chess-onteora-park">Kinetic Chess Onteora Park</a></li>
-<li><a href="/blog/neck-cranks-bjj-longevity-guide">Neck Crank Safety and Longevity</a></li>
-<li><a href="/blog/snow-day-protocol-bjj-home-dojo">Snow Day Culture: Catskills BJJ Dojo Guide</a></li>
-<li><a href="/blog/tannersville-bjj-tuesday">Tuesday Brazilian Jiu-Jitsu in Tannersville</a></li>
-<li><a href="/blog/bioginastica-movement-no-gi">BioGinastica Movement for No-Gi</a></li>
-</ul>
-</details>
-  </main>
+</div></div></main>
 
-  <aside class="ss-blog-rail" aria-label="Start training options">
-    <div class="ss-rail-card ss-rail-primary ss-reveal">
-      <p class="ss-eyebrow">Start This Week</p>
-      <h2>Free Intro Class</h2>
-      <p>
-        Visit the room, meet Sandy, learn the safety basics, and choose the class lane that feels right.
-      </p>
-
-      <div class="ss-rail-actions">
-        <a class="ss-btn ss-btn-primary ss-btn-rich" href="/book-free-intro"><span class="ss-btn-rich__label">Reserve Free Intro</span><span aria-hidden="true" class="ss-btn-rich__icon">↗</span></a>
-        <a class="ss-btn ss-btn-soft ss-btn-rich" href="sms:+19177368649"><span class="ss-btn-rich__label">Text Sandy</span><span aria-hidden="true" class="ss-btn-rich__icon">→</span></a>
-      </div>
-    </div>
-
-    <div class="ss-rail-card ss-reveal">
-      <p class="ss-eyebrow">Choose Your Lane</p>
-      <nav class="ss-rail-lanes" aria-label="Class lanes">
-        <a href="/private-lessons">
-          <span>Private Lesson</span>
-          <strong>4:00 PM</strong>
-        </a>
-        <a href="/schedule">
-          <span>Youth Class</span>
-          <strong>5:00 PM</strong>
-        </a>
-        <a href="/adult-bjj">
-          <span>Adult Class</span>
-          <strong>6:00 PM</strong>
-        </a>
-        <a href="/schedule">
-          <span>Saturday No-Gi</span>
-          <strong>10:30 AM</strong>
-        </a>
-      </nav>
-    </div>
-
-    <div class="ss-rail-card ss-reveal">
-      <p class="ss-eyebrow">Best First Read</p>
-      <h3>What Happens in Your First BJJ Class</h3>
-      <p>
-        A calm walkthrough of arrival, safety basics, class flow, and what to expect.
-      </p>
-      <a class="ss-rail-link" href="/blog/exactly-what-happens-first-bjj-class-minute-by-minute">
-        Read first class guide
-      </a>
-    </div>
-
-    <div class="ss-rail-card ss-rail-local ss-reveal">
-      <p class="ss-eyebrow">Local Training</p>
-      <p>
-        Serving Tannersville, Hunter, Windham, Haines Falls, and Catskills families.
-      </p>
-    </div>
-  </aside>
-
-</div>
 <!--#include virtual="/partials/schedule-consistency.html" -->
 <section class="ss-final-cta py-5">
 <div class="container text-center">
 <p class="ss-eyebrow">Ready When You Are</p>
 <h2>Start calm. Train smart.</h2>
-<p class="lead mb-4" style="color: #000;">Your first visit is simple. Come in, meet Sandy, learn the basics, and see which class lane feels right.</p>
+<p class="lead mb-4" style="color: #000;">Your first visit is simple. Come in, meet Sandy, learn the basics, and see which semi-private class lane feels right.</p>
 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-<a class="btn btn-primary btn-lg px-4 ss-btn-rich" data-track="blog_final_free_intro_click" href="/book-free-intro"><span class="ss-btn-rich__label">Reserve Free Intro</span><span aria-hidden="true" class="ss-btn-rich__icon">↗</span></a>
+<a class="btn btn-primary btn-lg px-4 ss-btn-rich" data-track="blog_final_free_intro_click" href="/free-bjj-intro-tannersville-ny"><span class="ss-btn-rich__label">Book Free Goal Mapping</span><span aria-hidden="true" class="ss-btn-rich__icon">↗</span></a>
 <a class="btn btn-outline-primary btn-lg px-4 ss-btn-rich" data-track="blog_final_text_click" href="sms:+19177368649"><span class="ss-btn-rich__label">Text Sandy</span><span aria-hidden="true" class="ss-btn-rich__icon">→</span></a>
 </div>
 </div>
 </section>
-</div>
+
 <script>
 (() => {
   const BLOG_POSTS = [
@@ -853,24 +1079,32 @@
       return;
     }
 
-    slice.forEach((post) => {
+    slice.forEach((post, index) => {
       const card = document.createElement("article");
       card.className = "ss-post-card ss-reveal";
       
       const tag = post.chips?.[0] || "Blog";
       const primaryCta = post.ctas?.[0];
 
+      card.className = `ss-post-card ss-reveal`;
+      
       card.innerHTML = `
-        <p class="ss-post-card__tag">${escapeHtml(tag)}</p>
-        <h3>
-          <a href="${escapeHtml(primaryCta?.url || "#")}">
-            ${escapeHtml(post.title)}
-          </a>
-        </h3>
-        <p>${escapeHtml(post.excerpt)}</p>
-        <a class="ss-card-link" href="${escapeHtml(primaryCta?.url || "#")}">
-          Read guide
-        </a>
+        <div class="doppelrand-shell">
+          <div class="doppelrand-core">
+            <span class="premium-eyebrow">${escapeHtml(tag)}</span>
+            <h3>
+              <a href="${escapeHtml(primaryCta?.url || "#")}">
+                ${escapeHtml(post.title)}
+              </a>
+            </h3>
+            <p>${escapeHtml(post.excerpt)}</p>
+            
+            <a href="${escapeHtml(primaryCta?.url || "#")}" class="premium-btn" style="background: var(--ss-surface); border: 1px solid var(--ss-border); color: var(--ss-ink);">
+              Read Guide
+              <span class="premium-btn-icon-wrapper" style="background: rgba(0,0,0,0.04);">↗</span>
+            </a>
+          </div>
+        </div>
       `;
       frag.appendChild(card);
     });
@@ -1019,7 +1253,7 @@
 </script>
 <!-- AUTO_BREADCRUMB_START -->
 <nav aria-label="Breadcrumb" class="mb-4">
-<a href="/">Home</a> &rarr;
+<a href="/">Home</a> →
   <span>Blog</span>
 </nav>
 <!-- AUTO_BREADCRUMB_END -->
@@ -1027,7 +1261,7 @@
 <section aria-label="Start training links" class="py-4">
 <div class="container" style="max-width: 920px;">
 <div class="border rounded-3 p-3 bg-light">
-<p class="text-uppercase small text-muted mb-2">Start Training</p>
+<p class="text-uppercase small text-muted mb-2">Book Free Goal Mapping</p>
 <ul class="mb-0">
 <li><a href="/kids">Kids Jiu-Jitsu</a></li>
 <li><a href="/teen-jiu-jitsu-tannersville-ny">Teens Jiu-Jitsu</a></li>
@@ -1046,7 +1280,7 @@
 <h2 class="h5 mb-2">Keep Reading</h2>
 <ul class="mb-0">
 <li><a href="/blog/hunter-elementary-tuesday-drop-off-bjj">Hunter Elementary Tuesday After-School Drop-Off Guide</a></li>
-<li><a href="/blog/exactly-what-happens-first-bjj-class-minute-by-minute">Exactly What Happens First Bjj Class Minute By Minute</a></li>
+<li><a href="/blog/exactly-what-happens-first-bjj-class-minute-by-minute">Your First BJJ Semi-Private Class: Minute-by-Minute</a></li>
 <li><a href="/blog/sanda-vs-jiu-jitsu">Sanda Vs Jiu Jitsu</a></li>
 <li><a href="/blog/schedule-sensei-weekly-template">Schedule Sensei Weekly Template</a></li>
 <li><a href="/blog/gi-vs-no-gi-bjj-cheat-code">Gi Vs No Gi Bjj Cheat Code</a></li>
@@ -1058,10 +1292,10 @@
 </section>
 <!-- RELATED_POSTS_END -->
 <!--#include virtual="/cta-footer.html" -->
-</main>
+
 <!--#include virtual="/footer-include.html" -->
 <nav aria-label="Mobile quick actions" class="ss-mobile-sticky-cta">
-<a data-track="blog_mobile_sticky_free_intro_click" href="/book-free-intro">Free Intro</a>
+<a data-track="blog_mobile_sticky_free_intro_click" href="/free-bjj-intro-tannersville-ny">Free Intro</a>
 <a data-track="blog_mobile_sticky_text_click" href="sms:+19177368649">Text</a>
 <a data-track="blog_mobile_sticky_schedule_click" href="/schedule">Schedule</a>
 </nav>

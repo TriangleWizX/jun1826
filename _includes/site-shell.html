@@ -1,117 +1,110 @@
 <!-- SITE_SHELL_START -->
 <header class="ss-header" role="banner">
-  <div class="ss-header__utility">
-    <div class="ss-container ss-header__utility-inner">
-      <span class="ss-header__utility-location">Tannersville, NY</span>
-      <div class="ss-header__utility-links">
-        <a href="/schedule" aria-label="View schedule">Schedule</a>
-        <a href="/blog" aria-label="Read the blog">Blog</a>
-        <span>
-          <span class="ss-header__utility-contactlabel">Call</span>
-          <a href="tel:+19177368649" data-primary-phone-link data-primary-phone-aria-call="Call {phone}" aria-label="Call Sensei Sandy BJJ">(917) 736-8649</a>
-        </span>
-      </div>
-    </div>
-  </div>
-
+<div class="ss-header__utility">
+<div class="ss-container ss-header__utility-inner">
+<span class="ss-header__utility-location">Tannersville, NY</span>
+<div class="ss-header__utility-links">
+<a aria-label="View schedule" href="/schedule">Schedule</a>
+<a aria-label="Read the blog" href="/blog">Blog</a>
+<span>
+<span class="ss-header__utility-contactlabel">Call</span>
+<a aria-label="Call Sensei Sandy BJJ" data-primary-phone-aria-call="Call {phone}" data-primary-phone-link="" href="tel:+19177368649">(917) 736-8649</a>
+</span>
+</div>
+</div>
+</div>
 </header>
-
-<nav class="ss-nav navbar navbar-expand-lg" role="navigation" aria-label="Primary site navigation">
-  <div class="ss-container">
-    <a class="navbar-brand ssbjj-brand" href="/" aria-label="Sensei Sandy BJJ home">
-      <picture>
-        <source
-          srcset="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp 256w,
-                  /assets/img/brand/sensei-sandy-bjj-logo-512.webp 512w"
-          sizes="52px"
-          type="image/webp">
-        <img
-          class="ssbjj-brand__logo"
-          src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png"
-          width="52"
-          height="52"
-          alt=""
-          decoding="async">
-      </picture>
-      <span class="ssbjj-brand__name">Sensei Sandy BJJ</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      {% assign about_menu_items = "Bio|/bio;Pricing|/options-pricing;Show-Up Kit|/show-up-kit;Studio Tour|/sensei-studio;Directions|/directions;Nearby Towns|/nearby-towns;BJJ Classes|/bjj-classes-tannersville-ny" | split: ";" %}
-      <ul class="navbar-nav ms-auto gap-2">
-        <li class="nav-item dropdown d-none d-lg-block programs-dropdown about-dropdown">
-          <button
-            class="nav-link dropdown-toggle"
-            type="button"
-            id="aboutDropdown"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >About</button>
-          <ul class="dropdown-menu dropdown-menu-end programs-dropdown__menu" aria-labelledby="aboutDropdown">
-            {% for item in about_menu_items %}
-            {% assign about_parts = item | split: "|" %}
-            <li><a class="dropdown-item" href="{{ about_parts[1] }}">{{ about_parts[0] }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
-        <li class="nav-item d-lg-none">
-          <a class="nav-link" href="/programs">Programs</a>
-        </li>
-        <li class="nav-item d-lg-none">
-          <a class="nav-link" href="/kids">Kids</a>
-        </li>
-        <li class="nav-item d-lg-none">
-          <a class="nav-link" href="/teen-jiu-jitsu-tannersville-ny">Teens</a>
-        </li>
-        <li class="nav-item d-lg-none">
-          <a class="nav-link" href="/adult-bjj">Adults</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/schedule">Schedule</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/options-pricing">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/bjj-glossary">BJJ Glossary</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/student-hub">Student Hub</a>
-        </li>
-        <li class="nav-item d-lg-none">
-          <a class="nav-link" href="/private-lessons">Private Lessons</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="btn btn-primary ss-btn ss-btn--primary"
-            href="/book-free-intro"
-            data-cta-target="intro"
-            data-cta-src="nav"
-            data-cta-label="Reserve Free Intro"
-            data-event="book_free_intro_click"
-            data-location="tannersville"
-          ><span data-cta-text>Reserve Free Intro</span></a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<nav aria-label="Primary site navigation" class="ss-nav navbar navbar-expand-lg" role="navigation">
+<div class="ss-container">
+<a aria-label="Sensei Sandy BJJ home" class="navbar-brand ssbjj-brand" href="/">
+<picture>
+<source sizes="52px" srcset="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp 256w,
+                  /assets/img/brand/sensei-sandy-bjj-logo-512.webp 512w" type="image/webp"/>
+<img alt="" class="ssbjj-brand__logo" decoding="async" height="52" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" width="52"/>
+</picture>
+<span class="ssbjj-brand__name">Sensei Sandy BJJ</span>
+</a>
+<button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="offcanvas" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div aria-labelledby="mainNavLabel" class="offcanvas offcanvas-end" id="mainNav" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title visually-hidden" id="mainNavLabel">Navigation</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav ms-auto gap-2 align-items-lg-center">
+<li class="nav-item dropdown programs-dropdown">
+<button aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="programsDropdown" type="button">Programs</button>
+<ul aria-labelledby="programsDropdown" class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/programs">Programs Overview</a></li>
+<li><a class="dropdown-item" href="/kids">Kids · Ages 5–9</a></li>
+<li><a class="dropdown-item" href="/teen-jiu-jitsu-tannersville-ny">Teens · Ages 10–17</a></li>
+<li><a class="dropdown-item" href="/adult-bjj">Adults · Ages 18+</a></li>
+<li><a class="dropdown-item" href="/private-lessons">Private Coaching</a></li>
+<li><a class="dropdown-item" href="/law-enforcement-bjj">Law Enforcement</a></li>
+<li><a class="dropdown-item" href="/options-pricing">Visitor Options</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/schedule">Schedule</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/options-pricing">Pricing</a>
+</li>
+<li class="nav-item dropdown programs-dropdown">
+<button aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="startHereDropdown" type="button">Start Here</button>
+<ul aria-labelledby="startHereDropdown" class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/free-bjj-intro-tannersville-ny">Free Intro Overview</a></li>
+<li><a class="dropdown-item" href="/show-up-kit">Show-Up Kit</a></li>
+<li><a class="dropdown-item" href="/jiu-jitsu-safety-tannersville-ny">Safety Walkthrough</a></li>
+<li><a class="dropdown-item" href="/sensei-studio">Studio Tour</a></li>
+<li><a class="dropdown-item" href="/success-stories">Success Stories</a></li>
+<li><a class="dropdown-item" href="/bio">Sandy’s Bio</a></li>
+<li><a class="dropdown-item" href="/bjj-tannersville-ny-directions">Directions</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown programs-dropdown">
+<button aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="parentResourcesDropdown" type="button">Parent Resources</button>
+<ul aria-labelledby="parentResourcesDropdown" class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/parent-resources">Parent Resources Overview</a></li>
+<li><a class="dropdown-item" href="/bully-proof-jiu-jitsu-tannersville-ny">Anti-Bullying Guide</a></li>
+<li><a class="dropdown-item" href="/local-bjj-tournaments-for-parents">Local Tournament Guide</a></li>
+<li><a class="dropdown-item" href="/friday-night-fanatics">Friday Night Fanatics</a></li>
+<li><a class="dropdown-item" href="/report-card">Progress Report Card</a></li>
+<li><a class="dropdown-item" href="/nearby-towns">Nearby Towns</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown programs-dropdown">
+<button aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="communityPartnersDropdown" type="button">Community Partners</button>
+<ul aria-labelledby="communityPartnersDropdown" class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/community-partners">Partner Directory</a></li>
+<li><a class="dropdown-item" href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
+<li><a class="dropdown-item" href="/partners-wellness-pt-referrals">Wellness &amp; PT Referrals</a></li>
+<li><a class="dropdown-item" href="/school-families-jiu-jitsu">Schools and Families</a></li>
+<li><a class="dropdown-item" href="/camp-clinics">Camp Clinics</a></li>
+</ul>
+</li>
+<li class="nav-item mt-3 mt-lg-0 ms-lg-2">
+<a class="btn btn-primary ss-btn ss-btn--primary" data-cta-label="Book Free Goal Mapping" data-cta-src="nav" data-cta-target="intro" data-event="book_free_intro_click" data-location="tannersville" href="/free-bjj-intro-tannersville-ny"><span data-cta-text="">Book Free Goal Mapping</span></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </nav>
 <!-- LANE_PICKER_START -->
-<div class="ss-lanes" role="navigation" aria-label="Program quick links">
-  <div class="ss-container">
-    <div class="ss-lane-picker-chips" role="list">
-      <a class="ss-chip" role="listitem" href="/private-lessons">Private Lessons</a>
-      <a class="ss-chip" role="listitem" href="/after-school">Youth Class</a>
-      <a class="ss-chip" role="listitem" href="/adult-bjj">Adult Class</a>
-      <a class="ss-chip" role="listitem" href="/programs">All Programs</a>
-    </div>
-  </div>
+<div aria-label="Program quick links" class="ss-lanes" role="navigation">
+<div class="ss-container">
+<div class="ss-lane-picker-chips" role="list">
+<a class="ss-chip" href="/private-lessons" role="listitem">Private Lessons</a>
+<a class="ss-chip" href="/after-school" role="listitem">Youth Semi-Private Class</a>
+<a class="ss-chip" href="/adult-bjj" role="listitem">Adult Semi-Private Class</a>
+<a class="ss-chip" href="/programs" role="listitem">All Programs</a>
+</div>
+</div>
 </div>
 <!-- LANE_PICKER_END -->
-
 <script>
   (function ensureBootstrapBundle() {
     if (window.bootstrap && window.bootstrap.Collapse) return;
@@ -205,8 +198,8 @@
       if (!shouldClose()) return;
 
       // Close via Bootstrap if available, otherwise manual fallback
-      if (window.bootstrap && window.bootstrap.Collapse) {
-        window.bootstrap.Collapse.getOrCreateInstance(nav).hide();
+      if (window.bootstrap && window.bootstrap.Offcanvas) {
+        window.bootstrap.Offcanvas.getOrCreateInstance(nav).hide();
       } else {
         nav.classList.remove('show');
         if (toggler) toggler.setAttribute('aria-expanded', 'false');
@@ -250,7 +243,7 @@
 <script>
   (function loadSiteScripts() {
     const scripts = [
-      '/js/site-config.611f21.js?v=20260213',
+      '/js/site-config.26c100.js?v=20260213',
       '/js/link-utils.js?v=20260428',
       '/js/cta-config.js?v=20260217',
       '/js/content-config.js?v=20260214',

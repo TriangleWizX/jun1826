@@ -189,15 +189,15 @@
   };
 
   const resolveIntroPath = (lane) => {
-    return '/book-free-intro';
+    return '/free-bjj-intro-tannersville-ny';
   };
 
   const normalizeLegacyIntroPath = (pathname) => {
     if (!pathname) return '';
     const normalized = pathname.replace(/\/+$/, '').toLowerCase() || '/';
-    const legacyMatch = normalized.match(/^\/book-free-intro(kids|teens|adults)$/);
+    const legacyMatch = normalized.match(/^\/free-bjj-intro-tannersville-ny(kids|teens|adults)$/);
     if (!legacyMatch) return '';
-    return `/book-free-intro/${legacyMatch[1]}`;
+    return `/free-bjj-intro-tannersville-ny/${legacyMatch[1]}`;
   };
 
   const isSenseiHost = (hostname) => {
@@ -208,10 +208,10 @@
   const isBookIntroPath = (pathname) => {
     if (!pathname) return false;
     const normalized = (normalizeLegacyIntroPath(pathname) || pathname.replace(/\/+$/, '').toLowerCase()) || '/';
-    return normalized === '/book-free-intro'
-      || normalized === '/book-free-intro/kids'
-      || normalized === '/book-free-intro/teens'
-      || normalized === '/book-free-intro/adults';
+    return normalized === '/free-bjj-intro-tannersville-ny'
+      || normalized === '/free-bjj-intro-tannersville-ny/kids'
+      || normalized === '/free-bjj-intro-tannersville-ny/teens'
+      || normalized === '/free-bjj-intro-tannersville-ny/adults';
   };
 
   const buildBookIntroUrl = ({ base, loc, src, lane } = {}) => {

@@ -19,7 +19,7 @@ const hasWeeklySummary = (html) =>
   /Saturday (?:runs )?No-Gi/i.test(html);
 
 const hasStaleSplit = (html) =>
-  /Kids 4:00 PM|Teens 5:00 PM|Start with the 4:00 PM class lane|Start with the 5:00 PM class lane/i.test(html);
+  /Kids 4:00 PM|Teens 5:00 PM|Start with the 4:00 PM class lane|Start with the Class lane/i.test(html);
 
 const checkFile = async (relPath) => {
   const html = await read(relPath);

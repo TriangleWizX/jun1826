@@ -2056,9 +2056,12 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
     contain: none !important;
   }
 
-  .navbar-collapse,
-  .ss-mobile-menu,
-  .collapse.show {
+  .navbar .navbar-collapse.show,
+  .navbar .navbar-collapse.collapsing,
+  .ss-nav .navbar-collapse.show,
+  .ss-nav .navbar-collapse.collapsing,
+  .ss-mobile-menu.show,
+  .ss-mobile-menu.is-open {
     position: absolute !important;
     top: 100% !important;
     left: 0;
@@ -3713,4 +3716,3 @@ body.page-schedule .ss-mobile-actions {
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 20px rgba(17, 106, 66, 0.06) !important;
 }
-

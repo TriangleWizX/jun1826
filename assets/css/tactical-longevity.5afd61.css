@@ -1,0 +1,332 @@
+/* Tactical Longevity - Editorial Luxury & Soft Structuralism */
+
+/* Vibe & Macro-Whitespace */
+.page-tactical {
+  background-color: var(--ss-bg, #FBFAF8);
+  color: var(--ss-ink, #362B24);
+}
+
+/* Premium Typography overrides */
+.page-tactical h1, .page-tactical h2, .page-tactical h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ss-ink);
+}
+
+.page-tactical .h1, .page-tactical h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  margin-bottom: 2rem;
+}
+
+.page-tactical .h2, .page-tactical h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.page-tactical .h3, .page-tactical h3 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.page-tactical .section-tactical {
+  padding-block: 8rem;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .page-tactical .section-tactical {
+    padding-block: 5rem;
+  }
+}
+
+/* Eyebrow Tags */
+.tactical-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  font-family: 'Lexend', sans-serif;
+  background-color: rgba(54, 43, 36, 0.05);
+  color: var(--ss-ink);
+  margin-bottom: 2rem;
+}
+
+/* The Double-Bezel Architecture */
+.tactical-bezel-outer {
+  background-color: rgba(54, 43, 36, 0.03);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(54, 43, 36, 0.05);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.02);
+  transition: all 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  height: 100%;
+}
+
+.tactical-bezel-inner {
+  background-color: var(--ss-surface, #FFFFFF);
+  border-radius: calc(2rem - 0.5rem);
+  padding: 3rem 2.5rem;
+  height: 100%;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .tactical-bezel-inner {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Button-in-Button Architecture & Magnetic Hover */
+.btn-tactical {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: var(--ss-ink);
+  color: var(--ss-surface);
+  border-radius: 9999px;
+  padding: 0.75rem 0.75rem 0.75rem 2rem;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  transition: all 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  cursor: pointer;
+}
+
+.btn-tactical:hover, .btn-tactical:focus {
+  background-color: #000;
+  color: var(--ss-surface);
+  transform: scale(0.98);
+}
+
+.btn-tactical:active {
+  transform: scale(0.95);
+}
+
+.btn-tactical-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.btn-tactical:hover .btn-tactical-icon-wrap {
+  transform: translate(4px, -1px) scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-tactical-secondary {
+  background-color: var(--ss-surface);
+  color: var(--ss-ink);
+  border: 1px solid var(--ss-border);
+}
+
+.btn-tactical-secondary .btn-tactical-icon-wrap {
+  background-color: rgba(54, 43, 36, 0.05);
+}
+
+.btn-tactical-secondary:hover, .btn-tactical-secondary:focus {
+  background-color: var(--ss-surface2);
+  color: var(--ss-ink);
+}
+
+.btn-tactical-secondary:hover .btn-tactical-icon-wrap {
+  background-color: rgba(54, 43, 36, 0.1);
+}
+
+/* Asymmetrical Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-col-8 {
+  grid-column: span 8;
+}
+
+.bento-col-4 {
+  grid-column: span 4;
+}
+
+.bento-col-6 {
+  grid-column: span 6;
+}
+
+@media (max-width: 991px) {
+  .bento-col-8, .bento-col-4, .bento-col-6 {
+    grid-column: span 12;
+  }
+}
+
+/* Editorial Split */
+.editorial-split {
+  display: flex;
+  align-items: stretch;
+  gap: 4rem;
+}
+
+.editorial-split-content {
+  flex: 1;
+}
+
+.editorial-split-media {
+  flex: 1;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.editorial-split-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .editorial-split {
+    flex-direction: column;
+  }
+  .editorial-split-media {
+    min-height: 400px;
+  }
+}
+
+/* First-Visit Pattern (Semantic OL) */
+.tactical-ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  counter-reset: tactical-counter;
+}
+
+.tactical-ol li {
+  position: relative;
+  padding-left: 4rem;
+  counter-increment: tactical-counter;
+}
+
+.tactical-ol li::before {
+  content: "0" counter(tactical-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ss-slate);
+  background: var(--ss-surface2);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.tactical-ol h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0;
+}
+
+/* Scroll Interpolation */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(4rem);
+  filter: blur(8px);
+  transition: opacity 1s cubic-bezier(0.32, 0.72, 0, 1), 
+              transform 1s cubic-bezier(0.32, 0.72, 0, 1), 
+              filter 1s cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-up.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Details/Summary */
+.tactical-details {
+  background: var(--ss-surface);
+  border: 1px solid var(--ss-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.tactical-details summary {
+  padding: 1.5rem;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tactical-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.tactical-details summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--ss-slate);
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.tactical-details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.tactical-details-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--ss-muted);
+  border-top: 1px solid rgba(54, 43, 36, 0.05);
+  margin-top: -0.5rem;
+  padding-top: 1.5rem;
+}
+
+/* Z-Axis Cascade Image for Hero */
+.z-cascade-image {
+  position: relative;
+  z-index: 10;
+  border-radius: 2rem;
+  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1);
+  transform: perspective(1000px) rotateY(-2deg) rotateX(2deg);
+  transition: all 1s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.z-cascade-image:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+@media (max-width: 767px) {
+  .z-cascade-image {
+    transform: none !important;
+  }
+}

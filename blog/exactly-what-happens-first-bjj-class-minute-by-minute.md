@@ -266,7 +266,7 @@ You don’t need to “get in shape first.” Training is how you get in shape -
 
 ## Explore Next
 
-- [How to Start](/book-free-intro)
+- [How to Start](/free-bjj-intro-tannersville-ny)
 - [Adult Program](/adult-bjj)
 - [Schedule](/schedule)
 - [FAQs](/bjj-faqs)
@@ -280,6 +280,6 @@ Not as a gimmick - because coaching matters, and beginners deserve attention. If
 
 So if you’re feeling that little nudge (the one that says, “Maybe I should do this”), follow it while it’s warm.
 
-**Book your first class:** [https://senseisandy.com/book-free-intro](https://senseisandy.com/book-free-intro)
+**Book your first class:** [https://senseisandy.com/free-bjj-intro-tannersville-ny](https://senseisandy.com/free-bjj-intro-tannersville-ny)
 
 Or reply with one question you’re nervous to ask. I’ll answer it like a normal human.

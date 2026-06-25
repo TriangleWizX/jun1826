@@ -34,7 +34,7 @@ These rules stay consistent sitewide.
 4. Completes Waiver
 - Success metrics: Booking completion rate, waiver completion rate
 
-### Journey B: Nervous beginner reassurance
+### Journey B: First-time student reassurance
 - Entry: Home / Contact / Show-Up Kit
 - Proof blocks: Reviews, beginner-safe pacing, no-robot responses, simple what-to-wear instructions
 
@@ -54,7 +54,7 @@ These rules stay consistent sitewide.
 
 ### Sitemap spine
 - `/` Home
-- `/book-free-intro` Lane picker booking hub
+- `/free-bjj-intro-tannersville-ny` Lane picker booking hub
 - `/schedule` Weekly schedule grid + lane sections
 - `/options-pricing` Plans + 12-week overview
 - `/show-up-kit` No-show reducer + first day instructions

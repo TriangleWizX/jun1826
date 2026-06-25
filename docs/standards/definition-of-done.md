@@ -9,7 +9,7 @@ Docs updates are required in the same commit/PR for these change types:
   - update sitemap artifacts and `docs/runbooks/sitemaps.md` notes as needed
 - Blog posts changed or added:
   - include at least 2 contextual links to older blog posts
-  - include at least 1 link to a money page (`/schedule` or `/book-free-intro`)
+  - include at least 1 link to a money page (`/schedule` or `/free-bjj-intro-tannersville-ny`)
   - include at least 1 link to a hub page (`/blog` or guide page)
   - run and pass `npm run qa:blog:linkout:rules`
 - Pricing or schedule changed:

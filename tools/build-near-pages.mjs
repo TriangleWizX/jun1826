@@ -179,10 +179,9 @@ const renderObjections = (objections = []) =>
 
 const renderProofItems = (items = []) =>
   items
-    .slice(0, 3)
     .map(
       (item) =>
-        `<article class="mb-3">\n <h3 class="h5 mb-1">${escapeHtml(item.title)}</h3>\n <p class="mb-0">${escapeHtml(item.text)}</p>\n</article>`
+        `<details class="mb-3">\n <summary class="fw-bold h5 mb-2" style="cursor: pointer;">${escapeHtml(item.title)}</summary>\n <p class="mb-0 pb-2">${escapeHtml(item.text)}</p>\n</details>`
     )
     .join('\n');
 
@@ -218,7 +217,7 @@ const defaultDecisionCopy = (town) => ({
   ],
   trip_story: `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
   first_cadence:
-    'Start with the 5:00 PM Youth Class or the 6:00 PM Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and use adult morning options Tuesday/Thursday at 6:30 AM, Wednesday/Friday at 10:00 AM, and Saturday at 10:30 AM when mornings fit better.',
+    'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and use adult morning options Tuesday/Thursday at 6:30 AM, Wednesday/Friday at 10:00 AM, and Saturday at 10:30 AM when mornings fit better.',
   objections: [
     {
       question: `Is this realistic from ${town.town} on school nights?`,

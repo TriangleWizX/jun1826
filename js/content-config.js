@@ -267,7 +267,7 @@
     };
 
     const computedCopy = {
-      optionsHeroLead: `${scheduleSummary.timesBullet}. Tour first. Safety walkthrough. Beginner Lane. Skill-first first class. ${reschedule}.`,
+      optionsHeroLead: `${scheduleSummary.timesBullet}. Tour first. Safety walkthrough. Beginner Lane. Complete class expectations. ${reschedule}.`,
       contactValueLine: renderTemplate(templates.contactValueLine),
       quickFaqCost: renderTemplate(templates.quickFaqCost),
       microFaqMoneyBack: `${coreName}: Youth ${coreYouth} / Adult ${coreAdult} with a 30-day guarantee - if it is not a fit, we refund you.`
@@ -341,7 +341,7 @@
       });
     }
 
-    const microcopy = textOr(copy.bookMicrocopy, 'Beginner Lane, skill-first first class, reschedule by text.');
+    const microcopy = textOr(copy.bookMicrocopy, 'Beginner Lane, complete class expectations, reschedule by text.');
     if (microcopy) {
       window.CTA_CONFIG = window.CTA_CONFIG || {};
       window.CTA_CONFIG.microcopy = microcopy;

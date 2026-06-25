@@ -29,13 +29,10 @@
 
     <div class="ss-reviews-village__footer">
       <div class="ss-reviews-village__footer-actions">
-        <a class="ss-proof-chip" data-reviews-chip href="/bjj-glossary/updates">
-          <strong>Actively maintained</strong>: 141 plain-English BJJ terms for beginners
-        </a>
         <a class="btn btn-outline-primary ss-btn ss-btn--secondary"
           href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu"
           target="_blank" rel="noopener">Read all Google reviews →</a>
-        <a class="btn btn-primary ss-btn" href="/book-free-intro" data-reviews-reserve hidden>Reserve Free Intro</a>
+        <a class="btn btn-primary ss-btn" href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping data-reviews-reserve hidden>Book Free Goal Mapping</a>
       </div>
     </div>
   </div>
@@ -130,7 +127,7 @@
       home: {
         title: "Families and adults start here because the room feels calm, clear, and respectful.",
         lede: "Three quick reasons people trust the room before they book.",
-        cards: ["jessie", "kelly", "richard"],
+        cards: ["richard", "kelly", "jessie"],
         showFooterChip: false,
         showReserveCta: true
       },
@@ -161,7 +158,7 @@
       },
       private: {
         title: "Proof private lessons are worth booking.",
-        lede: "Private clients usually want value, clear session structure, and confidence before stepping into group class.",
+        lede: "Private clients usually want value, clear session structure, and confidence before stepping into Semi-Private Class.",
         cards: ["richard", "jason", "roberto"]
       },
       partnerSchools: {
@@ -197,7 +194,7 @@
 
       if (body.classList.contains("page-home") || path === "/") return "home";
       if (body.classList.contains("page-options-pricing") || path === "/options-pricing") return "pricing";
-      if (path === "/book-free-intro") return "booking";
+      if (path === "/free-bjj-intro-tannersville-ny") return "booking";
       if (
         body.classList.contains("page-partners-schools") ||
         path === "/partners-schools-parents" ||

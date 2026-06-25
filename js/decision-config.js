@@ -3,7 +3,7 @@ const CALENDLY_BOOKING_URL = 'https://calendly.com/senseisandy?background_color=
 window.SENSEI_DECISIONS = window.SENSEI_DECISIONS || {
   pricingVisibility: 'site-wide',
   primaryCtaLabel: 'Reserve Free Intro',
-  primaryCtaUrl: '/book-free-intro',
+  primaryCtaUrl: '/free-bjj-intro-tannersville-ny',
   secondaryCtaLabel: 'Text Sandy First',
   secondaryCtaUrl: 'sms:+19177368649'
 };

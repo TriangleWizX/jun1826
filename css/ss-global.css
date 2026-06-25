@@ -241,9 +241,12 @@ h1,h2,h3,h4{
     z-index: 1050;
   }
 
-  .navbar-collapse,
-  .ss-mobile-menu,
-  .collapse.show {
+  .navbar .navbar-collapse.show,
+  .navbar .navbar-collapse.collapsing,
+  .ss-main-nav .navbar-collapse.show,
+  .ss-main-nav .navbar-collapse.collapsing,
+  .ss-mobile-menu.show,
+  .ss-mobile-menu.is-open {
     position: relative;
     z-index: 1060;
     pointer-events: auto;

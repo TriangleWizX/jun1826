@@ -1551,3 +1551,67 @@
     margin-top: 2rem;
   }
 }
+
+/* Streamlined CTA Architecture Updates */
+
+.ss-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.ss-btn--ghost {
+  background: transparent !important;
+  border: 2px solid currentColor !important;
+  color: inherit;
+  font-weight: 600;
+}
+
+.ss-btn--ghost:hover,
+.ss-btn--ghost:focus {
+  background: rgba(0, 0, 0, 0.05) !important;
+  text-decoration: none;
+}
+
+.ss-cta-microcopy {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--ss-muted, #4F433C);
+  max-width: 500px;
+  margin-bottom: 16px;
+}
+
+.ss-cta-assisted {
+  margin-top: 4px;
+}
+
+.ss-cta-assisted a {
+  font-size: 0.9rem;
+  color: var(--ss-text, #1F1712);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.ss-cta-assisted a:hover {
+  color: var(--ss-primary, #116A42);
+}
+
+@media (max-width: 767.98px) {
+  .ss-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .ss-cta-microcopy {
+    text-align: center;
+    margin: 0 auto 16px auto;
+  }
+
+  .ss-cta-assisted {
+    text-align: center;
+  }
+}

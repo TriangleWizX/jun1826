@@ -39,7 +39,7 @@
       if (body.classList.contains('page-home')) return 'home';
     }
     const path = (window.location.pathname || '').toLowerCase();
-    if (path.startsWith('/book-free-intro')) return 'booking';
+    if (path.startsWith('/free-bjj-intro-tannersville-ny')) return 'booking';
     if (path.startsWith('/contact')) return 'contact';
     if (path.startsWith('/programs') || path.startsWith('/bjj-classes-tannersville-ny')) return 'programs';
     if (path.startsWith('/blog')) return 'blog';
@@ -192,10 +192,10 @@
   const isBookIntroPath = (pathname) => {
     if (!pathname) return false;
     const normalized = pathname.replace(/\/+$/, '') || '/';
-    return normalized === '/book-free-intro'
-      || normalized === '/book-free-intro/kids'
-      || normalized === '/book-free-intro/teens'
-      || normalized === '/book-free-intro/adults';
+    return normalized === '/free-bjj-intro-tannersville-ny'
+      || normalized === '/free-bjj-intro-tannersville-ny/kids'
+      || normalized === '/free-bjj-intro-tannersville-ny/teens'
+      || normalized === '/free-bjj-intro-tannersville-ny/adults';
   };
 
   const isHomeHeroCta = (el) => {
@@ -397,7 +397,7 @@
             ...payload
           });
         }
-        if (isSms && getPage() === '/book-free-intro') {
+        if (isSms && getPage() === '/free-bjj-intro-tannersville-ny') {
           sendEvent('book_text_help_click', {
             ...buildCanonicalPayload(link, href, { cta_type: 'text_help' }),
             ...payload
@@ -445,7 +445,7 @@
 
       if (
         pathFromHref === '/kids' || pathFromHref === '/teens' || pathFromHref === '/teen-jiu-jitsu-tannersville-ny' || pathFromHref === '/adult-bjj'
-        || pathFromHref === '/book-free-intro/kids' || pathFromHref === '/book-free-intro/teens' || pathFromHref === '/book-free-intro/adults'
+        || pathFromHref === '/free-bjj-intro-tannersville-ny/kids' || pathFromHref === '/free-bjj-intro-tannersville-ny/teens' || pathFromHref === '/free-bjj-intro-tannersville-ny/adults'
       ) {
         const lanePayload = {
           lane: getLane(link),
@@ -453,7 +453,7 @@
           page_path: window.location.pathname
         };
         sendEvent('lane_select', lanePayload);
-        if (getPage() === '/book-free-intro') {
+        if (getPage() === '/free-bjj-intro-tannersville-ny') {
           const lane = lanePayload.lane;
           if (lane === 'kids') sendEvent('book_kids_lane_click', lanePayload);
           if (lane === 'teens') sendEvent('book_teens_lane_click', lanePayload);
@@ -525,7 +525,7 @@
             sendEvent('friend_pass_submit', payload);
           } else if (path.startsWith('/friday-night-fanatics')) {
             sendEvent('friday_fanatics_submit', payload);
-          } else if (path.startsWith('/book-free-intro') || form.matches('form[data-booking-form]')) {
+          } else if (path.startsWith('/free-bjj-intro-tannersville-ny') || form.matches('form[data-booking-form]')) {
             sendEvent('book_intro_submit', payload);
           }
         }

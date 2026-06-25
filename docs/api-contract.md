@@ -76,7 +76,7 @@ Example payload:
   "phone": "+19175551212",
   "lane": "adults",
   "start_time": "2026-02-15T15:00:00Z",
-  "source_url": "https://senseisandy.com/book-free-intro/adults",
+  "source_url": "https://senseisandy.com/free-bjj-intro-tannersville-ny/adults",
   "utm_source": "google",
   "utm_medium": "cpc",
   "utm_campaign": "free_intro"

@@ -18,9 +18,9 @@
     || senseiCfg.canonicalIntroUrl
     || senseiCfg.calendlyUrl
     || 'https://calendly.com/senseisandy?background_color=f8f8f8&primary_color=68963c&text_color=333';
-  const primaryCtaLabel = senseiCfg.primaryCtaLabel || window.PRIMARY_CTA_LABEL || 'Reserve Free Intro';
+  const primaryCtaLabel = senseiCfg.primaryCtaLabel || window.PRIMARY_CTA_LABEL || 'Reserve Your Free Intro';
   const primaryCtaHref = senseiCfg.primaryCtaUrl || window.PRIMARY_CTA_URL || defaultIntroHref;
-  const secondaryCtaLabel = senseiCfg.secondaryCtaLabel || window.SECONDARY_CTA_LABEL || 'Text Sandy First';
+  const secondaryCtaLabel = senseiCfg.secondaryCtaLabel || window.SECONDARY_CTA_LABEL || 'Text Sandy';
   const secondaryCtaHref = senseiCfg.secondaryCtaUrl || window.SECONDARY_CTA_URL || smsHref || `sms:${defaultPhone}`;
   const directionsCtaLabel = senseiCfg.directionsLabel || 'Directions';
   const directionsCtaHref = senseiCfg.directionsHref
@@ -35,9 +35,9 @@
     call15Href: secondaryCtaHref,
     textLabel: secondaryCtaLabel,
     textHref: secondaryCtaHref,
-    scheduleLabel: 'Schedule',
+    scheduleLabel: 'View the Schedule',
     scheduleHref: '/schedule',
-    microcopy: 'Beginner Lane. Reschedule by text. Calm first class.',
+    microcopy: 'Meet Sandy, tour the room, map your goals, learn the safety basics, and begin guided partner practice at your pace.',
     phoneLabel: primaryPhone ? `Call ${primaryPhone}` : 'Call',
     phoneHref: callHref
   };
@@ -68,14 +68,14 @@
     return pathname.replace(/\/+$/, '').toLowerCase() || '/';
   };
 
-  const isRootBookIntroPath = (pathname) => normalizePath(pathname) === '/book-free-intro';
+  const isRootBookIntroPath = (pathname) => normalizePath(pathname) === '/free-bjj-intro-tannersville-ny';
 
   const isBookIntroPage = () => {
     const path = normalizePath(window.location.pathname || '/');
-    return path === '/book-free-intro'
-      || path === '/book-free-intro/kids'
-      || path === '/book-free-intro/teens'
-      || path === '/book-free-intro/adults';
+    return path === '/free-bjj-intro-tannersville-ny'
+      || path === '/free-bjj-intro-tannersville-ny/kids'
+      || path === '/free-bjj-intro-tannersville-ny/teens'
+      || path === '/free-bjj-intro-tannersville-ny/adults';
   };
 
   const isGlossaryPage = () => {
@@ -115,11 +115,11 @@
       const url = new URL(base, window.location.origin);
       const normalizedLane = window.SENSEI_LINK_UTILS?.normalizeLane?.(lane);
       if (url.hostname === window.location.hostname) {
-        url.pathname = '/book-free-intro';
+        url.pathname = '/free-bjj-intro-tannersville-ny';
       }
       const hostname = url.hostname.replace(/^www\./i, '').toLowerCase();
       const internalBookIntro = hostname === 'senseisandy.com'
-        && url.pathname.replace(/\/+$/, '').startsWith('/book-free-intro');
+        && url.pathname.replace(/\/+$/, '').startsWith('/free-bjj-intro-tannersville-ny');
       if (internalBookIntro) {
         url.search = '';
         if (normalizedLane) {

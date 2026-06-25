@@ -43,7 +43,7 @@ Scribner's Staff Reset Pass (Private)
 Start calm. Train smart.
 - Beginner-friendly Jiu-Jitsu in Tannersville
 - Room tour + safety walkthrough + Beginner Lane
-- No hard sparring required on day one
+- Skill-based resistance activities begin at the right pace from day one
 - Shift-friendly schedule windows
 - $99 for first 30 days
 - $600 for 12 weeks after intro period

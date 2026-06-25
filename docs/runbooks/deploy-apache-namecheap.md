@@ -94,7 +94,7 @@ Use for production deploys to SenseiSandy.com.
        https://senseisandy.com/js/glossary-filters.73c583.js \
        https://senseisandy.com/assets/js/ss-evidence-accordion.c9619a.js \
        https://senseisandy.com/js/voice-faq-accordion.2b6c27.js \
-       https://senseisandy.com/js/book-free-intro-bridge.15e842.js?v=20260522 \
+       https://senseisandy.com/js/free-bjj-intro-tannersville-ny-bridge.15e842.js?v=20260522 \
        https://senseisandy.com/js/videos-hub-filters.4b8913.js; do
        echo "=== $u"
        curl -sSI "$u" | sed -n '1,8p'

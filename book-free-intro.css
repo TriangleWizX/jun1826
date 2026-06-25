@@ -1,4 +1,4 @@
-/* pages/book-free-intro.css
+/* pages/free-bjj-intro-tannersville-ny.css
    Book Free Intro class landing page-specific custom styling.
    Faithfully matches book-free-intro.png design.
    Schedule: Private Lessons 4:00 PM | Kids 5:00 PM | Teens 5:00 PM | Adults 6:00 PM | Training: Mon Tue Wed Fri + Sat 10:30 AM */
@@ -1073,3 +1073,130 @@ body.ss-clockwork.page-book-intro {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ─────────────────────────────────────────
+   PROGRESSIVE UI DECISION FLOW
+   ───────────────────────────────────────── */
+.ss-progressive-booking {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, rgba(251, 250, 248, 0.98), rgba(255, 255, 255, 0.96));
+  border-top: 1px solid rgba(54, 43, 36, 0.08);
+}
+
+.pb-step {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pb-step-hidden {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+.pb-step-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.pb-card-btn {
+  background: #FFFFFF;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(54, 43, 36, 0.04);
+}
+
+.pb-card-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(54, 43, 36, 0.08);
+  border-color: var(--ss-green);
+}
+
+.pb-card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem;
+  background: var(--ss-surface2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ss-slate);
+}
+
+.pb-card-btn h3 {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--ss-ink);
+  margin-bottom: 0.5rem;
+}
+
+.pb-card-btn p {
+  color: var(--ss-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.pb-back-btn {
+  color: var(--ss-muted);
+  font-weight: 600;
+  padding: 0;
+}
+
+.pb-back-btn:hover {
+  color: var(--ss-ink);
+}
+
+/* Unified CTA Button Classes for decoupled buttons */
+.ss-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 54px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: normal;
+  text-transform: none;
+  background: linear-gradient(135deg, var(--ss-ink), #2f3a32);
+  color: #FFFFFF !important;
+  border: none;
+  box-shadow: 0 14px 28px rgba(54, 43, 36, 0.14);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  margin: 0.5rem;
+}
+
+.ss-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 30px rgba(54, 43, 36, 0.16);
+}
+
+.ss-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 54px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: normal;
+  text-transform: none;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ss-ink) !important;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  transition: transform 180ms ease, background 180ms ease;
+  margin: 0.5rem;
+}
+
+.ss-btn-secondary:hover {
+  transform: translateY(-1px);
+  background: #FFFFFF;
+}
+

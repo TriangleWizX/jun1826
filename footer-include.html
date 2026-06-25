@@ -12,7 +12,7 @@
             <div class="ss-new-brand-title">Sensei Sandy BJJ</div>
           </div>
           <p class="ss-new-brand-desc">
-            Build confidence, fitness, focus, and calm self-defense through small classes and clear coaching.
+            Sensei Sandy BJJ: Calm, technical jiu-jitsu where every student is seen, guided, and supported. You will not disappear into the room.
           </p>
           <div class="ss-new-contact-list">
             <div class="ss-new-contact-row">
@@ -31,7 +31,7 @@
             <h3>START HERE</h3>
             <ul>
               <li><a class="ss-footer-support-link" href="/bjj-classes-tannersville-ny">Choose Lane</a></li>
-              <li><a href="/book-free-intro">Reserve Free Intro</a></li>
+              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Book Free Goal Mapping</a></li>
               <li><a class="ss-footer-support-link" href="/schedule">Schedule</a></li>
               <li><a class="ss-footer-support-link" href="/show-up-kit">Show-Up Kit</a></li>
             </ul>
@@ -53,6 +53,14 @@
               <li><a href="/bio">Bio</a></li>
               <li><a class="ss-footer-support-link" href="/sensei-studio">Studio Tour</a></li>
               <li><a href="/bjj-faqs">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>FRIENDS OF THE ACADEMY</h3>
+            <ul>
+              <li><a href="/community-partners">Community Partners</a></li>
+              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
+              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
             </ul>
           </div>
         </nav>
@@ -88,7 +96,7 @@
         <a href="/blog">Blog</a>
         <a href="/nearby-towns">Nearby Towns</a>
         <a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a>
-        <a href="/directions">Directions</a>
+        <a href="/bjj-tannersville-ny-directions">Directions</a>
         <a href="/contact">Contact</a>
       </div>
     </div>
@@ -96,9 +104,57 @@
 </footer>
 
 <nav class="ss-mobile-actionbar" aria-label="Quick actions">
-  <a class="ss-action-primary" href="/book-free-intro">Reserve Free Intro</a>
+  <a class="ss-action-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Book My Free BJJ Goal Mapping</a>
   <a class="ss-action-secondary" href="sms:+19177368649">Text Sandy First</a>
 </nav>
+
+<style>
+  .ss-floating-chat {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1050;
+    background-color: var(--ss-orange, #E05500);
+    color: #fff !important;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .ss-floating-chat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  }
+  .ss-floating-chat i {
+    font-size: 1.25rem;
+  }
+  .ss-floating-chat-text span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+  @media (max-width: 767.98px) {
+    .ss-floating-chat {
+      bottom: 80px; /* Above the mobile actionbar */
+      right: 16px;
+      padding: 10px 16px;
+    }
+  }
+</style>
+<a href="sms:+19177368649" class="ss-floating-chat">
+  <i class="bi bi-chat-dots-fill"></i>
+  <div class="ss-floating-chat-text">
+    Got questions about starting?
+    <span>Text Sensei Sandy directly: (917) 736-8649</span>
+  </div>
+</a>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -183,5 +239,24 @@
         footerObserver.observe(footerCta);
       }
     })();
+
+    // Intersection Observer for scroll reveals (high-end visual design)
+    (function initScrollReveals() {
+      const reveals = document.querySelectorAll('.ss-reveal');
+      if (!reveals.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      reveals.forEach(r => observer.observe(r));
+    })();
   });
 </script>
+
+<script src="/assets/js/goal-mapping.0af8be.js" defer></script>

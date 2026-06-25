@@ -10373,9 +10373,12 @@ body {
     contain: none !important;
   }
 
-  .navbar-collapse,
-  .ss-mobile-menu,
-  .collapse.show {
+  .navbar .navbar-collapse.show,
+  .navbar .navbar-collapse.collapsing,
+  .ss-nav .navbar-collapse.show,
+  .ss-nav .navbar-collapse.collapsing,
+  .ss-mobile-menu.show,
+  .ss-mobile-menu.is-open {
     position: absolute !important;
     top: 100% !important;
     left: 0;

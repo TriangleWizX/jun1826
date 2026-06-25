@@ -140,7 +140,7 @@ A physical, social training routine where teens build focus, confidence, coordin
 
 Globally replace:
 
-“No hard sparring on day one”
+“Skill-based resistance activities begin at the right pace from day one on day one”
 “No pressure”
 “Not a fight gym”
 “Too much screen time”

@@ -138,7 +138,7 @@
         helperEl.textContent = 'Busy schedule? We’ll help you pick the easiest first day.';
         helperEl.hidden = false;
       } else if (lane === 'adult') {
-        helperEl.textContent = 'Day 1 is technical + controlled—no hard sparring.';
+        helperEl.textContent = 'Day 1 is technical + controlled—skill-based resistance activities begin at the right pace from day one.';
         helperEl.hidden = false;
       } else {
         helperEl.textContent = '';

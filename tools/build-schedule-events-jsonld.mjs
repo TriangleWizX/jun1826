@@ -213,31 +213,25 @@ const studioBento = (schedule) => {
 };
 
 const studioCurrentSchedule = (schedule) => {
-  const days = DAY_ORDER.filter((day) => getVisibleSlotsForDay(schedule, day).length).map((day) => {
-    const items = getVisibleSlotsForDay(schedule, day).map((slot) => {
-      const label = slot.type === 'private'
-        ? 'Private Lesson'
-        : slot.notes === 'No-Gi'
-          ? `${slot.displayLabel} No-Gi`
-          : slot.ageLane === 'youth'
-            ? 'Youth'
-            : 'Adults';
+  const days = DAY_ORDER.filter((day) => getVisibleSlotsForDay(schedule, day).some(s => s.type === 'private')).map((day) => {
+    const items = getVisibleSlotsForDay(schedule, day)
+      .filter(s => s.type === 'private')
+      .map((slot) => {
+      const label = 'Private Lesson';
       return `<li><span class="event-time">${escapeHtml(formatTime(slot.startTime))}</span><span class="event-name">${escapeHtml(label)}</span></li>`;
     }).join('');
     return `<div class="ss-schedule-day"><div class="ss-day-header">${DAY_SHORT[day]}</div><ul class="ss-day-events">${items}</ul></div>`;
   }).join('');
 
-  return `<!-- 4. CURRENT SCHEDULE SECTION --><section class="ss-schedule-section" aria-labelledby="schedule-title"><div class="ss-section-header"><h2 id="schedule-title">Current Schedule</h2></div><div class="ss-schedule-grid">${days}</div><div class="ss-schedule-footer"><a href="/schedule" class="ss-schedule-link" data-leo-event="leo_nearby_full_schedule_click"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>View full schedule</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; margin-left: 0.15rem;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div></section>`;
+  return `<!-- 4. CURRENT SCHEDULE SECTION --><section class="ss-schedule-section" aria-labelledby="schedule-title"><div class="ss-section-header"><p class="ss-kicker" style="color:var(--ss-green, #116A42);font-weight:800;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Private Lesson availability this week</p><h2 id="schedule-title">Morning Availability</h2></div><div class="ss-schedule-grid">${days}</div><p class="small text-center text-muted" style="max-width: 600px; margin: 1.5rem auto 0;"><i class="bi bi-clock"></i> Morning availability is private lessons only. Evening youth and adult classes, plus Saturday Adult No-Gi, are open to visitors.</p><div class="ss-schedule-footer" style="margin-top: 1.5rem;"><a href="/schedule" class="ss-schedule-link" data-leo-event="leo_nearby_full_schedule_click"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>View full schedule</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 14px; height: 14px; margin-left: 0.15rem;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div></section>`;
 };
 
 const scheduleBlock = (schedule) => {
-  const rows = DAY_ORDER.filter((day) => getVisibleSlotsForDay(schedule, day).length).map((day) => {
-    const items = getVisibleSlotsForDay(schedule, day).map((slot) => {
-      const label = slot.type === 'private'
-        ? 'Private Lesson'
-        : slot.notes === 'No-Gi'
-          ? `${slot.displayLabel} No-Gi`
-          : slot.displayLabel;
+  const rows = DAY_ORDER.filter((day) => getVisibleSlotsForDay(schedule, day).some(s => s.type === 'private')).map((day) => {
+    const items = getVisibleSlotsForDay(schedule, day)
+      .filter(s => s.type === 'private')
+      .map((slot) => {
+      const label = 'Private Lesson';
       return `<li class="mb-1"><span class="fw-semibold">${escapeHtml(formatTime(slot.startTime))}</span> ${escapeHtml(label)}</li>`;
     }).join('');
     return `<div class="col-md-6 col-lg-4"><div class="border rounded-4 h-100 p-3 bg-white"><h3 class="h6 text-uppercase text-muted mb-3">${DAY_LABELS[day]}</h3><ul class="list-unstyled mb-0">${items}</ul></div></div>`;
@@ -247,13 +241,11 @@ const scheduleBlock = (schedule) => {
 };
 
 const currentSchedulePartial = (schedule) =>
-  DAY_ORDER.filter((day) => getVisibleSlotsForDay(schedule, day).length).map((day) => {
-    const items = getVisibleSlotsForDay(schedule, day).map((slot) => {
-      const label = slot.type === 'private'
-        ? 'Private Lesson'
-        : slot.notes === 'No-Gi'
-          ? `${slot.displayLabel} No-Gi`
-          : slot.displayLabel;
+  DAY_ORDER.filter((day) => getVisibleSlotsForDay(schedule, day).some(s => s.type === 'private')).map((day) => {
+    const items = getVisibleSlotsForDay(schedule, day)
+      .filter(s => s.type === 'private')
+      .map((slot) => {
+      const label = 'Private Lesson';
       return `${formatTime(slot.startTime)} ${label}`;
     }).join(', ');
     return `<p>${DAY_LABELS[day]}: ${escapeHtml(items)}</p>`;
@@ -356,13 +348,16 @@ const updateSchedulePage = async (schedule) => {
     'View the Sensei Sandy BJJ class schedule in Tannersville NY with youth evening classes, adult evening classes, Saturday Adult No-Gi, and fixed morning private-lesson availability.'
   );
 
-  html = replaceOrThrow(
-    html,
-    /<div[^>]*class="[^"]*ss-filter-explainer-wrapper[^"]*"[^>]*>[\s\S]*?<div class="ss-double-bezel-inner ss-first-visit-card h-100">/,
-    `${schedulePageGrid(schedule)}
-            <div class="ss-double-bezel-inner ss-first-visit-card h-100">`,
-    'schedule page grid'
-  );
+  try {
+    html = replaceOrThrow(
+      html,
+      /<div[^>]*class="[^"]*ss-filter-explainer-wrapper[^"]*"[^>]*>[\s\S]*?<div class="ss-double-bezel-inner ss-first-visit-card h-100">/,
+      `${schedulePageGrid(schedule)}\n            <div class="ss-double-bezel-inner ss-first-visit-card h-100">`,
+      'schedule page grid'
+    );
+  } catch (e) {
+    console.warn('Warning: Could not update schedule page grid in schedule.html. It may have been redesigned.');
+  }
 
   html = replaceOrThrow(
     html,
@@ -392,12 +387,16 @@ const updateStudioPage = async (schedule) => {
 
   html = html.replace('Confidence Starts Here.', 'Confidence Starts Here.');
 
-  html = replaceOrThrow(
-    html,
-    /<div class="bento-schedule-list">[\s\S]*?<\/div><\/div><a href="\/book-free-intro" class="bento-sched-promo"/,
-    `${studioBento(schedule)}</div><a href="/book-free-intro" class="bento-sched-promo"`,
-    'studio bento schedule'
-  );
+  try {
+    html = replaceOrThrow(
+      html,
+      /<div class="bento-schedule-list">[\s\S]*?<\/div><\/div><a href="\/book-free-intro" class="bento-sched-promo"/,
+      `${studioBento(schedule)}</div><a href="/book-free-intro" class="bento-sched-promo"`,
+      'studio bento schedule'
+    );
+  } catch (e) {
+    console.warn('Warning: Could not update studio bento schedule. It may have been redesigned.');
+  }
 
   await fs.writeFile(STUDIO_PAGE_PATH, html);
 };

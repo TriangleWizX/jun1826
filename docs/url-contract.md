@@ -30,7 +30,7 @@ Treat it as a public interface: links, canonicals, sitemaps, and redirects must 
 8. Correct: `https://senseisandy.com/jiu-jitsu-safety-tannersville-ny` | Incorrect: `https://senseisandy.com/safety`
 9. Correct: `https://senseisandy.com/near/catskill-ny` | Incorrect: `https://senseisandy.com/catskill-ny-jiu-jitsu`
 10. Correct: `https://senseisandy.com/near/east-jewett-ny` | Incorrect: `https://senseisandy.com/near/jewett-ny`
-11. Correct sitemap loc: `https://senseisandy.com/book-free-intro` | Incorrect sitemap loc: `https://senseisandy.com/book-free-intro/`
+11. Correct sitemap loc: `https://senseisandy.com/free-bjj-intro-tannersville-ny` | Incorrect sitemap loc: `https://senseisandy.com/free-bjj-intro-tannersville-ny/`
 12. Correct canonical tag: `<link rel="canonical" href="https://senseisandy.com/programs">` | Incorrect canonical tag: `<link rel="canonical" href="https://www.senseisandy.com/programs/">`
 13. Correct OG URL: `<meta property="og:url" content="https://senseisandy.com/blog">` | Incorrect OG URL: `<meta property="og:url" content="https://senseisandy.com/blog/">`
 14. Correct OG image: `<meta property="og:image" content="https://senseisandy.com/assets/images/hero.webp">` | Incorrect OG image: `<meta property="og:image" content="/assets/images/hero.webp">`

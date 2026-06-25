@@ -12,12 +12,12 @@
 - CTA footer block: `cta-footer.html`
 - CTA row/button: `cta-row.html`, `cta-primary.html`
 - Pricing / offer summary: `pricing-module-fragment.html`, `pricing-module.html`
-- Schedule location switch (booking): `book-free-intro/index.html`
+- Schedule location switch (booking): `free-bjj-intro-tannersville-ny/index.html`
 - JS config / CTA text: `js/site-config.js`, `js/cta-config.js`
 
 ## Baseline snapshot notes (no screenshots)
 - `/` (index.html): hero CTA uses data-cta; lanes link to kids/teens/adults; footer tagline adult-only.
-- `/start-here` -> redirects to `/book-free-intro` (book-free-intro/index.html): booking hero + location switch; no offer/schedule block yet.
+- `/start-here` -> redirects to `/free-bjj-intro-tannersville-ny` (free-bjj-intro-tannersville-ny/index.html): booking hero + location switch; no offer/schedule block yet.
 - `/programs` (programs.html): lane cards + CTA; contains lane schedule copy per page.
 - `/kids` (kids.html): hero uses CTA + mentions 4pm schedule; includes pricing module fragment.
 - `/teens` (teens.html): hero uses CTA + lane schedule copy; includes pricing module fragment.
