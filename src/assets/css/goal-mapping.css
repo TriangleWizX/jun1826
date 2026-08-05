@@ -1,0 +1,37 @@
+/* Optional additions for Goal Mapping CTAs */
+
+.goal-mapping-note {
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.goal-mapping-steps {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .goal-mapping-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.goal-mapping-step {
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid rgba(104, 150, 60, 0.24);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.goal-mapping-kicker {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.goal-mapping-meta {
+  font-size: 0.9rem;
+  opacity: 0.78;
+}

@@ -1,0 +1,168 @@
+/* ================================
+   Sensei Sandy — Teal Premium Theme
+   (drop-in overrides, sitewide)
+================================== */
+
+:root{
+  /* Brand */
+  --ss-orange:#E05500;
+  --ss-teal:#289FA1;
+  --ss-cyan:#00DDE0;
+  --ss-brown:#8B522E;
+  --ss-slate:#306061;
+  --ss-ink:#362B24;
+
+  /* Neutrals */
+  --ss-bg:#FBFAF8;
+  --ss-surface:#FFFFFF;
+  --ss-surface2:#F4F1ED;
+  --ss-text:#1F1712;
+  --ss-muted:#4F433C;
+  --ss-border:rgba(54, 43, 36, 0.14);
+
+  /* System */
+  --ss-radius-1:14px;
+  --ss-radius-2:20px;
+  --ss-shadow-1: 0 10px 30px rgba(31, 23, 18, 0.08);
+  --ss-shadow-2: 0 18px 55px rgba(31, 23, 18, 0.10);
+  --ss-ring: 0 0 0 4px rgba(0, 221, 224, 0.22); /* cyan focus */
+}
+
+/* Base */
+html{scroll-behavior:smooth;}
+body{
+  background: var(--ss-bg);
+  color: var(--ss-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+p{color: var(--ss-muted); line-height: 1.65; margin-bottom: 0.9rem; max-width: 72ch;}
+h1,h2,h3,h4{color: var(--ss-text); letter-spacing: -0.015em;}
+h1{line-height:1.12; margin-bottom:0.7rem;}
+h2{line-height:1.18; margin-bottom:0.65rem;}
+a{color: var(--ss-teal); text-decoration-thickness: 2px; text-underline-offset: 3px;}
+a:hover{color: var(--ss-slate);}
+
+/* Make “big empty” feel intentional (subtle teal tint near top) */
+main, .main, .page{
+  background:
+    radial-gradient(1100px 420px at 20% -10%, rgba(40,159,161,0.14), transparent 55%),
+    radial-gradient(900px 360px at 90% 0%, rgba(0,221,224,0.10), transparent 55%);
+}
+
+/* Containers: reduce “cheap wide whitespace” on desktop */
+.container, .ss-container{
+  max-width: 1120px;
+}
+
+/* ----------------
+   Whitespace clamp
+------------------ */
+/* Sections */
+section, .section{
+  padding-top: clamp(1.6rem, 2.6vw, 3.0rem);
+  padding-bottom: clamp(1.6rem, 2.6vw, 3.0rem);
+}
+
+/* If Bootstrap spacing classes exist, tighten them sitewide */
+.py-5{padding-top:2.25rem !important; padding-bottom:2.25rem !important;}
+.pt-5{padding-top:2.25rem !important;}
+.pb-5{padding-bottom:2.25rem !important;}
+.my-5{margin-top:2.25rem !important; margin-bottom:2.25rem !important;}
+.mt-5{margin-top:2.25rem !important;}
+.mb-5{margin-bottom:2.25rem !important;}
+
+/* Tighten headings + lists */
+ul,ol{margin-bottom:0.9rem;}
+li{margin-bottom:0.35rem;}
+hr{border-color: var(--ss-border); opacity: 1;}
+
+/* ----------------
+   Surfaces (less “cheap”)
+------------------ */
+.card, .ss-card, .shadow-sm{
+  border: 1px solid var(--ss-border) !important;
+  border-radius: var(--ss-radius-2) !important;
+  background: var(--ss-surface) !important;
+  box-shadow: var(--ss-shadow-1) !important;
+}
+.card:hover, .ss-card:hover{
+  box-shadow: var(--ss-shadow-2);
+  transform: translateY(-1px);
+  transition: 180ms ease;
+}
+.bg-light, .bg-body-tertiary{
+  background: var(--ss-surface2) !important;
+}
+
+/* Images: consistent rounding */
+img, .img-fluid{
+  border-radius: var(--ss-radius-2);
+}
+
+/* ----------------
+   Buttons / CTAs (teal-first)
+------------------ */
+.btn, button, .btn-primary, .btn-outline-primary{
+  border-radius: 999px !important;
+}
+.btn{
+  padding: 0.72rem 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.btn-primary{
+  background: var(--ss-teal) !important;
+  border-color: var(--ss-teal) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 22px rgba(40,159,161,0.22);
+}
+.btn-primary:hover{
+  background: var(--ss-slate) !important;
+  border-color: var(--ss-slate) !important;
+}
+.btn-outline-primary{
+  color: var(--ss-teal) !important;
+  border-color: rgba(40,159,161,0.35) !important;
+  background: rgba(40,159,161,0.06) !important;
+}
+.btn-outline-primary:hover{
+  background: rgba(40,159,161,0.14) !important;
+}
+
+/* Small accent use (orange only for “warning/limited/price”) */
+.badge, .pill, .tag{
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font-weight: 700;
+  border: 1px solid var(--ss-border);
+  background: var(--ss-surface2);
+  color: var(--ss-text);
+}
+.badge-accent, .is-accent{
+  background: rgba(224,85,0,0.10);
+  border-color: rgba(224,85,0,0.25);
+  color: var(--ss-ink);
+}
+
+/* ----------------
+   Nav/header: more “app-like”
+------------------ */
+.navbar, header, .site-header{
+  border-bottom: 1px solid var(--ss-border);
+  background: rgba(251,250,248,0.82);
+  backdrop-filter: blur(10px);
+}
+.navbar a, header a{ text-decoration: none; }
+.navbar .btn-primary, header .btn-primary{ padding: 0.6rem 0.95rem; }
+
+/* ----------------
+   Focus / accessibility polish
+------------------ */
+:focus-visible{
+  outline: none;
+  box-shadow: var(--ss-ring);
+  border-radius: 10px;
+}

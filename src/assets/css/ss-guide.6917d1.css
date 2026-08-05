@@ -1,0 +1,467 @@
+/* Sensei Sandy BJJ Guide Pages CSS (Class Rules + How Class Works) */
+
+:root {
+  --site-header-offset: 120px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --site-header-offset: 88px;
+  }
+}
+
+/* Establish one page container */
+.ss-guide-page {
+  --guide-max-width: 1120px;
+  --guide-copy-width: 72ch;
+  --guide-border: rgba(54, 43, 36, 0.14);
+  --guide-surface: #F4F1ED;
+  --guide-radius: 16px;
+
+  width: min(var(--guide-max-width), calc(100% - 40px));
+  margin-inline: auto;
+  padding-top: var(--site-header-offset, 120px);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+/* Anchor offset so fixed header doesn't obscure target sections */
+.ss-guide-page section[id],
+.ss-guide-page [id] {
+  scroll-margin-top: calc(var(--site-header-offset, 120px) + 20px);
+}
+
+/* Reset only guide-page elements */
+.ss-guide-page,
+.ss-guide-page *,
+.ss-guide-page *::before,
+.ss-guide-page *::after {
+  box-sizing: border-box;
+}
+
+.ss-guide-page h1,
+.ss-guide-page h2,
+.ss-guide-page h3,
+.ss-guide-page p,
+.ss-guide-page ul,
+.ss-guide-page ol,
+.ss-guide-page blockquote {
+  margin-top: 0;
+}
+
+.ss-guide-page p,
+.ss-guide-page li {
+  line-height: 1.65;
+  color: var(--ss-ink, #362B24);
+}
+
+/* Standardize typography */
+.ss-guide-page h1 {
+  max-width: 18ch;
+  margin-bottom: 1.25rem;
+  font-family: 'Lexend', var(--ss-font-heading, sans-serif);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  color: var(--ss-ink, #362B24);
+}
+
+.ss-guide-page h2 {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 1rem;
+  font-family: 'Lexend', var(--ss-font-heading, sans-serif);
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ss-ink, #362B24);
+}
+
+.ss-guide-page h3 {
+  margin-bottom: 0.6rem;
+  font-family: 'Lexend', var(--ss-font-heading, sans-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ss-ink, #362B24);
+}
+
+.ss-guide-page p,
+.ss-guide-page li {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+}
+
+.ss-guide-page .guide-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ss-teal, #289FA1);
+  margin-bottom: 0.75rem;
+}
+
+.ss-guide-page .guide-intro,
+.ss-guide-page .policy-lede {
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+  color: var(--ss-muted, #4F433C);
+  max-width: var(--guide-copy-width);
+  margin-bottom: 1.5rem;
+}
+
+/* Style on-page navigation */
+.ss-guide-page .guide-nav {
+  margin-block: 2rem 3rem;
+}
+
+.ss-guide-page .guide-nav__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 0.75rem;
+}
+
+.ss-guide-page .guide-nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.ss-guide-page .guide-nav li {
+  margin: 0;
+}
+
+.ss-guide-page .guide-nav a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid var(--guide-border);
+  border-radius: 999px;
+  color: inherit;
+  background: var(--guide-surface);
+  text-decoration: none;
+  font-weight: 650;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.ss-guide-page .guide-nav a:hover,
+.ss-guide-page .guide-nav a:focus-visible {
+  background: #ffffff;
+  border-color: var(--ss-teal, #289FA1);
+  color: var(--ss-teal, #289FA1);
+}
+
+/* Style rule cards (Class Rules) */
+.ss-class-rules .rules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ss-class-rules .rule-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.4rem;
+  border: 1px solid var(--guide-border);
+  border-radius: var(--guide-radius);
+  background: var(--guide-surface);
+}
+
+.ss-class-rules .rule-card-wide {
+  grid-column: 1 / -1;
+}
+
+.ss-class-rules .rule-card__number {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 750;
+  background: #fff;
+  color: var(--ss-teal, #289FA1);
+}
+
+.ss-class-rules .rule-card__content > :last-child {
+  margin-bottom: 0;
+}
+
+.ss-class-rules .three-t-steps {
+  margin: 0.75rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+.ss-class-rules .three-t-steps li {
+  margin-bottom: 0.5rem;
+}
+
+.ss-class-rules .policy-list {
+  padding-left: 1.25rem;
+}
+
+.ss-class-rules .policy-list li {
+  margin-bottom: 0.5rem;
+}
+
+.ss-class-rules .policy-callout {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border-left: 4px solid var(--ss-teal, #289FA1);
+  border-radius: 0 var(--guide-radius) var(--guide-radius) 0;
+  border: 1px solid var(--guide-border);
+  border-left-width: 4px;
+}
+
+@media (max-width: 767px) {
+  .ss-class-rules .rules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* How Class Works styles */
+.ss-how-class-works .class-window-note {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--ss-teal, #289FA1);
+  background: var(--guide-surface);
+  border-radius: 0 var(--guide-radius) var(--guide-radius) 0;
+  font-weight: 650;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+}
+
+.ss-how-class-works .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--guide-border);
+  border-radius: var(--guide-radius);
+  -webkit-overflow-scrolling: touch;
+}
+
+.ss-how-class-works table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+}
+
+.ss-how-class-works th,
+.ss-how-class-works td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--guide-border);
+  text-align: left;
+}
+
+.ss-how-class-works th {
+  background: var(--guide-surface);
+  font-weight: 700;
+}
+
+.ss-how-class-works tfoot tr th,
+.ss-how-class-works tfoot tr td {
+  border-bottom: none;
+  font-weight: 800;
+  background: var(--guide-surface);
+}
+
+.ss-how-class-works .class-timeline {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ss-how-class-works .timeline-card {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.25rem;
+  border: 1px solid var(--guide-border);
+  border-radius: var(--guide-radius);
+  background: var(--guide-surface);
+}
+
+.ss-how-class-works .timeline-card__time {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ss-teal, #289FA1);
+}
+
+@media (max-width: 600px) {
+  .ss-how-class-works .timeline-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Guide CTA Section */
+.ss-guide-page .guide-cta-section {
+  margin-top: 4rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  background: var(--ss-slate, #306061);
+  color: #ffffff;
+  border-radius: calc(var(--guide-radius) * 1.5);
+  text-align: center;
+}
+
+.ss-guide-page .guide-cta-section h2 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.ss-guide-page .guide-cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.ss-guide-page .guide-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Scheduling Modal CSS */
+.schedule-dialog[hidden] {
+  display: none !important;
+}
+
+.schedule-dialog {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.schedule-dialog__panel {
+  position: relative;
+  width: min(640px, 100%);
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding: 2rem;
+  border-radius: 18px;
+  background: #ffffff;
+  color: var(--ss-ink, #362B24);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-dialog__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  color: var(--ss-muted, #4F433C);
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.schedule-dialog__close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ss-ink, #362B24);
+}
+
+/* Shared button utilities */
+.ss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.ss-btn-primary {
+  background: var(--ss-teal, #289FA1);
+  color: #ffffff !important;
+}
+
+.ss-btn-primary:hover,
+.ss-btn-primary:focus-visible {
+  background: var(--ss-green, #116A42);
+  color: #ffffff !important;
+}
+
+.ss-btn-secondary {
+  background: #ffffff;
+  color: var(--ss-ink, #362B24) !important;
+  border-color: var(--guide-border);
+}
+
+.ss-btn-secondary:hover,
+.ss-btn-secondary:focus-visible {
+  border-color: var(--ss-teal, #289FA1);
+  color: var(--ss-teal, #289FA1) !important;
+}
+
+/* =========================================================
+   DESKTOP NAV DROPDOWN STATE FIX
+   Keep folders closed until hover or keyboard focus
+   ========================================================= */
+
+@media screen and (min-width: 768px) {
+  .header-display-desktop .header-nav-item--folder,
+  .ss-global-nav-wrapper .ss-navbar .dropdown,
+  .ss-navbar .nav-item.dropdown {
+    position: relative;
+  }
+
+  .header-display-desktop .header-nav-item--folder .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown-menu,
+  .ss-navbar .dropdown-menu {
+    display: block !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(10px) !important;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      visibility 160ms ease !important;
+  }
+
+  .header-display-desktop .header-nav-item--folder:hover .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder:focus-within .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.show .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.open .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.is-open .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown.show .dropdown-menu,
+  .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-navbar .dropdown.show .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+

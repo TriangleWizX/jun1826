@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sensei Sandy BJJ//Private Lessons 4 PM//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:private-lessons-4pm@senseisandy.com
+DTSTAMP:20260415T120000Z
+SUMMARY:Sensei Sandy BJJ - Private Lessons Available (4:00 PM)
+DTSTART;TZID=America/New_York:20260420T160000
+DTEND;TZID=America/New_York:20260420T164500
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,FR
+LOCATION:Sensei Sandy BJJ\, 6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485
+DESCRIPTION:Arrive 10 minutes early. Weekday 4 PM private lesson openings before the 5 PM youth class and 6 PM adult class.
+END:VEVENT
+END:VCALENDAR

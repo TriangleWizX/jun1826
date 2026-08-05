@@ -1,0 +1,125 @@
+body[data-audience="adults"] {
+  --ss-scope-adults: 1;
+}
+
+body[data-audience="adults"] .hero-content-card {
+  --ss-adults-hero: 1;
+}
+
+/* Adult YAM Section */
+.adult-yam-section {
+  padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+  background: #111;
+  color: #fff;
+}
+
+.adult-yam-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.adult-yam-section h2 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: .95;
+  margin: .35rem 0 1rem;
+}
+
+.adult-yam-lede {
+  max-width: 680px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.adult-yam-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.adult-yam-card {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #1f2937;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.adult-yam-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.adult-yam-copy {
+  padding: 1rem;
+}
+
+.adult-yam-copy h3 {
+  margin: .25rem 0 .5rem;
+  font-size: 1.25rem;
+}
+
+.adult-yam-copy p {
+  color: #d1d5db;
+}
+
+.adult-yam-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .adult-yam-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Adult BJJ: YAM visibility fix */
+.adult-yam-spotlight {
+  background: #fbf7ef;
+  color: #211915;
+}
+
+.adult-yam-spotlight h2,
+.adult-yam-spotlight .section-title {
+  color: #211915;
+}
+
+.adult-yam-spotlight p,
+.adult-yam-spotlight .section-intro,
+.adult-yam-spotlight .intro-text,
+.adult-yam-spotlight .adult-yam-lede {
+  color: #4f433b;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.adult-yam-spotlight .adult-yam-card {
+  background: #1d2a3a;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.adult-yam-spotlight .adult-yam-card h3,
+.adult-yam-spotlight .adult-yam-card .yam-name,
+.adult-yam-spotlight .yam-title {
+  color: #ffd38a;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.adult-yam-spotlight .adult-yam-card p,
+.adult-yam-spotlight .adult-yam-card .adult-yam-copy {
+  color: #e8f6ff;
+  opacity: 1;
+}
+
+.adult-yam-spotlight .adult-yam-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

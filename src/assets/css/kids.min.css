@@ -1,0 +1,7 @@
+body[data-audience="kids"] {
+    --ss-scope-kids: 1;
+}
+
+body[data-audience="kids"] .hero-content-card {
+    --ss-kids-hero: 1;
+}

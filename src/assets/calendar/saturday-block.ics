@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sensei Sandy BJJ//Saturday Block//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:saturday-block@senseisandy.com
+DTSTAMP:20260213T120000Z
+SUMMARY:Sensei Sandy BJJ - Saturday Block
+DTSTART;TZID=America/New_York:20260221T103000
+DTEND;TZID=America/New_York:20260221T113000
+RRULE:FREQ=WEEKLY;BYDAY=SA
+LOCATION:Sensei Sandy BJJ\, 6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485
+DESCRIPTION:Arrive 10 minutes early. Saturday Adult No-Gi.
+END:VEVENT
+END:VCALENDAR

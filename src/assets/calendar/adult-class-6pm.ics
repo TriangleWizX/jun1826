@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sensei Sandy BJJ//Adult Class 6 PM//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:adult-class-6pm@senseisandy.com
+DTSTAMP:20260415T120000Z
+SUMMARY:Sensei Sandy BJJ - Adult Class (6:00 PM)
+DTSTART;TZID=America/New_York:20260420T180000
+DTEND;TZID=America/New_York:20260420T190000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,FR
+LOCATION:Sensei Sandy BJJ\, 6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485
+DESCRIPTION:Arrive 10 minutes early. Calm, technical adult training with beginner-friendly coaching at 6 PM.
+END:VEVENT
+END:VCALENDAR

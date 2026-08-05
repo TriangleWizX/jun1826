@@ -1,0 +1,773 @@
+/* pages/private-lessons.css
+   Private lessons page-owned styles; shared CTAs/cards live in components.css.
+   Source: assets/css/ss.css migration split. */
+
+.page-private-lessons {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(17, 106, 66, 0.11) 0, rgba(17, 106, 66, 0) 24rem),
+    radial-gradient(circle at 86% 14%, rgba(40, 159, 161, 0.10) 0, rgba(40, 159, 161, 0) 20rem),
+    linear-gradient(180deg, #fbf8f2 0%, #f6efe4 42%, #eee3d4 100%);
+  color: var(--ss-text);
+  font-family: "Lexend", sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+.page-private-lessons .ss-main {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-private-lessons .ss-main > section {
+  padding-block: clamp(3.25rem, 6vw, 5.75rem);
+}
+
+.page-private-lessons .ss-main > section .container {
+  max-width: 1180px;
+}
+
+.page-private-lessons h1,
+.page-private-lessons h2,
+.page-private-lessons h3,
+.page-private-lessons h4,
+.page-private-lessons .ss-serif-title,
+.page-private-lessons .ss-price-card-header h3,
+.page-private-lessons .ss-testimonial-text {
+  font-family: "Instrument Serif", serif;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.page-private-lessons p,
+.page-private-lessons li,
+.page-private-lessons a,
+.page-private-lessons span {
+  text-wrap: pretty;
+}
+
+.page-private-lessons h1 {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.page-private-lessons .ss-section-kicker,
+.page-private-lessons .ss-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.52rem 0.9rem;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.8);
+  color: var(--ss-green);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-private-lessons .ss-hero-eyebrow svg,
+.page-private-lessons .ss-hero-eyebrow i {
+  color: var(--ss-green);
+}
+
+.page-private-lessons .ss-hero-section {
+  padding-top: clamp(2rem, 4vw, 4rem);
+}
+
+.page-private-lessons .ss-hero-title {
+  margin: 0.75rem 0 0;
+  max-width: 9ch;
+  color: var(--ss-ink);
+  font-size: clamp(3.25rem, 7.8vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+}
+
+.page-private-lessons .ss-highlight {
+  color: var(--ss-green);
+}
+
+.page-private-lessons .ss-hero-description {
+  max-width: 36rem;
+  margin-top: 1rem;
+  color: var(--ss-muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.72;
+}
+
+.page-private-lessons .ss-hero-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.page-private-lessons .ss-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(33, 29, 24, 0.1);
+  border-radius: 1.35rem;
+  background: rgba(255, 250, 242, 0.82);
+  box-shadow: 0 12px 28px rgba(33, 29, 24, 0.06);
+}
+
+.page-private-lessons .ss-benefit-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.1);
+  color: var(--ss-green);
+  font-size: 0.95rem;
+}
+
+.page-private-lessons .ss-benefit-text {
+  min-width: 0;
+}
+
+.page-private-lessons .ss-benefit-text strong,
+.page-private-lessons .ss-benefit-text span {
+  display: block;
+}
+
+.page-private-lessons .ss-benefit-text strong {
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.page-private-lessons .ss-benefit-text span {
+  margin-top: 0.15rem;
+  color: var(--ss-muted);
+  font-size: 0.89rem;
+  line-height: 1.35;
+}
+
+.page-private-lessons .ss-hero-ctas,
+.page-private-lessons .d-flex.gap-2.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.page-private-lessons .ss-hero-ctas .btn,
+.page-private-lessons .ss-price-card .btn,
+.page-private-lessons .ss-partner .btn,
+.page-private-lessons #black-belt-concierge-private-path .btn,
+.page-private-lessons #start .btn,
+.page-private-lessons #private-lesson-faq .btn,
+.page-private-lessons section:last-of-type .btn {
+  min-height: 52px;
+  padding: 0.92rem 1.25rem;
+  border-radius: 999px;
+  font-family: "Lexend", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  transition:
+    transform 260ms cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 260ms cubic-bezier(0.32, 0.72, 0, 1),
+    background-color 260ms cubic-bezier(0.32, 0.72, 0, 1),
+    border-color 260ms cubic-bezier(0.32, 0.72, 0, 1),
+    color 260ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.page-private-lessons .ss-hero-ctas .btn:hover,
+.page-private-lessons .ss-price-card .btn:hover,
+.page-private-lessons .ss-partner .btn:hover,
+.page-private-lessons #black-belt-concierge-private-path .btn:hover,
+.page-private-lessons #start .btn:hover,
+.page-private-lessons #private-lesson-faq .btn:hover,
+.page-private-lessons section:last-of-type .btn:hover {
+  transform: translateY(-2px);
+}
+
+.page-private-lessons .ss-hero-ctas .btn:active,
+.page-private-lessons .ss-price-card .btn:active,
+.page-private-lessons .ss-partner .btn:active,
+.page-private-lessons #black-belt-concierge-private-path .btn:active,
+.page-private-lessons #start .btn:active,
+.page-private-lessons #private-lesson-faq .btn:active,
+.page-private-lessons section:last-of-type .btn:active {
+  transform: translateY(1px);
+}
+
+.page-private-lessons .btn i {
+  font-size: 1.1em;
+  line-height: 1;
+  transition: transform 260ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.page-private-lessons .btn:hover i {
+  transform: translateX(2px);
+}
+
+.page-private-lessons .btn-primary,
+.page-private-lessons .ss-btn-primary,
+.page-private-lessons .btn.btn-primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, #116a42 0%, #0d5c39 100%);
+  box-shadow: 0 18px 34px rgba(17, 106, 66, 0.18);
+  color: #fff;
+}
+
+.page-private-lessons .btn-primary:hover,
+.page-private-lessons .ss-btn-primary:hover,
+.page-private-lessons .btn.btn-primary:hover,
+.page-private-lessons .btn-primary:focus-visible,
+.page-private-lessons .ss-btn-primary:focus-visible,
+.page-private-lessons .btn.btn-primary:focus-visible {
+  border-color: transparent;
+  background: linear-gradient(135deg, #0f5f3c 0%, #0a4f31 100%);
+  color: #fff;
+}
+
+.page-private-lessons .ss-btn-outline,
+.page-private-lessons .btn-outline-primary,
+.page-private-lessons .btn.btn-outline-primary {
+  border-color: rgba(33, 29, 24, 0.16);
+  background: rgba(255, 250, 242, 0.82);
+  color: var(--ss-ink);
+  box-shadow: 0 10px 24px rgba(33, 29, 24, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.page-private-lessons .ss-btn-outline:hover,
+.page-private-lessons .btn-outline-primary:hover,
+.page-private-lessons .btn.btn-outline-primary:hover,
+.page-private-lessons .ss-btn-outline:focus-visible,
+.page-private-lessons .btn-outline-primary:focus-visible,
+.page-private-lessons .btn.btn-outline-primary:focus-visible {
+  border-color: rgba(17, 106, 66, 0.24);
+  background: rgba(255, 250, 242, 0.95);
+  color: var(--ss-green);
+}
+
+.page-private-lessons .ss-hero-content {
+  min-width: 0;
+}
+
+.page-private-lessons .ss-image-frame-container {
+  position: relative;
+  padding: 0.95rem;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 250, 242, 0.9)),
+    linear-gradient(135deg, rgba(17, 106, 66, 0.09), rgba(40, 159, 161, 0.06));
+  box-shadow: 0 30px 70px rgba(33, 29, 24, 0.12);
+}
+
+.page-private-lessons .ss-image-mask-wrapper {
+  overflow: hidden;
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.72);
+}
+
+.page-private-lessons .ss-hero-img-masked {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+.page-private-lessons .ss-leaf-deco {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.3;
+  filter: blur(0.25px);
+}
+
+.page-private-lessons .ss-leaf-top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.page-private-lessons .ss-leaf-bottom-right {
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.page-private-lessons .ss-features-section {
+  padding-top: 0;
+}
+
+.page-private-lessons .ss-features-bar {
+  margin-top: clamp(-1.6rem, -3vw, -2.2rem);
+  padding: 0.95rem;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  border-radius: 2rem;
+  background: rgba(255, 250, 242, 0.74);
+  box-shadow: 0 18px 44px rgba(33, 29, 24, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.page-private-lessons .ss-feature-inner {
+  height: 100%;
+  padding: 1.15rem 1rem;
+  border: 1px solid rgba(33, 29, 24, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 250, 242, 0.94));
+}
+
+.page-private-lessons .ss-feature-col + .ss-feature-col .ss-feature-inner {
+  border-left-color: rgba(33, 29, 24, 0.08);
+}
+
+.page-private-lessons .ss-feat-icon {
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.1);
+  color: var(--ss-green);
+  font-size: 1.05rem;
+}
+
+.page-private-lessons .ss-feat-text h3 {
+  margin-bottom: 0.28rem;
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.page-private-lessons .ss-feat-text p {
+  margin-bottom: 0;
+  color: var(--ss-muted);
+  line-height: 1.55;
+}
+
+.page-private-lessons .ss-gameplan-section .ss-serif-title,
+.page-private-lessons .ss-pricing-section .ss-serif-title,
+.page-private-lessons .ss-testimonials-section .ss-serif-title {
+  margin-bottom: 0;
+  color: var(--ss-ink);
+  font-size: clamp(2.35rem, 4.4vw, 3.8rem);
+  line-height: 0.95;
+}
+
+.page-private-lessons .ss-steps-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.page-private-lessons .ss-step-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.page-private-lessons .ss-step-number {
+  display: grid;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border: 1px solid rgba(17, 106, 66, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.9);
+  box-shadow: 0 10px 24px rgba(33, 29, 24, 0.06);
+  color: var(--ss-green);
+  font-family: "Lexend", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.page-private-lessons .ss-step-card {
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid rgba(33, 29, 24, 0.11);
+  border-radius: 1.55rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 250, 242, 0.96)),
+    linear-gradient(135deg, rgba(17, 106, 66, 0.05), rgba(40, 159, 161, 0.04));
+  box-shadow: 0 16px 38px rgba(33, 29, 24, 0.08);
+}
+
+.page-private-lessons .ss-step-card-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 0.9rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.1);
+  color: var(--ss-green);
+  font-size: 1rem;
+}
+
+.page-private-lessons .ss-step-card h4 {
+  margin-bottom: 0.35rem;
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.page-private-lessons .ss-step-card p {
+  margin-bottom: 0;
+  color: var(--ss-muted);
+  line-height: 1.6;
+}
+
+.page-private-lessons .ss-pricing-section {
+  padding-top: clamp(3rem, 5vw, 5rem);
+}
+
+.page-private-lessons .ss-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.page-private-lessons .ss-price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1.35rem;
+  grid-column: span 3;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  border-radius: 1.8rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 250, 242, 0.96)),
+    linear-gradient(135deg, rgba(17, 106, 66, 0.04), rgba(40, 159, 161, 0.03));
+  box-shadow: 0 20px 50px rgba(33, 29, 24, 0.08);
+}
+
+.page-private-lessons .ss-price-card-highlighted {
+  grid-column: span 6;
+  border-color: rgba(17, 106, 66, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 242, 0.98)),
+    linear-gradient(135deg, rgba(17, 106, 66, 0.08), rgba(40, 159, 161, 0.05));
+  box-shadow: 0 26px 60px rgba(33, 29, 24, 0.11);
+}
+
+.page-private-lessons .ss-badge-bestvalue {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.35rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.11);
+  color: var(--ss-green);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-private-lessons .ss-price-card-header h3 {
+  margin-bottom: 0.3rem;
+  color: var(--ss-ink);
+  font-size: clamp(1.8rem, 2.8vw, 2.35rem);
+  line-height: 0.98;
+}
+
+.page-private-lessons .ss-price-card-header p {
+  margin-bottom: 0;
+  color: var(--ss-muted);
+}
+
+.page-private-lessons .ss-price-table {
+  display: grid;
+  gap: 0.15rem;
+  padding-top: 0.2rem;
+}
+
+.page-private-lessons .ss-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.82rem 0;
+  border-bottom: 1px solid rgba(33, 29, 24, 0.08);
+}
+
+.page-private-lessons .ss-price-row:last-child {
+  border-bottom: 0;
+}
+
+.page-private-lessons .ss-price-row-label {
+  color: var(--ss-ink);
+  font-weight: 700;
+}
+
+.page-private-lessons .ss-price-row-amount {
+  color: var(--ss-ink);
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+
+.page-private-lessons .ss-price-row-save {
+  justify-self: end;
+  color: var(--ss-green);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.page-private-lessons .ss-price-row-save--empty {
+  opacity: 0;
+}
+
+.page-private-lessons .ss-price-card .mt-auto {
+  margin-top: auto !important;
+}
+
+.page-private-lessons .ss-price-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.page-private-lessons .ss-price-card-footer-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  align-self: flex-start;
+  margin-top: 0.3rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.11);
+  color: var(--ss-green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.page-private-lessons .ss-testimonials-section {
+  padding-top: clamp(3rem, 5vw, 5rem);
+}
+
+.page-private-lessons .ss-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.page-private-lessons .ss-testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.35rem;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  border-radius: 1.65rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 250, 242, 0.96)),
+    linear-gradient(135deg, rgba(17, 106, 66, 0.04), rgba(40, 159, 161, 0.03));
+  box-shadow: 0 18px 42px rgba(33, 29, 24, 0.08);
+}
+
+.page-private-lessons .ss-quote-icon {
+  color: rgba(17, 106, 66, 0.18);
+  font-family: "Instrument Serif", serif;
+  font-size: 4rem;
+  line-height: 0.7;
+}
+
+.page-private-lessons .ss-testimonial-text {
+  margin-bottom: 0;
+  color: var(--ss-ink);
+  font-size: clamp(1.45rem, 2.2vw, 1.8rem);
+  line-height: 1.18;
+}
+
+.page-private-lessons .ss-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: auto;
+}
+
+.page-private-lessons .ss-author-img {
+  border-radius: 999px;
+  box-shadow: 0 10px 20px rgba(33, 29, 24, 0.1);
+}
+
+.page-private-lessons .ss-author-name {
+  display: block;
+  color: var(--ss-ink);
+  font-weight: 800;
+}
+
+.page-private-lessons .ss-author-location {
+  display: block;
+  color: var(--ss-muted);
+  font-size: 0.9rem;
+}
+
+.page-private-lessons .ss-carousel-controls {
+  margin-top: 1rem;
+}
+
+.page-private-lessons .ss-carousel-arrow,
+.page-private-lessons .ss-carousel-dot {
+  border-color: rgba(33, 29, 24, 0.12);
+}
+
+.page-private-lessons .ss-accordion {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.page-private-lessons .ss-accordion__item {
+  border: 1px solid rgba(33, 29, 24, 0.11);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 250, 242, 0.96)),
+    linear-gradient(135deg, rgba(17, 106, 66, 0.03), rgba(40, 159, 161, 0.02));
+  box-shadow: 0 14px 32px rgba(33, 29, 24, 0.06);
+  overflow: clip;
+}
+
+.page-private-lessons .ss-accordion summary {
+  padding: 1rem 1.2rem;
+}
+
+.page-private-lessons .ss-accordion__title {
+  color: var(--ss-ink);
+  font-family: "Lexend", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.page-private-lessons .ss-accordion__content {
+  padding: 0 1.2rem 1.15rem;
+  color: var(--ss-muted);
+  line-height: 1.65;
+}
+
+.page-private-lessons .ss-accordion__content p:last-child {
+  margin-bottom: 0;
+}
+
+.page-private-lessons .ss-partner .mx-auto,
+.page-private-lessons #black-belt-concierge-private-path .mx-auto,
+.page-private-lessons section:last-of-type .mx-auto {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(33, 29, 24, 0.12) !important;
+  border-radius: 2rem !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 250, 242, 0.96)),
+    linear-gradient(135deg, rgba(17, 106, 66, 0.04), rgba(40, 159, 161, 0.03));
+  box-shadow: 0 24px 54px rgba(33, 29, 24, 0.08) !important;
+  backdrop-filter: blur(14px);
+}
+
+.page-private-lessons .ss-partner .mx-auto::after,
+.page-private-lessons #black-belt-concierge-private-path .mx-auto::after,
+.page-private-lessons section:last-of-type .mx-auto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.65);
+}
+
+.page-private-lessons section:last-of-type h2 {
+  color: var(--ss-ink);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.02;
+}
+
+.page-private-lessons .ss-main > section:first-of-type h1,
+.page-private-lessons .ss-main > section:first-of-type p {
+  max-width: min(100%, calc(100vw - 2rem));
+}
+
+@media (max-width: 1199.98px) {
+  .page-private-lessons .ss-price-card-highlighted {
+    grid-column: span 12;
+  }
+
+  .page-private-lessons .ss-price-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .page-private-lessons .ss-main > section:first-of-type .row {
+    display: block;
+  }
+
+  .page-private-lessons .ss-main > section:first-of-type [class*="col-"] {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .page-private-lessons .ss-steps-timeline,
+  .page-private-lessons .ss-testimonials-grid,
+  .page-private-lessons .ss-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-private-lessons .ss-price-card,
+  .page-private-lessons .ss-price-card-highlighted {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-private-lessons .ss-main > section {
+    padding-block: 2.75rem;
+  }
+
+  .page-private-lessons h1.display-4 {
+    font-size: clamp(2rem, 9.2vw, 2.65rem);
+    line-height: 1.06;
+  }
+
+  .page-private-lessons .ss-hero-title {
+    max-width: none;
+    font-size: clamp(2.85rem, 15vw, 4.1rem);
+  }
+
+  .page-private-lessons .ss-hero-ctas .btn,
+  .page-private-lessons .ss-price-card .btn,
+  .page-private-lessons .ss-partner .btn,
+  .page-private-lessons #black-belt-concierge-private-path .btn,
+  .page-private-lessons #start .btn,
+  .page-private-lessons #private-lesson-faq .btn,
+  .page-private-lessons section:last-of-type .btn {
+    width: 100%;
+  }
+
+  .page-private-lessons .ss-features-bar {
+    margin-top: 1rem;
+  }
+
+  .page-private-lessons .ss-feature-inner {
+    padding: 1rem;
+  }
+
+  .page-private-lessons .ss-hero-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .page-private-lessons .ss-price-card,
+  .page-private-lessons .ss-testimonial-card,
+  .page-private-lessons .ss-step-card {
+    padding: 1.1rem;
+  }
+
+  .page-private-lessons .ss-testimonial-text {
+    font-size: 1.35rem;
+  }
+}

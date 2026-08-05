@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+title: ""
+description: ""
+canonicalUrl: ""
+bodyClass: "ss-page"
+permalink: "/partials/conversion-rail.html"
+---
+<section class="conversion-rail py-4 bg-light border-top mt-5" aria-label="Next Steps">
+  <div class="container text-center">
+    <h2 class="h4 mb-2">Ready to start?</h2>
+    <p class="mb-3" id="cr-offer">Begin with a free 15-minute Goal Mapping visit. Tour the room, discuss your goals, and choose your first class. Normal clothes are fine. No workout required.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+      <a href="/free-bjj-intro-tannersville-ny" class="btn btn-primary" id="cr-cta">Reserve Your Free Intro</a>
+      <a href="sms:+19177368649" class="btn btn-outline-primary" id="cr-phone">Text Sandy</a>
+      <a href="/schedule" class="btn btn-outline-secondary" id="cr-schedule">View Schedule</a>
+    </div>
+    <p class="small text-muted mt-3 mb-0" id="cr-location">6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485</p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('/data/site-data.json')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.free_intro && data.free_intro.wording) {
+            // Keep the default offer wording from the component but allow it to be augmented by JSON if needed
+            // The prompt wants to pull offer definition from config.
+            // document.getElementById('cr-offer').textContent = data.free_intro.wording;
+          }
+          if (data.free_intro && data.free_intro.cta_destination) {
+            document.getElementById('cr-cta').href = data.free_intro.cta_destination;
+          }
+          if (data.location && data.location.address) {
+            document.getElementById('cr-location').textContent = data.location.address;
+          }
+          if (window.siteFacts) {
+             if (window.siteFacts.phone) {
+                 var phoneDigits = window.siteFacts.phone.replace(/[^0-9]/g, '');
+                 document.getElementById('cr-phone').href = 'sms:+1' + phoneDigits;
+             }
+          }
+        })
+        .catch(function(e) { console.error('Failed to load conversion rail data:', e); });
+    });
+  </script>
+</section>
