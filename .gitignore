@@ -1,4 +1,6 @@
 .env
+.env.*
+!.env.example
 data/*.sqlite
 data/*.sqlite-*
 data/backups/*.gz
@@ -8,15 +10,25 @@ data/backups/*.gz
 Thumbs.db
 .idea/
 .history/
+.vscode/sftp.json
 
 # Python cache
-**/__pycache__/
+/**/__pycache__/
 *.pyc
 *.pyo
 
 # Node/cache
 node_modules/
 .npm/
+.cache/
+.tmp/
+dist/
+
+# Security & Secrets
+*.pem
+*.key
+*.pfx
+*.log
 
 # Local QA and scratch outputs
 tmp/qa-*
