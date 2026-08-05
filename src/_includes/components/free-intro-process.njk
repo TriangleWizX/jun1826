@@ -1,0 +1,31 @@
+<section aria-labelledby="ss-process-title" class="ss-process-section py-5 bg-light" style="background-color: var(--ss-surface2, #F4F1ED) !important;">
+  <div class="container">
+    <div class="text-center max-w-3xl mx-auto mb-5">
+      <span class="ss-home-kicker text-uppercase font-weight-bold text-teal mb-2 d-block" style="color: var(--ss-teal, #289FA1); letter-spacing: 0.05em; font-size: 0.9rem;">How Getting Started Works</span>
+      <h2 id="ss-process-title" class="h2 font-weight-bold text-ink mb-3" style="color: var(--ss-ink, #362B24);">From First Contact to Your First Free Class</h2>
+      <p class="text-muted lead" style="font-size: 1.1rem; color: var(--ss-muted, #4F433C);">Every new student begins with a calm 15-minute Goal Mapping visit in normal clothes before stepping onto the mat.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% for step in freeIntro.steps %}
+      <div class="col-12 col-md-6 col-lg-3 d-flex">
+        <div class="ss-process-card card border-0 shadow-sm w-100 p-4 rounded-4" style="background: var(--ss-surface, #FFFFFF); border-top: 4px solid var(--ss-green, #116A42) !important;">
+          <div class="d-flex align-items-center mb-3">
+            <span class="badge rounded-circle bg-green text-white me-3 d-inline-flex align-items-center justify-content-center" style="width: 38px; height: 38px; background-color: var(--ss-green, #116A42); font-size: 1.1rem; font-weight: 700;">{{ step.stepNumber }}</span>
+            <span class="small font-weight-bold text-uppercase text-muted" style="letter-spacing: 0.05em; font-size: 0.75rem;">Step {{ step.stepNumber }}</span>
+          </div>
+          <h3 class="h5 font-weight-bold mb-2" style="color: var(--ss-ink, #362B24);">{{ step.title }}</h3>
+          <p class="small text-muted mb-0" style="color: var(--ss-muted, #4F433C); line-height: 1.5;">{{ step.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="{{ business.primaryCta.url }}" class="btn btn-primary btn-lg ss-btn" data-analytics-event="free_intro_click" data-cta-location="process_section" data-cta-label="{{ freeIntro.primaryCtaLabel }}">
+        {{ freeIntro.primaryCtaLabel }}
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+{% macro primaryCta(location="page_body", label="Reserve Free Intro", url="/free-bjj-intro-tannersville-ny#booking-flow", supportingText="Start with a 15-minute Goal Mapping appointment.") %}
+<div class="ss-cta-component d-flex flex-column align-items-start gap-2">
+  <div class="d-flex flex-wrap align-items-center gap-3">
+    <a href="{{ url }}" 
+       class="btn btn-primary btn-lg ss-btn" 
+       data-analytics-event="free_intro_click" 
+       data-cta-location="{{ location }}" 
+       data-cta-label="{{ label }}">
+      {{ label }}
+      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+    </a>
+    <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting" 
+       class="btn btn-outline-secondary btn-lg ss-btn ss-btn--ghost"
+       data-analytics-event="phone_click"
+       data-link-location="{{ location }}">
+      Text Sandy (917) 736-8649
+    </a>
+  </div>
+  {% if supportingText %}
+  <div class="small text-muted d-flex align-items-center gap-1 mt-1" style="font-size: 0.875rem;">
+    <i class="bi bi-clock-history text-teal" aria-hidden="true" style="color: var(--ss-teal, #289FA1);"></i>
+    <span>{{ supportingText }}</span>
+  </div>
+  {% endif %}
+</div>
+{% endmacro %}
