@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+title: "Free Intro Request Received | Sensei Sandy BJJ"
+description: "Thank you for requesting your Free Intro at Sensei Sandy BJJ in Tannersville, NY. Sandy will call or text you shortly."
+canonicalUrl: "/free-bjj-intro-tannersville-ny/confirmation/"
+robots: "noindex, follow"
+permalink: "/free-bjj-intro-tannersville-ny/confirmation/index.html"
+---
+
+<div class="container py-5 my-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <div class="badge rounded-circle bg-green-subtle text-green p-3 mb-4 d-inline-flex align-items-center justify-content-center" style="width: 72px; height: 72px; background: rgba(17,106,66,0.1); color: #116A42;">
+      <i class="bi bi-check-circle-fill" style="font-size: 2.5rem;" aria-hidden="true"></i>
+    </div>
+
+    <h1 class="h2 font-weight-bold text-ink mb-3" style="color: var(--ss-ink, #362B24);">We Received Your Free Intro Request!</h1>
+    <p class="lead text-muted mb-4" style="color: var(--ss-muted, #4F433C); font-size: 1.15rem;">
+      Thank you for reaching out. Sensei Sandy will text or call you shortly to confirm your 15-minute Goal Mapping appointment time.
+    </p>
+
+    <div class="card border-0 shadow-sm p-4 text-start rounded-4 mb-4" style="background: var(--ss-surface2, #F4F1ED); border-left: 5px solid var(--ss-green, #116A42) !important;">
+      <h2 class="h5 font-weight-bold mb-3" style="color: var(--ss-ink, #362B24);">What Happens Next:</h2>
+      <ol class="mb-0 ps-3" style="line-height: 1.7; color: var(--ss-muted, #4F433C);">
+        <li class="mb-2"><strong>Appointment Confirmation:</strong> Sandy will reach out via text or phone to confirm a 15-minute Goal Mapping visit.</li>
+        <li class="mb-2"><strong>Studio Visit:</strong> Come to the studio (6045 Main St, 2nd Floor) in normal street clothes. You'll tour the mats, review safety, and discuss your schedule.</li>
+        <li class="mb-0"><strong>Coached First Class:</strong> Sandy will reserve your free first class and match you with a supportive training partner.</li>
+      </ol>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      <a href="/schedule" class="btn btn-primary btn-lg ss-btn">
+        View Studio Schedule
+        <i class="bi bi-calendar-event me-1" aria-hidden="true"></i>
+      </a>
+      <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20just%20submitted%20a%20Free%20Intro%20request!" class="btn btn-outline-secondary btn-lg ss-btn ss-btn--ghost">
+        Text Sandy Directly (917) 736-8649
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Fire generate_lead event ONLY once using sessionStorage deduplication flag
+  if (!sessionStorage.getItem("ss_lead_fired")) {
+    sessionStorage.setItem("ss_lead_fired", "true");
+    if (window.SS_TRACK_EVENT) {
+      window.SS_TRACK_EVENT("generate_lead", {
+        form_id: "ss-free-intro-form",
+        form_location: "free_intro_page",
+        page_type: "confirmation"
+      });
+    }
+  }
+});
+</script>
