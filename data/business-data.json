@@ -1,0 +1,46 @@
+{
+  "business": {
+    "name": "Sensei Sandy BJJ",
+    "phone": "+1 (917) 736-8649",
+    "phone_display": "(917) 736-8649",
+    "address": "6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485",
+    "primary_cta_label": "Reserve Free Intro",
+    "primary_cta_url": "/free-bjj-intro-tannersville-ny#booking-flow",
+    "town": "Tannersville",
+    "state": "NY"
+  },
+  "pricing": {
+    "youth_annual": "$2,100",
+    "youth_annual_monthly_equiv": "$175",
+    "adult_annual": "$2,650",
+    "adult_annual_monthly_equiv": "$220",
+    "community_service_annual": "$2,250",
+    "kids_core_block": "$550",
+    "adults_core_block": "$715",
+    "community_service_block": "$600",
+    "day_pass": "$35",
+    "vacation_week_pass": "$99",
+    "ten_class_pack": "$300",
+    "twenty_class_pack": "$550",
+    "private_lesson_single": "$195",
+    "private_lesson_six_pack": "$1,050"
+  },
+  "schedule": {
+    "kids": "5:00 PM (Mon, Tue, Wed, Fri)",
+    "teens": "5:00 PM (Mon, Tue, Wed, Fri)",
+    "adults": "6:00 PM (Mon, Tue, Wed, Fri) & 10:30 AM (Sat)",
+    "private_lessons": "6:30 AM (Tue, Thu) & 10:30 AM (Wed, Fri, Sun)",
+    "saturday_nogi": "10:30 AM to 11:30 AM"
+  },
+  "campaigns": {
+    "christmas_in_july": {
+      "name": "Christmas in July",
+      "active": false,
+      "expiration": "2026-08-02",
+      "banner_text": ""
+    }
+  },
+  "eligibility": {
+    "community_service": "Available for active first responders, law enforcement, veterans, educators, and healthcare workers."
+  }
+}

@@ -1,6 +1,18 @@
 Options -MultiViews
+AcceptPathInfo Off
 RewriteEngine On
+RewriteRule ^free-youth-bjj-intro-tannersville-ny/?$ /free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny [R=301,L,NE]
 RewriteBase /
+
+# Research pages are authored as top-level source files but published at their
+# clean, indexable URLs.
+RewriteRule ^research/law-enforcement-bjj-evidence/?$ /research/law-enforcement-bjj-evidence.html [END]
+RewriteRule ^research/marietta-police-bjj-case-summary/?$ /research/marietta-police-bjj-case-summary.html [END]
+
+# Canonical BJJ classes directory.
+RewriteRule ^bjj-classes/$ https://senseisandy.com/bjj-classes [L,R=301,NE]
+RewriteRule ^bjj-classes$ /bjj-classes/index.html [L]
+RewriteRule ^bjj-classes-([A-Za-z0-9-]+-ny)(?:\.html)?/?$ https://senseisandy.com/bjj-classes/$1 [L,R=301,NE]
 
 # IndexNow key file for Ahrefs verification:
 # allow public direct access and bypass all rewrite/canonical chains.
@@ -22,20 +34,30 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC,OR]
 RewriteCond %{HTTP_HOST} ^www\.senseisandy\.com$ [NC]
 RewriteRule ^ https://senseisandy.com%{REQUEST_URI} [L,R=301,NE]
 
+# Temporary redirection to remove BJJ videos globally for now
+RewriteCond %{REQUEST_URI} ^/bjj-videos [NC,OR]
+RewriteCond %{REQUEST_URI} ^/videos [NC]
+RewriteRule ^.*$ https://www.youtube.com/@SenseiSandyBJJ [R=302,L,NC]
+
 # --- Emergency booking-link trust leak fix ---
 # --- Manual legacy exceptions (intentionally not in managed JSON) ---
 RewriteRule ^6weekgrandslam/?$ - [G,L]
-# MANUAL_LEGACY_EXCEPTION: query-conditioned booking cleanup requires RewriteCond + QSD behavior.
-# Tracked schedule booking URLs are intentionally collapsed to the clean booking page.
-# This prevents SSI query-state errors from appearing before the booking CTA.
-RewriteCond %{REQUEST_URI} ^/book-free-intro(?:\.html|/)?$ [NC]
+RewriteRule ^videos/Adult\ class\ -adults-NS5gBmsJW9I/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/Adult\ class\ -L5hh632g2h4/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-1-l5hh632g2h4 [L,R=301,NE]
+RewriteRule ^videos/Adult\ class\ -lQtzpVkiW7Y/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-2-lqtzpvkiw7y [L,R=301,NE]
+RewriteRule ^videos/Private\ coaching\ -class-5wXyFR6f2yc/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+RewriteRule ^videos/Semi-Private\ Youth\ class\ -teens-Jmr7M3E5CoM/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
+# MANUAL_LEGACY_EXCEPTION: tracked schedule variants of the legacy booking URL
+# collapse to the clean canonical page so stale query state does not surface in
+# the SSI-expanded booking shell.
 RewriteCond %{QUERY_STRING} (^|&)(day=(monday|tuesday|wednesday|friday|saturday)|lane=mixed|source_page=schedule)(&|$) [NC]
-RewriteRule ^book-free-intro(?:\.html|/)?$ https://senseisandy.com/book-free-intro [R=302,L,NE,QSD]
+RewriteRule ^book-free-intro(?:/index\.html|\.html|/)?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [R=302,L,NE,QSD]
 
 # BEGIN AUTO_LEGACY_REDIRECTS
 # Managed by: npm run redirects:sync
 # Source of truth: config/legacy-redirects.json
 # Keep this block above internal /videos rewrites so aliases win over stale files.
+RewriteRule ^6\-week\-test\-drive/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^adult/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
 RewriteRule ^adults/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
 RewriteRule ^adults\-bjj/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
@@ -69,7 +91,9 @@ RewriteRule ^cairo\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/cairo-ny [L,R
 RewriteRule ^catskill\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
 RewriteRule ^catskill\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
 RewriteRule ^checkout/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^christmas\-in\-july\-bjj\-tannersville/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^classes/?$ https://senseisandy.com/programs [L,R=301,NE]
+RewriteRule ^community\-service\-bjj/?$ https://senseisandy.com/law-enforcement-bjj [L,R=301,NE]
 RewriteRule ^contacts/?$ https://senseisandy.com/contact [L,R=301,NE]
 RewriteRule ^core\-culture/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
 RewriteRule ^curriculum/?$ https://senseisandy.com/programs [L,R=301,NE]
@@ -80,6 +104,7 @@ RewriteRule ^faqs\.html/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^free\-bjj\-intro\-tannersville\-nyadults/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
 RewriteRule ^free\-bjj\-intro\-tannersville\-nykids/?$ https://senseisandy.com/kids [L,R=301,NE]
 RewriteRule ^free\-bjj\-intro\-tannersville\-nyteens/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteRule ^free\-intro/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^glossary/collar\-tie/?$ https://senseisandy.com/bjj-glossary/collar-tie [L,R=301,NE]
 RewriteRule ^glossary/guard\-pass/?$ https://senseisandy.com/bjj-glossary/guard-pass [L,R=301,NE]
 RewriteRule ^glossary/guard\-retention/?$ https://senseisandy.com/bjj-glossary/guard-retention [L,R=301,NE]
@@ -128,6 +153,7 @@ RewriteRule ^schedules/?$ https://senseisandy.com/schedule [L,R=301,NE]
 RewriteRule ^start\-here/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^stretches/?$ https://senseisandy.com/bjj-stretches [L,R=301,NE]
 RewriteRule ^summer/?$ https://senseisandy.com/summer-jiu-jitsu-tannersville [L,R=301,NE]
+RewriteRule ^summer\-bjj\-tannersville/?$ https://senseisandy.com/summer-jiu-jitsu-tannersville [L,R=301,NE]
 RewriteRule ^tannersville\-bjj\-video\-library/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
 RewriteRule ^tannersville\-jiu\-jitsu/?$ https://senseisandy.com/programs [L,R=301,NE]
 RewriteRule ^teens/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
@@ -272,12 +298,12 @@ RewriteRule ^videos/wednesday\-GFcByYHrou4/?$ https://senseisandy.com/videos/wed
 # Hard-canonical high-value entry routes in one hop.
 RewriteCond %{THE_REQUEST} \s/+contact\.html[\s?] [NC]
 RewriteRule ^contact(?:\.html)?/?$ https://senseisandy.com/contact [L,R=301,NE,NC]
-RewriteRule ^book-free-intro(?:/index\.html|\.html|/)?$ /free-bjj-intro-tannersville-ny/index.html [L,NC]
+RewriteRule ^book-free-intro(?:/index\.html|\.html|/)?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE,NC]
 RewriteRule ^directions(?:/index\.html|\.html|/)?$ /bjj-tannersville-ny-directions.html [L,NC]
-RewriteRule ^book-free-intro/kids(?:/index\.html|/)?$ https://senseisandy.com/kids [L,R=301,NE,NC]
-RewriteRule ^book-free-intro/teens(?:/index\.html|/)?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE,NC]
-RewriteRule ^book-free-intro/adults(?:/index\.html|/)?$ https://senseisandy.com/adult-bjj [L,R=301,NE,NC]
-RewriteRule ^adults(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/kids(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny/ [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/teens(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/teens-tannersville-ny/ [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/adults(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE,NC]
+RewriteRule ^adults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE,NC]
 RewriteRule ^options(?:\.html)?/?$ https://senseisandy.com/options-pricing [L,R=301,NE,NC]
 RewriteRule ^tannersville-bjj-video-library(?:\.html)?/?$ https://senseisandy.com/bjj-videos [L,R=301,NE,NC]
 RewriteRule ^partners-schools-parents(?:\.html)?/?$ https://senseisandy.com/school-families-jiu-jitsu [L,R=301,NE,NC]
@@ -294,9 +320,9 @@ RewriteRule ^api/?$ /api/index.php [L,QSA]
 RewriteRule ^api/(.*)$ /api/index.php?path=$1 [L,QSA]
 
 # Canonicalize legacy booking slugs that missed the lane slash.
-RewriteRule ^book-free-introkids(?:\.html)?/?$ https://senseisandy.com/kids [L,R=301,NE,NC]
-RewriteRule ^book-free-introteens(?:\.html)?/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE,NC]
-RewriteRule ^book-free-introadults(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE,NC]
+RewriteRule ^book-free-introkids(?:\.html)?/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny/ [L,R=301,NE,NC]
+RewriteRule ^book-free-introteens(?:\.html)?/?$ https://senseisandy.com/bjj-classes/teens-tannersville-ny/ [L,R=301,NE,NC]
+RewriteRule ^book-free-introadults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE,NC]
 
 # Tracked schedule booking URLs are intentionally collapsed to the clean booking page.
 # This prevents SSI query-state errors from appearing before the booking CTA.
@@ -345,18 +371,20 @@ RewriteRule ^videos/(.+)$ https://senseisandy.com${tolower:%{REQUEST_URI}} [L,R=
 # Redirect legacy start URLs to the canonical booking page (all variants, incl. trailing slash).
 RewriteCond %{REQUEST_URI} ^/(?:how-to-start|start-here)/index\.html?$ [NC]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteRule ^ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteCond %{REQUEST_URI} ^/(?:how-to-start|start-here)(?:\.html)?/?$ [NC]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^ https://senseisandy.com/book-free-intro [L,R=301,NE]
+RewriteRule ^ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 
 # Redirect legacy slugs to new keyworded URLs (single hop, includes .html + trailing slash).
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^adult(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^adult(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^classes(?:\.html)?/?$ https://senseisandy.com/programs [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^antibully(?:\.html)?/?$ https://senseisandy.com/bully-proof-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^sensei-bully(?:\.html)?/?$ https://senseisandy.com/bully-proof-jiu-jitsu-tannersville-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^blackbelttrack(?:\.html)?/?$ https://senseisandy.com/black-belt-track [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
@@ -377,57 +405,68 @@ RewriteRule ^blog/onteora-park-summer-activities/index\.html?$ https://senseisan
 # --- Near legacy aliases ---
 # Consolidate scaled near-town pages into canonical hubs/pages.
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
+RewriteRule ^near/?$ https://senseisandy.com/bjj-classes/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^cairo-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/near/cairo-ny [L,R=301,NE]
+RewriteRule ^near/([a-zA-Z0-9-]+-ny)(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/$1/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^catskill-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
+RewriteRule ^cairo-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/cairo-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^hunter-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteRule ^catskill-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/catskill-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/tannersville-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes-tannersville-ny [L,R=301,NE]
+RewriteRule ^hunter-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/hunter-mountain(?:/index\.html|/)?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteRule ^near/tannersville-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/tannersville-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/windham-mountain(?:/index\.html|/)?$ https://senseisandy.com/near/windham-ny [L,R=301,NE]
+RewriteRule ^near/hunter-mountain(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/esopus-creek-phoenicia(?:/index\.html|/)?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
+RewriteRule ^near/windham-mountain(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/windham-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/kaaterskill-falls(?:/index\.html|/)?$ https://senseisandy.com/near/palenville-ny [L,R=301,NE]
+RewriteRule ^near/esopus-creek-phoenicia(?:/index\.html|/)?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/kaaterskill-falls(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/palenville-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/jewett-east-jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/elka-park-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/jewett-east-jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/onteora-park-ny(?:/index\.html|/)?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/elka-park-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/lanesville-ny(?:/index\.html|/)?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
+RewriteRule ^near/onteora-park-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/lexington-ny(?:/index\.html|/)?$ https://senseisandy.com/near/windham-ny [L,R=301,NE]
+RewriteRule ^near/lanesville-ny(?:/index\.html|/)?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/saugerties-ny(?:/index\.html|/)?$ https://senseisandy.com/near/woodstock-ny [L,R=301,NE]
+RewriteRule ^near/lexington-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/windham-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^checkout(?:\.html)?/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^near/saugerties-ny(?:/index\.html|/)?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
+RewriteCond %{IS_SUBREQ} !=true
+RewriteRule ^checkout(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE]
 
 
 # --- Static assets / security headers / caching ---
+# Backward compatibility for stale fingerprinted goal-mapping JS URL.
+RewriteRule ^assets/js/goal-mapping\.279f11\.js$ /assets/js/goal-mapping.0af8be.js [R=301,L,NE]
+
+# Backward compatibility for stale JavaScript fingerprints reported by AHREFS.
+RewriteRule ^assets/js/ss-evidence-accordion\.414b2d\.js$ /assets/js/ss-evidence-accordion.js [R=301,L,NE]
+RewriteRule ^assets/js/ss-evidence-registry\.f17525\.js$ /assets/js/ss-evidence-registry.js [R=301,L,NE]
+RewriteRule ^js/calendly-intent\.43eb2c\.js$ /js/calendly-intent.js [R=301,L,NE]
+RewriteRule ^js/progressive-booking\.80e941\.js$ /js/progressive-booking.js [R=301,L,NE]
+RewriteRule ^js/site-config\.3b354e\.js$ /js/site-config.js [R=301,L,NE]
+RewriteRule ^js/site-ux\.715e33\.js$ /js/site-ux.js [R=301,L,NE]
+
 # Backward compatibility for legacy fingerprinted image URLs (e.g. name.abc123.webp).
 # If the unhashed file exists, internally serve it instead of returning 404.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/assets/images/$1.$2 -f
 RewriteRule ^assets/images/(.+)\.[0-9a-f]{6}\.(png|jpe?g|webp|gif|svg|avif)$ /assets/images/$1.$2 [L,NC]
 
-# Normalize /home to the canonical root in one hop.
-RewriteRule ^home/?$ / [R=301,L,NE]
 
 # Add explicit noindex headers for template/redirect pages.
 SetEnvIf Request_URI "^/near/template(?:\.html)?$" NOINDEX=1
 SetEnvIf Request_URI "^/curriculum(?:/index\.html|/)?$" NOINDEX=1
 SetEnvIfNoCase Request_URI "^/checkout(?:/|\.html)?$" NOINDEX_TXN=1
 SetEnvIfNoCase Request_URI "^/waiver(?:\.html)?/?$" FORCE_INDEX=1
-SetEnvIfNoCase Request_URI "^/blog/confidence-protocol(?:/index\.html|/)?$" FORCE_INDEX=1
+Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
 <IfModule mod_headers.c>
   Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX
   Header always set X-Robots-Tag "noindex, nofollow, noarchive" env=NOINDEX_TXN
@@ -488,7 +527,7 @@ RewriteRule ^assets/css/styles\.css$ /assets/css/styles.min.css [L]
 
 # Allow SSI fragments (nav/footer) to render inside .html pages
 Options +IncludesNOEXEC
-SSIErrorMsg ""
+SSIErrorMsg "<!-- SSI error -->"
 DirectoryIndex index.html
 AddType text/html .html
 AddOutputFilter INCLUDES .html
@@ -511,8 +550,6 @@ RewriteRule ^openingpress(?:\.html)?/?$ https://senseisandy.com/archive/openingp
 
 # 1c. Catch known aliases with optional .html in one hop to final canonical targets.
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^mountain-pass(?:\.html)?/?$ https://senseisandy.com/book-free-intro [L,R=301,NE]
-RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^bio(?:\.html|/)$ https://senseisandy.com/bio [L,R=301,NE,NC]
 
 # 2. Redirect explicit .html requests (except index) to clean URLs on the canonical host
@@ -528,7 +565,7 @@ RewriteRule ^blog/gi-vs-no-gi-bjj-cheat-code/$ https://senseisandy.com/blog/gi-v
 
 # --- Trailing slash / index / .html normalization ---
 # 4a. Remove trailing slash for all non-root URLs (canonical: no trailing slash).
-RewriteCond %{REQUEST_URI} !^/book-free-intro/$ [NC,OR]
+RewriteCond %{REQUEST_URI} !^/free-bjj-intro-tannersville-ny/$ [NC,OR]
 RewriteCond %{QUERY_STRING} !(^|&)src=[^&]+(&|$) [NC]
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_URI} ^/(.+)/$
@@ -544,8 +581,15 @@ RewriteRule ^(.+)$ $1/index.html [L]
 # 4c. Harden explicit clean route for top-level hunter comparison page.
 # This avoids edge-case misses when generic .html fallback is bypassed upstream.
 RewriteRule ^martial-arts-hunter-ny/?$ /martial-arts-hunter-ny.html [L]
-RewriteRule ^teen-jiu-jitsu-tannersville-ny/?$ /teen-jiu-jitsu-tannersville-ny.html [L]
+RewriteRule ^bjj-classes-teens-tannersville-ny/?$ /bjj-classes-teens-tannersville-ny.html [L]
 RewriteRule ^jiu-jitsu-safety-tannersville-ny/?$ /jiu-jitsu-safety-tannersville-ny.html [L]
+RewriteRule ^how-class-works/?$ /how-class-works.html [L]
+
+
+# Legacy route redirects to new keyword-optimized routes
+RewriteRule ^adult-bjj(?:/|\.html)?$ /bjj-classes-adults-tannersville-ny [R=301,L]
+RewriteRule ^kids(?:/|\.html)?$ /bjj-classes-kids-tannersville-ny [R=301,L]
+RewriteRule ^teen-jiu-jitsu-tannersville-ny(?:/|\.html)?$ /bjj-classes-teens-tannersville-ny [R=301,L]
 
 # 5. Internally serve .html files when clean URLs are requested
 RewriteCond %{REQUEST_FILENAME} !-d
