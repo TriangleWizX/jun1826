@@ -1,0 +1,123 @@
+{
+  "primary": [
+    {
+      "id": "free-intro",
+      "name": "Free Intro",
+      "category": "Primary Entry",
+      "audience": "All First-Timers",
+      "description": "Start with a 15-minute Goal Mapping visit and studio tour, followed by your first coached class free.",
+      "priceRef": "free",
+      "displayPrice": "Free",
+      "primaryCta": {
+        "label": "Reserve Free Intro",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "goal-mapping",
+      "name": "Goal Mapping Appointment",
+      "category": "Orientation",
+      "audience": "All First-Timers",
+      "description": "15-minute 1-on-1 studio tour, safety walkthrough, and schedule matching before your first class.",
+      "priceRef": "free",
+      "displayPrice": "Included",
+      "primaryCta": {
+        "label": "Reserve Your Free Intro",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "core-culture-youth",
+      "name": "Youth Core Culture",
+      "category": "Core Membership",
+      "audience": "Youth (5–17)",
+      "term": "12 weeks",
+      "priceRef": "coreCulture.youth",
+      "displayPrice": "$550",
+      "included": [
+        "Up to 36 coached classes",
+        "Three recurring weekly class reservations",
+        "Partner matching & progress tracking",
+        "Academy gi for first-time Core enrollment"
+      ],
+      "guarantee": "Minimum 4 classes during first 30 days for 30-day fit policy",
+      "primaryCta": {
+        "label": "Reserve Free Intro",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "core-culture-adult",
+      "name": "Adult Core Culture",
+      "category": "Core Membership",
+      "audience": "Adults (18+)",
+      "term": "12 weeks",
+      "priceRef": "coreCulture.adult",
+      "displayPrice": "$715",
+      "included": [
+        "Up to 36 coached classes",
+        "Three recurring weekly class reservations",
+        "Saturday Adult No-Gi inclusion",
+        "Academy gi for first-time Core enrollment"
+      ],
+      "guarantee": "Minimum 4 classes during first 30 days for 30-day fit policy",
+      "primaryCta": {
+        "label": "Reserve Free Intro",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    }
+  ],
+  "secondary": [
+    {
+      "id": "day-pass",
+      "name": "Day Pass",
+      "category": "Visitor",
+      "audience": "Short-term Visitors",
+      "priceRef": "visitorAndSupport.dayPass",
+      "displayPrice": "$35",
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "vacation-week",
+      "name": "Vacation Week Pass",
+      "category": "Visitor",
+      "audience": "Vacationing Families",
+      "priceRef": "visitorAndSupport.vacationWeek",
+      "displayPrice": "$99",
+      "active": true,
+      "public": true
+    }
+  ],
+  "support": [
+    {
+      "id": "private-coaching",
+      "name": "Private Coaching",
+      "category": "1-on-1 Instruction",
+      "audience": "Students wanting 1-on-1 progress",
+      "priceRef": "visitorAndSupport.privateCoachingSingle",
+      "displayPrice": "$195",
+      "active": true,
+      "public": true
+    }
+  ],
+  "qualified": [
+    {
+      "id": "annual-track",
+      "name": "Annual Track",
+      "category": "Long-Term Membership",
+      "audience": "Dedicated Students",
+      "priceRef": "annualTrack",
+      "active": true,
+      "public": true
+    }
+  ]
+}

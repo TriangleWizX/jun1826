@@ -1,0 +1,31 @@
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<title>{{ title | default("Sensei Sandy Jiu-Jitsu | Sandy Jiu Jitsu Tannersville NY") }}</title>
+<meta content="{{ description | default("Sensei Sandy Jiu-Jitsu (Sandy Jiu Jitsu) offers calm, beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Free Intro for kids, teens, and adults.") }}" name="description"/>
+<link href="https://senseisandy.com{{ canonicalUrl or page.url }}" rel="canonical"/>
+<meta content="https://senseisandy.com{{ canonicalUrl or page.url }}" property="og:url"/>
+<meta content="Sensei Sandy BJJ" property="og:site_name"/>
+<meta content="{{ socialImage | default("https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp") }}" property="og:image"/>
+<meta content="{{ robots | default("index, follow") }}" name="robots"/>
+<meta content="{{ ogTitle or title or "Confidence, Strength & Skill | Sensei Sandy BJJ" }}" property="og:title"/>
+<meta content="{{ ogDescription or description or "Beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Build confidence, strength, and skill through calm, guided BJJ classes for kids and adults." }}" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="{{ twitterTitle or title or "Confidence, Strength & Skill | Sensei Sandy BJJ" }}" name="twitter:title"/>
+<meta content="{{ twitterDescription or description or "Beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Build confidence, strength, and skill through calm, guided BJJ classes for kids and adults." }}" name="twitter:description"/>
+<meta content="{{ socialImage | default("https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp") }}" name="twitter:image"/>
+<meta content="https://senseisandy.com{{ canonicalUrl or page.url }}" name="twitter:url"/>
+<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/routes/site-ac8bb117999c.min.04d2f2.css">
+<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
+<link rel="stylesheet" href="/assets/css/fonts.e11440.css">
+<link rel="stylesheet" href="/assets/css/site-shell.211bb7.css">
+{% if extraCss %}
+  {% for cssFile in extraCss %}
+    <link rel="stylesheet" href="{{ cssFile }}">
+  {% endfor %}
+{% endif %}

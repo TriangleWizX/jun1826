@@ -1,0 +1,96 @@
+{
+  "currency": "USD",
+  "currencySymbol": "$",
+  "coreCulture": {
+    "youth": {
+      "name": "Youth Core Culture",
+      "price": 550,
+      "displayPrice": "$550",
+      "term": "12 weeks",
+      "active": true
+    },
+    "adult": {
+      "name": "Adult Core Culture",
+      "price": 715,
+      "displayPrice": "$715",
+      "term": "12 weeks",
+      "active": true
+    },
+    "communityServiceAdult": {
+      "name": "Community-Service Adult Core Culture",
+      "price": 600,
+      "displayPrice": "$600",
+      "term": "12 weeks",
+      "eligibility": "First responders, law enforcement, veterans, educators, healthcare workers",
+      "active": true
+    }
+  },
+  "annualTrack": {
+    "youth": {
+      "name": "Youth Annual Track",
+      "price": 2100,
+      "displayPrice": "$2,100",
+      "term": "12 months",
+      "active": true
+    },
+    "adult": {
+      "name": "Adult Annual Track",
+      "price": 2650,
+      "displayPrice": "$2,650",
+      "term": "12 months",
+      "active": true
+    },
+    "communityServiceAdult": {
+      "name": "Community-Service Adult Annual Track",
+      "price": 2250,
+      "displayPrice": "$2,250",
+      "term": "12 months",
+      "eligibility": "First responders, law enforcement, veterans, educators, healthcare workers",
+      "active": true
+    }
+  },
+  "visitorAndSupport": {
+    "dayPass": {
+      "name": "Single Day Pass",
+      "price": 35,
+      "displayPrice": "$35",
+      "term": "1 session",
+      "active": true
+    },
+    "vacationWeek": {
+      "name": "Vacation Week Pass",
+      "price": 99,
+      "displayPrice": "$99",
+      "term": "1 week",
+      "active": true
+    },
+    "tenPack": {
+      "name": "10-Class Pack",
+      "price": 300,
+      "displayPrice": "$300",
+      "term": "10 classes",
+      "active": true
+    },
+    "twentyPack": {
+      "name": "20-Class Pack",
+      "price": 550,
+      "displayPrice": "$550",
+      "term": "20 classes",
+      "active": true
+    },
+    "privateCoachingSingle": {
+      "name": "Private Session",
+      "price": 195,
+      "displayPrice": "$195",
+      "term": "1 session (60 mins)",
+      "active": true
+    },
+    "privateCoachingSixPack": {
+      "name": "Private Coaching 6-Pack",
+      "price": 1050,
+      "displayPrice": "$1,050",
+      "term": "6 sessions",
+      "active": true
+    }
+  }
+}

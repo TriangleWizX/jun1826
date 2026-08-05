@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "python3 -m http.server 8000",
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "node -e \"import('fs').then(fs => fs.rmSync('dist', {recursive: true, force: true}))\"",
     "validate": "npm run qa:schedule && npm run qa:links:static && npm run qa:links:existence && npm run qa:doctype",
     "validate:html": "node scripts/qa-doctype.mjs",
     "validate:links": "node scripts/qa-links-static.mjs",
@@ -94,6 +96,7 @@
     "headroom-ai": "^0.22.4"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
     "bootstrap": "5.3.3",
     "purgecss": "6.0.0",
     "sass": "1.77.8"

@@ -1,0 +1,7 @@
+{% if promotions.promotions[0].active %}
+<div class="ss-campaign-announcement-bar text-center py-2 px-3" style="background: #0B4F32; color: #FFFFFF !important; font-size: 0.95rem; font-family: 'Lexend', sans-serif; border-bottom: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <a href="{{ promotions.promotions[0].ctaUrl }}" style="color: #FFFFFF !important; text-decoration: underline;">
+    {{ promotions.promotions[0].name }} — {{ promotions.promotions[0].ctaText }} →
+  </a>
+</div>
+{% endif %}

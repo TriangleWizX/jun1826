@@ -1,0 +1,186 @@
+<footer class="ss-new-site-footer" aria-labelledby="ss-footer-title">
+  <div class="ss-new-footer-shell">
+    <div class="ss-new-footer-inner">
+      <h2 id="ss-footer-title" class="visually-hidden">Sensei Sandy BJJ footer</h2>
+
+      <div class="ss-new-footer-top">
+        <div class="ss-new-footer-brand" data-footer-group="primary">
+          <div class="ss-new-brand-row">
+            <img class="ss-new-brand-logo" src="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp" alt="Sensei Sandy BJJ logo" width="60" height="60" decoding="async">
+            <div class="ss-new-brand-title">{{ business.publicName }}</div>
+          </div>
+          <p class="ss-new-brand-desc">Calm, technical Jiu-Jitsu where every student is seen, guided, and supported. You will not disappear into the room.</p>
+          <div class="ss-new-contact-list">
+            <div class="ss-new-contact-row">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <span>{{ business.address.street }}, {{ business.address.studio }}<br>{{ business.address.city }}, {{ business.address.state }} {{ business.address.postalCode }}</span>
+            </div>
+            <div class="ss-new-contact-row">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              <span>Kids &bull; Teens &bull; Adults</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="ss-new-footer-nav" aria-label="Footer navigation">
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Start Here</h3>
+            <ul>
+              <li><a href="/nearby-towns">Choose Lane</a></li>
+              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Free Intro</a></li>
+              <li><a href="/schedule">Schedule</a></li>
+              <li><a href="/holiday-schedule">Holiday Schedule</a></li>
+              <li><a href="/show-up-kit">Show-Up Kit</a></li>
+              <li><a href="/core-culture-parent-guide">Parent Guide</a></li>
+              <li><a href="/bjj-tannersville-ny-directions">Directions</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Programs</h3>
+            <ul>
+              <li><a href="/bjj-classes">All BJJ Classes</a></li>
+              <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
+              <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
+              <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
+              <li><a href="/summer-jiu-jitsu-tannersville">Summer BJJ</a></li>
+              <li><a href="/private-lessons">Private Lessons</a></li>
+              <li><a href="/sensei-bully">Bully Proof</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Studio</h3>
+            <ul>
+              <li><a href="/how-class-works">How Class Works</a></li>
+              <li><a href="/success-stories">Success Stories</a></li>
+              <li><a href="/options-pricing">Pricing</a></li>
+              <li><a href="/bio">Bio</a></li>
+              <li><a href="/sensei-studio">Studio Tour</a></li>
+              <li><a href="/bjj-faqs">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Nearby</h3>
+            <ul>
+              <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
+              <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
+              <li><a href="/bjj-classes/windham-ny">Windham</a></li>
+              <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
+              <li><a href="/nearby-towns">Woodstock</a></li>
+              <li><a href="/nearby-towns">Nearby Towns</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Learn</h3>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/bjj-glossary">BJJ Glossary</a></li>
+              <li><a href="/bjj-stretches">BJJ Stretches</a></li>
+              <li><a href="{{ socialProfiles.youtube }}">BJJ Videos</a></li>
+              <li><a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Friends of the Academy</h3>
+            <ul>
+              <li><a href="/community-partners">Community Partners</a></li>
+              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
+              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="ss-new-footer-bottom">
+        <div>&copy; 2026 {{ business.publicName }}. All Rights Reserved.</div>
+        <div class="ss-new-footer-contacts">
+          <a href="{{ contact.phoneHref }}" class="ss-new-footer-contact-link">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            Call
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="{{ contact.smsHref }}" class="ss-new-footer-contact-link">
+            <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            Text
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="mailto:{{ contact.email }}" class="ss-new-footer-contact-link">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="ss-mobile-actionbar" aria-label="Quick actions">
+  <a class="ss-action-primary" href="{{ contact.smsHref }}" data-cta-target="text" data-cta-placement="sticky_mobile">Questions about starting? Text Sandy {{ contact.phoneFormatted }}</a>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollBar = document.getElementById("scrollProgress");
+    if (scrollBar) {
+      let progressFrame = 0;
+      const updateProgress = function () {
+        const winScroll = window.scrollY || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? winScroll / height : 0;
+        scrollBar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrolled)) + ")";
+        progressFrame = 0;
+      };
+      const requestProgress = function () {
+        if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
+      };
+      window.addEventListener("scroll", requestProgress, { passive: true });
+      window.addEventListener("resize", requestProgress, { passive: true });
+      requestProgress();
+    }
+
+    (function initStickyVisibility() {
+      const heroCta = document.querySelector([
+        '.home-hero .primary-cta',
+        '.hero-card .btn-white-secondary',
+        '.hero-card .btn-green-primary',
+        '.ss-hero .primary-cta',
+        '#hero-cta'
+      ].join(', '));
+      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
+      const stickyCta = document.querySelector('.ss-mobile-actionbar');
+
+      if (!stickyCta) return;
+      stickyCta.classList.add("is-observed");
+      if (!("IntersectionObserver" in window)) {
+        stickyCta.classList.add("is-visible");
+        return;
+      }
+
+      let heroOut = !heroCta;
+      let footerIn = false;
+      const updateVisibility = function () {
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+      };
+
+      if (heroCta) {
+        const heroObserver = new IntersectionObserver(function (entries) {
+          heroOut = !entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroCta);
+      }
+
+      if (footerCta) {
+        const footerObserver = new IntersectionObserver(function (entries) {
+          footerIn = entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.05 });
+        footerObserver.observe(footerCta);
+      }
+
+      updateVisibility();
+    })();
+  });
+</script>
+
+<script src="/assets/js/goal-mapping.5b78ff.js" defer></script>

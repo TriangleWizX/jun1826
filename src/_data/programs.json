@@ -1,0 +1,53 @@
+{
+  "kids": {
+    "id": "kids",
+    "name": "Kids Jiu-Jitsu",
+    "shortName": "Kids",
+    "ageRange": "5–9",
+    "canonicalUrl": "/bjj-classes/kids-tannersville-ny/",
+    "scheduleSummary": "5:00 PM (Monday, Tuesday, Wednesday, Friday)",
+    "priceRef": "coreCulture.youth",
+    "displayPrice": "$550",
+    "term": "12 weeks",
+    "primaryCta": {
+      "label": "Reserve Free Intro",
+      "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+    },
+    "active": true,
+    "indexable": true
+  },
+  "teens": {
+    "id": "teens",
+    "name": "Teens Jiu-Jitsu",
+    "shortName": "Teens",
+    "ageRange": "10–17",
+    "canonicalUrl": "/bjj-classes/teens-tannersville-ny/",
+    "scheduleSummary": "5:00 PM (Monday, Tuesday, Wednesday, Friday)",
+    "priceRef": "coreCulture.youth",
+    "displayPrice": "$550",
+    "term": "12 weeks",
+    "primaryCta": {
+      "label": "Reserve Free Intro",
+      "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+    },
+    "active": true,
+    "indexable": true
+  },
+  "adults": {
+    "id": "adults",
+    "name": "Adult Jiu-Jitsu",
+    "shortName": "Adults",
+    "ageRange": "18+",
+    "canonicalUrl": "/bjj-classes/adults-tannersville-ny/",
+    "scheduleSummary": "6:00 PM (Mon, Tue, Wed, Fri) & 10:30 AM (Saturday No-Gi)",
+    "priceRef": "coreCulture.adult",
+    "displayPrice": "$715",
+    "term": "12 weeks",
+    "primaryCta": {
+      "label": "Reserve Free Intro",
+      "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+    },
+    "active": true,
+    "indexable": true
+  }
+}

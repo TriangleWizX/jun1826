@@ -1,0 +1,279 @@
+---
+layout: layouts/base.njk
+title: ""
+description: ""
+canonicalUrl: ""
+bodyClass: "ss-page"
+permalink: "/_includes/lineage.html"
+---
+<style>
+  /* Lineage Flow */
+  .ss-lineage-flow-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    .ss-lineage-flow-box {
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: center;
+    }
+  }
+
+  .ss-lineage-node-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    max-width: 125px;
+    min-width: 110px;
+  }
+
+  .ss-lineage-avatar-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #C4A484; /* Soft gold/tan border */
+    padding: 2px;
+    background: #ffffff;
+    margin-bottom: 0.65rem;
+    box-shadow: 0 4px 10px rgba(54, 43, 36, 0.05);
+  }
+
+  .ss-lineage-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ss-lineage-node-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--ss-ink);
+    margin: 0;
+  }
+
+  .ss-lineage-node-name a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .ss-lineage-node-name a:hover {
+    text-decoration: underline;
+  }
+
+  .ss-lineage-node-desc {
+    font-size: 0.72rem;
+    color: var(--ss-muted);
+    margin: 0.15rem 0 0 0;
+    line-height: 1.35;
+  }
+
+  .ss-lineage-credit {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--ss-muted);
+    text-align: center;
+  }
+
+  .ss-lineage-node-connector {
+    flex-grow: 1;
+    height: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 2rem;
+    min-width: 20px;
+  }
+
+  @media (max-width: 767px) {
+    .ss-lineage-node-connector {
+      width: 1px;
+      height: 24px;
+      margin: 0;
+    }
+  }
+
+  .ss-lineage-connector-line-box {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(139, 82, 46, 0.2);
+  }
+
+  .ss-lineage-connector-line-box.dashed {
+    border-top: 1px dashed rgba(139, 82, 46, 0.3);
+    background: none;
+    height: 0;
+  }
+
+  @media (max-width: 767px) {
+    .ss-lineage-connector-line-box {
+      width: 1px;
+      height: 100%;
+    }
+    .ss-lineage-connector-line-box.dashed {
+      border-left: 1px dashed rgba(139, 82, 46, 0.3);
+      border-top: none;
+      width: 0;
+      height: 100%;
+    }
+  }
+
+  .ss-lineage-connector-arrow-box {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid rgba(139, 82, 46, 0.5);
+  }
+
+  @media (max-width: 767px) {
+    .ss-lineage-connector-arrow-box {
+      bottom: 0;
+      right: auto;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid rgba(139, 82, 46, 0.5);
+    }
+  }
+</style>
+
+<div aria-label="Sensei Sandy Brazilian Jiu-Jitsu lineage flow" class="ss-lineage-flow-box">
+  <!-- Node 0a: Kanō Jigorō -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Kanō Jigorō" class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-jigoro-kano-portrait.b587a7.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#jigoro-kano">Kanō Jigorō</a></h3>
+    <p class="ss-lineage-node-desc">Founder of Judo</p>
+  </div>
+  <!-- Connector 0a -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 0b: Mitsuyo Maeda -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Mitsuyo Maeda" class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-mitsuyo-maeda-portrait.c8c2ab.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#mitsuyo-maeda">Mitsuyo Maeda</a></h3>
+    <p class="ss-lineage-node-desc">Judo Expert &amp; Pioneer</p>
+  </div>
+  <!-- Connector 0b -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 1: Carlos Gracie -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Carlos Gracie Sr." class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-carlos-gracie-sr-portrait.fbf38d.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#carlos-gracie">Carlos Gracie</a></h3>
+    <p class="ss-lineage-node-desc">Founder of Gracie Jiu-Jitsu</p>
+  </div>
+  <!-- Connector 1 -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 2: Hélio Gracie -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Hélio Gracie" class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-helio-gracie-portrait.f9aa0e.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#helio-gracie">Hélio Gracie</a></h3>
+    <p class="ss-lineage-node-desc">Co-Founder of BJJ</p>
+  </div>
+  <!-- Connector 2 -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 3: Carlos Gracie Jr. -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Carlos Gracie Jr." class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-carlos-gracie-jr-portrait.2a9f64.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#carlos-gracie-jr">Carlos Gracie Jr.</a></h3>
+    <p class="ss-lineage-node-desc">Gracie Barra &amp; IBJJF Founder</p>
+  </div>
+  <!-- Connector 3 -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 4: Roberto Maia -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Roberto Maia" class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-roberto-maia-portrait.e3a5cb.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#roberto-maia">Roberto Maia</a></h3>
+    <p class="ss-lineage-node-desc">Boston BJJ Pioneer</p>
+  </div>
+  <!-- Connector 4 -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 5: Kenny Florian -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Kenny Florian" class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-kenny-florian-portrait.b84c46.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#kenny-florian">Kenny Florian</a></h3>
+    <p class="ss-lineage-node-desc">UFC Veteran &amp; Black Belt</p>
+  </div>
+  <!-- Connector 5 -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 6: Josh Griffiths -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Josh Griffiths" class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-josh-griffiths-portrait.c2c302.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#josh-griffiths">Josh Griffiths</a></h3>
+    <p class="ss-lineage-node-desc">Clockwork BJJ Head Coach</p>
+  </div>
+  <!-- Connector 6 -->
+  <div aria-hidden="true" class="ss-lineage-node-connector">
+    <div class="ss-lineage-connector-line-box"></div>
+    <div class="ss-lineage-connector-arrow-box"></div>
+  </div>
+  
+  <!-- Node 7: Sandy Jose Nunez -->
+  <div class="ss-lineage-node-box">
+    <div class="ss-lineage-avatar-container">
+      <img alt="Sandy Jose Nunez" class="ss-lineage-avatar-img" decoding="async" height="76" loading="lazy" src="/assets/img/lineage/lineage-sandy-jose-nunez-portrait.8070ab.webp" width="76"/>
+    </div>
+    <h3 class="ss-lineage-node-name"><a href="/sensei-jiu-jitsu#sandy-jose-nunez">Sandy Jose Nunez</a></h3>
+    <p class="ss-lineage-node-desc">Instructor at Sensei Sandy BJJ</p>
+  </div>
+</div>
+
+<p class="ss-lineage-credit mb-0">
+  Image credits: Carlos Gracie and Hélio Gracie are public-domain Archivo Nacional portraits. Kenny Florian credit to Peter Gordon, CC BY 2.0. Carlos Gracie Jr., Roberto Maia, Josh Griffiths, and Sandy Jose Nunez use locally hosted portraits.
+</p>

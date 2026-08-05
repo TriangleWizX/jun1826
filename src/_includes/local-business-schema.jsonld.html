@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+title: ""
+description: ""
+canonicalUrl: ""
+bodyClass: "ss-page"
+permalink: "/_includes/local-business-schema.jsonld.html"
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "SportsActivityLocation",
+        "LocalBusiness"
+      ],
+      "@id": "https://senseisandy.com/#business",
+      "name": "Sensei Sandy BJJ",
+      "url": "https://senseisandy.com/",
+      "telephone": "+1-917-736-8649",
+      "email": "me@senseisandy.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6045 Main Street, 2nd Floor Studio",
+        "addressLocality": "Tannersville",
+        "addressRegion": "NY",
+        "postalCode": "12485",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.1954787,
+        "longitude": -74.1323751
+      },
+      "logo": "https://senseisandy.com/assets/img/brand/sensei-sandy-bjj-logo-512.png",
+      "image": "https://senseisandy.com/assets/images/hero.89f093.webp",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=6045+Main+Street+Tannersville+NY+12485",
+      "sameAs": [
+        "https://www.instagram.com/senseisandybjj/",
+        "https://www.facebook.com/p/Sensei-Sandy-BJJ-61579362991950/",
+        "https://www.youtube.com/@SenseiSandyBJJ"
+      ],
+      "founder": {
+        "@id": "https://senseisandy.com/#sandy"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tannersville"
+        },
+        {
+          "@type": "City",
+          "name": "Hunter"
+        },
+        {
+          "@type": "City",
+          "name": "Windham"
+        },
+        {
+          "@type": "City",
+          "name": "Haines Falls"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://senseisandy.com/#sandy",
+      "name": "Sandy Jose Nunez",
+      "alternateName": [
+        "Sensei Sandy",
+        "Jiu Jitsu Sandy"
+      ],
+      "url": "https://senseisandy.com/bio",
+      "image": "https://senseisandy.com/assets/images/sensei-sandy-headshot.jpg",
+      "jobTitle": "Brazilian Jiu-Jitsu Instructor",
+      "worksFor": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "sameAs": [
+        "https://www.instagram.com/senseisandybjj/",
+        "https://www.facebook.com/p/Sensei-Sandy-BJJ-61579362991950/",
+        "https://www.youtube.com/@SenseiSandyBJJ"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://senseisandy.com/#website",
+      "url": "https://senseisandy.com/",
+      "name": "Sensei Sandy BJJ",
+      "publisher": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>

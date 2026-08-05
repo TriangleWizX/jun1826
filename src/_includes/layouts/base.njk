@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "components/head-metadata.njk" %}
+  {% if headExtra %}
+    {{ headExtra | safe }}
+  {% endif %}
+</head>
+<body class="{{ bodyClass | default("ss-page") }}">
+
+  {% include "components/header.njk" %}
+
+  {% if promotions.promotions[0].active %}
+    {% include "components/promotion-banner.njk" %}
+  {% endif %}
+
+  <div id="scrollProgress"></div>
+
+  <main class="ss-main {{ mainClass | default("") }}" id="main-content" role="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "components/footer.njk" %}
+
+  {% if bodyExtra %}
+    {{ bodyExtra | safe }}
+  {% endif %}
+</body>
+</html>

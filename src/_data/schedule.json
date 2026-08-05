@@ -1,0 +1,118 @@
+{
+  "updated": "2026-08-05",
+  "groupClasses": [
+    {
+      "id": "monday-youth-teen-gi",
+      "day": "Monday",
+      "dayOrder": 1,
+      "time": "5:00 PM",
+      "time24": "17:00",
+      "audience": "Youth/Teen",
+      "ages": "5–17",
+      "format": "Gi",
+      "active": true
+    },
+    {
+      "id": "monday-adult-gi",
+      "day": "Monday",
+      "dayOrder": 1,
+      "time": "6:00 PM",
+      "time24": "18:00",
+      "audience": "Adult",
+      "ages": "18+",
+      "format": "Gi",
+      "active": true
+    },
+    {
+      "id": "tuesday-youth-teen-gi",
+      "day": "Tuesday",
+      "dayOrder": 2,
+      "time": "5:00 PM",
+      "time24": "17:00",
+      "audience": "Youth/Teen",
+      "ages": "5–17",
+      "format": "Gi",
+      "active": true
+    },
+    {
+      "id": "tuesday-adult-gi",
+      "day": "Tuesday",
+      "dayOrder": 2,
+      "time": "6:00 PM",
+      "time24": "18:00",
+      "audience": "Adult",
+      "ages": "18+",
+      "format": "Gi",
+      "active": true
+    },
+    {
+      "id": "wednesday-youth-teen-nogi",
+      "day": "Wednesday",
+      "dayOrder": 3,
+      "time": "5:00 PM",
+      "time24": "17:00",
+      "audience": "Youth/Teen",
+      "ages": "5–17",
+      "format": "No-Gi",
+      "active": true
+    },
+    {
+      "id": "wednesday-adult-nogi",
+      "day": "Wednesday",
+      "dayOrder": 3,
+      "time": "6:00 PM",
+      "time24": "18:00",
+      "audience": "Adult",
+      "ages": "18+",
+      "format": "No-Gi",
+      "active": true
+    },
+    {
+      "id": "friday-youth-teen-gi",
+      "day": "Friday",
+      "dayOrder": 5,
+      "time": "5:00 PM",
+      "time24": "17:00",
+      "audience": "Youth/Teen",
+      "ages": "5–17",
+      "format": "Gi",
+      "active": true
+    },
+    {
+      "id": "friday-adult-gi",
+      "day": "Friday",
+      "dayOrder": 5,
+      "time": "6:00 PM",
+      "time24": "18:00",
+      "audience": "Adult",
+      "ages": "18+",
+      "format": "Gi",
+      "active": true
+    },
+    {
+      "id": "saturday-adult-nogi",
+      "day": "Saturday",
+      "dayOrder": 6,
+      "time": "10:30 AM",
+      "time24": "10:30",
+      "audience": "Adult No-Gi",
+      "ages": "18+",
+      "format": "No-Gi",
+      "note": "Youth and teens require Sandy's approval.",
+      "active": true
+    }
+  ],
+  "privateCoaching": {
+    "display": [
+      "Tuesday — 6:30 AM",
+      "Wednesday and Friday — mid-morning",
+      "Additional appointments by request"
+    ],
+    "slots": [
+      { "day": "Tuesday", "time": "6:30 AM" },
+      { "day": "Wednesday", "time": "mid-morning" },
+      { "day": "Friday", "time": "mid-morning" }
+    ],
+    "active": true
+  }
+}
