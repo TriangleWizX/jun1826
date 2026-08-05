@@ -1,0 +1,27 @@
+{
+  "name": "SenseiSandy Production SFTP",
+  "host": "your-cpanel-server.web-hosting.com",
+  "username": "your_username",
+  "password": "YOUR_SECURE_PASSWORD",
+  "protocol": "sftp",
+  "port": 21098,
+  "remotePath": "/home/your_username/public_html",
+  "uploadOnSave": false,
+  "useTempFile": false,
+  "openSsh": false,
+  "ignore": [
+    ".vscode",
+    ".git",
+    ".git/**",
+    "node_modules",
+    "node_modules/**",
+    ".env",
+    "*.psd",
+    "*.ai",
+    "*.zip",
+    "backups",
+    "backups/**",
+    "reports",
+    "reports/**"
+  ]
+}

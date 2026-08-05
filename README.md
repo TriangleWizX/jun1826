@@ -8,21 +8,33 @@ Marketing site and support tooling for Sensei Sandy Brazilian Jiu-Jitsu.
    ```bash
    npm install
    ```
-2. Build generated assets when needed:
+2. Run local preview HTTP server:
+   ```bash
+   npm run dev
+   ```
+   Preview at `http://localhost:8000`.
+3. Build generated assets when needed:
    ```bash
    npm run build
    ```
-3. Run QA checks before deploy:
+4. Run validation & QA checks:
    ```bash
+   npm run validate
    npm run qa:all
    ```
 
-`qa:all` is the local static suite. Run network-dependent checks separately when internet access is available:
+`validate` runs fast local static checks. Run network-dependent checks separately when internet access is available:
 
 ```bash
 npm run qa:links:live
 npm run qa:sitemaps:live:redirects
 ```
+
+## Documentation & Deployment Workflow
+
+- [Local Development Guide](file:///home/twizss/Documents/ssbjjweb/tmb/docs/deployment/LOCAL_DEVELOPMENT.md)
+- [Production Backup & Rollback Procedure](file:///home/twizss/Documents/ssbjjweb/tmb/docs/deployment/BACKUP_AND_ROLLBACK.md)
+- [SFTP Deployment Guide](file:///home/twizss/Documents/ssbjjweb/tmb/docs/deployment/SFTP_DEPLOYMENT.md)
 
 ## Working Tree Hygiene
 
