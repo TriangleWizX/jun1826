@@ -1,0 +1,148 @@
+<div class="ss-free-intro-form-container card border-0 shadow-sm p-4 p-md-5 rounded-4" style="background: var(--ss-surface, #FFFFFF); border-top: 5px solid var(--ss-green, #116A42) !important;">
+  <div class="mb-4 text-center">
+    <span class="ss-home-kicker text-uppercase font-weight-bold text-teal mb-1 d-block" style="color: var(--ss-teal, #289FA1); font-size: 0.85rem; letter-spacing: 0.05em;">Step 1 of 4</span>
+    <h2 class="h3 font-weight-bold mb-2" style="color: var(--ss-ink, #362B24);">Reserve Your Free Intro</h2>
+    <p class="text-muted small mb-0" style="color: var(--ss-muted, #4F433C);">Sandy will contact you to confirm your 15-minute Goal Mapping visit.</p>
+  </div>
+
+  <form id="ss-free-intro-form" action="{{ contact.formspreeEndpoint }}" method="POST" class="needs-validation" novalidate>
+    <!-- Hidden Attribution Fields (Populated dynamically by attribution.js) -->
+    <input type="hidden" name="first_utm_source" id="attr-first-utm-source" value="">
+    <input type="hidden" name="first_utm_medium" id="attr-first-utm-medium" value="">
+    <input type="hidden" name="first_utm_campaign" id="attr-first-utm-campaign" value="">
+    <input type="hidden" name="last_utm_source" id="attr-last-utm-source" value="">
+    <input type="hidden" name="last_utm_medium" id="attr-last-utm-medium" value="">
+    <input type="hidden" name="last_utm_campaign" id="attr-last-utm-campaign" value="">
+    <input type="hidden" name="landing_page" id="attr-landing-page" value="">
+    <input type="hidden" name="referring_page" id="attr-referring-page" value="">
+    <input type="hidden" name="program_interest" id="attr-program-interest" value="general">
+    <input type="hidden" name="_next" value="https://senseisandy.com/free-bjj-intro-tannersville-ny/confirmation/">
+    <input type="hidden" name="_subject" value="New Free Intro Reservation Request">
+
+    <div class="row g-3">
+      <!-- Student Lane Selection -->
+      <div class="col-12">
+        <label for="form-student-lane" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Who is starting? *</label>
+        <select class="form-select form-select-lg" id="form-student-lane" name="student_lane" required style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
+          <option value="" selected disabled>Select student age group…</option>
+          <option value="Kids (5–9)">Child (Ages 5–9)</option>
+          <option value="Teens (10–17)">Teen (Ages 10–17)</option>
+          <option value="Adult (18+)">Adult (Ages 18+)</option>
+        </select>
+        <div class="invalid-feedback">Please select who will be attending.</div>
+      </div>
+
+      <!-- Prospect Name -->
+      <div class="col-12 col-md-6">
+        <label for="form-name" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">First &amp; Last Name *</label>
+        <input type="text" class="form-control form-control-lg" id="form-name" name="name" autocomplete="name" required placeholder="e.g. Alex Smith" style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
+
+      <!-- Mobile Number -->
+      <div class="col-12 col-md-6">
+        <label for="form-phone" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Mobile Phone Number *</label>
+        <input type="tel" class="form-control form-control-lg" id="form-phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="(917) 000-0000" style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
+        <div class="invalid-feedback">Please enter a valid mobile number for text confirmation.</div>
+      </div>
+
+      <!-- Email Address -->
+      <div class="col-12">
+        <label for="form-email" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Email Address *</label>
+        <input type="email" class="form-control form-control-lg" id="form-email" name="email" autocomplete="email" required placeholder="you@example.com" style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <!-- Conditional Guardian Field (Shown for Child / Teen) -->
+      <div class="col-12 d-none" id="guardian-field-group">
+        <label for="form-guardian" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Parent / Guardian Name *</label>
+        <input type="text" class="form-control form-control-lg" id="form-guardian" name="guardian_name" placeholder="Parent or guardian full name" style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
+      </div>
+
+      <!-- Preferred Class Day -->
+      <div class="col-12 col-md-6">
+        <label for="form-schedule" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Preferred Class Day</label>
+        <select class="form-select form-select-lg" id="form-schedule" name="schedule_pref" style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
+          <option value="Flexible / Any Day">Flexible / Any Day</option>
+          <option value="Monday 5:00 PM (Youth/Teen Gi)">Monday 5:00 PM (Youth/Teen Gi)</option>
+          <option value="Monday 6:00 PM (Adult Gi)">Monday 6:00 PM (Adult Gi)</option>
+          <option value="Tuesday 5:00 PM (Youth/Teen Gi)">Tuesday 5:00 PM (Youth/Teen Gi)</option>
+          <option value="Tuesday 6:00 PM (Adult Gi)">Tuesday 6:00 PM (Adult Gi)</option>
+          <option value="Wednesday 5:00 PM (Youth/Teen No-Gi)">Wednesday 5:00 PM (Youth/Teen No-Gi)</option>
+          <option value="Wednesday 6:00 PM (Adult No-Gi)">Wednesday 6:00 PM (Adult No-Gi)</option>
+          <option value="Friday 5:00 PM (Youth/Teen Gi)">Friday 5:00 PM (Youth/Teen Gi)</option>
+          <option value="Friday 6:00 PM (Adult Gi)">Friday 6:00 PM (Adult Gi)</option>
+          <option value="Saturday 10:30 AM (Adult No-Gi)">Saturday 10:30 AM (Adult No-Gi)</option>
+          <option value="Private Coaching">Private Coaching Inquiry</option>
+        </select>
+      </div>
+
+      <!-- Prior Experience -->
+      <div class="col-12 col-md-6">
+        <label for="form-experience" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Prior Jiu-Jitsu Experience</label>
+        <select class="form-select form-select-lg" id="form-experience" name="experience" style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
+          <option value="No prior experience (Total Beginner)">No prior experience (Total Beginner)</option>
+          <option value="Some prior experience">Some prior experience</option>
+          <option value="Currently training">Currently training</option>
+          <option value="Returning after time away">Returning after time away</option>
+        </select>
+      </div>
+
+      <!-- Primary Goal or Questions -->
+      <div class="col-12">
+        <label for="form-goals" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Primary Goal or Questions (Optional)</label>
+        <textarea class="form-control" id="form-goals" name="goals" rows="2" placeholder="e.g. Building confidence, fitness, self-defense, routine for my child..." style="border-radius: 10px; font-size: 0.95rem; border: 1px solid rgba(54,43,36,0.2);"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-12 mt-4">
+        <button type="submit" class="btn btn-primary btn-lg ss-btn w-100 py-3" id="form-submit-btn" style="font-weight: 700;">
+          Request Free Intro &amp; Goal Mapping
+          <i class="bi bi-arrow-right me-1" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="col-12 text-center mt-3">
+        <p class="small text-muted mb-0" style="font-size: 0.825rem;">
+          <i class="bi bi-shield-check me-1 text-green" style="color: var(--ss-green, #116A42);"></i>
+          Your information is private and never shared. We will text or call you to confirm your visit.
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const laneSelect = document.getElementById("form-student-lane");
+  const guardianGroup = document.getElementById("guardian-field-group");
+  const guardianInput = document.getElementById("form-guardian");
+  const form = document.getElementById("ss-free-intro-form");
+
+  if (laneSelect && guardianGroup && guardianInput) {
+    laneSelect.addEventListener("change", function () {
+      const val = laneSelect.value;
+      if (val.includes("Kids") || val.includes("Teens")) {
+        guardianGroup.classList.remove("d-none");
+        guardianInput.setAttribute("required", "");
+      } else {
+        guardianGroup.classList.add("d-none");
+        guardianInput.removeAttribute("required");
+        guardianInput.value = "";
+      }
+    });
+  }
+
+  if (form) {
+    let formStarted = false;
+    form.addEventListener("input", function () {
+      if (!formStarted) {
+        formStarted = true;
+        if (window.SS_TRACK_EVENT) {
+          window.SS_TRACK_EVENT("form_start", { form_id: "ss-free-intro-form" });
+        }
+      }
+    }, { once: true });
+  }
+});
+</script>
