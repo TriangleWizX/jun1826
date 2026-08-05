@@ -408,7 +408,7 @@
 
 /* Make the main booking link feel like the header CTA */
 
-.ss-footer a[href*="book-free-intro"],
+.ss-footer a[href*="free-bjj-intro-tannersville-ny"],
 .ss-footer a[href*="calendly"] {
   background: var(--footer-orange);
   border-color: var(--footer-orange);
@@ -416,8 +416,8 @@
   box-shadow: 0 10px 26px rgba(17, 106, 66, 0.22);
 }
 
-.ss-footer a[href*="book-free-intro"]:hover,
-.ss-footer a[href*="book-free-intro"]:focus-visible,
+.ss-footer a[href*="free-bjj-intro-tannersville-ny"]:hover,
+.ss-footer a[href*="free-bjj-intro-tannersville-ny"]:focus-visible,
 .ss-footer a[href*="calendly"]:hover,
 .ss-footer a[href*="calendly"]:focus-visible {
   color: #ffffff;

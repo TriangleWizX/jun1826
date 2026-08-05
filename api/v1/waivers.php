@@ -10,6 +10,7 @@ if (!ss_rate_limit('waivers:' . ss_client_ip(), 60, 120)) {
 $db = ss_db();
 
 if ($method === 'GET') {
+    ss_require_ops_auth();
     $personId = ss_clean_string($_GET['person_id'] ?? '', 64);
     $sql = 'SELECT id, person_id, guardian_id, signed_at, waiver_version, storage_uri, file_sha256, ip_address, created_at
             FROM waiver';

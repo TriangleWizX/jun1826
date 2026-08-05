@@ -265,3 +265,22 @@
   --quote-color: var(--ss-ink, #362B24);
 }
 
+/* Global high-end visual bridge: evidence cards and accordion. */
+:where(.ss-evidence-accordion, .evidence-card, .success-card) {
+  --ss-ease-premium: cubic-bezier(0.32, 0.72, 0, 1);
+  border-color: var(--ss-border, rgba(33, 29, 24, 0.11));
+  border-radius: clamp(22px, 3vw, 34px);
+  box-shadow: 0 16px 44px rgba(33, 29, 24, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  transition:
+    transform 700ms var(--ss-ease-premium),
+    box-shadow 700ms var(--ss-ease-premium),
+    border-color 700ms var(--ss-ease-premium);
+}
+
+.ss-evidence-accordion .accordion-button {
+  border-radius: 999px;
+  transition:
+    transform 650ms var(--ss-ease-premium),
+    background-color 650ms var(--ss-ease-premium),
+    color 650ms var(--ss-ease-premium);
+}

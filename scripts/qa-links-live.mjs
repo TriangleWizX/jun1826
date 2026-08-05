@@ -137,19 +137,17 @@ const main = async () => {
   const results = await runWithConcurrency(urls, args.concurrency, async (url) => {
     try {
       const response = await fetchNoFollow(url, args.timeoutMs);
-      return {
+      throw Object.assign(new Error(''), {
         url,
         statusCode: response.status,
-        location: toAbsoluteLocation(response.headers.get('location') || '', url),
-        error: ''
-      };
+        location: toAbsoluteLocation(response.headers.get('location') || '', url)
+      });
     } catch (error) {
-      return {
+      throw Object.assign(new Error(error.message), {
         url,
         statusCode: 0,
-        location: '',
-        error: error.message
-      };
+        location: ''
+      });
     }
   });
 

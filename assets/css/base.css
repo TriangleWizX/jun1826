@@ -667,7 +667,7 @@ img {
 .btn-primary {
     background-color: var(--button-color)!important;
     border-color: var(--button-color)!important;
-    color: #fff !important;
+    color: #0f172a !important;
     box-shadow: 0 4px 14px rgba(245,158,11,0.4)
 }
 
@@ -675,7 +675,7 @@ img {
     background-color: var(--button-hover)!important;
     border-color: var(--button-hover)!important;
     transform: translateY(-2px);
-    color: #fff !important
+    color: #0f172a !important
 }
 
 .btn-outline,.btn-outline-primary {
@@ -2036,7 +2036,7 @@ ul {
 
 .bg-warning {
     background-color: var(--accent-color)!important;
-    color: #fff !important
+    color: #0f172a !important
 }
 
 .nav-link i.bi-shield-check {
@@ -4271,7 +4271,7 @@ body {
   .ss-nav a,
   .ss-lanes a,
   .cta-bar a,
-  a[href*="book-free-intro"] {
+  a[href*="free-bjj-intro-tannersville-ny"] {
     white-space: nowrap;
     flex: 0 0 auto;
   }

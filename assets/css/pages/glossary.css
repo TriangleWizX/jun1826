@@ -927,7 +927,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   margin: 0 auto;
   font-size: clamp(2.35rem, 7vw, 4.6rem);
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .glossary-hero-copy {
@@ -2225,7 +2225,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   margin: 0 0 10px;
   font-size: clamp(1.65rem, 4vw, 2.65rem);
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-cta-actions,
@@ -2854,7 +2854,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   margin: 0 0 0.85rem;
   font-size: clamp(1.85rem, 3vw, 2.45rem);
   font-weight: 950;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .ss-price span {
@@ -2998,7 +2998,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   color: var(--ss-text);
   font-size: clamp(2.4rem, 6vw, 5.2rem);
   line-height: 0.95;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-hero-copy > p:not(.glossary-eyebrow) {
@@ -3056,7 +3056,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   color: var(--ss-text);
   font-size: clamp(1.4rem, 3vw, 2rem);
   line-height: 1.05;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-visit-card ul {
@@ -3100,7 +3100,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   color: var(--ss-text);
   font-size: clamp(1.7rem, 4vw, 3rem);
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-section-header p {
@@ -3445,7 +3445,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   color: var(--ss-text);
   font-size: 1.34rem;
   line-height: 1.05;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-card h3 a {
@@ -3512,7 +3512,7 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   margin: 0 0 10px;
   color: var(--ss-text);
   font-size: clamp(1.8rem, 5vw, 3.4rem);
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-bottom-cta p {
@@ -3900,7 +3900,7 @@ body.page-glossary.page-bjj-glossary a.glossary-btn-secondary,
 .page-bjj-glossary .btn-primary,
 .page-bjj-glossary .btn-orange,
 .page-bjj-glossary .reserve-free-intro,
-.page-bjj-glossary a[href*="book-free-intro"] {
+.page-bjj-glossary a[href*="free-bjj-intro-tannersville-ny"] {
   background: var(--ss-green) !important;
   color: #ffffff !important;
   border-color: var(--ss-green) !important;
@@ -4039,7 +4039,7 @@ body.page-glossary {
 .ss-glossary-mobile-hero h1 {
   font-size: clamp(2rem, 9vw, 3.15rem);
   line-height: .96;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
   margin-bottom: .85rem;
 }
 
@@ -4394,7 +4394,7 @@ body.page-glossary {
   max-width: 11ch;
   font-size: clamp(3.25rem, 7vw, 6.5rem);
   line-height: .9;
-  letter-spacing: -.065em;
+  letter-spacing: 0;
   margin-bottom: 1rem;
 }
 
@@ -4459,7 +4459,7 @@ body.page-glossary {
 .ss-section-heading h2 {
   font-size: clamp(2rem, 4vw, 3.25rem);
   line-height: .95;
-  letter-spacing: -.04em;
+  letter-spacing: 0;
 }
 
 .ss-day-one-grid {
@@ -4869,4 +4869,86 @@ html body.page-bjj-glossary .ss-global-final-cta .ss-global-btn--primary {
   background: #116A42 !important;
   border-color: #116A42 !important;
   color: #ffffff !important;
+}
+
+/* Global high-end visual bridge: glossary index and term pages. */
+body.page-bjj-glossary {
+  --ss-body-font: "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --ss-display-font: "Instrument Serif", Georgia, serif;
+  --ss-ease-premium: cubic-bezier(0.32, 0.72, 0, 1);
+  --ss-shadow-soft: 0 16px 44px rgba(33, 29, 24, 0.09);
+  --ss-shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+body.page-bjj-glossary :where(
+  .ss-main > section,
+  .glossary-card,
+  .term-card,
+  .ss-glossary-card,
+  .ss-copy-block,
+  .ss-global-final-cta__card,
+  .ss-related-card
+) {
+  border-color: var(--ss-border, rgba(33, 29, 24, 0.11));
+  border-radius: clamp(22px, 3vw, 34px);
+  box-shadow: var(--ss-shadow-soft), var(--ss-shadow-inner);
+  transition:
+    transform 700ms var(--ss-ease-premium),
+    box-shadow 700ms var(--ss-ease-premium),
+    border-color 700ms var(--ss-ease-premium);
+}
+
+body.page-bjj-glossary :where(.ss-paths-eyebrow, .ss-eyebrow, .eyebrow, .ss-chip, .glossary-chip) {
+  border-radius: 999px;
+  letter-spacing: 0.14em;
+}
+
+
+/* Contrast fixes for WCAG compliance */
+body.page-glossary.page-bjj-glossary details.glossary-advanced-filters summary {
+  color: #044b4e !important;
+  font-weight: 700;
+}
+
+body.page-glossary.page-bjj-glossary details.glossary-advanced-filters legend {
+  color: #211d18 !important;
+  font-weight: 700;
+}
+
+#copy-term-link {
+  color: #211d18 !important;
+  background-color: #efe8dc !important;
+  border-color: rgba(33, 29, 24, 0.28) !important;
+}
+
+.ss-term-next-step {
+  background: #091a1c !important;
+  color: #f4fbfb !important;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.ss-term-next-step h2,
+.ss-term-next-step p,
+.ss-term-next-step .ss-eyebrow {
+  color: #f4fbfb !important;
+}
+
+.ss-term-next-step .ss-link-grid a {
+  color: #8ffcff !important;
+}
+
+.ss-term-next-step a.btn-primary {
+  background-color: #00dde0 !important;
+  border-color: #00dde0 !important;
+  color: #052324 !important;
+  font-weight: 700 !important;
+}
+
+.ss-term-next-step a.btn-outline-primary {
+  color: #ffffff !important;
+  border-color: #00dde0 !important;
+  background-color: rgba(0, 221, 224, 0.15) !important;
+  font-weight: 700 !important;
 }

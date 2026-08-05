@@ -129,7 +129,7 @@ body {
   margin: 0;
   background: var(--ss-bg);
   color: var(--ss-text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: var(--ss-body-font, "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -140,7 +140,7 @@ p {
   margin-bottom: 0.9rem;
   max-width: var(--ss-prose);
 }
-h1, h2, h3, h4, h5, h6 { color: var(--ss-text); letter-spacing: -0.015em; }
+h1, h2, h3, h4, h5, h6 { color: var(--ss-text); letter-spacing: 0; }
 h1 { line-height: 1.12; margin-bottom: 0.7rem; }
 h2 { line-height: 1.18; margin-bottom: 0.65rem; }
 ul, ol { margin-bottom: 0.9rem; }
@@ -1510,7 +1510,7 @@ header .navbar-brand:focus-visible {
 body {
   background: var(--ss-bg);
   color: var(--ss-text);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--ss-body-font, "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif);
   font-size: 16px;
   line-height: 1.62;
 }
@@ -1523,7 +1523,7 @@ p {
 
 h1, h2, h3 {
   font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   color: var(--ss-text);
 }
 
@@ -2655,7 +2655,7 @@ h2,
 h3,
 h4 {
   line-height: 1.18;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   text-wrap: balance;
 }
 
@@ -3097,7 +3097,7 @@ body.page-home {
 .page-home h1 {
   font-size: clamp(2.3rem, 5.8vw, 4.3rem);
   line-height: 1.02;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .page-home h2 {
@@ -4312,7 +4312,7 @@ body.page-home.heroCore-image-open .heroCore__imageFrame img {
 body {
   background: var(--ss-bg) !important;
   color: var(--ss-text) !important;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
+  font-family: var(--ss-body-font, "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif) !important;
   font-size: 1rem;
   line-height: 1.62;
   text-align: center;
@@ -4329,14 +4329,14 @@ h1,
 .h1 {
   font-size: var(--ss-h1);
   line-height: 1.08;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 
 h2,
 .h2 {
   font-size: var(--ss-h2);
   line-height: 1.14;
-  letter-spacing: -0.012em;
+  letter-spacing: 0;
 }
 
 h3,
@@ -4945,7 +4945,7 @@ button.btn {
   color: #1f1712 !important;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.05;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .ss-final-cta__copy {
@@ -5559,7 +5559,7 @@ main picture > img {
   margin: 0 auto;
   font-size: clamp(2.35rem, 7vw, 4.6rem);
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .glossary-hero-copy {
@@ -5841,7 +5841,7 @@ main picture > img {
   color: #ffffff;
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 0.96;
-  letter-spacing: -0.055em;
+  letter-spacing: 0;
 }
 
 .ss-paths-header p {
@@ -6453,7 +6453,7 @@ main picture > img {
   margin-bottom: 0.8rem;
   font-size: clamp(2rem, 4.3vw, 3.3rem);
   line-height: 1.02;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .ss-glossary-rich-hero-points {
@@ -7894,7 +7894,7 @@ main picture > img {
   margin: 0 0 10px;
   font-size: clamp(1.65rem, 4vw, 2.65rem);
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-cta-actions,
@@ -8523,7 +8523,7 @@ main picture > img {
   margin: 0 0 0.85rem;
   font-size: clamp(1.85rem, 3vw, 2.45rem);
   font-weight: 950;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .ss-price span {
@@ -8667,7 +8667,7 @@ main picture > img {
   color: var(--ss-text);
   font-size: clamp(2.4rem, 6vw, 5.2rem);
   line-height: 0.95;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-hero-copy > p:not(.glossary-eyebrow) {
@@ -8725,7 +8725,7 @@ main picture > img {
   color: var(--ss-text);
   font-size: clamp(1.4rem, 3vw, 2rem);
   line-height: 1.05;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-visit-card ul {
@@ -8769,7 +8769,7 @@ main picture > img {
   color: var(--ss-text);
   font-size: clamp(1.7rem, 4vw, 3rem);
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-section-header p {
@@ -9113,7 +9113,7 @@ main picture > img {
   color: var(--ss-text);
   font-size: 1.34rem;
   line-height: 1.05;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-card h3 a {
@@ -9180,7 +9180,7 @@ main picture > img {
   margin: 0 0 10px;
   color: var(--ss-text);
   font-size: clamp(1.8rem, 5vw, 3.4rem);
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 .page-glossary .glossary-bottom-cta p {
@@ -9622,7 +9622,7 @@ body {
   .ss-nav a,
   .ss-lanes a,
   .cta-bar a,
-  a[href*="book-free-intro"] {
+  a[href*="free-bjj-intro-tannersville-ny"] {
     white-space: nowrap;
     flex: 0 0 auto;
   }
@@ -9723,7 +9723,7 @@ body {
 
   font-weight: 900;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .ss-sticky-action:hover,
@@ -9876,7 +9876,7 @@ body {
     font-size: 1rem;
     font-weight: 900;
     line-height: 1;
-    letter-spacing: -.02em;
+    letter-spacing: 0;
     color: #362B24 !important;
     background: #fff;
     border: 1px solid rgba(54, 43, 36, .13);
@@ -9979,7 +9979,7 @@ body {
   font-family: var(--ss-display, Georgia, serif);
   font-size: clamp(2.15rem, 4.8vw, 4.45rem);
   line-height: 0.98;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .ss-lane-picker__primary {
@@ -10044,7 +10044,7 @@ body {
   font-family: var(--ss-display, Georgia, serif);
   font-size: clamp(1.65rem, 2.3vw, 2.25rem);
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
 }
 
 .ss-lane-card p {
@@ -10130,3 +10130,180 @@ iframe, .video-embed, .embed-video {
 
 /* 6. Reduce font swap movement */
 body { text-rendering: optimizeLegibility; }
+
+/* Global high-end visual pass for legacy ss.css pages. */
+:root {
+  --ss-body-font: "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --ss-display-font: "Instrument Serif", Georgia, serif;
+  --sans-font: var(--ss-body-font);
+  --font-sans: var(--ss-body-font);
+  --font-main: var(--ss-body-font);
+  --font-heading: var(--ss-display-font);
+  --ease-elastic: var(--ss-ease-premium);
+  --ease-fluid: var(--ss-ease-premium);
+  --ss-ease-premium: cubic-bezier(0.32, 0.72, 0, 1);
+  --ss-radius: 22px;
+  --ss-radius-sm: 14px;
+  --ss-radius-lg: 32px;
+  --ss-shadow: 0 24px 70px rgba(31, 23, 18, 0.13);
+  --ss-shadow-soft: 0 16px 44px rgba(31, 23, 18, 0.09);
+  --ss-shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  --ss-border: rgba(54, 43, 36, 0.11);
+  --ss-surface-raised: #fffdf8;
+}
+
+html {
+  background: var(--ss-bg, #fbfaf8);
+}
+
+body {
+  color: var(--ss-text, #1f1712);
+  font-family: var(--ss-body-font);
+  letter-spacing: 0;
+  background:
+    radial-gradient(900px 420px at 8% -8%, rgba(139, 82, 46, 0.12), transparent 60%),
+    radial-gradient(780px 380px at 96% 0%, rgba(17, 106, 66, 0.10), transparent 58%),
+    linear-gradient(180deg, #fffdf8 0%, var(--ss-bg, #fbfaf8) 42%, #f4f1ed 100%);
+}
+
+h1,
+h2,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  font-family: var(--ss-display-font);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.ss-section {
+  padding-block: clamp(2.75rem, 7vw, 6.5rem);
+}
+
+:where(
+  .ss-btn,
+  .btn.ss-btn,
+  .ss-btn-premium,
+  .he-btn-pill,
+  .kids-btn,
+  .adults-btn,
+  .btn-primary,
+  .btn-outline-secondary,
+  .btn-outline-dark,
+  .btn-outline-light
+) {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+  min-height: 44px;
+  transition:
+    transform 650ms var(--ss-ease-premium),
+    box-shadow 650ms var(--ss-ease-premium),
+    background-color 650ms var(--ss-ease-premium),
+    border-color 650ms var(--ss-ease-premium),
+    color 650ms var(--ss-ease-premium);
+  will-change: transform;
+}
+
+:where(
+  .ss-btn,
+  .btn.ss-btn,
+  .ss-btn-premium,
+  .he-btn-pill,
+  .kids-btn,
+  .adults-btn,
+  .btn-primary,
+  .btn-outline-secondary,
+  .btn-outline-dark,
+  .btn-outline-light
+):hover,
+:where(
+  .ss-btn,
+  .btn.ss-btn,
+  .ss-btn-premium,
+  .he-btn-pill,
+  .kids-btn,
+  .adults-btn,
+  .btn-primary,
+  .btn-outline-secondary,
+  .btn-outline-dark,
+  .btn-outline-light
+):focus-visible {
+  transform: translateY(-1px);
+}
+
+:where(
+  .ss-btn,
+  .btn.ss-btn,
+  .ss-btn-premium,
+  .he-btn-pill,
+  .kids-btn,
+  .adults-btn,
+  .btn-primary,
+  .btn-outline-secondary,
+  .btn-outline-dark,
+  .btn-outline-light
+):active {
+  transform: translateY(0) scale(0.985);
+}
+
+:where(
+  .ss-card,
+  .card,
+  .ss-proof-card,
+  .ss-cal-day,
+  .ss-mini-card,
+  .weekly-focus-card,
+  .kids-yam-card,
+  .adults-card,
+  .he-card
+) {
+  background:
+    linear-gradient(145deg, rgba(255, 253, 248, 0.96), rgba(255, 250, 242, 0.86));
+  border-color: var(--ss-border, rgba(54, 43, 36, 0.11));
+  border-radius: var(--ss-radius-lg, 32px);
+  box-shadow: var(--ss-shadow-soft, 0 16px 44px rgba(31, 23, 18, 0.09)), var(--ss-shadow-inner, inset 0 1px 0 rgba(255, 255, 255, 0.72));
+  transition:
+    transform 700ms var(--ss-ease-premium),
+    box-shadow 700ms var(--ss-ease-premium),
+    border-color 700ms var(--ss-ease-premium);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :where(
+    .ss-card,
+    .card,
+    .ss-proof-card,
+    .ss-cal-day,
+    .ss-mini-card,
+    .weekly-focus-card,
+    .kids-yam-card,
+    .adults-card,
+    .he-card
+  ):hover {
+    border-color: rgba(17, 106, 66, 0.18);
+    box-shadow: var(--ss-shadow, 0 24px 70px rgba(31, 23, 18, 0.13)), var(--ss-shadow-inner, inset 0 1px 0 rgba(255, 255, 255, 0.72));
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ss-section {
+    padding-block: clamp(2rem, 12vw, 3.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ss-btn, .btn, .ss-card, .card, .ss-proof-card, .ss-cal-day, .kids-yam-card, .adults-card) {
+    transition-duration: 1ms;
+  }
+
+  :where(.ss-btn, .btn, .ss-card, .card, .ss-proof-card, .ss-cal-day, .kids-yam-card, .adults-card):hover,
+  :where(.ss-btn, .btn, .ss-card, .card, .ss-proof-card, .ss-cal-day, .kids-yam-card, .adults-card):focus-visible,
+  :where(.ss-btn, .btn, .ss-card, .card, .ss-proof-card, .ss-cal-day, .kids-yam-card, .adults-card):active {
+    transform: none;
+  }
+}

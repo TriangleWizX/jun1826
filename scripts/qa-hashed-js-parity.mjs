@@ -3,13 +3,12 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const MANIFEST_PATH = path.join(ROOT, 'assets', 'data', 'asset-hash-manifest.json');
-const SKIP_DIRS = new Set(['.git', 'node_modules']);
+const SKIP_DIRS = new Set(['.git', 'node_modules', 'archive', '_archive', 'tmp']);
 const REQUIRED_ASSETS = [
   '/assets/js/ss-evidence-accordion.js',
   '/js/glossary-filters.js',
   '/js/voice-faq-accordion.js',
-  '/js/book-free-intro-bridge.js',
-  '/js/videos-hub-filters.js'
+  '/js/book-free-intro-bridge.js'
 ];
 
 const HASHED_JS_RE = /^(?:\/)?((?:assets\/js|js)\/([a-z0-9-]+)\.[0-9a-f]{6}\.js)$/i;

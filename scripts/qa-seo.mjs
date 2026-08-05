@@ -20,7 +20,9 @@ const PAGE_VIDEO_HUB_PATHS = new Set([
   '/videos/submissions',
   '/videos/self-defense',
 ]);
-const REQUIRED_INDEXABLE_PATHS = ['/waiver', '/blog/confidence-protocol'];
+// Registration utilities may intentionally be noindex. Keep only editorial
+// routes in the required-indexability gate.
+const REQUIRED_INDEXABLE_PATHS = ['/blog/confidence-protocol'];
 const ROBOTS_PATH = 'robots.txt';
 const HTACCESS_PATH = '.htaccess';
 const CSV_DUPLICATES = path.join('ubersuggest', 'duplicate_title_tags.csv');
@@ -290,6 +292,7 @@ const listVideoWatchFiles = async () => {
 };
 
 const loadLiveNearCanonicalPaths = async () => {
+  if (!(await fileExists(NEAR_TOWN_CONFIG))) return [];
   const raw = await fs.readFile(path.join(ROOT, NEAR_TOWN_CONFIG), 'utf8');
   const towns = JSON.parse(raw);
   if (!Array.isArray(towns)) {
@@ -301,7 +304,7 @@ const loadLiveNearCanonicalPaths = async () => {
     const status = String(town?.status || '').trim().toLowerCase();
     const slug = String(town?.slug || '').trim();
     if (status !== 'live' || !slug) continue;
-    paths.add(`/near/${slug}`);
+    paths.add(`/bjj-classes/${slug}`);
   }
 
   return [...paths].sort();

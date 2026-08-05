@@ -12,7 +12,7 @@
       }
     },
     "liferAnnual": {
-      "name": "Lifer Annual",
+      "name": "Annual Track",
       "prices": {
         "youth": 1650,
         "adult": 2150
@@ -28,6 +28,6 @@
   },
   "templates": {
     "contactValueLine": "If you want hard numbers, start with a Free Intro, then choose the {coreName} plan (Youth (Kids + Teens) {coreYouth} · Adult {coreAdult}), or choose the Black Belt Track (Annual Membership) for best value.",
-    "quickFaqCost": "{coreName}: Youth {coreYouth}, Adult {coreAdult}. Lifer Annual Track: Youth {liferYouth}, Adult {liferAdult}."
+    "quickFaqCost": "{coreName}: Youth {coreYouth}, Adult {coreAdult}. Annual Track Track: Youth {liferYouth}, Adult {liferAdult}."
   }
 }

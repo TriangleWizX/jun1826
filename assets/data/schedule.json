@@ -9,9 +9,9 @@
   "laneOrder": ["private", "youth", "adults"],
   "lanes": {
     "private": {
-      "label": "Private Lessons",
+      "label": "Private Coaching",
       "age": "Morning by request",
-      "time": "Tue/Thu 6:30 AM, Wed/Fri 10:00 AM"
+      "time": "Tue/Thu 6:30 AM, Wed/Fri 10:30 AM"
     },
     "youth": {
       "label": "Youth Class, Kids + Teens",
@@ -98,7 +98,7 @@
     {
       "id": "wed-private",
       "day": "wed",
-      "startTime": "10:00",
+      "startTime": "10:30",
       "endTime": "10:50",
       "program": "private",
       "ageLane": "private",
@@ -140,23 +140,9 @@
       "notes": "No-Gi"
     },
     {
-      "id": "thu-private",
-      "day": "thu",
-      "startTime": "06:30",
-      "endTime": "07:20",
-      "program": "private",
-      "ageLane": "private",
-      "giNoGi": "mixed",
-      "active": true,
-      "visitorEligible": false,
-      "bookingUrl": "/private-lessons",
-      "type": "private",
-      "displayLabel": "Private Lesson"
-    },
-    {
       "id": "fri-private",
       "day": "fri",
-      "startTime": "10:00",
+      "startTime": "10:30",
       "endTime": "10:50",
       "program": "private",
       "ageLane": "private",
@@ -212,20 +198,20 @@
     }
   ],
   "copy": {
-    "lanePickerIntro": "The weekday schedule stays simple: 5 PM Youth Class, 6 PM Adult Class, and controlled morning private lesson windows by request.",
-    "reassuranceStart": "Join the lane and time that fits: 5 PM Youth Class, 6 PM Adult Class, Saturday Adult No-Gi at 10:30 AM, or a private lesson in one of the fixed morning windows.",
+    "lanePickerIntro": "The weekday schedule stays simple: youth small-group classes at 5:00 PM, adult class at 6:00 PM, and controlled morning private lesson windows by request.",
+    "reassuranceStart": "Join the lane and time that fits: youth small-group class at 5:00 PM, adult class at 6:00 PM, Saturday Adult No-Gi at 10:30 AM, or a private lesson in one of the fixed morning windows.",
     "reassuranceSafety": "Beginner Lane = complete class expectations paced to skill level.",
     "reassuranceReschedule": "Cancel or reschedule by text anytime.",
-    "microFaqStart": "Youth classes run at 5 PM on Monday, Tuesday, Wednesday, and Friday. Adults can start at 6 PM evenings, Saturday No-Gi at 10:30 AM, or request a morning private lesson on Tuesday and Thursday at 6:30 AM or Wednesday and Friday at 10:00 AM.",
-    "privateLaneWeekdays": "Available: Tue, Thu at 6:30 AM • Wed, Fri at 10:00 AM",
+    "microFaqStart": "Youth small-group classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adults can start with evening class at 6:00 PM, Saturday No-Gi at 10:30 AM, or request private coaching on Tuesday at 6:30 AM or Wednesday and Friday mid-morning.",
+    "privateLaneWeekdays": "Available: Tue, Thu at 6:30 AM • Wed, Fri at 10:30 AM",
     "youthLaneAges": "Ages: Kids + Teens",
-    "youthLaneWeekdays": "Available: Mon, Tue, Wed, Fri • 5:00-5:50 PM",
+    "youthLaneWeekdays": "Available: Mon, Tue, Wed, Fri • 5:00-6:00 PM",
     "youthLaneNoGi": "Wednesday: Youth No-Gi",
     "adultsLaneWeekdays": "Available: Mon, Tue, Wed, Fri • 6:00-7:00 PM",
     "adultsLaneNoGi": "No-Gi: Wed 6:00-7:00 PM and Sat 10:30-11:30 AM",
-    "kidsLaneGi": "Youth class Mon, Tue, Wed, Fri - 5:00-5:50 PM",
-    "kidsLaneNoGi": "Wednesday: Youth No-Gi - 5:00-5:50 PM",
-    "teensLaneNoGi": "Wednesday: Youth No-Gi - 5:00-5:50 PM",
+    "kidsLaneGi": "Youth class Mon, Tue, Wed, Fri - 5:00-6:00 PM",
+    "kidsLaneNoGi": "Wednesday: Youth No-Gi - 5:00-6:00 PM",
+    "teensLaneNoGi": "Wednesday: Youth No-Gi - 5:00-6:00 PM",
     "adultsLaneGi": "Adult class Mon, Tue, Fri - 6:00-7:00 PM"
   },
   "days": {
@@ -239,7 +225,7 @@
           "lane": "youth",
           "bookLane": "youth",
           "calendarKey": "youth",
-          "time": "5:00-5:50 PM",
+          "time": "5:00-6:00 PM",
           "class": "Youth Class"
         },
         {
@@ -272,7 +258,7 @@
           "lane": "youth",
           "bookLane": "youth",
           "calendarKey": "youth",
-          "time": "5:00-5:50 PM",
+          "time": "5:00-6:00 PM",
           "class": "Youth Class"
         },
         {
@@ -288,7 +274,7 @@
     },
     "wed": {
       "label": "Wednesday",
-      "note": "Private lessons + No-Gi evening",
+      "note": "Private coaching + No-Gi evening",
       "slots": [
         {
           "id": "wed-private",
@@ -296,7 +282,7 @@
           "lane": "private",
           "bookLane": "private",
           "calendarKey": "private",
-          "time": "10:00-10:50 AM",
+          "time": "10:30-11:30 AM",
           "class": "Private Lesson"
         },
         {
@@ -305,7 +291,7 @@
           "lane": "youth",
           "bookLane": "youth",
           "calendarKey": "youth",
-          "time": "5:00-5:50 PM",
+          "time": "5:00-6:00 PM",
           "class": "Youth Class",
           "badge": "No-Gi",
           "badgeTone": "nogi"
@@ -323,21 +309,6 @@
         }
       ]
     },
-    "thu": {
-      "label": "Thursday",
-      "note": "Private lesson mornings",
-      "slots": [
-        {
-          "id": "thu-private",
-          "dayKey": "thu",
-          "lane": "private",
-          "bookLane": "private",
-          "calendarKey": "private",
-          "time": "6:30-7:20 AM",
-          "class": "Private Lesson"
-        }
-      ]
-    },
     "fri": {
       "label": "Friday",
       "note": "Private mornings + Gi evening classes",
@@ -348,7 +319,7 @@
           "lane": "private",
           "bookLane": "private",
           "calendarKey": "private",
-          "time": "10:00-10:50 AM",
+          "time": "10:30-11:30 AM",
           "class": "Private Lesson"
         },
         {
@@ -357,7 +328,7 @@
           "lane": "youth",
           "bookLane": "youth",
           "calendarKey": "youth",
-          "time": "5:00-5:50 PM",
+          "time": "5:00-6:00 PM",
           "class": "Youth Class"
         },
         {

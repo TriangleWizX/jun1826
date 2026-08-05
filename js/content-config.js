@@ -8,11 +8,15 @@
   const BADGE_CLASSES = ['b--gi', 'b--nogi', 'b--mix', 'b--bio'];
 
   const fetchJson = async (url) => {
-    const res = await fetch(url, { credentials: 'same-origin' });
-    if (!res.ok) {
-      throw new Error(`Failed to load ${url}: ${res.status}`);
+    try {
+      const res = await fetch(url, { credentials: 'same-origin' });
+      if (!res.ok) {
+        return null;
+      }
+      return await res.json();
+    } catch {
+      return null;
     }
-    return res.json();
   };
 
   const toMoney = (value) => {
@@ -178,8 +182,8 @@
 
     const scheduleCopy = {
       ...scheduleCopyRaw,
-      reassuranceStart: `${laneShort('private')} Private Lessons, ${laneShort('youth')} Youth Class, and ${laneShort('adults')} Adult Class are the main weekday lanes.`,
-      microFaqStart: `Join the weekday time that fits: ${laneShort('private')} Private Lessons, ${laneShort('youth')} Youth Class, or ${laneShort('adults')} Adult Class in Tannersville. Text Sandy and we will help you pick the best first class.`,
+      reassuranceStart: `${laneShort('private')} Private Coaching, ${laneShort('youth')} Youth Class, and ${laneShort('adults')} Adult Class are the main weekday lanes.`,
+      microFaqStart: `Join the weekday time that fits: ${laneShort('private')} Private Coaching, ${laneShort('youth')} Youth Class, or ${laneShort('adults')} Adult Class in Tannersville. Text Sandy and we will help you pick the best first class.`,
       privateLaneWeekdays: slotTime('mon-private') ? `Available: Mon, Tue, Wed, Fri • ${ensureRangeMeridiem(slotTime('mon-private'))}` : scheduleCopyRaw.privateLaneWeekdays,
       youthLaneAges: scheduleCopyRaw.youthLaneAges,
       youthLaneWeekdays: slotTime('mon-youth') ? `Available: Mon, Tue, Wed, Fri • ${ensureRangeMeridiem(slotTime('mon-youth'))}` : scheduleCopyRaw.youthLaneWeekdays,
@@ -219,7 +223,7 @@
     const lifer = tracks.liferAnnual || {};
 
     const coreName = textOr(core.name, 'Core Culture (12 Weeks)');
-    const liferName = textOr(lifer.name, 'Lifer Annual');
+    const liferName = textOr(lifer.name, 'Annual Track');
 
     const coreYouth = toMoney(core.prices && core.prices.youth);
     const coreAdult = toMoney(core.prices && core.prices.adult);

@@ -12,6 +12,8 @@ const EXCLUDED_DIRS = new Set([
   "assets",
   "partials",
   "archive",
+  "_archive",
+  "_drafts",
   "tmp",
   "crawl-reports",
   "docs",
@@ -20,7 +22,9 @@ const EXCLUDED_DIRS = new Set([
   "_includes",
   "api",
   "node_modules",
-  ".git"
+  ".git",
+  "videos",
+  "near"
 ]);
 
 const EXCLUDED_FILES = new Set([
@@ -36,7 +40,8 @@ const EXCLUDED_FILES = new Set([
   "offer-block.html",
   "pricing-module.html",
   "pricing-module-fragment.html",
-  "schedule-block.html"
+  "schedule-block.html",
+  "bjj-videos.html"
 ]);
 
 const VIDEO_HUB_PATHS = new Set([
@@ -74,7 +79,7 @@ const toCanonicalPath = (relFile) => {
   return null;
 };
 
-const toLoc = (pathname) => (pathname === "/" ? SITE : `${SITE}${pathname}`);
+const toLoc = (pathname) => (pathname === "/" ? `${SITE}/` : `${SITE}${pathname}`);
 
 const parseMetaDirectives = (html, name) => {
   const directives = [];

@@ -2,12 +2,12 @@
 
 ## Required wording
 
-- `class` → `semi-private class`
-- `classes` → `semi-private classes`
-- `small class` → `semi-private class`
-- `small classes` → `semi-private classes`
-- `group class` → `semi-private class`
-- `group classes` → `semi-private classes`
+- `class` → `small-group class`
+- `classes` → `small-group classes`
+- `small class` → `small-group class`
+- `small classes` → `small-group classes`
+- `group class` → `small-group class`
+- `group classes` → `small-group classes`
 
 The patcher changes rendered text and accessibility-facing attributes only. It does not alter HTML `class=""` attributes, JavaScript, CSS, code samples, or the hyphenated adjective `first-class`.
 

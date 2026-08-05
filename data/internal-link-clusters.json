@@ -4,9 +4,9 @@
       "label": "Belts and Promotions",
       "startHere": "/blog/bjj-belts-stripes-promotions",
       "pillarTargets": [
-        "/kids",
-        "/teen-jiu-jitsu-tannersville-ny",
-        "/adult-bjj",
+        "/bjj-classes/kids-tannersville-ny",
+        "/bjj-classes/teens-tannersville-ny",
+        "/bjj-classes/adults-tannersville-ny",
         "/schedule"
       ],
       "links": [
@@ -19,9 +19,9 @@
       "label": "Beginners and Local Discovery",
       "startHere": "/blog/beginners-guide-bjj-human-chess",
       "pillarTargets": [
-        "/tannersville-ny-jiu-jitsu",
+        "/programs",
         "/schedule",
-        "/adult-bjj"
+        "/bjj-classes/adults-tannersville-ny"
       ],
       "links": [
         "/blog/bjj-beginners-over-40-catskills",
@@ -34,7 +34,7 @@
       "label": "Training and Longevity",
       "startHere": "/blog/bjj-36-techniques",
       "pillarTargets": [
-        "/adult-bjj",
+        "/bjj-classes/adults-tannersville-ny",
         "/schedule"
       ],
       "links": [
@@ -50,10 +50,10 @@
       "label": "Sensei and Local Support",
       "startHere": "/blog/bjj-sensei",
       "pillarTargets": [
-        "/tannersville-ny-jiu-jitsu",
-        "/kids",
-        "/teen-jiu-jitsu-tannersville-ny",
-        "/adult-bjj",
+        "/programs",
+        "/bjj-classes/kids-tannersville-ny",
+        "/bjj-classes/teens-tannersville-ny",
+        "/bjj-classes/adults-tannersville-ny",
         "/schedule"
       ],
       "links": [
@@ -63,9 +63,9 @@
         "/blog/after-school-jiu-jitsu-calm-routine-catskills",
         "/blog/jiu-jitsu-near-windham-mountain-club",
         "/blog/jiu-jitsu-near-windham-mountain-club-ski-families",
-        "/blog/martial-arts-windham-ny",
+        "/nearby-towns",
         "/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu",
-        "/martial-arts-hunter-ny",
+        "/nearby-towns",
         "/blog/kids-martial-arts-haines-falls",
         "/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu"
       ]
@@ -95,7 +95,7 @@
     "/blog/after-school-jiu-jitsu-calm-routine-catskills": "sensei-local-support",
     "/blog/jiu-jitsu-near-windham-mountain-club": "sensei-local-support",
     "/blog/jiu-jitsu-near-windham-mountain-club-ski-families": "sensei-local-support",
-    "/blog/martial-arts-windham-ny": "sensei-local-support",
+    "/nearby-towns": "sensei-local-support",
     "/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu": "sensei-local-support",
     "/blog/kids-martial-arts-haines-falls": "sensei-local-support",
     "/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu": "sensei-local-support"
@@ -114,7 +114,7 @@
       "minInlinks": 2
     },
     {
-      "path": "/black-belt-track",
+      "path": "/annual-track",
       "minInlinks": 5
     },
     {
@@ -147,7 +147,7 @@
     },
     {
       "path": "/blog/beginners-guide-bjj-human-chess",
-      "minInlinks": 4
+      "minInlinks": 3
     },
     {
       "path": "/blog/bjj-beginners-over-40-catskills",
@@ -167,7 +167,7 @@
     },
     {
       "path": "/blog/bjj-36-techniques",
-      "minInlinks": 4
+      "minInlinks": 2
     },
     {
       "path": "/blog/bio-switch-nervous-system",
@@ -190,12 +190,12 @@
       "minInlinks": 4
     },
     {
-      "path": "/near/haines-falls-ny",
+      "path": "/nearby-towns",
       "minInlinks": 4
     },
     {
       "path": "/blog/bjj-sensei",
-      "minInlinks": 4
+      "minInlinks": 2
     },
     {
       "path": "/blog/what-does-sensei-mean-in-bjj",
@@ -222,7 +222,7 @@
       "minInlinks": 4
     },
     {
-      "path": "/blog/martial-arts-windham-ny",
+      "path": "/nearby-towns",
       "minInlinks": 4
     },
     {
@@ -230,7 +230,7 @@
       "minInlinks": 4
     },
     {
-      "path": "/martial-arts-hunter-ny",
+      "path": "/nearby-towns",
       "minInlinks": 4
     },
     {

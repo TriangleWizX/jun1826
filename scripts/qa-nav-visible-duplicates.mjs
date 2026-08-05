@@ -6,7 +6,7 @@ const NAV_ITEM_RE = /<li\b[^>]*class=(["'])[^"']*\bnav-item\b[^"']*\1[^>]*>[\s\S
 const LINK_TEXT_RE = /<(?:a|button)\b[^>]*class=(["'])[^"']*\bnav-link\b[^"']*\1[^>]*>([\s\S]*?)<\/(?:a|button)>/i;
 const TAG_RE = /<[^>]+>/g;
 
-const pages = ['index.html', 'teens.html', 'teen-jiu-jitsu-tannersville-ny.html', 'student-hub.html', 'schedule.html'];
+const pages = ['index.html', 'bjj-classes/teens-tannersville-ny/index.html', 'student-hub.html', 'schedule.html'];
 
 const textOf = (value) => value.replace(TAG_RE, ' ').replace(/\s+/g, ' ').trim();
 

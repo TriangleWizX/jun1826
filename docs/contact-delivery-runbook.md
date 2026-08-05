@@ -3,11 +3,11 @@
 ## Scope
 - Contact form endpoint: `https://formspree.io/f/myzpdvay`
 - Source page: `/contact`
-- Success redirect: `/thanks`
+- Success redirect: `/`
 
 ## Weekly checks
 1. Submit a live test from `https://senseisandy.com/contact` with a unique subject marker, for example: `RUNBOOK TEST YYYY-MM-DD`.
-2. Confirm redirect to `https://senseisandy.com/thanks`.
+2. Confirm redirect to `https://senseisandy.com/`.
 3. Confirm the message arrives in primary inbox.
 4. Confirm the same message is not trapped in spam/junk.
 5. Confirm phone and email values render correctly in the delivered message.

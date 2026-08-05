@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span class="focus-video-thumb" aria-hidden="true">
                   ${
                     thumbUrl
-                      ? `<img src="${thumbUrl}" alt="" loading="lazy" decoding="async">`
+                      ? `<img src="${thumbUrl}" alt="${focus.title || 'Sensei Sandy BJJ Class Photo'}" loading="lazy" decoding="async">`
                       : ""
                   }
                   <span class="focus-video-play">▶</span>

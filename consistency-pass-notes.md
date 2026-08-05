@@ -21,7 +21,7 @@
 - `/programs` (programs.html): lane cards + CTA; contains lane schedule copy per page.
 - `/kids` (kids.html): hero uses CTA + mentions 4pm schedule; includes pricing module fragment.
 - `/teens` (teens.html): hero uses CTA + lane schedule copy; includes pricing module fragment.
-- `/adults` -> `/adult-bjj` (adult-bjj.html): hero uses CTA + lane schedule copy; includes pricing module fragment.
+- `/adults` -> `/bjj-classes-adults-tannersville-ny` (bjj-classes-adults-tannersville-ny.html): hero uses CTA + lane schedule copy; includes pricing module fragment.
 - `/schedule` (schedule.html): full schedule layout; meta referenced legacy location label.
 - `/after-school-bjj` (after-school.html): hero CTA; schedule copy varies; no shared schedule block yet.
 - `/contact` (contact.html): CTA hero/footer included; location copy references Tannersville / by appointment.

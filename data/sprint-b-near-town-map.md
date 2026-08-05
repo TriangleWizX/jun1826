@@ -18,7 +18,7 @@ Scope: `near/*` location pages + overlap with existing top-level town pages.
 ## Recommended actions
 - Keep 5 near hubs and enrich them deeply (route photos, commuter timing guidance, and lane-specific internal links).
 - Merge/301 the other near pages into the closest hub or top-level town page.
-- Update `nearby-towns.html` links after redirects so internal links point directly to final canonical targets.
+- Retire `nearby-towns.html` as a canonical destination. Use `/bjj-classes/` as the maintained class-by-town hub, and keep `/nearby-towns` as a 301 compatibility redirect.
 
 ## Keep set (canonical near hubs)
 - `/near/east-jewett-ny`
@@ -32,7 +32,7 @@ See `data/sprint-b-near-town-map.csv` for full source→target mapping.
 
 ## Implementation order
 1. Ship all 301 rules first (single-hop to canonical target).
-2. Update internal links in `nearby-towns.html` and any cross-links in near pages.
+2. Update internal links to `/bjj-classes/` and any cross-links in near pages so regenerated content does not reintroduce `/nearby-towns`.
 3. Enrich kept hubs with unique local proof:
    - one unique route photo + unique alt text
    - one concrete route/parking note

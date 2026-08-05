@@ -4,7 +4,7 @@ window.SENSEI_DECISIONS = window.SENSEI_DECISIONS || {
   pricingVisibility: 'site-wide',
   primaryCtaLabel: 'Reserve Free Intro',
   primaryCtaUrl: '/free-bjj-intro-tannersville-ny',
-  secondaryCtaLabel: 'Text Sandy First',
+  secondaryCtaLabel: 'Text Sandy',
   secondaryCtaUrl: 'sms:+19177368649'
 };
 

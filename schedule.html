@@ -2,19 +2,7 @@
 
 <html lang="en">
 <head>
-<script>
-  (function() {
-    try {
-      var isLead = localStorage.getItem('ss_lead_captured') === 'true' || sessionStorage.getItem('sensei_homepage_lead_submitted') === 'true';
-      var fromLead = document.referrer.includes('book-free-intro') || document.referrer.includes('waiver') || window.location.search.includes('booked');
-      if (!isLead && !fromLead) {
-        window.location.replace('/book-free-intro?returnTo=schedule');
-      } else {
-        localStorage.setItem('ss_lead_captured', 'true');
-      }
-    } catch(e) {}
-  })();
-</script>
+
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
@@ -22,7 +10,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>BJJ Schedule in Tannersville NY | Kids, Teens &amp; Adults</title>
-<meta content="View the Sensei Sandy BJJ class schedule in Tannersville NY with youth evening classes, adult evening classes, Saturday Adult No-Gi, " name="description"/>
+<meta content="View the Jiu Jitsu class schedule Tannersville NY families use: 5:00 PM youth, 6:00 PM adults, and Saturday Adult No-Gi. Reserve a Free Intro." name="description"/>
 <link href="https://senseisandy.com/schedule" rel="canonical"/>
 <meta content="Brazilian Jiu Jitsu schedule Tannersville NY, BJJ class times Hunter Windham Catskills" name="keywords"/>
 <meta content="website" property="og:type"/>
@@ -31,27 +19,68 @@
 <meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" property="og:image"/>
 <meta content="index, follow" name="robots"/>
 <meta content="BJJ Schedule in Tannersville NY | Kids, Teens &amp; Adults" property="og:title"/>
-<meta content="View the Sensei Sandy BJJ class schedule in Tannersville NY with youth evening classes, adult evening classes, Saturday Adult No-Gi, " property="og:description"/>
+<meta content="View the Jiu Jitsu class schedule Tannersville NY families use: 5:00 PM youth, 6:00 PM adults, and Saturday Adult No-Gi. Reserve a Free Intro." property="og:description"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="BJJ Schedule in Tannersville NY | Kids, Teens &amp; Adults" name="twitter:title"/>
-<meta content="View the Sensei Sandy BJJ class schedule in Tannersville NY with youth evening classes, adult evening classes, Saturday Adult No-Gi, " name="twitter:description"/>
+<meta content="View the Jiu Jitsu class schedule Tannersville NY families use: 5:00 PM youth, 6:00 PM adults, and Saturday Adult No-Gi. Reserve a Free Intro." name="twitter:description"/>
 <meta content="/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
 <!--#include virtual="/_includes/analytics-head.html" -->
 <link crossorigin="" href="https://www.google.com" rel="preconnect"/>
 <link href="//www.google.com" rel="dns-prefetch"/>
 <link href="//analytics.ahrefs.com" rel="dns-prefetch"/>
 <!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
-<link as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript>
-<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-</noscript>
-<link href="/assets/css/global.96c66d.css" rel="stylesheet"/>
-<link href="/assets/css/components.ba8a33.css" rel="stylesheet"/>
-<link href="/assets/css/pages/schedule.90f904.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/routes/site-929a0de8f3f1.min.b8ee93.css">
+
+<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://senseisandy.com/schedule#webpage",
+      "url": "https://senseisandy.com/schedule",
+      "name": "BJJ Schedule in Tannersville NY | Kids, Teens & Adults",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://senseisandy.com/#website"
+      },
+      "about": {
+        "@id": "https://senseisandy.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://senseisandy.com/schedule#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://senseisandy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Studio",
+          "item": "https://senseisandy.com/sensei-studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Schedule",
+          "item": "https://senseisandy.com/schedule"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/css/fonts.e11440.css">
+<link rel="stylesheet" href="/assets/css/site-shell.211bb7.css">
 </head>
 <body class="lane-mixed page-schedule">
 <!--#include virtual="/nav-include.html" -->
@@ -60,110 +89,105 @@
 <section aria-labelledby="ss-schedule-hero-title" class="ss-hero-editorial-split">
 <div class="ss-editorial-left ss-anim-fade-up">
 <span class="ss-eyebrow-badge" style="margin-bottom: 1rem; display: inline-block;">Tannersville, NY</span>
-<h1 class="ss-editorial-title" id="ss-schedule-hero-title">Choose the semi-private class that fits your week</h1>
+<span class="ss-eyebrow-badge" style="margin-bottom: 1rem; display: inline-block; background-color: var(--ss-surface2); border: 1px solid var(--ss-border); margin-left: 0.5rem;">Last updated: 2026-07</span>
+<h1 class="ss-editorial-title" id="ss-schedule-hero-title">Choose the small-group class that fits your week</h1>
 <p class="ss-editorial-lead">
           Start with a guided Free Intro. Compare youth, adult, morning, and weekend lanes in one calm view, then book the first visit that feels right.
         </p>
 <div class="ss-hero-actions">
-<a class="ss-btn-premium" href="/free-bjj-intro-tannersville-ny">
-<span>Book Free Goal Mapping</span>
+<a class="ss-btn-premium" data-cta-target="intro" href="#ss-lead-capture-form-inline">
+<span>Reserve Your Free Intro</span>
 <div class="ss-btn-premium-icon">
-<i aria-hidden="true" class="ph-light ph-arrow-up-right"></i>
+<i aria-hidden="true" class="bi bi-arrow-down"></i>
 </div>
 </a>
 </div>
-<ul aria-label="First semi-private class includes" class="ss-hero-features-row" style="margin-top: 3rem;">
-<li><i aria-hidden="true" class="ph-light ph-door-open"></i><span>Room tour</span></li>
-<li><i aria-hidden="true" class="ph-light ph-shield-check"></i><span>Safety walkthrough</span></li>
-<li><i aria-hidden="true" class="ph-light ph-user"></i><span>Beginner Lane</span></li>
+<ul aria-label="First small-group class includes" class="ss-hero-features-row" style="margin-top: 3rem;">
+<li><i aria-hidden="true" class="bi bi-door-open"></i><span>Room tour</span></li>
+<li><i aria-hidden="true" class="bi bi-shield-check"></i><span>Safety walkthrough</span></li>
+<li><i aria-hidden="true" class="bi bi-person"></i><span>Beginner Lane</span></li>
 </ul>
 </div>
 <div class="ss-editorial-right ss-anim-fade-up ss-anim-delay-1">
-<div class="ss-calendar-bezel-outer">
+<div style="text-align: right; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--ss-muted);">Current Students: Need to reschedule? <a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none; border-bottom: 1px solid rgba(17, 106, 66, 0.2);">Text Sandy</a></div><div class="ss-calendar-bezel-outer">
 <div class="ss-calendar-bezel-inner">
 <!-- Monday -->
-<a class="ss-cal-day" href="/free-bjj-intro-tannersville-ny">
-<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;">First-time local student? Book Goal Mapping First</div>
+<div class="ss-cal-day">
+<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;"><a href="#ss-lead-capture-form-inline" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(17, 106, 66, 0.4); text-underline-offset: 3px;">First-time local student? Reserve Your Free Intro</a></div>
 <div class="ss-cal-day-header">
 <span class="ss-cal-day-name">Monday</span>
 <span class="ss-cal-day-badge active">Gi Evening</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">5:00 PM</span>
-<span class="ss-cal-slot-name">Youth Semi-Private Class</span>
+<span class="ss-cal-slot-time">5:00–6:00 PM</span>
+<span class="ss-cal-slot-name">Youth + Teen Small-Group Class · Ages 5–17</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">6:00 PM</span>
-<span class="ss-cal-slot-name">Adult Semi-Private Class</span>
+<span class="ss-cal-slot-time">6:00–7:00 PM</span>
+<span class="ss-cal-slot-name">Adult Small-Group Class · <a href="#ss-lead-capture-form-inline">Reserve Adult Intro</a></span>
 </div>
-</a>
+<div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Tuesday -->
-<a class="ss-cal-day" href="/free-bjj-intro-tannersville-ny">
-<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;">First-time local student? Book Goal Mapping First</div>
+<div class="ss-cal-day">
+<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;"><a href="#ss-lead-capture-form-inline" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(17, 106, 66, 0.4); text-underline-offset: 3px;">First-time local student? Reserve Your Free Intro</a></div>
 <div class="ss-cal-day-header">
 <span class="ss-cal-day-name">Tuesday</span>
 <span class="ss-cal-day-badge active">Gi Evening</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">5:00 PM</span>
-<span class="ss-cal-slot-name">Youth Semi-Private Class</span>
+<span class="ss-cal-slot-time">5:00–6:00 PM</span>
+<span class="ss-cal-slot-name">Youth + Teen Small-Group Class · Ages 5–17</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">6:00 PM</span>
-<span class="ss-cal-slot-name">Adult Semi-Private Class</span>
+<span class="ss-cal-slot-time">6:00–7:00 PM</span>
+<span class="ss-cal-slot-name">Adult Small-Group Class</span>
 </div>
-</a>
+<div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Wednesday -->
-<a class="ss-cal-day" href="/free-bjj-intro-tannersville-ny">
-<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;">First-time local student? Book Goal Mapping First</div>
+<div class="ss-cal-day">
+<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;"><a href="#ss-lead-capture-form-inline" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(17, 106, 66, 0.4); text-underline-offset: 3px;">First-time local student? Reserve Your Free Intro</a></div>
 <div class="ss-cal-day-header">
 <span class="ss-cal-day-name">Wednesday</span>
 <span class="ss-cal-day-badge nogi">No-Gi Evening</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">5:00 PM</span>
-<span class="ss-cal-slot-name">Youth Semi-Private Class No-Gi</span>
+<span class="ss-cal-slot-time">5:00–6:00 PM</span>
+<span class="ss-cal-slot-name">Youth + Teen Small-Group Class · Ages 5–17 No-Gi</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">6:00 PM</span>
-<span class="ss-cal-slot-name">Adult Semi-Private Class No-Gi</span>
+<span class="ss-cal-slot-time">6:00–7:00 PM</span>
+<span class="ss-cal-slot-name">Adult Small-Group Class No-Gi</span>
 </div>
-</a>
-<!-- Thursday -->
-<div class="ss-cal-day">
-<div class="ss-cal-day-header">
-<span class="ss-cal-day-name">Thursday</span>
-<span class="ss-cal-day-badge">Closed</span>
-</div>
-</div>
+<div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Friday -->
-<a class="ss-cal-day" href="/free-bjj-intro-tannersville-ny">
-<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;">First-time local student? Book Goal Mapping First</div>
+<div class="ss-cal-day">
+<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;"><a href="#ss-lead-capture-form-inline" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(17, 106, 66, 0.4); text-underline-offset: 3px;">First-time local student? Reserve Your Free Intro</a></div>
 <div class="ss-cal-day-header">
 <span class="ss-cal-day-name">Friday</span>
 <span class="ss-cal-day-badge active">Gi Evening</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">5:00 PM</span>
-<span class="ss-cal-slot-name">Youth Semi-Private Class</span>
+<span class="ss-cal-slot-time">5:00–6:00 PM</span>
+<span class="ss-cal-slot-name">Youth + Teen Small-Group Class · Ages 5–17</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">6:00 PM</span>
-<span class="ss-cal-slot-name">Adult Semi-Private Class</span>
+<span class="ss-cal-slot-time">6:00–7:00 PM</span>
+<span class="ss-cal-slot-name">Adult Small-Group Class</span>
 </div>
-</a>
+<div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Saturday -->
-<a class="ss-cal-day" href="/free-bjj-intro-tannersville-ny">
-<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;">First-time local student? Book Goal Mapping First</div>
+<div class="ss-cal-day">
+<div class="ss-cal-first-time" style="font-size: 0.8rem; color: var(--ss-green); margin-bottom: 0.5rem; text-align: center;"><a href="#ss-lead-capture-form-inline" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(17, 106, 66, 0.4); text-underline-offset: 3px;">First-time local student? Reserve Your Free Intro</a></div>
 <div class="ss-cal-day-header">
 <span class="ss-cal-day-name">Saturday</span>
 <span class="ss-cal-day-badge nogi">No-Gi Weekend</span>
 </div>
 <div class="ss-cal-slot">
-<span class="ss-cal-slot-time">10:30 AM</span>
-<span class="ss-cal-slot-name">Adult Semi-Private Class No-Gi</span>
+<span class="ss-cal-slot-time">10:30–11:30 AM</span>
+<span class="ss-cal-slot-name">Adult No-Gi</span>
+<div style="font-size: 0.8rem; color: var(--ss-muted); margin-top: 0.5rem;">Ages 18+ are regularly scheduled. Youth and teens may attend only with Sandy’s approval. Text before attending.</div>
 </div>
-</a>
+<div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Sunday -->
 <div class="ss-cal-day">
 <div class="ss-cal-day-header">
@@ -176,18 +200,44 @@
 </div>
 </div>
 </div>
+</div><div style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;"><a href="/private-lessons" style="color: var(--ss-text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--ss-border);">Looking for Private Coaching?</a> <span aria-hidden="true">·</span> <a href="/bjj-tannersville-ny-directions" style="color: var(--ss-text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--ss-border);">Directions and parking</a></div>
+</div>
+</section>
+<section class="ss-section ss-reveal" style="background: var(--ss-bg); padding-top: 0; padding-bottom: 2rem;">
+<div class="container ss-shell" style="max-width: 800px; margin: 0 auto;">
+<div class="ss-cal-day" style="margin-top: 0; border: 1px solid var(--ss-border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+<div class="ss-cal-day-header" style="flex-direction: column; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--ss-border); margin-bottom: 1rem; padding-bottom: 1rem;">
+<h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-accent); margin: 0;">Private Coaching by Request</h3>
+<p style="font-size: 0.9rem; color: var(--ss-muted); text-align: center; margin: 0;">Private coaching is available by request and is not a drop-in group class.</p>
+</div>
+<div class="ss-cal-slot" style="justify-content: space-between; border-bottom: 1px dashed var(--ss-border); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+<span class="ss-cal-slot-time" style="color: var(--ss-slate); min-width: 100px;">Tuesday</span>
+<span class="ss-cal-slot-name">6:30 AM</span>
+</div>
+<div class="ss-cal-slot" style="justify-content: space-between; border-bottom: 1px dashed var(--ss-border); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+<span class="ss-cal-slot-time" style="color: var(--ss-slate); min-width: 100px;">Wednesday</span>
+<span class="ss-cal-slot-name">10:30–11:30 AM</span>
+</div>
+<div class="ss-cal-slot" style="justify-content: space-between; border-bottom: 1px dashed var(--ss-border); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+<span class="ss-cal-slot-time" style="color: var(--ss-slate); min-width: 100px;">Thursday</span>
+<span class="ss-cal-slot-name">6:30 AM</span>
+</div>
+<div class="ss-cal-slot" style="justify-content: space-between;">
+<span class="ss-cal-slot-time" style="color: var(--ss-slate); min-width: 100px;">Friday</span>
+<span class="ss-cal-slot-name">10:30–11:30 AM</span>
+</div>
 </div>
 </div>
 </section>
-<!-- 4. Private Lesson Windows -->
-<!-- 5. Private Lessons Link -->
+
+<!-- 4. Private Class Windows -->
+<!-- 5. Private Coaching Link -->
 <!-- 6. Saturday Visitor Note -->
 <section aria-labelledby="saturday-nogi" class="order-last w-100 ss-section ss-saturday-feature ss-reveal">
 <div class="container ss-shell">
 <div class="ss-double-bezel">
 <div class="ss-double-bezel-inner ss-saturday-grid">
 <div>
-<span class="ss-eyebrow">Saturday No-Gi</span>
 <h2 id="saturday-nogi">Weekend jiu-jitsu for visitors and busy families.</h2>
 <p>
                 Saturday No-Gi is a clean jiu-jitsu entry point for visitors, families with weekday conflicts,
@@ -209,15 +259,13 @@
 <section aria-labelledby="free-intro-flow" class="order-last w-100 ss-section ss-free-intro-flow ss-reveal">
 <div class="container ss-shell">
 <div class="ss-section-head ss-section-intro">
-<span class="ss-eyebrow">First Visit Essentials</span>
-<h2 id="free-intro-flow">Show up made easy.</h2>
+<h2 id="free-intro-flow">Your first visit, made easy.</h2>
 <p>Everything about jiu-jitsu starting, safety, and after-intro details.</p>
 </div>
 <div class="ss-info-grid">
 <article class="ss-info-card ss-reveal delay-1">
 <h3>Safety</h3>
-<p>Beginner Lane keeps jiu-jitsu pacing clear, partners matched, and instruction calm so you can practice control from
-              day one.</p>
+<p>Your journey starts with a room tour and safety walkthrough. Skill-based resistance activities begin at the right pace from day one, keeping partners matched and pacing clear.</p>
 </article>
 <article class="ss-info-card ss-reveal delay-2">
 <h3>Dress for Training</h3>
@@ -225,12 +273,11 @@
 </article>
 <article class="ss-info-card ss-reveal delay-3">
 <h3>Time &amp; frequency</h3>
-<p>Start with two sessions per week when possible. Many families train Mon/Wed or Tue/Fri for steady jiu-jitsu
-              momentum.</p>
+<p>Core Culture is a 12-week program with three planned classes each week. Choose three recurring home classes.</p>
 </article>
 <article class="ss-info-card ss-reveal delay-4">
 <h3>Rescheduling</h3>
-<p>Text Sandy anytime if your plans shift.</p>
+<p>Text Sandy to request another appropriate class with space.</p>
 </article>
 </div>
 </div>
@@ -242,11 +289,10 @@
 <div class="ss-double-bezel">
 <div class="ss-double-bezel-inner ss-location-grid">
 <div>
-<span class="ss-eyebrow">Arrival + Location</span>
 <h2 id="location">Arrive at 6045 Main Street, Tannersville</h2>
 <p>Sensei Sandy BJJ occupies a 2nd floor studio above Main Street.</p>
-<figure class="my-3 p-2 rounded-4 border" style="background:#fff;border-color:rgba(54,43,36,0.12)!important;">
-<img alt="Studios on Main building at 6045 Main Street in Tannersville, home of Sensei Sandy BJJ" class="w-100 rounded-3" height="4608" loading="lazy" src="/assets/images/sensei-sandy-bjj-building-main-street.6c6845.webp" style="aspect-ratio:16/9;object-fit:cover;" width="8192"/>
+<figure class="my-3 p-2 rounded-4 border" style="background:var(--color-paper);border-color:var(--color-rule)!important;">
+<img alt="Studios on Main building at 6045 Main Street in Tannersville, home of Sensei Sandy BJJ" class="w-100 rounded-3" height="4608" loading="lazy" src="/assets/images/sensei-sandy-bjj-building-main-street.585fcc.webp" style="aspect-ratio:16/9;object-fit:cover;" width="8192"/ decoding="async">
 <figcaption class="small mt-2 mb-0 text-muted">Look for the Studios on Main building, then head upstairs to the second-floor studio.</figcaption>
 </figure>
 <ul class="ss-check-list">
@@ -256,22 +302,22 @@
 <li>Arrive 10 to 15 minutes early</li>
 </ul>
 <div class="ss-hero-actions">
-<a class="ss-btn ss-btn-primary ss-btn-island group" href="/free-bjj-intro-tannersville-ny">
-<span class="ss-btn-text">Book Free Goal Mapping</span>
+<a class="ss-btn ss-btn-primary ss-btn-island group" data-cta-target="intro" href="#ss-lead-capture-form-inline">
+<span class="ss-btn-text">Reserve Your Free Intro</span>
 <span class="ss-btn-icon-wrapper">
-<i aria-hidden="true" class="ph-light ph-calendar-event"></i>
+<i aria-hidden="true" class="bi bi-calendar-event"></i>
 </span>
 </a>
 <a class="ss-btn ss-btn-secondary ss-btn-island group" href="https://maps.google.com/?q=6045+Main+Street+Tannersville+NY+12485">
 <span class="ss-btn-text">Open Maps</span>
 <span class="ss-btn-icon-wrapper">
-<i aria-hidden="true" class="ph-light ph-arrow-up-right"></i>
+<i aria-hidden="true" class="bi bi-arrow-up-right"></i>
 </span>
 </a>
 </div>
 </div>
 <aside class="ss-contact-card">
-<h3>Want help before semi-private class?</h3>
+<h3>Want help before small-group class?</h3>
 <p><a href="sms:+19177368649?&amp;body=Hi%20Sandy%2C%20I%27m%20interested%20in%20a%20Free%20Intro.">Text Sandy First</a> with your age, goal, and best day. We’ll help you choose the cleanest first visit.</p>
 <a href="sms:+19177368649?&amp;body=Hi%20Sandy%2C%20I%27m%20interested%20in%20a%20Free%20Intro.">Text Sandy First</a>
 </aside>
@@ -283,19 +329,18 @@
 <section aria-labelledby="faq-title" class="order-7 w-100 ss-section ss-faq-section ss-reveal">
 <div class="container ss-shell">
 <div class="ss-section-head ss-section-intro">
-<span class="ss-eyebrow">Questions</span>
 <h2 id="faq-title">Schedule FAQs</h2>
 </div>
 <div class="accordion ss-faq-accordion" id="faqAccordion">
 <div class="accordion-item">
 <h3 class="accordion-header">
 <button class="accordion-button collapsed" data-bs-target="#faq1" data-bs-toggle="collapse" type="button">
-                What are the BJJ semi-private class times in Tannersville, NY?
+                What are the BJJ small-group class times in Tannersville, NY?
               </button>
 </h3>
 <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq1">
 <div class="accordion-body">
-                Most first visits start at 5:00 PM for youth or 6:00 PM for adults. Saturday Adult No-Gi is at 10:30 AM.
+                Most first visits start at 5:00–6:00 PM for youth or 6:00–7:00 PM for adults. Saturday Adult No-Gi is at 10:30–11:30 AM.
               </div>
 </div>
 </div>
@@ -307,7 +352,7 @@
 </h3>
 <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq2">
 <div class="accordion-body">
-                Gi-focused evening semi-private classes run Monday, Tuesday, and Friday. No-Gi runs Wednesday evening, and Saturday Adult No-Gi runs at 10:30 AM.
+                Gi-focused evening small-group classes run Monday, Tuesday, and Friday. No-Gi runs Wednesday evening, and Saturday Adult No-Gi runs at 10:30–11:30 AM.
               </div>
 </div>
 </div>
@@ -319,14 +364,14 @@
 </h3>
 <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq3">
 <div class="accordion-body">
-                Yes. Text Sandy anytime if your plans shift.
+                Yes. Simply text Sandy at +1 (917) 736-8649 if your plans shift.
               </div>
 </div>
 </div>
 <div class="accordion-item">
 <h3 class="accordion-header">
 <button class="accordion-button collapsed" data-bs-target="#faq4" data-bs-toggle="collapse" type="button">
-                What should I wear to jiu-jitsu semi-private class?
+                What should I wear to jiu-jitsu small-group class?
               </button>
 </h3>
 <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq4">
@@ -342,1183 +387,32 @@
 <!-- 11. Helpful Local Guides -->
 <!-- 12. Final CTA -->
 <section aria-labelledby="schedule-local-planning-title" class="container py-4">
-<div class="rounded-4 border p-4" style="background:#F4F1ED;border-color:rgba(54,43,36,0.14)!important;">
-<p class="text-uppercase fw-semibold small mb-2" style="letter-spacing:0.12em;color:#116A42;">Local planning</p>
-<h2 class="h3 mb-2" id="schedule-local-planning-title" style="font-family:'Instrument Serif', Georgia, serif;">Need a Windham-focused timing check?</h2>
-<p class="mb-3">Use the <a href="/blog/bjj-schedule-windham-ny">Windham schedule guide</a> for a calmer read on drive time, semi-private class choice, and what a realistic first week can look like from across the mountain.</p>
-<a class="ss-btn ss-btn-secondary" href="/blog/bjj-schedule-windham-ny">Read the Windham schedule guide</a>
+<div class="rounded-4 border p-4" style="background:var(--color-paper-2);border-color:var(--color-rule)!important;">
+<p class="text-uppercase fw-semibold small mb-2" style="letter-spacing:0.12em;color:var(--color-accent);">Local planning</p>
+<h2 class="h3 mb-2" id="schedule-local-planning-title" style="font-family:var(--font-display);">Need a Windham-focused timing check?</h2>
+<p class="mb-3">Use the <a href="/nearby-towns">Windham schedule guide</a> for a calmer read on drive time, small-group class choice, and what a realistic first week can look like from across the mountain.</p>
+<a class="ss-btn ss-btn-secondary" href="/nearby-towns">Read the Windham schedule guide</a>
 </div>
 </section>
-<!--#include virtual="/cta-footer.html" -->
+
+
+<section class="container py-4 ss-culture-explanation" aria-label="Core Culture Schedule and Rescheduling Policy">
+  <div class="p-4 rounded-4 border bg-white shadow-sm" style="border-color: rgba(54, 43, 36, 0.12)!important;">
+    <h3 class="h5 fw-bold mb-3" style="font-family: 'Lexend', sans-serif; color: var(--ss-ink, #362B24);">Core Culture Schedule &amp; Rescheduling</h3>
+    <p class="mb-2" style="font-size: 0.95rem; color: var(--ss-muted, #4F433C); line-height: 1.6;">
+      Each standard enrollment includes <strong>three planned classes per week</strong> (up to <strong>36 scheduled classes over 12 weeks</strong>). Students select <strong>three recurring home-class reservations</strong> to keep training consistent and manage room capacity.
+    </p>
+    <p class="mb-0" style="font-size: 0.95rem; color: var(--ss-muted, #4F433C); line-height: 1.6;">
+      If your availability changes during a week, we offer <strong>open-seat rescheduling by text</strong>. Rescheduling depends on space and partner fit in that session. Text Sandy directly to check open seats.
+    </p>
+  </div>
+</section>
+
 </main>
-<!--#include virtual="/_includes/footer-high-intent.html" -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the BJJ class times in Tannersville, NY?","acceptedAnswer":{"@type":"Answer","text":"Youth classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adult classes run Monday, Tuesday, Wednesday, and Friday at 6:00 PM. Saturday Adult No-Gi starts at 10:30 AM. Morning availability is reserved for private lessons."}},{"@type":"Question","name":"Which classes are visitor-eligible?","acceptedAnswer":{"@type":"Answer","text":"Visitors can join all active evening youth and adult classes plus Saturday Adult No-Gi. Morning availability is reserved for private lessons."}},{"@type":"Question","name":"Can I reschedule?","acceptedAnswer":{"@type":"Answer","text":"Yes. Text Sandy anytime if your plans shift."}},{"@type":"Question","name":"What should I wear to Brazilian Jiu-Jitsu class?","acceptedAnswer":{"@type":"Answer","text":"Wear athletic gear you can move in. If you have a gi, bring it. If not, start in a t-shirt and shorts and we will guide you on day one."}}]}
-</script>
-<!-- SCHEDULE_EVENTS_JSONLD_START -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260626-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-06-26T17:00:00-04:00",
-      "endDate": "2026-06-26T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260626-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-06-26T18:00:00-04:00",
-      "endDate": "2026-06-26T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260627-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-06-27T10:30:00-04:00",
-      "endDate": "2026-06-27T11:30:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260629-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-06-29T17:00:00-04:00",
-      "endDate": "2026-06-29T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260629-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-06-29T18:00:00-04:00",
-      "endDate": "2026-06-29T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260630-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-06-30T17:00:00-04:00",
-      "endDate": "2026-06-30T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260630-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-06-30T18:00:00-04:00",
-      "endDate": "2026-06-30T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260701-youth-class-no-gi",
-      "name": "Youth Class No-Gi",
-      "startDate": "2026-07-01T17:00:00-04:00",
-      "endDate": "2026-07-01T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260701-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-07-01T18:00:00-04:00",
-      "endDate": "2026-07-01T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260703-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-03T17:00:00-04:00",
-      "endDate": "2026-07-03T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260703-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-03T18:00:00-04:00",
-      "endDate": "2026-07-03T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260704-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-07-04T10:30:00-04:00",
-      "endDate": "2026-07-04T11:30:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260706-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-06T17:00:00-04:00",
-      "endDate": "2026-07-06T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260706-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-06T18:00:00-04:00",
-      "endDate": "2026-07-06T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260707-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-07T17:00:00-04:00",
-      "endDate": "2026-07-07T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260707-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-07T18:00:00-04:00",
-      "endDate": "2026-07-07T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260708-youth-class-no-gi",
-      "name": "Youth Class No-Gi",
-      "startDate": "2026-07-08T17:00:00-04:00",
-      "endDate": "2026-07-08T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260708-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-07-08T18:00:00-04:00",
-      "endDate": "2026-07-08T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260710-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-10T17:00:00-04:00",
-      "endDate": "2026-07-10T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260710-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-10T18:00:00-04:00",
-      "endDate": "2026-07-10T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260711-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-07-11T10:30:00-04:00",
-      "endDate": "2026-07-11T11:30:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260713-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-13T17:00:00-04:00",
-      "endDate": "2026-07-13T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260713-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-13T18:00:00-04:00",
-      "endDate": "2026-07-13T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260714-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-14T17:00:00-04:00",
-      "endDate": "2026-07-14T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260714-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-14T18:00:00-04:00",
-      "endDate": "2026-07-14T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260715-youth-class-no-gi",
-      "name": "Youth Class No-Gi",
-      "startDate": "2026-07-15T17:00:00-04:00",
-      "endDate": "2026-07-15T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260715-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-07-15T18:00:00-04:00",
-      "endDate": "2026-07-15T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260717-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-17T17:00:00-04:00",
-      "endDate": "2026-07-17T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260717-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-17T18:00:00-04:00",
-      "endDate": "2026-07-17T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260718-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-07-18T10:30:00-04:00",
-      "endDate": "2026-07-18T11:30:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260720-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-20T17:00:00-04:00",
-      "endDate": "2026-07-20T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260720-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-20T18:00:00-04:00",
-      "endDate": "2026-07-20T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260721-youth-class",
-      "name": "Youth Class",
-      "startDate": "2026-07-21T17:00:00-04:00",
-      "endDate": "2026-07-21T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260721-adult-class",
-      "name": "Adult Class",
-      "startDate": "2026-07-21T18:00:00-04:00",
-      "endDate": "2026-07-21T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260722-youth-class-no-gi",
-      "name": "Youth Class No-Gi",
-      "startDate": "2026-07-22T17:00:00-04:00",
-      "endDate": "2026-07-22T17:50:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    },
-    {
-      "@type": "Event",
-      "@id": "https://senseisandy.com/schedule#event-20260722-adult-class-no-gi",
-      "name": "Adult Class No-Gi",
-      "startDate": "2026-07-22T18:00:00-04:00",
-      "endDate": "2026-07-22T19:00:00-04:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Sensei Sandy BJJ",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "6045 Main Street, 2nd Floor Studio",
-          "addressLocality": "Tannersville",
-          "addressRegion": "NY",
-          "postalCode": "12485",
-          "addressCountry": "US"
-        }
-      },
-      "organizer": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "url": "https://senseisandy.com/schedule",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny"
-      }
-    }
-  ]
-}
-</script>
-<!-- SCHEDULE_EVENTS_JSONLD_END -->
+<!--#include virtual="/footer-include.html" -->
 <script src="/js/voice-faq-accordion.2b6c27.js"></script>
-<script defer="" src="/assets/js/ss-evidence-registry.01466d.js"></script>
-<script defer="" src="/assets/js/ss-evidence-accordion.c9619a.js"></script>
+<script defer="" src="/assets/js/ss-evidence-registry.0f4e50.js"></script>
+<script defer="" src="/assets/js/ss-evidence-accordion.daa894.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
       const filterPills = document.querySelectorAll('.ss-filter-pill');
@@ -1529,8 +423,8 @@
 
       const explainers = {
         all: "",
-        youth: "Youth classes prioritize focus, coordination, partner care, and a safe look at neutral work, chest-to-chest control, chest-to-back control, and standing engagement when skill level makes it appropriate.",
-        adults: "Adult classes include neutral work, chest-to-chest control, chest-to-back control, and standing engagement when skill level makes it appropriate. Sandy adjusts partners, resistance, and pace.",
+        youth: "Youth classes prioritize focus, coordination, partner care, and a safe look at coached, beginner-appropriate partner activities. Sandy adjusts the position, partner, pace, and resistance.",
+        adults: "Adult classes include coached, beginner-appropriate partner activities. Sandy adjusts the position, partner, pace, and resistance so your child can participate safely and learn at the right speed.",
         morning: "Morning and weekend blocks are smaller, quieter, and offer plenty of breathing room for first-timers or busy parents.",
         nogi: "No-Gi classes simplify your start: train in standard athletic shorts and a t-shirt. No traditional uniform (gi) required."
       };

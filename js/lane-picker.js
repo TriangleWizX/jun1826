@@ -158,8 +158,8 @@
     if (saveSpotBullet) {
       saveSpotBullet.textContent =
         lane === 'adult'
-          ? 'Save a 6 PM adult spot (or ask for another time)'
-          : 'Save a 5 PM youth spot (or ask for another time)';
+          ? 'Save an adult class spot (or ask for another time)'
+          : 'Save a youth small-group class spot (or ask for another time)';
     }
 
     const scheduleLabel = document.querySelector('[data-ss-form-schedule-label]');
@@ -167,7 +167,7 @@
       scheduleLabel.textContent =
         lane === 'adult'
           ? 'Does 6:00 PM in Tannersville work?'
-          : 'Does 5:00 PM in Tannersville work?';
+          : 'Does the 5:00 PM youth small-group class in Tannersville work?';
     }
 
     const scheduleOptionPrimary = document.querySelector('[data-ss-form-schedule-option="primary"]');

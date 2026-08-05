@@ -169,8 +169,8 @@ const schedulePageGrid = (schedule) => {
             </div>
             <div class="ss-slot-main">
               <div class="ss-slot-name-row">
-                <p class="ss-slot-name-text">${escapeHtml(slotDisplayName(slot))}</p>
-                ${badge ? `<span class="ss-slot-badge ${badge.tone}">${escapeHtml(badge.text)}</span>` : ''}
+                <p class="ss-slot-name-text">${escapeHtml(slotDisplayName(slot))}</p>${badge ? `
+                <span class="ss-slot-badge ${badge.tone}">${escapeHtml(badge.text)}</span>` : ''}
               </div>
               <p class="ss-slot-meta">${escapeHtml(visitorText)} · ${escapeHtml(formatRange(slot.startTime, slot.endTime))}</p>
             </div>
@@ -251,7 +251,7 @@ const currentSchedulePartial = (schedule) =>
     return `<p>${DAY_LABELS[day]}: ${escapeHtml(items)}</p>`;
   }).join('\n');
 
-const faqJson = `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the BJJ class times in Tannersville, NY?","acceptedAnswer":{"@type":"Answer","text":"Youth classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adult classes run Monday, Tuesday, Wednesday, and Friday at 6:00 PM. Saturday Adult No-Gi starts at 10:30 AM. Morning availability is private lessons only on Tuesday and Thursday at 6:30 AM and Wednesday and Friday at 10:00 AM."}},{"@type":"Question","name":"Which classes are visitor-eligible?","acceptedAnswer":{"@type":"Answer","text":"Visitors can join all active evening youth and adult classes plus Saturday Adult No-Gi. Morning availability is reserved for private lessons."}},{"@type":"Question","name":"Can I reschedule?","acceptedAnswer":{"@type":"Answer","text":"Yes. Text Sandy anytime if your plans shift."}},{"@type":"Question","name":"What should I wear to Brazilian Jiu-Jitsu class?","acceptedAnswer":{"@type":"Answer","text":"Wear athletic gear you can move in. If you have a gi, bring it. If not, start in a t-shirt and shorts and we will guide you on day one."}}]}`;
+const faqJson = `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the BJJ class times in Tannersville, NY?","acceptedAnswer":{"@type":"Answer","text":"Youth classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adult classes run Monday, Tuesday, Wednesday, and Friday at 6:00 PM. Saturday Adult No-Gi starts at 10:30 AM. Morning availability is private lessons only on Tuesday and Thursday at 6:30 AM and Wednesday and Friday at 10:30 AM."}},{"@type":"Question","name":"Which classes are visitor-eligible?","acceptedAnswer":{"@type":"Answer","text":"Visitors can join all active evening youth and adult classes plus Saturday Adult No-Gi. Morning availability is reserved for private lessons."}},{"@type":"Question","name":"Can I reschedule?","acceptedAnswer":{"@type":"Answer","text":"Yes. Text Sandy anytime if your plans shift."}},{"@type":"Question","name":"What should I wear to Brazilian Jiu-Jitsu class?","acceptedAnswer":{"@type":"Answer","text":"Wear athletic gear you can move in. If you have a gi, bring it. If not, start in a t-shirt and shorts and we will guide you on day one."}}]}`;
 
 const buildEventsJsonLd = (schedule) => {
   const now = new Date();
@@ -344,7 +344,7 @@ const updateSchedulePage = async (schedule) => {
   let html = await fs.readFile(SCHEDULE_PAGE_PATH, 'utf8');
 
   html = html.replace(
-    /View the Sensei Sandy BJJ class schedule in Tannersville NY with youth and evening classes, Before Work BJJ, Morning BJJ, and Saturday Adult No-Gi\./g,
+    /View the Sensei Sandy BJJ class schedule in Tannersville NY with youth and evening classes, Private Lessons, Private Lessons, and Saturday Adult No-Gi\./g,
     'View the Sensei Sandy BJJ class schedule in Tannersville NY with youth evening classes, adult evening classes, Saturday Adult No-Gi, and fixed morning private-lesson availability.'
   );
 
@@ -359,25 +359,64 @@ const updateSchedulePage = async (schedule) => {
     console.warn('Warning: Could not update schedule page grid in schedule.html. It may have been redesigned.');
   }
 
-  html = replaceOrThrow(
-    html,
-    /<script type="application\/ld\+json">\s*[\s\S]*?"@type"\s*:\s*"FAQPage"[\s\S]*?<\/script>/,
-    `<script type="application/ld+json">
-${faqJson}
-</script>`,
-    'schedule FAQ schema'
-  );
+  // Remove FAQPage schema if present
+  html = html.replace(/<script type="application\/ld\+json">\s*[\s\S]*?"@type"\s*:\s*"FAQPage"[\s\S]*?<\/script>/g, '');
 
-  html = replaceOrThrow(
-    html,
-    /<!-- SCHEDULE_EVENTS_JSONLD_START -->[\s\S]*?<!-- SCHEDULE_EVENTS_JSONLD_END -->/,
-    buildEventsJsonLd(schedule),
-    'schedule event schema'
-  );
+  // Replace Event schema with WebPage and BreadcrumbList graph
+  const scheduleSchema = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://senseisandy.com/schedule#webpage",
+      "url": "https://senseisandy.com/schedule",
+      "name": "BJJ Schedule in Tannersville NY | Kids, Teens & Adults",
+      "description": "View the Jiu Jitsu class schedule Tannersville NY families use: 5:00 PM youth, 6:00 PM adults, and Saturday Adult No-Gi. Reserve a Free Intro.",
+      "isPartOf": {
+        "@id": "https://senseisandy.com/#website"
+      },
+      "about": {
+        "@id": "https://senseisandy.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://senseisandy.com/schedule#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://senseisandy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Studio",
+          "item": "https://senseisandy.com/sensei-studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Schedule",
+          "item": "https://senseisandy.com/schedule"
+        }
+      ]
+    }
+  ]
+}
+</script>`;
+
+  if (/<!-- SCHEDULE_EVENTS_JSONLD_START -->[\s\S]*?<!-- SCHEDULE_EVENTS_JSONLD_END -->/.test(html)) {
+    html = html.replace(/<!-- SCHEDULE_EVENTS_JSONLD_START -->[\s\S]*?<!-- SCHEDULE_EVENTS_JSONLD_END -->/g, scheduleSchema);
+  } else if (!html.includes('https://senseisandy.com/schedule#breadcrumb')) {
+    html = html.replace('</head>', `${scheduleSchema}\n</head>`);
+  }
 
   html = html
-    .replace(/Before Work BJJ/g, 'Private Lesson')
-    .replace(/Morning BJJ/g, 'Private Lesson');
+    .replace(/Private Lessons/g, 'Private Lesson')
+    .replace(/Private Lessons/g, 'Private Lesson');
 
   await fs.writeFile(SCHEDULE_PAGE_PATH, html);
 };
@@ -390,8 +429,8 @@ const updateStudioPage = async (schedule) => {
   try {
     html = replaceOrThrow(
       html,
-      /<div class="bento-schedule-list">[\s\S]*?<\/div><\/div><a href="\/book-free-intro" class="bento-sched-promo"/,
-      `${studioBento(schedule)}</div><a href="/book-free-intro" class="bento-sched-promo"`,
+      /<div class="bento-schedule-list">[\s\S]*?<\/div><\/div><a href="\/free-bjj-intro-tannersville-ny" class="bento-sched-promo"/,
+      `${studioBento(schedule)}</div><a href="/free-bjj-intro-tannersville-ny" class="bento-sched-promo"`,
       'studio bento schedule'
     );
   } catch (e) {
@@ -403,19 +442,23 @@ const updateStudioPage = async (schedule) => {
 
 const updateNearbyTownsPage = async (schedule) => {
   let html = await fs.readFile(NEARBY_TOWNS_PATH, 'utf8');
-  html = replaceOrThrow(
-    html,
-    /<!-- 4\. CURRENT SCHEDULE SECTION -->[\s\S]*?<!-- Shared reviews-village section -->/,
-    `${studioCurrentSchedule(schedule)}<!-- Shared reviews-village section -->`,
-    'nearby towns current schedule'
-  );
-  await fs.writeFile(NEARBY_TOWNS_PATH, html);
+  try {
+    html = replaceOrThrow(
+      html,
+      /<!-- 4\. CURRENT SCHEDULE SECTION -->[\s\S]*?<!-- Shared reviews-village section -->/,
+      `${studioCurrentSchedule(schedule)}<!-- Shared reviews-village section -->`,
+      'nearby towns current schedule'
+    );
+    await fs.writeFile(NEARBY_TOWNS_PATH, html);
+  } catch (e) {
+    console.warn('Warning: Could not update nearby towns current schedule. It may have been redesigned.');
+  }
 };
 
 const updateStudentHub = async () => {
   let html = await fs.readFile(STUDENT_HUB_PATH, 'utf8');
   html = html.replace(
-    /if \(className === 'Adult Morning Class'\) \{\s*if \(dayKey === 'tue' \|\| dayKey === 'thu'\) return 'Before Work BJJ';\s*if \(dayKey === 'wed' \|\| dayKey === 'fri'\) return 'Morning BJJ';\s*\}/,
+    /if \(className === 'Adult Morning Class'\) \{\s*if \(dayKey === 'tue' \|\| dayKey === 'thu'\) return 'Private Lessons';\s*if \(dayKey === 'wed' \|\| dayKey === 'fri'\) return 'Private Lessons';\s*\}/,
     `if (className === 'Adult Morning Class' || className === 'Private Lesson') {
           return 'Private Lesson';
         }`
@@ -426,8 +469,8 @@ const updateStudentHub = async () => {
 const updateSchoolFamilies = async () => {
   let html = await fs.readFile(SCHOOL_FAMILIES_PATH, 'utf8');
   html = html.replace(/Adult Morning Class/g, 'Private Lesson');
-  html = html.replace(/Before Work BJJ/g, 'Private Lesson');
-  html = html.replace(/Morning BJJ/g, 'Private Lesson');
+  html = html.replace(/Private Lessons/g, 'Private Lesson');
+  html = html.replace(/Private Lessons/g, 'Private Lesson');
   await fs.writeFile(SCHOOL_FAMILIES_PATH, html);
 };
 

@@ -1,7 +1,7 @@
 import os
 
 replacements = [
-    # adult-bjj.html
+    # bjj-classes-adults-tannersville-ny.html
     ("Safe &amp; Supportive", "Supportive"),
     ("Safe & Supportive", "Supportive"),
     ("Calm mind, strong body", "Strong body"),
@@ -22,7 +22,7 @@ replacements = [
 ]
 
 target_files = [
-    "adult-bjj.html",
+    "bjj-classes-adults-tannersville-ny.html",
     "nervous-first-timers.html",
     "safety.html",
     "scribners.html"

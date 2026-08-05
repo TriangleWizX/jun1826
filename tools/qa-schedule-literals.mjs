@@ -23,9 +23,9 @@ const SKIP_FILES = new Set([
 const FILE_EXTENSIONS = new Set(['.html', '.json', '.js', '.mjs', '.md', '.sh', '.txt']);
 const CHECKS = [
   { label: '5:30 PM', pattern: /5:30 PM/g },
-  { label: 'Before Work BJJ', pattern: /Before Work BJJ/g },
-  { label: 'Morning BJJ', pattern: /Morning BJJ/g },
-  { label: 'Saturday 10:00 AM', pattern: /Saturday[^.\n]{0,24}10:00 AM/g }
+  { label: 'Private Lessons', pattern: /Private Lessons/g },
+  { label: 'Private Lessons', pattern: /Private Lessons/g },
+  { label: 'Saturday 10:30 AM', pattern: /Saturday[^.\n]{0,24}10:30 AM/g }
 ];
 
 const walk = async (dir) => {

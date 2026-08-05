@@ -24,9 +24,9 @@ const MARKERS = {
   homeLatestEnd: '<!-- HOME_RECENT_POSTS_END -->'
 };
 
-const REQUIRED_SERVICE_PATHS = ['/kids', '/teen-jiu-jitsu-tannersville-ny', '/adult-bjj', '/schedule'];
+const REQUIRED_SERVICE_PATHS = ['/bjj-classes/kids-tannersville-ny', '/bjj-classes/teens-tannersville-ny', '/bjj-classes/adults-tannersville-ny', '/schedule'];
 const REQUIRED_LOCATION_SUPPORT_POSTS = [
-  '/blog/martial-arts-windham-ny',
+  '/nearby-towns',
   '/blog/kids-martial-arts-haines-falls'
 ];
 

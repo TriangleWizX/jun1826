@@ -6,6 +6,8 @@ import { spawn } from 'node:child_process';
 const ROOT = process.cwd();
 const CHROME_BIN = process.env.CHROME_BIN || 'chromium';
 const MIN_RATIO = 4.5;
+const ROUTE_BUNDLE_RE = /\/assets\/css\/routes\/site-[0-9a-f]{12}\.min(?:\.[0-9a-f]{6})?\.css/i;
+const SITE_SHELL_RE = /\/assets\/css\/site-shell(?:\.[0-9a-f]{6})?\.css/i;
 
 const pages = [
   { label: 'hub', path: '/bjj-glossary/' },
@@ -60,17 +62,24 @@ const contrastRatio = (foreground, background) => {
 const runStaticSurfaceAudit = async (reason) => {
   console.warn(`Browser contrast audit unavailable (${reason}). Running static glossary surface contrast audit.`);
 
-  const [hubHtml, termHtml, glossaryCss, componentsCss] = await Promise.all([
+  const [hubHtml, termHtml, glossaryCss, componentsCss, routeManifest] = await Promise.all([
     fs.readFile(path.join(ROOT, 'bjj-glossary', 'index.html'), 'utf8'),
     fs.readFile(path.join(ROOT, 'bjj-glossary', 'guard', 'index.html'), 'utf8'),
     fs.readFile(path.join(ROOT, 'assets', 'css', 'pages', 'glossary.css'), 'utf8'),
-    fs.readFile(path.join(ROOT, 'assets', 'css', 'components.css'), 'utf8')
+    fs.readFile(path.join(ROOT, 'assets', 'css', 'components.css'), 'utf8'),
+    fs.readFile(path.join(ROOT, 'assets', 'data', 'route-style-manifest.json'), 'utf8').then(JSON.parse)
   ]);
 
-  ensure(/\/assets\/css\/global(?:\.[0-9a-f]{6})?\.css/.test(hubHtml), 'Glossary hub does not load global CSS.');
-  ensure(/\/assets\/css\/components(?:\.[0-9a-f]{6})?\.css/.test(hubHtml), 'Glossary hub does not load component CSS.');
-  ensure(/\/assets\/css\/pages\/glossary(?:\.[0-9a-f]{6})?\.css/.test(hubHtml), 'Glossary hub does not load page-owned glossary CSS.');
-  ensure(/\/assets\/css\/pages\/glossary(?:\.[0-9a-f]{6})?\.css/.test(termHtml), 'Glossary term page does not load page-owned glossary CSS.');
+  const hubInputs = routeManifest.routes?.['/bjj-glossary']?.orderedInputs || [];
+  const termInputs = routeManifest.routes?.['/bjj-glossary/guard']?.orderedInputs || [];
+  ensure(ROUTE_BUNDLE_RE.test(hubHtml), 'Glossary hub does not load its generated route bundle.');
+  ensure(ROUTE_BUNDLE_RE.test(termHtml), 'Glossary term does not load its generated route bundle.');
+  ensure(SITE_SHELL_RE.test(hubHtml) && SITE_SHELL_RE.test(termHtml), 'Glossary routes do not load the shared site shell.');
+  ensure(hubInputs.includes('/assets/css/global.css'), 'Glossary hub route bundle no longer absorbs global CSS.');
+  ensure(hubInputs.includes('/assets/css/bundles/components-glossary-hub.min.css'), 'Glossary hub route bundle no longer absorbs its component bundle.');
+  ensure(termInputs.includes('/assets/css/bundles/components-glossary-term.min.css'), 'Glossary term route bundle no longer absorbs its component bundle.');
+  ensure(hubInputs.includes('/assets/css/pages/glossary.css'), 'Glossary hub route bundle no longer absorbs page-owned glossary CSS.');
+  ensure(termInputs.includes('/assets/css/pages/glossary.css'), 'Glossary term route bundle no longer absorbs page-owned glossary CSS.');
   ensure(hubHtml.includes('class="glossary-shell glossary-next-steps glossary-surface--dark"'), 'Next-step CTA is not using the dark glossary surface.');
   ensure(hubHtml.includes('class="ss-glossary-paths glossary-surface--dark"'), 'Buyer path section is not using the dark glossary surface.');
   ensure(hubHtml.includes('class="ss-paths-inner"'), 'Buyer path section still lacks the generated surface inner wrapper.');

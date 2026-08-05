@@ -41,7 +41,7 @@ const probeScript = `
       ? Math.min.apply(null, fixedBottom.map((el) => el.getBoundingClientRect().top))
       : window.innerHeight;
 
-    const controls = Array.from(document.querySelectorAll('a,button,input,select,textarea,[role="button"],[tabindex]')).filter((el) => {
+    const controls = Array.from(document.querySelectorAll('a,button,input,select,textarea,[role="button"],[tabindex]:not([tabindex^="-"])')).filter((el) => {
       if (!visible(el)) return false;
       if (fixedBottom.some((bar) => bar.contains(el))) return false;
       const r = el.getBoundingClientRect();

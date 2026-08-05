@@ -766,8 +766,8 @@
 .faq-lineage-flow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.35rem;
+  justify-content: flex-start;
+  gap: 1rem;
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -777,7 +777,16 @@
 }
 
 .faq-lineage-flow::-webkit-scrollbar {
-  display: none;
+  height: 8px;
+}
+
+.faq-lineage-flow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.faq-lineage-flow::-webkit-scrollbar-thumb {
+  background-color: rgba(33, 29, 24, 0.15);
+  border-radius: 4px;
 }
 
 /* Node */

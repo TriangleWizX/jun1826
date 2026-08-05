@@ -40,6 +40,12 @@ if ($path === '' && $method === 'GET') {
         'routes' => [
             'GET /api/health',
             'POST /api/leads',
+            'GET /api/youth-intro/availability',
+            'GET|POST|DELETE /api/youth-intro/records',
+            'GET|POST /api/youth-intro/messages',
+            'GET /api/youth-intro/report',
+            'POST /api/youth-intro/confirm',
+            'GET|POST /api/youth-intro/overrides',
             'POST /api/csp-reports',
             'POST /api/webhook/booking',
             'GET /api/reviews',
@@ -63,6 +69,24 @@ switch ($path) {
         break;
     case 'leads':
         require __DIR__ . '/v1/leads.php';
+        break;
+    case 'youth-intro/availability':
+        require __DIR__ . '/v1/youth_intro_availability.php';
+        break;
+    case 'youth-intro/records':
+        require __DIR__ . '/v1/youth_intro_records.php';
+        break;
+    case 'youth-intro/messages':
+        require __DIR__ . '/v1/youth_intro_messages.php';
+        break;
+    case 'youth-intro/report':
+        require __DIR__ . '/v1/youth_intro_report.php';
+        break;
+    case 'youth-intro/confirm':
+        require __DIR__ . '/v1/youth_intro_confirm.php';
+        break;
+    case 'youth-intro/overrides':
+        require __DIR__ . '/v1/youth_intro_overrides.php';
         break;
     case 'csp-reports':
         require __DIR__ . '/v1/csp_reports.php';

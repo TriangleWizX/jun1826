@@ -48,7 +48,7 @@ Start calm. Train smart.
 - $99 for first 30 days
 - $600 for 12 weeks after intro period
 
-Text Sandy First:
+Text Sandy:
 +1 (917) 736-8649
 
 Text keyword to start:

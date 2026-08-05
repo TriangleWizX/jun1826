@@ -1,6 +1,6 @@
-/* assets/js/ss-accordion-section.js */
+// assets/js/ss-accordion-section.js
 
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
   const sections = document.querySelectorAll('[data-ss-accordion-section]');
   
   sections.forEach((section, sIdx) => {
@@ -115,4 +115,4 @@ document.addEventListener('DOMContentLoaded', () => {
       filterCategory(category);
     }
   });
-});
+})();

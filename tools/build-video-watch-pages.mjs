@@ -145,7 +145,7 @@ const HUB_GUIDE_PROFILES = {
     localAudience: "families from Tannersville, Haines Falls, Hunter, Windham, Palenville, and the nearby Catskills",
     trainingGoal: "turn movement, listening, balance, and self-control into repeatable habits",
     primaryConcern: "parents usually want to know whether the room is calm, whether the coach explains contact safely, and whether a new child can participate without being thrown into chaos",
-    classPath: "/kids",
+    classPath: "/bjj-classes/kids-tannersville-ny",
     classLabel: "Kids Jiu-Jitsu",
     relatedGuide: "/blog/kids-martial-arts-haines-falls",
     relatedGuideLabel: "kids martial arts near Haines Falls",
@@ -183,7 +183,7 @@ const HUB_GUIDE_PROFILES = {
     localAudience: "teens from Tannersville, Windham, Hunter, Haines Falls, and surrounding mountain towns",
     trainingGoal: "build calm under pressure, better body awareness, and social confidence through structured grappling",
     primaryConcern: "families often want a room that is serious enough to hold a teen attention span while still being safe for beginners",
-    classPath: "/teen-jiu-jitsu-tannersville-ny",
+    classPath: "/bjj-classes/teens-tannersville-ny",
     classLabel: "Teens Jiu-Jitsu",
     relatedGuide: "/blog/teen-jiu-jitsu-hunter-ny",
     relatedGuideLabel: "teen jiu-jitsu near Hunter",
@@ -221,7 +221,7 @@ const HUB_GUIDE_PROFILES = {
     localAudience: "adults from Tannersville, Windham, Hunter, Catskill, Cairo, Palenville, and nearby Catskills communities",
     trainingGoal: "learn technical control, pressure management, safe sparring habits, and repeatable fundamentals",
     primaryConcern: "most adults want to know whether they can start out of shape, train without getting injured, and understand the room before they book",
-    classPath: "/adult-bjj",
+    classPath: "/bjj-classes/adults-tannersville-ny",
     classLabel: "Adults Jiu-Jitsu",
     relatedGuide: "/blog/bjj-beginners-over-40-catskills",
     relatedGuideLabel: "BJJ beginners over 40 in the Catskills",
@@ -335,7 +335,7 @@ const HUB_GUIDE_PROFILES = {
     localAudience: "beginners and developing grapplers near Tannersville, Windham, Hunter, and surrounding Catskills towns",
     trainingGoal: "build a reliable top game by solving frames, legs, hips, and distance in order",
     primaryConcern: "new students often rush in guard before they learn base and posture",
-    classPath: "/adult-bjj",
+    classPath: "/bjj-classes/adults-tannersville-ny",
     classLabel: "Adults Jiu-Jitsu",
     relatedGuide: "/blog/gi-vs-no-gi-bjj-cheat-code",
     relatedGuideLabel: "gi vs no-gi BJJ guide",
@@ -411,7 +411,7 @@ const HUB_GUIDE_PROFILES = {
     localAudience: "teens, adults, and supervised kids learning safe finishing habits near Tannersville and the Catskills",
     trainingGoal: "understand how control leads to the finish and how tapping early protects training partners",
     primaryConcern: "new students often see submissions as the whole art, but good coaching treats the finish as the last step after position",
-    classPath: "/adult-bjj",
+    classPath: "/bjj-classes/adults-tannersville-ny",
     classLabel: "Adults Jiu-Jitsu",
     relatedGuide: "/blog/neck-cranks-bjj-longevity-guide",
     relatedGuideLabel: "neck cranks and BJJ longevity",
@@ -487,7 +487,7 @@ const HUB_GUIDE_PROFILES = {
     localAudience: "kids, teens, adults, parents, and beginners near Tannersville, Hunter, Windham, Haines Falls, and nearby Catskills towns",
     trainingGoal: "build practical safety habits without fear-based training or reckless escalation",
     primaryConcern: "people searching for self-defense want useful skills, but they also want a room that teaches judgment and calm",
-    classPath: "/book-free-intro",
+    classPath: "/free-bjj-intro-tannersville-ny",
     classLabel: "Book Free Intro",
     relatedGuide: "/sensei-bully",
     relatedGuideLabel: "parent anti-bullying plan",
@@ -814,7 +814,7 @@ const localBusinessJson = {
   "@id": "https://senseisandy.com/#localbusiness",
   name: "Sensei Sandy BJJ",
   url: "https://senseisandy.com",
-  telephone: "+19177368649",
+  telephone: "+1-917-736-8649",
   email: "me@senseisandy.com",
   address: {
     "@type": "PostalAddress",
@@ -1165,16 +1165,17 @@ const buildVideoCardExcerpt = (video) => {
   const laneLabel = PROGRAM_MAP.get(video.primaryProgramHub)?.label || "Adults";
   const techniqueLabel = TECHNIQUE_MAP.get(video.primaryTechniqueHub)?.label || "submissions";
   const laneAudience = laneLabel === "Adults" ? "Adult" : laneLabel;
+  const friendlyLabel = laneLabel === "Adults" ? "adult" : (laneLabel === "Kids" ? "kid" : (laneLabel === "Teens" ? "teen" : "beginner"));
   const cleanTopics = unique((video.topics || []).map(formatTopicLabel).filter(isUsefulExcerptTopic));
   const shortTopics = cleanTopics.filter((topic) => topic.length <= 34);
   const specificTopics = shortTopics.filter(isSpecificExcerptTopic);
 
   if (specificTopics.length >= 2) {
-    return `${specificTopics[0]} flows into ${specificTopics[1]} with ${laneLabel.toLowerCase()}-friendly ${techniqueLabel.toLowerCase()} coaching and controlled resets.`;
+    return `${specificTopics[0]} flows into ${specificTopics[1]} with ${friendlyLabel}-friendly ${techniqueLabel.toLowerCase()} coaching and controlled resets.`;
   }
 
   if (specificTopics.length === 1 && /\s/.test(specificTopics[0])) {
-    return `${toSentenceCase(specificTopics[0])} is taught with ${laneLabel.toLowerCase()}-friendly pacing and a clear ${techniqueLabel.toLowerCase()} focus.`;
+    return `${toSentenceCase(specificTopics[0])} is taught with ${friendlyLabel}-friendly pacing and a clear ${techniqueLabel.toLowerCase()} focus.`;
   }
 
   return `${laneAudience} students can use this clip to preview ${techniqueLabel.toLowerCase()} instruction, safety cues, and class pacing before training.`;
@@ -1199,7 +1200,7 @@ const renderMasterHubIntro = () => {
         <p>If a title uses a word you do not know, open the <a href="/bjj-glossary">BJJ glossary</a> and learn enough to follow the next rep. Terms like <a href="/bjj-glossary/base">base</a>, <a href="/bjj-glossary/posture">posture</a>, <a href="/bjj-glossary/frame">frame</a>, <a href="/bjj-glossary/guard">guard</a>, and <a href="/bjj-glossary/tap">tap</a> matter more than memorizing a long list of advanced names.</p>
 
         <h3>A simple beginner path</h3>
-        <p>Start with one lane page, then one safety-heavy topic page, then one clip from the filtered grid below. After that, check the <a href="/schedule">schedule</a> or <a href="/book-free-intro">book a free intro</a>. The goal is to arrive less uncertain, not to self-coach an entire first month from video.</p>
+        <p>Start with one lane page, then one safety-heavy topic page, then one clip from the filtered grid below. After that, check the <a href="/schedule">schedule</a> or <a href="/free-bjj-intro-tannersville-ny">book a free intro</a>. The goal is to arrive less uncertain, not to self-coach an entire first month from video.</p>
 
         <h3>FAQ</h3>
         <p><strong>Can I learn BJJ from this page alone?</strong> No. The library is for preview and review; live coaching still matters most. <strong>Which clip should I watch first?</strong> Watch the title that matches the question you already have. <strong>What if I do not know the terms?</strong> Use the glossary for the important words, then come back here. <strong>What is the next step if the coaching style looks like a fit?</strong> Check the program pages or schedule and try class in person.</p>
@@ -1218,9 +1219,9 @@ const renderFilteredHubCards = (videos) => {
       const excerpt = buildVideoCardExcerpt(video);
       return `<div class="col-12 col-md-6 col-xl-4 ss-video-card-wrap" data-lane="${laneValue}" data-topic="${topicValue}">
             <article class="card h-100 shadow-sm border-0 ss-video-card">
-              <a href="${video.path}" class="ss-video-thumb">
-                <img src="${escapeHtml(video.imageUrl)}" class="card-img-top" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" width="1280" height="720">
-              </a>
+              <div class="ss-video-thumb">
+                <img src="${escapeHtml(video.imageUrl)}" class="card-img-top" alt="${escapeHtml(video.title)} thumbnail" loading="lazy" decoding="async" width="1280" height="720">
+              </div>
               <div class="card-body d-flex flex-column">
                 <div class="d-flex flex-wrap gap-2 mb-2">
                   <span class="badge rounded-pill text-bg-light ss-video-pill">${escapeHtml(programLabel)}</span>
@@ -1454,9 +1455,9 @@ const renderRelatedVideoLinks = (videos) => {
 };
 
 const CLASS_PAGE_BY_PROGRAM = {
-  kids: "/kids",
-  teens: "/teen-jiu-jitsu-tannersville-ny",
-  adults: "/adult-bjj"
+  kids: "/bjj-classes/kids-tannersville-ny",
+  teens: "/bjj-classes/teens-tannersville-ny",
+  adults: "/bjj-classes/adults-tannersville-ny"
 };
 
 const toGuideLabel = (href) => {
@@ -1501,7 +1502,7 @@ const buildWatchPage = ({ video, relatedVideos, prevVideo, nextVideo }) => {
   });
   const takeaways = buildTakeaways(video.topics);
   const guideLinks = pickGuideLinks(video);
-  const classPath = CLASS_PAGE_BY_PROGRAM[video.primaryProgramHub] || "/adult-bjj";
+  const classPath = CLASS_PAGE_BY_PROGRAM[video.primaryProgramHub] || "/bjj-classes/adults-tannersville-ny";
   const classLabel = PROGRAM_MAP.get(video.primaryProgramHub)?.label || "Adults";
   const chipLabels = unique([primaryProgram.label, primaryTechnique.label, location]);
 
@@ -1532,10 +1533,23 @@ const buildWatchPage = ({ video, relatedVideos, prevVideo, nextVideo }) => {
   <link rel="stylesheet" href="/assets/css/ss.min.css?v=20260219" />
   <link rel="stylesheet" href="/assets/css/videos.css" />
   <script type="application/ld+json">
-${JSON.stringify(videoObjectJson, null, 2)}
-  </script>
-  <script type="application/ld+json">
-${JSON.stringify(breadcrumbJson, null, 2)}
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${toAbsoluteUrl(video.path)}#webpage`,
+      'url': toAbsoluteUrl(video.path),
+      'name': video.titleTag,
+      'description': video.description,
+      'about': {
+        '@id': 'https://senseisandy.com/#business'
+      }
+    },
+    videoObjectJson,
+    breadcrumbJson
+  ]
+}, null, 2)}
   </script>
 ${ANALYTICS_HEAD_INCLUDE}
 </head>
@@ -1608,7 +1622,7 @@ ${ANALYTICS_HEAD_INCLUDE}
             <h3>Helpful links</h3>
             <div class="link-list">
               <a href="/schedule">Class schedule</a>
-              <a href="/book-free-intro">Book a free intro</a>
+              <a href="/free-bjj-intro-tannersville-ny">Book a free intro</a>
               <a href="${classPath}">${escapeHtml(classLabel)} class page</a>
               <a href="${primaryProgram.path}">${escapeHtml(primaryProgram.label)} video hub</a>
               <a href="${primaryTechnique.path}">${escapeHtml(primaryTechnique.label)} video hub</a>
@@ -1670,24 +1684,7 @@ ${ANALYTICS_HEAD_INCLUDE}
 };
 
 const renderFeaturedPartial = ({ heading, intro }) => {
-  const rows = [
-    `<li class="mb-2"><a href="${MASTER_VIDEO_HUB_PATH}">All videos hub</a><span class="small text-muted"> (Master index)</span></li>`,
-    '<li class="mb-2"><a href="/videos/kids">Kids videos hub</a><span class="small text-muted"> (Program)</span></li>',
-    '<li class="mb-2"><a href="/videos/teens">Teens videos hub</a><span class="small text-muted"> (Program)</span></li>',
-    '<li class="mb-2"><a href="/videos/adults">Adults videos hub</a><span class="small text-muted"> (Program)</span></li>'
-  ].join("\n        ");
-
-  return `<section class="py-4 border-top border-bottom bg-light" aria-label="Featured videos">
-  <div class="container" style="max-width: 960px;">
-    <h2 class="h5 mb-2">${escapeHtml(heading)}</h2>
-    <p class="small text-muted mb-3">${escapeHtml(intro)}</p>
-    <ul class="mb-0">
-        ${rows}
-    </ul>
-    <p class="small mb-0 mt-2"><a href="${MASTER_VIDEO_HUB_PATH}">Browse all video hubs</a></p>
-  </div>
-</section>
-`;
+  return "<!-- videos disabled -->";
 };
 
 const createVideoModel = () => {
@@ -1824,49 +1821,8 @@ for (const entry of existingEntries) {
   await fs.unlink(path.join(videosDir, entry.name));
 }
 
-for (const video of videosByOrder) {
-  const relatedVideos = pickRelatedVideos(video);
-  const { prevVideo, nextVideo } = getSeriesNav(video);
-  const html = buildWatchPage({ video, relatedVideos, prevVideo, nextVideo });
-  await fs.writeFile(path.join(videosDir, `${video.slug}.html`), html, "utf8");
-}
-
-const masterHubHtml = buildHubPage({
-  canonicalPath: MASTER_VIDEO_HUB_PATH,
-  pageTitle: "BJJ Videos in Tannersville NY | Sensei Sandy BJJ",
-  heading: "Sensei Sandy BJJ Video Library",
-  breadcrumbName: "All Videos",
-  description:
-    "Browse Sensei Sandy BJJ's video library with beginner-friendly lessons for kids, teens, and adults, including fundamentals, drills, and calm coaching.",
-  videos: [...videosByOrder].sort(sortByNewestThenPlaylist),
-  filteredNavigation: true
-});
-await fs.writeFile(path.join(videosDir, "index.html"), masterHubHtml, "utf8");
-
-for (const hub of PROGRAM_HUBS) {
-  const html = buildHubPage({
-    canonicalPath: hub.path,
-    pageTitle: hub.pageTitle,
-    heading: hub.heading,
-    breadcrumbName: hub.label,
-    description: hub.description,
-    credibilityCue: hub.credibilityCue,
-    videos: programBuckets.get(hub.slug) || []
-  });
-  await fs.writeFile(path.join(videosDir, `${hub.slug}.html`), html, "utf8");
-}
-
-for (const hub of TECHNIQUE_HUBS) {
-  const html = buildHubPage({
-    canonicalPath: hub.path,
-    pageTitle: hub.pageTitle,
-    heading: hub.heading,
-    breadcrumbName: hub.label,
-    description: hub.description,
-    videos: techniqueBuckets.get(hub.slug) || []
-  });
-  await fs.writeFile(path.join(videosDir, `${hub.slug}.html`), html, "utf8");
-}
+// Watch pages and hubs are temporarily disabled globally
+console.log("[videos:pages] Skipping generation of watch pages and hubs (disabled globally).");
 
 await fs.mkdir(partialsDir, { recursive: true });
 for (const config of FEATURED_PARTIAL_CONFIG) {

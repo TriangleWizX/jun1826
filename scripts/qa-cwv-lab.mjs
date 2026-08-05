@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 
 const BASE_URL = process.env.CWV_BASE_URL || "http://127.0.0.1:8123";
 const OUT_DIR = process.env.CWV_OUT_DIR || "tmp/cwv-lab";
-const PAGES = ["/", "/schedule", "/book-free-intro", "/adult-bjj", "/options-pricing"];
+const PAGES = ["/", "/schedule", "/free-bjj-intro-tannersville-ny", "/adult-bjj", "/options-pricing"];
 
 mkdirSync(OUT_DIR, { recursive: true });
 

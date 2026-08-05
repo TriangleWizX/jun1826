@@ -127,7 +127,7 @@
 ## 7) How To Use This Brief (Execution)
 
 **Kickoff inputs (required):**
-- List the key pages to optimize (example: `/6weekgrandslam`, `/adult-bjj`, `/kids`, `/contact`).
+- List the key pages to optimize (example: `/6weekgrandslam`, `/bjj-classes-adults-tannersville-ny`, `/kids`, `/contact`).
 - Confirm what counts as `starter_plan_submit` on this site (form submit, Calendly booked, or both).
 - Confirm the single source of truth for `spots_left` and `month_label`.
 - Decide whether variants are separate routes (`/confidence`, `/mental-clarity`) or query params.

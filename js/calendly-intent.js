@@ -177,6 +177,32 @@
     mount.dataset.loaded = '1';
     mount.dataset.calendlyUrl = url;
 
+    const isMobile = window.matchMedia('(max-width: 767.98px)').matches;
+    if (isMobile) {
+      mount.innerHTML = `
+        <div class="p-4 text-center rounded-4 border bg-white shadow-sm mt-3" style="border-color: rgba(54, 43, 36, 0.12) !important;">
+          <p class="mb-3 text-muted">Click below to open the booking calendar.</p>
+          <button id="open-calendly-intent-btn" class="btn btn-primary ss-btn ss-btn-primary w-100 py-3" style="border-radius: 999px; font-weight: 700; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+            Select Date & Time
+            <i class="bi bi-calendar-check ms-2"></i>
+          </button>
+        </div>
+      `;
+      // Load Calendly assets in background
+      await loadCalendlyAssets();
+      
+      const btn = mount.querySelector('#open-calendly-intent-btn');
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openPopup(url);
+        });
+      }
+      // Auto-trigger
+      setTimeout(() => openPopup(url), 200);
+      return;
+    }
+
     mount.innerHTML = '<div class="ss-calendly__loading"><p class="fw-semibold mb-1">Finding available intro times&hellip;</p><p class="small mb-2">Calendar not loading? <a href="sms:+19177368649?body=I%20want%20a%20Free%20Intro." data-contact-pref="text">Text Sandy: "I want a Free Intro."</a></p><p class="small text-muted mb-0">While this loads, here&rsquo;s what happens first: room tour, safety walkthrough, Beginner Lane.</p></div>';
 
     try {

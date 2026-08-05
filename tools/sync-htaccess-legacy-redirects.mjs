@@ -26,7 +26,7 @@ const normalizePath = (value) => {
   return pathname || "/";
 };
 
-const escapeRegex = (value) => String(value).replace(/[|\\{}()[\]^$+*?.-]/g, "\\$&");
+const escapeRegex = (value) => String(value).replace(/[|\\{}()[\]^$+*?. -]/g, "\\$&");
 
 const parseArgs = () => {
   const args = new Set(process.argv.slice(2));

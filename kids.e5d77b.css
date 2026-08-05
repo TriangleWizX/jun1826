@@ -11,15 +11,15 @@
   --kids-border-hairline: 1px solid rgba(54, 43, 36, 0.07);
 }
 
-body[data-audience="kids"] {
+body[data-audience="bjj-classes-kids-tannersville-ny"] {
   --ss-scope-kids: 1;
 }
 
-body[data-audience="kids"] .hero-content-card {
+body[data-audience="bjj-classes-kids-tannersville-ny"] .hero-content-card {
   --ss-kids-hero: 1;
 }
 
-body.page-programs[data-audience="kids"] .kids-page {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page {
   position: relative;
   overflow-x: clip;
   padding-bottom: clamp(4rem, 8vw, 8rem);
@@ -35,7 +35,7 @@ body.page-programs[data-audience="kids"] .kids-page {
 }
 
 /* Film-grain texture overlay */
-body.page-programs[data-audience="kids"] .kids-page::before {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -45,13 +45,13 @@ body.page-programs[data-audience="kids"] .kids-page::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-body.page-programs[data-audience="kids"] .kids-page .container {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page .container {
   max-width: 1180px;
 }
 
-body.page-programs[data-audience="kids"] .kids-page h1,
-body.page-programs[data-audience="kids"] .kids-page h2,
-body.page-programs[data-audience="kids"] .kids-page h3 {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page h1,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page h2,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page h3 {
   color: var(--ss-ink);
   font-family: "Lexend", sans-serif;
   line-height: 1.05;
@@ -60,8 +60,8 @@ body.page-programs[data-audience="kids"] .kids-page h3 {
 }
 
 /* Heading Highlight Styles */
-body.page-programs[data-audience="kids"] .kids-page h1 span,
-body.page-programs[data-audience="kids"] .kids-page h2 span {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page h1 span,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page h2 span {
   font-family: "Instrument Serif", serif;
   font-style: italic;
   font-weight: 400;
@@ -69,16 +69,16 @@ body.page-programs[data-audience="kids"] .kids-page h2 span {
   letter-spacing: -0.02em;
 }
 
-body.page-programs[data-audience="kids"] .kids-page p {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page p {
   text-wrap: pretty;
 }
 
-body.page-programs[data-audience="kids"] .kids-page section {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page section {
   position: relative;
 }
 
 /* Eyebrow badge */
-body.page-programs[data-audience="kids"] .kids-kicker {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-kicker {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -95,12 +95,12 @@ body.page-programs[data-audience="kids"] .kids-kicker {
 }
 
 /* Thin strokes for Bootstrap Icons */
-body.page-programs[data-audience="kids"] .kids-page .bi::before {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page .bi::before {
   -webkit-text-stroke: 0.15px;
 }
 
 /* Button & CTA styles */
-body.page-programs[data-audience="kids"] .kids-btn {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn {
   min-height: 54px;
   display: inline-flex;
   align-items: center;
@@ -118,23 +118,23 @@ body.page-programs[data-audience="kids"] .kids-btn {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-btn:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn:hover {
   transform: translateY(-2px);
 }
 
-body.page-programs[data-audience="kids"] .kids-btn:active {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn:active {
   transform: scale(0.98);
 }
 
-body.page-programs[data-audience="kids"] .kids-btn--primary {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn--primary {
   background: var(--ss-green);
   border-color: var(--ss-green);
   color: #fff;
   box-shadow: 0 12px 28px rgba(17, 106, 66, 0.16);
 }
 
-body.page-programs[data-audience="kids"] .kids-btn--primary:hover,
-body.page-programs[data-audience="kids"] .kids-btn--primary:focus-visible {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn--primary:hover,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn--primary:focus-visible {
   background: #0d5233;
   border-color: #0d5233;
   color: #fff;
@@ -142,7 +142,7 @@ body.page-programs[data-audience="kids"] .kids-btn--primary:focus-visible {
 }
 
 /* Button-in-button trailing icon */
-body.page-programs[data-audience="kids"] .kids-btn-icon-wrapper {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn-icon-wrapper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -154,11 +154,11 @@ body.page-programs[data-audience="kids"] .kids-btn-icon-wrapper {
   transition: transform 0.4s var(--kids-transition-curve);
 }
 
-body.page-programs[data-audience="kids"] .kids-btn--primary:hover .kids-btn-icon-wrapper {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn--primary:hover .kids-btn-icon-wrapper {
   transform: translate(3px, -1px) scale(1.08);
 }
 
-body.page-programs[data-audience="kids"] .kids-btn--ghost {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn--ghost {
   background: rgba(255, 250, 242, 0.7);
   border-color: rgba(54, 43, 36, 0.1);
   color: var(--ss-ink);
@@ -167,8 +167,8 @@ body.page-programs[data-audience="kids"] .kids-btn--ghost {
   -webkit-backdrop-filter: blur(10px);
 }
 
-body.page-programs[data-audience="kids"] .kids-btn--ghost:hover,
-body.page-programs[data-audience="kids"] .kids-btn--ghost:focus-visible {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn--ghost:hover,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn--ghost:focus-visible {
   background: #fffaf2;
   border-color: rgba(17, 106, 66, 0.25);
   color: var(--ss-green);
@@ -176,32 +176,32 @@ body.page-programs[data-audience="kids"] .kids-btn--ghost:focus-visible {
 }
 
 /* Section Spacing - Visual breathing room */
-body.page-programs[data-audience="kids"] .kids-hero {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero {
   padding: clamp(4rem, 8vw, 8rem) 0 clamp(3rem, 6vw, 6rem);
 }
 
-body.page-programs[data-audience="kids"] .kids-trio,
-body.page-programs[data-audience="kids"] .kids-yam,
-body.page-programs[data-audience="kids"] .kids-pricing,
-body.page-programs[data-audience="kids"] .kids-faq,
-body.page-programs[data-audience="kids"] .kids-final,
-body.page-programs[data-audience="kids"] .kids-nearby {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trio,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final,
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-nearby {
   padding: clamp(4.5rem, 9vw, 9rem) 0;
 }
 
 /* Hero Section */
-body.page-programs[data-audience="kids"] .kids-hero-grid {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
 
-body.page-programs[data-audience="kids"] .kids-hero-copy {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-copy {
   min-width: 0;
 }
 
-body.page-programs[data-audience="kids"] .kids-hero h1 {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero h1 {
   margin: 0;
   max-width: 14ch;
   font-size: clamp(2.85rem, 6.5vw, 5.25rem);
@@ -209,7 +209,7 @@ body.page-programs[data-audience="kids"] .kids-hero h1 {
   letter-spacing: -0.05em;
 }
 
-body.page-programs[data-audience="kids"] .kids-lede {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-lede {
   max-width: 52ch;
   margin: 1.5rem 0 0;
   color: var(--ss-muted);
@@ -217,7 +217,7 @@ body.page-programs[data-audience="kids"] .kids-lede {
   line-height: 1.6;
 }
 
-body.page-programs[data-audience="kids"] .kids-hero-actions {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
@@ -225,14 +225,14 @@ body.page-programs[data-audience="kids"] .kids-hero-actions {
 }
 
 /* Trust Points */
-body.page-programs[data-audience="kids"] .kids-trust-grid {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trust-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0.85rem;
   margin-top: 2.5rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-trust-item {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trust-item {
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -244,14 +244,14 @@ body.page-programs[data-audience="kids"] .kids-trust-item {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-trust-item:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trust-item:hover {
   transform: translateY(-2px);
   background: #ffffff;
   border-color: rgba(17, 106, 66, 0.15);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-trust-icon {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trust-icon {
   flex: none;
   display: grid;
   place-items: center;
@@ -263,7 +263,7 @@ body.page-programs[data-audience="kids"] .kids-trust-icon {
   font-size: 0.95rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-trust-item strong {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trust-item strong {
   display: block;
   color: var(--ss-ink);
   font-family: "Lexend", sans-serif;
@@ -271,7 +271,7 @@ body.page-programs[data-audience="kids"] .kids-trust-item strong {
   line-height: 1.15;
 }
 
-body.page-programs[data-audience="kids"] .kids-trust-item span {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trust-item span {
   display: block;
   margin-top: 0.16rem;
   color: var(--ss-muted);
@@ -280,7 +280,7 @@ body.page-programs[data-audience="kids"] .kids-trust-item span {
 }
 
 /* Hero Image & Double-Bezel */
-body.page-programs[data-audience="kids"] .kids-hero-media {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-media {
   position: relative;
   padding: 0.75rem;
   border: var(--kids-border-hairline);
@@ -289,7 +289,7 @@ body.page-programs[data-audience="kids"] .kids-hero-media {
   box-shadow: var(--kids-shadow-premium);
 }
 
-body.page-programs[data-audience="kids"] .kids-hero-image {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-image {
   display: block;
   width: 100%;
   height: auto;
@@ -298,7 +298,7 @@ body.page-programs[data-audience="kids"] .kids-hero-image {
   aspect-ratio: 543 / 380;
 }
 
-body.page-programs[data-audience="kids"] .kids-hero-badge {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-badge {
   position: absolute;
   left: 50%;
   bottom: 1.25rem;
@@ -318,30 +318,30 @@ body.page-programs[data-audience="kids"] .kids-hero-badge {
   white-space: nowrap;
 }
 
-body.page-programs[data-audience="kids"] .kids-hero-badge i {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-badge i {
   color: var(--ss-green);
 }
 
 /* Asymmetrical Bento Grid (Desktop) */
-body.page-programs[data-audience="kids"] .kids-card-grid {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
 }
 
 @media (min-width: 992px) {
-  body.page-programs[data-audience="kids"] .kids-card-grid {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card-grid {
     grid-template-columns: 1.15fr 0.85fr;
     grid-template-rows: auto auto;
     gap: 2rem;
   }
-  body.page-programs[data-audience="kids"] .kids-step-card {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-card {
     grid-row: span 2;
   }
 }
 
 /* Cards Nested Bezel Style */
-body.page-programs[data-audience="kids"] .kids-card {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card {
   padding: 0.65rem;
   border: var(--kids-border-hairline);
   border-radius: 2rem;
@@ -350,12 +350,12 @@ body.page-programs[data-audience="kids"] .kids-card {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-card:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--kids-shadow-premium);
 }
 
-body.page-programs[data-audience="kids"] .kids-card-inner {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card-inner {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -367,19 +367,19 @@ body.page-programs[data-audience="kids"] .kids-card-inner {
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 12px 32px -10px rgba(54, 43, 36, 0.05);
 }
 
-body.page-programs[data-audience="kids"] .kids-card-heading {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card-heading {
   margin: 0 0 0.25rem;
   font-size: clamp(1.35rem, 2vw, 1.65rem);
   line-height: 1.15;
 }
 
 /* Steps List (Free Intro steps) */
-body.page-programs[data-audience="kids"] .kids-step-list {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-list {
   display: grid;
   gap: 0.85rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-step-item {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-item {
   display: grid;
   grid-template-columns: 2rem 2.5rem 1fr;
   gap: 1rem;
@@ -391,13 +391,13 @@ body.page-programs[data-audience="kids"] .kids-step-item {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-step-item:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-item:hover {
   transform: translateX(4px);
   border-color: rgba(17, 106, 66, 0.12);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-step-num {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-num {
   display: grid;
   place-items: center;
   width: 2rem;
@@ -411,7 +411,7 @@ body.page-programs[data-audience="kids"] .kids-step-num {
   font-variant-numeric: tabular-nums;
 }
 
-body.page-programs[data-audience="kids"] .kids-step-icon {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-icon {
   display: grid;
   place-items: center;
   width: 2.5rem;
@@ -422,14 +422,14 @@ body.page-programs[data-audience="kids"] .kids-step-icon {
   font-size: 1rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-step-copy h3 {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-copy h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.2;
 }
 
-body.page-programs[data-audience="kids"] .kids-step-copy p {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-step-copy p {
   margin: 0.35rem 0 0;
   color: var(--ss-muted);
   font-size: 0.9rem;
@@ -437,7 +437,7 @@ body.page-programs[data-audience="kids"] .kids-step-copy p {
 }
 
 /* Schedule List */
-body.page-programs[data-audience="kids"] .kids-schedule-eyebrow {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-eyebrow {
   margin: 0 0 0.5rem;
   color: var(--ss-teal);
   font-size: 0.72rem;
@@ -446,12 +446,12 @@ body.page-programs[data-audience="kids"] .kids-schedule-eyebrow {
   text-transform: uppercase;
 }
 
-body.page-programs[data-audience="kids"] .kids-schedule-list {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-list {
   display: grid;
   gap: 0.65rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-schedule-row {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -463,20 +463,20 @@ body.page-programs[data-audience="kids"] .kids-schedule-row {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-schedule-row:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-row:hover {
   transform: translateX(4px);
   border-color: rgba(40, 159, 161, 0.15);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-schedule-row strong {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-row strong {
   color: var(--ss-ink);
   font-family: "Lexend", sans-serif;
   font-weight: 800;
   font-size: 0.94rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-schedule-row span {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-row span {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -486,12 +486,12 @@ body.page-programs[data-audience="kids"] .kids-schedule-row span {
   font-size: 0.94rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-schedule-row i {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-row i {
   color: var(--ss-green);
   font-size: 0.85rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-schedule-note {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-schedule-note {
   margin-top: auto;
   padding: 0.95rem 1.15rem;
   border-left: 3px solid var(--ss-green);
@@ -503,12 +503,12 @@ body.page-programs[data-audience="kids"] .kids-schedule-note {
 }
 
 /* Fit checklist */
-body.page-programs[data-audience="kids"] .kids-fit-list {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-fit-list {
   display: grid;
   gap: 0.65rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-fit-item {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-fit-item {
   display: flex;
   align-items: center;
   gap: 0.85rem;
@@ -519,13 +519,13 @@ body.page-programs[data-audience="kids"] .kids-fit-item {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-fit-item:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-fit-item:hover {
   transform: translateX(4px);
   border-color: rgba(17, 106, 66, 0.12);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-fit-icon {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-fit-icon {
   flex: none;
   display: grid;
   place-items: center;
@@ -537,7 +537,7 @@ body.page-programs[data-audience="kids"] .kids-fit-icon {
   font-size: 0.9rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-fit-item span {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-fit-item span {
   color: var(--ss-ink);
   font-weight: 700;
   font-size: 0.9rem;
@@ -545,7 +545,7 @@ body.page-programs[data-audience="kids"] .kids-fit-item span {
 }
 
 /* Youth YAM Section */
-body.page-programs[data-audience="kids"] .kids-yam-panel {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-panel {
   padding: 0.75rem;
   border: var(--kids-border-hairline);
   border-radius: 2.5rem;
@@ -553,7 +553,7 @@ body.page-programs[data-audience="kids"] .kids-yam-panel {
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-inner {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-inner {
   padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem);
   border: var(--kids-border-bezel);
   border-radius: calc(2.5rem - 0.75rem);
@@ -561,23 +561,23 @@ body.page-programs[data-audience="kids"] .kids-yam-inner {
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), var(--kids-shadow-premium);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-intro {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-intro {
   max-width: 50rem;
   margin-bottom: 2.5rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-intro h2 {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-intro h2 {
   margin: 0 0 1rem;
   font-size: clamp(1.95rem, 4.2vw, 3.25rem);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-intro p {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-intro p {
   color: var(--ss-muted);
   font-size: 1.05rem;
   line-height: 1.6;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-link {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-link {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -589,18 +589,18 @@ body.page-programs[data-audience="kids"] .kids-yam-link {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-link:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-link:hover {
   transform: translateX(4px);
   color: #0d5233;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-cards {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-card {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-card {
   padding: 0.5rem;
   border: var(--kids-border-hairline);
   border-radius: 1.75rem;
@@ -609,12 +609,12 @@ body.page-programs[data-audience="kids"] .kids-yam-card {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-card:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-card-inner {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-card-inner {
   display: flex;
   gap: 1.15rem;
   align-items: flex-start;
@@ -625,14 +625,14 @@ body.page-programs[data-audience="kids"] .kids-yam-card-inner {
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 8px 24px -10px rgba(54, 43, 36, 0.04);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-avatar {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-avatar {
   position: relative;
   flex: none;
   width: 78px;
   height: 78px;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-avatar img {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-avatar img {
   display: block;
   width: 78px;
   height: 78px;
@@ -641,7 +641,7 @@ body.page-programs[data-audience="kids"] .kids-yam-avatar img {
   box-shadow: 0 4px 12px rgba(54, 43, 36, 0.08);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-badge {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-badge {
   position: absolute;
   right: -0.35rem;
   bottom: -0.35rem;
@@ -657,13 +657,13 @@ body.page-programs[data-audience="kids"] .kids-yam-badge {
   box-shadow: 0 4px 10px rgba(54, 43, 36, 0.12);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-name {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-name {
   margin: 0;
   font-size: 1.15rem;
   font-weight: 800;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-role {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-role {
   margin: 0.25rem 0 0.45rem;
   color: var(--ss-green);
   font-size: 0.72rem;
@@ -672,7 +672,7 @@ body.page-programs[data-audience="kids"] .kids-yam-role {
   text-transform: uppercase;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-copy {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-copy {
   margin: 0;
   max-width: none;
   color: var(--ss-muted);
@@ -680,7 +680,7 @@ body.page-programs[data-audience="kids"] .kids-yam-copy {
   line-height: 1.55;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-dots {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-dots {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
@@ -688,7 +688,7 @@ body.page-programs[data-audience="kids"] .kids-yam-dots {
   padding-top: 1rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-dot {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-dot {
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 999px;
@@ -696,13 +696,13 @@ body.page-programs[data-audience="kids"] .kids-yam-dot {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-yam-dot.active {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-dot.active {
   width: 1.5rem;
   background: var(--ss-green);
 }
 
 /* Pricing Section */
-body.page-programs[data-audience="kids"] .kids-pricing-card {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-card {
   padding: 0.75rem;
   border: var(--kids-border-hairline);
   border-radius: 2.5rem;
@@ -710,7 +710,7 @@ body.page-programs[data-audience="kids"] .kids-pricing-card {
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-pricing-inner {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-inner {
   padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem);
   border: var(--kids-border-bezel);
   border-radius: calc(2.5rem - 0.75rem);
@@ -718,19 +718,19 @@ body.page-programs[data-audience="kids"] .kids-pricing-inner {
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), var(--kids-shadow-premium);
 }
 
-body.page-programs[data-audience="kids"] .kids-pricing-grid {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr) minmax(240px, 0.7fr);
   gap: clamp(2rem, 4vw, 3.5rem);
   align-items: center;
 }
 
-body.page-programs[data-audience="kids"] .kids-pricing-copy h2 {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-copy h2 {
   margin: 0;
   font-size: clamp(2rem, 3.5vw, 3rem);
 }
 
-body.page-programs[data-audience="kids"] .kids-price {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-price {
   margin: 1.25rem 0 0.15rem;
   color: var(--ss-green);
   font-family: "Lexend", sans-serif;
@@ -741,31 +741,31 @@ body.page-programs[data-audience="kids"] .kids-price {
   font-weight: 800;
 }
 
-body.page-programs[data-audience="kids"] .kids-price-period {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-price-period {
   margin: 0 0 1.25rem;
   color: var(--ss-muted);
   font-size: 0.95rem;
   font-weight: 800;
 }
 
-body.page-programs[data-audience="kids"] .kids-pricing-copy p:last-of-type {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-copy p:last-of-type {
   max-width: 38ch;
   color: var(--ss-muted);
   line-height: 1.55;
 }
 
-body.page-programs[data-audience="kids"] .kids-pricing-actions {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-actions {
   margin-top: 1.75rem;
 }
 
 /* Pricing Features */
-body.page-programs[data-audience="kids"] .kids-pricing-features {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.85rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-feature {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-feature {
   display: flex;
   align-items: flex-start;
   gap: 0.85rem;
@@ -777,13 +777,13 @@ body.page-programs[data-audience="kids"] .kids-feature {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-feature:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-feature:hover {
   transform: translateY(-2px);
   border-color: rgba(17, 106, 66, 0.12);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-feature i {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-feature i {
   flex: none;
   display: grid;
   place-items: center;
@@ -795,7 +795,7 @@ body.page-programs[data-audience="kids"] .kids-feature i {
   font-size: 1rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-feature strong {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-feature strong {
   display: block;
   color: var(--ss-ink);
   font-size: 0.94rem;
@@ -803,7 +803,7 @@ body.page-programs[data-audience="kids"] .kids-feature strong {
   line-height: 1.25;
 }
 
-body.page-programs[data-audience="kids"] .kids-feature span {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-feature span {
   display: block;
   margin-top: 0.2rem;
   color: var(--ss-muted);
@@ -811,12 +811,12 @@ body.page-programs[data-audience="kids"] .kids-feature span {
   line-height: 1.3;
 }
 
-body.page-programs[data-audience="kids"] .kids-pricing-media {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-media {
   display: grid;
   place-items: center;
 }
 
-body.page-programs[data-audience="kids"] .kids-pricing-media img {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-media img {
   display: block;
   width: min(100%, 220px);
   height: auto;
@@ -824,18 +824,18 @@ body.page-programs[data-audience="kids"] .kids-pricing-media img {
 }
 
 /* FAQs Section */
-body.page-programs[data-audience="kids"] .kids-faq-title {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-title {
   margin: 0 0 1.75rem;
   font-size: clamp(2rem, 3.8vw, 3.25rem);
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-grid {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-item {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-item {
   overflow: hidden;
   border: var(--kids-border-hairline);
   border-radius: 1.35rem;
@@ -844,13 +844,13 @@ body.page-programs[data-audience="kids"] .kids-faq-item {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-item:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-item:hover {
   transform: translateY(-2px);
   border-color: rgba(17, 106, 66, 0.15);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-item summary {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-item summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -864,11 +864,11 @@ body.page-programs[data-audience="kids"] .kids-faq-item summary {
   list-style: none;
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-item summary::-webkit-details-marker {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-item summary::after {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-item summary::after {
   content: "+";
   flex: none;
   display: grid;
@@ -883,14 +883,14 @@ body.page-programs[data-audience="kids"] .kids-faq-item summary::after {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-item[open] summary::after {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-item[open] summary::after {
   content: "–";
   background: rgba(40, 159, 161, 0.08);
   color: var(--ss-teal);
   transform: rotate(180deg);
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-answer {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-answer {
   padding: 0 1.5rem 1.35rem;
   max-width: none;
   color: var(--ss-muted);
@@ -898,14 +898,14 @@ body.page-programs[data-audience="kids"] .kids-faq-answer {
   line-height: 1.6;
 }
 
-body.page-programs[data-audience="kids"] .kids-faq-answer a {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-answer a {
   color: var(--ss-green);
   font-weight: 800;
   text-decoration: underline;
 }
 
 /* Final CTA Section */
-body.page-programs[data-audience="kids"] .kids-final-card {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-card {
   padding: 0.75rem;
   border: var(--kids-border-hairline);
   border-radius: 2.5rem;
@@ -913,7 +913,7 @@ body.page-programs[data-audience="kids"] .kids-final-card {
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-final-inner {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-inner {
   padding: clamp(2.5rem, 5vw, 5rem) clamp(1.5rem, 3.5vw, 3.5rem);
   border: var(--kids-border-bezel);
   border-radius: calc(2.5rem - 0.75rem);
@@ -927,7 +927,7 @@ body.page-programs[data-audience="kids"] .kids-final-inner {
   align-items: center;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-brand {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-brand {
   display: inline-grid;
   place-items: center;
   width: 3.25rem;
@@ -937,20 +937,20 @@ body.page-programs[data-audience="kids"] .kids-final-brand {
   background: rgba(95, 111, 82, 0.08);
 }
 
-body.page-programs[data-audience="kids"] .kids-final-brand img {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-brand img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-copy h2 {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-copy h2 {
   margin: 0;
   color: var(--ss-ink);
   font-size: clamp(2.15rem, 4.5vw, 3.5rem);
   line-height: 1.02;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-copy p {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-copy p {
   max-width: 44ch;
   margin-top: 1rem;
   color: var(--ss-muted);
@@ -958,25 +958,25 @@ body.page-programs[data-audience="kids"] .kids-final-copy p {
   line-height: 1.55;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-actions {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
   margin-top: 1.75rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-actions .kids-btn--ghost {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-actions .kids-btn--ghost {
   background: #ffffff;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-badges {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-badges {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
   margin-top: 2rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-badge {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-badge {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -988,14 +988,14 @@ body.page-programs[data-audience="kids"] .kids-final-badge {
   transition: var(--kids-transition);
 }
 
-body.page-programs[data-audience="kids"] .kids-final-badge:hover {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-badge:hover {
   transform: translateY(-2px);
   background: #ffffff;
   border-color: rgba(17, 106, 66, 0.12);
   box-shadow: var(--kids-shadow-soft);
 }
 
-body.page-programs[data-audience="kids"] .kids-final-badge i {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-badge i {
   flex: none;
   display: grid;
   place-items: center;
@@ -1007,19 +1007,19 @@ body.page-programs[data-audience="kids"] .kids-final-badge i {
   font-size: 0.95rem;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-badge span {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-badge span {
   color: var(--ss-ink);
   font-size: 0.88rem;
   font-weight: 800;
   line-height: 1.25;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-art {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-art {
   display: grid;
   place-items: center end;
 }
 
-body.page-programs[data-audience="kids"] .kids-final-art img {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-art img {
   display: block;
   width: min(100%, 320px);
   height: auto;
@@ -1027,24 +1027,24 @@ body.page-programs[data-audience="kids"] .kids-final-art img {
 }
 
 /* Nearby SEO Section */
-body.page-programs[data-audience="kids"] .kids-nearby-title {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-nearby-title {
   margin: 0 0 1.25rem;
   font-size: clamp(2rem, 3.8vw, 3.25rem);
 }
 
-body.page-programs[data-audience="kids"] .kids-nearby-lead {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-nearby-lead {
   max-width: 55ch;
   color: var(--ss-muted);
   font-size: clamp(1.05rem, 1.55vw, 1.25rem);
   line-height: 1.6;
 }
 
-body.page-programs[data-audience="kids"] .kids-nearby p {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-nearby p {
   color: var(--ss-muted);
   line-height: 1.6;
 }
 
-body.page-programs[data-audience="kids"] .kids-nearby a {
+body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-nearby a {
   color: var(--ss-green);
   font-weight: 800;
   text-decoration: underline;
@@ -1067,75 +1067,75 @@ body.page-programs[data-audience="kids"] .kids-nearby a {
 
 /* Responsive Overrides */
 @media (max-width: 1099.98px) {
-  body.page-programs[data-audience="kids"] .kids-hero-grid,
-  body.page-programs[data-audience="kids"] .kids-pricing-grid,
-  body.page-programs[data-audience="kids"] .kids-final-inner {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-grid,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-grid,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  body.page-programs[data-audience="kids"] .kids-pricing-media,
-  body.page-programs[data-audience="kids"] .kids-final-art {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-media,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-art {
     justify-content: center;
     place-items: center;
   }
 }
 
 @media (max-width: 767.98px) {
-  body.page-programs[data-audience="kids"] .kids-page .container {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page .container {
     padding-inline: 1.25rem;
   }
 
-  body.page-programs[data-audience="kids"] .kids-page h1 {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-page h1 {
     max-width: 14ch;
   }
 
-  body.page-programs[data-audience="kids"] .kids-hero {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero {
     padding-top: 2rem;
   }
 
-  body.page-programs[data-audience="kids"] .kids-card-inner,
-  body.page-programs[data-audience="kids"] .kids-yam-inner,
-  body.page-programs[data-audience="kids"] .kids-pricing-inner,
-  body.page-programs[data-audience="kids"] .kids-final-inner {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card-inner,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-inner,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-inner,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-inner {
     padding: 1.75rem 1.25rem;
     border-radius: calc(1.75rem - 0.5rem);
   }
 
-  body.page-programs[data-audience="kids"] .kids-card,
-  body.page-programs[data-audience="kids"] .kids-yam-panel,
-  body.page-programs[data-audience="kids"] .kids-pricing-card,
-  body.page-programs[data-audience="kids"] .kids-final-card {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-card,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-panel,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-card,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-card {
     padding: 0.5rem;
     border-radius: 1.75rem;
   }
 
-  body.page-programs[data-audience="kids"] .kids-hero-actions,
-  body.page-programs[data-audience="kids"] .kids-pricing-actions,
-  body.page-programs[data-audience="kids"] .kids-final-actions {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-hero-actions,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-pricing-actions,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-actions {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
-  body.page-programs[data-audience="kids"] .kids-btn {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-btn {
     width: 100%;
   }
 
-  body.page-programs[data-audience="kids"] .kids-final-badges {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-final-badges {
     grid-template-columns: 1fr;
     gap: 0.65rem;
   }
   
-  body.page-programs[data-audience="kids"] .kids-trust-grid {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-trust-grid {
     grid-template-columns: 1fr;
     gap: 0.65rem;
   }
 }
 
 @media (max-width: 479.98px) {
-  body.page-programs[data-audience="kids"] .kids-yam-cards,
-  body.page-programs[data-audience="kids"] .kids-faq-grid {
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-yam-cards,
+  body.page-programs[data-audience="bjj-classes-kids-tannersville-ny"] .kids-faq-grid {
     grid-template-columns: 1fr;
   }
 }

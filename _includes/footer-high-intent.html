@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/sensei-sandy-logo-global.css">
+
 
 <footer class="ss-new-site-footer" aria-labelledby="ss-footer-title">
   <div class="ss-new-footer-shell">
@@ -30,18 +30,19 @@
           <div class="ss-new-nav-col" data-footer-group="secondary">
             <h3>START HERE</h3>
             <ul>
-              <li><a class="ss-footer-support-link" href="/programs">Choose Lane</a></li>
-              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Book Free Goal Mapping</a></li>
+              <li><a class="ss-footer-support-link" href="/nearby-towns">Choose Lane</a></li>
+              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Reserve Your Free Intro</a></li>
               <li><a class="ss-footer-support-link" href="/schedule">Schedule</a></li>
               <li><a class="ss-footer-support-link" href="/show-up-kit">Show-Up Kit</a></li>
+              <li><a class="ss-footer-support-link" href="/core-culture-parent-guide">Parent Guide</a></li>
             </ul>
           </div>
           <div class="ss-new-nav-col" data-footer-group="secondary">
             <h3>PROGRAMS</h3>
             <ul>
-              <li><a href="/kids">Kids</a></li>
-              <li><a href="/teen-jiu-jitsu-tannersville-ny">Teens</a></li>
-              <li><a href="/adult-bjj">Adults</a></li>
+              <li><a href="/bjj-classes/kids-tannersville-ny">Kids</a></li>
+              <li><a href="/bjj-classes/teens-tannersville-ny">Teens</a></li>
+              <li><a href="/bjj-classes/adults-tannersville-ny">Adults</a></li>
               <li><a href="/private-lessons">Private Coaching</a></li>
             </ul>
           </div>
@@ -66,7 +67,7 @@
             Call
           </a>
           <div class="ss-new-divider"></div>
-          <a href="sms:+19177368649" class="ss-new-footer-contact-link">
+          <a href="sms:+19177368649?body=Hi%20Sandy%21%20I%27m%20interested%20in%20booking%20a%2015%20minute%20call%20to%20map%20my%20BJJ%20Goals%20at%20Sensei%20Sandy%20Brazilian%20Jiu%20Jitsu%21%20Can%20you%20help%20me%20confirm%20the%20best%20time%3F" class="ss-new-footer-contact-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
             Text
           </a>
@@ -81,14 +82,13 @@
       <div class="ss-new-footer-utility-links" aria-label="Additional site links" data-footer-group="secondary" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; text-align: center;">
         <div class="ss-footer-utility-group">
           <strong>Nearby</strong> &bull;
-          <a href="/nearby-towns">All Nearby Towns</a> &bull;
-          <a href="/hunter-ny-jiu-jitsu">Hunter</a> &bull;
-          <a href="/windham-ny">Windham</a>
+          <a href="/nearby-towns">All BJJ Class Towns</a> &bull;
+          <a href="/bjj-classes/hunter-ny">Hunter</a> &bull;
+          <a href="/nearby-towns">Windham</a>
         </div>
         <div class="ss-footer-utility-group">
           <strong>Learn</strong> &bull;
           <a href="/bjj-glossary">BJJ Glossary</a> &bull;
-          <a href="/bjj-videos">BJJ Videos</a> &bull;
           <a href="/blog">Blog</a> &bull;
           <a href="/bjj-faqs">FAQs</a>
         </div>
@@ -97,7 +97,7 @@
           <a href="/bjj-tannersville-ny-directions">Directions</a> &bull;
           <a href="/contact">Contact</a> &bull;
           <a href="/schedule">Schedule</a> &bull;
-          <a href="sms:+19177368649">Text Sandy</a>
+          <a href="sms:+19177368649?body=Hi%20Sandy%21%20I%27m%20interested%20in%20booking%20a%2015%20minute%20call%20to%20map%20my%20BJJ%20Goals%20at%20Sensei%20Sandy%20Brazilian%20Jiu%20Jitsu%21%20Can%20you%20help%20me%20confirm%20the%20best%20time%3F">Text Sandy</a>
         </div>
       </div>
     </div>
@@ -105,8 +105,7 @@
 </footer>
 
 <nav class="ss-mobile-actionbar" aria-label="Quick actions">
-  <a class="ss-action-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Book Free Goal Mapping</a>
-  <a class="ss-action-secondary" href="sms:+19177368649">Text Sandy First</a>
+  <a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%21%20I%20have%20a%20question%20about%20starting." data-cta-target="text" data-cta-placement="sticky_mobile">Questions about starting? Text Sandy (917) 736 - 8649</a>
 </nav>
 
 <script>
@@ -114,11 +113,11 @@
     const currentPath = window.location.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
     const navLinks = document.querySelectorAll(".ss-navbar a[href]");
     const programPaths = new Set([
-      "/bjj-classes-tannersville-ny",
-      "/kids",
-      "/teen-jiu-jitsu-tannersville-ny",
-      "/adult-bjj",
-      "/private-lessons"
+      "/bjj-classes/",
+      "/bjj-classes/kids-tannersville-ny",
+      "/bjj-classes/teens-tannersville-ny",
+      "/bjj-classes/adults-tannersville-ny",
+      "/private-classes"
     ]);
 
     navLinks.forEach(function (link) {
@@ -155,42 +154,46 @@
 
     // Intersection Observer for mobile sticky actionbar visibility
     (function initStickyVisibility() {
-      const heroCta = document.querySelector('.home-hero .primary-cta, .hero-card .btn-white-secondary, .hero-card .btn-green-primary');
-      const footerCta = document.querySelector('.ss-cta-footer-section');
+      const heroCta = document.querySelector([
+        '.home-hero .primary-cta',
+        '.hero-card .btn-white-secondary',
+        '.hero-card .btn-green-primary',
+        '.ss-hero .primary-cta',
+        '#hero-cta'
+      ].join(', '));
+      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
       const stickyCta = document.querySelector('.ss-mobile-actionbar');
 
       if (!stickyCta) return;
+      stickyCta.classList.add("is-observed");
+      if (!("IntersectionObserver" in window)) {
+        stickyCta.classList.add("is-visible");
+        return;
+      }
 
-      let heroOut = false;
+      let heroOut = !heroCta;
       let footerIn = false;
-
-      const updateVisibility = () => {
-        if (heroOut && !footerIn) {
-          stickyCta.classList.add('is-visible');
-        } else {
-          stickyCta.classList.remove('is-visible');
-        }
+      const updateVisibility = function () {
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
       };
 
       if (heroCta) {
-        const heroObserver = new IntersectionObserver(([entry]) => {
-          heroOut = !entry.isIntersecting;
+        const heroObserver = new IntersectionObserver(function (entries) {
+          heroOut = !entries[0].isIntersecting;
           updateVisibility();
         }, { threshold: 0.1 });
         heroObserver.observe(heroCta);
-      } else {
-        // Default to visible on pages without home hero CTA
-        heroOut = true;
-        updateVisibility();
       }
 
       if (footerCta) {
-        const footerObserver = new IntersectionObserver(([entry]) => {
-          footerIn = entry.isIntersecting;
+        const footerObserver = new IntersectionObserver(function (entries) {
+          footerIn = entries[0].isIntersecting;
           updateVisibility();
-        }, { threshold: 0.1 });
+        }, { threshold: 0.05 });
         footerObserver.observe(footerCta);
       }
+
+      updateVisibility();
     })();
   });
 </script>

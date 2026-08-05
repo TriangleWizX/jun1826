@@ -2,6 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
+import { CSS_BUNDLE_REGISTRY } from './css-bundle-registry.mjs';
+
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, 'data', 'glossary-terms.json');
 const OUTPUT_ROOT = path.join(ROOT, 'bjj-glossary');
@@ -11,6 +13,15 @@ const CANONICAL_ORIGIN = 'https://senseisandy.com';
 const CSS_VERSION = '20260420';
 const ANALYTICS_HEAD_INCLUDE = '  <!--#include virtual="/_includes/analytics-head.html" -->';
 const GLOSSARY_FILTERS_SRC = '/js/glossary-filters.js';
+const COMPONENT_BUNDLE_HREFS = new Map(
+  CSS_BUNDLE_REGISTRY.bundles.map((bundle) => [bundle.name, bundle.manifestKey])
+);
+
+const componentBundleHref = (bundleName) => {
+  const href = COMPONENT_BUNDLE_HREFS.get(bundleName);
+  if (!href) throw new Error(`Unknown component bundle: ${bundleName}`);
+  return href;
+};
 
 const CATEGORY_LABELS = Object.freeze({
   positions: 'Positions',
@@ -312,7 +323,7 @@ const validateTerms = (terms) => {
   }
 };
 
-const renderLayout = ({ title, description, canonicalUrl, bodyClass = 'page-glossary', extraHead = '', body, scripts = [] }) => `<!DOCTYPE html>
+const renderLayout = ({ title, description, canonicalUrl, componentBundleName, bodyClass = 'page-glossary', extraHead = '', body, scripts = [] }) => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -327,18 +338,20 @@ const renderLayout = ({ title, description, canonicalUrl, bodyClass = 'page-glos
   <meta property="og:url" content="${escapeHtml(canonicalUrl)}">
   <meta property="og:image" content="${CANONICAL_ORIGIN}/assets/images/hero.webp">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
   <link rel="stylesheet" href="/assets/css/global.css" />
-  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="${escapeHtml(componentBundleHref(componentBundleName))}" />
   <link rel="stylesheet" href="/assets/css/pages/glossary.css" />
 ${ANALYTICS_HEAD_INCLUDE}
 ${extraHead}
   <!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/site-shell.css">
 </head>
 <body class="${escapeHtml(bodyClass)}" data-glossary-theme-root>
 <!--#include virtual="/nav-include.html" -->
 ${body}
-<!--#include virtual="/cta-footer.html" -->
 <!--#include virtual="/footer-include.html" -->
 ${scripts.map((src) => `<script src="${src}" defer></script>`).join('\n')}
 </body>
@@ -361,6 +374,16 @@ const renderHubSchema = (terms) => {
           url: canonicalUrlFor(term.slug),
           description: term.summary
         }))
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${canonicalUrlFor()}#webpage`,
+        url: canonicalUrlFor(),
+        name: 'BJJ Glossary | Sensei Sandy BJJ',
+        description: 'A beginner-friendly glossary of Brazilian Jiu-Jitsu terms in plain English.',
+        about: {
+          '@id': 'https://senseisandy.com/#business'
+        }
       },
       {
         '@type': 'BreadcrumbList',
@@ -389,6 +412,16 @@ const renderTermSchema = (term, relatedTerms) => {
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${canonicalUrlFor(term.slug)}#webpage`,
+        url: canonicalUrlFor(term.slug),
+        name: `${term.displayTerm} | BJJ Glossary | Sensei Sandy BJJ`,
+        description: term.summary,
+        about: {
+          '@id': 'https://senseisandy.com/#business'
+        }
+      },
       {
         '@type': 'DefinedTerm',
         name: term.term,
@@ -530,7 +563,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
         <div class="glossary-hero-actions" aria-label="Glossary actions">
           <a class="glossary-btn glossary-btn-primary" href="#first-class-starter-pack">Start with 7 Day-One Words</a>
           <a class="glossary-btn glossary-btn-secondary" href="#glossary-q">Search term</a>
-          <a class="glossary-btn glossary-btn-primary" href="/book-free-intro">Reserve Free Intro</a>
+          <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
           <a class="glossary-btn glossary-btn-secondary" href="#glossary-a-z">Browse A to Z</a>
         </div>
       </div>
@@ -543,7 +576,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
           <li>Understand safety</li>
           <li>Start calmly</li>
         </ul>
-        <a class="glossary-btn glossary-btn-primary" href="/book-free-intro">Reserve Free Intro</a>
+        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
       </aside>
     </div>
   </section>
@@ -603,7 +636,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
 
     <div class="glossary-start-cta">
       <p>You do not need every term today. Start with these seven.</p>
-      <a class="glossary-btn glossary-btn-primary" href="/book-free-intro">Book Free Intro</a>
+      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Book Free Intro</a>
     </div>
   </section>
 
@@ -626,7 +659,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
       </div>
 
       <div class="ss-community-post-actions">
-        <a class="ss-community-pill ss-primary" href="/book-free-intro" data-cta-target="intro" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="primary" data-cta-lane="mixed">Reserve Free Intro</a>
+        <a class="ss-community-pill ss-primary" href="/free-bjj-intro-tannersville-ny" data-cta-target="intro" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="primary" data-cta-lane="mixed">Reserve Free Intro</a>
         <a class="ss-community-pill" href="/student-hub#weekly-focus" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="secondary" data-cta-lane="mixed">This Week&rsquo;s Focus</a>
         <a class="ss-community-pill" href="/student-hub" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="tertiary" data-cta-lane="mixed">Visit Student Hub</a>
       </div>
@@ -637,11 +670,11 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
     <div class="glossary-start-cta">
       <p class="mb-3">Ready to see the words in class?</p>
       <div class="d-flex flex-wrap justify-content-center gap-2">
-        <a class="glossary-btn glossary-btn-primary" href="/book-free-intro">Reserve Free Intro</a>
+        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
         <a class="glossary-btn glossary-btn-secondary" href="/schedule">See the class schedule</a>
-        <a class="glossary-btn glossary-btn-secondary" href="/adult-bjj">Adult beginner Jiu-Jitsu</a>
-        <a class="glossary-btn glossary-btn-secondary" href="/kids">Kids Jiu-Jitsu</a>
-        <a class="glossary-btn glossary-btn-secondary" href="/teen-jiu-jitsu-tannersville-ny">Teen Jiu-Jitsu</a>
+        <a class="glossary-btn glossary-btn-secondary" href="/bjj-classes/adults-tannersville-ny">Adult beginner Jiu-Jitsu</a>
+        <a class="glossary-btn glossary-btn-secondary" href="/bjj-classes/kids-tannersville-ny">Kids Jiu-Jitsu</a>
+        <a class="glossary-btn glossary-btn-secondary" href="/bjj-classes/teens-tannersville-ny">Teen Jiu-Jitsu</a>
         <a class="glossary-btn glossary-btn-secondary" href="/private-lessons">Private BJJ lessons</a>
       </div>
     </div>
@@ -750,6 +783,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
     title: 'BJJ Glossary for Beginners | Sensei Sandy BJJ',
     description: 'Learn beginner Brazilian Jiu-Jitsu terms with plain-English definitions, safety cues, related concepts, and class examples from Sensei Sandy BJJ.',
     canonicalUrl: canonicalUrlFor(),
+    componentBundleName: 'glossary-hub',
     bodyClass: 'page-glossary page-bjj-glossary bjj-glossary-page ss-page ss-page-glossary ss-has-community-bg ss-has-community-cards ss-has-sticky-actions',
     extraHead: renderHubSchema(terms),
     body,
@@ -777,11 +811,11 @@ const renderTermNextStep = () => `
       <a href="/bjj-glossary">Browse the Beginner Glossary</a>
       <a href="/student-hub">See This Week’s Focus</a>
       <a href="/schedule">View Class Schedule</a>
-      <a href="/book-free-intro">Reserve Free Intro</a>
+      <a href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
     </div>
 
     <div class="ss-inline-actions">
-      <a class="btn btn-primary" href="/book-free-intro">Reserve Free Intro</a>
+      <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
       <a class="btn btn-outline-primary" href="/schedule">View Schedule</a>
     </div>
   </div>
@@ -917,6 +951,7 @@ const renderTermPage = (term, termMap, glossaryFiltersScript) => {
     title: term.seo.title,
     description: term.seo.description,
     canonicalUrl: canonicalUrlFor(term.slug),
+    componentBundleName: 'glossary-term',
     bodyClass: 'page-glossary-term page-glossary-term-rich page-bjj-glossary bjj-glossary-page',
     extraHead: renderTermSchema(term, relatedTerms),
     body,
@@ -1039,8 +1074,8 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
             <a href="/bjj-videos">Watch the video library</a>
             <a href="/student-hub">See this week&apos;s class focus</a>
             <a href="/schedule">Check the class schedule</a>
-            <a href="/adult-bjj">Adults program details</a>
-            <a href="/kids">Kids program details</a>
+            <a href="/bjj-classes/adults-tannersville-ny">Adults program details</a>
+            <a href="/bjj-classes/kids-tannersville-ny">Kids program details</a>
           </div>
         </article>
       </div>
@@ -1080,6 +1115,7 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
     title: 'BJJ Glossary Updates | Sensei Sandy BJJ',
     description: 'Track recent Sensei Sandy BJJ glossary additions, updated beginner terms, coverage notes, and new plain-English class examples for students.',
     canonicalUrl: `${canonicalUrlFor()}/updates`,
+    componentBundleName: 'glossary-hub',
     bodyClass: 'page-glossary page-glossary-updates page-bjj-glossary bjj-glossary-page',
     body,
     scripts: [glossaryFiltersScript]

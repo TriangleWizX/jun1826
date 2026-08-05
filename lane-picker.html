@@ -4,17 +4,17 @@
     <div class="ss-lane-picker-cards" role="list">
       <a class="ss-lane-picker-card" role="listitem" href="/private-lessons" data-lane-pref="private">
         <span class="ss-lane-picker-card__label">Private</span>
-        <strong>4:00 PM</strong>
+        <strong><!-- SITE_DATA:schedule.private_lessons_short -->Morning & Midday<!-- /SITE_DATA --></strong>
         <span>1-on-1 calm start</span>
       </a>
       <a class="ss-lane-picker-card" role="listitem" href="/after-school" data-lane-pref="youth">
         <span class="ss-lane-picker-card__label">Youth</span>
-        <strong>5:00 PM</strong>
+        <strong><!-- SITE_DATA:schedule.youth_short -->5:00–6:00 PM<!-- /SITE_DATA --></strong>
         <span>Kids and teens</span>
       </a>
-      <a class="ss-lane-picker-card" role="listitem" href="/adult-bjj" data-lane-pref="adults">
+      <a class="ss-lane-picker-card" role="listitem" href="/bjj-classes/adults-tannersville-ny" data-lane-pref="adults">
         <span class="ss-lane-picker-card__label">Adult</span>
-        <strong>6:00 PM</strong>
+        <strong><!-- SITE_DATA:schedule.adult_short -->6:00–7:00 PM<!-- /SITE_DATA --></strong>
         <span>Beginner-friendly</span>
       </a>
       <a class="ss-lane-picker-card ss-lane-picker-card--quiet" role="listitem" href="/programs">
@@ -26,3 +26,47 @@
   </div>
 </div>
 <!-- LANE_PICKER_END -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://senseisandy.com/lane-picker#webpage",
+      "url": "https://senseisandy.com/lane-picker",
+      "name": "Sensei Sandy BJJ",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://senseisandy.com/#website"
+      },
+      "about": {
+        "@id": "https://senseisandy.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://senseisandy.com/lane-picker#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://senseisandy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Studio",
+          "item": "https://senseisandy.com/sensei-studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sensei Sandy BJJ",
+          "item": "https://senseisandy.com/lane-picker"
+        }
+      ]
+    }
+  ]
+}
+</script>

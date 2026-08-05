@@ -31,7 +31,7 @@
         <a class="btn btn-outline-primary ss-btn ss-btn--secondary"
           href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu"
           target="_blank" rel="noopener">Read all Google reviews →</a>
-        <a class="btn btn-primary ss-btn" href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping data-reviews-reserve hidden>Book Free Goal Mapping</a>
+        <a class="btn btn-primary ss-btn" href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping data-reviews-reserve hidden>Reserve Your Free Intro</a>
       </div>
     </div>
   </div>
@@ -102,7 +102,7 @@
       },
       caroline: {
         tags: ["parent", "confidence", "trust"],
-        quote: "My 8yr old loves the classes. Since starting just over a month ago, his focus at home and class has improved.",
+        quote: "My 8yr old loves the classes. Since starting a month ago, his focus at home and class has improved.",
         author: "caroline cosgrove"
       },
       jessie: {
@@ -156,8 +156,8 @@
         cards: ["richard", "phillip", "douglas"]
       },
       private: {
-        title: "Proof private lessons are worth booking.",
-        lede: "Private clients usually want value, clear session structure, and confidence before stepping into Semi-Private Class.",
+        title: "Proof private coaching are worth booking.",
+        lede: "Private clients usually want value, clear session structure, and confidence before stepping into Small-group class.",
         cards: ["richard", "jason", "roberto"]
       },
       partnerSchools: {
@@ -174,7 +174,7 @@
       },
       partnerHospitality: {
         title: "Guest-proof for a low-friction local recommendation.",
-        lede: "Hospitality partners usually want evidence that visitors will feel welcomed fast, whether they are complete beginners or just trying something new in town.",
+        lede: "Hospitality partners usually want evidence that visitors will feel welcomed fast, whether they are complete beginners or trying something new in town.",
         cards: ["christopher", "tess", "adamM"],
         showFooterChip: false
       },
@@ -219,12 +219,12 @@
         path === "/camp-clinics"
       ) return "campClinics";
       if (
-        body.classList.contains("page-private-lessons") ||
-        path === "/private-lessons"
+        body.classList.contains("page-private-classes") ||
+        path === "/private-classes"
       ) return "private";
-      if (audience === "kids" || path === "/kids") return "kids";
+      if (audience === "bjj-classes-kids-tannersville-ny" || path === "/bjj-classes-kids-tannersville-ny") return "bjj-classes-kids-tannersville-ny";
       if (audience === "teens" || path === "/teens") return "teens";
-      if (audience === "adults" || path === "/adult-bjj") return "adults";
+      if (audience === "adults" || path === "/bjj-classes-adults-tannersville-ny") return "adults";
       return "home";
     };
 
@@ -262,4 +262,48 @@
       )
       .join("");
   })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://senseisandy.com/reviews-village#webpage",
+      "url": "https://senseisandy.com/reviews-village",
+      "name": "Sensei Sandy BJJ",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://senseisandy.com/#website"
+      },
+      "about": {
+        "@id": "https://senseisandy.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://senseisandy.com/reviews-village#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://senseisandy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Studio",
+          "item": "https://senseisandy.com/sensei-studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sensei Sandy BJJ",
+          "item": "https://senseisandy.com/reviews-village"
+        }
+      ]
+    }
+  ]
+}
 </script>

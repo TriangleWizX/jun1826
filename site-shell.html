@@ -34,7 +34,7 @@
 <picture>
 <source sizes="52px" srcset="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp 256w,
                   /assets/img/brand/sensei-sandy-bjj-logo-512.webp 512w" type="image/webp"/>
-<img alt="" class="ssbjj-brand__logo" decoding="async" height="52" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" width="52"/>
+<img alt="Sensei Sandy BJJ logo" class="ssbjj-brand__logo" decoding="async" height="52" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" width="52"/>
 </picture>
 <span class="ssbjj-brand__name">Sensei Sandy BJJ</span>
 </a>
@@ -47,24 +47,24 @@
 <button aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="programsDropdown" type="button">Programs</button>
 <ul aria-labelledby="programsDropdown" class="dropdown-menu dropdown-menu-end">
 <li><a class="dropdown-item" href="/programs">Compare Programs</a></li>
-<li><a class="dropdown-item" href="/kids">Kids Jiu-Jitsu</a></li>
-<li><a class="dropdown-item" href="/teen-jiu-jitsu-tannersville-ny">Teen Jiu-Jitsu</a></li>
-<li><a class="dropdown-item" href="/adult-bjj">Adult Jiu-Jitsu</a></li>
+<li><a class="dropdown-item" href="/bjj-classes/kids-tannersville-ny">Kids Jiu-Jitsu</a></li>
+<li><a class="dropdown-item" href="/bjj-classes/teens-tannersville-ny">Teen Jiu-Jitsu</a></li>
+<li><a class="dropdown-item" href="/bjj-classes/adults-tannersville-ny">Adult Jiu-Jitsu</a></li>
 <li><hr class="dropdown-divider"/></li>
-<li><a class="dropdown-item" href="/private-lessons">Private Lessons</a></li>
+<li><a class="dropdown-item" href="/private-lessons">Private Coaching</a></li>
 </ul>
 </li>
 <li class="nav-item d-lg-none">
 <a class="nav-link" href="/programs">Programs</a>
 </li>
 <li class="nav-item d-lg-none">
-<a class="nav-link" href="/kids">Kids</a>
+<a class="nav-link" href="/bjj-classes/kids-tannersville-ny">Kids</a>
 </li>
 <li class="nav-item d-lg-none">
-<a class="nav-link" href="/teen-jiu-jitsu-tannersville-ny">Teens</a>
+<a class="nav-link" href="/bjj-classes/teens-tannersville-ny">Teens</a>
 </li>
 <li class="nav-item d-lg-none">
-<a class="nav-link" href="/adult-bjj">Adults</a>
+<a class="nav-link" href="/bjj-classes/adults-tannersville-ny">Adults</a>
 </li>
 <li class="nav-item">
 <a class="nav-link ss-nav-secondary" href="/schedule">Schedule</a>
@@ -79,10 +79,10 @@
 <a class="nav-link" href="/student-hub">Student Hub</a>
 </li>
 <li class="nav-item d-lg-none">
-<a class="nav-link" href="/private-lessons">Private Lessons</a>
+<a class="nav-link" href="/private-lessons">Private Coaching</a>
 </li>
 <li class="nav-item">
-<a class="btn btn-primary ss-btn ss-btn--primary" data-cta-label="Book Free Goal Mapping" data-cta-src="nav" data-cta-target="intro" data-event="book_free_intro_click" data-location="tannersville" href="/free-bjj-intro-tannersville-ny"><span data-cta-text="">Reserve a Calm Free Intro</span></a>
+<a class="btn btn-primary ss-btn ss-btn--primary" data-cta-label="Reserve Your Free Intro" data-cta-src="nav" data-cta-target="intro" data-event="book_free_intro_click" data-location="tannersville" href="/free-bjj-intro-tannersville-ny"><span data-cta-text="">Reserve Your Free Intro</span></a>
 </li>
 </ul>
 </div>
@@ -92,9 +92,9 @@
 <div aria-label="Program quick links" class="ss-lanes" role="navigation">
 <div class="ss-container">
 <div class="ss-lane-picker-chips" role="list">
-<a class="ss-chip" href="/private-lessons" role="listitem">Private Lessons</a>
-<a class="ss-chip" href="/after-school" role="listitem">Youth Semi-Private Class</a>
-<a class="ss-chip" href="/adult-bjj" role="listitem">Adult Semi-Private Class</a>
+<a class="ss-chip" href="/private-lessons" role="listitem">Private Coaching</a>
+<a class="ss-chip" href="/after-school" role="listitem">Youth Small-group class</a>
+<a class="ss-chip" href="/bjj-classes/adults-tannersville-ny" role="listitem">Adult Small-group class</a>
 <a class="ss-chip" href="/programs" role="listitem">All Programs</a>
 </div>
 </div>
@@ -238,11 +238,11 @@
 <script>
   (function loadSiteScripts() {
     const scripts = [
-      '/js/site-config.26c100.js?v=20260213',
+      '/js/site-config.e63977.js?v=20260213',
       '/js/link-utils.js?v=20260428',
       '/js/cta-config.js?v=20260217',
       '/js/content-config.js?v=20260214',
-      '/js/analytics-events.js?v=20260215'
+      '/js/analytics-events.js'
     ];
     const loadNext = (idx) => {
       if (idx >= scripts.length) return;
@@ -257,7 +257,7 @@
     const loadCalendlyIfNeeded = () => {
       if (document.querySelector('script[src*="calendly-intent.js"]')) return;
       const calendlyScript = document.createElement('script');
-      calendlyScript.src = '/js/calendly-intent.1b837b.js?v=20260210';
+      calendlyScript.src = '/js/calendly-intent.fca0f4.js?v=20260210';
       calendlyScript.defer = true;
       document.body.appendChild(calendlyScript);
     };
@@ -279,9 +279,9 @@
     const programPaths = new Set([
       '/programs',
       '/kids',
-      '/teen-jiu-jitsu-tannersville-ny',
-      '/adult-bjj',
-      '/private-lessons'
+      '/bjj-classes-teens-tannersville-ny',
+      '/bjj-classes-adults-tannersville-ny',
+      '/private-classes'
     ]);
 
     nav.querySelectorAll('a.nav-link, .dropdown-menu a.dropdown-item').forEach((link) => {
@@ -295,7 +295,7 @@
       const matchesDirect = currentPath === linkPath;
       const matchesSection = linkPath !== '/' && currentPath.startsWith(linkPath + '/');
       const marksPrograms = link.classList.contains('dropdown-toggle') && programPaths.has(currentPath);
-      const markActive = matchesDirect || matchesSection || marksPrograms || (linkPath === '/nearby-towns' && currentPath.startsWith('/near/'));
+      const markActive = matchesDirect || matchesSection || marksPrograms || (linkPath === '/bjj-classes/' && currentPath.startsWith('/bjj-classes/'));
 
       if (markActive) {
         link.classList.add('active');
@@ -325,3 +325,47 @@
   })();
 </script>
 <!-- SITE_SHELL_END -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://senseisandy.com/site-shell#webpage",
+      "url": "https://senseisandy.com/site-shell",
+      "name": "Sensei Sandy BJJ",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://senseisandy.com/#website"
+      },
+      "about": {
+        "@id": "https://senseisandy.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://senseisandy.com/site-shell#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://senseisandy.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Studio",
+          "item": "https://senseisandy.com/sensei-studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sensei Sandy BJJ",
+          "item": "https://senseisandy.com/site-shell"
+        }
+      ]
+    }
+  ]
+}
+</script>

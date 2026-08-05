@@ -109,14 +109,13 @@ const followChain = async ({ startUrl, timeoutMs, maxHops }) => {
 
   while (hops <= maxHops) {
     if (seen.has(current)) {
-      return {
+      throw Object.assign(new Error('redirect loop detected'), {
         chain,
         hops,
         finalUrl: current,
         finalStatus: 0,
-        finalText,
-        error: 'redirect loop detected'
-      };
+        finalText
+      });
     }
     seen.add(current);
 
@@ -128,25 +127,23 @@ const followChain = async ({ startUrl, timeoutMs, maxHops }) => {
     finalText = text;
 
     if (!isRedirectStatus(status)) {
-      return {
+      throw Object.assign(new Error(''), {
         chain,
         hops,
         finalUrl: current,
         finalStatus: status,
-        finalText,
-        error: ''
-      };
+        finalText
+      });
     }
 
     if (!locationRaw) {
-      return {
+      throw Object.assign(new Error('redirect missing location header'), {
         chain,
         hops,
         finalUrl: current,
         finalStatus: status,
-        finalText,
-        error: 'redirect missing location header'
-      };
+        finalText
+      });
     }
 
     if (!locationAbs) {
@@ -233,6 +230,8 @@ const main = async () => {
         maxHops: args.maxHops
       });
     } catch (error) {
+      const result = error;
+      
       failures += 1;
       redirectRows.push([
         startUrl,
@@ -278,6 +277,8 @@ const main = async () => {
         maxHops: args.maxHops
       });
     } catch (error) {
+      const result = error;
+      
       failures += 1;
       parityRows.push([requestUrl, 'ERR', '', '', '', '', String(error.message || error)]);
       continue;

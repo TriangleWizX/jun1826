@@ -1,14 +1,12 @@
 (() => {
   'use strict';
 
-  /*
-   * Sensei Sandy BJJ — Global Goal Mapping Calendly launcher
-   *
-   * 1. Create the Calendly event type first.
-   * 2. Confirm the slug below matches the live Calendly link.
-   * 3. Load this file once, just before </body>, on every HTML page:
-   *    <script src="/assets/js/goal-mapping.js" defer></script>
-   */
+  // Sensei Sandy BJJ — Global Goal Mapping Calendly launcher
+  //
+  // 1. Create the Calendly event type first.
+  // 2. Confirm the slug below matches the live Calendly link.
+  // 3. Load this file once, just before </body>, on every HTML page:
+  //    <script src="/assets/js/goal-mapping.js" defer></script>
 
   const CALENDLY_URL =
     'https://calendly.com/senseisandy/bjj-goal-mapping-session' +
@@ -177,7 +175,7 @@
         if (!trigger.getAttribute('aria-label')) {
           trigger.setAttribute(
             'aria-label',
-            'Book a 15-minute BJJ Goal Mapping Session'
+            'Book a 15-minute BJJ Goal Mapping Visit'
           );
         }
       });

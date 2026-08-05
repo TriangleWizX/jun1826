@@ -571,3 +571,54 @@ body.page-glossary.page-bjj-glossary .glossary-pill {
   font-weight: 700;
   border: 1px solid rgba(0, 221, 224, 0.42) !important;
 }
+
+/* WCAG Contrast Fixes for Glossary Controls & Filters */
+body.page-glossary.page-bjj-glossary details.glossary-advanced-filters summary,
+.glossary-shell details.glossary-advanced-filters summary {
+  color: #044b4e !important;
+  font-weight: 700;
+}
+
+body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset legend,
+.glossary-shell details.glossary-advanced-filters fieldset legend {
+  color: #211d18 !important;
+  font-weight: 700;
+}
+
+#copy-term-link {
+  color: #211d18 !important;
+  background-color: #efe8dc !important;
+  border-color: rgba(33, 29, 24, 0.28) !important;
+}
+
+.ss-term-next-step {
+  background: #091a1c !important;
+  color: #f4fbfb !important;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.ss-term-next-step h2,
+.ss-term-next-step p,
+.ss-term-next-step .ss-eyebrow {
+  color: #f4fbfb !important;
+}
+
+.ss-term-next-step .ss-link-grid a {
+  color: #8ffcff !important;
+}
+
+.ss-term-next-step a.btn-primary {
+  background-color: #00dde0 !important;
+  border-color: #00dde0 !important;
+  color: #052324 !important;
+  font-weight: 700 !important;
+}
+
+.ss-term-next-step a.btn-outline-primary {
+  color: #ffffff !important;
+  border-color: #00dde0 !important;
+  background-color: rgba(0, 221, 224, 0.15) !important;
+  font-weight: 700 !important;
+}

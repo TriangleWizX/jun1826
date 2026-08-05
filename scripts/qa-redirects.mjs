@@ -83,13 +83,12 @@ const followRedirects = async ({ startUrl, maxHops, timeoutMs }) => {
     }
 
     if (!locationHeader) {
-      return {
+      throw Object.assign(new Error('redirect missing Location header'), {
         hops,
         finalUrl: current,
         finalStatus: status,
-        chain,
-        error: 'redirect missing Location header'
-      };
+        chain
+      });
     }
 
     let next;
@@ -106,13 +105,12 @@ const followRedirects = async ({ startUrl, maxHops, timeoutMs }) => {
     }
 
     if (seen.has(next)) {
-      return {
+      throw Object.assign(new Error('redirect loop detected'), {
         hops,
         finalUrl: next,
         finalStatus: status,
-        chain,
-        error: 'redirect loop detected'
-      };
+        chain
+      });
     }
 
     seen.add(next);

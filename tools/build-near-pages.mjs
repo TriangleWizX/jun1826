@@ -44,9 +44,7 @@ const escapeHtml = (value = '') =>
 const STRAIGHT_LINE_MILES = Object.freeze({
   'hunter-ny': '2.2',
   'windham-ny': '9.6',
-  'woodstock-ny': '9.7',
   'haines-falls-ny': '1.7',
-  'phoenicia-ny': '13.5',
   'cairo-ny': '11.7',
   'catskill-ny': '13.5',
   'palenville-ny': '8.5'
@@ -57,11 +55,9 @@ const NEAR_FACTS_MAP = Object.freeze({
   'haines-falls-ny': ['haines_falls'],
   'east-jewett-ny': ['elka_park', 'onteora_park', 'east_jewett', 'jewett_town'],
   'windham-ny': ['windham_town'],
-  'phoenicia-ny': ['phoenicia'],
   'palenville-ny': ['palenville'],
   'cairo-ny': ['cairo_town'],
-  'catskill-ny': ['catskill_town'],
-  'woodstock-ny': ['woodstock_town']
+  'catskill-ny': ['catskill_town']
 });
 
 const buildTownPath = (townByName, label, legacyNearRedirects) => {
@@ -121,18 +117,17 @@ const renderLocalLinkModule = ({ town, towns, townByName, legacyNearRedirects })
     <section class="ss-local-route-group" aria-label="Nearby town links">
      <h3>Nearby towns</h3>
      <ul>
-      <li><a href="/nearby-towns">All nearby towns</a></li>
+      <li><a href="/nearby-towns">All BJJ class towns</a></li>
 ${neighborItems}
      </ul>
     </section>
     <section class="ss-local-route-group" aria-label="First class links">
      <h3>Choose your first class</h3>
      <ul>
-      <li><a href="/kids">Kids Jiu-Jitsu</a></li>
-      <li><a href="/teen-jiu-jitsu-tannersville-ny">Teen Jiu-Jitsu</a></li>
-      <li><a href="/adult-bjj">Adult BJJ</a></li>
-      <li><a href="/schedule">Class schedule</a></li>
-      <li><a href="/directions">Directions to the studio</a></li>
+      <li><a href="/bjj-classes/kids-tannersville-ny">Kids Jiu-Jitsu</a></li>
+      <li><a href="/bjj-classes/teens-tannersville-ny">Teen Jiu-Jitsu</a></li>
+      <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
+      <li><a href="/bjj-tannersville-ny-directions">Directions to the studio</a></li>
      </ul>
     </section>
    </div>
@@ -142,7 +137,7 @@ ${neighborItems}
 
 const buildCanonicalUrl = (slug) => `https://senseisandy.com/near/${slug}`;
 
-const buildFaqSchema = (canonicalUrl, objections = []) => {
+const buildNearSchema = (canonicalUrl, townName, title, description, objections = []) => {
   const mainEntity = objections.slice(0, 3).map((item) => ({
     '@type': 'Question',
     name: item.question,
@@ -152,17 +147,56 @@ const buildFaqSchema = (canonicalUrl, objections = []) => {
     }
   }));
 
-  return `<script type="application/ld+json">\n${JSON.stringify(
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      '@id': `${canonicalUrl}#faq`,
-      url: canonicalUrl,
-      mainEntity
-    },
-    null,
-    2
-  )}\n</script>`;
+  const graph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${canonicalUrl}#webpage`,
+        'url': canonicalUrl,
+        'name': title,
+        'description': description,
+        'isPartOf': {
+          '@id': 'https://senseisandy.com/#website'
+        },
+        'about': {
+          '@id': 'https://senseisandy.com/#business'
+        }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalUrl}#breadcrumb`,
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': 'https://senseisandy.com/'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Nearby Towns',
+            'item': 'https://senseisandy.com/nearby-towns'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': `${townName}, NY`,
+            'item': canonicalUrl
+          }
+        ]
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${canonicalUrl}#faq`,
+        'url': canonicalUrl,
+        'mainEntity': mainEntity
+      }
+    ]
+  };
+
+  return `<script type="application/ld+json">\n${JSON.stringify(graph, null, 2)}\n</script>`;
 };
 
 const renderBulletList = (items = []) =>
@@ -217,7 +251,7 @@ const defaultDecisionCopy = (town) => ({
   ],
   trip_story: `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
   first_cadence:
-    'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and use adult morning options Tuesday/Thursday at 6:30 AM, Wednesday/Friday at 10:00 AM, and Saturday at 10:30 AM when mornings fit better.',
+    'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and use adult morning options Tuesday/Thursday at 6:30 AM, Wednesday/Friday at 10:30 AM, and Saturday at 10:30 AM when mornings fit better.',
   objections: [
     {
       question: `Is this realistic from ${town.town} on school nights?`,
@@ -243,7 +277,7 @@ const defaultDecisionCopy = (town) => ({
     },
     {
       title: 'Routine proof',
-      text: 'Private lessons at 4:00 PM, Youth Class at 5:00 PM, Adult Class at 6:00 PM, Wednesday No-Gi, and the Saturday No-Gi block gives families a predictable weekly flow.'
+      text: 'Private lessons at Morning, Youth Class at 5:00 PM, Adult Class at 6:00 PM, Wednesday No-Gi, and the Saturday No-Gi block gives families a predictable weekly flow.'
     }
   ],
   best_fit: 'Best for families and adult beginners who value coaching quality, clear structure, and low-pressure onboarding.',
@@ -285,7 +319,7 @@ const generate = async () => {
 
   let removedAliasDirs = 0;
   for (const slug of aliasSlugs) {
-    if (liveSlugs.has(slug)) continue;
+    if (liveSlugs.has(slug) || CUSTOM_NEAR_SLUGS.has(slug)) continue;
     const aliasDir = path.join(OUTPUT_ROOT, slug);
     await fs.rm(aliasDir, { recursive: true, force: true });
     removedAliasDirs += 1;
@@ -332,7 +366,13 @@ const generate = async () => {
         legacyNearRedirects
       }),
       '[QuietCtaLine]': decision.quiet_cta_line,
-      '[FaqSchema]': buildFaqSchema(canonicalUrl, decision.objections)
+      '[JsonLdSchema]': buildNearSchema(
+        canonicalUrl,
+        town.town,
+        decision.meta_title || `Brazilian Jiu-Jitsu Near ${town.town}, NY | Sensei Sandy`,
+        decision.meta_description || `Brazilian Jiu-Jitsu near ${town.town} NY for families and adults who want calm beginner coaching, clear class lanes, and a Free Intro in Tannersville.`,
+        decision.objections
+      )
     };
 
     const html = replaceAll(template, replacements);

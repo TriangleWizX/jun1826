@@ -16,7 +16,7 @@ Primary business goal: help kids, teens, and adults confidently book a Free Intr
 
 Core CTA language:
 - Reserve Free Intro
-- Text Sandy First
+- Text Sandy
 - Start calm. Train smart.
 - Your first class is a coached learning experience
 
@@ -195,7 +195,7 @@ Schedule Rules
 
 Common schedule references:
 
-Private Lessons: 4:00 PM
+Private Lessons: Morning
 Kids: 5:00 PM
 Teens: 5:00 PM
 Adults: 6:00 PM

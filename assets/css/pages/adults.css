@@ -37,7 +37,7 @@ body.page-programs[data-audience="adults"] .adults-page h3 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
   line-height: 0.96;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   text-wrap: balance;
 }
 
@@ -148,7 +148,7 @@ body.page-programs[data-audience="adults"] .adults-hero h1 {
   max-width: 14ch;
   font-size: clamp(2.75rem, 6vw, 5.35rem);
   line-height: 0.94;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 body.page-programs[data-audience="adults"] .adults-hero h1 span {
@@ -312,7 +312,7 @@ body.page-programs[data-audience="adults"] .adults-fit-list {
 
 body.page-programs[data-audience="adults"] .adults-step-item {
   display: grid;
-  grid-template-columns: 2rem 2.35rem 1fr;
+  grid-template-columns: 2rem minmax(8.5rem, 0.55fr) minmax(0, 1fr);
   gap: 0.8rem;
   align-items: start;
   padding: 0.85rem;
@@ -600,7 +600,7 @@ body.page-programs[data-audience="adults"] .adults-price {
   font-family: "Lexend", sans-serif;
   font-size: clamp(3rem, 6vw, 4.75rem);
   line-height: 0.95;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 
@@ -1130,7 +1130,7 @@ body.page-programs[data-audience="adults"] .adults-hero h1 {
   max-width: 13ch;
   font-size: clamp(3.2rem, 7.2vw, 6.6rem);
   line-height: 0.9;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 body.page-programs[data-audience="adults"] .adults-hero h1 span {
@@ -1344,7 +1344,7 @@ body.page-programs[data-audience="adults"] .adults-fit-list {
 
 body.page-programs[data-audience="adults"] .adults-step-item {
   display: grid;
-  grid-template-columns: 2rem 2.35rem 1fr;
+  grid-template-columns: 2rem minmax(8.5rem, 0.55fr) minmax(0, 1fr);
   gap: 0.8rem;
   align-items: start;
   padding: 0.85rem;
@@ -1617,7 +1617,7 @@ body.page-programs[data-audience="adults"] .adults-price {
   font-family: "Lexend", sans-serif;
   font-size: clamp(3rem, 6vw, 5rem);
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 
@@ -2049,4 +2049,73 @@ html.adults-enhanced body.page-programs[data-audience="adults"] .adults-page > s
   body.page-programs[data-audience="adults"] .adults-btn i {
     transition: none;
   }
+}
+
+body.page-programs[data-audience="adults"] .adults-step-item > span {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--ss-green);
+  color: #fff;
+  font-weight: 800;
+}
+
+body.page-programs[data-audience="adults"] .adults-step-item > h3 {
+  grid-column: 2;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+body.page-programs[data-audience="adults"] .adults-step-item > p {
+  grid-column: 3;
+  margin: 0;
+  min-width: 0;
+}
+
+@media (max-width: 575.98px) {
+  body.page-programs[data-audience="adults"] .adults-step-item {
+    grid-template-columns: 2rem minmax(0, 1fr);
+  }
+
+  body.page-programs[data-audience="adults"] .adults-step-item > h3,
+  body.page-programs[data-audience="adults"] .adults-step-item > p {
+    grid-column: 2;
+  }
+}
+
+/* Global high-end visual bridge: adults page. */
+body.page-programs[data-audience="adults"] {
+  --sans-font: var(--ss-body-font, "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif);
+  --ease-elastic: var(--ss-ease-premium, cubic-bezier(0.32, 0.72, 0, 1));
+}
+
+body.page-programs[data-audience="adults"] :where(
+  .adults-card,
+  .adults-step-card,
+  .adults-schedule-card,
+  .adults-fit-card,
+  .adults-yam-card,
+  .adults-nearby-card,
+  .adults-final-card
+) {
+  background: linear-gradient(145deg, rgba(255, 253, 248, 0.96), rgba(255, 250, 242, 0.86));
+  border-color: var(--ss-border, rgba(33, 29, 24, 0.11));
+  border-radius: clamp(22px, 3vw, 34px);
+  box-shadow: var(--ss-shadow-soft, 0 16px 44px rgba(33, 29, 24, 0.09)), var(--ss-shadow-inner, inset 0 1px 0 rgba(255, 255, 255, 0.72));
+  transition:
+    transform 700ms var(--ss-ease-premium, cubic-bezier(0.32, 0.72, 0, 1)),
+    box-shadow 700ms var(--ss-ease-premium, cubic-bezier(0.32, 0.72, 0, 1)),
+    border-color 700ms var(--ss-ease-premium, cubic-bezier(0.32, 0.72, 0, 1));
+}
+
+body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss-eyebrow) {
+  border: 1px solid var(--ss-border, rgba(33, 29, 24, 0.11));
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  letter-spacing: 0.16em;
 }

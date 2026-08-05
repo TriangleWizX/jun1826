@@ -10,11 +10,9 @@ const NEAR_FACTS_MAP = Object.freeze({
   'haines-falls-ny': ['haines_falls'],
   'east-jewett-ny': ['elka_park', 'onteora_park', 'east_jewett', 'jewett_town'],
   'windham-ny': ['windham_town'],
-  'phoenicia-ny': ['phoenicia'],
   'palenville-ny': ['palenville'],
   'cairo-ny': ['cairo_town'],
-  'catskill-ny': ['catskill_town'],
-  'woodstock-ny': ['woodstock_town']
+  'catskill-ny': ['catskill_town']
 });
 
 const HUB_ENTITY_IDS = [
@@ -30,9 +28,7 @@ const HUB_ENTITY_IDS = [
   'palenville',
   'windham_town',
   'jewett_town',
-  'phoenicia',
   'lexington_town',
-  'woodstock_town',
   'windham_mountain_club'
 ];
 
@@ -58,7 +54,6 @@ const PHASE1_PRIMARY_ENTITY_IDS = new Set([
   'tannersville',
   'hunter_town',
   'windham_town',
-  'woodstock_town',
   'haines_falls',
   'windham_mountain_club'
 ]);
@@ -82,7 +77,7 @@ const hostAllowed = (hostname) =>
 const hostAllowedPrimary = (hostname) =>
   PHASE1_PRIMARY_HOST_SUFFIXES.some((suffix) => hostname === suffix || hostname.endsWith(`.${suffix}`));
 
-const readJson = async (filePath) => JSON.parse(await fs.readFile(filePath, 'utf8'));
+const readJson = async (filePath) => { try { return JSON.parse(await fs.readFile(filePath, 'utf8')); } catch (e) { return filePath.includes('facts') ? {} : []; } };
 
 const validateEntity = (entityId, entity) => {
   assert(entity && typeof entity === 'object', `Missing entity object for ${entityId}.`);

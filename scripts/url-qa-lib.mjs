@@ -3,8 +3,9 @@ import path from 'node:path';
 
 export const ROOT = process.cwd();
 
-const SKIP_DIRS = new Set(['.git', '.vscode', '.tmb', '_includes', 'node_modules', 'tmp']);
-const SSI_INCLUDE_RE = /<!--#include\s+virtual=(["'])(.*?)\1\s*-->/gi;
+const SKIP_DIRS = new Set(['.git', '.vscode', '.tmb', '_includes', 'node_modules', 'tmp', '_archive', '_drafts', '.venv', 'near']);
+const SSI_DIRECTIVE_RE = /<!--#include\b[\s\S]*?-->/gi;
+const SSI_VIRTUAL_RE = /^<!--#include\s+virtual=(["'])(.*?)\1\s*-->$/i;
 
 export const normalizePath = (value) => {
   if (!value) return '/';
@@ -61,35 +62,93 @@ const normalizeIncludeTarget = (virtualPath = '') => {
   return clean.replace(/^\/+/, '');
 };
 
+const createSsiIncludeError = ({ cause, message, reason, stack, target }) => {
+  const error = new Error(message, cause ? { cause } : undefined);
+  error.code = 'ERR_SSI_INCLUDE';
+  error.reason = reason;
+  error.target = target;
+  error.includeChain = [...stack, target];
+  return error;
+};
+
 export const expandSsiIncludes = async (html, {
   root = ROOT,
-  stack = []
+  stack = [],
+  strict = false
 } = {}) => {
   const source = String(html || '');
-  const matches = [...source.matchAll(SSI_INCLUDE_RE)];
+  const matches = [...source.matchAll(SSI_DIRECTIVE_RE)];
   if (!matches.length) return source;
 
   let output = source;
   for (const match of matches) {
     const directive = match[0];
-    const includeTarget = normalizeIncludeTarget(match[2]);
-    if (!includeTarget) continue;
+    const parsedDirective = directive.match(SSI_VIRTUAL_RE);
+    const rawTarget = parsedDirective?.[2] || directive;
+    const includeTarget = normalizeIncludeTarget(parsedDirective?.[2]);
+    if (!includeTarget) {
+      if (strict) {
+        throw createSsiIncludeError({
+          message: `SSI include must use a quoted, root-relative virtual path: ${rawTarget}`,
+          reason: 'invalid',
+          stack,
+          target: rawTarget
+        });
+      }
+      continue;
+    }
 
-    const includePath = path.join(root, includeTarget);
+    const resolvedRoot = path.resolve(root);
+    const includePath = path.join(resolvedRoot, includeTarget);
     const normalizedIncludePath = path.normalize(includePath);
-    if (!normalizedIncludePath.startsWith(path.normalize(root))) continue;
-    if (stack.includes(normalizedIncludePath)) continue;
+    const relativeToRoot = path.relative(resolvedRoot, normalizedIncludePath);
+    const escapesRoot = relativeToRoot === '..'
+      || relativeToRoot.startsWith(`..${path.sep}`)
+      || path.isAbsolute(relativeToRoot);
+    if (escapesRoot) {
+      if (strict) {
+        throw createSsiIncludeError({
+          message: `SSI include escapes the site root: /${includeTarget}`,
+          reason: 'outside_root',
+          stack,
+          target: `/${includeTarget}`
+        });
+      }
+      continue;
+    }
+    if (stack.includes(normalizedIncludePath)) {
+      if (strict) {
+        throw createSsiIncludeError({
+          message: `SSI include cycle detected: /${includeTarget}`,
+          reason: 'cycle',
+          stack,
+          target: normalizedIncludePath
+        });
+      }
+      continue;
+    }
 
     let includeHtml = '';
     try {
       includeHtml = await fs.readFile(normalizedIncludePath, 'utf8');
-    } catch {
+    } catch (error) {
+      if (strict) {
+        const reason = error?.code ? ` (${error.code})` : '';
+        throw createSsiIncludeError({
+          cause: error,
+          message: `SSI include cannot be read: /${includeTarget}${reason}`,
+          reason: 'read_failed',
+          stack,
+          target: normalizedIncludePath
+        });
+      }
       continue;
     }
 
     const expanded = await expandSsiIncludes(includeHtml, {
       root,
-      stack: [...stack, normalizedIncludePath]
+      stack: [...stack, normalizedIncludePath],
+      strict
     });
     output = output.replace(directive, expanded);
   }
@@ -97,12 +156,13 @@ export const expandSsiIncludes = async (html, {
   return output;
 };
 
-export const readHtmlWithSsi = async (relPath, { root = ROOT } = {}) => {
+export const readHtmlWithSsi = async (relPath, { root = ROOT, strict = false } = {}) => {
   const fullPath = path.join(root, relPath);
   const html = await fs.readFile(fullPath, 'utf8');
   return expandSsiIncludes(html, {
     root,
-    stack: [path.normalize(fullPath)]
+    stack: [path.normalize(fullPath)],
+    strict
   });
 };
 

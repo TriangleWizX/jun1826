@@ -20,7 +20,7 @@
 <picture>
 <source sizes="52px" srcset="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp 256w,
                   /assets/img/brand/sensei-sandy-bjj-logo-512.webp 512w" type="image/webp"/>
-<img alt="" class="ssbjj-brand__logo" decoding="async" height="52" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" width="52"/>
+<img alt="Sensei Sandy BJJ logo" class="ssbjj-brand__logo" decoding="async" height="52" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" width="52"/>
 </picture>
 <span class="ssbjj-brand__name">Sensei Sandy BJJ</span>
 </a>
@@ -38,9 +38,9 @@
 <button aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="programsDropdown" type="button">Programs</button>
 <ul aria-labelledby="programsDropdown" class="dropdown-menu dropdown-menu-end">
 <li><a class="dropdown-item" href="/programs">Programs Overview</a></li>
-<li><a class="dropdown-item" href="/kids">Kids · Ages 5–9</a></li>
-<li><a class="dropdown-item" href="/teen-jiu-jitsu-tannersville-ny">Teens · Ages 10–17</a></li>
-<li><a class="dropdown-item" href="/adult-bjj">Adults · Ages 18+</a></li>
+<li><a class="dropdown-item" href="/bjj-classes/kids-tannersville-ny">Kids · Ages 5–9</a></li>
+<li><a class="dropdown-item" href="/bjj-classes/teens-tannersville-ny">Teens · Ages 10–17</a></li>
+<li><a class="dropdown-item" href="/bjj-classes/adults-tannersville-ny">Adults · Ages 18+</a></li>
 <li><a class="dropdown-item" href="/private-lessons">Private Coaching</a></li>
 <li><a class="dropdown-item" href="/law-enforcement-bjj">Law Enforcement</a></li>
 <li><a class="dropdown-item" href="/options-pricing">Visitor Options</a></li>
@@ -72,7 +72,7 @@
 <li><a class="dropdown-item" href="/local-bjj-tournaments-for-parents">Local Tournament Guide</a></li>
 <li><a class="dropdown-item" href="/friday-night-fanatics">Friday Night Fanatics</a></li>
 <li><a class="dropdown-item" href="/report-card">Progress Report Card</a></li>
-<li><a class="dropdown-item" href="/nearby-towns">Nearby Towns</a></li>
+<li><a class="dropdown-item" href="/nearby-towns">BJJ Classes by Town</a></li>
 </ul>
 </li>
 <li class="nav-item dropdown programs-dropdown">
@@ -86,7 +86,7 @@
 </ul>
 </li>
 <li class="nav-item mt-3 mt-lg-0 ms-lg-2">
-<a class="btn btn-primary ss-btn ss-btn--primary" data-cta-label="Book Free Goal Mapping" data-cta-src="nav" data-cta-target="intro" data-event="book_free_intro_click" data-location="tannersville" href="/free-bjj-intro-tannersville-ny"><span data-cta-text="">Book Free Goal Mapping</span></a>
+<a class="btn btn-primary ss-btn ss-btn--primary" data-cta-label="Reserve Your Free Intro" data-cta-src="nav" data-cta-target="intro" data-event="book_free_intro_click" data-location="tannersville" href="/free-bjj-intro-tannersville-ny"><span data-cta-text="">Reserve Your Free Intro</span></a>
 </li>
 </ul>
 </div>
@@ -97,9 +97,9 @@
 <div aria-label="Program quick links" class="ss-lanes" role="navigation">
 <div class="ss-container">
 <div class="ss-lane-picker-chips" role="list">
-<a class="ss-chip" href="/private-lessons" role="listitem">Private Lessons</a>
-<a class="ss-chip" href="/after-school" role="listitem">Youth Semi-Private Class</a>
-<a class="ss-chip" href="/adult-bjj" role="listitem">Adult Semi-Private Class</a>
+<a class="ss-chip" href="/private-lessons" role="listitem">Private Coaching</a>
+<a class="ss-chip" href="/after-school" role="listitem">Youth Small-group class</a>
+<a class="ss-chip" href="/bjj-classes/adults-tannersville-ny" role="listitem">Adult Small-group class</a>
 <a class="ss-chip" href="/programs" role="listitem">All Programs</a>
 </div>
 </div>
@@ -243,11 +243,11 @@
 <script>
   (function loadSiteScripts() {
     const scripts = [
-      '/js/site-config.26c100.js?v=20260213',
+      '/js/site-config.e63977.js?v=20260213',
       '/js/link-utils.js?v=20260428',
       '/js/cta-config.js?v=20260217',
       '/js/content-config.js?v=20260214',
-      '/js/analytics-events.js?v=20260215'
+      '/js/analytics-events.js'
     ];
     const loadNext = (idx) => {
       if (idx >= scripts.length) return;
@@ -262,7 +262,7 @@
     const loadCalendlyIfNeeded = () => {
       if (document.querySelector('script[src*="calendly-intent.js"]')) return;
       const calendlyScript = document.createElement('script');
-      calendlyScript.src = '/js/calendly-intent.1b837b.js?v=20260210';
+      calendlyScript.src = '/js/calendly-intent.fca0f4.js?v=20260210';
       calendlyScript.defer = true;
       document.body.appendChild(calendlyScript);
     };

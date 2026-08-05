@@ -72,8 +72,8 @@ const makeBaseContext = ({ pathname = '/', search = '' } = {}) => {
     },
     addEventListener() {},
     SENSEI_CONFIG: {
-      bookIntroUrl: 'https://senseisandy.com/book-free-intro',
-      canonicalIntroUrl: 'https://senseisandy.com/book-free-intro'
+      bookIntroUrl: 'https://senseisandy.com/free-bjj-intro-tannersville-ny',
+      canonicalIntroUrl: 'https://senseisandy.com/free-bjj-intro-tannersville-ny'
     }
   };
 
@@ -99,22 +99,22 @@ const runScript = async (ctx, relPath) => {
 
 const testAttributionPersistence = async () => {
   const { context, window } = makeBaseContext({
-    pathname: '/near/phoenicia-ny',
-    search: '?src=phoenicia&utm_source=google&utm_medium=cpc&utm_campaign=winter_partner'
+    pathname: '/near/hunter-ny',
+    search: '?src=hunter&utm_source=google&utm_medium=cpc&utm_campaign=winter_partner'
   });
   await runScript(context, 'js/site-config.js');
 
   const built = window.buildBookIntroUrl({
-    base: 'https://senseisandy.com/book-free-intro',
+    base: 'https://senseisandy.com/free-bjj-intro-tannersville-ny',
     lane: 'kids'
   });
   const url = new URL(built);
 
-  assert(url.pathname === '/book-free-intro', 'Expected canonical booking path.');
+  assert(url.pathname === '/free-bjj-intro-tannersville-ny', 'Expected canonical booking path.');
   assert(url.search === '', 'Expected internal booking URL to stay clean (no query params).');
 
   const stored = window.SENSEI_LINK_UTILS?.readStoredAttribution?.() || {};
-  assert(stored.src === 'phoenicia', 'Expected src to persist in session attribution.');
+  assert(stored.src === 'hunter', 'Expected src to persist in session attribution.');
   assert(stored.utm_source === 'google', 'Expected utm_source to persist in session attribution.');
   assert(stored.utm_medium === 'cpc', 'Expected utm_medium to persist in session attribution.');
   assert(stored.utm_campaign === 'winter_partner', 'Expected utm_campaign to persist in session attribution.');
@@ -194,7 +194,7 @@ const testAnalyticsEvents = async () => {
   clickHandler({ target: makeTarget({ linkEl: makeLink({ href: '/show-up-kit' }) }) });
   assert(eventExists(events, 'showup_kit_click'), 'Missing showup_kit_click event.');
 
-  window.location.pathname = '/book-free-intro';
+  window.location.pathname = '/free-bjj-intro-tannersville-ny';
 };
 
 const testLawEnforcementAnalyticsEvents = async () => {
@@ -205,7 +205,7 @@ const testLawEnforcementAnalyticsEvents = async () => {
 
   const leoClicks = [
     makeLink({
-      href: '/book-free-intro',
+      href: '/free-bjj-intro-tannersville-ny',
       textContent: 'Claim $600 Service Rate',
       dataset: {
         leoEvent: 'leo_individual_service_rate_click',
@@ -284,7 +284,7 @@ const testLawEnforcementAnalyticsEvents = async () => {
 
   for (const el of leoClicks) {
     const href = el.getAttribute('href') || '';
-    const isIntro = href === '/book-free-intro';
+    const isIntro = href === '/free-bjj-intro-tannersville-ny';
     const isAnchor = href.length > 0;
     clickHandler({ target: makeTarget({ leoEl: el, introEl: isIntro ? el : null, linkEl: isAnchor ? el : null }) });
   }
@@ -323,14 +323,14 @@ const testLawEnforcementPageCoverage = async () => {
   assert(!html.includes('Ask About Youth Service Rate'), 'law-enforcement-bjj.html: youth service-rate CTA should be removed.');
 
   const sectionOrder = [
-    'Two Ways to Start',
-    'Why Close-Range Control Matters',
-    'Why Departments Are Looking at Grappling-Based Control',
-    'What Officers Train',
-    'The 12-Week Pilot Covers',
-    'Training Tiers and Deployment',
-    '<h2 class="h4 mb-3">FAQ</h2>',
-    'How to Start'
+    '<h2 class="reveal-up" style="transition-delay: 100ms;">Two Ways to Start</h2>',
+    '<h2 class="mb-4 reveal-up" style="transition-delay: 100ms;">Jiu-Jitsu Foundations Adapted Around Your Responsibilities</h2>',
+    '<h2 class="mb-4">Your First Step</h2>',
+    '<h2 class="mb-4 reveal-up">What Regular Training Develops</h2>',
+    '<h2 class="mb-4">Why Agencies Explore Consistent Grappling Practice</h2>',
+    '<h2 class="mb-4">Private Pilot Framework</h2>',
+    '<h2 class="mb-4">Community Service Rate</h2>',
+    '<h2 class="mb-4">Common Questions</h2>'
   ].map((needle) => html.indexOf(needle));
 
   sectionOrder.forEach((index, i) => {
@@ -345,26 +345,26 @@ const testFunnelCoverage = async () => {
   const pages = [
     'index.html',
     'schedule.html',
-    'book-free-intro/index.html'
+    'free-bjj-intro-tannersville-ny/index.html'
   ];
 
   for (const relPath of pages) {
     const html = await fs.readFile(path.join(ROOT, relPath), 'utf8');
     assert(html.includes('/nav-include.html'), `${relPath}: missing nav include.`);
-    const hasBookCta = /data-cta-target="intro"|\/book-free-intro/.test(html);
+    const hasBookCta = /data-cta-target="intro"|\/free-bjj-intro-tannersville-ny/.test(html);
     assert(hasBookCta, `${relPath}: missing booking CTA.`);
-    const hasLegacyLaneLink = /\/book-free-intro\/(kids|teens|adults)\b/.test(html);
+    const hasLegacyLaneLink = /\/free-bjj-intro-tannersville-ny\/(kids|teens|adults)\b/.test(html);
     assert(!hasLegacyLaneLink, `${relPath}: links to deprecated lane booking paths.`);
   }
 };
 
 const testBookIntroStructure = async () => {
-  const html = await fs.readFile(path.join(ROOT, 'book-free-intro/index.html'), 'utf8');
-  assert(html.includes('id="onsite-booking-form"'), 'book-free-intro/index.html: missing lead capture form.');
-  assert(html.includes('id="calendly-embed-onsite"'), 'book-free-intro/index.html: missing Calendly embed container.');
-  assert(html.includes('class="w-100 ss-section ss-mobile-ig-booking"'), 'book-free-intro/index.html: missing mobile Instagram booking block.');
-  assert(html.includes('class="w-100 ss-section ss-mobile-lanes"'), 'book-free-intro/index.html: missing mobile lane chooser.');
-  assert(html.includes('class="ss-mobile-sticky-cta"'), 'book-free-intro/index.html: missing page-local mobile sticky CTA.');
+  const html = await fs.readFile(path.join(ROOT, 'free-bjj-intro-tannersville-ny/index.html'), 'utf8');
+  assert(html.includes('id="onsite-booking-form"'), 'free-bjj-intro-tannersville-ny/index.html: missing lead capture form.');
+  assert(html.includes('id="calendly-embed-onsite"'), 'free-bjj-intro-tannersville-ny/index.html: missing Calendly embed container.');
+  assert(html.includes('editorial-split-container'), 'free-bjj-intro-tannersville-ny/index.html: missing editorial split container.');
+  assert(html.includes('id="booking-flow"'), 'free-bjj-intro-tannersville-ny/index.html: missing progressive booking flow container.');
+  assert(html.includes('ss-mobile-sticky-cta'), 'free-bjj-intro-tannersville-ny/index.html: missing page-local mobile sticky CTA.');
 
   // Direct Calendly links should NO LONGER be in the HTML.
   const calendlyUrls = [
@@ -373,27 +373,25 @@ const testBookIntroStructure = async () => {
   ];
 
   for (const url of calendlyUrls) {
-    assert(!html.includes(url), `book-free-intro/index.html: should NOT contain direct Calendly link ${url}`);
+    assert(!html.includes(url), `free-bjj-intro-tannersville-ny/index.html: should NOT contain direct Calendly link ${url}`);
   }
 
   const sectionOrder = [
-    'ss-mobile-ig-booking',
-    'ss-mobile-lanes',
-    'id="pick-your-lane"',
-    'ss-book-flow',
-    'id="booking-form"',
-    'id="calendly-step"',
+    'editorial-split-container',
+    'id="booking-flow"',
+    'id="pb-step-1"',
+    'id="pb-step-2"',
+    'id="calendly-embed-onsite"',
     'ss-book-location',
-    'reviews-village',
     'data-ss-evidence-mount',
-    'ss-book-final-cta'
+    'ss-faq-section'
   ];
 
   let lastIndex = -1;
   for (const marker of sectionOrder) {
     const nextIndex = html.indexOf(marker);
-    assert(nextIndex !== -1, `book-free-intro/index.html: missing section marker ${marker}.`);
-    assert(nextIndex > lastIndex, `book-free-intro/index.html: section order regression at ${marker}.`);
+    assert(nextIndex !== -1, `free-bjj-intro-tannersville-ny/index.html: missing section marker ${marker}.`);
+    assert(nextIndex > lastIndex, `free-bjj-intro-tannersville-ny/index.html: section order regression at ${marker}.`);
     lastIndex = nextIndex;
   }
 };

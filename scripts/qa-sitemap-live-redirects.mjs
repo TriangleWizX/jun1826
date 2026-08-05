@@ -1,5 +1,6 @@
 const DEFAULT_SITEMAP_URL = 'https://senseisandy.com/sitemap.xml';
 const MAX_TIMEOUT_MS = 15000;
+const REQUEST_CONCURRENCY = 8;
 
 const args = process.argv.slice(2);
 
@@ -123,20 +124,25 @@ const main = async () => {
   const redirectFindings = [];
   const requestErrors = [];
 
-  for (const url of urls) {
-    try {
-      const res = await getStatus(url);
-      if (res.status >= 300 && res.status < 400) {
-        redirectFindings.push({
-          source: url,
-          status: res.status,
-          location: res.headers.get('location') || ''
-        });
+  let nextIndex = 0;
+  const worker = async () => {
+    while (nextIndex < urls.length) {
+      const url = urls[nextIndex++];
+      try {
+        const res = await getStatus(url);
+        if (res.status >= 300 && res.status < 400) {
+          redirectFindings.push({
+            source: url,
+            status: res.status,
+            location: res.headers.get('location') || ''
+          });
+        }
+      } catch (error) {
+        requestErrors.push(`${url} -> ${error?.name || 'Error'}: ${error?.message || String(error)}`);
       }
-    } catch (error) {
-      requestErrors.push(`${url} -> ${error.message}`);
     }
-  }
+  };
+  await Promise.all(Array.from({ length: Math.min(REQUEST_CONCURRENCY, urls.length) }, worker));
 
   console.log(`Checked ${urls.length} sitemap URLs from ${validatedRoot}`);
 

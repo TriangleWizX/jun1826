@@ -1,4 +1,4 @@
-/* assets/js/ss-evidence-registry.js */
+// assets/js/ss-evidence-registry.js
 
 window.SS_EVIDENCE_REGISTRY = {
   meta: {
@@ -88,7 +88,7 @@ window.SS_EVIDENCE_REGISTRY = {
     },
     "cdc-active-people": {
       title: "CDC: Active People, Healthy Nation",
-      url: "https://www.cdc.gov/physical-activity/activepeoplehealthynation/index.html",
+      url: "https://senseisandy.com/sources/cdc-physical-activity",
       publisher: "Centers for Disease Control and Prevention",
       fact: "Regular movement supports better sleep, thinking, learning, and emotional health.",
       bestFor: ["adult-bjj", "student-hub"]
@@ -116,14 +116,14 @@ window.SS_EVIDENCE_REGISTRY = {
     },
     "marietta-police-bjj-data": {
       title: "Marietta Police: BJJ Training Data",
-      url: "https://www.mariettaga.gov/CivicAlerts.asp?AID=3116",
+      url: "https://senseisandy.com/sources/marietta-police-bjj",
       publisher: "Marietta Police Department",
       fact: "Marietta Police Department reported that officers participating in BJJ training saw fewer officer injuries, fewer injuries to arrested people, and less Taser use than non-participating coworkers in its 2020 comparison.",
       bestFor: ["law-enforcement-bjj"]
     },
     "marietta-chief-flynn-article": {
       title: "Chief Dan Flynn: Brazilian Jiu-Jitsu: The Future of Policing",
-      url: "https://www.mariettaga.gov/DocumentCenter/View/11626",
+      url: "/downloads/marietta-police-chief-flynn-bjj-article.pdf",
       publisher: "Marietta Police Department",
       fact: "Chief Dan Flynn explains that Jiu-Jitsu emphasizes leverage, body weight, and hip control instead of relying primarily on blunt force or striking.",
       bestFor: ["law-enforcement-bjj"]
@@ -233,6 +233,12 @@ window.SS_EVIDENCE_REGISTRY = {
       "dec-kaaterskill-wild-forest",
       "great-northern-tannersville",
       "cdc-adult-benefits"
+    ],
+    "/": [
+      "cdc-active-people",
+      "aap-martial-arts-safety",
+      "cdc-adult-benefits",
+      "hhs-social-connection-advisory"
     ]
   }
 };

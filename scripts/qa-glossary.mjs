@@ -242,8 +242,8 @@ const main = async () => {
     ensure(termHtml.includes('<h2>Common class phrases</h2>'), `${term.slug} missing common class phrases heading.`);
     ensure(termHtml.includes('<h2>Related terms</h2>'), `${term.slug} missing related terms heading.`);
     ensure(termHtml.includes('Want to feel this in class?'), `${term.slug} missing shared CTA heading.`);
-    ensure(termHtml.includes('href="/book-free-intro"'), `${term.slug} missing Reserve Free Intro CTA.`);
-    ensure(termHtml.includes('href="/schedule"'), `${term.slug} missing See Schedule CTA.`);
+    ensure(termHtml.includes('href="/free-bjj-intro-tannersville-ny"'), `${term.slug} missing Reserve Free Intro CTA.`);
+    ensure(termHtml.includes('href="/schedule"'), `${term.slug} missing View Schedule CTA.`);
     ensure(termHtml.includes('<h2>FAQ</h2>'), `${term.slug} missing FAQ heading.`);
     ensure(termHtml.includes('<h2>What local families say</h2>'), `${term.slug} missing reviews heading.`);
     ensure(termHtml.indexOf('id="related-terms"') < termHtml.indexOf('<h3>Relationship map</h3>'), `${term.slug} relationship map must sit inside related terms flow.`);

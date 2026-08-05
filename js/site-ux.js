@@ -1,6 +1,26 @@
 (function siteUx() {
   const PREF_KEY = 'senseiCalmStartPrefs';
 
+  const getSessionItem = (key) => {
+    try {
+      return window.sessionStorage ? window.sessionStorage.getItem(key) : null;
+    } catch (e) {
+      return null;
+    }
+  };
+
+  const setSessionItem = (key, value) => {
+    try {
+      if (window.sessionStorage) window.sessionStorage.setItem(key, value);
+    } catch (e) {}
+  };
+
+  const removeSessionItem = (key) => {
+    try {
+      if (window.sessionStorage) window.sessionStorage.removeItem(key);
+    } catch (e) {}
+  };
+
   const readPrefs = () => {
     try {
       return JSON.parse(localStorage.getItem(PREF_KEY) || '{}') || {};
@@ -93,7 +113,7 @@
         }
 
         // Skip to Calendly if coming from homepage lead form
-        if (sessionStorage.getItem('sensei_homepage_lead_submitted') === 'true') {
+        if (getSessionItem('sensei_homepage_lead_submitted') === 'true') {
           const payload = {
             page_path: window.location.pathname,
             lane: lane,
@@ -120,20 +140,21 @@
           }
 
           if (window.SSCalendly && calendlyEmbed && typeof window.SSCalendly.openInline === 'function') {
+            const cfg = window.SENSEI_CONFIG || {};
             const laneUrls = {
-              kids: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
-              teens: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
-              adults: 'https://calendly.com/senseisandy/free-first-class-adult-bjj',
+              kids: cfg.kidsCalendlyUrl || 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
+              teens: cfg.teensCalendlyUrl || 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
+              adults: cfg.adultsCalendlyUrl || 'https://calendly.com/senseisandy/free-first-class-adult-bjj',
               private: 'https://calendly.com/senseisandy/private-class'
             };
-            const baseUrl = laneUrls[lane] || 'https://calendly.com/senseisandy';
+            const baseUrl = laneUrls[lane] || cfg.mixedCalendlyUrl || cfg.calendlyUrl || 'https://calendly.com/senseisandy';
             
-            const savedName = sessionStorage.getItem('sensei_homepage_lead_name') || '';
-            const savedEmail = sessionStorage.getItem('sensei_homepage_lead_email') || '';
-            const savedPhone = sessionStorage.getItem('sensei_homepage_lead_phone') || '';
+            const savedName = getSessionItem('sensei_homepage_lead_name') || '';
+            const savedEmail = getSessionItem('sensei_homepage_lead_email') || '';
+            const savedPhone = getSessionItem('sensei_homepage_lead_phone') || '';
             const prefilledPhone = formatPrefillPhone(savedPhone);
 
-            const urlObj = new URL(baseUrl);
+            const urlObj = new URL(baseUrl, window.location.origin);
             if (savedName) urlObj.searchParams.set('name', savedName);
             if (savedEmail) urlObj.searchParams.set('email', savedEmail);
             if (prefilledPhone) {
@@ -204,7 +225,7 @@
           let srcVal = '';
 
           try {
-            const stored = JSON.parse(sessionStorage.getItem('sensei_attribution_v1') || '{}');
+            const stored = JSON.parse(getSessionItem('sensei_attribution_v1') || '{}');
             if (stored && typeof stored === 'object') {
               if (stored.utm_source) utmSource = stored.utm_source;
               if (stored.utm_medium) utmMedium = stored.utm_medium;
@@ -251,7 +272,13 @@
               body: JSON.stringify(data)
             });
 
-            if (!response.ok) throw new Error('Failed to save lead');
+            if (!response.ok) {
+              console.error('Failed to save lead');
+              alert('Something went wrong. Please try again or text Sandy at (917) 736-8649.');
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalBtnText;
+              return null;
+            }
 
             // Success Transition
             if (bookingFormSection) bookingFormSection.hidden = true;
@@ -262,16 +289,17 @@
 
             // Initialize Calendly
             if (window.SSCalendly && calendlyEmbed && typeof window.SSCalendly.openInline === 'function') {
+              const cfg = window.SENSEI_CONFIG || {};
               const laneUrls = {
-                kids: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
-                teens: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
-                adults: 'https://calendly.com/senseisandy/free-first-class-adult-bjj',
+                kids: cfg.kidsCalendlyUrl || 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
+                teens: cfg.teensCalendlyUrl || 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
+                adults: cfg.adultsCalendlyUrl || 'https://calendly.com/senseisandy/free-first-class-adult-bjj',
                 private: 'https://calendly.com/senseisandy/private-class'
               };
-              const baseUrl = laneUrls[lane] || 'https://calendly.com/senseisandy';
+              const baseUrl = laneUrls[lane] || cfg.mixedCalendlyUrl || cfg.calendlyUrl || 'https://calendly.com/senseisandy';
               const prefilledPhone = formatPrefillPhone(phone);
               
-              const urlObj = new URL(baseUrl);
+              const urlObj = new URL(baseUrl, window.location.origin);
               urlObj.searchParams.set('name', name);
                 urlObj.searchParams.set('a1', trained_before);
               if (prefilledPhone) {
@@ -461,19 +489,19 @@
           </div>
 
           <div class="d-flex flex-column gap-3 mx-auto" style="max-width: 320px;">
-            <a href="${waiverUrl}" class="btn btn-primary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2">
+            <a href="${waiverUrl}" class="btn btn-primary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2" style="font-family: 'Inter', system-ui, -apple-system, sans-serif;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
               Continue to Waiver
             </a>
-            <a href="${calUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2">
+            <a href="${calUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2" style="font-family: 'Inter', system-ui, -apple-system, sans-serif;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
               Add to calendar
             </a>
-            <a href="${kitUrl}" class="btn btn-outline-secondary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2">
+            <a href="${kitUrl}" class="btn btn-outline-secondary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2" style="font-family: 'Inter', system-ui, -apple-system, sans-serif;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
               Read the Show-Up Kit
             </a>
-            <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2">
+            <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary w-100 py-2.5 fw-bold d-inline-flex align-items-center justify-content-center gap-2" style="font-family: 'Inter', system-ui, -apple-system, sans-serif;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               Open Maps
             </a>
@@ -498,7 +526,7 @@
 
       showConfirmation(e.data.payload?.event_start_time || '');
 
-      if (sessionStorage.getItem('sensei_homepage_lead_submitted') === 'true') {
+      if (getSessionItem('sensei_homepage_lead_submitted') === 'true') {
         const lane = readPrefs().selectedLane || 'mixed';
         const payload = {
           page_path: window.location.pathname,
@@ -519,10 +547,10 @@
           window.dataLayer.push({ event: 'homepage_intro_booked', ...payload });
         }
         // Clear flag and data after booking is complete so subsequent actions behave normally
-        sessionStorage.removeItem('sensei_homepage_lead_submitted');
-        sessionStorage.removeItem('sensei_homepage_lead_name');
-        sessionStorage.removeItem('sensei_homepage_lead_email');
-        sessionStorage.removeItem('sensei_homepage_lead_phone');
+        removeSessionItem('sensei_homepage_lead_submitted');
+        removeSessionItem('sensei_homepage_lead_name');
+        removeSessionItem('sensei_homepage_lead_email');
+        removeSessionItem('sensei_homepage_lead_phone');
       }
     });
   });

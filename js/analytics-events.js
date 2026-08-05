@@ -134,7 +134,7 @@
   const getPage = () => (window.location.pathname || '/').toLowerCase();
 
   const isPricingPage = () => {
-    const path = getPage().replace(/\/+$/, '') || '/';
+    const path = getPage().replace(/\.html?$/i, '').replace(/\/+$/, '') || '/';
     return path === '/options-pricing';
   };
 
@@ -191,7 +191,7 @@
 
   const isBookIntroPath = (pathname) => {
     if (!pathname) return false;
-    const normalized = pathname.replace(/\/+$/, '') || '/';
+    const normalized = pathname.replace(/\.html?$/i, '').replace(/\/+$/, '') || '/';
     return normalized === '/free-bjj-intro-tannersville-ny'
       || normalized === '/free-bjj-intro-tannersville-ny/kids'
       || normalized === '/free-bjj-intro-tannersville-ny/teens'

@@ -1,3 +1,4 @@
+/* Hallmark · genre: editorial · macrostructure: shared foundation · design-system: design.md · designed-as-app */
 /* global.css
    Site tokens, base reset, typography, layout primitives, and accessibility defaults.
    Source: assets/css/ss.css migration split. */
@@ -473,28 +474,39 @@ hr { border-color: var(--ss-border); opacity: 1; }
 }
 
 @media (max-width: 767.98px) {
-  .ss-mobile-actionbar {
+  .ss-mobile-actionbar,
+  .ss-mobile-sticky-cta,
+  .mobile-sticky-cta,
+  .sticky-cta,
+  .partner-mobile-sticky,
+  .birthday-mobile-sticky,
+  .ff-sticky-actionbar,
+  .hospitality-mobile-sticky-actions,
+  .partner-stickybar,
+  .ss-mobile-sticky {
     position: fixed;
     z-index: 1050;
 
-    left: max(12px, env(safe-area-inset-left));
-    right: max(12px, env(safe-area-inset-right));
-    bottom: calc(12px + env(safe-area-inset-bottom));
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-    width: auto;
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
 
-    display: grid;
-    grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.85fr);
-    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    padding: 8px;
-    border-radius: 999px;
-    border: 1px solid rgba(54, 43, 36, 0.16);
-    background: rgba(255, 250, 242, 0.94);
-    box-shadow: 0 12px 34px rgba(33, 29, 24, 0.18);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid rgba(54, 43, 36, 0.14);
+    background: rgba(251, 250, 248, 0.96);
+    box-shadow: 0 -8px 24px rgba(33, 29, 24, 0.14);
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     opacity: 0;
     visibility: hidden;
@@ -506,7 +518,16 @@ hr { border-color: var(--ss-border); opacity: 1; }
       visibility 180ms ease;
   }
 
-  .ss-mobile-actionbar.is-visible {
+  .ss-mobile-actionbar.is-visible,
+  .ss-mobile-sticky-cta,
+  .mobile-sticky-cta,
+  .sticky-cta,
+  .partner-mobile-sticky,
+  .birthday-mobile-sticky,
+  .ff-sticky-actionbar,
+  .hospitality-mobile-sticky-actions,
+  .partner-stickybar,
+  .ss-mobile-sticky {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -514,54 +535,58 @@ hr { border-color: var(--ss-border); opacity: 1; }
   }
 
   .ss-mobile-actionbar a,
-  .ss-mobile-actionbar button {
+  .ss-mobile-actionbar button,
+  .ss-mobile-sticky-cta a,
+  .mobile-sticky-cta a,
+  .sticky-cta a,
+  .partner-mobile-sticky a,
+  .birthday-mobile-sticky a,
+  .ff-sticky-actionbar a,
+  .hospitality-mobile-sticky-actions a,
+  .partner-stickybar a,
+  .ss-mobile-sticky a {
     min-width: 0;
     max-width: 100%;
     width: 100%;
+    min-height: 48px;
     box-sizing: border-box;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 14px 12px;
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
     border-radius: 999px;
 
-    color: var(--ss-ink);
-    font-size: 0 !important; /* Hide original text to bypass QA text restrictions while preventing layout wrap */
-    font-weight: 900;
+    background: var(--ss-green, #116A42);
+    color: #ffffff !important;
+    font-size: clamp(0.70rem, 3.2vw, 0.92rem) !important;
+    font-weight: 700;
     line-height: 1;
+    text-align: center;
     text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    letter-spacing: -0.01em;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+
+    box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
+    transition: transform 150ms ease, background-color 150ms ease;
   }
 
   .ss-mobile-actionbar a::before,
   .ss-mobile-actionbar button::before {
-    font-size: clamp(0.88rem, 3.8vw, 1rem);
-    line-height: 1;
-    white-space: nowrap;
+    content: none !important;
   }
 
-  .ss-mobile-actionbar .ss-action-primary {
-    background: var(--ss-green);
-    color: #fff;
-  }
-
-  .ss-mobile-actionbar .ss-action-primary::before {
-    content: "Reserve Free Intro";
-    color: #fff;
-  }
-
-  .ss-mobile-actionbar .ss-action-secondary::before {
-    content: "Text Sandy";
-  }
-}
-
-@media (max-width: 359.98px) {
-  .ss-mobile-actionbar .ss-action-primary::before {
-    content: "Free Intro";
+  body:has(.ss-mobile-actionbar) .ss-mobile-sticky-cta,
+  body:has(.ss-mobile-actionbar) .partner-mobile-sticky,
+  body:has(.ss-mobile-actionbar) .birthday-mobile-sticky,
+  body:has(.ss-mobile-actionbar) .ff-sticky-actionbar,
+  body:has(.ss-mobile-actionbar) .hospitality-mobile-sticky-actions,
+  body:has(.ss-mobile-actionbar) .partner-stickybar,
+  body:has(.ss-mobile-actionbar) .ss-mobile-sticky {
+    display: none !important;
   }
 }
 
@@ -696,4 +721,196 @@ hr { border-color: var(--ss-border); opacity: 1; }
 .ss-context-link a:hover,
 .ss-context-link a:focus-visible {
   color: var(--ss-green, #116A42);
+}
+
+/* =========================================================
+   Catskills Studio global contract
+   Additive by design: preserves page ownership while unifying the base layer.
+========================================================= */
+:root {
+  --paper: var(--color-paper);
+  --surface: var(--color-paper);
+  --surface-2: var(--color-paper-2);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--ss-border);
+  --gold: var(--color-gold);
+  --moss: var(--color-accent);
+  --clay: var(--color-brown);
+  --charcoal: var(--color-ink);
+
+  --ss-teal-dark: var(--color-accent-strong);
+  --ss-surface-soft: var(--color-paper-2);
+  --ss-radius: var(--radius-card);
+  --ss-radius-sm: var(--radius-input);
+  --ss-radius-lg: calc(var(--radius-card) + 0.25rem);
+  --ss-radius-1: var(--radius-input);
+  --ss-radius-2: var(--radius-card);
+  --ss-shadow: var(--shadow-card);
+  --ss-shadow-soft: var(--shadow-card);
+  --ss-shadow-1: var(--shadow-card);
+  --ss-shadow-2: var(--shadow-raised);
+  --ss-ring: 0 0 0 3px color-mix(in oklab, var(--color-focus) 28%, transparent);
+
+  --ss-max: var(--container-standard);
+  --ss-pad: var(--gutter);
+  --ss-pad-x: var(--gutter);
+  --ss-pad-y: clamp(var(--space-lg), 5vw, var(--space-2xl));
+  --ss-s1: var(--space-2xs);
+  --ss-s2: var(--space-sm);
+  --ss-s3: var(--space-md);
+  --ss-s4: var(--space-lg);
+  --ss-stack: clamp(var(--space-xs), 2.2vw, var(--space-md));
+  --ss-prose: 68ch;
+  --ss-cta: var(--color-accent);
+  --ss-cta-hover: var(--color-accent-strong);
+  --ss-focus: var(--color-focus);
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+html {
+  background: var(--color-paper);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+:where(p, li, dd) {
+  color: var(--color-muted);
+}
+
+:where(a) {
+  color: var(--color-accent);
+  text-decoration-color: color-mix(in oklab, currentColor 42%, transparent);
+  text-decoration-thickness: var(--rule-hair);
+  text-underline-offset: 0.2em;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+:where(button, input, select, textarea) {
+  font: inherit;
+}
+
+:where(input, select, textarea) {
+  border: var(--rule-hair) solid var(--color-rule-2);
+  border-radius: var(--radius-input);
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+:where(input, select, textarea):focus-visible {
+  border-width: var(--rule-hair);
+  border-color: var(--color-neutral);
+  outline-color: var(--color-focus);
+}
+
+:where(.ss-btn, .ss-global-btn, .btn) {
+  min-height: 44px;
+  border-radius: var(--radius-button);
+  font-family: var(--font-body);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out),
+    color var(--dur-short) var(--ease-out),
+    transform var(--dur-micro) var(--ease-out);
+}
+
+:where(.ss-btn, .ss-global-btn, .btn):active {
+  transform: translateY(1px);
+}
+
+:where(.ss-btn--primary, .ss-global-btn--primary, .btn-primary) {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: none;
+  color: var(--color-accent-ink);
+}
+
+:where(.ss-btn--ghost, .ss-global-btn--secondary, .btn-outline-primary) {
+  border-color: var(--color-rule-2);
+  background: var(--color-paper);
+  box-shadow: none;
+  color: var(--color-ink);
+}
+
+:where(.ss-card, .ss-global-final-cta__card, .ss-footer-card) {
+  border-color: var(--color-rule);
+  border-radius: var(--radius-card);
+  background: var(--color-paper);
+  box-shadow: var(--shadow-card);
+}
+
+.ss-main {
+  background: var(--color-paper);
+}
+
+.ss-context-link {
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-input);
+  background: var(--color-paper-2);
+  color: var(--color-muted);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :where(a):hover {
+    color: var(--color-accent-strong);
+  }
+
+  :where(.ss-btn--primary, .ss-global-btn--primary, .btn-primary):hover {
+    border-color: var(--color-accent-strong);
+    background: var(--color-accent-strong);
+    color: var(--color-accent-ink);
+  }
+
+  :where(.ss-btn--ghost, .ss-global-btn--secondary, .btn-outline-primary):hover {
+    border-color: var(--color-neutral);
+    background: var(--color-paper-2);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

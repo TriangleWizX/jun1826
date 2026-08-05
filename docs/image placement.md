@@ -386,7 +386,7 @@ The result should feel like a guided arrival, not a photo dump: prospects recogn
 
 [1]: https://senseisandy.com/directions "Sensei Sandy BJJ | Parking & Entry in Tannersville NY"
 [2]: https://senseisandy.com/show-up-kit "Show-Up Kit for Your First BJJ Class | Sensei Sandy BJJ"
-[3]: https://senseisandy.com/book-free-intro "BJJ Goal Mapping Session | Sensei Sandy BJJ"
+[3]: https://senseisandy.com/book-free-intro "BJJ Goal Mapping Visit | Sensei Sandy BJJ"
 [4]: https://senseisandy.com/sensei-studio "Sensei Studio BJJ Gym Tannersville NY | Above Main St"
 [5]: https://senseisandy.com/ "Confidence, Strength & Skill | Sensei Sandy BJJ"
 [6]: https://senseisandy.com/contact?utm_source=chatgpt.com "Contact Sensei Sandy BJJ | Tannersville NY"

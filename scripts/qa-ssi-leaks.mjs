@@ -6,14 +6,13 @@ const ROOT = process.cwd();
 const ROOT_SITEMAP = 'sitemap.xml';
 const ERROR_TOKEN = '[an error occurred while processing this directive]';
 const PRIORITY_PATHS = [
-  '/kids',
-  '/teens',
-  '/teen-jiu-jitsu-tannersville-ny',
+  '/bjj-classes/kids-tannersville-ny',
+  '/bjj-classes/teens-tannersville-ny',
   '/student-hub',
-  '/directions',
+  '/bjj-tannersville-ny-directions',
   '/contact',
   '/schedule',
-  '/near/windham-ny',
+  '/nearby-towns',
   '/blog/beginner-friendly-bjj-tannersville-links'
 ];
 

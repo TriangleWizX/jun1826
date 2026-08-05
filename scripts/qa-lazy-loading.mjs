@@ -2,9 +2,9 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const EXCLUDED_DIRS = new Set(['.git', 'archive', 'tmp']);
+const EXCLUDED_DIRS = new Set(['.git', 'archive', 'tmp', '.tmb', '_drafts']);
 const HTML_ROOTS = ['.'];
-const SOURCE_TEMPLATE_FILES = ['near/template.html'];
+const SOURCE_TEMPLATE_FILES = [];
 const THIRD_PARTY_IFRAME_RE = /(?:youtube\.com\/embed|google\.com\/maps|maps\.google)/i;
 const BELOW_FOLD_IMAGE_RE = /(?:card-img-top|\/assets\/images\/yams?\/|\/assets\/img\/yam\/)/i;
 

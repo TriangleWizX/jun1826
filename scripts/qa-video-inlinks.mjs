@@ -98,7 +98,10 @@ const main = async () => {
   if (!canonicalOrigin) throw new Error('config/url-contract.json is missing canonicalOrigin.');
 
   const watchPaths = await loadWatchPages();
-  if (!watchPaths.length) throw new Error('No watch pages found under videos/.');
+  if (!watchPaths.length) {
+    console.log("No watch pages found under videos/ (BJJ videos disabled). Skipping video inlinks check.");
+    process.exit(0);
+  }
 
   const watchPathSet = new Set(watchPaths);
   const stats = new Map(

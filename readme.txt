@@ -64,7 +64,7 @@ Columns:
     2. Page block reason
 6. Problem: With a long loading time
 Report file: long_load_time.csv
-Description: The load time of a website refers to the time that it takes for the entire site to render in your browser, displaying all parts of the site's HTML code. This does not include images, CSS, Java, or any other non-HTML codes. 
+Description: The load time of a website refers to the time that it takes for the entire site to render in your browser, displaying all parts of the site's HTML code. This does not include images, CSS, JavaScript, or any other non-HTML codes.
 
 Never has it been more important for your site's load time to happen quickly. If you want your content to rank, it's vital that your site loads quickly. The faster the better.
 Solution: Ensure that your website's HTML code is clean and uncluttered. Removing unnecessary plugins, elements, or features can help with load speed. Make sure that you are compressing images and caching. If your server is compromising your load speed, consider upgrading to a better hosting company or a more robust plan.

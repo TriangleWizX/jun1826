@@ -1,14 +1,12 @@
 (() => {
   'use strict';
 
-  /*
-   * Sensei Sandy BJJ — Global Goal Mapping Calendly launcher
-   *
-   * 1. Create the Calendly event type first.
-   * 2. Confirm the slug below matches the live Calendly link.
-   * 3. Load this file once, just before </body>, on every HTML page:
-   *    <script src="/assets/js/goal-mapping.js" defer></script>
-   */
+  // Sensei Sandy BJJ — Global Goal Mapping Calendly launcher
+  //
+  // 1. Create the Calendly event type first.
+  // 2. Confirm the slug below matches the live Calendly link.
+  // 3. Load this file once, just before </body>, on every HTML page:
+  //    <script src="/assets/js/goal-mapping.js" defer></script>
 
   const CALENDLY_URL =
     'https://calendly.com/senseisandy/bjj-goal-mapping-session' +
@@ -24,6 +22,7 @@
 
   function isLegacyBookingLink(element) {
     if (!(element instanceof HTMLAnchorElement)) return false;
+    if (window.location.pathname.replace(/\/+$/, '') === '/schedule') return false;
 
     try {
       const url = new URL(element.href, window.location.href);
@@ -167,20 +166,28 @@
   });
 
   document.addEventListener('DOMContentLoaded', () => {
-    document
-      .querySelectorAll(
-        '[data-goal-mapping], [data-calendly], a[href*="calendly.com/senseisandy"], a[href="/free-bjj-intro-tannersville-ny"], a[href$="/free-bjj-intro-tannersville-ny"]'
-      )
-      .forEach((trigger) => {
-        trigger.setAttribute('aria-haspopup', 'dialog');
+    const triggers = Array.from(
+      document.querySelectorAll('[data-goal-mapping], [data-calendly]')
+    );
 
-        if (!trigger.getAttribute('aria-label')) {
-          trigger.setAttribute(
-            'aria-label',
-            'Book a 15-minute BJJ Goal Mapping Session'
-          );
-        }
-      });
+    document.querySelectorAll('a[href]').forEach((link) => {
+      if (isLegacyBookingLink(link)) {
+        triggers.push(link);
+      }
+    });
+
+    const uniqueTriggers = [...new Set(triggers)];
+
+    uniqueTriggers.forEach((trigger) => {
+      trigger.setAttribute('aria-haspopup', 'dialog');
+
+      if (!trigger.getAttribute('aria-label')) {
+        trigger.setAttribute(
+          'aria-label',
+          'Reserve Your Free Intro'
+        );
+      }
+    });
   });
 
   // Optional GA4 event. Safe when gtag is not installed.

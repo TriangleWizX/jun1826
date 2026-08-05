@@ -8,7 +8,7 @@ The article repeats “no hard sparring on day one” in the hero, summary, and 
 
 The tone also slips below the newer premium brand voice with phrases such as “Tapout vibes,” “burpees until you see God,” “not creepy,” “not a nightclub,” and “This isn’t the Marines.” The wit draws attention away from the calm, methodical experience.
 
-The article uses an older navigation, footer, and “Reserve Free Intro” conversion path. Your current intake page positions the first step as a 15-minute BJJ Goal Mapping Session, followed by skill-based resistance at the appropriate pace.
+The article uses an older navigation, footer, and “Reserve Free Intro” conversion path. Your current intake page positions the first step as a 15-minute BJJ Goal Mapping Visit, followed by skill-based resistance at the appropriate pace.
 
 The blog hub also repeats the old “no hard sparring” language. Update that featured card when this article changes, or the old positioning will keep sending readers into the revised page.
 
@@ -17,10 +17,10 @@ Editorial hero
 First Class Guide · Adults · Tannersville
 Clear H1
 Four practical trust markers
-Goal Mapping Session CTA
+Goal Mapping Visit CTA
 Real beginner-training photograph
 Before class
-Explain the Goal Mapping Session
+Explain the Goal Mapping Visit
 What to wear
 When to arrive
 Where to park
@@ -35,7 +35,7 @@ Separate it clearly from open rolling
 First-class checklist
 Four-question FAQ
 Strong closing CTA
-Book Your Goal Mapping Session
+Book Your Goal Mapping Visit
 Text Sandy First
 View Schedule as a quieter tertiary link
 Paste-Ready Replacement Copy
@@ -48,12 +48,12 @@ Your first class follows a clear path. You meet Sandy, learn the room and safety
 
 Arrive 5–10 minutes early · Wear clean athletic clothes · Pause anytime · Beginner-guided from the first minute
 
-Primary button: Book Your Goal Mapping Session
+Primary button: Book Your Goal Mapping Visit
 Secondary button: Text Sandy First
 
 Before Class: Map Your First Step
 
-Training begins with a free 15-minute BJJ Goal Mapping Session.
+Training begins with a free 15-minute BJJ Goal Mapping Visit.
 
 You and Sandy discuss:
 
@@ -202,7 +202,7 @@ Start With a Plan That Fits Your Life
 
 Meet Sandy for 15 minutes. Tour the room, discuss your goals, map your weekly schedule, and choose the right first class together.
 
-Primary button: Book Your Goal Mapping Session
+Primary button: Book Your Goal Mapping Visit
 Secondary button: Text Sandy First
 Text link: View the Class Schedule
 
@@ -289,6 +289,6 @@ Hero alt text to:
 Adult beginner practicing a guided positional Jiu-Jitsu activity with a partner at Sensei Sandy BJJ.
 Add visible FAQ content and matching FAQPage schema.
 Use BlogPosting and BreadcrumbList schema.
-Replace the old article navigation and footer with the same global components used by the Goal Mapping Session page.
+Replace the old article navigation and footer with the same global components used by the Goal Mapping Visit page.
 Update the blog feature card and excerpts containing “no hard sparring on day one.”
 Keep the existing URL to preserve accumulated links and search history.

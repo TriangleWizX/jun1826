@@ -22,9 +22,14 @@
 <meta content="A calm, beginner-friendly Jiu-Jitsu staff wellness pass for Scribner’s employees near Hunter and Tannersville, NY." name="twitter:description"/>
 <meta content="https://senseisandy.com/assets/images/sensei-sandy.6e2ade.webp" name="twitter:image"/>
 <meta content="Scribner’s Staff Reset Pass at Sensei Sandy BJJ" name="twitter:image:alt"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
-<link href="/assets/css/scribners.d51fe7.css" rel="stylesheet"/>
+<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/routes/site-255ef3cf7fa2.min.23e6ff.css">
+<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
+
+
+<!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,20 +38,116 @@
       "@type": "WebPage",
       "@id": "https://senseisandy.com/scribners#webpage",
       "url": "https://senseisandy.com/scribners",
-      "name": "Scribner’s Staff Reset Pass | Sensei Sandy BJJ",
-      "description": "A calm, beginner-friendly Brazilian Jiu-Jitsu staff wellness pass for Scribner’s Catskill Lodge employees near Hunter and Tannersville, NY.",
+      "name": "Scribner\u2019s Staff Reset Pass | Sensei Sandy BJJ",
+      "description": "",
       "isPartOf": {
-        "@type": "WebSite",
-        "@id": "https://senseisandy.com/#website",
-        "name": "Sensei Sandy BJJ",
-        "url": "https://senseisandy.com"
+        "@id": "https://senseisandy.com/#website"
       },
       "about": {
-        "@id": "https://senseisandy.com/scribners#service"
-      },
-      "mainEntity": {
-        "@id": "https://senseisandy.com/scribners#service"
+        "@id": "https://senseisandy.com/#business"
       }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/scribners#service",
+      "name": "Scribner\u2019s Staff Reset Pass",
+      "serviceType": "Beginner-friendly Brazilian Jiu-Jitsu staff wellness pass",
+      "description": "A calm, beginner-friendly 30-day Brazilian Jiu-Jitsu intro offer for Scribner\u2019s Catskill Lodge employees, including a room tour, safety walkthrough, Beginner Lane orientation, and adult classes.",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Hunter, NY"
+        },
+        {
+          "@type": "Place",
+          "name": "Tannersville, NY"
+        }
+      ],
+      "audience": {
+        "@type": "PeopleAudience",
+        "audienceType": "Scribner\u2019s Catskill Lodge employees"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/scribners#offer-intro",
+          "name": "Scribner\u2019s Employee Intro",
+          "description": "30 days of beginner-friendly adult Brazilian Jiu-Jitsu classes for Scribner\u2019s Catskill Lodge employees.",
+          "price": "99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "eligibleCustomerType": "Scribner\u2019s Catskill Lodge employees",
+          "url": "https://senseisandy.com/scribners"
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/scribners#offer-12-Week Core Culture Program",
+          "name": "Scribner\u2019s Staff 12-Week Core Culture Program Rate",
+          "description": "A 12-week staff continuation rate for Scribner\u2019s Catskill Lodge employees after the first 30 days.",
+          "price": "600",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "eligibleCustomerType": "Scribner\u2019s Catskill Lodge employees",
+          "url": "https://senseisandy.com/scribners"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://senseisandy.com/scribners#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "I\u2019ve never done Jiu-Jitsu before. Can I still start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Scribner\u2019s Staff Reset Pass is built for beginners. Your first visit starts with a room tour, safety walkthrough, and Beginner Lane orientation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the Scribner\u2019s Staff Reset Pass?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The pass includes beginner-friendly adult classes, a room tour, safety walkthrough, Beginner Lane orientation, help choosing your first class, and text support before you arrive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much is the Scribner\u2019s employee intro offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Scribner\u2019s employee intro offer is $99 for the first 30 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after the first 30 days?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Scribner\u2019s employees can continue with a staff 12-Week Core Culture Program rate of $600 for 12 weeks. The regular adult 12-Week Core Culture Program is $715."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is hard sparring required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The first-class experience is calm, structured, and beginner-friendly. Skill-based resistance activities begin at the right pace from day one needed to start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do Scribner\u2019s employees start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Text SCRIBNERS to +1 (917) 736-8649. Sandy will help you choose a first class that fits your schedule."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -61,169 +162,25 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Scribner’s Staff Reset Pass",
+          "name": "Studio",
+          "item": "https://senseisandy.com/sensei-studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Scribner\u2019s Staff Reset Pass",
           "item": "https://senseisandy.com/scribners"
-        }
-      ]
-    },
-    {
-      "@type": [
-        "LocalBusiness",
-        "SportsActivityLocation"
-      ],
-      "@id": "https://senseisandy.com/#localbusiness",
-      "name": "Sensei Sandy BJJ",
-      "url": "https://senseisandy.com",
-      "telephone": "+19177368649",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6045 Main St",
-        "addressLocality": "Tannersville",
-        "addressRegion": "NY",
-        "postalCode": "12485",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 42.1954787,
-        "longitude": -74.13495
-      },
-      "areaServed": [
-        {
-          "@type": "Place",
-          "name": "Tannersville, NY"
-        },
-        {
-          "@type": "Place",
-          "name": "Hunter, NY"
-        },
-        {
-          "@type": "Place",
-          "name": "Windham, NY"
-        },
-        {
-          "@type": "Place",
-          "name": "Haines Falls, NY"
-        }
-      ],
-      "knowsAbout": [
-        "Brazilian Jiu-Jitsu",
-        "Adult Brazilian Jiu-Jitsu",
-        "Beginner Brazilian Jiu-Jitsu",
-        "Martial arts",
-        "Self-defense",
-        "Fitness",
-        "Confidence training"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://senseisandy.com/scribners#service",
-      "name": "Scribner’s Staff Reset Pass",
-      "serviceType": "Beginner-friendly Brazilian Jiu-Jitsu staff wellness pass",
-      "description": "A calm, beginner-friendly 30-day Brazilian Jiu-Jitsu intro offer for Scribner’s Catskill Lodge employees, including a room tour, safety walkthrough, Beginner Lane orientation, and adult classes.",
-      "provider": {
-        "@id": "https://senseisandy.com/#localbusiness"
-      },
-      "areaServed": [
-        {
-          "@type": "Place",
-          "name": "Hunter, NY"
-        },
-        {
-          "@type": "Place",
-          "name": "Tannersville, NY"
-        }
-      ],
-      "audience": {
-        "@type": "PeopleAudience",
-        "audienceType": "Scribner’s Catskill Lodge employees"
-      },
-      "offers": [
-        {
-          "@type": "Offer",
-          "@id": "https://senseisandy.com/scribners#offer-intro",
-          "name": "Scribner’s Employee Intro",
-          "description": "30 days of beginner-friendly adult Brazilian Jiu-Jitsu classes for Scribner’s Catskill Lodge employees.",
-          "price": "99",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/LimitedAvailability",
-          "eligibleCustomerType": "Scribner’s Catskill Lodge employees",
-          "url": "https://senseisandy.com/scribners"
-        },
-        {
-          "@type": "Offer",
-          "@id": "https://senseisandy.com/scribners#offer-12-Week Core Culture Program",
-          "name": "Scribner’s Staff 12-Week Core Culture Program Rate",
-          "description": "A 12-week staff continuation rate for Scribner’s Catskill Lodge employees after the first 30 days.",
-          "price": "600",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/LimitedAvailability",
-          "eligibleCustomerType": "Scribner’s Catskill Lodge employees",
-          "url": "https://senseisandy.com/scribners"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://senseisandy.com/scribners#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "I’ve never done Jiu-Jitsu before. Can I still start?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The Scribner’s Staff Reset Pass is built for beginners. Your first visit starts with a room tour, safety walkthrough, and Beginner Lane orientation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is included in the Scribner’s Staff Reset Pass?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The pass includes beginner-friendly adult classes, a room tour, safety walkthrough, Beginner Lane orientation, help choosing your first class, and text support before you arrive."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much is the Scribner’s employee intro offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Scribner’s employee intro offer is $99 for the first 30 days."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens after the first 30 days?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Scribner’s employees can continue with a staff 12-Week Core Culture Program rate of $600 for 12 weeks. The regular adult 12-Week Core Culture Program is $715."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is hard sparring required?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. The first-class experience is calm, structured, and beginner-friendly. Skill-based resistance activities begin at the right pace from day one needed to start."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do Scribner’s employees start?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Text SCRIBNERS to +1 (917) 736-8649. Sandy will help you choose a first class that fits your schedule."
-          }
         }
       ]
     }
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/css/fonts.e11440.css">
+<link rel="stylesheet" href="/assets/css/site-shell.211bb7.css">
 </head>
 <body class="ss-scribners-page">
+<!--#include virtual="/nav-include.html" -->
 <main id="main-content">
 <!-- CRO-DENSE HERO -->
 <section class="ss-scribners-hero py-4 py-lg-6 bg-light border-bottom">
@@ -265,7 +222,7 @@
             </a>
 </div>
 <p class="ss-microcopy mt-3 mb-0">
-            Sandy will help you pick a first semi-private class that fits your shift schedule.
+            Sandy will help you pick a first small-group class that fits your shift schedule.
           </p>
 </div>
 <div class="col-lg-5">
@@ -280,7 +237,7 @@
 <span>Sandy knows you are using the staff pass.</span>
 </li>
 <li>
-<strong>Choose a semi-private class</strong>
+<strong>Choose a small-group class</strong>
 <span>Get help around your work schedule.</span>
 </li>
 <li>
@@ -393,7 +350,7 @@
 <ul class="list-unstyled d-grid gap-3 mb-0">
 <li class="d-flex gap-3">
 <i class="bi bi-check-circle-fill text-primary"></i>
-<span>Adult beginner-friendly semi-private classes</span>
+<span>Adult beginner-friendly classes</span>
 </li>
 <li class="d-flex gap-3">
 <i class="bi bi-check-circle-fill text-primary"></i>
@@ -409,7 +366,7 @@
 </li>
 <li class="d-flex gap-3">
 <i class="bi bi-check-circle-fill text-primary"></i>
-<span>Help choosing your first semi-private class</span>
+<span>Help choosing your first class</span>
 </li>
 <li class="d-flex gap-3">
 <i class="bi bi-check-circle-fill text-primary"></i>
@@ -457,10 +414,10 @@
 <div class="row justify-content-center text-center mb-4">
 <div class="col-lg-8">
 <p class="text-uppercase fw-bold small text-primary mb-3">
-            First Semi-Private Class Flow
+            First Small-group class Flow
           </p>
 <h2 class="display-6 fw-bold">
-            Your first semi-private class is simple.
+            Your first class is simple.
           </h2>
 </div>
 </div>
@@ -475,8 +432,8 @@
 <div class="col-md">
 <div class="h-100 p-4 rounded-4 border bg-white">
 <div class="display-6 fw-bold text-primary">2</div>
-<h3 class="h5 fw-bold mt-3">Pick Your Semi-Private Class</h3>
-<p class="mb-0">Get help choosing a first semi-private class that fits your work schedule.</p>
+<h3 class="h5 fw-bold mt-3">Pick Your Class</h3>
+<p class="mb-0">Get help choosing a first small-group class that fits your work schedule.</p>
 </div>
 </div>
 <div class="col-md">
@@ -607,7 +564,7 @@
 </h3>
 <div aria-labelledby="faqThreeHeading" class="accordion-collapse collapse" data-bs-parent="#scribnersFaq" id="faqThree">
 <div class="accordion-body">
-                  Text Sandy first. He will help you choose a semi-private class that fits your schedule.
+                  Text Sandy first. He will help you choose a class that fits your schedule.
                 </div>
 </div>
 </div>
@@ -640,7 +597,7 @@
           Start your Scribner’s Staff Reset Pass.
         </h2>
 <p class="fs-5 mb-4">
-          Fill this out or text “SCRIBNERS” to Sandy. He will help you pick your first semi-private class.
+          Fill this out or text “SCRIBNERS” to Sandy. He will help you pick your first class.
         </p>
 <div class="p-4 bg-white rounded-4 border">
 <p class="fw-bold mb-1">Prefer text?</p>
@@ -721,11 +678,11 @@
 </select>
 </div>
 <div class="col-12">
-<label class="form-label" for="firstClass">Preferred first semi-private class *</label>
+<label class="form-label" for="firstClass">Preferred first small-group class *</label>
 <select class="form-select form-select-lg" id="firstClass" name="preferred_first_class" required="">
 <option value="">Choose one</option>
-<option value="Weeknight adult class">Weeknight adult semi-private class</option>
-<option value="Saturday adult class">Saturday adult semi-private class</option>
+<option value="Weeknight adult class">Weeknight adult class</option>
+<option value="Saturday adult class">Saturday adult class</option>
 <option value="Text me first">Text me first</option>
 </select>
 </div>
@@ -748,7 +705,7 @@
 </div>
 <div class="col-12">
 <p class="small text-muted mb-0">
-                Sandy will text you personally to help pick your first semi-private class. Limited to 10 Scribner’s employee spots per season.
+                Sandy will text you personally to help pick your first small-group class. Limited to 10 Scribner’s employee spots per season.
               </p>
 </div>
 </div>
@@ -815,5 +772,6 @@
     }
   })();
 </script>
+<!--#include virtual="/footer-include.html" -->
 </body>
 </html>

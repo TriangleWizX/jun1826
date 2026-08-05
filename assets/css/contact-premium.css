@@ -16,7 +16,7 @@
 .contact-premium-main {
   background: var(--ss-bg);
   color: var(--ss-text);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--ss-body-font, "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif);
 }
 
 /* Bento Grid Layout */
@@ -74,7 +74,7 @@
   font-family: "Instrument Serif", Georgia, serif;
   color: var(--ss-text);
   margin-top: 0;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .hero-card-content h1 {
@@ -644,4 +644,34 @@
   font-size: 1.15rem;
   flex-shrink: 0;
   margin-top: 0.1rem;
+}
+
+/* Global high-end visual bridge: contact surface. */
+body.page-contact {
+  --ss-body-font: "Lexend", "Sora", ui-sans-serif, system-ui, sans-serif;
+  --ss-display-font: "Instrument Serif", Georgia, serif;
+  --ss-ease-premium: cubic-bezier(0.32, 0.72, 0, 1);
+  --ss-radius-lg: 32px;
+  --ss-shadow-soft: 0 16px 44px rgba(33, 29, 24, 0.09);
+  --ss-shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+body.page-contact :where(.hero-card, .form-card, .contact-reassurance-box, .success-card, .evidence-card) {
+  border-color: var(--ss-border, rgba(33, 29, 24, 0.11));
+  border-radius: clamp(22px, 3vw, 34px);
+  box-shadow: var(--ss-shadow-soft), var(--ss-shadow-inner);
+  transition:
+    transform 700ms var(--ss-ease-premium),
+    box-shadow 700ms var(--ss-ease-premium),
+    border-color 700ms var(--ss-ease-premium);
+}
+
+body.page-contact :where(.btn-green-primary, .btn-outline-green, .button) {
+  border-radius: 999px;
+  min-height: 44px;
+  transition:
+    transform 650ms var(--ss-ease-premium),
+    box-shadow 650ms var(--ss-ease-premium),
+    background-color 650ms var(--ss-ease-premium),
+    border-color 650ms var(--ss-ease-premium);
 }

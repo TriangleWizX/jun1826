@@ -11,36 +11,37 @@ const pages = [
   { label: 'home', relPath: 'index.html' },
   { label: 'schedule', relPath: 'schedule.html' },
   { label: 'glossary', relPath: 'bjj-glossary/index.html' },
-  { label: 'adults', relPath: 'adult-bjj.html' },
+  { label: 'adults', relPath: 'bjj-classes/adults-tannersville-ny/index.html' },
   { label: 'sensei-studio', relPath: 'sensei-studio.html' },
   { label: 'faqs', relPath: 'bjj-faqs.html' }
 ];
 
 const expectedDesktopTopLevelItems = [
-  'Kids',
-  'Teens',
-  'Adults',
-  'Schedule',
-  'About'
+  'Programs',
+  'The Experience',
+  'Pricing',
+  'Parent Hub'
 ];
 
 const expectedMobileMenuItems = [
-  'Start Here',
-  'Kids',
-  'Teens',
-  'Adults',
-  'Schedule',
-  'Text Sandy'
+  'Programs',
+  'The Experience',
+  'Pricing',
+  'Parent Hub'
 ];
 
-const expectedAboutMenuItems = [
-  'Bio',
-  'Pricing',
-  'Show-Up Kit',
+const expectedProgramsMenuItems = [
+  'Kids BJJ',
+  'Teens BJJ',
+  'Adult BJJ',
+  'Private Coaching'
+];
+
+const expectedExperienceMenuItems = [
+  'How Class Works',
   'Studio Tour',
-  'Directions',
-  'Nearby Towns',
-  'BJJ Classes'
+  'Safety Walkthrough',
+  'Success Stories'
 ];
 
 const ensure = (condition, message) => {
@@ -157,24 +158,24 @@ const navProbe = `
     }
 
     async function runNavProbe() {
-      var aboutButton = document.querySelector('#aboutDropdownToggle');
-      var aboutMenu = document.querySelector('#aboutDropdownMenu');
-      var beforeOpen = dropdownSnapshot(aboutButton, aboutMenu);
+      var dropdownButton = document.querySelector('#programsDropdownToggle');
+      var dropdownMenu = document.querySelector('#programsDropdownMenu');
+      var beforeOpen = dropdownSnapshot(dropdownButton, dropdownMenu);
 
-      if (aboutButton) {
-        aboutButton.click();
+      if (dropdownButton) {
+        dropdownButton.click();
         await wait(420);
       }
 
-      var afterOpen = dropdownSnapshot(aboutButton, aboutMenu);
+      var afterOpen = dropdownSnapshot(dropdownButton, dropdownMenu);
       var payload = {
         topLevelItems: visibleText('#ssMainNav > .navbar-nav > .nav-item > .nav-link, #ssMainNav > .navbar-nav > .nav-item > button.nav-link'),
         topbarSeparatorVisibleText: visibleText('.ss-topbar-dot'),
         topbarText: visibleText('.ss-topbar-inner *'),
-        aboutDropdown: {
-          found: Boolean(aboutButton && aboutMenu),
+        programsDropdown: {
+          found: Boolean(dropdownButton && dropdownMenu),
           hasBootstrapDropdown: Boolean(window.bootstrap && window.bootstrap.Dropdown),
-          menuItems: textList('#aboutDropdownMenu .dropdown-item'),
+          menuItems: textList('#programsDropdownMenu .dropdown-item'),
           beforeOpen: beforeOpen,
           afterOpen: afterOpen
         }
@@ -283,6 +284,7 @@ const startServer = () => new Promise((resolve, reject) => {
 
       const filePath = await resolveRequestPath(url.pathname);
       if (!filePath) {
+        console.error(`404 Not Found: ${url.pathname}`);
         res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
         res.end('Not found');
         return;
@@ -360,22 +362,22 @@ const assertDesktop = (snapshot, label) => {
   const deduped = new Set(snapshot.topLevelItems);
   ensure(deduped.size === snapshot.topLevelItems.length, `${label}: duplicate visible desktop nav labels detected (${JSON.stringify(snapshot.topLevelItems)}).`);
 
-  const aboutDropdown = snapshot.aboutDropdown || {};
-  const beforeOpen = aboutDropdown.beforeOpen || {};
-  const afterOpen = aboutDropdown.afterOpen || {};
+  const programsDropdown = snapshot.programsDropdown || {};
+  const beforeOpen = programsDropdown.beforeOpen || {};
+  const afterOpen = programsDropdown.afterOpen || {};
 
-  ensure(aboutDropdown.found === true, `${label}: About dropdown markup was not found.`);
-  ensure(aboutDropdown.hasBootstrapDropdown === true, `${label}: Bootstrap Dropdown API was not available.`);
+  ensure(programsDropdown.found === true, `${label}: Programs dropdown markup was not found.`);
+  ensure(programsDropdown.hasBootstrapDropdown === true, `${label}: Bootstrap Dropdown API was not available.`);
   ensure(
-    JSON.stringify(aboutDropdown.menuItems) === JSON.stringify(expectedAboutMenuItems),
-    `${label}: About dropdown menu items changed unexpectedly (${JSON.stringify(aboutDropdown.menuItems)}).`
+    JSON.stringify(programsDropdown.menuItems) === JSON.stringify(expectedProgramsMenuItems),
+    `${label}: Programs dropdown menu items changed unexpectedly (${JSON.stringify(programsDropdown.menuItems)}).`
   );
-  ensure(beforeOpen.shown === false, `${label}: About dropdown should start closed.`);
-  ensure(beforeOpen.ariaExpanded === 'false', `${label}: About dropdown aria-expanded should start false.`);
-  ensure(afterOpen.shown === true, `${label}: About dropdown did not open after click.`);
-  ensure(afterOpen.ariaExpanded === 'true', `${label}: About dropdown aria-expanded did not update after click.`);
-  ensure(afterOpen.display !== 'none', `${label}: About dropdown menu should be laid out after click.`);
-  ensure(afterOpen.firstLinkClickable === true, `${label}: About dropdown links should be clickable after click.`);
+  ensure(beforeOpen.shown === false, `${label}: Programs dropdown should start closed.`);
+  ensure(beforeOpen.ariaExpanded === 'false', `${label}: Programs dropdown aria-expanded should start false.`);
+  ensure(afterOpen.shown === true, `${label}: Programs dropdown did not open after click.`);
+  ensure(afterOpen.ariaExpanded === 'true', `${label}: Programs dropdown aria-expanded did not update after click.`);
+  ensure(afterOpen.display !== 'none', `${label}: Programs dropdown menu should be laid out after click.`);
+  ensure(afterOpen.firstLinkClickable === true, `${label}: Programs dropdown links should be clickable after click.`);
 };
 
 const assertMobileClosed = (snapshot, label) => {
@@ -410,14 +412,14 @@ const runStaticAudit = async (reason) => {
     fs.readFile(path.join(ROOT, 'assets/css/components.css'), 'utf8')
   ]);
 
-  ensure(navHtml.includes('>Start Here<'), 'Shared nav is missing Start Here.');
-  ensure(navHtml.includes('href="sms:+19177368649">Text Sandy</a>'), 'Shared nav is missing Text Sandy.');
+  ensure(navHtml.includes('>Programs<'), 'Shared nav is missing Programs dropdown toggle.');
+  ensure(navHtml.includes('href="sms:+19177368649"'), 'Shared nav is missing Text Sandy.');
   ensure(!/data-ss-dropdown(-toggle|-menu)?/.test(navHtml), 'Shared nav should not include custom dropdown hooks.');
   ensure(!navHtml.includes('function initProgramsDropdown'), 'Shared nav should not include legacy dropdown controller.');
-  ensure(/id="aboutDropdownToggle"[^>]*data-bs-toggle="dropdown"/.test(navHtml), 'Shared nav About toggle must use Bootstrap dropdown markup.');
+  ensure(/id="programsDropdownToggle"[^>]*data-bs-toggle="dropdown"/.test(navHtml), 'Shared nav Programs toggle must use Bootstrap dropdown markup.');
   ensure(navHtml.includes('window.bootstrap && window.bootstrap.Dropdown'), 'Shared Bootstrap loader must check window.bootstrap.Dropdown.');
-  expectedAboutMenuItems.forEach((item) => {
-    ensure(navHtml.includes(`>${item}<`), `Shared About dropdown is missing ${item}.`);
+  expectedProgramsMenuItems.forEach((item) => {
+    ensure(navHtml.includes(`>${item}<`), `Shared Programs dropdown is missing ${item}.`);
   });
   ensure(!navHtml.includes('>Glossary<'), 'Shared nav should not include Glossary in top nav.');
   ensure(!componentsCss.includes('Universal Dropdown Menu Fix'), 'Shared component CSS still contains the legacy universal dropdown override.');
@@ -435,6 +437,7 @@ try {
   const failures = [];
 
   for (const page of pages) {
+    console.log(`Checking page: ${page.relPath}`);
     const url = `http://127.0.0.1:${started.port}/__nav-dropdown-check?page=${encodeURIComponent(page.relPath)}`;
     const html = await runChromium(url);
     const result = extractResult(html);

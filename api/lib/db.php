@@ -237,6 +237,105 @@ function ss_run_migrations(PDO $db): void
     $db->exec('CREATE INDEX IF NOT EXISTS ix_booking_status ON booking(status, start_at)');
 
     $db->exec(
+        'CREATE TABLE IF NOT EXISTS youth_intro_records (
+            id TEXT PRIMARY KEY,
+            lead_id INTEGER NOT NULL,
+            guardian_name TEXT NOT NULL,
+            student_name TEXT NOT NULL,
+            student_age INTEGER NOT NULL,
+            town TEXT NOT NULL,
+            prior_experience TEXT NOT NULL,
+            main_goal TEXT NOT NULL,
+            participation_notes TEXT NOT NULL,
+            loaner_gi_requested INTEGER NOT NULL DEFAULT 0,
+            preferred_date TEXT NOT NULL,
+            age_lane TEXT NOT NULL,
+            scheduled_class_id TEXT NOT NULL DEFAULT \'\',
+            appointment_datetime TEXT NOT NULL DEFAULT \'\',
+            arrival_datetime TEXT NOT NULL DEFAULT \'\',
+            waiver_completed INTEGER NOT NULL DEFAULT 0,
+            media_choice TEXT NOT NULL,
+            message_consent INTEGER NOT NULL DEFAULT 0,
+            pipeline_stage TEXT NOT NULL DEFAULT \'New inquiry\',
+            reschedule_count INTEGER NOT NULL DEFAULT 0,
+            attendance_status TEXT NOT NULL DEFAULT \'\',
+            recommended_schedule TEXT NOT NULL DEFAULT \'\',
+            non_enrollment_reason TEXT NOT NULL DEFAULT \'\',
+            follow_up_date TEXT NOT NULL DEFAULT \'\',
+            enrollment_status TEXT NOT NULL DEFAULT \'\',
+            message_consent_at TEXT,
+            consent_text_version TEXT NOT NULL DEFAULT \'youth-intro-v1\',
+            completion_status TEXT NOT NULL DEFAULT \'Incomplete\',
+            checklist_json TEXT NOT NULL DEFAULT \'{}\',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (lead_id),
+            FOREIGN KEY (lead_id) REFERENCES leads(id)
+        )'
+    );
+    $youthColumns = array_column($db->query('PRAGMA table_info(youth_intro_records)')->fetchAll(PDO::FETCH_ASSOC), 'name');
+    foreach (['scheduled_class_id' => "TEXT NOT NULL DEFAULT ''", 'appointment_datetime' => "TEXT NOT NULL DEFAULT ''", 'arrival_datetime' => "TEXT NOT NULL DEFAULT ''", 'message_consent_at' => 'TEXT', 'consent_text_version' => "TEXT NOT NULL DEFAULT 'youth-intro-v1'", 'completion_status' => "TEXT NOT NULL DEFAULT 'Incomplete'", 'checklist_json' => "TEXT NOT NULL DEFAULT '{}'" ] as $column => $definition) {
+        if (!in_array($column, $youthColumns, true)) $db->exec("ALTER TABLE youth_intro_records ADD COLUMN {$column} {$definition}");
+    }
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_youth_intro_stage ON youth_intro_records(pipeline_stage, preferred_date)');
+    $db->exec(
+        'CREATE TABLE IF NOT EXISTS youth_intro_messages (
+            id TEXT PRIMARY KEY,
+            youth_intro_id TEXT NOT NULL,
+            template_key TEXT NOT NULL,
+            recipient TEXT NOT NULL,
+            merge_data_json TEXT NOT NULL,
+            status TEXT NOT NULL DEFAULT \'queued\',
+            sent_at TEXT,
+            created_at TEXT NOT NULL,
+            FOREIGN KEY (youth_intro_id) REFERENCES youth_intro_records(id)
+        )'
+    );
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_youth_intro_messages_status ON youth_intro_messages(status, created_at)');
+    $messageColumns = array_column($db->query('PRAGMA table_info(youth_intro_messages)')->fetchAll(PDO::FETCH_ASSOC), 'name');
+    foreach (['attempt_count' => 'INTEGER NOT NULL DEFAULT 0', 'failed_at' => 'TEXT', 'error_message' => 'TEXT'] as $column => $definition) {
+        if (!in_array($column, $messageColumns, true)) $db->exec("ALTER TABLE youth_intro_messages ADD COLUMN {$column} {$definition}");
+    }
+    $db->exec(
+        'CREATE TABLE IF NOT EXISTS youth_intro_alerts (
+            id TEXT PRIMARY KEY,
+            youth_intro_id TEXT NOT NULL,
+            message_id TEXT,
+            alert_type TEXT NOT NULL,
+            details TEXT NOT NULL,
+            resolved_at TEXT,
+            created_at TEXT NOT NULL,
+            FOREIGN KEY (youth_intro_id) REFERENCES youth_intro_records(id),
+            FOREIGN KEY (message_id) REFERENCES youth_intro_messages(id)
+        )'
+    );
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_youth_intro_alerts_open ON youth_intro_alerts(resolved_at, created_at)');
+    $db->exec(
+        'CREATE TABLE IF NOT EXISTS youth_intro_overrides (
+            id TEXT PRIMARY KEY,
+            class_id TEXT NOT NULL,
+            override_date TEXT,
+            status TEXT,
+            intro_capacity INTEGER,
+            partner_approved INTEGER,
+            manual_review INTEGER NOT NULL DEFAULT 0,
+            moved_to_class_id TEXT,
+            actor_user_id TEXT,
+            created_at TEXT NOT NULL,
+            FOREIGN KEY (actor_user_id) REFERENCES user_account(id)
+        )'
+    );
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_youth_intro_overrides_lookup ON youth_intro_overrides(class_id, override_date, created_at)');
+    $db->exec(
+        'CREATE TABLE IF NOT EXISTS lead_request_keys (
+            request_key TEXT PRIMARY KEY,
+            lead_id INTEGER NOT NULL,
+            created_at TEXT NOT NULL,
+            FOREIGN KEY (lead_id) REFERENCES leads(id)
+        )'
+    );
+
+    $db->exec(
         'CREATE TABLE IF NOT EXISTS session (
             id TEXT PRIMARY KEY,
             location_id TEXT NOT NULL,

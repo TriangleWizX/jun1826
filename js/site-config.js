@@ -32,13 +32,13 @@ window.academyData = academyData;
 
 
 const defaultMonthLabel = new Date().toLocaleString('en-US', { month: 'long' });
-const CALENDLY_BOOKING_URL = 'https://calendly.com/senseisandy?background_color=f8f8f8&primary_color=68963c&text_color=333';
+const CALENDLY_BOOKING_URL = 'https://calendly.com/senseisandy?background_color=fbfaf8&primary_color=289fa1&text_color=1f1712';
 
 const defaultDecisionConfig = {
   pricingVisibility: 'site-wide',
   primaryCtaLabel: 'Reserve Free Intro',
   primaryCtaUrl: '/free-bjj-intro-tannersville-ny',
-  secondaryCtaLabel: 'Text Sandy First',
+  secondaryCtaLabel: 'Text Sandy',
   secondaryCtaUrl: 'sms:+19177368649'
 };
 
@@ -182,7 +182,8 @@ window.SENSEI_DECISIONS = decisionOverrides;
 
   const isSenseiHost = (hostname) => {
     if (!hostname) return false;
-    return hostname.replace(/^www\./i, '').toLowerCase() === 'senseisandy.com';
+    const clean = hostname.replace(/^www\./i, '').toLowerCase();
+    return clean === 'senseisandy.com' || clean === 'localhost' || clean.startsWith('127.0.');
   };
 
   const isBookIntroPath = (pathname) => {
@@ -211,7 +212,6 @@ window.SENSEI_DECISIONS = decisionOverrides;
     if (internalBookIntro) {
       url.pathname = resolveIntroPath(lane);
       url.search = '';
-      url.hash = '';
       return url.toString();
     }
 
@@ -243,18 +243,18 @@ const defaultSenseiConfig = {
   currentMonthLabel: defaultMonthLabel,
   newStudentSpots: 3,
   grandSlamSpots: 3,
-  calendlyUrl: 'https://calendly.com/senseisandy?background_color=f8f8f8&primary_color=68963c&text_color=333',
+  calendlyUrl: 'https://calendly.com/senseisandy?background_color=fbfaf8&primary_color=289fa1&text_color=1f1712',
   canonicalIntroUrl: 'https://senseisandy.com/free-bjj-intro-tannersville-ny',
   bookIntroUrl: 'https://senseisandy.com/free-bjj-intro-tannersville-ny',
   kidsCalendlyUrl: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
   teensCalendlyUrl: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
   adultsCalendlyUrl: 'https://calendly.com/senseisandy/free-first-class-adult-bjj',
   mixedCalendlyUrl: 'https://calendly.com/senseisandy/',
-  tannersvilleCalendlyUrl: 'https://calendly.com/senseisandy?background_color=f8f8f8&primary_color=68963c&text_color=333',
+  tannersvilleCalendlyUrl: 'https://calendly.com/senseisandy?background_color=fbfaf8&primary_color=289fa1&text_color=1f1712',
   smsNumber: '+19177368649',
   primaryCtaLabel: 'Reserve Free Intro',
   primaryCtaUrl: '/free-bjj-intro-tannersville-ny',
-  secondaryCtaLabel: 'Text Sandy First',
+  secondaryCtaLabel: 'Text Sandy',
   secondaryCtaUrl: 'sms:+19177368649',
   laneAges: {
     kids: academyData.kidsAges,
@@ -294,7 +294,7 @@ const PRIMARY_CTA_URL = window.SENSEI_CONFIG.primaryCtaUrl
   || window.SENSEI_CONFIG.bookIntroUrl
   || window.SENSEI_CONFIG.canonicalIntroUrl
   || CALENDLY_BOOKING_URL;
-const SECONDARY_CTA_LABEL = window.SENSEI_CONFIG.secondaryCtaLabel || 'Text Sandy First';
+const SECONDARY_CTA_LABEL = window.SENSEI_CONFIG.secondaryCtaLabel || 'Text Sandy';
 const SECONDARY_CTA_URL = window.SENSEI_CONFIG.secondaryCtaUrl || `sms:${PRIMARY_PHONE}`;
 
 window.PRIMARY_PHONE = PRIMARY_PHONE;
@@ -354,7 +354,7 @@ window.SECONDARY_CTA_URL = SECONDARY_CTA_URL;
 
   const normalizeBookPath = (pathname) => {
     if (!pathname) return '';
-    const normalized = pathname.replace(/\/+$/, '').toLowerCase() || '/';
+    const normalized = pathname.replace(/\.html?$/i, '').replace(/\/+$/, '').toLowerCase() || '/';
     const legacyMatch = normalized.match(/^\/free-bjj-intro-tannersville-ny(kids|teens|adults)$/);
     if (legacyMatch) return `/free-bjj-intro-tannersville-ny/${legacyMatch[1]}`;
     return normalized;
@@ -383,7 +383,7 @@ window.SECONDARY_CTA_URL = SECONDARY_CTA_URL;
   };
 
   const autoLinkLocations = () => {
-      const locationQueries = {
+    const locationQueries = {
       Tannersville: '5VW8+52 Tannersville, New York',
       'Haines Falls': 'Haines Falls, NY',
       Hunter: 'Hunter, NY',

@@ -221,7 +221,7 @@ ss_db();
 if (PHP_SAPI !== 'cli') {
     header('X-Content-Type-Options: nosniff');
     header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Ops-Api-Key, X-Booking-Webhook-Secret, X-Webhook-Secret');
+        header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Ops-Api-Key, X-Booking-Webhook-Secret, X-Youth-Intro-Confirm-Secret, X-Webhook-Secret');
     header('Vary: Origin');
 
     $allowedOriginsRaw = ss_env('ALLOWED_ORIGINS', '');
