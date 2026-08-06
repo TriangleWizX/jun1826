@@ -1,0 +1,24 @@
+<h1>Sensei Sandy live copy correction</h1>
+<h2>Required wording</h2>
+<ul>
+<li><code>class</code> → <code>small-group class</code></li>
+<li><code>classes</code> → <code>small-group classes</code></li>
+<li><code>small class</code> → <code>small-group class</code></li>
+<li><code>small classes</code> → <code>small-group classes</code></li>
+<li><code>group class</code> → <code>small-group class</code></li>
+<li><code>group classes</code> → <code>small-group classes</code></li>
+</ul>
+<p>The patcher changes rendered text and accessibility-facing attributes only. It does not alter HTML <code>class=&quot;&quot;</code> attributes, JavaScript, CSS, code samples, or the hyphenated adjective <code>first-class</code>.</p>
+<h2>Run</h2>
+<pre><code class="language-bash">python -m pip install beautifulsoup4
+python fix_semiprivate_copy.py /path/to/current/public_html
+</code></pre>
+<p>The first command is a dry run and writes <code>semi_private_copy_changes.csv</code>.</p>
+<p>After reviewing the report:</p>
+<pre><code class="language-bash">python fix_semiprivate_copy.py /path/to/current/public_html --write
+</code></pre>
+<p>Each edited page receives a one-time <code>.bak</code> backup.</p>
+<h2>Deployment boundary</h2>
+<p>Run this against the current deployed-site folder or a fresh download of <code>public_html</code>. Do not run it against an older backup repository. The audit CSV lists the live URLs where the requested wording was found.</p>
+<h2>Review note</h2>
+<p>Some affected text appears inside attributed customer testimonials. Changing quoted wording makes it a paraphrase. Remove quotation marks or obtain reviewer approval if exact quotation integrity matters.</p>

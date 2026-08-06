@@ -1,0 +1,110 @@
+<h1>Sitewide Migration Checklist</h1>
+<h2>1. Create the new Calendly event</h2>
+<p>Create <code>BJJ Goal Mapping Visit</code>, confirm the final public URL, and update
+<code>CALENDLY_URL</code> in <code>goal-mapping.js</code> if the slug differs.</p>
+<h2>2. Install the shared launcher</h2>
+<p>Upload:</p>
+<ul>
+<li><code>goal-mapping.js</code> to <code>/assets/js/goal-mapping.js</code></li>
+<li><code>goal-mapping.css</code> to <code>/assets/css/goal-mapping.css</code></li>
+</ul>
+<p>Add this once before <code>&lt;/body&gt;</code> on every HTML page:</p>
+<pre><code class="language-html">&lt;script src=&quot;/assets/js/goal-mapping.js&quot; defer&gt;&lt;/script&gt;
+</code></pre>
+<p>Add this inside <code>&lt;head&gt;</code> if you use the optional styles:</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/goal-mapping.css&quot;&gt;
+</code></pre>
+<p>The launcher also catches current <code>data-calendly</code> links, existing Sensei Sandy
+Calendly URLs, and links to <code>/free-bjj-intro-tannersville-ny</code>. That makes the transition work
+before every old CTA has been rewritten.</p>
+<h2>3. Change the global CTA hierarchy</h2>
+<p>Use:</p>
+<ul>
+<li><strong>Primary:</strong> Reserve Free Intro</li>
+<li><strong>Compact nav/mobile:</strong> Start Here</li>
+<li><strong>Supporting line:</strong> 15 minutes. Meet Sandy. Leave with your recommended class
+and weekly plan.</li>
+<li><strong>Secondary CTA:</strong> Text Sandy</li>
+</ul>
+<p>Retire these as primary labels:</p>
+<ul>
+<li>Reserve Free Intro</li>
+<li>Book Your First Class</li>
+<li>Claim Your Free Class</li>
+<li>Try a Class</li>
+<li>Save My Spot</li>
+</ul>
+<h2>4. Replace the homepage form and always-loaded calendar</h2>
+<p>Remove the homepage lead form and the calendar that loads below it. Replace
+both with the single <code>homepage start section</code> in <code>cta-snippets.html</code>.</p>
+<p>The calendar should load only after a CTA click. This keeps the page focused,
+reduces duplicate choices, and makes the scheduling action feel like the next
+step instead of a separate third step.</p>
+<h2>5. Rebuild <code>/free-bjj-intro-tannersville-ny</code></h2>
+<p>Keep the URL temporarily for backlinks and search equity, but change:</p>
+<ul>
+<li>Page title: <code>BJJ Goal Mapping Visit | Sensei Sandy BJJ</code></li>
+<li>H1: <code>Your First Step Toward Consistent Training</code></li>
+<li>Intro: <code>Meet Sandy for 15 minutes. Map your goal, schedule, and best starting lane before choosing your first class.</code></li>
+<li>Primary CTA: <code>Reserve Free Intro</code></li>
+</ul>
+<p>Remove the class-booking form and the always-loaded scheduling section.</p>
+<p>Later, consider a permanent redirect from <code>/free-bjj-intro-tannersville-ny</code> to
+<code>/goal-mapping-session</code> after internal links, search listings, and campaigns
+have been updated.</p>
+<h2>6. Rewrite first-visit sections</h2>
+<p>Use this sequence everywhere:</p>
+<ol>
+<li>Meet Sandy</li>
+<li>Share the result you want</li>
+<li>Map a realistic weekly rhythm</li>
+<li>Choose the right first class together</li>
+<li>Begin with skill-based resistance activities at the right pace</li>
+</ol>
+<p>Do not position the 15-minute appointment as a medical screen. Use
+<code>movement-readiness check</code>, <code>mobility considerations</code>, or <code>training considerations</code>.</p>
+<h2>7. Update metadata and structured data</h2>
+<p>Replace offers named <code>Free Introductory BJJ Class</code> with:</p>
+<ul>
+<li>Offer/service name: <code>Complimentary BJJ Goal Mapping Visit</code></li>
+<li>Price: <code>0</code></li>
+<li>Duration: <code>PT15M</code></li>
+<li>URL: the new on-site page or Calendly event URL</li>
+</ul>
+<p>Update page descriptions that promise a free first class.</p>
+<h2>8. Tracking</h2>
+<p>The supplied script sends this GA4 event after a completed embedded booking:</p>
+<ul>
+<li>Event: <code>goal_mapping_booked</code></li>
+<li>Category: <code>lead</code></li>
+<li>Label: current page title</li>
+</ul>
+<p>Track these conversion steps:</p>
+<ol>
+<li>CTA click</li>
+<li>Calendly loaded</li>
+<li>Session booked</li>
+<li>Session attended</li>
+<li>First class scheduled</li>
+<li>12-week track started</li>
+</ol>
+<h2>9. QA</h2>
+<p>Test on:</p>
+<ul>
+<li>iPhone-sized screen</li>
+<li>Android-sized screen</li>
+<li>Desktop Chrome</li>
+<li>Safari</li>
+<li>Slow connection</li>
+<li>JavaScript disabled</li>
+</ul>
+<p>Confirm:</p>
+<ul>
+<li>Every primary CTA opens the popup</li>
+<li>Hosted Calendly link works as a fallback</li>
+<li>Escape closes the popup</li>
+<li>Focus returns correctly</li>
+<li>No CTA uses <code>href=&quot;#&quot;</code></li>
+<li>No page shows an always-loaded duplicate calendar</li>
+<li>UTM fields identify the page and CTA source</li>
+</ul>
