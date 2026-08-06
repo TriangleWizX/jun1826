@@ -127862,7 +127862,7 @@
         "/class-rules",
         "/how-class-works"
       ],
-      "rejectedCount": 2457,
+      "rejectedCount": 2463,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -128264,6 +128264,7 @@
         ".bg-gradient",
         ".bg-info",
         ".bg-info-subtle",
+        ".bg-light",
         ".bg-light-subtle",
         ".bg-opacity-10",
         ".bg-opacity-100",
@@ -128313,6 +128314,7 @@
         ".border-start-0",
         ".border-success",
         ".border-success-subtle",
+        ".border-top",
         ".border-top-0",
         ".border-warning",
         ".border-warning-subtle",
@@ -128956,6 +128958,7 @@
         ".invisible",
         ".justify-content-around",
         ".justify-content-between",
+        ".justify-content-center",
         ".justify-content-end",
         ".justify-content-evenly",
         ".justify-content-lg-around",
@@ -129323,6 +129326,7 @@
         ".mt-0",
         ".mt-1",
         ".mt-4",
+        ".mt-5",
         ".mt-auto",
         ".mt-lg-0",
         ".mt-lg-1",
@@ -129972,6 +129976,7 @@
         ".py-0",
         ".py-1",
         ".py-2",
+        ".py-4",
         ".py-5",
         ".py-lg-0",
         ".py-lg-1",
@@ -130293,6 +130298,7 @@
         "[type=search]",
         "a > code",
         "abbr[title]",
+        "address",
         "b",
         "caption",
         "code",
@@ -167362,7 +167368,7 @@
   "schemaVersion": 1,
   "summary": {
     "bundleCount": 42,
-    "rejectedSelectorCount": 166640,
+    "rejectedSelectorCount": 166646,
     "routeCount": 265
   }
 }
