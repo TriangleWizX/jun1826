@@ -1,0 +1,26 @@
+{
+  "approved": false,
+  "approvedAt": null,
+  "templates": {
+    "immediate_confirmation": {
+      "body": "Hi {{parentName}} — {{studentName}} is reserved for {{day}}, {{date}} at {{classTime}}. Please arrive at {{arrivalTime}}. Sensei Sandy BJJ, Tannersville, NY. Waiver: {{waiverStatus}}. Loaner gi: {{loanerGiStatus}}. Reply here if you need help. Reply STOP to opt out.",
+      "requiredFields": ["parentName", "studentName", "day", "date", "classTime", "arrivalTime", "address", "waiverStatus", "loanerGiStatus"]
+    },
+    "24_hour_reminder": {
+      "body": "Reminder: {{studentName}} is scheduled tomorrow at {{classTime}} for the {{ageLane}} lane. Arrive at {{arrivalTime}}. Reply CONFIRM, or text Sandy at +1 (917) 736-8649 to reschedule. Reply STOP to opt out.",
+      "requiredFields": ["studentName", "classTime", "arrivalTime", "ageLane", "reschedulingContact"]
+    },
+    "same_day_reminder": {
+      "body": "Today: please arrive at {{arrivalTime}} for {{studentName}}’s intro. Entrance and parking: {{parkingDirections}}. Questions: {{contact}}. Reply STOP to opt out.",
+      "requiredFields": ["studentName", "arrivalTime", "parkingDirections", "contact"]
+    },
+    "missed_appointment": {
+      "body": "We missed {{studentName}} today. You have one complimentary reschedule available; text Sandy at +1 (917) 736-8649 to request an open time. A second missed appointment goes to manual review.",
+      "requiredFields": ["studentName", "rescheduleCount", "reschedulingContact"]
+    },
+    "post_class_follow_up": {
+      "body": "Hi {{parentName}} — {{studentName}} specifically succeeded at {{specificSuccess}}. You shared that your goal is {{parentGoal}}. Based on today, Sandy recommends {{recommendedSchedule}}. Next step: {{enrollmentLink}}.",
+      "requiredFields": ["parentName", "studentName", "specificSuccess", "parentGoal", "recommendedSchedule", "enrollmentLink"]
+    }
+  }
+}

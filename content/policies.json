@@ -1,0 +1,54 @@
+{
+  "fitGuarantee": {
+    "days": 30,
+    "description": "Core Culture includes a 30-day fit guarantee. Public pages may state that the guarantee exists. Editors may not add terms until Sandy approves a separate policy."
+  },
+  "medicalPause": {
+    "coreCulture": {
+      "maximumPauses": 1,
+      "maximumDays": 14,
+      "requestWindowDays": 7,
+      "creditExpirationMonths": 6
+    },
+    "annualTrack": {
+      "maximumPauses": 2,
+      "maximumDays": 30
+    },
+    "qualifyingReasons": [
+      "Injury or extended illness",
+      "Medical procedure",
+      "Physician-directed activity restriction",
+      "Pregnancy-related restriction",
+      "Recovery that prevents safe training"
+    ],
+    "nonQualifyingReasons": [
+      "Vacation",
+      "Work travel",
+      "Transportation problems",
+      "Schedule conflicts",
+      "School events",
+      "Ordinary missed classes"
+    ]
+  },
+  "laundry": {
+    "bagsPerWeek": 1,
+    "maximumSetsPerBag": 3,
+    "turnaroundHours": 72,
+    "excludedItems": [
+      "Moldy gear",
+      "Gear contaminated with blood or bodily fluids",
+      "Shoes or personal clothing",
+      "Dry-clean-only items",
+      "Specialty equipment",
+      "Items that require special washing",
+      "Gear with sharp objects",
+      "Gear that presents a mildew risk"
+    ],
+    "unclaimedGear": {
+      "reminderDays": 14,
+      "lostAndFoundDays": 30,
+      "finalNoticeDays": 45,
+      "disposalDays": 60
+    }
+  }
+}

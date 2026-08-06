@@ -1,0 +1,164 @@
+{
+  "@context": "https://schema.org",
+  "services": [
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/options-pricing#youth-core-culture",
+      "name": "Youth Core Culture",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Mountaintop Region, Greene County, New York"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#youth-core-3x-offer",
+          "url": "https://senseisandy.com/options-pricing#youth-core-culture",
+          "price": "550.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "description": "Three planned classes per week for 12 weeks."
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#youth-core-2x-offer",
+          "url": "https://senseisandy.com/options-pricing#youth-core-culture",
+          "price": "425.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "description": "Two planned classes per week for 12 weeks."
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/options-pricing#adult-core-culture",
+      "name": "Adult Core Culture",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Mountaintop Region, Greene County, New York"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#adult-core-3x-offer",
+          "url": "https://senseisandy.com/options-pricing#adult-core-culture",
+          "price": "715.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "description": "Three planned classes per week for 12 weeks."
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#adult-core-2x-offer",
+          "url": "https://senseisandy.com/options-pricing#adult-core-culture",
+          "price": "550.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "description": "Two planned classes per week for 12 weeks."
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/options-pricing#community-service-adult",
+      "name": "Community-Service Adult Core Culture",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#community-adult-core-offer",
+          "url": "https://senseisandy.com/options-pricing#community-service-adult",
+          "price": "600.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "description": "Discounted rate for active first responders, law enforcement, veterans, educators, and healthcare workers."
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/options-pricing#day-pass",
+      "name": "Day Pass",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#day-pass-offer",
+          "url": "https://senseisandy.com/options-pricing#day-pass",
+          "price": "35.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "description": "Single-class visitor pass."
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/options-pricing#vacation-week",
+      "name": "Vacation Week",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#vacation-week-offer",
+          "url": "https://senseisandy.com/options-pricing#vacation-week",
+          "price": "99.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "description": "Unlimited visitor access for 7 consecutive days."
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/options-pricing#free-intro",
+      "name": "Free Intro Class",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#free-intro-offer",
+          "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny#booking-flow",
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "description": "Coached introductory visit and room tour."
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://senseisandy.com/options-pricing#private-coaching",
+      "name": "Private Coaching",
+      "provider": {
+        "@id": "https://senseisandy.com/#business"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://senseisandy.com/options-pricing#private-coaching-offer",
+          "url": "https://senseisandy.com/private-lessons",
+          "price": "195.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/LimitedAvailability",
+          "description": "1-on-1 private coaching session."
+        }
+      ]
+    }
+  ]
+}

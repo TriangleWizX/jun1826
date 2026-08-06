@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<title>Law Enforcement BJJ Evidence Hub | Sensei Sandy BJJ</title>
+<meta content="Review agency case studies, training standards, and operational guidelines behind Brazilian Jiu-Jitsu training for law enforcement and first responders." name="description"/>
+
+
+<link href="https://senseisandy.com/research/law-enforcement-bjj-evidence" rel="canonical"/>
+<meta content="https://senseisandy.com/research/law-enforcement-bjj-evidence" property="og:url"/>
+<meta content="Sensei Sandy BJJ" property="og:site_name"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" property="og:image"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Law Enforcement BJJ Evidence Hub | Sensei Sandy BJJ" property="og:title"/>
+<meta content="Review agency case studies, training standards, and operational guidelines behind Brazilian Jiu-Jitsu training for law enforcement and first responders." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Law Enforcement BJJ Evidence Hub | Sensei Sandy BJJ" name="twitter:title"/>
+<meta content="Review agency case studies, training standards, and operational guidelines behind Brazilian Jiu-Jitsu training for law enforcement and first responders." name="twitter:description"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
+<meta content="https://senseisandy.com/research/law-enforcement-bjj-evidence" name="twitter:url"/>
+<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/routes/site-da3d828d72c6.min.97c330.css">
+<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
+<link rel="stylesheet" href="/assets/css/fonts.e11440.css">
+<link rel="stylesheet" href="/assets/css/site-shell.211bb7.css">
+</head>
+<body class="page-partner page-tactical">
+
+  <!--#include virtual="/nav-include.html" -->
+
+
+<!-- Preload & load Bootstrap early so pages with footer-only includes get the file downloaded earlier -->
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+
+<script>
+  (function ensureBootstrapBundle() {
+    const primarySrc = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+    const fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
+    const bootstrapScriptSelector = 'script[src*="bootstrap.bundle.min.js"]';
+
+    const hasDropdown = () => Boolean(window.bootstrap && window.bootstrap.Dropdown);
+
+    const loadBundle = (src) => {
+      if (hasDropdown()) return;
+      if (document.querySelector(`script[data-ss-bootstrap-loader="${src}"]`)) return;
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.crossOrigin = 'anonymous';
+      script.async = false;
+      script.dataset.ssBootstrapLoader = src;
+      script.addEventListener('load', () => {
+        if (!hasDropdown() && src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => {
+        if (src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      document.body.appendChild(script);
+    };
+
+    const watchExistingBundle = (script) => {
+      if (!script || script.dataset.ssBootstrapWatched === 'true') return;
+      script.dataset.ssBootstrapWatched = 'true';
+      script.addEventListener('load', () => {
+        if (!hasDropdown()) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => loadBundle(fallbackSrc), { once: true });
+    };
+
+    const ensureDropdown = () => {
+      if (hasDropdown()) return;
+
+      const existingBundle = document.querySelector(bootstrapScriptSelector);
+      if (existingBundle) {
+        watchExistingBundle(existingBundle);
+      } else {
+        loadBundle(primarySrc);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ensureDropdown, { once: true });
+    } else {
+      ensureDropdown();
+    }
+  })();
+</script>
+
+<div id="schedule-dialog" class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="schedule-dialog-title" hidden>
+  <div class="schedule-dialog__panel">
+    <button type="button" class="schedule-dialog__close" aria-label="Close scheduling form">&times;</button>
+    <h2 id="schedule-dialog-title">Plan Your First Class</h2>
+    <p>Leave the best number to reach you. Sandy will help you choose the right class time.</p>
+    <form id="schedule-dialog-form" action="https://formspree.io/f/mqazqozk" method="POST">
+      <label for="schedule-lead-name" style="display: block; margin-bottom: 1rem; font-weight: 600;">
+        First name
+        <input type="text" id="schedule-lead-name" name="name" autocomplete="given-name" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <label for="schedule-lead-phone" style="display: block; margin-bottom: 1.5rem; font-weight: 600;">
+        Phone number
+        <input type="tel" id="schedule-lead-phone" name="phone" autocomplete="tel" inputmode="tel" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <input type="hidden" name="_subject" value="New Schedule Request (Modal)">
+      <button type="submit" class="ss-btn ss-btn-primary" style="width: 100%;">Continue to Schedule</button>
+    </form>
+    <p id="schedule-dialog-status" class="ss-lead-capture-status" role="status" aria-live="polite" hidden style="margin-top: 1rem; color: #116A42; font-weight: 600;">
+      Thank you. Sandy will call or text you soon.
+    </p>
+  </div>
+</div>
+
+<script>
+(function initScheduleModal() {
+  const endpoint = 'https://formspree.io/f/mqazqozk';
+  const schedulePath = '/schedule';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const dialog = document.getElementById('schedule-dialog');
+    if (!dialog) return;
+
+    const panel = dialog.querySelector('.schedule-dialog__panel');
+    const closeBtn = dialog.querySelector('.schedule-dialog__close');
+    const form = document.getElementById('schedule-dialog-form');
+    const status = document.getElementById('schedule-dialog-status');
+    let lastActiveElement = null;
+
+    function openModal(trigger) {
+      lastActiveElement = trigger || document.activeElement;
+      dialog.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      const firstInput = dialog.querySelector('input, button');
+      if (firstInput) firstInput.focus();
+    }
+
+    function closeModal() {
+      dialog.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+        lastActiveElement.focus();
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      const trigger = e.target.closest('.schedule-trigger, [aria-controls="schedule-dialog"]');
+      if (trigger) {
+        e.preventDefault();
+        openModal(trigger);
+      }
+    });
+
+    closeBtn?.addEventListener('click', closeModal);
+
+    dialog.addEventListener('click', function (e) {
+      if (panel && !panel.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !dialog.hasAttribute('hidden')) {
+        closeModal();
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const defaultLabel = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        const payload = {
+          name: form.elements.name.value,
+          phone: form.elements.phone.value,
+          _subject: 'New Schedule Request (Modal)'
+        };
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (!res.ok) throw new Error('Submission failed');
+          form.hidden = true;
+          if (status) {
+            status.textContent = 'Thank you. Sandy will call or text you soon.';
+            status.hidden = false;
+          }
+          setTimeout(function () {
+            closeModal();
+            const currentPath = window.location.pathname.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            const targetPath = schedulePath.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            if (currentPath !== targetPath) {
+              window.location.href = schedulePath;
+            }
+          }, 1200);
+        }).catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = defaultLabel;
+          if (status) {
+            status.textContent = "We couldn't send that. Please try again or text Sandy at .";
+            status.hidden = false;
+          }
+        });
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+(function markCurrentPage() {
+  const currentPath = window.location.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+  const allLinks = document.querySelectorAll('#ssMainNav a.nav-link, #ssMainNav a.dropdown-item');
+  allLinks.forEach(link => {
+    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) {
+          toggle.classList.add('active');
+        }
+      }
+    }
+  });
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const myCollapsible = document.getElementById('ssMainNav');
+  const siteHeader = document.querySelector('.ss-site-header');
+  const toggler = document.querySelector('.ss-menu-button');
+  const skipLink = document.querySelector('.ss-skip-link');
+  const mainContent = document.querySelector('main, [role="main"]');
+
+  if (skipLink && mainContent) {
+    if (!mainContent.id) mainContent.id = 'main-content';
+    if (!mainContent.hasAttribute('tabindex')) mainContent.tabIndex = -1;
+    skipLink.setAttribute('href', '#' + mainContent.id);
+    skipLink.addEventListener('click', function () {
+      window.setTimeout(function () {
+        mainContent.focus({ preventScroll: true });
+      }, 0);
+    });
+  }
+
+  if (myCollapsible && siteHeader) {
+    const lgQuery = window.matchMedia('(min-width: 992px)');
+    const handleResize = (e) => {
+      if (e.matches) {
+        myCollapsible.removeAttribute('inert');
+      } else {
+        if (!myCollapsible.classList.contains('show')) {
+          myCollapsible.setAttribute('inert', '');
+        }
+      }
+    };
+
+    if (lgQuery.addEventListener) {
+      lgQuery.addEventListener('change', handleResize);
+    } else if (lgQuery.addListener) {
+      lgQuery.addListener(handleResize);
+    }
+    handleResize(lgQuery);
+
+    myCollapsible.addEventListener('show.bs.collapse', function () {
+      siteHeader.classList.add('nav-open');
+      myCollapsible.removeAttribute('inert');
+    });
+
+    myCollapsible.addEventListener('shown.bs.collapse', function () {
+      const firstLink = myCollapsible.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    });
+
+    myCollapsible.addEventListener('hide.bs.collapse', function () {
+      siteHeader.classList.remove('nav-open');
+    });
+
+    myCollapsible.addEventListener('hidden.bs.collapse', function () {
+      if (!lgQuery.matches) {
+        myCollapsible.setAttribute('inert', '');
+      }
+      if (toggler) toggler.focus();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && myCollapsible.classList.contains('show')) {
+        if (window.bootstrap && window.bootstrap.Collapse) {
+          const bsCollapse = window.bootstrap.Collapse.getInstance(myCollapsible) || new window.bootstrap.Collapse(myCollapsible, { toggle: false });
+          bsCollapse.hide();
+        }
+      }
+    });
+  }
+});
+</script>
+
+<style>
+@media screen and (min-width: 768px) {
+  .header-display-desktop .header-nav-item--folder,
+  .ss-global-nav-wrapper .ss-navbar .dropdown,
+  .ss-navbar .nav-item.dropdown {
+    position: relative;
+  }
+
+  .header-display-desktop .header-nav-item--folder .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown-menu,
+  .ss-navbar .dropdown-menu {
+    display: block !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(10px) !important;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      visibility 160ms ease !important;
+  }
+
+  .header-display-desktop .header-nav-item--folder:hover .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder:focus-within .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.show .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.open .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.is-open .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown.show .dropdown-menu,
+  .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-navbar .dropdown.show .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const folders = document.querySelectorAll(
+      ".header-display-desktop .header-nav-item--folder, .ss-navbar .dropdown"
+    );
+
+    const closeFolder = function (folder) {
+      folder.classList.remove("open", "is-open", "active-folder", "menu-open", "folder-open");
+      folder.removeAttribute("data-open");
+      folder.removeAttribute("data-folder-status");
+      const menu = folder.querySelector(".dropdown-menu, .header-nav-folder-content");
+      if (menu) menu.classList.remove("show", "open", "is-open");
+      const trigger = folder.querySelector("a, button");
+      if (trigger && trigger.hasAttribute("aria-expanded")) trigger.setAttribute("aria-expanded", "false");
+    };
+
+    folders.forEach(closeFolder);
+
+    document.addEventListener("click", function (event) {
+      folders.forEach(function (folder) {
+        if (!folder.contains(event.target)) closeFolder(folder);
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      folders.forEach(closeFolder);
+      const focusedElement = document.activeElement;
+      if (focusedElement instanceof HTMLElement) focusedElement.blur();
+    });
+  });
+</script>
+
+
+  
+
+  <div id="scrollProgress"></div>
+
+  
+    <main class="ss-main" id="main-content" role="main">
+
+<section class="section-tactical py-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<span class="tactical-eyebrow reveal-up">Evidence Hub</span>
+<h1 class="reveal-up" style="transition-delay: 100ms; font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1.5rem;">Law Enforcement Brazilian Jiu-Jitsu Evidence Hub</h1>
+<p class="lead text-muted mb-5 reveal-up" style="transition-delay: 150ms;">
+This central repository hosts case reports, training standards, and curricula guidelines relating to physical control, grappling, and jiu-jitsu training programs for policing agencies.
+</p>
+
+<!-- What the evidence supports/does not supports -->
+<div class="row g-4 mb-5 reveal-up" style="transition-delay: 200ms;">
+<div class="col-md-6">
+<div class="tactical-bezel-outer">
+<div class="tactical-bezel-inner h-100" style="padding: 2rem 1.5rem; border-color: rgba(17, 106, 66, 0.15);">
+<h2 class="h5 mb-3 fw-bold text-success" style="font-family: 'Lexend', sans-serif;">What the Evidence Supports</h2>
+<ul class="ps-3 text-muted small">
+<li class="mb-2"><strong>Controlled Resistance Practice:</strong> Gives officers recurring opportunities to practice physical techniques against active, non-compliant partners in a safe training environment.</li>
+<li class="mb-2"><strong>Positional-Control & Balance:</strong> Develops skeletal framing, weight distribution, and leverage control to hold or move a subject without relying on strikes or blunt force.</li>
+<li class="mb-2"><strong>Pressure Decision-Making:</strong> Improves physiological control and composure, helping officers slow down and make decisions under physical stress.</li>
+<li class="mb-2"><strong>Operational Testing:</strong> Suggests potential benefits in safety and injury reduction that are worth testing through a supervised department pilot.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="tactical-bezel-outer">
+<div class="tactical-bezel-inner h-100" style="padding: 2rem 1.5rem; border-color: rgba(54, 43, 36, 0.15);">
+<h2 class="h5 mb-3 fw-bold" style="color: var(--ss-muted); font-family: 'Lexend', sans-serif;">What the Evidence Does Not Establish</h2>
+<ul class="ps-3 text-muted small">
+<li class="mb-2"><strong>Guaranteed Reductions:</strong> Marietta's reports are department-reported data and do not guarantee equivalent statistical outcomes for another agency.</li>
+<li class="mb-2"><strong>Automatic Compliance:</strong> Training alone does not guarantee policy adherence; tactical training is supplemental to department directives.</li>
+<li class="mb-2"><strong>Sport BJJ Generalization:</strong> Standard sport BJJ techniques require specific adjustments for duty belts, weapons retention, and multiple subjects.</li>
+<li class="mb-2"><strong>DT Replacement:</strong> BJJ is supplemental and does not replace official, department-approved defensive-tactics instruction or state training requirements.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Agency Case Reports -->
+<div class="content-block mb-5 reveal-up" style="transition-delay: 250ms;">
+<h2 class="h3 mb-3">Agency Case Reports</h2>
+<p class="text-muted">Documentation from active programs evaluating operational metrics:</p>
+<div class="list-group rounded-4 overflow-hidden mb-3">
+<a href="/research/marietta-police-bjj-case-summary" class="list-group-item list-group-item-action p-4 border-1 bg-white">
+<div class="d-flex w-100 justify-content-between align-items-center">
+<h3 class="h6 fw-bold mb-1" style="font-family: 'Lexend', sans-serif;">Marietta Police Department</h3>
+<span class="badge bg-warning text-dark">Redirecting</span>
+</div>
+<p class="small text-muted mb-2">Reported a 48% reduction in officer injuries, 53% suspect injury reduction, and 23% less Taser use in 2020.</p>
+<span class="small text-success fw-bold text-uppercase" style="font-size: 0.75rem;">Read Case Summary &rarr;</span>
+</a>
+</div>
+<p class="small text-muted italic">Additional agency case reports will be added here as they undergo compliance and validation review.</p>
+</div>
+
+<!-- Training Standards & Curricula -->
+<div class="content-block mb-5 reveal-up" style="transition-delay: 300ms;">
+<h2 class="h3 mb-3">Training Standards & Curricula</h2>
+<p class="text-muted">Guidelines and official curriculum resources defining curriculum frameworks:</p>
+<ul class="list-unstyled d-flex flex-column gap-3">
+<li class="p-3 border rounded-4 bg-white">
+<div class="d-flex justify-content-between align-items-center mb-2">
+<span class="fw-bold small text-dark" style="font-family: 'Lexend', sans-serif;">Georgia POST BJJ Officer Level 1 Curriculum</span>
+<span class="badge bg-success">Verified</span>
+</div>
+<p class="small text-muted mb-2">Official curriculum standards established by the Georgia Peace Officer Standards and Training Council.</p>
+<a href="/downloads/georgia-post-bjj-officer-level-1-curriculum.pdf" target="_blank" class="small text-success fw-bold" style="font-size: 0.75rem;">View Original PDF Resource &rarr;</a>
+</li>
+<li class="p-3 border rounded-4 bg-white">
+<div class="d-flex justify-content-between align-items-center mb-2">
+<span class="fw-bold small text-dark" style="font-family: 'Lexend', sans-serif;">New York DCJS / Municipal Standards</span>
+<span class="badge bg-secondary">Unavailable</span>
+</div>
+<p class="small text-muted mb-0">Local New York state guidelines. Currently, DCJS does not mandate a BJJ-specific curriculum; agency requirements dictate individual department standards.</p>
+</li>
+</ul>
+</div>
+
+<!-- Source Status Label Key -->
+<div class="p-4 border rounded-4 bg-white mb-5 reveal-up" style="transition-delay: 350ms;">
+<h3 class="h6 fw-bold mb-3" style="font-family: 'Lexend', sans-serif;">Source Verification Protocol</h3>
+<p class="small text-muted">To protect credibility against broken external links, all source links are verified and marked with one of the following labels:</p>
+<div class="row g-2 text-start">
+<div class="col-sm-6">
+<p class="small mb-1"><span class="badge bg-success me-2">Verified</span> Source returned successfully (HTTP 200) within the last 90 days.</p>
+<p class="small mb-1"><span class="badge bg-warning text-dark me-2">Redirecting</span> Source works but has changed its URL destination.</p>
+</div>
+<div class="col-sm-6">
+<p class="small mb-1"><span class="badge bg-info text-dark me-2">Archived</span> Original source disappeared; notes and citations remain preserved.</p>
+<p class="small mb-1"><span class="badge bg-secondary me-2">Unavailable</span> Source could not be independently reviewed or is offline.</p>
+</div>
+</div>
+</div>
+
+<div class="mt-5 p-4 border rounded-4 bg-white text-center reveal-up" style="transition-delay: 400ms;">
+<h3 class="h5 mb-3 fw-bold" style="font-family: 'Lexend', sans-serif;">Explore the Tactical BJJ Framework</h3>
+<p class="small text-muted mb-4">Interested in testing a recurring grappling pilot program for your agency? Let's discuss your department's specific needs.</p>
+<div class="d-flex flex-wrap justify-content-center gap-3">
+<a class="btn-tactical text-decoration-none px-4 py-2 rounded-pill" href="/law-enforcement-bjj#pilot-request">
+<span>Request a Pilot Conversation</span>
+</a>
+<a class="btn-tactical btn-tactical-secondary text-decoration-none px-4 py-2 rounded-pill" href="/research/marietta-police-bjj-case-summary">
+<span>Review the Marietta Case Summary</span>
+</a>
+</div>
+</div>
+
+<div class="pt-4 mt-4 border-top text-center reveal-up" style="transition-delay: 450ms;">
+<a class="btn-tactical text-decoration-none" href="/law-enforcement-bjj">
+<span>Return to Law Enforcement BJJ</span>
+<span class="btn-tactical-icon-wrap"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg></span>
+</a>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+  
+
+  <footer class="ss-new-site-footer" aria-labelledby="ss-footer-title">
+  <div class="ss-new-footer-shell">
+    <div class="ss-new-footer-inner">
+      <h2 id="ss-footer-title" class="visually-hidden">Sensei Sandy BJJ footer</h2>
+
+      <div class="ss-new-footer-top">
+        <div class="ss-new-footer-brand" data-footer-group="primary">
+          <div class="ss-new-brand-row">
+            <img class="ss-new-brand-logo" src="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp" alt="Sensei Sandy BJJ logo" width="60" height="60" decoding="async">
+            <div class="ss-new-brand-title">Sensei Sandy BJJ</div>
+          </div>
+          <p class="ss-new-brand-desc">Calm, technical Jiu-Jitsu where every student is seen, guided, and supported. You will not disappear into the room.</p>
+          <div class="ss-new-contact-list">
+            <div class="ss-new-contact-row">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <span>6045 Main Street, 2nd Floor Studio<br>Tannersville, NY 12485</span>
+            </div>
+            <div class="ss-new-contact-row">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              <span>Kids &bull; Teens &bull; Adults</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="ss-new-footer-nav" aria-label="Footer navigation">
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Start Here</h3>
+            <ul>
+              <li><a href="/nearby-towns">Choose Lane</a></li>
+              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Free Intro</a></li>
+              <li><a href="/schedule">Schedule</a></li>
+              <li><a href="/holiday-schedule">Holiday Schedule</a></li>
+              <li><a href="/show-up-kit">Show-Up Kit</a></li>
+              <li><a href="/core-culture-parent-guide">Parent Guide</a></li>
+              <li><a href="/bjj-tannersville-ny-directions">Directions</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Programs</h3>
+            <ul>
+              <li><a href="/bjj-classes">All BJJ Classes</a></li>
+              <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
+              <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
+              <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
+              <li><a href="/summer-jiu-jitsu-tannersville">Summer BJJ</a></li>
+              <li><a href="/private-lessons">Private Lessons</a></li>
+              <li><a href="/sensei-bully">Bully Proof</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Studio</h3>
+            <ul>
+              <li><a href="/how-class-works">How Class Works</a></li>
+              <li><a href="/success-stories">Success Stories</a></li>
+              <li><a href="/options-pricing">Pricing</a></li>
+              <li><a href="/bio">Bio</a></li>
+              <li><a href="/sensei-studio">Studio Tour</a></li>
+              <li><a href="/bjj-faqs">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Nearby</h3>
+            <ul>
+              <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
+              <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
+              <li><a href="/bjj-classes/windham-ny">Windham</a></li>
+              <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
+              <li><a href="/nearby-towns">Woodstock</a></li>
+              <li><a href="/nearby-towns">Nearby Towns</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Learn</h3>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/bjj-glossary">BJJ Glossary</a></li>
+              <li><a href="/bjj-stretches">BJJ Stretches</a></li>
+              <li><a href="">BJJ Videos</a></li>
+              <li><a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Friends of the Academy</h3>
+            <ul>
+              <li><a href="/community-partners">Community Partners</a></li>
+              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
+              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="ss-new-footer-bottom">
+        <div>&copy; 2026 Sensei Sandy BJJ. All Rights Reserved.</div>
+        <div class="ss-new-footer-contacts">
+          <a href="tel:+19177368649" class="ss-new-footer-contact-link">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            Call
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" class="ss-new-footer-contact-link">
+            <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            Text
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="mailto:sandy@senseisandy.com" class="ss-new-footer-contact-link">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="ss-mobile-actionbar" aria-label="Quick actions">
+  <a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" data-cta-target="text" data-cta-placement="sticky_mobile">Questions about starting? Text Sandy </a>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollBar = document.getElementById("scrollProgress");
+    if (scrollBar) {
+      let progressFrame = 0;
+      const updateProgress = function () {
+        const winScroll = window.scrollY || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? winScroll / height : 0;
+        scrollBar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrolled)) + ")";
+        progressFrame = 0;
+      };
+      const requestProgress = function () {
+        if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
+      };
+      window.addEventListener("scroll", requestProgress, { passive: true });
+      window.addEventListener("resize", requestProgress, { passive: true });
+      requestProgress();
+    }
+
+    (function initStickyVisibility() {
+      const heroCta = document.querySelector([
+        '.home-hero .primary-cta',
+        '.hero-card .btn-white-secondary',
+        '.hero-card .btn-green-primary',
+        '.ss-hero .primary-cta',
+        '#hero-cta'
+      ].join(', '));
+      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
+      const stickyCta = document.querySelector('.ss-mobile-actionbar');
+
+      if (!stickyCta) return;
+      stickyCta.classList.add("is-observed");
+      if (!("IntersectionObserver" in window)) {
+        stickyCta.classList.add("is-visible");
+        return;
+      }
+
+      let heroOut = !heroCta;
+      let footerIn = false;
+      const updateVisibility = function () {
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+      };
+
+      if (heroCta) {
+        const heroObserver = new IntersectionObserver(function (entries) {
+          heroOut = !entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroCta);
+      }
+
+      if (footerCta) {
+        const footerObserver = new IntersectionObserver(function (entries) {
+          footerIn = entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.05 });
+        footerObserver.observe(footerCta);
+      }
+
+      updateVisibility();
+    })();
+  });
+</script>
+
+<script src="/assets/js/goal-mapping.5b78ff.js" defer></script>
+
+
+  <script src="/assets/js/attribution.c136f0.js" defer></script>
+  <script src="/assets/js/analytics-events.63417f.js" defer></script>
+  
+</body>
+</html>

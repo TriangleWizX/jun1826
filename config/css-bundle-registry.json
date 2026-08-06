@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "sourcePath": "assets/css/components.css",
+  "outputDirectory": "assets/css/bundles",
+  "bundles": [
+    {
+      "name": "core",
+      "pageTokens": [],
+      "canonicalPath": "assets/css/bundles/components-core.css",
+      "minifiedPath": "assets/css/bundles/components-core.min.css",
+      "manifestKey": "/assets/css/bundles/components-core.min.css"
+    },
+    {
+      "name": "home",
+      "pageTokens": ["page-home"],
+      "canonicalPath": "assets/css/bundles/components-home.css",
+      "minifiedPath": "assets/css/bundles/components-home.min.css",
+      "manifestKey": "/assets/css/bundles/components-home.min.css"
+    },
+    {
+      "name": "glossary-hub",
+      "pageTokens": ["page-glossary", "page-bjj-glossary"],
+      "canonicalPath": "assets/css/bundles/components-glossary-hub.css",
+      "minifiedPath": "assets/css/bundles/components-glossary-hub.min.css",
+      "manifestKey": "/assets/css/bundles/components-glossary-hub.min.css"
+    },
+    {
+      "name": "glossary-term",
+      "pageTokens": ["page-bjj-glossary", "page-glossary-term"],
+      "canonicalPath": "assets/css/bundles/components-glossary-term.css",
+      "minifiedPath": "assets/css/bundles/components-glossary-term.min.css",
+      "manifestKey": "/assets/css/bundles/components-glossary-term.min.css"
+    },
+    {
+      "name": "schedule",
+      "pageTokens": ["page-schedule"],
+      "canonicalPath": "assets/css/bundles/components-schedule.css",
+      "minifiedPath": "assets/css/bundles/components-schedule.min.css",
+      "manifestKey": "/assets/css/bundles/components-schedule.min.css"
+    },
+    {
+      "name": "booking",
+      "pageTokens": ["page-book-intro"],
+      "canonicalPath": "assets/css/bundles/components-booking.css",
+      "minifiedPath": "assets/css/bundles/components-booking.min.css",
+      "manifestKey": "/assets/css/bundles/components-booking.min.css"
+    },
+    {
+      "name": "programs",
+      "pageTokens": ["page-programs"],
+      "canonicalPath": "assets/css/bundles/components-programs.css",
+      "minifiedPath": "assets/css/bundles/components-programs.min.css",
+      "manifestKey": "/assets/css/bundles/components-programs.min.css"
+    },
+    {
+      "name": "law-enforcement",
+      "pageTokens": ["page-law-enforcement"],
+      "canonicalPath": "assets/css/bundles/components-law-enforcement.css",
+      "minifiedPath": "assets/css/bundles/components-law-enforcement.min.css",
+      "manifestKey": "/assets/css/bundles/components-law-enforcement.min.css"
+    },
+    {
+      "name": "contact",
+      "pageTokens": ["page-contact"],
+      "canonicalPath": "assets/css/bundles/components-contact.css",
+      "minifiedPath": "assets/css/bundles/components-contact.min.css",
+      "manifestKey": "/assets/css/bundles/components-contact.min.css"
+    },
+    {
+      "name": "near",
+      "pageTokens": ["page-near"],
+      "canonicalPath": "assets/css/bundles/components-near.css",
+      "minifiedPath": "assets/css/bundles/components-near.min.css",
+      "manifestKey": "/assets/css/bundles/components-near.min.css"
+    },
+    {
+      "name": "videos",
+      "pageTokens": ["page-videos"],
+      "canonicalPath": "assets/css/bundles/components-videos.css",
+      "minifiedPath": "assets/css/bundles/components-videos.min.css",
+      "manifestKey": "/assets/css/bundles/components-videos.min.css"
+    },
+    {
+      "name": "pricing",
+      "pageTokens": ["page-options-pricing"],
+      "canonicalPath": "assets/css/bundles/components-pricing.css",
+      "minifiedPath": "assets/css/bundles/components-pricing.min.css",
+      "manifestKey": "/assets/css/bundles/components-pricing.min.css"
+    },
+    {
+      "name": "student-hub",
+      "pageTokens": ["page-student-hub", "ss-page-student-hub"],
+      "canonicalPath": "assets/css/bundles/components-student-hub.css",
+      "minifiedPath": "assets/css/bundles/components-student-hub.min.css",
+      "manifestKey": "/assets/css/bundles/components-student-hub.min.css"
+    }
+  ]
+}

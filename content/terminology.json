@@ -1,0 +1,29 @@
+{
+  "use": {
+    "Reserve Your Free Intro": "Public call to action",
+    "Free Intro": "Initial visit",
+    "Goal Mapping": "Planning process during the Free Intro",
+    "Small-Group Classes": "Standard group instruction",
+    "Core Culture": "Primary 12-week program",
+    "Home Classes": "Three recurring reservations",
+    "Private Coaching": "One-on-one instruction",
+    "Open-Seat Rescheduling": "Approved replacement placement",
+    "Community-Service Adult Rate": "Discounted Adult Core offer"
+  },
+  "remove": [
+    "Small-Group Classes",
+    "Reserve Your Free Intro",
+    "Annual Track",
+    "Unlimited membership",
+    "Unlimited access",
+    "Attend any class",
+    "Training-session lessons",
+    "Two-day routine",
+    "Two consistent days",
+    "Make up anytime",
+    "Automatic annual renewal"
+  ],
+  "rules": {
+    "membershipAlternative": ["program", "term", "enrollment", "track"]
+  }
+}

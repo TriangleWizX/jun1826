@@ -1,0 +1,10 @@
+{
+  "weeklyIntroLimit": 4,
+  "introCapacity": 2,
+  "introBookingRosterLimit": 10,
+  "classes": [
+    {"classId":"youth-tue-1700","day":"Tuesday","startTime":"17:00","ageLanes":["kids","teens"],"regularCapacity":12,"active":true,"requiresPartnerApproval":true},
+    {"classId":"youth-wed-1700","day":"Wednesday","startTime":"17:00","ageLanes":["kids","teens"],"regularCapacity":12,"active":true,"requiresPartnerApproval":true},
+    {"classId":"youth-fri-1700","day":"Friday","startTime":"17:00","ageLanes":["kids","teens"],"regularCapacity":12,"active":true,"requiresPartnerApproval":true}
+  ]
+}

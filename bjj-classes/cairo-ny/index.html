@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<title>Brazilian Jiu-Jitsu Near Cairo, NY | Sensei Sandy BJJ</title>
+<meta content="Pick a realistic weekly rhythm for BJJ. For families who want structure over chaos. Take the drive from Cairo for clear, calm coaching. Learn more at Sense" name="description"/>
+
+
+<link href="https://senseisandy.com/bjj-classes/cairo-ny" rel="canonical"/>
+<meta content="https://senseisandy.com/bjj-classes/cairo-ny" property="og:url"/>
+<meta content="Sensei Sandy BJJ" property="og:site_name"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" property="og:image"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Brazilian Jiu-Jitsu Near Cairo, NY | Sensei Sandy BJJ" property="og:title"/>
+<meta content="Pick a realistic weekly rhythm for BJJ. For families who want structure over chaos. Take the drive from Cairo for clear, calm coaching. Learn more at Sense" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Brazilian Jiu-Jitsu Near Cairo, NY | Sensei Sandy BJJ" name="twitter:title"/>
+<meta content="Pick a realistic weekly rhythm for BJJ. For families who want structure over chaos. Take the drive from Cairo for clear, calm coaching. Learn more at Sense" name="twitter:description"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
+<meta content="https://senseisandy.com/bjj-classes/cairo-ny" name="twitter:url"/>
+<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/routes/site-b593ef45b765.min.505a19.css">
+<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
+<link rel="stylesheet" href="/assets/css/fonts.e11440.css">
+<link rel="stylesheet" href="/assets/css/site-shell.211bb7.css">
+</head>
+<body class="lane-mixed page-cairo">
+
+  <!--#include virtual="/nav-include.html" -->
+
+
+<!-- Preload & load Bootstrap early so pages with footer-only includes get the file downloaded earlier -->
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+
+<script>
+  (function ensureBootstrapBundle() {
+    const primarySrc = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+    const fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
+    const bootstrapScriptSelector = 'script[src*="bootstrap.bundle.min.js"]';
+
+    const hasDropdown = () => Boolean(window.bootstrap && window.bootstrap.Dropdown);
+
+    const loadBundle = (src) => {
+      if (hasDropdown()) return;
+      if (document.querySelector(`script[data-ss-bootstrap-loader="${src}"]`)) return;
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.crossOrigin = 'anonymous';
+      script.async = false;
+      script.dataset.ssBootstrapLoader = src;
+      script.addEventListener('load', () => {
+        if (!hasDropdown() && src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => {
+        if (src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      document.body.appendChild(script);
+    };
+
+    const watchExistingBundle = (script) => {
+      if (!script || script.dataset.ssBootstrapWatched === 'true') return;
+      script.dataset.ssBootstrapWatched = 'true';
+      script.addEventListener('load', () => {
+        if (!hasDropdown()) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => loadBundle(fallbackSrc), { once: true });
+    };
+
+    const ensureDropdown = () => {
+      if (hasDropdown()) return;
+
+      const existingBundle = document.querySelector(bootstrapScriptSelector);
+      if (existingBundle) {
+        watchExistingBundle(existingBundle);
+      } else {
+        loadBundle(primarySrc);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ensureDropdown, { once: true });
+    } else {
+      ensureDropdown();
+    }
+  })();
+</script>
+
+<div id="schedule-dialog" class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="schedule-dialog-title" hidden>
+  <div class="schedule-dialog__panel">
+    <button type="button" class="schedule-dialog__close" aria-label="Close scheduling form">&times;</button>
+    <h2 id="schedule-dialog-title">Plan Your First Class</h2>
+    <p>Leave the best number to reach you. Sandy will help you choose the right class time.</p>
+    <form id="schedule-dialog-form" action="https://formspree.io/f/mqazqozk" method="POST">
+      <label for="schedule-lead-name" style="display: block; margin-bottom: 1rem; font-weight: 600;">
+        First name
+        <input type="text" id="schedule-lead-name" name="name" autocomplete="given-name" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <label for="schedule-lead-phone" style="display: block; margin-bottom: 1.5rem; font-weight: 600;">
+        Phone number
+        <input type="tel" id="schedule-lead-phone" name="phone" autocomplete="tel" inputmode="tel" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <input type="hidden" name="_subject" value="New Schedule Request (Modal)">
+      <button type="submit" class="ss-btn ss-btn-primary" style="width: 100%;">Continue to Schedule</button>
+    </form>
+    <p id="schedule-dialog-status" class="ss-lead-capture-status" role="status" aria-live="polite" hidden style="margin-top: 1rem; color: #116A42; font-weight: 600;">
+      Thank you. Sandy will call or text you soon.
+    </p>
+  </div>
+</div>
+
+<script>
+(function initScheduleModal() {
+  const endpoint = 'https://formspree.io/f/mqazqozk';
+  const schedulePath = '/schedule';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const dialog = document.getElementById('schedule-dialog');
+    if (!dialog) return;
+
+    const panel = dialog.querySelector('.schedule-dialog__panel');
+    const closeBtn = dialog.querySelector('.schedule-dialog__close');
+    const form = document.getElementById('schedule-dialog-form');
+    const status = document.getElementById('schedule-dialog-status');
+    let lastActiveElement = null;
+
+    function openModal(trigger) {
+      lastActiveElement = trigger || document.activeElement;
+      dialog.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      const firstInput = dialog.querySelector('input, button');
+      if (firstInput) firstInput.focus();
+    }
+
+    function closeModal() {
+      dialog.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+        lastActiveElement.focus();
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      const trigger = e.target.closest('.schedule-trigger, [aria-controls="schedule-dialog"]');
+      if (trigger) {
+        e.preventDefault();
+        openModal(trigger);
+      }
+    });
+
+    closeBtn?.addEventListener('click', closeModal);
+
+    dialog.addEventListener('click', function (e) {
+      if (panel && !panel.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !dialog.hasAttribute('hidden')) {
+        closeModal();
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const defaultLabel = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        const payload = {
+          name: form.elements.name.value,
+          phone: form.elements.phone.value,
+          _subject: 'New Schedule Request (Modal)'
+        };
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (!res.ok) throw new Error('Submission failed');
+          form.hidden = true;
+          if (status) {
+            status.textContent = 'Thank you. Sandy will call or text you soon.';
+            status.hidden = false;
+          }
+          setTimeout(function () {
+            closeModal();
+            const currentPath = window.location.pathname.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            const targetPath = schedulePath.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            if (currentPath !== targetPath) {
+              window.location.href = schedulePath;
+            }
+          }, 1200);
+        }).catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = defaultLabel;
+          if (status) {
+            status.textContent = "We couldn't send that. Please try again or text Sandy at .";
+            status.hidden = false;
+          }
+        });
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+(function markCurrentPage() {
+  const currentPath = window.location.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+  const allLinks = document.querySelectorAll('#ssMainNav a.nav-link, #ssMainNav a.dropdown-item');
+  allLinks.forEach(link => {
+    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) {
+          toggle.classList.add('active');
+        }
+      }
+    }
+  });
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const myCollapsible = document.getElementById('ssMainNav');
+  const siteHeader = document.querySelector('.ss-site-header');
+  const toggler = document.querySelector('.ss-menu-button');
+  const skipLink = document.querySelector('.ss-skip-link');
+  const mainContent = document.querySelector('main, [role="main"]');
+
+  if (skipLink && mainContent) {
+    if (!mainContent.id) mainContent.id = 'main-content';
+    if (!mainContent.hasAttribute('tabindex')) mainContent.tabIndex = -1;
+    skipLink.setAttribute('href', '#' + mainContent.id);
+    skipLink.addEventListener('click', function () {
+      window.setTimeout(function () {
+        mainContent.focus({ preventScroll: true });
+      }, 0);
+    });
+  }
+
+  if (myCollapsible && siteHeader) {
+    const lgQuery = window.matchMedia('(min-width: 992px)');
+    const handleResize = (e) => {
+      if (e.matches) {
+        myCollapsible.removeAttribute('inert');
+      } else {
+        if (!myCollapsible.classList.contains('show')) {
+          myCollapsible.setAttribute('inert', '');
+        }
+      }
+    };
+
+    if (lgQuery.addEventListener) {
+      lgQuery.addEventListener('change', handleResize);
+    } else if (lgQuery.addListener) {
+      lgQuery.addListener(handleResize);
+    }
+    handleResize(lgQuery);
+
+    myCollapsible.addEventListener('show.bs.collapse', function () {
+      siteHeader.classList.add('nav-open');
+      myCollapsible.removeAttribute('inert');
+    });
+
+    myCollapsible.addEventListener('shown.bs.collapse', function () {
+      const firstLink = myCollapsible.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    });
+
+    myCollapsible.addEventListener('hide.bs.collapse', function () {
+      siteHeader.classList.remove('nav-open');
+    });
+
+    myCollapsible.addEventListener('hidden.bs.collapse', function () {
+      if (!lgQuery.matches) {
+        myCollapsible.setAttribute('inert', '');
+      }
+      if (toggler) toggler.focus();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && myCollapsible.classList.contains('show')) {
+        if (window.bootstrap && window.bootstrap.Collapse) {
+          const bsCollapse = window.bootstrap.Collapse.getInstance(myCollapsible) || new window.bootstrap.Collapse(myCollapsible, { toggle: false });
+          bsCollapse.hide();
+        }
+      }
+    });
+  }
+});
+</script>
+
+<style>
+@media screen and (min-width: 768px) {
+  .header-display-desktop .header-nav-item--folder,
+  .ss-global-nav-wrapper .ss-navbar .dropdown,
+  .ss-navbar .nav-item.dropdown {
+    position: relative;
+  }
+
+  .header-display-desktop .header-nav-item--folder .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown-menu,
+  .ss-navbar .dropdown-menu {
+    display: block !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(10px) !important;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      visibility 160ms ease !important;
+  }
+
+  .header-display-desktop .header-nav-item--folder:hover .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder:focus-within .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.show .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.open .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.is-open .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown.show .dropdown-menu,
+  .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-navbar .dropdown.show .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const folders = document.querySelectorAll(
+      ".header-display-desktop .header-nav-item--folder, .ss-navbar .dropdown"
+    );
+
+    const closeFolder = function (folder) {
+      folder.classList.remove("open", "is-open", "active-folder", "menu-open", "folder-open");
+      folder.removeAttribute("data-open");
+      folder.removeAttribute("data-folder-status");
+      const menu = folder.querySelector(".dropdown-menu, .header-nav-folder-content");
+      if (menu) menu.classList.remove("show", "open", "is-open");
+      const trigger = folder.querySelector("a, button");
+      if (trigger && trigger.hasAttribute("aria-expanded")) trigger.setAttribute("aria-expanded", "false");
+    };
+
+    folders.forEach(closeFolder);
+
+    document.addEventListener("click", function (event) {
+      folders.forEach(function (folder) {
+        if (!folder.contains(event.target)) closeFolder(folder);
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      folders.forEach(closeFolder);
+      const focusedElement = document.activeElement;
+      if (focusedElement instanceof HTMLElement) focusedElement.blur();
+    });
+  });
+</script>
+
+
+  
+
+  <div id="scrollProgress"></div>
+
+  
+    <main class="ss-main" id="main-content" role="main">
+<!-- 1. Hero Section -->
+<header class="ss-section-premium py-5 mt-4">
+<div class="container ss-container text-center text-lg-start">
+<div class="row align-items-center g-5">
+<div class="col-lg-7">
+<span class="ss-eyebrow">BJJ Small-group classes Near Cairo NY</span>
+<h1 class="mb-4">Brazilian Jiu-Jitsu Near Cairo, NY</h1>
+<p class="lead-text mb-5">
+  Choose a realistic weekly rhythm. For families who want structure over chaos, our Tannersville studio provides calm, clear coaching that makes the drive worthwhile.
+</p>
+<div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+<a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny">
+<span>Reserve Your Free Intro</span>
+<span class="btn-icon-circle"><i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="btn-premium btn-premium--secondary" href="sms:+19177368649?&body=Hi%20Sandy%2C%20I%27m%20interested%20in%20a%20Free%20Intro.">
+<span>Text Sandy</span>
+<span class="btn-icon-circle"><i class="bi bi-chat-text"></i></span>
+</a>
+</div>
+</div>
+<div class="col-lg-5">
+<div class="db-card">
+<div class="db-card-inner text-start">
+<h3 class="mb-3">Best first class from Cairo</h3>
+<p class="text-muted small mb-4">Focus on fit and sustainability.</p>
+<ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+<li class="d-flex align-items-start gap-3">
+<span class="badge text-bg-light border border-slate-200 px-3 py-2 rounded-pill"><i class="bi bi-clock text-success me-1"></i> Start: Free Intro first</span>
+</li>
+<li class="d-flex align-items-start gap-3">
+<span class="badge text-bg-light border border-slate-200 px-3 py-2 rounded-pill"><i class="bi bi-clock text-success me-1"></i> Adults: Saturday adult option</span>
+</li>
+<li class="d-flex align-items-start gap-3">
+<span class="badge text-bg-light border border-slate-200 px-3 py-2 rounded-pill"><i class="bi bi-clock text-success me-1"></i> Youth: Weekday only after confirming fit</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. Realistic Routine -->
+<section class="ss-section-premium bg-light reveal-on-scroll">
+<div class="container ss-container">
+<div class="row align-items-center g-5">
+<div class="col-lg-6">
+<span class="ss-eyebrow">Choose one realistic lane first</span>
+<h2 class="mb-4">Can the Cairo drive become a weekly habit?</h2>
+<p class="lead-text mb-4">
+  Pick a realistic weekly rhythm first. The goal isn't to be in the gym every single day, but to find a sustainable schedule that fits your life without adding stress.
+</p>
+<span class="ss-eyebrow mt-4 d-block">Arrival and parking plan</span>
+<h2 class="mb-4">Give yourself time.</h2>
+<p class="lead-text mb-0">
+  When making the trip from Cairo, give yourself a buffer. We recommend the Saturday adult option or carefully selected weekday classes once you've confirmed the routine works.
+</p>
+</div>
+<div class="col-lg-6">
+<div class="db-card p-4 bg-white rounded-3 shadow-sm border border-slate-200">
+    <h4 class="mb-3">Can we sustain the schedule?</h4>
+    <p class="small text-muted mb-0">Pick a realistic weekly rhythm first; do not overcommit. We want you to enjoy training, not resent the drive.</p>
+</div>
+<div class="db-card p-4 bg-white rounded-3 shadow-sm border border-slate-200 mt-4">
+    <h4 class="mb-3">Arrival note</h4>
+    <p class="small text-muted mb-0">Do not cut it close; arrive early so the first visit does not feel rushed. Park on Main Street or side streets, then head upstairs.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. What Happens First (Day One) -->
+<section class="ss-section-premium reveal-on-scroll">
+<div class="container ss-container">
+<div class="text-center mb-5 max-w-3xl mx-auto">
+<span class="ss-eyebrow">What Happens First</span>
+<h2 class="mt-2 mb-3">Your first visit should feel <span>clear</span> before it feels intense.</h2>
+<p class="lead-text mx-auto text-center">Take your time deciding. Experience the room before choosing a tuition track. A calm first visit.</p>
+</div>
+<div class="steps-container">
+<div class="step-card">
+<div class="step-card-inner">
+<span class="step-number ss-serif">01</span>
+<h3 class="step-title">Tour the room</h3>
+<p class="step-desc">See the mats, where to put your things, and how class works.</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-card-inner">
+<span class="step-number ss-serif">02</span>
+<h3 class="step-title">Safety walkthrough</h3>
+<p class="step-desc">Learn how to tap, pause, reset, and train at the right pace.</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-card-inner">
+<span class="step-number ss-serif">03</span>
+<h3 class="step-title">Beginner Lane</h3>
+<p class="step-desc">Start with simple movement, control, escapes, and coached partner work.</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-card-inner">
+<span class="step-number ss-serif">04</span>
+<h3 class="step-title">Next-step plan</h3>
+<p class="step-desc">After your Free Intro, choose the right class lane only if the room feels right.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Local Recreation Bridge -->
+<section class="ss-section-premium bg-light reveal-on-scroll">
+<div class="container ss-container">
+<div class="editorial-split">
+<div class="editorial-split-sticky">
+<span class="ss-eyebrow">Youth + Adult Recreation</span>
+<h2 class="mb-4">Outdoor town. <span>Indoor</span> weekly discipline.</h2>
+<p class="lead-text mb-4">
+              Around Tannersville and Hunter, families already build life around movement: skiing, snowboarding,
+              hiking, golf, cross-country skiing, snowshoeing, lakes, trails, and school activities. BJJ gives kids,
+              teens, and adults a repeatable indoor practice that works in every season.
+            </p>
+<div class="road-bridge-box text-start mt-4">
+<h4 class="mb-2"><i class="bi bi-compass me-2 text-success"></i>Surrounding Ecosystem</h4>
+<p class="text-muted small mb-0">
+                We design classes to anchor your active lifestyle.
+                Hunter Mountain has 320 skiable acres, 13 lifts, and 67 trails. Mountain Top Arboretum includes 200 acres of trails and meadows. Colonial Golf Course offers local bike trails and summer events. BJJ is your weekly anchor between them.
+              </p>
+</div>
+</div>
+<div>
+<div class="recreation-grid">
+<div class="recreation-item">
+<h3 class="recreation-title">For kids</h3>
+<p class="recreation-desc">Confidence, body control, safe boundaries, and listening under pressure.</p>
+</div>
+<div class="recreation-item">
+<h3 class="recreation-title">For teens</h3>
+<p class="recreation-desc">Calm self-defense, discipline, athletic identity, and structured challenge.</p>
+</div>
+<div class="recreation-item">
+<h3 class="recreation-title">For adults</h3>
+<p class="recreation-desc">Fitness, stress relief, practical skill, and a reliable reason to move.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Schedule Preview -->
+<section class="ss-section-premium reveal-on-scroll">
+<div class="container ss-container">
+<div class="row g-5 align-items-center">
+<div class="col-lg-5">
+<span class="ss-eyebrow">Class Times</span>
+<h2 class="mb-4">Simple weekly lanes near Cairo.</h2>
+<p class="lead-text mb-4">
+              Our schedule is built to align with school, work, and mountain recreation plans. We structure morning, evening, and weekend options for convenience.
+            </p>
+<a class="btn-premium btn-premium--secondary" href="/schedule">
+<span>See Full Schedule</span>
+<span class="btn-icon-circle"><i class="bi bi-calendar3"></i></span>
+</a>
+</div>
+<div class="col-lg-7">
+<div class="db-card ss-schedule-compact reveal-on-scroll">
+<div class="db-card-inner">
+<h3 class="h5 fw-bold mb-3" style="font-family: 'Lexend', sans-serif;">Weekly Training Rhythm</h3>
+<p class="text-muted mb-4">Youth + Teen classes meet at 5:00 PM. Adult classes meet at 6:00 PM. Monday, Tuesday and Friday are Gi; Wednesday is No-Gi. Saturday Adult No-Gi begins at 10:30 AM. Private morning coaching is available by request.</p>
+<div>
+<a href="/schedule" class="btn-link-pill">
+View the current schedule <i class="bi bi-arrow-right ms-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Testimonials / Proof Include -->
+<!--#include virtual="/partials/reviews-village.html" -->
+<!-- 10. Final CTA Section -->
+<section class="ss-section-premium reveal-on-scroll">
+<div class="container ss-container text-center">
+<div class="max-w-3xl mx-auto">
+<span class="ss-eyebrow">Best Next Step</span>
+<h2 class="mt-2 mb-4">Reserve one Free Intro and see if the room feels <span>right</span>.</h2>
+<p class="lead-text mx-auto text-center mb-5">
+            Tour the studio, ask questions, map your goal, then choose your first small-group class. Beginner-friendly Brazilian Jiu-Jitsu near Cairo for kids, teens, and adults.
+          </p>
+<div class="d-flex flex-wrap justify-content-center gap-3">
+<a class="btn-premium btn-premium--primary" data-cta-lane="mixed" data-cta-placement="final" data-cta-src="tannersville-final-cta" data-cta-target="intro" data-cta-tier="primary" href="/free-bjj-intro-tannersville-ny">
+<span>Reserve Your Free Intro</span>
+<span class="btn-icon-circle"><i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="btn-premium btn-premium--secondary" href="sms:+19177368649?&amp;body=Hi%20Sandy%2C%20I%27m%20interested%20in%20a%20Free%20Intro.">
+<span>Text Sandy</span>
+<span class="btn-icon-circle"><i class="bi bi-chat-text"></i></span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. Internal Links near bottom -->
+<section aria-label="Explore the Studio" class="py-5 border-top bg-light">
+<div class="container ss-container text-center">
+<p class="text-uppercase small fw-bold text-muted mb-3">Quick Links</p>
+<div class="d-flex flex-wrap justify-content-center gap-2">
+<a class="btn-link-pill" href="/schedule">See the weekly class schedule</a>
+<a class="btn-link-pill" href="/free-bjj-intro-tannersville-ny">Reserve Your Free Intro</a>
+<a class="btn-link-pill" href="/bjj-tannersville-ny-directions">Parking &amp; entry directions</a>
+</div>
+</div>
+</section>
+</main>
+
+
+  
+
+  <footer class="ss-new-site-footer" aria-labelledby="ss-footer-title">
+  <div class="ss-new-footer-shell">
+    <div class="ss-new-footer-inner">
+      <h2 id="ss-footer-title" class="visually-hidden">Sensei Sandy BJJ footer</h2>
+
+      <div class="ss-new-footer-top">
+        <div class="ss-new-footer-brand" data-footer-group="primary">
+          <div class="ss-new-brand-row">
+            <img class="ss-new-brand-logo" src="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp" alt="Sensei Sandy BJJ logo" width="60" height="60" decoding="async">
+            <div class="ss-new-brand-title">Sensei Sandy BJJ</div>
+          </div>
+          <p class="ss-new-brand-desc">Calm, technical Jiu-Jitsu where every student is seen, guided, and supported. You will not disappear into the room.</p>
+          <div class="ss-new-contact-list">
+            <div class="ss-new-contact-row">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <span>6045 Main Street, 2nd Floor Studio<br>Tannersville, NY 12485</span>
+            </div>
+            <div class="ss-new-contact-row">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              <span>Kids &bull; Teens &bull; Adults</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="ss-new-footer-nav" aria-label="Footer navigation">
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Start Here</h3>
+            <ul>
+              <li><a href="/nearby-towns">Choose Lane</a></li>
+              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Free Intro</a></li>
+              <li><a href="/schedule">Schedule</a></li>
+              <li><a href="/holiday-schedule">Holiday Schedule</a></li>
+              <li><a href="/show-up-kit">Show-Up Kit</a></li>
+              <li><a href="/core-culture-parent-guide">Parent Guide</a></li>
+              <li><a href="/bjj-tannersville-ny-directions">Directions</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Programs</h3>
+            <ul>
+              <li><a href="/bjj-classes">All BJJ Classes</a></li>
+              <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
+              <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
+              <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
+              <li><a href="/summer-jiu-jitsu-tannersville">Summer BJJ</a></li>
+              <li><a href="/private-lessons">Private Lessons</a></li>
+              <li><a href="/sensei-bully">Bully Proof</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Studio</h3>
+            <ul>
+              <li><a href="/how-class-works">How Class Works</a></li>
+              <li><a href="/success-stories">Success Stories</a></li>
+              <li><a href="/options-pricing">Pricing</a></li>
+              <li><a href="/bio">Bio</a></li>
+              <li><a href="/sensei-studio">Studio Tour</a></li>
+              <li><a href="/bjj-faqs">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Nearby</h3>
+            <ul>
+              <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
+              <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
+              <li><a href="/bjj-classes/windham-ny">Windham</a></li>
+              <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
+              <li><a href="/nearby-towns">Woodstock</a></li>
+              <li><a href="/nearby-towns">Nearby Towns</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Learn</h3>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/bjj-glossary">BJJ Glossary</a></li>
+              <li><a href="/bjj-stretches">BJJ Stretches</a></li>
+              <li><a href="">BJJ Videos</a></li>
+              <li><a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Friends of the Academy</h3>
+            <ul>
+              <li><a href="/community-partners">Community Partners</a></li>
+              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
+              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="ss-new-footer-bottom">
+        <div>&copy; 2026 Sensei Sandy BJJ. All Rights Reserved.</div>
+        <div class="ss-new-footer-contacts">
+          <a href="tel:+19177368649" class="ss-new-footer-contact-link">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            Call
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" class="ss-new-footer-contact-link">
+            <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            Text
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="mailto:sandy@senseisandy.com" class="ss-new-footer-contact-link">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="ss-mobile-actionbar" aria-label="Quick actions">
+  <a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" data-cta-target="text" data-cta-placement="sticky_mobile">Questions about starting? Text Sandy </a>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollBar = document.getElementById("scrollProgress");
+    if (scrollBar) {
+      let progressFrame = 0;
+      const updateProgress = function () {
+        const winScroll = window.scrollY || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? winScroll / height : 0;
+        scrollBar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrolled)) + ")";
+        progressFrame = 0;
+      };
+      const requestProgress = function () {
+        if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
+      };
+      window.addEventListener("scroll", requestProgress, { passive: true });
+      window.addEventListener("resize", requestProgress, { passive: true });
+      requestProgress();
+    }
+
+    (function initStickyVisibility() {
+      const heroCta = document.querySelector([
+        '.home-hero .primary-cta',
+        '.hero-card .btn-white-secondary',
+        '.hero-card .btn-green-primary',
+        '.ss-hero .primary-cta',
+        '#hero-cta'
+      ].join(', '));
+      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
+      const stickyCta = document.querySelector('.ss-mobile-actionbar');
+
+      if (!stickyCta) return;
+      stickyCta.classList.add("is-observed");
+      if (!("IntersectionObserver" in window)) {
+        stickyCta.classList.add("is-visible");
+        return;
+      }
+
+      let heroOut = !heroCta;
+      let footerIn = false;
+      const updateVisibility = function () {
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+      };
+
+      if (heroCta) {
+        const heroObserver = new IntersectionObserver(function (entries) {
+          heroOut = !entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroCta);
+      }
+
+      if (footerCta) {
+        const footerObserver = new IntersectionObserver(function (entries) {
+          footerIn = entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.05 });
+        footerObserver.observe(footerCta);
+      }
+
+      updateVisibility();
+    })();
+  });
+</script>
+
+<script src="/assets/js/goal-mapping.5b78ff.js" defer></script>
+
+
+  <script src="/assets/js/attribution.c136f0.js" defer></script>
+  <script src="/assets/js/analytics-events.63417f.js" defer></script>
+  
+</body>
+</html>

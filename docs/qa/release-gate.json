@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "authority": "docs/qa/DEFINITION_OF_DONE.md",
+  "releases": [
+    { "id": "release-1", "tag": "release-1-stabilization-2026-08-05", "status": "BLOCKED", "evidence": "Tag inventory recorded; full gate audit not yet evidenced." },
+    { "id": "release-2", "tag": "release-2-eleventy-architecture-2026-08-05", "status": "BLOCKED", "evidence": "Tag inventory recorded; full gate audit not yet evidenced." },
+    { "id": "release-3", "tag": "release-3-conversion-pricing-analytics-2026-08-05", "status": "BLOCKED", "evidence": "Tag inventory recorded; full gate audit not yet evidenced." },
+    { "id": "release-4", "tag": "release-4-content-consolidation-technical-seo-2026-08-05", "status": "BLOCKED", "evidence": "Tag inventory recorded; full gate audit not yet evidenced." },
+    { "id": "release-5", "tag": "feature/release-5-optimize-launch", "status": "BLOCKED", "evidence": "Current worktree is dirty; classification and release-candidate evidence remain open." }
+  ],
+  "checks": [
+    { "id": "source.architecture", "area": "source", "description": "Eleventy source, includes, generated output, and route ownership are documented and consistent.", "status": "PARTIAL", "evidence": "Existing Eleventy build and Release 5 checks are present; full architecture audit is not yet recorded." },
+    { "id": "content.business-data", "area": "content", "description": "Business, contact, program, location, offer, schedule, and promotion data have one verified source of truth.", "status": "PARTIAL", "evidence": "Structured data files exist under data/ and content/; cross-file reconciliation evidence is pending." },
+    { "id": "content.pricing-schedule", "area": "content", "description": "Pricing and schedule copy agree across canonical pages, structured data, and generated routes.", "status": "PARTIAL", "evidence": "Existing schedule and offer QA scripts are available; complete reconciliation report is pending." },
+    { "id": "conversion.free-intro", "area": "conversion", "description": "Free Intro wording, form behavior, confirmation path, and booking fallback are verified.", "status": "BLOCKED", "evidence": "Local source checks exist; browser/Formspree functional evidence is not recorded." },
+    { "id": "seo.archive-redirects", "area": "seo", "description": "Archive exclusion, redirect dispositions, canonicals, internal links, sitemap, and robots rules pass.", "status": "PARTIAL", "evidence": "URL contract and redirect/sitemap QA exist; release-wide evidence is pending." },
+    { "id": "seo.metadata-schema", "area": "seo", "description": "JSON-LD, metadata, HTML validity, asset references, and secret scans pass on generated output.", "status": "PARTIAL", "evidence": "Release 5 validator covers core generated-output checks; complete schema/metadata report is pending." },
+    { "id": "privacy.analytics", "area": "privacy", "description": "Analytics events are deduplicated and exclude PII across the funnel.", "status": "BLOCKED", "evidence": "Analytics documentation exists; network/debug evidence is not recorded." },
+    { "id": "accessibility.interaction", "area": "accessibility", "description": "Mobile navigation, keyboard/focus behavior, zoom, reduced motion, and sticky overlap are verified.", "status": "BLOCKED", "evidence": "Automated scripts exist for selected interaction checks; complete device/browser evidence is pending." },
+    { "id": "performance.assets", "area": "performance", "description": "Image dimensions/loading, CSS/JS duplication, and console-error evidence meet the release budget.", "status": "BLOCKED", "evidence": "Performance directory contains baseline material; current release evidence is pending." },
+    { "id": "testing.cross-device", "area": "testing", "description": "Cross-browser/device and functional smoke-test evidence is attached to the release candidate.", "status": "BLOCKED", "evidence": "No completed release-candidate matrix is recorded." },
+    { "id": "deployment.backup", "area": "deployment", "description": "Production backup, SFTP destination, rollback path, and generated-only deployment payload are verified.", "status": "BLOCKED", "evidence": "Deployment remains authorization-gated; no production backup or SFTP verification performed." },
+    { "id": "production.live", "area": "production", "description": "Live status, redirects, forms, analytics, sitemap, robots, and visual smoke checks pass.", "status": "BLOCKED", "evidence": "Production validation is intentionally pending deployment authorization." },
+    { "id": "owner.authorization", "area": "owner", "description": "Sandy explicitly authorizes deployment and Search Console submission.", "status": "BLOCKED", "evidence": "No owner authorization supplied in this task." },
+    { "id": "handoff.documentation", "area": "handoff", "description": "Owner guide, technical handoff, release manifest, changelog, and final report are complete.", "status": "PARTIAL", "evidence": "Existing runbooks and QA docs exist; release-specific handoff artifacts are pending." }
+  ]
+}

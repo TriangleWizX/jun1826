@@ -1,0 +1,5 @@
+Script started on 2026-07-15 22:49:28-04:00 [COMMAND="chromium --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --remote-debugging-port=0 --user-data-dir=/tmp/qa-shell-3 about:blank" <not executed on terminal>]
+snap-confine has elevated permissions and is not confined but should be. Refusing to continue to avoid permission escalation attacks
+Please make sure that the snapd.apparmor service is enabled and started.
+
+Script done on 2026-07-15 22:49:29-04:00 [COMMAND_EXIT_CODE="1"]

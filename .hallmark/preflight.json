@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "scannedAt": "2026-07-15",
+  "scope": "multi-page",
+  "project": "Sensei Sandy BJJ",
+  "framework": "vanilla HTML with Apache SSI, Bootstrap 5.3.3 JavaScript, static generators, and fingerprinted assets",
+  "inventory": {
+    "routes": 250,
+    "marketingRoutes": 30,
+    "functionalRoutes": 9,
+    "contentRoutes": 211,
+    "navOwner": "nav-include.html",
+    "footerOwner": "footer-include.html",
+    "componentBundleSource": "assets/css/components.css",
+    "componentBundleFamilies": 13
+  },
+  "signals": {
+    "fonts": "Remote Instrument Serif, Lexend, Inter, Plus Jakarta Sans, Geist, Cormorant Garamond, and DM Serif references are inconsistent across routes; no local @font-face source existed at scan time.",
+    "palette": "Existing warm paper, forest green, teal, cyan, brown, slate, and ink custom properties conflict across global and page stylesheets.",
+    "motion": "No dedicated motion library; the project is motion-cut.",
+    "spacing": "Multiple unrelated scales; the locked system introduces one four-point named scale.",
+    "cssPayload": "245 of 250 sitemapped routes exceed the 50 KiB gzip budget; full Bootstrap is present on all 250 routes.",
+    "sharedCss": "Shared nav and footer inline CSS is repeated across SSI-expanded routes; sensei-sandy-logo-global.css owns substantially more than logo rules."
+  },
+  "preserve": [
+    "Sensei Sandy forest-green brand anchor and warm paper character",
+    "All route, canonical, structured-data, analytics, form, CTA, booking, phone, and SSI contracts",
+    "Beginner-friendly copy hierarchy and audience-lane behavior",
+    "Existing Bootstrap 5.3.3 JavaScript behavior while its CSS becomes selective",
+    "The current 13-family component-bundle ownership contract"
+  ],
+  "introduce": [
+    "Catskills Studio editorial design system",
+    "Instrument Serif display plus Lexend body typography",
+    "Split Studio, Workbench, Long Document, and Index-First route-family structures",
+    "N6-inspired editorial masthead and asymmetrical Ft3 sitemap footer",
+    "Purposeful interaction states, responsive discipline, and a motion-cut default",
+    "Selective Bootstrap Sass, ordered route CSS bundles, PurgeCSS safeguards, and a strict per-route CSS budget"
+  ],
+  "approval": {
+    "status": "approved",
+    "approvedAt": "2026-07-15",
+    "phrase": "Approve Catskills Studio and the pinned toolchain",
+    "devDependencies": {
+      "bootstrap": "5.3.3",
+      "purgecss": "6.0.0",
+      "sass": "1.77.8"
+    },
+    "productionFileDeletions": false
+  }
+}
+
