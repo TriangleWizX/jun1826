@@ -412,7 +412,7 @@ const runStaticAudit = async (reason) => {
     fs.readFile(path.join(ROOT, 'assets/css/components.css'), 'utf8')
   ]);
 
-  ensure(navHtml.includes('>Programs<'), 'Shared nav is missing Programs dropdown toggle.');
+  ensure(/>\s*Programs\s*</.test(navHtml), 'Shared nav is missing Programs dropdown toggle.');
   ensure(navHtml.includes('href="sms:+19177368649"'), 'Shared nav is missing Text Sandy.');
   ensure(!/data-ss-dropdown(-toggle|-menu)?/.test(navHtml), 'Shared nav should not include custom dropdown hooks.');
   ensure(!navHtml.includes('function initProgramsDropdown'), 'Shared nav should not include legacy dropdown controller.');

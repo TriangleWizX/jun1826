@@ -7,6 +7,15 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("tmp/**");
   eleventyConfig.ignores.add("crawl-reports/**");
   eleventyConfig.ignores.add("playwright-report/**");
+  // Keep editor, private tooling, and include-only fragments out of production.
+  eleventyConfig.ignores.add(".tmb/**");
+  eleventyConfig.ignores.add(".vscode/**");
+  eleventyConfig.ignores.add(".venv/**");
+  eleventyConfig.ignores.add("_drafts/**");
+  eleventyConfig.ignores.add("admin/**");
+  eleventyConfig.ignores.add("partials/**");
+  eleventyConfig.ignores.add("snippets/**");
+  eleventyConfig.ignores.add("assets/**");
 
   // Passthrough copy static assets to output
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });

@@ -1,565 +1,507 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
+  <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
+<link href="/site.webmanifest" rel="manifest"/>
 <title>Instagram Start Here | Sensei Sandy BJJ</title>
 <meta content="Came from Instagram? Start here with a Free Intro, text Sandy first, choose Youth or Adult, or get directions to Sensei Sandy BJJ. Learn more at Sensei San" name="description"/>
+
+
 <link href="https://senseisandy.com/instagram" rel="canonical"/>
-<meta content="noindex,follow" name="robots"/>
-<meta content="noindex,follow" name="googlebot"/>
-<meta content="website" property="og:type"/>
-<meta content="Sensei Sandy BJJ" property="og:site_name"/>
 <meta content="https://senseisandy.com/instagram" property="og:url"/>
+<meta content="Sensei Sandy BJJ" property="og:site_name"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" property="og:image"/>
+<meta content="index, follow" name="robots"/>
 <meta content="Instagram Start Here | Sensei Sandy BJJ" property="og:title"/>
-<meta content="Came from Instagram? Start here with a Free Intro, text Sandy first, choose Youth or Adult, or get directions to Sensei Sandy BJJ." property="og:description"/>
-<meta content="https://senseisandy.com/assets/images/social/ssbjj-card-1200x628.jpg" property="og:image"/>
-<meta content="Sensei Sandy BJJ in Tannersville, NY" property="og:image:alt"/>
+<meta content="Came from Instagram? Start here with a Free Intro, text Sandy first, choose Youth or Adult, or get directions to Sensei Sandy BJJ. Learn more at Sensei San" property="og:description"/>
+<meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Instagram Start Here | Sensei Sandy BJJ" name="twitter:title"/>
-<meta content="Came from Instagram? Start here with a Free Intro, text Sandy first, choose Youth or Adult, or get directions to Sensei Sandy BJJ." name="twitter:description"/>
-<meta content="https://senseisandy.com/assets/images/social/ssbjj-card-1200x628.jpg" name="twitter:image"/>
-<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<style>
-    :root {
-      --bg: #f7f3ec;
-      --paper: #fffaf2;
-      --surface-2: #efe8dc;
-      --ink: #211d18;
-      --muted: #756b5f;
-      --line: rgba(33, 29, 24, 0.12);
-      --accent: #b88a44;
-      --accent-dark: #9b6a4a;
-      --accent-soft: #efe8dc;
-      --pine: #5f6f52;
-      --pine-soft: #dde7d8;
-      --sun: #f1b95f;
-      --shadow: 0 20px 50px rgba(33, 29, 24, 0.12);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(184, 138, 68, 0.20), transparent 30%),
-        linear-gradient(180deg, var(--paper) 0%, var(--bg) 55%, var(--surface-2) 100%);
-      font-family: "Avenir Next", "Segoe UI", sans-serif;
-      line-height: 1.5;
-      padding-bottom: 104px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .ig-shell {
-      width: min(100% - 24px, 760px);
-      margin: 0 auto;
-      padding: 16px 0 40px;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 14px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(33, 72, 61, 0.12);
-      border-radius: 999px;
-      background: rgba(255, 253, 248, 0.8);
-      backdrop-filter: blur(8px);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .topbar strong,
-    .eyebrow,
-    .section-label {
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.74rem;
-    }
-
-    .topbar .phone-link {
-      font-weight: 700;
-      color: var(--pine);
-      white-space: nowrap;
-    }
-
-    .hero,
-    .section-card,
-    .location-card,
-    .final-card {
-      border: 1px solid rgba(31, 27, 22, 0.08);
-      border-radius: var(--radius-xl);
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 28px 22px 24px;
-      margin-bottom: 18px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -80px -90px auto;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(162, 71, 27, 0.18), transparent 68%);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      color: var(--pine);
-      font-weight: 700;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--sun);
-      box-shadow: 0 0 0 6px rgba(241, 185, 95, 0.18);
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
-      line-height: 1.05;
-      margin: 0;
-    }
-
-    h1 {
-      font-size: clamp(2.1rem, 7vw, 3.6rem);
-      margin-bottom: 12px;
-    }
-
-    .hero-copy {
-      font-size: 1.02rem;
-      color: var(--muted);
-      margin-bottom: 14px;
-      max-width: 34rem;
-    }
-
-    .hero-layout,
-    .hero-main,
-    .decision-panel,
-    .trust-band,
-    .trust-item,
-    .decision-card,
-    .bottom-grid {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-layout,
-    .bottom-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .hero-main {
-      min-width: 0;
-    }
-
-    .decision-panel {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .cta-stack,
-    .final-actions {
-      display: grid;
-      gap: 10px;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .cta:hover,
-    .cta:focus-visible {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 24px rgba(33, 72, 61, 0.14);
-    }
-
-    .cta-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .cta-primary:hover,
-    .cta-primary:focus-visible {
-      background: var(--accent-dark);
-      color: #fff;
-    }
-
-    .cta-secondary {
-      background: var(--pine);
-      color: #fff;
-    }
-
-    .cta-secondary:hover,
-    .cta-secondary:focus-visible {
-      background: #17352d;
-      color: #fff;
-    }
-
-    .cta-outline {
-      background: transparent;
-      border-color: rgba(33, 72, 61, 0.2);
-      color: var(--pine);
-    }
-
-    .meta-note {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .cta-microcopy {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .chip-row li {
-      padding: 9px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
-      color: var(--pine);
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .section-card,
-    .location-card,
-    .final-card {
-      padding: 22px;
-      margin-bottom: 18px;
-    }
-
-    .section-label {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .section-lead {
-      color: var(--muted);
-      margin: 10px 0 0;
-    }
-
-    .steps-grid,
-    .trust-band,
-    .decision-actions {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .step-card,
-    .trust-item,
-    .decision-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, #fffdf8 0%, #fff8ef 100%);
-      padding: 18px;
-    }
-
-    .step-card h3,
-    .trust-item h3,
-    .decision-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .step-card p,
-    .trust-item p,
-    .decision-card p,
-    .location-card p,
-    .final-card p {
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
-    .decision-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 12px 0 16px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .decision-meta li {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .decision-actions .cta,
-    .reassure-actions .cta {
-      width: 100%;
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--pine-soft);
-      color: var(--pine);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .trust-band {
-      margin-bottom: 18px;
-    }
-
-    .trust-item {
-      background: linear-gradient(180deg, #fffaf3 0%, #fff1e4 100%);
-    }
-
-    .decision-actions,
-    .reassure-actions {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .location-card {
-      background:
-        linear-gradient(135deg, rgba(33, 72, 61, 0.05), rgba(255, 255, 255, 0.9)),
-        var(--paper);
-    }
-
-    .location-grid {
-      display: grid;
-      gap: 18px;
-      margin-top: 14px;
-    }
-
-    .location-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    .location-pills li {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(33, 72, 61, 0.08);
-      color: var(--pine);
-      font-weight: 700;
-      font-size: 0.88rem;
-    }
-
-    .final-card {
-      background: linear-gradient(180deg, #fff6ea 0%, #fffdf8 100%);
-    }
-
-    .bottom-grid {
-      margin-bottom: 18px;
-    }
-
-    .sticky-cta {
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      z-index: 1000;
-      display: grid;
-      gap: 10px;
-      padding: 12px;
-      border: 1px solid rgba(31, 27, 22, 0.08);
-      border-radius: 22px;
-      background: rgba(255, 253, 248, 0.94);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 22px 40px rgba(31, 27, 22, 0.18);
-    }
-
-    .sticky-cta .cta {
-      min-height: 50px;
-    }
-
-    @media (min-width: 576px) {
-      .cta-stack,
-      .final-actions {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .steps-grid,
-      .trust-band {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 768px) {
-      body {
-        padding-bottom: 40px;
-      }
-
-      .ig-shell {
-        padding-top: 28px;
-      }
-
-      .hero {
-        padding: 38px 34px 32px;
-      }
-
-      .section-card,
-      .location-card,
-      .final-card {
-        padding: 28px;
-      }
-    }
-
-    @media (min-width: 992px) {
-      body {
-        padding-bottom: 40px;
-      }
-
-      .ig-shell {
-        width: min(100% - 48px, 1120px);
-      }
-
-      .hero {
-        padding: 38px 34px 34px;
-      }
-
-      .hero-layout {
-        grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-        align-items: start;
-        gap: 24px;
-      }
-
-      .decision-panel {
-        margin-top: 0;
-      }
-
-      .trust-band {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .steps-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .bottom-grid {
-        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-        align-items: stretch;
-      }
-
-      .location-grid {
-        grid-template-columns: 1.3fr 0.9fr;
-        align-items: center;
-      }
-
-      .sticky-cta {
-        display: none;
-      }
-    }
-  </style>
-<!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://senseisandy.com/instagram#webpage",
-      "url": "https://senseisandy.com/instagram",
-      "name": "Instagram Start Here | Sensei Sandy BJJ",
-      "description": "",
-      "isPartOf": {
-        "@id": "https://senseisandy.com/#website"
-      },
-      "about": {
-        "@id": "https://senseisandy.com/#business"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://senseisandy.com/instagram#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://senseisandy.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Studio",
-          "item": "https://senseisandy.com/sensei-studio"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Instagram Start Here",
-          "item": "https://senseisandy.com/instagram"
-        }
-      ]
-    }
-  ]
-}
-</script>
+<meta content="Came from Instagram? Start here with a Free Intro, text Sandy first, choose Youth or Adult, or get directions to Sensei Sandy BJJ. Learn more at Sensei San" name="twitter:description"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
+<meta content="https://senseisandy.com/instagram" name="twitter:url"/>
+<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/routes/site-ac8bb117999c.min.e4502a.css">
+<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
+<link rel="stylesheet" href="/assets/css/fonts.e11440.css">
+<link rel="stylesheet" href="/assets/css/site-shell.211bb7.css">
+
+
+  
 </head>
-<body>
-<!--#include virtual="/nav-include.html" -->
-<main class="ig-shell" role="main">
+<body class="ss-page">
+
+  <!--#include virtual="/nav-include.html" -->
+<div class="ss-global-nav-wrapper">
+
+  <header class="ss-site-header">
+    <a class="ss-skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="ss-topbar" role="region" aria-label="Studio details">
+      <div class="container ss-topbar-inner">
+        <div class="ss-topbar-left">
+          <span class="ss-topbar-highlight">Catskills Studio</span>
+          <span class="ss-topbar-dot" aria-hidden="true" role="presentation">•</span>
+          <span class="ss-topbar-location">6045 Main Street, Tannersville</span>
+        </div>
+        <div class="ss-topbar-right">
+          <a class="ss-topbar-sms" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">
+            <i class="bi bi-chat-text" aria-hidden="true"></i>
+            Text Sandy
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg ss-navbar" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand ss-brand" href="/" aria-label="Sensei Sandy BJJ homepage">
+          <img class="ss-brand-mark" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" alt="Sensei Sandy BJJ logo" width="44" height="44" decoding="async">
+          <span class="ss-brand-copy">
+            <span class="ss-brand-main">Sensei Sandy BJJ</span>
+            <span class="ss-brand-sub">Calm, technical Jiu-Jitsu in Tannersville</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler ss-menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#ssMainNav"
+          aria-controls="ssMainNav" aria-expanded="false" aria-label="Open menu">
+          Menu
+        </button>
+
+        <div id="ssMainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" id="programsDropdownToggle" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false" aria-controls="programsDropdownMenu">
+                Programs
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" id="programsDropdownMenu" aria-labelledby="programsDropdownToggle">
+                <li><a class="dropdown-item" href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
+                <li><a class="dropdown-item" href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
+                <li><a class="dropdown-item" href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
+                <li><a class="dropdown-item" href="/private-lessons">Private Coaching</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" id="experienceDropdownToggle" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false" aria-controls="experienceDropdownMenu">
+                The Experience
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" id="experienceDropdownMenu" aria-labelledby="experienceDropdownToggle">
+                <li><a class="dropdown-item" href="/how-class-works">How Class Works</a></li>
+                <li><a class="dropdown-item" href="/sensei-studio">Studio Tour</a></li>
+                <li><a class="dropdown-item" href="/jiu-jitsu-safety-tannersville-ny">Safety Walkthrough</a></li>
+                <li><a class="dropdown-item" href="/success-stories">Success Stories</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/options-pricing">Pricing</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/parent-resources">Parent Hub</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="ss-nav-cta" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+</nav>
+  </header>
+</div>
+
+<script>
+  (function improveMobileNavigation() {
+    function init() {
+      const menu = document.getElementById('ssMainNav');
+      const toggle = document.querySelector('.ss-menu-button');
+      if (!menu || !toggle || menu.dataset.ssNavA11yReady === 'true') return;
+      menu.dataset.ssNavA11yReady = 'true';
+
+      menu.addEventListener('shown.bs.collapse', function () {
+        const firstLink = menu.querySelector('a, button');
+        firstLink?.focus();
+      });
+
+      menu.addEventListener('hidden.bs.collapse', function () {
+        toggle.focus();
+      });
+
+      menu.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape' || !menu.classList.contains('show')) return;
+        const instance = window.bootstrap?.Collapse?.getOrCreateInstance(menu, { toggle: false });
+        instance?.hide();
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init, { once: true });
+    } else {
+      init();
+    }
+  })();
+</script>
+
+<!-- Preload & load Bootstrap early so pages with footer-only includes get the file downloaded earlier -->
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+
+<script>
+  (function ensureBootstrapBundle() {
+    const primarySrc = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+    const fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
+    const bootstrapScriptSelector = 'script[src*="bootstrap.bundle.min.js"]';
+
+    const hasDropdown = () => Boolean(window.bootstrap && window.bootstrap.Dropdown);
+
+    const loadBundle = (src) => {
+      if (hasDropdown()) return;
+      if (document.querySelector(`script[data-ss-bootstrap-loader="${src}"]`)) return;
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.crossOrigin = 'anonymous';
+      script.async = false;
+      script.dataset.ssBootstrapLoader = src;
+      script.addEventListener('load', () => {
+        if (!hasDropdown() && src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => {
+        if (src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      document.body.appendChild(script);
+    };
+
+    const watchExistingBundle = (script) => {
+      if (!script || script.dataset.ssBootstrapWatched === 'true') return;
+      script.dataset.ssBootstrapWatched = 'true';
+      script.addEventListener('load', () => {
+        if (!hasDropdown()) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => loadBundle(fallbackSrc), { once: true });
+    };
+
+    const ensureDropdown = () => {
+      if (hasDropdown()) return;
+
+      const existingBundle = document.querySelector(bootstrapScriptSelector);
+      if (existingBundle) {
+        watchExistingBundle(existingBundle);
+      } else {
+        loadBundle(primarySrc);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ensureDropdown, { once: true });
+    } else {
+      ensureDropdown();
+    }
+  })();
+</script>
+
+<div id="schedule-dialog" class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="schedule-dialog-title" hidden>
+  <div class="schedule-dialog__panel">
+    <button type="button" class="schedule-dialog__close" aria-label="Close scheduling form">&times;</button>
+    <h2 id="schedule-dialog-title">Plan Your First Class</h2>
+    <p>Leave the best number to reach you. Sandy will help you choose the right class time.</p>
+    <form id="schedule-dialog-form" action="https://formspree.io/f/mqazqozk" method="POST">
+      <label for="schedule-lead-name" style="display: block; margin-bottom: 1rem; font-weight: 600;">
+        First name
+        <input type="text" id="schedule-lead-name" name="name" autocomplete="given-name" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <label for="schedule-lead-phone" style="display: block; margin-bottom: 1.5rem; font-weight: 600;">
+        Phone number
+        <input type="tel" id="schedule-lead-phone" name="phone" autocomplete="tel" inputmode="tel" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <input type="hidden" name="_subject" value="New Schedule Request (Modal)">
+      <button type="submit" class="ss-btn ss-btn-primary" style="width: 100%;">Continue to Schedule</button>
+    </form>
+    <p id="schedule-dialog-status" class="ss-lead-capture-status" role="status" aria-live="polite" hidden style="margin-top: 1rem; color: #116A42; font-weight: 600;">
+      Thank you. Sandy will call or text you soon.
+    </p>
+  </div>
+</div>
+
+<script>
+(function initScheduleModal() {
+  const endpoint = 'https://formspree.io/f/mqazqozk';
+  const schedulePath = '/schedule';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const dialog = document.getElementById('schedule-dialog');
+    if (!dialog) return;
+
+    const panel = dialog.querySelector('.schedule-dialog__panel');
+    const closeBtn = dialog.querySelector('.schedule-dialog__close');
+    const form = document.getElementById('schedule-dialog-form');
+    const status = document.getElementById('schedule-dialog-status');
+    let lastActiveElement = null;
+
+    function openModal(trigger) {
+      lastActiveElement = trigger || document.activeElement;
+      dialog.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      const firstInput = dialog.querySelector('input, button');
+      if (firstInput) firstInput.focus();
+    }
+
+    function closeModal() {
+      dialog.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+        lastActiveElement.focus();
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      const trigger = e.target.closest('.schedule-trigger, [aria-controls="schedule-dialog"]');
+      if (trigger) {
+        e.preventDefault();
+        openModal(trigger);
+      }
+    });
+
+    closeBtn?.addEventListener('click', closeModal);
+
+    dialog.addEventListener('click', function (e) {
+      if (panel && !panel.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !dialog.hasAttribute('hidden')) {
+        closeModal();
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const defaultLabel = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        const payload = {
+          name: form.elements.name.value,
+          phone: form.elements.phone.value,
+          _subject: 'New Schedule Request (Modal)'
+        };
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (!res.ok) throw new Error('Submission failed');
+          form.hidden = true;
+          if (status) {
+            status.textContent = 'Thank you. Sandy will call or text you soon.';
+            status.hidden = false;
+          }
+          setTimeout(function () {
+            closeModal();
+            const currentPath = window.location.pathname.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            const targetPath = schedulePath.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            if (currentPath !== targetPath) {
+              window.location.href = schedulePath;
+            }
+          }, 1200);
+        }).catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = defaultLabel;
+          if (status) {
+            status.textContent = "We couldn't send that. Please try again or text Sandy at .";
+            status.hidden = false;
+          }
+        });
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+(function markCurrentPage() {
+  const currentPath = window.location.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+  const allLinks = document.querySelectorAll('#ssMainNav a.nav-link, #ssMainNav a.dropdown-item');
+  allLinks.forEach(link => {
+    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) {
+          toggle.classList.add('active');
+        }
+      }
+    }
+  });
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const myCollapsible = document.getElementById('ssMainNav');
+  const siteHeader = document.querySelector('.ss-site-header');
+  const toggler = document.querySelector('.ss-menu-button');
+  const skipLink = document.querySelector('.ss-skip-link');
+  const mainContent = document.querySelector('main, [role="main"]');
+
+  if (skipLink && mainContent) {
+    if (!mainContent.id) mainContent.id = 'main-content';
+    if (!mainContent.hasAttribute('tabindex')) mainContent.tabIndex = -1;
+    skipLink.setAttribute('href', '#' + mainContent.id);
+    skipLink.addEventListener('click', function () {
+      window.setTimeout(function () {
+        mainContent.focus({ preventScroll: true });
+      }, 0);
+    });
+  }
+
+  if (myCollapsible && siteHeader) {
+    const lgQuery = window.matchMedia('(min-width: 992px)');
+    const handleResize = (e) => {
+      if (e.matches) {
+        myCollapsible.removeAttribute('inert');
+      } else {
+        if (!myCollapsible.classList.contains('show')) {
+          myCollapsible.setAttribute('inert', '');
+        }
+      }
+    };
+
+    if (lgQuery.addEventListener) {
+      lgQuery.addEventListener('change', handleResize);
+    } else if (lgQuery.addListener) {
+      lgQuery.addListener(handleResize);
+    }
+    handleResize(lgQuery);
+
+    myCollapsible.addEventListener('show.bs.collapse', function () {
+      siteHeader.classList.add('nav-open');
+      myCollapsible.removeAttribute('inert');
+    });
+
+    myCollapsible.addEventListener('shown.bs.collapse', function () {
+      const firstLink = myCollapsible.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    });
+
+    myCollapsible.addEventListener('hide.bs.collapse', function () {
+      siteHeader.classList.remove('nav-open');
+    });
+
+    myCollapsible.addEventListener('hidden.bs.collapse', function () {
+      if (!lgQuery.matches) {
+        myCollapsible.setAttribute('inert', '');
+      }
+      if (toggler) toggler.focus();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && myCollapsible.classList.contains('show')) {
+        if (window.bootstrap && window.bootstrap.Collapse) {
+          const bsCollapse = window.bootstrap.Collapse.getInstance(myCollapsible) || new window.bootstrap.Collapse(myCollapsible, { toggle: false });
+          bsCollapse.hide();
+        }
+      }
+    });
+  }
+});
+</script>
+
+<style>
+@media screen and (min-width: 768px) {
+  .header-display-desktop .header-nav-item--folder,
+  .ss-global-nav-wrapper .ss-navbar .dropdown,
+  .ss-navbar .nav-item.dropdown {
+    position: relative;
+  }
+
+  .header-display-desktop .header-nav-item--folder .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown-menu,
+  .ss-navbar .dropdown-menu {
+    display: block !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(10px) !important;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      visibility 160ms ease !important;
+  }
+
+  .header-display-desktop .header-nav-item--folder:hover .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder:focus-within .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.show .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.open .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.is-open .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown.show .dropdown-menu,
+  .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-navbar .dropdown.show .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const folders = document.querySelectorAll(
+      ".header-display-desktop .header-nav-item--folder, .ss-navbar .dropdown"
+    );
+
+    const closeFolder = function (folder) {
+      folder.classList.remove("open", "is-open", "active-folder", "menu-open", "folder-open");
+      folder.removeAttribute("data-open");
+      folder.removeAttribute("data-folder-status");
+      const menu = folder.querySelector(".dropdown-menu, .header-nav-folder-content");
+      if (menu) menu.classList.remove("show", "open", "is-open");
+      const trigger = folder.querySelector("a, button");
+      if (trigger && trigger.hasAttribute("aria-expanded")) trigger.setAttribute("aria-expanded", "false");
+    };
+
+    folders.forEach(closeFolder);
+
+    document.addEventListener("click", function (event) {
+      folders.forEach(function (folder) {
+        if (!folder.contains(event.target)) closeFolder(folder);
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      folders.forEach(closeFolder);
+      const focusedElement = document.activeElement;
+      if (focusedElement instanceof HTMLElement) focusedElement.blur();
+    });
+  });
+</script>
+
+
+  
+
+  <div id="scrollProgress"></div>
+
+  
+    <main class="ig-shell" role="main">
 <div class="topbar">
 <span><strong>Instagram Start Here</strong> • Tannersville, NY</span>
 <a class="phone-link" href="tel:+19177368649">Call (917) 736-8649</a>
@@ -710,6 +652,199 @@
 <div aria-label="Mobile quick actions" class="sticky-cta">
 <a class="cta cta-primary" href="sms:+19177368649?body=Hi%20Sensei%20Sandy%2C%20I%20came%20from%20Instagram.%20I%20have%20a%20question%20about%20starting.">Questions about starting? Text Sandy (917) 736 - 8649</a>
 </div>
-<!--#include virtual="/footer-include.html" -->
+
+  
+
+  <footer class="ss-new-site-footer" aria-labelledby="ss-footer-title">
+  <div class="ss-new-footer-shell">
+    <div class="ss-new-footer-inner">
+      <h2 id="ss-footer-title" class="visually-hidden">Sensei Sandy BJJ footer</h2>
+
+      <div class="ss-new-footer-top">
+        <div class="ss-new-footer-brand" data-footer-group="primary">
+          <div class="ss-new-brand-row">
+            <img class="ss-new-brand-logo" src="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp" alt="Sensei Sandy BJJ logo" width="60" height="60" decoding="async">
+            <div class="ss-new-brand-title">Sensei Sandy BJJ</div>
+          </div>
+          <p class="ss-new-brand-desc">Calm, technical Jiu-Jitsu where every student is seen, guided, and supported. You will not disappear into the room.</p>
+          <div class="ss-new-contact-list">
+            <div class="ss-new-contact-row">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <span>6045 Main Street, 2nd Floor Studio<br>Tannersville, NY 12485</span>
+            </div>
+            <div class="ss-new-contact-row">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              <span>Kids &bull; Teens &bull; Adults</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="ss-new-footer-nav" aria-label="Footer navigation">
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Start Here</h3>
+            <ul>
+              <li><a href="/nearby-towns">Choose Lane</a></li>
+              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Free Intro</a></li>
+              <li><a href="/schedule">Schedule</a></li>
+              <li><a href="/holiday-schedule">Holiday Schedule</a></li>
+              <li><a href="/show-up-kit">Show-Up Kit</a></li>
+              <li><a href="/core-culture-parent-guide">Parent Guide</a></li>
+              <li><a href="/bjj-tannersville-ny-directions">Directions</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Programs</h3>
+            <ul>
+              <li><a href="/bjj-classes">All BJJ Classes</a></li>
+              <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
+              <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
+              <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
+              <li><a href="/summer-jiu-jitsu-tannersville">Summer BJJ</a></li>
+              <li><a href="/private-lessons">Private Lessons</a></li>
+              <li><a href="/sensei-bully">Bully Proof</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Studio</h3>
+            <ul>
+              <li><a href="/how-class-works">How Class Works</a></li>
+              <li><a href="/success-stories">Success Stories</a></li>
+              <li><a href="/options-pricing">Pricing</a></li>
+              <li><a href="/bio">Bio</a></li>
+              <li><a href="/sensei-studio">Studio Tour</a></li>
+              <li><a href="/bjj-faqs">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Nearby</h3>
+            <ul>
+              <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
+              <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
+              <li><a href="/bjj-classes/windham-ny">Windham</a></li>
+              <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
+              <li><a href="/nearby-towns">Woodstock</a></li>
+              <li><a href="/nearby-towns">Nearby Towns</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Learn</h3>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/bjj-glossary">BJJ Glossary</a></li>
+              <li><a href="/bjj-stretches">BJJ Stretches</a></li>
+              <li><a href="">BJJ Videos</a></li>
+              <li><a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Friends of the Academy</h3>
+            <ul>
+              <li><a href="/community-partners">Community Partners</a></li>
+              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
+              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="ss-new-footer-bottom">
+        <div>&copy; 2026 Sensei Sandy BJJ. All Rights Reserved.</div>
+        <div class="ss-new-footer-contacts">
+          <a href="tel:+19177368649" class="ss-new-footer-contact-link">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            Call
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" class="ss-new-footer-contact-link">
+            <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            Text
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="mailto:sandy@senseisandy.com" class="ss-new-footer-contact-link">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="ss-mobile-actionbar" aria-label="Quick actions">
+  <a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" data-cta-target="text" data-cta-placement="sticky_mobile">Questions about starting? Text Sandy </a>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollBar = document.getElementById("scrollProgress");
+    if (scrollBar) {
+      let progressFrame = 0;
+      const updateProgress = function () {
+        const winScroll = window.scrollY || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? winScroll / height : 0;
+        scrollBar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrolled)) + ")";
+        progressFrame = 0;
+      };
+      const requestProgress = function () {
+        if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
+      };
+      window.addEventListener("scroll", requestProgress, { passive: true });
+      window.addEventListener("resize", requestProgress, { passive: true });
+      requestProgress();
+    }
+
+    (function initStickyVisibility() {
+      const heroCta = document.querySelector([
+        '.home-hero .primary-cta',
+        '.hero-card .btn-white-secondary',
+        '.hero-card .btn-green-primary',
+        '.ss-hero .primary-cta',
+        '#hero-cta'
+      ].join(', '));
+      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
+      const stickyCta = document.querySelector('.ss-mobile-actionbar');
+
+      if (!stickyCta) return;
+      stickyCta.classList.add("is-observed");
+      if (!("IntersectionObserver" in window)) {
+        stickyCta.classList.add("is-visible");
+        return;
+      }
+
+      let heroOut = !heroCta;
+      let footerIn = false;
+      const updateVisibility = function () {
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+      };
+
+      if (heroCta) {
+        const heroObserver = new IntersectionObserver(function (entries) {
+          heroOut = !entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroCta);
+      }
+
+      if (footerCta) {
+        const footerObserver = new IntersectionObserver(function (entries) {
+          footerIn = entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.05 });
+        footerObserver.observe(footerCta);
+      }
+
+      updateVisibility();
+    })();
+  });
+</script>
+
+<script src="/assets/js/goal-mapping.5b78ff.js" defer></script>
+
+
+  <script src="/assets/js/attribution.c136f0.js" defer></script>
+  <script src="/assets/js/analytics-events.63417f.js" defer></script>
+  
 </body>
 </html>

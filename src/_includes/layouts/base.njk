@@ -16,9 +16,13 @@
 
   <div id="scrollProgress"></div>
 
-  <main class="ss-main {{ mainClass | default("") }}" id="main-content" role="main">
+  {% if "<main" in content %}
     {{ content | safe }}
-  </main>
+  {% else %}
+    <main class="ss-main {{ mainClass | default("") }}" id="main-content" role="main">
+      {{ content | safe }}
+    </main>
+  {% endif %}
 
   {% include "components/footer.njk" %}
 

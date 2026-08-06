@@ -3,12 +3,10 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for item in collections.all %}
-  {%- if not item.data.eleventyExcludeFromCollections and item.data.robots != "noindex, follow" and item.url and not item.url.includes("confirmation") %}
-  <url>
-    <loc>https://senseisandy.com{{ item.url }}</loc>
-  </url>
-  {%- endif %}
-{%- endfor %}
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>https://senseisandy.com/sitemap-core.xml</loc></sitemap>
+  <sitemap><loc>https://senseisandy.com/sitemap-programs.xml</loc></sitemap>
+  <sitemap><loc>https://senseisandy.com/sitemap-locations.xml</loc></sitemap>
+  <sitemap><loc>https://senseisandy.com/sitemap-blog.xml</loc></sitemap>
+  <sitemap><loc>https://senseisandy.com/sitemap-glossary.xml</loc></sitemap>
+</sitemapindex>
