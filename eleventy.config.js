@@ -19,6 +19,8 @@ export default function (eleventyConfig) {
 
   // Passthrough copy static assets to output
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // The booking bridge is maintained in the repository-level js/ directory.
+  eleventyConfig.addPassthroughCopy({ "js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
   eleventyConfig.addPassthroughCopy({ "src/downloads": "downloads" });
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });

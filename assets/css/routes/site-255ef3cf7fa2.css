@@ -1091,10 +1091,6 @@ textarea.form-control-lg {
   border-radius: var(--bs-dropdown-border-radius);
 }
 
-.dropdown-menu-end {
-  --bs-position: end;
-}
-
 .dropdown-item {
   display: block;
   width: 100%;
