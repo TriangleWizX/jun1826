@@ -578,10 +578,6 @@ progress {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
-  .col-md-6 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
 }
 @media (min-width: 992px) {
   .col-lg-4 {
@@ -1733,10 +1729,6 @@ progress {
 
 .fs-5 {
   font-size: 1.25rem !important;
-}
-
-.fst-italic {
-  font-style: italic !important;
 }
 
 .fw-semibold {

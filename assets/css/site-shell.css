@@ -22,6 +22,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Keep the non-critical site shell out of the initial mobile render path. */
+@media (max-width: 47.99rem) {
+  .ss-new-site-footer,
+  .ss-lead-capture-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 52rem;
+  }
+}
+
 :where(h1, h2, h3, h4, h5, h6) {
   min-width: 0;
   overflow-wrap: anywhere;
@@ -2512,4 +2521,3 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
     transform: translateY(0) !important;
   }
 }
-

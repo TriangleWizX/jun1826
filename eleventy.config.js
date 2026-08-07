@@ -27,6 +27,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
   eleventyConfig.addPassthroughCopy({ "src/site.webmanifest": "site.webmanifest" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
+  // Apache expands these root-relative SSI targets after deployment. They are
+  // deployment artifacts, so copy the canonical root fragments into dist.
+  eleventyConfig.addPassthroughCopy("nav-include.html");
+  eleventyConfig.addPassthroughCopy("footer-include.html");
   eleventyConfig.addPassthroughCopy({ "src/pages-sitemap.xml": "pages-sitemap.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap-core.xml": "sitemap-core.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap-programs.xml": "sitemap-programs.xml" });

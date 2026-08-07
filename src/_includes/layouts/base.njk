@@ -24,10 +24,14 @@
     </main>
   {% endif %}
 
-  {% include "components/footer.njk" %}
+  {% if footerSsi %}
+    <!--#include virtual="/footer-include.html" -->
+  {% else %}
+    {% include "components/footer.njk" %}
+  {% endif %}
 
-  <script src="/assets/js/attribution.js" defer></script>
-  <script src="/assets/js/analytics-events.js" defer></script>
+  <script src="/assets/js/attribution.js" defer fetchpriority="low"></script>
+  <script src="/assets/js/analytics-events.js" defer fetchpriority="low"></script>
   {% if bodyExtra %}
     {{ bodyExtra | safe }}
   {% endif %}

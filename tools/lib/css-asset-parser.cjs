@@ -477,7 +477,9 @@ const parseActiveStylesheets = (expandedHtml) => {
     const href = String(attributes.get('href') || '').trim();
     if (!href) continue;
     const stylesheet = rel.includes('stylesheet');
-    const asynchronousStylesheet = rel.includes('preload') && as === 'style';
+    // A plain style preload warms the cache but does not apply CSS. Treat it
+    // as an active stylesheet only when an onload handler promotes it.
+    const asynchronousStylesheet = rel.includes('preload') && as === 'style' && attributes.has('onload');
     if (!stylesheet && !asynchronousStylesheet) continue;
     stylesheets.push(Object.freeze({
       asynchronous: asynchronousStylesheet && !stylesheet,

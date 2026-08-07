@@ -25,10 +25,11 @@
 <meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
 <meta content="https://senseisandy.com/private-lessons" name="twitter:url"/>
 <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/tokens.647cf5.css" as="style">
 <link rel="stylesheet" href="/assets/css/routes/site-c436f4fa87bc.min.9a030d.css">
 <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
 <link rel="stylesheet" href="/assets/css/fonts.e11440.css">
-<link rel="stylesheet" href="/assets/css/site-shell.211bb7.css">
+<link rel="stylesheet" href="/assets/css/site-shell.83155d.css">
 </head>
 <body class="lane-mixed page-private-classes page-private-lessons ss-page ss-page-private-classes ss-has-community-bg ss-has-community-cards">
 
@@ -445,7 +446,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="ss-image-mask-wrapper">
 <picture>
 <source srcset="/assets/images/action2.dee90e.webp" type="image/webp"/>
+<picture>
+<source media="(max-width: 767px)" srcset="/assets/images/action2-mobile.webp" width="768" height="432">
 <img alt="Private Brazilian Jiu-Jitsu coaching session at Sensei Sandy BJJ" class="ss-hero-img-masked" decoding="async" loading="eager" src="/assets/images/action2.dee90e.webp"/>
+</picture>
 </picture>
 </div>
 <div aria-hidden="true" class="ss-leaf-deco ss-leaf-top-left"></div>
@@ -872,23 +876,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const scrollBar = document.getElementById("scrollProgress");
-    if (scrollBar) {
-      let progressFrame = 0;
-      const updateProgress = function () {
-        const winScroll = window.scrollY || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = height > 0 ? winScroll / height : 0;
-        scrollBar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrolled)) + ")";
-        progressFrame = 0;
-      };
-      const requestProgress = function () {
-        if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
-      };
-      window.addEventListener("scroll", requestProgress, { passive: true });
-      window.addEventListener("resize", requestProgress, { passive: true });
-      requestProgress();
-    }
 
     (function initStickyVisibility() {
       const heroCta = document.querySelector([
@@ -935,7 +922,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 </script>
 
-<script src="/assets/js/goal-mapping.5b78ff.js" defer></script>
+<script src="/assets/js/goal-mapping.5b78ff.js" defer fetchpriority="low"></script>
 
 
   <script src="/assets/js/attribution.c136f0.js" defer></script>

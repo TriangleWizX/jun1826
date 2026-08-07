@@ -494,6 +494,7 @@ const canonicalSharedTag = (href, suffix = '') => `<link rel="stylesheet" href="
 const routeBundleTag = (href) => `<link rel="stylesheet" href="${href}">`;
 const fontPreloadTag = () =>
   `<link rel="preload" href="${LEXEND_FONT}" as="font" type="font/woff2" crossorigin>`;
+const tokenPreloadTag = () => `<link rel="preload" href="${TOKENS_STYLESHEET}" as="style">`;
 
 const stripLegacyBootstrapNoscript = (html) => String(html || '').replace(
   /<noscript\b[^>]*>[\s\S]*?<\/noscript\s*>/gi,
@@ -542,6 +543,8 @@ const migrateHtmlSource = ({
   let firstIcon = null;
   let lexendPreloadEdit = null;
   let lexendPreloadPosition = null;
+  let tokenPreloadEdit = null;
+  let tokenPreloadPosition = null;
   const seenShared = new Map();
 
   for (const linkTag of links) {
@@ -549,10 +552,26 @@ const migrateHtmlSource = ({
     const rel = String(attributes.get('rel') || '').toLowerCase().split(/\s+/).filter(Boolean);
     const href = String(attributes.get('href') || '').trim();
     const as = String(attributes.get('as') || '').toLowerCase();
-    const stylesheet = rel.includes('stylesheet') || (rel.includes('preload') && as === 'style');
+    const stylePreload = rel.includes('preload') && as === 'style';
+    const stylesheet = rel.includes('stylesheet');
     let replacement = null;
 
-    if (stylesheet && href) {
+    if (stylePreload && href) {
+      let isPinnedTokens = false;
+      try {
+        const tokenStylesheet = !/^https?:|^\/\//i.test(href)
+          ? canonicalizeLocalAsset(href, sourcePath, assetManifest)
+          : null;
+        isPinnedTokens = tokenStylesheet?.canonicalHref === TOKENS_STYLESHEET;
+      } catch {
+        // Leave unrelated style preloads untouched; unsafe local assets are
+        // rejected when they are active stylesheets below.
+      }
+      if (isPinnedTokens) {
+        replacement = tokenPreloadPosition === null ? tokenPreloadTag() : '';
+        if (tokenPreloadPosition === null) tokenPreloadPosition = linkTag.start;
+      }
+    } else if (stylesheet && href) {
       if (firstStylesheet === null) firstStylesheet = linkTag.start;
       const classification = classifyStylesheet({
         assetManifest,
@@ -600,6 +619,7 @@ const migrateHtmlSource = ({
       const edit = { end: linkTag.end, start: linkTag.start, text: replacement };
       replacements.push(edit);
       if (lexendPreloadPosition === linkTag.start) lexendPreloadEdit = edit;
+      if (tokenPreloadPosition === linkTag.start) tokenPreloadEdit = edit;
     }
   }
 
@@ -617,6 +637,10 @@ const migrateHtmlSource = ({
   if (lexendPreloadPosition === null || lexendPreloadPosition > preloadPosition) {
     if (lexendPreloadEdit) lexendPreloadEdit.text = '';
     addInsertion(insertions, preloadPosition, `${fontPreloadTag()}\n`);
+  }
+  if (tokenPreloadPosition === null || tokenPreloadPosition > preloadPosition) {
+    if (tokenPreloadEdit) tokenPreloadEdit.text = '';
+    addInsertion(insertions, preloadPosition, `${tokenPreloadTag()}\n`);
   }
 
   if (firstIcon !== null) {

@@ -139,19 +139,6 @@
       }
     });
 
-    // GPU-safe scroll progress bar indicator
-    const scrollBar = document.getElementById("scrollProgress");
-    if (scrollBar) {
-      window.addEventListener("scroll", function () {
-        const winScroll = window.scrollY || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (height > 0) {
-          const scrolled = winScroll / height;
-          scrollBar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrolled)) + ")";
-        }
-      }, { passive: true });
-    }
-
     // Intersection Observer for mobile sticky actionbar visibility
     (function initStickyVisibility() {
       const heroCta = document.querySelector([
