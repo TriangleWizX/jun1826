@@ -5,14 +5,30 @@ import { spawnSync } from "node:child_process";
 
 const BASE_URL = process.env.CWV_BASE_URL || "http://127.0.0.1:8123";
 const OUT_DIR = process.env.CWV_OUT_DIR || "tmp/cwv-lab";
-const PAGES = ["/", "/schedule", "/free-bjj-intro-tannersville-ny", "/adult-bjj", "/options-pricing"];
+const PAGES = [
+  "/",
+  "/schedule",
+  "/free-bjj-intro-tannersville-ny",
+  "/bjj-classes/adults-tannersville-ny/",
+  "/options-pricing"
+];
 
 mkdirSync(OUT_DIR, { recursive: true });
 
-const lighthouseProbe = spawnSync("lighthouse", ["--version"], { encoding: "utf8" });
-if (lighthouseProbe.error || lighthouseProbe.status !== 0) {
-  console.error("qa:cwv:lab requires Lighthouse CLI on PATH.");
-  console.error("Install Lighthouse globally or run in an environment that already has it.");
+const directLighthouse = { command: "lighthouse", prefix: [] };
+const npxLighthouse = { command: "npx", prefix: ["--yes", "lighthouse"] };
+const canRun = ({ command, prefix }) => {
+  const probe = spawnSync(command, [...prefix, "--version"], { encoding: "utf8" });
+  return !probe.error && probe.status === 0;
+};
+const lighthouse = canRun(directLighthouse)
+  ? directLighthouse
+  : canRun(npxLighthouse)
+    ? npxLighthouse
+    : null;
+
+if (!lighthouse) {
+  console.error("qa:cwv:lab requires Lighthouse on PATH or runnable through npx.");
   process.exit(2);
 }
 
@@ -29,8 +45,9 @@ for (const path of PAGES) {
   rmSync(reportPath, { force: true });
 
   const run = spawnSync(
-    "lighthouse",
+    lighthouse.command,
     [
+      ...lighthouse.prefix,
       url,
       "--only-categories=performance",
       "--emulated-form-factor=mobile",
@@ -48,12 +65,16 @@ for (const path of PAGES) {
   }
 
   const report = JSON.parse(readFileSync(reportPath, "utf8"));
+  if (report.runtimeError || report.categories?.performance?.score == null) {
+    const detail = report.runtimeError?.message || "Lighthouse did not produce a performance score.";
+    throw new Error(`Lighthouse could not measure ${url}: ${detail}`);
+  }
   const audits = report.audits || {};
   const metrics = {
     url: report.finalDisplayedUrl || url,
     score: Math.round((report.categories?.performance?.score || 0) * 100),
     lcp_ms: toMs(audits["largest-contentful-paint"]?.numericValue),
-    inp_ms: toMs(audits.interaction-to-next-paint?.numericValue),
+    inp_ms: toMs(audits["interaction-to-next-paint"]?.numericValue),
     cls: toNum(audits["cumulative-layout-shift"]?.numericValue)
   };
   runResults.push(metrics);

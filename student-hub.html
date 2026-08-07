@@ -25,11 +25,11 @@
 <meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
 <meta content="https://senseisandy.com/student-hub" name="twitter:url"/>
 <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/tokens.647cf5.css" as="style">
+<link rel="preload" href="/tokens.ba1d25.css" as="style">
 <link rel="stylesheet" href="/assets/css/routes/site-522046e5a5b7.min.a5dc9b.css">
 <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
 <link rel="stylesheet" href="/assets/css/fonts.e11440.css">
-<link rel="stylesheet" href="/assets/css/site-shell.83155d.css">
+<link rel="stylesheet" href="/assets/css/site-shell.9e1f13.css">
 </head>
 <body class="lane-mixed page-student-hub ss-page ss-page-student-hub">
 
@@ -674,8 +674,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
 <h2 class="sh2-card-h2" id="adult-rhythm-heading" style="font-size:1.3rem;">Adult Training Rhythm</h2>
 <div class="sh2-rhythm-image">
-<img alt="Sensei Sandy BJJ training" decoding="async" height="1024" loading="lazy" src="/assets/images/IMG_20260602_190934_086.518497.webp" width="1024"/>
+<img alt="Sensei Sandy BJJ training" data-rhythm-image="" data-rhythm-image-fallback="/assets/images/IMG_20260602_190934_086.webp" decoding="async" height="1024" loading="lazy" src="/assets/images/IMG_20260602_190934_086.518497.webp" width="1024"/>
 </div>
+<script>
+  (() => {
+    const image = document.querySelector("[data-rhythm-image]");
+    if (!image) return;
+
+    image.addEventListener("error", () => {
+      const fallback = image.dataset.rhythmImageFallback;
+
+      if (fallback && image.dataset.fallbackApplied !== "true") {
+        image.dataset.fallbackApplied = "true";
+        image.src = fallback;
+        return;
+      }
+
+      image.hidden = true;
+    });
+  })();
+</script>
 <p class="sh2-card-p" style="font-size:0.85rem;">Return to the mats at the next clean opening.</p>
 <p class="sh2-highlight-text">Consistency compounds.</p>
 </article>
@@ -806,7 +824,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="ss-yam-modal-backdrop" data-yam-close=""></div>
 <div aria-label="YAM image preview" aria-modal="true" class="ss-yam-modal-panel" role="dialog">
 <button aria-label="Close YAM preview" class="ss-yam-modal-close" data-yam-close="" type="button">×</button>
-<img alt="Sensei Sandy BJJ Class Photo" data-yam-modal-img="" src=""/>
+<img alt="Sensei Sandy BJJ Class Photo" data-yam-modal-img="" src="/assets/images/IMG_20260602_190934_086.518497.webp"/>
 <p data-yam-modal-caption=""></p>
 </div>
 </div>

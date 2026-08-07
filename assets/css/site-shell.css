@@ -1930,6 +1930,132 @@ body .ss-global-nav-wrapper .ss-topbar {
   }
 }
 
+/* Persuade family bridge: one calm, consistent first-class decision surface
+   across Kids, Teens, and Adults without changing their audience-specific copy. */
+body.page-programs.ss-page-kids .kids-page,
+body.page-programs[data-audience="teens"] .teens-page,
+body.page-programs[data-audience="adults"] .adults-page {
+  background: var(--color-paper) !important;
+  color: var(--color-ink) !important;
+}
+
+body.page-programs.ss-page-kids :is(.kids-btn, .kids-hero-media),
+body.page-programs[data-audience="teens"] :is(.teens-btn, .teens-hero-media),
+body.page-programs[data-audience="adults"] :is(.adults-btn, .adults-hero-media) {
+  border-color: var(--color-rule) !important;
+}
+
+body.page-programs.ss-page-kids :is(.kids-btn, .kids-hero-media),
+body.page-programs[data-audience="teens"] :is(.teens-btn, .teens-hero-media),
+body.page-programs[data-audience="adults"] :is(.adults-btn, .adults-hero-media) {
+  transition: transform var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out) !important;
+}
+
+body.page-programs.ss-page-kids :is(.kids-hero h1, .kids-page h2),
+body.page-programs[data-audience="teens"] :is(.teens-hero h1, .teens-page h2),
+body.page-programs[data-audience="adults"] :is(.adults-hero h1, .adults-page h2) {
+  font-family: var(--font-display) !important;
+  font-style: var(--display-style) !important;
+  font-weight: var(--display-weight) !important;
+  letter-spacing: var(--tracking-display) !important;
+  overflow-wrap: anywhere;
+}
+
+body.page-programs.ss-page-kids :is(.kids-btn--primary, .kids-btn--primary:visited),
+body.page-programs[data-audience="teens"] :is(.teens-btn--primary, .teens-btn--primary:visited),
+body.page-programs[data-audience="adults"] :is(.adults-btn--primary, .adults-btn--primary:visited) {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-accent-ink) !important;
+}
+
+body.page-programs.ss-page-kids :is(.kids-btn, .kids-btn-icon-wrapper),
+body.page-programs[data-audience="teens"] :is(.teens-btn, .teens-btn-icon-wrapper),
+body.page-programs[data-audience="adults"] :is(.adults-btn, .adults-btn-icon-wrapper) {
+  border-radius: var(--radius-pill) !important;
+}
+
+body.page-programs.ss-page-kids :is(.kids-btn, .kids-btn-icon-wrapper):focus-visible,
+body.page-programs[data-audience="teens"] :is(.teens-btn, .teens-btn-icon-wrapper):focus-visible,
+body.page-programs[data-audience="adults"] :is(.adults-btn, .adults-btn-icon-wrapper):focus-visible {
+  outline: var(--rule-fine) solid var(--color-focus) !important;
+  outline-offset: 2px !important;
+}
+
+body.page-programs.ss-page-kids .kids-btn[aria-disabled="true"],
+body.page-programs[data-audience="teens"] .teens-btn[aria-disabled="true"],
+body.page-programs[data-audience="adults"] .adults-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: .4;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.page-programs.ss-page-kids .kids-btn--primary:hover,
+  body.page-programs[data-audience="teens"] .teens-btn--primary:hover,
+  body.page-programs[data-audience="adults"] .adults-btn--primary:hover {
+    background: var(--color-accent-strong) !important;
+    border-color: var(--color-accent-strong) !important;
+    transform: translateY(-1px);
+  }
+}
+
+body.page-programs.ss-page-kids .kids-btn:active,
+body.page-programs[data-audience="teens"] .teens-btn:active,
+body.page-programs[data-audience="adults"] .adults-btn:active { transform: scale(.98); }
+
+@media (max-width: 47.99rem) {
+  body.page-programs.ss-page-kids :is(.kids-hero, .kids-page section),
+  body.page-programs[data-audience="teens"] :is(.teens-hero, .teens-page section),
+  body.page-programs[data-audience="adults"] :is(.adults-hero, .adults-page section) { padding-inline: var(--gutter); }
+}
+
+/* Operate and Read modes: function-first schedule/booking containment and a
+   comfortable editorial reading measure for glossary and blog pages. */
+body.page-schedule .ss-main,
+body.page-schedule [data-page="schedule"],
+body.page-free-intro .ss-main,
+body.page-free-intro .ss-progressive-booking {
+  background: var(--color-paper) !important;
+  color: var(--color-ink) !important;
+}
+
+body.page-schedule :is(table, .table-responsive, form, .ss-progressive-booking),
+body.page-free-intro :is(form, .editorial-right, .ss-progressive-booking) {
+  border-color: var(--color-rule) !important;
+  box-shadow: var(--shadow-card);
+}
+
+body.page-schedule :is(input, select, textarea, button):focus-visible,
+body.page-free-intro :is(input, select, textarea, button):focus-visible {
+  outline: var(--rule-fine) solid var(--color-focus) !important;
+  outline-offset: 2px !important;
+}
+
+body.page-glossary .glossary-shell,
+body.page-blog .ss-blog-main {
+  max-width: var(--container-narrow) !important;
+}
+
+body.page-glossary :is(.glossary-hero-copy, .glossary-section-header, .term-card__summary),
+body.page-blog :is(.ss-blog-section-intro, article p) {
+  font-family: var(--font-body);
+  line-height: var(--leading-body);
+}
+
+body.page-glossary :is(h1, h2, h3),
+body.page-blog :is(h1, h2, h3) {
+  font-family: var(--font-display);
+  font-style: var(--display-style);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+}
+
+body.page-glossary .glossary-btn,
+body.page-blog .ss-btn {
+  border-radius: var(--radius-pill);
+}
+
 /* Dropdown and contact prompt must remain last as well. */
 body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
   min-width: 15rem !important;
@@ -1997,97 +2123,6 @@ body .ss-floating-chat-text {
     border: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-  }
-}
-
-/* Final dropdown and floating-contact state. */
-body .ss-global-nav-wrapper .navbar-nav > .dropdown {
-  position: relative !important;
-}
-
-body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
-  min-width: 15rem !important;
-  padding: 0.45rem !important;
-  border: 1px solid rgba(37, 30, 26, 0.08) !important;
-  border-radius: 1rem !important;
-  background: #ffffff !important;
-  box-shadow: 0 18px 42px rgba(37, 30, 26, 0.12) !important;
-}
-
-body .ss-global-nav-wrapper .ss-navbar .dropdown-menu.show {
-  display: block !important;
-}
-
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item {
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  min-height: 44px !important;
-  padding: 0.65rem 0.8rem !important;
-  border-radius: 0.7rem !important;
-  background: transparent !important;
-  color: var(--color-ink) !important;
-  font-size: 0.95rem !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-}
-
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item:hover,
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item:focus,
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item.active,
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current="page"] {
-  background: #f4f0ec !important;
-  color: #e05500 !important;
-}
-
-body .ss-floating-chat {
-  border-color: #e05500 !important;
-  background: #e05500 !important;
-  color: #ffffff !important;
-}
-
-body .ss-floating-chat i,
-body .ss-floating-chat-text {
-  color: #ffffff !important;
-}
-
-@media (min-width: 62rem) {
-  body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
-    position: absolute !important;
-    top: 100% !important;
-    right: auto !important;
-    left: 0 !important;
-    margin: 0.35rem 0 0 !important;
-  }
-
-  body .ss-global-nav-wrapper .ss-navbar .dropdown-menu.dropdown-menu-end {
-    right: 0 !important;
-    left: auto !important;
-  }
-}
-
-@media (max-width: 61.999rem) {
-  body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
-    position: static !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-}
-
-@media (max-width: 620px) {
-  body footer.ss-new-site-footer .ss-new-footer-nav {
-    grid-template-columns: 1fr;
-  }
-
-  body .ss-floating-chat {
-    right: 10px;
-    bottom: calc(72px + env(safe-area-inset-bottom));
-    max-width: calc(100vw - 20px);
-    padding: 12px 18px;
   }
 }
 
@@ -2277,76 +2312,6 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-item {
   }
 }
 
-/* Final dropdown and contact state after every legacy protection rule. */
-body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
-  min-width: 15rem !important;
-  padding: 0.45rem !important;
-  border: 1px solid rgba(37, 30, 26, 0.08) !important;
-  border-radius: 1rem !important;
-  background: #ffffff !important;
-  box-shadow: 0 18px 42px rgba(37, 30, 26, 0.12) !important;
-}
-
-body .ss-global-nav-wrapper .ss-navbar .dropdown-menu.show {
-  display: block !important;
-}
-
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item {
-  min-height: 44px !important;
-  padding: 0.65rem 0.8rem !important;
-  border-radius: 0.7rem !important;
-  background: transparent !important;
-  color: var(--color-ink) !important;
-  font-size: 0.95rem !important;
-  font-weight: 600 !important;
-}
-
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item:hover,
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item:focus,
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item.active,
-body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current="page"] {
-  background: #f4f0ec !important;
-  color: #e05500 !important;
-}
-
-body .ss-floating-chat {
-  border-color: #e05500 !important;
-  background: #e05500 !important;
-  color: #ffffff !important;
-}
-
-body .ss-floating-chat i,
-body .ss-floating-chat-text {
-  color: #ffffff !important;
-}
-
-@media (min-width: 62rem) {
-  body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
-    position: absolute !important;
-    top: 100% !important;
-    right: auto !important;
-    left: 0 !important;
-    margin: 0.35rem 0 0 !important;
-  }
-
-  body .ss-global-nav-wrapper .ss-navbar .dropdown-menu.dropdown-menu-end {
-    right: 0 !important;
-    left: auto !important;
-  }
-}
-
-@media (max-width: 61.999rem) {
-  body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
-    position: static !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-}
-
 /* Final nav state: this follows every legacy protection rule. */
 body .ss-global-nav-wrapper .ss-topbar {
   display: none !important;
@@ -2520,4 +2485,96 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
     pointer-events: auto !important;
     transform: translateY(0) !important;
   }
+}
+
+/* Catskills Studio editorial masthead. This final layer deliberately replaces
+   the former floating-capsule treatment while retaining Bootstrap's collapse
+   and dropdown mechanics above. */
+body .ss-global-nav-wrapper {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: var(--z-nav) !important;
+  padding: 0 !important;
+  background: var(--color-paper) !important;
+  border-bottom: var(--rule-hair) solid var(--color-rule) !important;
+}
+
+body .ss-global-nav-wrapper > .ss-site-header {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--color-paper) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body .ss-global-nav-wrapper .ss-topbar {
+  display: block !important;
+  background: var(--color-paper-2) !important;
+  color: var(--color-muted) !important;
+  font: 600 var(--text-xs)/1.2 var(--font-body) !important;
+  letter-spacing: var(--tracking-label) !important;
+  text-transform: uppercase !important;
+}
+
+body .ss-global-nav-wrapper .ss-topbar-inner,
+body .ss-global-nav-wrapper .ss-navbar > .container {
+  width: min(var(--container-wide), calc(100% - (var(--gutter) * 2))) !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+}
+
+body .ss-global-nav-wrapper .ss-navbar {
+  min-height: 0 !important;
+  padding: var(--space-sm) 0 !important;
+  background: transparent !important;
+}
+
+body .ss-global-nav-wrapper .ss-nav-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--space-xs) !important;
+  min-height: 44px !important;
+  padding: var(--space-2xs) var(--space-2xs) var(--space-2xs) var(--space-md) !important;
+  border: var(--rule-hair) solid var(--color-accent) !important;
+  border-radius: var(--radius-pill) !important;
+  background: var(--color-accent) !important;
+  color: var(--color-accent-ink) !important;
+  font-weight: 700 !important;
+  transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-short) var(--ease-out) !important;
+}
+
+body .ss-global-nav-wrapper .ss-nav-cta__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--cta-icon-surface);
+  transition: transform var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+
+body .ss-global-nav-wrapper .ss-nav-cta:focus-visible,
+body .ss-global-nav-wrapper .ss-navbar .nav-link:focus-visible,
+body .ss-global-nav-wrapper .ss-topbar a:focus-visible {
+  outline: var(--rule-fine) solid var(--color-focus) !important;
+  outline-offset: 2px !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body .ss-global-nav-wrapper .ss-nav-cta:hover { background: var(--color-accent-strong) !important; transform: translateY(-1px); }
+  body .ss-global-nav-wrapper .ss-nav-cta:hover .ss-nav-cta__icon { background: var(--cta-icon-surface-hover); transform: translate(1px, -1px) scale(1.05); }
+  body .ss-global-nav-wrapper .ss-navbar .nav-link:hover { color: var(--color-accent-deep) !important; }
+}
+
+body .ss-global-nav-wrapper .ss-nav-cta:active { transform: scale(.98); }
+
+@media (max-width: 61.999rem) {
+  body .ss-global-nav-wrapper .ss-topbar { display: none !important; }
+  body .ss-global-nav-wrapper .ss-navbar { padding-inline: var(--gutter) !important; }
+  body .ss-global-nav-wrapper .ss-navbar > .container { width: 100% !important; }
+  body .ss-global-nav-wrapper #ssMainNav { margin-top: var(--space-sm) !important; }
 }

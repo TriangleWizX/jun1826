@@ -23,8 +23,8 @@ Pages share the same theme and typography. Variety comes from content structure 
 
 - Navigation: an adapted **N6 editorial masthead** using the site’s real information architecture, a compact mobile disclosure, and one visible Reserve Free Intro action. No floating pill, glass panel, or ornamental announcement strip.
 - Footer: **Ft3 index columns** are justified because the footer is a genuine sitemap. The composition is asymmetric and closes with the studio’s local identity instead of a generic social-icon tail.
-- Buttons: medium-radius, solid forest primary, quiet paper or text secondary, single-line labels, and a minimum 44 px target.
-- Cards: one containment layer. Cards do not contain decorative micro-cards. Nested framing is permitted only for media, schedules, booking, and forms when it communicates function.
+- Buttons: **Nested "Button-in-Button" Island Architecture**. Primary CTAs use pill geometry (`var(--radius-pill)`), solid forest accent surface, and an enclosed circular sub-icon container (`width: 2rem`, `height: 2rem`, `border-radius: 50%`) placed flush against the right inner padding. Sub-icons execute micro diagonal translations (`translate(1px, -1px) scale(1.05)`) on hover/active states. Single-line labels only; minimum 44 px touch target.
+- Cards & Containers: **Double-Bezel (Doppelrand) Enclosure System**. Functional cards, schedule widgets, and booking containers use nested architecture to create tactile hardware depth. The outer shell uses `var(--color-paper-2)` with a 1px hairline border (`var(--color-rule)`), outer radius `var(--radius-outer)` (1.25rem), and 0.5rem padding (`var(--space-2xs)`). The inner core uses `var(--color-paper)` with concentric radius `var(--radius-inner)` (0.75rem), subtle top-bezel highlight (`box-shadow: inset 0 1px 1px rgba(255,255,255,0.4)`), and primary content. Decorative micro-cards inside cards are prohibited.
 - Rules: warm hairlines and deliberate whitespace carry hierarchy more often than shadows.
 - Icons: the existing single local Bootstrap Icon subset. Do not mix icon systems.
 
@@ -57,11 +57,19 @@ Forest green is the anchor and occupies no more than roughly five percent of a t
 
 Headings remain upright. Italic belongs to emphasis inside running copy, not as a decorative word flip in headlines. Inter, Plus Jakarta Sans, Geist, Cormorant Garamond, and DM Serif Display are outside this system.
 
-## Spacing and layout
+## Spacing, layout, and mobile performance engineering
 
-Use the named four-point scale in `tokens.css`; page CSS does not invent raw spacing values. Base styling is mobile-first. Content-driven additions normally occur near 40 rem, 60 rem, and 90 rem.
+Use the named four-point scale in `tokens.css`; page CSS does not invent raw spacing values. Base styling is mobile-first. Content-driven additions normally occur near 40 rem, 60 rem, and 90 rem. Macro-whitespace padding (`py-16` to `py-32`) allows high-end agency breathing room.
 
-Required viewport checks: 320, 375, 414, 768, and 1440 CSS pixels. `html` and `body` use `overflow-x: clip`, never `hidden`. Image grid tracks use `minmax(0, 1fr)`. Interactive labels do not wrap.
+Required viewport checks: 320, 375, 414, 768, and 1440 CSS pixels.
+- **Root Overflow:** `html` and `body` use `overflow-x: clip;`, never `hidden`.
+- **Viewport Height Stability:** Full-screen heroes use `min-h-[100dvh]` to eliminate layout jumping on iOS Safari and mobile Chrome.
+- **Track Protection:** Image-bearing grid columns use `minmax(0, 1fr)`.
+- **Text Wrapping:** Display headers specify `overflow-wrap: anywhere; min-width: 0;` to wrap safely on 320px screens. Interactive labels do not wrap.
+- **GPU-Safe Performance Guardrails:** Keyframes and transitions animate `transform` and `opacity` ONLY. Layout-triggering properties (`top`, `left`, `width`, `height`) are strictly forbidden in animation loops. `backdrop-blur` is restricted to fixed/sticky nav headers and modal backdrops.
+- **Per-Page CSS Payload Budget:** Target a strict **20 KB gzipped** per route. Unused Bootstrap utility classes are selectively purged; legacy route families remain in scope until the contract passes.
+
+Run `npm run qa:css:design-contract` to verify this limit against every active local stylesheet for every sitemapped route. This is the authoritative Catskills Studio budget gate; it is intentionally separate from the repository's existing 50 KB compatibility budget until the legacy route families are reduced to the design-system limit.
 
 ## Motion
 
@@ -74,15 +82,24 @@ Required viewport checks: 320, 375, 414, 768, and 1440 CSS pixels. `html` and `b
 
 Do not use parallax, cursor followers, animated gradients, looping card motion, universal fade-up sections, bounce, or `transition: all`.
 
-## Microinteractions stance
+## Microinteractions stance & 8-State System
 
+Every interactive element (Buttons, Links, Inputs, Selects, Cards, Modals) must ship explicit styling for all **8 interactive states**:
+1. **Default:** Clean token-based styling meeting WCAG 4.5:1 text contrast.
+2. **Hover:** Active inside `@media (hover: hover) and (pointer: fine)` only. Micro surface shift, 1px translation, circular sub-icon kinetic shift.
+3. **Focus:** Instant focus ring (`2px solid var(--color-focus)` with 2px offset) meeting 3:1 contrast ratio.
+4. **Active:** Physical press simulation (`scale(0.98)` or `translateY(1px)`).
+5. **Disabled:** 40% opacity, `cursor: not-allowed`, interactive transforms suppressed.
+6. **Loading:** Reduced label opacity, inline SVG hardware spinner active.
+7. **Error:** Border color `--color-error`, helper error text rendered, `aria-invalid="true"`.
+8. **Success:** Border color `--color-success`, confirmation checkmark icon active.
+
+Additional Microinteraction Stances:
 - Silent success when the result is already visible.
-- Focus rings appear instantly and meet 3:1 contrast.
-- Hover treatments exist only inside a hover/fine-pointer query and have keyboard equivalents.
 - Press feedback may translate by one pixel; cards do not universally lift.
 - Tooltip delay: 800–1000 ms on hover and 0 ms on focus.
 - Form validation begins on blur, preserves border width, and pairs colour with text and ARIA state.
-- Touch targets are at least 44 by 44 CSS pixels.
+- Touch targets are at least 44 by 44 CSS pixels across all viewports.
 
 ## CTA voice
 

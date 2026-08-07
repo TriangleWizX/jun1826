@@ -1,0 +1,132 @@
+/* Hallmark · genre: editorial · design-system: Catskills Studio · vibe: Catskills warmth, grounded coaching, quiet confidence · paper: oklch(98.53% 0.0029 84.6) · accent: oklch(46.44% 0.1028 157.7) · display: Instrument Serif · body: Lexend */
+:root {
+  color-scheme: light;
+
+  /* Core surfaces and ink. */
+  --color-paper: oklch(98.53% 0.0029 84.6);
+  --color-paper-2: oklch(95.93% 0.0062 75.4);
+  --color-paper-3: oklch(92.74% 0.0126 75.4);
+  --color-rule: oklch(88.20% 0.0116 71.9);
+  --color-rule-2: oklch(75.89% 0.0164 67.6);
+  --color-muted: oklch(46.24% 0.0203 55.8);
+  --color-neutral: oklch(36.19% 0.0185 50.4);
+  --color-ink-2: oklch(29.92% 0.0205 54.2);
+  --color-ink: oklch(21.28% 0.0161 53.6);
+
+  /* Brand and state colours. Accent use stays below five percent per viewport. */
+  --color-accent: oklch(46.44% 0.1028 157.7);
+  --color-accent-strong: oklch(40.50% 0.0886 158.0);
+  --color-accent-deep: oklch(35.32% 0.0760 158.5);
+  --color-accent-soft: oklch(95.45% 0.0134 167.2);
+  --color-accent-ink: var(--color-paper);
+  --color-focus: oklch(12.43% 0.0079 72.5);
+  --color-focus-inverse: oklch(68.13% 0.1159 197.7);
+  --color-backdrop: oklch(12.43% 0.0079 72.5 / 0.62);
+  --color-teal: oklch(64.13% 0.0999 196.7);
+  --color-cyan: oklch(81.37% 0.1386 196.5);
+  --color-brown: oklch(49.70% 0.0914 51.5);
+  --color-gold: oklch(70.05% 0.1272 80.7);
+  --color-error: oklch(49.75% 0.1396 28.1);
+  --color-success: var(--color-accent);
+
+  /* Type. Upright display headings are deliberate; italics stay in running copy. */
+  --font-display: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: "Lexend", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-outlier: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display-weight: 400;
+  --display-style: normal;
+  --tracking-display: -0.025em;
+  --tracking-body: -0.008em;
+  --tracking-label: 0.08em;
+  --leading-tight: 0.96;
+  --leading-heading: 1.08;
+  --leading-body: 1.62;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-display: clamp(2.75rem, 7vw + 0.5rem, 6rem);
+
+  /* Four-point spatial rhythm. */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 8rem;
+  --space-5xl: 12rem;
+
+  --container-narrow: 46rem;
+  --container-standard: 72rem;
+  --container-wide: 88rem;
+  --gutter: clamp(1rem, 3.6vw, 3rem);
+
+  /* Shape and depth. Doppelrand framing is reserved for functional containment. */
+  --rule-hair: 1px;
+  --rule-fine: 2px;
+  --radius-outer: 1.25rem;
+  --radius-card: 0.75rem;
+  --radius-inner: calc(var(--radius-outer) - var(--space-2xs));
+  --radius-button: 0.5rem;
+  --radius-input: 0.5rem;
+  --radius-pill: 999px;
+  --bezel-outer: 0 0 0 var(--rule-hair) var(--color-rule);
+  --bezel-inner-highlight: inset 0 1px 1px rgb(255 255 255 / 0.4);
+  --shadow-card: 0 1px 0 oklch(21.28% 0.0161 53.6 / 0.08), 0 1rem 2.5rem oklch(21.28% 0.0161 53.6 / 0.06);
+  --shadow-raised: 0 1.25rem 3.5rem oklch(21.28% 0.0161 53.6 / 0.12);
+
+  /* Motion is cut by default; these values support purposeful state feedback. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  /* Named stacking scale. */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+
+  /* Backwards-compatible Sensei Sandy aliases during the atomic migration. */
+  --ss-green: var(--color-accent);
+  --ss-green-dark: var(--color-accent-strong);
+  --ss-teal: var(--color-teal);
+  --ss-cyan: var(--color-cyan);
+  --ss-brown: var(--color-brown);
+  --ss-slate: var(--color-neutral);
+  --ss-ink: var(--color-ink-2);
+  --ss-bg: var(--color-paper);
+  --ss-surface: var(--color-paper);
+  --ss-surface2: var(--color-paper-2);
+  --ss-text: var(--color-ink);
+  --ss-muted: var(--color-muted);
+  --ss-border: color-mix(in oklab, var(--color-ink) 14%, transparent);
+  --ss-body-font: var(--font-body);
+  --ss-display-font: var(--font-display);
+  --ss-font-sans: var(--font-body);
+  --ss-font-serif: var(--font-display);
+
+  /* Bootstrap runtime bridges; the selective Sass source mirrors these values. */
+  --bs-body-font-family: var(--font-body);
+  --bs-body-color: var(--color-ink);
+  --bs-body-bg: var(--color-paper);
+  --bs-primary: var(--color-accent);
+  --bs-link-color: var(--color-accent);
+  --bs-link-hover-color: var(--color-accent-strong);
+  --bs-border-color: var(--color-rule);
+  --bs-border-radius: var(--radius-input);
+  --bs-border-radius-lg: var(--radius-card);
+  --bs-focus-ring-color: color-mix(in oklab, var(--color-focus) 30%, transparent);
+}

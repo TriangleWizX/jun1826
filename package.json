@@ -57,6 +57,7 @@
     "qa:css:routes": "node tools/build-route-styles.mjs --check",
     "qa:css:route-bundles": "node scripts/qa-css-route-bundles.mjs",
     "qa:css:budget": "node scripts/qa-css-budget.mjs",
+    "qa:css:design-contract": "node scripts/qa-css-budget.mjs --budget=20480",
     "qa:css:minified": "node tools/minify-css.mjs --check",
     "qa:css:assets": "node scripts/qa-css-assets.mjs",
     "qa:css:assets:baseline": "node scripts/qa-css-assets.mjs --report-only",

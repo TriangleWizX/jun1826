@@ -18,7 +18,7 @@ const HTML_SKIP_TOP_LEVEL_DIRS = new Set([
   '.agents', '.codegraph', '.codex', '.git', '.github', '.vscode',
   '__pycache__', '_archive', '_drafts', 'archive', 'assets', 'config',
   'content', 'crawl-reports', 'css', 'data', 'docs', 'email-templates',
-  'jobs', 'marketing-plans', 'node_modules', 'playwright-report',
+  'dist', 'jobs', 'marketing-plans', 'node_modules', 'playwright-report',
   'retired', 'scratch', 'scripts', 'seo', 'test-results', 'tests', 'tmp',
   'tools', 'ubersuggest'
 ]);
