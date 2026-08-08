@@ -40,10 +40,10 @@ const {
 } = parser;
 
 const THIS_FILE = fileURLToPath(import.meta.url);
-const DEFAULT_MANIFEST = 'assets/data/route-style-manifest.json';
-const DEFAULT_REJECTED_REPORT = 'assets/data/route-style-rejected-selectors.json';
-const DEFAULT_ASSET_MANIFEST = 'assets/data/asset-hash-manifest.json';
-const DEFAULT_OUTPUT_DIRECTORY = 'assets/css/routes';
+const DEFAULT_MANIFEST = 'src/assets/data/route-style-manifest.json';
+const DEFAULT_REJECTED_REPORT = 'src/assets/data/route-style-rejected-selectors.json';
+const DEFAULT_ASSET_MANIFEST = 'src/assets/data/asset-hash-manifest.json';
+const DEFAULT_OUTPUT_DIRECTORY = 'src/assets/css/routes';
 const ROUTE_BUNDLE_RE = /^\/assets\/css\/routes\/site-([0-9a-f]{12})\.min\.css$/i;
 const GENERATED_FILE_RE = /^site-[0-9a-f]{12}(?:\.min)?\.css$/i;
 

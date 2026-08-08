@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05",
+  "updated": "2026-08-08",
   "groupClasses": [
     {
       "id": "monday-youth-teen-gi",
@@ -105,13 +105,16 @@
   "privateCoaching": {
     "display": [
       "Tuesday — 6:30 AM",
-      "Wednesday and Friday — mid-morning",
+      "Wednesday — 10:30 AM",
+      "Thursday — 6:30 AM",
+      "Friday — 10:30 AM",
       "Additional appointments by request"
     ],
     "slots": [
       { "day": "Tuesday", "time": "6:30 AM" },
-      { "day": "Wednesday", "time": "mid-morning" },
-      { "day": "Friday", "time": "mid-morning" }
+      { "day": "Wednesday", "time": "10:30 AM" },
+      { "day": "Thursday", "time": "6:30 AM" },
+      { "day": "Friday", "time": "10:30 AM" }
     ],
     "active": true
   }

@@ -8,6 +8,7 @@ import parser from './lib/css-asset-parser.cjs';
 
 const {
   ROOT,
+  assetPathForHref,
   assertSafeExistingFile,
   assertSafeOutputPath,
   atomicWriteFile,
@@ -38,11 +39,11 @@ const BOOTSTRAP_VERSION = '5.3.3';
 const PURGECSS_VERSION = '6.0.0';
 const SASS_VERSION = '1.77.8';
 
-const DEFAULT_BOOTSTRAP_CSS = 'assets/css/bootstrap-site.css';
-const DEFAULT_OUTPUT_DIRECTORY = 'assets/css/routes';
-const DEFAULT_MANIFEST = 'assets/data/route-style-manifest.json';
-const DEFAULT_REJECTED_REPORT = 'assets/data/route-style-rejected-selectors.json';
-const DEFAULT_ASSET_MANIFEST = 'assets/data/asset-hash-manifest.json';
+const DEFAULT_BOOTSTRAP_CSS = 'src/assets/css/bootstrap-site.css';
+const DEFAULT_OUTPUT_DIRECTORY = 'src/assets/css/routes';
+const DEFAULT_MANIFEST = 'src/assets/data/route-style-manifest.json';
+const DEFAULT_REJECTED_REPORT = 'src/assets/data/route-style-rejected-selectors.json';
+const DEFAULT_ASSET_MANIFEST = 'src/assets/data/asset-hash-manifest.json';
 const BOOTSTRAP_INPUT = '/assets/css/bootstrap-site.css';
 const FONTS_STYLESHEET = '/assets/css/fonts.css';
 const SITE_SHELL_STYLESHEET = '/assets/css/site-shell.css';
@@ -55,6 +56,7 @@ const SHARED_STYLESHEETS = new Set([
   ICONS_STYLESHEET,
 ]);
 const ROUTE_BUNDLE_RE = /^\/assets\/css\/routes\/site-([0-9a-f]{12})(?:\.min)?\.css$/i;
+const STALE_FINGERPRINTED_ROUTE_BUNDLE_RE = /^\/assets\/css\/routes\/site-[0-9a-f]{12}\.min\.[0-9a-f]{6}\.css(?:[?#].*)?$/i;
 const BOOTSTRAP_CDN_RE = /^https:\/\/cdn\.jsdelivr\.net\/npm\/bootstrap@5\.3\.3\/dist\/css\/bootstrap(?:\.min)?\.css(?:[?#].*)?$/i;
 const BOOTSTRAP_ICON_CDN_RE = /^https:\/\/cdn\.jsdelivr\.net\/npm\/bootstrap-icons@[^/]+\/font\/bootstrap-icons(?:\.min)?\.css(?:[?#].*)?$/i;
 
@@ -179,7 +181,7 @@ const RUNTIME_SAFELIST = Object.freeze([
 
 const ALLOWED_EXTERNAL_FUNCTIONAL_STYLESHEETS = Object.freeze([]);
 
-const usage = `Usage: node tools/build-route-styles.mjs (--write | --check) [options]
+const usage = `Usage: node tools/build-route-styles.mjs (--write | --check | --prune-stale) [options]
 
 Options:
   --output-dir=<path>       Route bundle directory (default: ${DEFAULT_OUTPUT_DIRECTORY})
@@ -209,6 +211,7 @@ const parseArgs = (args = process.argv.slice(2)) => {
   for (const arg of args) {
     if (arg === '--write') setMode('--write');
     else if (arg === '--check') setMode('--check');
+    else if (arg === '--prune-stale') setMode('--prune-stale');
     else if (arg === '--help' || arg === '-h') help = true;
     else if (arg.startsWith('--output-dir=')) outputDirectory = arg.slice('--output-dir='.length);
     else if (arg.startsWith('--manifest=')) manifest = arg.slice('--manifest='.length);
@@ -341,7 +344,7 @@ const validatePriorRouteBundle = ({ canonicalHref, priorManifest, route, sourceH
     if (typeof href !== 'string' || !href.startsWith('/') || SHARED_STYLESHEETS.has(href) || isRouteBundleHref(href)) {
       throw new Error(`Prior route-style manifest has an unsafe input for ${route}: ${href}`);
     }
-    assertSafeExistingFile(path.resolve(ROOT, href.replace(/^\/+/, '')), `Prior route CSS input ${href}`);
+    assertSafeExistingFile(assetPathForHref(href), `Prior route CSS input ${href}`);
   }
   return [...prior.orderedInputs];
 };
@@ -356,6 +359,13 @@ const classifyStylesheet = ({
 }) => {
   if (isBootstrapCdn(href)) return { absorbedInputs: [BOOTSTRAP_INPUT], kind: 'bootstrap' };
   if (isBootstrapIconCdn(href)) return { absorbedInputs: [], kind: 'legacy-icon' };
+  // A previous generic fingerprint pass may have fingerprinted a generated
+  // route bundle. It has no source dependency and is replaced atomically by
+  // this generator; accepting only this exact managed pattern avoids a broad
+  // missing-asset exception.
+  if (STALE_FINGERPRINTED_ROUTE_BUNDLE_RE.test(href)) {
+    return { absorbedInputs: [], kind: 'stale-fingerprinted-route-bundle' };
+  }
   if (/^https?:|^\/\//i.test(href)) {
     if (isRemoteFontUrl(href)) return { absorbedInputs: [], kind: 'remote-font' };
     if (ALLOWED_EXTERNAL_FUNCTIONAL_STYLESHEETS.includes(href)) {
@@ -581,7 +591,7 @@ const migrateHtmlSource = ({
         route,
         sourceHtml,
       });
-      if (classification.absorbedInputs.length || classification.kind === 'prior-route-bundle') {
+      if (classification.absorbedInputs.length || classification.kind === 'prior-route-bundle' || classification.kind === 'stale-fingerprinted-route-bundle') {
         if (firstAbsorbed === null) firstAbsorbed = linkTag.start;
         replacement = '';
       } else if (classification.kind === 'shared') {
@@ -958,6 +968,27 @@ const writeAtomically = async (writes, originalSources) => {
   }
 };
 
+const pruneStaleBundles = async ({ bundles, options, writes }) => {
+  // Recompute and verify every output first. A stale/incomplete manifest must
+  // never become an authorization to delete files.
+  await checkWrites(writes, await loadAssetManifest(options.paths.assetManifest));
+  const keep = new Set(bundles.flatMap((bundle) => [
+    path.basename(bundle.canonicalHref), path.basename(bundle.minifiedHref),
+  ]));
+  const candidates = [];
+  for (const entry of await fs.readdir(options.paths.outputDirectory, { withFileTypes: true })) {
+    if (!entry.isFile() || !/^site-[0-9a-f]{12}(?:\.min)?\.css$/i.test(entry.name) || keep.has(entry.name)) continue;
+    candidates.push(path.join(options.paths.outputDirectory, entry.name));
+  }
+  // checkWrites has proven active source/SSI ownership and the expected
+  // manifest. Any candidate not in that manifest is therefore unreferenced.
+  for (const candidate of candidates.sort(compareText)) {
+    assertSafeExistingFile(candidate, 'Stale route bundle candidate');
+    await fs.unlink(candidate);
+  }
+  console.log(`Pruned ${candidates.length} stale route bundle(s).`);
+};
+
 const main = async () => {
   const options = parseArgs();
   if (options.help) {
@@ -991,6 +1022,10 @@ const main = async () => {
       `Route styles are current (${discovered.routes.length} routes, ${bundles.length} bundles; ` +
       'HTML ownership verified).'
     );
+    return;
+  }
+  if (options.mode === '--prune-stale') {
+    await pruneStaleBundles({ bundles, options, writes });
     return;
   }
   await writeAtomically(writes, discovered.sourceFiles);

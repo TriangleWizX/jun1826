@@ -8,10 +8,12 @@ const { gzipSync } = require('node:zlib');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const ROOT_REAL = fs.realpathSync(ROOT);
-const DEFAULT_ASSET_MANIFEST_PATH = path.join(ROOT, 'assets', 'data', 'asset-hash-manifest.json');
+const ASSET_SOURCE_ROOT = path.join(ROOT, 'src', 'assets');
+const DEFAULT_ASSET_MANIFEST_PATH = path.join(ASSET_SOURCE_ROOT, 'data', 'asset-hash-manifest.json');
 const DEFAULT_SITEMAPS = Object.freeze(['pages-sitemap.xml', 'blog-sitemap.xml']);
 const HTML_EXTENSIONS = Object.freeze(['.html', '.shtml']);
 const HASHED_ASSET_RE = /\.[0-9a-f]{6}(?=\.[^.]+$)/i;
+const BUNDLE_HASH_RE = /\.[0-9a-f]{12}(?=\.(?:min\.)?[^.]+$)/i;
 
 const toPosix = (value) => String(value).split(path.sep).join('/');
 const compareText = (left, right) => (left < right ? -1 : left > right ? 1 : 0);
@@ -277,7 +279,40 @@ const loadAssetManifest = async (manifestPath = DEFAULT_ASSET_MANIFEST_PATH) => 
   return Object.freeze({ assets, reverse, path: path.resolve(manifestPath) });
 };
 
-const rootHrefForFile = (absolutePath) => `/${toPosix(path.relative(ROOT, absolutePath))}`;
+// Return the manifest's stable identity for either spelling of an asset URL.
+// The unhashed spelling is also accepted for legacy files when that source is
+// present; callers still use the fingerprinted target for the physical file.
+const normalizeManifestAssetHref = (rawHref, manifest) => {
+  const href = splitUrlSuffix(decodeMarkupValue(String(rawHref || '').trim())).pathname;
+  if (!href.startsWith('/') || !manifest) return href;
+  if (manifest.reverse.has(href)) return manifest.reverse.get(href);
+  if (manifest.assets.has(href)) return href;
+  const candidate = assetPathForHref(href);
+  if (lstatIfExists(candidate)?.isFile()) return href;
+  const basename = path.basename(candidate);
+  if (BUNDLE_HASH_RE.test(basename)) {
+    const canonicalHref = `${path.posix.dirname(href)}/${basename.replace(BUNDLE_HASH_RE, '')}`;
+    if (lstatIfExists(assetPathForHref(canonicalHref))?.isFile()) return canonicalHref;
+  }
+  return href;
+};
+
+// Assets are authored under src/assets but deliberately retain /assets public
+// URLs. Keeping this translation here makes generators and QA use one owner.
+const rootHrefForFile = (absolutePath) => {
+  const resolved = path.resolve(absolutePath);
+  if (isPathInside(ASSET_SOURCE_ROOT, resolved, { allowEqual: false })) {
+    return `/assets/${toPosix(path.relative(ASSET_SOURCE_ROOT, resolved))}`;
+  }
+  return `/${toPosix(path.relative(ROOT, resolved))}`;
+};
+
+const assetPathForHref = (href) => {
+  const normalized = String(href || '').replace(/^\/+/, '');
+  return normalized === 'assets' || normalized.startsWith('assets/')
+    ? path.join(ASSET_SOURCE_ROOT, normalized.slice('assets'.length).replace(/^\/+/, ''))
+    : path.resolve(ROOT, normalized);
+};
 
 const isAbsoluteUrl = (value) => /^[a-z][a-z0-9+.-]*:/i.test(value) || value.startsWith('//');
 
@@ -315,8 +350,8 @@ const canonicalizeLocalAsset = (
   }
 
   const candidate = decodedPathname.startsWith('/')
-    ? path.resolve(ROOT, decodedPathname.replace(/^\/+/, ''))
-    : path.resolve(path.dirname(ownerFile), decodedPathname);
+    ? assetPathForHref(decodedPathname)
+    : assetPathForHref(toPosix(path.relative(ROOT, path.resolve(path.dirname(ownerFile), decodedPathname))));
   if (!isPathInside(ROOT, candidate, { allowEqual: false })) {
     throw new Error(`Asset URL escapes the workspace: ${href}`);
   }
@@ -331,7 +366,12 @@ const canonicalizeLocalAsset = (
     }
     canonicalHref = rootHrefForFile(sibling);
   }
-  const canonicalPath = path.resolve(ROOT, canonicalHref.replace(/^\/+/, ''));
+  let canonicalPath = assetPathForHref(canonicalHref);
+  if (!lstatIfExists(canonicalPath)?.isFile() && manifest?.assets?.has(canonicalHref)) {
+    const fingerprintedHref = manifest.assets.get(canonicalHref);
+    const fingerprintedPath = assetPathForHref(fingerprintedHref);
+    if (lstatIfExists(fingerprintedPath)?.isFile()) canonicalPath = fingerprintedPath;
+  }
   if (!isPathInside(ROOT, canonicalPath, { allowEqual: false })) {
     throw new Error(`Canonical asset escapes the workspace: ${canonicalHref}`);
   }
@@ -958,6 +998,8 @@ const inlineCssFile = async (
 
 module.exports = Object.freeze({
   DEFAULT_ASSET_MANIFEST_PATH,
+  ASSET_SOURCE_ROOT,
+  assetPathForHref,
   DEFAULT_SITEMAPS,
   HTML_EXTENSIONS,
   ROOT,
@@ -978,6 +1020,7 @@ module.exports = Object.freeze({
   isGoogleFontUrl,
   isPathInside,
   loadAssetManifest,
+  normalizeManifestAssetHref,
   normalizeManagedHtmlAssetReferences,
   parseActiveStylesheets,
   parseCssImportPrelude,

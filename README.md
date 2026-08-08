@@ -30,6 +30,21 @@ npm run qa:links:live
 npm run qa:sitemaps:live:redirects
 ```
 
+## Asset ownership
+
+`src/assets/` is the only canonical published-asset tree. Public URLs remain
+`/assets/...`; Eleventy copies that source tree to `dist/assets/`.
+
+Before asset cleanup, run `npm run assets:inventory`. It writes a JSON and
+Markdown allowlist under `docs/performance/`, including hashes, references,
+and duplicate groups. Then use `npm run styles:routes:prune` to remove only
+route bundles absent from the current manifest after source/SSI ownership has
+been verified. Run `npm run qa:assets:size` after a cleanup.
+
+Keep lossless originals and any media rollback copies outside the repository
+and outside the published asset path. Do not delete inventory-listed
+legacy-only assets until they have been manually classified.
+
 ## Documentation & Deployment Workflow
 
 - [Local Development Guide](file:///home/twizss/Documents/ssbjjweb/tmb/docs/deployment/LOCAL_DEVELOPMENT.md)

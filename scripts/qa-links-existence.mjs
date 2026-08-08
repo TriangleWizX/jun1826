@@ -12,6 +12,7 @@ import {
 } from './url-qa-lib.mjs';
 
 const DEFAULT_REPORT = 'crawl-reports/links-existence.csv';
+const GENERATED_OUTPUT_ROOT = path.join(ROOT, 'dist');
 
 const parseArgs = () => {
   const args = process.argv.slice(2);
@@ -54,27 +55,34 @@ const checkExists = async (normalizedPath) => {
   }
 
   // 1. Direct file check (e.g. /robots.txt -> robots.txt, /assets/images/logo.png -> assets/images/logo.png)
-  const pathDirect = path.join(ROOT, decoded);
-  try {
-    const statDirect = await fs.stat(pathDirect);
-    if (statDirect.isFile()) return true;
-  } catch {}
+  const roots = [ROOT, GENERATED_OUTPUT_ROOT];
+  for (const root of roots) {
+    const pathDirect = path.join(root, decoded);
+    try {
+      const statDirect = await fs.stat(pathDirect);
+      if (statDirect.isFile()) return true;
+    } catch {}
+  }
 
   // 2. Hybrid location routing (e.g. /adult-bjj -> adult-bjj.html)
   // Only apply if there is no file extension (to avoid checking /images/logo.png.html)
   if (!path.extname(decoded)) {
-    const pathHtml = path.join(ROOT, `${decoded}.html`);
-    try {
-      const statHtml = await fs.stat(pathHtml);
-      if (statHtml.isFile()) return true;
-    } catch {}
+    for (const root of roots) {
+      const pathHtml = path.join(root, `${decoded}.html`);
+      try {
+        const statHtml = await fs.stat(pathHtml);
+        if (statHtml.isFile()) return true;
+      } catch {}
+    }
 
     // 3. Directory index check (e.g. /bjj-glossary/ankle-lock -> bjj-glossary/ankle-lock/index.html)
-    const pathIndex = path.join(ROOT, decoded, 'index.html');
-    try {
-      const statIndex = await fs.stat(pathIndex);
-      if (statIndex.isFile()) return true;
-    } catch {}
+    for (const root of roots) {
+      const pathIndex = path.join(root, decoded, 'index.html');
+      try {
+        const statIndex = await fs.stat(pathIndex);
+        if (statIndex.isFile()) return true;
+      } catch {}
+    }
   }
 
   return false;

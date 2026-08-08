@@ -5,7 +5,8 @@ const crypto = require('crypto');
 
 const ROOT = path.resolve(process.cwd());
 const ROOT_REAL = fs.realpathSync(ROOT);
-const MANIFEST_PATH = path.join(ROOT, 'assets', 'data', 'asset-hash-manifest.json');
+const ASSET_ROOT = path.join(ROOT, 'src', 'assets');
+const MANIFEST_PATH = path.join(ASSET_ROOT, 'data', 'asset-hash-manifest.json');
 
 const HTML_EXT = new Set(['.html']);
 const CSS_EXT = new Set(['.css']);
@@ -63,6 +64,14 @@ const isPathInside = (base, candidate) => {
   return relative !== '' && !relative.startsWith(`..${path.sep}`) && !path.isAbsolute(relative);
 };
 const relativeLabel = (abs) => toPosix(path.relative(ROOT, abs)) || '.';
+const publicHrefForAsset = (abs) => `/assets/${toPosix(path.relative(ASSET_ROOT, abs))}`;
+const assetPathForPublicHref = (href) => {
+  const normalized = String(href || '').replace(/^\/+/, '');
+  if (normalized === 'assets' || normalized.startsWith('assets/')) {
+    return path.join(ASSET_ROOT, normalized.slice('assets'.length).replace(/^\/+/, ''));
+  }
+  return path.resolve(ROOT, normalized);
+};
 const lstatIfExists = (abs) => {
   try {
     return fs.lstatSync(abs);
@@ -202,13 +211,14 @@ const isExternalRef = (value) => (
   || /^[a-z][a-z0-9+.-]*:/i.test(value) || /^var\(/i.test(value)
 );
 const isPinnedAsset = (abs) => (
-  isPathInside(ROOT, abs)
-  && toPosix(path.relative(ROOT, abs)).startsWith('assets/icons/bootstrap/')
+  isPathInside(ASSET_ROOT, abs)
+  && (/^icons\/bootstrap\//.test(toPosix(path.relative(ASSET_ROOT, abs))) ||
+    /^css\/routes\/site-[0-9a-f]{12}(?:\.min)?\.css$/i.test(toPosix(path.relative(ASSET_ROOT, abs))))
 );
 const isAllowedCssSource = (abs) => {
   if (path.extname(abs).toLowerCase() !== '.css') return false;
   if (path.dirname(abs) === ROOT || path.dirname(abs) === path.join(ROOT, 'js')) return true;
-  return isPathInside(path.join(ROOT, 'assets', 'css'), abs);
+  return isPathInside(path.join(ASSET_ROOT, 'css'), abs);
 };
 const resolveAssetRef = (ref, ownerPath) => {
   const trimmed = String(ref || '').trim();
@@ -224,13 +234,18 @@ const resolveAssetRef = (ref, ownerPath) => {
     throw new Error(`Invalid local asset reference: ${ref}`);
   }
   const abs = decoded.startsWith('/')
-    ? path.resolve(ROOT, decoded.replace(/^\/+/, ''))
-    : path.resolve(path.dirname(ownerPath), decoded);
+    ? assetPathForPublicHref(decoded)
+    : assetPathForPublicHref(toPosix(path.relative(ROOT, path.resolve(path.dirname(ownerPath), decoded))));
   if (!isPathInside(ROOT, abs)) return null;
   const ext = path.extname(abs).toLowerCase();
   if (!ASSET_EXT.has(ext)) return null;
   assertSafeOutputPath(abs, 'Asset reference path');
-  if (!lstatIfExists(abs)) return null;
+  if (!lstatIfExists(abs)) {
+    const sibling = isHashed(path.basename(abs)) ? unhashedSiblingPath(abs) : null;
+    if (!sibling || !lstatIfExists(sibling)) return null;
+    assertSafeExistingFile(sibling, 'Canonical asset sibling');
+    return sibling;
+  }
   assertSafeExistingFile(abs, 'Asset reference');
   if (!isHashed(path.basename(abs))) return abs;
   const sibling = unhashedSiblingPath(abs);
@@ -425,8 +440,8 @@ const replacementReference = (original, ownerPath, target) => {
   const trimmed = original.trim();
   const { pathname, suffix } = splitSuffix(trimmed);
   let nextPath;
-  if (pathname.startsWith('/')) {
-    nextPath = `/${toPosix(path.relative(ROOT, target))}`;
+  if (pathname.startsWith('/') || !isPathInside(ASSET_ROOT, ownerPath)) {
+    nextPath = publicHrefForAsset(target);
   } else {
     nextPath = toPosix(path.relative(path.dirname(ownerPath), target));
     if (pathname.startsWith('./') && !nextPath.startsWith('.')) nextPath = `./${nextPath}`;
@@ -516,7 +531,7 @@ if (CLEANUP || CHECK) {
 
 const manifestAssets = {};
 for (const [source, target] of [...resolvedAssets].sort(([a], [b]) => comparePaths(a, b))) {
-  manifestAssets[`/${toPosix(path.relative(ROOT, source))}`] = `/${toPosix(path.relative(ROOT, target))}`;
+  manifestAssets[publicHrefForAsset(source)] = publicHrefForAsset(target);
 }
 const manifestText = `${JSON.stringify({ assets: manifestAssets }, null, 2)}\n`;
 assertSafeOutputPath(MANIFEST_PATH, 'Asset manifest');

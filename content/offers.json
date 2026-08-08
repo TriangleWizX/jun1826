@@ -87,10 +87,10 @@
       "price": 0,
       "priceDisplay": "$0",
       "term": "One introductory visit",
-      "primaryCta": "Reserve Your Free Intro",
       "eligibility": "New local students",
       "status": "active",
       "visibilityLevel": "primary",
+      "primaryCta": "Reserve Your Free Intro",
       "searchTreatment": "index",
       "destinationUrl": "/free-bjj-intro-tannersville-ny",
       "replacementUrl": null,
@@ -461,32 +461,15 @@
       "price": null,
       "priceDisplay": "Retired",
       "term": "Retired",
-      "primaryCta": "Reserve Your Free Intro",
+      "primaryCta": "View Current Options",
       "eligibility": "None",
       "status": "archived",
       "visibilityLevel": "archived",
       "searchTreatment": "redirect",
-      "destinationUrl": "/free-bjj-intro-tannersville-ny",
-      "replacementUrl": "/free-bjj-intro-tannersville-ny",
+      "destinationUrl": "/options-pricing",
+      "replacementUrl": "/options-pricing",
       "expirationDate": null,
-      "notes": "Legacy offer; permanently redirects to /free-bjj-intro-tannersville-ny"
-    },
-    {
-      "id": "christmas-in-july",
-      "name": "Christmas in July",
-      "audience": "First-time qualified prospects",
-      "price": null,
-      "priceDisplay": "Promotional",
-      "term": "Ends July 31, 2026",
-      "primaryCta": "Reserve Your Free Intro",
-      "eligibility": "Campaign rules",
-      "status": "archived",
-      "visibilityLevel": "archived",
-      "searchTreatment": "redirect",
-      "destinationUrl": "/free-bjj-intro-tannersville-ny",
-      "replacementUrl": "/free-bjj-intro-tannersville-ny",
-      "expirationDate": "2026-07-31",
-      "notes": "Promotional campaign expired August 2, 2026; redirects to /free-bjj-intro-tannersville-ny."
+      "notes": "Legacy offer; permanently redirects to /options-pricing"
     }
   ]
 }

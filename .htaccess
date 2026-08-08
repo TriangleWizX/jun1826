@@ -41,7 +41,6 @@ RewriteRule ^.*$ https://www.youtube.com/@SenseiSandyBJJ [R=302,L,NC]
 
 # --- Emergency booking-link trust leak fix ---
 # --- Manual legacy exceptions (intentionally not in managed JSON) ---
-RewriteRule ^6weekgrandslam/?$ - [G,L]
 RewriteRule ^videos/Adult\ class\ -adults-NS5gBmsJW9I/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
 RewriteRule ^videos/Adult\ class\ -L5hh632g2h4/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-1-l5hh632g2h4 [L,R=301,NE]
 RewriteRule ^videos/Adult\ class\ -lQtzpVkiW7Y/?$ https://senseisandy.com/videos/6-pm-bjj-class-preview-session-2-lqtzpvkiw7y [L,R=301,NE]
@@ -57,10 +56,11 @@ RewriteRule ^book-free-intro(?:/index\.html|\.html|/)?$ https://senseisandy.com/
 # Managed by: npm run redirects:sync
 # Source of truth: config/legacy-redirects.json
 # Keep this block above internal /videos rewrites so aliases win over stale files.
-RewriteRule ^6\-week\-test\-drive/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
-RewriteRule ^adult/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
-RewriteRule ^adults/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
-RewriteRule ^adults\-bjj/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^6\-week\-test\-drive/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
+RewriteRule ^6weekgrandslam/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
+RewriteRule ^adult/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
+RewriteRule ^adults/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
+RewriteRule ^adults\-bjj/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
 RewriteRule ^anti\-bully/?$ https://senseisandy.com/bully-proof-jiu-jitsu-tannersville-ny [L,R=301,NE]
 RewriteRule ^antibully/?$ https://senseisandy.com/bully-proof-jiu-jitsu-tannersville-ny [L,R=301,NE]
 RewriteRule ^bios/?$ https://senseisandy.com/bio [L,R=301,NE]
@@ -90,7 +90,7 @@ RewriteRule ^cairo\-jiu\-jitsu/?$ https://senseisandy.com/near/cairo-ny [L,R=301
 RewriteRule ^cairo\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/cairo-ny [L,R=301,NE]
 RewriteRule ^catskill\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
 RewriteRule ^catskill\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
-RewriteRule ^checkout/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^checkout/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
 RewriteRule ^christmas\-in\-july\-bjj\-tannersville/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^classes/?$ https://senseisandy.com/programs [L,R=301,NE]
 RewriteRule ^community\-service\-bjj/?$ https://senseisandy.com/law-enforcement-bjj [L,R=301,NE]
@@ -101,7 +101,7 @@ RewriteRule ^faq/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^faqs\.html/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
-RewriteRule ^free\-bjj\-intro\-tannersville\-nyadults/?$ https://senseisandy.com/adult-bjj [L,R=301,NE]
+RewriteRule ^free\-bjj\-intro\-tannersville\-nyadults/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
 RewriteRule ^free\-bjj\-intro\-tannersville\-nykids/?$ https://senseisandy.com/kids [L,R=301,NE]
 RewriteRule ^free\-bjj\-intro\-tannersville\-nyteens/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
 RewriteRule ^free\-intro/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
@@ -152,8 +152,9 @@ RewriteRule ^schedule\.html/?$ https://senseisandy.com/schedule [L,R=301,NE]
 RewriteRule ^schedules/?$ https://senseisandy.com/schedule [L,R=301,NE]
 RewriteRule ^start\-here/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^stretches/?$ https://senseisandy.com/bjj-stretches [L,R=301,NE]
-RewriteRule ^summer/?$ https://senseisandy.com/summer-jiu-jitsu-tannersville [L,R=301,NE]
-RewriteRule ^summer\-bjj\-tannersville/?$ https://senseisandy.com/summer-jiu-jitsu-tannersville [L,R=301,NE]
+RewriteRule ^summer/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE]
+RewriteRule ^summer\-bjj\-tannersville/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE]
+RewriteRule ^summer\-jiu\-jitsu\-tannersville/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE]
 RewriteRule ^tannersville\-bjj\-video\-library/?$ https://senseisandy.com/bjj-videos [L,R=301,NE]
 RewriteRule ^tannersville\-jiu\-jitsu/?$ https://senseisandy.com/programs [L,R=301,NE]
 RewriteRule ^teens/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
@@ -587,7 +588,7 @@ RewriteRule ^how-class-works/?$ /how-class-works.html [L]
 
 
 # Legacy route redirects to new keyword-optimized routes
-RewriteRule ^adult-bjj(?:/|\.html)?$ /bjj-classes-adults-tannersville-ny [R=301,L]
+RewriteRule ^adult-bjj(?:/|\.html)?$ /bjj-classes/adults-tannersville-ny [R=301,L]
 RewriteRule ^kids(?:/|\.html)?$ /bjj-classes-kids-tannersville-ny [R=301,L]
 RewriteRule ^teen-jiu-jitsu-tannersville-ny(?:/|\.html)?$ /bjj-classes-teens-tannersville-ny [R=301,L]
 

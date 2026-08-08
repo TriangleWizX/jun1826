@@ -21,6 +21,7 @@ const {
   findCssImports,
   gzipBytes,
   loadAssetManifest,
+  normalizeManifestAssetHref,
   parseActiveStylesheets,
   parseCssImportPrelude,
   readJsonFile,
@@ -159,6 +160,19 @@ const collectActiveLocalCss = ({ assetManifest, expandedHtml, source }) => {
   return assets;
 };
 
+const validateRouteManifestAsset = (href, assetManifest, route) => {
+  try {
+    const canonicalHref = normalizeManifestAssetHref(href, assetManifest);
+    const asset = canonicalizeLocalAsset(canonicalHref, path.resolve(ROOT, 'index.html'), assetManifest);
+    if (!asset || path.extname(asset.absolutePath).toLowerCase() !== '.css') {
+      throw new Error(`not a local CSS file: ${href}`);
+    }
+    return canonicalHref;
+  } catch (error) {
+    throw new Error(`route manifest asset ${href} cannot be resolved: ${error.message}`);
+  }
+};
+
 const main = async () => {
   const options = parseArgs();
   if (options.help) {
@@ -185,12 +199,13 @@ const main = async () => {
     const expandedHtml = await expander.expandFile(source.absolutePath);
     try {
       const activeAssets = collectActiveLocalCss({ assetManifest, expandedHtml, source });
-      const activeHrefs = activeAssets.map((asset) => asset.canonicalHref);
+      const activeHrefs = activeAssets.map((asset) => normalizeManifestAssetHref(asset.canonicalHref, assetManifest));
+      const routeHref = validateRouteManifestAsset(routeEntry.minifiedHref, assetManifest, route.route);
       const allowed = new Set([
-        routeEntry.minifiedHref,
-        ICONS_STYLESHEET,
-        FONTS_STYLESHEET,
-        SITE_SHELL_STYLESHEET,
+        routeHref,
+        normalizeManifestAssetHref(ICONS_STYLESHEET, assetManifest),
+        normalizeManifestAssetHref(FONTS_STYLESHEET, assetManifest),
+        normalizeManifestAssetHref(SITE_SHELL_STYLESHEET, assetManifest),
       ]);
       if (activeHrefs.length !== 4 || activeHrefs.some((href) => !allowed.has(href))) {
         failures.push(`${route.route}: expected exactly the four active CSS layers; found ${activeHrefs.join(', ')}`);

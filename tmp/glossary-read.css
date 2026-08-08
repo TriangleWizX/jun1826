@@ -1,0 +1,31 @@
+/* Catskills Studio Read mode: glossary index and term pages. */
+.page-glossary,.page-glossary-term{background:var(--color-paper);color:var(--color-ink)}
+.glossary-index,.glossary-term{max-width:var(--container-standard);margin-inline:auto;padding:var(--space-2xl) var(--gutter) var(--space-4xl)}
+.glossary-index :is(h1,h2,h3),.glossary-term :is(h1,h2,h3){font-family:var(--font-display);font-style:var(--display-style);font-weight:var(--display-weight);letter-spacing:var(--tracking-display);line-height:var(--leading-heading);color:var(--color-ink);overflow-wrap:anywhere}
+.glossary-index p,.glossary-term p,.glossary-term li{max-width:var(--container-narrow);font:400 1.0625rem/1.65 var(--font-body);color:var(--color-muted)}
+.glossary-shell,.glossary-card,.panel{border:var(--rule-hair) solid var(--color-rule);background:var(--color-paper);border-radius:var(--radius-card)}
+.glossary-hero{padding-block:var(--space-xl);border-block:var(--rule-hair) solid var(--color-rule)}
+.glossary-hero-grid{display:grid;gap:var(--space-xl);grid-template-columns:minmax(0,1.25fr) minmax(16rem,.75fr);align-items:end}
+.glossary-eyebrow,.ss-eyebrow,.term-meta{margin:0 0 var(--space-xs);font:700 var(--text-xs)/1 var(--font-body);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--color-accent-deep)}
+.glossary-hero__title{margin:0;font-size:clamp(var(--text-3xl),5vw,var(--text-display))}
+.glossary-hero__lede,.term-summary{margin:var(--space-md) 0 0}.glossary-hero-actions,.ss-inline-actions,.button-row{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-lg)}
+.glossary-btn,.glossary-chip,.glossary-alpha,.term-pill,.glossary-card-cta,.ss-link-grid a,.related-card{display:inline-flex;align-items:center;min-height:44px;border:var(--rule-hair) solid var(--color-rule-2);border-radius:var(--radius-button);padding:var(--space-2xs) var(--space-sm);font:600 var(--text-sm)/1.2 var(--font-body);color:var(--color-ink);background:var(--color-paper);text-decoration:none}
+.glossary-btn-primary,.glossary-start-cta{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-accent-ink)}
+.glossary-filter-panel{margin-block:var(--space-xl);padding:var(--space-lg);border:var(--rule-hair) solid var(--color-rule);border-radius:var(--radius-outer);background:var(--color-paper-2);box-shadow:var(--shadow-card)}
+.glossary-filter-header{display:flex;gap:var(--space-sm);justify-content:space-between;align-items:baseline}.glossary-filter-header label{font:700 var(--text-lg)/1.2 var(--font-body)}
+.glossary-search{display:block;width:100%;min-height:48px;margin-top:var(--space-md);padding:var(--space-sm);border:var(--rule-fine) solid var(--color-rule-2);border-radius:var(--radius-input);background:var(--color-paper);color:var(--color-ink);font:400 var(--text-md)/1.4 var(--font-body)}
+.glossary-chip-row{display:flex;flex-wrap:wrap;gap:var(--space-2xs);margin-top:var(--space-md)}.glossary-chip[aria-pressed=true],.glossary-alpha[aria-pressed=true]{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-accent-ink)}
+.glossary-az{overflow-x:auto;flex-wrap:nowrap;padding-block-end:var(--space-2xs)}.glossary-alpha{min-width:2.75rem;justify-content:center;padding-inline:var(--space-2xs)}
+.glossary-results-header{display:flex;justify-content:space-between;align-items:baseline;margin-block:var(--space-xl) var(--space-md);border-bottom:var(--rule-hair) solid var(--color-rule)}
+.glossary-grid,.related-grid,.relationship-grid,.day-one-grid,.glossary-term-review-grid,.ss-link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-md)}
+.term-card,.related-card,.day-one-card{display:flex;flex-direction:column;gap:var(--space-sm);padding:var(--space-md);box-shadow:var(--bezel-inner-highlight)}
+.term-card__meta,.glossary-card-meta{font:700 var(--text-xs)/1 var(--font-body);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--color-accent-deep)}
+.term-card__title{margin:0;font-size:var(--text-xl)}.term-card__title a,.related-card a{color:inherit;text-decoration:none}.term-card__summary{margin:0}.term-card__cta{margin-top:auto;color:var(--color-accent-deep);border-color:transparent;padding-inline:0;min-height:32px}
+.glossary-term{max-width:var(--container-narrow)}.term-hero{padding:var(--space-xl);margin-bottom:var(--space-xl);border-radius:var(--radius-outer);background:var(--color-paper-2)}.glossary-term-section{margin-top:var(--space-xl);padding:var(--space-lg)}
+.glossary-term-section h2{margin-top:0;font-size:var(--text-2xl)}.glossary-term-check-list,.glossary-term-faq-list{padding-inline-start:var(--space-lg)}.glossary-term-pagination{justify-content:space-between}
+.glossary-surface--dark{background:var(--color-ink);color:var(--color-paper)}.glossary-surface--dark :is(h2,h3,p,a){color:inherit}.hidden{display:none!important}
+:is(.glossary-btn,.glossary-chip,.glossary-alpha,.glossary-search,.term-card__cta,.related-card):focus-visible{outline:var(--rule-fine) solid var(--color-focus);outline-offset:2px}
+@media (hover:hover) and (pointer:fine){.term-card,.related-card{transition:transform var(--dur-short) var(--ease-out),border-color var(--dur-short) var(--ease-out)}.term-card:hover,.related-card:hover{transform:translateY(-1px);border-color:var(--color-rule-2)}.glossary-btn-primary:hover{background:var(--color-accent-strong)}}
+@media (max-width:60rem){.glossary-hero-grid{grid-template-columns:1fr}.glossary-grid,.related-grid,.relationship-grid,.day-one-grid,.glossary-term-review-grid,.ss-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:40rem){.glossary-index,.glossary-term{padding-block:var(--space-xl)}.glossary-grid,.related-grid,.relationship-grid,.day-one-grid,.glossary-term-review-grid,.ss-link-grid{grid-template-columns:1fr}.glossary-filter-panel,.term-hero,.glossary-term-section{padding:var(--space-md)}.glossary-hero__title{font-size:clamp(2.5rem,13vw,4rem)}}
+@media (prefers-reduced-motion:reduce){.term-card,.related-card{transition:none}}

@@ -1,0 +1,6 @@
+SOURCE,ANCHOR,OLD HREF,NEW HREF,OLD STATUS,NEW STATUS,ROOT CAUSE,TEMPLATE/FILE CHANGED
+src/show-up-kit.html,Youth,/calendar/youth-5pm.ics,/assets/calendar/youth-class-5pm.ics,404,UNVERIFIED_ASSET_DELETED,obsolete calendar path,src/show-up-kit.html
+src/show-up-kit.html,Adult,/calendar/adult-6pm.ics,/assets/calendar/adult-class-6pm.ics,404,UNVERIFIED_ASSET_DELETED,obsolete calendar path,src/show-up-kit.html
+src/show-up-kit.html,Adult No-Gi,/calendar/saturday.ics,/assets/calendar/saturday-block.ics,404,UNVERIFIED_ASSET_DELETED,obsolete calendar path,src/show-up-kit.html
+src/partials/schedule-consistency.html,Reserve Youth Free Intro,#ss-lead-capture-form-inline,/free-bjj-intro-tannersville-ny#booking-flow,broken fragment,200,CTA targeted a form not owned by source page,src/partials/schedule-consistency.html
+src/partials/schedule-consistency.html,Reserve Your Free Intro,#ss-lead-capture-form-inline,/free-bjj-intro-tannersville-ny#booking-flow,broken fragment,200,CTA targeted a form not owned by source page,src/partials/schedule-consistency.html

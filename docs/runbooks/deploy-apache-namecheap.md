@@ -14,6 +14,9 @@ Use for production deploys to SenseiSandy.com.
 - Canonical host QA is deploy-blocking via `scripts/predeploy.sh` (`scripts/qa-canonical-host-live.sh`).
 - Shared SSI include files under `/_includes/` are part of the deploy payload, including `/_includes/analytics-head.html`.
 - Asset hash parity is deploy-blocking via `scripts/predeploy.sh` (`npm run build:assets` + `npm run qa:assets:canon`).
+- `src/assets/` is the sole published-asset owner; do not upload the legacy
+  root `assets/` tree. Run `npm run assets:inventory` and `npm run qa:assets:size`
+  when an asset cleanup is included in a release.
 - URL contract remains aligned with:
   - `docs/url-contract.md`
   - `config/url-contract.json`
@@ -25,7 +28,9 @@ Use for production deploys to SenseiSandy.com.
 2. Run QA:
    ```bash
    npm run build:assets
+   npm run styles:routes:prune
    npm run qa:assets:canon
+   npm run qa:assets:size
    npm run qa:all
    ```
    Deploy-blocking canonical host checks:

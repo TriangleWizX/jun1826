@@ -2,7 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const MANIFEST_PATH = path.join(ROOT, 'assets', 'data', 'asset-hash-manifest.json');
+const ASSET_ROOT = path.join(ROOT, 'src', 'assets');
+const MANIFEST_PATH = path.join(ASSET_ROOT, 'data', 'asset-hash-manifest.json');
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'archive', '_archive', 'tmp']);
 const REQUIRED_ASSETS = [
   '/assets/js/ss-evidence-accordion.js',
@@ -84,7 +85,9 @@ const main = async () => {
         requiredRefs.set(unhashedKey, requiredRefs.get(unhashedKey) + 1);
       }
 
-      const absolutePath = path.join(ROOT, clean.replace(/^\//, ''));
+      const absolutePath = clean.startsWith('/assets/')
+        ? path.join(ASSET_ROOT, clean.slice('/assets/'.length))
+        : path.join(ROOT, clean.replace(/^\//, ''));
       try {
         const stat = await fs.stat(absolutePath);
         if (!stat.isFile()) missingFiles.push(`${relHtml}: ${clean}`);
