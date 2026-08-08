@@ -1,14 +1,14 @@
 # Asset inventory
 
-Generated: 2026-08-08T04:43:54.873Z
+Generated: 2026-08-08T18:09:11.305Z
 
 | Tree | Files | Bytes |
 | --- | ---: | ---: |
-| src/assets | 1384 | 499489287 |
-| assets | 479 | 86762959 |
-| dist/assets | 1478 | 506087551 |
+| src/assets | 1389 | 511966261 |
+| assets | 472 | 85911136 |
+| dist/assets | 1482 | 518013137 |
 
 - Exact legacy copies eligible for removal: 0
-- Source-only files: 1376
-- Legacy-only files: 471
-- Duplicate byte groups: 252
+- Source-only files: 1379
+- Legacy-only files: 462
+- Duplicate byte groups: 249

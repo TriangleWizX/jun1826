@@ -739,7 +739,9 @@ const buildCombinedCss = async (orderedInputs, assetManifest, bootstrapCssPath) 
     }
     const absolutePath = href === BOOTSTRAP_INPUT
       ? bootstrapCssPath
-      : path.resolve(ROOT, href.replace(/^\/+/, ''));
+      : href.startsWith('/assets/')
+        ? path.join(ROOT, 'src', href.replace(/^\/+/, ''))
+        : path.resolve(ROOT, href.replace(/^\/+/, ''));
     assertSafeExistingFile(absolutePath, `Route CSS input ${href}`);
     const css = await inlineCssFile(absolutePath, assetManifest, {
       cache,

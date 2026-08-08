@@ -148,8 +148,13 @@ const loadCssBundleRegistry = async () => {
   return validateCssBundleRegistry(parsed, path.relative(ROOT, REGISTRY_PATH));
 };
 
-const resolveWorkspacePath = (relativePath) =>
-  path.resolve(ROOT, ...assertWorkspaceRelativePath(relativePath, 'Workspace path').split('/'));
+const resolveWorkspacePath = (relativePath) => {
+  const normalized = assertWorkspaceRelativePath(relativePath, 'Workspace path');
+  const sourcePath = normalized === 'assets' || normalized.startsWith('assets/')
+    ? `src/${normalized}`
+    : normalized;
+  return path.resolve(ROOT, ...sourcePath.split('/'));
+};
 
 const CSS_BUNDLE_REGISTRY = await loadCssBundleRegistry();
 const CSS_BUNDLE_OUTPUT_DIRECTORY = resolveWorkspacePath(CSS_BUNDLE_REGISTRY.outputDirectory);

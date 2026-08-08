@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-08T04:43:54.873Z",
+  "generatedAt": "2026-08-08T18:09:11.305Z",
   "owner": "src/assets",
   "totals": {
     "src/assets": {
-      "files": 1384,
-      "bytes": 499489287
+      "files": 1389,
+      "bytes": 511966261
     },
     "assets": {
-      "files": 479,
-      "bytes": 86762959
+      "files": 472,
+      "bytes": 85911136
     },
     "dist/assets": {
-      "files": 1478,
-      "bytes": 506087551
+      "files": 1482,
+      "bytes": 518013137
     }
   },
   "exactLegacyCopies": [],
@@ -54,9 +54,11 @@
     "css/bundles/components-core.min.a77e3e.css",
     "css/bundles/components-core.min.css",
     "css/bundles/components-glossary-hub.css",
+    "css/bundles/components-glossary-hub.min.0f7e88.css",
     "css/bundles/components-glossary-hub.min.56822f.css",
     "css/bundles/components-glossary-hub.min.css",
     "css/bundles/components-glossary-term.css",
+    "css/bundles/components-glossary-term.min.29c4f3.css",
     "css/bundles/components-glossary-term.min.73b474.css",
     "css/bundles/components-glossary-term.min.css",
     "css/bundles/components-home.css",
@@ -144,10 +146,10 @@
     "css/pages/directions.min.css",
     "css/pages/elite-concierge.721378.css",
     "css/pages/free-bjj-intro-tannersville-ny.798727.css",
+    "css/pages/glossary.27ce1b.css",
     "css/pages/glossary.48bfd4.css",
     "css/pages/glossary.c264e1.css",
     "css/pages/glossary.css",
-    "css/pages/glossary.min.css",
     "css/pages/holiday-schedule.css",
     "css/pages/holiday-schedule.d89a4d.css",
     "css/pages/home.bcbcc3.css",
@@ -174,7 +176,6 @@
     "css/pages/private-lessons.min.css",
     "css/pages/schedule.649ae2.css",
     "css/pages/schedule.css",
-    "css/pages/schedule.min.css",
     "css/pages/sensei-jiu-jitsu.css",
     "css/pages/student-hub-premium.css",
     "css/pages/student-hub-premium.d186fb.css",
@@ -297,8 +298,10 @@
     "css/routes/site-9e3744ddb414.min.3e7f83.css",
     "css/routes/site-9e3744ddb414.min.5e30ac.css",
     "css/routes/site-9e3744ddb414.min.c71910.css",
+    "css/routes/site-a4f623220fac.css",
     "css/routes/site-a4f623220fac.min.4ba113.css",
     "css/routes/site-a4f623220fac.min.9b3df7.css",
+    "css/routes/site-a4f623220fac.min.css",
     "css/routes/site-a4f623220fac.min.db1ff8.css",
     "css/routes/site-a4f623220fac.min.ed6ffe.css",
     "css/routes/site-abb88025a884.min.46446c.css",
@@ -365,9 +368,11 @@
     "css/routes/site-f143b60880c0.min.b97979.css",
     "css/routes/site-f85cf28ed254.min.6a9ff6.css",
     "css/routes/site-f85cf28ed254.min.7ff66e.css",
+    "css/routes/site-fe9c349a57b9.css",
     "css/routes/site-fe9c349a57b9.min.5062d8.css",
     "css/routes/site-fe9c349a57b9.min.79b968.css",
     "css/routes/site-fe9c349a57b9.min.cc136e.css",
+    "css/routes/site-fe9c349a57b9.min.css",
     "css/routes/site-fe9c349a57b9.min.dad188.css",
     "css/schedule-consistency.css",
     "css/schedule-consistency.e5bd8a.css",
@@ -1312,8 +1317,6 @@
     "js/ss-evidence-registry.0f4e50.js",
     "js/ss-evidence-registry.js",
     "js/student-hub-class-focus.js",
-    "py/fix_semiprivate_copy.py",
-    "py/README_semiprivate_copy_fix.md",
     "py/senseisandy_live_copy_audit.csv",
     "scss/bootstrap-site.scss",
     "sensei-sandy-goal-mapping-implementation/sensei-sandy-goal-mapping/calendly-setup.md",
@@ -1397,14 +1400,9 @@
     "yam-of-the-day/yam-2026-05-12-youth.webp"
   ],
   "legacyOnly": [
-    "css/blog.4c4f46.css",
-    "css/bundles/components-glossary-hub.min.0f7e88.css",
-    "css/bundles/components-glossary-term.min.29c4f3.css",
-    "css/pages/contact.35f6ea.css",
     "css/pages/home.b66309.css",
     "css/pages/home.e457cd.css",
     "css/pages/schedule.9b6c56.css",
-    "css/pages/sensei-jiu-jitsu.525c56.css",
     "css/routes/site-02dc726d329c.css",
     "css/routes/site-02dc726d329c.min.css",
     "css/routes/site-03f6ee1399c4.css",
@@ -1681,10 +1679,8 @@
     "css/routes/site-9fa1979dfff0.min.css",
     "css/routes/site-a0308a9c5155.css",
     "css/routes/site-a0308a9c5155.min.css",
-    "css/routes/site-a4f623220fac.css",
     "css/routes/site-a4f623220fac.min.3fc1a2.css",
     "css/routes/site-a4f623220fac.min.a15377.css",
-    "css/routes/site-a4f623220fac.min.css",
     "css/routes/site-a4f623220fac.min.f98bb4.css",
     "css/routes/site-a51c5c253d9f.css",
     "css/routes/site-a51c5c253d9f.min.css",
@@ -1837,10 +1833,8 @@
     "css/routes/site-f98ccccc9a4a.min.css",
     "css/routes/site-fb27ae11a4cd.css",
     "css/routes/site-fb27ae11a4cd.min.css",
-    "css/routes/site-fe9c349a57b9.css",
     "css/routes/site-fe9c349a57b9.min.a2ee36.css",
     "css/routes/site-fe9c349a57b9.min.a3e051.css",
-    "css/routes/site-fe9c349a57b9.min.css",
     "css/routes/site-fea7fd4dd0a2.css",
     "css/routes/site-fea7fd4dd0a2.min.css",
     "css/routes/site-fee01f687d2e.css",
@@ -1882,13 +1876,6 @@
       "paths": [
         "src/assets/css/base.bfd8e4.css",
         "src/assets/css/base.css"
-      ]
-    },
-    {
-      "sha256": "58fd147d646de850db6c2acc5924e29593f99e36b6290330d0d14db14afed31d",
-      "paths": [
-        "src/assets/css/blog.css",
-        "assets/css/blog.4c4f46.css"
       ]
     },
     {
@@ -2012,17 +1999,17 @@
       ]
     },
     {
-      "sha256": "0625e5a5ec2c0505f6800bb33025d8115c5c55623320b3ed5a40c996b86521df",
-      "paths": [
-        "src/assets/css/pages/contact.css",
-        "assets/css/pages/contact.35f6ea.css"
-      ]
-    },
-    {
       "sha256": "3f835562b76383a6f59d10caa6fb6da13438c0f2f6fb1d47a1eaceb18328214e",
       "paths": [
         "src/assets/css/pages/directions.css",
         "src/assets/css/pages/directions.d699d5.css"
+      ]
+    },
+    {
+      "sha256": "572d72c939449bc2d1d03feb29e84d36467449908169c9ce60debb1e181cecb6",
+      "paths": [
+        "src/assets/css/pages/glossary.27ce1b.css",
+        "src/assets/css/pages/glossary.css"
       ]
     },
     {
@@ -2075,13 +2062,6 @@
       ]
     },
     {
-      "sha256": "e5d873e107e716a29ae126e1676f9bc161a407d17b944a6687bddf0c5fd0c8c4",
-      "paths": [
-        "src/assets/css/pages/sensei-jiu-jitsu.css",
-        "assets/css/pages/sensei-jiu-jitsu.525c56.css"
-      ]
-    },
-    {
       "sha256": "2c7a4464300f0ff60856d35cb392ac713dbb9db92d4cdcbfdf6fce499231ec23",
       "paths": [
         "src/assets/css/pages/student-hub-premium.css",
@@ -2121,13 +2101,6 @@
       "paths": [
         "src/assets/css/phoenicia-diner.c8da19.css",
         "src/assets/css/phoenicia-diner.css"
-      ]
-    },
-    {
-      "sha256": "45195e2a725a6a26729d0cfac6bcea7b583b83ac2aa0e0b904bc3c4a1a88da7c",
-      "paths": [
-        "src/assets/css/routes/site-18ac9c2704ce.min.82dfa0.css",
-        "src/assets/css/routes/site-18ac9c2704ce.min.css"
       ]
     },
     {
@@ -3805,7 +3778,9 @@
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json"
+        "docs/performance/asset-inventory.json",
+        "show-up-kit.html",
+        "src/show-up-kit.html"
       ],
       "publicUrl": "/assets/calendar/adult-class-6pm.ics",
       "generatedOwner": false
@@ -3853,7 +3828,9 @@
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json"
+        "docs/performance/asset-inventory.json",
+        "show-up-kit.html",
+        "src/show-up-kit.html"
       ],
       "publicUrl": "/assets/calendar/saturday-block.ics",
       "generatedOwner": false
@@ -3877,7 +3854,9 @@
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json"
+        "docs/performance/asset-inventory.json",
+        "show-up-kit.html",
+        "src/show-up-kit.html"
       ],
       "publicUrl": "/assets/calendar/youth-class-5pm.ics",
       "generatedOwner": false
@@ -4249,7 +4228,6 @@
         "src/sources/clockwork-bjj-instructors/index.html",
         "src/sources/kodokan-etiquette/index.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -4530,8 +4508,7 @@
         "sources/kodokan-etiquette/index.html",
         "sources/marietta-police-bjj/index.html",
         "student-hub.html",
-        "success-stories.html",
-        "summer-jiu-jitsu-tannersville.html"
+        "success-stories.html"
       ],
       "publicUrl": "/assets/css/bootstrap-icons-local.css",
       "generatedOwner": false
@@ -4667,6 +4644,16 @@
       "generatedOwner": true
     },
     {
+      "path": "css/bundles/components-glossary-hub.min.0f7e88.css",
+      "bytes": 257580,
+      "sha256": "e9372004e111cbaeb7dc833ce4afaacc884941901b334f478b10d70c16514b3a",
+      "references": [
+        "docs/performance/asset-inventory.json"
+      ],
+      "publicUrl": "/assets/css/bundles/components-glossary-hub.min.0f7e88.css",
+      "generatedOwner": true
+    },
+    {
       "path": "css/bundles/components-glossary-hub.min.56822f.css",
       "bytes": 257102,
       "sha256": "3e0344b45ced013ee2a54c379afde6ee5a4d206181414081ec6c0cf48e385db4",
@@ -4702,6 +4689,16 @@
         "docs/performance/asset-inventory.json"
       ],
       "publicUrl": "/assets/css/bundles/components-glossary-term.css",
+      "generatedOwner": true
+    },
+    {
+      "path": "css/bundles/components-glossary-term.min.29c4f3.css",
+      "bytes": 225848,
+      "sha256": "7ed82ce4526d74da91d2c33000eaead3c9c026b52a10620cfdc279a5e5248303",
+      "references": [
+        "docs/performance/asset-inventory.json"
+      ],
+      "publicUrl": "/assets/css/bundles/components-glossary-term.min.29c4f3.css",
       "generatedOwner": true
     },
     {
@@ -5569,8 +5566,7 @@
         "sources/kodokan-etiquette/index.html",
         "sources/marietta-police-bjj/index.html",
         "student-hub.html",
-        "success-stories.html",
-        "summer-jiu-jitsu-tannersville.html"
+        "success-stories.html"
       ],
       "publicUrl": "/assets/css/fonts.css",
       "generatedOwner": false
@@ -5733,7 +5729,6 @@
         "src/sources/clockwork-bjj-instructors/index.html",
         "src/sources/kodokan-etiquette/index.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -6215,6 +6210,16 @@
       "generatedOwner": false
     },
     {
+      "path": "css/pages/glossary.27ce1b.css",
+      "bytes": 6291,
+      "sha256": "572d72c939449bc2d1d03feb29e84d36467449908169c9ce60debb1e181cecb6",
+      "references": [
+        "docs/performance/asset-inventory.json"
+      ],
+      "publicUrl": "/assets/css/pages/glossary.27ce1b.css",
+      "generatedOwner": false
+    },
+    {
       "path": "css/pages/glossary.48bfd4.css",
       "bytes": 120471,
       "sha256": "12eb6d52f68e138a5345ad001dfbc6c815e19bf0905fa8fdce3523d17c6e6692",
@@ -6291,7 +6296,6 @@
       "sha256": "b2af6e4cec937502c1a3ee36ab54ce69dde0809637d7c140b4d0c1920fdf1bbf",
       "references": [
         "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json",
         "docs/performance/asset-inventory.json",
         "src/index.html"
       ],
@@ -6965,8 +6969,8 @@
     },
     {
       "path": "css/routes/site-18ac9c2704ce.css",
-      "bytes": 73251,
-      "sha256": "55914a8138a4fdf0654eeedb40a5199e2465bba7e1d0369eb84750d4c43608d4",
+      "bytes": 72344,
+      "sha256": "cd07c85d31d846733bda4c53c752f36ce1fb77111692f1dc5584d4a2cd358bcd",
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json"
@@ -6986,8 +6990,8 @@
     },
     {
       "path": "css/routes/site-18ac9c2704ce.min.css",
-      "bytes": 63185,
-      "sha256": "45195e2a725a6a26729d0cfac6bcea7b583b83ac2aa0e0b904bc3c4a1a88da7c",
+      "bytes": 62431,
+      "sha256": "b4a9a7bf34496f1b894dcf9b9bc77caf98788801e90f74d8897d8f3b277ee069",
       "references": [
         "after-school.html",
         "back-to-school-bjj-tannersville/index.html",
@@ -7005,149 +7009,6 @@
         "bjj-classes/teens-tannersville-ny/index.html",
         "bjj-classes/windham-ny/index.html",
         "bjj-faqs.html",
-        "bjj-glossary/ankle-lock/index.html",
-        "bjj-glossary/ankle-pick/index.html",
-        "bjj-glossary/arm-drag/index.html",
-        "bjj-glossary/armbar/index.html",
-        "bjj-glossary/back-control/index.html",
-        "bjj-glossary/back-defense/index.html",
-        "bjj-glossary/back-take/index.html",
-        "bjj-glossary/backstep-pass/index.html",
-        "bjj-glossary/base/index.html",
-        "bjj-glossary/beginner-lane/index.html",
-        "bjj-glossary/body-lock/index.html",
-        "bjj-glossary/body-lock-pass/index.html",
-        "bjj-glossary/bridge/index.html",
-        "bjj-glossary/bully-proof/index.html",
-        "bjj-glossary/butterfly-guard/index.html",
-        "bjj-glossary/butterfly-hook/index.html",
-        "bjj-glossary/butterfly-sweep/index.html",
-        "bjj-glossary/chest-to-back/index.html",
-        "bjj-glossary/chest-to-chest/index.html",
-        "bjj-glossary/clinch/index.html",
-        "bjj-glossary/closed-guard/index.html",
-        "bjj-glossary/closed-guard-break/index.html",
-        "bjj-glossary/collar-grip/index.html",
-        "bjj-glossary/collar-tie/index.html",
-        "bjj-glossary/control/index.html",
-        "bjj-glossary/cross-collar-choke/index.html",
-        "bjj-glossary/crossface/index.html",
-        "bjj-glossary/crossface-defense/index.html",
-        "bjj-glossary/crossface-pressure/index.html",
-        "bjj-glossary/de-la-riva/index.html",
-        "bjj-glossary/dominant-position/index.html",
-        "bjj-glossary/double-leg/index.html",
-        "bjj-glossary/double-leg-defense/index.html",
-        "bjj-glossary/elbow-knee-escape/index.html",
-        "bjj-glossary/escape/index.html",
-        "bjj-glossary/flower-sweep/index.html",
-        "bjj-glossary/frame/index.html",
-        "bjj-glossary/frame-recovery/index.html",
-        "bjj-glossary/front-headlock/index.html",
-        "bjj-glossary/gi/index.html",
-        "bjj-glossary/go-behind/index.html",
-        "bjj-glossary/go-behind-defense/index.html",
-        "bjj-glossary/granby-roll/index.html",
-        "bjj-glossary/grip/index.html",
-        "bjj-glossary/grip-fighting/index.html",
-        "bjj-glossary/guard/index.html",
-        "bjj-glossary/guard-pass/index.html",
-        "bjj-glossary/guard-pull/index.html",
-        "bjj-glossary/guard-recovery/index.html",
-        "bjj-glossary/guard-retention/index.html",
-        "bjj-glossary/guillotine/index.html",
-        "bjj-glossary/half-guard/index.html",
-        "bjj-glossary/hand-fighting/index.html",
-        "bjj-glossary/head-line/index.html",
-        "bjj-glossary/head-position/index.html",
-        "bjj-glossary/heavy-hips/index.html",
-        "bjj-glossary/hip-escape/index.html",
-        "bjj-glossary/hip-heist/index.html",
-        "bjj-glossary/hooks/index.html",
-        "bjj-glossary/index.html",
-        "bjj-glossary/inside-position/index.html",
-        "bjj-glossary/inside-tie/index.html",
-        "bjj-glossary/inside-trip/index.html",
-        "bjj-glossary/inversion/index.html",
-        "bjj-glossary/jiu-jitsu/index.html",
-        "bjj-glossary/k-guard/index.html",
-        "bjj-glossary/kimura/index.html",
-        "bjj-glossary/knee-cut/index.html",
-        "bjj-glossary/knee-line/index.html",
-        "bjj-glossary/knee-shield/index.html",
-        "bjj-glossary/knee-slide/index.html",
-        "bjj-glossary/lapel-grip/index.html",
-        "bjj-glossary/leg-drag/index.html",
-        "bjj-glossary/leg-entanglement/index.html",
-        "bjj-glossary/level-change/index.html",
-        "bjj-glossary/long-step/index.html",
-        "bjj-glossary/mat-return/index.html",
-        "bjj-glossary/mount/index.html",
-        "bjj-glossary/mount-transition/index.html",
-        "bjj-glossary/neutral-position/index.html",
-        "bjj-glossary/no-gi/index.html",
-        "bjj-glossary/north-south/index.html",
-        "bjj-glossary/off-balance/index.html",
-        "bjj-glossary/open-guard/index.html",
-        "bjj-glossary/open-guard-pass/index.html",
-        "bjj-glossary/outside-trip/index.html",
-        "bjj-glossary/overhook/index.html",
-        "bjj-glossary/penetration-step/index.html",
-        "bjj-glossary/pin/index.html",
-        "bjj-glossary/pin-escape/index.html",
-        "bjj-glossary/posture/index.html",
-        "bjj-glossary/posture-break/index.html",
-        "bjj-glossary/posture-recovery/index.html",
-        "bjj-glossary/pressure/index.html",
-        "bjj-glossary/pummel/index.html",
-        "bjj-glossary/quarter-guard/index.html",
-        "bjj-glossary/re-guard/index.html",
-        "bjj-glossary/re-shot/index.html",
-        "bjj-glossary/rear-naked-choke/index.html",
-        "bjj-glossary/reverse-de-la-riva/index.html",
-        "bjj-glossary/safety/index.html",
-        "bjj-glossary/scissor-sweep/index.html",
-        "bjj-glossary/scramble/index.html",
-        "bjj-glossary/seatbelt/index.html",
-        "bjj-glossary/seatbelt-escape/index.html",
-        "bjj-glossary/seated-guard/index.html",
-        "bjj-glossary/shot-entry/index.html",
-        "bjj-glossary/shoulder-pressure/index.html",
-        "bjj-glossary/shrimp/index.html",
-        "bjj-glossary/sickle-sweep/index.html",
-        "bjj-glossary/side-control/index.html",
-        "bjj-glossary/single-leg/index.html",
-        "bjj-glossary/single-leg-defense/index.html",
-        "bjj-glossary/sleeve-grip/index.html",
-        "bjj-glossary/snap-down/index.html",
-        "bjj-glossary/spin-behind/index.html",
-        "bjj-glossary/sprawl/index.html",
-        "bjj-glossary/sprawl-defense/index.html",
-        "bjj-glossary/submission/index.html",
-        "bjj-glossary/sweep/index.html",
-        "bjj-glossary/takedown/index.html",
-        "bjj-glossary/takedown-defense/index.html",
-        "bjj-glossary/tap/index.html",
-        "bjj-glossary/technical-stand-up/index.html",
-        "bjj-glossary/top-position/index.html",
-        "bjj-glossary/top-ride/index.html",
-        "bjj-glossary/torreando/index.html",
-        "bjj-glossary/torreando-defense/index.html",
-        "bjj-glossary/transition/index.html",
-        "bjj-glossary/triangle/index.html",
-        "bjj-glossary/tripod-sweep/index.html",
-        "bjj-glossary/turtle/index.html",
-        "bjj-glossary/underhook/index.html",
-        "bjj-glossary/upa-escape/index.html",
-        "bjj-glossary/updates/index.html",
-        "bjj-glossary/waiter-sweep/index.html",
-        "bjj-glossary/whizzer/index.html",
-        "bjj-glossary/whizzer-defense/index.html",
-        "bjj-glossary/windshield-wiper/index.html",
-        "bjj-glossary/wrestle-up/index.html",
-        "bjj-glossary/wrist-control/index.html",
-        "bjj-glossary/x-guard/index.html",
-        "bjj-glossary/z-guard/index.html",
         "bjj-stretches.html",
         "bjj-tannersville-ny-directions.html",
         "blog/after-school-jiu-jitsu/index.html",
@@ -7255,9 +7116,10 @@
         "sources/kenny-florian/index.html",
         "sources/kodokan-etiquette/index.html",
         "sources/marietta-police-bjj/index.html",
+        "src/sources/clockwork-bjj-instructors/index.html",
+        "src/sources/kodokan-etiquette/index.html",
         "student-hub.html",
-        "success-stories.html",
-        "summer-jiu-jitsu-tannersville.html"
+        "success-stories.html"
       ],
       "publicUrl": "/assets/css/routes/site-18ac9c2704ce.min.css",
       "generatedOwner": true
@@ -8268,6 +8130,17 @@
       "generatedOwner": true
     },
     {
+      "path": "css/routes/site-a4f623220fac.css",
+      "bytes": 107648,
+      "sha256": "9bead49209afde0cf06c6e93b9587e6ce27345af71ee60ffba1dad3e12b1840c",
+      "references": [
+        "docs/performance/asset-inventory.before.json",
+        "docs/performance/asset-inventory.json"
+      ],
+      "publicUrl": "/assets/css/routes/site-a4f623220fac.css",
+      "generatedOwner": true
+    },
+    {
       "path": "css/routes/site-a4f623220fac.min.4ba113.css",
       "bytes": 135279,
       "sha256": "77ca08da41591a491ca919e71e230522a8a275ca1fb8c85d3fb352d1b2017879",
@@ -8287,6 +8160,19 @@
         "docs/performance/asset-inventory.json"
       ],
       "publicUrl": "/assets/css/routes/site-a4f623220fac.min.9b3df7.css",
+      "generatedOwner": true
+    },
+    {
+      "path": "css/routes/site-a4f623220fac.min.css",
+      "bytes": 95707,
+      "sha256": "881c6ba559cb2653272a72b5ee9cfe328c33272bd769926ca9a828525fdd79a2",
+      "references": [
+        "bjj-glossary/index.html",
+        "bjj-glossary/updates/index.html",
+        "docs/performance/asset-inventory.before.json",
+        "docs/performance/asset-inventory.json"
+      ],
+      "publicUrl": "/assets/css/routes/site-a4f623220fac.min.css",
       "generatedOwner": true
     },
     {
@@ -9062,6 +8948,17 @@
       "generatedOwner": true
     },
     {
+      "path": "css/routes/site-fe9c349a57b9.css",
+      "bytes": 78616,
+      "sha256": "ee2a7ee3c93cb896dfcb4017c0bbddce6d19809b1ad0e3bdb69ff27a24b278fb",
+      "references": [
+        "docs/performance/asset-inventory.before.json",
+        "docs/performance/asset-inventory.json"
+      ],
+      "publicUrl": "/assets/css/routes/site-fe9c349a57b9.css",
+      "generatedOwner": true
+    },
+    {
       "path": "css/routes/site-fe9c349a57b9.min.5062d8.css",
       "bytes": 77967,
       "sha256": "e8d1ada6ed64d8ba7dcfc095df7f4d34789337f4c4fd5d224e6f434b9ac2f799",
@@ -9092,6 +8989,158 @@
         "docs/performance/asset-inventory.json"
       ],
       "publicUrl": "/assets/css/routes/site-fe9c349a57b9.min.cc136e.css",
+      "generatedOwner": true
+    },
+    {
+      "path": "css/routes/site-fe9c349a57b9.min.css",
+      "bytes": 68971,
+      "sha256": "d3472e8e74a28a8d8b46355951249578d2bb29151d6cddfc7a1617a579a1de79",
+      "references": [
+        "bjj-glossary/ankle-lock/index.html",
+        "bjj-glossary/ankle-pick/index.html",
+        "bjj-glossary/arm-drag/index.html",
+        "bjj-glossary/armbar/index.html",
+        "bjj-glossary/back-control/index.html",
+        "bjj-glossary/back-defense/index.html",
+        "bjj-glossary/back-take/index.html",
+        "bjj-glossary/backstep-pass/index.html",
+        "bjj-glossary/base/index.html",
+        "bjj-glossary/beginner-lane/index.html",
+        "bjj-glossary/body-lock/index.html",
+        "bjj-glossary/body-lock-pass/index.html",
+        "bjj-glossary/bridge/index.html",
+        "bjj-glossary/bully-proof/index.html",
+        "bjj-glossary/butterfly-guard/index.html",
+        "bjj-glossary/butterfly-hook/index.html",
+        "bjj-glossary/butterfly-sweep/index.html",
+        "bjj-glossary/chest-to-back/index.html",
+        "bjj-glossary/chest-to-chest/index.html",
+        "bjj-glossary/clinch/index.html",
+        "bjj-glossary/closed-guard/index.html",
+        "bjj-glossary/closed-guard-break/index.html",
+        "bjj-glossary/collar-grip/index.html",
+        "bjj-glossary/collar-tie/index.html",
+        "bjj-glossary/control/index.html",
+        "bjj-glossary/cross-collar-choke/index.html",
+        "bjj-glossary/crossface/index.html",
+        "bjj-glossary/crossface-defense/index.html",
+        "bjj-glossary/crossface-pressure/index.html",
+        "bjj-glossary/de-la-riva/index.html",
+        "bjj-glossary/dominant-position/index.html",
+        "bjj-glossary/double-leg/index.html",
+        "bjj-glossary/double-leg-defense/index.html",
+        "bjj-glossary/elbow-knee-escape/index.html",
+        "bjj-glossary/escape/index.html",
+        "bjj-glossary/flower-sweep/index.html",
+        "bjj-glossary/frame/index.html",
+        "bjj-glossary/frame-recovery/index.html",
+        "bjj-glossary/front-headlock/index.html",
+        "bjj-glossary/gi/index.html",
+        "bjj-glossary/go-behind/index.html",
+        "bjj-glossary/go-behind-defense/index.html",
+        "bjj-glossary/granby-roll/index.html",
+        "bjj-glossary/grip/index.html",
+        "bjj-glossary/grip-fighting/index.html",
+        "bjj-glossary/guard/index.html",
+        "bjj-glossary/guard-pass/index.html",
+        "bjj-glossary/guard-pull/index.html",
+        "bjj-glossary/guard-recovery/index.html",
+        "bjj-glossary/guard-retention/index.html",
+        "bjj-glossary/guillotine/index.html",
+        "bjj-glossary/half-guard/index.html",
+        "bjj-glossary/hand-fighting/index.html",
+        "bjj-glossary/head-line/index.html",
+        "bjj-glossary/head-position/index.html",
+        "bjj-glossary/heavy-hips/index.html",
+        "bjj-glossary/hip-escape/index.html",
+        "bjj-glossary/hip-heist/index.html",
+        "bjj-glossary/hooks/index.html",
+        "bjj-glossary/inside-position/index.html",
+        "bjj-glossary/inside-tie/index.html",
+        "bjj-glossary/inside-trip/index.html",
+        "bjj-glossary/inversion/index.html",
+        "bjj-glossary/jiu-jitsu/index.html",
+        "bjj-glossary/k-guard/index.html",
+        "bjj-glossary/kimura/index.html",
+        "bjj-glossary/knee-cut/index.html",
+        "bjj-glossary/knee-line/index.html",
+        "bjj-glossary/knee-shield/index.html",
+        "bjj-glossary/knee-slide/index.html",
+        "bjj-glossary/lapel-grip/index.html",
+        "bjj-glossary/leg-drag/index.html",
+        "bjj-glossary/leg-entanglement/index.html",
+        "bjj-glossary/level-change/index.html",
+        "bjj-glossary/long-step/index.html",
+        "bjj-glossary/mat-return/index.html",
+        "bjj-glossary/mount/index.html",
+        "bjj-glossary/mount-transition/index.html",
+        "bjj-glossary/neutral-position/index.html",
+        "bjj-glossary/no-gi/index.html",
+        "bjj-glossary/north-south/index.html",
+        "bjj-glossary/off-balance/index.html",
+        "bjj-glossary/open-guard/index.html",
+        "bjj-glossary/open-guard-pass/index.html",
+        "bjj-glossary/outside-trip/index.html",
+        "bjj-glossary/overhook/index.html",
+        "bjj-glossary/penetration-step/index.html",
+        "bjj-glossary/pin/index.html",
+        "bjj-glossary/pin-escape/index.html",
+        "bjj-glossary/posture/index.html",
+        "bjj-glossary/posture-break/index.html",
+        "bjj-glossary/posture-recovery/index.html",
+        "bjj-glossary/pressure/index.html",
+        "bjj-glossary/pummel/index.html",
+        "bjj-glossary/quarter-guard/index.html",
+        "bjj-glossary/re-guard/index.html",
+        "bjj-glossary/re-shot/index.html",
+        "bjj-glossary/rear-naked-choke/index.html",
+        "bjj-glossary/reverse-de-la-riva/index.html",
+        "bjj-glossary/safety/index.html",
+        "bjj-glossary/scissor-sweep/index.html",
+        "bjj-glossary/scramble/index.html",
+        "bjj-glossary/seatbelt/index.html",
+        "bjj-glossary/seatbelt-escape/index.html",
+        "bjj-glossary/seated-guard/index.html",
+        "bjj-glossary/shot-entry/index.html",
+        "bjj-glossary/shoulder-pressure/index.html",
+        "bjj-glossary/shrimp/index.html",
+        "bjj-glossary/sickle-sweep/index.html",
+        "bjj-glossary/side-control/index.html",
+        "bjj-glossary/single-leg/index.html",
+        "bjj-glossary/single-leg-defense/index.html",
+        "bjj-glossary/sleeve-grip/index.html",
+        "bjj-glossary/snap-down/index.html",
+        "bjj-glossary/spin-behind/index.html",
+        "bjj-glossary/sprawl/index.html",
+        "bjj-glossary/sprawl-defense/index.html",
+        "bjj-glossary/submission/index.html",
+        "bjj-glossary/sweep/index.html",
+        "bjj-glossary/takedown/index.html",
+        "bjj-glossary/takedown-defense/index.html",
+        "bjj-glossary/tap/index.html",
+        "bjj-glossary/technical-stand-up/index.html",
+        "bjj-glossary/top-position/index.html",
+        "bjj-glossary/top-ride/index.html",
+        "bjj-glossary/torreando/index.html",
+        "bjj-glossary/torreando-defense/index.html",
+        "bjj-glossary/transition/index.html",
+        "bjj-glossary/triangle/index.html",
+        "bjj-glossary/tripod-sweep/index.html",
+        "bjj-glossary/turtle/index.html",
+        "bjj-glossary/underhook/index.html",
+        "bjj-glossary/upa-escape/index.html",
+        "bjj-glossary/waiter-sweep/index.html",
+        "bjj-glossary/whizzer/index.html",
+        "bjj-glossary/whizzer-defense/index.html",
+        "bjj-glossary/windshield-wiper/index.html",
+        "bjj-glossary/wrestle-up/index.html",
+        "bjj-glossary/wrist-control/index.html",
+        "bjj-glossary/x-guard/index.html",
+        "bjj-glossary/z-guard/index.html",
+        "docs/performance/asset-inventory.before.json",
+        "docs/performance/asset-inventory.json"
+      ],
+      "publicUrl": "/assets/css/routes/site-fe9c349a57b9.min.css",
       "generatedOwner": true
     },
     {
@@ -9376,7 +9425,6 @@
         "src/sources/clockwork-bjj-instructors/index.html",
         "src/sources/kodokan-etiquette/index.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -9657,8 +9705,7 @@
         "sources/marietta-police-bjj/index.html",
         "src/_includes/components/head-metadata.njk",
         "student-hub.html",
-        "success-stories.html",
-        "summer-jiu-jitsu-tannersville.html"
+        "success-stories.html"
       ],
       "publicUrl": "/assets/css/site-shell.css",
       "generatedOwner": false
@@ -10052,8 +10099,8 @@
     },
     {
       "path": "data/asset-hash-manifest.json",
-      "bytes": 9068,
-      "sha256": "a1fa0ab1af3fbbd0fb6c2c78be69b1a3e3f484be8ea944cad21ea4717904dfe9",
+      "bytes": 9402,
+      "sha256": "2d2d6ef9067d170246f42d28ce7c02cf07500f173ef9a4999f3fc890529dfbee",
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json",
@@ -10435,8 +10482,8 @@
     },
     {
       "path": "data/route-style-manifest.json",
-      "bytes": 17269376,
-      "sha256": "082f36126776e319f43cdaa57bbb9b88eeff4cbbb70db76179efaebe34232173",
+      "bytes": 28629863,
+      "sha256": "4732f8856834a5cdb7f6767e9ca68081b97367f37ccaf293ae70fdfdc10f6447",
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json"
@@ -10446,8 +10493,8 @@
     },
     {
       "path": "data/route-style-rejected-selectors.json",
-      "bytes": 76106,
-      "sha256": "9de4d217b6d55ea91f41fd515507c63514f3488c7173ef5c944f6bd7b05e3711",
+      "bytes": 361893,
+      "sha256": "413a46482addff213bec7e037c802d18da0298656eda00481a6fff3107de9fa3",
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json"
@@ -10785,8 +10832,6 @@
         "student-hub.html",
         "success-stories.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
-        "summer-jiu-jitsu-tannersville.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -11137,8 +11182,6 @@
         "student-hub.html",
         "success-stories.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
-        "summer-jiu-jitsu-tannersville.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -11390,7 +11433,6 @@
         "src/sources/clockwork-bjj-instructors/index.html",
         "src/sources/kodokan-etiquette/index.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -11673,8 +11715,7 @@
         "sources/kodokan-etiquette/index.html",
         "sources/marietta-police-bjj/index.html",
         "student-hub.html",
-        "success-stories.html",
-        "summer-jiu-jitsu-tannersville.html"
+        "success-stories.html"
       ],
       "publicUrl": "/assets/fonts/lexend/lexend-latin-variable.woff2",
       "generatedOwner": false
@@ -22098,8 +22139,6 @@
         "student-hub.html",
         "success-stories.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
-        "summer-jiu-jitsu-tannersville.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -22936,7 +22975,6 @@
         "deer-mountain-inn.html",
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json",
-        "docs/performance/asset-inventory.json",
         "drilling/index.html",
         "elite-concierge.html",
         "footer-include-no-proof.html",
@@ -23017,8 +23055,6 @@
         "student-hub.html",
         "success-stories.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
-        "summer-jiu-jitsu-tannersville.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -23237,7 +23273,6 @@
         "deer-mountain-inn.html",
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json",
-        "docs/performance/asset-inventory.json",
         "drilling/index.html",
         "elite-concierge.html",
         "footer-include-no-proof.html",
@@ -23318,8 +23353,6 @@
         "student-hub.html",
         "success-stories.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
-        "summer-jiu-jitsu-tannersville.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -23679,8 +23712,6 @@
         "student-hub.html",
         "success-stories.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
-        "summer-jiu-jitsu-tannersville.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -23838,30 +23869,6 @@
         "docs/performance/asset-inventory.json"
       ],
       "publicUrl": "/assets/js/student-hub-class-focus.js",
-      "generatedOwner": false
-    },
-    {
-      "path": "py/fix_semiprivate_copy.py",
-      "bytes": 7325,
-      "sha256": "455dd779d95a21c6a6c0a2ab761a99d860f9b84f7209ff93a7559d85f0857f6c",
-      "references": [
-        "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json"
-      ],
-      "publicUrl": "/assets/py/fix_semiprivate_copy.py",
-      "generatedOwner": false
-    },
-    {
-      "path": "py/README_semiprivate_copy_fix.md",
-      "bytes": 1309,
-      "sha256": "16142eb75137389f2f424968a0fac15645fc19d9b39bc81627051f13713d4511",
-      "references": [
-        "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json"
-      ],
-      "publicUrl": "/assets/py/README_semiprivate_copy_fix.md",
       "generatedOwner": false
     },
     {
@@ -24932,31 +24939,11 @@
       ]
     },
     {
-      "path": "css/blog.4c4f46.css",
-      "bytes": 30929,
-      "sha256": "58fd147d646de850db6c2acc5924e29593f99e36b6290330d0d14db14afed31d",
+      "path": "css/pages/glossary.min.css",
+      "bytes": 6225,
+      "sha256": "564152dd8e5f997a7656f4d4bdef18a1040f9a3bc09b7feca495e3db62df339a",
       "references": [
         "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json"
-      ]
-    },
-    {
-      "path": "css/bundles/components-glossary-hub.min.0f7e88.css",
-      "bytes": 257580,
-      "sha256": "e9372004e111cbaeb7dc833ce4afaacc884941901b334f478b10d70c16514b3a",
-      "references": []
-    },
-    {
-      "path": "css/bundles/components-glossary-term.min.29c4f3.css",
-      "bytes": 225848,
-      "sha256": "7ed82ce4526d74da91d2c33000eaead3c9c026b52a10620cfdc279a5e5248303",
-      "references": []
-    },
-    {
-      "path": "css/pages/contact.35f6ea.css",
-      "bytes": 84,
-      "sha256": "0625e5a5ec2c0505f6800bb33025d8115c5c55623320b3ed5a40c996b86521df",
-      "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json"
       ]
@@ -24975,8 +24962,8 @@
     },
     {
       "path": "css/pages/home.min.css",
-      "bytes": 9244,
-      "sha256": "f69048a3fd242728aac67802c3e45532771ac872f858b16e332e55490f95ce82",
+      "bytes": 10737,
+      "sha256": "e3424a3c076e849fcf7ff10aba9f8f324a31f67b6883f690d4dba66d2a28308a",
       "references": [
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json"
@@ -24989,10 +24976,11 @@
       "references": []
     },
     {
-      "path": "css/pages/sensei-jiu-jitsu.525c56.css",
-      "bytes": 88,
-      "sha256": "e5d873e107e716a29ae126e1676f9bc161a407d17b944a6687bddf0c5fd0c8c4",
+      "path": "css/pages/schedule.min.css",
+      "bytes": 5930,
+      "sha256": "1970cbd260269de82a21e3a96516fa48cfe63c114349f7d766b4e8f344b06651",
       "references": [
+        "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.before.json",
         "docs/performance/asset-inventory.json"
       ]
@@ -25347,149 +25335,6 @@
         "bjj-classes/teens-tannersville-ny/index.html",
         "bjj-classes/windham-ny/index.html",
         "bjj-faqs.html",
-        "bjj-glossary/ankle-lock/index.html",
-        "bjj-glossary/ankle-pick/index.html",
-        "bjj-glossary/arm-drag/index.html",
-        "bjj-glossary/armbar/index.html",
-        "bjj-glossary/back-control/index.html",
-        "bjj-glossary/back-defense/index.html",
-        "bjj-glossary/back-take/index.html",
-        "bjj-glossary/backstep-pass/index.html",
-        "bjj-glossary/base/index.html",
-        "bjj-glossary/beginner-lane/index.html",
-        "bjj-glossary/body-lock/index.html",
-        "bjj-glossary/body-lock-pass/index.html",
-        "bjj-glossary/bridge/index.html",
-        "bjj-glossary/bully-proof/index.html",
-        "bjj-glossary/butterfly-guard/index.html",
-        "bjj-glossary/butterfly-hook/index.html",
-        "bjj-glossary/butterfly-sweep/index.html",
-        "bjj-glossary/chest-to-back/index.html",
-        "bjj-glossary/chest-to-chest/index.html",
-        "bjj-glossary/clinch/index.html",
-        "bjj-glossary/closed-guard/index.html",
-        "bjj-glossary/closed-guard-break/index.html",
-        "bjj-glossary/collar-grip/index.html",
-        "bjj-glossary/collar-tie/index.html",
-        "bjj-glossary/control/index.html",
-        "bjj-glossary/cross-collar-choke/index.html",
-        "bjj-glossary/crossface/index.html",
-        "bjj-glossary/crossface-defense/index.html",
-        "bjj-glossary/crossface-pressure/index.html",
-        "bjj-glossary/de-la-riva/index.html",
-        "bjj-glossary/dominant-position/index.html",
-        "bjj-glossary/double-leg/index.html",
-        "bjj-glossary/double-leg-defense/index.html",
-        "bjj-glossary/elbow-knee-escape/index.html",
-        "bjj-glossary/escape/index.html",
-        "bjj-glossary/flower-sweep/index.html",
-        "bjj-glossary/frame/index.html",
-        "bjj-glossary/frame-recovery/index.html",
-        "bjj-glossary/front-headlock/index.html",
-        "bjj-glossary/gi/index.html",
-        "bjj-glossary/go-behind/index.html",
-        "bjj-glossary/go-behind-defense/index.html",
-        "bjj-glossary/granby-roll/index.html",
-        "bjj-glossary/grip/index.html",
-        "bjj-glossary/grip-fighting/index.html",
-        "bjj-glossary/guard/index.html",
-        "bjj-glossary/guard-pass/index.html",
-        "bjj-glossary/guard-pull/index.html",
-        "bjj-glossary/guard-recovery/index.html",
-        "bjj-glossary/guard-retention/index.html",
-        "bjj-glossary/guillotine/index.html",
-        "bjj-glossary/half-guard/index.html",
-        "bjj-glossary/hand-fighting/index.html",
-        "bjj-glossary/head-line/index.html",
-        "bjj-glossary/head-position/index.html",
-        "bjj-glossary/heavy-hips/index.html",
-        "bjj-glossary/hip-escape/index.html",
-        "bjj-glossary/hip-heist/index.html",
-        "bjj-glossary/hooks/index.html",
-        "bjj-glossary/index.html",
-        "bjj-glossary/inside-position/index.html",
-        "bjj-glossary/inside-tie/index.html",
-        "bjj-glossary/inside-trip/index.html",
-        "bjj-glossary/inversion/index.html",
-        "bjj-glossary/jiu-jitsu/index.html",
-        "bjj-glossary/k-guard/index.html",
-        "bjj-glossary/kimura/index.html",
-        "bjj-glossary/knee-cut/index.html",
-        "bjj-glossary/knee-line/index.html",
-        "bjj-glossary/knee-shield/index.html",
-        "bjj-glossary/knee-slide/index.html",
-        "bjj-glossary/lapel-grip/index.html",
-        "bjj-glossary/leg-drag/index.html",
-        "bjj-glossary/leg-entanglement/index.html",
-        "bjj-glossary/level-change/index.html",
-        "bjj-glossary/long-step/index.html",
-        "bjj-glossary/mat-return/index.html",
-        "bjj-glossary/mount/index.html",
-        "bjj-glossary/mount-transition/index.html",
-        "bjj-glossary/neutral-position/index.html",
-        "bjj-glossary/no-gi/index.html",
-        "bjj-glossary/north-south/index.html",
-        "bjj-glossary/off-balance/index.html",
-        "bjj-glossary/open-guard/index.html",
-        "bjj-glossary/open-guard-pass/index.html",
-        "bjj-glossary/outside-trip/index.html",
-        "bjj-glossary/overhook/index.html",
-        "bjj-glossary/penetration-step/index.html",
-        "bjj-glossary/pin/index.html",
-        "bjj-glossary/pin-escape/index.html",
-        "bjj-glossary/posture/index.html",
-        "bjj-glossary/posture-break/index.html",
-        "bjj-glossary/posture-recovery/index.html",
-        "bjj-glossary/pressure/index.html",
-        "bjj-glossary/pummel/index.html",
-        "bjj-glossary/quarter-guard/index.html",
-        "bjj-glossary/re-guard/index.html",
-        "bjj-glossary/re-shot/index.html",
-        "bjj-glossary/rear-naked-choke/index.html",
-        "bjj-glossary/reverse-de-la-riva/index.html",
-        "bjj-glossary/safety/index.html",
-        "bjj-glossary/scissor-sweep/index.html",
-        "bjj-glossary/scramble/index.html",
-        "bjj-glossary/seatbelt/index.html",
-        "bjj-glossary/seatbelt-escape/index.html",
-        "bjj-glossary/seated-guard/index.html",
-        "bjj-glossary/shot-entry/index.html",
-        "bjj-glossary/shoulder-pressure/index.html",
-        "bjj-glossary/shrimp/index.html",
-        "bjj-glossary/sickle-sweep/index.html",
-        "bjj-glossary/side-control/index.html",
-        "bjj-glossary/single-leg/index.html",
-        "bjj-glossary/single-leg-defense/index.html",
-        "bjj-glossary/sleeve-grip/index.html",
-        "bjj-glossary/snap-down/index.html",
-        "bjj-glossary/spin-behind/index.html",
-        "bjj-glossary/sprawl/index.html",
-        "bjj-glossary/sprawl-defense/index.html",
-        "bjj-glossary/submission/index.html",
-        "bjj-glossary/sweep/index.html",
-        "bjj-glossary/takedown/index.html",
-        "bjj-glossary/takedown-defense/index.html",
-        "bjj-glossary/tap/index.html",
-        "bjj-glossary/technical-stand-up/index.html",
-        "bjj-glossary/top-position/index.html",
-        "bjj-glossary/top-ride/index.html",
-        "bjj-glossary/torreando/index.html",
-        "bjj-glossary/torreando-defense/index.html",
-        "bjj-glossary/transition/index.html",
-        "bjj-glossary/triangle/index.html",
-        "bjj-glossary/tripod-sweep/index.html",
-        "bjj-glossary/turtle/index.html",
-        "bjj-glossary/underhook/index.html",
-        "bjj-glossary/upa-escape/index.html",
-        "bjj-glossary/updates/index.html",
-        "bjj-glossary/waiter-sweep/index.html",
-        "bjj-glossary/whizzer/index.html",
-        "bjj-glossary/whizzer-defense/index.html",
-        "bjj-glossary/windshield-wiper/index.html",
-        "bjj-glossary/wrestle-up/index.html",
-        "bjj-glossary/wrist-control/index.html",
-        "bjj-glossary/x-guard/index.html",
-        "bjj-glossary/z-guard/index.html",
         "bjj-stretches.html",
         "bjj-tannersville-ny-directions.html",
         "blog/after-school-jiu-jitsu/index.html",
@@ -25597,9 +25442,10 @@
         "sources/kenny-florian/index.html",
         "sources/kodokan-etiquette/index.html",
         "sources/marietta-police-bjj/index.html",
+        "src/sources/clockwork-bjj-instructors/index.html",
+        "src/sources/kodokan-etiquette/index.html",
         "student-hub.html",
-        "success-stories.html",
-        "summer-jiu-jitsu-tannersville.html"
+        "success-stories.html"
       ]
     },
     {
@@ -25608,9 +25454,7 @@
       "sha256": "cb248846e2e4b86d0e659afb905835064ba7bb4f77f06830b8cc358bdf4a8780",
       "references": [
         "docs/performance/asset-inventory.before.json",
-        "docs/performance/asset-inventory.json",
-        "src/sources/clockwork-bjj-instructors/index.html",
-        "src/sources/kodokan-etiquette/index.html"
+        "docs/performance/asset-inventory.json"
       ]
     },
     {
@@ -27361,14 +27205,6 @@
       ]
     },
     {
-      "path": "css/routes/site-a4f623220fac.css",
-      "bytes": 107648,
-      "sha256": "9bead49209afde0cf06c6e93b9587e6ce27345af71ee60ffba1dad3e12b1840c",
-      "references": [
-        "docs/performance/asset-inventory.before.json"
-      ]
-    },
-    {
       "path": "css/routes/site-a4f623220fac.min.3fc1a2.css",
       "bytes": 137110,
       "sha256": "923ca91d7f9236fdcaee72f156ca985305248f007a5cb5e15f7bd166501cc2f5",
@@ -27379,14 +27215,6 @@
       "bytes": 95493,
       "sha256": "1739b811a763992bb49aaa81942be73e53fe705e6de9b5029595d2b7135aff66",
       "references": []
-    },
-    {
-      "path": "css/routes/site-a4f623220fac.min.css",
-      "bytes": 95707,
-      "sha256": "881c6ba559cb2653272a72b5ee9cfe328c33272bd769926ca9a828525fdd79a2",
-      "references": [
-        "docs/performance/asset-inventory.before.json"
-      ]
     },
     {
       "path": "css/routes/site-a4f623220fac.min.f98bb4.css",
@@ -27627,7 +27455,6 @@
         "site-shell.html",
         "snap-down-defense/index.html",
         "summer-academy.html",
-        "summer-bjj-tannersville/index.html",
         "sweep-single/index.html",
         "tactical-longevity.html",
         "updates/index.html",
@@ -28639,14 +28466,6 @@
       ]
     },
     {
-      "path": "css/routes/site-fe9c349a57b9.css",
-      "bytes": 78616,
-      "sha256": "ee2a7ee3c93cb896dfcb4017c0bbddce6d19809b1ad0e3bdb69ff27a24b278fb",
-      "references": [
-        "docs/performance/asset-inventory.before.json"
-      ]
-    },
-    {
       "path": "css/routes/site-fe9c349a57b9.min.a2ee36.css",
       "bytes": 68992,
       "sha256": "061ffb826d3e72ac6c862b20b4db551b6650ed3b08bba1ff1acee74673f1691e",
@@ -28657,14 +28476,6 @@
       "bytes": 80182,
       "sha256": "f1425fae10d35b1d04b5b9a4571d47be1b804f92662b39f0744c944c60156469",
       "references": []
-    },
-    {
-      "path": "css/routes/site-fe9c349a57b9.min.css",
-      "bytes": 68971,
-      "sha256": "d3472e8e74a28a8d8b46355951249578d2bb29151d6cddfc7a1617a579a1de79",
-      "references": [
-        "docs/performance/asset-inventory.before.json"
-      ]
     },
     {
       "path": "css/routes/site-fea7fd4dd0a2.css",
@@ -29009,8 +28820,7 @@
         "sources/marietta-police-bjj/index.html",
         "src/_includes/components/head-metadata.njk",
         "student-hub.html",
-        "success-stories.html",
-        "summer-jiu-jitsu-tannersville.html"
+        "success-stories.html"
       ]
     },
     {
