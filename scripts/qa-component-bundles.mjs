@@ -130,7 +130,7 @@ assert.equal(
   '.scope :is(.a, .b) .child, .scope [data-state="open"] { color: red; }'
 );
 
-const productionSource = await fs.readFile(path.join(ROOT, 'assets/css/components.css'), 'utf8');
+const productionSource = await fs.readFile(path.join(ROOT, 'src/assets/css/components.css'), 'utf8');
 for (const bundle of BUNDLES) {
   const expected = buildBundleCss(productionSource, bundle);
   const outputPath = resolveWorkspacePath(bundle.canonicalPath);
