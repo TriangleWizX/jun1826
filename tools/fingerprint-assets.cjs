@@ -6,6 +6,14 @@ const crypto = require('crypto');
 const ROOT = path.resolve(process.cwd());
 const ROOT_REAL = fs.realpathSync(ROOT);
 const ASSET_ROOT = path.join(ROOT, 'src', 'assets');
+const SITE_ROOT = path.join(ROOT, 'dist');
+const OUTPUT_ASSET_ROOT = path.join(SITE_ROOT, 'assets');
+const SOURCE_ROOTS = [
+  { prefix: 'assets', source: ASSET_ROOT, output: OUTPUT_ASSET_ROOT },
+  { prefix: 'images', source: path.join(ROOT, 'src', 'images'), output: path.join(SITE_ROOT, 'images') },
+  { prefix: 'js', source: path.join(ROOT, 'js'), output: path.join(SITE_ROOT, 'js') },
+  { prefix: 'tokens.css', source: path.join(ROOT, 'src', 'tokens.css'), output: path.join(SITE_ROOT, 'tokens.css') }
+];
 const MANIFEST_PATH = path.join(ASSET_ROOT, 'data', 'asset-hash-manifest.json');
 
 const HTML_EXT = new Set(['.html']);
@@ -64,13 +72,49 @@ const isPathInside = (base, candidate) => {
   return relative !== '' && !relative.startsWith(`..${path.sep}`) && !path.isAbsolute(relative);
 };
 const relativeLabel = (abs) => toPosix(path.relative(ROOT, abs)) || '.';
-const publicHrefForAsset = (abs) => `/assets/${toPosix(path.relative(ASSET_ROOT, abs))}`;
+const publicHrefForAsset = (abs) => {
+  const resolved = path.resolve(abs);
+  for (const root of SOURCE_ROOTS) {
+    if (fs.existsSync(root.source) && fs.statSync(root.source).isFile()) {
+      const outputName = path.basename(root.output);
+      if (resolved === root.source) return `/${root.prefix}`;
+      if (isPathInside(path.dirname(root.output), resolved) && path.basename(resolved).startsWith(`${path.basename(outputName, path.extname(outputName))}.`)) {
+        return `/${path.basename(root.prefix, path.extname(root.prefix))}${path.extname(root.prefix) ? `.${path.basename(resolved).split('.').slice(-2, -1)[0]}` : ''}${path.extname(root.prefix)}`;
+      }
+      continue;
+    }
+    if (resolved === root.source) return `/${root.prefix}`;
+    if (isPathInside(root.source, resolved)) return `/${root.prefix}/${toPosix(path.relative(root.source, resolved))}`;
+    if (resolved === root.output) return `/${root.prefix}`;
+    if (isPathInside(root.output, resolved)) return `/${root.prefix}/${toPosix(path.relative(root.output, resolved))}`;
+  }
+  return `/${toPosix(path.relative(ROOT, resolved))}`;
+};
 const assetPathForPublicHref = (href) => {
-  const normalized = String(href || '').replace(/^\/+/, '');
-  if (normalized === 'assets' || normalized.startsWith('assets/')) {
-    return path.join(ASSET_ROOT, normalized.slice('assets'.length).replace(/^\/+/, ''));
+  let normalized = String(href || '').replace(/^\/+/, '');
+  if (normalized === 'dist' || normalized.startsWith('dist/')) normalized = normalized.slice('dist'.length).replace(/^\/+/, '');
+  for (const root of SOURCE_ROOTS) {
+    if (fs.existsSync(root.source) && fs.statSync(root.source).isFile()) {
+      if (normalized === root.prefix || normalized.startsWith(`${path.basename(root.prefix, path.extname(root.prefix))}.`)) return root.source;
+      continue;
+    }
+    if (normalized === root.prefix || normalized.startsWith(`${root.prefix}/`)) {
+      return path.join(root.source, normalized.slice(root.prefix.length).replace(/^\/+/, ''));
+    }
   }
   return path.resolve(ROOT, normalized);
+};
+const outputPathForAsset = (abs) => {
+  const resolved = path.resolve(abs);
+  for (const root of SOURCE_ROOTS) {
+    if (fs.existsSync(root.source) && fs.statSync(root.source).isFile()) {
+      if (resolved === root.source) return root.output;
+      continue;
+    }
+    if (resolved === root.source) return root.output;
+    if (isPathInside(root.source, resolved)) return path.join(root.output, path.relative(root.source, resolved));
+  }
+  return resolved;
 };
 const lstatIfExists = (abs) => {
   try {
@@ -218,6 +262,7 @@ const isPinnedAsset = (abs) => (
 const isAllowedCssSource = (abs) => {
   if (path.extname(abs).toLowerCase() !== '.css') return false;
   if (path.dirname(abs) === ROOT || path.dirname(abs) === path.join(ROOT, 'js')) return true;
+  if (abs === SOURCE_ROOTS[3].source) return true;
   return isPathInside(path.join(ASSET_ROOT, 'css'), abs);
 };
 const resolveAssetRef = (ref, ownerPath) => {
@@ -233,9 +278,12 @@ const resolveAssetRef = (ref, ownerPath) => {
   if (!decoded || decoded.includes('\0') || decoded.includes('\\')) {
     throw new Error(`Invalid local asset reference: ${ref}`);
   }
+  const relativeAbs = path.resolve(path.dirname(ownerPath), decoded);
   const abs = decoded.startsWith('/')
     ? assetPathForPublicHref(decoded)
-    : assetPathForPublicHref(toPosix(path.relative(ROOT, path.resolve(path.dirname(ownerPath), decoded))));
+    : isPathInside(SITE_ROOT, relativeAbs)
+      ? assetPathForPublicHref(`/${toPosix(path.relative(SITE_ROOT, relativeAbs))}`)
+      : relativeAbs;
   if (!isPathInside(ROOT, abs)) return null;
   const ext = path.extname(abs).toLowerCase();
   if (!ASSET_EXT.has(ext)) return null;
@@ -359,7 +407,7 @@ const listActiveHtmlFiles = () => {
       }
     }
   };
-  walk(ROOT, 0);
+  walk(SITE_ROOT, 0);
   return out;
 };
 
@@ -416,7 +464,8 @@ const plannedTargets = new Map();
 const targetPathForBytes = (source, bytes) => {
   const ext = path.extname(source);
   const base = path.basename(source, ext);
-  return path.join(path.dirname(source), `${base}.${hashBytes(bytes)}${ext}`);
+  const outputSource = outputPathForAsset(source);
+  return path.join(path.dirname(outputSource), `${base}.${hashBytes(bytes)}${ext}`);
 };
 const planTarget = (source, bytes, sourceDependencies = new Set([source])) => {
   assertSafeExistingFile(source, 'Canonical asset source');
@@ -440,12 +489,7 @@ const replacementReference = (original, ownerPath, target) => {
   const trimmed = original.trim();
   const { pathname, suffix } = splitSuffix(trimmed);
   let nextPath;
-  if (pathname.startsWith('/') || !isPathInside(ASSET_ROOT, ownerPath)) {
-    nextPath = publicHrefForAsset(target);
-  } else {
-    nextPath = toPosix(path.relative(path.dirname(ownerPath), target));
-    if (pathname.startsWith('./') && !nextPath.startsWith('.')) nextPath = `./${nextPath}`;
-  }
+  nextPath = publicHrefForAsset(target);
   return `${nextPath}${suffix}`;
 };
 const cssBuildStack = [];
@@ -514,9 +558,10 @@ if (CLEANUP || CHECK) {
     const base = path.basename(source, ext);
     const escape = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const familyRe = new RegExp(`^${escape(base)}\\.[0-9a-f]{6}${escape(ext)}$`, 'i');
-    for (const sibling of fs.readdirSync(path.dirname(source), { withFileTypes: true })) {
+    const outputSource = outputPathForAsset(source);
+    for (const sibling of fs.readdirSync(path.dirname(outputSource), { withFileTypes: true })) {
       if (!familyRe.test(sibling.name)) continue;
-      const candidate = path.join(path.dirname(source), sibling.name);
+      const candidate = path.join(path.dirname(outputSource), sibling.name);
       if (sibling.isSymbolicLink()) {
         throw new Error(`Managed fingerprint sibling is a symlink: ${relativeLabel(candidate)}`);
       }

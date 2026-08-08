@@ -13,6 +13,7 @@ npm run styles:min
 npm run icons:build
 npm run styles:bootstrap
 npm run styles:routes
+npm run build
 npm run qa:components:bundles
 npm run qa:css:minified
 npm run qa:icons:local
@@ -21,9 +22,9 @@ npm run qa:css:routes
 npm run qa:css:route-bundles
 npm run qa:css:budget
 npm run qa:assets:fingerprint:fixture
-npm run build:assets:additive
+npm run build:assets
 npm run qa:assets:canon
-npm run qa:css:assets:baseline
+npm run qa:css:assets -- --site-root=dist
 npm run qa:doctype
 npm run qa:ssi:integrity
 node tools/qa-schedule-literals.mjs
