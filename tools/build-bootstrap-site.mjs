@@ -18,8 +18,8 @@ const {
 const THIS_FILE = fileURLToPath(import.meta.url);
 const BUILD_VERSION = 'bootstrap-site-1';
 const BOOTSTRAP_VERSION = '5.3.3';
-const DEFAULT_SOURCE = 'assets/scss/bootstrap-site.scss';
-const DEFAULT_OUTPUT = 'assets/css/bootstrap-site.css';
+const DEFAULT_SOURCE = 'src/assets/scss/bootstrap-site.scss';
+const DEFAULT_OUTPUT = 'src/assets/css/bootstrap-site.css';
 
 const usage = `Usage: node tools/build-bootstrap-site.mjs [--check] [--source=<path>] [--output=<path>]
 

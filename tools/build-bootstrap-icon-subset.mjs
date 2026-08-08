@@ -3,8 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const ICON_DIR = path.join(ROOT, 'assets/icons/bootstrap');
-const OUTPUT_PATH = path.join(ROOT, 'assets/css/bootstrap-icons-local.css');
+const ICON_DIR = path.join(ROOT, 'src/assets/icons/bootstrap');
+const OUTPUT_PATH = path.join(ROOT, 'src/assets/css/bootstrap-icons-local.css');
 const PUBLIC_ICON_ROOT = '/assets/icons/bootstrap';
 
 const parseArgs = () => {
