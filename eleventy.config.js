@@ -17,8 +17,12 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("snippets/**");
   eleventyConfig.ignores.add("assets/**");
 
+  // Partials are Apache SSI payloads, not standalone Eleventy pages.
+  eleventyConfig.addPassthroughCopy({ "src/partials": "partials" });
+
   // Passthrough copy static assets to output
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/tokens.css": "tokens.css" });
   // The booking bridge is maintained in the repository-level js/ directory.
   eleventyConfig.addPassthroughCopy({ "js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });

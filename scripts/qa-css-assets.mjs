@@ -9,6 +9,14 @@ import { readHtmlWithSsi } from './url-qa-lib.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ROOT_REAL = await fs.realpath(ROOT);
+const ASSET_ROOT = path.join(ROOT, 'src', 'assets');
+const CANONICAL_ROOTS = [
+  { prefix: 'assets', source: ASSET_ROOT },
+  { prefix: 'images', source: path.join(ROOT, 'src', 'images') },
+  { prefix: 'js', source: path.join(ROOT, 'js') },
+  { prefix: 'tokens.css', source: path.join(ROOT, 'src', 'tokens.css') }
+];
+let SITE_ROOT = path.join(ROOT, 'dist');
 const DEFAULT_BUDGET_KB = 50;
 const DEFAULT_TOP = 12;
 const ISSUE_SAMPLES_PER_TYPE = 3;
@@ -18,12 +26,27 @@ const BASELINE_DEBT_TYPES = new Set([
   'unmeasured_external_stylesheet'
 ]);
 const HASHED_ASSET_RE = /\.[0-9a-f]{6}\.css$/i;
-const MANIFEST_PATH = 'assets/data/asset-hash-manifest.json';
+const ROUTE_BUNDLE_RE = /^assets\/css\/routes\/site-[0-9a-f]{12}(?:\.min)?\.css$/i;
+const MANIFEST_PATH = 'src/assets/data/asset-hash-manifest.json';
 const URL_CONTRACT_PATH = 'config/url-contract.json';
 const BOOTSTRAP_VENDOR_PATH = 'tools/vendor/bootstrap-5.3.3.min.css';
-const LOCAL_ICON_DIR = 'assets/icons/bootstrap';
+const LOCAL_ICON_DIR = 'src/assets/icons/bootstrap';
 const LOCAL_ICON_STYLESHEET = '/assets/css/bootstrap-icons-local.css';
 const BOOTSTRAP_533_RE = /^https:\/\/cdn\.jsdelivr\.net\/npm\/bootstrap@5\.3\.3\/dist\/css\/bootstrap(?:\.min)?\.css$/i;
+
+const resolveSitePath = (relativePath) => {
+  const normalized = String(relativePath).replace(/^\/+/, '');
+  return path.resolve(SITE_ROOT, ...normalized.split('/'));
+};
+const resolveCanonicalPath = (publicPath) => {
+  const normalized = String(publicPath).replace(/^\/+/, '');
+  for (const root of CANONICAL_ROOTS) {
+    if (normalized === root.prefix || normalized.startsWith(`${root.prefix}/`)) {
+      return path.join(root.source, normalized.slice(root.prefix.length).replace(/^\/+/, ''));
+    }
+  }
+  return path.resolve(ROOT, normalized);
+};
 
 const parseArgs = () => {
   const args = process.argv.slice(2);
@@ -55,6 +78,12 @@ const parseArgs = () => {
     }
     if (arg.startsWith('--sitemap=')) {
       sitemapPath = arg.slice('--sitemap='.length);
+      continue;
+    }
+    if (arg.startsWith('--site-root=')) {
+      const value = arg.slice('--site-root='.length);
+      if (!value) throw new Error('--site-root requires a directory.');
+      SITE_ROOT = path.resolve(ROOT, value);
       continue;
     }
     throw new Error(`Unknown argument: ${arg}`);
@@ -225,7 +254,7 @@ const resolveLocalCssUrl = (value, ownerRelPath) => {
   if (!relPath || relPath === '.' || relPath === '..' || relPath.startsWith('../') || path.posix.isAbsolute(relPath)) {
     return { error: 'path escapes the site root', ref };
   }
-  const fullPath = path.resolve(ROOT, ...relPath.split('/'));
+  const fullPath = resolveSitePath(relPath);
   if (!isPathInside(ROOT, fullPath)) return { error: 'path escapes the site root', ref };
   return { fullPath, ref, relPath };
 };
@@ -234,13 +263,7 @@ const replacementReference = (original, ownerRelPath, targetManifestPath) => {
   const trimmed = original.trim();
   const { pathname, suffix } = splitUrlSuffix(trimmed);
   const targetRelPath = targetManifestPath.replace(/^\/+/, '');
-  let nextPath;
-  if (pathname.startsWith('/')) {
-    nextPath = `/${targetRelPath}`;
-  } else {
-    nextPath = path.posix.relative(path.posix.dirname(ownerRelPath), targetRelPath);
-    if (pathname.startsWith('./') && !nextPath.startsWith('.')) nextPath = `./${nextPath}`;
-  }
+  const nextPath = `/${targetRelPath}`;
   return `${nextPath}${suffix}`;
 };
 
@@ -300,7 +323,14 @@ const parseActiveStylesheets = (html) => {
     links.push({ href, tag });
   }
 
-  return links;
+  const stylesheetHrefs = new Set(
+    links.filter((link) => /\brel\s*=\s*(["'])[^"']*\bstylesheet\b/i.test(link.tag))
+      .map((link) => link.href)
+  );
+  return links.filter((link) => {
+    const isPreload = /\brel\s*=\s*(["'])[^"']*\bpreload\b/i.test(link.tag);
+    return !isPreload || !stylesheetHrefs.has(link.href);
+  });
 };
 
 const parseBootstrapIconNames = (html) => {
@@ -332,7 +362,7 @@ const routeToHtmlPath = async (absoluteUrl) => {
     : ['index.html'];
 
   for (const candidate of candidates) {
-    const fullPath = path.resolve(ROOT, ...candidate.split('/'));
+  const fullPath = resolveSitePath(candidate);
     if (!isPathInside(ROOT, fullPath)) continue;
     if (await fileExists(fullPath)) return candidate;
   }
@@ -383,7 +413,7 @@ const normalizeStylesheet = (href, pageUrl, canonicalOrigin) => {
   if (!relPath || relPath === '.' || relPath === '..' || relPath.startsWith('../') || path.posix.isAbsolute(relPath)) {
     return { error: 'invalid_stylesheet_url', href };
   }
-  const fullPath = path.resolve(ROOT, ...relPath.split('/'));
+  const fullPath = resolveSitePath(relPath);
   if (!isPathInside(ROOT, fullPath)) return { error: 'invalid_stylesheet_url', href };
   return {
     external: false,
@@ -433,9 +463,9 @@ const buildManifestState = async () => {
     if (isCss) byTarget.set(target, source);
     const sourceRel = source.replace(/^\/+/, '');
     const targetRel = target.replace(/^\/+/, '');
-    const sourcePath = path.resolve(ROOT, ...sourceRel.split('/'));
-    const targetPath = path.resolve(ROOT, ...targetRel.split('/'));
-    if (!isPathInside(ROOT, sourcePath) || !isPathInside(ROOT, targetPath)) {
+    const sourcePath = resolveCanonicalPath(source);
+    const targetPath = resolveSitePath(targetRel);
+    if (!isPathInside(ROOT, sourcePath) || !isPathInside(SITE_ROOT, targetPath)) {
       issues.push({
         type: 'manifest_css_family_mismatch',
         detail: `${source} -> ${target}; resolved path escapes the site root`
@@ -525,13 +555,18 @@ const measureLocalStylesheet = async ({
   if (visited.has(assetKey)) return 0;
   visited.add(assetKey);
 
-  const fullPath = path.join(ROOT, relPath);
+  const manifestKey = `/${relPath}`;
+  let resolvedRelPath = relPath;
+  let fullPath = resolveSitePath(relPath);
+  if (!await fileExists(fullPath) && manifestState.manifest[manifestKey]) {
+    resolvedRelPath = manifestState.manifest[manifestKey].replace(/^\/+/, '');
+    fullPath = resolveSitePath(resolvedRelPath);
+  }
   if (!await fileExists(fullPath)) {
     issues.push({ type: missingType, route: pageUrl, detail: `/${relPath}` });
     return 0;
   }
 
-  const manifestKey = `/${relPath}`;
   if (HASHED_ASSET_RE.test(relPath)) {
     if (!manifestState.byTarget.has(manifestKey)) {
       issues.push({
@@ -540,7 +575,7 @@ const measureLocalStylesheet = async ({
         detail: manifestKey
       });
     }
-  } else {
+  } else if (!ROUTE_BUNDLE_RE.test(relPath)) {
     issues.push({
       type: 'unfingerprinted_stylesheet_reference',
       route: pageUrl,
@@ -550,15 +585,15 @@ const measureLocalStylesheet = async ({
     });
   }
 
-  if (!sizeCache.has(relPath)) {
+  if (!sizeCache.has(resolvedRelPath)) {
     const buffer = await fs.readFile(fullPath);
-    sizeCache.set(relPath, {
+    sizeCache.set(resolvedRelPath, {
       gzip: gzipBytes(buffer),
       imports: parseCssImports(buffer.toString('utf8'))
     });
   }
 
-  const cached = sizeCache.get(relPath);
+  const cached = sizeCache.get(resolvedRelPath);
   let total = cached.gzip;
   const cssBaseUrl = new URL(`/${relPath}`, canonicalOrigin).href;
 
@@ -620,7 +655,9 @@ const main = async () => {
 
     let html;
     try {
-      html = await readHtmlWithSsi(relPath, { root: ROOT, strict: true });
+      // Inspect the generated deployment payload, including its generated SSI
+      // fragments. The repository-root publication tree is not a release input.
+      html = await readHtmlWithSsi(relPath, { root: SITE_ROOT, strict: true });
     } catch (error) {
       issues.push({
         type: 'ssi_expansion_failed',
@@ -668,7 +705,7 @@ const main = async () => {
       group.push(link);
       groups.set(link.key, group);
       const family = families.get(link.familyKey) || [];
-      family.push(link);
+      if (!family.some((entry) => entry.key === link.key)) family.push(link);
       families.set(link.familyKey, family);
     }
 

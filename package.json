@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy",
+    "build": "eleventy && node tools/materialize-ssi-fragments.mjs",
     "clean": "node -e \"import('fs').then(fs => fs.rmSync('dist', {recursive: true, force: true}))\"",
     "validate": "npm run qa:schedule && npm run qa:links:static && npm run qa:links:existence && npm run qa:doctype && npm run validate:release5",
     "validate:release5": "node scripts/qa-release-5.mjs",
