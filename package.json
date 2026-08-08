@@ -96,7 +96,7 @@
     "watch": "node tools/watch-assets.mjs",
     "build:assets": "node tools/fingerprint-assets.cjs --clean",
     "build:assets:additive": "node tools/fingerprint-assets.cjs",
-    "build:site": "python3 scripts/build.py",
+    "build:site": "npm run build",
     "qa:media:manifest": "node scripts/qa-media-manifest.mjs"
   },
   "dependencies": {

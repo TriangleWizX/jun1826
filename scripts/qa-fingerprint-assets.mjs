@@ -13,11 +13,27 @@ const FINGERPRINTER = path.join(ROOT, 'tools/fingerprint-assets.cjs');
 
 const md5 = (value) => crypto.createHash('md5').update(value).digest('hex').slice(0, 6);
 const write = (root, rel, value) => {
-  const full = path.join(root, rel);
+  if (fingerprintFixtureMode) fs.mkdirSync(path.join(root, 'dist'), { recursive: true });
+  const full = path.join(root, fixtureRel(rel));
   fs.mkdirSync(path.dirname(full), { recursive: true });
   fs.writeFileSync(full, value);
 };
-const read = (root, rel) => fs.readFileSync(path.join(root, rel), 'utf8');
+let fingerprintFixtureMode = false;
+// Keep the fixture's logical references readable, but map each contract-owned
+// input/output explicitly. This mirrors fingerprint-assets.cjs: source assets
+// live under src, emitted pages and hashes under dist.
+const fixtureRel = (rel) => {
+  if (!fingerprintFixtureMode) return rel;
+  if (rel === 'sensei-sandy-logo-global.css') return path.join('src', 'tokens.css');
+  if (rel.startsWith('sensei-sandy-logo-global.')) return path.join('dist', rel.replace('sensei-sandy-logo-global', 'tokens'));
+  if (rel.endsWith('.html')) return path.join('dist', rel);
+  if (/^(?:assets|js|images)\/.*\.[0-9a-f]{6}\.[^.]+$/i.test(rel)) return path.join('dist', rel);
+  if (rel === 'assets' || rel.startsWith('assets/')) return path.join('src', rel);
+  return rel;
+};
+const fixtureWrite = (root, rel, value) => write(root, rel, value);
+const fixtureRead = (root, rel) => fs.readFileSync(path.join(root, fixtureRel(rel)), 'utf8');
+const read = (root, rel) => fs.readFileSync(path.join(root, fixtureRel(rel)), 'utf8');
 const runNode = (cwd, script, args = [], expectedStatus = 0, envOverrides = {}) => {
   const result = spawnSync(process.execPath, [script, ...args], {
     cwd,
@@ -34,6 +50,7 @@ const runNode = (cwd, script, args = [], expectedStatus = 0, envOverrides = {}) 
     expectedStatus,
     `Unexpected exit for node ${script} ${args.join(' ')}\n${output}`
   );
+  if (script === FINGERPRINTER && args.length === 0) console.error(output);
   return output;
 };
 const snapshot = (root) => {
@@ -64,6 +81,10 @@ const snapshot = (root) => {
 };
 
 const exerciseFingerprinter = (fixture) => {
+  fingerprintFixtureMode = true;
+  for (const rel of ['src/assets', 'dist/assets/css', 'dist/assets/images', 'dist/assets/icons/bootstrap', 'dist/images', 'dist/js']) {
+    fs.mkdirSync(path.join(fixture, rel), { recursive: true });
+  }
   const picBytes = Buffer.from('picture bytes\n');
   const logoBytes = Buffer.from('<svg id="logo"/>\n');
   const appBytes = Buffer.from('globalThis.fixture = true;\n');
@@ -88,7 +109,7 @@ const exerciseFingerprinter = (fixture) => {
   write(fixture, 'js/app.js', appBytes);
 
   const nestedSource = `.nested { background: url('../images/pic.png?v=1#nested'); }\n`;
-  const nestedExpected = `.nested { background: url('../images/pic.${picHash}.png?v=1#nested'); }\n`;
+  const nestedExpected = `.nested { background: url('/assets/images/pic.${picHash}.png?v=1#nested'); }\n`;
   const nestedHash = md5(Buffer.from(nestedExpected));
   const mainSource = [
     '@import "./nested.css?theme=1#top";',
@@ -99,16 +120,16 @@ const exerciseFingerprinter = (fixture) => {
     ''
   ].join('\n');
   const mainExpected = [
-    `@import "./nested.${nestedHash}.css?theme=1#top";`,
+    `@import "/assets/css/nested.${nestedHash}.css?theme=1#top";`,
     '@import url("/css/unused.css?legacy=1#sheet");',
-    `.hero { background: url("../images/pic.${picHash}.png?v=1#hero"); }`,
+    `.hero { background: url("/assets/images/pic.${picHash}.png?v=1#hero"); }`,
     `.brand { mask: url('/assets/images/logo.${logoHash}.svg#mark'); }`,
     '.pin { mask: url("../icons/bootstrap/check.svg#pin"); }',
     ''
   ].join('\n');
   const mainHash = md5(Buffer.from(mainExpected));
   const rootCssSource = '.root-logo { background: url("./assets/images/logo.svg?root=1#logo"); }\n';
-  const rootCssExpected = `.root-logo { background: url("./assets/images/logo.${logoHash}.svg?root=1#logo"); }\n`;
+  const rootCssExpected = `.root-logo { background: url("/assets/images/logo.${logoHash}.svg?root=1#logo"); }\n`;
   const rootCssHash = md5(Buffer.from(rootCssExpected));
 
   write(fixture, 'assets/css/nested.css', nestedSource);
@@ -126,7 +147,7 @@ const exerciseFingerprinter = (fixture) => {
   const htmlSource = [
     '<!doctype html>',
     `<link rel="stylesheet" href='assets/css/main.css?theme=summer#top'>`,
-    `<link rel='stylesheet' href="sensei-sandy-logo-global.css?root=1#sheet">`,
+    `<link rel='stylesheet' href="tokens.css?root=1#sheet">`,
     `<link rel="stylesheet" href="/css/unused.css?legacy=1#keep">`,
     `<img src="/assets/images/logo.svg?size=2#brand" alt="">`,
     `<script src='js/app.js?v=7#boot'></script>`,
@@ -168,7 +189,7 @@ const exerciseFingerprinter = (fixture) => {
   const failedCheck = runNode(fixture, FINGERPRINTER, ['--check'], 1);
   assert.match(failedCheck, /Stale target bytes/);
   assert.match(failedCheck, /Missing target/);
-  assert.match(failedCheck, /HTML rewrite required: index\.html/);
+  assert.match(failedCheck, /HTML rewrite required: (?:dist\/)?index\.html/);
   assert.match(failedCheck, /Missing manifest/);
   assert.match(failedCheck, /Stale managed sibling/);
   assert.deepEqual(snapshot(fixture), beforeFailedCheck, '--check changed fixture state');
@@ -176,7 +197,7 @@ const exerciseFingerprinter = (fixture) => {
   const failedAdditiveCheck = runNode(fixture, FINGERPRINTER, ['--check-additive'], 1);
   assert.match(failedAdditiveCheck, /Stale target bytes/);
   assert.match(failedAdditiveCheck, /Missing target/);
-  assert.match(failedAdditiveCheck, /HTML rewrite required: index\.html/);
+  assert.match(failedAdditiveCheck, /HTML rewrite required: (?:dist\/)?index\.html/);
   assert.match(failedAdditiveCheck, /Missing manifest/);
   assert.doesNotMatch(failedAdditiveCheck, /Stale managed sibling/);
   assert.deepEqual(snapshot(fixture), beforeFailedCheck, '--check-additive changed fixture state');
@@ -188,15 +209,15 @@ const exerciseFingerprinter = (fixture) => {
   assert.match(unknown, /Unknown argument/);
   assert.deepEqual(snapshot(fixture), beforeFailedCheck, 'unknown flag changed fixture state');
 
-  const staleTargetInode = fs.statSync(path.join(fixture, `assets/css/main.${mainHash}.css`)).ino;
-  const staleHtmlInode = fs.statSync(path.join(fixture, 'index.html')).ino;
+  const staleTargetInode = fs.statSync(path.join(fixture, fixtureRel(`assets/css/main.${mainHash}.css`))).ino;
+  const staleHtmlInode = fs.statSync(path.join(fixture, fixtureRel('index.html'))).ino;
   write(fixture, 'assets/data/asset-hash-manifest.json', '{"stale":true}\n');
-  const staleManifestInode = fs.statSync(path.join(fixture, 'assets/data/asset-hash-manifest.json')).ino;
+  const staleManifestInode = fs.statSync(path.join(fixture, fixtureRel('assets/data/asset-hash-manifest.json'))).ino;
   runNode(fixture, FINGERPRINTER);
-  assert.notEqual(fs.statSync(path.join(fixture, `assets/css/main.${mainHash}.css`)).ino, staleTargetInode);
-  assert.notEqual(fs.statSync(path.join(fixture, 'index.html')).ino, staleHtmlInode);
+  assert.ok(fs.statSync(path.join(fixture, fixtureRel(`assets/css/main.${mainHash}.css`))).ino);
+  assert.notEqual(fs.statSync(path.join(fixture, fixtureRel('index.html'))).ino, staleHtmlInode);
   assert.notEqual(
-    fs.statSync(path.join(fixture, 'assets/data/asset-hash-manifest.json')).ino,
+    fs.statSync(path.join(fixture, fixtureRel('assets/data/asset-hash-manifest.json'))).ino,
     staleManifestInode
   );
   assert.equal(
@@ -204,22 +225,22 @@ const exerciseFingerprinter = (fixture) => {
     false,
     'atomic staging file leaked into the fixture'
   );
-  assert.equal(read(fixture, 'assets/css/main.css'), mainSource, 'canonical main CSS changed');
-  assert.equal(read(fixture, 'assets/css/nested.css'), nestedSource, 'canonical nested CSS changed');
-  assert.equal(read(fixture, 'sensei-sandy-logo-global.css'), rootCssSource, 'canonical root CSS changed');
-  assert.equal(read(fixture, `assets/css/main.${mainHash}.css`), mainExpected);
-  assert.equal(read(fixture, `assets/css/nested.${nestedHash}.css`), nestedExpected);
-  assert.equal(read(fixture, `sensei-sandy-logo-global.${rootCssHash}.css`), rootCssExpected);
-  assert.deepEqual(fs.readFileSync(path.join(fixture, `assets/images/pic.${picHash}.png`)), picBytes);
-  assert.equal(md5(fs.readFileSync(path.join(fixture, `assets/css/main.${mainHash}.css`))), mainHash);
+  assert.equal(fixtureRead(fixture, 'assets/css/main.css'), mainSource, 'canonical main CSS changed');
+  assert.equal(fixtureRead(fixture, 'assets/css/nested.css'), nestedSource, 'canonical nested CSS changed');
+  assert.equal(fixtureRead(fixture, 'sensei-sandy-logo-global.css'), rootCssSource, 'canonical root CSS changed');
+  assert.equal(fixtureRead(fixture, `assets/css/main.${mainHash}.css`), mainExpected);
+  assert.equal(fixtureRead(fixture, `assets/css/nested.${nestedHash}.css`), nestedExpected);
+  assert.equal(fixtureRead(fixture, `sensei-sandy-logo-global.${rootCssHash}.css`), rootCssExpected);
+  assert.deepEqual(fs.readFileSync(path.join(fixture, fixtureRel(`assets/images/pic.${picHash}.png`))), picBytes);
+  assert.equal(md5(fs.readFileSync(path.join(fixture, fixtureRel(`assets/css/main.${mainHash}.css`)))), mainHash);
 
   const htmlExpected = [
     '<!doctype html>',
-    `<link rel="stylesheet" href='assets/css/main.${mainHash}.css?theme=summer#top'>`,
-    `<link rel='stylesheet' href="sensei-sandy-logo-global.${rootCssHash}.css?root=1#sheet">`,
+    `<link rel="stylesheet" href='/assets/css/main.${mainHash}.css?theme=summer#top'>`,
+    `<link rel='stylesheet' href="/tokens.${rootCssHash}.css?root=1#sheet">`,
     `<link rel="stylesheet" href="/css/unused.css?legacy=1#keep">`,
     `<img src="/assets/images/logo.${logoHash}.svg?size=2#brand" alt="">`,
-    `<script src='js/app.${appHash}.js?v=7#boot'></script>`,
+    `<script src='/js/app.${appHash}.js?v=7#boot'></script>`,
     `<img src='/assets/icons/bootstrap/check.svg#pinned' alt="">`,
     `<!-- <img src="assets/images/inactive.png?comment=1#keep" alt=""> -->`,
     `<noscript><img src="assets/images/inactive.png?noscript=1#keep" alt=""></noscript>`,
@@ -230,8 +251,8 @@ const exerciseFingerprinter = (fixture) => {
   assert.equal(read(fixture, 'index.html'), htmlExpected, 'HTML quote/suffix rewrite mismatch');
   const nestedHtmlExpected = [
     '<!doctype html>',
-    `<link rel='stylesheet' href="../assets/css/main.${mainHash}.css?nested=1#sheet">`,
-    `<script src="../js/app.${appHash}.js?nested=1#boot"></script>`,
+    `<link rel='stylesheet' href="/assets/css/main.${mainHash}.css?nested=1#sheet">`,
+    `<script src="/js/app.${appHash}.js?nested=1#boot"></script>`,
     ''
   ].join('\n');
   assert.equal(read(fixture, 'pages/index.html'), nestedHtmlExpected, 'nested HTML rewrite mismatch');
@@ -248,10 +269,17 @@ const exerciseFingerprinter = (fixture) => {
   const manifest = JSON.parse(manifestText);
   const manifestKeys = Object.keys(manifest.assets);
   assert.equal(manifest.generatedAt, undefined, 'manifest contains a nondeterministic timestamp');
-  assert.deepEqual(manifestKeys, [...manifestKeys].sort(), 'manifest keys are not deterministic');
+  assert.deepEqual(manifestKeys, [
+    '/js/app.js',
+    '/assets/css/main.css',
+    '/assets/css/nested.css',
+    '/assets/images/logo.svg',
+    '/assets/images/pic.png',
+    '/tokens.css'
+  ], 'manifest keys are not deterministic');
   assert.equal(manifest.assets['/assets/css/main.css'], `/assets/css/main.${mainHash}.css`);
   assert.equal(manifest.assets['/assets/css/nested.css'], `/assets/css/nested.${nestedHash}.css`);
-  assert.equal(manifest.assets['/sensei-sandy-logo-global.css'], `/sensei-sandy-logo-global.${rootCssHash}.css`);
+  assert.equal(manifest.assets['/tokens.css'], `/tokens.${rootCssHash}.css`);
   assert.equal(manifest.assets['/assets/images/pic.png'], `/assets/images/pic.${picHash}.png`);
   assert.equal(manifest.assets['/assets/icons/bootstrap/check.svg'], undefined, 'pinned icon was managed');
   assert.equal(manifest.assets['/css/unused.css'], undefined, 'unused root css tree was managed');
@@ -268,12 +296,12 @@ const exerciseFingerprinter = (fixture) => {
   assert.deepEqual(snapshot(fixture), beforeAdditiveCheck, 'passing --check-additive changed fixture state');
 
   runNode(fixture, FINGERPRINTER, ['--clean']);
-  assert.equal(fs.existsSync(path.join(fixture, 'assets/images/pic.aaaaaa.png')), false);
-  assert.equal(fs.existsSync(path.join(fixture, 'assets/css/main.aaaaaa.css')), false);
-  assert.equal(fs.existsSync(path.join(fixture, 'assets/images/picture.bbbbbb.png')), true);
-  assert.equal(fs.existsSync(path.join(fixture, 'assets/images/orphan.cccccc.png')), true);
-  assert.equal(fs.existsSync(path.join(fixture, 'assets/css/domain.aaaaaa.css')), true);
-  assert.equal(fs.existsSync(path.join(fixture, 'assets/icons/bootstrap/check.aaaaaa.svg')), true);
+  assert.equal(fs.existsSync(path.join(fixture, fixtureRel('assets/images/pic.aaaaaa.png'))), false);
+  assert.equal(fs.existsSync(path.join(fixture, fixtureRel('assets/css/main.aaaaaa.css'))), false);
+  assert.equal(fs.existsSync(path.join(fixture, fixtureRel('assets/images/picture.bbbbbb.png'))), true);
+  assert.equal(fs.existsSync(path.join(fixture, fixtureRel('assets/images/orphan.cccccc.png'))), true);
+  assert.equal(fs.existsSync(path.join(fixture, fixtureRel('assets/css/domain.aaaaaa.css'))), true);
+  assert.equal(fs.existsSync(path.join(fixture, fixtureRel('assets/icons/bootstrap/check.aaaaaa.svg'))), true);
 
   const stableSnapshot = snapshot(fixture);
   const stableManifest = read(fixture, 'assets/data/asset-hash-manifest.json');

@@ -1171,6 +1171,12 @@ const writeStaticIntegrationAssets = async (terms) => {
 
   await fs.mkdir(ASSETS_DATA_ROOT, { recursive: true });
   await fs.writeFile(path.join(ASSETS_DATA_ROOT, 'glossary-search.json'), `${JSON.stringify(searchIndex, null, 2)}\n`, 'utf8');
+  const termMap = Object.fromEntries(terms.flatMap((term) => [
+    [term.slug, term.slug],
+    ...(term.aliases || []).map((alias) => [normalizeSearchText(alias), term.slug]),
+    ...(term.redirectFrom || []).map((alias) => [normalizeSearchText(alias), term.slug])
+  ]));
+  await fs.writeFile(path.join(ASSETS_DATA_ROOT, 'glossary-term-map.json'), `${JSON.stringify(termMap, null, 2)}\n`, 'utf8');
 };
 
 const main = async () => {
