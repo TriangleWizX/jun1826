@@ -1,3 +1,3 @@
 # Release 5 Deployment Evidence
 
-Status: `BLOCKED`. Record owner authorization, backup location and verification, SFTP destination verification, generated-only payload, rollback point, and post-deploy status/redirect/form/sitemap/robots checks here. No deployment or remote deletion is authorized by the definition-of-done task itself.
+Status: `BLOCKED` as of 2026-08-08. The release candidate is committed locally at `e438742`, but no production backup, generated-only payload transfer, rollback point, post-deploy verification, or Search Console submission was performed. Read-only live probes are recorded in `docs/qa/RELEASE_5_LOCAL_EVIDENCE.md`; they are not deployment evidence.
