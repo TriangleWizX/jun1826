@@ -34,8 +34,8 @@ const {
 
 const THIS_FILE = fileURLToPath(import.meta.url);
 const STRICT_BUDGET_BYTES = 51_200;
-const DEFAULT_MANIFEST = 'assets/data/route-style-manifest.json';
-const DEFAULT_ASSET_MANIFEST = 'assets/data/asset-hash-manifest.json';
+const DEFAULT_MANIFEST = 'src/assets/data/route-style-manifest.json';
+const DEFAULT_ASSET_MANIFEST = 'src/assets/data/asset-hash-manifest.json';
 
 const usage = `Usage: node scripts/qa-css-budget.mjs [options]
 
