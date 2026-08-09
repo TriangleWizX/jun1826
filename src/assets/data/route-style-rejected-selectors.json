@@ -6822,7 +6822,7 @@
         "/bjj-glossary/x-guard",
         "/bjj-glossary/z-guard"
       ],
-      "rejectedCount": 4303,
+      "rejectedCount": 4305,
       "rejectedSelectors": [
         "\n  .birthday-mobile-sticky",
         "\n  .birthday-mobile-sticky a",
@@ -10964,6 +10964,8 @@
         ".video-embed iframe",
         ".video-ratio",
         ".video-ratio iframe",
+        ".visually-hidden",
+        ".visually-hidden:not(caption)",
         ".vr",
         ".vstack",
         ".vw-100",
@@ -11250,7 +11252,7 @@
   "schemaVersion": 1,
   "summary": {
     "bundleCount": 3,
-    "rejectedSelectorCount": 10841,
+    "rejectedSelectorCount": 10843,
     "routeCount": 264
   }
 }
