@@ -2521,3 +2521,14 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
     transform: translateY(0) !important;
   }
 }
+
+/* Mobile navigation must be closed before any optional Bootstrap runtime loads. */
+@media screen and (max-width: 991.98px) {
+  .ss-global-nav-wrapper #ssMainNav:not(.show):not(.collapsing) {
+    display: none !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show {
+    display: block !important;
+  }
+}

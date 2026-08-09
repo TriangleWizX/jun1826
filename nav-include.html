@@ -140,6 +140,41 @@
   })();
 </script>
 
+<script>
+  (function mobileNavFallback() {
+    const setup = function () {
+      const button = document.querySelector('.ss-menu-button');
+      const nav = document.getElementById('ssMainNav');
+      if (!button || !nav || button.dataset.ssMobileNavReady === 'true') return;
+      button.dataset.ssMobileNavReady = 'true';
+
+      document.addEventListener('click', function (event) {
+        if (!window.matchMedia('(max-width: 991.98px)').matches) return;
+        if (!event.target.closest('.ss-menu-button')) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        const open = nav.classList.toggle('show');
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }, true);
+
+      nav.addEventListener('click', function (event) {
+        if (event.target.closest('a')) {
+          nav.classList.remove('show');
+          button.setAttribute('aria-expanded', 'false');
+          button.setAttribute('aria-label', 'Open menu');
+        }
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setup, { once: true });
+    } else {
+      setup();
+    }
+  })();
+</script>
+
 <div
   id="schedule-dialog"
   class="schedule-dialog"
