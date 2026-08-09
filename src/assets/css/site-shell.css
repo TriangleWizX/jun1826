@@ -2531,4 +2531,25 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
   .ss-global-nav-wrapper #ssMainNav.show {
     display: block !important;
   }
+
+  .ss-global-nav-wrapper #ssMainNav.show,
+  .ss-global-nav-wrapper #ssMainNav.show .navbar-nav,
+  .ss-global-nav-wrapper #ssMainNav.show .nav-item,
+  .ss-global-nav-wrapper #ssMainNav.show .nav-link,
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-menu,
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-item {
+    pointer-events: auto !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-menu:not(.show) {
+    display: none !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-menu.show {
+    display: block !important;
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

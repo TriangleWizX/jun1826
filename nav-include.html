@@ -416,6 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const close = () => {
       nav.classList.remove('show', 'collapsing');
       button.setAttribute('aria-expanded', 'false');
+      if (mobile()) nav.setAttribute('inert', '');
     };
 
     button.addEventListener('click', (event) => {
@@ -423,9 +424,30 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
       const open = nav.classList.toggle('show');
       button.setAttribute('aria-expanded', String(open));
+      if (open) nav.removeAttribute('inert');
+      else nav.setAttribute('inert', '');
     });
 
     nav.addEventListener('click', (event) => {
+      const toggle = event.target.closest('.dropdown-toggle');
+      if (mobile() && toggle && !(window.bootstrap && window.bootstrap.Dropdown)) {
+        event.preventDefault();
+        const dropdown = toggle.closest('.dropdown');
+        const menu = dropdown && dropdown.querySelector('.dropdown-menu');
+        if (!dropdown || !menu) return;
+        const open = !dropdown.classList.contains('show');
+        nav.querySelectorAll('.dropdown.show').forEach((item) => {
+          item.classList.remove('show');
+          const itemToggle = item.querySelector('.dropdown-toggle');
+          const itemMenu = item.querySelector('.dropdown-menu');
+          if (itemToggle) itemToggle.setAttribute('aria-expanded', 'false');
+          if (itemMenu) itemMenu.classList.remove('show');
+        });
+        dropdown.classList.toggle('show', open);
+        menu.classList.toggle('show', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        return;
+      }
       if (mobile() && event.target.closest('a')) close();
     });
 
