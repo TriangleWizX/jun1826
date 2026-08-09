@@ -428,6 +428,10 @@ document.addEventListener('DOMContentLoaded', function() {
       else nav.setAttribute('inert', '');
     });
 
+    nav.addEventListener('pointerdown', () => {
+      if (mobile()) nav.removeAttribute('inert');
+    }, { passive: true });
+
     nav.addEventListener('click', (event) => {
       const toggle = event.target.closest('.dropdown-toggle');
       if (mobile() && toggle && !(window.bootstrap && window.bootstrap.Dropdown)) {

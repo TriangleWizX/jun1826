@@ -2530,6 +2530,8 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
 
   .ss-global-nav-wrapper #ssMainNav.show {
     display: block !important;
+    position: relative !important;
+    z-index: 2000 !important;
   }
 
   .ss-global-nav-wrapper #ssMainNav.show,
@@ -2551,5 +2553,12 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
     visibility: visible !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show a,
+  .ss-global-nav-wrapper #ssMainNav.show button {
+    position: relative !important;
+    z-index: 2001 !important;
+    touch-action: manipulation;
   }
 }
