@@ -356,13 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (myCollapsible && siteHeader) {
     const lgQuery = window.matchMedia('(min-width: 992px)');
     const handleResize = (e) => {
-      if (e.matches) {
-        myCollapsible.removeAttribute('inert');
-      } else {
-        if (!myCollapsible.classList.contains('show')) {
-          myCollapsible.setAttribute('inert', '');
-        }
-      }
+      if (e.matches) myCollapsible.classList.remove('show', 'collapsing');
     };
 
     // Fallback for older Safari
@@ -388,9 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     myCollapsible.addEventListener('hidden.bs.collapse', function () {
-      if (!lgQuery.matches) {
-        myCollapsible.setAttribute('inert', '');
-      }
       if (toggler) toggler.focus();
     });
 
@@ -416,7 +407,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const close = () => {
       nav.classList.remove('show', 'collapsing');
       button.setAttribute('aria-expanded', 'false');
-      if (mobile()) nav.setAttribute('inert', '');
     };
 
     button.addEventListener('click', (event) => {
@@ -424,13 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
       const open = nav.classList.toggle('show');
       button.setAttribute('aria-expanded', String(open));
-      if (open) nav.removeAttribute('inert');
-      else nav.setAttribute('inert', '');
     });
-
-    nav.addEventListener('pointerdown', () => {
-      if (mobile()) nav.removeAttribute('inert');
-    }, { passive: true });
 
     nav.addEventListener('click', (event) => {
       const toggle = event.target.closest('.dropdown-toggle');
