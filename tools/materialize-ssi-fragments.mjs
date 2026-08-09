@@ -31,6 +31,10 @@ const copyFragmentTree = async (relativeDir) => {
   }
 };
 
+// Remove stale nested fragment pages before materializing the canonical SSI tree.
+// This prevents an old Eleventy page (for example /partials/booking-router/)
+// from surviving an additive deployment beside the fragment file.
+await fs.rm(path.join(outputRoot, 'partials'), { recursive: true, force: true });
 await copyFragmentTree('partials');
 
 // This legacy-named root file is also consumed as an SSI fragment.
