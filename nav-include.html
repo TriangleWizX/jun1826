@@ -406,6 +406,39 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+  (function initMobileNavFallback() {
+    const nav = document.getElementById('ssMainNav');
+    const button = document.querySelector('.ss-menu-button');
+    if (!nav || !button) return;
+
+    const mobile = () => window.matchMedia('(max-width: 991.98px)').matches;
+    const close = () => {
+      nav.classList.remove('show', 'collapsing');
+      button.setAttribute('aria-expanded', 'false');
+    };
+
+    button.addEventListener('click', (event) => {
+      if (!mobile() || (window.bootstrap && window.bootstrap.Collapse)) return;
+      event.preventDefault();
+      const open = nav.classList.toggle('show');
+      button.setAttribute('aria-expanded', String(open));
+    });
+
+    nav.addEventListener('click', (event) => {
+      if (mobile() && event.target.closest('a')) close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+
+    window.addEventListener('resize', () => {
+      if (!mobile()) close();
+    }, { passive: true });
+  })();
+</script>
+
 <style>
 /* =========================================================
    DESKTOP NAV DROPDOWN STATE FIX
