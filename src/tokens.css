@@ -1,0 +1,37 @@
+/* Catskills Studio shared design tokens. */
+:root {
+  --color-paper: #fbfaf8;
+  --color-paper-2: #f4f1ed;
+  --color-paper-3: #ebe6df;
+  --color-ink: #362b24;
+  --color-ink-2: #4f433c;
+  --color-muted: #756b5f;
+  --color-rule: rgba(54, 43, 36, 0.14);
+  --color-rule-2: rgba(54, 43, 36, 0.28);
+  --color-accent: #116a42;
+  --color-accent-strong: #0d5736;
+  --color-accent-ink: #fbfaf8;
+  --color-focus: #211d18;
+  --color-focus-inverse: #289fa1;
+  --color-brown: #8b522e;
+  --color-gold: #b88a44;
+  --font-display: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  --tracking-display: -0.025em;
+  --leading-heading: 1.08;
+  --leading-body: 1.62;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --container-standard: 72rem;
+  --gutter: clamp(1rem, 3.6vw, 3rem);
+  --radius-card: 0.75rem;
+  --radius-input: 0.5rem;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 0 rgba(54, 43, 36, 0.08), 0 1rem 2.5rem rgba(54, 43, 36, 0.06);
+  --shadow-raised: 0 1.25rem 3.5rem rgba(54, 43, 36, 0.12);
+}

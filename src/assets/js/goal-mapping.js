@@ -30,11 +30,9 @@
         url.hostname === 'calendly.com' &&
         url.pathname.startsWith('/senseisandy');
 
-      const isOldStartPage =
-        url.origin === window.location.origin &&
-        url.pathname.replace(/\/+$/, '') === '/free-bjj-intro-tannersville-ny';
-
-      return isCalendly || isOldStartPage;
+      // Internal Free Intro links keep native navigation. Only explicitly
+      // marked links should open the optional third-party popup flow.
+      return isCalendly;
     } catch (_) {
       return false;
     }
@@ -76,6 +74,13 @@
     if (widgetPromise) return widgetPromise;
 
     widgetPromise = new Promise((resolve, reject) => {
+      // Never strand a visitor on the source page when the third-party widget
+      // is blocked or slow. The catch path below preserves the hosted fallback.
+      window.setTimeout(
+        () => reject(new Error('Calendly widget load timed out.')),
+        3000
+      );
+
       addCalendlyStyles();
 
       const existing = document.querySelector(`script[src="${WIDGET_JS}"]`);

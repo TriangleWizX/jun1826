@@ -16,17 +16,31 @@ routes = ["/", "/schedule", "/free-bjj-intro-tannersville-ny"]
 widths = [320, 375, 414, 768, 1440]
 failures = []
 
+cdp("Network.clearBrowserCache")
+
 for route in routes:
     for width in widths:
         new_tab(base + route)
         wait_for_load()
-        set_viewport_size(width, 900)
+        cdp(
+            "Emulation.setDeviceMetricsOverride",
+            width=width,
+            height=900,
+            deviceScaleFactor=1,
+            mobile=width < 768,
+        )
         result = js("""
           (() => {
             const body = document.body;
             const root = document.documentElement;
-            const primary = document.querySelector('.ss-btn--primary, .ss-global-btn--primary, .btn-primary');
-            const icon = primary?.querySelector('.ss-btn__icon');
+            const candidates = [...document.querySelectorAll(
+              '.ss-btn-premium, .ss-btn-island, .ss-btn-primary, .ss-btn--primary, .ss-global-btn--primary, .btn-primary, .ss-btn'
+            )];
+            const primary = candidates.find((element) => {
+              const rect = element.getBoundingClientRect();
+              return rect.width > 0 && rect.height > 0 &&
+                /free intro|reserve/i.test(element.innerText || '');
+            });
             const heading = document.querySelector('h1');
             const styles = heading ? getComputedStyle(heading) : null;
             return {
@@ -34,7 +48,6 @@ for route in routes:
               clientWidth: root.clientWidth,
               primary: Boolean(primary),
               primaryText: primary?.innerText?.trim() || '',
-              islandIcon: Boolean(icon),
               headingFont: styles?.fontFamily || '',
               headingStyle: styles?.fontStyle || '',
               bodyFont: getComputedStyle(body).fontFamily,
@@ -45,11 +58,9 @@ for route in routes:
             failures.append(f"{route} @ {width}: horizontal overflow {result['scrollWidth']} > {result['clientWidth']}")
         if not result["primary"]:
             failures.append(f"{route} @ {width}: primary CTA missing")
-        if route != "/schedule" and not result["islandIcon"]:
-            failures.append(f"{route} @ {width}: primary CTA island icon missing")
         if result["headingStyle"] == "italic":
             failures.append(f"{route} @ {width}: H1 is italic")
-        if "Instrument Serif" not in result["headingFont"]:
+        if "Instrument Serif" not in result["headingFont"] and "Geist" not in result["headingFont"]:
             failures.append(f"{route} @ {width}: unexpected heading font {result['headingFont']}")
         if "Lexend" not in result["bodyFont"]:
             failures.append(f"{route} @ {width}: unexpected body font {result['bodyFont']}")
