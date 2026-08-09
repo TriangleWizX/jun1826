@@ -339,7 +339,7 @@ const renderLayout = ({ title, description, canonicalUrl, componentBundleName, b
   <meta property="og:image" content="${CANONICAL_ORIGIN}/assets/images/hero.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/css/bootstrap-site.css" />
   <link rel="stylesheet" href="/assets/css/global.css" />
   <link rel="stylesheet" href="${escapeHtml(componentBundleHref(componentBundleName))}" />
   <link rel="stylesheet" href="/assets/css/pages/glossary.css" />

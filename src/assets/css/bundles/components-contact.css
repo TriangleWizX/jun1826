@@ -3745,6 +3745,33 @@ button.btn {
   color: #155f61 !important;
 }
 
+/* Keep the shared mobile disclosure closed until Bootstrap opens it. Some
+   route bundles carry desktop navbar rules ahead of the offcanvas base rules;
+   this guard preserves the compact mobile header and prevents menu occlusion. */
+@media (max-width: 991.98px) {
+  .ss-nav .offcanvas.offcanvas-end {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: min(22rem, 100vw);
+    max-width: 100vw;
+    visibility: hidden;
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+
+  .ss-nav .offcanvas.offcanvas-end.show {
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .ss-nav .offcanvas-body {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
 .ss-lanes {
   padding: 0.4rem 0;
 }
