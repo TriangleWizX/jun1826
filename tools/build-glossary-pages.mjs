@@ -6,7 +6,7 @@ import { CSS_BUNDLE_REGISTRY } from './css-bundle-registry.mjs';
 
 const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, 'data', 'glossary-terms.json');
-const OUTPUT_ROOT = path.join(ROOT, 'bjj-glossary');
+const OUTPUT_ROOT = path.join(ROOT, 'src', 'bjj-glossary');
 const LEGACY_REDIRECTS_PATH = path.join(ROOT, 'config', 'legacy-redirects.json');
 const ASSETS_DATA_ROOT = path.join(ROOT, 'assets', 'data');
 const CANONICAL_ORIGIN = 'https://senseisandy.com';
@@ -721,7 +721,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
           <fieldset>
             <legend>Browse by letter</legend>
             <nav class="glossary-alpha-row glossary-az ss-glossary-az-nav" id="glossary-az-rail" aria-label="Browse by letter">
-              ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => `<a class="glossary-alpha" href="#" data-letter-link="${letter}" aria-pressed="false">${letter}</a>`).join('\n')}
+              ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => `<a class="glossary-alpha" href="/bjj-glossary" data-letter-link="${letter}" aria-pressed="false">${letter}</a>`).join('\n')}
             </nav>
           </fieldset>
 
@@ -939,9 +939,9 @@ const renderTermPage = (term, termMap, glossaryFiltersScript) => {
   ${renderReviewsSection()}
 
   <nav class="term-pagination glossary-term-pagination button-row" aria-label="Glossary navigation">
-    <a id="prev-term" href="#" hidden>Previous term</a>
+    <a id="prev-term" href="/bjj-glossary" hidden>Previous term</a>
     <a id="back-term-results" href="/bjj-glossary">Back to results</a>
-    <a id="next-term" href="#" hidden>Next term</a>
+    <a id="next-term" href="/bjj-glossary" hidden>Next term</a>
   </nav>
 
   <script id="glossary-term-nav-data" type="application/json">${navJson}</script>
@@ -1188,17 +1188,45 @@ const main = async () => {
   const glossaryFiltersScript = await hashedAssetPath(GLOSSARY_FILTERS_SRC);
 
   await fs.mkdir(OUTPUT_ROOT, { recursive: true });
-  await fs.writeFile(path.join(OUTPUT_ROOT, 'index.html'), renderHubPage(sortedTerms, termMap, glossaryFiltersScript), 'utf8');
+  const writeGeneratedPage = async (filePath, html, metadata) => {
+    const frontMatter = Object.entries(metadata)
+      .map(([key, value]) => `${key}: ${JSON.stringify(value)}`)
+      .join('\n');
+    await fs.writeFile(filePath, `---\n${frontMatter}\n---\n${html}`, 'utf8');
+  };
+
+  await writeGeneratedPage(path.join(OUTPUT_ROOT, 'index.html'), renderHubPage(sortedTerms, termMap, glossaryFiltersScript), {
+    layout: 'layouts/base.njk',
+    title: 'BJJ Glossary | Sensei Sandy BJJ',
+    description: 'Plain-English BJJ glossary for beginners, parents, and students training at Sensei Sandy BJJ in Tannersville, NY.',
+    canonicalUrl: 'https://senseisandy.com/bjj-glossary',
+    bodyClass: 'page-glossary page-bjj-glossary bjj-glossary-page ss-page ss-page-glossary',
+    permalink: '/bjj-glossary/index.html'
+  });
 
   for (const term of sortedTerms) {
     const termDir = path.join(OUTPUT_ROOT, term.slug);
     await fs.mkdir(termDir, { recursive: true });
-    await fs.writeFile(path.join(termDir, 'index.html'), renderTermPage(term, termMap, glossaryFiltersScript), 'utf8');
+    await writeGeneratedPage(path.join(termDir, 'index.html'), renderTermPage(term, termMap, glossaryFiltersScript), {
+      layout: 'layouts/base.njk',
+      title: `${term.displayTerm} in BJJ: Meaning, Basics, and Why It Matters`,
+      description: term.summary,
+      canonicalUrl: `https://senseisandy.com/bjj-glossary/${term.slug}`,
+      bodyClass: 'page-glossary-term page-glossary-term-rich page-bjj-glossary bjj-glossary-page',
+      permalink: `/bjj-glossary/${term.slug}/index.html`
+    });
   }
 
   const updatesDir = path.join(OUTPUT_ROOT, 'updates');
   await fs.mkdir(updatesDir, { recursive: true });
-  await fs.writeFile(path.join(updatesDir, 'index.html'), renderUpdatesPage(sortedTerms, glossaryFiltersScript), 'utf8');
+  await writeGeneratedPage(path.join(updatesDir, 'index.html'), renderUpdatesPage(sortedTerms, glossaryFiltersScript), {
+    layout: 'layouts/base.njk',
+    title: 'BJJ Glossary Updates | Sensei Sandy BJJ',
+    description: 'Track recent Sensei Sandy BJJ glossary additions, updated beginner terms, coverage notes, and new plain-English class examples for students.',
+    canonicalUrl: 'https://senseisandy.com/bjj-glossary/updates',
+    bodyClass: 'page-glossary page-glossary-updates page-bjj-glossary bjj-glossary-page',
+    permalink: '/bjj-glossary/updates/index.html'
+  });
 
   await writeStaticIntegrationAssets(sortedTerms);
   await syncGlossaryRedirects(sortedTerms);

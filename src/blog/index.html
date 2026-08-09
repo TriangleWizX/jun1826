@@ -602,13 +602,13 @@ permalink: "/blog/index.html"
           <div class="doppelrand-core">
             <span class="premium-eyebrow">${escapeHtml(tag)}</span>
             <h3>
-              <a href="${escapeHtml(primaryCta?.url || "#")}">
+              <a href="${escapeHtml(primaryCta?.url || "/blog")}">
                 ${escapeHtml(post.title)}
               </a>
             </h3>
             <p>${escapeHtml(post.excerpt)}</p>
             
-            <a href="${escapeHtml(primaryCta?.url || "#")}" class="premium-btn" style="background: var(--ss-surface); border: 1px solid var(--ss-border); color: var(--ss-ink);">
+            <a href="${escapeHtml(primaryCta?.url || "/blog")}" class="premium-btn" style="background: var(--ss-surface); border: 1px solid var(--ss-border); color: var(--ss-ink);">
               Read Guide
               <span class="premium-btn-icon-wrapper" style="background: rgba(0,0,0,0.04);">↗</span>
             </a>

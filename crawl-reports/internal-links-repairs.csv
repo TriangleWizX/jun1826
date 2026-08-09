@@ -4,3 +4,14 @@ src/show-up-kit.html,Adult,/calendar/adult-6pm.ics,/assets/calendar/adult-class-
 src/show-up-kit.html,Adult No-Gi,/calendar/saturday.ics,/assets/calendar/saturday-block.ics,404,UNVERIFIED_ASSET_DELETED,obsolete calendar path,src/show-up-kit.html
 src/partials/schedule-consistency.html,Reserve Youth Free Intro,#ss-lead-capture-form-inline,/free-bjj-intro-tannersville-ny#booking-flow,broken fragment,200,CTA targeted a form not owned by source page,src/partials/schedule-consistency.html
 src/partials/schedule-consistency.html,Reserve Your Free Intro,#ss-lead-capture-form-inline,/free-bjj-intro-tannersville-ny#booking-flow,broken fragment,200,CTA targeted a form not owned by source page,src/partials/schedule-consistency.html
+src/cta-hero.html,Reserve Your Free Intro,,/free-bjj-intro-tannersville-ny#booking-flow,empty href,200,shared CTA omitted destination,src/cta-hero.html
+src/cta-row.html,Reserve Your Free Intro,,/free-bjj-intro-tannersville-ny#booking-flow,empty href,200,shared CTA omitted destination,src/cta-row.html
+src/footer-include-no-proof.html,Reserve Your Free Intro,,/free-bjj-intro-tannersville-ny#booking-flow,empty href,200,shared footer CTA omitted destination,src/footer-include-no-proof.html
+src/footer-include-no-proof.html,"Weekday times: Private classes, Small-group class Youth class, Adult class Adult",/schedule#hero,/schedule,broken fragment,200,footer pointed to nonexistent schedule fragment,src/footer-include-no-proof.html
+src/show-up-kit.html,Youth,/assets/calendar/youth-class-5pm.ics,/schedule,404,200,calendar asset did not exist; schedule is canonical destination,src/show-up-kit.html
+src/show-up-kit.html,Adult,/assets/calendar/adult-class-6pm.ics,/schedule,404,200,calendar asset did not exist; schedule is canonical destination,src/show-up-kit.html
+src/show-up-kit.html,Adult No-Gi,/assets/calendar/saturday-block.ics,/schedule,404,200,calendar asset did not exist; schedule is canonical destination,src/show-up-kit.html
+tools/build-glossary-pages.mjs,Glossary alphabet and previous/next,,/bjj-glossary,placeholder href,200,glossary generator emitted fake hash links,tools/build-glossary-pages.mjs
+src/blog/catskills-gym-alternative-jiu-jitsu/index.html,Adult Beginner Guide,/bjj-classes/adults-tannersville-ny#start-adults,/bjj-classes/adults-tannersville-ny,broken fragment,200,program page has no start-adults anchor,src/blog/catskills-gym-alternative-jiu-jitsu/index.html
+src/blog/catskills-gym-alternative-jiu-jitsu/index.html,Kids Program,/bjj-classes/kids-tannersville-ny#start,/bjj-classes/kids-tannersville-ny,broken fragment,200,program page has no start anchor,src/blog/catskills-gym-alternative-jiu-jitsu/index.html
+src/bjj-glossary/updates/index.html,Watch the video library,/bjj-videos,https://www.youtube.com/@SenseiSandyBJJ,302,200,internal link followed a redirect to the canonical external video library,src/bjj-glossary/updates/index.html
