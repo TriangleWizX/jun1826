@@ -22,6 +22,7 @@
     "qa:redirects": "npm run redirects:check && node scripts/qa-redirects.mjs",
     "qa:footer": "node scripts/qa-footer.mjs",
     "qa:nav": "node scripts/qa-nav-dropdown.mjs",
+    "qa:browser-use": "bash scripts/qa-browser-use.sh",
     "qa:skip-link-single-source": "node scripts/qa-skip-link-single-source.mjs",
     "qa:nav-visible-duplicates": "node scripts/qa-nav-visible-duplicates.mjs",
     "qa:sticky-overlap": "node scripts/qa-sticky-overlap.mjs",

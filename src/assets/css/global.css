@@ -150,7 +150,7 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 p {
   color: var(--ss-muted);
@@ -277,6 +277,7 @@ hr { border-color: var(--ss-border); opacity: 1; }
   background: #0D5233;
   border-color: #0D5233;
   color: #fff;
+  transform: translateY(-1px);
 }
 
 .ss-global-btn--soft {
@@ -289,6 +290,7 @@ hr { border-color: var(--ss-border); opacity: 1; }
 .ss-global-btn--soft:focus-visible {
   background: var(--ss-surface2);
   color: var(--ss-green);
+  transform: translateY(-1px);
 }
 
 .ss-global-btn--link {
@@ -513,9 +515,9 @@ hr { border-color: var(--ss-border); opacity: 1; }
     transform: translateY(18px);
     pointer-events: none;
     transition:
-      opacity 180ms ease,
-      transform 180ms ease,
-      visibility 180ms ease;
+      opacity var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out),
+      visibility var(--dur-short) var(--ease-out);
   }
 
   .ss-mobile-actionbar.is-visible,
@@ -571,7 +573,9 @@ hr { border-color: var(--ss-border); opacity: 1; }
     text-overflow: ellipsis !important;
 
     box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
-    transition: transform 150ms ease, background-color 150ms ease;
+    transition:
+      transform var(--dur-micro) var(--ease-out),
+      background-color var(--dur-short) var(--ease-out);
   }
 
   .ss-mobile-actionbar a::before,
@@ -701,7 +705,7 @@ hr { border-color: var(--ss-border); opacity: 1; }
   margin: 1.25rem 0;
   padding: 1rem 1.25rem;
   background-color: var(--ss-surface2, #f4f1ed);
-  border-left: 4px solid var(--ss-green, #116A42);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
   border-radius: 4px;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -765,6 +769,65 @@ hr { border-color: var(--ss-border); opacity: 1; }
   --ss-cta: var(--color-accent);
   --ss-cta-hover: var(--color-accent-strong);
   --ss-focus: var(--color-focus);
+}
+
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4
+   Shared finish: editorial luxury with tactile, restrained interaction. */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+:where(.ss-global-btn--primary, .ss-btn--primary, .btn-primary) {
+  border-radius: var(--radius-pill);
+}
+
+:where(.ss-global-btn, .ss-btn, .btn) {
+  min-width: 44px;
+  white-space: nowrap;
+}
+
+:where(.ss-btn__icon) {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.45rem;
+  border-radius: 50%;
+  background: var(--cta-icon-surface);
+  color: currentColor;
+  transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :where(.ss-btn, .ss-global-btn, .btn):hover .ss-btn__icon,
+  :where(.ss-btn, .ss-global-btn, .btn):focus-visible .ss-btn__icon {
+    transform: translate(1px, -1px) scale(1.05);
+    background: var(--cta-icon-surface-hover);
+  }
+}
+
+:where(.ss-card, .ss-global-final-cta__card, .ss-footer-brand, .ss-footer-group) {
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-outer);
+  background: var(--color-paper-2);
+  box-shadow: var(--bezel-outer);
+}
+
+:where(.ss-card > :first-child, .ss-global-final-cta__card > :first-child) {
+  min-width: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :where(.ss-footer-group a, .ss-footer-contact a, .ss-context-link a) {
+    transition: color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+  }
+
+  :where(.ss-footer-group a, .ss-footer-contact a, .ss-context-link a):hover {
+    transform: translateX(1px);
+  }
 }
 
 html,
@@ -848,6 +911,14 @@ body {
 
 :where(.ss-btn, .ss-global-btn, .btn):active {
   transform: translateY(1px);
+}
+
+:where(.ss-btn, .ss-global-btn, .btn)[aria-disabled="true"],
+:where(.ss-btn, .ss-global-btn, .btn):disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+  transform: none;
 }
 
 :where(.ss-btn--primary, .ss-global-btn--primary, .btn-primary) {
