@@ -5,7 +5,9 @@ const parseArgs = () => {
   const out = {
     baseUrl: '',
     maxHops: 1,
-    timeoutMs: 12000
+    timeoutMs: 12000,
+    retries: 2,
+    retryDelayMs: 250
   };
 
   for (let i = 0; i < args.length; i += 1) {
@@ -23,6 +25,16 @@ const parseArgs = () => {
     if (arg === '--timeout-ms') {
       out.timeoutMs = Number.parseInt(args[i + 1] || String(out.timeoutMs), 10);
       i += 1;
+      continue;
+    }
+    if (arg === '--retries') {
+      out.retries = Number.parseInt(args[i + 1] || String(out.retries), 10);
+      i += 1;
+      continue;
+    }
+    if (arg === '--retry-delay-ms') {
+      out.retryDelayMs = Number.parseInt(args[i + 1] || String(out.retryDelayMs), 10);
+      i += 1;
     }
   }
 
@@ -31,32 +43,44 @@ const parseArgs = () => {
 
 const isRedirectStatus = (status) => [301, 302, 303, 307, 308].includes(status);
 
-const fetchNoFollow = async (url, timeoutMs) => {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+const sleep = (delayMs) => new Promise((resolve) => setTimeout(resolve, delayMs));
 
-  try {
-    return await fetch(url, {
-      redirect: 'manual',
-      method: 'GET',
-      signal: controller.signal,
-      headers: {
-        'user-agent': 'senseisandy-qa-redirects/1.0'
-      }
-    });
-  } finally {
-    clearTimeout(timeout);
+const fetchNoFollow = async (url, timeoutMs, retries, retryDelayMs) => {
+  const attempts = Math.max(1, retries + 1);
+  let lastError;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      return await fetch(url, {
+        redirect: 'manual',
+        method: 'GET',
+        signal: controller.signal,
+        headers: { 'user-agent': 'senseisandy-qa-redirects/1.0' }
+      });
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) await sleep(retryDelayMs * attempt);
+    } finally {
+      clearTimeout(timeout);
+    }
   }
+
+  const causeCode = lastError?.cause?.code || lastError?.code || 'none';
+  throw Object.assign(new Error(
+    `network failure for ${url} after ${attempts} attempt(s): ${lastError?.name || 'Error'}: ${lastError?.message || lastError}; cause=${causeCode}; timeout=${timeoutMs}ms`
+  ), { cause: lastError, url, attempts, timeoutMs, causeCode, networkFailure: true });
 };
 
-const followRedirects = async ({ startUrl, maxHops, timeoutMs }) => {
+const followRedirects = async ({ startUrl, maxHops, timeoutMs, retries, retryDelayMs }) => {
   let current = startUrl;
   let hops = 0;
   const chain = [];
   const seen = new Set([startUrl]);
 
   while (true) {
-    const response = await fetchNoFollow(current, timeoutMs);
+    const response = await fetchNoFollow(current, timeoutMs, retries, retryDelayMs);
     const status = response.status;
     const locationHeader = response.headers.get('location') || '';
 
@@ -123,11 +147,16 @@ const expectedPathToUrl = (base, targetPath) => {
   return new URL(path, `${base.replace(/\/$/, '')}/`).toString();
 };
 
-const checkLegacyRedirect = async ({ sourcePath, targetPath, baseUrl, maxHops, timeoutMs }) => {
+const checkLegacyRedirect = async ({ sourcePath, targetPath, baseUrl, maxHops, timeoutMs, retries, retryDelayMs }) => {
   const sourceUrl = expectedPathToUrl(baseUrl, sourcePath);
   const expectedFinalPath = normalizePath(targetPath);
 
-  const outcome = await followRedirects({ startUrl: sourceUrl, maxHops, timeoutMs });
+  let outcome;
+  try {
+    outcome = await followRedirects({ startUrl: sourceUrl, maxHops, timeoutMs, retries, retryDelayMs });
+  } catch (error) {
+    return { sourcePath, sourceUrl, expectedFinalPath, outcome: null, issues: [error.message] };
+  }
   const first = outcome.chain[0];
 
   const issues = [];
@@ -161,8 +190,13 @@ const checkLegacyRedirect = async ({ sourcePath, targetPath, baseUrl, maxHops, t
   };
 };
 
-const checkCanonicalization = async ({ startUrl, expectedFinalUrl, maxHops, timeoutMs }) => {
-  const outcome = await followRedirects({ startUrl, maxHops, timeoutMs });
+const checkCanonicalization = async ({ startUrl, expectedFinalUrl, maxHops, timeoutMs, retries, retryDelayMs }) => {
+  let outcome;
+  try {
+    outcome = await followRedirects({ startUrl, maxHops, timeoutMs, retries, retryDelayMs });
+  } catch (error) {
+    return { startUrl, expectedFinalUrl, outcome: null, issues: [error.message] };
+  }
   const issues = [];
 
   if (outcome.error) issues.push(outcome.error);
@@ -241,7 +275,9 @@ const main = async () => {
       targetPath,
       baseUrl,
       maxHops: args.maxHops,
-      timeoutMs: args.timeoutMs
+      timeoutMs: args.timeoutMs,
+      retries: args.retries,
+      retryDelayMs: args.retryDelayMs
     });
 
     if (result.issues.length) {
@@ -272,7 +308,9 @@ const main = async () => {
     const result = await checkCanonicalization({
       ...check,
       maxHops: args.maxHops,
-      timeoutMs: args.timeoutMs
+      timeoutMs: args.timeoutMs,
+      retries: args.retries,
+      retryDelayMs: args.retryDelayMs
     });
 
     if (result.issues.length) {

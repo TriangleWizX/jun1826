@@ -77,6 +77,24 @@ npm run qa:near
 npm run qa:redirects
 ```
 
+Live-QA preflight (run from the release environment) should confirm both curl
+and Node fetch reach the canonical host before interpreting failures:
+
+```bash
+curl -sS -o /dev/null -w 'curl %{http_code} %{url_effective}\n' https://senseisandy.com/
+node -e "fetch('https://senseisandy.com/').then(r => console.log('fetch', r.status, r.url)).catch(e => { console.error(e); process.exit(1); })"
+getent hosts senseisandy.com www.senseisandy.com
+npm run qa:redirects
+```
+
+`qa-redirects.mjs` retries each timed-out or connection-level fetch twice with a
+short backoff, continues through the remaining URLs, and reports the URL,
+attempt count, error, cause code, and timeout for unresolved network failures.
+Those failures remain fail-closed; an HTTP failure such as `/summer` returning
+404 is reported separately and still requires an intentional target decision.
+For diagnostic testing only, use `node scripts/qa-redirects.mjs
+--timeout-ms 1`; do not treat that forced-timeout run as live proof.
+
 Notes:
 - `qa:seo` is the canonical+sitemap enforcement gate.
 - `qa:redirects` validates alias redirect behavior but may include unrelated failures that should be triaged separately.
