@@ -45,3 +45,10 @@ body.page-sensei-studio section[aria-label="Studio care photos"] figure img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+
+/* Temporary image-free presentation; retain the slots for later artwork. */
+body.page-sensei-studio .studio-image-frame > img,
+body.page-sensei-studio .studio-logo-badge > img,
+body.page-sensei-studio section[aria-label="Studio care photos"] figure img {
+  display: none !important;
+}
