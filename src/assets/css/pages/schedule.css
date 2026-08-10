@@ -1,4 +1,13 @@
 /* Catskills Studio Workbench: schedule and booking surfaces. */
+.page-schedule .ss-location-grid figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: clamp(220px, 30vw, 420px);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
 .page-schedule{background:var(--color-paper);color:var(--color-ink)}.page-schedule .ss-main{overflow-x:clip}.page-schedule .container{max-width:var(--container-standard)}
 .page-schedule :is(h1,h2,h3){font-family:var(--font-display);font-style:var(--display-style);font-weight:var(--display-weight);letter-spacing:var(--tracking-display);line-height:var(--leading-heading);color:var(--color-ink);overflow-wrap:anywhere}.page-schedule p,.page-schedule li{font:400 var(--text-md)/var(--leading-body) var(--font-body);color:var(--color-muted)}
 .ss-hero-editorial-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr);gap:var(--space-2xl);align-items:center;padding-block:var(--space-2xl)}.ss-editorial-title{margin:0;font-size:clamp(var(--text-3xl),5vw,var(--text-display))}.ss-editorial-lead{max-width:42rem;margin:var(--space-md) 0 0}.ss-eyebrow-badge,.ss-card-label{display:inline-flex;margin-bottom:var(--space-sm);font:700 var(--text-xs)/1 var(--font-body);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--color-accent-deep)}
