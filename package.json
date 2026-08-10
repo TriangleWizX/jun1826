@@ -92,6 +92,7 @@
     "qa:sitemaps:overlap": "node scripts/qa-sitemap-overlap.mjs",
     "sitemaps:index": "node tools/build-all-sitemaps.mjs",
     "sitemaps:build": "node tools/build-all-sitemaps.mjs",
+    "indexation:policy": "node scripts/build-indexation-policy.mjs",
     "icons:build": "node tools/build-bootstrap-icon-subset.mjs",
     "qa:icons:local": "node tools/build-bootstrap-icon-subset.mjs --check",
     "styles:min": "node tools/minify-css.mjs",

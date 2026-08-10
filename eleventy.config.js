@@ -1,6 +1,21 @@
 import path from "node:path";
+import fs from "node:fs";
+
+const urlRegistry = JSON.parse(fs.readFileSync("data/url-registry.json", "utf8"));
+const seoRobots = {};
+const normalizePath = (value) => String(value || "/").replace(/\/$/, "") || "/";
+for (const entry of urlRegistry) {
+  const canonicalMismatch = entry.canonicalPath && normalizePath(entry.canonicalPath) !== normalizePath(entry.path);
+  if (entry.status === "active" && (!entry.indexable || canonicalMismatch) && !entry.redirectTarget) {
+    const pathName = entry.path || "/";
+    seoRobots[pathName] = "noindex, follow";
+    seoRobots[`${pathName.replace(/\/$/, "")}/`] = "noindex, follow";
+    seoRobots[`${pathName}.html`] = "noindex, follow";
+  }
+}
 
 export default function (eleventyConfig) {
+  eleventyConfig.addGlobalData("seoRobots", seoRobots);
   // Ignore archive and temporary build/qa directories
   eleventyConfig.ignores.add("_archive/**");
   eleventyConfig.ignores.add("archive/**");

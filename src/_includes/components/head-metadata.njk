@@ -12,7 +12,8 @@
 <meta content="{{ canonicalHref }}" property="og:url"/>
 <meta content="Sensei Sandy BJJ" property="og:site_name"/>
 <meta content="{{ socialImage | default("https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp") }}" property="og:image"/>
-<meta content="{{ robots | default("index, follow") }}" name="robots"/>
+{% set effectiveRobots = robots or seoRobots[page.url] or "index, follow" %}
+<meta content="{{ effectiveRobots }}" name="robots"/>
 <meta content="{{ ogTitle or title or "Confidence, Strength & Skill | Sensei Sandy BJJ" }}" property="og:title"/>
 <meta content="{{ ogDescription or description or "Beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Build confidence, strength, and skill through calm, guided BJJ classes for kids and adults." }}" property="og:description"/>
 <meta content="website" property="og:type"/>

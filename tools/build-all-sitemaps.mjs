@@ -13,6 +13,7 @@ const LOCATIONS_SITEMAP = path.join(ROOT, 'sitemap-locations.xml');
 const BLOG_SITEMAP = path.join(ROOT, 'sitemap-blog.xml');
 const GLOSSARY_SITEMAP = path.join(ROOT, 'sitemap-glossary.xml');
 const SRC_SITEMAP_DIR = path.join(ROOT, 'src');
+const normalizePath = (value) => String(value || '/').replace(/\/$/, '') || '/';
 
 const escapeXml = (value) =>
   String(value || '')
@@ -68,7 +69,8 @@ export const main = async () => {
   const glossaryUrls = new Set();
 
   for (const entry of registry) {
-    if (!entry.indexable || entry.status !== 'active' || entry.redirectTarget) {
+    if (!entry.indexable || entry.status !== 'active' || entry.redirectTarget ||
+        (entry.canonicalPath && normalizePath(entry.canonicalPath) !== normalizePath(entry.path))) {
       continue;
     }
 
