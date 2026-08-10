@@ -181,19 +181,13 @@
   role="dialog"
   aria-modal="true"
   aria-labelledby="schedule-dialog-title"
+  aria-describedby="schedule-dialog-description"
+  tabindex="-1"
   hidden
 >
   <div class="schedule-dialog__panel">
-    <button
-      type="button"
-      class="schedule-dialog__close"
-      aria-label="Close scheduling form"
-    >
-      &times;
-    </button>
-
     <h2 id="schedule-dialog-title">Plan Your First Class</h2>
-    <p>Leave the best number to reach you. Sandy will help you choose the right class time.</p>
+    <p id="schedule-dialog-description">Leave the best number to reach you. Sandy will help you choose the right class time.</p>
 
     <form id="schedule-dialog-form" action="https://formspree.io/f/myzpdvay" method="POST">
       <label for="schedule-lead-name" style="display: block; margin-bottom: 1rem; font-weight: 600;">
@@ -210,6 +204,13 @@
     <p id="schedule-dialog-status" class="ss-lead-capture-status" role="status" aria-live="polite" hidden style="margin-top: 1rem; color: #116A42; font-weight: 600;">
       Thank you. Sandy will call or text you soon.
     </p>
+    <button
+      type="button"
+      class="schedule-dialog__close"
+      aria-label="Close scheduling form"
+    >
+      &times;
+    </button>
   </div>
 </div>
 
@@ -227,18 +228,39 @@
     const form = document.getElementById('schedule-dialog-form');
     const status = document.getElementById('schedule-dialog-status');
     let lastActiveElement = null;
+    let previousOverflow = '';
+    let inertBackground = [];
+
+    const focusableSelector = [
+      'a[href]', 'area[href]', 'button:not([disabled])',
+      'input:not([disabled]):not([type="hidden"])', 'select:not([disabled])',
+      'textarea:not([disabled])', '[tabindex]:not([tabindex="-1"])'
+    ].join(',');
+
+    function setBackgroundInert(isInert) {
+      if (isInert) {
+        inertBackground = Array.from(document.body.children).filter((child) => child !== dialog);
+        inertBackground.forEach((element) => { element.inert = true; });
+      } else {
+        inertBackground.forEach((element) => { element.inert = false; });
+        inertBackground = [];
+      }
+    }
 
     function openModal(trigger) {
       lastActiveElement = trigger || document.activeElement;
       dialog.removeAttribute('hidden');
+      previousOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
-      const firstInput = dialog.querySelector('input, button');
-      if (firstInput) firstInput.focus();
+      setBackgroundInert(true);
+      const firstInput = dialog.querySelector('#schedule-lead-name');
+      (firstInput || dialog).focus();
     }
 
     function closeModal() {
       dialog.setAttribute('hidden', '');
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
+      setBackgroundInert(false);
       if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
         lastActiveElement.focus();
       }
@@ -253,6 +275,25 @@
     });
 
     closeBtn?.addEventListener('click', closeModal);
+
+    dialog.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      const focusable = Array.from(dialog.querySelectorAll(focusableSelector));
+      if (!focusable.length) {
+        e.preventDefault();
+        dialog.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
 
     dialog.addEventListener('click', function (e) {
       if (panel && !panel.contains(e.target)) {
