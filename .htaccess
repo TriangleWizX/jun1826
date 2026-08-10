@@ -82,7 +82,7 @@ RewriteRule ^blackbelttrack/?$ https://senseisandy.com/black-belt-track [L,R=301
 RewriteRule ^blog/bio\-ginastica/?$ https://senseisandy.com/blog/bioginastica-movement-no-gi [L,R=301,NE]
 RewriteRule ^blog/ginastica/?$ https://senseisandy.com/blog/bioginastica-movement-no-gi [L,R=301,NE]
 RewriteRule ^blog/jiu\-jitsu\-sensei/?$ https://senseisandy.com/blog/bjj-sensei [L,R=301,NE]
-RewriteRule ^blog/martial\-arts\-near\-hunter\-ny\-grappling\-not\-striking/?$ https://senseisandy.com/martial-arts-hunter-ny [L,R=301,NE]
+RewriteRule ^blog/martial\-arts\-near\-hunter\-ny\-grappling\-not\-striking/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteRule ^blog/onteora\-park\-summer\-activities/?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
 RewriteRule ^blog/onteora\-park\-summer\-activities\-tannersville\-athletics/?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
 RewriteRule ^blog/sensei\-sandy\-open\-mat/?$ https://senseisandy.com/bjj-glossary/open-mat [L,R=301,NE]
@@ -123,6 +123,7 @@ RewriteRule ^hunter\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/hunter-ny [L
 RewriteRule ^jiu\-jitsu\-sandy/?$ https://senseisandy.com/sensei-jiu-jitsu [L,R=301,NE]
 RewriteRule ^kids\-bjj/?$ https://senseisandy.com/kids [L,R=301,NE]
 RewriteRule ^kids\.html/?$ https://senseisandy.com/kids [L,R=301,NE]
+RewriteRule ^martial\-arts\-hunter\-ny/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteRule ^mountain\-pass/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^mountain\-pass\-print/?$ https://senseisandy.com/ [L,R=301,NE]
 RewriteRule ^mountain\-pass\-print\.html/?$ https://senseisandy.com/ [L,R=301,NE]
@@ -292,6 +293,7 @@ RewriteRule ^videos/spar\-3cD3E6czrXU/?$ https://senseisandy.com/bjj-videos [L,R
 RewriteRule ^videos/teens\-brazilian\-jiu\-jitsu\-chokes\-self\-defense\-LFeW\-qWwdgQ/?$ https://senseisandy.com/videos/teens-brazilian-jiu-jitsu-chokes-self-defense-lfew-qwwdgq [L,R=301,NE]
 RewriteRule ^videos/tuesday\-tannersville\-brazilian\-jiu\-jitsu\-xXScA476zuE/?$ https://senseisandy.com/videos/tuesday-tannersville-brazilian-jiu-jitsu-xxsca476zue [L,R=301,NE]
 RewriteRule ^videos/wednesday\-GFcByYHrou4/?$ https://senseisandy.com/videos/wednesday-gfcbyyhrou4 [L,R=301,NE]
+RewriteRule ^windham\-ny/?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
 # END AUTO_LEGACY_REDIRECTS
 
 
@@ -581,7 +583,6 @@ RewriteRule ^(.+)$ $1/index.html [L]
 
 # 4c. Harden explicit clean route for top-level hunter comparison page.
 # This avoids edge-case misses when generic .html fallback is bypassed upstream.
-RewriteRule ^martial-arts-hunter-ny/?$ /martial-arts-hunter-ny.html [L]
 RewriteRule ^bjj-classes-teens-tannersville-ny/?$ /bjj-classes-teens-tannersville-ny.html [L]
 RewriteRule ^jiu-jitsu-safety-tannersville-ny/?$ /jiu-jitsu-safety-tannersville-ny.html [L]
 RewriteRule ^how-class-works/?$ /how-class-works.html [L]
