@@ -66,6 +66,18 @@
   --ss-focus: rgba(184, 138, 68, 0.34);
 }
 
+:where(svg) {
+  height: auto;
+  max-width: 100%;
+}
+
+:where(svg:not([width]):not([height])) {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
 /* Sensei Sandy BJJ global logo system */
 :root {
   --ss-logo-nav-size: 52px;

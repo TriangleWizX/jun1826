@@ -4762,3 +4762,112 @@ body {
     margin-top: 2rem;
   }
 }
+/* Success-story trust items contain inline SVG icons and copy. */
+body.page-success .ss-trust-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+body.page-success .ss-trust-pillar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.page-success .ss-trust-pillar svg {
+  display: inline-block;
+  flex: 0 0 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+body.page-success {
+  background: #fdfbf7;
+  color: #362b24;
+}
+
+body.page-success .ss-hero {
+  background: #fdfbf7;
+  color: #362b24;
+}
+
+body.page-success .ss-hero :is(h1, h2, h3, p, span, strong) {
+  color: #362b24;
+}
+
+body.page-success .ss-hero :is(.ss-hq-badge, .ss-hq-stars, .ss-eyebrow-pill) {
+  color: inherit;
+}
+
+body.page-success .ss-hero__headline,
+body.page-success .ss-hero__headline em {
+  color: #362b24 !important;
+}
+
+body.page-success .ss-hero__right,
+body.page-success .ss-hero__left {
+  color: #362b24;
+}
+
+body.page-success .ss-hero__right {
+  background: #f4f1ed;
+}
+
+body.page-success .ss-hero__right .ss-dbezel,
+body.page-success .ss-hero__right .ss-dbezel__inner {
+  background: #fff;
+  color: #362b24;
+}
+
+body.page-success .ss-hero__right :is(h2, h3, h4, p, span, strong) {
+  color: #362b24;
+}
+
+body.page-success .ss-stories {
+  background: #fdfbf7;
+  color: #362b24;
+}
+
+body.page-success .ss-stories :is(h2, h3, h4, p, span, strong) {
+  color: #362b24;
+}
+
+/* Final success-page contrast layer: legacy base variables set some child
+   components to white even when their surface is light. */
+body.page-success .ss-hero__right * {
+  color: #362b24 !important;
+}
+
+body.page-success .ss-stories * {
+  color: #362b24 !important;
+}
+
+body.page-success .ss-trust-strip * {
+  color: #fff !important;
+}
+
+body.page-success .ss-trust-strip em {
+  color: #e4bd70 !important;
+}
+
+body.page-success .ss-trust-strip {
+  background: #2b221c;
+  color: #fff;
+}
+
+body.page-success .ss-trust-strip :is(h2, p, span, .ss-trust-pillar) {
+  color: #fff;
+}
+
+body.page-success .ss-trust-strip em {
+  color: #e4bd70;
+}
+
+body.page-success :is(.ss-dbezel, .ss-story-card) {
+  color: #362b24;
+}
+
+body.page-success :is(.ss-dbezel, .ss-story-card) :is(h2, h3, h4, p, span, strong) {
+  color: inherit;
+}
