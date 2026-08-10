@@ -37,3 +37,11 @@ body.page-sensei-studio .studio-image-frame img {
   aspect-ratio: 5 / 4;
   object-fit: cover;
 }
+
+body.page-sensei-studio section[aria-label="Studio care photos"] figure img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 22vw, 300px);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
