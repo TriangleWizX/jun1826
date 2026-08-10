@@ -44,6 +44,7 @@
     "qa:youth-intro": "node scripts/qa-youth-intro-rollout.mjs",
     "campaign:expire-christmas": "node scripts/expire-christmas-in-july.mjs",
     "qa:seo": "node scripts/qa-seo-eleventy.mjs",
+    "qa:towns": "node scripts/qa-town-duplication.mjs",
     "qa:lazy-loading": "node scripts/qa-lazy-loading.mjs",
     "qa:meta:live": "node scripts/qa-meta-live.mjs",
     "qa:blog:slash:live": "node scripts/qa-blog-slash-live.mjs",
