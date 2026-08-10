@@ -1,0 +1,39 @@
+/* Sensei Studio: keep dimensionless inline icons from becoming viewport-wide media. */
+body.page-sensei-studio svg {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  max-width: none;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+body.page-sensei-studio .program-icon-box svg,
+body.page-sensei-studio .studio-quote-icon-circle svg,
+body.page-sensei-studio .bento-step-subcard-icon svg,
+body.page-sensei-studio .amenities-brand-logo svg,
+body.page-sensei-studio .amenities-social-link svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+body.page-sensei-studio .bento-testimonial-quote-svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+body.page-sensei-studio .trust-list svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+body.page-sensei-studio img {
+  max-width: 100%;
+  height: auto;
+}
+
+body.page-sensei-studio .studio-image-frame img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
