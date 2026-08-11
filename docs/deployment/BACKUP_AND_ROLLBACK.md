@@ -70,6 +70,10 @@ Recommended Local Path:
 6. **Verify Local Snapshot**:
    Run the verification checklist below before making any server changes.
 
+## 3A. Remote Backup Retention During Deployment
+
+Every deployment must create and verify a new remote `senseisandy-predeploy-*.tar.gz` archive before extracting the release payload. After verification, retain the two most recent verified remote archives and remove only older archives by their exact absolute filename. Never use a wildcard or broad recursive deletion, and never remove the newest verified archive. Record the retained and removed archive paths in the deployment handoff.
+
 ---
 
 ## 4. Backup Verification Checklist
