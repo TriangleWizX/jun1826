@@ -6,7 +6,7 @@ const seoRobots = {};
 const normalizePath = (value) => String(value || "/").replace(/\/$/, "") || "/";
 for (const entry of urlRegistry) {
   const canonicalMismatch = entry.canonicalPath && normalizePath(entry.canonicalPath) !== normalizePath(entry.path);
-  if (entry.status === "active" && (!entry.indexable || canonicalMismatch) && !entry.redirectTarget) {
+  if ((!entry.indexable || canonicalMismatch) && !entry.redirectTarget) {
     const pathName = entry.path || "/";
     seoRobots[pathName] = "noindex, follow";
     seoRobots[`${pathName.replace(/\/$/, "")}/`] = "noindex, follow";
@@ -60,6 +60,35 @@ export default function (eleventyConfig) {
 
   // Custom Nunjucks/liquid filters if needed
   eleventyConfig.addFilter("json", (obj) => JSON.stringify(obj, null, 2));
+
+  // Keep the wellness referral page within ordinary fitness/coaching claims
+  // until provider testimonials and credentials have been source-verified.
+  eleventyConfig.addTransform("wellness-claims-safety", function (content) {
+    const outputPath = this.page?.outputPath;
+    if (typeof outputPath !== "string" || !outputPath.endsWith("/partners-wellness-pt-referrals.html")) {
+      return content;
+    }
+    return content
+      .replace(/<section aria-labelledby="testimonials-heading"[\s\S]*?<\/section>/i, "")
+      .replace(/Best for cautious or rehab-adjacent clients\./gi, "Best for clients who want private, beginner-friendly coaching.")
+      .replace(/Is this appropriate for complete beginners\?/gi, "Is this appropriate for complete beginners?")
+      .replace(/Can sessions be modified for injuries or limitations\?/gi, "Can sessions be adjusted for comfort and pace?")
+      .replace(/Yes\. Pace and focus are adjusted to the client\. Private-first options are ideal for cautious clients or those recovering from injuries, allowing for tailor-made, safe progression\./gi, "Yes. Pace and focus can be adjusted to the client, with private-first options available for a gradual, coached experience.");
+  });
+
+  // Glossary/source entries own article body content, not document shells.
+  // Strip legacy embedded <html>/<head> wrappers so base.njk remains the
+  // single owner of title, description, canonical, robots, and social tags.
+  eleventyConfig.addTransform("strip-embedded-document-shell", function (content) {
+    const outputPath = this.page?.outputPath;
+    if (typeof outputPath !== "string" ||
+        (!outputPath.includes("/bjj-glossary/") && !outputPath.endsWith("/sources/kodokan-etiquette/index.html"))) {
+      return content;
+    }
+    return content
+      .replace(/<!doctype html>\s*<html[^>]*>\s*<head>[\s\S]*?<\/head>\s*<body[^>]*>/i, "")
+      .replace(/<\/body>\s*<\/html>\s*$/i, "");
+  });
 
   return {
     dir: {
