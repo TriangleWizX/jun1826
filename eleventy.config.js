@@ -90,6 +90,13 @@ export default function (eleventyConfig) {
       .replace(/<\/body>\s*<\/html>\s*$/i, "");
   });
 
+  // Describe the historical student count without implying a current-member total.
+  eleventyConfig.addTransform("success-stories-claim-clarity", function (content) {
+    const outputPath = this.page?.outputPath;
+    if (typeof outputPath !== "string" || !outputPath.endsWith("/success-stories.html")) return content;
+    return content.replace("Happy Members", "Students Coached");
+  });
+
   return {
     dir: {
       input: "src",
