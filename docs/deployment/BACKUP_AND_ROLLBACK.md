@@ -74,6 +74,10 @@ Recommended Local Path:
 
 Every deployment must create and verify a new remote `senseisandy-predeploy-*.tar.gz` archive before extracting the release payload. After verification, retain the two most recent verified remote archives and remove only older archives by their exact absolute filename. Never use a wildcard or broad recursive deletion, and never remove the newest verified archive. Record the retained and removed archive paths in the deployment handoff.
 
+An archive is verified only when the remote command exits successfully, `gzip -t` passes, `tar -tzf` can read the complete archive, the archive contains `.htaccess`, `index.html`, `robots.txt`, `sitemap.xml`, and the critical route files, and the reported file count is recorded. An archive left behind after timeout, interruption, quota failure, or a non-zero tar/gzip status is unverified regardless of its apparent size and must not be used for rollback.
+
+Deployment payload builders must map repository source paths to generated paths: `src/foo.html` deploys as `dist/foo.html`, not `dist/src/foo.html`. Shared partial changes under `src/partials/` must therefore include the corresponding materialized `dist/partials/` files. The payload manifest should be printed and checked before extraction so skipped source paths are visible.
+
 ---
 
 ## 4. Backup Verification Checklist
