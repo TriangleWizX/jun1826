@@ -23,21 +23,9 @@ window.SSBJJ_SCHEDULE = {
   ],
   privateCoaching: [
     {
-      day: "Tuesday",
-      items: ["6:30 AM Private Coaching by Request"]
-    },
-    {
-      day: "Wednesday",
-      items: ["10:30–11:30 AM Private Coaching by Request"]
-    },
-    {
-      day: "Thursday",
-      items: ["6:30 AM Private Coaching by Request"]
-    },
-    {
-      day: "Friday",
-      items: ["10:30–11:30 AM Private Coaching by Request"]
+      day: "Morning",
+      items: ["Private Coaching by Request"]
     }
   ],
-  thursdayNote: "Thursday: no group classes; private coaching by request."
+  thursdayNote: "There are no group classes on Thursday; private coaching is available by request."
 };

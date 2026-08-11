@@ -11,7 +11,7 @@
     "private": {
       "label": "Private Coaching",
       "age": "Morning by request",
-      "time": "Tue/Thu 6:30 AM, Wed/Fri 10:30 AM"
+      "time": "Morning by request"
     },
     "youth": {
       "label": "Youth Class, Kids + Teens",
@@ -198,12 +198,12 @@
     }
   ],
   "copy": {
-    "lanePickerIntro": "The weekday schedule stays simple: youth small-group classes at 5:00 PM, adult class at 6:00 PM, and controlled morning private lesson windows by request.",
-    "reassuranceStart": "Join the lane and time that fits: youth small-group class at 5:00 PM, adult class at 6:00 PM, Saturday Adult No-Gi at 10:30 AM, or a private lesson in one of the fixed morning windows.",
+    "lanePickerIntro": "The weekday schedule stays simple: youth small-group classes at 5:00 PM, adult class at 6:00 PM, and morning private coaching by request.",
+    "reassuranceStart": "Join the lane and time that fits: youth small-group class at 5:00 PM, adult class at 6:00 PM, Saturday Adult No-Gi at 10:30 AM, or private coaching by request.",
     "reassuranceSafety": "Beginner Lane = complete class expectations paced to skill level.",
     "reassuranceReschedule": "Cancel or reschedule by text anytime.",
-    "microFaqStart": "Youth small-group classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adults can start with evening class at 6:00 PM, Saturday No-Gi at 10:30 AM, or request private coaching on Tuesday at 6:30 AM or Wednesday and Friday mid-morning.",
-    "privateLaneWeekdays": "Available: Tue, Thu at 6:30 AM • Wed, Fri at 10:30 AM",
+    "microFaqStart": "Youth small-group classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adults can start with evening class at 6:00 PM, Saturday No-Gi at 10:30 AM, or request morning private coaching.",
+    "privateLaneWeekdays": "Available by request in the morning",
     "youthLaneAges": "Ages: Kids + Teens",
     "youthLaneWeekdays": "Available: Mon, Tue, Wed, Fri • 5:00-6:00 PM",
     "youthLaneNoGi": "Wednesday: Youth No-Gi",
@@ -241,7 +241,7 @@
     },
     "tue": {
       "label": "Tuesday",
-      "note": "Private lesson mornings + Gi evenings",
+      "note": "Gi evening classes",
       "slots": [
         {
           "id": "tue-private",
