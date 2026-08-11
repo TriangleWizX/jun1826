@@ -28,9 +28,5 @@ export const schedule = {
     }
   ],
 
-  privateCoaching: [
-    { day: "Tuesday", start: "6:30 AM", end: "7:30 AM" },
-    { day: "Wednesday", start: "10:30 AM", end: "11:30 AM", label: "mid-morning" },
-    { day: "Friday", start: "10:30 AM", end: "11:30 AM", label: "mid-morning" }
-  ]
+  privateCoaching: { display: "Morning private coaching is available by request.", slots: [] }
 };

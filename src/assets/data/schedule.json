@@ -6,13 +6,8 @@
     "adults": "/free-bjj-intro-tannersville-ny",
     "private": "/private-lessons"
   },
-  "laneOrder": ["private", "youth", "adults"],
+  "laneOrder": ["youth", "adults"],
   "lanes": {
-    "private": {
-      "label": "Private Coaching",
-      "age": "Morning by request",
-      "time": "Morning by request"
-    },
     "youth": {
       "label": "Youth Class, Kids + Teens",
       "age": "Ages: Kids + Teens",
@@ -54,20 +49,6 @@
       "displayLabel": "Adult Class"
     },
     {
-      "id": "tue-private",
-      "day": "tue",
-      "startTime": "06:30",
-      "endTime": "07:20",
-      "program": "private",
-      "ageLane": "private",
-      "giNoGi": "mixed",
-      "active": true,
-      "visitorEligible": false,
-      "bookingUrl": "/private-lessons",
-      "type": "private",
-      "displayLabel": "Private Lesson"
-    },
-    {
       "id": "tue-youth",
       "day": "tue",
       "startTime": "17:00",
@@ -94,20 +75,6 @@
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
       "displayLabel": "Adult Class"
-    },
-    {
-      "id": "wed-private",
-      "day": "wed",
-      "startTime": "10:30",
-      "endTime": "10:50",
-      "program": "private",
-      "ageLane": "private",
-      "giNoGi": "mixed",
-      "active": true,
-      "visitorEligible": false,
-      "bookingUrl": "/private-lessons",
-      "type": "private",
-      "displayLabel": "Private Lesson"
     },
     {
       "id": "wed-youth",
@@ -138,20 +105,6 @@
       "type": "group",
       "displayLabel": "Adult Class",
       "notes": "No-Gi"
-    },
-    {
-      "id": "fri-private",
-      "day": "fri",
-      "startTime": "10:30",
-      "endTime": "10:50",
-      "program": "private",
-      "ageLane": "private",
-      "giNoGi": "mixed",
-      "active": true,
-      "visitorEligible": false,
-      "bookingUrl": "/private-lessons",
-      "type": "private",
-      "displayLabel": "Private Lesson"
     },
     {
       "id": "fri-youth",
@@ -244,15 +197,6 @@
       "note": "Gi evening classes",
       "slots": [
         {
-          "id": "tue-private",
-          "dayKey": "tue",
-          "lane": "private",
-          "bookLane": "private",
-          "calendarKey": "private",
-          "time": "6:30-7:20 AM",
-          "class": "Private Lesson"
-        },
-        {
           "id": "tue-youth",
           "dayKey": "tue",
           "lane": "youth",
@@ -274,17 +218,8 @@
     },
     "wed": {
       "label": "Wednesday",
-      "note": "Private coaching + No-Gi evening",
+      "note": "No-Gi evening classes",
       "slots": [
-        {
-          "id": "wed-private",
-          "dayKey": "wed",
-          "lane": "private",
-          "bookLane": "private",
-          "calendarKey": "private",
-          "time": "10:30-11:30 AM",
-          "class": "Private Lesson"
-        },
         {
           "id": "wed-youth",
           "dayKey": "wed",
@@ -311,17 +246,8 @@
     },
     "fri": {
       "label": "Friday",
-      "note": "Private mornings + Gi evening classes",
+      "note": "Gi evening classes",
       "slots": [
-        {
-          "id": "fri-private",
-          "dayKey": "fri",
-          "lane": "private",
-          "bookLane": "private",
-          "calendarKey": "private",
-          "time": "10:30-11:30 AM",
-          "class": "Private Lesson"
-        },
         {
           "id": "fri-youth",
           "dayKey": "fri",

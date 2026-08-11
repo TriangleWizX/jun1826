@@ -47,7 +47,7 @@ function generateCompact() {
   html += `    <p>All youth and adult classes are 45 minutes. The final 15 minutes are elective. Sandy will consult with you on how to use this time productively.</p>\n`;
   html += `  </div>\n`;
   html += `  <h4 class="mb-3 mt-4">Private Coaching</h4>\n`;
-  html += `  <p class="small text-muted">Select Tuesday–Friday morning windows by request.</p>\n`;
+  html += `  <p class="small text-muted">Morning private coaching is available by request. Text Sandy to discuss goals and availability.</p>\n`;
   html += `</div>\n`;
   return html;
 }
@@ -80,15 +80,8 @@ function generateFull() {
   // Private Coaching
   html += `    <div class="col-md-6 mb-4">\n`;
   html += `      <h3 class="h5 border-bottom pb-2 mb-3">Private Coaching</h3>\n`;
-  html += `      <p class="text-muted mb-3">Available by request during the following morning windows:</p>\n`;
-  html += `      <ul class="list-group list-group-flush border-top-0">\n`;
-  for (const priv of scheduleData.privateCoaching) {
-    html += `        <li class="list-group-item bg-transparent px-0 border-light d-flex justify-content-between align-items-center">\n`;
-    html += `          <span class="fw-medium">${priv.day}</span>\n`;
-    html += `          <span class="text-muted small">${priv.start} – ${priv.end}</span>\n`;
-    html += `        </li>\n`;
-  }
-  html += `      </ul>\n`;
+  html += `      <p class="text-muted mb-3">Morning private coaching is available by request. Text Sandy to discuss goals and availability.</p>\n`;
+  html += `      <a class="btn btn-outline-primary" href="/private-lessons">Ask About Private Lessons</a>\n`;
   html += `    </div>\n`;
   
   html += `  </div>\n`;

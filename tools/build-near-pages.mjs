@@ -251,7 +251,7 @@ const defaultDecisionCopy = (town) => ({
   ],
   trip_story: `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
   first_cadence:
-    'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and use adult morning options Tuesday/Thursday at 6:30 AM, Wednesday/Friday at 10:30 AM, and Saturday at 10:30 AM when mornings fit better.',
+    'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and ask Sandy about private coaching if a one-to-one start fits better.',
   objections: [
     {
       question: `Is this realistic from ${town.town} on school nights?`,

@@ -251,8 +251,6 @@ const currentSchedulePartial = (schedule) =>
     return `<p>${DAY_LABELS[day]}: ${escapeHtml(items)}</p>`;
   }).join('\n');
 
-const faqJson = `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the BJJ class times in Tannersville, NY?","acceptedAnswer":{"@type":"Answer","text":"Youth classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adult classes run Monday, Tuesday, Wednesday, and Friday at 6:00 PM. Saturday Adult No-Gi starts at 10:30 AM. Morning availability is private lessons only on Tuesday and Thursday at 6:30 AM and Wednesday and Friday at 10:30 AM."}},{"@type":"Question","name":"Which classes are visitor-eligible?","acceptedAnswer":{"@type":"Answer","text":"Visitors can join all active evening youth and adult classes plus Saturday Adult No-Gi. Morning availability is reserved for private lessons."}},{"@type":"Question","name":"Can I reschedule?","acceptedAnswer":{"@type":"Answer","text":"Yes. Text Sandy anytime if your plans shift."}},{"@type":"Question","name":"What should I wear to Brazilian Jiu-Jitsu class?","acceptedAnswer":{"@type":"Answer","text":"Wear athletic gear you can move in. If you have a gi, bring it. If not, start in a t-shirt and shorts and we will guide you on day one."}}]}`;
-
 const buildEventsJsonLd = (schedule) => {
   const now = new Date();
   const today = getTodayPartsInZone(now, TIMEZONE);
