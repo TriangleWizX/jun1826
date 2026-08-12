@@ -1,0 +1,29 @@
+/* Summer Academy media stays inside its grid column at every viewport. */
+.kids-hero-media,
+.kids-hero-media picture {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.kids-hero-media {
+  overflow: hidden;
+  border-radius: 1.45rem;
+}
+
+.kids-hero-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+@media (max-width: 767.98px) {
+  .kids-hero-image {
+    aspect-ratio: 1 / 1;
+  }
+}
