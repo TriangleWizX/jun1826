@@ -30,8 +30,8 @@
     {% include "components/footer.njk" %}
   {% endif %}
 
-  <script src="/assets/js/attribution.js" defer fetchpriority="low"></script>
-  <script src="/assets/js/analytics-events.js" defer fetchpriority="low"></script>
+  <script src="/js/link-utils.js" defer></script>
+  <script src="/js/analytics-events.js" defer></script>
   {% if bodyExtra %}
     {{ bodyExtra | safe }}
   {% endif %}
