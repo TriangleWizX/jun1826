@@ -645,6 +645,7 @@ if (CHECK) {
   for (const plan of targetWrites) {
     assertSourcesFresh(plan.sourceDependencies);
     assertSafeOutputPath(plan.target, 'Fingerprint target');
+    ensureSafeDirectory(path.dirname(plan.target));
     const sourceMode = fs.lstatSync(plan.source).mode & 0o777;
     writeFileAtomically(plan.target, plan.bytes, sourceMode);
   }
