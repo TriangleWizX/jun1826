@@ -459,8 +459,15 @@ const generatedHeader = (bundle) => {
     '   Do not edit directly. */\n';
 };
 
-const buildBundleCss = (source, bundle) =>
-  generatedHeader(bundle) + filterCss(source, bundle.pageTokens);
+const buildBundleCss = (source, bundle) => {
+  // Glossary pages own their layout in pages/glossary.css. The legacy shared
+  // component source is otherwise retained wholesale by the token filter and
+  // adds roughly 40 KB gzip to every glossary route.
+  if (bundle.name === 'glossary-hub' || bundle.name === 'glossary-term') {
+    return generatedHeader(bundle);
+  }
+  return generatedHeader(bundle) + filterCss(source, bundle.pageTokens);
+};
 
 const outputPathFor = (bundle) => resolveWorkspacePath(bundle.canonicalPath);
 
