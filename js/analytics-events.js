@@ -28,30 +28,40 @@
     };
   };
 
+  const normalizeLane = (value) => {
+    const raw = String(value || '').toLowerCase().replace(/-/g, '_');
+    if (['kid', 'kids', 'youth', 'child'].includes(raw)) return 'kids';
+    if (['teen', 'teens'].includes(raw)) return 'teens';
+    if (['adult', 'adults', 'adult_beginner'].includes(raw)) return 'adults';
+    if (['community_service', 'leo'].includes(raw)) return 'community_service';
+    return 'unknown';
+  };
+
   const getPageType = () => {
     const body = document.body;
     if (body) {
-      if (body.classList.contains('page-book-intro')) return 'booking';
-      if (body.classList.contains('page-contact')) return 'contact';
-      if (body.classList.contains('page-programs')) return 'programs';
-      if (body.classList.contains('page-blog')) return 'blog';
-      if (body.classList.contains('page-near')) return 'near';
+      if (body.classList.contains('page-book-intro')) return 'other';
+      if (body.classList.contains('page-programs')) return 'program';
+      if (body.classList.contains('page-near')) return 'location';
       if (body.classList.contains('page-home')) return 'home';
     }
     const path = (window.location.pathname || '').toLowerCase();
-    if (path.startsWith('/free-bjj-intro-tannersville-ny')) return 'booking';
-    if (path.startsWith('/contact')) return 'contact';
-    if (path.startsWith('/programs') || path.startsWith('/bjj-classes-tannersville-ny')) return 'programs';
-    if (path.startsWith('/blog')) return 'blog';
-    if (path.startsWith('/near')) return 'near';
-    return 'site';
+    if (path === '/options-pricing') return 'pricing';
+    if (path.startsWith('/free-bjj-intro-tannersville-ny') || path.startsWith('/contact')) return 'other';
+    if (path.startsWith('/programs') || path.startsWith('/bjj-classes-tannersville-ny') || path.startsWith('/blog')) return 'program';
+    if (path.startsWith('/near') || /-ny\/?$/.test(path)) return 'location';
+    if (path.includes('success-stor')) return 'success_story';
+    return 'other';
   };
 
   const sendEvent = (name, params = {}) => {
     const payload = {
       ...params,
       page_type: params.page_type || getPageType(),
-      ...getAttribution()
+      source_page: window.location.href,
+      source_path: window.location.pathname || '/',
+      ...getAttribution(),
+      ...params
     };
     if (typeof window.gtag === 'function') {
       window.gtag('event', name, payload);
@@ -94,7 +104,7 @@
 
   const getLane = (el) => {
     const direct = el?.dataset?.ctaLane || el?.dataset?.lane;
-    if (direct) return String(direct).toLowerCase();
+    if (direct) return normalizeLane(direct);
     const href = el?.getAttribute?.('href') || '';
     if (href.includes('/kids')) return 'kids';
     if (href.includes('/teens')) return 'teens';
@@ -107,7 +117,7 @@
     if (path.includes('/adult-bjj')) return 'adults';
     const audience = document.body?.dataset?.audience;
     if (audience) return String(audience).toLowerCase();
-    return 'mixed';
+    return 'unknown';
   };
 
   const getCtaTier = (el, fallback = 'primary') => {
@@ -169,7 +179,12 @@
   const buildCanonicalPayload = (el, href = '', overrides = {}) => ({
     page: getPage(),
     placement: getPlacement(el),
-    lane: getLane(el),
+    lane: normalizeLane(getLane(el)),
+    town: String(getLocation(el) || 'tannersville').toLowerCase(),
+    source_page: window.location.href,
+    source_path: window.location.pathname || '/',
+    destination_path: getPathFromHref(href),
+    cta_location: getPlacement(el),
     day: getDay(el, href),
     cta_label: normalizeCtaLabel(el?.textContent || ''),
     ...overrides
@@ -254,6 +269,7 @@
       };
       sendEvent('cta_click', buildCanonicalPayload(introBtn, introBtn.getAttribute('href') || '', { cta_type: 'book' }));
       sendEvent('book_intro_click', payload);
+      sendEvent('free_intro_cta_click', buildCanonicalPayload(introBtn, introBtn.getAttribute('href') || '', { cta_type: 'book' }));
       sendEvent('cta_book_free_intro_click', payload);
       sendEvent('book_free_intro_click', payload);
       sendEvent('cta_book_click', payload);
@@ -332,6 +348,13 @@
           term: String(link.dataset?.term || '').toLowerCase() || 'unknown',
           term_name: link.dataset?.termName || 'Unknown'
         });
+      }
+
+      if (pathFromHref.includes('success-stor')) {
+        sendEvent('success_story_click', buildCanonicalPayload(link, href, { cta_type: 'success_story' }));
+      }
+      if (pathFromHref.includes('catskills-home-base') || link.dataset.seasonalPack === '1') {
+        sendEvent('seasonal_pack_click', buildCanonicalPayload(link, href, { cta_type: 'seasonal_pack' }));
       }
 
       if (link.dataset.scheduleCta === '1') {
@@ -453,6 +476,7 @@
           page_path: window.location.pathname
         };
         sendEvent('lane_select', lanePayload);
+        sendEvent('lane_selected', { ...buildCanonicalPayload(link, href), selection_method: 'manual' });
         if (getPage() === '/free-bjj-intro-tannersville-ny') {
           const lane = lanePayload.lane;
           if (lane === 'kids') sendEvent('book_kids_lane_click', lanePayload);
@@ -497,9 +521,6 @@
   });
 
   document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.startsWith('/thanks')) {
-      sendEvent('booking_complete', buildCanonicalPayload(null, '', { placement: 'page_load', cta_type: 'conversion' }));
-    }
     if (window.location.pathname.startsWith('/waiver')) {
       sendEvent('waiver_start', { page_path: window.location.pathname });
     }
@@ -533,6 +554,7 @@
     });
 
     if (isPricingPage()) {
+      sendEvent('pricing_view', buildCanonicalPayload(null, '', { placement: 'page_view', cta_type: 'pricing' }));
       document.querySelectorAll('[data-pricing-tab], [data-pricing-toggle]').forEach((button) => {
         button.addEventListener('click', () => {
           const lane = String(button.dataset.pricingTab || button.dataset.pricingToggle || '').toLowerCase();
@@ -579,6 +601,22 @@
         pricingCards.forEach(sendCardView);
       }
     }
+
+    const guarantee = document.querySelector('[data-guarantee], .guarantee, [id*="guarantee"]');
+    if (guarantee) {
+      let timer;
+      const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          timer = window.setTimeout(() => {
+            sendEvent('guarantee_view', buildCanonicalPayload(guarantee, '', { placement: 'guarantee', cta_type: 'view' }));
+            observer.disconnect();
+          }, 1000);
+        } else if (timer) {
+          window.clearTimeout(timer);
+        }
+      }), { threshold: [0.5] });
+      observer.observe(guarantee);
+    }
   });
 
   window.addEventListener('message', (e) => {
@@ -595,6 +633,7 @@
       placement: 'calendly',
       cta_type: 'conversion'
     }));
+    sendEvent('booking_completed', buildCanonicalPayload(null, '', { lane, placement: 'calendly', cta_type: 'conversion' }));
     sendEvent('book_intro_submit', {
       location: window.SENSEI_BOOKING_LOCATION || 'tannersville',
       lane,

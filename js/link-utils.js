@@ -8,6 +8,7 @@
     'utm_content',
     'src'
   ];
+  const CONTEXT_KEYS = ['original_source_page', 'latest_commercial_source_page', 'lane', 'town'];
 
   const getSessionStorage = () => {
     try {
@@ -43,6 +44,10 @@
         if (!value) return;
         merged[key] = value;
       });
+      CONTEXT_KEYS.forEach((key) => {
+        const value = partial[key];
+        if (value) merged[key] = String(value).slice(0, 160);
+      });
       storage.setItem(ATTR_STORAGE_KEY, JSON.stringify(merged));
     } catch (error) {
       // sessionStorage can be blocked
@@ -77,8 +82,14 @@
 
   const captureAttributionForSession = (search) => {
     const current = extractTrackingParams(search);
-    if (!Object.keys(current).length) return {};
-    saveAttribution(current);
+    const path = window.location.pathname || '/';
+    const existing = readStoredAttribution();
+    const isCommercial = /free-bjj-intro|options-pricing|schedule|kids|teens|adult-bjj|locations|near\//i.test(path);
+    saveAttribution({
+      ...current,
+      original_source_page: existing.original_source_page || path,
+      ...(isCommercial ? { latest_commercial_source_page: path } : {})
+    });
     const merged = readStoredAttribution();
     pushAttributionEvent(merged);
     return merged;

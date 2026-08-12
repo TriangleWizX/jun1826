@@ -18,8 +18,24 @@
     ];
 
     let state = {
-      profile: null
+      profile: null,
+      bookingStarted: false
     };
+
+    const track = (name, extra = {}) => {
+      const payload = {
+        source_page: window.location.href,
+        source_path: window.location.pathname || '/',
+        page_type: 'other',
+        lane: String(new URLSearchParams(window.location.search).get('lane') || 'unknown').replace('-', '_'),
+        ...extra
+      };
+      if (typeof window.gtag === 'function') window.gtag('event', name, payload);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: name, ...payload });
+    };
+
+    track('intro_page_loaded');
 
     const showStep = (stepIndex) => {
       steps.forEach((step, idx) => {
@@ -65,6 +81,11 @@
         target.setAttribute('aria-pressed', 'true');
         
         state.profile = target.getAttribute('data-profile');
+        if (!state.bookingStarted) {
+          state.bookingStarted = true;
+          track('booking_started', { lane: state.profile, interaction: 'profile_selected' });
+        }
+        track('lane_resolved', { lane: state.profile, selection_method: requestedProfile === state.profile ? 'query' : 'manual' });
         
         // Prepare Step 2: Calendly
         initCalendly(state.profile);
@@ -126,6 +147,7 @@
       if (!container) return;
       
       container.innerHTML = '';
+      track('availability_displayed', { lane: profile });
       
       const baseUrl = container.getAttribute('data-calendly-url') || 'https://calendly.com/senseisandy/bjj-goal-mapping-session';
       
@@ -198,6 +220,7 @@
         if (popupBtn) {
           popupBtn.addEventListener('click', (e) => {
             e.preventDefault();
+            track('appointment_selected', { lane: profile, interaction: 'calendar_open' });
             triggerPopup();
           });
         }
@@ -231,6 +254,7 @@
     window.addEventListener('message', (e) => {
       if (e.origin !== "https://calendly.com") return;
       if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+        track('booking_confirmed', { lane: state.profile || 'unknown', confirmation_source: 'calendly' });
         showStep(3);
         // Scroll to success message
         setTimeout(() => {
