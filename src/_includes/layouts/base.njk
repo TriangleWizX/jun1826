@@ -17,10 +17,10 @@
   <div id="scrollProgress"></div>
 
   {% if "<main" in content %}
-    {{ content | safe }}
+    {{ content | stripDocumentShell | safe }}
   {% else %}
     <main class="ss-main {{ mainClass | default("") }}" id="main-content" role="main">
-      {{ content | safe }}
+      {{ content | stripDocumentShell | safe }}
     </main>
   {% endif %}
 

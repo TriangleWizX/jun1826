@@ -60,6 +60,13 @@ export default function (eleventyConfig) {
 
   // Custom Nunjucks/liquid filters if needed
   eleventyConfig.addFilter("json", (obj) => JSON.stringify(obj, null, 2));
+  eleventyConfig.addFilter("stripDocumentShell", (content) => {
+    if (typeof content !== "string" || !/<!doctype\s+html\s*>/i.test(content)) return content;
+    return content.replace(
+      /<!doctype\s+html\s*>\s*<html[^>]*>\s*<head>[\s\S]*?<\/head>\s*<body[^>]*>([\s\S]*?)<\/body>\s*<\/html>\s*$/i,
+      "$1"
+    );
+  });
 
   // Keep the wellness referral page within ordinary fitness/coaching claims
   // until provider testimonials and credentials have been source-verified.
@@ -80,19 +87,16 @@ export default function (eleventyConfig) {
   // Strip legacy embedded <html>/<head> wrappers so base.njk remains the
   // single owner of title, description, canonical, robots, and social tags.
   eleventyConfig.addTransform("strip-embedded-document-shell", function (content) {
-    const inputPath = this.page?.inputPath;
-    if (typeof inputPath !== "string" ||
-        (!inputPath.includes("/src/bjj-glossary/") && !inputPath.endsWith("/src/sources/kodokan-etiquette.html"))) {
-      return content;
-    }
     const doctypeRe = /<!doctype\s+html\s*>/gi;
     const firstDoctype = doctypeRe.exec(content);
-    if (!firstDoctype) return content;
-    const shellOpenEnd = content.search(/<body[^>]*>/i, firstDoctype.index);
+    const secondDoctype = firstDoctype && doctypeRe.exec(content);
+    if (!secondDoctype) return content;
+    const shellOpenEnd = content.search(/<body[^>]*>/i, secondDoctype.index);
     if (shellOpenEnd < 0) return content;
     const shellClose = content.search(/<\/body>\s*<\/html>\s*$/i);
     if (shellClose < 0) return content;
-    return content.slice(shellOpenEnd + content.slice(shellOpenEnd).search(/>/) + 1, shellClose);
+    return content.slice(0, secondDoctype.index) +
+      content.slice(shellOpenEnd + content.slice(shellOpenEnd).search(/>/) + 1, shellClose);
   });
 
   // Describe the historical student count without implying a current-member total.
