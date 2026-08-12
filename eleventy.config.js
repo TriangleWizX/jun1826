@@ -80,14 +80,19 @@ export default function (eleventyConfig) {
   // Strip legacy embedded <html>/<head> wrappers so base.njk remains the
   // single owner of title, description, canonical, robots, and social tags.
   eleventyConfig.addTransform("strip-embedded-document-shell", function (content) {
-    const outputPath = this.page?.outputPath;
-    if (typeof outputPath !== "string" ||
-        (!outputPath.includes("/bjj-glossary/") && !outputPath.endsWith("/sources/kodokan-etiquette/index.html"))) {
+    const inputPath = this.page?.inputPath;
+    if (typeof inputPath !== "string" ||
+        (!inputPath.includes("/src/bjj-glossary/") && !inputPath.endsWith("/src/sources/kodokan-etiquette.html"))) {
       return content;
     }
-    return content
-      .replace(/<!doctype html>\s*<html[^>]*>\s*<head>[\s\S]*?<\/head>\s*<body[^>]*>/i, "")
-      .replace(/<\/body>\s*<\/html>\s*$/i, "");
+    const doctypeRe = /<!doctype\s+html\s*>/gi;
+    const firstDoctype = doctypeRe.exec(content);
+    if (!firstDoctype) return content;
+    const shellOpenEnd = content.search(/<body[^>]*>/i, firstDoctype.index);
+    if (shellOpenEnd < 0) return content;
+    const shellClose = content.search(/<\/body>\s*<\/html>\s*$/i);
+    if (shellClose < 0) return content;
+    return content.slice(shellOpenEnd + content.slice(shellOpenEnd).search(/>/) + 1, shellClose);
   });
 
   // Describe the historical student count without implying a current-member total.
