@@ -348,11 +348,10 @@ ${extraHead}
   <!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
   <link rel="stylesheet" href="/assets/css/fonts.css">
   <link rel="stylesheet" href="/assets/css/site-shell.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.css">
 </head>
 <body class="${escapeHtml(bodyClass)}" data-glossary-theme-root>
-<!--#include virtual="/nav-include.html" -->
 ${body}
-<!--#include virtual="/footer-include.html" -->
 ${scripts.map((src) => `<script src="${src}" defer></script>`).join('\n')}
 </body>
 </html>
