@@ -19,7 +19,8 @@
 
     let state = {
       profile: null,
-      bookingStarted: false
+      bookingStarted: false,
+      autoSelecting: false
     };
 
     const track = (name, extra = {}) => {
@@ -30,9 +31,12 @@
         lane: String(new URLSearchParams(window.location.search).get('lane') || 'unknown').replace('-', '_'),
         ...extra
       };
-      if (typeof window.gtag === 'function') window.gtag('event', name, payload);
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: name, ...payload });
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, payload);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: name, ...payload });
+      }
     };
 
     track('intro_page_loaded');
@@ -80,12 +84,20 @@
         const target = e.currentTarget; 
         target.setAttribute('aria-pressed', 'true');
         
+        const previousProfile = state.profile;
         state.profile = target.getAttribute('data-profile');
-        if (!state.bookingStarted) {
+        if (!state.autoSelecting && !state.bookingStarted) {
           state.bookingStarted = true;
           track('booking_started', { lane: state.profile, interaction: 'profile_selected' });
         }
-        track('lane_resolved', { lane: state.profile, selection_method: requestedProfile === state.profile ? 'query' : 'manual' });
+        track('lane_resolved', { lane: state.profile, selection_method: state.autoSelecting ? 'query' : 'manual' });
+        if (!state.autoSelecting && previousProfile !== state.profile) {
+          track('lane_selected', {
+            previous_lane: previousProfile || 'unknown',
+            selected_lane: state.profile,
+            selection_method: previousProfile ? 'changed' : 'manual'
+          });
+        }
         
         // Prepare Step 2: Calendly
         initCalendly(state.profile);
@@ -128,7 +140,11 @@
     }
     if (requestedProfile) {
       const matchingButton = Array.from(profileBtns).find((button) => button.getAttribute('data-profile') === requestedProfile);
-      if (matchingButton) matchingButton.click();
+      if (matchingButton) {
+        state.autoSelecting = true;
+        matchingButton.click();
+        state.autoSelecting = false;
+      }
     }
 
     // Back buttons
@@ -253,7 +269,15 @@
     // Step 3: Listen for Calendly Booking Event
     window.addEventListener('message', (e) => {
       if (e.origin !== "https://calendly.com") return;
-      if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+      const calendlyEvent = e.data?.event;
+      if (calendlyEvent === 'calendly.event_type_viewed') {
+        track('availability_displayed', { lane: state.profile || 'unknown', scheduler_event: calendlyEvent });
+      }
+      if (calendlyEvent === 'calendly.date_and_time_selected') {
+        track('appointment_selected', { lane: state.profile || 'unknown', scheduler_event: calendlyEvent });
+      }
+      if (calendlyEvent === 'calendly.event_scheduled') {
+        track('booking_submitted', { lane: state.profile || 'unknown', scheduler_event: calendlyEvent });
         track('booking_confirmed', { lane: state.profile || 'unknown', confirmation_source: 'calendly' });
         showStep(3);
         // Scroll to success message

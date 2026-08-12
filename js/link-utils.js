@@ -84,11 +84,15 @@
     const current = extractTrackingParams(search);
     const path = window.location.pathname || '/';
     const existing = readStoredAttribution();
-    const isCommercial = /free-bjj-intro|options-pricing|schedule|kids|teens|adult-bjj|locations|near\//i.test(path);
+    const context = contextFromPath(path);
+    const queryLane = new URLSearchParams(search || window.location.search).get('lane');
+    const isCommercial = /free-bjj-intro|options-pricing|schedule|kids|teens|adult-bjj|locations|near\/|bjj-classes\//i.test(path);
     saveAttribution({
       ...current,
       original_source_page: existing.original_source_page || path,
-      ...(isCommercial ? { latest_commercial_source_page: path } : {})
+      ...(isCommercial ? { latest_commercial_source_page: path } : {}),
+      lane: queryLane || context.lane || existing.lane || '',
+      town: context.town || existing.town || ''
     });
     const merged = readStoredAttribution();
     pushAttributionEvent(merged);
@@ -113,6 +117,14 @@
   };
 
   const getSourcePage = () => window.location.pathname || '/';
+
+  const contextFromPath = (path) => {
+    const normalized = String(path || '').toLowerCase();
+    const laneMatch = normalized.match(/\/free-bjj-intro-tannersville-ny\/(kids|teens|adults)/)
+      || normalized.match(/\/bjj-classes\/(kids|teens|adults)-tannersville-ny/);
+    const townMatch = normalized.match(/\/(?:bjj-classes|near)\/([a-z-]+)-ny(?:\/|$)/);
+    return { lane: laneMatch ? laneMatch[1] : '', town: townMatch ? townMatch[1].replace(/-/g, '_') : '' };
+  };
 
   const readConciergeSource = () => {
     const params = new URLSearchParams(window.location.search);

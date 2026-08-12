@@ -24,7 +24,11 @@
       utm_medium: stored.utm_medium || params.get('utm_medium') || 'organic',
       utm_campaign: stored.utm_campaign || params.get('utm_campaign') || 'evergreen',
       utm_content: stored.utm_content || params.get('utm_content') || '',
-      src: stored.src || params.get('src') || ''
+      src: stored.src || params.get('src') || '',
+      original_source_page: stored.original_source_page || '',
+      latest_commercial_source_page: stored.latest_commercial_source_page || '',
+      stored_lane: normalizeLane(stored.lane),
+      stored_town: stored.town || ''
     };
   };
 
@@ -116,7 +120,9 @@
     if (path.includes('/teen-jiu-jitsu-tannersville-ny')) return 'teens';
     if (path.includes('/adult-bjj')) return 'adults';
     const audience = document.body?.dataset?.audience;
-    if (audience) return String(audience).toLowerCase();
+    if (audience) return normalizeLane(audience);
+    const stored = readStoredAttribution();
+    if (stored.lane) return normalizeLane(stored.lane);
     return 'unknown';
   };
 
@@ -180,9 +186,11 @@
     page: getPage(),
     placement: getPlacement(el),
     lane: normalizeLane(getLane(el)),
-    town: String(getLocation(el) || 'tannersville').toLowerCase(),
+    town: String(getLocation(el) || getAttribution().stored_town || 'tannersville').toLowerCase().replace(/-/g, '_'),
     source_page: window.location.href,
     source_path: window.location.pathname || '/',
+    original_source_page: getAttribution().original_source_page || window.location.pathname || '/',
+    latest_commercial_source_page: getAttribution().latest_commercial_source_page || window.location.pathname || '/',
     destination_path: getPathFromHref(href),
     cta_location: getPlacement(el),
     day: getDay(el, href),
