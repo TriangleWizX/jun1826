@@ -82,6 +82,34 @@
       btn.addEventListener('focus', preloadCalendly, { once: true });
     });
 
+    // Program pages pass a lane so high-intent visitors do not have to repeat
+    // the audience choice they already made. Keep the generic page unchanged.
+    const requestedLane = new URLSearchParams(window.location.search).get('lane');
+    const laneProfiles = {
+      kids: 'child',
+      teens: 'teen',
+      teen: 'teen',
+      adults: 'adult-beginner',
+      adult: 'adult-beginner',
+      'community-service': 'leo'
+    };
+    const requestedProfile = laneProfiles[String(requestedLane || '').toLowerCase()];
+    const laneNote = document.getElementById('first-visit-lane-note');
+    const laneNotes = {
+      kids: 'For kids: Goal Mapping takes 15 minutes immediately before class. Normal clothes are fine for the meeting; bring clean athletic clothes for class.',
+      teens: 'For teens: Goal Mapping takes 15 minutes immediately before class. Normal clothes are fine for the meeting; bring clean athletic clothes for class.',
+      adults: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
+      adult: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
+      'community-service': 'For qualifying service professionals: use Goal Mapping to discuss the right class lane, schedule, and community-service rate.'
+    };
+    if (laneNote && laneNotes[String(requestedLane || '').toLowerCase()]) {
+      laneNote.textContent = laneNotes[String(requestedLane).toLowerCase()];
+    }
+    if (requestedProfile) {
+      const matchingButton = Array.from(profileBtns).find((button) => button.getAttribute('data-profile') === requestedProfile);
+      if (matchingButton) matchingButton.click();
+    }
+
     // Back buttons
     const backBtns = document.querySelectorAll('[data-back-to]');
     backBtns.forEach(btn => {
