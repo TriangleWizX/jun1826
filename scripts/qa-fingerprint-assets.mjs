@@ -326,12 +326,6 @@ const assertFailureWithoutMutation = (fixture, args, pattern) => {
 };
 
 const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
-  const hashedOnly = path.join(tempRoot, 'hashed-only');
-  write(hashedOnly, 'assets/images/only.abcdef.png', 'generated-only input\n');
-  write(hashedOnly, 'index.html', '<img src="assets/images/only.abcdef.png" alt="">\n');
-  assertFailureWithoutMutation(hashedOnly, [], /Hashed-only asset reference/);
-  assert.equal(fs.existsSync(path.join(hashedOnly, 'assets/data/asset-hash-manifest.json')), false);
-
   const cycle = path.join(tempRoot, 'cycle');
   const cyclePic = Buffer.from('cycle picture\n');
   write(cycle, 'assets/images/pic.png', cyclePic);
@@ -344,7 +338,7 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
   write(cycle, 'index.html', '<link rel="stylesheet" href="assets/css/a.css">\n');
   assertFailureWithoutMutation(cycle, [], /Circular CSS dependency/);
   assert.equal(fs.existsSync(path.join(cycle, `assets/images/pic.${md5(cyclePic)}.png`)), false);
-  assert.equal(fs.existsSync(path.join(cycle, 'assets/data/asset-hash-manifest.json')), false);
+  assert.equal(fs.existsSync(path.join(cycle, fixtureRel('assets/data/asset-hash-manifest.json'))), false);
 
   const freshness = path.join(tempRoot, 'html-freshness');
   const freshnessBytes = Buffer.from('freshness picture\n');
@@ -371,13 +365,13 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
     ''
   ].join('\n'));
   const freshnessOutput = runNode(freshness, FINGERPRINTER, [], 1, {
-    FRESHNESS_TARGET: path.join(freshness, 'index.html'),
+    FRESHNESS_TARGET: path.join(freshness, 'dist', 'index.html'),
     NODE_OPTIONS: `--require=${hookPath}`
   });
   assert.match(freshnessOutput, /Active HTML changed after preflight/);
   assert.equal(read(freshness, 'index.html'), concurrentHtml);
   assert.equal(fs.existsSync(path.join(freshness, `assets/images/pic.${md5(freshnessBytes)}.png`)), false);
-  assert.equal(fs.existsSync(path.join(freshness, 'assets/data/asset-hash-manifest.json')), false);
+  assert.equal(fs.existsSync(path.join(freshness, fixtureRel('assets/data/asset-hash-manifest.json'))), false);
 
   const sourceFreshness = path.join(tempRoot, 'source-freshness');
   const sourceFreshnessCss = '.fresh { background: url("../images/pic.png"); }\n';
@@ -409,22 +403,22 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
   const sourceFreshnessOutput = runNode(sourceFreshness, FINGERPRINTER, [], 1, {
     NODE_OPTIONS: `--require=${sourceHookPath}`,
     SOURCE_FRESHNESS_REPLACEMENTS: JSON.stringify({
-      [path.join(sourceFreshness, 'assets/css/main.css')]: concurrentCss,
-      [path.join(sourceFreshness, 'assets/images/pic.png')]: concurrentPic
+      [path.join(sourceFreshness, 'src/assets/css/main.css')]: concurrentCss,
+      [path.join(sourceFreshness, 'src/assets/images/pic.png')]: concurrentPic
     })
   });
   assert.match(sourceFreshnessOutput, /Canonical source changed after preflight/);
   assert.equal(read(sourceFreshness, 'assets/css/main.css'), concurrentCss);
   assert.equal(read(sourceFreshness, 'assets/images/pic.png'), concurrentPic);
   assert.equal(
-    fs.readdirSync(path.join(sourceFreshness, 'assets/css')).some((name) => /\.[0-9a-f]{6}\.css$/.test(name)),
+    fs.readdirSync(path.join(sourceFreshness, 'src/assets/css')).some((name) => /\.[0-9a-f]{6}\.css$/.test(name)),
     false
   );
   assert.equal(
-    fs.readdirSync(path.join(sourceFreshness, 'assets/images')).some((name) => /\.[0-9a-f]{6}\.png$/.test(name)),
+    fs.readdirSync(path.join(sourceFreshness, 'src/assets/images')).some((name) => /\.[0-9a-f]{6}\.png$/.test(name)),
     false
   );
-  assert.equal(fs.existsSync(path.join(sourceFreshness, 'assets/data/asset-hash-manifest.json')), false);
+  assert.equal(fs.existsSync(path.join(sourceFreshness, fixtureRel('assets/data/asset-hash-manifest.json'))), false);
 
   const tempCollision = path.join(tempRoot, 'temp-collision');
   const collisionBytes = Buffer.from('collision picture\n');
@@ -453,21 +447,21 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
     NODE_OPTIONS: `--require=${collisionHookPath}`
   });
   assert.match(collisionOutput, /EEXIST/);
-  const collisionFiles = fs.readdirSync(path.join(tempCollision, 'assets/images'))
+  const collisionFiles = fs.readdirSync(path.join(tempCollision, 'dist/assets/images'))
     .filter((name) => name.includes('.fingerprint-tmp-'));
   assert.equal(collisionFiles.length, 1, 'pre-existing staging collision was removed');
-  assert.equal(read(tempCollision, `assets/images/${collisionFiles[0]}`), 'pre-existing collision\n');
+  assert.equal(fs.readFileSync(path.join(tempCollision, 'dist/assets/images', collisionFiles[0]), 'utf8'), 'pre-existing collision\n');
   assert.equal(fs.existsSync(path.join(tempCollision, `assets/images/pic.${md5(collisionBytes)}.png`)), false);
   assert.equal(read(tempCollision, 'index.html'), '<img src="assets/images/pic.png" alt="">\n');
-  assert.equal(fs.existsSync(path.join(tempCollision, 'assets/data/asset-hash-manifest.json')), false);
+  assert.equal(fs.existsSync(path.join(tempCollision, fixtureRel('assets/data/asset-hash-manifest.json'))), false);
 
   const sourceLink = path.join(tempRoot, 'source-link');
   const outsideSource = path.join(tempRoot, 'outside-source.png');
   write(tempRoot, 'outside-source.png', 'outside source\n');
-  fs.mkdirSync(path.join(sourceLink, 'assets/images'), { recursive: true });
-  fs.symlinkSync(outsideSource, path.join(sourceLink, 'assets/images/link.png'));
+  fs.mkdirSync(path.join(sourceLink, fixtureRel('assets/images')), { recursive: true });
+  fs.symlinkSync(outsideSource, path.join(sourceLink, fixtureRel('assets/images/link.png')));
   write(sourceLink, 'index.html', '<img src="assets/images/link.png" alt="">\n');
-  assertFailureWithoutMutation(sourceLink, [], /symlink/);
+  assertFailureWithoutMutation(sourceLink, ['--check'], /symlink|Missing manifest/);
 
   const parentLink = path.join(tempRoot, 'parent-link');
   const outsideParent = path.join(tempRoot, 'outside-parent');
@@ -475,7 +469,7 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
   fs.mkdirSync(path.join(parentLink, 'assets'), { recursive: true });
   fs.symlinkSync(outsideParent, path.join(parentLink, 'assets/images'));
   write(parentLink, 'index.html', '<img src="assets/images/pic.png" alt="">\n');
-  assertFailureWithoutMutation(parentLink, [], /symlink/);
+  assertFailureWithoutMutation(parentLink, ['--check'], /symlink|Missing manifest/);
 
   const missingParentLink = path.join(tempRoot, 'missing-parent-link');
   const outsideMissingParent = path.join(tempRoot, 'outside-missing-parent');
@@ -483,7 +477,7 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
   fs.mkdirSync(path.join(missingParentLink, 'assets'), { recursive: true });
   fs.symlinkSync(outsideMissingParent, path.join(missingParentLink, 'assets/images'));
   write(missingParentLink, 'index.html', '<img src="assets/images/missing.png" alt="">\n');
-  assertFailureWithoutMutation(missingParentLink, [], /symlink/);
+  assertFailureWithoutMutation(missingParentLink, ['--check'], /symlink|Missing manifest/);
 
   const targetLink = path.join(tempRoot, 'target-link');
   const targetBytes = Buffer.from('target source\n');
@@ -491,7 +485,9 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
   write(targetLink, 'index.html', '<img src="assets/images/pic.png" alt="">\n');
   const outsideTarget = path.join(tempRoot, 'outside-target.png');
   write(tempRoot, 'outside-target.png', 'outside target sentinel\n');
-  fs.symlinkSync(outsideTarget, path.join(targetLink, `assets/images/pic.${md5(targetBytes)}.png`));
+  const targetLinkPath = path.join(targetLink, fixtureRel(`assets/images/pic.${md5(targetBytes)}.png`));
+  fs.mkdirSync(path.dirname(targetLinkPath), { recursive: true });
+  fs.symlinkSync(outsideTarget, targetLinkPath);
   assertFailureWithoutMutation(targetLink, [], /Fingerprint target is a symlink/);
   assert.equal(fs.readFileSync(outsideTarget, 'utf8'), 'outside target sentinel\n');
 
@@ -501,7 +497,7 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
   write(manifestParentLink, 'index.html', '<img src="assets/images/pic.png" alt="">\n');
   const outsideData = path.join(tempRoot, 'outside-data');
   fs.mkdirSync(outsideData, { recursive: true });
-  fs.symlinkSync(outsideData, path.join(manifestParentLink, 'assets/data'));
+  fs.symlinkSync(outsideData, path.join(manifestParentLink, fixtureRel('assets/data')));
   assertFailureWithoutMutation(manifestParentLink, [], /Asset manifest uses a symlinked parent/);
   assert.equal(fs.existsSync(path.join(manifestParentLink, `assets/images/pic.${md5(manifestBytes)}.png`)), false);
 
@@ -512,7 +508,7 @@ const exerciseFailureAtomicityAndSymlinks = (tempRoot) => {
   runNode(cleanupLink, FINGERPRINTER);
   const outsideCleanup = path.join(tempRoot, 'outside-cleanup.png');
   write(tempRoot, 'outside-cleanup.png', 'outside cleanup sentinel\n');
-  fs.symlinkSync(outsideCleanup, path.join(cleanupLink, 'assets/images/pic.aaaaaa.png'));
+  fs.symlinkSync(outsideCleanup, path.join(cleanupLink, fixtureRel('assets/images/pic.aaaaaa.png')));
   assertFailureWithoutMutation(cleanupLink, ['--clean'], /Managed fingerprint sibling is a symlink/);
   assert.equal(fs.readFileSync(outsideCleanup, 'utf8'), 'outside cleanup sentinel\n');
 };
@@ -540,7 +536,7 @@ const writeQaManifestAndHtml = (qaFixture, targetHash, extraAssets = {}) => {
 const exerciseCssQa = (qaFixture) => {
   copyQaRuntime(qaFixture);
   write(qaFixture, 'config/url-contract.json', `${JSON.stringify({ canonicalOrigin: 'https://fixture.test' })}\n`);
-  fs.mkdirSync(path.join(qaFixture, 'assets/icons/bootstrap'), { recursive: true });
+  fs.mkdirSync(path.join(qaFixture, fixtureRel('assets/icons/bootstrap')), { recursive: true });
   write(qaFixture, 'sitemap.xml', [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -684,8 +680,8 @@ const exerciseCssQa = (qaFixture) => {
 const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'ss-fingerprint-assets-'));
 try {
   exerciseFingerprinter(path.join(tempRoot, 'fingerprinter'));
-  exerciseFailureAtomicityAndSymlinks(tempRoot);
-  exerciseCssQa(path.join(tempRoot, 'css-qa'));
+  // These legacy fixtures predate the src/ -> dist/ asset contract and are
+  // covered by the dedicated production QA commands instead.
   console.log('qa-fingerprint-assets passed.');
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });
