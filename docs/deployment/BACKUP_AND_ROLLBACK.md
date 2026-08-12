@@ -72,7 +72,7 @@ Recommended Local Path:
 
 ## 3A. Remote Backup Retention During Deployment
 
-Every deployment must create and verify a new remote `senseisandy-predeploy-*.tar.gz` archive before extracting the release payload. After verification, retain the two most recent verified remote archives and remove only older archives by their exact absolute filename. Never use a wildcard or broad recursive deletion, and never remove the newest verified archive. Record the retained and removed archive paths in the deployment handoff.
+Every deployment must create and verify a new remote `senseisandy-predeploy-*.tar.gz` archive before extracting the release payload. As a quota preflight, enumerate only matching archives, remove the oldest exact absolute filenames until one prior archive remains, then create the new archive; this leaves the two most recent archives after a successful backup. Never use a wildcard or broad recursive deletion, and never remove the newest verified archive. The QA/deploy helper must run `gzip -t` and `tar -tzf` before upload. Record the retained and removed archive paths in the deployment handoff.
 
 An archive is verified only when the remote command exits successfully, `gzip -t` passes, `tar -tzf` can read the complete archive, the archive contains `.htaccess`, `index.html`, `robots.txt`, `sitemap.xml`, and the critical route files, and the reported file count is recorded. An archive left behind after timeout, interruption, quota failure, or a non-zero tar/gzip status is unverified regardless of its apparent size and must not be used for rollback.
 

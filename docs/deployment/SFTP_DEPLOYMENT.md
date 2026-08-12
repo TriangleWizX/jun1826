@@ -3,7 +3,7 @@
 ## Overview
 
 SenseiSandy.com is hosted on Namecheap shared hosting via cPanel and deployed via SFTP.
-Deploys must only occur after explicit authorization from Sandy following local testing and backup verification.
+Deploys must only occur after explicit authorization from Sandy following local testing and backup verification. Backup QA must rotate only the oldest matching predeploy archive when quota requires it, verify the new archive with `gzip -t` and `tar -tzf`, and record the removed and retained archive paths.
 
 ---
 
