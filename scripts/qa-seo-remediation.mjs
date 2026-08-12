@@ -4,13 +4,12 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const DIST = path.join(ROOT, 'dist');
 const publicRoutes = [
-  '/', '/bjj-classes', '/black-belt-concierge', '/blog/bio-ginastica-mobility',
-  '/blog/onteora-park-summer-activities-catskills', '/community-partners',
+  '/', '/bjj-classes', '/black-belt-concierge', '/community-partners',
   '/elite-concierge', '/phoenicia-diner', '/school-families-jiu-jitsu',
   '/show-up-kit', '/summer-academy', '/blog/gi-vs-no-gi-bjj-cheat-code',
-  '/sources/kodokan-etiquette'
+  '/blog/bioginastica-movement-no-gi', '/blog/kinetic-chess-onteora-park'
 ];
-const privateRoutes = ['/report-card', '/student-hub'];
+const privateRoutes = ['/report-card', '/student-hub', '/sources/kodokan-etiquette'];
 const glossaryRoutes = ['/bjj-glossary', '/bjj-glossary/armbar', '/bjj-glossary/back-control', '/bjj-glossary/butterfly-guard', '/bjj-glossary/bridge'];
 
 const fileFor = (route) => {

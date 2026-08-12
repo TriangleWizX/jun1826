@@ -61,9 +61,9 @@ export default function (eleventyConfig) {
   // Custom Nunjucks/liquid filters if needed
   eleventyConfig.addFilter("json", (obj) => JSON.stringify(obj, null, 2));
   eleventyConfig.addFilter("stripDocumentShell", (content) => {
-    if (typeof content !== "string" || !/<!doctype\s+html\s*>/i.test(content)) return content;
+    if (typeof content !== "string" || !/<html\b/i.test(content)) return content;
     return content.replace(
-      /<!doctype\s+html\s*>\s*<html[^>]*>\s*<head>[\s\S]*?<\/head>\s*<body[^>]*>([\s\S]*?)<\/body>\s*<\/html>\s*$/i,
+      /(?:<!doctype\s+html\s*>\s*)?<html[^>]*>\s*<head>[\s\S]*?<\/head>\s*<body[^>]*>([\s\S]*?)(?:<\/body>\s*<\/html>)?\s*$/i,
       "$1"
     );
   });
