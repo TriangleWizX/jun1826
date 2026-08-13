@@ -47,6 +47,7 @@
     "qa:seo": "node scripts/qa-seo-eleventy.mjs",
     "qa:towns": "node scripts/qa-town-duplication.mjs",
     "qa:lazy-loading": "node scripts/qa-lazy-loading.mjs",
+    "qa:images": "node scripts/qa-images.mjs",
     "qa:meta:live": "node scripts/qa-meta-live.mjs",
     "qa:blog:slash:live": "node scripts/qa-blog-slash-live.mjs",
     "qa:sitemaps:live:redirects": "node scripts/qa-sitemap-live-redirects.mjs",
@@ -82,7 +83,7 @@
     "qa:visibility": "node scripts/qa-visibility.mjs --json=reports/visibility-report.json",
     "qa:schedule": "node scripts/qa-schedule.mjs",
     "plan:finalize": "bash scripts/plan-finalize.sh",
-    "qa:all": "npm run qa:schedule && npm run build && npm run qa:links:inventory && npm run qa:funnel && npm run qa:links:static && npm run qa:links:existence && npm run qa:css:links && npm run qa:components:bundles && npm run qa:css:minified && npm run qa:icons:local && npm run qa:css:bootstrap && npm run qa:css:routes && npm run qa:css:route-bundles && npm run qa:css:budget && npm run qa:assets:fingerprint:fixture && npm run qa:assets:canon && npm run qa:css:assets:baseline && npm run qa:external:blocked && npm run qa:videos && npm run qa:priority:inlinks && npm run qa:orphans && npm run qa:nav && npm run qa:doctype && npm run qa:ssi && npm run qa:seo && npm run qa:lazy-loading && npm run qa:near && npm run qa:schema && npm run qa:glossary",
+    "qa:all": "npm run qa:schedule && npm run build && npm run qa:links:inventory && npm run qa:funnel && npm run qa:links:static && npm run qa:links:existence && npm run qa:css:links && npm run qa:components:bundles && npm run qa:css:minified && npm run qa:icons:local && npm run qa:css:bootstrap && npm run qa:css:routes && npm run qa:css:route-bundles && npm run qa:css:budget && npm run qa:assets:fingerprint:fixture && npm run qa:assets:canon && npm run qa:css:assets:baseline && npm run qa:external:blocked && npm run qa:videos && npm run qa:priority:inlinks && npm run qa:orphans && npm run qa:nav && npm run qa:doctype && npm run qa:ssi && npm run qa:seo && npm run qa:lazy-loading && npm run qa:images && npm run qa:near && npm run qa:schema && npm run qa:glossary",
     "near:verify": "npm run near:build && npm run qa:near && npm run qa:funnel && git diff --exit-code -- near/",
     "playlist:json": "node scripts/fetch-playlist.mjs",
     "videos:json": "npm run playlist:json",
@@ -110,6 +111,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
     "bootstrap": "5.3.3",
+    "playwright": "^1.62.1",
     "purgecss": "6.0.0",
     "sass": "1.77.8"
   }
