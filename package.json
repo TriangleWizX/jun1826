@@ -39,6 +39,7 @@
     "qa:links:inventory": "node scripts/qa-internal-links.mjs",
     "qa:links:single": "node scripts/qa-single-internal-links.mjs",
     "qa:links:anchor-text": "node scripts/qa-no-anchor-text.mjs",
+    "qa:links:descriptive-text": "node scripts/qa-non-descriptive-anchor-text.mjs",
     "qa:videos": "node scripts/qa-video-inlinks.mjs",
     "qa:priority:inlinks": "node scripts/qa-priority-inlinks.mjs",
     "qa:orphans": "node scripts/qa-orphans.mjs",
