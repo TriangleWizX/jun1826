@@ -37,6 +37,7 @@
     "qa:links:existence": "node scripts/qa-links-existence.mjs",
     "qa:links:live": "node scripts/qa-links-live.mjs",
     "qa:links:inventory": "node scripts/qa-internal-links.mjs",
+    "qa:links:single": "node scripts/qa-single-internal-links.mjs",
     "qa:videos": "node scripts/qa-video-inlinks.mjs",
     "qa:priority:inlinks": "node scripts/qa-priority-inlinks.mjs",
     "qa:orphans": "node scripts/qa-orphans.mjs",
