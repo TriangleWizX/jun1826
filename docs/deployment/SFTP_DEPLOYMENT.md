@@ -3,7 +3,7 @@
 ## Overview
 
 SenseiSandy.com is hosted on Namecheap shared hosting via cPanel and deployed via SFTP.
-Deploys must only occur after explicit authorization from Sandy following local testing and backup verification. Backup QA must rotate only the oldest matching predeploy archive when quota requires it, verify the new archive with `gzip -t` and `tar -tzf`, and record the removed and retained archive paths.
+Deploys must only occur after explicit authorization from Sandy following local testing and backup verification. Backup QA must rotate only exact matching predeploy archives, clear stale provider staging copies, verify the new archive with `gzip -t` and `tar -tzf`, and record the removed and retained archive paths.
 
 ---
 
@@ -37,3 +37,7 @@ The repository helper is `npm run deploy:release -- --commit <sha>`. Run `--dry-
    * `.env` or `.vscode/`
    * Temporary scripts or scratch python files
 5. **Post-Deploy Smoke Test**: Test live URLs, responsive design, forms, navigation, and schedule.
+
+### Backup QA
+
+Run `npm run qa:backup:remote` for an audit-only inventory. It examines both the account-level predeploy archive directory and `.cagefs/tmp`, where failed provider-side archive jobs can leave large stale copies. Run `npm run qa:backup:remote:cleanup` only during an authorized release; it removes exact stale `.cagefs/tmp` archive paths and older account-level rotation entries while retaining the newest account-level archive. The deploy helper runs this same cleanup immediately before creating the fresh backup.

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Deploy only generated files changed by a commit, atomically and resumably."""
-import argparse, json, pathlib, posixpath, shlex, subprocess, tarfile, time
+import argparse, json, pathlib, posixpath, re, shlex, subprocess, tarfile, time
 import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package', 'src/')
 DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', '413/')
 ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'site-shell.html'}
+BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
@@ -56,12 +57,51 @@ def remote_run(client, command):
     if stdout.channel.recv_exit_status() != 0: raise RuntimeError(err or out)
     return out
 
+def backup_inventory(client, cfg):
+    home = '/home/' + cfg['username']
+    commands = {
+        'home': f"find {shlex.quote(home)} -maxdepth 1 -type f -name 'senseisandy-predeploy-*.tar.gz' -printf '%T@ %s %p\\n' | sort -n",
+        'tmp': f"find {shlex.quote(home + '/.cagefs/tmp')} -maxdepth 1 -type f -name 'senseisandy-predeploy-*.tar.gz' -printf '%T@ %s %p\\n' | sort -n",
+    }
+    inventory = []
+    for location, command in commands.items():
+        for line in remote_run(client, command).splitlines():
+            parts = line.split(' ', 2)
+            if len(parts) != 3:
+                continue
+            mtime, size, path = parts
+            if not BACKUP_NAME.fullmatch(pathlib.PurePosixPath(path).name):
+                continue
+            inventory.append({'location': location, 'mtime': float(mtime), 'size': int(size), 'path': path})
+    return inventory
+
+def cleanup_remote_backups(client, cfg, cleanup=False, stale_seconds=86400):
+    now = time.time(); inventory = backup_inventory(client, cfg)
+    home = sorted((x for x in inventory if x['location'] == 'home'), key=lambda x: x['mtime'], reverse=True)
+    remove = []
+    # The provider temp directory is not part of the active web root. Its old
+    # predeploy archives are staging leftovers and are safe to clear exactly.
+    for item in inventory:
+        if item['location'] == 'tmp' and now - item['mtime'] >= stale_seconds:
+            remove.append((item, 'stale-provider-temp'))
+    # Keep one newest top-level archive as the prior rollback point. The next
+    # fresh backup will restore the two-archive rotation after deployment.
+    for item in home[1:]:
+        remove.append((item, 'older-top-level-rotation'))
+    print(f'backup_qa_found={len(inventory)} backup_qa_remove={len(remove)} cleanup={cleanup}', flush=True)
+    for item, reason in remove:
+        print(f"backup_qa_{'removed' if cleanup else 'candidate'}={item['path']} reason={reason} bytes={item['size']}", flush=True)
+        if cleanup:
+            home_root = '/home/' + cfg['username']
+            allowed = (home_root + '/', home_root + '/.cagefs/tmp/')
+            if not item['path'].startswith(allowed):
+                raise RuntimeError(f"refusing backup path outside account: {item['path']}")
+            remote_run(client, f"rm -- {shlex.quote(item['path'])}")
+    return inventory, remove
+
 def backup_remote(client, cfg):
     home = '/home/' + cfg['username']; remote = cfg['remotePath']; stamp = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime()); backup = f'{home}/senseisandy-predeploy-{stamp}.tar.gz'
-    listing = remote_run(client, f"find {shlex.quote(home)} -maxdepth 1 -type f -name 'senseisandy-predeploy-*.tar.gz' -printf '%T@ %p\\n' | sort -n")
-    archives = [line.split(' ', 1)[1].strip() for line in listing.splitlines() if ' ' in line]
-    while len(archives) >= 2:
-        oldest = archives.pop(0); remote_run(client, f"rm -- {shlex.quote(oldest)}"); print(f'removed_oldest_backup={oldest}', flush=True)
+    cleanup_remote_backups(client, cfg, cleanup=True)
     archive_cmd = f"timeout --signal=TERM --kill-after=30s 300s tar -czf {shlex.quote(backup)} -C {shlex.quote(remote)} ."
     remote_run(client, f"{archive_cmd} && gzip -t {shlex.quote(backup)}")
     archive_listing = remote_run(client, f"tar -tzf {shlex.quote(backup)}")
@@ -84,8 +124,16 @@ def verify_local_backup(path):
     print(f'local_backup_verified={backup} bytes={backup.stat().st_size}', flush=True)
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); args = parser.parse_args()
-    cfg = json.loads((ROOT / args.config).read_text()); files = changed_outputs(args.commit)
+    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); args = parser.parse_args()
+    cfg = json.loads((ROOT / args.config).read_text())
+    if args.qa_backups:
+        client = connect(cfg)
+        try:
+            cleanup_remote_backups(client, cfg, cleanup=args.cleanup)
+        finally:
+            client.close()
+        return
+    files = changed_outputs(args.commit)
     print(f'payload_files={len(files)} commit={args.commit}')
     for _, rel in files: print(rel)
     if args.dry_run: return
