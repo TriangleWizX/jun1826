@@ -60,7 +60,8 @@ def backup_remote(client, cfg):
     archives = [line.split(' ', 1)[1].strip() for line in listing.splitlines() if ' ' in line]
     while len(archives) >= 2:
         oldest = archives.pop(0); remote_run(client, f"rm -- {shlex.quote(oldest)}"); print(f'removed_oldest_backup={oldest}', flush=True)
-    remote_run(client, f"tar -czf {shlex.quote(backup)} -C {shlex.quote(remote)} . && gzip -t {shlex.quote(backup)}")
+    archive_cmd = f"timeout --signal=TERM --kill-after=30s 300s tar -czf {shlex.quote(backup)} -C {shlex.quote(remote)} ."
+    remote_run(client, f"{archive_cmd} && gzip -t {shlex.quote(backup)}")
     archive_listing = remote_run(client, f"tar -tzf {shlex.quote(backup)}")
     required = {'./.htaccess', './index.html', './robots.txt', './sitemap.xml'}
     present = set(archive_listing.splitlines())
