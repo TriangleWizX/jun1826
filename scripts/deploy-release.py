@@ -77,8 +77,16 @@ def backup_inventory(client, cfg):
 
 def cleanup_remote_backups(client, cfg, cleanup=False, stale_seconds=86400):
     now = time.time(); inventory = backup_inventory(client, cfg)
+    invalid = []
+    for item in inventory:
+        try:
+            remote_run(client, f"gzip -t {shlex.quote(item['path'])} && tar -tzf {shlex.quote(item['path'])} >/dev/null")
+        except RuntimeError:
+            invalid.append(item)
     home = sorted((x for x in inventory if x['location'] == 'home'), key=lambda x: x['mtime'], reverse=True)
     remove = []
+    for item in invalid:
+        remove.append((item, 'invalid-archive'))
     # The provider temp directory is not part of the active web root. Its old
     # predeploy archives are staging leftovers and are safe to clear exactly.
     for item in inventory:
@@ -88,7 +96,7 @@ def cleanup_remote_backups(client, cfg, cleanup=False, stale_seconds=86400):
     # fresh backup will restore the two-archive rotation after deployment.
     for item in home[1:]:
         remove.append((item, 'older-top-level-rotation'))
-    print(f'backup_qa_found={len(inventory)} backup_qa_remove={len(remove)} cleanup={cleanup}', flush=True)
+    print(f'backup_qa_found={len(inventory)} backup_qa_invalid={len(invalid)} backup_qa_remove={len(remove)} cleanup={cleanup}', flush=True)
     for item, reason in remove:
         print(f"backup_qa_{'removed' if cleanup else 'candidate'}={item['path']} reason={reason} bytes={item['size']}", flush=True)
         if cleanup:
