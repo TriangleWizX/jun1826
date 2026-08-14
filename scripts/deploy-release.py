@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""Deploy only generated files changed by a commit, atomically and resumably."""
+import argparse, json, pathlib, posixpath, shlex, subprocess, time
+import paramiko
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package', 'src/')
+DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', '413/')
+ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml'}
+
+def changed_outputs(commit):
+    names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
+    outputs = set()
+    for name in names:
+        if name.startswith('src/'):
+            candidate = ROOT / 'dist' / name[4:]
+        elif name in ROOT_FILES:
+            candidate = ROOT / 'dist' / name
+        else:
+            continue
+        rel = candidate.relative_to(ROOT / 'dist').as_posix()
+        if rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS):
+            if candidate.is_file(): outputs.add((candidate, rel))
+    return sorted(outputs, key=lambda item: item[1])
+
+def connect(cfg):
+    client = paramiko.SSHClient(); client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(cfg['host'], port=int(cfg['port']), username=cfg['username'], password=cfg['password'], timeout=45, banner_timeout=45, auth_timeout=45)
+    return client
+
+def upload_one(client, cfg, local, rel):
+    remote = posixpath.join(cfg['remotePath'], rel); temp = remote + '.codex-upload'
+    parent = posixpath.dirname(remote)
+    command = f"mkdir -p {shlex.quote(parent)} && cat > {shlex.quote(temp)} && mv -f {shlex.quote(temp)} {shlex.quote(remote)} && stat -c %s {shlex.quote(remote)}"
+    stdin, stdout, stderr = client.exec_command(command, timeout=180)
+    stdin.write(local.read_bytes()); stdin.close(); out = stdout.read().decode(errors='replace'); err = stderr.read().decode(errors='replace')
+    if stdout.channel.recv_exit_status() != 0: raise RuntimeError(err or out)
+    return out.strip()
+
+def main():
+    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); args = parser.parse_args()
+    cfg = json.loads((ROOT / args.config).read_text()); files = changed_outputs(args.commit)
+    print(f'payload_files={len(files)} commit={args.commit}')
+    for _, rel in files: print(rel)
+    if args.dry_run: return
+    if not files: raise SystemExit('No deployable generated outputs changed by commit.')
+    client = None
+    try:
+        for local, rel in files:
+            for attempt in range(1, args.retries + 1):
+                try:
+                    if client is None or not client.get_transport() or not client.get_transport().is_active(): client = connect(cfg)
+                    print(f'upload {rel} attempt={attempt}', flush=True); print(f'remote_bytes={upload_one(client, cfg, local, rel)}', flush=True); break
+                except Exception as error:
+                    if client: client.close()
+                    client = None
+                    if attempt == args.retries: raise
+                    print(f'retry {rel}: {error}', flush=True); time.sleep(2)
+    finally:
+        if client: client.close()
+
+if __name__ == '__main__': main()

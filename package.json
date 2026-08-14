@@ -48,6 +48,7 @@
     "qa:towns": "node scripts/qa-town-duplication.mjs",
     "qa:lazy-loading": "node scripts/qa-lazy-loading.mjs",
     "qa:images": "node scripts/qa-images.mjs",
+    "deploy:release": "python3 scripts/deploy-release.py",
     "qa:meta:live": "node scripts/qa-meta-live.mjs",
     "qa:blog:slash:live": "node scripts/qa-blog-slash-live.mjs",
     "qa:sitemaps:live:redirects": "node scripts/qa-sitemap-live-redirects.mjs",
