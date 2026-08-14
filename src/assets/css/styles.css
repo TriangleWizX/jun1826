@@ -567,7 +567,7 @@ color:rgba(255, 255, 255, 0.85)
     position: relative;
     min-height: clamp(65vh, 78vh, 90vh);
     overflow: hidden;
-    background: url("../images/herobanner.png")center/cover no-repeat
+    background: url("../images/herobanner.webp")center/cover no-repeat
 }
 
 .hero-content .cta-primary {

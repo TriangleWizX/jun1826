@@ -10,6 +10,8 @@ import {
 const THIS_FILE = fileURLToPath(import.meta.url);
 
 const baseJobs = [
+  ["assets/css/bootstrap-site.css", "assets/css/bootstrap-site.min.css"],
+  ["assets/css/fonts.css", "assets/css/fonts.min.css"],
   ["assets/css/styles.css", "assets/css/styles.min.css"],
   ["assets/css/ss.css", "assets/css/ss.min.css"],
   ["assets/css/bjj-glossary.css", "assets/css/bjj-glossary.min.css"],

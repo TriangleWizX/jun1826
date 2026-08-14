@@ -744,7 +744,7 @@ img {
     position: relative;
     min-height: clamp(65vh,78vh,90vh);
     overflow: hidden;
-    background: url("../images/herobanner.png")center/cover no-repeat
+    background: url("../images/herobanner.webp")center/cover no-repeat
 }
 
 .hero-content .cta-primary {
@@ -908,7 +908,7 @@ img {
     justify-content: center;
     padding: clamp(2.75rem,4vw,4rem)clamp(1rem,3vw,2.5rem)clamp(3rem,4vw,4.25rem);
     margin-top: clamp(1rem,3vw,1.5rem);
-    background: linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.45)),url("../images/herobanner.png")center/cover no-repeat;
+    background: linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.45)),url("../images/herobanner.webp")center/cover no-repeat;
     border-radius: 32px;
     box-shadow: 0 35px 65px rgba(27,20,12,0.18)
 }

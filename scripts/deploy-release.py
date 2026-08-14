@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Deploy only generated files changed by a commit, atomically and resumably."""
-import argparse, json, pathlib, posixpath, shlex, subprocess, time
+import argparse, json, pathlib, posixpath, shlex, subprocess, tarfile, time
 import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package', 'src/')
-DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', '413/')
-ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml'}
+DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', '413/')
+ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'site-shell.html'}
 
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
@@ -15,6 +15,8 @@ def changed_outputs(commit):
         if name.startswith('src/'):
             candidate = ROOT / 'dist' / name[4:]
         elif name in ROOT_FILES:
+            candidate = ROOT / 'dist' / name
+        elif name.startswith(DEPLOYABLE_ROOTS):
             candidate = ROOT / 'dist' / name
         else:
             continue
@@ -69,14 +71,29 @@ def backup_remote(client, cfg):
     if missing: raise RuntimeError(f'backup missing required files: {", ".join(missing)}')
     print(f'backup_verified={backup} files={len(archive_listing.splitlines())}', flush=True)
 
+def verify_local_backup(path):
+    backup = pathlib.Path(path).expanduser().resolve()
+    if not backup.is_file():
+        raise RuntimeError(f'local backup not found: {backup}')
+    required_sets = ({'./.htaccess', './index.html', './robots.txt', './sitemap.xml'},
+                     {'public_html/.htaccess', 'public_html/index.html', 'public_html/robots.txt', 'public_html/sitemap.xml'})
+    with tarfile.open(backup, mode='r:gz') as archive:
+        present = set(archive.getnames())
+    if not any(required <= present for required in required_sets):
+        raise RuntimeError('local backup missing required production root files')
+    print(f'local_backup_verified={backup} bytes={backup.stat().st_size}', flush=True)
+
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); args = parser.parse_args()
     cfg = json.loads((ROOT / args.config).read_text()); files = changed_outputs(args.commit)
     print(f'payload_files={len(files)} commit={args.commit}')
     for _, rel in files: print(rel)
     if args.dry_run: return
     if not files: raise SystemExit('No deployable generated outputs changed by commit.')
     client = None; backup_done = False
+    if args.local_backup:
+        verify_local_backup(args.local_backup)
+        backup_done = True
     try:
         for local, rel in files:
             for attempt in range(1, args.retries + 1):

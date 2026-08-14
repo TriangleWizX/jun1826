@@ -12,7 +12,7 @@ const ASSETS_DATA_ROOT = path.join(ROOT, 'assets', 'data');
 const CANONICAL_ORIGIN = 'https://senseisandy.com';
 const CSS_VERSION = '20260420';
 const ANALYTICS_HEAD_INCLUDE = '  <!--#include virtual="/_includes/analytics-head.html" -->';
-const GLOSSARY_FILTERS_SRC = '/js/glossary-filters.js';
+const GLOSSARY_FILTERS_SRC = '/js/glossary-filters.min.js';
 const COMPONENT_BUNDLE_HREFS = new Map(
   CSS_BUNDLE_REGISTRY.bundles.map((bundle) => [bundle.name, bundle.manifestKey])
 );
@@ -339,15 +339,15 @@ const renderLayout = ({ title, description, canonicalUrl, componentBundleName, b
   <meta property="og:image" content="${CANONICAL_ORIGIN}/assets/images/hero.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/bootstrap-site.css" />
-  <link rel="stylesheet" href="/assets/css/global.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap-site.min.css" />
+  <link rel="stylesheet" href="/assets/css/global.min.css" />
   <link rel="stylesheet" href="${escapeHtml(componentBundleHref(componentBundleName))}" />
-  <link rel="stylesheet" href="/assets/css/pages/glossary.css" />
+  <link rel="stylesheet" href="/assets/css/pages/glossary.min.css" />
 ${ANALYTICS_HEAD_INCLUDE}
 ${extraHead}
   <!--#include virtual="/_includes/local-business-schema.jsonld.html" -->
-  <link rel="stylesheet" href="/assets/css/fonts.css">
-  <link rel="stylesheet" href="/assets/css/site-shell.css">
+  <link rel="stylesheet" href="/assets/css/fonts.min.css">
+  <link rel="stylesheet" href="/assets/css/site-shell.min.css">
   <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.css">
 </head>
 <body class="${escapeHtml(bodyClass)}" data-glossary-theme-root>
