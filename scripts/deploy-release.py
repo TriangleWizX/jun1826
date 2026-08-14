@@ -37,6 +37,26 @@ def upload_one(client, cfg, local, rel):
     if stdout.channel.recv_exit_status() != 0: raise RuntimeError(err or out)
     return out.strip()
 
+def remote_run(client, command):
+    _, stdout, stderr = client.exec_command(command, timeout=600)
+    out = stdout.read().decode(errors='replace'); err = stderr.read().decode(errors='replace')
+    if stdout.channel.recv_exit_status() != 0: raise RuntimeError(err or out)
+    return out
+
+def backup_remote(client, cfg):
+    home = '/home/' + cfg['username']; remote = cfg['remotePath']; stamp = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime()); backup = f'{home}/senseisandy-predeploy-{stamp}.tar.gz'
+    listing = remote_run(client, f"find {shlex.quote(home)} -maxdepth 1 -type f -name 'senseisandy-predeploy-*.tar.gz' -printf '%T@ %p\\n' | sort -n")
+    archives = [line.split(' ', 1)[1].strip() for line in listing.splitlines() if ' ' in line]
+    while len(archives) >= 2:
+        oldest = archives.pop(0); remote_run(client, f"rm -- {shlex.quote(oldest)}"); print(f'removed_oldest_backup={oldest}', flush=True)
+    remote_run(client, f"tar -czf {shlex.quote(backup)} -C {shlex.quote(remote)} . && gzip -t {shlex.quote(backup)}")
+    archive_listing = remote_run(client, f"tar -tzf {shlex.quote(backup)}")
+    required = {'./.htaccess', './index.html', './robots.txt', './sitemap.xml'}
+    present = set(archive_listing.splitlines())
+    missing = sorted(required - present)
+    if missing: raise RuntimeError(f'backup missing required files: {", ".join(missing)}')
+    print(f'backup_verified={backup} files={len(archive_listing.splitlines())}', flush=True)
+
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); args = parser.parse_args()
     cfg = json.loads((ROOT / args.config).read_text()); files = changed_outputs(args.commit)
@@ -44,12 +64,15 @@ def main():
     for _, rel in files: print(rel)
     if args.dry_run: return
     if not files: raise SystemExit('No deployable generated outputs changed by commit.')
-    client = None
+    client = None; backup_done = False
     try:
         for local, rel in files:
             for attempt in range(1, args.retries + 1):
                 try:
-                    if client is None or not client.get_transport() or not client.get_transport().is_active(): client = connect(cfg)
+                    if client is None or not client.get_transport() or not client.get_transport().is_active():
+                        client = connect(cfg)
+                        if not backup_done:
+                            backup_remote(client, cfg); backup_done = True
                     print(f'upload {rel} attempt={attempt}', flush=True); print(f'remote_bytes={upload_one(client, cfg, local, rel)}', flush=True); break
                 except Exception as error:
                     if client: client.close()
