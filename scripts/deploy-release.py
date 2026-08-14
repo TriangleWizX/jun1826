@@ -39,7 +39,18 @@ def upload_one(client, cfg, local, rel):
 
 def remote_run(client, command):
     _, stdout, stderr = client.exec_command(command, timeout=600)
-    out = stdout.read().decode(errors='replace'); err = stderr.read().decode(errors='replace')
+    channel = stdout.channel
+    deadline = time.monotonic() + 600
+    chunks = []
+    while True:
+        if channel.recv_ready(): chunks.append(channel.recv(65536))
+        if channel.exit_status_ready() and not channel.recv_ready(): break
+        if time.monotonic() >= deadline:
+            channel.close()
+            raise TimeoutError(f'remote command timed out: {command}')
+        time.sleep(0.2)
+    out = b''.join(chunks).decode(errors='replace')
+    err = stderr.read().decode(errors='replace')
     if stdout.channel.recv_exit_status() != 0: raise RuntimeError(err or out)
     return out
 
