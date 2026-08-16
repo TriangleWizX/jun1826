@@ -1,0 +1,220 @@
+/* Shared partner-page presentation modeled on the wellness referral lane. */
+body.partner-page {
+  --partner-paper: #fbfaf8;
+  --partner-surface: #fff;
+  --partner-ink: #362b24;
+  --partner-muted: #4f433c;
+  --partner-line: rgba(54, 43, 36, .14);
+  --partner-teal: #289fa1;
+  background: var(--partner-paper);
+  color: var(--partner-ink);
+}
+
+body.partner-page .hero-serif-title,
+body.partner-page .cp-hero h1,
+body.partner-page .section-title {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: 1.02;
+}
+
+body.partner-page .hospitality-hero-section,
+body.partner-page .wellness-hero-section {
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  background: var(--partner-paper);
+}
+
+body.partner-page .hospitality-hero-grid,
+body.partner-page .wellness-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+body.partner-page .hospitality-hero-left,
+body.partner-page .wellness-hero-left { min-width: 0; }
+body.partner-page .hospitality-hero-left .lead,
+body.partner-page .wellness-hero-left .lead {
+  max-width: 38rem;
+  color: var(--partner-muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.6;
+}
+
+body.partner-page .hospitality-hero-img,
+body.partner-page .wellness-hero-img {
+  display: block;
+  width: 100%;
+  max-height: min(62vh, 540px);
+  object-fit: cover;
+  border: 1px solid var(--partner-line);
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 36px rgba(54, 43, 36, .1);
+}
+
+body.partner-page .hospitality-hero-ctas,
+body.partner-page .wellness-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 1.5rem 0;
+}
+
+body.partner-page .btn-wellness-primary,
+body.partner-page .btn-wellness-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 48px;
+  padding: .78rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+body.partner-page .btn-wellness-primary {
+  color: #fff;
+  background: #306061;
+}
+body.partner-page .btn-wellness-outline {
+  color: var(--partner-ink);
+  border: 1.5px solid var(--partner-ink);
+}
+body.partner-page .btn-wellness-primary:hover,
+body.partner-page .btn-wellness-outline:hover { transform: translateY(-2px); }
+
+body.partner-page .hospitality-feature-ribbon,
+body.partner-page .referral-kit-bar,
+body.partner-page .cp-section {
+  margin-block: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--partner-line);
+  border-radius: 1.25rem;
+  background: var(--partner-surface);
+  box-shadow: 0 8px 28px rgba(54, 43, 36, .04);
+}
+
+body.partner-page .hospitality-feature-ribbon-grid,
+body.partner-page .referral-kit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+}
+
+body.partner-page .hospitality-ribbon-col,
+body.partner-page .referral-kit-training,
+body.partner-page .cp-link-card { min-width: 0; }
+
+body.page-community-partners .cp-main {
+  padding: 0 1rem clamp(3rem, 7vw, 6rem);
+  background: var(--partner-paper);
+}
+body.page-community-partners .cp-shell { max-width: 1180px; margin-inline: auto; }
+body.page-community-partners .cp-hero { padding: clamp(3rem, 7vw, 6rem) 0 2rem; }
+body.page-community-partners .cp-breadcrumbs {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-top: 1rem;
+  color: var(--partner-muted);
+  font-size: .85rem;
+}
+body.page-community-partners .cp-breadcrumbs a { color: inherit; text-decoration: none; }
+body.page-community-partners .cp-breadcrumbs a:hover { color: var(--partner-teal); }
+body.page-community-partners .cp-hero h1 {
+  max-width: 15ch;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  text-wrap: balance;
+}
+body.page-community-partners .cp-hero > p:not(.cp-kicker) {
+  max-width: 70ch;
+  color: var(--partner-muted);
+  font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+  line-height: 1.75;
+}
+body.page-community-partners .cp-kicker {
+  color: var(--partner-teal);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+body.page-community-partners .cp-section { margin-block: 1.5rem; }
+body.page-community-partners .cp-section h2 {
+  margin-bottom: .6rem;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1;
+}
+body.page-community-partners .cp-section-intro { max-width: 62ch; color: var(--partner-muted); line-height: 1.7; }
+body.page-community-partners .cp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+body.page-community-partners .cp-link-card {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid var(--partner-line);
+  border-radius: 1rem;
+  color: inherit;
+  background: var(--partner-surface);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+body.page-community-partners .cp-link-card strong,
+body.page-community-partners .cp-link-card span { display: block; }
+body.page-community-partners .cp-link-card strong { margin-bottom: .45rem; font-size: 1.05rem; }
+body.page-community-partners .cp-link-card span { color: var(--partner-muted); line-height: 1.55; }
+body.page-community-partners .cp-link-card::after {
+  display: block;
+  margin-top: 1rem;
+  color: var(--partner-teal);
+  content: "Explore partner details →";
+  font-size: .82rem;
+  font-weight: 800;
+}
+body.page-community-partners .cp-link-card:hover,
+body.page-community-partners .cp-link-card:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(54, 43, 36, .08); }
+
+body.page-partners-hospitality .what-guests-get-section { text-align: center; }
+body.page-partners-hospitality .what-guests-get-grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+body.page-partners-hospitality .what-guests-get-left {
+  display: flex;
+  max-width: 50rem;
+  align-items: center;
+  text-align: center;
+}
+body.page-partners-hospitality .what-guests-get-left .subtext { max-width: 42rem; }
+body.page-partners-hospitality .what-guests-get-cards {
+  width: 100%;
+  max-width: 960px;
+  justify-items: center;
+}
+body.page-partners-hospitality .what-get-card {
+  text-align: center;
+  align-items: center;
+}
+
+@media (max-width: 767.98px) {
+  body.partner-page .hospitality-hero-grid,
+  body.partner-page .wellness-hero-grid,
+  body.partner-page .hospitality-feature-ribbon-grid,
+  body.partner-page .referral-kit-grid,
+  body.page-community-partners .cp-grid { grid-template-columns: 1fr; }
+  body.partner-page .hospitality-hero-section,
+  body.partner-page .wellness-hero-section { text-align: center; }
+  body.partner-page .hospitality-hero-ctas,
+  body.partner-page .wellness-hero-ctas { justify-content: center; }
+  body.partner-page .hospitality-hero-left .lead,
+  body.partner-page .wellness-hero-left .lead { margin-inline: auto; }
+}
