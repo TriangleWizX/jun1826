@@ -130,6 +130,19 @@ body.page-sensei-jiu-jitsu .ss-historical-flow > .container > .ss-profile-card .
   margin-inline: auto;
 }
 
+body.page-sensei-jiu-jitsu .ss-lineage-glance .row > [class*="col-"] {
+  display: flex;
+}
+
+body.page-sensei-jiu-jitsu .ss-lineage-glance .row > [class*="col-"] > .p-4 {
+  width: 100%;
+  text-align: center;
+}
+
+body.page-sensei-jiu-jitsu .ss-lineage-glance .row .d-flex {
+  justify-content: center;
+}
+
 body.page-sensei-jiu-jitsu .ss-instructor-flow > .container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
