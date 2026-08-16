@@ -273,6 +273,13 @@
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.72);
 }
 
+.page-private-lessons .ss-private-detail-image {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  margin-inline: auto;
+}
+
 .page-private-lessons .ss-hero-img-masked {
   display: block;
   width: 100%;
