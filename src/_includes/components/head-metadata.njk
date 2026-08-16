@@ -34,3 +34,6 @@
     <link rel="stylesheet" href="{{ cssFile }}">
   {% endfor %}
 {% endif %}
+{% if bodyClass and "page-blog" in bodyClass %}
+  <link rel="stylesheet" href="/assets/css/blog.css">
+{% endif %}

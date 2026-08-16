@@ -763,6 +763,7 @@ body {
 
 .page-blog .ss-prose {
   max-width: 70ch;
+  margin-inline: auto;
 }
 
 .page-blog .ss-prose > * + * {
@@ -1175,6 +1176,11 @@ body {
 
 /* Article desktop shell */
 @media (min-width: 992px) {
+  .page-blog .ss-article-shell {
+    grid-template-columns: minmax(0, 760px);
+    justify-content: center;
+  }
+
   .ss-article-shell {
     max-width: 1180px;
     margin-inline: auto;
