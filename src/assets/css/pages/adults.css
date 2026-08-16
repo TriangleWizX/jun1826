@@ -1957,6 +1957,10 @@ html.adults-enhanced body.page-programs[data-audience="adults"] .adults-page > s
 html.adults-enhanced body.page-programs[data-audience="adults"] .adults-page > section:nth-of-type(8) { transition-delay: 320ms; }
 
 @media (max-width: 1099.98px) {
+  body.page-programs[data-audience="adults"] .adults-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
   body.page-programs[data-audience="adults"] .adults-step-card,
   body.page-programs[data-audience="adults"] .adults-schedule-card,
   body.page-programs[data-audience="adults"] .adults-fit-card {
@@ -2118,4 +2122,10 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
   border-radius: 999px;
   padding: 0.35rem 0.7rem;
   letter-spacing: 0.16em;
+}
+
+@media (max-width: 1099.98px) {
+  body.page-programs[data-audience="adults"] .adults-hero-grid {
+    grid-template-columns: 1fr;
+  }
 }
