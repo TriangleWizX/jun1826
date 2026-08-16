@@ -6,7 +6,7 @@
     {{ headExtra | safe }}
   {% endif %}
 </head>
-<body class="{{ bodyClass | default("ss-page") }}">
+<body class="{{ bodyClass | default("ss-page") }}"{% if audience %} data-audience="{{ audience }}"{% endif %}>
 
   {% include "components/header.njk" %}
 
