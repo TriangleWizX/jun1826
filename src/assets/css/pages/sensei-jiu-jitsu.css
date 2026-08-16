@@ -1,1 +1,53 @@
-/* Sensei lineage page route-style anchor. Shared page rules live in components.css. */
+/* Sensei lineage page: centered, responsive presentation. */
+body.page-sensei-jiu-jitsu .ss-main > section {
+  width: min(calc(100% - 2rem), 1180px);
+  margin-inline: auto;
+  text-align: center;
+}
+
+body.page-sensei-jiu-jitsu .ss-main > section > .container {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+body.page-sensei-jiu-jitsu :where(h1, h2, h3, h4, p, li) {
+  text-align: center;
+}
+
+body.page-sensei-jiu-jitsu .ss-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+}
+
+body.page-sensei-jiu-jitsu .ss-hero-content,
+body.page-sensei-jiu-jitsu .ss-hero-grid > * {
+  min-width: 0;
+}
+
+body.page-sensei-jiu-jitsu img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+body.page-sensei-jiu-jitsu .ss-hero-actions,
+body.page-sensei-jiu-jitsu .ss-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 767.98px) {
+  body.page-sensei-jiu-jitsu .ss-main > section {
+    width: min(calc(100% - 1.5rem), 620px);
+  }
+
+  body.page-sensei-jiu-jitsu .ss-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
