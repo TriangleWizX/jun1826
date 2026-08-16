@@ -3,6 +3,16 @@
 body.page-bjj-glossary .glossary-page {
   width: min(calc(100% - 2rem), 1180px);
   margin-inline: auto;
+  text-align: center;
+}
+
+body.page-bjj-glossary .glossary-page :where(h1, h2, h3, h4, p, li, dt, dd) {
+  text-align: center;
+}
+
+body.page-bjj-glossary .glossary-page :where(ul, ol) {
+  padding-inline-start: 0;
+  list-style-position: inside;
 }
 
 body.page-glossary.page-bjj-glossary {
