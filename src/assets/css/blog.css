@@ -456,6 +456,11 @@ body {
   z-index: 1;
 }
 
+.page-blog .ss-main > section {
+  width: min(calc(100% - 2rem), 1180px);
+  margin-inline: auto;
+}
+
 .page-blog :where(h1, h2, h3, h4) {
   font-family: var(--ss-blog-serif);
   font-weight: 400;
