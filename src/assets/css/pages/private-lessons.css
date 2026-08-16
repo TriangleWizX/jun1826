@@ -18,6 +18,8 @@
 }
 
 .page-private-lessons .ss-main > section {
+  width: min(calc(100% - 2rem), 1180px);
+  margin-inline: auto;
   padding-block: clamp(3.25rem, 6vw, 5.75rem);
 }
 
