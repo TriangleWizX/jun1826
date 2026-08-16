@@ -1,0 +1,97 @@
+/* Page-owned layout for the beginner mobility guide. */
+.ss-stretches-page {
+  --stretch-ink: var(--ss-ink, #362b24);
+  --stretch-muted: var(--ss-muted, #4f433c);
+  --stretch-green: var(--ss-green, #116a42);
+  color: var(--stretch-ink);
+  text-align: center;
+}
+
+.ss-stretches-page > section {
+  width: min(calc(100% - 2rem), 980px);
+  margin-inline: auto;
+  padding-block: clamp(2.75rem, 6vw, 5rem);
+}
+
+.ss-stretches-page .ss-hero {
+  padding-top: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.ss-stretches-page :where(h1, h2, h3, p) {
+  margin-inline: auto;
+}
+
+.ss-stretches-page h1 {
+  max-width: 12ch;
+  font-size: clamp(2.7rem, 7vw, 5.5rem);
+  line-height: 0.95;
+}
+
+.ss-stretches-page :where(.ss-lede, .ss-section > p, .ss-trust-note) {
+  max-width: 68ch;
+  color: var(--stretch-muted);
+  line-height: 1.65;
+}
+
+.ss-stretches-page .ss-hero-pills,
+.ss-stretches-page .ss-hero-actions,
+.ss-stretches-page .ss-cta-row,
+.ss-stretches-page .ss-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.ss-stretches-page .ss-hero-pills {
+  max-width: 760px;
+  margin: 1.5rem auto;
+}
+
+.ss-stretches-page .ss-routine-grid,
+.ss-stretches-page .ss-mini-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.ss-stretches-page :where(.ss-routine-card, .ss-mini-list > article, .ss-callout, .ss-warning-box) {
+  padding: clamp(1.15rem, 3vw, 1.75rem);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  background: var(--ss-surface, #fff);
+  text-align: center;
+}
+
+.ss-stretches-page .ss-section--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.ss-stretches-page .ss-section--split > * {
+  min-width: 0;
+}
+
+.ss-stretches-page details {
+  max-width: 760px;
+  margin: 0.75rem auto;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1rem;
+  text-align: left;
+}
+
+@media (max-width: 760px) {
+  .ss-stretches-page > section {
+    width: min(calc(100% - 1.5rem), 620px);
+  }
+
+  .ss-stretches-page .ss-routine-grid,
+  .ss-stretches-page .ss-mini-list,
+  .ss-stretches-page .ss-section--split {
+    grid-template-columns: 1fr;
+  }
+}
