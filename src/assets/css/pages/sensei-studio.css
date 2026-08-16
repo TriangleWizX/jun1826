@@ -34,6 +34,7 @@ body.page-sensei-studio img {
 
 body.page-sensei-studio .studio-image-frame img {
   width: 100%;
+  max-height: min(62vh, 540px);
   aspect-ratio: 5 / 4;
   object-fit: cover;
 }
@@ -60,6 +61,7 @@ body.page-sensei-studio .studio-narrative .container {
 body.page-sensei-studio .studio-hero-title {
   max-width: 12ch;
   margin: 0 0 1.25rem;
+  color: #f8f4ed;
   font-family: "Instrument Serif", Georgia, serif;
   font-size: clamp(2.8rem, 6vw, 5.4rem);
   line-height: 0.98;
@@ -176,6 +178,7 @@ body.page-sensei-studio .narrative-block p { max-width: 58ch; line-height: 1.7; 
   body.page-sensei-studio .studio-cta-row,
   body.page-sensei-studio .studio-benefits-row { justify-content: center; }
   body.page-sensei-studio .studio-hero-visual { margin-top: 1rem; }
+  body.page-sensei-studio .studio-image-frame img { max-height: 38vh; }
   body.page-sensei-studio .narrative-grid { grid-template-columns: 1fr; }
   body.page-sensei-studio .narrative-title-row { text-align: center; }
   body.page-sensei-studio .narrative-title-row h2 { margin-inline: auto; }
