@@ -491,6 +491,7 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
   # Short cache for HTML (edge-friendly).
   <FilesMatch "^options-pricing\.html$">
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set X-LiteSpeed-Cache-Control "no-cache"
   </FilesMatch>
   <FilesMatch "\\.(?:html)$">
     Header set Cache-Control "public, max-age=300, s-maxage=300"
