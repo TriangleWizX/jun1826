@@ -3137,6 +3137,22 @@ textarea.form-control-lg {
     font-size: 1.5rem !important;
   }
 }
+.he-inner-core {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.he-inner-core.d-flex {
+  display: flex !important;
+}
+.he-inner-core.flex-column {
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .he-inner-core.flex-lg-row {
+    flex-direction: row;
+  }
+}
 
 /* route-style input: /assets/css/site-shell.min.css */
 /* Hallmark · genre: editorial · macrostructure: shared shell · theme: Catskills Studio · enrichment: none · nav: N6 masthead · footer: Ft3 index */

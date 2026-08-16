@@ -55,3 +55,25 @@ $enable-dark-mode: false;
 // Helpers, then generated utility classes last.
 @import "bootstrap/scss/helpers";
 @import "bootstrap/scss/utilities/api";
+
+// Shared card anchors must retain their box geometry even on route bundles
+// where Bootstrap utility selectors are filtered or reordered.
+.he-inner-core {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  &.d-flex {
+    display: flex !important;
+  }
+
+  &.flex-column {
+    flex-direction: column;
+  }
+
+  @media (min-width: 992px) {
+    &.flex-lg-row {
+      flex-direction: row;
+    }
+  }
+}

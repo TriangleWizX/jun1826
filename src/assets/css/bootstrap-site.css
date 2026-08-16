@@ -11220,3 +11220,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.he-inner-core {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.he-inner-core.d-flex {
+  display: flex !important;
+}
+.he-inner-core.flex-column {
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .he-inner-core.flex-lg-row {
+    flex-direction: row;
+  }
+}
