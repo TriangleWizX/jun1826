@@ -228,6 +228,28 @@
 }
 
 /* How Class Works styles */
+.ss-how-class-works .guide-hero {
+  text-align: center;
+}
+
+.ss-how-class-works .guide-hero h1,
+.ss-how-class-works .guide-hero .guide-intro {
+  margin-inline: auto;
+}
+
+.ss-how-class-works > section:not(.guide-cta-section) > h2,
+.ss-how-class-works > section:not(.guide-cta-section) > p,
+.ss-how-class-works > section:not(.guide-cta-section) > ul,
+.ss-how-class-works > section:not(.guide-cta-section) > ol {
+  margin-inline: auto;
+}
+
+.ss-how-class-works > section:not(.guide-cta-section) > p,
+.ss-how-class-works > section:not(.guide-cta-section) > ul,
+.ss-how-class-works > section:not(.guide-cta-section) > ol {
+  max-width: var(--guide-copy-width);
+}
+
 .ss-how-class-works .class-window-note {
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
@@ -274,6 +296,7 @@
 
 .ss-how-class-works .class-timeline {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -302,6 +325,10 @@
 }
 
 @media (max-width: 600px) {
+  .ss-how-class-works .class-timeline {
+    grid-template-columns: 1fr;
+  }
+
   .ss-how-class-works .timeline-card {
     grid-template-columns: 1fr;
   }
@@ -464,4 +491,3 @@
     transform: translateY(0) !important;
   }
 }
-
