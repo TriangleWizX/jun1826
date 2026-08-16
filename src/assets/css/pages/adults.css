@@ -52,6 +52,11 @@ body.page-programs[data-audience="adults"] .adults-page section {
   position: relative;
 }
 
+body.page-programs[data-audience="adults"] .adults-page > section {
+  width: min(calc(100% - 2rem), 1180px);
+  margin-inline: auto;
+}
+
 body.page-programs[data-audience="adults"] .adults-kicker {
   display: inline-flex;
   align-items: center;
