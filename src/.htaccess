@@ -1,6 +1,7 @@
 Options -MultiViews
 AcceptPathInfo Off
 RewriteEngine On
+RewriteRule ^options-pricing/?$ options-pricing.html [END]
 RewriteRule ^free-youth-bjj-intro-tannersville-ny/?$ /free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny [R=301,L,NE]
 RewriteBase /
 
