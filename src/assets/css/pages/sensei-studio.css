@@ -46,9 +46,137 @@ body.page-sensei-studio section[aria-label="Studio care photos"] figure img {
   object-fit: cover;
 }
 
-/* Temporary image-free presentation; retain the slots for later artwork. */
-body.page-sensei-studio .studio-image-frame > img,
-body.page-sensei-studio .studio-logo-badge > img,
-body.page-sensei-studio section[aria-label="Studio care photos"] figure img {
-  display: none !important;
+body.page-sensei-studio .studio-hero {
+  padding: clamp(4.5rem, 9vw, 8rem) 0 clamp(3rem, 7vw, 6rem);
+  color: #f8f4ed;
+  background: linear-gradient(135deg, #123f2e, #306061);
+}
+
+body.page-sensei-studio .studio-hero .container,
+body.page-sensei-studio .studio-narrative .container {
+  max-width: 1180px;
+}
+
+body.page-sensei-studio .studio-hero-title {
+  max-width: 12ch;
+  margin: 0 0 1.25rem;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+body.page-sensei-studio .studio-hero-kicker {
+  color: #b9dfca;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+body.page-sensei-studio .studio-hero-desc {
+  max-width: 58ch;
+  color: rgba(248, 244, 237, 0.84);
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  line-height: 1.7;
+}
+
+body.page-sensei-studio .studio-cta-row,
+body.page-sensei-studio .studio-benefits-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+body.page-sensei-studio .studio-cta-row { margin: 1.75rem 0; }
+
+body.page-sensei-studio .studio-btn-primary,
+body.page-sensei-studio .studio-btn-secondary {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  min-height: 48px;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.page-sensei-studio .studio-btn-primary {
+  color: #173b2d;
+  background: #b9dfca;
+}
+
+body.page-sensei-studio .studio-btn-secondary {
+  color: inherit;
+  border: 1px solid currentColor;
+}
+
+body.page-sensei-studio .btn-arrow-circle,
+body.page-sensei-studio .btn-arrow-circle-outline {
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border-radius: 50%;
+}
+
+body.page-sensei-studio .btn-arrow-circle { background: #fff; }
+body.page-sensei-studio .btn-arrow-circle-outline { border: 1px solid currentColor; }
+
+body.page-sensei-studio .studio-benefit-tag {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  color: rgba(248, 244, 237, 0.78);
+  font-size: 0.88rem;
+}
+
+body.page-sensei-studio .studio-image-frame {
+  overflow: hidden;
+  border: 8px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+body.page-sensei-studio .studio-narrative {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  color: #362b24;
+  background: #fbfaf8;
+}
+
+body.page-sensei-studio .narrative-title-row { margin-bottom: 2.5rem; }
+body.page-sensei-studio .narrative-title-row h2 {
+  max-width: 16ch;
+  margin: 0;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(2.3rem, 4.5vw, 4rem);
+  line-height: 1;
+}
+
+body.page-sensei-studio .narrative-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 5vw, 5rem);
+}
+
+body.page-sensei-studio .narrative-block {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(54, 43, 36, 0.16);
+}
+
+body.page-sensei-studio .narrative-block h3 { font-size: 1.35rem; }
+body.page-sensei-studio .narrative-block p { max-width: 58ch; line-height: 1.7; }
+
+@media (max-width: 767.98px) {
+  body.page-sensei-studio .studio-hero { text-align: center; }
+  body.page-sensei-studio .studio-hero-title,
+  body.page-sensei-studio .studio-hero-desc { margin-inline: auto; }
+  body.page-sensei-studio .studio-cta-row,
+  body.page-sensei-studio .studio-benefits-row { justify-content: center; }
+  body.page-sensei-studio .studio-hero-visual { margin-top: 1rem; }
+  body.page-sensei-studio .narrative-grid { grid-template-columns: 1fr; }
+  body.page-sensei-studio .narrative-title-row { text-align: center; }
+  body.page-sensei-studio .narrative-title-row h2 { margin-inline: auto; }
 }
