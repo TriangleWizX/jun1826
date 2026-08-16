@@ -96,6 +96,40 @@ body.page-sensei-jiu-jitsu .ss-instructor-flow > .container > .ss-profile-card {
   display: block;
 }
 
+body.page-sensei-jiu-jitsu .ss-historical-flow > .container > .ss-profile-card {
+  display: block;
+}
+
+body.page-sensei-jiu-jitsu .ss-historical-flow > .container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+body.page-sensei-jiu-jitsu .ss-historical-flow > .container > :is(.text-center, .ss-profile-card) {
+  grid-column: span 1;
+}
+
+body.page-sensei-jiu-jitsu .ss-historical-flow > .container > .text-center {
+  grid-column: 1 / -1;
+}
+
+body.page-sensei-jiu-jitsu .ss-historical-flow > .container > .ss-profile-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body.page-sensei-jiu-jitsu .ss-historical-flow > .container > .ss-profile-card .ss-profile-grid {
+  grid-template-columns: 1fr;
+}
+
+body.page-sensei-jiu-jitsu .ss-historical-flow > .container > .ss-profile-card .ss-profile-img {
+  margin-inline: auto;
+}
+
 body.page-sensei-jiu-jitsu .ss-instructor-flow > .container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -144,6 +178,10 @@ body.page-sensei-jiu-jitsu .ss-instructor-flow > .container > .ss-student-node {
   }
 
   body.page-sensei-jiu-jitsu .ss-instructor-flow > .container {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-sensei-jiu-jitsu .ss-historical-flow > .container {
     grid-template-columns: 1fr;
   }
 
