@@ -1,5 +1,10 @@
 /* BJJ Glossary visibility system */
 
+body.page-bjj-glossary .glossary-page {
+  width: min(calc(100% - 2rem), 1180px);
+  margin-inline: auto;
+}
+
 body.page-glossary.page-bjj-glossary {
   --glossary-dark-bg: #071314;
   --glossary-dark-panel: #0d2022;
