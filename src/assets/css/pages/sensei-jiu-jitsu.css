@@ -42,6 +42,56 @@ body.page-sensei-jiu-jitsu .ss-cta-row {
   gap: 0.75rem;
 }
 
+body.page-sensei-jiu-jitsu .ss-profile-card {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto 1.5rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  background: var(--ss-surface, #fff);
+  box-shadow: 0 14px 32px rgba(54, 43, 36, 0.08);
+  text-align: left;
+}
+
+body.page-sensei-jiu-jitsu .ss-profile-card + .ss-profile-card::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: 2px;
+  height: 1.5rem;
+  background: var(--ss-green, #116a42);
+  opacity: 0.35;
+}
+
+body.page-sensei-jiu-jitsu .ss-profile-grid {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+}
+
+body.page-sensei-jiu-jitsu .ss-profile-img {
+  width: 200px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+body.page-sensei-jiu-jitsu .ss-profile-info :where(p, h3) {
+  text-align: left;
+}
+
+body.page-sensei-jiu-jitsu .ss-profile-nav,
+body.page-sensei-jiu-jitsu .ss-profile-sources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
 @media (max-width: 767.98px) {
   body.page-sensei-jiu-jitsu .ss-main > section {
     width: min(calc(100% - 1.5rem), 620px);
@@ -49,5 +99,24 @@ body.page-sensei-jiu-jitsu .ss-cta-row {
 
   body.page-sensei-jiu-jitsu .ss-hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  body.page-sensei-jiu-jitsu .ss-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-sensei-jiu-jitsu .ss-profile-img {
+    width: min(200px, 100%);
+    margin-inline: auto;
+  }
+
+  body.page-sensei-jiu-jitsu .ss-profile-info :where(p, h3) {
+    text-align: center;
+  }
+
+  body.page-sensei-jiu-jitsu .ss-profile-nav,
+  body.page-sensei-jiu-jitsu .ss-profile-sources {
+    justify-content: center;
+    text-align: center;
   }
 }
