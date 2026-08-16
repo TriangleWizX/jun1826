@@ -2331,6 +2331,7 @@ body.page-programs.ss-page-kids .kids-yam-copy {
 
 .kids-program-page .program-hero__media img {
   width: 100%;
+  height: clamp(280px, 75vw, 540px);
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 30px;
