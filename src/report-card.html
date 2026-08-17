@@ -206,7 +206,7 @@ permalink: "/report-card.html"
       gap: 1rem;
     }
 
-    /* Overall Grade Card styling */
+    /* Non-numeric snapshot card styling */
     .rc-card--grade {
       text-align: center;
       display: flex;
@@ -760,6 +760,29 @@ permalink: "/report-card.html"
 @media (max-width: 560px) { .rc-domain-row { align-items: flex-start; flex-wrap: wrap; } .rc-domain-name { width: calc(100% - 40px); } .rc-capability-control { flex-basis: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-left: 40px; } }
 @media (max-width: 900px) { .rc-development-axes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .rc-development-map { padding: 1.25rem; } .rc-development-axes { grid-template-columns: 1fr; } }
+.rc-development-intro { max-width: 68rem; margin: 0 0 1rem; color: #4f433c; line-height: 1.55; }
+.rc-development-axis { display: flex; flex-direction: column; gap: .55rem; }
+.rc-development-axis select { width: 100%; border: 1px solid rgba(54,43,36,.18); border-radius: .45rem; background: #fff; color: #1f1712; padding: .45rem .5rem; font: inherit; font-size: .78rem; }
+.rc-review-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: 1rem; }
+.rc-field-label { display: block; margin-bottom: .3rem; color: #4f433c; font-size: .76rem; font-weight: 700; }
+.rc-review-meta input, .rc-review-meta select, .rc-focus-control select { width: 100%; min-height: 2.5rem; border: 1px solid rgba(54,43,36,.18); border-radius: .45rem; background: #fff; color: #1f1712; padding: .45rem .55rem; font: inherit; }
+.rc-focus-card { margin-top: 1rem; padding: 1rem; border: 1px solid rgba(17,106,66,.2); border-radius: .75rem; background: #f7fbf8; }
+.rc-focus-control { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.rc-focus-help, .rc-coach-guidance { margin: .75rem 0 0; color: #4f433c; font-size: .82rem; line-height: 1.5; }
+.rc-feedback-fields { display: grid; gap: .8rem; }
+.rc-feedback-field textarea { width: 100%; min-height: 5.5rem; resize: vertical; border: 1px solid rgba(54,43,36,.18); border-radius: .55rem; padding: .65rem .7rem; color: #1f1712; font: inherit; line-height: 1.45; }
+.rc-feedback-field textarea:focus, .rc-review-meta input:focus, .rc-review-meta select:focus, .rc-focus-control select:focus, .rc-development-axis select:focus { outline: 3px solid rgba(0,221,224,.55); outline-offset: 2px; }
+.rc-output-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.rc-output-actions button { border: 1px solid #116a42; border-radius: 999px; background: #116a42; color: #fff; padding: .55rem .9rem; font: inherit; font-weight: 700; cursor: pointer; }
+.rc-output-actions button.secondary { background: #fff; color: #116a42; }
+.rc-example-note { color: #8b522e; font-size: .76rem; font-style: italic; }
+@media (max-width: 560px) { .rc-review-meta, .rc-focus-control { grid-template-columns: 1fr; } .rc-output-actions button { width: 100%; } }
+@media print {
+  .rc-page-header, .rc-development-intro, .rc-coach-guidance, .rc-capability-intro, .rc-card--capability-guide, .rc-output-actions, .report-card-copy, .rc-card--action, .rc-footer-branding, .rc-development-notes { display: none !important; }
+  .rc-card:hover { transform: none; }
+  .rc-feedback-field textarea { min-height: 3.5rem; border: 0; padding: 0; }
+  .rc-review-meta input, .rc-review-meta select, .rc-focus-control select, .rc-development-axis select { appearance: none; border: 0; padding-left: 0; }
+}
 </style>
 <main class="ss-main">
 <!-- SVG Vector Watermarks -->
@@ -796,20 +819,22 @@ permalink: "/report-card.html"
 <div class="rc-card-header"><span class="rc-card-label">Development Map</span></div>
 <h2 id="development-map-title">Jiu-Jitsu Development Map</h2>
 <p class="rc-page-subtitle">Use observable stages to describe what is becoming reliable, without turning progress into a school grade.</p>
+<p class="rc-development-intro">Choose the state that matches repeated live evidence. A state may stay unchanged, or become more context-dependent when conditions widen; neither is a grade or a failure.</p>
 <div class="rc-development-axes">
-<article><h3>Recognize</h3><p>Do I understand what is happening?</p><span>Emerging</span></article>
-<article><h3>Protect</h3><p>Can I remain safe?</p><span>Developing</span></article>
-<article><h3>Solve</h3><p>Can I improve the situation?</p><span>Developing</span></article>
-<article><h3>Adapt</h3><p>Can I respond when my first idea fails?</p><span>Emerging</span></article>
-<article><h3>Express</h3><p>Am I choosing solutions that fit me?</p><span>Not Yet Observed</span></article>
+<article class="rc-development-axis"><h3>Recognize</h3><p>Do I understand what is happening?</p><label class="visually-hidden" for="development-recognize">Recognize state</label><select id="development-recognize" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Protect</h3><p>Can I remain safe?</p><label class="visually-hidden" for="development-protect">Protect state</label><select id="development-protect" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Solve</h3><p>Can I improve the situation?</p><label class="visually-hidden" for="development-solve">Solve state</label><select id="development-solve" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Adapt</h3><p>Can I respond when my first idea fails?</p><label class="visually-hidden" for="development-adapt">Adapt state</label><select id="development-adapt" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Express</h3><p>Am I choosing solutions that fit me?</p><label class="visually-hidden" for="development-express">Express state</label><select id="development-express" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
 </div>
 <div class="rc-development-notes"><strong>What is working?</strong><strong>What is the next problem?</strong><strong>What is beginning to become yours?</strong></div>
+<p class="rc-coach-guidance">Coach note: update a state when repeated live training gives enough evidence that behavior has meaningfully changed. No change is still information. Reliable means the behavior holds across meaningful variation and appropriate resistance—not mastered or finished.</p>
 </section>
 <div class="rc-dashboard-grid">
 <!-- Top Summary Row -->
 <section aria-label="Student Summary Info" class="rc-summary-row">
-<!-- Overall Grade Card -->
-<div class="rc-card rc-card--grade">
+<!-- Legacy decorative card remains hidden; the report has no numeric snapshot. -->
+<div aria-hidden="true" class="rc-card rc-card--grade">
 <span class="rc-card-label">Development Snapshot</span>
 <div class="rc-grade-wreath">
 <!-- Wreath SVG -->
@@ -836,11 +861,20 @@ permalink: "/report-card.html"
 <path d="M 85,19 Q 78,10 72,17 C 66,24 74,28 85,19" fill="#C5A880"></path>
 <path d="M 72,13 Q 64,7 60,16 C 56,25 64,26 72,13" fill="#C5A880"></path>
 </svg>
-<div class="rc-grade-value">Reliable</div>
+<div class="rc-grade-value"></div>
 </div>
-<div class="rc-grade-percent">Contextual</div>
-<div class="rc-grade-status">Capability snapshot</div>
-<div class="rc-grade-star">★</div>
+<div class="rc-grade-percent"></div>
+<div class="rc-grade-status"></div>
+<div class="rc-grade-star"></div>
+</div>
+<!-- Review metadata -->
+<div class="rc-card rc-card--review-meta">
+<div class="rc-card-header"><i class="bi bi-calendar3"></i><span class="rc-card-label">Review</span></div>
+<div class="rc-review-meta">
+<div><label class="rc-field-label" for="review-date">Review Date</label><input id="review-date" type="date"/></div>
+<div><label class="rc-field-label" for="review-type">Review Type</label><select id="review-type"><option>Baseline</option><option>Check-In</option><option>Mid-Cycle</option><option>End-of-Term</option><option>Coach Review</option><option>Other</option></select></div>
+</div>
+<span class="rc-example-note">Use the date and context of a useful review; no weekly grade is required.</span>
 </div>
 <!-- Student Info Card -->
 <div class="rc-card rc-card--student">
@@ -848,8 +882,8 @@ permalink: "/report-card.html"
 <i class="bi bi-person"></i>
 <span class="rc-card-label">Student</span>
 </div>
-<input aria-label="Student name input" class="rc-value-input" id="student-name" type="text" value="Alex Morgan"/>
-<span class="rc-card-subtext">Example student ID: SSBJJ-0427</span>
+<input aria-label="Student name input" class="rc-value-input" id="student-name" type="text" placeholder="Student name"/>
+<span class="rc-card-subtext">Optional: add a student ID only when it has an operational purpose.</span>
 </div>
 <!-- Level/Belt Info Card -->
 <div class="rc-card rc-card--level">
@@ -857,14 +891,14 @@ permalink: "/report-card.html"
 <i class="bi bi-award"></i>
 <span class="rc-card-label">Level</span>
 </div>
-<input aria-label="Level input" class="rc-value-input" id="level" type="text" value="Blue Belt"/>
+<input aria-label="Level input" class="rc-value-input" id="level" type="text" placeholder="Belt / level"/>
 <div aria-label="Belt stripes selector" class="rc-stripes-container" data-stripes="2">
 <span aria-label="Set stripes to 1" class="rc-stripe-block active" role="button"></span>
 <span aria-label="Set stripes to 2" class="rc-stripe-block active" role="button"></span>
 <span aria-label="Set stripes to 3" class="rc-stripe-block" role="button"></span>
 <span aria-label="Set stripes to 4" class="rc-stripe-block" role="button"></span>
 </div>
-<span class="rc-card-subtext" id="stripes-text">Example stripe: 2 of 4</span>
+<span class="rc-card-subtext" id="stripes-text">Optional stripe detail</span>
 </div>
 <!-- Coaches Info Card -->
 <div class="rc-card rc-card--coaches">
@@ -872,12 +906,12 @@ permalink: "/report-card.html"
 <i class="bi bi-people"></i>
 <span class="rc-card-label">Coaches</span>
 </div>
-<input aria-label="Coaches input" class="rc-value-input" id="coaches" type="text" value="Sensei Sandy"/>
+<input aria-label="Coaches input" class="rc-value-input" id="coaches" type="text" placeholder="Coach name(s)"/>
 <div class="rc-avatars-row">
 <div class="rc-avatar-placeholder" title="Sensei Sandy">
 <svg viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
 </div>
-<div class="rc-avatar-placeholder" title="Coach Alex">
+<div class="rc-avatar-placeholder" title="Additional coach (optional)">
 <svg viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
 </div>
 </div>
@@ -888,8 +922,16 @@ permalink: "/report-card.html"
 <i class="bi bi-calendar3"></i>
 <span class="rc-card-label">Schedule</span>
 </div>
-<input aria-label="Schedule input" class="rc-value-input" id="schedule" type="text" value="Mon, Wed, Fri"/>
-<span class="rc-card-subtext">Example schedule: Mon/Wed 6:00 PM</span>
+<input aria-label="Schedule input" class="rc-value-input" id="schedule" type="text" placeholder="Class schedule"/>
+<span class="rc-card-subtext">Optional context for this review</span>
+</div>
+</section>
+<section aria-labelledby="current-focus-title" class="rc-focus-card">
+<div class="rc-card-header"><i class="bi bi-crosshair"></i><span class="rc-card-label" id="current-focus-title">Current Focus</span></div>
+<p class="rc-focus-help">Choose one primary domain and, only when useful, one secondary domain. The lowest state is not automatically the next priority.</p>
+<div class="rc-focus-control">
+<div><label class="rc-field-label" for="primary-focus">Primary focus</label><select id="primary-focus"><option value="">Choose a primary domain</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
+<div><label class="rc-field-label" for="secondary-focus">Secondary focus (optional)</label><select id="secondary-focus"><option value="">None</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
 </div>
 </section>
 <!-- Main Domain and Details Row -->
@@ -972,7 +1014,13 @@ permalink: "/report-card.html"
 <span class="rc-card-label" id="remarks-title">Feedback &amp; Remarks</span>
 </div>
 <div class="rc-feedback-container">
-<div aria-label="What is working and next problem editor" class="rc-feedback-textarea" contenteditable="true"><strong>What is working:</strong> Recovers a knee inside when chest pressure shifts toward the head.<br/><br/><strong>Next problem:</strong> Recover the legs when the top partner blocks the first hip turn.<br/><br/><strong>What is beginning to become yours:</strong> Staying calm while adapting when the first answer fails.</div>
+<p class="rc-focus-help">Write these three sentences primarily about the selected Current Focus. Keep them concise and connected to observed behavior.</p>
+<div class="rc-feedback-fields">
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-working">What is working?</label><textarea id="feedback-working" placeholder="Describe one observable success connected to the current focus."></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-next">What is the next problem?</label><textarea id="feedback-next" placeholder="Name the next solvable problem, not a technique homework assignment."></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-yours">What is beginning to become yours?</label><textarea id="feedback-yours" placeholder="Describe the behavior or choice that is starting to feel dependable."></textarea></div>
+</div>
+<div class="rc-output-actions"><button type="button" id="copy-summary">Copy Summary</button><button class="secondary" type="button" id="clear-report">Clear Review Fields</button><span aria-live="polite" class="visually-hidden" id="copy-status"></span></div>
 <!-- Vector Lotus Watermark -->
 <svg aria-hidden="true" class="lotus-watermark" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
 <path d="M12 21a9 9 0 0 0 9-9c0-5-9-10-9-10S3 7 3 12a9 9 0 0 0 9 9z"></path>
@@ -991,24 +1039,27 @@ permalink: "/report-card.html"
 <i aria-hidden="true" class="bi bi-book"></i>
 <span class="rc-card-label" id="how-to-use-title">Using the digital twin report card</span>
 </div>
+<h2 class="rc-print-only">Progress Review</h2>
 <div class="rc-steps-grid">
 <div class="rc-step-item">
 <div class="rc-step-number">1</div>
-<p>Update each domain when recent training gives enough observable evidence.</p>
+<p>Identify the review date, context, coach, and schedule.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">2</div>
-<p>Record belt level, stripe, and primary coach(es).</p>
+<p>Scan the Development Map and nine domains; leaving a state unchanged is valid.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">3</div>
-<p>Record what is working, the next problem, and what is beginning to become yours.</p>
+<p>Choose one primary focus and an optional secondary focus.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">4</div>
-<p>Print or save the final card and track progress.</p>
+<p>Write three concise observations, then print or copy the summary.</p>
 </div>
 </div>
+<p class="rc-coach-guidance">Update states when recent classes provide enough live evidence—not from attendance, one repetition, or a single unusually easy or difficult round. New conditions can reveal that a capability is more context-dependent; that is useful coaching information.</p>
+<p class="rc-coach-guidance"><strong>Parent role:</strong> Ask, listen, and encourage. Technical coaching stays in class. Useful questions include: “What felt easier this time?” and “What problem are you working on?”</p>
 </section>
 <!-- CTA Action Card (gold-brown background) -->
 <section aria-label="Book a free intro small-group class" class="rc-card rc-card--action">
@@ -1050,9 +1101,11 @@ permalink: "/report-card.html"
 <!-- Guide SEO copy block -->
 <section aria-labelledby="report-card-guide-title" class="report-card-copy">
 <h2 id="report-card-guide-title">How To Use the Digital Twin Report Card</h2>
-<p>These observations come from the same coached positional problems used during regular classes. <a href="/how-class-works">See how class works</a>. Use the wider <a href="/parent-resources">Parent Resources hub</a> for safety answers, schedule planning, and other family-facing next steps that connect to this tracker.</p>
+<h2>How to read this card</h2>
+<p>The states are a snapshot of what Sandy is seeing in training, not a ranking against other students. The most useful part is the current focus: what is working, what problem comes next, and what is starting to become yours.</p>
+<p>These observations come from the same coached positional problems used during regular classes. <a href="/how-class-works">See how class works</a>. Parents can help most by encouraging effort, asking useful questions, and letting coaches handle technical instruction. <a href="/core-culture-parent-guide">Read the Parent Guide</a>.</p>
 <p>
-        The Sensei Sandy BJJ Digital Twin Report Card is a quick way to review training priorities and observable behavior for one student, one class lane, or one weekly coaching cycle. Coaches can update each capability state when recent drills, positional rounds, or live training provide enough evidence. The final output gives families and students a simple snapshot of what is improving, what is stable, and what problem should receive more attention next.
+        The Sensei Sandy BJJ Digital Twin Report Card is a quick way to review training priorities and observable behavior for one student, one class lane, or one useful review. Coaches can update each capability state when recent classes provide enough live evidence. The final output gives families and students a simple snapshot of what is improving, what is stable, and what problem should receive more attention next.
       </p>
 <p>
         This report card format built for beginner-friendly Brazilian Jiu-Jitsu coaching in Tannersville, NY, where clear standards and calm communication matter. Instead of vague feedback, each category maps to observable habits like base retention, pin escapes, guard passing, and submissions. That structure helps reduce confusion for new students and gives returning students a predictable progression path.
@@ -1061,13 +1114,55 @@ permalink: "/report-card.html"
 <li>Choose the capability state that best matches what the student currently demonstrates under appropriate resistance.</li>
 <li>Record the current belt level, class schedule, and coach so each review is traceable.</li>
 <li>Record what is working, the next problem, and what is beginning to become yours.</li>
-<li>Print the final card for at-home practice goals and next-session accountability.</li>
+<li>Print or save the final card so the student and family can understand what is working and what Sandy is coaching next.</li>
 </ul>
 <p>
-        When comparing progress across weeks, keep the domain definitions and capability-state criteria consistent. Update a state when repeated training gives enough evidence that the student's behavior has changed. Consistency makes the report card useful for coaching decisions, parent updates, and long-term skill development across kids, teens, and adults.
+        When comparing reviews, keep the domain definitions and capability-state criteria consistent. Update a state when repeated training gives enough evidence that the student's behavior has changed. No change is still information, and states do not have to move only upward. Consistency makes the report card useful for coaching decisions, parent conversations, and long-term skill development across kids, teens, and adults.
       </p>
 <p>
         Keep exploring: <a href="/schedule">Schedule</a> · <a href="/bjj-classes/tannersville-ny">BJJ Small-group classes</a> · <a href="/options-pricing">Options / Pricing</a> · <a href="/private-lessons">Private Coaching</a> · <a href="/contact">Contact</a> · <a href="/blog">Blog</a>
 </p>
 </section>
+<script>
+(() => {
+  const value = (id) => document.getElementById(id)?.value.trim() || '';
+  const summary = () => {
+    const student = value('student-name') || 'Student';
+    const date = value('review-date');
+    const type = value('review-type');
+    const primary = value('primary-focus') || 'Not selected';
+    const secondary = value('secondary-focus');
+    const lines = [
+      "Sandy's Progress Review",
+      student,
+      date ? `Review date: ${date}` : '',
+      type ? `Review type: ${type}` : '',
+      `Current focus: ${primary}${secondary ? `; ${secondary}` : ''}`,
+      '',
+      `What is working:\n${value('feedback-working') || '[Not recorded]'}`,
+      '',
+      `Next problem:\n${value('feedback-next') || '[Not recorded]'}`,
+      '',
+      `Beginning to become yours:\n${value('feedback-yours') || '[Not recorded]'}`
+    ];
+    return lines.filter((line, index) => line || (index > 0 && lines[index - 1])).join('\n');
+  };
+  document.getElementById('copy-summary')?.addEventListener('click', async () => {
+    const button = document.getElementById('copy-summary');
+    try {
+      await navigator.clipboard.writeText(summary());
+      button.textContent = 'Summary Copied';
+      document.getElementById('copy-status').textContent = 'Progress summary copied.';
+      setTimeout(() => { button.textContent = 'Copy Summary'; }, 1800);
+    } catch {
+      window.prompt('Copy this progress summary:', summary());
+    }
+  });
+  document.getElementById('clear-report')?.addEventListener('click', () => {
+    document.querySelectorAll('#report-card-guide-title ~ * input, #report-card-guide-title ~ * textarea').forEach((field) => { field.value = ''; });
+    ['student-name', 'level', 'coaches', 'schedule', 'review-date', 'primary-focus', 'secondary-focus', 'feedback-working', 'feedback-next', 'feedback-yours'].forEach((id) => { const field = document.getElementById(id); if (field) field.value = ''; });
+    const type = document.getElementById('review-type'); if (type) type.selectedIndex = 0;
+  });
+})();
+</script>
 </main>
