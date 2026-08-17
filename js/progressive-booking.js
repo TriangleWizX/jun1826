@@ -135,8 +135,8 @@
     const introTitle = document.getElementById('book-intro-title');
     const introSubtitle = document.getElementById('book-intro-subtitle');
     const laneNotes = {
-      kids: 'For kids: Goal Mapping happens immediately before one structured class during the same visit. Plan for 60–75 minutes and arrive 20 minutes before class in clean athletic clothing.',
-      teens: 'For teens: Goal Mapping happens immediately before one structured class during the same visit. Plan for 60–75 minutes and arrive 20 minutes before class in clean athletic clothing.',
+      kids: 'For kids: this general path books a short Goal Mapping visit first. Sandy then selects and schedules the right coached class. Wear normal clothes; no workout is required for this appointment.',
+      teens: 'For teens: this general path books a short Goal Mapping visit first. Sandy then selects and schedules the right coached class. Wear normal clothes; no workout is required for this appointment.',
       adults: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
       adult: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
       'community-service': 'For qualifying service professionals: use Goal Mapping to discuss the right class lane, schedule, and community-service rate.'

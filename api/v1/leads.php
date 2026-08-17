@@ -95,7 +95,7 @@ if ($isYouthIntro) {
     if ($studentType !== 'first_time') $errors['studentType'] = 'Returning students and visitors must use the appropriate alternate route.';
     if ($guardianName === '' || $studentName === '') $errors['student'] = 'Guardian and student names are required.';
     if ($studentAge === false || $studentAge < 5 || $studentAge > 17) $errors['studentAge'] = 'Youth intro age must be between 5 and 17.';
-    if ($town === '' || $priorExperience === '' || $mainGoal === '' || $participationNotes === '') $errors['starting_context'] = 'Complete the required youth starting-context fields.';
+    if ($town === '') $errors['starting_context'] = 'Town is required so Sandy can provide local arrival guidance.';
     if ($preferredDate === '' || !in_array($ageLane, ['kids', 'teens'], true) || $scheduledClassId === '' || $appointmentDateTime === '' || $arrivalDateTime === '') $errors['appointment'] = 'Choose an available class and confirm the 20-minute arrival requirement.';
     if ($mediaChoice === '' || $messageConsent !== 1 || $onsiteAcknowledged !== 1 || $arrivalAcknowledged !== 1 || $rescheduleAcknowledged !== 1) $errors['policies'] = 'Complete message consent, parent attendance, arrival, and reschedule acknowledgments.';
     $availabilityConfig = json_decode((string)file_get_contents(dirname(__DIR__, 2) . '/config/youth-intro-availability.json'), true);
