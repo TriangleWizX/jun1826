@@ -86,6 +86,10 @@
         
         const previousProfile = state.profile;
         state.profile = target.getAttribute('data-profile');
+        updateLanePresentation(state.profile);
+        if (laneNote && (state.profile === 'child' || state.profile === 'teen')) {
+          laneNote.textContent = state.profile === 'child' ? laneNotes.kids : laneNotes.teens;
+        }
         if (!state.autoSelecting && !state.bookingStarted) {
           state.bookingStarted = true;
           track('booking_started', { lane: state.profile, interaction: 'profile_selected' });
@@ -128,16 +132,26 @@
     };
     const requestedProfile = laneProfiles[String(requestedLane || '').toLowerCase()];
     const laneNote = document.getElementById('first-visit-lane-note');
+    const introTitle = document.getElementById('book-intro-title');
+    const introSubtitle = document.getElementById('book-intro-subtitle');
     const laneNotes = {
-      kids: 'For kids: Goal Mapping takes 15 minutes immediately before class. Normal clothes are fine for the meeting; bring clean athletic clothes for class.',
-      teens: 'For teens: Goal Mapping takes 15 minutes immediately before class. Normal clothes are fine for the meeting; bring clean athletic clothes for class.',
+      kids: 'For kids: Goal Mapping happens immediately before one structured class during the same visit. Plan for 60–75 minutes and arrive 20 minutes before class in clean athletic clothing.',
+      teens: 'For teens: Goal Mapping happens immediately before one structured class during the same visit. Plan for 60–75 minutes and arrive 20 minutes before class in clean athletic clothing.',
       adults: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
       adult: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
       'community-service': 'For qualifying service professionals: use Goal Mapping to discuss the right class lane, schedule, and community-service rate.'
     };
+    const youthHeadline = 'See How Your Child Responds Before Choosing a Jiu-Jitsu Program';
+    const youthSubheadline = 'Reserve a free beginner intro with Goal Mapping, a carefully matched partner, and one structured class. No experience, credit card, or enrollment commitment required.';
+    const updateLanePresentation = (lane) => {
+      const isYouth = lane === 'kids' || lane === 'teens' || lane === 'child' || lane === 'teen';
+      if (introTitle) introTitle.textContent = isYouth ? youthHeadline : 'Reserve Your Free Intro.';
+      if (introSubtitle) introSubtitle.textContent = isYouth ? youthSubheadline : 'Tour the studio, map your goal, then choose the right first class for your week.';
+    };
     if (laneNote && laneNotes[String(requestedLane || '').toLowerCase()]) {
       laneNote.textContent = laneNotes[String(requestedLane).toLowerCase()];
     }
+    updateLanePresentation(requestedLane);
     if (requestedProfile) {
       const matchingButton = Array.from(profileBtns).find((button) => button.getAttribute('data-profile') === requestedProfile);
       if (matchingButton) {

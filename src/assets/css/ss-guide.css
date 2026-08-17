@@ -491,3 +491,38 @@
     transform: translateY(0) !important;
   }
 }
+.ss-teaching-doctrine {
+  margin: clamp(2rem, 5vw, 4rem) 0;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.ss-teaching-doctrine h2 {
+  margin-bottom: 1.25rem;
+}
+
+.ss-teaching-doctrine__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.ss-teaching-doctrine__grid article {
+  padding: 1rem;
+  border-left: 3px solid var(--ss-green, #116a42);
+  background: rgba(244, 241, 237, 0.65);
+}
+
+.ss-teaching-doctrine__grid h3,
+.ss-teaching-doctrine__grid p {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .ss-teaching-doctrine__grid {
+    grid-template-columns: 1fr;
+  }
+}

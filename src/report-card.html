@@ -833,7 +833,27 @@ permalink: "/report-card.html"
         background: transparent !important;
       }
     }
-  </style>
+.rc-development-map {
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  border-radius: 1rem;
+  background: #fff;
+}
+.rc-development-map h2 { margin: .35rem 0 .5rem; }
+.rc-development-axes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; margin-top: 1.5rem; }
+.rc-development-axes article { padding: 1rem; border-left: 3px solid #116a42; background: #f4f1ed; }
+.rc-development-axes h3 { margin: 0 0 .45rem; font-size: 1rem; }
+.rc-development-axes p { min-height: 3.4em; margin: 0 0 .8rem; font-size: .84rem; color: #4f433c; }
+.rc-development-axes span { display: inline-block; padding: .25rem .5rem; border-radius: 999px; background: rgba(17,106,66,.1); color: #116a42; font-size: .72rem; font-weight: 700; }
+.rc-development-notes { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.25rem; color: #4f433c; font-size: .86rem; }
+.rc-development-notes strong { font-weight: 600; }
+.rc-dashboard-grid > .rc-summary-row .rc-card--grade,
+.rc-dashboard-grid > .rc-main-row .rc-card--performance { display: none; }
+@media (max-width: 900px) { .rc-development-axes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rc-development-map { padding: 1.25rem; } .rc-development-axes { grid-template-columns: 1fr; } }
+</style>
 <main class="ss-main">
 <!-- SVG Vector Watermarks -->
 <!-- Left mountains watermark -->
@@ -865,6 +885,19 @@ permalink: "/report-card.html"
 <p class="rc-page-subtitle">Clear insight. Calm progress. Better Jiu-Jitsu.</p>
 <div class="rc-page-divider"></div>
 </header>
+<section aria-labelledby="development-map-title" class="rc-development-map">
+<div class="rc-card-header"><span class="rc-card-label">Development Map</span></div>
+<h2 id="development-map-title">Jiu-Jitsu Development Map</h2>
+<p class="rc-page-subtitle">Use observable stages to describe what is becoming reliable, without turning progress into a school grade.</p>
+<div class="rc-development-axes">
+<article><h3>Recognize</h3><p>Do I understand what is happening?</p><span>Emerging</span></article>
+<article><h3>Protect</h3><p>Can I remain safe?</p><span>Developing</span></article>
+<article><h3>Solve</h3><p>Can I improve the situation?</p><span>Developing</span></article>
+<article><h3>Adapt</h3><p>Can I respond when my first idea fails?</p><span>Emerging</span></article>
+<article><h3>Express</h3><p>Am I choosing solutions that fit me?</p><span>Not Yet Observed</span></article>
+</div>
+<div class="rc-development-notes"><strong>What is working?</strong><strong>What is the next problem?</strong><strong>What is beginning to become yours?</strong></div>
+</section>
 <div class="rc-dashboard-grid">
 <!-- Top Summary Row -->
 <section aria-label="Student Summary Info" class="rc-summary-row">
