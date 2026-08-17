@@ -734,6 +734,26 @@ body.page-options-pricing .op-inline-cta {
   background: rgba(255, 253, 249, 0.56);
 }
 
+body.page-options-pricing .op-progress-note {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+  gap: 2rem;
+  align-items: center;
+  margin: 1.5rem 0 1.3rem;
+  padding: 1.5rem;
+  border: 1px solid var(--op-line);
+  border-radius: 1.25rem;
+  background: rgba(247, 243, 236, .72);
+}
+body.page-options-pricing .op-progress-note h2 { margin: .15rem 0 .6rem; color: var(--op-ink); font-size: clamp(1.35rem, 2vw, 1.8rem); }
+body.page-options-pricing .op-progress-note p { max-width: 48rem; margin: 0 0 .7rem; color: var(--op-muted); font-size: .88rem; line-height: 1.55; }
+body.page-options-pricing .op-progress-note .op-eyebrow { margin-bottom: .25rem; }
+body.page-options-pricing .op-progress-note__term { font-size: .8rem; }
+body.page-options-pricing .op-progress-note__steps { display: grid; gap: .65rem; margin: 0; padding: 0; list-style: none; }
+body.page-options-pricing .op-progress-note__steps li { display: grid; grid-template-columns: 5.5rem 1fr; gap: .7rem; padding: .75rem .85rem; border-left: 3px solid var(--op-teal); background: rgba(255,255,255,.66); color: var(--op-muted); font-size: .8rem; }
+body.page-options-pricing .op-progress-note__steps strong { color: var(--op-forest); }
+body.page-options-pricing .op-section-note { margin: -1.2rem 0 1.5rem; color: var(--op-muted); font-size: .82rem; }
+
 body.page-options-pricing .op-inline-cta p {
   margin-bottom: 0;
   color: var(--op-muted);
@@ -1594,6 +1614,9 @@ body.page-options-pricing .op-final-card__text-link:hover {
   body.page-options-pricing .op-inline-cta {
     display: grid;
   }
+
+  body.page-options-pricing .op-progress-note { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.2rem; }
+  body.page-options-pricing .op-section-note { margin-top: -0.8rem; }
 
   body.page-options-pricing .op-household-card summary {
     grid-template-columns: minmax(0, 1fr) auto;
