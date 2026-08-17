@@ -17,6 +17,24 @@
       "bookingRule": "Request an appropriate class with available space and suitable partner fit; capacity and placement still control."
     },
     "renewal": "At the end of a term, review what is working, what comes next, and which schedule or product fits. Renewal is a choice; there is no automatic escalation."
+    ,"endOfTermReview": {
+      "name": "Core Culture Review",
+      "sequence": ["observe_training", "review_schedule", "choose_next_arrangement"],
+      "reportCardFields": ["what_is_working", "what_is_the_next_problem", "what_is_beginning_to_become_yours"],
+      "outcomes": ["renewed_core_culture", "annual_track", "elite_concierge", "flexible_access", "pause", "stop"],
+      "guaranteeResets": false,
+      "rankDeterminesChoice": false,
+      "attendanceDeterminesChoice": false
+    },
+    "renewedCoreCulture": {
+      "stage": "continuation",
+      "term": "12 weeks",
+      "recurringHomeClassReservation": "Reviewed and confirmed for the next term",
+      "longitudinalProgressFeedback": true,
+      "rescheduling": "Open-seat rescheduling under current capacity and suitable-partner rules",
+      "gi": "No additional gi by virtue of renewal",
+      "guaranteeEligible": false
+    }
   },
   "eliteConcierge": {
     "name": "Elite Concierge",
