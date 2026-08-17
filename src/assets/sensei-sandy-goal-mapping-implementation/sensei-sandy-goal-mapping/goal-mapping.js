@@ -175,7 +175,7 @@
         if (!trigger.getAttribute('aria-label')) {
           trigger.setAttribute(
             'aria-label',
-            'Book a 15-minute BJJ Goal Mapping Visit'
+            'Reserve Your Free Intro'
           );
         }
       });
