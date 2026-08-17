@@ -31,7 +31,8 @@ def changed_outputs(commit):
         for candidate in (ROOT / 'dist').rglob('*'):
             if not candidate.is_file(): continue
             rel = candidate.relative_to(ROOT / 'dist').as_posix()
-            if rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS):
+            is_js = rel.startswith('js/') or rel.startswith('assets/js/')
+            if rel in ROOT_FILES or rel.endswith('.html') or is_js or rel == 'assets/data/asset-hash-manifest.json':
                 outputs.add((candidate, rel))
     return sorted(outputs, key=lambda item: item[1])
 
@@ -141,7 +142,7 @@ def verify_local_backup(path):
     print(f'local_backup_verified={backup} bytes={backup.stat().st_size}', flush=True)
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--reuse-existing-backup', action='store_true'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); args = parser.parse_args()
     cfg = json.loads((ROOT / args.config).read_text())
     if args.qa_backups:
         client = connect(cfg)
@@ -159,6 +160,9 @@ def main():
     if args.local_backup:
         verify_local_backup(args.local_backup)
         backup_done = True
+    elif args.reuse_existing_backup:
+        backup_done = True
+        print('backup_reuse_requested=true', flush=True)
     try:
         for local, rel in files:
             for attempt in range(1, args.retries + 1):
@@ -166,7 +170,13 @@ def main():
                     if client is None or not client.get_transport() or not client.get_transport().is_active():
                         client = connect(cfg)
                         if not backup_done:
-                            backup_remote(client, cfg); backup_done = True
+                            inventory, removed = cleanup_remote_backups(client, cfg, cleanup=True)
+                            valid = [item for item in inventory if item not in removed]
+                            if valid:
+                                print(f"backup_reused={max(valid, key=lambda item: item['mtime'])['path']}", flush=True)
+                            else:
+                                backup_remote(client, cfg)
+                            backup_done = True
                     print(f'upload {rel} attempt={attempt}', flush=True); print(f'remote_bytes={upload_one(client, cfg, local, rel)}', flush=True); break
                 except Exception as error:
                     if client: client.close()
