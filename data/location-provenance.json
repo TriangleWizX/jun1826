@@ -1,0 +1,55 @@
+{
+  "manifestVersion": 1,
+  "studio": {
+    "address": "6045 Main Street, Tannersville, NY 12485",
+    "sourceNote": "Academy operating address; verify against the current studio contact and directions pages."
+  },
+  "primary": {
+    "tannersville-ny": {
+      "town": "Tannersville",
+      "route": { "verified": true, "description": "Studio is in downtown Tannersville on NY-23A." },
+      "driveTime": { "verified": true, "label": "Home studio" },
+      "schoolContext": { "verified": false },
+      "seasonalFriction": { "verified": false },
+      "recommendedFirstClasses": { "verified": true, "source": "canonical schedule" }
+    },
+    "hunter-ny": {
+      "town": "Hunter",
+      "route": { "verified": true, "description": "NY-23A into Tannersville." },
+      "driveTime": { "verified": true, "label": "About 5–8 minutes from Hunter Mountain" },
+      "schoolContext": { "verified": false },
+      "seasonalFriction": { "verified": true, "description": "Ski-season traffic and storms can affect planning." },
+      "recommendedFirstClasses": { "verified": true, "source": "canonical schedule and local editorial review" }
+    },
+    "windham-ny": {
+      "town": "Windham",
+      "route": { "verified": true, "description": "NY-296 south toward NY-23A and Tannersville." },
+      "driveTime": { "verified": true, "label": "About 15–20 minutes under normal conditions" },
+      "schoolContext": { "verified": true, "description": "WAJ context is specific to Windham-area families." },
+      "seasonalFriction": { "verified": true, "description": "Allow buffer when mountain conditions affect Route 296." },
+      "recommendedFirstClasses": { "verified": true, "source": "canonical schedule and local editorial review" }
+    },
+    "haines-falls-ny": {
+      "town": "Haines Falls",
+      "route": { "verified": true, "description": "NY-23A west into Tannersville." },
+      "driveTime": { "verified": true, "label": "About 3–5 minutes under normal conditions" },
+      "schoolContext": { "verified": false },
+      "seasonalFriction": { "verified": false },
+      "recommendedFirstClasses": { "verified": true, "source": "canonical schedule" }
+    },
+    "woodstock-ny": {
+      "town": "Woodstock",
+      "route": { "verified": false, "sourceUrl": "https://woodstockny.gov/welcome-woodstock/getting-to-from-woodstock", "lastVerified": "2026-08-17", "sourceNote": "The official Woodstock travel page identifies NY-212 and NY-375 as major access roads, but this does not independently verify a route to the Tannersville studio." },
+      "driveTime": { "verified": false },
+      "schoolContext": { "verified": false },
+      "seasonalFriction": { "verified": false },
+      "recommendedFirstClasses": { "verified": false }
+    }
+  },
+  "forbiddenTokens": {
+    "woodstock-ny": ["WAJ", "Route 296", "NY-296"],
+    "hunter-ny": ["WAJ"],
+    "haines-falls-ny": ["WAJ"],
+    "tannersville-ny": ["WAJ"]
+  }
+}

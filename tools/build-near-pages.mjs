@@ -7,6 +7,7 @@ const CONFIG_PATH = path.join(ROOT, 'near', 'town-config.json');
 const LEGACY_REDIRECTS_PATH = path.join(ROOT, 'config', 'legacy-redirects.json');
 const FAST_FACTS_PATH = path.join(ROOT, 'data', 'near-fast-facts.json');
 const DECISION_CONTENT_PATH = path.join(ROOT, 'data', 'near-decision-content.json');
+const PROVENANCE_PATH = path.join(ROOT, 'data', 'location-provenance.json');
 const OUTPUT_ROOT = path.join(ROOT, 'near');
 const CUSTOM_NEAR_SLUGS = new Set(['windham-ny']);
 
@@ -241,17 +242,26 @@ const renderLocalFacts = (factsEntities = []) => {
 
 const defaultDecisionCopy = (town) => ({
   hero_headline: `Brazilian Jiu-Jitsu for ${town.town} families who want structured beginner progress without chaotic class culture`,
-  hero_subhead: `A practical route from ${town.town} to a calm, coach-led room in Tannersville.`,
+  hero_subhead: town.route_verified === false
+    ? `A calm, coach-led room in Tannersville. Check the drive from ${town.town} before choosing a recurring class rhythm.`
+    : `A practical route from ${town.town} to a calm, coach-led room in Tannersville.`,
   hero_for_line: `Built for families and adults who want skill-based training with clear first-class support.`,
-  travel_one_liner: `Most families use ${town.main_route} and treat this as a planned weekly anchor.`,
+  travel_one_liner: town.route_verified === false
+    ? `Town-specific travel guidance is still being verified. Check directions from your actual starting point and text Sandy if you want help deciding whether the drive fits.`
+    : `Most families use ${town.main_route} and treat this as a planned weekly anchor.`,
   why_choose: [
-    `The route from ${town.town} is familiar, which makes weeknight planning easier.`,
+    town.route_verified === false
+      ? `Use the Free Intro and current directions to decide whether the trip from ${town.town} fits your week.`
+      : `The route from ${town.town} is familiar, which makes weeknight planning easier.`,
     'Classes run in clear lanes with coached pacing for true beginners.',
     'One room, consistent coaching, and a first-visit process that stays low pressure.'
   ],
-  trip_story: `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
-  first_cadence:
-    'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and ask Sandy about private coaching if a one-to-one start fits better.',
+  trip_story: town.route_verified === false
+    ? `For ${town.town} families, the first useful question is whether the Tannersville room fits the actual drive. Start with one Free Intro before choosing a recurring plan.`
+    : `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
+  first_cadence: town.recommendations_verified === false
+    ? 'Check the current schedule and text Sandy if you want help deciding whether a youth, teen, adult, or Saturday option fits the drive.'
+    : 'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and ask Sandy about private coaching if a one-to-one start fits better.',
   objections: [
     {
       question: `Is this realistic from ${town.town} on school nights?`,
@@ -286,12 +296,13 @@ const defaultDecisionCopy = (town) => ({
 });
 
 const generate = async () => {
-  const [template, towns, legacyRedirectConfig, factsById, decisionBySlug] = await Promise.all([
+  const [template, towns, legacyRedirectConfig, factsById, decisionBySlug, provenance] = await Promise.all([
     fs.readFile(TEMPLATE_PATH, 'utf8'),
     readJson(CONFIG_PATH),
     readJson(LEGACY_REDIRECTS_PATH),
     readJson(FAST_FACTS_PATH),
-    readJson(DECISION_CONTENT_PATH)
+    readJson(DECISION_CONTENT_PATH),
+    readJson(PROVENANCE_PATH)
   ]);
 
   const legacyRedirects = legacyRedirectConfig && typeof legacyRedirectConfig.redirects === 'object'
@@ -328,13 +339,23 @@ const generate = async () => {
   let generatedCount = 0;
 
   for (const town of liveTowns) {
+    const profile = provenance.primary?.[town.slug];
+    const safeTown = profile
+      ? {
+          ...town,
+          route_verified: profile.route?.verified !== false,
+          recommendations_verified: profile.recommendedFirstClasses?.verified !== false,
+          main_route: profile.route?.verified === false ? '' : town.main_route,
+          drive_minutes: profile.driveTime?.verified === false ? null : town.drive_minutes
+        }
+      : { ...town, route_verified: true, recommendations_verified: true };
     const canonicalUrl = buildCanonicalUrl(town.slug);
-    const fallbackMiles = Math.max(1, Math.round((Number(town.drive_minutes) || 10) * 0.45 * 10) / 10);
+    const fallbackMiles = Math.max(1, Math.round((Number(safeTown.drive_minutes) || 10) * 0.45 * 10) / 10);
     const straightLineMiles = STRAIGHT_LINE_MILES[town.slug] || String(fallbackMiles);
     const factsEntities = (NEAR_FACTS_MAP[town.slug] || []).map((id) => factsById[id]).filter(Boolean);
 
     const decision = {
-      ...defaultDecisionCopy(town),
+      ...defaultDecisionCopy(safeTown),
       ...(decisionBySlug[town.slug] || {})
     };
 
