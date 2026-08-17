@@ -1,0 +1,74 @@
+body.page-core-culture-parent-guide {
+  background: var(--ss-bg, #fbfaf8);
+}
+
+body.page-core-culture-parent-guide .cc-main {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+  padding-block: clamp(1rem, 3vw, 2.5rem) clamp(3rem, 7vw, 6rem);
+}
+
+body.page-core-culture-parent-guide .cc-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  align-items: center;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  color: var(--ss-muted, #4f433c);
+  font-size: .84rem;
+}
+
+body.page-core-culture-parent-guide .cc-doppelrand-shell {
+  margin-block: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+body.page-core-culture-parent-guide .cc-doppelrand-core {
+  max-width: 68rem;
+  margin-inline: auto;
+}
+
+body.page-core-culture-parent-guide .cc-hero-image-frame {
+  max-width: 62rem;
+  margin: clamp(1.5rem, 4vw, 3rem) auto 0;
+  overflow: hidden;
+  border-radius: clamp(1rem, 2vw, 1.5rem);
+}
+
+body.page-core-culture-parent-guide .cc-hero-image-inner,
+body.page-core-culture-parent-guide .cc-hero-image-inner picture {
+  display: block;
+}
+
+body.page-core-culture-parent-guide .cc-hero-image-inner img {
+  display: block;
+  width: 100%;
+  height: clamp(14rem, 42vw, 34rem);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+body.page-core-culture-parent-guide .cc-section-title {
+  margin-block: 0 1rem;
+  text-wrap: balance;
+}
+
+body.page-core-culture-parent-guide .cc-text,
+body.page-core-culture-parent-guide .cc-list,
+body.page-core-culture-parent-guide .cc-pull-quote {
+  max-width: 68ch;
+}
+
+body.page-core-culture-parent-guide .cc-role-grid {
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 47.99rem) {
+  body.page-core-culture-parent-guide .cc-main {
+    width: min(100% - 1.25rem, 76rem);
+  }
+
+  body.page-core-culture-parent-guide .cc-hero-image-inner img {
+    height: min(58vw, 20rem);
+  }
+}

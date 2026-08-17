@@ -1,0 +1,62 @@
+/* Hallmark · page refinement: Safety Promise · calm editorial utility */
+body.page-jiu-jitsu-safety,
+body:has(.hero-video-section) {
+  background: var(--ss-bg, #fbfaf8);
+}
+
+body:has(.hero-video-section) .ss-main { overflow: clip; }
+body:has(.hero-video-section) .container,
+body:has(.hero-video-section) .ss-container { margin-inline: auto; }
+
+body:has(.hero-video-section) .hero-video-section {
+  position: relative;
+  min-height: clamp(34rem, 72vh, 48rem);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding-block: clamp(5rem, 12vw, 9rem) !important;
+  background: var(--ss-ink, #362b24) !important;
+  color: #fff;
+  isolation: isolate;
+}
+
+body:has(.hero-video-section) .video-wrapper,
+body:has(.hero-video-section) .hero-bg-video,
+body:has(.hero-video-section) .hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body:has(.hero-video-section) .video-wrapper { z-index: -2; }
+body:has(.hero-video-section) .hero-bg-video { display: block; object-fit: cover; object-position: center; }
+body:has(.hero-video-section) .hero-overlay { background: linear-gradient(90deg, rgba(17, 52, 39, .9), rgba(17, 52, 39, .54)); z-index: 1; }
+
+body:has(.hero-video-section) .hero-content-container {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 2rem, 76rem);
+  text-align: center;
+}
+
+body:has(.hero-video-section) .hero__inner { max-width: 52rem; margin-inline: auto; }
+body:has(.hero-video-section) .hero__title { max-width: 16ch; margin: .75rem auto 1rem; text-wrap: balance; }
+body:has(.hero-video-section) .hero__subtitle { max-width: 42rem; margin-inline: auto; color: rgba(255, 255, 255, .86); font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.65; }
+body:has(.hero-video-section) .hero__badges { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+body:has(.hero-video-section) .hero__badges li { padding: .5rem .8rem; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: rgba(255,255,255,.9); font-size: .8rem; }
+
+body:has(.hero-video-section) section:not(.hero-video-section) > .container { width: min(100% - 2rem, 76rem); }
+body:has(.hero-video-section) section:not(.hero-video-section) > .container > .text-center { max-width: 42rem; margin-inline: auto; }
+body:has(.hero-video-section) .premium-card-outer { height: 100%; padding: .35rem; border: 1px solid var(--ss-border, rgba(54,43,36,.14)); border-radius: 1.25rem; background: var(--ss-surface2, #f4f1ed); }
+body:has(.hero-video-section) .premium-card-inner { height: 100%; padding: 1.5rem; border: 1px solid rgba(54,43,36,.1); border-radius: 1rem; background: var(--ss-surface, #fff); text-align: center; }
+body:has(.hero-video-section) .premium-card-inner p { max-width: 36ch; margin-inline: auto; }
+body:has(.hero-video-section) .method-card-number { color: var(--ss-green, #116a42); font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
+body:has(.hero-video-section) figure img { display: block; max-width: 100%; height: auto; }
+body:has(.hero-video-section) .hero__inner a { text-decoration: none; }
+
+@media (max-width: 47.99rem) {
+  body:has(.hero-video-section) .hero-video-section { min-height: 38rem; }
+  body:has(.hero-video-section) .hero-content-container { width: min(100% - 1.25rem, 76rem); }
+  body:has(.hero-video-section) .hero__badges li { flex: 1 1 calc(50% - .6rem); }
+}
