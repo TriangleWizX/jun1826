@@ -255,9 +255,12 @@ const isExternalRef = (value) => (
   || /^[a-z][a-z0-9+.-]*:/i.test(value) || /^var\(/i.test(value)
 );
 const isPinnedAsset = (abs) => (
-  isPathInside(ASSET_ROOT, abs)
+  ((isPathInside(ASSET_ROOT, abs) && path.extname(abs).toLowerCase() === '.js') ||
+    isPathInside(path.join(ROOT, 'js'), abs)) ||
+  (isPathInside(ASSET_ROOT, abs)
   && (/^icons\/bootstrap\//.test(toPosix(path.relative(ASSET_ROOT, abs))) ||
     /^css\/routes\/site-[0-9a-f]{12}(?:\.min)?\.css$/i.test(toPosix(path.relative(ASSET_ROOT, abs))))
+  )
 );
 const isAllowedCssSource = (abs) => {
   if (path.extname(abs).toLowerCase() !== '.css') return false;
@@ -537,9 +540,19 @@ for (const [htmlPath, document] of htmlDocuments) {
   let updated = '';
   for (const attr of attrs) {
     updated += html.slice(cursor, attr.start);
-    const source = resolveAssetRef(attr.value, htmlPath);
+    let normalizedRef = attr.value;
+    const referencedPath = resolveAssetRef(attr.value, htmlPath);
+    if (referencedPath && path.extname(referencedPath).toLowerCase() === '.js' && isHashed(path.basename(referencedPath))) {
+      const canonicalPath = unhashedSiblingPath(referencedPath);
+      if (fs.existsSync(canonicalPath)) normalizedRef = publicHrefForAsset(canonicalPath);
+    }
+    if (/^\/?(?:assets\/)?js\/[^?#]+\.[0-9a-f]{6}\.js(?:[?#]|$)/i.test(normalizedRef)) {
+      const candidate = normalizedRef.replace(/\.[0-9a-f]{6}(?=\.js(?:[?#]|$))/i, '');
+      if (fs.existsSync(assetPathForPublicHref(candidate))) normalizedRef = candidate;
+    }
+    const source = resolveAssetRef(normalizedRef, htmlPath);
     const target = source && !isPinnedAsset(source) ? resolvedAssets.get(source) : null;
-    updated += target ? replacementReference(attr.value, htmlPath, target) : attr.value;
+    updated += target ? replacementReference(normalizedRef, htmlPath, target) : normalizedRef;
     cursor = attr.end;
   }
   updated += html.slice(cursor);
