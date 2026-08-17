@@ -1,6 +1,25 @@
 {
   "currency": "USD",
   "currencySymbol": "$",
+  "productPolicy": {
+    "firstPaidTerm": ["coreCulture.youth", "coreCulture.adult", "coreCulture.communityServiceAdult"],
+    "continuationOnly": ["eliteConcierge", "annualTrack"],
+    "firstQualifyingCoreGi": "Included once with a student's first qualifying Core Culture enrollment; continuation products do not add another gi.",
+    "guaranteeEligible": ["coreCulture.youth", "coreCulture.adult"],
+    "guaranteeExcluded": ["eliteConcierge", "annualTrack", "coreCulture.communityServiceAdult", "visitorAndSupport", "privateCoaching", "optionalAddOns"],
+    "renewal": "At the end of a term, review what is working, what comes next, and which schedule or product fits. Renewal is a choice; there is no automatic escalation."
+  },
+  "eliteConcierge": {
+    "name": "Elite Concierge",
+    "price": 1050,
+    "displayPrice": "$1,050",
+    "term": "12 weeks",
+    "stage": "continuation",
+    "eligibility": "Adults continuing after a Core Culture term; application and schedule review required",
+    "guarantee": "Excluded from the 30-Day Training Fit Guarantee",
+    "gi": "No additional gi; the first qualifying Core Culture gi carries forward",
+    "active": true
+  },
   "coreCulture": {
     "youth": {
       "name": "Youth Core Culture",

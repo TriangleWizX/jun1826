@@ -111,10 +111,22 @@
   ],
   "qualified": [
     {
+      "id": "elite-concierge",
+      "name": "Elite Concierge",
+      "category": "Continuation Membership",
+      "audience": "Adults continuing after a Core Culture term",
+      "term": "12 weeks",
+      "priceRef": "eliteConcierge",
+      "displayPrice": "$1,050",
+      "guarantee": "Excluded from the 30-Day Training Fit Guarantee",
+      "active": true,
+      "public": true
+    },
+    {
       "id": "annual-track",
       "name": "Annual Track",
       "category": "Long-Term Membership",
-      "audience": "Dedicated Students",
+      "audience": "Students continuing after a Core Culture term",
       "priceRef": "annualTrack",
       "active": true,
       "public": true
