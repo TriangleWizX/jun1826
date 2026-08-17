@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "qa:seo:remediation": "node scripts/qa-seo-remediation.mjs",
+    "qa:how-class-works:canonical": "node scripts/qa-how-class-works-canonical.mjs",
     "dev": "eleventy --serve",
     "build": "eleventy && node tools/materialize-ssi-fragments.mjs",
     "clean": "node -e \"import('fs').then(fs => fs.rmSync('dist', {recursive: true, force: true}))\"",
