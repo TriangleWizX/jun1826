@@ -12,6 +12,9 @@ BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
+    # the resulting deployable HTML and JS payload even though dist/ is ignored.
+    fingerprint_release = 'tools/fingerprint-assets.cjs' in names or 'src/assets/data/asset-hash-manifest.json' in names
     for name in names:
         if name.startswith('src/'):
             candidate = ROOT / 'dist' / name[4:]
@@ -24,6 +27,12 @@ def changed_outputs(commit):
         rel = candidate.relative_to(ROOT / 'dist').as_posix()
         if rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS):
             if candidate.is_file(): outputs.add((candidate, rel))
+    if fingerprint_release:
+        for candidate in (ROOT / 'dist').rglob('*'):
+            if not candidate.is_file(): continue
+            rel = candidate.relative_to(ROOT / 'dist').as_posix()
+            if rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS):
+                outputs.add((candidate, rel))
     return sorted(outputs, key=lambda item: item[1])
 
 def connect(cfg):
