@@ -3202,6 +3202,9 @@ body {
   overflow-x: clip;
 }
 
+/* Keep shared-shell images inside their flex/grid containers without
+   overriding component-specific crops or fixed-height treatments. */
+
 html {
   scroll-behavior: smooth;
 }
@@ -3214,6 +3217,86 @@ body {
   line-height: var(--leading-body);
   letter-spacing: var(--tracking-body);
   text-rendering: optimizeLegibility;
+}
+
+/* Universal responsive image contract for routes that load the shell alone. */
+.ss-main picture,
+.ss-main img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+.ss-main img {
+  block-size: auto;
+}
+
+/* Shared geometry for the location/class family. These pages use the shell
+   bundle directly, so their nested cards must not depend on page-only CSS. */
+.lane-mixed .db-card {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  border-radius: 2.25rem;
+  background: rgba(54, 43, 36, 0.03);
+  box-sizing: border-box;
+}
+
+.lane-mixed .db-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  border-radius: 1.6rem;
+  background: linear-gradient(180deg, #fff 0%, #faf8f5 100%);
+  box-sizing: border-box;
+}
+
+.lane-mixed .db-card-inner .text-start {
+  text-align: center !important;
+}
+
+/* The location templates use Bootstrap's !important text-start utilities.
+   Keep the complete class-page family centered at every breakpoint. */
+.lane-mixed .ss-main {
+  text-align: center;
+}
+
+.lane-mixed .text-start,
+.lane-mixed .text-lg-start {
+  text-align: center !important;
+}
+
+.lane-mixed .justify-content-lg-start {
+  justify-content: center !important;
+}
+
+.lane-mixed .db-card-inner ul {
+  width: 100%;
+  padding-left: 0;
+}
+
+.lane-mixed .db-card-inner li {
+  justify-content: center;
+  width: 100%;
+}
+
+.lane-mixed .db-card-inner .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 24rem);
+  min-height: 2.5rem;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  box-sizing: border-box;
+}
+
+@media (max-width: 575.98px) {
+  .lane-mixed .db-card-inner {
+    padding: 1.5rem 0.9rem;
+  }
 }
 
 /* Keep the non-critical site shell out of the initial mobile render path. */
@@ -5165,5 +5248,46 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
     visibility: visible !important;
     pointer-events: auto !important;
     transform: translateY(0) !important;
+  }
+}
+
+/* Mobile navigation must be closed before any optional Bootstrap runtime loads. */
+@media screen and (max-width: 991.98px) {
+  .ss-global-nav-wrapper #ssMainNav:not(.show):not(.collapsing) {
+    display: none !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show {
+    display: block !important;
+    position: relative !important;
+    z-index: 2000 !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show,
+  .ss-global-nav-wrapper #ssMainNav.show .navbar-nav,
+  .ss-global-nav-wrapper #ssMainNav.show .nav-item,
+  .ss-global-nav-wrapper #ssMainNav.show .nav-link,
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-menu,
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-item {
+    pointer-events: auto !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-menu:not(.show) {
+    display: none !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show .dropdown-menu.show {
+    display: block !important;
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .ss-global-nav-wrapper #ssMainNav.show a,
+  .ss-global-nav-wrapper #ssMainNav.show button {
+    position: relative !important;
+    z-index: 2001 !important;
+    touch-action: manipulation;
   }
 }

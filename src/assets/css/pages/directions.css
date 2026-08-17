@@ -345,10 +345,14 @@ body.page-directions.page-directions-board a {
 }
 
 .directions-section-head--compact {
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  justify-items: start;
-  text-align: left;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.directions-section-head--compact > div {
+  width: min(100%, 56rem);
 }
 
 .directions-section-head--compact h2 {
@@ -1272,11 +1276,6 @@ body.page-directions.page-directions-board a {
     min-height: 0;
   }
 
-  .directions-section-head--compact {
-    grid-template-columns: 1fr;
-    justify-items: start;
-  }
-
   .directions-inline-link {
     white-space: normal;
   }
@@ -1317,6 +1316,61 @@ body.page-directions.page-directions-board a {
   .directions-info__actions {
     flex-direction: column;
   }
+}
+
+/* Keep page copy centered despite the compact desktop alignment inherited by the board layout. */
+body.page-directions.page-directions-board .directions-info__card,
+body.page-directions.page-directions-board .directions-arrival-proof__inner,
+body.page-directions.page-directions-board .directions-phone__shell,
+body.page-directions.page-directions-board .directions-proof__schedule,
+body.page-directions.page-directions-board .directions-proof__testimonial {
+  text-align: center;
+}
+
+body.page-directions.page-directions-board .directions-info__card h1,
+body.page-directions.page-directions-board .directions-info__card h2,
+body.page-directions.page-directions-board .directions-info__card h3,
+body.page-directions.page-directions-board .directions-info__card p,
+body.page-directions.page-directions-board .directions-arrival-proof h2,
+body.page-directions.page-directions-board .directions-arrival-proof figcaption,
+body.page-directions.page-directions-board .directions-phone__shell p,
+body.page-directions.page-directions-board .directions-phone__shell h2,
+body.page-directions.page-directions-board .directions-phone__shell h3 {
+  margin-inline: auto;
+}
+
+body.page-directions.page-directions-board .directions-info__item p,
+body.page-directions.page-directions-board .directions-proof__quote,
+body.page-directions.page-directions-board .directions-proof__footnote,
+body.page-directions.page-directions-board .directions-proof__credit {
+  margin-inline: auto;
+}
+
+body.page-directions.page-directions-board .directions-proof__credit {
+  justify-content: center;
+}
+
+body.page-directions.page-directions-board .directions-info__grid {
+  justify-items: stretch;
+}
+
+body.page-directions.page-directions-board .directions-info__item {
+  display: grid;
+  justify-items: center;
+}
+
+body.page-directions.page-directions-board .directions-proof {
+  justify-items: center;
+}
+
+body.page-directions.page-directions-board .directions-proof > * {
+  width: 100%;
+}
+
+body.page-directions.page-directions-board .directions-info__actions,
+body.page-directions.page-directions-board .directions-phone__actions,
+body.page-directions.page-directions-board .directions-phone__cta {
+  justify-content: center;
 }
 
 @media (max-width: 575.98px) {
