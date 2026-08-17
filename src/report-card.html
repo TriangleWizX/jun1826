@@ -382,72 +382,6 @@ permalink: "/report-card.html"
       width: 150px;
       flex-shrink: 0;
     }
-    .rc-slider-container {
-      flex-grow: 1;
-      padding: 8px 0;
-      cursor: ew-resize;
-      position: relative;
-    }
-    .rc-slider-track {
-      height: 6px;
-      background-color: var(--ss-rc-border);
-      border-radius: 3px;
-      overflow: hidden;
-      position: relative;
-    }
-    .rc-slider-fill {
-      height: 100%;
-      background-color: var(--ss-rc-muted);
-      border-radius: 3px;
-      transition: width 0.1s ease;
-    }
-    .rc-domain-row:hover .rc-slider-fill {
-      background-color: var(--ss-rc-blue);
-    }
-    .rc-domain-percent {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--ss-rc-muted);
-      width: 45px;
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .rc-domain-grade-badge {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 20px;
-      width: 40px;
-      text-align: center;
-      flex-shrink: 0;
-      text-transform: uppercase;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-    }
-
-    /* Badges styles */
-    .grade-a-plus, .grade-a, .grade-a-minus {
-      background-color: #E2F0D9;
-      color: #385723;
-    }
-    .grade-b-plus, .grade-b {
-      background-color: #FFF2CC;
-      color: #7F6000;
-    }
-    .grade-c-plus, .grade-c {
-      background-color: #FCE4D6;
-      color: #C65911;
-    }
-    .grade-d-plus, .grade-d {
-      background-color: #F8CBAD;
-      color: #C00000;
-    }
-    .grade-f {
-      background-color: #E7E6E6;
-      color: #595959;
-    }
-
     .rc-performance-footer {
       display: flex;
       align-items: center;
@@ -459,46 +393,6 @@ permalink: "/report-card.html"
       border-top: 1px solid var(--ss-rc-border);
       padding-top: 0.8rem;
       opacity: 0.8;
-    }
-
-    /* Grading Table */
-    .rc-grading-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      margin-top: 0.4rem;
-    }
-    .rc-grading-table th {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--ss-rc-muted);
-      text-align: left;
-      padding: 8px 10px;
-      border-bottom: 1px solid var(--ss-rc-border);
-    }
-    .rc-grading-table td {
-      padding: 7px 10px;
-      border-bottom: 1px solid rgba(54, 43, 36, 0.05);
-      color: var(--ss-rc-dark);
-    }
-    .rc-grading-table tr:last-child td {
-      border-bottom: none;
-    }
-    .rc-grading-table tr:nth-child(even) {
-      background-color: rgba(54, 43, 36, 0.02);
-    }
-    .rc-table-badge {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 12px;
-      display: inline-block;
-      min-width: 28px;
-      text-align: center;
     }
 
     /* Feedback block */
@@ -849,8 +743,21 @@ permalink: "/report-card.html"
 .rc-development-axes span { display: inline-block; padding: .25rem .5rem; border-radius: 999px; background: rgba(17,106,66,.1); color: #116a42; font-size: .72rem; font-weight: 700; }
 .rc-development-notes { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.25rem; color: #4f433c; font-size: .86rem; }
 .rc-development-notes strong { font-weight: 600; }
-.rc-dashboard-grid > .rc-summary-row .rc-card--grade,
-.rc-dashboard-grid > .rc-main-row .rc-card--performance { display: none; }
+.rc-dashboard-grid > .rc-summary-row .rc-card--grade { display: none; }
+.rc-capability-intro { margin: -0.5rem 0 1.25rem; padding: .85rem 1rem; border-left: 3px solid #116a42; background: #f4f1ed; color: #4f433c; font-size: .88rem; line-height: 1.55; }
+.rc-capability-control { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .35rem; flex: 1; min-width: 0; margin: 0; padding: 0; border: 0; }
+.rc-capability-control label { position: relative; margin: 0; cursor: pointer; }
+.rc-capability-control input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.rc-capability-control label span { display: flex; align-items: center; justify-content: center; min-height: 2.25rem; padding: .35rem .3rem; border: 1px solid rgba(54,43,36,.18); border-radius: .45rem; background: #fff; color: #4f433c; font-size: .7rem; line-height: 1.15; text-align: center; }
+.rc-capability-control input:checked + span { border-color: #116a42; background: rgba(17,106,66,.12); color: #116a42; font-weight: 700; box-shadow: inset 0 0 0 1px #116a42; }
+.rc-capability-control input:focus-visible + span { outline: 3px solid rgba(0,221,224,.7); outline-offset: 2px; }
+.rc-card--capability-guide dl { margin: 0; font-size: .78rem; }
+.rc-card--capability-guide dt { margin-top: .7rem; color: #116a42; font-weight: 700; }
+.rc-card--capability-guide dt:first-child { margin-top: 0; }
+.rc-card--capability-guide dd { margin: .15rem 0 0; color: #4f433c; line-height: 1.45; }
+.rc-parent-interpretation { margin: 1rem 0 0; padding-top: .8rem; border-top: 1px solid rgba(54,43,36,.14); font-size: .78rem; line-height: 1.45; }
+@media (max-width: 900px) { .rc-capability-control { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rc-domain-row { align-items: flex-start; flex-wrap: wrap; } .rc-domain-name { width: calc(100% - 40px); } .rc-capability-control { flex-basis: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-left: 40px; } }
 @media (max-width: 900px) { .rc-development-axes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .rc-development-map { padding: 1.25rem; } .rc-development-axes { grid-template-columns: 1fr; } }
 </style>
@@ -932,7 +839,7 @@ permalink: "/report-card.html"
 <div class="rc-grade-value">Reliable</div>
 </div>
 <div class="rc-grade-percent">Contextual</div>
-<div class="rc-grade-status">Excellent</div>
+<div class="rc-grade-status">Capability snapshot</div>
 <div class="rc-grade-star">★</div>
 </div>
 <!-- Student Info Card -->
@@ -987,177 +894,77 @@ permalink: "/report-card.html"
 </section>
 <!-- Main Domain and Details Row -->
 <div class="rc-main-row">
-<!-- Domain Performance Section (Sliders) -->
+<!-- Domain Performance Section (Capability states) -->
 <section aria-labelledby="performance-title" class="rc-card rc-card--performance">
 <div class="rc-performance-header">
 <i class="bi bi-bar-chart-line"></i>
 <span class="rc-card-label" id="performance-title">Domain Performance</span>
 </div>
+<div class="rc-capability-intro"><strong>Capability, not grades</strong><br/>These states describe what Sandy is currently seeing in live training. They are not school grades and they are not permanent labels. A skill may work reliably in one situation while still developing in another.</div>
 <div class="rc-domains-list">
 <!-- Feet to Floor -->
 <div class="rc-domain-row" data-tip="Takedown accuracy, posture maintenance, and stance stability.">
 <div class="rc-domain-icon"><i class="bi bi-chevron-double-down"></i></div>
 <span class="rc-domain-name">Feet to Floor</span>
-<div aria-label="Feet to Floor slider" class="rc-slider-container" data-score="90">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 90%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">90%</span>
-<span class="rc-domain-grade-badge grade-a">A</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Feet to Floor capability state</legend><label><input type="radio" name="feet-to-floor" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="feet-to-floor" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="feet-to-floor" value="developing"/><span>Developing</span></label><label><input type="radio" name="feet-to-floor" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="feet-to-floor" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Pinning -->
 <div class="rc-domain-row" data-tip="Positional control, weight distribution, and chest-to-chest connection.">
 <div class="rc-domain-icon"><i class="bi bi-lock"></i></div>
 <span class="rc-domain-name">Pinning</span>
-<div aria-label="Pinning slider" class="rc-slider-container" data-score="85">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 85%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">85%</span>
-<span class="rc-domain-grade-badge grade-b">B</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Pinning capability state</legend><label><input type="radio" name="pinning" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="pinning" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="pinning" value="developing"/><span>Developing</span></label><label><input checked="" type="radio" name="pinning" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="pinning" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Pin Escapes -->
 <div class="rc-domain-row" data-tip="Hip escape spacing, frame structure, and timing of weight shifts.">
 <div class="rc-domain-icon"><i class="bi bi-unlock"></i></div>
 <span class="rc-domain-name">Pin Escapes</span>
-<div aria-label="Pin Escapes slider" class="rc-slider-container" data-score="70">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 70%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">70%</span>
-<span class="rc-domain-grade-badge grade-c">C</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Pin Escapes capability state</legend><label><input type="radio" name="pin-escapes" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="pin-escapes" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="pin-escapes" value="developing"/><span>Developing</span></label><label><input type="radio" name="pin-escapes" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="pin-escapes" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Base Retention -->
 <div class="rc-domain-row" data-tip="Three points of contact, posture recovery, and defensive balance.">
 <div class="rc-domain-icon"><i class="bi bi-shield-lock"></i></div>
 <span class="rc-domain-name">Base Retention</span>
-<div aria-label="Base Retention slider" class="rc-slider-container" data-score="95">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 95%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">95%</span>
-<span class="rc-domain-grade-badge grade-a-plus">Reliable</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Base Retention capability state</legend><label><input type="radio" name="base-retention" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="base-retention" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="base-retention" value="developing"/><span>Developing</span></label><label><input type="radio" name="base-retention" value="contextual"/><span>Contextual</span></label><label><input checked="" type="radio" name="base-retention" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Guard Passing -->
 <div class="rc-domain-row" data-tip="Torreando control, pressure passing, and leg clearance.">
 <div class="rc-domain-icon"><i class="bi bi-arrow-right-circle"></i></div>
 <span class="rc-domain-name">Guard Passing</span>
-<div aria-label="Guard Passing slider" class="rc-slider-container" data-score="60">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 60%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">60%</span>
-<span class="rc-domain-grade-badge grade-f">F</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Guard Passing capability state</legend><label><input type="radio" name="guard-passing" value="not_observed"/><span>Not Yet Observed</span></label><label><input checked="" type="radio" name="guard-passing" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="guard-passing" value="developing"/><span>Developing</span></label><label><input type="radio" name="guard-passing" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="guard-passing" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Guard Retention -->
 <div class="rc-domain-row" data-tip="Knee-to-elbow connection, hip movement, and open guard recovery.">
 <div class="rc-domain-icon"><i class="bi bi-shield-check"></i></div>
 <span class="rc-domain-name">Guard Retention</span>
-<div aria-label="Guard Retention slider" class="rc-slider-container" data-score="75">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 75%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">75%</span>
-<span class="rc-domain-grade-badge grade-c-plus">C+</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Guard Retention capability state</legend><label><input type="radio" name="guard-retention" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="guard-retention" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="guard-retention" value="developing"/><span>Developing</span></label><label><input checked="" type="radio" name="guard-retention" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="guard-retention" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Guard -->
 <div class="rc-domain-row" data-tip="Closed and open guard offensive control and grip configurations.">
 <div class="rc-domain-icon"><i class="bi bi-shield"></i></div>
 <span class="rc-domain-name">Guard</span>
-<div aria-label="Guard slider" class="rc-slider-container" data-score="80">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 80%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">80%</span>
-<span class="rc-domain-grade-badge grade-b">B</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Guard capability state</legend><label><input type="radio" name="guard" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="guard" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="guard" value="developing"/><span>Developing</span></label><label><input type="radio" name="guard" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="guard" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Submissions -->
 <div class="rc-domain-row" data-tip="Submission control setups, joint lock and choke execution.">
 <div class="rc-domain-icon"><i class="bi bi-key"></i></div>
 <span class="rc-domain-name">Submissions</span>
-<div aria-label="Submissions slider" class="rc-slider-container" data-score="50">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 50%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">50%</span>
-<span class="rc-domain-grade-badge grade-f">F</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Submissions capability state</legend><label><input type="radio" name="submissions" value="not_observed"/><span>Not Yet Observed</span></label><label><input checked="" type="radio" name="submissions" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="submissions" value="developing"/><span>Developing</span></label><label><input type="radio" name="submissions" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="submissions" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Submission Escapes -->
 <div class="rc-domain-row" data-tip="Early posture defense, hitchhiker structures, and tap timing.">
 <div class="rc-domain-icon"><i class="bi bi-key-fill"></i></div>
 <span class="rc-domain-name">Submission Escapes</span>
-<div aria-label="Submission Escapes slider" class="rc-slider-container" data-score="65">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 65%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">65%</span>
-<span class="rc-domain-grade-badge grade-d">D</span>
+<fieldset class="rc-capability-control"><legend class="visually-hidden">Submission Escapes capability state</legend><label><input type="radio" name="submission-escapes" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="submission-escapes" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="submission-escapes" value="developing"/><span>Developing</span></label><label><input type="radio" name="submission-escapes" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="submission-escapes" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 </div>
 <div class="rc-performance-footer">
 <i class="bi bi-info-circle"></i>
-<span>Hover a row for domain tips. Drag bars to adjust values.</span>
+<span>Choose the state that best matches what the student demonstrates under appropriate resistance.</span>
 </div>
 </section>
-<!-- Sidebar stack (Grading details & Feedback) -->
+<!-- Sidebar stack (Capability details & Feedback) -->
 <div class="rc-main-right-stack">
-<!-- Grading Legend Card -->
-<section aria-labelledby="grading-legend-title" class="rc-card rc-card--grading-system">
-<div class="rc-card-header">
-<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 3v18M6 7h12M6 7l-2 8h4l-2-8M18 7l-2 8h4l-2-8M12 21h-4m8 0h-4"></path></svg>
-<span class="rc-card-label" id="grading-legend-title">Grading System</span>
-</div>
-<table class="rc-grading-table">
-<thead>
-<tr>
-<th>Grade</th>
-<th>Score Range</th>
-<th>Verbal Rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="rc-table-badge grade-a-plus">Reliable</span></td>
-<td>97 – 100</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-a">A</span></td>
-<td>93 – 96</td>
-<td>Outstanding</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-b">B</span></td>
-<td>85 – 92</td>
-<td>Very Good</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-c">C</span></td>
-<td>75 – 84</td>
-<td>Good</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-d">D</span></td>
-<td>65 – 74</td>
-<td>Satisfactory</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-f">F</span></td>
-<td>0 – 64</td>
-<td>Fair</td>
-</tr>
-</tbody>
-</table>
-</section>
+<section aria-labelledby="capability-guide-title" class="rc-card rc-card--capability-guide"><div class="rc-card-header"><i aria-hidden="true" class="bi bi-compass"></i><span class="rc-card-label" id="capability-guide-title">Capability states</span></div><dl><dt>Not Yet Observed</dt><dd>There is not enough live evidence yet. This is not failure.</dd><dt>Emerging</dt><dd>The student can begin solving with prompting or favorable conditions.</dd><dt>Developing</dt><dd>Useful behavior is becoming consistent against appropriate resistance.</dd><dt>Contextual</dt><dd>The solution works in familiar or specific conditions and is still being tested across variations.</dd><dt>Reliable</dt><dd>The capability holds across meaningful variation and appropriate resistance; it is not perfection.</dd></dl><p class="rc-parent-interpretation"><strong>Progress is evidence, not a pass/fail result.</strong> Emerging → Developing means useful behavior is more consistent. Developing → Contextual means it is dependable in known conditions. Contextual → Reliable means it is surviving meaningful variation.</p></section>
 <!-- Remarks Card -->
 <section aria-labelledby="remarks-title" class="rc-card rc-card--feedback">
 <div class="rc-card-header">
@@ -1165,7 +972,7 @@ permalink: "/report-card.html"
 <span class="rc-card-label" id="remarks-title">Feedback &amp; Remarks</span>
 </div>
 <div class="rc-feedback-container">
-<div aria-label="Feedback and remarks editor" class="rc-feedback-textarea" contenteditable="true">Excellent work on retaining guard this week. Needs more focus on hip movement during pin escapes. Keep drilling the shrimp!</div>
+<div aria-label="What is working and next problem editor" class="rc-feedback-textarea" contenteditable="true"><strong>What is working:</strong> Recovers a knee inside when chest pressure shifts toward the head.<br/><br/><strong>Next problem:</strong> Recover the legs when the top partner blocks the first hip turn.<br/><br/><strong>What is beginning to become yours:</strong> Staying calm while adapting when the first answer fails.</div>
 <!-- Vector Lotus Watermark -->
 <svg aria-hidden="true" class="lotus-watermark" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
 <path d="M12 21a9 9 0 0 0 9-9c0-5-9-10-9-10S3 7 3 12a9 9 0 0 0 9 9z"></path>
@@ -1187,7 +994,7 @@ permalink: "/report-card.html"
 <div class="rc-steps-grid">
 <div class="rc-step-item">
 <div class="rc-step-number">1</div>
-<p>Adjust domain scores based on weekly training.</p>
+<p>Update each domain when recent training gives enough observable evidence.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">2</div>
@@ -1245,19 +1052,19 @@ permalink: "/report-card.html"
 <h2 id="report-card-guide-title">How To Use the Digital Twin Report Card</h2>
 <p>Use the wider <a href="/parent-resources">Parent Resources hub</a> for safety answers, schedule planning, and other family-facing next steps that connect to this tracker.</p>
 <p>
-        The Sensei Sandy BJJ Digital Twin Report Card is a quick way to review training priorities and performance trends for one student, one small-group class lane, or one weekly coaching cycle. Each domain score is editable, so coaches can update values in real time after drills, positional rounds, or notes from live sparring. The final output gives families and students a simple snapshot of what is improving, what is stable, and what needs focused reps next week.
+        The Sensei Sandy BJJ Digital Twin Report Card is a quick way to review training priorities and observable behavior for one student, one class lane, or one weekly coaching cycle. Coaches can update each capability state when recent drills, positional rounds, or live training provide enough evidence. The final output gives families and students a simple snapshot of what is improving, what is stable, and what problem should receive more attention next.
       </p>
 <p>
         This report card format built for beginner-friendly Brazilian Jiu-Jitsu coaching in Tannersville, NY, where clear standards and calm communication matter. Instead of vague feedback, each category maps to observable habits like base retention, pin escapes, guard passing, and submissions. That structure helps reduce confusion for new students and gives returning students a predictable progression path.
       </p>
 <ul>
-<li>Use the score sliders to adjust each domain based on recent class performance.</li>
+<li>Choose the capability state that best matches what the student currently demonstrates under appropriate resistance.</li>
 <li>Record the current belt level, class schedule, and coach so each review is traceable.</li>
 <li>Record what is working, the next problem, and what is beginning to become yours.</li>
 <li>Print the final card for at-home practice goals and next-session accountability.</li>
 </ul>
 <p>
-        If you are comparing progress over multiple weeks, keep domain definitions consistent and avoid changing grading thresholds mid-cycle. Consistency makes the report card useful for coaching decisions, parent updates, and long-term skill development across kids, teens, and adults.
+        When comparing progress across weeks, keep the domain definitions and capability-state criteria consistent. Update a state when repeated training gives enough evidence that the student's behavior has changed. Consistency makes the report card useful for coaching decisions, parent updates, and long-term skill development across kids, teens, and adults.
       </p>
 <p>
         Keep exploring: <a href="/schedule">Schedule</a> · <a href="/bjj-classes/tannersville-ny">BJJ Small-group classes</a> · <a href="/options-pricing">Options / Pricing</a> · <a href="/private-lessons">Private Coaching</a> · <a href="/contact">Contact</a> · <a href="/blog">Blog</a>
