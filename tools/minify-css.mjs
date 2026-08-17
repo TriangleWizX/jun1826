@@ -39,6 +39,7 @@ const baseJobs = [
   ["assets/css/schedule-consistency.css", "assets/css/schedule-consistency.min.css"],
   ["assets/css/partner-pages.css", "assets/css/partner-pages.min.css"],
   ["assets/css/pages/partners-hospitality-hunter-windham.css", "assets/css/pages/partners-hospitality-hunter-windham.min.css"],
+  ["assets/css/contact-vip.css", "assets/css/contact-vip.min.css"],
 ];
 
 const jobs = Object.freeze([

@@ -675,3 +675,92 @@ body.page-contact :where(.btn-green-primary, .btn-outline-green, .button) {
     background-color 650ms var(--ss-ease-premium),
     border-color 650ms var(--ss-ease-premium);
 }
+
+/* Responsive contact-page alignment and image contract. */
+.contact-vip-main > .container {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.contact-vip-main .bento-card,
+.contact-vip-main .hero-card-content,
+.contact-vip-main .contact-details-col,
+.contact-vip-main .hours-grid,
+.contact-vip-main .faq-card,
+.contact-vip-main .ss-culture-explanation > div {
+  text-align: center;
+}
+
+.contact-vip-main .hero-card-image-wrapper {
+  height: clamp(220px, 32vw, 360px);
+}
+
+.contact-vip-main .hero-card-image,
+.contact-details-col > figure img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contact-details-col {
+  align-items: center;
+}
+
+.contact-details-col > figure {
+  width: min(100%, 620px);
+  margin-inline: auto;
+}
+
+.contact-details-col > figure img {
+  height: clamp(220px, 28vw, 360px);
+  aspect-ratio: 16 / 9;
+}
+
+.contact-vip-main .action-row,
+.contact-vip-main .social-row,
+.contact-vip-main .hours-header-box,
+.contact-vip-main .hours-respond-box {
+  justify-content: center;
+}
+
+.contact-vip-main .detail-item {
+  width: min(100%, 28rem);
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-vip-main .detail-text {
+  align-items: center;
+}
+
+.contact-vip-main .map-col,
+.contact-vip-main .map-container {
+  min-height: clamp(280px, 34vw, 420px);
+}
+
+.contact-vip-main .faq-trigger,
+.contact-vip-main .faq-content-inner,
+.contact-vip-main .faq-footer {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .contact-vip-main > .container {
+    padding-inline: 0.9rem;
+  }
+
+  .contact-vip-main .bento-card {
+    padding: 1.25rem;
+    border-radius: 1.15rem;
+  }
+
+  .contact-vip-main .hero-card-image-wrapper,
+  .contact-details-col > figure img {
+    height: clamp(190px, 54vw, 280px);
+  }
+
+  .contact-vip-main .hours-grid {
+    justify-items: center;
+  }
+}
