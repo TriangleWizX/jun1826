@@ -691,6 +691,26 @@ body.page-contact :where(.btn-green-primary, .btn-outline-green, .button) {
   text-align: center;
 }
 
+.contact-vip-main .hero-card-content {
+  align-items: center;
+}
+
+.contact-vip-main .hero-card-content .eyebrow,
+.contact-vip-main .hero-card-content h1,
+.contact-vip-main .hero-card-content .lead {
+  width: min(100%, 42rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.contact-vip-main .hero-card-content h1 {
+  max-width: 14ch;
+}
+
+.contact-vip-main .hero-card-content .lead {
+  max-width: 38rem;
+}
+
 .contact-vip-main .hero-card-image-wrapper {
   height: clamp(220px, 32vw, 360px);
 }
