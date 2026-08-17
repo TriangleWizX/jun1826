@@ -8,7 +8,7 @@
   object-fit: cover;
   object-position: center;
 }
-.page-schedule{background:var(--color-paper);color:var(--color-ink)}.page-schedule .ss-main{overflow-x:clip}.page-schedule .container{max-width:var(--container-standard)}
+.page-schedule{background:var(--color-paper);color:var(--color-ink)}.page-schedule .ss-main{overflow-x:clip}.page-schedule .container{max-width:var(--container-standard);margin-inline:auto}.page-schedule .ss-hero-editorial-split{width:min(calc(100% - var(--gutter) - var(--gutter)),var(--container-standard));margin-inline:auto}
 .page-schedule :is(h1,h2,h3){font-family:var(--font-display);font-style:var(--display-style);font-weight:var(--display-weight);letter-spacing:var(--tracking-display);line-height:var(--leading-heading);color:var(--color-ink);overflow-wrap:anywhere}.page-schedule p,.page-schedule li{font:400 var(--text-md)/var(--leading-body) var(--font-body);color:var(--color-muted)}
 .ss-hero-editorial-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr);gap:var(--space-2xl);align-items:center;padding-block:var(--space-2xl)}.ss-editorial-title{margin:0;font-size:clamp(var(--text-3xl),5vw,var(--text-display))}.ss-editorial-lead{max-width:42rem;margin:var(--space-md) 0 0}.ss-eyebrow-badge,.ss-card-label{display:inline-flex;margin-bottom:var(--space-sm);font:700 var(--text-xs)/1 var(--font-body);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--color-accent-deep)}
 .ss-hero-actions,.ss-inline-actions{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-lg)}.ss-btn,.ss-action-primary{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-xs);min-height:44px;padding:var(--space-2xs) var(--space-md);border:var(--rule-hair) solid var(--color-rule-2);border-radius:var(--radius-pill);background:var(--color-paper);color:var(--color-ink);font:700 var(--text-sm)/1.2 var(--font-body);text-decoration:none}.ss-btn-primary,.ss-action-primary{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-accent-ink)}.ss-btn-icon-wrapper,.ss-btn-premium-icon{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--cta-icon-surface)}
@@ -21,3 +21,46 @@
 @media (hover:hover) and (pointer:fine){.ss-btn-primary:hover,.ss-action-primary:hover{background:var(--color-accent-strong);transform:translateY(-1px)}.ss-btn-primary:hover .ss-btn-icon-wrapper{transform:translate(1px,-1px) scale(1.05)}}
 @media (max-width:60rem){.ss-hero-editorial-split{grid-template-columns:1fr}.ss-info-grid,.ss-hero-features-row{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:40rem){.ss-hero-editorial-split,.ss-section{padding-block:var(--space-xl)}.ss-double-bezel-inner,.ss-calendar-bezel-inner{padding:var(--space-md)}.ss-info-grid,.ss-hero-features-row,.ss-saturday-grid,.ss-location-grid{grid-template-columns:1fr}.ss-cal-slot{grid-template-columns:1fr;gap:var(--space-2xs)}.ss-mobile-actionbar{position:sticky;bottom:0;z-index:var(--z-sticky);display:flex;gap:var(--space-xs);padding:var(--space-xs) var(--gutter);background:var(--color-paper);border-top:var(--rule-hair) solid var(--color-rule)}}
 @media (prefers-reduced-motion:reduce){.page-schedule *{transition:none!important;animation:none!important}}
+
+/* Keep section introductions in the same centered reading frame as the hero. */
+.page-schedule .ss-section-head { margin-inline: auto; text-align: center; }
+
+/* Keep the schedule decision visible sooner after the site header. */
+.page-schedule .ss-hero-editorial-split {
+  padding-block-start: .5rem;
+}
+
+.page-schedule .ss-schedule-utility-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
+  margin-bottom: .75rem;
+  color: var(--ss-muted);
+  font-size: .85rem;
+}
+
+.page-schedule .ss-schedule-utility-row a {
+  color: var(--ss-green);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(17, 106, 66, .2);
+}
+
+@media (max-width: 40rem) {
+.page-schedule .ss-schedule-utility-row { justify-content: center; text-align: center; }
+}
+
+/* The schedule promise is the first row; the calendar follows beneath it. */
+.page-schedule .ss-hero-editorial-split {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.page-schedule .ss-editorial-left {
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.page-schedule .ss-editorial-lead { margin-inline: auto; }
+.page-schedule .ss-hero-actions,
+.page-schedule .ss-hero-features-row { justify-content: center; }

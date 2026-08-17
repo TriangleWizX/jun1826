@@ -33,8 +33,10 @@ body.page-sensei-studio img {
 }
 
 body.page-sensei-studio .studio-image-frame img {
+  display: block;
   width: 100%;
-  max-height: min(62vh, 540px);
+  height: min(62vh, 540px);
+  max-height: 540px;
   aspect-ratio: 5 / 4;
   object-fit: cover;
 }
@@ -47,6 +49,16 @@ body.page-sensei-studio section[aria-label="Studio care photos"] figure img {
   object-fit: cover;
 }
 
+body.page-sensei-studio section[aria-labelledby="studio-arrival-details"] figure img,
+body.page-sensei-studio section[aria-labelledby="studio-changing-details"] figure img {
+  display: block;
+  width: 100%;
+  height: clamp(11rem, 20vw, 17rem);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
 body.page-sensei-studio .studio-hero {
   padding: clamp(4.5rem, 9vw, 8rem) 0 clamp(3rem, 7vw, 6rem);
   color: #f8f4ed;
@@ -56,6 +68,7 @@ body.page-sensei-studio .studio-hero {
 body.page-sensei-studio .studio-hero .container,
 body.page-sensei-studio .studio-narrative .container {
   max-width: 1180px;
+  margin-inline: auto;
 }
 
 body.page-sensei-studio .studio-hero-title {
@@ -148,10 +161,13 @@ body.page-sensei-studio .studio-narrative {
   background: #fbfaf8;
 }
 
-body.page-sensei-studio .narrative-title-row { margin-bottom: 2.5rem; }
+body.page-sensei-studio .narrative-title-row {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
 body.page-sensei-studio .narrative-title-row h2 {
   max-width: 16ch;
-  margin: 0;
+  margin: 0 auto;
   font-family: "Instrument Serif", Georgia, serif;
   font-size: clamp(2.3rem, 4.5vw, 4rem);
   line-height: 1;
@@ -168,7 +184,7 @@ body.page-sensei-studio .narrative-block {
   border-top: 1px solid rgba(54, 43, 36, 0.16);
 }
 
-body.page-sensei-studio .narrative-block h3 { font-size: 1.35rem; }
+body.page-sensei-studio .narrative-block h3 { font-size: 1.35rem; text-align: center; }
 body.page-sensei-studio .narrative-block p { max-width: 58ch; line-height: 1.7; }
 
 @media (max-width: 767.98px) {
@@ -178,7 +194,7 @@ body.page-sensei-studio .narrative-block p { max-width: 58ch; line-height: 1.7; 
   body.page-sensei-studio .studio-cta-row,
   body.page-sensei-studio .studio-benefits-row { justify-content: center; }
   body.page-sensei-studio .studio-hero-visual { margin-top: 1rem; }
-  body.page-sensei-studio .studio-image-frame img { max-height: 38vh; }
+  body.page-sensei-studio .studio-image-frame img { height: min(48vh, 24rem); }
   body.page-sensei-studio .narrative-grid { grid-template-columns: 1fr; }
   body.page-sensei-studio .narrative-title-row { text-align: center; }
   body.page-sensei-studio .narrative-title-row h2 { margin-inline: auto; }

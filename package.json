@@ -51,6 +51,8 @@
     "qa:towns": "node scripts/qa-town-duplication.mjs",
     "qa:lazy-loading": "node scripts/qa-lazy-loading.mjs",
     "qa:images": "node scripts/qa-images.mjs",
+    "qa:image-contract": "node scripts/qa-image-contract.mjs",
+    "qa:class-family": "node scripts/qa-class-family-contract.mjs",
     "deploy:release": "python3 scripts/deploy-release.py",
     "qa:backup:remote": "python3 scripts/deploy-release.py --qa-backups",
     "qa:backup:remote:cleanup": "python3 scripts/deploy-release.py --qa-backups --cleanup",

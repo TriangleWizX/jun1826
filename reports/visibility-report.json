@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-10T03:27:26.134Z",
+  "generatedAt": "2026-08-11T18:28:18.665Z",
   "target": "dist",
   "summary": {
-    "html": 436,
-    "css": 482,
-    "checks": 918,
-    "warnings": 795,
+    "html": 432,
+    "css": 398,
+    "checks": 830,
+    "warnings": 710,
     "failures": 0
   },
   "failures": [],
@@ -33,11 +33,6 @@
     {
       "kind": "unresolved-ssi",
       "file": "dist/back-to-school-bjj-tannersville/index.html",
-      "detail": "SSI directive remains for server-side processing"
-    },
-    {
-      "kind": "unresolved-ssi",
-      "file": "dist/beginner-friendly-bjj-tannersville-links/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -223,6 +218,11 @@
     {
       "kind": "unresolved-ssi",
       "file": "dist/bjj-classes/windham-ny/index.html",
+      "detail": "SSI directive remains for server-side processing"
+    },
+    {
+      "kind": "unresolved-ssi",
+      "file": "dist/bjj-classes/woodstock-ny/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1037,12 +1037,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/blog/beginner-friendly-bjj-tannersville-evidence/index.html",
-      "detail": "SSI directive remains for server-side processing"
-    },
-    {
-      "kind": "unresolved-ssi",
-      "file": "dist/blog/beginner-friendly-bjj-tannersville-links/index.html",
+      "file": "dist/blog/beginner-friendly-bjj-tannersville/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1681,11 +1676,6 @@
       "detail": "SSI directive remains for server-side processing"
     },
     {
-      "kind": "inline-layout-risk",
-      "file": "dist/qa-design-probe.html",
-      "detail": "1 inline layout rule(s) may cause viewport overflow/overlap"
-    },
-    {
       "kind": "unresolved-ssi",
       "file": "dist/report-card.html",
       "detail": "SSI directive remains for server-side processing"
@@ -1728,11 +1718,6 @@
     {
       "kind": "unresolved-ssi",
       "file": "dist/schedule/index.html",
-      "detail": "SSI directive remains for server-side processing"
-    },
-    {
-      "kind": "unresolved-ssi",
-      "file": "dist/schedule.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -2477,16 +2462,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-0a585dbe9295.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .page-camp-clinics .faq-section .accordion-button"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-0a585dbe9295.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-0a585dbe9295.min.0ef788.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .page-camp-clinics .faq-section .accordion-button"
     },
@@ -2517,32 +2492,12 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-0a585dbe9295.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .page-camp-clinics .faq-section .accordion-button"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-0a585dbe9295.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-0a585dbe9295.min.e0e757.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .page-camp-clinics .faq-section .accordion-button"
     },
     {
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-0a585dbe9295.min.e0e757.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-0badbc95d19d.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-0badbc95d19d.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
     },
     {
@@ -2587,16 +2542,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-0badbc95d19d.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-0badbc95d19d.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-0badbc95d19d.min.f6b619.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow"
     },
@@ -2604,11 +2549,6 @@
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-0badbc95d19d.min.f6b619.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-207d810a38d2.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-secondary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -2632,18 +2572,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-207d810a38d2.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-secondary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-207d810a38d2.min.eb8317.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-secondary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-227e8d1cf4c7.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -2667,16 +2597,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-227e8d1cf4c7.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-3013a4251e7e.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-3013a4251e7e.min.48d748.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -2697,18 +2617,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-3013a4251e7e.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-3013a4251e7e.min.fa5876.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-3060fd038b63.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-secondary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -2732,26 +2642,11 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-3060fd038b63.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-secondary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-3060fd038b63.min.e4730d.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-secondary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-3c70fcc37f86.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-3c70fcc37f86.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-3c70fcc37f86.min.55f246.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -2782,16 +2677,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-3c70fcc37f86.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-3c70fcc37f86.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-3c70fcc37f86.min.d00e02.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -2799,11 +2684,6 @@
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-3c70fcc37f86.min.d00e02.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-42403dc40454.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-eyebrow | .eyebrow | body.page-programs[data-audience=\"adults\"] .adults-btn--primary"
     },
     {
       "kind": "duplicate-selector",
@@ -2822,18 +2702,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-42403dc40454.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-eyebrow | .eyebrow | body.page-programs[data-audience=adults] .adults-btn--primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-42403dc40454.min.fbabe8.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-eyebrow | .eyebrow | body.page-programs[data-audience=adults] .adults-btn--primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-492c97fc7c6f.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -2853,16 +2723,6 @@
     {
       "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-492c97fc7c6f.min.a95276.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-492c97fc7c6f.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-50c6061009dc.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
@@ -2887,16 +2747,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-50c6061009dc.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-522046e5a5b7.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .eyebrow"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-522046e5a5b7.min.520426.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .eyebrow"
     },
@@ -2917,18 +2767,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-522046e5a5b7.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .eyebrow"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-522046e5a5b7.min.e31edd.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .eyebrow"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-60d52f5f177f.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -2957,21 +2797,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-60d52f5f177f.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-6215352ad838.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-6215352ad838.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-6215352ad838.min.9b65c9.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -3012,16 +2837,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-6215352ad838.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-6215352ad838.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-6215352ad838.min.e585d5.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -3029,11 +2844,6 @@
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-6215352ad838.min.e585d5.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-764a6ae837f6.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -3048,16 +2858,6 @@
     {
       "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-764a6ae837f6.min.5ce9bb.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-764a6ae837f6.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-7b234ea71403.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
@@ -3077,16 +2877,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-7b234ea71403.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-929a0de8f3f1.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .navbar .navbar-collapse.show, .navbar .navbar-collapse.collapsing | .eyebrow | .page-schedule .ss-main .ss-btn-secondary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-929a0de8f3f1.min.af779d.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .navbar .navbar-collapse.show,.navbar .navbar-collapse.collapsing | .eyebrow | .page-schedule .ss-main .ss-btn-secondary"
     },
@@ -3102,18 +2892,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-929a0de8f3f1.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .navbar .navbar-collapse.show,.navbar .navbar-collapse.collapsing | .eyebrow | .page-schedule .ss-main .ss-btn-secondary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-929a0de8f3f1.min.dc10d2.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .navbar .navbar-collapse.show,.navbar .navbar-collapse.collapsing | .eyebrow | .page-schedule .ss-main .ss-btn-secondary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-94ff725ee4d2.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -3132,11 +2912,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-94ff725ee4d2.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-94ff725ee4d2.min.f4efe3.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -3147,16 +2922,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-9b923549765a.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-9b923549765a.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-9b923549765a.min.04bbfd.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -3207,16 +2972,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-9b923549765a.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-9b923549765a.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-9b923549765a.min.eb19d1.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
@@ -3224,11 +2979,6 @@
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-9b923549765a.min.eb19d1.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-9e3744ddb414.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -3253,11 +3003,6 @@
     {
       "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-9e3744ddb414.min.c71910.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-9e3744ddb414.min.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
@@ -3292,16 +3037,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-abb88025a884.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-abb88025a884.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-abb88025a884.min.46446c.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
     },
@@ -3349,21 +3084,6 @@
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-abb88025a884.min.9bdc74.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-abb88025a884.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-abb88025a884.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-ac8bb117999c.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow | .ss-btn-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -3392,16 +3112,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-ac8bb117999c.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow | .ss-btn-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-b593ef45b765.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-b593ef45b765.min.1c0fda.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
     },
@@ -3422,18 +3132,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-b593ef45b765.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-b593ef45b765.min.d4c056.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-ba653ca66731.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -3457,18 +3157,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-ba653ca66731.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-ba653ca66731.min.ea105d.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-mobile-sticky-cta a"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-baa4decf2340.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary"
     },
     {
       "kind": "duplicate-selector",
@@ -3478,11 +3168,6 @@
     {
       "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-baa4decf2340.min.bfd4c9.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-summer-confidence-page .ss-score-table"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-baa4decf2340.min.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-summer-confidence-page .ss-score-table"
     },
     {
@@ -3502,16 +3187,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-c436f4fa87bc.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-price-card | .ss-eyebrow | .eyebrow"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-c436f4fa87bc.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-c436f4fa87bc.min.21d7c3.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-price-card | .ss-eyebrow | .eyebrow"
     },
@@ -3552,26 +3227,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-c436f4fa87bc.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-price-card | .ss-eyebrow | .eyebrow"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-c436f4fa87bc.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-d05f7dbabb9e.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .page-camp-clinics .hero-stats-pill | .page-camp-clinics .faq-section .accordion-button"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-d05f7dbabb9e.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-d05f7dbabb9e.min.04cfb9.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .page-camp-clinics .hero-stats-pill | .page-camp-clinics .faq-section .accordion-button"
     },
@@ -3602,32 +3257,12 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-d05f7dbabb9e.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .page-camp-clinics .hero-stats-pill | .page-camp-clinics .faq-section .accordion-button"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-d05f7dbabb9e.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-d05f7dbabb9e.min.e80a7c.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .page-camp-clinics .hero-stats-pill | .page-camp-clinics .faq-section .accordion-button"
     },
     {
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-d05f7dbabb9e.min.e80a7c.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-da3d828d72c6.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-da3d828d72c6.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
     },
     {
@@ -3679,21 +3314,6 @@
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-da3d828d72c6.min.94ecf7.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-da3d828d72c6.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-da3d828d72c6.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-e24317089673.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow"
     },
     {
       "kind": "duplicate-selector",
@@ -3717,26 +3337,11 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-e24317089673.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-e24317089673.min.e0c7ae.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-eyebrow | .eyebrow"
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-eb08bda61052.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-lane-card p | .ss-btn-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-eb08bda61052.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-eb08bda61052.min.0708c8.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-lane-card p | .ss-btn-primary"
     },
@@ -3784,21 +3389,6 @@
       "kind": "svg-width-rule",
       "file": "dist/assets/css/routes/site-eb08bda61052.min.ceb08d.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-eb08bda61052.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-lane-card p | .ss-btn-primary"
-    },
-    {
-      "kind": "svg-width-rule",
-      "file": "dist/assets/css/routes/site-eb08bda61052.min.css",
-      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-eff031c5a3a9.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-lane-card p"
     },
     {
       "kind": "duplicate-selector",
@@ -3822,18 +3412,8 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-eff031c5a3a9.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-lane-card p"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-eff031c5a3a9.min.d53f93.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .ss-lane-card p"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-f143b60880c0.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .eyebrow"
     },
     {
       "kind": "duplicate-selector",
@@ -3858,11 +3438,6 @@
     {
       "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-f143b60880c0.min.b97979.css",
-      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .eyebrow"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-f143b60880c0.min.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-outline-primary | .eyebrow"
     },
     {
@@ -3994,11 +3569,6 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/_includes/deprecated/site-shell.2026-05-24.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
       "file": "dist/_includes/footer-high-intent.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
@@ -4090,11 +3660,6 @@
     {
       "kind": "html-scanned",
       "file": "dist/back-to-school-bjj-tannersville/index.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
-      "file": "dist/beginner-friendly-bjj-tannersville-links/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -4280,6 +3845,11 @@
     {
       "kind": "html-scanned",
       "file": "dist/bjj-classes/windham-ny/index.html",
+      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
+    },
+    {
+      "kind": "html-scanned",
+      "file": "dist/bjj-classes/woodstock-ny/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5094,12 +4664,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/blog/beginner-friendly-bjj-tannersville-evidence/index.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
-      "file": "dist/blog/beginner-friendly-bjj-tannersville-links/index.html",
+      "file": "dist/blog/beginner-friendly-bjj-tannersville/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5979,11 +5544,6 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/qa-design-probe.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
       "file": "dist/report-card.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
@@ -6025,11 +5585,6 @@
     {
       "kind": "html-scanned",
       "file": "dist/schedule/index.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
-      "file": "dist/schedule.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -6719,11 +6274,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/pages/contact.35f6ea.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/pages/contact.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -6779,7 +6329,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/pages/home.bcbcc3.css",
+      "file": "dist/assets/css/pages/home.7b52dc.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7009,11 +6559,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-0a585dbe9295.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-0a585dbe9295.min.0ef788.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7029,17 +6574,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-0a585dbe9295.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-0a585dbe9295.min.e0e757.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-0badbc95d19d.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7064,17 +6599,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-0badbc95d19d.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-0badbc95d19d.min.f6b619.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-0cd14bf55cf3.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7085,11 +6610,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-0cd14bf55cf3.min.7f9655.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-0cd14bf55cf3.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7119,32 +6639,12 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-18ac9c2704ce.min.27706d.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-18ac9c2704ce.min.4a008c.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-18ac9c2704ce.min.82dfa0.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-18ac9c2704ce.min.a6ee18.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-18ac9c2704ce.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-207d810a38d2.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7169,17 +6669,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-207d810a38d2.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-207d810a38d2.min.eb8317.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-227e8d1cf4c7.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7204,32 +6694,12 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-227e8d1cf4c7.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-255ef3cf7fa2.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-255ef3cf7fa2.min.1703f0.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-255ef3cf7fa2.min.23e6ff.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-255ef3cf7fa2.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-3013a4251e7e.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7254,17 +6724,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-3013a4251e7e.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-3013a4251e7e.min.fa5876.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-3060fd038b63.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7289,17 +6749,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-3060fd038b63.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-3060fd038b63.min.e4730d.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-3c70fcc37f86.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7319,17 +6769,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-3c70fcc37f86.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-3c70fcc37f86.min.d00e02.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-42403dc40454.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7349,17 +6789,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-42403dc40454.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-42403dc40454.min.fbabe8.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-4246717cef64.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7384,16 +6814,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-4246717cef64.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-492c97fc7c6f.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-492c97fc7c6f.min.02ec25.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7410,16 +6830,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-492c97fc7c6f.min.a95276.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-492c97fc7c6f.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-50c6061009dc.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7444,16 +6854,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-50c6061009dc.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-522046e5a5b7.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-522046e5a5b7.min.520426.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7474,32 +6874,12 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-522046e5a5b7.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-522046e5a5b7.min.e31edd.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-54e4eb12b818.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-54e4eb12b818.min.1deac6.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-54e4eb12b818.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-60d52f5f177f.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7529,16 +6909,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-60d52f5f177f.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-6215352ad838.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-6215352ad838.min.9b65c9.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7559,17 +6929,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-6215352ad838.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-6215352ad838.min.e585d5.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-6f8f35460fa0.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7589,17 +6949,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-6f8f35460fa0.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-6f8f35460fa0.min.d73b00.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-764a6ae837f6.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7619,16 +6969,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-764a6ae837f6.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-7b234ea71403.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-7b234ea71403.min.188685.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7640,16 +6980,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-7b234ea71403.min.b0e703.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-7b234ea71403.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-88eb19c15d4b.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7669,17 +6999,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-88eb19c15d4b.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-88eb19c15d4b.min.ed4730.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-929a0de8f3f1.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7699,17 +7019,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-929a0de8f3f1.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-929a0de8f3f1.min.dc10d2.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-94ff725ee4d2.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7729,22 +7039,12 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-94ff725ee4d2.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-94ff725ee4d2.min.f4efe3.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-94ff725ee4d2.min.fe393c.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-9b923549765a.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7774,17 +7074,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-9b923549765a.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-9b923549765a.min.eb19d1.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-9e3744ddb414.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7810,11 +7100,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-9e3744ddb414.min.c71910.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-9e3744ddb414.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7849,11 +7134,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-abb88025a884.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-abb88025a884.min.46446c.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7875,16 +7155,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-abb88025a884.min.9bdc74.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-abb88025a884.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-ac8bb117999c.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7914,16 +7184,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-ac8bb117999c.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-b593ef45b765.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-b593ef45b765.min.1c0fda.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7944,17 +7204,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-b593ef45b765.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-b593ef45b765.min.d4c056.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-ba653ca66731.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7979,17 +7229,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-ba653ca66731.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-ba653ca66731.min.ea105d.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-baa4decf2340.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8000,11 +7240,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-baa4decf2340.min.bfd4c9.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-baa4decf2340.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8020,11 +7255,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-bd0c4e75edb2.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-c436f4fa87bc.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8049,32 +7279,12 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-c436f4fa87bc.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-c77f6432c892.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-c77f6432c892.min.7f5e88.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-c77f6432c892.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-c77f6432c892.min.d04237.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-d05f7dbabb9e.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8094,17 +7304,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-d05f7dbabb9e.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-d05f7dbabb9e.min.e80a7c.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-da3d828d72c6.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8134,16 +7334,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-da3d828d72c6.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-e24317089673.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-e24317089673.min.7056e6.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -8164,17 +7354,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-e24317089673.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-e24317089673.min.e0c7ae.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-ea64eeff1257.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8195,16 +7375,6 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-ea64eeff1257.min.a0b636.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-ea64eeff1257.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-eb08bda61052.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8234,16 +7404,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-eb08bda61052.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-eff031c5a3a9.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-eff031c5a3a9.min.2ee6a9.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -8264,17 +7424,7 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-eff031c5a3a9.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-eff031c5a3a9.min.d53f93.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-f143b60880c0.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -8304,27 +7454,12 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-f143b60880c0.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-f85cf28ed254.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-f85cf28ed254.min.6a9ff6.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-f85cf28ed254.min.7ff66e.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-f85cf28ed254.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {

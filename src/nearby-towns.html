@@ -4,6 +4,9 @@ title: "Nearby Towns: BJJ Classes Near Tannersville | SSBJJ"
 description: "Find beginner-friendly Brazilian Jiu-Jitsu near Woodstock, Hunter, Windham, Haines Falls, and Tannersville. Choose a lane and reserve a Free Intro."
 canonicalUrl: "https://senseisandy.com/nearby-towns"
 bodyClass: "ss-page ss-page-bjj-classes ss-page-nearby-towns"
+extraCss:
+  - "/assets/css/high-end-near.21e42b.css"
+  - "/assets/css/pages/near.css"
 permalink: "/nearby-towns.html"
 ---
 <main id="main-content">
@@ -142,14 +145,11 @@ permalink: "/nearby-towns.html"
             </a>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="p-4 rounded-4 border bg-white h-100 d-flex flex-column justify-content-between shadow-sm">
-            <div>
-              <span class="badge bg-light text-dark border mb-2">25 Min Drive</span>
-              <h3 class="h4 fw-bold mb-2">Woodstock</h3>
-              <p class="text-muted small mb-3">A scenic drive up Route 214 through Stony Clove Notch to a dedicated athletic space away from town bustle.</p>
-            </div>
-            <a href="/nearby-towns" class="btn btn-outline-dark btn-sm rounded-pill fw-semibold w-100">Nearby Towns &rarr;</a>
+          <div class="he-outer-shell ss-nearby-town-shell">
+            <a class="he-inner-core ss-nearby-town-card text-decoration-none d-flex flex-column" href="/bjj-classes/woodstock-ny">
+              <strong class="fs-4 text-dark mb-2">Woodstock</strong>
+              <p class="text-muted mb-0">A scenic drive through Stony Clove Notch to a dedicated athletic space away from town bustle.</p>
+            </a>
           </div>
         </div>
 
@@ -195,3 +195,25 @@ permalink: "/nearby-towns.html"
       </div>
     </section>
   </main>
+  <script>
+    (() => {
+      const reveals = document.querySelectorAll('.ss-page-nearby-towns .he-reveal');
+      if (!reveals.length) return;
+
+      const showAll = () => reveals.forEach((element) => element.classList.add('is-visible'));
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+        showAll();
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, entryObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          entryObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+      reveals.forEach((element) => observer.observe(element));
+    })();
+  </script>

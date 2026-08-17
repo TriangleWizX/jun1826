@@ -137,6 +137,10 @@ body.page-community-partners .cp-hero > p:not(.cp-kicker) {
   font-size: clamp(1.02rem, 1.5vw, 1.15rem);
   line-height: 1.75;
 }
+body.page-community-partners .cp-hero > p:not(.cp-kicker),
+body.page-community-partners .cp-section-intro {
+  margin-inline: auto;
+}
 body.page-community-partners .cp-kicker {
   color: var(--partner-teal);
   font-size: .78rem;
@@ -217,4 +221,7 @@ body.page-partners-hospitality .what-get-card {
   body.partner-page .wellness-hero-ctas { justify-content: center; }
   body.partner-page .hospitality-hero-left .lead,
   body.partner-page .wellness-hero-left .lead { margin-inline: auto; }
+  body.page-community-partners .cp-hero,
+  body.page-community-partners .cp-section { text-align: center; }
+  body.page-community-partners .cp-link-card { text-align: left; }
 }

@@ -27,6 +27,7 @@ const baseJobs = [
   ["assets/css/pages/glossary.css", "assets/css/pages/glossary.min.css"],
   ["assets/css/pages/pricing.css", "assets/css/pages/pricing.min.css"],
   ["assets/css/pages/private-lessons.css", "assets/css/pages/private-lessons.min.css"],
+  ["assets/css/pages/parent-resources.css", "assets/css/pages/parent-resources.min.css"],
   ["assets/css/pages/near.css", "assets/css/pages/near.min.css"],
   ["assets/css/pages/directions.css", "assets/css/pages/directions.min.css"],
   ["assets/css/pages/tannersville.css", "assets/css/pages/tannersville.min.css"],
