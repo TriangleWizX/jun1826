@@ -7,6 +7,15 @@
     "firstQualifyingCoreGi": "Included once with a student's first qualifying Core Culture enrollment; continuation products do not add another gi.",
     "guaranteeEligible": ["coreCulture.youth", "coreCulture.adult"],
     "guaranteeExcluded": ["eliteConcierge", "annualTrack", "coreCulture.communityServiceAdult", "visitorAndSupport", "privateCoaching", "optionalAddOns"],
+    "flexibleAccess": {
+      "localFirstTimer": "Start with the Free Intro and choose Core Culture when building a regular local training rhythm.",
+      "inClassCoaching": "All students receive appropriate coaching, safety management, and partner guidance while in class.",
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "recurringHomeClassReservation": false,
+      "bookingRule": "Request an appropriate class with available space and suitable partner fit; capacity and placement still control."
+    },
     "renewal": "At the end of a term, review what is working, what comes next, and which schedule or product fits. Renewal is a choice; there is no automatic escalation."
   },
   "eliteConcierge": {
@@ -74,6 +83,15 @@
       "price": 35,
       "displayPrice": "$35",
       "term": "1 session",
+      "accessModel": "open_access",
+      "audience": "Short-term visitors",
+      "classesIncluded": "1 appropriate class",
+      "validity": "One visit",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "bookingRule": "Advance request; available space and suitable partner fit required",
       "active": true
     },
     "vacationWeek": {
@@ -81,6 +99,15 @@
       "price": 99,
       "displayPrice": "$99",
       "term": "1 week",
+      "accessModel": "open_access",
+      "audience": "Visitors staying in the Catskills",
+      "classesIncluded": "Up to 3 appropriate classes",
+      "validity": "7 consecutive days",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "bookingRule": "Advance request; available space and suitable partner fit required",
       "active": true
     },
     "tenPack": {
@@ -88,6 +115,15 @@
       "price": 300,
       "displayPrice": "$300",
       "term": "10 classes",
+      "accessModel": "open_access",
+      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "classesIncluded": "10 consumable class visits",
+      "validity": "6 months",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "bookingRule": "Request an appropriate class with available space and suitable partner fit",
       "active": true
     },
     "twentyPack": {
@@ -95,6 +131,15 @@
       "price": 550,
       "displayPrice": "$550",
       "term": "20 classes",
+      "accessModel": "open_access",
+      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "classesIncluded": "20 consumable class visits",
+      "validity": "12 months",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "bookingRule": "Request an appropriate class with available space and suitable partner fit",
       "active": true
     },
     "privateCoachingSingle": {
