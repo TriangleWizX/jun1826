@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-08-17",
+  "relationships": [
+    {
+      "from": "Renzo Gracie",
+      "to": "Roberto Maia",
+      "type": "black_belt_award",
+      "source": "https://bostonbjj.us/our-academy",
+      "sourceType": "first_party",
+      "status": "verified",
+      "verifiedDate": "2026-08-17"
+    },
+    {
+      "from": "Roberto Maia",
+      "to": "Kenny Florian",
+      "type": "black_belt_award",
+      "source": "/sources/kenny-florian",
+      "sourceType": "SSBJJ_source_record",
+      "status": "primary_internal_evidence",
+      "verifiedDate": "2026-08-17"
+    },
+    {
+      "from": "Kenny Florian",
+      "to": "Josh Griffiths",
+      "type": "black_belt_award",
+      "source": "https://www.clockworkbjj.com/instructors",
+      "sourceType": "first_party",
+      "status": "verified",
+      "verifiedDate": "2026-08-17"
+    },
+    {
+      "from": "Josh Griffiths",
+      "to": "Sandy Jose Nunez",
+      "type": "black_belt_award",
+      "source": "/bio plus academy promotion photo",
+      "sourceType": "SSBJJ_primary_internal_record",
+      "status": "primary_internal_evidence",
+      "verifiedDate": "2026-08-17"
+    },
+    {
+      "from": "Sandy Jose Nunez",
+      "to": "Josh Griffiths",
+      "type": "primary_training",
+      "source": "/bio",
+      "sourceType": "SSBJJ_primary_internal_record",
+      "status": "primary_internal_evidence",
+      "verifiedDate": "2026-08-17"
+    },
+    {
+      "from": "Josh Griffiths",
+      "to": "Clockwork Jiu Jitsu",
+      "type": "current_instructor_role",
+      "source": "https://www.clockworkbjj.com/instructors",
+      "sourceType": "first_party",
+      "status": "verified",
+      "verifiedDate": "2026-08-17"
+    },
+    {
+      "from": "Mikinosuke Kawaishi",
+      "to": "Sandy Jose Nunez",
+      "type": "historical_influence",
+      "source": "/bio",
+      "sourceType": "SSBJJ_stated_teaching_influence",
+      "status": "influence_only",
+      "verifiedDate": "2026-08-17"
+    },
+    {
+      "from": "Chris Haueter",
+      "to": "Sandy Jose Nunez",
+      "type": "historical_influence",
+      "source": "/bio",
+      "sourceType": "SSBJJ_stated_teaching_influence",
+      "status": "influence_only",
+      "verifiedDate": "2026-08-17"
+    }
+  ],
+  "excludedFormalClaims": [
+    {
+      "claim": "Sensei Sandy BJJ is a Clockwork Jiu Jitsu affiliate",
+      "status": "unverified",
+      "sources": []
+    },
+    {
+      "claim": "Clockwork provides ongoing technical quality assurance for Sensei Sandy BJJ",
+      "status": "unverified",
+      "sources": []
+    }
+  ]
+}

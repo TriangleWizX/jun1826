@@ -53,6 +53,7 @@
     "qa:location:provenance": "node scripts/qa-location-provenance.mjs",
     "qa:attendance:policy": "node scripts/qa-attendance-policy.mjs",
     "qa:product:lifecycle": "node scripts/qa-product-lifecycle.mjs",
+    "qa:lineage:integrity": "node scripts/qa-lineage-integrity.mjs",
     "qa:lazy-loading": "node scripts/qa-lazy-loading.mjs",
     "qa:images": "node scripts/qa-images.mjs",
     "qa:image-contract": "node scripts/qa-image-contract.mjs",

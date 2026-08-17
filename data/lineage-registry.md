@@ -1,14 +1,14 @@
 # Lineage Source & Verification Registry
 
-This registry maintains the metadata, validation status, and source material for the Brazilian Jiu-Jitsu lineage at Sensei Sandy BJJ. It is updated periodically to ensure all external links are active and all historical records remain accurate.
+This registry maintains claim-level relationship types, provenance, and source status for the Brazilian Jiu-Jitsu lineage at Sensei Sandy BJJ. A source that verifies a person's role does not automatically verify every relationship claim attached to that person.
 
-**Last Full Verification Audit:** July 2026
+**Last Full Verification Audit:** August 17, 2026
 
 ---
 
 ## 1. Registry Schema
 
-Each member of the lineage is registered with the following fields:
+Each claim is registered with the following fields:
 - **Member ID:** Unique lowercase slug identifier.
 - **Display Name:** Canonical spelling for UI display.
 - **Name Variants:** Common alternative spellings or nicknames.
@@ -18,10 +18,11 @@ Each member of the lineage is registered with the following fields:
 - **Followed By:** Immediate successor in the line.
 - **Profile Anchor:** Target ID on `/sensei-jiu-jitsu`.
 - **Short Bio:** Summary of life and contributions (80-140 words).
-- **Connection Copy:** Explicit context of their relationship in this lineage.
-- **Primary Source:** Verified external resource URL.
-- **Backup Source:** Supporting citation or Wikipedia link.
-- **Source Checked Date:** Last time links were verified as working (HTTP 200).
+- **Connection Copy:** Explicit context of the relationship claim.
+- **Relationship Type:** `black_belt_award`, `primary_training`, `documented_training`, `historical_influence`, or `family_relationship`.
+- **Claim Status:** Verified, primary internal evidence, historical context, or unverified.
+- **Supporting Source:** The source that supports this specific claim, not merely the named person.
+- **Source Checked Date:** Last time the source link was verified as working (HTTP 200).
 - **Portrait Filename:** Relative path to the optimized WebP asset.
 - **Portrait Credit:** Author or source of the portrait.
 - **Portrait License:** Usage license under copyright law.
@@ -201,7 +202,7 @@ Each member of the lineage is registered with the following fields:
 - **Followed By:** None (Active Instructor)
 - **Profile Anchor:** `#sandy-jose-nunez`
 - **Short Bio:** Sandy Jose Nunez is a Brazilian Jiu-Jitsu black belt, the head instructor of Sensei Sandy BJJ in Tannersville, NY, and the founder of Jiu Jitsu Sandy. Sandy began his Jiu-Jitsu journey in New York City, dedicating years of training under Josh Griffiths at Clockwork Jiu Jitsu. After earning his black belt, Sandy relocated to the Catskills to open Sensei Sandy BJJ, a studio designed specifically for local families, busy adults, and beginners. Sandy's coaching philosophy is centered on safety, structured progression, and a calm, supportive learning environment. He is dedicated to helping kids, teens, and adults build confidence, coordination, and functional skill at a comfortable pace.
-- **Connection Copy:** Sandy Jose Nunez trained from white belt to black belt under Josh Griffiths at Clockwork Jiu Jitsu in NYC. He is the head instructor at Sensei Sandy BJJ in Tannersville, NY, bringing this prestigious lineage directly to the Catskills.
+- **Connection Copy:** Sandy Jose Nunez trained from white belt to black belt under Josh Griffiths at Clockwork Jiu Jitsu in NYC. He is now the head instructor at Sensei Sandy BJJ in Tannersville, where he applies that technical foundation in his own coaching system.
 - **Primary Source:** [Sensei Sandy Bio Page](https://senseisandy.com/bio)
 - **Backup Source:** Academy Promotion Photo
 - **Source Checked Date:** July 2026
