@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "kids": {"id": "kids", "label": "Kids", "ageRange": "5–9", "minAge": 5, "maxAge": 9, "programPage": "/bjj-classes/kids-tannersville-ny"},
+    "teens": {"id": "teens", "label": "Teens", "ageRange": "10–17", "minAge": 10, "maxAge": 17, "programPage": "/bjj-classes/teens-tannersville-ny"},
+    "adults": {"id": "adults", "label": "Adults", "ageRange": "18+", "minAge": 18, "programPage": "/bjj-classes/adults-tannersville-ny"}
+  },
+  "scheduledClasses": {
+    "youthTeen": {"id": "youth-teen", "label": "Youth + Teen Class", "ageRange": "5–17", "eligibleProfiles": ["kids", "teens"], "timeSummary": "5:00 PM Monday, Tuesday, Wednesday, and Friday"},
+    "adult": {"id": "adult", "label": "Adult Class", "ageRange": "18+", "eligibleProfiles": ["adults"], "timeSummary": "6:00 PM Monday, Tuesday, Wednesday, and Friday"},
+    "adultSaturdayNoGi": {"id": "adult-saturday-no-gi", "label": "Saturday Adult No-Gi", "ageRange": "18+", "eligibleProfiles": ["adults"], "timeSummary": "10:30–11:30 AM Saturday", "youthException": "Sandy approval required"}
+  },
+  "products": {
+    "youthCore": {"id": "core-culture-youth", "label": "Youth Core Culture", "ageRange": "5–17", "eligibleProfiles": ["kids", "teens"]},
+    "adultCore": {"id": "core-culture-adult", "label": "Adult Core Culture", "ageRange": "18+", "eligibleProfiles": ["adults"]}
+  },
+  "transitions": {
+    "age9To10": "Profile changes from Kids to Teens; the regular scheduled class normally remains Youth + Teen Class.",
+    "age17To18": "Sandy confirms the transition timing for the student's current term; the site makes no automatic tuition or class promise."
+  }
+}

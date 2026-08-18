@@ -19,7 +19,7 @@
   const ageLaneLabel = form.querySelector('label[for="ageLane"]');
   // Age is the reliable first-pass router; keep the derived value in the
   // submission for Sandy/admin overrides without asking parents to classify it.
-  if (ageLaneLabel) ageLaneLabel.textContent = 'Suggested first lane (based on age)';
+  if (ageLaneLabel) ageLaneLabel.textContent = 'Student profile (set from age)';
   if (form.ageLane) {
     form.ageLane.setAttribute('aria-readonly', 'true');
     form.ageLane.tabIndex = -1;
