@@ -36,12 +36,14 @@ const resolveVirtualTarget = async (target) => {
   ];
 
   for (const candidate of candidates) {
-    const fullPath = path.join(ROOT, candidate);
-    try {
-      await fs.access(fullPath);
-      return fullPath;
-    } catch {
-      // Continue through common clean-URL SSI target variants.
+    for (const prefix of ['', 'src/']) {
+      const fullPath = path.join(ROOT, prefix + candidate);
+      try {
+        await fs.access(fullPath);
+        return fullPath;
+      } catch {
+        // Continue through canonical source and clean-URL variants.
+      }
     }
   }
 
