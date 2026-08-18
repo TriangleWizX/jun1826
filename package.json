@@ -106,6 +106,7 @@
     "qa:temporal": "node scripts/qa-temporal-programs.mjs",
     "qa:taxonomy": "node scripts/qa-taxonomy.mjs",
     "qa:faq": "node scripts/qa-faq.mjs",
+    "qa:safety-learning": "node scripts/qa-safety-learning.mjs",
     "qa:index-surfaces": "node scripts/qa-index-surfaces.mjs",
     "plan:finalize": "bash scripts/plan-finalize.sh",
     "qa:all": "npm run qa:schedule && npm run build && npm run qa:links:inventory && npm run qa:funnel && npm run qa:links:static && npm run qa:links:existence && npm run qa:css:links && npm run qa:components:bundles && npm run qa:css:minified && npm run qa:icons:local && npm run qa:css:bootstrap && npm run qa:css:routes && npm run qa:css:route-bundles && npm run qa:css:budget && npm run qa:assets:fingerprint:fixture && npm run qa:assets:canon && npm run qa:css:assets:baseline && npm run qa:external:blocked && npm run qa:videos && npm run qa:priority:inlinks && npm run qa:orphans && npm run qa:nav && npm run qa:doctype && npm run qa:ssi && npm run qa:seo && npm run qa:lazy-loading && npm run qa:images && npm run qa:near && npm run qa:location:provenance && npm run qa:attendance:policy && npm run qa:schema && npm run qa:glossary",
