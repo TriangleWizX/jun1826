@@ -118,6 +118,10 @@ html:has(body.page-home), body.page-home {
 .page-home .ss-home-experience-card p:last-child, .page-home .ss-home-option-card p:last-child { margin-top: auto !important; }
 .page-home .ss-home-option-card > p.fw-bold { min-height: 1.5rem; }
 .page-home .ss-home-option-card h3, .page-home .ss-home-option-card p { width: 100%; text-align: center; }
+.page-home .ss-reviews-village__card { justify-items: center; text-align: center; }
+.page-home .ss-reviews-village__card .ss-stars,
+.page-home .ss-reviews-village__card .ss-card__quote,
+.page-home .ss-reviews-village__card .ss-card__name { width: 100%; text-align: center; }
 .page-home .ss-home-section .row { --bs-gutter-y: 1.25rem; }
 .page-home .ss-home-section img { max-width: 100%; }
 .page-home .ss-home-section--links { background: var(--home-surface-2); }
