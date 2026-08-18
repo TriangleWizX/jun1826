@@ -112,7 +112,7 @@ RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^faqs\.html/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^free\-bjj\-intro\-tannersville\-nyadults/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
 RewriteRule ^free\-bjj\-intro\-tannersville\-nykids/?$ https://senseisandy.com/kids [L,R=301,NE]
-RewriteRule ^free\-bjj\-intro\-tannersville\-nyteens/?$ https://senseisandy.com/teen-jiu-jitsu-tannersville-ny [L,R=301,NE]
+RewriteRule ^free\-bjj\-intro\-tannersville\-nyteens/?$ https://senseisandy.com/bjj-classes/teens-tannersville-ny [L,R=301,NE]
 RewriteRule ^free\-intro/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^glossary/collar\-tie/?$ https://senseisandy.com/bjj-glossary/collar-tie [L,R=301,NE]
 RewriteRule ^glossary/guard\-pass/?$ https://senseisandy.com/bjj-glossary/guard-pass [L,R=301,NE]
@@ -601,7 +601,7 @@ RewriteRule ^how-class-works/?$ /how-class-works.html [L]
 # Legacy route redirects to new keyword-optimized routes
 RewriteRule ^adult-bjj(?:/|\.html)?$ /bjj-classes/adults-tannersville-ny [R=301,L]
 RewriteRule ^kids(?:/|\.html)?$ /bjj-classes-kids-tannersville-ny [R=301,L]
-RewriteRule ^teen-jiu-jitsu-tannersville-ny(?:/|\.html)?$ /bjj-classes-teens-tannersville-ny [R=301,L]
+RewriteRule ^teen-jiu-jitsu-tannersville-ny(?:/|\.html)?$ /bjj-classes/teens-tannersville-ny [R=301,L]
 
 # 5. Internally serve .html files when clean URLs are requested
 RewriteCond %{REQUEST_FILENAME} !-d
