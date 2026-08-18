@@ -1,0 +1,28 @@
+[
+  {
+    "id": "stegelhoek-2025-bjj-injury-survey",
+    "publicText": "A retrospective survey of BJJ practitioners reported different injury incidence for training and competition.",
+    "claimType": "epidemiology",
+    "population": "881 surveyed BJJ practitioners, mostly adult men",
+    "intervention": "BJJ training and competition as reported by participants",
+    "outcome": "self-reported injuries per training hour and competition match",
+    "source": "https://pubmed.ncbi.nlm.nih.gov/40092168/",
+    "sourceType": "retrospective survey",
+    "reviewedDate": "2026-08-17",
+    "allowedContexts": ["research context", "risk-management rationale"],
+    "prohibitedInferences": ["SSBJJ injury rate", "youth injury rate", "individual risk prediction", "injury prevention guarantee"]
+  },
+  {
+    "id": "ding-2022-youth-team-sport-warmup",
+    "publicText": "Removed from public BJJ safety evidence because its pooled reduction concerns warm-up interventions across youth team sports.",
+    "claimType": "intervention",
+    "population": "children and adolescents in team-sport studies",
+    "intervention": "structured warm-up programs",
+    "outcome": "sports injury rates",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9140806/",
+    "sourceType": "systematic review and meta-analysis",
+    "reviewedDate": "2026-08-17",
+    "allowedContexts": ["internal claim audit"],
+    "prohibitedInferences": ["BJJ injury reduction", "SSBJJ injury reduction", "36% safer BJJ"]
+  }
+]

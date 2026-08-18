@@ -57,6 +57,7 @@
     "qa:flexible:access": "node scripts/qa-flexible-access.mjs",
     "qa:end-of-term:review": "node scripts/qa-end-of-term-review.mjs",
     "qa:progress:communication": "node scripts/qa-progress-communication.mjs",
+    "qa:health:claims": "node scripts/qa-health-claims.mjs",
     "qa:lazy-loading": "node scripts/qa-lazy-loading.mjs",
     "qa:images": "node scripts/qa-images.mjs",
     "qa:image-contract": "node scripts/qa-image-contract.mjs",
