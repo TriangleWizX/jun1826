@@ -8,7 +8,14 @@ const summerAcademy = {
   capacity: 12,
   manuallyClosed: false,
   lateEnrollmentAllowed: false,
-  futureAction: "Text Sandy About Future Summer Programs"
+  futureAction: "Text Sandy About Future Summer Programs",
+  temporaryContent: {
+    owner: "Summer Academy",
+    startsAt: "2026-07-14T00:00:00-04:00",
+    endsAt: "2026-08-20T23:59:59-04:00",
+    fallback: "future-interest",
+    sourceProgram: "summer-academy-2026"
+  }
 };
 
 export function getProgramState(now, cohort) {
