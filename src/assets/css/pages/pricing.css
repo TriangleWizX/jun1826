@@ -266,6 +266,12 @@ body.page-options-pricing .ss-eyebrow {
     border-color 320ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
+/* Keep the legacy membership cards aligned with the newer pricing cards. */
+.ss-options-card > .mb-3 { min-height: 10.5rem; }
+.ss-options-card > .mb-3 h3 { min-height: 2.25rem; }
+.ss-options-card > .display-5 { min-height: 3rem; }
+.ss-options-card > .small.mb-4 { min-height: 2.5rem; }
+
 .ss-price-card::before,
 .ss-pricing-card::before {
   content: "";
