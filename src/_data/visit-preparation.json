@@ -1,0 +1,32 @@
+{
+  "goalMapping": {
+    "label": "Goal Mapping Visit",
+    "duration": "About 15 minutes",
+    "clothing": "Normal everyday clothes",
+    "workout": false,
+    "arrivalMinutes": 5,
+    "bring": ["Your calendar or schedule questions"],
+    "expect": ["Studio tour", "Plain-language safety conversation", "Goals and schedule fit", "First-class recommendation"],
+    "waiver": "Complete it before the visit or on-site; follow Sandy's confirmation instructions."
+  },
+  "firstClass": {
+    "label": "Coached First Class",
+    "duration": "Normal class duration",
+    "clothing": "Clean athletic clothing plus the class-specific Gi / No-Gi guidance",
+    "workout": true,
+    "arrivalMinutes": 10,
+    "bring": ["Water"],
+    "remove": ["Jewelry", "Zippers, buttons, or hard/sharp hardware"],
+    "expect": ["Active safety walkthrough", "Partner matching", "Beginner-paced movement", "Coached resistance activities"]
+  },
+  "youthCombinedIntro": {
+    "label": "Youth Combined Intro + Class",
+    "duration": "One 45-minute class; plan 60–75 minutes total",
+    "clothing": "Clean athletic clothing or assigned uniform",
+    "workout": true,
+    "arrivalMinutes": 20,
+    "parentOnSite": true,
+    "loanerGi": "Ask whether a loaner is available; availability is not guaranteed.",
+    "waiver": "Required before confirmation."
+  }
+}
