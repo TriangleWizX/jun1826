@@ -24,6 +24,7 @@ assert.match(script, /current < steps\.length - 1/);
 assert.match(script, /current -= 1/);
 assert.match(script, /SS_TRACK_EVENT/);
 assert.match(script, /checkoutAdapter/);
+assert.match(script, /data-hw-package/);
 for (const event of ['hyphen_ice_added', 'hyphen_delivery_selected', 'hyphen_configuration_completed', 'hyphen_checkout_started']) assert.match(script, new RegExp(event));
 assert.doesNotMatch(source, /LocalBusiness|SportsActivityLocation|Free Intro/i);
 assert.doesNotMatch(output, /priceRange|alcohol.*included.*true/i);

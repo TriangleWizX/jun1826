@@ -40,6 +40,11 @@ function render() {
   if (current > 0) send(['hyphen_dates_selected','hyphen_property_entered','hyphen_guest_count_changed','hyphen_cuisine_selected','hyphen_drink_selected','hyphen_size_selected','hyphen_sourcing_selected','hyphen_ice_added','hyphen_delivery_selected'][current - 1]);
 }
 document.querySelectorAll('[data-hw-start]').forEach((link) => link.addEventListener('click', () => send('hyphen_configurator_started')));
+document.querySelectorAll('[data-hw-package]').forEach((link) => link.addEventListener('click', () => {
+  const choice = form.querySelector(`input[name="drinkPackage"][value="${link.dataset.hwPackage}"]`);
+  if (choice) { choice.checked = true; choice.dispatchEvent(new Event('change', { bubbles: true })); }
+  send('hyphen_configurator_started', { configuration_value: link.dataset.hwPackage });
+}));
 next.addEventListener('click', () => { if (!valid()) return; if (current < steps.length - 1) { current += 1; render(); } else { const handoff = checkoutAdapter.start({ ...config, bottleSize: form.elements.bottleSize.value, deliveryDay: form.elements.deliveryDay?.value || null }); send('hyphen_configuration_completed', { alcohol_mode: handoff.configuration.alcoholMode, bottle_size: handoff.configuration.bottleSize }); send('hyphen_checkout_started', { configuration_value: handoff.mode }); document.querySelector('#hw-summary-status').textContent = 'Configuration complete. Reservation will be connected after merchant data and delivery operations are confirmed.'; next.disabled = true; next.textContent = 'Inquiry seam ready'; } });
 back.addEventListener('click', () => { current -= 1; render(); });
 form.addEventListener('change', (event) => { config[event.target.name] = event.target.value; updateSummary(); });
