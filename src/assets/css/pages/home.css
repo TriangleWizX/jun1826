@@ -76,6 +76,7 @@ html:has(body.page-home), body.page-home {
 .page-home .ss-home-section-head p { max-width: 32rem; margin: 0 auto; font: .95rem/1.7 var(--home-sans); }
 .page-home .ss-home-section > .container.text-center > h2,
 .page-home .ss-home-section > .container.text-center > .ss-home-kicker { margin-inline: auto; }
+.page-home .ss-main section > .container > p { margin-inline: auto; }
 .page-home .ss-home-lanes-panel > .ss-home-kicker { display: block; text-align: center; }
 .page-home .ss-home-lanes-panel, .page-home .ss-home-flow-card, .page-home .ss-home-links-card { text-align: center; }
 .page-home .ss-home-lane-bento-body p, .page-home .ss-home-step p { margin-inline: auto; text-align: center; }
