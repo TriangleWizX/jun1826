@@ -207,7 +207,7 @@ const runStaticAudit = async (reason) => {
   console.warn(`Browser sticky overlap audit unavailable (${reason}). Running static sticky contract audit.`);
   const [navHtml, globalCss] = await Promise.all([
     fs.readFile(path.join(ROOT, 'nav-include.html'), 'utf8'),
-    fs.readFile(path.join(ROOT, 'assets/css/global.css'), 'utf8')
+    fs.readFile(path.join(ROOT, 'src/assets/css/global.css'), 'utf8')
   ]);
 
   ensure(navHtml.includes('.ss-mobile-actions'), 'nav-include.html: expected mobile sticky actions class missing.');
