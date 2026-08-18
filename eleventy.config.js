@@ -60,6 +60,15 @@ export default function (eleventyConfig) {
 
   // Custom Nunjucks/liquid filters if needed
   eleventyConfig.addFilter("json", (obj) => JSON.stringify(obj, null, 2));
+  eleventyConfig.addFilter("metaDescription", (value) => {
+    const text = String(value || "").replace(/\s+/g, " ").trim();
+    const expanded = text.length < 120
+      ? `${text} Learn the basics and how the term fits a calm, beginner-friendly first class.`
+      : text;
+    if (expanded.length <= 160) return expanded;
+    const shortened = expanded.slice(0, 157).replace(/\s+\S*$/, "").trim();
+    return `${shortened}...`;
+  });
   eleventyConfig.addFilter("stripDocumentShell", (content) => {
     if (typeof content !== "string" || !/<html\b/i.test(content)) return content;
     return content.replace(

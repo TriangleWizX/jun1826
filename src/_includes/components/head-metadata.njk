@@ -5,7 +5,7 @@
 <link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
 <link href="/site.webmanifest" rel="manifest"/>
 <title>{{ title | default("Sensei Sandy Jiu-Jitsu | Sandy Jiu Jitsu Tannersville NY") }}</title>
-<meta content="{{ description | default("Sensei Sandy Jiu-Jitsu (Sandy Jiu Jitsu) offers calm, beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Free Intro for kids, teens, and adults.") }}" name="description"/>
+<meta content="{{ description | default("Sensei Sandy Jiu-Jitsu (Sandy Jiu Jitsu) offers calm, beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Free Intro for kids, teens, and adults.") | metaDescription }}" name="description"/>
 {% set canonical = canonicalUrl or page.url %}
 {% set canonicalHref = canonical if canonical.startsWith("http") else "https://senseisandy.com" ~ canonical %}
 <link href="{{ canonicalHref }}" rel="canonical"/>
