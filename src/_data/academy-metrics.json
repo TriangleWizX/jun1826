@@ -1,13 +1,20 @@
 {
   "lastVerified": "2026-08-18",
+  "evidenceLayers": ["external-research", "first-party-operational", "individual-observation"],
   "metrics": {
-    "weekly-class-count": {"value": 9, "status": "current-service", "period": "Current published schedule", "source": "src/_data/schedule.json", "public": true},
-    "class-cap": {"value": 12, "status": "current-service", "period": "Current small-group policy", "source": "src/options-pricing.html", "public": true},
-    "core-culture-rhythm": {"value": 3, "status": "current-service", "period": "12-week first term", "source": "src/options-pricing.html", "public": true},
-    "first-year-class-count": {"value": 293, "status": "pending-verification", "period": "First 12 months at 6045 Main Street", "source": "Attendance ledger pending reconciliation", "public": false},
-    "median-class-size": {"value": null, "status": "not-yet-measured", "period": "Minimum 30 observations", "source": "Private measurement definition", "public": false},
-    "intro-funnel": {"value": null, "status": "not-yet-measured", "period": "Defined funnel cohort", "source": "Private measurement definition", "public": false},
-    "term-completion-rate": {"value": null, "status": "not-yet-measured", "period": "12-week Core Culture term", "source": "Private measurement definition", "public": false},
-    "renewal-rate": {"value": null, "status": "not-yet-measured", "period": "Defined renewal cohort", "source": "Private measurement definition", "public": false}
+    "weekly-class-count": {"category": "current-service", "value": 9, "status": "current-service", "period": "Current published schedule", "source": "src/_data/schedule.json", "aggregation": "count active groupClasses", "definition": "Four Youth/Teen and five Adult recurring group sessions in the published schedule.", "public": true},
+    "class-cap": {"category": "current-service", "value": 12, "status": "current-service", "period": "Current small-group policy", "source": "src/options-pricing.html", "aggregation": "policy maximum", "definition": "Maximum planned students per small-group class; a coaching constraint, not scarcity messaging.", "public": true},
+    "core-culture-rhythm": {"category": "current-service", "value": 3, "status": "current-service", "period": "12-week first term", "source": "src/options-pricing.html", "aggregation": "planned sessions per week", "definition": "Three planned classes per week, up to 36 scheduled classes over the first 12-week term.", "public": true},
+    "first-year-class-count": {"category": "operational-history", "value": 293, "status": "pending-verification", "period": "First 12 months at 6045 Main Street", "source": "Attendance ledger and class calendar pending reconciliation", "aggregation": "count delivered sessions", "definition": "A delivered session must be present in the canonical class calendar; attendance records corroborate operation but do not replace the calendar.", "verification": ["attendance-ledger", "class-calendar"], "public": false},
+    "median-class-size": {"category": "operations", "value": null, "status": "not-yet-measured", "period": "Explicit date window required; minimum 30 regular classes", "source": "Private session and attendance records", "aggregation": "median attendees per delivered regular class", "definition": "Exclude canceled, holiday, private, and event sessions; report N, date window, quartiles, and maximum with any public value.", "minimumObservationCount": 30, "public": false},
+    "intro-funnel": {"category": "business-performance", "value": null, "status": "not-yet-measured", "period": "Defined cohort and date window required", "source": "Booking ledger", "aggregation": "reserved → attended → first class attended → Core Culture started", "definition": "Operational funnel only; conversion rates remain private by default.", "public": false},
+    "term-completion-rate": {"category": "business-performance", "value": null, "status": "not-yet-measured", "period": "12-week Core Culture cohort", "source": "Enrollment ledger", "aggregation": "completers / starters", "definition": "A completer reaches the end of the first paid term without cancellation or refund; this is not a student quality score.", "public": false},
+    "renewal-rate": {"category": "business-performance", "value": null, "status": "not-yet-measured", "period": "Defined first-term cohort", "source": "Enrollment ledger", "aggregation": "next-term continuers / completed first-term cohort", "definition": "Continuation is measured separately from first-term completion and remains a choice, not an attendance virtue.", "public": false}
+  },
+  "tracking": {
+    "session": {"source": "api/v1/sessions.php", "requiredFields": ["id", "program_id", "start_at", "end_at", "capacity"], "deliveredDefinition": "Calendar session not canceled; reconcile status in the canonical calendar before counting."},
+    "attendance": {"source": "api/v1/attendance.php", "requiredFields": ["session_id", "person_id", "status", "checked_in_at"], "allowedStatuses": ["present", "late", "excused"], "neverMapsTo": ["rank", "promotion", "capability"]},
+    "introFunnel": {"source": "api/v1/webhook_booking.php and booking ledger", "stages": ["intro_reserved", "intro_attended", "first_class_reserved", "first_class_attended", "core_culture_started"]},
+    "coreCulture": {"source": "enrollment ledger", "fields": ["term_started_at", "planned_sessions", "completed_sessions", "rescheduled_sessions", "missed_sessions", "term_completed_at", "renewed_at"]}
   }
 }
