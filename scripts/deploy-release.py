@@ -20,6 +20,8 @@ def changed_outputs(commit):
         if name.startswith('src/'):
             if name == 'src/evidence.html':
                 candidate = ROOT / 'dist' / 'evidence' / 'index.html'
+            elif name.startswith('src/') and name.endswith('.njk'):
+                candidate = ROOT / 'dist' / name[4:-4] / 'index.html'
             else:
                 candidate = ROOT / 'dist' / name[4:]
         elif name in ROOT_FILES:
