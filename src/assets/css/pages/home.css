@@ -116,8 +116,9 @@ html:has(body.page-home), body.page-home {
 
 @media (min-width: 48rem) {
   .home-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(20rem, .8fr); }
-  .home-hero__content { text-align: left; }
-  .home-hero__desc, .home-hero__pathos { margin-left: 0; margin-right: 0; }
+  .home-hero__content { margin-inline: auto; text-align: center; }
+  .home-hero__desc, .home-hero__pathos { margin-left: auto; margin-right: auto; }
+  .home-hero__actions { justify-content: center; }
   .page-home .ss-home-section-head { grid-template-columns: minmax(0, 1fr) minmax(16rem, .65fr); }
   .ss-home-lane-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
   .page-home .ss-home-lane-bento-card--adults { grid-column: 1 / -1; }
