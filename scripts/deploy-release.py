@@ -5,8 +5,8 @@ import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package', 'src/')
-DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', '413/')
-ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'site-shell.html', 'nav-include.html', 'report-card.html', 'after-booking-promise.html', 'bjj_anatomy_game.html', 'core-promise-full.html', 'core-promise-short.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html'}
+DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', 'free-bjj-intro-tannersville-ny/', 'evidence/', '413/')
+ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'site-shell.html', 'nav-include.html', 'report-card.html', 'after-booking-promise.html', 'bjj_anatomy_game.html', 'core-promise-full.html', 'core-promise-short.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 
 def changed_outputs(commit):
@@ -18,7 +18,10 @@ def changed_outputs(commit):
     sitewide_release = 'eleventy.config.js' in names
     for name in names:
         if name.startswith('src/'):
-            candidate = ROOT / 'dist' / name[4:]
+            if name == 'src/evidence.html':
+                candidate = ROOT / 'dist' / 'evidence' / 'index.html'
+            else:
+                candidate = ROOT / 'dist' / name[4:]
         elif name in ROOT_FILES:
             candidate = ROOT / 'dist' / name
         elif name.startswith(DEPLOYABLE_ROOTS):
