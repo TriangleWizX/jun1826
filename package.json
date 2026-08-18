@@ -59,6 +59,7 @@
     "qa:progress:communication": "node scripts/qa-progress-communication.mjs",
     "qa:health:claims": "node scripts/qa-health-claims.mjs",
     "qa:homepage:synthesis": "node scripts/qa-homepage-synthesis.mjs",
+    "qa:student:hub": "node scripts/qa-student-hub-authority.mjs",
     "qa:lazy-loading": "node scripts/qa-lazy-loading.mjs",
     "qa:images": "node scripts/qa-images.mjs",
     "qa:image-contract": "node scripts/qa-image-contract.mjs",
