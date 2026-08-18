@@ -1,8 +1,23 @@
 {
-  "primaryCtaLabel": "Reserve Free Intro",
-  "supportingText": "Start with a calm Goal Mapping conversation; the general path schedules the coached first class afterward.",
+  "primaryCtaLabel": "Reserve Your Free Intro",
+  "supportingText": "Start with a 15-minute Goal Mapping visit in normal clothes; no workout is required, and Sandy schedules the coached first class afterward.",
   "goalMappingDurationMinutes": 15,
-  "goalMappingClothing": "Youth: clean athletic clothing; adults: lane-specific preparation guidance",
+  "goalMappingClothing": "Normal clothes; no workout required",
+  "generalPath": {
+    "name": "Free Intro",
+    "firstStep": "15-minute Goal Mapping visit",
+    "workoutRequired": false,
+    "normalClothes": true,
+    "classSameVisit": false,
+    "nextStep": "Sandy recommends and schedules the coached first class afterward"
+  },
+  "youthCombinedPath": {
+    "name": "Youth Goal Mapping + coached class",
+    "workoutRequired": true,
+    "normalClothes": false,
+    "classSameVisit": true,
+    "scope": "Only the specialized youth booking workflow"
+  },
   "firstClassFree": true,
   "steps": [
     {

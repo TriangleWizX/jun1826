@@ -186,8 +186,8 @@
   hidden
 >
   <div class="schedule-dialog__panel">
-    <p id="schedule-dialog-title" class="modal-title">Plan Your First Class</p>
-    <p id="schedule-dialog-description">Leave the best number to reach you. Sandy will help you choose the right class time.</p>
+    <p id="schedule-dialog-title" class="modal-title">Plan Your First Visit</p>
+    <p id="schedule-dialog-description">Leave the best number to reach you. Sandy will help you choose the right starting lane and first class.</p>
 
     <form id="schedule-dialog-form" action="https://formspree.io/f/myzpdvay" method="POST">
       <label for="schedule-lead-name" style="display: block; margin-bottom: 1rem; font-weight: 600;">
@@ -199,10 +199,10 @@
         <input type="tel" id="schedule-lead-phone" name="phone" autocomplete="tel" inputmode="tel" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
       </label>
       <input type="hidden" name="_subject" value="New Schedule Request (Modal)">
-      <button type="submit" class="ss-btn ss-btn-primary" style="width: 100%;">Continue to Schedule</button>
+      <button type="submit" class="ss-btn ss-btn-primary" style="width: 100%;">Continue</button>
     </form>
     <p id="schedule-dialog-status" class="ss-lead-capture-status" role="status" aria-live="polite" hidden style="margin-top: 1rem; color: #116A42; font-weight: 600;">
-      Thank you. Sandy will call or text you soon.
+      Thanks. Sandy will text or call to help choose your next step.
     </p>
     <button
       type="button"
@@ -331,7 +331,7 @@
           if (!res.ok) throw new Error('Submission failed');
           form.hidden = true;
           if (status) {
-            status.textContent = 'Thank you. Sandy will call or text you soon.';
+            status.textContent = 'Thanks. Sandy will text or call to help choose your next step.';
             status.hidden = false;
           }
           setTimeout(function () {

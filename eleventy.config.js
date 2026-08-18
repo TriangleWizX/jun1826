@@ -58,6 +58,21 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/sitemap-glossary.xml": "sitemap-glossary.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap.xml": "sitemap.xml" });
 
+  // Editorial articles historically carried a duplicated acquisition rail.
+  // Normalize that exact legacy shell at the shared build boundary so every
+  // consuming route gets the same First-Visit Contract and SSI payload.
+  eleventyConfig.addTransform("normalize-acquisition-rail", function (content) {
+    if (typeof content !== "string" || !content.includes('class="ss-article-rail"')) {
+      return content;
+    }
+    return content.replace(/<aside[^>]*class="ss-article-rail"[\s\S]*?<\/aside>/gi, (rail) => {
+      if (!/Free Intro Class|Free Intro Small-group class|Try This In|learn the basics with calm instruction|href="\/student-hub"/i.test(rail)) {
+        return rail;
+      }
+      return '<!--#include virtual="/partials/acquisition-editorial-rail.html" -->';
+    });
+  });
+
   // Custom Nunjucks/liquid filters if needed
   eleventyConfig.addFilter("json", (obj) => JSON.stringify(obj, null, 2));
   eleventyConfig.addFilter("metaDescription", (value) => {
