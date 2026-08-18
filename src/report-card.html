@@ -927,6 +927,11 @@ permalink: "/report-card.html"
 <span class="rc-card-subtext">Optional context for this review</span>
 </div>
 <div class="rc-card rc-card--schedule">
+<div class="rc-card-header"><i class="bi bi-bullseye"></i><span class="rc-card-label">Problem tested</span></div>
+<input aria-label="Problem tested input" class="rc-value-input" id="problem-tested" type="text" placeholder="Problem tested"/>
+<span class="rc-card-subtext">Name the problem, not a technique count</span>
+</div>
+<div class="rc-card rc-card--schedule">
 <div class="rc-card-header"><i class="bi bi-signpost-split"></i><span class="rc-card-label">Observation context</span></div>
 <select aria-label="Observation context" class="rc-value-input" id="observation-context">
 <option value="">Choose context (optional)</option>
@@ -1152,6 +1157,7 @@ permalink: "/report-card.html"
       student,
       date ? `Review date: ${date}` : '',
       type ? `Review type: ${type}` : '',
+      value('problem-tested') ? `Problem tested: ${value('problem-tested')}` : '',
       value('observation-context') ? `Observation context: ${value('observation-context')}` : '',
       `Current focus: ${primary}${secondary ? `; ${secondary}` : ''}`,
       '',
@@ -1176,7 +1182,7 @@ permalink: "/report-card.html"
   });
   document.getElementById('clear-report')?.addEventListener('click', () => {
     document.querySelectorAll('#report-card-guide-title ~ * input, #report-card-guide-title ~ * textarea').forEach((field) => { field.value = ''; });
-    ['student-name', 'level', 'coaches', 'schedule', 'observation-context', 'review-date', 'primary-focus', 'secondary-focus', 'feedback-working', 'feedback-next', 'feedback-yours'].forEach((id) => { const field = document.getElementById(id); if (field) field.value = ''; });
+    ['student-name', 'level', 'coaches', 'schedule', 'problem-tested', 'observation-context', 'review-date', 'primary-focus', 'secondary-focus', 'feedback-working', 'feedback-next', 'feedback-yours'].forEach((id) => { const field = document.getElementById(id); if (field) field.value = ''; });
     const type = document.getElementById('review-type'); if (type) type.selectedIndex = 0;
   });
 })();
