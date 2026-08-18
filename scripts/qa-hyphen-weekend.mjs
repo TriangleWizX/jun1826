@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+
+const source = fs.readFileSync('src/hyphen-weekend.html', 'utf8');
+const css = fs.readFileSync('src/assets/css/hyphen-weekend.css', 'utf8');
+const output = fs.readFileSync('dist/hyphen-weekend/index.html', 'utf8');
+const script = fs.readFileSync('src/assets/js/hyphen-weekend.js', 'utf8');
+const data = fs.readFileSync('src/_data/hyphenWeekend.js', 'utf8');
+
+assert.equal((output.match(/<h1\b/gi) || []).length, 1, 'route must have exactly one H1');
+assert.match(output, /rel="canonical" href="https:\/\/senseisandy\.com\/hyphen-weekend\//);
+assert.match(output, /name="robots" content="noindex, follow"/);
+for (const text of ['Build your weekend', 'configurator', 'Bright', 'Silk', 'Deep', '750 mL', 'Cocktail Cubes', 'Coming soon', 'Guest-supplied spirit', 'Alcohol is not included', 'Bruce handles dinner', 'Direction pending']) assert.match(output, new RegExp(text, 'i'), `missing ${text}`);
+assert.equal((source.match(/data-step=/g) || []).length, 9, 'all nine enabled configurator decisions must exist');
+assert.match(source, /name="cuisine"/);
+assert.match(source, /<form id="hw-form"[^>]*novalidate/);
+assert.ok((source.match(/<fieldset data-step=/g) || []).length === (source.match(/<legend>/g) || []).length, 'every configurator step needs a legend');
+assert.match(source, /aria-live="polite"/);
+assert.match(css, /prefers-reduced-motion/);
+assert.match(source, /class="hw-mobile-cta"/);
+assert.match(source, /data-step="7"/);
+assert.match(source, /name="deliveryDay"/);
+assert.match(script, /current < steps\.length - 1/);
+assert.match(script, /current -= 1/);
+assert.match(script, /SS_TRACK_EVENT/);
+assert.match(script, /checkoutAdapter/);
+for (const event of ['hyphen_ice_added', 'hyphen_delivery_selected', 'hyphen_configuration_completed', 'hyphen_checkout_started']) assert.match(script, new RegExp(event));
+assert.doesNotMatch(source, /LocalBusiness|SportsActivityLocation|Free Intro/i);
+assert.doesNotMatch(output, /\$\d|priceRange|alcohol.*included.*true/i);
+assert.match(data, /ALCOHOL_INCLUDED_ENABLED\s*=\s*false/);
+console.log('Hyphen Weekend QA passed');

@@ -1,0 +1,75 @@
+---
+permalink: "/hyphen-weekend/"
+title: "Hyphen Weekend | Catskills Food, Cocktail Kits & Ice"
+description: "Food, clarified cocktail kits and serious ice prepared for Catskills weekends around Hunter Mountain. Build your House Drop before you arrive."
+layout: false
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://senseisandy.com/hyphen-weekend/">
+  <link rel="stylesheet" href="/assets/css/hyphen-weekend.css">
+  <!--#include virtual="/_includes/analytics-head.html" -->
+</head>
+<body class="hw-page">
+  <header class="hw-header">
+    <a class="hw-wordmark" href="/hyphen-weekend/" aria-label="Hyphen Weekend home">HYPHEN <span>WEEKEND</span></a>
+    <p>Food, Drinks &amp; Ice for Catskills Weekends</p>
+    <a class="hw-header-cta" href="#configurator">Build your weekend</a>
+  </header>
+
+  <main>
+    <section class="hw-hero" aria-labelledby="hw-hero-title">
+      <div class="hw-hero-copy">
+        <p class="hw-eyebrow">Hunter Mountain · Catskills</p>
+        <h1 id="hw-hero-title">Your weekend is already too short.</h1>
+        <p class="hw-hero-lede">Food, clarified cocktail kits and serious ice, prepared for the house.</p>
+        <p>Whether you're checking into a vacation rental or coming back to your place for the weekend, Hyphen makes dinner and drinks the easy part.</p>
+        <div class="hw-actions"><a class="hw-button hw-button-primary" href="#configurator" data-hw-start>Build your weekend</a><a class="hw-button hw-button-quiet" href="#how-it-works">See how it works</a></div>
+        <p class="hw-microcopy">Choose the food. Choose the drink. Choose the ice.<br>We handle the rest.</p>
+      </div>
+      <div class="hw-hero-art" role="img" aria-label="A warm house at dusk in the Catskills"><span>HOUSE<br>FIRST</span></div>
+    </section>
+
+    <section class="hw-problem" id="how-it-works" aria-labelledby="hw-problem-title">
+      <div><p class="hw-eyebrow">The useful part</p><h2 id="hw-problem-title">You came up here to get away.</h2></div>
+      <div class="hw-sequence"><p>Not to grocery shop.</p><p>Not to find cocktail shakers in someone else's kitchen.</p><p>Not to buy six ingredients for two drinks.</p><p>Not to figure out dinner after everyone is already hungry.</p><strong>Arrive. Put your bags down. Open the fridge.</strong><p>That is the product.</p></div>
+    </section>
+
+    <section class="hw-configurator" id="configurator" aria-labelledby="hw-config-title">
+      <div class="hw-section-intro"><p class="hw-eyebrow">House Drop · guest-supplied spirit</p><h2 id="hw-config-title">Build your weekend.</h2><p>Start with the shape of the house. We will keep the handoff simple.</p></div>
+      <div class="hw-config-shell">
+        <div class="hw-step-panel">
+          <div class="hw-progress"><span id="hw-step-label">Step 1 of 6</span><span id="hw-step-name">Dates</span></div>
+          <form id="hw-form" novalidate>
+            <fieldset data-step="0"><legend>When are you arriving?</legend><label for="hw-start">Arrival date</label><input id="hw-start" name="startDate" type="date" required><label for="hw-end">Leaving date</label><input id="hw-end" name="endDate" type="date" required><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="1" hidden><legend>Where is the house?</legend><label for="hw-property">Property or town</label><input id="hw-property" name="property" placeholder="Property name or Catskills town" required><p class="hw-note">We will confirm the future delivery zone before reservation.</p><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="2" hidden><legend>How many people?</legend><label for="hw-guests">Guests</label><input id="hw-guests" name="guests" type="number" min="1" max="30" value="6" required><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="3" hidden><legend>What should dinner feel like?</legend><p class="hw-note">Cuisine offerings are awaiting verified merchant details. Nothing is priced or promised yet.</p><div class="hw-choice-grid">{% for option in [1, 2, 3] %}<label class="hw-choice"><input type="radio" name="cuisine" value="pending-{{ option }}" required><span><b>Direction {{ option }}</b><strong>Merchant data needed</strong><small>Food description, serving size, finish time and pairing will be added after approval.</small></span></label>{% endfor %}</div><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="4" hidden><legend>Choose your drink family</legend><div class="hw-choice-grid">{% for drink in hyphenWeekend.drinkFamilies %}<label class="hw-choice"><input type="radio" name="drink" value="{{ drink.id }}" required><span><b>{{ drink.name }}</b><strong>{{ drink.product }}</strong><small>{{ drink.description }}<br>{{ drink.supporting }}</small></span></label>{% endfor %}</div><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="5" hidden><legend>One bottle. One batch.</legend><p>Every Bottle Match is engineered around a complete spirit bottle. Pick your size, combine as directed, chill and pour.</p><div class="hw-choice-grid hw-size-grid">{% for size in hyphenWeekend.bottleSizes %}<label class="hw-choice"><input type="radio" name="bottleSize" value="{{ size.id }}"{% if size.featured %} checked{% endif %} required><span><b>{{ size.volumeMl }} mL</b><strong>{{ size.label }}{% if size.featured %} · Default{% endif %}</strong><small>Guest-supplied spirit<br>Price confirmed at reservation</small></span></label>{% endfor %}</div><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="6" hidden><legend>Finish the box.</legend><div class="hw-choice-grid">{% for ice in hyphenWeekend.iceProducts %}<label class="hw-choice{% if not ice.available %} hw-choice-disabled{% endif %}"><input type="checkbox" name="ice" value="{{ ice.id }}"{% if not ice.available %} disabled{% endif %}><span><b>{{ ice.name }}</b><strong>{% if ice.available %}Add to Icebox{% else %}Coming soon{% endif %}</strong><small>{{ ice.description }}</small></span></label>{% endfor %}</div><p class="hw-note">Alcohol is not included. The customer provides the bottle.</p><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="7" hidden><legend>House Drop window</legend><p>House Drop is designed around a scheduled arrival window with refrigerated food, refrigerated cocktail components, frozen Icebox and a simple finish card.</p><div class="hw-choice-grid"><label class="hw-choice"><input type="radio" name="deliveryDay" value="friday" required><span><b>Friday</b><strong>Future-configurable</strong><small>Operating window and zone require merchant confirmation.</small></span></label><label class="hw-choice"><input type="radio" name="deliveryDay" value="saturday" required><span><b>Saturday</b><strong>Future-configurable</strong><small>Operating window and zone require merchant confirmation.</small></span></label></div><p class="hw-error" data-error></p></fieldset>
+            <fieldset data-step="8" hidden><legend>Review your weekend.</legend><p>We will use this configuration to prepare a reservation inquiry. No payment is taken here, alcohol is not included, and delivery is confirmed only after merchant review.</p><dl class="hw-review"><div><dt>Alcohol mode</dt><dd>Guest supplied</dd></div><div><dt>Commerce</dt><dd>Reservation inquiry</dd></div></dl><p class="hw-error" data-error></p></fieldset>
+            <div class="hw-form-actions"><button type="button" class="hw-button hw-button-quiet" id="hw-back" hidden>Back</button><button type="button" class="hw-button hw-button-primary" id="hw-next">Continue</button></div>
+          </form>
+        </div>
+        <aside class="hw-summary" aria-live="polite"><p class="hw-eyebrow">Your weekend</p><h3 id="hw-summary-title">A considered start.</h3><dl id="hw-summary-list"><div><dt>Spirit</dt><dd>Guest supplied</dd></div><div><dt>Bottle Match</dt><dd>750 mL · House</dd></div></dl><p id="hw-summary-status">No payment or fabricated price. Reservation seam ready when merchant details are confirmed.</p></aside>
+      </div>
+    </section>
+
+    <section class="hw-ice-food" aria-labelledby="hw-ice-title"><div><p class="hw-eyebrow">The Icebox</p><h2 id="hw-ice-title">Ice shouldn't taste like the freezer.</h2></div><p>Two-inch cubes for slow dilution. Spears for tall drinks. Cocktail Cubes are coming soon.</p></section>
+    <section class="hw-food" aria-labelledby="hw-food-title"><div><p class="hw-eyebrow">Food</p><h2 id="hw-food-title">Bruce handles dinner.</h2><p>Hyphen builds the food side around cuisines designed to travel well, finish easily and make sense around a table.</p><p>Choose the direction. We'll tell you exactly what arrives and exactly what needs to happen next.</p></div><div class="hw-food-placeholders"><article><b>01</b><h3>Direction pending</h3><p>Merchant cuisine, serving guidance and verified pairing details needed.</p></article><article><b>02</b><h3>Direction pending</h3><p>Merchant cuisine, serving guidance and verified pairing details needed.</p></article><article><b>03</b><h3>Direction pending</h3><p>Merchant cuisine, serving guidance and verified pairing details needed.</p></article><blockquote>Less restaurant catering. More somebody thought through dinner for you.</blockquote></div></section>
+    <section class="hw-house" aria-labelledby="hw-house-title"><div><p class="hw-eyebrow">House Drop</p><h2 id="hw-house-title">The house is waiting.</h2><p>You've already planned the drive. You've already booked the place. You've already decided who you're spending the weekend with.</p><strong>Let dinner and drinks be the part you don't have to plan.</strong><a class="hw-button hw-button-primary" href="#configurator" data-hw-start>Build my weekend</a></div></section>
+  </main>
+  <footer class="hw-footer"><span>HYPHEN WEEKEND</span><span>Food, Drinks &amp; Ice for Catskills Weekends</span></footer>
+  <a class="hw-mobile-cta" href="#configurator" data-hw-start>Build your weekend</a>
+  <script defer src="/assets/js/analytics-events.min.js"></script>
+  <script type="module" src="/assets/js/hyphen-weekend.js"></script>
+</body>
+</html>

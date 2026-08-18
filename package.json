@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "qa:seo:remediation": "node scripts/qa-seo-remediation.mjs",
+    "qa:hyphen-weekend": "node scripts/qa-hyphen-weekend.mjs",
     "qa:how-class-works:canonical": "node scripts/qa-how-class-works-canonical.mjs",
     "dev": "eleventy --serve",
     "build": "eleventy && node tools/materialize-ssi-fragments.mjs",
