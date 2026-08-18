@@ -247,6 +247,10 @@ const resolveUrlToFile = async (urlString) => {
     candidates.push(`${slug}.html`);
     candidates.push(path.join(slug, 'index.html'));
     if (slug.endsWith('.html')) candidates.push(slug);
+    candidates.push(path.join('src', `${slug}.html`));
+    candidates.push(path.join('src', slug, 'index.html'));
+    candidates.push(path.join('dist', `${slug}.html`));
+    candidates.push(path.join('dist', slug, 'index.html'));
   }
 
   for (const candidate of candidates) {
