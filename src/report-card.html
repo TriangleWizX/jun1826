@@ -925,6 +925,20 @@ permalink: "/report-card.html"
 <input aria-label="Schedule input" class="rc-value-input" id="schedule" type="text" placeholder="Class schedule"/>
 <span class="rc-card-subtext">Optional context for this review</span>
 </div>
+<div class="rc-card rc-card--schedule">
+<div class="rc-card-header"><i class="bi bi-signpost-split"></i><span class="rc-card-label">Observation context</span></div>
+<select aria-label="Observation context" class="rc-value-input" id="observation-context">
+<option value="">Choose context (optional)</option>
+<option>Familiar partner</option>
+<option>Changed partner</option>
+<option>Unfamiliar partner</option>
+<option>Increased resistance</option>
+<option>Novel position</option>
+<option>Scrimmage</option>
+<option>Competition</option>
+</select>
+<span class="rc-card-subtext">Context describes where behavior survived; it has no score or rank value.</span>
+</div>
 </section>
 <section aria-labelledby="current-focus-title" class="rc-focus-card">
 <div class="rc-card-header"><i class="bi bi-crosshair"></i><span class="rc-card-label" id="current-focus-title">Current Focus</span></div>
@@ -1137,6 +1151,7 @@ permalink: "/report-card.html"
       student,
       date ? `Review date: ${date}` : '',
       type ? `Review type: ${type}` : '',
+      value('observation-context') ? `Observation context: ${value('observation-context')}` : '',
       `Current focus: ${primary}${secondary ? `; ${secondary}` : ''}`,
       '',
       `What is working:\n${value('feedback-working') || '[Not recorded]'}`,
@@ -1160,7 +1175,7 @@ permalink: "/report-card.html"
   });
   document.getElementById('clear-report')?.addEventListener('click', () => {
     document.querySelectorAll('#report-card-guide-title ~ * input, #report-card-guide-title ~ * textarea').forEach((field) => { field.value = ''; });
-    ['student-name', 'level', 'coaches', 'schedule', 'review-date', 'primary-focus', 'secondary-focus', 'feedback-working', 'feedback-next', 'feedback-yours'].forEach((id) => { const field = document.getElementById(id); if (field) field.value = ''; });
+    ['student-name', 'level', 'coaches', 'schedule', 'observation-context', 'review-date', 'primary-focus', 'secondary-focus', 'feedback-working', 'feedback-next', 'feedback-yours'].forEach((id) => { const field = document.getElementById(id); if (field) field.value = ''; });
     const type = document.getElementById('review-type'); if (type) type.selectedIndex = 0;
   });
 })();
