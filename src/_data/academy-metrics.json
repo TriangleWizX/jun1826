@@ -1,0 +1,13 @@
+{
+  "lastVerified": "2026-08-18",
+  "metrics": {
+    "weekly-class-count": {"value": 9, "status": "current-service", "period": "Current published schedule", "source": "src/_data/schedule.json", "public": true},
+    "class-cap": {"value": 12, "status": "current-service", "period": "Current small-group policy", "source": "src/options-pricing.html", "public": true},
+    "core-culture-rhythm": {"value": 3, "status": "current-service", "period": "12-week first term", "source": "src/options-pricing.html", "public": true},
+    "first-year-class-count": {"value": 293, "status": "pending-verification", "period": "First 12 months at 6045 Main Street", "source": "Attendance ledger pending reconciliation", "public": false},
+    "median-class-size": {"value": null, "status": "not-yet-measured", "period": "Minimum 30 observations", "source": "Private measurement definition", "public": false},
+    "intro-funnel": {"value": null, "status": "not-yet-measured", "period": "Defined funnel cohort", "source": "Private measurement definition", "public": false},
+    "term-completion-rate": {"value": null, "status": "not-yet-measured", "period": "12-week Core Culture term", "source": "Private measurement definition", "public": false},
+    "renewal-rate": {"value": null, "status": "not-yet-measured", "period": "Defined renewal cohort", "source": "Private measurement definition", "public": false}
+  }
+}

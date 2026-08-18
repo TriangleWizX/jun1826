@@ -9,6 +9,7 @@ extraCss:
   - "/assets/css/pages/home.min.css"
 permalink: "/index.html"
 ---
+{% from "components/academy-fact.njk" import academyFact %}
 <main class="ss-main ss-home-mockup" id="main-content" role="main">
 <section aria-labelledby="ss-home-hero-title" class="home-hero ss-reveal">
 <div class="container home-hero__grid">
@@ -59,13 +60,13 @@ permalink: "/index.html"
 <a class="text-decoration-underline" href="/evidence">See the research behind the approach <span aria-hidden="true">→</span></a>
 </div>
 </section>
-<section aria-label="Trust and Affiliations" class="ss-home-section bg-light py-3 border-bottom text-center" style="background-color: var(--ss-surface2, #F4F1ED) !important;">
+<section aria-label="Operational and social proof" class="ss-home-section bg-light py-3 border-bottom text-center" style="background-color: var(--ss-surface2, #F4F1ED) !important;">
 <div class="container">
 <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 gap-md-5" style="color: var(--ss-muted); font-size: 0.95rem;">
 <span class="d-flex align-items-center"><i class="bi bi-google text-primary me-2"></i><i class="bi bi-star-fill text-warning me-1"></i><i class="bi bi-star-fill text-warning me-1"></i><i class="bi bi-star-fill text-warning me-1"></i><i class="bi bi-star-fill text-warning me-1"></i><i class="bi bi-star-fill text-warning me-2"></i> 5.0 Google Rating · 60+ Reviews</span>
-<span class="d-flex align-items-center"><i class="bi bi-shield-check me-2"></i> Black Belt Instruction</span>
-<span class="d-flex align-items-center"><i class="bi bi-people me-2"></i> Small Groups</span>
-<span class="d-flex align-items-center"><i class="bi bi-person-check me-2"></i> Beginner Ready</span>
+{{ academyFact(9, "recurring classes each week", "Current schedule · verified Aug. 18, 2026", "current-service") }}
+{{ academyFact(12, "students maximum per class", "Small-group capacity policy", "current-service") }}
+{{ academyFact(3, "planned classes each week", "Core Culture · 12-week first term", "current-service") }}
 </div>
 </div>
 </section>

@@ -1,0 +1,7 @@
+{% macro academyFact(value, label, detail, category) %}
+<article class="academy-fact" data-academy-category="{{ category }}">
+  <strong class="academy-fact__value">{{ value }}</strong>
+  <span class="academy-fact__label">{{ label }}</span>
+  <small class="academy-fact__detail">{{ detail }}</small>
+</article>
+{% endmacro %}
