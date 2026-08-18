@@ -15,6 +15,7 @@ for (const [id, metric] of Object.entries(metrics.metrics)) {
 }
 const firstYear = metrics.metrics['first-year-class-count'];
 if (firstYear.public || firstYear.status !== 'pending-verification') errors.push('unverified first-year count is exposed');
+if (firstYear.verification?.length !== 2 || !firstYear.verification.includes('attendance-ledger') || !firstYear.verification.includes('class-calendar')) errors.push('first-year verification sources incomplete');
 if (!homepage.includes('academyFact(9') || !homepage.includes('recurring classes each week') || !homepage.includes('current-service')) errors.push('homepage lacks current-service fact block');
 if (!reportCard.includes('Observations reviewed') || !reportCard.includes('Contexts observed')) errors.push('report card lacks operational observation fields');
 if (/attendance.{0,80}(rank|promotion|capabil)/i.test(reportCard)) errors.push('report card links attendance to capability or promotion');
