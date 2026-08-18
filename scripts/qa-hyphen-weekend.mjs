@@ -20,6 +20,15 @@ assert.match(css, /prefers-reduced-motion/);
 assert.match(source, /class="hw-mobile-cta"/);
 assert.match(source, /data-step="7"/);
 assert.match(source, /name="deliveryDay"/);
+assert.ok((source.match(/<img\b/g) || []).length >= 2, 'supplied Hyphen photography must be integrated');
+assert.ok((output.match(/<img\b/g) || []).length >= 4, 'package photography must render for each offer');
+assert.match(source, /assets\/images\/hyphen\/three-drinks\.webp/);
+assert.match(source, /formspree\.io\/f\/mqazqozk/);
+assert.match(source, /Message Sandy Inquiry/);
+assert.match(source, /Text Sandy/);
+const suppliedImages = fs.readdirSync('assets/hyphen').filter((name) => /\.(jpe?g)$/i.test(name));
+for (const image of suppliedImages) { assert.ok(fs.existsSync(`src/assets/images/hyphen/${image}`), `missing copied asset ${image}`); assert.match(output, new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing rendered asset ${image}`); }
+assert.ok((output.match(/<img\b/g) || []).length >= suppliedImages.length + 4, 'all supplied gallery images and product images must render');
 assert.match(script, /current < steps\.length - 1/);
 assert.match(script, /current -= 1/);
 assert.match(script, /SS_TRACK_EVENT/);

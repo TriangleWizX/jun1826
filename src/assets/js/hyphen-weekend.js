@@ -33,7 +33,7 @@ function render() {
   steps.forEach((step, i) => { step.hidden = i !== current; });
   stepLabel.textContent = `Step ${current + 1} of ${steps.length}`;
   stepName.textContent = names[current];
-  if (mobileCta) mobileCta.textContent = current === 0 ? 'Build your weekend' : `Step ${current + 1} / ${steps.length} · Continue`;
+  if (mobileCta) { mobileCta.textContent = current === 0 ? 'Text Sandy' : `Step ${current + 1} / ${steps.length} · Continue`; mobileCta.href = current === 0 ? 'sms:+19177368649?body=Hi%20Sandy%2C%20I%27d%20like%20to%20ask%20about%20a%20Hyphen%20Weekend%20inquiry.' : '#configurator'; }
   back.hidden = current === 0;
   next.textContent = current === steps.length - 1 ? 'Review configuration' : 'Continue';
   updateSummary();

@@ -8,9 +8,9 @@ export const drinkFamilies = [
 ];
 
 export const drinkPackages = [
-  { id: "one", name: "One", description: "One Bottle Match. About 12 pours.", price: 34, includes: ["bright"], featured: false },
-  { id: "duo", name: "Duo", description: "Any two. About 24 pours.", price: 66, savings: "Save up to $8", includes: ["bright", "silk", "deep"], featured: false },
-  { id: "full-flight", name: "Full Flight", description: "Bright + Silk + Deep. About 36 pours.", price: 94, savings: "Save $14", includes: ["bright", "silk", "deep"], featured: true }
+  { id: "one", name: "One", description: "One Bottle Match. About 12 pours.", price: 34, includes: ["bright"], image: "/assets/images/hyphen/cocktail-mint.webp", alt: "Mint-topped cocktail with crushed ice", featured: false },
+  { id: "duo", name: "Duo", description: "Any two. About 24 pours.", price: 66, savings: "Save up to $8", includes: ["bright", "silk", "deep"], image: "/assets/images/hyphen/three-drinks.webp", alt: "Three finished cocktails arranged on a tray", featured: false },
+  { id: "full-flight", name: "Full Flight", description: "Bright + Silk + Deep. About 36 pours.", price: 94, savings: "Save $14", includes: ["bright", "silk", "deep"], image: "/assets/images/hyphen/bar-process.webp", alt: "Cocktail tools and drinks during bar preparation", featured: true }
 ];
 
 // Public labels intentionally avoid exposing internal sourcing routes or vendor names.
@@ -34,6 +34,25 @@ export const iceProducts = [
   { id: "cocktail-cubes", name: "Cocktail Cubes", description: "The cocktail is frozen into the cube.", available: false }
 ];
 
+export const galleryImages = [
+  ["20230508_185319.jpg", "Cocktail preparation at the bar"],
+  ["20230508_195151.jpg", "A finished drink in warm evening light"],
+  ["20230820_180830.jpg", "Drinks prepared for a weekend table"],
+  ["20240827_181117.jpg", "A close view of a finished cocktail"],
+  ["20241231_203321.jpg", "Cocktail service during a gathering"],
+  ["20250718_191413.jpg", "Cocktail tools and bottles during preparation"],
+  ["20250817_174305.jpg", "A drink served with citrus"],
+  ["20251109_162043.jpg", "Bottle selection and cocktail mise en place"],
+  ["20260718_174246.jpg", "Three finished cocktails on a tray"],
+  ["3017441d-80e3-46c4-a819-8d425ff8cc57.jpg", "A bar setup ready for service"],
+  ["DSC_9585-Edit.jpg", "Mint-topped cocktail with crushed ice"],
+  ["FB_IMG_1553289309823.jpg", "A colorful cocktail prepared for guests"],
+  ["FB_IMG_1662229855940.jpg", "A cocktail close-up in warm light"],
+  ["IMG-20250412-WA0006.jpeg", "A prepared drink and bar setting"],
+  ["IMG_20190827_082447_353.jpg", "A cocktail moment at the bar"],
+  ["PXL_20210507_191732494.PORTRAIT.jpg", "Drinks ready to share"],
+];
+
 // Merchant data is intentionally empty until Bruce supplies verified offerings.
 export const cuisines = [];
 
@@ -45,5 +64,6 @@ export default {
   spiritSourcing,
   bottleSizes,
   iceProducts,
+  galleryImages,
   cuisines
 };
