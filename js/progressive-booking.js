@@ -135,10 +135,10 @@
     const introTitle = document.getElementById('book-intro-title');
     const introSubtitle = document.getElementById('book-intro-subtitle');
     const laneNotes = {
-      kids: 'For kids: this general path books a short Goal Mapping visit first. Sandy then selects and schedules the right coached class. Wear normal clothes; no workout is required for this appointment.',
-      teens: 'For teens: this general path books a short Goal Mapping visit first. Sandy then selects and schedules the right coached class. Wear normal clothes; no workout is required for this appointment.',
-      adults: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
-      adult: 'For adults: start with a calm 15-minute Goal Mapping visit, then choose the class lane and schedule that fit your week.',
+      kids: 'For kids: we help your child understand the room and find the right starting challenge. Goal Mapping comes first, then Sandy selects and schedules the right coached class.',
+      teens: 'For teens: we see how they learn, move, and respond before choosing the right starting lane. Goal Mapping comes first, then Sandy selects and schedules the coached class.',
+      adults: 'For adults: we orient you to the room, explain how resistance works, and choose a manageable starting point during a calm 15-minute Goal Mapping visit.',
+      adult: 'For adults: we orient you to the room, explain how resistance works, and choose a manageable starting point during a calm 15-minute Goal Mapping visit.',
       'community-service': 'For qualifying service professionals: use Goal Mapping to discuss the right class lane, schedule, and community-service rate.'
     };
     const youthHeadline = 'See How Your Child Responds Before Choosing a Jiu-Jitsu Program';
