@@ -5,8 +5,8 @@ import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package', 'src/')
-DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', '413/')
-ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'site-shell.html', 'report-card.html', 'after-booking-promise.html', 'bjj_anatomy_game.html', 'core-promise-full.html', 'core-promise-short.html'}
+DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', '413/')
+ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'site-shell.html', 'nav-include.html', 'report-card.html', 'after-booking-promise.html', 'bjj_anatomy_game.html', 'core-promise-full.html', 'core-promise-short.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 
 def changed_outputs(commit):
@@ -15,6 +15,7 @@ def changed_outputs(commit):
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names or 'src/assets/data/asset-hash-manifest.json' in names
+    sitewide_release = 'eleventy.config.js' in names
     for name in names:
         if name.startswith('src/'):
             candidate = ROOT / 'dist' / name[4:]
@@ -27,7 +28,7 @@ def changed_outputs(commit):
         rel = candidate.relative_to(ROOT / 'dist').as_posix()
         if rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS):
             if candidate.is_file(): outputs.add((candidate, rel))
-    if fingerprint_release:
+    if fingerprint_release or sitewide_release:
         for candidate in (ROOT / 'dist').rglob('*'):
             if not candidate.is_file(): continue
             rel = candidate.relative_to(ROOT / 'dist').as_posix()
