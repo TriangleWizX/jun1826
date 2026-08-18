@@ -391,6 +391,10 @@ Touching deployment or secret files
 If the request is clearly scoped, proceed with the best safe implementation.
 
 
+## Volatile operational facts
+
+Do not hard-code current academy schedule, private availability, prices, address, phone, guarantee naming, or program entitlement inside editorial pages. Import canonical values or link to the authority page. The public schedule authority is `/schedule`; private coaching is request-based unless a canonical data source explicitly declares a recurring public slot. Run `npm run qa:volatile-facts` after changing schedule-sensitive content.
+
 <!-- headroom:rtk-instructions -->
 # RTK (Rust Token Killer) - Token-Optimized Commands
 
