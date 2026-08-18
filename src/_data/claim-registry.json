@@ -1,0 +1,29 @@
+[
+  {
+    "id": "open-skill-problem-solving",
+    "claimStrength": 4,
+    "type": "mechanism",
+    "publicWording": "Your partner changes the problem while you solve it.",
+    "evidenceIds": ["open-skill-youth-2025"],
+    "allowedPages": ["home", "tannersville", "how-class-works", "kids", "teens", "adults"],
+    "prohibited": ["BJJ improves executive function", "BJJ is better than soccer", "individual outcome guarantee"]
+  },
+  {
+    "id": "youth-attention-context",
+    "claimStrength": 5,
+    "type": "research-outcome",
+    "publicWording": "One randomized school study reported differences on selected teacher-rated behavioral measures after 12 weeks of BJJ.",
+    "evidenceIds": ["school-bjj-rct-2022", "youth-martial-arts-rct"],
+    "allowedPages": ["kids", "teens", "evidence"],
+    "prohibited": ["BJJ makes kids focus", "BJJ treats ADHD", "SSBJJ improves school performance"]
+  },
+  {
+    "id": "adult-fitness-context",
+    "claimStrength": 2,
+    "type": "research-outcome",
+    "publicWording": "A small BJJ intervention study supports describing regular practice as physical training.",
+    "evidenceIds": ["adult-bjj-fitness-2020"],
+    "allowedPages": ["adults", "evidence"],
+    "prohibited": ["BJJ is a better workout than Pilates", "guaranteed fitness outcome"]
+  }
+]
