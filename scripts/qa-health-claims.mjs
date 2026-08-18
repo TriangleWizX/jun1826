@@ -38,7 +38,7 @@ assert.match(anatomy, /communicate more clearly about where they feel pressure o
 assert.doesNotMatch(anatomy, /prevent injuries/);
 assert.match(faq, /not medical rehabilitation/);
 assert.match(catskill, /returning after medical clearance/);
-assert.match(home, /safer training habits and longevity-minded rolling/);
+assert.doesNotMatch(home, /injury prevention/);
 assert.match(teenEvidence, /do not establish a guaranteed mental-health or developmental outcome/);
 assert.match(bully, /clear boundaries, safe movement practice/);
 assert.doesNotMatch(bully, /become calmer, more confident/);
