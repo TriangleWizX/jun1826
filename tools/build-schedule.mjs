@@ -89,10 +89,27 @@ function generateFull() {
   return html;
 }
 
+function generateStudioBento() {
+  const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday'];
+  const abbreviations = { Monday: 'MON', Tuesday: 'TUE', Wednesday: 'WED', Friday: 'FRI', Saturday: 'SAT' };
+  let html = `---\nlayout: layouts/base.njk\ntitle: ""\ndescription: ""\ncanonicalUrl: ""\nbodyClass: "ss-page"\npermalink: "/_includes/schedule-studio-bento.html"\n---\n`;
+  html += '<div class="bento-schedule-list">';
+  for (const day of dayOrder) {
+    const classes = scheduleData.groupClasses
+      .filter((entry) => entry.days.includes(day))
+      .map((entry) => `${entry.start} ${entry.publicLabel || `${entry.audience} · ${entry.format}`}`)
+      .join(' · ');
+    html += `<div class="bento-schedule-row"><span class="bento-sched-day">${abbreviations[day]}</span><span class="bento-sched-class">${classes}</span></div>`;
+  }
+  html += '</div>\n';
+  return html;
+}
+
 const compactHtml = generateCompact();
 const fullHtml = generateFull();
 
 fs.writeFileSync(path.join(root, '_includes', 'schedule-compact.html'), compactHtml);
 fs.writeFileSync(path.join(root, '_includes', 'schedule-full.html'), fullHtml);
+fs.writeFileSync(path.join(root, '_includes', 'schedule-studio-bento.html'), generateStudioBento());
 
 console.log('Successfully generated schedule components from data/schedule.js');
