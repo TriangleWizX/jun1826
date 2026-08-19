@@ -19,6 +19,8 @@
 
     let state = {
       profile: null,
+      otherSport: null,
+      primaryActivity: '',
       bookingStarted: false,
       autoSelecting: false
     };
@@ -131,6 +133,17 @@
       'community-service': 'leo'
     };
     const requestedProfile = laneProfiles[String(requestedLane || '').toLowerCase()];
+    const activityLabel = document.getElementById('primary-activity-label');
+    const activityInput = document.getElementById('primary-activity');
+    document.querySelectorAll('[data-athlete-context] input[name="other_sport"]').forEach((input) => {
+      input.addEventListener('change', () => {
+        state.otherSport = input.value;
+        const showActivity = input.checked && input.value === 'Yes';
+        activityLabel?.classList.toggle('d-none', !showActivity);
+        if (!showActivity && activityInput) activityInput.value = '';
+      });
+    });
+    activityInput?.addEventListener('input', () => { state.primaryActivity = activityInput.value; });
     const laneNote = document.getElementById('first-visit-lane-note');
     const introTitle = document.getElementById('book-intro-title');
     const introSubtitle = document.getElementById('book-intro-subtitle');
@@ -188,6 +201,9 @@
       url.searchParams.set('background_color', 'fbfaf8');
       url.searchParams.set('text_color', '1f1712');
       url.searchParams.set('primary_color', '289fa1');
+      url.searchParams.set('audience_lane', profile);
+      if (state.otherSport) url.searchParams.set('other_sport', state.otherSport);
+      if (state.primaryActivity) url.searchParams.set('primary_activity', state.primaryActivity);
 
       // Forward any page-level search params for session attribution
       try {

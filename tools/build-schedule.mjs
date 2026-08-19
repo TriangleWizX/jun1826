@@ -36,7 +36,7 @@ function generateCompact() {
   for (const cls of scheduleData.groupClasses) {
     html += `    <li class="mb-2">\n`;
     html += `      <strong>${cls.days.join(', ')}</strong><br>\n`;
-    html += `      ${cls.audience}: ${cls.start}–${cls.end}\n`;
+    html += `      ${cls.publicLabel || cls.audience}: ${cls.start}–${cls.end} (${cls.format})\n`;
     if (cls.note) {
       html += `      <br><small class="text-muted">${cls.note}</small>\n`;
     }
@@ -44,7 +44,7 @@ function generateCompact() {
   }
   html += `  </ul>\n`;
   html += `  <div class="mt-2 mb-4 small text-muted">\n`;
-  html += `    <p>All youth and adult classes are 45 minutes. The final 15 minutes are elective. Sandy will consult with you on how to use this time productively.</p>\n`;
+  html += `    <p>All youth and adult classes run for 60 minutes. The class format is shown so you know what to wear before you arrive.</p>\n`;
   html += `  </div>\n`;
   html += `  <h4 class="mb-3 mt-4">Private Coaching</h4>\n`;
   html += `  <p class="small text-muted">Morning private coaching is available by request. Text Sandy to discuss goals and availability.</p>\n`;
@@ -63,7 +63,7 @@ function generateFull() {
   for (const cls of scheduleData.groupClasses) {
     html += `      <div class="card mb-3 shadow-sm border-0">\n`;
     html += `        <div class="card-body">\n`;
-    html += `          <h4 class="h6 fw-bold text-success mb-1">${cls.audience} (${cls.format})</h4>\n`;
+    html += `          <h4 class="h6 fw-bold text-success mb-1">${cls.publicLabel || cls.audience} (${cls.format})</h4>\n`;
     html += `          <p class="mb-1 text-dark fw-medium">${cls.days.join(', ')}</p>\n`;
     html += `          <p class="mb-0 text-muted"><i class="bi bi-clock me-2"></i>${cls.start} – ${cls.end}</p>\n`;
     if (cls.note) {
@@ -73,7 +73,7 @@ function generateFull() {
     html += `      </div>\n`;
   }
   html += `      <div class="mt-3 small text-muted">\n`;
-  html += `        <p><strong>Note on class length:</strong> All youth and adult classes are 45 minutes of core instruction. The final 15 minutes of the hour are elective. Sandy will consult with you on how to use this time productively based on your skill level.</p>\n`;
+    html += `        <p><strong>Format matters:</strong> Check the Gi or No-Gi label before your first class so you know what to wear.</p>\n`;
   html += `      </div>\n`;
   html += `    </div>\n`;
   

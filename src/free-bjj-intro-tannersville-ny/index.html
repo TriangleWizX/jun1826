@@ -171,6 +171,17 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
         <h2 class="h3 mb-5" style="font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.02em;">
           Choose your time
         </h2>
+        <fieldset class="border rounded-4 p-3 mb-4" data-athlete-context>
+          <legend class="h6 mb-2">Does this student currently train or compete in another sport? <span class="text-muted fw-normal">(Optional)</span></legend>
+          <div class="d-flex flex-wrap gap-3">
+            <label><input type="radio" name="other_sport" value="Yes"> Yes</label>
+            <label><input type="radio" name="other_sport" value="No"> No</label>
+            <label><input type="radio" name="other_sport" value="Prefer to discuss with Sandy"> Prefer to discuss with Sandy</label>
+          </div>
+          <label class="small mt-3 d-none" id="primary-activity-label" for="primary-activity">Primary sport or activity
+            <input class="form-control mt-1" id="primary-activity" name="primary_activity" maxlength="80" autocomplete="off" placeholder="e.g. skiing, soccer, running">
+          </label>
+        </fieldset>
         <div class="ss-bezel-shell">
           <div class="ss-bezel-core p-0 overflow-hidden" style="display: block;">
             <div data-calendly-url="https://calendly.com/senseisandy/bjj-goal-mapping-session" id="calendly-embed-onsite" style="min-width: 320px; height: 700px; width: 100%;"></div>

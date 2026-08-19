@@ -10,15 +10,15 @@ function checkCanonicalSchedule() {
   const data = JSON.parse(fs.readFileSync(path.join(root, 'src', '_data', 'schedule.json'), 'utf8'));
   const activeGroupClasses = data.groupClasses.filter((entry) => entry.active);
   const expected = [
-    ['Monday', 'Youth/Teen', '5:00 PM', 'Gi'],
-    ['Monday', 'Adult', '6:00 PM', 'Gi'],
-    ['Tuesday', 'Youth/Teen', '5:00 PM', 'Gi'],
+    ['Monday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
+    ['Monday', 'Adult', '6:00 PM', 'No-Gi'],
+    ['Tuesday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
     ['Tuesday', 'Adult', '6:00 PM', 'Gi'],
     ['Wednesday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
     ['Wednesday', 'Adult', '6:00 PM', 'No-Gi'],
     ['Friday', 'Youth/Teen', '5:00 PM', 'Gi'],
     ['Friday', 'Adult', '6:00 PM', 'Gi'],
-    ['Saturday', 'Adult No-Gi', '10:30 AM', 'No-Gi']
+    ['Saturday', 'Adult', '10:30 AM', 'No-Gi']
   ];
   for (const [day, audience, time, format] of expected) {
     const match = activeGroupClasses.find((entry) => entry.day === day && entry.audience === audience);
@@ -26,6 +26,12 @@ function checkCanonicalSchedule() {
       return [`Canonical schedule mismatch: ${day} ${audience} ${time} ${format}`];
     }
   }
+  if (activeGroupClasses.length !== 9) return ['Canonical schedule must contain exactly nine recurring classes.'];
+  const youth = activeGroupClasses.filter((entry) => entry.audience === 'Youth/Teen');
+  const adults = activeGroupClasses.filter((entry) => entry.audience === 'Adult');
+  if (youth.length !== 4 || youth.filter((entry) => entry.format === 'No-Gi').length !== 3 || youth.filter((entry) => entry.format === 'Gi').length !== 1) return ['Youth schedule ratio must be three No-Gi and one Gi.'];
+  if (adults.length !== 5 || adults.filter((entry) => entry.format === 'No-Gi').length !== 3 || adults.filter((entry) => entry.format === 'Gi').length !== 2) return ['Adult schedule ratio must be three No-Gi and two Gi.'];
+  if (data.pilot?.capacity !== 12 || data.groupClasses.find((entry) => entry.id === 'friday-youth-teen-gi-lab')?.publicLabel !== 'Friday Gi Lab') return ['Pilot capacity or Friday Gi Lab label is incorrect.'];
 
   const sharedPartial = fs.readFileSync(path.join(root, 'src', 'partials', 'current-schedule.html'), 'utf8');
   if (!sharedPartial.includes('Private coaching is scheduled separately by request.') || !sharedPartial.includes('href="/schedule"')) {
@@ -39,6 +45,10 @@ function checkCanonicalSchedule() {
 
 // Audit rules
 const bannedStrings = [
+  'Monday, Tuesday and Friday are Gi',
+  'Monday, Tuesday, and Friday are Gi',
+  'Gi-focused evening classes run Monday, Tuesday and Friday',
+  'No-Gi runs Wednesday evening',
   "semi-private",
   "semi private",
   "Morning BJJ",

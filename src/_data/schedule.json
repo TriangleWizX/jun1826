@@ -1,37 +1,46 @@
 {
-  "updated": "2026-08-08",
+  "updated": "2026-08-19",
+  "pilot": {
+    "status": "pilot",
+    "timezone": "America/New_York",
+    "effectiveDate": "2026-09-08",
+    "measurementEndDate": "2026-10-23",
+    "reviewDate": "2026-10-26",
+    "verifiedDate": "2026-08-19",
+    "capacity": 12
+  },
   "groupClasses": [
     {
-      "id": "monday-youth-teen-gi",
+      "id": "monday-youth-teen-nogi",
       "day": "Monday",
       "dayOrder": 1,
       "time": "5:00 PM",
       "time24": "17:00",
       "audience": "Youth/Teen",
       "ages": "5–17",
-      "format": "Gi",
+      "format": "No-Gi",
       "active": true
     },
     {
-      "id": "monday-adult-gi",
+      "id": "monday-adult-nogi",
       "day": "Monday",
       "dayOrder": 1,
       "time": "6:00 PM",
       "time24": "18:00",
       "audience": "Adult",
       "ages": "18+",
-      "format": "Gi",
+      "format": "No-Gi",
       "active": true
     },
     {
-      "id": "tuesday-youth-teen-gi",
+      "id": "tuesday-youth-teen-nogi",
       "day": "Tuesday",
       "dayOrder": 2,
       "time": "5:00 PM",
       "time24": "17:00",
       "audience": "Youth/Teen",
       "ages": "5–17",
-      "format": "Gi",
+      "format": "No-Gi",
       "active": true
     },
     {
@@ -68,7 +77,7 @@
       "active": true
     },
     {
-      "id": "friday-youth-teen-gi",
+      "id": "friday-youth-teen-gi-lab",
       "day": "Friday",
       "dayOrder": 5,
       "time": "5:00 PM",
@@ -76,6 +85,7 @@
       "audience": "Youth/Teen",
       "ages": "5–17",
       "format": "Gi",
+      "publicLabel": "Friday Gi Lab",
       "active": true
     },
     {
@@ -95,7 +105,7 @@
       "dayOrder": 6,
       "time": "10:30 AM",
       "time24": "10:30",
-      "audience": "Adult No-Gi",
+      "audience": "Adult",
       "ages": "18+",
       "format": "No-Gi",
       "note": "Youth and teens require Sandy's approval.",

@@ -1,12 +1,24 @@
 {
-  "version": 2,
-  "generatedAt": "2026-06-17",
+  "version": 3,
+  "generatedAt": "2026-08-19",
+  "pilot": {
+    "status": "pilot",
+    "timezone": "America/New_York",
+    "effectiveDate": "2026-09-08",
+    "measurementEndDate": "2026-10-23",
+    "reviewDate": "2026-10-26",
+    "verifiedDate": "2026-08-19",
+    "capacity": 12
+  },
   "bookingUrls": {
     "youth": "/free-bjj-intro-tannersville-ny",
     "adults": "/free-bjj-intro-tannersville-ny",
     "private": "/private-lessons"
   },
-  "laneOrder": ["youth", "adults"],
+  "laneOrder": [
+    "youth",
+    "adults"
+  ],
   "lanes": {
     "youth": {
       "label": "Youth Class, Kids + Teens",
@@ -21,52 +33,55 @@
   },
   "slots": [
     {
-      "id": "mon-youth",
+      "id": "monday-youth-teen-nogi-mon",
       "day": "mon",
-      "startTime": "17:00",
-      "endTime": "17:50",
+      "startTime": "5:00",
+      "endTime": "6:00",
       "program": "youth",
       "ageLane": "youth",
-      "giNoGi": "gi",
+      "giNoGi": "no-gi",
       "active": true,
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Youth Class"
+      "displayLabel": "Youth/Teen",
+      "note": ""
     },
     {
-      "id": "mon-adults",
+      "id": "monday-adult-nogi-mon",
       "day": "mon",
-      "startTime": "18:00",
-      "endTime": "19:00",
+      "startTime": "6:00",
+      "endTime": "7:00",
       "program": "adults",
       "ageLane": "adults",
-      "giNoGi": "gi",
+      "giNoGi": "no-gi",
       "active": true,
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Adult Class"
+      "displayLabel": "Adult",
+      "note": ""
     },
     {
-      "id": "tue-youth",
+      "id": "tuesday-youth-teen-nogi-tue",
       "day": "tue",
-      "startTime": "17:00",
-      "endTime": "17:50",
+      "startTime": "5:00",
+      "endTime": "6:00",
       "program": "youth",
       "ageLane": "youth",
-      "giNoGi": "gi",
+      "giNoGi": "no-gi",
       "active": true,
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Youth Class"
+      "displayLabel": "Youth/Teen",
+      "note": ""
     },
     {
-      "id": "tue-adults",
+      "id": "tuesday-adult-gi-tue",
       "day": "tue",
-      "startTime": "18:00",
-      "endTime": "19:00",
+      "startTime": "6:00",
+      "endTime": "7:00",
       "program": "adults",
       "ageLane": "adults",
       "giNoGi": "gi",
@@ -74,43 +89,44 @@
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Adult Class"
+      "displayLabel": "Adult",
+      "note": ""
     },
     {
-      "id": "wed-youth",
+      "id": "wednesday-youth-teen-nogi-wed",
       "day": "wed",
-      "startTime": "17:00",
-      "endTime": "17:50",
+      "startTime": "5:00",
+      "endTime": "6:00",
       "program": "youth",
       "ageLane": "youth",
-      "giNoGi": "nogi",
+      "giNoGi": "no-gi",
       "active": true,
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Youth Class",
-      "notes": "No-Gi"
+      "displayLabel": "Youth/Teen",
+      "note": ""
     },
     {
-      "id": "wed-adults",
+      "id": "wednesday-adult-nogi-wed",
       "day": "wed",
-      "startTime": "18:00",
-      "endTime": "19:00",
+      "startTime": "6:00",
+      "endTime": "7:00",
       "program": "adults",
       "ageLane": "adults",
-      "giNoGi": "nogi",
+      "giNoGi": "no-gi",
       "active": true,
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Adult Class",
-      "notes": "No-Gi"
+      "displayLabel": "Adult",
+      "note": ""
     },
     {
-      "id": "fri-youth",
+      "id": "friday-youth-teen-gi-lab-fri",
       "day": "fri",
-      "startTime": "17:00",
-      "endTime": "17:50",
+      "startTime": "5:00",
+      "endTime": "6:00",
       "program": "youth",
       "ageLane": "youth",
       "giNoGi": "gi",
@@ -118,13 +134,14 @@
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Youth Class"
+      "displayLabel": "Friday Gi Lab",
+      "note": ""
     },
     {
-      "id": "fri-adults",
+      "id": "friday-adult-gi-fri",
       "day": "fri",
-      "startTime": "18:00",
-      "endTime": "19:00",
+      "startTime": "6:00",
+      "endTime": "7:00",
       "program": "adults",
       "ageLane": "adults",
       "giNoGi": "gi",
@@ -132,158 +149,23 @@
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Adult Class"
+      "displayLabel": "Adult",
+      "note": ""
     },
     {
-      "id": "sat-adults",
+      "id": "saturday-adult-nogi-sat",
       "day": "sat",
       "startTime": "10:30",
       "endTime": "11:30",
       "program": "adults",
       "ageLane": "adults",
-      "giNoGi": "nogi",
+      "giNoGi": "no-gi",
       "active": true,
       "visitorEligible": true,
       "bookingUrl": "/free-bjj-intro-tannersville-ny",
       "type": "group",
-      "displayLabel": "Adult Class",
-      "notes": "No-Gi"
+      "displayLabel": "Adult",
+      "note": "Youth and teens require Sandy's approval."
     }
-  ],
-  "copy": {
-    "lanePickerIntro": "The weekday schedule stays simple: youth small-group classes at 5:00 PM, adult class at 6:00 PM, and morning private coaching by request.",
-    "reassuranceStart": "Join the lane and time that fits: youth small-group class at 5:00 PM, adult class at 6:00 PM, Saturday Adult No-Gi at 10:30 AM, or private coaching by request.",
-    "reassuranceSafety": "Beginner Lane = complete class expectations paced to skill level.",
-    "reassuranceReschedule": "Cancel or reschedule by text anytime.",
-    "microFaqStart": "Youth small-group classes run Monday, Tuesday, Wednesday, and Friday at 5:00 PM. Adults can start with evening class at 6:00 PM, Saturday No-Gi at 10:30 AM, or request morning private coaching.",
-    "privateLaneWeekdays": "Available by request in the morning",
-    "youthLaneAges": "Ages: Kids + Teens",
-    "youthLaneWeekdays": "Available: Mon, Tue, Wed, Fri • 5:00-6:00 PM",
-    "youthLaneNoGi": "Wednesday: Youth No-Gi",
-    "adultsLaneWeekdays": "Available: Mon, Tue, Wed, Fri • 6:00-7:00 PM",
-    "adultsLaneNoGi": "No-Gi: Wed 6:00-7:00 PM and Sat 10:30-11:30 AM",
-    "kidsLaneGi": "Youth class Mon, Tue, Wed, Fri - 5:00-6:00 PM",
-    "kidsLaneNoGi": "Wednesday: Youth No-Gi - 5:00-6:00 PM",
-    "teensLaneNoGi": "Wednesday: Youth No-Gi - 5:00-6:00 PM",
-    "adultsLaneGi": "Adult class Mon, Tue, Fri - 6:00-7:00 PM"
-  },
-  "days": {
-    "mon": {
-      "label": "Monday",
-      "note": "Gi evening classes",
-      "slots": [
-        {
-          "id": "mon-youth",
-          "dayKey": "mon",
-          "lane": "youth",
-          "bookLane": "youth",
-          "calendarKey": "youth",
-          "time": "5:00-6:00 PM",
-          "class": "Youth Class"
-        },
-        {
-          "id": "mon-adults",
-          "dayKey": "mon",
-          "lane": "adults",
-          "bookLane": "adults",
-          "calendarKey": "adults",
-          "time": "6:00-7:00 PM",
-          "class": "Adult Class"
-        }
-      ]
-    },
-    "tue": {
-      "label": "Tuesday",
-      "note": "Gi evening classes",
-      "slots": [
-        {
-          "id": "tue-youth",
-          "dayKey": "tue",
-          "lane": "youth",
-          "bookLane": "youth",
-          "calendarKey": "youth",
-          "time": "5:00-6:00 PM",
-          "class": "Youth Class"
-        },
-        {
-          "id": "tue-adults",
-          "dayKey": "tue",
-          "lane": "adults",
-          "bookLane": "adults",
-          "calendarKey": "adults",
-          "time": "6:00-7:00 PM",
-          "class": "Adult Class"
-        }
-      ]
-    },
-    "wed": {
-      "label": "Wednesday",
-      "note": "No-Gi evening classes",
-      "slots": [
-        {
-          "id": "wed-youth",
-          "dayKey": "wed",
-          "lane": "youth",
-          "bookLane": "youth",
-          "calendarKey": "youth",
-          "time": "5:00-6:00 PM",
-          "class": "Youth Class",
-          "badge": "No-Gi",
-          "badgeTone": "nogi"
-        },
-        {
-          "id": "wed-adults",
-          "dayKey": "wed",
-          "lane": "adults",
-          "bookLane": "adults",
-          "calendarKey": "adults",
-          "time": "6:00-7:00 PM",
-          "class": "Adult Class",
-          "badge": "No-Gi",
-          "badgeTone": "nogi"
-        }
-      ]
-    },
-    "fri": {
-      "label": "Friday",
-      "note": "Gi evening classes",
-      "slots": [
-        {
-          "id": "fri-youth",
-          "dayKey": "fri",
-          "lane": "youth",
-          "bookLane": "youth",
-          "calendarKey": "youth",
-          "time": "5:00-6:00 PM",
-          "class": "Youth Class"
-        },
-        {
-          "id": "fri-adults",
-          "dayKey": "fri",
-          "lane": "adults",
-          "bookLane": "adults",
-          "calendarKey": "adults",
-          "time": "6:00-7:00 PM",
-          "class": "Adult Class"
-        }
-      ]
-    },
-    "sat": {
-      "label": "Saturday",
-      "note": "Adult No-Gi",
-      "slots": [
-        {
-          "id": "sat-adults",
-          "dayKey": "sat",
-          "lane": "adults",
-          "bookLane": "adults",
-          "calendarKey": "saturday",
-          "time": "10:30-11:30 AM",
-          "class": "Adult Class",
-          "badge": "No-Gi",
-          "badgeTone": "nogi"
-        }
-      ]
-    }
-  }
+  ]
 }

@@ -1,31 +1,81 @@
 window.SSBJJ_SCHEDULE = {
-  groupClasses: [
+  "pilot": {
+    "status": "pilot",
+    "timezone": "America/New_York",
+    "effectiveDate": "2026-09-08",
+    "measurementEndDate": "2026-10-23",
+    "reviewDate": "2026-10-26",
+    "verifiedDate": "2026-08-19",
+    "capacity": 12
+  },
+  "groupClasses": [
     {
-      day: "Monday",
-      items: ["5:00 PM Youth/Teen", "6:00 PM Adults"]
+      "id": "weekday-youth-teen-1700",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "start": "5:00 PM",
+      "end": "6:00 PM",
+      "audience": "Youth + Teen",
+      "ages": "5–17",
+      "format": "No-Gi"
     },
     {
-      day: "Tuesday",
-      items: ["5:00 PM Youth/Teen", "6:00 PM Adults"]
+      "id": "friday-youth-teen-gi-lab-1700",
+      "days": [
+        "Friday"
+      ],
+      "start": "5:00 PM",
+      "end": "6:00 PM",
+      "audience": "Youth + Teen",
+      "ages": "5–17",
+      "format": "Gi",
+      "publicLabel": "Friday Gi Lab"
     },
     {
-      day: "Wednesday",
-      items: ["5:00 PM Youth/Teen No-Gi", "6:00 PM Adult No-Gi"]
+      "id": "weekday-adult-1800",
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start": "6:00 PM",
+      "end": "7:00 PM",
+      "audience": "Adult",
+      "ages": "18+",
+      "format": "No-Gi"
     },
     {
-      day: "Friday",
-      items: ["5:00 PM Youth/Teen", "6:00 PM Adults"]
+      "id": "tuesday-friday-adult-gi",
+      "days": [
+        "Tuesday",
+        "Friday"
+      ],
+      "start": "6:00 PM",
+      "end": "7:00 PM",
+      "audience": "Adult",
+      "ages": "18+",
+      "format": "Gi"
     },
     {
-      day: "Saturday",
-      items: ["10:30 AM Adult No-Gi"]
+      "id": "saturday-adult-nogi-1030",
+      "days": [
+        "Saturday"
+      ],
+      "start": "10:30 AM",
+      "end": "11:30 AM",
+      "audience": "Adult",
+      "format": "No-Gi",
+      "note": "Youth and teens require Sandy's approval."
     }
   ],
-  privateCoaching: [
+  "privateCoaching": [
     {
-      day: "Morning",
-      items: ["Private Coaching by Request"]
+      "day": "Morning",
+      "items": [
+        "Private Coaching by Request"
+      ]
     }
-  ],
-  thursdayNote: "There are no group classes on Thursday; private coaching is available by request."
+  ]
 };
