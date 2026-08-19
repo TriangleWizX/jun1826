@@ -650,6 +650,18 @@ hr { border-color: var(--ss-border); opacity: 1; }
     gap: 1rem;
   }
 
+  .ss-mobile-actionbar .ss-action-primary {
+    flex: 1 1 auto;
+  }
+
+  .ss-mobile-actionbar .ss-action-home {
+    flex: 0 0 4.5rem;
+    width: auto;
+    border: 1px solid var(--ss-green, #116A42);
+    background: transparent;
+    color: var(--ss-green, #116A42);
+  }
+
   .ss-footer-group {
     padding: 1rem;
   }
