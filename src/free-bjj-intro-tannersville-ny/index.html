@@ -179,7 +179,17 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
             <label><input type="radio" name="other_sport" value="Prefer to discuss with Sandy"> Prefer to discuss with Sandy</label>
           </div>
           <label class="small mt-3 d-none" id="primary-activity-label" for="primary-activity">Primary sport or activity
-            <input class="form-control mt-1" id="primary-activity" name="primary_activity" maxlength="80" autocomplete="off" placeholder="e.g. skiing, soccer, running">
+            <select class="form-select mt-1" id="primary-activity" name="primary_activity">
+              <option value="">Choose one</option>
+              <option value="Skiing or snowboarding">Skiing or snowboarding</option>
+              <option value="Soccer or field sport">Soccer or field sport</option>
+              <option value="Running or cross-country">Running or cross-country</option>
+              <option value="Cycling or hiking">Cycling or hiking</option>
+              <option value="Golf">Golf</option>
+              <option value="Racquet sport">Racquet sport</option>
+              <option value="Strength training or fitness">Strength training or fitness</option>
+              <option value="Other sport or activity">Other sport or activity</option>
+            </select>
           </label>
         </fieldset>
         <div class="ss-bezel-shell">
