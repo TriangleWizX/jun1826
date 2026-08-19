@@ -5,8 +5,8 @@ import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package', 'src/')
-DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'athlete-cross-training/', 'back-to-school-bjj-tannersville/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', 'schedule/', 'free-bjj-intro-tannersville-ny/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/')
-ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'site-shell.html', 'nav-include.html', 'report-card.html', 'after-booking-promise.html', 'after-school.html', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'core-promise-full.html', 'core-promise-short.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html'}
+DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'athlete-cross-training/', 'back-to-school-bjj-tannersville/', 'fall-practice-reset/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', 'schedule/', 'free-bjj-intro-tannersville-ny/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/')
+ROOT_FILES = {'.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'report-card.html', 'after-booking-promise.html', 'after-school.html', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'core-promise-full.html', 'core-promise-short.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 
 def changed_outputs(commit):
