@@ -21,6 +21,7 @@
       profile: null,
       otherSport: null,
       primaryActivity: '',
+      preferredDays: [],
       bookingStarted: false,
       autoSelecting: false
     };
@@ -137,6 +138,14 @@
     const requestedProfile = laneProfiles[String(requestedLane || '').toLowerCase()];
     const activityLabel = document.getElementById('primary-activity-label');
     const activityInput = document.getElementById('primary-activity');
+    const preferredDaysFieldset = document.querySelector('[data-youth-preferred-days]');
+    const preferredDayInputs = document.querySelectorAll('[data-youth-preferred-days] input[name="preferred_days"]');
+    preferredDayInputs.forEach((input) => {
+      input.addEventListener('change', () => {
+        state.preferredDays = Array.from(preferredDayInputs).filter((item) => item.checked).map((item) => item.value);
+        track('preferred_days_selected', { lane: state.profile || requestedLane || 'unknown', preferred_days: state.preferredDays.join('|') });
+      });
+    });
     document.querySelectorAll('[data-athlete-context] input[name="other_sport"]').forEach((input) => {
       input.addEventListener('change', () => {
         state.otherSport = input.value;
@@ -162,6 +171,7 @@
       const isYouth = lane === 'kids' || lane === 'teens' || lane === 'child' || lane === 'teen';
       if (introTitle) introTitle.textContent = isYouth ? youthHeadline : 'Reserve Your Free Intro.';
       if (introSubtitle) introSubtitle.textContent = isYouth ? youthSubheadline : 'Tour the studio, map your goal, then choose the right first class for your week.';
+      preferredDaysFieldset?.classList.toggle('d-none', !isYouth);
     };
     if (laneNote && laneNotes[String(requestedLane || '').toLowerCase()]) {
       laneNote.textContent = laneNotes[String(requestedLane).toLowerCase()];
@@ -211,6 +221,8 @@
       url.searchParams.set('audience_lane', profile);
       if (state.otherSport) url.searchParams.set('other_sport', state.otherSport);
       if (state.primaryActivity) url.searchParams.set('primary_activity', state.primaryActivity);
+      if (state.preferredDays.length) url.searchParams.set('preferred_days', state.preferredDays.join('|'));
+      url.searchParams.set('referring_page', window.location.pathname || '/');
 
       // Forward any page-level search params for session attribution
       try {
@@ -235,6 +247,8 @@
         utm_campaign: profile
       };
       payload.campaign = campaign || 'none';
+      payload.referring_page = window.location.pathname || '/';
+      payload.preferred_days = state.preferredDays.join('|');
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'profile_selected', payload);
       } else if (Array.isArray(window.dataLayer)) {

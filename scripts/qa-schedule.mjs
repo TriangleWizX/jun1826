@@ -33,6 +33,23 @@ function checkCanonicalSchedule() {
   if (adults.length !== 5 || adults.filter((entry) => entry.format === 'No-Gi').length !== 3 || adults.filter((entry) => entry.format === 'Gi').length !== 2) return ['Adult schedule ratio must be three No-Gi and two Gi.'];
   if (data.pilot?.capacity !== 12 || data.groupClasses.find((entry) => entry.id === 'friday-youth-teen-gi-lab')?.publicLabel !== 'Friday Gi Lab') return ['Pilot capacity or Friday Gi Lab label is incorrect.'];
 
+  const renderedSchedulePath = path.join(root, 'dist', 'schedule', 'index.html');
+  if (fs.existsSync(renderedSchedulePath)) {
+    const rendered = fs.readFileSync(renderedSchedulePath, 'utf8');
+    const renderedRows = [
+      ['Monday', 'Youth + Teen Small-Group Class · Ages 5–17 No-Gi', 'Adult Small-Group Class · No-Gi'],
+      ['Tuesday', 'Youth + Teen Small-Group Class · Ages 5–17 Gi', 'Adult Small-Group Class · Gi'],
+      ['Wednesday', 'Youth + Teen Small-Group Class · Ages 5–17 No-Gi', 'Adult Small-Group Class No-Gi'],
+      ['Friday', 'Youth + Teen Small-Group Class · Ages 5–17 Gi', 'Adult Small-Group Class · Gi'],
+      ['Saturday', 'Adult No-Gi', null]
+    ];
+    for (const [day, youthOrAdult, adult] of renderedRows) {
+      if (!rendered.includes(day) || !rendered.includes(youthOrAdult) || (adult && !rendered.includes(adult))) {
+        return [`Rendered schedule row is incomplete or contradictory: ${day}`];
+      }
+    }
+  }
+
   const sharedPartial = fs.readFileSync(path.join(root, 'src', 'partials', 'current-schedule.html'), 'utf8');
   if (!sharedPartial.includes('Private coaching is scheduled separately by request.') || !sharedPartial.includes('href="/schedule"')) {
     return ['Shared schedule partial must describe private coaching by request and link to /schedule.'];
