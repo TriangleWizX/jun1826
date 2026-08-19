@@ -22,6 +22,8 @@ def changed_outputs(commit):
                 candidate = ROOT / 'dist' / 'evidence' / 'index.html'
             elif name == 'src/athlete-cross-training.html':
                 candidate = ROOT / 'dist' / 'athlete-cross-training' / 'index.html'
+            elif name == 'src/athlete-cross-training/evidence.html':
+                candidate = ROOT / 'dist' / 'athlete-cross-training' / 'evidence' / 'index.html'
             elif name == 'src/schedule.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
             elif name == 'src/hyphen-weekend.html':
