@@ -12,13 +12,22 @@ export const schedule = {
 
   groupClasses: [
     {
-      id: "weekday-youth-teen-1700",
-      days: ["Monday", "Tuesday", "Wednesday"],
+      id: "weekday-youth-teen-nogi-1700",
+      days: ["Monday", "Wednesday"],
       start: "5:00 PM",
       end: "6:00 PM",
       audience: "Youth + Teen",
       ages: "5–17",
       format: "No-Gi"
+    },
+    {
+      id: "tuesday-youth-teen-gi-1700",
+      days: ["Tuesday"],
+      start: "5:00 PM",
+      end: "6:00 PM",
+      audience: "Youth + Teen",
+      ages: "5–17",
+      format: "Gi"
     },
     {
       id: "friday-youth-teen-gi-lab-1700",
