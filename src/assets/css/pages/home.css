@@ -87,6 +87,13 @@ html:has(body.page-home), body.page-home {
 .page-home .ss-home-lane-bento-card--kids .ss-double-bezel-inner { background: #f1e5d6; }
 .page-home .ss-home-lane-bento-card--teens .ss-double-bezel-inner { background: #e0eeee; }
 .page-home .ss-home-lane-bento-card--adults .ss-double-bezel-inner { background: #e5eadf; }
+.page-home .ss-home-lane-bento-card .ss-double-bezel-inner { position: relative; isolation: isolate; overflow: hidden; }
+.page-home .ss-home-lane-bento-card .ss-double-bezel-inner::before { position: absolute; inset: 0; z-index: -2; background-position: center; background-repeat: no-repeat; background-size: auto 125%; content: ""; opacity: .2; mix-blend-mode: multiply; pointer-events: none; }
+.page-home .ss-home-lane-bento-card .ss-double-bezel-inner::after { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(255 255 255 / .78) 0%, rgb(255 255 255 / .48) 48%, rgb(255 255 255 / .12) 100%); content: ""; pointer-events: none; }
+.page-home .ss-home-lane-bento-card--kids .ss-double-bezel-inner::before { background-image: url("/assets/images/herogigroup-mobile.webp"); background-position: 78% center; }
+.page-home .ss-home-lane-bento-card--teens .ss-double-bezel-inner::before { background-image: url("/assets/images/action3-mobile.webp"); background-position: 78% center; }
+.page-home .ss-home-lane-bento-card--adults .ss-double-bezel-inner::before { background-image: url("/assets/images/action2-mobile.webp"); background-position: 82% center; }
+.page-home .ss-lane-bento-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; }
 .page-home .ss-double-bezel { padding: var(--space-2xs); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-outer); background: var(--color-paper-2); box-shadow: var(--shadow-card); transition: transform var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
 .page-home .ss-double-bezel-inner { height: 100%; padding: var(--space-lg); border: var(--rule-hair) solid var(--bezel-inner-border); border-radius: var(--radius-inner); box-shadow: var(--bezel-inner-highlight); }
 .ss-lane-bento-header, .ss-lane-bento-footer { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
@@ -156,6 +163,8 @@ html:has(body.page-home), body.page-home {
   .page-home .ss-home-section--schedule td:nth-child(2)::before { content: "Youth / Teens"; color: var(--home-muted); }
   .page-home .ss-home-section--schedule td:nth-child(3)::before { content: "Adults"; color: var(--home-muted); }
   .page-home .home-hero__actions .ss-btn { flex: 1 1 100%; }
+  .page-home .ss-home-lane-bento-card .ss-double-bezel-inner::before { background-size: auto 100%; opacity: .14; }
+  .page-home .ss-home-lane-bento-card .ss-double-bezel-inner::after { background: linear-gradient(90deg, rgb(255 255 255 / .86) 0%, rgb(255 255 255 / .62) 58%, rgb(255 255 255 / .2) 100%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
