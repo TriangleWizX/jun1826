@@ -182,7 +182,8 @@ def main():
                         client = connect(cfg)
                         if not backup_done:
                             inventory, removed = cleanup_remote_backups(client, cfg, cleanup=True)
-                            valid = [item for item in inventory if item not in removed]
+                            removed_paths = {item['path'] for item, _ in removed}
+                            valid = [item for item in inventory if item['path'] not in removed_paths]
                             if valid:
                                 print(f"backup_reused={max(valid, key=lambda item: item['mtime'])['path']}", flush=True)
                             else:
