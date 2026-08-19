@@ -652,6 +652,8 @@ hr { border-color: var(--ss-border); opacity: 1; }
 
   .ss-mobile-actionbar .ss-action-primary {
     flex: 1 1 auto;
+    white-space: nowrap;
+    font-size: clamp(0.82rem, 3.5vw, 0.95rem);
   }
 
   .ss-mobile-actionbar .ss-action-home {
