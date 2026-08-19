@@ -1,0 +1,66 @@
+/* Fall Practice Reset: warm, calm acquisition surface aligned with the site system. */
+.page-back-to-school {
+  --bts-paper: var(--ss-bg, #fbfaf8);
+  --bts-ink: var(--ss-ink, #362b24);
+  --bts-green: var(--ss-green, #116a42);
+  --bts-teal: var(--ss-teal, #289fa1);
+  background: var(--bts-paper);
+  color: var(--bts-ink);
+}
+.page-back-to-school .bts-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3.25rem, 7vw, 6rem) 1rem;
+  color: #fff;
+  background: var(--bts-green);
+  isolation: isolate;
+}
+.page-back-to-school .bts-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 52%;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(40, 159, 161, .28), transparent 68%);
+  pointer-events: none;
+}
+.page-back-to-school .bts-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.35rem, 5vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+}
+.page-back-to-school .bts-hero .lead { max-width: 38rem; line-height: 1.6; }
+.page-back-to-school .bts-hero .btn { min-height: 48px; }
+.page-back-to-school .bts-hero .bg-white {
+  border-radius: 1.25rem;
+  box-shadow: 0 1.25rem 3rem rgba(20, 55, 42, .22) !important;
+}
+.page-back-to-school .bts-card {
+  height: 100%;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(54, 43, 36, .12);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 .75rem 2rem rgba(54, 43, 36, .06);
+}
+.page-back-to-school .bts-card h3 { letter-spacing: -.02em; }
+.page-back-to-school .bts-cta-box {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 1.25rem;
+  color: #fff;
+  background: var(--bts-green);
+}
+.page-back-to-school a:focus-visible,
+.page-back-to-school button:focus-visible,
+.page-back-to-school select:focus-visible {
+  outline: 3px solid var(--bts-teal);
+  outline-offset: 3px;
+}
+@media (max-width: 767.98px) {
+  .page-back-to-school .bts-hero { padding-block: 3rem; }
+  .page-back-to-school .bts-hero h1 { max-width: 15ch; font-size: clamp(2.25rem, 11vw, 3.4rem); }
+  .page-back-to-school .bts-hero::before { inset: 48% 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-back-to-school *, .page-back-to-school *::before, .page-back-to-school *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

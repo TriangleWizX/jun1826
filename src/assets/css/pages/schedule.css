@@ -64,3 +64,15 @@
 .page-schedule .ss-editorial-lead { margin-inline: auto; }
 .page-schedule .ss-hero-actions,
 .page-schedule .ss-hero-features-row { justify-content: center; }
+
+/* Keep the schedule decision surface visually tied to campaign landing pages. */
+.page-schedule .ss-calendar-bezel-outer,
+.page-schedule .ss-double-bezel {
+  border-color: rgba(17, 106, 66, .16);
+  box-shadow: 0 .9rem 2.25rem rgba(54, 43, 36, .07);
+}
+.page-schedule .ss-cal-day-badge.active {
+  background: var(--ss-green, #116a42);
+  color: #fff;
+}
+.page-schedule .ss-cal-slot-name { font-weight: 600; }
