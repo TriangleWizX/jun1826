@@ -15,7 +15,7 @@ def changed_outputs(commit):
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names or 'src/assets/data/asset-hash-manifest.json' in names
-    sitewide_release = 'eleventy.config.js' in names
+    sitewide_release = 'eleventy.config.js' in names or 'src/_includes/components/footer.njk' in names
     for name in names:
         if name.startswith('src/'):
             if name == 'src/evidence.html':
