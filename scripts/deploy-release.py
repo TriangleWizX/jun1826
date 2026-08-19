@@ -48,8 +48,9 @@ def changed_outputs(commit):
             if not candidate.is_file(): continue
             rel = candidate.relative_to(ROOT / 'dist').as_posix()
             is_js = rel.startswith('js/') or rel.startswith('assets/js/')
+            is_css = rel.startswith('assets/css/')
             is_site_html = rel.endswith('.html') and (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS))
-            if is_site_html or is_js or rel == 'assets/data/asset-hash-manifest.json':
+            if is_site_html or is_js or is_css or rel == 'assets/data/asset-hash-manifest.json':
                 outputs.add((candidate, rel))
     return sorted(outputs, key=lambda item: item[1])
 
