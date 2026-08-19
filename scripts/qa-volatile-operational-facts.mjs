@@ -8,15 +8,15 @@ const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 
 const canonical = JSON.parse(read("src/_data/schedule.json"));
 const expected = [
-  ["Monday", "Youth/Teen", "5:00 PM", "Gi"],
+  ["Monday", "Youth/Teen", "5:00 PM", "No-Gi"],
   ["Tuesday", "Youth/Teen", "5:00 PM", "Gi"],
   ["Wednesday", "Youth/Teen", "5:00 PM", "No-Gi"],
   ["Friday", "Youth/Teen", "5:00 PM", "Gi"],
-  ["Monday", "Adult", "6:00 PM", "Gi"],
+  ["Monday", "Adult", "6:00 PM", "No-Gi"],
   ["Tuesday", "Adult", "6:00 PM", "Gi"],
   ["Wednesday", "Adult", "6:00 PM", "No-Gi"],
   ["Friday", "Adult", "6:00 PM", "Gi"],
-  ["Saturday", "Adult No-Gi", "10:30 AM", "No-Gi"]
+  ["Saturday", "Adult", "10:30 AM", "No-Gi"]
 ];
 const active = canonical.groupClasses.filter((item) => item.active);
 for (const [day, audience, time, format] of expected) {
