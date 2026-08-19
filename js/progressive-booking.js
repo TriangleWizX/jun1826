@@ -26,11 +26,13 @@
     };
 
     const track = (name, extra = {}) => {
+      const pageParams = new URLSearchParams(window.location.search);
       const payload = {
         source_page: window.location.href,
         source_path: window.location.pathname || '/',
         page_type: 'other',
         lane: String(new URLSearchParams(window.location.search).get('lane') || 'unknown').replace('-', '_'),
+        campaign: pageParams.get('campaign') || pageParams.get('utm_campaign') || 'none',
         ...extra
       };
       if (typeof window.gtag === 'function') {
@@ -198,6 +200,11 @@
       const url = new URL(baseUrl, window.location.origin);
       url.searchParams.set('utm_source', 'onsite-booking');
       url.searchParams.set('utm_campaign', profile);
+      const campaign = new URLSearchParams(window.location.search).get('campaign') || new URLSearchParams(window.location.search).get('utm_campaign');
+      if (campaign) {
+        url.searchParams.set('campaign', campaign);
+        url.searchParams.set('campaign_tag', campaign);
+      }
       url.searchParams.set('background_color', 'fbfaf8');
       url.searchParams.set('text_color', '1f1712');
       url.searchParams.set('primary_color', '289fa1');
@@ -227,6 +234,7 @@
         utm_source: 'onsite-booking',
         utm_campaign: profile
       };
+      payload.campaign = campaign || 'none';
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'profile_selected', payload);
       } else if (Array.isArray(window.dataLayer)) {
