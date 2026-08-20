@@ -31,6 +31,11 @@ export const houseDrops = [
   { id: "friday", name: "Friday", description: "Best for weekend arrivals.", status: "Recommended for wedding weekends." },
   { id: "saturday-morning", name: "Saturday Morning", description: "Limited availability for getting-ready houses.", status: "Limited availability." }
 ];
-export const galleryImages = [["20230508_195151.jpg", "A finished drink in warm evening light", "/assets/images/hyphen/20230508_195151.webp"], ["20230820_180830.jpg", "Drinks prepared for a weekend table", "/assets/images/hyphen/20230820_180830.webp"], ["20260718_174246.jpg", "Three finished cocktails on a tray", "/assets/images/hyphen/20260718_174246.webp"], ["20251109_162043.jpg", "Bottle selection and cocktail mise en place", "/assets/images/hyphen/20251109_162043.webp"]];
+export const galleryImages = [
+  ["bar-process.jpg", "A bartender finishing a cocktail with citrus", "/assets/images/hyphen/bar-process.webp"],
+  ["bottle-selection.jpg", "A considered bottle selection beside a finished drink", "/assets/images/hyphen/bottle-selection.webp"],
+  ["cocktail-mint.jpg", "A chilled mint cocktail with crushed ice", "/assets/images/hyphen/cocktail-mint.webp"],
+  ["20230508_195151.jpg", "A finished drink in warm evening light", "/assets/images/hyphen/20230508_195151.webp"]
+];
 export const cuisines = [];
 export default { ALCOHOL_INCLUDED_ENABLED, HYPHEN_PRICING, bottleSizes, drinkFamilies, drinkPackages, spiritSourcing, iceProducts, houseDrops, galleryImages, cuisines };
