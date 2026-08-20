@@ -21,3 +21,8 @@ html,body.hw-page{overflow-x:clip}body.hw-page{min-width:0}.hw-header>*{min-widt
 @media(max-width:767px){.hw-hero-art{min-height:clamp(18rem,82vw,25rem)}.hw-hero-art img{object-position:center}.hw-price-grid,.hw-sourcing-list{grid-template-columns:1fr}.hw-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.hw-gallery-grid figure,.hw-gallery-grid figure:nth-child(3n+1){aspect-ratio:1/1;grid-row:auto}.hw-price-card>picture{height:9rem;flex-basis:9rem}}
 @media(min-width:768px){.hw-gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.hw-gallery-grid figure:nth-child(3n+1){grid-row:span 2}.hw-gallery-grid figure:nth-child(3n+1) img{object-position:center}}
 @media(prefers-reduced-motion:reduce){.hw-price-card>picture>img,.hw-gallery-grid img{transition:none}}
+.hw-hero-art img{transform:rotate(180deg)}
+.hw-price-card>picture>img{transform:rotate(90deg) scale(.72)}
+.hw-price-card:hover>picture>img,.hw-price-card:focus-within>picture>img{transform:rotate(90deg) scale(.75)}
+.hw-gallery-grid img{transform:rotate(90deg) scale(.72)}
+.hw-gallery-grid figure:focus-within img,.hw-gallery-grid figure:hover img{transform:rotate(90deg) scale(.75)}
