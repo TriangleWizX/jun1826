@@ -28,6 +28,8 @@ assert.match(script, /#hw-name/);
 assert.match(script, /setDefaultDates/);
 assert.match(script, /message.required = true/);
 assert.match(script, /Hyphen Weekend request/);
+assert.match(script, /Food interest: Yes/);
+assert.match(script, /config\.foodInterest/);
 assert.match(source, /id="hw-inquiry-form"/);
 assert.match(source, /action="https:\/\/formspree\.io\/f\/mqazqozk"/);
 for (const invariant of ['alcoholIncluded: false', 'paymentEnabled: false', "transactionType: 'inquiry'"]) assert.match(script, new RegExp(invariant.replace(/[{}()[\].+?^$\\|]/g, '\\$&')));
