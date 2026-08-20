@@ -28,3 +28,6 @@ html,body.hw-page{overflow-x:clip}body.hw-page{min-width:0}.hw-header>*{min-widt
 .hw-gallery-grid figure:focus-within img,.hw-gallery-grid figure:hover img{transform:rotate(90deg) scale(.75)}
 .hw-pricing[aria-labelledby="hw-pricing-title"] .hw-price-card:nth-child(2)>picture>img,.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-price-card:nth-child(2):hover>picture>img{transform:none}
 .hw-gallery-grid figure:nth-child(2) img,.hw-gallery-grid figure:nth-child(2):hover img,.hw-gallery-grid figure:nth-child(2):focus-within img{transform:none}
+.hw-price-grid[aria-label] .hw-price-card>picture>img{transform:rotate(90deg)}
+.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-price-card>picture>img{width:100%;height:100%;object-fit:cover}
+.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-price-card:nth-child(2)>picture>img,.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-price-card:nth-child(2):hover>picture>img{transform:none}
