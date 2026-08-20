@@ -1,5 +1,11 @@
 export const ALCOHOL_INCLUDED_ENABLED = false;
 import { HYPHEN_PRICING } from "../assets/js/hyphen-pricing.js";
+export const bottleSizes = [
+  { ml: 375, label: "375 mL", name: "Cabin", copy: "A smaller Bottle Match. About 6 pours each." },
+  { ml: 750, label: "750 mL", name: "House · Default", copy: "The standard Bottle Match. About 12 pours each.", featured: true },
+  { ml: 1000, label: "1 L", name: "Gathering", copy: "More room around the table. About 16 pours each." },
+  { ml: 1500, label: "1.5 L", name: "Full House", copy: "Built for the larger weekend. About 24 pours each." }
+];
 export const drinkFamilies = [
   { id: "bright", name: "Bright", product: "Clarified Lime", description: "Cold. Bright. Clean.", supporting: "Crisp citrus built for the first glass after you put your bags down.", pairs: "rum · gin · tequila", garnish: ["lime"], container: "quart_mason_jar" },
   { id: "silk", name: "Silk", product: "Clarified Sour", description: "Soft. Bright. Aromatic.", supporting: "A polished sour built for cocktail hour without turning the rental kitchen into a bar.", pairs: "gin", garnish: ["lemon"], container: "quart_mason_jar" },
@@ -27,4 +33,4 @@ export const houseDrops = [
 ];
 export const galleryImages = [["20230508_195151.jpg", "A finished drink in warm evening light"], ["20230820_180830.jpg", "Drinks prepared for a weekend table"], ["20260718_174246.jpg", "Three finished cocktails on a tray"], ["20251109_162043.jpg", "Bottle selection and cocktail mise en place"]];
 export const cuisines = [];
-export default { ALCOHOL_INCLUDED_ENABLED, HYPHEN_PRICING, drinkFamilies, drinkPackages, spiritSourcing, iceProducts, houseDrops, galleryImages, cuisines };
+export default { ALCOHOL_INCLUDED_ENABLED, HYPHEN_PRICING, bottleSizes, drinkFamilies, drinkPackages, spiritSourcing, iceProducts, houseDrops, galleryImages, cuisines };
