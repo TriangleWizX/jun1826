@@ -102,6 +102,7 @@
     "qa:repo:clean": "node scripts/qa-repo-clean.mjs",
     "qa:visibility": "node scripts/qa-visibility.mjs --json=reports/visibility-report.json",
     "qa:schedule": "node scripts/qa-schedule.mjs",
+    "qa:fall-pilot": "node scripts/qa-fall-pilot.mjs",
     "qa:volatile-facts": "node scripts/qa-volatile-operational-facts.mjs",
     "qa:first-visit": "node scripts/qa-first-visit-contract.mjs",
     "qa:temporal": "node scripts/qa-temporal-programs.mjs",

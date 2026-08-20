@@ -22,6 +22,8 @@
       otherSport: null,
       primaryActivity: '',
       preferredDays: [],
+      transportationConstraint: '',
+      recurringTimeConflict: '',
       bookingStarted: false,
       autoSelecting: false
     };
@@ -90,13 +92,14 @@
         target.setAttribute('aria-pressed', 'true');
         
         const previousProfile = state.profile;
+        const wasBookingStarted = state.bookingStarted;
         state.profile = target.getAttribute('data-profile');
+        state.bookingStarted = true;
         updateLanePresentation(state.profile);
         if (laneNote && (state.profile === 'child' || state.profile === 'teen')) {
           laneNote.textContent = state.profile === 'child' ? laneNotes.kids : laneNotes.teens;
         }
-        if (!state.autoSelecting && !state.bookingStarted) {
-          state.bookingStarted = true;
+        if (!state.autoSelecting && !wasBookingStarted) {
           track('booking_started', { lane: state.profile, interaction: 'profile_selected' });
         }
         track('lane_resolved', { lane: state.profile, selection_method: state.autoSelecting ? 'query' : 'manual' });
@@ -138,23 +141,35 @@
     const requestedProfile = laneProfiles[String(requestedLane || '').toLowerCase()];
     const activityLabel = document.getElementById('primary-activity-label');
     const activityInput = document.getElementById('primary-activity');
+    const athleteContext = document.querySelector('[data-athlete-context]');
     const preferredDaysFieldset = document.querySelector('[data-youth-preferred-days]');
-    const preferredDayInputs = document.querySelectorAll('[data-youth-preferred-days] input[name="preferred_days"]');
+    const adultPreferredDaysFieldset = document.querySelector('[data-adult-preferred-days]');
+    const preferredDayInputs = document.querySelectorAll('[data-youth-preferred-days] input[name="preferred_days"], [data-adult-preferred-days] input[name="preferred_days"]');
     preferredDayInputs.forEach((input) => {
       input.addEventListener('change', () => {
         state.preferredDays = Array.from(preferredDayInputs).filter((item) => item.checked).map((item) => item.value);
         track('preferred_days_selected', { lane: state.profile || requestedLane || 'unknown', preferred_days: state.preferredDays.join('|') });
+        syncCalendlyPreferences();
       });
     });
     document.querySelectorAll('[data-athlete-context] input[name="other_sport"]').forEach((input) => {
       input.addEventListener('change', () => {
         state.otherSport = input.value;
         const showActivity = input.checked && input.value === 'Yes';
-        activityLabel?.classList.toggle('d-none', !showActivity);
+        setHiddenState(activityLabel, !showActivity);
         if (!showActivity && activityInput) activityInput.value = '';
+        syncCalendlyPreferences();
       });
     });
-    activityInput?.addEventListener('input', () => { state.primaryActivity = activityInput.value; });
+    activityInput?.addEventListener('input', () => { state.primaryActivity = activityInput.value; syncCalendlyPreferences(); });
+    document.getElementById('transportation-constraint')?.addEventListener('input', (event) => {
+      state.transportationConstraint = event.target.value.trim();
+      syncCalendlyPreferences();
+    });
+    document.getElementById('recurring-time-conflict')?.addEventListener('input', (event) => {
+      state.recurringTimeConflict = event.target.value.trim();
+      syncCalendlyPreferences();
+    });
     const laneNote = document.getElementById('first-visit-lane-note');
     const introTitle = document.getElementById('book-intro-title');
     const introSubtitle = document.getElementById('book-intro-subtitle');
@@ -165,13 +180,21 @@
       adult: 'For adults: we orient you to the room, explain how resistance works, and choose a manageable starting point during a calm 15-minute Goal Mapping visit.',
       'community-service': 'For qualifying service professionals: use Goal Mapping to discuss the right class lane, schedule, and community-service rate.'
     };
+    const setHiddenState = (element, hidden) => {
+      if (!element) return;
+      element.classList.toggle('d-none', hidden);
+      element.toggleAttribute('hidden', hidden);
+      element.setAttribute('aria-hidden', String(hidden));
+    };
     const youthHeadline = 'See How Your Child Responds Before Choosing a Jiu-Jitsu Program';
     const youthSubheadline = 'Reserve a free beginner intro with Goal Mapping, a carefully matched partner, and one structured class. No experience, credit card, or enrollment commitment required.';
     const updateLanePresentation = (lane) => {
       const isYouth = lane === 'kids' || lane === 'teens' || lane === 'child' || lane === 'teen';
       if (introTitle) introTitle.textContent = isYouth ? youthHeadline : 'Reserve Your Free Intro.';
       if (introSubtitle) introSubtitle.textContent = isYouth ? youthSubheadline : 'Tour the studio, map your goal, then choose the right first class for your week.';
-      preferredDaysFieldset?.classList.toggle('d-none', !isYouth);
+      setHiddenState(preferredDaysFieldset, !isYouth);
+      setHiddenState(adultPreferredDaysFieldset, isYouth);
+      setHiddenState(athleteContext, isYouth);
     };
     if (laneNote && laneNotes[String(requestedLane || '').toLowerCase()]) {
       laneNote.textContent = laneNotes[String(requestedLane).toLowerCase()];
@@ -197,7 +220,15 @@
     });
 
     // Initialize Calendly
-    const initCalendly = (profile) => {
+    let mobilePopupShown = false;
+    let preferenceSyncTimer;
+    function syncCalendlyPreferences() {
+      if (!state.profile || !state.bookingStarted) return;
+      clearTimeout(preferenceSyncTimer);
+      preferenceSyncTimer = setTimeout(() => initCalendly(state.profile), 350);
+    }
+
+    function initCalendly(profile) {
       const container = document.getElementById('calendly-embed-onsite');
       if (!container) return;
       
@@ -222,6 +253,8 @@
       if (state.otherSport) url.searchParams.set('other_sport', state.otherSport);
       if (state.primaryActivity) url.searchParams.set('primary_activity', state.primaryActivity);
       if (state.preferredDays.length) url.searchParams.set('preferred_days', state.preferredDays.join('|'));
+      if (state.transportationConstraint) url.searchParams.set('transportation_constraint', state.transportationConstraint);
+      if (state.recurringTimeConflict) url.searchParams.set('recurring_time_conflict', state.recurringTimeConflict);
       url.searchParams.set('referring_page', window.location.pathname || '/');
 
       // Forward any page-level search params for session attribution
@@ -249,6 +282,8 @@
       payload.campaign = campaign || 'none';
       payload.referring_page = window.location.pathname || '/';
       payload.preferred_days = state.preferredDays.join('|');
+      payload.transportation_constraint = state.transportationConstraint;
+      payload.recurring_time_conflict = state.recurringTimeConflict;
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'profile_selected', payload);
       } else if (Array.isArray(window.dataLayer)) {
@@ -293,7 +328,10 @@
           });
         }
         // Auto-trigger popup for smooth transition
-        setTimeout(triggerPopup, 200);
+        if (!mobilePopupShown) {
+          mobilePopupShown = true;
+          setTimeout(triggerPopup, 200);
+        }
       } else {
         if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
           window.Calendly.initInlineWidget({
