@@ -17,6 +17,7 @@ def changed_outputs(commit):
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names or 'src/assets/data/asset-hash-manifest.json' in names
     sitewide_release = ('eleventy.config.js' in names or
                         'footer-include.html' in names or
+                        'src/_includes/layouts/base.njk' in names or
                         'src/_includes/components/footer.njk' in names or
                         'src/_includes/footer-high-intent.html' in names)
     for name in names:
