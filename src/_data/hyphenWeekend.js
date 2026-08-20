@@ -12,9 +12,9 @@ export const drinkFamilies = [
   { id: "deep", name: "Deep", product: "Spirit-Forward", description: "Slow. Aromatic. Ready for the fire.", supporting: "A darker Bottle Match for dinner ending, big ice and nowhere else to be.", pairs: "rye · bourbon", garnish: ["orange", "cherry"], container: "pint_mason_jar" }
 ];
 export const drinkPackages = [
-  { id: "one", name: "One", description: "For one drink direction. About 12 pours.", price: 55, includes: [], featured: false, image: "/assets/images/hyphen/20260718_174246.jpg", alt: "Three finished cocktails on a tray" },
-  { id: "duo", name: "Duo", description: "For a weekend with options. About 24 pours.", price: 105, includes: [], featured: false, image: "/assets/images/hyphen/three-drinks.webp", alt: "Three finished cocktails arranged on a tray" },
-  { id: "full-flight", name: "Full Flight", description: "Best for the house. Bright + Silk + Deep. About 36 pours.", price: 145, includes: ["bright", "silk", "deep"], featured: true, image: "/assets/images/hyphen/20260718_174246.jpg", alt: "Three finished cocktails on a tray" }
+  { id: "one", name: "One", description: "For one drink direction. About 12 pours.", price: 55, includes: [], featured: false, image: "/assets/images/hyphen/20251109_162043.jpg", webp: "/assets/images/hyphen/20251109_162043.webp", alt: "A finished drink in warm evening light" },
+  { id: "duo", name: "Duo", description: "For a weekend with options. About 24 pours.", price: 105, includes: [], featured: false, image: "/assets/images/hyphen/20230820_180830.jpg", webp: "/assets/images/hyphen/20230820_180830.webp", alt: "Drinks prepared for a weekend table" },
+  { id: "full-flight", name: "Full Flight", description: "Best for the house. Bright + Silk + Deep. About 36 pours.", price: 145, includes: ["bright", "silk", "deep"], featured: true, image: "/assets/images/hyphen/20260718_174246.jpg", webp: "/assets/images/hyphen/20260718_174246.webp", alt: "Three finished cocktails on a tray" }
 ];
 export const spiritSourcing = [
   { id: "guest-supplied", name: "I Have the Bottle", description: "Bring the bottles you already like.", price: 0 },
@@ -31,6 +31,6 @@ export const houseDrops = [
   { id: "friday", name: "Friday", description: "Best for weekend arrivals.", status: "Recommended for wedding weekends." },
   { id: "saturday-morning", name: "Saturday Morning", description: "Limited availability for getting-ready houses.", status: "Limited availability." }
 ];
-export const galleryImages = [["20230508_195151.jpg", "A finished drink in warm evening light"], ["20230820_180830.jpg", "Drinks prepared for a weekend table"], ["20260718_174246.jpg", "Three finished cocktails on a tray"], ["20251109_162043.jpg", "Bottle selection and cocktail mise en place"]];
+export const galleryImages = [["20230508_195151.jpg", "A finished drink in warm evening light", "/assets/images/hyphen/20230508_195151.webp"], ["20230820_180830.jpg", "Drinks prepared for a weekend table", "/assets/images/hyphen/20230820_180830.webp"], ["20260718_174246.jpg", "Three finished cocktails on a tray", "/assets/images/hyphen/20260718_174246.webp"], ["20251109_162043.jpg", "Bottle selection and cocktail mise en place", "/assets/images/hyphen/20251109_162043.webp"]];
 export const cuisines = [];
 export default { ALCOHOL_INCLUDED_ENABLED, HYPHEN_PRICING, bottleSizes, drinkFamilies, drinkPackages, spiritSourcing, iceProducts, houseDrops, galleryImages, cuisines };
