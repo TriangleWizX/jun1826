@@ -20,8 +20,18 @@ permalink: "/options-pricing/index.html"
       </p>
     </div>
 
+    <nav class="border rounded-4 p-3 p-md-4 mb-5" aria-label="Choose your buying stage" data-offer-stage="discovery">
+      <h2 class="h4 mb-2">What describes you?</h2>
+      <p class="small text-muted mb-3">Choose the path that matches your situation; the full details remain below.</p>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-primary" href="#start" data-offer-stage="discovery" data-offer="free-intro">I'm New</a>
+        <a class="btn btn-outline-primary" href="#flexible" data-offer-stage="visitor" data-offer="flexible-access">I Need Flexible Access</a>
+        <a class="btn btn-outline-primary" href="#continue" data-offer-stage="continuation" data-audience="member">I'm Already Training</a>
+      </div>
+    </nav>
+
     <!-- Section 1: Start Free -->
-    <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5" style="background: var(--ss-surface2, #F4F1ED); border-left: 6px solid var(--ss-green, #116A42) !important;">
+    <div id="start" class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5" style="background: var(--ss-surface2, #F4F1ED); border-left: 6px solid var(--ss-green, #116A42) !important;">
       <div class="row align-items-center">
         <div class="col-12 col-lg-8">
           <span class="badge bg-green text-white mb-2 px-3 py-2" style="background-color: var(--ss-green, #116A42); font-size: 0.85rem;">First Step</span>
@@ -157,7 +167,7 @@ permalink: "/options-pricing/index.html"
     </section>
 
     <!-- Section 3: Visitors & Short-Term -->
-    <div class="mb-5 py-4 px-3 rounded-4" style="background: var(--ss-surface2, #F4F1ED);">
+    <div id="flexible" class="mb-5 py-4 px-3 rounded-4" style="background: var(--ss-surface2, #F4F1ED);">
       <div class="text-center mb-4">
         <h2 class="h3 font-weight-bold text-ink" style="color: var(--ss-ink, #362B24);">Visiting the Catskills</h2>
         <p class="text-muted" style="color: var(--ss-muted, #4F433C);">Drop-in passes for vacationing practitioners and temporary area visitors.</p>
@@ -204,7 +214,7 @@ permalink: "/options-pricing/index.html"
     </div>
 
     <!-- Section 5: Later choices -->
-    <section class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5" aria-labelledby="later-choices-title" style="background: var(--ss-surface2, #F4F1ED);">
+    <section id="continue" class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5" aria-labelledby="later-choices-title" style="background: var(--ss-surface2, #F4F1ED);">
       <span class="ss-home-kicker text-uppercase font-weight-bold text-teal mb-2 d-block" style="color: var(--ss-teal, #289FA1); font-size: 0.85rem; letter-spacing: 0.05em;">After your first term</span>
       <h2 id="later-choices-title" class="h3 font-weight-bold text-ink mb-2" style="color: var(--ss-ink, #362B24);">Longer-term choices are a later decision.</h2>
       <p class="text-muted mb-3" style="color: var(--ss-muted, #4F433C);">After a Core Culture term and a review of what is working, you can renew Core Culture, consider Annual Track, or apply for Elite Concierge. Finishing a term does not obligate you to continue.</p>

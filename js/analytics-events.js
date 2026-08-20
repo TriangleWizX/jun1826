@@ -195,6 +195,10 @@
     cta_location: getPlacement(el),
     day: getDay(el, href),
     cta_label: normalizeCtaLabel(el?.textContent || ''),
+    offer_stage: el?.dataset?.offerStage || '',
+    audience: el?.dataset?.audience || '',
+    source_component: el?.dataset?.ctaSrc || el?.dataset?.source || '',
+    offer: el?.dataset?.offer || el?.dataset?.offerId || '',
     ...overrides
   });
 

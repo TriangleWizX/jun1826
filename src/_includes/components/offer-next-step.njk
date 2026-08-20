@@ -1,0 +1,11 @@
+{% macro offerNextStep(eyebrow, title, description, primaryLabel, primaryHref, secondaryLabel='', secondaryHref='', stage='discovery', audience='prospect', offer='') %}
+<section class="ss-offer-next-step" data-offer-stage="{{ stage }}" data-audience="{{ audience }}"{% if offer %} data-offer="{{ offer }}"{% endif %} aria-label="{{ title }}">
+  <p class="ss-eyebrow mb-2">{{ eyebrow }}</p>
+  <h2 class="h3 mb-2">{{ title }}</h2>
+  <p class="mb-3">{{ description }}</p>
+  <div class="d-flex flex-wrap gap-2">
+    <a class="btn btn-primary ss-btn" href="{{ primaryHref }}" data-offer-stage="{{ stage }}" data-audience="{{ audience }}"{% if offer %} data-offer="{{ offer }}"{% endif %}>{{ primaryLabel }}</a>
+    {% if secondaryLabel and secondaryHref %}<a class="btn btn-outline-secondary ss-btn" href="{{ secondaryHref }}" data-offer-stage="{{ stage }}" data-audience="{{ audience }}">{{ secondaryLabel }}</a>{% endif %}
+  </div>
+</section>
+{% endmacro %}

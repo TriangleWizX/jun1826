@@ -47,6 +47,16 @@
         cta_location: ctaLocation,
         cta_label: ctaLabel
       };
+      const lifecycleFields = {
+        offer_stage: target.getAttribute("data-offer-stage"),
+        audience: target.getAttribute("data-audience"),
+        source_component: target.getAttribute("data-cta-src") || target.getAttribute("data-source"),
+        lane: target.getAttribute("data-cta-lane"),
+        offer: target.getAttribute("data-offer") || target.getAttribute("data-offer-id")
+      };
+      Object.entries(lifecycleFields).forEach(([key, value]) => {
+        if (value) params[key] = value;
+      });
       if (offerId) params.offer_id = offerId;
 
       window.SS_TRACK_EVENT(eventName, params);

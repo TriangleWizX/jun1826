@@ -10,6 +10,20 @@
 
   {% include "components/header.njk" %}
 
+  {% if audience == "member" %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".ss-nav-cta").forEach(function (cta) {
+        cta.href = "/schedule";
+        cta.setAttribute("data-cta-label", "View Schedule");
+        var text = cta.querySelector("[data-cta-text]");
+        if (text) text.textContent = "View Schedule";
+        else cta.textContent = "View Schedule";
+      });
+    });
+  </script>
+  {% endif %}
+
   {% if promotions.promotions[0].active %}
     {% include "components/promotion-banner.njk" %}
   {% endif %}
