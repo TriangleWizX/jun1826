@@ -26,3 +26,5 @@ html,body.hw-page{overflow-x:clip}body.hw-page{min-width:0}.hw-header>*{min-widt
 .hw-price-card:hover>picture>img,.hw-price-card:focus-within>picture>img{transform:rotate(90deg) scale(.75)}
 .hw-gallery-grid img{transform:rotate(90deg) scale(.72)}
 .hw-gallery-grid figure:focus-within img,.hw-gallery-grid figure:hover img{transform:rotate(90deg) scale(.75)}
+.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-price-card:nth-child(2)>picture>img,.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-price-card:nth-child(2):hover>picture>img{transform:none}
+.hw-gallery-grid figure:nth-child(2) img,.hw-gallery-grid figure:nth-child(2):hover img,.hw-gallery-grid figure:nth-child(2):focus-within img{transform:none}
