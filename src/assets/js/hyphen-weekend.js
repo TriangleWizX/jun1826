@@ -11,6 +11,10 @@ const config = { dates: {}, property: '', guests: 0, bottleMatch: { package: '',
 import { HYPHEN_PRICING as prices } from './hyphen-pricing.js';
 const garnishes = { bright: ['lime'], silk: ['lemon'], deep: ['orange', 'cherry'] };
 const priceKey = value => value === 'full-flight' ? 'fullFlight' : value;
+const isoDate = date => date.toISOString().slice(0, 10);
+function setDefaultDates() { const start = new Date(); start.setHours(12, 0, 0, 0); start.setDate(start.getDate() + ((5 - start.getDay() + 7) % 7)); const end = new Date(start); end.setDate(end.getDate() + 2); form.elements.startDate.value = isoDate(start); form.elements.endDate.value = isoDate(end); config.dates = { startDate: form.elements.startDate.value, endDate: form.elements.endDate.value }; }
+function inquiryMessage() { const name = form.querySelector('input[name="package"]:checked')?.closest('label')?.querySelector('b')?.textContent || 'Bottle Match package to confirm'; const dates = config.dates.startDate && config.dates.endDate ? config.dates.startDate + ' to ' + config.dates.endDate : 'Dates to confirm'; const flavors = config.bottleMatch.flavors.join(' · ') || 'Flavors to confirm'; return 'Hyphen Weekend request\nDates: ' + dates + '\nHouse: ' + (config.property || 'Property to confirm') + '\nGuests: ' + (config.guests || 'Guests to confirm') + '\nBottle Match: ' + name + '\nFlavors: ' + flavors + '\nFinish Kit: ' + (config.finishKit.enabled ? 'Yes' : 'No') + '\nSpirit sourcing: ' + config.sourcing + '\nIcebox: ' + config.icebox + '\nHouse Drop: ' + (config.houseDrop || 'To confirm') + '\nService subtotal: $' + config.serviceSubtotal + '\nSpirit cost additional.'; }
+function syncInquiryMessage() { const message = document.querySelector('#hw-inquiry-message'); if (message) { message.required = true; if (message.dataset.autofilled === 'true' || !message.value) { message.value = inquiryMessage(); message.dataset.autofilled = 'true'; } } }
 const send = (name, value = {}) => (window.SS_TRACK_EVENT ? window.SS_TRACK_EVENT(name, value) : window.dataLayer?.push({ event: name, ...value }));
 const pkg = () => config.bottleMatch.package;
 function selectedFlavors() { return config.bottleMatch.package === 'full-flight' ? ['bright', 'silk', 'deep'] : [...form.querySelectorAll('select[name="flavorSlot"]')].map(x => x.value).filter(Boolean); }
@@ -26,6 +30,7 @@ function refresh() {
   document.querySelector('#hw-summary-list').innerHTML = '<div><dt>Bottle Match</dt><dd>' + packageName + (pkg() ? ' · $' + prices.bottleMatch[priceKey(pkg())] : '') + '</dd></div><div><dt>Flavors</dt><dd>' + (config.bottleMatch.flavors.join(' · ') || 'Not chosen') + '</dd></div><div><dt>Subtotal</dt><dd>' + (subtotal ? '$' + subtotal : 'Choose your package') + '</dd></div>';
   if (current === 8) document.querySelector('#hw-review').innerHTML = '<div><dt>Bottle Match</dt><dd>' + packageName + ' · $' + (prices.bottleMatch[priceKey(pkg())] || 0) + '</dd></div><div><dt>Finish Kit</dt><dd>' + (config.finishKit.enabled ? '$' + finish : 'Not added') + '</dd></div><div><dt>Spirits</dt><dd>' + config.sourcing + ' · $' + (prices.sourcing[config.sourcing.replace('_', '-')] || 0) + '</dd></div><div><dt>Ice</dt><dd>' + config.icebox + '</dd></div><div><dt>BEVERAGE SERVICE SUBTOTAL</dt><dd>$' + subtotal + '</dd></div>';
   document.querySelector('#hw-payload').value = JSON.stringify(config);
+  syncInquiryMessage();
 }
 function valid() {
   const fields = [...steps[current].querySelectorAll('input[required]')];
@@ -44,4 +49,7 @@ next.addEventListener('click', () => { if (!valid()) return; if (current < steps
 back.addEventListener('click', () => { current--; render(); });
 document.querySelector('#hw-inquiry-form')?.addEventListener('submit', () => send('hyphen_inquiry_submitted', { package: config.bottleMatch.package, flavors: config.bottleMatch.flavors, finish_kit: config.finishKit.enabled, sourcing: config.sourcing, icebox: config.icebox, house_drop: config.houseDrop }));
 render();
+setDefaultDates();
+form.querySelector('#hw-inquiry-message')?.addEventListener('input', e => { e.target.dataset.autofilled = 'false'; });
+refresh();
 if (mobileCta && 'IntersectionObserver' in window) new IntersectionObserver(([entry]) => mobileCta.classList.toggle('hw-mobile-cta-hidden', entry.isIntersecting), { threshold: 0.1 }).observe(document.querySelector('.hw-actions'));
