@@ -1,69 +1,30 @@
 export const ALCOHOL_INCLUDED_ENABLED = false;
-export const alcoholIncludedEnabled = ALCOHOL_INCLUDED_ENABLED;
-
+import { HYPHEN_PRICING } from "../assets/js/hyphen-pricing.js";
 export const drinkFamilies = [
-  { id: "bright", name: "Bright", product: "Clarified Lime", description: "Cold. Bright. Clean.", supporting: "Crisp citrus. Clean finish." },
-  { id: "silk", name: "Silk", product: "Clarified Sour", description: "Soft top. Sharp center.", supporting: "Bright acidity underneath a thick, soft head of foam." },
-  { id: "deep", name: "Deep", product: "Clarified Old Fashioned", description: "Slow, cold and ready for the fire.", supporting: "Aromatic, spirit-forward and built for slow ice." }
+  { id: "bright", name: "Bright", product: "Clarified Lime", description: "Cold. Bright. Clean.", supporting: "Crisp citrus built for the first glass after you put your bags down.", pairs: "rum · gin · tequila", garnish: ["lime"], container: "quart_mason_jar" },
+  { id: "silk", name: "Silk", product: "Clarified Sour", description: "Soft. Bright. Aromatic.", supporting: "A polished sour built for cocktail hour without turning the rental kitchen into a bar.", pairs: "gin", garnish: ["lemon"], container: "quart_mason_jar" },
+  { id: "deep", name: "Deep", product: "Spirit-Forward", description: "Slow. Aromatic. Ready for the fire.", supporting: "A darker Bottle Match for dinner ending, big ice and nowhere else to be.", pairs: "rye · bourbon", garnish: ["orange", "cherry"], container: "pint_mason_jar" }
 ];
-
 export const drinkPackages = [
-  { id: "one", name: "One", description: "One Bottle Match. About 12 pours.", price: 34, includes: ["bright"], image: "/assets/images/hyphen/cocktail-mint.webp", alt: "Mint-topped cocktail with crushed ice", featured: false },
-  { id: "duo", name: "Duo", description: "Any two. About 24 pours.", price: 66, savings: "Save up to $8", includes: ["bright", "silk", "deep"], image: "/assets/images/hyphen/three-drinks.webp", alt: "Three finished cocktails arranged on a tray", featured: false },
-  { id: "full-flight", name: "Full Flight", description: "Bright + Silk + Deep. About 36 pours.", price: 94, savings: "Save $14", includes: ["bright", "silk", "deep"], image: "/assets/images/hyphen/bar-process.webp", alt: "Cocktail tools and drinks during bar preparation", featured: true }
+  { id: "one", name: "One", description: "For one drink direction. About 12 pours.", price: 55, includes: [], featured: false, image: "/assets/images/hyphen/20260718_174246.jpg", alt: "Three finished cocktails on a tray" },
+  { id: "duo", name: "Duo", description: "For a weekend with options. About 24 pours.", price: 105, includes: [], featured: false, image: "/assets/images/hyphen/three-drinks.webp", alt: "Three finished cocktails arranged on a tray" },
+  { id: "full-flight", name: "Full Flight", description: "Best for the house. Bright + Silk + Deep. About 36 pours.", price: 145, includes: ["bright", "silk", "deep"], featured: true, image: "/assets/images/hyphen/20260718_174246.jpg", alt: "Three finished cocktails on a tray" }
 ];
-
-// Public labels intentionally avoid exposing internal sourcing routes or vendor names.
 export const spiritSourcing = [
   { id: "guest-supplied", name: "I Have the Bottle", description: "Bring the bottles you already like.", price: 0 },
-  { id: "courtesy", name: "Courtesy", description: "Added to a scheduled sourcing run.", price: 65, internalNote: "Planned Cairo run" },
-  { id: "curated", name: "Curated", description: "Dedicated sourcing, bottle selection and presentation.", price: 85, label: "Most popular", featured: true, internalNote: "Cairo sourcing + selection" },
+  { id: "courtesy", name: "Courtesy", description: "Added to a scheduled sourcing run.", price: 65 },
+  { id: "curated", name: "Curated", description: "Dedicated sourcing, bottle selection and presentation.", price: 85, label: "Most popular", featured: true },
   { id: "priority", name: "Priority", description: "Priority sourcing for specialty bottles or tighter timelines.", price: 125 }
 ];
-
-export const bottleSizes = [
-  { id: "375ml", label: "Cabin", volumeMl: 375, price: null },
-  { id: "750ml", label: "House", volumeMl: 750, price: null, featured: true },
-  { id: "1l", label: "Gathering", volumeMl: 1000, price: null },
-  { id: "1.5l", label: "Full House", volumeMl: 1500, price: null }
-];
-
 export const iceProducts = [
-  { id: "two-inch", name: "Two-inch", description: "Large-format cubes for slow dilution.", priceFrom: 24, priceTo: 32, available: true },
-  { id: "spears", name: "Spears", description: "Long-format ice for tall drinks.", priceFrom: 24, priceTo: 32, available: true },
-  { id: "cocktail-cubes", name: "Cocktail Cubes", description: "The cocktail is frozen into the cube.", available: false }
+  { id: "standard", name: "Icebox", description: "Large-format cocktail ice. Choose two-inch cubes or spears.", price: 39, available: true },
+  { id: "full", name: "Full Icebox", description: "More large-format ice for Full Flight and larger houses.", price: 59, available: true },
+  { id: "cocktail-cubes", name: "Cocktail Cubes", description: "Coming soon.", available: false }
 ];
-
-export const galleryImages = [
-  ["20230508_185319.jpg", "Cocktail preparation at the bar"],
-  ["20230508_195151.jpg", "A finished drink in warm evening light"],
-  ["20230820_180830.jpg", "Drinks prepared for a weekend table"],
-  ["20240827_181117.jpg", "A close view of a finished cocktail"],
-  ["20241231_203321.jpg", "Cocktail service during a gathering"],
-  ["20250718_191413.jpg", "Cocktail tools and bottles during preparation"],
-  ["20250817_174305.jpg", "A drink served with citrus"],
-  ["20251109_162043.jpg", "Bottle selection and cocktail mise en place"],
-  ["20260718_174246.jpg", "Three finished cocktails on a tray"],
-  ["3017441d-80e3-46c4-a819-8d425ff8cc57.jpg", "A bar setup ready for service"],
-  ["DSC_9585-Edit.jpg", "Mint-topped cocktail with crushed ice"],
-  ["FB_IMG_1553289309823.jpg", "A colorful cocktail prepared for guests"],
-  ["FB_IMG_1662229855940.jpg", "A cocktail close-up in warm light"],
-  ["IMG-20250412-WA0006.jpeg", "A prepared drink and bar setting"],
-  ["IMG_20190827_082447_353.jpg", "A cocktail moment at the bar"],
-  ["PXL_20210507_191732494.PORTRAIT.jpg", "Drinks ready to share"],
+export const houseDrops = [
+  { id: "friday", name: "Friday", description: "Best for weekend arrivals.", status: "Recommended for wedding weekends." },
+  { id: "saturday-morning", name: "Saturday Morning", description: "Limited availability for getting-ready houses.", status: "Limited availability." }
 ];
-
-// Merchant data is intentionally empty until Bruce supplies verified offerings.
+export const galleryImages = [["20230508_195151.jpg", "A finished drink in warm evening light"], ["20230820_180830.jpg", "Drinks prepared for a weekend table"], ["20260718_174246.jpg", "Three finished cocktails on a tray"], ["20251109_162043.jpg", "Bottle selection and cocktail mise en place"]];
 export const cuisines = [];
-
-export default {
-  ALCOHOL_INCLUDED_ENABLED,
-  alcoholIncludedEnabled,
-  drinkFamilies,
-  drinkPackages,
-  spiritSourcing,
-  bottleSizes,
-  iceProducts,
-  galleryImages,
-  cuisines
-};
+export default { ALCOHOL_INCLUDED_ENABLED, HYPHEN_PRICING, drinkFamilies, drinkPackages, spiritSourcing, iceProducts, houseDrops, galleryImages, cuisines };
