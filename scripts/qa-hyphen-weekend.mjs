@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { HYPHEN_PRICING } from '../src/assets/js/hyphen-pricing.js';
 const source = fs.readFileSync('src/hyphen-weekend.html', 'utf8');
-const output = fs.readFileSync('dist/hyphen-weekend.html', 'utf8');
+const output = fs.readFileSync('dist/hyphen-weekend/index.html', 'utf8');
 const script = fs.readFileSync('src/assets/js/hyphen-weekend.js', 'utf8');
 const data = fs.readFileSync('src/_data/hyphenWeekend.js', 'utf8');
 assert.deepEqual(HYPHEN_PRICING, { bottleMatch: { one: 55, duo: 105, fullFlight: 145 }, finishKit: { one: 25, duo: 45, fullFlight: 69 }, sourcing: { guestSupplied: 0, courtesy: 65, curated: 85, priority: 125 }, icebox: { standard: 39, full: 59 } });

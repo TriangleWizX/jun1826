@@ -32,7 +32,7 @@ def changed_outputs(commit):
             elif name == 'src/fall-practice-reset.html':
                 candidate = ROOT / 'dist' / 'fall-practice-reset' / 'index.html'
             elif name == 'src/hyphen-weekend.html':
-                candidate = ROOT / 'dist' / 'hyphen-weekend.html'
+                candidate = ROOT / 'dist' / 'hyphen-weekend' / 'index.html'
             elif name == 'src/_includes/schedule-master.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
             elif name.startswith('src/') and name.endswith('.njk'):
