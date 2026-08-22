@@ -1,4 +1,10 @@
 const form = document.querySelector('#hw-form');
+const dateStep = document.createElement('fieldset');
+dateStep.dataset.step = '0';
+dateStep.hidden = true;
+dateStep.innerHTML = '<legend>When should the house be ready?</legend><label for="hw-start-date">Arrival date</label><input id="hw-start-date" name="startDate" type="date" required><label for="hw-end-date">Leaving date</label><input id="hw-end-date" name="endDate" type="date" required><p class="hw-error" data-error></p>';
+form.prepend(dateStep);
+dateStep.querySelector('input[name="startDate"]').min = new Date().toISOString().slice(0, 10);
 const sizeStep = document.createElement('fieldset');
 sizeStep.dataset.step = '2';
 sizeStep.hidden = true;
@@ -9,10 +15,42 @@ const next = document.querySelector('#hw-next');
 const back = document.querySelector('#hw-back');
 const stepLabel = document.querySelector('#hw-step-label');
 const stepName = document.querySelector('#hw-step-name');
-const names = ['Property + Guests', 'Bottle Size', 'Bottle Match', 'Flavor', 'Finish Kit', 'Spirits', 'Icebox', 'House Drop', 'Review'];
+const names = ['Dates', 'Property + Guests', 'Bottle Size', 'Bottle Match', 'Flavor', 'Finish Kit', 'Spirits', 'Icebox', 'House Drop', 'Review'];
+const availability = { '2026-08-21': { friday: 'available' }, '2026-08-22': { saturday_morning: 'limited' } };
 const mobileCta = document.querySelector('.hw-mobile-cta');
+const finishChoice = form.querySelector('input[name="finishKit"]')?.closest('label');
+const garnishNote = document.createElement('small');
+garnishNote.id = 'finish-garnish-note';
+finishChoice?.append(garnishNote);
+document.querySelector('.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-section-intro p:last-child').textContent = '750 mL is our standard Bottle Match. Choose a smaller or larger bottle for the house you are stocking.';
+document.querySelector('.hw-configurator .hw-eyebrow').textContent = 'HOUSE DROP · REQUEST YOUR WEEKEND';
+document.querySelector('.hw-pricing[aria-labelledby="flavors-title"] > p:last-child').innerHTML = 'Finish Kit from +$25<br>Icebox: +$39 · Full Icebox: +$59';
+const weddingAnchor = document.querySelector('.hw-wedding-house .hw-price-card strong');
+if (weddingAnchor) weddingAnchor.textContent = '750 mL House Setup — $358 + spirits';
+const flavorSummary = document.createElement('div');
+flavorSummary.className = 'hw-note';
+flavorSummary.id = 'hw-flavor-summary';
+form.querySelector('.hw-flavor-slots')?.after(flavorSummary);
+function updateConfiguratorUX() {
+  const selected = pkg();
+  const slots = [...form.querySelectorAll('select[name="flavorSlot"]')];
+  const labels = slots.map(slot => slot.closest('label'));
+  labels[0]?.querySelector('b') && (labels[0].querySelector('b').textContent = selected === 'duo' ? 'First Bottle Match' : 'Choose your Bottle Match');
+  labels[1]?.querySelector('b') && (labels[1].querySelector('b').textContent = 'Second Bottle Match');
+  labels[1] && (labels[1].hidden = selected === 'one' || selected === 'full-flight');
+  slots.forEach(slot => { slot.hidden = selected === 'full-flight'; });
+  flavorSummary.hidden = selected !== 'full-flight';
+  flavorSummary.innerHTML = selected === 'full-flight' ? '<b>FULL FLIGHT</b><br>Bright · Clarified Lime<br>Silk · Clarified Sour<br>Deep · Spirit-Forward<br>All three are included.' : '';
+  const finishPrice = document.querySelector('#finish-price');
+  const size = config.bottleMatch.bottleSizeMl || 750;
+  const finishPrices = FINISH_KIT_PRICING[size];
+  const finishes = selected === 'full-flight' ? 3 * (POURS_PER_MATCH[size] || 12) : selected === 'duo' ? 2 * (POURS_PER_MATCH[size] || 12) : (POURS_PER_MATCH[size] || 12);
+  if (finishPrice && selected) finishPrice.textContent = '+$' + (finishPrices?.[priceKey(selected)] || 0) + ' · About ' + finishes + ' finishes';
+  const iceLabels = [...form.querySelectorAll('input[name="icebox"]')].map(input => input.closest('label'));
+  iceLabels.forEach(label => { const input = label?.querySelector('input'); const note = label?.querySelector('small'); if (note && input) note.textContent = input.value === (selected === 'full-flight' ? 'full' : 'standard') ? 'RECOMMENDED FOR YOUR ' + (selected === 'full-flight' ? 'FULL FLIGHT' : selected?.toUpperCase() || 'BOTTLE MATCH') : input.value === 'full' ? 'More large-format ice for Full Flight and larger houses.' : 'Large-format cocktail ice. Choose two-inch cubes or spears.'; });
+}
 let current = 0;
-const config = { dates: {}, property: '', guests: 0, bottleMatch: { package: '', bottleSizeMl: 750, flavors: [] }, finishKit: { enabled: false, tier: '', garnishes: [] }, sourcing: 'guest_supplied', icebox: 'none', houseDrop: '', foodInterest: false, serviceSubtotal: 0, alcoholIncluded: false, paymentEnabled: false, transactionType: 'inquiry' };
+const config = { houseReadyDate: null, dates: {}, property: '', guests: 0, bottleMatch: { package: '', bottleSizeMl: 750, flavors: [] }, finishKit: { enabled: false, tier: '', garnishes: [] }, sourcing: 'guest_supplied', icebox: 'none', houseDrop: '', foodInterest: false, serviceSubtotal: 0, alcoholIncluded: false, paymentEnabled: false, transactionType: 'inquiry' };
 import { BOTTLE_MATCH_PRICING, FINISH_KIT_PRICING, POURS_PER_MATCH, HYPHEN_PRICING as prices } from './hyphen-pricing.js';
 const garnishes = { bright: ['lime'], silk: ['lemon'], deep: ['orange', 'cherry'] };
 const priceKey = value => value === 'full-flight' ? 'fullFlight' : value;
@@ -34,8 +72,11 @@ function refresh() {
   const subtotal = (bottlePrices?.[priceKey(pkg())] || 0) + finish + (prices.sourcing[config.sourcing.replace('_', '-')] || 0) + (prices.icebox[config.icebox] || 0);
   config.serviceSubtotal = subtotal;
   const packageName = form.querySelector('input[name="package"]:checked')?.closest('label')?.querySelector('b')?.textContent || 'Not chosen';
-  form.querySelectorAll('input[name="package"]').forEach(input => { const value = input.closest('label')?.querySelector('strong'); if (value) value.textContent = '$' + (bottlePrices?.[priceKey(input.value)] || 0); });
+  form.querySelectorAll('input[name="package"]').forEach(input => { const label = input.closest('label'); const value = label?.querySelector('strong'); const description = label?.querySelector('small'); const packagePours = (input.value === 'full-flight' ? 3 : input.value === 'duo' ? 2 : 1) * (POURS_PER_MATCH[size] || 12); if (value) value.textContent = '$' + (bottlePrices?.[priceKey(input.value)] || 0); if (description) { description.dataset.baseDescription ||= description.innerHTML; description.innerHTML = description.dataset.baseDescription.replace(/About \d+ pours\./, 'About ' + packagePours + ' pours.'); } });
   document.querySelector('#finish-price').textContent = pkg() ? '+$' + (finishPrices?.[priceKey(pkg())] || 0) : 'Choose a package first';
+  if (garnishNote) garnishNote.textContent = config.finishKit.enabled ? 'Sized for ' + (config.bottleMatch.flavors.length || 1) + ' direction' + (config.bottleMatch.flavors.length === 1 ? '' : 's') + ' and the ' + size + ' mL house.' : 'Fresh citrus and cocktail finishes, packed for your selected size.';
+  const recommendedIce = size >= 1000 ? 'full' : 'standard';
+  if (!config.icebox && form.querySelector('input[name="icebox"][value="' + recommendedIce + '"]')) { const recommendedInput = form.querySelector('input[name="icebox"][value="' + recommendedIce + '"]'); recommendedInput.checked = true; config.icebox = recommendedIce; }
   document.querySelector('#hw-summary-list').innerHTML = '<div><dt>Bottle Size</dt><dd>' + (size === 1000 ? '1 L' : size === 1500 ? '1.5 L' : size + ' mL') + '</dd></div><div><dt>Bottle Match</dt><dd>' + packageName + (pkg() ? ' · $' + (bottlePrices?.[priceKey(pkg())] || 0) : '') + '</dd></div><div><dt>Flavors</dt><dd>' + (config.bottleMatch.flavors.join(' · ') || 'Not chosen') + '</dd></div><div><dt>Subtotal</dt><dd>' + (subtotal ? '$' + subtotal : 'Choose your package') + '</dd></div>';
   if (current === steps.length - 1) document.querySelector('#hw-review').innerHTML = '<div><dt>Bottle Size</dt><dd>' + size + ' mL</dd></div><div><dt>Bottle Match</dt><dd>' + packageName + ' · $' + (bottlePrices?.[priceKey(pkg())] || 0) + '</dd></div><div><dt>Finish Kit</dt><dd>' + (config.finishKit.enabled ? '$' + finish : 'Not added') + '</dd></div><div><dt>Spirits</dt><dd>' + config.sourcing + ' · $' + (prices.sourcing[config.sourcing.replace('_', '-')] || 0) + '</dd></div><div><dt>Ice</dt><dd>' + config.icebox + '</dd></div><div><dt>BEVERAGE SERVICE SUBTOTAL</dt><dd>$' + subtotal + '</dd></div>';
   document.querySelector('#hw-payload').value = JSON.stringify(config);
@@ -45,11 +86,11 @@ function valid() {
   const fields = [...steps[current].querySelectorAll('input[required]')];
   const flavorCount = selectedFlavors().length;
   const requiredFlavorCount = pkg() === 'full-flight' ? 3 : pkg() === 'duo' ? 2 : 1;
-  const ok = fields.every(x => x.checkValidity()) && (current !== 3 || flavorCount === requiredFlavorCount);
+  const ok = fields.every(x => x.checkValidity()) && (current !== 4 || flavorCount === requiredFlavorCount);
   steps[current].querySelector('[data-error]').textContent = ok ? '' : 'Please complete this step before continuing.';
   return ok;
 }
-function render() { steps.forEach((s, i) => { s.hidden = i !== current; }); stepLabel.textContent = 'Step ' + (current + 1) + ' of ' + steps.length; stepName.textContent = names[current]; back.hidden = current === 0; next.textContent = current === steps.length - 1 ? 'CONTINUE TO REQUEST' : 'Continue'; if (current === 3) send('hyphen_finish_kit_viewed', { package: config.bottleMatch.package }); refresh(); }
+function render() { steps.forEach((s, i) => { s.hidden = i !== current; }); stepLabel.textContent = 'Step ' + (current + 1) + ' of ' + steps.length; stepName.textContent = names[current]; back.hidden = current === 0; next.textContent = current === steps.length - 1 ? 'CONTINUE TO REQUEST' : 'Continue'; if (current === 5) send('hyphen_finish_kit_viewed', { package: config.bottleMatch.package }); refresh(); }
 document.querySelectorAll('[data-hw-start]').forEach(x => x.addEventListener('click', () => send('hyphen_configurator_started')));
 document.querySelectorAll('[data-hw-wedding]').forEach(x => x.addEventListener('click', () => send('hyphen_wedding_cta_clicked')));
 document.querySelectorAll('[data-hw-package]').forEach(x => x.addEventListener('click', () => { const input = form.querySelector('input[name="package"][value="' + x.dataset.hwPackage + '"]'); input.checked = true; input.dispatchEvent(new Event('change', { bubbles: true })); send('hyphen_package_selected', { package: x.dataset.hwPackage }); }));
@@ -59,6 +100,18 @@ next.addEventListener('click', () => { if (!valid()) return; if (current < steps
 back.addEventListener('click', () => { current--; render(); });
 document.querySelector('#hw-inquiry-form')?.addEventListener('submit', () => send('hyphen_inquiry_submitted', { package: config.bottleMatch.package, flavors: config.bottleMatch.flavors, finish_kit: config.finishKit.enabled, sourcing: config.sourcing, icebox: config.icebox, house_drop: config.houseDrop }));
 form.querySelectorAll('input[name="bottleSize"]').forEach(input => input.addEventListener('change', e => { config.bottleMatch.bottleSizeMl = Number(e.target.value); send('hyphen_bottle_size_selected', { size_ml: config.bottleMatch.bottleSizeMl }); refresh(); }));
+function updateDateFlow() {
+  const dateAvailability = availability[config.houseReadyDate];
+  form.querySelectorAll('input[name="houseDrop"]').forEach(input => { const label = input.closest('label'); const supported = !dateAvailability || dateAvailability[input.value]; input.disabled = !supported; label.hidden = !supported; const status = label?.querySelector('strong'); if (status && supported) status.textContent = dateAvailability?.[input.value] === 'limited' ? 'LIMITED' : dateAvailability?.[input.value] === 'available' ? 'RECOMMENDED FOR WEDDING WEEKENDS' : 'AVAILABILITY CONFIRMED WITH YOUR REQUEST'; });
+  if (config.houseDrop && form.querySelector('input[name="houseDrop"][value="' + config.houseDrop + '"]')?.disabled) { config.houseDrop = ''; form.querySelectorAll('input[name="houseDrop"]').forEach(input => { input.checked = false; }); }
+  if (current === steps.length - 1) { const review = document.querySelector('#hw-review'); const displayDate = config.houseReadyDate ? new Date(config.houseReadyDate + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) : 'Choose a date'; review.innerHTML = '<div><dt>HOUSE READY</dt><dd>' + displayDate + '</dd></div><div><dt>HOUSE DROP</dt><dd>' + (config.houseDrop || 'Choose a window') + '</dd></div>' + review.innerHTML + '<p>House Drop subject to confirmation. Spirit cost additional.</p>'; }
+}
+form.addEventListener('change', e => { if (e.target.name === 'startDate') { config.houseReadyDate = e.target.value || null; const selected = e.target.value ? new Date(e.target.value + 'T12:00:00') : null; const daysUntilService = selected ? Math.ceil((selected - new Date(new Date().toDateString())) / 86400000) : null; send('hyphen_house_ready_date_selected', { dayOfWeek: selected?.toLocaleDateString('en-US', { weekday: 'long' }) || '', daysUntilService }); updateDateFlow(); refresh(); } if (e.target.name === 'houseDrop') { config.houseDrop = e.target.value; const status = availability[config.houseReadyDate]?.[e.target.value] || 'available'; send('hyphen_house_drop_window_selected', { window: e.target.value, availability_status: status }); } });
+document.querySelectorAll('[data-hw-wedding]').forEach(x => x.addEventListener('click', () => { current = 0; render(); document.querySelector('#hw-start-date')?.focus({ preventScroll: true }); }));
+const packageStep = form.querySelector('input[name="package"]')?.closest('fieldset');
+if (packageStep) packageStep.querySelector('legend').textContent = 'HOW MUCH OF THE WEEKEND ARE WE STOCKING?';
+form.addEventListener('change', e => { if (e.target.name === 'package' || e.target.name === 'flavorSlot' || e.target.name === 'bottleSize') updateConfiguratorUX(); });
+updateConfiguratorUX();
 setDefaultDates();
 render();
 form.querySelector('#hw-inquiry-message')?.addEventListener('input', e => { e.target.dataset.autofilled = 'false'; });

@@ -32,9 +32,9 @@ export const houseDrops = [
   { id: "saturday-morning", name: "Saturday Morning", description: "Limited availability for getting-ready houses.", status: "Limited availability." }
 ];
 export const galleryImages = [
-  ["bar-process.jpg", "A bartender finishing a cocktail with citrus", "/assets/images/hyphen/bar-process.webp"],
   ["bottle-selection.jpg", "A considered bottle selection beside a finished drink", "/assets/images/hyphen/bottle-selection.webp"],
-  ["cocktail-mint.jpg", "A chilled mint cocktail with crushed ice", "/assets/images/hyphen/cocktail-mint.webp"],
+  ["bottle-selection.jpg", "A considered bottle selection beside a finished drink", "/assets/images/hyphen/bottle-selection.webp"],
+  ["20260718_174246.jpg", "Three labeled Bottle Matches prepared for a house", "/assets/images/hyphen/20260718_174246.webp"],
   ["20230508_195151.jpg", "A finished drink in warm evening light", "/assets/images/hyphen/20230508_195151.webp"]
 ];
 export const cuisines = [];
