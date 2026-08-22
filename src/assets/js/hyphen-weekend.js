@@ -57,7 +57,7 @@ document.querySelector('.hw-pricing[aria-labelledby="hw-pricing-title"]')?.befor
 const nightlifeIntro = nightlifeSection.querySelector('.hw-section-intro');
 if (nightlifeIntro) { nightlifeIntro.querySelector('.hw-eyebrow').textContent = 'GOING OUT FIRST?'; nightlifeIntro.querySelector('h2').textContent = 'A few places stay late. Many wind down earlier.'; nightlifeIntro.querySelector('p:last-child').textContent = 'A quick look at published local hours around Hunter, Windham and Belleayre. Hours change seasonally, so confirm before heading out.'; }
 function trackNightlife(name, value) { send(name, value ? { area: value } : {}); }
-send('hyphen_offer_view');
+window.__hyphenOfferViewed = true;
 document.querySelectorAll('[data-hw-start]').forEach(link => link.addEventListener('click', () => send('hyphen_build_weekend_click')));
 nightlifeSection.querySelectorAll('[data-nightlife-locale]').forEach(button => button.addEventListener('click', () => trackNightlife('hyphen_local_area_selected', button.dataset.nightlifeLocale)));
 const flavorSummary = document.createElement('div');
@@ -93,6 +93,7 @@ function inquiryMessage() { const name = form.querySelector('input[name="package
 function syncInquiryMessage() { const message = document.querySelector('#hw-inquiry-message'); if (message) { message.required = true; if ((current === steps.length - 1 && config.bottleMatch.package || config.foodInterest || message.dataset.autofilled === 'true') && (message.dataset.autofilled === 'true' || !message.value)) { message.value = inquiryMessage(); message.dataset.autofilled = 'true'; } } }
 const send = (name, value = {}) => (window.SS_TRACK_EVENT ? window.SS_TRACK_EVENT(name, value) : window.dataLayer?.push({ event: name, ...value }));
 if (window.__hyphenLocalHoursViewed) send('hyphen_local_hours_view');
+if (window.__hyphenOfferViewed) send('hyphen_offer_view');
 const pkg = () => config.bottleMatch.package;
 function selectedFlavors() { return config.bottleMatch.package === 'full-flight' ? ['bright', 'silk', 'deep'] : [...form.querySelectorAll('select[name="flavorSlot"]')].map(x => x.value).filter(Boolean); }
 function refresh() {
