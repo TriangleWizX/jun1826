@@ -1,5 +1,5 @@
 export const BOTTLE_MATCH_PRICING = {
-375: { one: 39, duo: 75, fullFlight: 105 }, 750: { one: 55, duo: 105, fullFlight: 145 },
+375: { one: 39, duo: 75, fullFlight: 105 }, 750: { one: 34, duo: 66, fullFlight: 94 },
   1000: { one: 69, duo: 135, fullFlight: 185 }, 1500: { one: 99, duo: 195, fullFlight: 265 }
 };
 export const FINISH_KIT_PRICING = {
