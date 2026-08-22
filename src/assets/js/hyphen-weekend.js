@@ -37,6 +37,13 @@ document.querySelector('.hw-house-context')?.after(nightlifeSection);
 function renderNightlife(locale = 'hunter') { nightlifeSection.querySelector('.hw-nightlife-grid').innerHTML = nightlifeVenues[locale].map(venue => '<article class="hw-nightlife-card"><p class="hw-price-kicker">PUBLISHED HOURS</p><h3>' + venue.name + '</h3><strong>' + venue.close + '</strong><p>' + venue.note + '</p><div><a href="' + venue.official + '" rel="noopener" target="_blank">Official source</a><a href="' + venue.maps + '" rel="noopener" target="_blank">Open in Google Maps</a></div></article>').join(''); nightlifeSection.querySelectorAll('[data-nightlife-locale]').forEach(button => { button.setAttribute('aria-selected', String(button.dataset.nightlifeLocale === locale)); }); }
 nightlifeSection.querySelectorAll('[data-nightlife-locale]').forEach(button => button.addEventListener('click', () => renderNightlife(button.dataset.nightlifeLocale)));
 renderNightlife();
+document.querySelector('#hw-hero-title')?.replaceChildren(document.createTextNode("Go out. Come back to a house that's ready."));
+const nightlifeBridge = document.createElement('section');
+nightlifeBridge.className = 'hw-nightlife-bridge';
+nightlifeBridge.innerHTML = '<p class="hw-eyebrow">THE EASY PART IS GOING OUT.</p><h2>The useful part is knowing the house is already handled.</h2><p>Bottle Match chilled.<br>Fresh finish ready.<br>Serious ice in the freezer.</p><a class="hw-button hw-button-primary" href="#configurator" data-hw-start>BUILD YOUR WEEKEND</a>';
+nightlifeSection.after(nightlifeBridge);
+nightlifeSection.querySelectorAll('.hw-nightlife-card>div').forEach(actions => { const official = actions.querySelector('a:first-child'); const maps = actions.querySelector('a:last-child'); official?.remove(); if (maps) { maps.textContent = 'MAP + DIRECTIONS ↗'; maps.addEventListener('click', () => send('hyphen_maps_click')); } });
+send('hyphen_local_hours_view');
 const offerExplainer = document.createElement('section');
 offerExplainer.className = 'hw-offer-explainer';
 offerExplainer.setAttribute('aria-labelledby', 'hw-offer-title');
