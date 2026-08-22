@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { HYPHEN_PRICING, BOTTLE_MATCH_PRICING, FINISH_KIT_PRICING } from '../src/assets/js/hyphen-pricing.js';
+import { HYPHEN_PRICING, BOTTLE_MATCH_PRICING, PROMOTIONAL_BOTTLE_MATCH_PRICING, PUBLIC_BOTTLE_MATCH_PRICING, FINISH_KIT_PRICING } from '../src/assets/js/hyphen-pricing.js';
 const source = fs.readFileSync('src/hyphen-weekend.html', 'utf8');
 const output = fs.readFileSync('dist/hyphen-weekend/index.html', 'utf8');
 const script = fs.readFileSync('src/assets/js/hyphen-weekend.js', 'utf8');
 const data = fs.readFileSync('src/_data/hyphenWeekend.js', 'utf8');
-assert.deepEqual(HYPHEN_PRICING, { bottleMatch: { one: 34, duo: 66, fullFlight: 94 }, finishKit: { one: 25, duo: 45, fullFlight: 69 }, sourcing: { guestSupplied: 0, courtesy: 65, curated: 85, priority: 125 }, icebox: { standard: 39, full: 59 } });
+assert.deepEqual(HYPHEN_PRICING, { bottleMatch: { one: 34, duo: 66, fullFlight: 94 }, promotionalBottleMatch: { one: 39, duo: 75, fullFlight: 105 }, publicBottleMatch: { one: 55, duo: 105, fullFlight: 145 }, finishKit: { one: 25, duo: 45, fullFlight: 69 }, sourcing: { guestSupplied: 0, courtesy: 65, curated: 85, priority: 125 }, icebox: { standard: 39, full: 59 } });
+assert.deepEqual(PROMOTIONAL_BOTTLE_MATCH_PRICING, { one: 39, duo: 75, fullFlight: 105 });
+assert.deepEqual(PUBLIC_BOTTLE_MATCH_PRICING, { one: 55, duo: 105, fullFlight: 145 });
 assert.deepEqual(BOTTLE_MATCH_PRICING[375], { one: 39, duo: 75, fullFlight: 105 });
 assert.deepEqual(BOTTLE_MATCH_PRICING[1000], { one: 69, duo: 135, fullFlight: 185 });
 assert.deepEqual(BOTTLE_MATCH_PRICING[1500], { one: 99, duo: 195, fullFlight: 265 });
