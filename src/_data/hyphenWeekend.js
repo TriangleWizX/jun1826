@@ -12,9 +12,9 @@ export const drinkFamilies = [
   { id: "deep", name: "Deep", product: "Spirit-Forward", description: "Slow. Aromatic. Ready for the fire.", supporting: "A darker Bottle Match for dinner ending, big ice and nowhere else to be.", pairs: "rye · bourbon", garnish: ["orange", "cherry"], container: "pint_mason_jar" }
 ];
 export const drinkPackages = [
-  { id: "one", name: "One", description: "For one drink direction. About 12 pours.", price: 55, includes: [], featured: false, image: "/assets/images/hyphen/20251109_162043.jpg", webp: "/assets/images/hyphen/20251109_162043.webp", alt: "A finished drink in warm evening light" },
-  { id: "duo", name: "Duo", description: "For a weekend with options. About 24 pours.", price: 105, includes: [], featured: false, image: "/assets/images/hyphen/20230820_180830.jpg", webp: "/assets/images/hyphen/20230820_180830.webp", alt: "Drinks prepared for a weekend table" },
-  { id: "full-flight", name: "Full Flight", description: "Best for the house. Bright + Silk + Deep. About 36 pours.", price: 145, includes: ["bright", "silk", "deep"], featured: true, image: "/assets/images/hyphen/20260718_174246.jpg", webp: "/assets/images/hyphen/20260718_174246.webp", alt: "Three finished cocktails on a tray" }
+  { id: "one", name: "One", description: "One 750 mL Bottle Match. About 12 pours.", price: 55, includes: [], featured: false, image: "/assets/images/hyphen/20251109_162043.jpg", webp: "/assets/images/hyphen/20251109_162043.webp", alt: "A finished drink in warm evening light" },
+  { id: "duo", name: "Duo", description: "Two 750 mL Bottle Matches. About 24 pours.", price: 105, includes: [], featured: false, image: "/assets/images/hyphen/20230820_180830.jpg", webp: "/assets/images/hyphen/20230820_180830.webp", alt: "Drinks prepared for a weekend table" },
+  { id: "full-flight", name: "Full Flight", description: "Bright + Silk + Deep. About 36 pours.", price: 145, includes: ["bright", "silk", "deep"], featured: true, image: "/assets/images/hyphen/20260718_174246.jpg", webp: "/assets/images/hyphen/20260718_174246.webp", alt: "Three finished cocktails on a tray" }
 ];
 export const spiritSourcing = [
   { id: "guest-supplied", name: "I Have the Bottle", description: "Bring the bottles you already like.", price: 0 },

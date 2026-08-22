@@ -37,6 +37,22 @@ document.querySelector('.hw-house-context')?.after(nightlifeSection);
 function renderNightlife(locale = 'hunter') { nightlifeSection.querySelector('.hw-nightlife-grid').innerHTML = nightlifeVenues[locale].map(venue => '<article class="hw-nightlife-card"><p class="hw-price-kicker">PUBLISHED HOURS</p><h3>' + venue.name + '</h3><strong>' + venue.close + '</strong><p>' + venue.note + '</p><div><a href="' + venue.official + '" rel="noopener" target="_blank">Official source</a><a href="' + venue.maps + '" rel="noopener" target="_blank">Open in Google Maps</a></div></article>').join(''); nightlifeSection.querySelectorAll('[data-nightlife-locale]').forEach(button => { button.setAttribute('aria-selected', String(button.dataset.nightlifeLocale === locale)); }); }
 nightlifeSection.querySelectorAll('[data-nightlife-locale]').forEach(button => button.addEventListener('click', () => renderNightlife(button.dataset.nightlifeLocale)));
 renderNightlife();
+const offerExplainer = document.createElement('section');
+offerExplainer.className = 'hw-offer-explainer';
+offerExplainer.setAttribute('aria-labelledby', 'hw-offer-title');
+offerExplainer.innerHTML = '<p class="hw-eyebrow">HYPHEN WEEKEND</p><h2 id="hw-offer-title">Drinks, garnishes and serious ice, prepared for your Catskills weekend house.</h2><p>Choose the drink direction. Choose how much of the weekend you are stocking. Add bottle sourcing when you need it.</p><p class="hw-offer-location">Hunter · Windham · Belleayre</p>';
+document.querySelector('.hw-hero')?.after(offerExplainer);
+const buyingStrip = document.createElement('section');
+buyingStrip.className = 'hw-buying-strip';
+buyingStrip.setAttribute('aria-labelledby', 'hw-buying-title');
+buyingStrip.innerHTML = '<p class="hw-eyebrow">START HERE</p><h2 id="hw-buying-title">What you are buying</h2><div class="hw-buying-grid"><article><b>01 · BOTTLE MATCH</b><p>A 750 mL prepared mixer built around your bottle.</p></article><article><b>02 · FINISH KIT</b><p>Fresh garnishes and serious ice, sized to the package.</p></article><article><b>03 · BOTTLE SOURCING</b><p>Optional bottle procurement when you do not want another errand.</p></article></div><p class="hw-note">750 mL is the standard Bottle Match size. Other sizes are priced separately.</p>';
+document.querySelector('.hw-pricing[aria-labelledby="hw-pricing-title"]')?.before(buyingStrip);
+const nightlifeIntro = nightlifeSection.querySelector('.hw-section-intro');
+if (nightlifeIntro) { nightlifeIntro.querySelector('.hw-eyebrow').textContent = 'GOING OUT FIRST?'; nightlifeIntro.querySelector('h2').textContent = 'A few places stay late. Many wind down earlier.'; nightlifeIntro.querySelector('p:last-child').textContent = 'A quick look at published local hours around Hunter, Windham and Belleayre. Hours change seasonally, so confirm before heading out.'; }
+function trackNightlife(name, value) { send(name, value ? { area: value } : {}); }
+send('hyphen_offer_view');
+document.querySelectorAll('[data-hw-start]').forEach(link => link.addEventListener('click', () => send('hyphen_build_weekend_click')));
+nightlifeSection.querySelectorAll('[data-nightlife-locale]').forEach(button => button.addEventListener('click', () => trackNightlife('hyphen_local_area_selected', button.dataset.nightlifeLocale)));
 const flavorSummary = document.createElement('div');
 flavorSummary.className = 'hw-note';
 flavorSummary.id = 'hw-flavor-summary';
