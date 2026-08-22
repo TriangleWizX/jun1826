@@ -43,7 +43,7 @@ nightlifeBridge.className = 'hw-nightlife-bridge';
 nightlifeBridge.innerHTML = '<p class="hw-eyebrow">THE EASY PART IS GOING OUT.</p><h2>The useful part is knowing the house is already handled.</h2><p>Bottle Match chilled.<br>Fresh finish ready.<br>Serious ice in the freezer.</p><a class="hw-button hw-button-primary" href="#configurator" data-hw-start>BUILD YOUR WEEKEND</a>';
 nightlifeSection.after(nightlifeBridge);
 nightlifeSection.querySelectorAll('.hw-nightlife-card>div').forEach(actions => { const official = actions.querySelector('a:first-child'); const maps = actions.querySelector('a:last-child'); official?.remove(); if (maps) { maps.textContent = 'MAP + DIRECTIONS ↗'; maps.addEventListener('click', () => send('hyphen_maps_click')); } });
-send('hyphen_local_hours_view');
+window.__hyphenLocalHoursViewed = true;
 const offerExplainer = document.createElement('section');
 offerExplainer.className = 'hw-offer-explainer';
 offerExplainer.setAttribute('aria-labelledby', 'hw-offer-title');
@@ -92,6 +92,7 @@ function setDefaultDates() { const start = new Date(); start.setHours(12, 0, 0, 
 function inquiryMessage() { const name = form.querySelector('input[name="package"]:checked')?.closest('label')?.querySelector('b')?.textContent || 'Bottle Match package to confirm'; const dates = config.dates.startDate && config.dates.endDate ? config.dates.startDate + ' to ' + config.dates.endDate : 'Dates to confirm'; const flavors = config.bottleMatch.flavors.join(' · ') || 'Flavors to confirm'; return 'Hyphen Weekend request\nDates: ' + dates + '\nHouse: ' + (config.property || 'Property to confirm') + '\nGuests: ' + (config.guests || 'Guests to confirm') + '\nBottle Match: ' + name + '\nFlavors: ' + flavors + '\nFinish Kit: ' + (config.finishKit.enabled ? 'Yes' : 'No') + '\nSpirit sourcing: ' + config.sourcing + '\nIcebox: ' + config.icebox + '\nHouse Drop: ' + (config.houseDrop || 'To confirm') + '\nService subtotal: $' + config.serviceSubtotal + '\nSpirit cost additional.' + (config.foodInterest ? '\nFood interest: Yes' : ''); }
 function syncInquiryMessage() { const message = document.querySelector('#hw-inquiry-message'); if (message) { message.required = true; if ((current === steps.length - 1 && config.bottleMatch.package || config.foodInterest || message.dataset.autofilled === 'true') && (message.dataset.autofilled === 'true' || !message.value)) { message.value = inquiryMessage(); message.dataset.autofilled = 'true'; } } }
 const send = (name, value = {}) => (window.SS_TRACK_EVENT ? window.SS_TRACK_EVENT(name, value) : window.dataLayer?.push({ event: name, ...value }));
+if (window.__hyphenLocalHoursViewed) send('hyphen_local_hours_view');
 const pkg = () => config.bottleMatch.package;
 function selectedFlavors() { return config.bottleMatch.package === 'full-flight' ? ['bright', 'silk', 'deep'] : [...form.querySelectorAll('select[name="flavorSlot"]')].map(x => x.value).filter(Boolean); }
 function refresh() {
