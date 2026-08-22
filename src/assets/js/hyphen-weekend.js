@@ -54,6 +54,26 @@ buyingStrip.className = 'hw-buying-strip';
 buyingStrip.setAttribute('aria-labelledby', 'hw-buying-title');
 buyingStrip.innerHTML = '<p class="hw-eyebrow">START HERE</p><h2 id="hw-buying-title">What you are buying</h2><div class="hw-buying-grid"><article><b>01 · BOTTLE MATCH</b><p>A 750 mL prepared mixer built around your bottle.</p></article><article><b>02 · FINISH KIT</b><p>Fresh garnishes and serious ice, sized to the package.</p></article><article><b>03 · BOTTLE SOURCING</b><p>Optional bottle procurement when you do not want another errand.</p></article></div><p class="hw-note">750 mL is the standard Bottle Match size. Other sizes are priced separately.</p>';
 document.querySelector('.hw-pricing[aria-labelledby="hw-pricing-title"]')?.before(buyingStrip);
+const mechanism = document.createElement('section');
+mechanism.className = 'hw-mechanism';
+mechanism.innerHTML = '<p class="hw-eyebrow">HOW HYPHEN WORKS</p><h2>Tell us about the weekend. We handle the pieces.</h2><div class="hw-mechanism-grid"><article><b>01 · TELL US THE HOUSE</b><p>Where you are staying, guest count and occasion.</p></article><article><b>02 · WE BUILD THE SETUP</b><p>Bottle Match, finish, ice and optional sourcing.</p></article><article><b>03 · ARRIVE AND POUR</b><p>Everything cold, labeled and simple.</p></article></div>';
+document.querySelector('.hw-pricing[aria-labelledby="hw-pricing-title"]')?.before(mechanism);
+const anchor = document.createElement('section');
+anchor.className = 'hw-anchor-offer';
+anchor.innerHTML = '<p class="hw-eyebrow">THE HOUSE SETUP</p><h2>Full Flight for the weekend that needs everything handled.</h2><p>Bright + Silk + Deep. About 36 pours. Best for wedding houses, birthdays and group rentals.</p><strong>$145</strong><a class="hw-button hw-button-primary" href="#configurator" data-hw-package="full-flight">SET UP THE HOUSE</a>';
+document.querySelector('.hw-pricing[aria-labelledby="hw-pricing-title"]')?.before(anchor);
+const choosePath = document.createElement('section');
+choosePath.className = 'hw-choose-path';
+choosePath.innerHTML = '<p class="hw-eyebrow">NOT SURE?</p><h2>Let Hyphen choose.</h2><p>Tell us where you are staying, how many people are coming and what you normally drink. We will recommend the Bottle Match, finish, ice and bottle plan.</p><a class="hw-button hw-button-quiet" href="#configurator">LET HYPHEN CHOOSE</a>';
+document.querySelector('#configurator')?.before(choosePath);
+const heroTitle = document.querySelector('#hw-hero-title');
+if (heroTitle) heroTitle.innerHTML = 'Your weekend is already too short.<span>Arrive to a house that\'s ready for drinks.</span>';
+document.querySelectorAll('[data-hw-start]').forEach(link => { if (link.textContent.includes('BUILD')) link.textContent = 'BUILD MY HOUSE'; });
+const sampleLink = document.querySelector('.hw-actions .hw-button-quiet');
+if (sampleLink) sampleLink.textContent = 'SEE A SAMPLE WEEKEND';
+document.querySelectorAll('input[name="sourcing"]').forEach(input => { const strong = input.closest('label')?.querySelector('strong'); const source = input.closest('label')?.querySelector('b')?.textContent || ''; if (strong && source !== 'I Have the Bottle') strong.textContent += ' + bottle cost'; });
+document.querySelector('input[name="houseDrop"]')?.closest('fieldset')?.insertAdjacentHTML('beforeend', '<p class="hw-note">House Drop pricing is confirmed by property location before the request is accepted.</p>');
+document.querySelector('input[name="icebox"][value="cocktail-cubes"]')?.closest('label')?.remove();
 const nightlifeIntro = nightlifeSection.querySelector('.hw-section-intro');
 if (nightlifeIntro) { nightlifeIntro.querySelector('.hw-eyebrow').textContent = 'GOING OUT FIRST?'; nightlifeIntro.querySelector('h2').textContent = 'A few places stay late. Many wind down earlier.'; nightlifeIntro.querySelector('p:last-child').textContent = 'A quick look at published local hours around Hunter, Windham and Belleayre. Hours change seasonally, so confirm before heading out.'; }
 function trackNightlife(name, value) { send(name, value ? { area: value } : {}); }
