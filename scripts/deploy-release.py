@@ -142,10 +142,10 @@ def cleanup_remote_backups(client, cfg, cleanup=False, stale_seconds=86400):
     return inventory, remove
 
 def backup_remote(client, cfg):
-    home = '/home/' + cfg['username']; remote = cfg['remotePath']; stamp = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime()); backup = f'{home}/senseisandy-predeploy-{stamp}.tar.gz'
+    home = '/home/' + cfg['username']; remote = cfg['remotePath']; stamp = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime()); backup = f'{home}/senseisandy-predeploy-{stamp}.tar.gz'; temp = f'{home}/.senseisandy-predeploy-{stamp}.tar.gz.part'
     cleanup_remote_backups(client, cfg, cleanup=True)
-    archive_cmd = f"timeout --signal=TERM --kill-after=30s 300s tar -czf {shlex.quote(backup)} -C {shlex.quote(remote)} ."
-    remote_run(client, f"{archive_cmd} && gzip -t {shlex.quote(backup)}")
+    archive_cmd = f"rm -f {shlex.quote(temp)} && trap 'rm -f {shlex.quote(temp)}' EXIT && timeout --signal=TERM --kill-after=30s 300s tar -czf {shlex.quote(temp)} -C {shlex.quote(remote)} . && gzip -t {shlex.quote(temp)} && tar -tzf {shlex.quote(temp)} >/dev/null && mv -f {shlex.quote(temp)} {shlex.quote(backup)}"
+    remote_run(client, archive_cmd)
     archive_listing = remote_run(client, f"tar -tzf {shlex.quote(backup)}")
     required = {'./.htaccess', './index.html', './robots.txt', './sitemap.xml'}
     present = set(archive_listing.splitlines())
