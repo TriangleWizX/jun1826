@@ -15,8 +15,8 @@ for (const value of required) {
 }
 for (const [term, definition] of [
   ['ADAPT', 'Teaching fits the learner.'],
-  ['TEST', 'Learning survives appropriate resistance.'],
-  ['EXPRESS', 'Capability eventually becomes individual.']
+  ['TEST', 'Learning survives safe resistance.'],
+  ['EXPRESS', 'Skill becomes personal.']
 ]) {
   if (!doctrine.includes(term) || !doctrine.includes(definition)) {
     throw new Error(`canonical doctrine mismatch: ${term}`);
