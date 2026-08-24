@@ -5,7 +5,7 @@ const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const checks = [
   ['how-class-works', read('dist/how-class-works.html'), ['More Skill Means More Choices', 'removes prompts', 'student to recognize', 'safety, partner matching']],
-  ['report-card', read('dist/report-card.html'), ['What is beginning to become yours?', 'Prompt dependence is context', 'Recognize', 'Protect', 'Solve', 'Adapt', 'Express']],
+  ['report-card', read('dist/report-card.html'), ['What is beginning to become yours?', 'Prompt dependence is context', 'Recognize', 'Protect', 'Solve', 'Act', 'Care', 'Speak', 'Own / Express']],
   ['kids lane', read('dist/bjj-classes/kids-tannersville-ny/index.html'), ['try their own answer before asking for one']],
   ['teens lane', read('dist/bjj-classes/teens-tannersville-ny/index.html'), ['Recognize it. Choose. Adjust. Make it yours.']],
   ['adults lane', read('dist/bjj-classes/adults-tannersville-ny/index.html'), ['principles you can use without waiting for instructions']],
@@ -19,7 +19,7 @@ for (const [label, html, phrases] of checks) {
 }
 
 const report = read('dist/report-card.html');
-const axes = ['Recognize', 'Protect', 'Solve', 'Adapt', 'Express'];
+const axes = ['Recognize', 'Protect', 'Solve', 'Act', 'Care', 'Speak', 'Own / Express'];
 if (axes.some((axis) => (report.match(new RegExp(`<h3>${axis}</h3>`, 'g')) || []).length !== 1)) failures.push('report-card: development axes must remain exactly once each');
 if (/independence.{0,40}(percent|%|score)|coachability.{0,40}(percent|%|score)/i.test(report)) failures.push('report-card: independence/coachability metric detected');
 if (/macho|toughness ritual|fight language/i.test(checks.map(([, html]) => html).join('\n'))) failures.push('coaching surfaces: disallowed macho language detected');

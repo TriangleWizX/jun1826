@@ -20,7 +20,7 @@ const failures = required.filter((phrase) => !article.toLowerCase().includes(phr
 if (!parent.toLowerCase().includes('attendance creates more opportunities') || !parent.toLowerCase().includes('not a report card capability state')) failures.push('parent guide: attendance/capability distinction missing');
 if (/report card.{0,80}(?:equals?|maps? directly|automatically awards?).{0,40}(belt|stripe)/i.test(article)) failures.push('article: mechanical Report Card-to-rank mapping detected');
 if (/fastest way to earn stripes|earn stripes faster|rank up faster/i.test(article)) failures.push('article: rank-optimization FAQ language detected');
-if (!['Recognize', 'Protect', 'Solve', 'Adapt', 'Express'].every((axis) => report.includes(`<h3>${axis}</h3>`))) failures.push('report-card: capability axes missing');
+if (!['Recognize', 'Protect', 'Solve', 'Act', 'Care', 'Speak', 'Own / Express'].every((axis) => report.includes(`<h3>${axis}</h3>`))) failures.push('report-card: capability axes missing');
 
 if (failures.length) {
   console.error(failures.join('\n'));
