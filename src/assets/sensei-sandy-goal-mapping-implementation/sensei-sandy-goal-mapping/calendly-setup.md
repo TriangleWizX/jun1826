@@ -12,7 +12,7 @@
   Meet Sandy for a focused 15-minute planning session. We will discuss who is
   training, the result you want, your weekly schedule, prior experience, and
   any mobility or learning considerations. You will leave with a recommended
-  class lane and a clear first-class plan.
+  class class and a clear first-class plan.
 
 ## Invitee questions
 

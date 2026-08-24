@@ -62,7 +62,7 @@ Keep the URL temporarily for backlinks and search equity, but change:
 - Page title: `BJJ first visit Visit | Sensei Sandy BJJ`
 - H1: `Your First Step Toward Consistent Training`
 - Intro: `Meet Sandy for 15 minutes. Map your goal, schedule, and best starting
-  lane before choosing your first class.`
+  class before choosing your first class.`
 - Primary CTA: `Reserve Free Intro`
 
 Remove the class-booking form and the always-loaded scheduling section.
