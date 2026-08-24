@@ -3,7 +3,7 @@
 ## Event type
 
 - **Type:** One-on-one
-- **Name:** BJJ Goal Mapping Visit
+- **Name:** BJJ first visit Visit
 - **Duration:** 15 minutes
 - **Suggested slug:** `bjj-goal-mapping-session`
 - **Location:** Sensei Sandy BJJ, 6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485
@@ -64,14 +64,14 @@ Create short blocks that do not compete with teaching:
 
 ## Confirmation message
 
-You are booked for your BJJ Goal Mapping Visit.
+You are booked for your BJJ first visit Visit.
 
 Wear normal clothes. This is a 15-minute conversation and studio walkthrough,
 not your first class. Bring any questions about goals, schedule, injuries,
 mobility, or helping your child start well.
 
 After the session, Sandy will recommend the best first class and a weekly
-training rhythm you can realistically maintain.
+weekly schedule you can realistically maintain.
 
 Sensei Sandy BJJ
 6045 Main Street, 2nd Floor Studio
