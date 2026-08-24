@@ -1,18 +1,18 @@
 {
   "primaryCtaLabel": "Reserve Your Free Intro",
-  "supportingText": "Start with a 15-minute Goal Mapping visit in normal clothes; no workout is required, and Sandy schedules the coached first class afterward.",
+ "supportingText": "Start with a 15-minute first visit in normal clothes; no workout is required, and Sandy schedules your coached first class afterward.",
   "goalMappingDurationMinutes": 15,
   "goalMappingClothing": "Normal clothes; no workout required",
   "generalPath": {
     "name": "Free Intro",
-    "firstStep": "15-minute Goal Mapping visit",
+    "firstStep": "15-minute first visit",
     "workoutRequired": false,
     "normalClothes": true,
     "classSameVisit": false,
     "nextStep": "Sandy recommends and schedules the coached first class afterward"
   },
   "youthCombinedPath": {
-    "name": "Youth Goal Mapping + coached class",
+    "name": "Youth first visit + coached class",
     "workoutRequired": true,
     "normalClothes": false,
     "classSameVisit": true,
@@ -23,12 +23,12 @@
     {
       "stepNumber": 1,
       "title": "Reserve Your Free Intro",
-      "subtitle": "Goal Mapping before class",
+      "subtitle": "First visit before class",
       "description": "Request your visit online. Pick your preferred student lane (Kids, Teens, Adults) and general schedule preferences."
     },
     {
       "stepNumber": 2,
-      "title": "Meet Sandy for Goal Mapping",
+      "title": "Meet Sandy for your first visit",
       "subtitle": "One-visit starting plan",
       "description": "Tour the mats, review safety, discuss goals, and set the starting plan. The general path schedules class afterward; the specialized youth path can combine both during one visit."
     },
@@ -36,7 +36,7 @@
       "stepNumber": 3,
       "title": "Train in the right starting lane",
       "subtitle": "Matched, coached first class",
-      "description": "The general Goal Mapping visit uses normal clothes and requires no workout. Specialized youth requests plan for 60–75 minutes and arrive 20 minutes early in clean athletic clothing. Adults receive lane-specific scheduling guidance."
+      "description": "The general first visit uses normal clothes and requires no workout. Specialized youth requests plan for 60–75 minutes and arrive 20 minutes early in clean athletic clothing. Adults receive class-specific scheduling guidance."
     },
     {
       "stepNumber": 4,
