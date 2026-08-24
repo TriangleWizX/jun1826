@@ -133,7 +133,7 @@ export default function (eleventyConfig) {
 eleventyConfig.addTransform("plain-language-copy-cleanup", function (content) {
     const outputPath = this.page?.outputPath || "";
 if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
-    return content.replaceAll("timees", "times").replaceAll("12-week program is organized as a 12-week", "the program is organized as a 12-week").replace(/12-week 12-week program/gi, "12-week program").replace(/class class/gi, "class").replace(/starting lane/gi, "first class");
+    return content.replaceAll("timees", "times").replaceAll("12-week program is organized as a 12-week", "the program is organized as a 12-week").replace(/12-week 12-week program/gi, "12-week program").replace(/class class/gi, "class").replace(/starting lane/gi, "first class").replace(/Why live problems matter\??/gi, "Practice that changes with you");
   });
 
   return {
