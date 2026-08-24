@@ -81,6 +81,10 @@ if (foodTitle) { foodTitle.textContent = 'Want dinner handled too?'; const foodC
 document.querySelectorAll('[data-hw-package]').forEach(link => { if (link.textContent.toLowerCase().includes('choose')) link.textContent = 'SET UP THIS HOUSE'; });
 document.querySelectorAll('a[href="#inquiry"], #hw-inquiry-form button').forEach(element => { element.textContent = 'REQUEST MY HOUSE DROP'; });
 document.querySelector('[data-hw-wedding]')?.replaceChildren(document.createTextNode('SET UP THE WEDDING HOUSE'));
+const bottleMatchIntro = document.querySelector('.hw-pricing[aria-labelledby="hw-pricing-title"] .hw-section-intro>p:last-child');
+if (bottleMatchIntro) bottleMatchIntro.textContent += ' One bottle + one Bottle Match makes about 12 finished drinks.';
+const flavorMoments = { Bright: ['Arrival drinks', 'Lime · crisp · refreshing', 'Rum / gin / tequila'], Silk: ['Cocktail hour', 'Soft citrus · aromatic', 'Gin'], Deep: ['After dinner', 'Spirit-forward · orange · cherry', 'Rye / bourbon'] };
+document.querySelectorAll('.hw-pricing[aria-labelledby="flavors-title"] .hw-price-card').forEach(card => { const name = card.querySelector('.hw-price-kicker')?.textContent.trim(); const moment = flavorMoments[name]; const copy = card.querySelector('p:not(.hw-price-kicker)'); if (moment && copy) copy.innerHTML = '<b>' + moment[0] + '</b><br>' + moment[1] + '<br>' + moment[2]; });
 const nightlifeIntro = nightlifeSection.querySelector('.hw-section-intro');
 if (nightlifeIntro) { nightlifeIntro.querySelector('.hw-eyebrow').textContent = 'GOING OUT FIRST?'; nightlifeIntro.querySelector('h2').textContent = 'A few places stay late. Many wind down earlier.'; nightlifeIntro.querySelector('p:last-child').textContent = 'A quick look at published local hours around Hunter, Windham and Belleayre. Hours change seasonally, so confirm before heading out.'; }
 function trackNightlife(name, value) { send(name, value ? { area: value } : {}); }
