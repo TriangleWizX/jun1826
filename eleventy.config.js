@@ -130,10 +130,10 @@ export default function (eleventyConfig) {
     return content.replace("Happy Members", "Students Coached");
   });
 
-  eleventyConfig.addTransform("plain-language-copy-cleanup", function (content) {
+eleventyConfig.addTransform("plain-language-copy-cleanup", function (content) {
     const outputPath = this.page?.outputPath || "";
-    if (typeof content !== "string" || !(outputPath.endsWith("options-pricing.html") || outputPath.endsWith("options-pricing/index.html"))) return content;
-    return content.replaceAll("timees", "times").replaceAll("12-week program is organized as a 12-week", "the program is organized as a 12-week").replaceAll("class class", "class");
+if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
+    return content.replaceAll("timees", "times").replaceAll("12-week program is organized as a 12-week", "the program is organized as a 12-week").replace(/12-week 12-week program/gi, "12-week program").replace(/class class/gi, "class").replace(/starting lane/gi, "first class");
   });
 
   return {
