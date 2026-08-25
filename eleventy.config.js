@@ -139,6 +139,34 @@ eleventyConfig.addTransform("copy-integrity-normalization", function (content) {
   }
   return output.replace(/Four youth class options 5 PM/gi, "Choose 3 class days").replace(/Reserve three recurring regular class times by September 12; make-up class available by text when plans change\./gi, "Make-up classes are available when space is open.");
 });
+eleventyConfig.addTransform("acquisition-page-subtraction", function (content) {
+  const outputPath = this.page?.outputPath || "";
+  if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
+  let output = content;
+  if (outputPath.endsWith("/schedule/index.html")) {
+    output = output.replace(/<section[^>]*aria-labelledby="faq-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-labelledby="schedule-local-planning-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-label="12-week program Schedule Rescheduling Policy"[\s\S]*?<\/section>/i, "");
+  }
+  if (outputPath.endsWith("/how-class-works.html")) {
+    for (const id of ["class-breakdown", "beginner-four-part-map", "coaching-basics", "class-timeline-section", "partner-makes-lesson-real", "beginner-lane", "guided-practice", "more-skill-more-choices", "what-parents-expect", "why-we-teach-this-way", "what-students-review"]) {
+      output = output.replace(new RegExp(`<section[^>]*id="${id}"[\\s\\S]*?<\\/section>`, "i"), "");
+      output = output.replace(new RegExp(`<li>\\s*<a[^>]*href="#${id}"[^>]*>[\\s\\S]*?<\\/a>\\s*<\\/li>`, "i"), "");
+    }
+  }
+  if (outputPath.endsWith("/bjj-classes/adults-tannersville-ny/index.html")) {
+    for (const id of ["adults-aeo-title", "private-classes", "program-faq", "nearby-title", "adult-agency-title"]) {
+      output = output.replace(new RegExp(`<section[^>]*(?:id="${id}"|aria-labelledby="${id}")[\\s\\S]*?<\\/section>`, "i"), "");
+    }
+    output = output.replace(/<section[^>]*ss-culture-explanation[\s\S]*?<\/section>/i, "");
+  }
+  if (outputPath.endsWith("/bjj-classes/teens-tannersville-ny/index.html")) {
+    output = output.replace(/<section[^>]*id="teen-culture-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*ss-culture-explanation[\s\S]*?<\/section>/i, "");
+  }
+  if (outputPath.endsWith("/bjj-classes/kids-tannersville-ny/index.html")) {
+    output = output.replace(/<section[^>]*ss-culture-explanation[\s\S]*?<\/section>/i, "");
+  }
+  output = output.replace(/<section[^>]*class="[^"]*ss-culture-explanation[^"]*"[\s\S]*?<\/section>/gi, "").replace(/<section[^>]*aria-labelledby="teen-culture-title"[\s\S]*?<\/section>/i, "");
+  return output;
+});
 eleventyConfig.addTransform("plain-language-copy-cleanup", function (content) {
     const outputPath = this.page?.outputPath || "";
 if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;

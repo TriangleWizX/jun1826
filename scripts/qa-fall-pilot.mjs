@@ -28,7 +28,7 @@ for (const [content, terms, label] of [
   [schedulePage, ['Fall placement begins September 8', 'full fall practice schedule begins Monday, September 14', 'Class times remain unchanged', 'Fall Placement Begins Tuesday, September 8'], 'Schedule page'],
   [reset, ['School starts September 3', 'placement begins September 8', 'full weekly format begins September 14'], 'Fall reset'],
   [homepage, ['Build a fall routine they can keep', 'See the Fall Schedule', 'Book a Free Intro'], 'Homepage'],
-  [booking, ['Which adult days could you protect each week?', 'transportation-constraint', 'recurring-time-conflict'], 'Booking page'],
+[booking, ['Which days work for you?', 'transportation-constraint', 'recurring-time-conflict'], 'Booking page'],
   [bookingJs, ['transportation_constraint', 'recurring_time_conflict', 'adultPreferredDaysFieldset'], 'Booking script']
 ]) for (const term of terms) requireText(content, term, label);
 
