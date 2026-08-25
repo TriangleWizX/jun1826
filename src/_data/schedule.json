@@ -1,14 +1,30 @@
 {
-  "updated": "2026-08-19",
+  "updated": "2026-08-25",
+  "operatingPolicy": {
+    "default": "stay-open-by-default",
+    "ordinarySchoolDay": "normal schedule",
+    "federalHoliday": "normal or special schedule unless directly conflicting",
+    "schoolOnlyHoliday": "normal evening schedule; consider daytime youth special",
+    "schoolVacation": "normal schedule; measure attendance",
+    "majorLocalEvent": "modify only directly conflicting class",
+    "severeWeather": "condition-based operational decision",
+    "lowPredictedAttendance": "open mat or combined class"
+  },
+  "season": {"name": "Fall Practice Schedule", "effectiveDate": "2026-09-14", "review": "seasonally", "exceptionsPath": "/holiday-schedule"},
+  "specialEvents": [{"date": "2026-09-07", "label": "Labor Day No-Gi Games / Open Mat", "time": "5:00 PM Youth/Teen; 6:00 PM Adult", "status": "special", "bringAFriend": true}],
+  "closures": [{"date": "2026-11-26", "label": "Thanksgiving Day"}, {"date": "2026-12-25", "label": "Christmas Day"}],
+  "modifiedClasses": [],
+  "weatherStatus": {"status": "open", "levels": ["OPEN", "OPEN / USE DISCRETION", "MODIFIED", "CLOSED"], "decisionWindows": ["3–4 hours before class", "2 hours before class", "90 minutes before class"]},
+  "attendanceContext": {"fields": ["schoolStatus", "localEvent", "weather", "academyStatus"], "schoolStatusValues": ["Regular", "Break", "Holiday"], "academyStatusValues": ["Normal", "Special", "Modified"]},
   "pilot": {
     "status": "pilot",
     "timezone": "America/New_York",
     "placementStartDate": "2026-09-08",
     "effectiveDate": "2026-09-14",
     "measurementStartDate": "2026-09-14",
-    "measurementEndDate": "2026-10-23",
+    "measurementEndDate": null,
     "reviewDate": "2026-10-26",
-    "verifiedDate": "2026-08-19",
+    "verifiedDate": "2026-08-25",
     "capacity": 12
   },
   "groupClasses": [

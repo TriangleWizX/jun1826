@@ -1,0 +1,20 @@
+{
+  "purpose": "Record context alongside each class so academy decisions use SSBJJ attendance evidence.",
+  "fields": {
+    "date": "YYYY-MM-DD",
+    "day": "Monday-Sunday",
+    "time": "class start time",
+    "audience": "Youth/Teen or Adult",
+    "schoolStatus": ["Regular", "Break", "Holiday"],
+    "localEvent": "None or named event",
+    "weather": ["Normal", "Snow", "Heavy rain", "Flooding", "Road concern"],
+    "academyStatus": ["Normal", "Special", "Modified", "Closed"],
+    "reservations": "integer",
+    "attendance": "integer",
+    "intros": "integer",
+    "visitors": "integer",
+    "notes": "short operational note"
+  },
+  "reviewCadence": "monthly",
+  "comparisons": ["ordinary school days", "school holidays", "vacation weeks", "local-event days", "modified or special classes"]
+}

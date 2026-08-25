@@ -21,10 +21,11 @@ if (control.schoolBegins !== 'Thursday, September 3, 2026') errors.push('Control
 if (control.september4 !== 'Regular school and academy day; Youth Gi 5 PM and Adult Gi 6 PM') errors.push('Control sheet September 4 decision drifted.');
 if (control.fullFallSchedule !== 'Monday, September 14, 2026') errors.push('Control sheet full-schedule date drifted.');
 if (control.october12 !== 'Regular academy schedule; Columbus/Indigenous Peoples’ Day is treated as a minor holiday for this rollout') errors.push('October 12 decision is missing or changed.');
-if (schedule.pilot?.placementStartDate !== '2026-09-08' || schedule.pilot?.effectiveDate !== '2026-09-14' || schedule.pilot?.measurementEndDate !== '2026-10-23' || schedule.pilot?.reviewDate !== '2026-10-26') errors.push('Canonical pilot dates drifted.');
+if (schedule.pilot?.placementStartDate !== '2026-09-08' || schedule.pilot?.effectiveDate !== '2026-09-14' || schedule.pilot?.measurementEndDate !== null || schedule.pilot?.reviewDate !== '2026-10-26') errors.push('Canonical pilot dates drifted.');
+if (schedule.specialEvents?.find((item) => item.date === '2026-09-07')?.status !== 'special') errors.push('Labor Day special-event policy drifted.');
 
 for (const [content, terms, label] of [
-  [holiday, ['First Day of School', 'Regular Friday academy schedule: Youth Gi at 5:00 PM and Adult Gi at 6:00 PM.', 'Fall Placement Week', 'Full Fall Practice Schedule', 'October 26'], 'Holiday page'],
+  [holiday, ['First Day of School', 'Regular Friday academy schedule: Youth Gi at 5:00 PM and Adult Gi at 6:00 PM.', 'Fall Placement Week', 'Full Fall Practice Schedule', 'October 26', 'Labor Day No-Gi Games / Open Mat'], 'Holiday page'],
   [schedulePage, ['Fall placement begins September 8', 'full fall practice schedule begins Monday, September 14', 'Class times remain unchanged', 'Fall Placement Begins Tuesday, September 8'], 'Schedule page'],
   [reset, ['School starts September 3', 'placement begins September 8', 'full weekly format begins September 14'], 'Fall reset'],
   [homepage, ['Build a fall routine they can keep', 'See the Fall Schedule', 'Book a Free Intro'], 'Homepage'],

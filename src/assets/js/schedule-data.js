@@ -1,11 +1,13 @@
 window.SSBJJ_SCHEDULE = {
+  "policy": {"default": "stay-open-by-default", "effectiveDate": "2026-09-14", "weatherStatus": "condition-based"},
+  "specialEvents": [{"date": "2026-09-07", "label": "Labor Day No-Gi Games / Open Mat", "status": "special"}],
   "pilot": {
     "status": "pilot",
     "timezone": "America/New_York",
-    "effectiveDate": "2026-09-08",
-    "measurementEndDate": "2026-10-23",
+    "effectiveDate": "2026-09-14",
+    "measurementEndDate": null,
     "reviewDate": "2026-10-26",
-    "verifiedDate": "2026-08-19",
+    "verifiedDate": "2026-08-25",
     "capacity": 12
   },
   "groupClasses": [
