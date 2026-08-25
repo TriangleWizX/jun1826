@@ -19,11 +19,7 @@
 
     let state = {
       profile: null,
-      otherSport: null,
-      primaryActivity: '',
       preferredDays: [],
-      transportationConstraint: '',
-      recurringTimeConflict: '',
       bookingStarted: false,
       autoSelecting: false
     };
@@ -139,9 +135,6 @@
       'community-service': 'leo'
     };
     const requestedProfile = laneProfiles[String(requestedLane || '').toLowerCase()];
-    const activityLabel = document.getElementById('primary-activity-label');
-    const activityInput = document.getElementById('primary-activity');
-    const athleteContext = document.querySelector('[data-athlete-context]');
     const preferredDaysFieldset = document.querySelector('[data-youth-preferred-days]');
     const adultPreferredDaysFieldset = document.querySelector('[data-adult-preferred-days]');
     const preferredDayInputs = document.querySelectorAll('[data-youth-preferred-days] input[name="preferred_days"], [data-adult-preferred-days] input[name="preferred_days"]');
@@ -151,24 +144,6 @@
         track('preferred_days_selected', { lane: state.profile || requestedLane || 'unknown', preferred_days: state.preferredDays.join('|') });
         syncCalendlyPreferences();
       });
-    });
-    document.querySelectorAll('[data-athlete-context] input[name="other_sport"]').forEach((input) => {
-      input.addEventListener('change', () => {
-        state.otherSport = input.value;
-        const showActivity = input.checked && input.value === 'Yes';
-        setHiddenState(activityLabel, !showActivity);
-        if (!showActivity && activityInput) activityInput.value = '';
-        syncCalendlyPreferences();
-      });
-    });
-    activityInput?.addEventListener('input', () => { state.primaryActivity = activityInput.value; syncCalendlyPreferences(); });
-    document.getElementById('transportation-constraint')?.addEventListener('input', (event) => {
-      state.transportationConstraint = event.target.value.trim();
-      syncCalendlyPreferences();
-    });
-    document.getElementById('recurring-time-conflict')?.addEventListener('input', (event) => {
-      state.recurringTimeConflict = event.target.value.trim();
-      syncCalendlyPreferences();
     });
     const laneNote = document.getElementById('first-visit-lane-note');
     const introTitle = document.getElementById('book-intro-title');
@@ -194,7 +169,6 @@
       if (introSubtitle) introSubtitle.textContent = isYouth ? youthSubheadline : 'Tour the studio, map your goal, then choose the right first class for your week.';
       setHiddenState(preferredDaysFieldset, !isYouth);
       setHiddenState(adultPreferredDaysFieldset, isYouth);
-      setHiddenState(athleteContext, isYouth);
     };
     if (laneNote && laneNotes[String(requestedLane || '').toLowerCase()]) {
       laneNote.textContent = laneNotes[String(requestedLane).toLowerCase()];
@@ -250,11 +224,7 @@
       url.searchParams.set('text_color', '1f1712');
       url.searchParams.set('primary_color', '289fa1');
       url.searchParams.set('audience_lane', profile);
-      if (state.otherSport) url.searchParams.set('other_sport', state.otherSport);
-      if (state.primaryActivity) url.searchParams.set('primary_activity', state.primaryActivity);
       if (state.preferredDays.length) url.searchParams.set('preferred_days', state.preferredDays.join('|'));
-      if (state.transportationConstraint) url.searchParams.set('transportation_constraint', state.transportationConstraint);
-      if (state.recurringTimeConflict) url.searchParams.set('recurring_time_conflict', state.recurringTimeConflict);
       url.searchParams.set('referring_page', window.location.pathname || '/');
 
       // Forward any page-level search params for session attribution
@@ -282,8 +252,6 @@
       payload.campaign = campaign || 'none';
       payload.referring_page = window.location.pathname || '/';
       payload.preferred_days = state.preferredDays.join('|');
-      payload.transportation_constraint = state.transportationConstraint;
-      payload.recurring_time_conflict = state.recurringTimeConflict;
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'profile_selected', payload);
       } else if (Array.isArray(window.dataLayer)) {
