@@ -130,6 +130,11 @@ export default function (eleventyConfig) {
     return content.replace("Happy Members", "Students Coached");
   });
 
+eleventyConfig.addTransform("copy-integrity-normalization", function (content) {
+  const outputPath = this.page?.outputPath || "";
+  if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
+  return content.replace(/\bvisit\s+visit\b/gi, "visit").replace(/\bclass\s+class\b/gi, "class").replace(/\bprogram\s+program\b/gi, "program").replace(/\b12-week\s+12-week\b/gi, "12-week");
+});
 eleventyConfig.addTransform("plain-language-copy-cleanup", function (content) {
     const outputPath = this.page?.outputPath || "";
 if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
