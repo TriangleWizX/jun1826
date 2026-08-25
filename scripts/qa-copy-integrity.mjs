@@ -17,6 +17,12 @@ const forbidden = [
   /\bprogram\s+program\b/gi,
   /\b12-week\s+12-week\b/gi,
   /\b12-week program\s+12-week program\b/gi,
+  /\bCore Culture\b/gi,
+  /\bGoal Mapping\b/gi,
+  /\bacademy gi\b/gi,
+  /\bChoose Lane\b/gi,
+  /\bstarting lane\b/gi,
+  /\bBeginner Lane\b/gi,
   /^\s*[1-9]\.\s+[1-9]\./gmi
 ];
 const errors = [];
