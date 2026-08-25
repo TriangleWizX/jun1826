@@ -11,8 +11,8 @@
     "lowPredictedAttendance": "open mat or combined class"
   },
   "season": {"name": "Fall Practice Schedule", "effectiveDate": "2026-09-14", "review": "seasonally", "exceptionsPath": "/holiday-schedule"},
-  "specialEvents": [{"date": "2026-09-07", "label": "Labor Day No-Gi Games / Open Mat", "time": "5:00 PM Youth/Teen; 6:00 PM Adult", "status": "special", "bringAFriend": true}],
-  "closures": [{"date": "2026-11-26", "label": "Thanksgiving Day"}, {"date": "2026-12-25", "label": "Christmas Day"}],
+  "specialEvents": [{"date": "2026-09-04", "label": "School's-Out Youth Jiu-Jitsu", "time": "10:30–11:30 AM optional", "status": "special"}, {"date": "2026-09-07", "label": "Labor Day No-Gi Games / Open Mat", "time": "5:00 PM Youth/Teen; 6:00 PM Adult", "status": "special", "bringAFriend": true}, {"date": "2026-11-25", "label": "Thanksgiving Eve Open Mat", "status": "special"}, {"date": "2026-11-27", "label": "Turkey Roll Youth + Adult Open Mat", "status": "special"}],
+  "closures": [{"date": "2026-11-26", "label": "Thanksgiving Day"}, {"date": "2026-12-25", "label": "Christmas Day"}, {"date": "2027-01-01", "label": "New Year's Day"}],
   "modifiedClasses": [],
   "weatherStatus": {"status": "open", "levels": ["OPEN", "OPEN / USE DISCRETION", "MODIFIED", "CLOSED"], "decisionWindows": ["3–4 hours before class", "2 hours before class", "90 minutes before class"]},
   "attendanceContext": {"fields": ["schoolStatus", "localEvent", "weather", "academyStatus"], "schoolStatusValues": ["Regular", "Break", "Holiday"], "academyStatusValues": ["Normal", "Special", "Modified"]},

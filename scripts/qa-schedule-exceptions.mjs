@@ -10,6 +10,9 @@ const pages = [
 const exceptions = JSON.parse(read('src/_data/schedule-exceptions.json'));
 const errors = [];
 
+if (exceptions.exceptions.find((item) => item.date === '2026-09-04')?.status !== 'special') {
+  errors.push('Canonical September 4 School\'s-Out special event is missing.');
+}
 if (exceptions.exceptions.find((item) => item.date === '2026-09-07')?.status !== 'special') {
   errors.push('Canonical September 7 exception is not a special event.');
 }
@@ -17,6 +20,8 @@ if (!pages.includes('September 7') || !/Labor Day.*(Games|Open Mat)|September 7.
   errors.push('Public schedule surfaces do not state the September 7 special event.');
 }
 if (!/September 7[^.]{0,180}(5:00 PM|6:00 PM)/i.test(pages)) errors.push('September 7 special-event times are missing.');
+if (!/Thanksgiving Eve[\s\S]{0,500}Open Mat/i.test(pages)) errors.push('Thanksgiving Eve open mat policy is missing.');
+if (!/Thanksgiving Day[\s\S]{0,500}closed/i.test(pages)) errors.push('Thanksgiving Day closure is missing.');
 if (!pages.includes('Saturday, September 5') && !pages.includes('Saturday Adult No-Gi')) {
   errors.push('Saturday September 5 state is not explicit.');
 }

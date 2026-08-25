@@ -3,6 +3,14 @@
   "precedence": ["dateException", "seasonSchedule", "recurringSchedule"],
   "exceptions": [
     {
+      "date": "2026-09-04",
+      "status": "special",
+      "label": "School's-Out Youth Jiu-Jitsu",
+      "time": "10:30–11:30 AM optional; regular Youth/Teen Gi 5:00 PM; Adult Gi 6:00 PM",
+      "audience": "Youth/Teen and Adult",
+      "note": "School is closed; evening classes remain normal."
+    },
+    {
       "date": "2026-09-05",
       "status": "open",
       "label": "Saturday Adult No-Gi",
