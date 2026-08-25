@@ -16,6 +16,7 @@ const forbidden = [
   /\bclass\s+class\b/gi,
   /\bprogram\s+program\b/gi,
   /\b12-week\s+12-week\b/gi,
+  /\b12-week program\s+12-week program\b/gi,
   /^\s*[1-9]\.\s+[1-9]\./gmi
 ];
 const errors = [];

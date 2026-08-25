@@ -166,7 +166,7 @@ eleventyConfig.addTransform("acquisition-page-subtraction", function (content) {
   }
   const acquisitionRoute = /\/(?:index\.html|schedule\/index\.html|options-pricing(?:\/index)?\.html|contact\.html|free-bjj-intro-tannersville-ny\/index\.html|fall-practice-reset\/index\.html|holiday-schedule\.html|bjj-classes\/(?:kids|teens|adults)-tannersville-ny\/index\.html|show-up-kit\.html)$/.test(outputPath);
   if (acquisitionRoute) {
-    output = output.replace(/recurring regular class timees?/gi, "class days").replace(/(?:recurring |planned weekly )?home-class reservations?/gi, "planned weekly classes").replace(/home-class schedules?/gi, "weekly class plans").replace(/home-class seats?/gi, "weekly class places").replace(/open-seat rescheduling/gi, "make-up classes when space is open");
+    output = output.replace(/recurring regular class timees?/gi, "class days").replace(/(?:recurring |planned weekly )?home-class reservations?/gi, "planned weekly classes").replace(/home-class schedules?/gi, "weekly class plans").replace(/home-class seats?/gi, "weekly class places").replace(/open-seat rescheduling/gi, "make-up classes when space is open").replace(/\bUp 36\b/gi, "Up to 36").replace(/\bOne uniform first\b/gi, "One uniform for first").replace(/Starting easier\. first uniform included/gi, "Starting easier. One uniform is included").replace(/first visit\s+Visit/gi, "First Visit");
   }
   output = output.replace(/<section[^>]*class="[^"]*ss-culture-explanation[^"]*"[\s\S]*?<\/section>/gi, "").replace(/<section[^>]*aria-labelledby="teen-culture-title"[\s\S]*?<\/section>/i, "");
   return output;
