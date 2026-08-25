@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const routes = [
+const priorityRoutes = [
   'dist/index.html',
   'dist/schedule/index.html',
   'dist/options-pricing/index.html',
@@ -11,6 +11,14 @@ const routes = [
   'dist/fall-practice-reset/index.html',
   'dist/holiday-schedule.html'
 ];
+const walk = (dir) => fs.readdirSync(dir, {withFileTypes: true}).flatMap((entry) => {
+  const file = path.join(dir, entry.name);
+  return entry.isDirectory() ? walk(file) : [file];
+});
+const routes = [...new Set([
+  ...priorityRoutes,
+  ...walk('dist').filter((file) => file.endsWith('.html') && !file.startsWith('dist/assets/'))
+])];
 const forbidden = [
   /\bvisit\s+visit\b/gi,
   /\bclass\s+class\b/gi,
@@ -35,4 +43,4 @@ if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join('\n'));
   process.exit(1);
 }
-console.log(`Copy integrity passed: ${routes.length} acquisition routes checked.`);
+console.log(`Copy integrity passed: ${routes.length} visitor HTML files checked.`);
