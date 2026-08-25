@@ -133,7 +133,7 @@ export default function (eleventyConfig) {
 eleventyConfig.addTransform("plain-language-copy-cleanup", function (content) {
     const outputPath = this.page?.outputPath || "";
 if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
-    return content.replaceAll("timees", "times").replaceAll("12-week program is organized as a 12-week", "the program is organized as a 12-week").replace(/12-week 12-week program/gi, "12-week program").replace(/class class/gi, "class").replace(/starting lane/gi, "first class").replace(/beginner lane/gi, "beginner class").replace(/Why live problems matter\??/gi, "Practice that changes with you");
+    return content.replaceAll("timees", "times").replaceAll("12-week program is organized as a 12-week", "the program is organized as a 12-week").replace(/12-week 12-week program/gi, "12-week program").replace(/class class/gi, "class").replace(/starting lane/gi, "first class").replace(/beginner lane/gi, "beginner class").replace(/Fall formats begin Monday, September 14\. View (?:the )?current schedule through September 5; (?:the )?academy is closed September 7\./gi, "Fall Placement Week runs September 8–12. The full Fall Practice Schedule begins September 14; Labor Day No-Gi / Open Mat runs September 7.").replace(/Why live problems matter\??/gi, "Practice that changes with you");
   });
 
   return {
