@@ -132,7 +132,8 @@
       teen: 'teen',
       adults: 'adult-beginner',
       adult: 'adult-beginner',
-      'community-service': 'leo'
+    'community-service': 'leo',
+    family: 'family'
     };
     const requestedProfile = laneProfiles[String(requestedLane || '').toLowerCase()];
     const preferredDaysFieldset = document.querySelector('[data-youth-preferred-days]');

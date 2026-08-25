@@ -18,8 +18,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
     <!-- LEFT: Editorial Content & Typography -->
     <div class="editorial-left hevd-reveal">
       <div class="ss-book-hero-content">
-        <div class="alert alert-success border-0 rounded-3 mb-4 p-3" style="background-color: #e8f5e9; color: #1b5e20; font-size: 0.9rem;">
-        </div>
+        <div class="alert alert-success border-0 rounded-3 mb-4 p-3" style="background-color: #e8f5e9; color: #1b5e20; font-size: 0.9rem;"></div>
         <span class="ss-eyebrow-pill mb-4 d-inline-block px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-medium" style="border-radius: 999px; background: rgba(0,0,0,0.05); font-family: 'Geist', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em;">
           YOUR FREE BEGINNER INTRO
         </span>
@@ -72,7 +71,10 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
     <div class="editorial-right ss-progressive-booking" id="booking-flow">
       <!-- STEP 1: Select Profile -->
       <div class="pb-step pb-step-active" id="pb-step-1">
-        <h2 class="h3 mb-5 hevd-reveal" style="font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.02em;">Who is this booking for?</h2>
+        <p class="ss-eyebrow-pill mb-3 d-inline-block px-3 py-1">Booking card</p>
+        <p class="small text-uppercase fw-bold text-muted mb-2">Step 1 of 3</p>
+        <h2 class="h3 mb-2 hevd-reveal" style="font-family: 'Geist', sans-serif; font-weight: 600; letter-spacing: -0.02em;">Who is starting?</h2>
+        <p class="small text-muted mb-4">Choose the person or group taking the first step.</p>
         <div class="d-flex flex-column gap-4 pb-lanes">
           
           <div class="hevd-reveal" style="transition-delay: 100ms;">
@@ -83,7 +85,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
                     <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                   </div>
                   <div class="flex-grow-1">
-                    <h3>Adult beginner or returning student</h3>
+                    <h3>Adult</h3>
                   </div>
                   <div class="ss-btn-trailing-icon">
                     <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -101,7 +103,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
                     <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
                   </div>
                   <div class="flex-grow-1">
-                    <h3>Child age 5–9</h3>
+                    <h3>Child</h3>
                   </div>
                   <div class="ss-btn-trailing-icon">
                     <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -119,7 +121,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
                     <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                   </div>
                   <div class="flex-grow-1">
-                    <h3>Teen age 10–17</h3>
+                    <h3>Teen</h3>
                   </div>
                   <div class="ss-btn-trailing-icon">
                     <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -129,15 +131,15 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
             </button>
           </div>
           
-          <div class="hevd-reveal" style="transition-delay: 250ms;">
-            <button class="pb-card-btn group" data-profile="leo" aria-pressed="false">
+          <div class="hevd-reveal d-none" style="transition-delay: 250ms;">
+            <button class="pb-card-btn group d-none" data-profile="leo" aria-pressed="false">
               <div class="ss-bezel-shell">
                 <div class="ss-bezel-core">
                   <div class="pb-card-icon m-0 flex-shrink-0">
                     <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                   </div>
                   <div class="flex-grow-1">
-                    <h3>Law enforcement, fire, EMS, veteran</h3>
+                    <h3>Family</h3>
                   </div>
                   <div class="ss-btn-trailing-icon">
                     <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -148,14 +150,14 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
           </div>
           
           <div class="hevd-reveal" style="transition-delay: 300ms;">
-            <button class="pb-card-btn group" data-profile="not-sure" aria-pressed="false">
+            <button class="pb-card-btn group" data-profile="family" aria-pressed="false">
               <div class="ss-bezel-shell">
                 <div class="ss-bezel-core">
                   <div class="pb-card-icon m-0 flex-shrink-0" style="background: rgba(54, 43, 36, 0.05); color: var(--ss-ink);">
                     <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                   </div>
                   <div class="flex-grow-1">
-                    <h3>Not sure—help me choose</h3>
+                    <h3>Family</h3>
                   </div>
                   <div class="ss-btn-trailing-icon">
                     <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -164,7 +166,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
               </div>
             </button>
           </div>
-          
+          <a class="small text-muted text-decoration-none mt-2" href="/schedule">Continue <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <!-- STEP 2: Choose a Time -->
