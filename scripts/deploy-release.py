@@ -19,6 +19,7 @@ def changed_outputs(commit):
                         'footer-include.html' in names or
                         'src/_includes/layouts/base.njk' in names or
                         'src/_includes/components/footer.njk' in names or
+                        'src/_includes/components/free-intro-process.njk' in names or
                         'src/_includes/footer-high-intent.html' in names)
     for name in names:
         if name.startswith('src/'):
