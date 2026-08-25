@@ -602,7 +602,7 @@ window.SECONDARY_CTA_URL = SECONDARY_CTA_URL;
     const canonicalIntro = typeof window.buildBookIntroUrl === 'function'
       ? window.buildBookIntroUrl({ base: canonicalIntroBase })
       : canonicalIntroBase;
-    const sharedMicrocopy = 'Tour first. Safety walkthrough. Beginner Lane. Skill-first first class. Reschedule by text.';
+ const sharedMicrocopy = 'Tour first. Safety walkthrough. Beginner Lane. Skill-based first class. Reschedule by text.';
     window.CTA_CONFIG = window.CTA_CONFIG || {};
     window.CTA_CONFIG.introHref = canonicalIntro;
     window.CTA_CONFIG.introLabel = PRIMARY_CTA_LABEL;

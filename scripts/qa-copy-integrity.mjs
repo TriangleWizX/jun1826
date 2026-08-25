@@ -25,6 +25,9 @@ const forbidden = [
   /\bprogram\s+program\b/gi,
   /\b12-week\s+12-week\b/gi,
   /\b12-week program\s+12-week program\b/gi,
+  /\bhome-class\b/gi,
+  /Monday No-Gi Monday/gi,
+  /Friday Friday/gi,
   /\bCore Culture\b/gi,
   /\bGoal Mapping\b/gi,
   /\bacademy gi\b/gi,
@@ -38,6 +41,14 @@ for (const file of routes) {
   if (!fs.existsSync(file)) { errors.push(`${file}: missing`); continue; }
   const text = fs.readFileSync(file, 'utf8');
   for (const pattern of forbidden) if (pattern.test(text)) errors.push(`${file}: ${pattern}`);
+  const textNodes = [...text.matchAll(/>([^<]+)</g)].map((match) => match[1]);
+  for (const textNode of textNodes) {
+    const duplicateWords = textNode.match(/\b([a-z][a-z'-]*)\s+\1\b/gi) || [];
+    for (const duplicate of duplicateWords) {
+      const normalizedDuplicate = duplicate.replace(/\s+/g, ' ').trim().toLowerCase();
+      if (!new Set(['had had', 'that that', 'very very', 'camera camera', 'document document', 'street street', 'weekly weekly', 'ss-btn ss-btn']).has(normalizedDuplicate)) errors.push(`${file}: duplicate visitor words ${duplicate}`);
+    }
+  }
 }
 if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join('\n'));
