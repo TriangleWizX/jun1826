@@ -2134,3 +2134,88 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
     grid-template-columns: 1fr;
   }
 }
+
+/* Compact conversion surface: keep Adults visually continuous with Kids and Teens. */
+.adults-program-page .program-conversion-template {
+  --adult-conversion-surface: #fffaf2;
+  --adult-conversion-border: rgba(54, 43, 36, 0.12);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(17, 106, 66, 0.1), transparent 18rem),
+    radial-gradient(circle at 92% 14%, rgba(40, 159, 161, 0.08), transparent 16rem),
+    linear-gradient(180deg, #fffaf2 0%, #f7f3ec 54%, #efe8dc 100%);
+  color: var(--ss-text, #1f1712);
+  font-family: var(--ss-body-font, "Lexend", sans-serif);
+}
+
+.adults-program-page .program-conversion-template .program-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.92fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1rem, 3vw, 1.5rem) clamp(2rem, 4vw, 3.5rem);
+}
+
+.adults-program-page .program-conversion-template .program-hero__content { min-width: 0; }
+.adults-program-page .program-conversion-template .eyebrow,
+.adults-program-page .program-conversion-template .section-kicker {
+  color: var(--ss-green, #116a42);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.adults-program-page .program-conversion-template .eyebrow { margin-bottom: 0.9rem; }
+.adults-program-page .program-conversion-template h1,
+.adults-program-page .program-conversion-template h2 {
+  color: var(--ss-ink, #362b24);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+.adults-program-page .program-conversion-template h1 { max-width: 10ch; font-size: clamp(2.8rem, 6vw, 5rem); }
+.adults-program-page .program-conversion-template h2 { font-size: clamp(2rem, 4vw, 3.4rem); }
+.adults-program-page .program-conversion-template .lead,
+.adults-program-page .program-conversion-template section p { color: var(--ss-muted, #4f433c); line-height: 1.65; }
+.adults-program-page .program-conversion-template .lead { max-width: 32rem; margin: 1rem 0 0; font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
+.adults-program-page .program-conversion-template .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.4rem; }
+.adults-program-page .program-conversion-template .hero-actions .btn,
+.adults-program-page .program-conversion-template > section .btn { border-radius: 999px; font-weight: 800; }
+.adults-program-page .program-conversion-template .program-hero__media {
+  padding: 0.7rem;
+  border: 1px solid var(--adult-conversion-border);
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: 0 18px 42px rgba(54, 43, 36, 0.1);
+}
+.adults-program-page .program-conversion-template .program-hero__media img { display: block; width: 100%; height: auto; aspect-ratio: 543 / 380; border-radius: 1.45rem; object-fit: cover; }
+.adults-program-page .program-conversion-template > .benefit-chips,
+.adults-program-page .program-conversion-template > section > .container { max-width: 1180px; margin-inline: auto; }
+.adults-program-page .program-conversion-template > .benefit-chips { display: flex; flex-wrap: wrap; gap: 0.65rem; padding: 0 clamp(1rem, 3vw, 1.5rem) 1.5rem; }
+.adults-program-page .program-conversion-template > .benefit-chips span { padding: 0.65rem 0.85rem; border: 1px solid rgba(17, 106, 66, 0.14); border-radius: 999px; background: rgba(17, 106, 66, 0.08); color: var(--ss-ink, #362b24); font-size: 0.86rem; font-weight: 750; }
+.adults-program-page .program-conversion-template .program-overview-section { border-top: 1px solid rgba(54, 43, 36, 0.08); }
+.adults-program-page .program-conversion-template .benefit-card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.9rem; margin-top: 1.5rem; }
+.adults-program-page .program-conversion-template .benefit-card { padding: 1.15rem; border: 1px solid var(--adult-conversion-border); border-radius: 1.25rem; background: rgba(255, 255, 255, 0.72); box-shadow: 0 10px 24px rgba(54, 43, 36, 0.06); }
+.adults-program-page .program-conversion-template .benefit-card h3 { margin-bottom: 0.45rem; color: var(--ss-ink, #362b24); font-family: var(--ss-body-font, "Lexend", sans-serif); font-size: 1rem; font-weight: 800; }
+.adults-program-page .program-conversion-template .benefit-card p { margin: 0; font-size: 0.94rem; }
+.adults-program-page .program-conversion-template .proof-quote-inline { max-width: 42rem; margin-top: 1.25rem; padding: 1rem 1.25rem; border-left: 3px solid var(--ss-green, #116a42); background: rgba(17, 106, 66, 0.06); }
+
+@media (max-width: 767.98px) {
+  .adults-program-page .program-conversion-template .program-hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; }
+  .adults-program-page .program-conversion-template h1 { max-width: 12ch; font-size: clamp(2.7rem, 13vw, 4rem); }
+  .adults-program-page .program-conversion-template .program-hero__media { order: 2; }
+  .adults-program-page .program-conversion-template .hero-actions { display: grid; grid-template-columns: 1fr; }
+  .adults-program-page .program-conversion-template .hero-actions .btn { width: 100%; }
+  .adults-program-page .program-conversion-template .benefit-card-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 420px) {
+  .adults-program-page .program-conversion-template .benefit-card-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adults-program-page .program-conversion-template * { scroll-behavior: auto !important; transition: none !important; }
+}
