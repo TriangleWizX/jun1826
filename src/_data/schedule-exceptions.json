@@ -1,0 +1,19 @@
+{
+  "timezone": "America/New_York",
+  "precedence": ["dateException", "seasonSchedule", "recurringSchedule"],
+  "exceptions": [
+    {
+      "date": "2026-09-05",
+      "status": "open",
+      "label": "Saturday Adult No-Gi",
+      "time": "10:30–11:30 AM",
+      "audience": "Adult"
+    },
+    {
+      "date": "2026-09-07",
+      "status": "closed",
+      "reason": "Labor Day",
+      "makeup": "Priority makeup space Sept. 8–11"
+    }
+  ]
+}
