@@ -421,7 +421,7 @@ RewriteRule ^blog/onteora-park-summer-activities/index\.html?$ https://senseisan
 RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^near/?$ https://senseisandy.com/bjj-classes/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/([a-zA-Z0-9-]+-ny)(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/$1/ [L,R=301,NE]
+RewriteRule ^near/([a-zA-Z0-9-]+-ny)(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/$1 [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^cairo-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/cairo-ny/ [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
