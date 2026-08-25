@@ -336,8 +336,13 @@
       }
       if (calendlyEvent === 'calendly.event_scheduled') {
         track('booking_submitted', { lane: state.profile || 'unknown', scheduler_event: calendlyEvent });
-        track('booking_confirmed', { lane: state.profile || 'unknown', confirmation_source: 'calendly' });
-        showStep(3);
+    track('booking_confirmed', { lane: state.profile || 'unknown', confirmation_source: 'calendly' });
+    const confirmationTitle = document.getElementById('booking-confirmation-title');
+    const confirmationCopy = document.getElementById('booking-confirmation-copy');
+    const isYouthConfirmation = ['child', 'teen'].includes(state.profile);
+    if (confirmationTitle) confirmationTitle.textContent = isYouthConfirmation ? 'Your youth first visit is booked.' : 'Your adult first visit is booked.';
+    if (confirmationCopy) confirmationCopy.textContent = isYouthConfirmation ? 'Arrive 20 minutes before your selected class in clean athletic clothes. Sandy will meet you, review safety, and confirm whether your child trains that day.' : 'Wear normal clothes. No workout is required. Sandy will use this 15-minute conversation to help choose and schedule your free coached first class afterward.';
+    showStep(3);
         // Scroll to success message
         setTimeout(() => {
           const successStep = document.getElementById('pb-step-3');
