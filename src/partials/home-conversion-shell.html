@@ -34,7 +34,7 @@
   .ss-home-conversion__proof strong, .ss-home-conversion__proof span { display: block; }
   .ss-home-conversion__proof strong { color: var(--ss-green, #116a42); font-family: var(--ss-body-font, "Lexend", sans-serif); font-size: 1.25rem; }
   .ss-home-conversion__proof span { margin-top: .2rem; color: var(--ss-muted, #4f433c); font-size: .82rem; }
-  .ss-home-conversion__week { display: flex; max-width: 1180px; margin: 0 auto; padding: 2rem clamp(1rem, 3vw, 1.5rem) 3rem; align-items: end; justify-content: space-between; gap: 1.5rem; }
+  .ss-home-conversion__week { display: flex; max-width: 1180px; margin: 0 auto; padding: 2rem clamp(1rem, 3vw, 1.5rem) 3rem; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
   .ss-home-conversion__week h2 { margin: .4rem 0 .6rem; font-size: clamp(2rem, 4vw, 3rem); }
   .ss-home-conversion__week p:not(.ss-home-conversion__eyebrow) { max-width: 38rem; margin: 0; color: var(--ss-muted, #4f433c); line-height: 1.6; }
   .ss-home-conversion__week-facts { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 1.25rem 0; color: var(--ss-muted, #4f433c); }
@@ -43,7 +43,7 @@
   .ss-home-mockup > section[aria-labelledby="ss-home-double-win-title"] { display: none; }
   .ss-home-mockup > section.ss-home-conversion__arguments { display: block; }
   .ss-home-conversion__arguments { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 1.5rem) 3rem; }
-  .ss-home-conversion__arguments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .ss-home-conversion__arguments-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
   .ss-home-conversion__argument { padding: 1.25rem 0; border-top: 1px solid var(--color-rule, rgba(54,43,36,.14)); background: transparent; }
   .ss-home-conversion__argument h3 { margin: .35rem 0 .6rem; color: var(--ss-ink, #362b24); font-family: "Instrument Serif", Georgia, serif; font-size: 1.7rem; font-weight: 400; }
   .ss-home-conversion__argument p { margin: 0; color: var(--ss-muted, #4f433c); line-height: 1.55; }
