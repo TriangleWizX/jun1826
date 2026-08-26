@@ -1021,12 +1021,68 @@ body {
 }
 /* Contrast guard: primary CTA pills use a dark green surface, so their labels
    must remain white even when legacy button rules load later in the cascade. */
-:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary) {
+:where(
+  .btn-primary,
+  .ss-btn-primary,
+  .ss-btn--primary,
+  .ss-global-btn--primary,
+  .cta-pill,
+  .cta-primary,
+  .glossary-btn-primary,
+  .glossary-start-cta,
+  .glossary-chip[aria-pressed="true"],
+  .glossary-alpha[aria-pressed="true"],
+  .ss-footer-cta-btn-primary,
+  .ss-action-primary,
+  .ss-mobile-sticky-cta a
+) {
   color: #fff !important;
 }
 
-:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary):hover,
-:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary):focus-visible,
-:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary):active {
+:where(
+  .btn-primary,
+  .ss-btn-primary,
+  .ss-btn--primary,
+  .ss-global-btn--primary,
+  .cta-pill,
+  .cta-primary,
+  .glossary-btn-primary,
+  .glossary-start-cta,
+  .glossary-chip[aria-pressed="true"],
+  .glossary-alpha[aria-pressed="true"],
+  .ss-footer-cta-btn-primary,
+  .ss-action-primary,
+  .ss-mobile-sticky-cta a
+):hover,
+:where(
+  .btn-primary,
+  .ss-btn-primary,
+  .ss-btn--primary,
+  .ss-global-btn--primary,
+  .cta-pill,
+  .cta-primary,
+  .glossary-btn-primary,
+  .glossary-start-cta,
+  .glossary-chip[aria-pressed="true"],
+  .glossary-alpha[aria-pressed="true"],
+  .ss-footer-cta-btn-primary,
+  .ss-action-primary,
+  .ss-mobile-sticky-cta a
+):focus-visible,
+:where(
+  .btn-primary,
+  .ss-btn-primary,
+  .ss-btn--primary,
+  .ss-global-btn--primary,
+  .cta-pill,
+  .cta-primary,
+  .glossary-btn-primary,
+  .glossary-start-cta,
+  .glossary-chip[aria-pressed="true"],
+  .glossary-alpha[aria-pressed="true"],
+  .ss-footer-cta-btn-primary,
+  .ss-action-primary,
+  .ss-mobile-sticky-cta a
+):active {
   color: #fff !important;
 }
