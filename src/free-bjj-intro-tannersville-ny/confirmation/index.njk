@@ -13,17 +13,18 @@ permalink: "/free-bjj-intro-tannersville-ny/confirmation/index.html"
       <i class="bi bi-check-circle-fill" style="font-size: 2.5rem;" aria-hidden="true"></i>
     </div>
 
-    <h1 class="h2 font-weight-bold text-ink mb-3" style="color: var(--ss-ink, #362B24);">We Received Your Free Intro Request!</h1>
+    <h1 class="h2 font-weight-bold text-ink mb-3" style="color: var(--ss-ink, #362B24);">We Received Your Free First Visit Request!</h1>
     <p class="lead text-muted mb-4" style="color: var(--ss-muted, #4F433C); font-size: 1.15rem;">
-      Thank you for reaching out. Sensei Sandy will text or call you shortly to confirm your short first visit appointment.
+      Thank you for reaching out. Sensei Sandy will text or call you shortly to confirm the details below.
     </p>
 
     <div class="card border-0 shadow-sm p-4 text-start rounded-4 mb-4" style="background: var(--ss-surface2, #F4F1ED); border-left: 5px solid var(--ss-green, #116A42) !important;">
       <h2 class="h5 font-weight-bold mb-3" style="color: var(--ss-ink, #362B24);">What Happens Next:</h2>
       <ol class="mb-0 ps-3" style="line-height: 1.7; color: var(--ss-muted, #4F433C);">
-        <li class="mb-2"><strong>Appointment Confirmation:</strong> Sandy will reach out via text or phone to confirm the first visit.</li>
-        <li class="mb-2"><strong>Studio Visit:</strong> Come to the studio (6045 Main St, 2nd Floor) in normal street clothes. No workout is required for this conversation.</li>
-        <li class="mb-0"><strong>Next step:</strong> Sandy will select and schedule your free coached first class, with an appropriate partner and clear safety rules.</li>
+        <li class="mb-2"><strong>Appointment confirmation:</strong> Sandy will reach out via text or phone to confirm your first visit.</li>
+        <li class="mb-2" data-confirmation-adult><strong>Adult:</strong> Your 15-minute Goal Mapping visit is in normal clothes. Meet Sandy, see the room, and choose your free coached first class.</li>
+        <li class="mb-2" data-confirmation-youth><strong>Child or teen:</strong> Arrive 20 minutes before your selected 5 PM class in athletic clothes. Meet Sandy, review safety, and your student may train that day.</li>
+        <li class="mb-0"><strong>Bring:</strong> 6045 Main St, 2nd Floor; your selected class time and Gi/No-Gi option; and the waiver completed before arrival.</li>
       </ol>
     </div>
 
@@ -41,6 +42,9 @@ permalink: "/free-bjj-intro-tannersville-ny/confirmation/index.html"
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  const details = JSON.parse(sessionStorage.getItem("ss_first_visit_details") || "null");
+  if (details?.profile === "adult-beginner" || details?.profile === "adult") document.querySelector("[data-confirmation-youth]")?.remove();
+  if (["child", "teen"].includes(details?.profile)) document.querySelector("[data-confirmation-adult]")?.remove();
   // Fire generate_lead event ONLY once using sessionStorage deduplication flag
   if (!sessionStorage.getItem("ss_lead_fired")) {
     sessionStorage.setItem("ss_lead_fired", "true");

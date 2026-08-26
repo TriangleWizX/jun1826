@@ -149,10 +149,10 @@
     const introTitle = document.getElementById('book-intro-title');
     const introSubtitle = document.getElementById('book-intro-subtitle');
     const laneNotes = {
-      kids: 'For kids: we help your child understand the room and find the right starting challenge. Goal Mapping comes first, then Sandy selects and schedules the right coached class.',
-      teens: 'For teens: we see how they learn, move, and respond before choosing the right starting lane. Goal Mapping comes first, then Sandy selects and schedules the coached class.',
-      adults: 'For adults: we orient you to the room, explain how resistance works, and choose a manageable starting point during a calm 15-minute Goal Mapping visit.',
-      adult: 'For adults: we orient you to the room, explain how resistance works, and choose a manageable starting point during a calm 15-minute Goal Mapping visit.',
+      kids: 'For children: arrive 20 minutes before the selected 5 PM class in athletic clothes. Meet Sandy, review safety, and your child may train that day.',
+      teens: 'For teens: arrive 20 minutes before the selected 5 PM class in athletic clothes. Meet Sandy, review safety, and your teen may train that day.',
+      adults: 'For adults: book a 15-minute Goal Mapping visit in normal clothes. Meet Sandy, see the room, and choose your free coached first class.',
+      adult: 'For adults: book a 15-minute Goal Mapping visit in normal clothes. Meet Sandy, see the room, and choose your free coached first class.',
       'community-service': 'For qualifying service professionals: use Goal Mapping to discuss the right class lane, schedule, and community-service rate.'
     };
     const setHiddenState = (element, hidden) => {

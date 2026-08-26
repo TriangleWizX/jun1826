@@ -29,7 +29,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
         <p id="book-intro-subtitle" class="mb-5" style="font-family: 'Geist', sans-serif; font-size: 1.25rem; color: rgba(31, 23, 18, 0.7); max-width: 24ch; line-height: 1.4;">
           We’ll help you choose the right class, partner, and starting pace. Meet Sandy, see the room, and take the next step without needing experience.
         </p>
-        <p id="first-visit-lane-note" class="small text-muted mb-4" data-default-note="your 15-minute Goal Mapping visit is a short conversation about why you’re here, what your week looks like, and what first class makes sense. Normal clothes are fine; no workout is required. Sandy schedules the coached first class afterward.">Your 15-minute Goal Mapping visit is a short conversation about why you’re here, what your week looks like, and what first class makes sense. Normal clothes are fine; no workout is required. Sandy schedules the coached first class afterward.</p>
+        <p id="first-visit-lane-note" class="small text-muted mb-4" data-default-note="Your first visit depends on who’s starting. Adults meet Sandy for a 15-minute Goal Mapping visit in normal clothes. Children and teens arrive 20 minutes before their selected class in athletic clothes and may train that day.">Your first visit depends on who’s starting. Adults meet Sandy for a 15-minute Goal Mapping visit in normal clothes. Children and teens arrive 20 minutes before their selected class in athletic clothes and may train that day.</p>
         <div class="row g-3 text-start mb-4" aria-label="What happens at the Free Intro">
           <div class="col-md-6"><article class="h-100 p-3 border rounded-3 bg-white"><h2 class="h5 mb-2">Adults: meet Sandy first.</h2><p class="small mb-0">15 minutes in normal clothes. No workout. Then Sandy books your free class.</p></article></div>
           <div class="col-md-6"><article class="h-100 p-3 border rounded-3 bg-white"><h2 class="h5 mb-2">Kids + teens: meet Sandy before class.</h2><p class="small mb-0">Arrive 20 minutes early in athletic clothes. Your child may train that day.</p></article></div>
@@ -179,13 +179,11 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
         <p class="small text-muted">Choose a relevant class preference first. Sandy will confirm the exact first-class plan after your visit.</p>
         <div class="booking-class-choices mb-4" data-booking-class-choices aria-label="Relevant class choices"></div>
         <fieldset class="border rounded-4 p-3 mb-4 d-none" data-youth-preferred-days hidden aria-hidden="true">
-          <legend class="h6 mb-2">Which 5 PM days usually work? <span class="text-muted fw-normal">(Optional)</span></legend>
+          <legend class="h6 mb-2">When would you like to start? <span class="text-muted fw-normal">(Choose a period)</span></legend>
           <div class="d-flex flex-wrap gap-3">
-            <label><input type="checkbox" name="preferred_days" value="Monday — No-Gi"> Monday — No-Gi</label>
-            <label><input type="checkbox" name="preferred_days" value="Tuesday — Gi"> Tuesday — Gi</label>
-            <label><input type="checkbox" name="preferred_days" value="Wednesday — No-Gi"> Wednesday — No-Gi</label>
-            <label><input type="checkbox" name="preferred_days" value="Friday — Gi Lab"> Friday — Gi Lab</label>
-            <label><input type="checkbox" name="preferred_days" value="We need help finding a workable time"> We need help finding a workable time</label>
+            <label><input type="radio" name="preferred_days" value="Before September 8"> Before September 8 · current available dates</label>
+            <label><input type="radio" name="preferred_days" value="Placement Week · September 8–12"> Placement Week · September 8–12</label>
+            <label><input type="radio" name="preferred_days" value="Fall Routine · September 14+"> Fall Routine · September 14+</label>
           </div>
         </fieldset>
         <fieldset class="border rounded-4 p-3 mb-4 d-none" data-adult-preferred-days hidden aria-hidden="true">
@@ -226,17 +224,17 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
             </div>
             <h2 id="booking-confirmation-title" class="h3 mb-3" style="font-family: 'Geist', sans-serif; font-weight: 700;">Your first visit is booked.</h2>
             <p id="booking-confirmation-copy" class="mb-4" style="color: var(--ss-muted); font-size: 1.05rem;">
-              This appointment is the short first conversation. Sandy will help select and schedule your free coached first class afterward.
+              We’ll keep the next step clear and matched to who is starting.
             </p>
             <div class="text-start mb-4 p-4 w-100" style="background: rgba(0,0,0,0.03); border-radius: 1.25rem;">
               <h4 class="h6 mb-2" style="font-family: 'Geist', sans-serif; font-weight: 700; color: var(--ss-ink)">Step 1: First Visit</h4>
               <p class="mb-3" style="color: var(--ss-muted); font-size: 0.95rem">
-                • <strong>What to wear:</strong> Normal everyday clothes for first visit (no workout required)<br>
-                • <strong>What to expect:</strong> A studio tour, plain-language safety conversation, and a discussion of your goals and schedule.
+                • <strong>What to wear:</strong> Normal clothes for adults; athletic clothes for children and teens<br>
+                • <strong>What to expect:</strong> Adults have a 15-minute Goal Mapping visit. Children and teens arrive 20 minutes before class, review safety, and may train that day.
               </p>
               <h4 class="h6 mb-2" style="font-family: 'Geist', sans-serif; font-weight: 700; color: var(--ss-ink)">Step 2: Free First Small-Group Class</h4>
               <p class="mb-3" style="color: var(--ss-muted); font-size: 0.95rem">
-                • <strong>Next step:</strong> Sandy will select and schedule the right free coached first class with you<br>
+                • <strong>Next step:</strong> Sandy will confirm the right free coached first class with you<br>
                 • <strong>What to expect then:</strong> Safety walkthrough, an appropriate partner, and beginner-paced skill practice.
               </p>
               <h4 class="h6 mb-2" style="font-family: 'Geist', sans-serif; font-weight: 700; color: var(--ss-ink)">Location</h4>
@@ -380,7 +378,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
 <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
 <script>
 (() => {
-  const options = { child: ['Monday · 5:00 PM · Youth/Teen No-Gi','Tuesday · 5:00 PM · Youth/Teen Gi','Wednesday · 5:00 PM · Youth/Teen No-Gi','Friday · 5:00 PM · Youth/Teen Gi Lab'], teen: ['Monday · 5:00 PM · Youth/Teen No-Gi','Tuesday · 5:00 PM · Youth/Teen Gi','Wednesday · 5:00 PM · Youth/Teen No-Gi','Friday · 5:00 PM · Youth/Teen Gi Lab'], 'adult-beginner': ['Monday · 6:00 PM · Adult No-Gi','Tuesday · 6:00 PM · Adult Gi','Wednesday · 6:00 PM · Adult No-Gi','Friday · 6:00 PM · Adult Gi','Saturday · 10:30 AM · Adult No-Gi'] };
+  const options = { child: ['Before September 8 · Friday, August 28 · 5 PM — Youth/Teen Gi','Before September 8 · Monday, August 31 · 5 PM — Youth/Teen Gi','Before September 8 · Tuesday, September 1 · 5 PM — Youth/Teen Gi','Before September 8 · Wednesday, September 2 · 5 PM — Youth/Teen No-Gi','Before September 8 · Friday, September 4 · 5 PM — Youth/Teen Gi Lab','Placement Week · Tuesday, September 8 · 5 PM — Youth/Teen Gi','Placement Week · Friday, September 11 · 5 PM — Youth/Teen Gi','Fall Routine · Monday, September 14 · 5 PM — Youth/Teen No-Gi','Fall Routine · Tuesday, September 15 · 5 PM — Youth/Teen Gi','Fall Routine · Wednesday, September 16 · 5 PM — Youth/Teen No-Gi','Fall Routine · Friday, September 18 · 5 PM — Youth/Teen Gi'], teen: ['Before September 8 · Friday, August 28 · 5 PM — Youth/Teen Gi','Before September 8 · Monday, August 31 · 5 PM — Youth/Teen Gi','Before September 8 · Tuesday, September 1 · 5 PM — Youth/Teen Gi','Before September 8 · Wednesday, September 2 · 5 PM — Youth/Teen No-Gi','Before September 8 · Friday, September 4 · 5 PM — Youth/Teen Gi Lab','Placement Week · Tuesday, September 8 · 5 PM — Youth/Teen Gi','Placement Week · Friday, September 11 · 5 PM — Youth/Teen Gi','Fall Routine · Monday, September 14 · 5 PM — Youth/Teen No-Gi','Fall Routine · Tuesday, September 15 · 5 PM — Youth/Teen Gi','Fall Routine · Wednesday, September 16 · 5 PM — Youth/Teen No-Gi','Fall Routine · Friday, September 18 · 5 PM — Youth/Teen Gi'], 'adult-beginner': ['Before September 8 · Friday, August 28 · 6 PM — Adult Gi','Before September 8 · Monday, August 31 · 6 PM — Adult Gi','Before September 8 · Tuesday, September 1 · 6 PM — Adult Gi','Before September 8 · Wednesday, September 2 · 6 PM — Adult No-Gi','Before September 8 · Friday, September 4 · 6 PM — Adult Gi','Placement Week · Tuesday, September 8 · 6 PM — Adult Gi','Placement Week · Friday, September 11 · 6 PM — Adult Gi','Fall Routine · Monday, September 14 · 6 PM — Adult No-Gi','Fall Routine · Tuesday, September 15 · 6 PM — Adult Gi','Fall Routine · Wednesday, September 16 · 6 PM — Adult No-Gi','Fall Routine · Friday, September 18 · 6 PM — Adult Gi','Fall Routine · Saturday, September 19 · 10:30 AM — Adult No-Gi'] };
   document.querySelectorAll('#pb-step-1 [data-profile]').forEach((button) => button.addEventListener('click', () => { const target = document.querySelector('[data-booking-class-choices]'); if (!target) return; document.getElementById('booking-profile-value').value = button.dataset.profile; document.querySelector('[data-booking-student-field]').hidden = !['child', 'teen'].includes(button.dataset.profile); const list = options[button.dataset.profile] || options['adult-beginner']; target.innerHTML = list.map((label) => `<label class="d-block border rounded-3 p-2 mb-2"><input type="radio" name="booking_class_preference" value="${label}" class="me-2">${label}</label>`).join(''); target.querySelectorAll('input').forEach((input) => input.addEventListener('change', () => { document.getElementById('booking-class-value').value = input.value; })); }));
 })();
 </script>
