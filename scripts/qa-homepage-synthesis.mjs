@@ -8,7 +8,7 @@ assert.match(home, /A calm place to begin/);
 assert.match(home, /Kids Jiu-Jitsu in/);
 assert.match(home, /kids and teens/);
 assert.match(home, /matched partner/);
-assert.match(home, /Reserve Your Free Intro/);
+assert.match(home, /Reserve Free First Visit/);
 assert.match(home, /View Schedule/);
 assert.match(home, /6045 Main Street/);
 assert.match(home, /What students practice/);
