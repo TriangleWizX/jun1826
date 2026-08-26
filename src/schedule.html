@@ -22,7 +22,7 @@ permalink: "/schedule/"
         </p>
 <div class="ss-hero-actions">
 <a class="ss-btn-premium" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny#booking-flow">
-<span>Reserve Your Free First Visit</span>
+<span>Reserve Your Free Intro</span>
 <div class="ss-btn-premium-icon">
 <i aria-hidden="true" class="bi bi-arrow-down"></i>
 </div>
@@ -346,7 +346,7 @@ permalink: "/schedule/"
 (() => {
   const replaceVisitorCopy = (node) => {
     if (node.nodeType === Node.TEXT_NODE) {
-      node.nodeValue = node.nodeValue.replaceAll('Reserve Your Free Intro', 'Reserve Your Free First Visit').replaceAll('Reserve Intro', 'Reserve Free First Visit').replaceAll('Free Intro first visit', 'Free First Visit');
+      node.nodeValue = node.nodeValue.replaceAll('Reserve Your Free Intro', 'Reserve Your Free Intro').replaceAll('Reserve Intro', 'Reserve Your Free Intro').replaceAll('Free Intro first visit', 'Free First Visit');
       return;
     }
     node.childNodes?.forEach(replaceVisitorCopy);
