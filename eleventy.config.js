@@ -133,7 +133,7 @@ export default function (eleventyConfig) {
 eleventyConfig.addTransform("copy-integrity-normalization", function (content) {
   const outputPath = this.page?.outputPath || "";
   if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
-  content = content.replace(/home-class/gi, "weekly class");
+    content = content.replace(/home-class/gi, "class");
   let output = content.replace(/\bvisit\s+visit\b/gi, "visit").replace(/\bclass\s+class\b/gi, "class").replace(/\bprogram\s+program\b/gi, "program").replace(/\b12-week\s+12-week\b/gi, "12-week");
   if (outputPath.endsWith("/fall-practice-reset/index.html")) {
     output = output.replace(/School starts September 3\. placement begins September 8; the full weekly format begins September 14\. Fall Placement Week runs September 8–12\. Four youth classes meet at 5 PM\. Choose three recurring regular class times for the fall schedule\./gi, "Fall Placement Week runs September 8–12. Fall classes begin September 14. Choose 3 class days: Monday No-Gi, Tuesday Gi, Wednesday No-Gi, or Friday Gi.").replace(/Four youth (?:class )?options 5 PM/gi, "Choose 3 class days").replace(/Friday Gi Lab/gi, "Gi").replace(/Reserve three recurring regular class times by September 12; make-up (?:classes? is|classes are) available(?: by text when plans change| when space is open)\./gi, "Make-up classes are available when space is open.");
