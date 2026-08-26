@@ -1092,3 +1092,8 @@ body {
 .teens-program-page .program-overview-section.bg-light > .container > p:nth-of-type(2) {
   display: none;
 }
+/* Keep every green primary surface readable in normal, hover, focus, and active states. */
+:where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary),
+:where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):hover,
+:where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):focus-visible,
+:where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):active { color: #fff !important; }
