@@ -1019,3 +1019,14 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+/* Contrast guard: primary CTA pills use a dark green surface, so their labels
+   must remain white even when legacy button rules load later in the cascade. */
+:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary) {
+  color: #fff !important;
+}
+
+:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary):hover,
+:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary):focus-visible,
+:where(.btn-primary, .ss-btn-primary, .ss-btn--primary, .cta-pill, .cta-primary):active {
+  color: #fff !important;
+}
