@@ -170,3 +170,13 @@ html:has(body.page-home), body.page-home {
 @media (prefers-reduced-motion: reduce) {
   .page-home *, .page-home *::before, .page-home *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Keep the location promise, address, arrival note, and actions on one editorial measure. */
+.page-home .ss-home-location__copy { max-width: 42rem; margin-inline: 0; text-align: left; }
+.page-home .ss-home-location__copy h2,
+.page-home .ss-home-location__copy p { max-width: none; margin-left: 0; margin-right: 0; }
+.page-home .ss-home-location__copy .d-flex { justify-content: flex-start; }
+
+@media (max-width: 47.99rem) {
+  .page-home .ss-home-location__copy { max-width: none; }
+}
