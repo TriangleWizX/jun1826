@@ -342,4 +342,16 @@ permalink: "/schedule/"
 })();
 </script>
 
+<script>
+(() => {
+  const replaceVisitorCopy = (node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      node.nodeValue = node.nodeValue.replaceAll('Reserve Your Free Intro', 'Reserve Your Free First Visit').replaceAll('Reserve Intro', 'Reserve Free First Visit').replaceAll('Free Intro first visit', 'Free First Visit');
+      return;
+    }
+    node.childNodes?.forEach(replaceVisitorCopy);
+  };
+  document.addEventListener('DOMContentLoaded', () => replaceVisitorCopy(document.body));
+})();
+</script>
 </main>
