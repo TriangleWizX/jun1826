@@ -28,7 +28,7 @@ for (const [content, terms, label] of [
   [holiday, ['First Day of School', 'Regular Friday academy schedule: Youth Gi at 5:00 PM and Adult Gi at 6:00 PM.', 'Fall Placement Week', 'Full Fall Practice Schedule', 'October 26', 'Labor Day No-Gi Games / Open Mat'], 'Holiday page'],
   [schedulePage, ['Fall placement begins September 8', 'full fall practice schedule begins Monday, September 14', 'Class times remain unchanged', 'Fall Placement Begins Tuesday, September 8'], 'Schedule page'],
   [reset, ['School starts September 3', 'placement begins September 8', 'full weekly format begins September 14'], 'Fall reset'],
-  [homepage, ['Build a fall routine they can keep', 'See the Fall Schedule', 'Book a Free Intro'], 'Homepage'],
+  [homepage, ['Build a fall routine they can keep', 'See the Fall Schedule', 'Free First Visit'], 'Homepage'],
   [booking, ['Which 5 PM days usually work?', 'Which adult class days usually work?', 'preferred_days'], 'Booking page'],
   [bookingJs, ['preferred_days', 'adultPreferredDaysFieldset'], 'Booking script']
 ]) for (const term of terms) requireText(content, term, label);
