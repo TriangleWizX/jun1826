@@ -37,6 +37,14 @@
   .ss-home-conversion__week-facts { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 1.25rem 0; color: var(--ss-muted, #4f433c); }
   .ss-home-conversion__week-facts span { display: grid; gap: .1rem; }
   .ss-home-conversion__week-facts strong { color: var(--ss-green, #116a42); font-size: 1.15rem; }
+  .ss-home-mockup > section[aria-labelledby="ss-home-double-win-title"] { display: none; }
+  .ss-home-mockup > section.ss-home-conversion__arguments { display: block; }
+  .ss-home-conversion__arguments { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 1.5rem) 3rem; }
+  .ss-home-conversion__arguments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .ss-home-conversion__argument { padding: 1.25rem; border: 1px solid rgba(54,43,36,.12); border-radius: 1.25rem; background: rgba(255,255,255,.78); }
+  .ss-home-conversion__argument h3 { margin: .35rem 0 .6rem; color: var(--ss-ink, #362b24); font-family: "Instrument Serif", Georgia, serif; font-size: 1.7rem; font-weight: 400; }
+  .ss-home-conversion__argument p { margin: 0; color: var(--ss-muted, #4f433c); line-height: 1.55; }
+  @media (max-width: 767.98px) { .ss-home-conversion__arguments-grid { grid-template-columns: 1fr; } }
   @media (max-width: 767.98px) { .ss-home-conversion__hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; } .ss-home-conversion__hero-copy { display: contents; } .ss-home-conversion__builder { display: contents; } .ss-home-conversion__card { order: 3; max-width: none; margin: 0 1rem; border-radius: 1.25rem; } .ss-home-conversion__media { order: 4; margin: 0 1rem 1.5rem; } .ss-home-conversion__proof { order: 5; grid-template-columns: 1fr; } .ss-home-conversion__proof div { padding: .75rem; } .ss-home-conversion__week { display: block; padding-top: 1.5rem; } .ss-home-conversion__week .btn { margin-top: 1rem; } }
   @media (prefers-reduced-motion: reduce) { .ss-home-conversion * { scroll-behavior: auto !important; transition: none !important; } }
 </style>
@@ -58,6 +66,7 @@
   </div>
   <div class="ss-home-conversion__proof" aria-label="Academy proof"><div><strong>5.0 Google</strong><span>60+ reviews</span></div><div><strong>12 max</strong><span>per class</span></div><div><strong>294</strong><span>classes delivered</span></div></div>
   <section class="ss-home-conversion__week" aria-labelledby="home-week-title"><div><p class="ss-home-conversion__eyebrow">Built around the week</p><h2 id="home-week-title">One stop. Different ways onto the mat.</h2><p>5 PM youth · 6 PM adults · Mon/Wed No-Gi · Tue/Fri Gi · Saturday adult No-Gi</p><p class="mt-2">Build a routine around your week instead of another activity your family has to work around.</p></div><a class="btn btn-outline-secondary" href="/schedule">View full schedule <span aria-hidden="true">→</span></a></section>
+  <section class="ss-home-conversion__arguments" aria-labelledby="home-arguments-title"><p class="ss-home-conversion__eyebrow">Why families stay</p><h2 id="home-arguments-title">A class that feels clear, useful, and repeatable.</h2><div class="ss-home-conversion__arguments-grid"><article class="ss-home-conversion__argument"><p class="ss-home-conversion__eyebrow">01 Class feel</p><h3>Calm coaching</h3><p>Students get a clear problem, a matched partner, and resistance adjusted to the moment.</p></article><article class="ss-home-conversion__argument"><p class="ss-home-conversion__eyebrow">02 Practice</p><h3>Skills that transfer</h3><p>Attention, partner care, problem solving, and communication are practiced every week.</p></article><article class="ss-home-conversion__argument"><p class="ss-home-conversion__eyebrow">03 Routine</p><h3>Easy to keep going</h3><p>Predictable class times, makeups by text, and a coach who knows the student help families return.</p></article></div></section>
 </section>
 <script>
 (() => {
