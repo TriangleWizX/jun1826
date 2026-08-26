@@ -26,6 +26,10 @@ permalink: "/free-bjj-intro-tannersville-ny/confirmation/index.html"
         <li class="mb-2" data-confirmation-youth><strong>Child or teen:</strong> Arrive 20 minutes before your selected 5 PM class in athletic clothes. Meet Sandy, review safety, and your student may train that day.</li>
         <li class="mb-0"><strong>Bring:</strong> 6045 Main St, 2nd Floor; your selected class time and Gi/No-Gi option; and the waiver completed before arrival.</li>
       </ol>
+      <div id="first-visit-details" class="mt-3 pt-3 border-top" hidden>
+        <strong>Your selected first-visit details</strong>
+        <p class="small mb-0 mt-2" data-confirmation-details></p>
+      </div>
     </div>
 
     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
@@ -45,6 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const details = JSON.parse(sessionStorage.getItem("ss_first_visit_details") || "null");
   if (details?.profile === "adult-beginner" || details?.profile === "adult") document.querySelector("[data-confirmation-youth]")?.remove();
   if (["child", "teen"].includes(details?.profile)) document.querySelector("[data-confirmation-adult]")?.remove();
+  if (details?.selectedClass) {
+    const panel = document.querySelector("#first-visit-details");
+    const copy = document.querySelector("[data-confirmation-details]");
+    const youth = ["child", "teen"].includes(details.profile);
+    if (copy) copy.textContent = `${youth ? "Arrival time: 20 minutes before class · " : "Visit: 15-minute Goal Mapping · "}${details.selectedClass}. Address: 6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485.`;
+    if (panel) panel.hidden = false;
+  }
   // Fire generate_lead event ONLY once using sessionStorage deduplication flag
   if (!sessionStorage.getItem("ss_lead_fired")) {
     sessionStorage.setItem("ss_lead_fired", "true");
