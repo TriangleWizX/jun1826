@@ -38,7 +38,12 @@ def changed_outputs(commit):
             elif name == 'src/_includes/schedule-master.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
             elif name.startswith('src/') and name.endswith('.njk'):
-                candidate = ROOT / 'dist' / name[4:-4] / 'index.html'
+                relative = name[4:]
+                if relative.endswith('/index.njk'):
+                    relative = relative[:-10]
+                else:
+                    relative = relative[:-4]
+                candidate = ROOT / 'dist' / relative / 'index.html'
             else:
                 candidate = ROOT / 'dist' / name[4:]
         elif name in ROOT_FILES:
