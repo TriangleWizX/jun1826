@@ -208,6 +208,17 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
       </div>
       <!-- STEP 3: Show-Up Kit -->
       <div class="pb-step pb-step-hidden" id="pb-step-3" style="display: none" hidden aria-hidden="true">
+        <form action="{{ contact.formspreeEndpoint }}" method="POST" class="needs-validation" novalidate>
+          <input type="hidden" name="_subject" value="Free First Visit Booking Details">
+          <input type="hidden" name="_next" value="https://senseisandy.com/free-bjj-intro-tannersville-ny/confirmation/">
+          <input type="hidden" name="profile" id="booking-profile-value">
+          <input type="hidden" name="selected_class" id="booking-class-value">
+          <div class="mb-3"><label class="form-label" for="booking-name">Your name</label><input class="form-control" id="booking-name" name="name" autocomplete="name" required></div>
+          <div class="mb-3"><label class="form-label" for="booking-mobile">Mobile number</label><input class="form-control" id="booking-mobile" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="mb-3"><label class="form-label" for="booking-email">Email</label><input class="form-control" id="booking-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="mb-3" data-booking-student-field hidden><label class="form-label" for="booking-student">Student name</label><input class="form-control" id="booking-student" name="student_name" autocomplete="given-name"></div>
+          <button class="btn btn-primary w-100 mb-4" type="submit">Send My Free First Visit Details</button>
+        </form>
         <div class="ss-bezel-shell">
           <div class="ss-bezel-core flex-column text-center p-5" style="display: flex;">
             <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(17, 106, 66, 0.1); color: var(--ss-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
@@ -370,7 +381,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
 <script>
 (() => {
   const options = { child: ['Monday · 5:00 PM · Youth/Teen No-Gi','Tuesday · 5:00 PM · Youth/Teen Gi','Wednesday · 5:00 PM · Youth/Teen No-Gi','Friday · 5:00 PM · Youth/Teen Gi Lab'], teen: ['Monday · 5:00 PM · Youth/Teen No-Gi','Tuesday · 5:00 PM · Youth/Teen Gi','Wednesday · 5:00 PM · Youth/Teen No-Gi','Friday · 5:00 PM · Youth/Teen Gi Lab'], 'adult-beginner': ['Monday · 6:00 PM · Adult No-Gi','Tuesday · 6:00 PM · Adult Gi','Wednesday · 6:00 PM · Adult No-Gi','Friday · 6:00 PM · Adult Gi','Saturday · 10:30 AM · Adult No-Gi'] };
-  document.querySelectorAll('#pb-step-1 [data-profile]').forEach((button) => button.addEventListener('click', () => { const target = document.querySelector('[data-booking-class-choices]'); if (!target) return; const list = options[button.dataset.profile] || options['adult-beginner']; target.innerHTML = list.map((label) => `<label class="d-block border rounded-3 p-2 mb-2"><input type="radio" name="booking_class_preference" value="${label}" class="me-2">${label}</label>`).join(''); }));
+  document.querySelectorAll('#pb-step-1 [data-profile]').forEach((button) => button.addEventListener('click', () => { const target = document.querySelector('[data-booking-class-choices]'); if (!target) return; document.getElementById('booking-profile-value').value = button.dataset.profile; document.querySelector('[data-booking-student-field]').hidden = !['child', 'teen'].includes(button.dataset.profile); const list = options[button.dataset.profile] || options['adult-beginner']; target.innerHTML = list.map((label) => `<label class="d-block border rounded-3 p-2 mb-2"><input type="radio" name="booking_class_preference" value="${label}" class="me-2">${label}</label>`).join(''); target.querySelectorAll('input').forEach((input) => input.addEventListener('change', () => { document.getElementById('booking-class-value').value = input.value; })); }));
 })();
 </script>
 <script src="/js/progressive-booking.js" defer></script>
