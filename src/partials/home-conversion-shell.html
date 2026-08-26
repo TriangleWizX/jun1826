@@ -4,7 +4,7 @@
   .ss-home-mockup > section.ss-home-section--schedule { display: none; }
   /* Hallmark: Editorial Split / Catskills Studio. Keep the conversion path quiet, tactile, and content-led. */
   .ss-home-conversion { background: var(--color-paper, var(--ss-bg, #fbfaf8)); color: var(--color-ink, var(--ss-text, #1f1712)); }
-  .ss-home-conversion__hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; max-width: 1180px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1rem, 3vw, 1.5rem) 2rem; }
+  .ss-home-conversion__hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; max-width: 1180px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1rem, 3vw, 1.5rem) 2rem; }
   .ss-home-conversion__hero-copy { min-width: 0; }
   .ss-home-conversion__eyebrow, .ss-home-conversion__step-label { color: var(--color-accent, var(--ss-green, #116a42)); font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
   .ss-home-conversion h1, .ss-home-conversion h2 { color: var(--color-ink-2, var(--ss-ink, #362b24)); font-family: var(--font-display, "Instrument Serif", Georgia, serif); font-weight: 400; letter-spacing: -.025em; line-height: .98; text-wrap: balance; overflow-wrap: anywhere; }
@@ -48,6 +48,7 @@
   .ss-home-conversion__argument h3 { margin: .35rem 0 .6rem; color: var(--ss-ink, #362b24); font-family: "Instrument Serif", Georgia, serif; font-size: 1.7rem; font-weight: 400; }
   .ss-home-conversion__argument p { margin: 0; color: var(--ss-muted, #4f433c); line-height: 1.55; }
   @media (max-width: 767.98px) { .ss-home-conversion__arguments-grid { grid-template-columns: 1fr; } }
+  @media (min-width: 768px) { .ss-home-conversion__hero-copy { text-align: left; } .ss-home-conversion__subhead { margin-right: auto; } }
   @media (max-width: 767.98px) { .ss-home-conversion__hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; } .ss-home-conversion__hero-copy { display: contents; } .ss-home-conversion__builder { display: contents; } .ss-home-conversion__card { order: 3; max-width: none; margin: 0 1rem; } .ss-home-conversion__media { order: 4; margin: 0 1rem 1.5rem; } .ss-home-conversion__proof { order: 5; grid-template-columns: 1fr; } .ss-home-conversion__proof div { padding: .75rem; } .ss-home-conversion__week { display: block; padding-top: 1.5rem; } .ss-home-conversion__week .btn { margin-top: 1rem; } .ss-home-conversion h1 { font-size: clamp(2.65rem, 14vw, 4rem); } .ss-home-conversion__actions .btn { flex: 1 1 auto; } }
   @media (prefers-reduced-motion: reduce) { .ss-home-conversion * { scroll-behavior: auto !important; transition: none !important; } }
 </style>
