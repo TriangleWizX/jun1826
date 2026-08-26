@@ -1086,3 +1086,8 @@ body {
 ):active {
   color: #fff !important;
 }
+
+/* The community-service rate belongs only on adult/pricing surfaces. */
+.kids-program-page .program-overview-section.bg-light > .container > p:nth-of-type(2) {
+  display: none;
+}
