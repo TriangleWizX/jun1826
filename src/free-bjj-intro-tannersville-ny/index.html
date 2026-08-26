@@ -383,4 +383,18 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
 })();
 </script>
 <script src="/js/progressive-booking.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#pb-step-3 form');
+    if (!form) return;
+    form.addEventListener('submit', () => {
+      try {
+        sessionStorage.setItem('ss_first_visit_details', JSON.stringify({
+          profile: document.getElementById('booking-profile-value')?.value || '',
+          selectedClass: document.getElementById('booking-class-value')?.value || ''
+        }));
+      } catch (error) { /* storage may be unavailable in private browsing */ }
+    });
+  });
+</script>
 <script src="/js/book-free-intro-bridge.min.js" defer></script>
