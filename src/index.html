@@ -386,6 +386,19 @@ permalink: "/index.html"
     else init();
   })();
 </script>
+<script>
+  (function routeHomepageBookingCtas() {
+    if (window.location.pathname !== '/') return;
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href*="free-bjj-intro-tannersville-ny"]');
+      const builder = document.getElementById('home-first-visit-builder');
+      if (!link || !builder) return;
+      event.preventDefault();
+      builder.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      builder.querySelector('input[name="profile_choice"]')?.focus({ preventScroll: true });
+    });
+  })();
+</script>
 <!-- Homepage imagery is intentionally static above the fold to protect CLS and mobile performance. -->
 <!--
     (function () {
