@@ -738,14 +738,14 @@ permalink: "/report-card.html"
 }
 .rc-development-map h2 { margin: .35rem 0 .5rem; }
 .rc-development-axes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; margin-top: 1.5rem; }
-.rc-development-axes article { padding: 1rem; border-left: 3px solid #116a42; background: #f4f1ed; }
+.rc-development-axes article { padding: 1rem; border-top: 2px solid #116a42; background: #f4f1ed; }
 .rc-development-axes h3 { margin: 0 0 .45rem; font-size: 1rem; }
 .rc-development-axes p { min-height: 3.4em; margin: 0 0 .8rem; font-size: .84rem; color: #4f433c; }
 .rc-development-axes span { display: inline-block; padding: .25rem .5rem; border-radius: 999px; background: rgba(17,106,66,.1); color: #116a42; font-size: .72rem; font-weight: 700; }
 .rc-development-notes { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.25rem; color: #4f433c; font-size: .86rem; }
 .rc-development-notes strong { font-weight: 600; }
 .rc-dashboard-grid > .rc-summary-row .rc-card--grade { display: none; }
-.rc-skill-intro { margin: -0.5rem 0 1.25rem; padding: .85rem 1rem; border-left: 3px solid #116a42; background: #f4f1ed; color: #4f433c; font-size: .88rem; line-height: 1.55; }
+.rc-skill-intro { margin: -0.5rem 0 1.25rem; padding: .85rem 1rem; border-top: 2px solid #116a42; background: #f4f1ed; color: #4f433c; font-size: .88rem; line-height: 1.55; }
 .rc-skill-control { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .35rem; flex: 1; min-width: 0; margin: 0; padding: 0; border: 0; }
 .rc-skill-control label { position: relative; margin: 0; cursor: pointer; }
 .rc-skill-control input { position: absolute; opacity: 0; width: 1px; height: 1px; }
@@ -784,6 +784,35 @@ permalink: "/report-card.html"
   .rc-feedback-field textarea { min-height: 3.5rem; border: 0; padding: 0; }
   .rc-review-meta input, .rc-review-meta select, .rc-focus-control select, .rc-development-axis select { appearance: none; border: 0; padding-left: 0; }
 }
+/* Clarity pass: functional workbench, not a decorative dashboard. */
+:root { --ss-rc-cream: var(--color-paper, #fbfaf8); --ss-rc-white: var(--color-paper, #fbfaf8); --ss-rc-dark: var(--color-ink, #1f1712); --ss-rc-muted: var(--color-muted, #4f433c); --ss-rc-border: var(--color-rule, rgba(54,43,36,.14)); --ss-rc-green: var(--color-accent, #116a42); }
+body { font-family: var(--font-body, 'Lexend', sans-serif); }
+.rc-page-header { max-width: 56rem; margin: 2rem auto 2.25rem; text-align: left; }
+.rc-page-eyebrow { justify-content: flex-start; letter-spacing: .12em; }
+.rc-page-eyebrow::before { display: none; }
+.rc-page-eyebrow::after { width: 2.5rem; }
+.rc-page-title { font-family: var(--font-display, 'Instrument Serif', Georgia, serif); font-size: clamp(2.35rem, 5vw, 3.75rem); }
+.rc-page-subtitle { max-width: 38rem; margin-bottom: .45rem; line-height: 1.55; }
+.rc-page-kicker { max-width: 38rem; margin: 0 0 1.25rem; color: var(--ss-rc-muted); font-size: .9rem; line-height: 1.5; }
+.rc-page-divider { margin: 0; width: 3rem; background: var(--ss-rc-green); }
+.rc-development-map { background: var(--ss-rc-white); border: 1px solid var(--ss-rc-border); border-radius: .75rem; box-shadow: none; }
+.rc-development-map h2 { font-family: var(--font-display, 'Instrument Serif', Georgia, serif); font-size: 1.9rem; }
+.rc-development-axes article { border-top: 2px solid var(--ss-rc-green); border-radius: .5rem; background: var(--color-paper-2, #f4f1ed); }
+.rc-card { border-color: var(--ss-rc-border); border-radius: .75rem; box-shadow: none; transition: border-color .12s ease, background-color .12s ease; }
+.rc-card:hover { transform: none; box-shadow: none; }
+.rc-summary-row .rc-card { min-height: 8.5rem; }
+.rc-domain-row { border: 1px solid transparent; }
+.rc-domain-row:hover { border-color: var(--ss-rc-border); }
+.rc-skill-control label span { min-height: 2.75rem; font-size: .74rem; }
+.rc-skill-control input:focus-visible + span, .rc-development-axis select:focus-visible, .rc-review-meta input:focus-visible, .rc-review-meta select:focus-visible, .rc-focus-control select:focus-visible, .rc-feedback-field textarea:focus-visible { outline: 3px solid var(--color-focus-inverse, #00a8aa); outline-offset: 2px; }
+.rc-focus-card { border-color: color-mix(in srgb, var(--ss-rc-green) 28%, var(--ss-rc-border)); background: color-mix(in srgb, var(--ss-rc-green) 5%, var(--ss-rc-white)); }
+.rc-feedback-field textarea { min-height: 6.25rem; background: var(--ss-rc-white); }
+.rc-output-actions button { min-height: 2.75rem; }
+.report-card-copy { max-width: 56rem; border-radius: .75rem; box-shadow: none; }
+@media (max-width: 560px) { .rc-page-header { margin-top: 1.25rem; margin-bottom: 1.5rem; padding: 0 1rem; } .rc-dashboard-grid { padding: 0 1rem; gap: 1rem; } .rc-development-map, .rc-card { padding: 1rem; } .rc-skill-control label span { min-height: 3rem; } .rc-summary-row .rc-card { min-height: auto; } }
+@media (max-width: 560px) { .rc-domain-row::after { position: static; order: 3; display: block; width: 100%; padding: 0 0 0 40px; background: transparent; color: var(--ss-rc-muted); box-shadow: none; opacity: 1; transform: none; font-size: .72rem; line-height: 1.4; text-align: left; } }
+ .rc-section-title { max-width: 56rem; margin: 1.25rem auto -0.5rem; padding: 0 0.25rem; color: var(--ss-rc-dark); font-family: var(--font-body, 'Lexend', sans-serif); font-size: 1rem; font-weight: 700; letter-spacing: 0; }
+@media (max-width: 560px) { .rc-section-title { margin-top: .75rem; padding: 0; font-size: .95rem; } }
 </style>
 <main class="ss-main">
 <!-- SVG Vector Watermarks -->
@@ -814,6 +843,7 @@ permalink: "/report-card.html"
 <div class="rc-page-eyebrow">Training Report</div>
 <h1 class="rc-page-title">Training Report Card</h1>
 <p class="rc-page-subtitle">A clear way to see what is working and what to try next.</p>
+<p class="rc-page-kicker">Start with the student and review details. Then choose what you saw in class.</p>
 <div class="rc-page-divider"></div>
 </header>
 <section aria-labelledby="development-map-title" class="rc-development-map">
@@ -833,6 +863,7 @@ permalink: "/report-card.html"
 <p class="rc-coach-guidance">Coach note: update a state after the student shows a clear change in more than one class. Write down the problem, what happened, and what to try next. Needing a prompt is part of learning. A failed try gives us information. “Reliable” means the skill still works when the situation changes. It does not mean perfect.</p>
 </section>
 <div class="rc-dashboard-grid">
+<h2 class="rc-section-title">1. Student and review details</h2>
 <!-- Top Summary Row -->
 <section aria-label="Student Summary Info" class="rc-summary-row">
 <!-- Legacy decorative card remains hidden; the report has no numeric snapshot. -->
@@ -950,6 +981,7 @@ permalink: "/report-card.html"
 <span class="rc-card-subtext">Context tells us where the skill worked.</span>
 </div>
 </section>
+<h2 class="rc-section-title">2. Choose the main focus</h2>
 <section aria-labelledby="current-focus-title" class="rc-focus-card">
 <div class="rc-card-header"><i class="bi bi-crosshair"></i><span class="rc-card-label" id="current-focus-title">Current Focus</span></div>
 <p class="rc-focus-help">Choose one main area. Add a second area only if it helps. The lowest state is not always the next focus.</p>
@@ -959,6 +991,7 @@ permalink: "/report-card.html"
 </div>
 </section>
 <!-- Main Domain and Details Row -->
+<h2 class="rc-section-title">3. Mark the skills you saw</h2>
 <div class="rc-main-row">
 <!-- Domain Performance Section (skill states) -->
 <section aria-labelledby="performance-title" class="rc-card rc-card--performance">
@@ -1056,6 +1089,7 @@ permalink: "/report-card.html"
 </div>
 </div>
 <!-- Bottom Layout Row -->
+<h2 class="rc-section-title">4. Write three short notes</h2>
 <div class="rc-bottom-row">
 <!-- Instructions Card -->
 <section aria-labelledby="how-to-use-title" class="rc-card rc-card--how-to-use">
