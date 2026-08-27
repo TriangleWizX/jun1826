@@ -2,23 +2,19 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 
-const home = fs.readFileSync(path.join(process.cwd(), "src/index.html"), "utf8");
+const home = fs.readFileSync(path.join(process.cwd(), "src/partials/home-conversion-shell.html"), "utf8");
+const rendered = fs.readFileSync(path.join(process.cwd(), "dist/index.html"), "utf8");
 
-assert.match(home, /A calm place to begin/);
-assert.match(home, /Kids Jiu-Jitsu in/);
-assert.match(home, /kids and teens/);
-assert.match(home, /matched partner/);
-assert.match(home, /Reserve Free First Visit/);
-assert.match(home, /View Schedule/);
-assert.match(home, /6045 Main Street/);
-assert.match(home, /What students practice/);
-assert.match(home, /Learn clear skills with a partner/);
-assert.match(home, /12-week program/);
-assert.doesNotMatch(home, /Seen\. Tested\. Becoming\./);
-assert.doesNotMatch(home, /Annual Track|Elite Concierge|ADAPT.*TEST.*EXPRESS/);
-assert.match(home, /href="\/bjj-classes\/kids-tannersville-ny"/);
-assert.match(home, /href="\/bjj-classes\/teens-tannersville-ny"/);
-assert.match(home, /href="\/bjj-classes\/adults-tannersville-ny"/);
-assert.match(home, /data-analytics-event="home_intro_click"/);
+for (const surface of [home, rendered]) {
+  assert.match(surface, /Tannersville, NY · Kids · Teens · Adults/);
+  assert.match(surface, /Jiu-Jitsu for Kids, Teens &amp; Adults in Tannersville/);
+  assert.match(surface, /Small classes\. Beginner-friendly partners\. Live practice with coach nearby\./);
+}
+assert.match(home, /value="child"/);
+assert.match(home, /value="teen"/);
+assert.match(home, /value="adult"/);
+assert.match(home, /value="family"/);
+assert.match(home, /href="\/schedule"/);
+assert.doesNotMatch(rendered, /transformative|ecological dynamics|constraints-led|unlock your potential/i);
 
 console.log("homepage synthesis QA passed");
