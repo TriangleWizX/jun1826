@@ -211,7 +211,8 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
           <input type="hidden" name="_next" value="https://senseisandy.com/free-bjj-intro-tannersville-ny/confirmation/">
           <input type="hidden" name="profile" id="booking-profile-value">
           <input type="hidden" name="selected_class" id="booking-class-value">
-          <div class="mb-3"><label class="form-label" for="booking-name">Your name</label><input class="form-control" id="booking-name" name="name" autocomplete="name" required></div>
+<input type="hidden" name="economic_lane" id="booking-economic-lane"> <input type="hidden" name="avatar" id="booking-avatar"> <input type="hidden" name="source_page" value="/free-bjj-intro-tannersville-ny"> <input type="hidden" name="source_campaign" id="booking-source-campaign"> <input type="hidden" name="primary_goal" id="booking-primary-goal"> <input type="hidden" name="primary_objection" id="booking-primary-objection"> <input type="hidden" name="schedule_constraint" id="booking-schedule-constraint"> <input type="hidden" name="buying_trigger" id="booking-buying-trigger"> <input type="hidden" name="child_wants_to_return" id="booking-child-wants-to-return">
+<div class="mb-3"><label class="form-label" for="booking-name">Your name</label><input class="form-control" id="booking-name" name="name" autocomplete="name" required></div>
           <div class="mb-3"><label class="form-label" for="booking-mobile">Mobile number</label><input class="form-control" id="booking-mobile" name="phone" type="tel" autocomplete="tel" required></div>
           <div class="mb-3"><label class="form-label" for="booking-email">Email</label><input class="form-control" id="booking-email" name="email" type="email" autocomplete="email" required></div>
           <div class="mb-3" data-booking-student-field hidden><label class="form-label" for="booking-student">Student name</label><input class="form-control" id="booking-student" name="student_name" autocomplete="given-name"></div>
@@ -383,6 +384,25 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
 })();
 </script>
 <script src="/js/progressive-booking.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('#pb-step-3 form');
+  if (!form) return;
+  const params = new URLSearchParams(window.location.search);
+  const profile = document.getElementById('booking-profile-value');
+  const avatar = document.getElementById('booking-avatar');
+  const lane = document.getElementById('booking-economic-lane');
+  const campaign = document.getElementById('booking-source-campaign');
+  const selected = profile?.value || '';
+  if (avatar) avatar.value = selected === 'adult-beginner' ? 'adult' : selected || '';
+  if (lane) lane.value = selected === 'adult-beginner' ? 'adult' : selected ? 'youth' : '';
+  if (campaign) campaign.value = params.get('campaign') || params.get('utm_campaign') || '';
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
+    const input = document.createElement('input');
+    input.type = 'hidden'; input.name = key; input.value = params.get(key) || ''; form.appendChild(input);
+  });
+});
+</script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#pb-step-3 form');
