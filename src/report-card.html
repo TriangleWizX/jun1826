@@ -859,11 +859,11 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <article class="rc-development-axis"><h3>Adapt</h3><p>Can I respond when my first idea fails?</p><label class="visually-hidden" for="development-adapt">Adapt state</label><select id="development-adapt" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
 <article class="rc-development-axis"><h3>Express</h3><p>Am I choosing solutions that fit me?</p><label class="visually-hidden" for="development-express">Express state</label><select id="development-express" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
 </div>
-<div class="rc-development-notes"><strong>What is working?</strong><strong>What is the next problem?</strong><strong>What is beginning to become yours?</strong></div>
+<div class="rc-development-notes"><strong>What went well?</strong><strong>What will we try next?</strong><strong>What is getting easier?</strong></div>
 <p class="rc-coach-guidance">Coach note: update a state after the student shows a clear change in more than one class. Write down the problem, what happened, and what to try next. Needing a prompt is part of learning. A failed try gives us information. “Reliable” means the skill still works when the situation changes. It does not mean perfect.</p>
 </section>
 <div class="rc-dashboard-grid">
-<h2 class="rc-section-title">1. Student and review details</h2>
+<h2 class="rc-section-title">1. Tell us who this is</h2>
 <!-- Top Summary Row -->
 <section aria-label="Student Summary Info" class="rc-summary-row">
 <!-- Legacy decorative card remains hidden; the report has no numeric snapshot. -->
@@ -981,17 +981,17 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <span class="rc-card-subtext">Context tells us where the skill worked.</span>
 </div>
 </section>
-<h2 class="rc-section-title">2. Choose the main focus</h2>
+<h2 class="rc-section-title">2. Pick one thing to work on</h2>
 <section aria-labelledby="current-focus-title" class="rc-focus-card">
 <div class="rc-card-header"><i class="bi bi-crosshair"></i><span class="rc-card-label" id="current-focus-title">Current Focus</span></div>
-<p class="rc-focus-help">Choose one main area. Add a second area only if it helps. The lowest state is not always the next focus.</p>
+<p class="rc-focus-help">Pick one main area to practice. Add a second only if it helps.</p>
 <div class="rc-focus-control">
 <div><label class="rc-field-label" for="primary-focus">Primary focus</label><select id="primary-focus"><option value="">Choose a primary domain</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
 <div><label class="rc-field-label" for="secondary-focus">Secondary focus (optional)</label><select id="secondary-focus"><option value="">None</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
 </div>
 </section>
 <!-- Main Domain and Details Row -->
-<h2 class="rc-section-title">3. Mark the skills you saw</h2>
+<h2 class="rc-section-title">3. Show what happened in class</h2>
 <div class="rc-main-row">
 <!-- Domain Performance Section (skill states) -->
 <section aria-labelledby="performance-title" class="rc-card rc-card--performance">
@@ -1073,9 +1073,9 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <div class="rc-feedback-container">
 <p class="rc-focus-help">Write three short notes about the main focus. Say what happened, not only that the student improved.</p>
 <div class="rc-feedback-fields">
-<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-working">What is working?</label><textarea id="feedback-working" placeholder="What did the student do well?"></textarea></div>
-<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-next">What is the next problem?</label><textarea id="feedback-next" placeholder="What should the student try next?"></textarea></div>
-<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-yours">What is beginning to become yours?</label><textarea id="feedback-yours" placeholder="What is starting to feel more natural?"></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-working">What went well?</label><textarea id="feedback-working" placeholder="What did the student do well?"></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-next">What will we try next?</label><textarea id="feedback-next" placeholder="What should the student try next?"></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-yours">What is getting easier?</label><textarea id="feedback-yours" placeholder="What is starting to feel easier?"></textarea></div>
 </div>
 <div class="rc-output-actions"><button type="button" id="copy-summary">Copy Summary</button><button class="secondary" type="button" id="clear-report">Clear Review Fields</button><span aria-live="polite" class="visually-hidden" id="copy-status"></span></div>
 <!-- Vector Lotus Watermark -->
@@ -1089,7 +1089,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 </div>
 </div>
 <!-- Bottom Layout Row -->
-<h2 class="rc-section-title">4. Write three short notes</h2>
+<h2 class="rc-section-title">4. Write what comes next</h2>
 <div class="rc-bottom-row">
 <!-- Instructions Card -->
 <section aria-labelledby="how-to-use-title" class="rc-card rc-card--how-to-use">
@@ -1117,7 +1117,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 </div>
 </div>
 <p class="rc-coach-guidance">Update a state after the student shows the skill in more than one class. Do not base it on attendance or one round. A new situation may show that the skill needs more practice. That is useful information.</p>
-<p class="rc-coach-guidance"><strong>Parent role:</strong> Ask, listen, and encourage. Let the coach handle technique. Try: “What felt easier today?” or “What are you working on?”</p>
+<p class="rc-coach-guidance"><strong>Parent role:</strong> Ask, listen, and encourage. Let the coach handle technique. Try: “What felt easier today?” or “What are you working on?” For a young child, say: “You did this part. Next time, we can try this part.”</p>
 </section>
 <!-- CTA Action Card (gold-brown background) -->
 <section aria-label="Review progress and choose the next step" class="rc-card rc-card--action" data-offer-stage="progress" data-audience="member">
@@ -1204,11 +1204,11 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
       value('contexts-observed') ? `Contexts observed: ${value('contexts-observed')}` : '',
       `Current focus: ${primary}${secondary ? `; ${secondary}` : ''}`,
       '',
-      `What is working:\n${value('feedback-working') || '[Not recorded]'}`,
+`What went well:\n${value('feedback-working') || '[Not recorded]'}`,
       '',
       `Next problem:\n${value('feedback-next') || '[Not recorded]'}`,
       '',
-      `Beginning to become yours:\n${value('feedback-yours') || '[Not recorded]'}`
+`What is getting easier:\n${value('feedback-yours') || '[Not recorded]'}`
     ];
     return lines.filter((line, index) => line || (index > 0 && lines[index - 1])).join('\n');
   };
