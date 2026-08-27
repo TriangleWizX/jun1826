@@ -12,6 +12,10 @@ BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    if 'data/url-registry.json' in names:
+        candidate = ROOT / 'dist' / 'sources' / 'kodokan-etiquette' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'sources/kodokan-etiquette/index.html'))
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names or 'src/assets/data/asset-hash-manifest.json' in names
