@@ -811,17 +811,17 @@ permalink: "/report-card.html"
 <path d="M 87 30 Q 100 15 110 20"></path>
 </svg>
 <header class="rc-page-header">
-<div class="rc-page-eyebrow">Digital Twin</div>
-<h1 class="rc-page-title">Digital Twin Report Card</h1>
-<p class="rc-page-subtitle">Clear insight. Calm progress. Better Jiu-Jitsu.</p>
+<div class="rc-page-eyebrow">Training Report</div>
+<h1 class="rc-page-title">Training Report Card</h1>
+<p class="rc-page-subtitle">A clear way to see what is working and what to try next.</p>
 <div class="rc-page-divider"></div>
 </header>
 <section aria-labelledby="development-map-title" class="rc-development-map">
-<div class="rc-card-header"><span class="rc-card-label">Development Map</span></div>
-<h2 id="development-map-title">Jiu-Jitsu Development Map</h2>
-<p class="rc-page-subtitle">Use observable stages to describe what is becoming reliable, without turning progress into a school grade.</p>
-<p class="rc-development-intro"><strong>Map → Adapt → Resist → Observe → Adjust:</strong> the report card organizes what live training revealed so the next problem can be chosen from evidence, not guesswork.</p>
-<p class="rc-development-intro">Choose the state that matches repeated live evidence. A state may stay unchanged, or become more context-dependent when conditions widen; neither is a grade or a failure.</p>
+<div class="rc-card-header"><span class="rc-card-label">Progress Map</span></div>
+<h2 id="development-map-title">How Your Skills Are Growing</h2>
+<p class="rc-page-subtitle">Use these stages to describe real training progress. This is not a school grade.</p>
+<p class="rc-development-intro"><strong>Watch → Practice → Check → Adjust:</strong> use what happened in class to choose the next problem to work on.</p>
+<p class="rc-development-intro">Choose the state that best matches what the student has shown more than once. A state can stay the same. That is useful information, not failure.</p>
 <div class="rc-development-axes">
 <article class="rc-development-axis"><h3>Recognize</h3><p>Do I understand what is happening?</p><label class="visually-hidden" for="development-recognize">Recognize state</label><select id="development-recognize" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
 <article class="rc-development-axis"><h3>Protect</h3><p>Can I remain safe?</p><label class="visually-hidden" for="development-protect">Protect state</label><select id="development-protect" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
@@ -830,7 +830,7 @@ permalink: "/report-card.html"
 <article class="rc-development-axis"><h3>Express</h3><p>Am I choosing solutions that fit me?</p><label class="visually-hidden" for="development-express">Express state</label><select id="development-express" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
 </div>
 <div class="rc-development-notes"><strong>What is working?</strong><strong>What is the next problem?</strong><strong>What is beginning to become yours?</strong></div>
-<p class="rc-coach-guidance">Coach note: update a state when repeated live training gives enough evidence that behavior has meaningfully changed. Record the student, problem, conditions, observed behavior, and next constraint. Prompt dependence is context, not a separate grade: note what the student recognized without prompting, then how they adapted when the partner changed direction. A failed attempt is information about perception, technique, physical capacity, emotion, or problem size—not a verdict. Reliable means the behavior holds across meaningful variation and safe resistance—not mastered or finished.</p>
+<p class="rc-coach-guidance">Coach note: update a state after the student shows a clear change in more than one class. Write down the problem, what happened, and what to try next. Needing a prompt is part of learning. A failed try gives us information. “Reliable” means the skill still works when the situation changes. It does not mean perfect.</p>
 </section>
 <div class="rc-dashboard-grid">
 <!-- Top Summary Row -->
@@ -876,7 +876,7 @@ permalink: "/report-card.html"
 <div><label class="rc-field-label" for="review-date">Review Date</label><input id="review-date" type="date"/></div>
 <div><label class="rc-field-label" for="review-type">Review Type</label><select id="review-type"><option>Baseline</option><option>Check-In</option><option>Mid-Cycle</option><option>End-of-Term</option><option>Coach Review</option><option>Other</option></select></div>
 </div>
-<span class="rc-example-note">Use the date and context of a useful review; no weekly grade is required.</span>
+<span class="rc-example-note">Use the date and setting of this review. A weekly grade is not needed.</span>
 </div>
 <!-- Student Info Card -->
 <div class="rc-card rc-card--student">
@@ -885,7 +885,7 @@ permalink: "/report-card.html"
 <span class="rc-card-label">Student</span>
 </div>
 <input aria-label="Student name input" class="rc-value-input" id="student-name" type="text" placeholder="Student name"/>
-<span class="rc-card-subtext">Optional: add a student ID only when it has an operational purpose.</span>
+<span class="rc-card-subtext">Student ID is optional.</span>
 </div>
 <!-- Level/Belt Info Card -->
 <div class="rc-card rc-card--level">
@@ -930,7 +930,7 @@ permalink: "/report-card.html"
 <div class="rc-card rc-card--schedule">
 <div class="rc-card-header"><i class="bi bi-bullseye"></i><span class="rc-card-label">Problem tested</span></div>
 <input aria-label="Problem tested input" class="rc-value-input" id="problem-tested" type="text" placeholder="Problem tested"/>
-<span class="rc-card-subtext">Name the problem, not a technique count</span>
+<span class="rc-card-subtext">Name the problem, not the number of moves.</span>
 </div>
 <div class="rc-card rc-card--schedule">
 <div class="rc-card-header"><i class="bi bi-signpost-split"></i><span class="rc-card-label">Observation context</span></div>
@@ -946,13 +946,13 @@ permalink: "/report-card.html"
 </select>
 <div><label class="rc-field-label" for="observations-reviewed">Observations reviewed</label><input aria-describedby="observation-volume-note" class="rc-value-input" id="observations-reviewed" inputmode="numeric" min="0" type="number"/></div>
 <div><label class="rc-field-label" for="contexts-observed">Contexts observed</label><input aria-describedby="observation-volume-note" class="rc-value-input" id="contexts-observed" placeholder="e.g. positional start, live round" type="text"/></div>
-<p class="rc-coach-guidance" id="observation-volume-note">Evidence volume and context, not a score.</p>
-<span class="rc-card-subtext">Context describes where behavior survived; it has no score or rank value.</span>
+<p class="rc-coach-guidance" id="observation-volume-note">These notes give context. They are not a score.</p>
+<span class="rc-card-subtext">Context tells us where the skill worked.</span>
 </div>
 </section>
 <section aria-labelledby="current-focus-title" class="rc-focus-card">
 <div class="rc-card-header"><i class="bi bi-crosshair"></i><span class="rc-card-label" id="current-focus-title">Current Focus</span></div>
-<p class="rc-focus-help">Choose one primary domain and, only when useful, one secondary domain. The lowest state is not automatically the next priority.</p>
+<p class="rc-focus-help">Choose one main area. Add a second area only if it helps. The lowest state is not always the next focus.</p>
 <div class="rc-focus-control">
 <div><label class="rc-field-label" for="primary-focus">Primary focus</label><select id="primary-focus"><option value="">Choose a primary domain</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
 <div><label class="rc-field-label" for="secondary-focus">Secondary focus (optional)</label><select id="secondary-focus"><option value="">None</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
@@ -964,9 +964,9 @@ permalink: "/report-card.html"
 <section aria-labelledby="performance-title" class="rc-card rc-card--performance">
 <div class="rc-performance-header">
 <i class="bi bi-bar-chart-line"></i>
-<span class="rc-card-label" id="performance-title">Domain Performance</span>
+<span class="rc-card-label" id="performance-title">Skill Areas</span>
 </div>
-<div class="rc-skill-intro"><strong>skill, not grades</strong><br/>These states describe what Sandy is currently seeing in live training. They are not school grades and they are not permanent labels. A skill may work reliably in one situation while still developing in another.</div>
+<div class="rc-skill-intro"><strong>Skills, not grades</strong><br/>These states describe what Sandy sees in live training. They are not permanent labels. A skill may work in one situation and still need practice in another.</div>
 <div class="rc-domains-list">
 <!-- Feet to Floor -->
 <div class="rc-domain-row" data-tip="Takedown accuracy, posture maintenance, and stance stability.">
@@ -1025,12 +1025,12 @@ permalink: "/report-card.html"
 </div>
 <div class="rc-performance-footer">
 <i class="bi bi-info-circle"></i>
-<span>Choose the state that best matches what the student demonstrates under safe resistance.</span>
+<span>Choose the state that best matches what the student can do during safe practice.</span>
 </div>
 </section>
 <!-- Sidebar stack (skill details & Feedback) -->
 <div class="rc-main-right-stack">
-<section aria-labelledby="skill-guide-title" class="rc-card rc-card--skill-guide"><div class="rc-card-header"><i aria-hidden="true" class="bi bi-compass"></i><span class="rc-card-label" id="skill-guide-title">skill states</span></div><dl><dt>Not Yet Observed</dt><dd>There is not enough live evidence yet. This is not failure.</dd><dt>Emerging</dt><dd>The student can begin solving with prompting or favorable conditions.</dd><dt>Developing</dt><dd>Useful behavior is becoming consistent against safe resistance.</dd><dt>Contextual</dt><dd>The solution works in familiar or specific conditions and is still being tested across variations.</dd><dt>Reliable</dt><dd>The skill holds across meaningful variation and safe resistance; it is not perfection.</dd></dl><p class="rc-parent-interpretation"><strong>Progress is evidence, not a pass/fail result.</strong> Emerging → Developing means useful behavior is more consistent. Developing → Contextual means it is dependable in known conditions. Contextual → Reliable means it is surviving meaningful variation.</p></section>
+<section aria-labelledby="skill-guide-title" class="rc-card rc-card--skill-guide"><div class="rc-card-header"><i aria-hidden="true" class="bi bi-compass"></i><span class="rc-card-label" id="skill-guide-title">Skill states</span></div><dl><dt>Not Yet Observed</dt><dd>We need more class time to see it. This is not failure.</dd><dt>Emerging</dt><dd>The student can start with help or in an easier situation.</dd><dt>Developing</dt><dd>The student is doing it more often during safe practice.</dd><dt>Contextual</dt><dd>It works in some situations. We are checking it in others.</dd><dt>Reliable</dt><dd>It still works when the situation changes. It does not mean perfect.</dd></dl><p class="rc-parent-interpretation"><strong>Progress is information, not pass or fail.</strong> Each step means the skill is working more often or in more situations.</p></section>
 <!-- Remarks Card -->
 <section aria-labelledby="remarks-title" class="rc-card rc-card--feedback">
 <div class="rc-card-header">
@@ -1038,11 +1038,11 @@ permalink: "/report-card.html"
 <span class="rc-card-label" id="remarks-title">Feedback &amp; Remarks</span>
 </div>
 <div class="rc-feedback-container">
-<p class="rc-focus-help">Write these three sentences primarily about the selected Current Focus. Keep them concise and connected to observed behavior. A specific observation is evidence of care: say what happened, not only that the student improved.</p>
+<p class="rc-focus-help">Write three short notes about the main focus. Say what happened, not only that the student improved.</p>
 <div class="rc-feedback-fields">
-<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-working">What is working?</label><textarea id="feedback-working" placeholder="Describe one observable success connected to the current focus."></textarea></div>
-<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-next">What is the next problem?</label><textarea id="feedback-next" placeholder="Name the next solvable problem, not a technique homework assignment."></textarea></div>
-<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-yours">What is beginning to become yours?</label><textarea id="feedback-yours" placeholder="Describe the behavior or choice that is starting to feel dependable."></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-working">What is working?</label><textarea id="feedback-working" placeholder="What did the student do well?"></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-next">What is the next problem?</label><textarea id="feedback-next" placeholder="What should the student try next?"></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-yours">What is beginning to become yours?</label><textarea id="feedback-yours" placeholder="What is starting to feel more natural?"></textarea></div>
 </div>
 <div class="rc-output-actions"><button type="button" id="copy-summary">Copy Summary</button><button class="secondary" type="button" id="clear-report">Clear Review Fields</button><span aria-live="polite" class="visually-hidden" id="copy-status"></span></div>
 <!-- Vector Lotus Watermark -->
@@ -1061,7 +1061,7 @@ permalink: "/report-card.html"
 <section aria-labelledby="how-to-use-title" class="rc-card rc-card--how-to-use">
 <div class="rc-card-header">
 <i aria-hidden="true" class="bi bi-book"></i>
-<span class="rc-card-label" id="how-to-use-title">Using the digital twin report card</span>
+<span class="rc-card-label" id="how-to-use-title">Using the report card</span>
 </div>
 <h2 class="rc-print-only">Progress Review</h2>
 <div class="rc-steps-grid">
@@ -1071,19 +1071,19 @@ permalink: "/report-card.html"
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">2</div>
-<p>Scan the Development Map and nine domains; leaving a state unchanged is valid.</p>
+<p>Review the five progress areas. Leaving a state unchanged is okay.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">3</div>
-<p>Choose one primary focus and an optional secondary focus.</p>
+<p>Choose one main focus. Add a second only if it helps.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">4</div>
-<p>Write three concise observations, then print or copy the summary.</p>
+<p>Write three short notes, then print or copy the summary.</p>
 </div>
 </div>
-<p class="rc-coach-guidance">Update states when recent classes provide enough live evidence—not from attendance, one repetition, or a single unusually easy or difficult round. New conditions can reveal that a skill is more context-dependent; that is useful coaching information.</p>
-<p class="rc-coach-guidance"><strong>Parent role:</strong> Ask, listen, and encourage. Technical coaching stays in class. Useful questions include: “What felt easier this time?” and “What problem are you working on?”</p>
+<p class="rc-coach-guidance">Update a state after the student shows the skill in more than one class. Do not base it on attendance or one round. A new situation may show that the skill needs more practice. That is useful information.</p>
+<p class="rc-coach-guidance"><strong>Parent role:</strong> Ask, listen, and encourage. Let the coach handle technique. Try: “What felt easier today?” or “What are you working on?”</p>
 </section>
 <!-- CTA Action Card (gold-brown background) -->
 <section aria-label="Review progress and choose the next step" class="rc-card rc-card--action" data-offer-stage="progress" data-audience="member">
@@ -1094,7 +1094,7 @@ permalink: "/report-card.html"
 <path d="M12 21c2 0 3-4 3-9s-1-9-3-9-3 4-3 9 1 9 3 9z"></path>
 <path d="M3 12h18"></path>
 </svg>
-<h2 class="rc-action-title">Keep Gathering Evidence.<br/>Then review what comes next.</h2>
+<h2 class="rc-action-title">Keep practicing.<br/>Then review what comes next.</h2>
 <div class="rc-action-buttons">
 <a class="rc-btn rc-btn--primary" href="/core-culture-review" data-offer-stage="review" data-audience="member">
                 Review This Progress With Sandy <i aria-hidden="true" class="bi bi-arrow-right"></i>
@@ -1125,25 +1125,26 @@ permalink: "/report-card.html"
 </div>
 <!-- Guide SEO copy block -->
 <section aria-labelledby="report-card-guide-title" class="report-card-copy">
-<h2 id="report-card-guide-title">How To Use the Digital Twin Report Card</h2>
+<h2 id="report-card-guide-title">How to use the Report Card</h2>
 <h2>How to read this card</h2>
-<p>The states are a snapshot of what Sandy is seeing in training, not a ranking against other students. The most useful part is the current focus: what is working, what problem comes next, and what is starting to become yours.</p>
-<p>Research helps explain why we observe recognition, decision-making, adaptation, and reduced prompting under changing conditions, but this card does not measure clinical executive function or promise a study outcome. <a href="/evidence">Read the evidence ledger.</a></p>
-<p>These observations come from the same coached positional problems used during regular classes. <a href="/how-class-works">See how class works</a>. Parents can help most by encouraging effort, asking useful questions, and letting coaches handle technical instruction. <a href="/core-culture-parent-guide">Read the Parent Guide</a>.</p>
+<p>This card shows what Sandy sees in training. It does not rank students. Look first at the current focus: what is working, what comes next, and what is starting to feel natural.</p>
+<p>The notes come from coached practice in class. They do not measure a medical or school skill. <a href="/how-class-works">See how class works</a> or <a href="/evidence">read the evidence ledger</a>.</p>
+<p>New to a BJJ word? <a href="/bjj-glossary">Browse the beginner BJJ glossary</a> for short, plain-language definitions.</p>
+<p>Helpful terms: <a href="/bjj-glossary/base">Base</a>, <a href="/bjj-glossary/pin">Pin</a>, <a href="/bjj-glossary/pin-escape">Pin Escape</a>, <a href="/bjj-glossary/guard">Guard</a>, <a href="/bjj-glossary/guard-pass">Guard Pass</a>, <a href="/bjj-glossary/guard-retention">Guard Retention</a>, and <a href="/bjj-glossary/submission">Submission</a>.</p>
 <p>
-        The Sensei Sandy BJJ Digital Twin Report Card is a quick way to review training priorities and observable behavior for one student, one class class, or one useful review. Coaches can update each skill state when recent classes provide enough live evidence. The final output gives families and students a simple snapshot of what is improving, what is stable, and what problem should receive more attention next.
+        The Sensei Sandy BJJ Report Card is a quick way to review one student’s training. It shows what is improving, what is steady, and what problem to work on next.
       </p>
 <p>
-        This report card format built for beginner-friendly Brazilian Jiu-Jitsu coaching in Tannersville, NY, where clear standards and calm communication matter. Instead of vague feedback, each category maps to observable habits like base retention, pin escapes, guard passing, and submissions. That structure helps reduce confusion for new students and gives returning students a predictable progression path.
+        It is made for calm, beginner-friendly Brazilian Jiu-Jitsu coaching in Tannersville, NY. Each area points to a skill we can see in class, such as staying safe, escaping a pin, passing guard, or finishing a hold.
       </p>
 <ul>
-<li>Choose the skill state that best matches what the student currently demonstrates under safe resistance.</li>
-<li>Record the current belt level, class schedule, and coach so each review is traceable.</li>
-<li>Record what is working, the next problem, and what is beginning to become yours.</li>
-<li>Print or save the final card so the student and family can understand what is working and what Sandy is coaching next.</li>
+<li>Choose the state that best matches what the student shows in safe practice.</li>
+<li>Add the date, coach, and class details.</li>
+<li>Write what is working, what comes next, and what feels more natural.</li>
+<li>Print or copy the card to share with the student and family.</li>
 </ul>
 <p>
-        When comparing reviews, keep the domain definitions and skill-state criteria consistent. Update a state when repeated training gives enough evidence that the student's behavior has changed. No change is still information, and states do not have to move only upward. Consistency makes the report card useful for coaching decisions, parent conversations, and long-term skill development across kids, teens, and adults.
+        Use the same state meanings each time. Update a state when the student shows a change in repeated training. No change is still information. Skills do not move only up. This keeps reviews useful for coaches, parents, kids, teens, and adults.
       </p>
 <p>
         Keep exploring: <a href="/schedule">Schedule</a> · <a href="/bjj-classes/tannersville-ny">BJJ Small-group classes</a> · <a href="/options-pricing">Options / Pricing</a> · <a href="/private-lessons">Private Coaching</a> · <a href="/contact">Contact</a> · <a href="/blog">Blog</a>
