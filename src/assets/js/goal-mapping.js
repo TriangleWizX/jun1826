@@ -189,7 +189,7 @@
       if (!trigger.getAttribute('aria-label')) {
         trigger.setAttribute(
           'aria-label',
-          'Reserve Your Free Intro'
+          'Reserve Your Free First Visit'
         );
       }
     });
