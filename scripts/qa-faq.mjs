@@ -10,7 +10,7 @@ for (const stale of [
   "structured age-appropriate groups"
 ]) assert.equal(visible.includes(stale), false, `FAQ contains stale policy copy: ${stale.slice(0, 60)}`);
 for (const required of [
-  "Do I train during my Free Intro?",
+  "Do I train during my Free First Visit?",
   "Do kids and teens train together?",
   "Is there a first-term guarantee?",
   "Youth + Teen class",

@@ -1,10 +1,10 @@
 {
-  "primaryCtaLabel": "Reserve Your Free Intro",
+  "primaryCtaLabel": "Reserve Your Free First Visit",
  "supportingText": "Start with a 15-minute first visit in normal clothes; no workout is required, and Sandy schedules your coached first class afterward.",
   "goalMappingDurationMinutes": 15,
   "goalMappingClothing": "Normal clothes; no workout required",
   "generalPath": {
-    "name": "Free Intro",
+    "name": "Free First Visit",
     "firstStep": "15-minute Goal Mapping visit",
     "workoutRequired": false,
     "normalClothes": true,
@@ -22,7 +22,7 @@
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Reserve Your Free Intro",
+      "title": "Reserve Your Free First Visit",
       "subtitle": "First visit before class",
       "description": "Request your visit online. Pick your preferred student lane (Kids, Teens, Adults) and general schedule preferences."
     },

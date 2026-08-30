@@ -5,7 +5,7 @@ const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const checks = [
   ['homepage', read('dist/index.html'), ['Seen. Tested. Becoming.', 'small groups', 'matched partners']],
-  ['Free Intro', read('dist/free-bjj-intro-tannersville-ny/index.html'), ['Goal Mapping', 'appropriate partner', 'skill-based resistance']],
+  ['Free First Visit', read('dist/free-bjj-intro-tannersville-ny/index.html'), ['Goal Mapping', 'appropriate partner', 'skill-based resistance']],
   ['Kids', read('dist/bjj-classes/kids-tannersville-ny/index.html'), ['appropriate without making it fake', 'Safe enough to keep trying']],
   ['Teens', read('dist/bjj-classes/teens-tannersville-ny/index.html'), ['serious training without a sink-or-swim culture', 'gradually increasing resistance']],
   ['Adults', read('dist/bjj-classes/adults-tannersville-ny/index.html'), ['real resistance from the beginning—but not random resistance', 'Coach-controlled resistance rounds']],

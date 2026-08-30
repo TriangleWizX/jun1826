@@ -18,7 +18,7 @@ const termCtaOld = `const renderTermCta = () => '<section id="learn-safely" clas
         </p>'
       </div>'
       <div class="cta-actions glossary-term-cta__actions">
-        <a class="btn btn-primary glossary-term-cta__button glossary-term-cta__button--primary" href="/book-free-intro">Reserve Free Intro</a>
+        <a class="btn btn-primary glossary-term-cta__button glossary-term-cta__button--primary" href="/book-free-intro">Reserve Your Free First Visit</a>
         <a class="btn btn-secondary glossary-term-cta__button glossary-term-cta__button--secondary" href="/schedule">View Schedule</a>
         <a class="btn btn-outline-primary glossary-term-cta__button glossary-term-cta__button--outline" href="/student-hub#this-weeks-focus">Review This Week’s Class Focus</a>
       </div>
@@ -37,7 +37,7 @@ const termCtaNew = `const renderTermCta = () => \`<section id="learn-safely" cla
         </p>
       </div>
       <div class="cta-actions glossary-term-cta__actions">
-        <a class="btn btn-primary glossary-term-cta__button glossary-term-cta__button--primary" href="/book-free-intro">Reserve Free Intro</a>
+        <a class="btn btn-primary glossary-term-cta__button glossary-term-cta__button--primary" href="/book-free-intro">Reserve Your Free First Visit</a>
         <a class="btn btn-secondary glossary-term-cta__button glossary-term-cta__button--secondary" href="/schedule">View Schedule</a>
         <a class="btn btn-outline-primary glossary-term-cta__button glossary-term-cta__button--outline" href="/student-hub#this-weeks-focus">Review This Week’s Class Focus</a>
       </div>

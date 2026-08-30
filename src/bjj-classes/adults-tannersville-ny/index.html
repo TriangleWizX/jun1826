@@ -13,7 +13,7 @@ permalink: "/bjj-classes/adults-tannersville-ny/index.html"
   (function syncAdultsCtas() {
     const adultsBookingUrl = (window.SENSEI_CONFIG && window.SENSEI_CONFIG.adultsCalendlyUrl) || '/free-bjj-intro-tannersville-ny?lane=adult';
     window.SENSEI_DECISIONS = Object.assign({}, window.SENSEI_DECISIONS || {}, {
-      primaryCtaLabel: 'Reserve Your Free Intro',
+      primaryCtaLabel: 'Reserve Your Free First Visit',
       primaryCtaUrl: adultsBookingUrl
     });
 
@@ -25,13 +25,13 @@ permalink: "/bjj-classes/adults-tannersville-ny/index.html"
     if (!navCta) return;
 
     navCta.setAttribute('href', adultsBookingUrl);
-    navCta.setAttribute('data-cta-label', 'Reserve Your Free Intro');
+    navCta.setAttribute('data-cta-label', 'Reserve Your Free First Visit');
 
     const ctaText = navCta.querySelector('[data-cta-text]');
     if (ctaText) {
-      ctaText.textContent = 'Reserve Your Free Intro';
+      ctaText.textContent = 'Reserve Your Free First Visit';
     } else {
-      navCta.textContent = 'Reserve Your Free Intro';
+      navCta.textContent = 'Reserve Your Free First Visit';
     }
   })();
 </script>

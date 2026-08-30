@@ -174,7 +174,7 @@ const schedulePageGrid = (schedule) => {
               </div>
               <p class="ss-slot-meta">${escapeHtml(visitorText)} · ${escapeHtml(formatRange(slot.startTime, slot.endTime))}</p>
             </div>
-            <a class="ss-slot-cta" href="${escapeHtml(slot.bookingUrl)}">${slot.type === 'private' ? 'Ask About Private Lessons' : 'Reserve Free Intro'}</a>
+            <a class="ss-slot-cta" href="${escapeHtml(slot.bookingUrl)}">${slot.type === 'private' ? 'Ask About Private Lessons' : 'Reserve Your Free First Visit'}</a>
           </li>`;
     }).join('\n');
     const note = schedule.days?.[day]?.note || '';
@@ -370,7 +370,7 @@ const updateSchedulePage = async (schedule) => {
       "@id": "https://senseisandy.com/schedule#webpage",
       "url": "https://senseisandy.com/schedule",
       "name": "BJJ Schedule in Tannersville NY | Kids, Teens & Adults",
-      "description": "View the Jiu Jitsu class schedule Tannersville NY families use: 5:00 PM youth, 6:00 PM adults, and Saturday Adult No-Gi. Reserve a Free Intro.",
+      "description": "View the Jiu Jitsu class schedule Tannersville NY families use: 5:00 PM youth, 6:00 PM adults, and Saturday Adult No-Gi. Reserve a Free First Visit.",
       "isPartOf": {
         "@id": "https://senseisandy.com/#website"
       },

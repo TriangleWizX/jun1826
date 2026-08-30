@@ -49,7 +49,7 @@ const validateLocalLinkContract = (relPath, html, ownSlug) => {
 
 const validateCustomWindhamPage = (relPath, html) => {
   assert(/<title>Brazilian Jiu-Jitsu Near Windham NY \| Sensei Sandy BJJ<\/title>/i.test(html), `${relPath}: incorrect custom title.`);
-  assert(/meta\s+[^>]*name="description"\s+[^>]*content="Beginner-friendly Brazilian Jiu-Jitsu near Windham NY for kids, teens, adults, and families\. Train minutes away in Tannersville with a Free Intro\."/i.test(html) || /meta\s+[^>]*content="Beginner-friendly Brazilian Jiu-Jitsu near Windham NY for kids, teens, adults, and families\. Train minutes away in Tannersville with a Free Intro\."\s+[^>]*name="description"/i.test(html), `${relPath}: incorrect custom meta description.`);
+  assert(/meta\s+[^>]*name="description"\s+[^>]*content="Beginner-friendly Brazilian Jiu-Jitsu near Windham NY for kids, teens, adults, and families\. Train minutes away in Tannersville with a Free First Visit\."/i.test(html) || /meta\s+[^>]*content="Beginner-friendly Brazilian Jiu-Jitsu near Windham NY for kids, teens, adults, and families\. Train minutes away in Tannersville with a Free First Visit\."\s+[^>]*name="description"/i.test(html), `${relPath}: incorrect custom meta description.`);
   assert(/link\s+[^>]*rel="canonical"\s+[^>]*href="https:\/\/senseisandy\.com\/near\/windham-ny"/i.test(html) || /link\s+[^>]*href="https:\/\/senseisandy\.com\/near\/windham-ny"\s+[^>]*rel="canonical"/i.test(html), `${relPath}: incorrect custom canonical.`);
   assert(/https:\/\/senseisandy\.com\/near\/windham-ny#webpage/i.test(html), `${relPath}: missing WebPage schema id.`);
   assert(/https:\/\/senseisandy\.com\/near\/windham-ny#faq/i.test(html), `${relPath}: missing FAQ schema id.`);

@@ -41,7 +41,7 @@ for (const file of candidates) {
   const rails = html.match(/<aside[^>]*class="ss-article-rail"[\s\S]*?<\/aside>/gi) || [];
   for (const rail of rails) {
     railCount += 1;
-    if (/Plan Your First Class|Free Intro Class|Free Intro Small-group class|learn the basics with calm instruction|href="\/student-hub"/i.test(rail)) {
+    if (/Plan Your First Class|Free First Visit Class|Free First Visit Small-group class|learn the basics with calm instruction|href="\/student-hub"/i.test(rail)) {
       failures.push(`stale acquisition rail: ${path.relative(dist, file)}`);
     }
     for (const required of ['/how-class-works', '/schedule', '/show-up-kit', '/bjj-faqs', '/free-bjj-intro-tannersville-ny#booking-flow']) {
@@ -50,7 +50,7 @@ for (const file of candidates) {
   }
 }
 const partial = fs.readFileSync(path.join(dist, 'partials/acquisition-editorial-rail.html'), 'utf8');
-for (const required of ['Thinking about starting?', 'Free Intro', 'How Class Works', '/schedule', '/show-up-kit', '/bjj-faqs', '/free-bjj-intro-tannersville-ny#booking-flow']) {
+for (const required of ['Thinking about starting?', 'Free First Visit', 'How Class Works', '/schedule', '/show-up-kit', '/bjj-faqs', '/free-bjj-intro-tannersville-ny#booking-flow']) {
   if (!partial.includes(required)) failures.push(`shared acquisition partial missing ${required}`);
 }
 if (includeCount < 30) failures.push(`expected propagated acquisition includes, found ${includeCount}`);
@@ -60,10 +60,10 @@ if (navDist.includes('Plan Your First Class') || navDist.includes('Continue to S
 if (!navDist.includes('Plan Your First Visit')) failures.push('generated nav missing normalized modal copy');
 
 const protectedPaths = {
-  'programs.html': ['Goal Mapping', 'schedules class afterward'],
-  'how-class-works.html': ['Goal Mapping', 'first class'],
-  'bjj-classes/adults-tannersville-ny/index.html': ['Goal Mapping'],
-  'free-bjj-intro-tannersville-ny/index.html': ['Goal Mapping', 'no workout is required']
+  'programs.html': ['Free First Visit', 'coached first class'],
+  'how-class-works.html': ['Free First Visit', 'first class'],
+  'bjj-classes/adults-tannersville-ny/index.html': ['Free First Visit'],
+  'free-bjj-intro-tannersville-ny/index.html': ['Free First Visit', 'no workout is required']
 };
 for (const [rel, required] of Object.entries(protectedPaths)) {
   const html = fs.readFileSync(path.join(dist, rel), 'utf8');

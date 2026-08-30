@@ -488,7 +488,7 @@ const HUB_GUIDE_PROFILES = {
     trainingGoal: "build practical safety habits without fear-based training or reckless escalation",
     primaryConcern: "people searching for self-defense want useful skills, but they also want a room that teaches judgment and calm",
     classPath: "/free-bjj-intro-tannersville-ny",
-    classLabel: "Book Free Intro",
+    classLabel: "Reserve Your Free First Visit",
     relatedGuide: "/sensei-bully",
     relatedGuideLabel: "parent anti-bullying plan",
     watchSignals: [
@@ -1111,7 +1111,7 @@ const renderHubGuide = ({ canonicalPath, heading, description, videos }) => {
         <h3>How often should I rewatch a clip?</h3>
         <p>Rewatch after class, not only before class. The same video will make more sense after you have felt the position in person. A short rewatch can help you remember one correction, one grip, or one safety rule for the next visit.</p>
         <h3>What is the clearest next step?</h3>
-        <p>If the coaching style looks like a fit, book a free intro or check the schedule. The hub should reduce uncertainty, but the decision becomes real only when you step on the mats, meet the coach, and try the first controlled rep.</p>
+        <p>If the coaching style looks like a fit, reserve your Free First Visit or check the schedule. The hub should reduce uncertainty, but the decision becomes real only when you step on the mats, meet the coach, and try the first controlled rep.</p>
       </div>`;
 };
 
@@ -1200,7 +1200,7 @@ const renderMasterHubIntro = () => {
         <p>If a title uses a word you do not know, open the <a href="/bjj-glossary">BJJ glossary</a> and learn enough to follow the next rep. Terms like <a href="/bjj-glossary/base">base</a>, <a href="/bjj-glossary/posture">posture</a>, <a href="/bjj-glossary/frame">frame</a>, <a href="/bjj-glossary/guard">guard</a>, and <a href="/bjj-glossary/tap">tap</a> matter more than memorizing a long list of advanced names.</p>
 
         <h3>A simple beginner path</h3>
-        <p>Start with one lane page, then one safety-heavy topic page, then one clip from the filtered grid below. After that, check the <a href="/schedule">schedule</a> or <a href="/free-bjj-intro-tannersville-ny">book a free intro</a>. The goal is to arrive less uncertain, not to self-coach an entire first month from video.</p>
+        <p>Start with one lane page, then one safety-heavy topic page, then one clip from the filtered grid below. After that, check the <a href="/schedule">schedule</a> or <a href="/free-bjj-intro-tannersville-ny">reserve your Free First Visit</a>. The goal is to arrive less uncertain, not to self-coach an entire first month from video.</p>
 
         <h3>FAQ</h3>
         <p><strong>Can I learn BJJ from this page alone?</strong> No. The library is for preview and review; live coaching still matters most. <strong>Which clip should I watch first?</strong> Watch the title that matches the question you already have. <strong>What if I do not know the terms?</strong> Use the glossary for the important words, then come back here. <strong>What is the next step if the coaching style looks like a fit?</strong> Check the program pages or schedule and try class in person.</p>
@@ -1622,7 +1622,7 @@ ${ANALYTICS_HEAD_INCLUDE}
             <h3>Helpful links</h3>
             <div class="link-list">
               <a href="/schedule">Class schedule</a>
-              <a href="/free-bjj-intro-tannersville-ny">Book a free intro</a>
+              <a href="/free-bjj-intro-tannersville-ny">Book a Free First Visit</a>
               <a href="${classPath}">${escapeHtml(classLabel)} class page</a>
               <a href="${primaryProgram.path}">${escapeHtml(primaryProgram.label)} video hub</a>
               <a href="${primaryTechnique.path}">${escapeHtml(primaryTechnique.label)} video hub</a>
@@ -1633,7 +1633,7 @@ ${ANALYTICS_HEAD_INCLUDE}
 
           <div class="card cta-panel">
             <h3>Want to visit?</h3>
-            <p>Start with a Free Intro and see the mats in person.</p>
+            <p>Start with a Free First Visit and see the mats in person.</p>
             <div class="cta-row">
               <a class="btn btn-primary" data-cta-target="intro"><span data-cta-text></span></a>
             </div>

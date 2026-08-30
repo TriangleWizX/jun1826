@@ -562,7 +562,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
         <div class="glossary-hero-actions" aria-label="Glossary actions">
           <a class="glossary-btn glossary-btn-primary" href="#first-class-starter-pack">Start with 7 Day-One Words</a>
           <a class="glossary-btn glossary-btn-secondary" href="#glossary-q">Search term</a>
-          <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
+          <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
           <a class="glossary-btn glossary-btn-secondary" href="#glossary-a-z">Browse A to Z</a>
         </div>
       </div>
@@ -575,7 +575,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
           <li>Understand safety</li>
           <li>Start calmly</li>
         </ul>
-        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
+        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
       </aside>
     </div>
   </section>
@@ -635,7 +635,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
 
     <div class="glossary-start-cta">
       <p>You do not need every term today. Start with these seven.</p>
-      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Book Free Intro</a>
+      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
     </div>
   </section>
 
@@ -658,7 +658,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
       </div>
 
       <div class="ss-community-post-actions">
-        <a class="ss-community-pill ss-primary" href="/free-bjj-intro-tannersville-ny" data-cta-target="intro" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="primary" data-cta-lane="mixed">Reserve Free Intro</a>
+        <a class="ss-community-pill ss-primary" href="/free-bjj-intro-tannersville-ny" data-cta-target="intro" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="primary" data-cta-lane="mixed">Reserve Your Free First Visit</a>
         <a class="ss-community-pill" href="/student-hub#weekly-focus" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="secondary" data-cta-lane="mixed">This Week&rsquo;s Focus</a>
         <a class="ss-community-pill" href="/student-hub" data-cta-src="glossary-learning-card" data-cta-placement="learning_card" data-cta-tier="tertiary" data-cta-lane="mixed">Visit Student Hub</a>
       </div>
@@ -669,7 +669,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
     <div class="glossary-start-cta">
       <p class="mb-3">Ready to see the words in class?</p>
       <div class="d-flex flex-wrap justify-content-center gap-2">
-        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
+        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
         <a class="glossary-btn glossary-btn-secondary" href="/schedule">See the class schedule</a>
         <a class="glossary-btn glossary-btn-secondary" href="/bjj-classes/adults-tannersville-ny">Adult beginner Jiu-Jitsu</a>
         <a class="glossary-btn glossary-btn-secondary" href="/bjj-classes/kids-tannersville-ny">Kids Jiu-Jitsu</a>
@@ -803,18 +803,18 @@ const renderTermNextStep = () => `
     <p class="ss-eyebrow">Train the word</p>
     <h2 id="term-next-step-title">Want to feel this in class?</h2>
     <p>
-      Start with a guided Free Intro. We’ll show you the room, explain the safety rules, and help you choose the right class lane.
+      Start with a guided Free First Visit. We’ll show you the room, explain the safety rules, and help you choose the right class lane.
     </p>
 
     <div class="ss-link-grid">
       <a href="/bjj-glossary">Browse the Beginner Glossary</a>
       <a href="/student-hub">See This Week’s Focus</a>
       <a href="/schedule">View Class Schedule</a>
-      <a href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
+      <a href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
     </div>
 
     <div class="ss-inline-actions">
-      <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
+      <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
       <a class="btn btn-outline-primary" href="/schedule">View Schedule</a>
     </div>
   </div>

@@ -11,7 +11,7 @@ const page = 'free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/index.htm
 const form = read(page);
 const requiredFields = ['studentType', 'guardianName', 'studentName', 'studentAge', 'town', 'email', 'mobile', 'messageConsent', 'priorExperience', 'mainGoal', 'participationNotes', 'loanerGi', 'preferredDate', 'ageLane', 'onsite', 'arrival', 'mediaChoice', 'reschedule'];
 requiredFields.forEach((field) => requireText(page, `name="${field}"`, `required field ${field}`));
-['Free Beginner Jiu-Jitsu Intro', '$0', 'No card required', 'One 45-minute class', '60–75 min', '$550 for 12 weeks', 'Reserve Your Free Intro', 'Parent outcomes', 'Access to every scheduled class', 'A reserved Core Culture seat', 'A promise of confidence after one session'].forEach((text) => { if (!form.includes(text)) failures.push(`${page}: missing offer text ${text}`); });
+['Free Beginner Jiu-Jitsu Intro', '$0', 'No card required', 'One 45-minute class', '60–75 min', '$550 for 12 weeks', 'Reserve Your Free First Visit', 'Parent outcomes', 'Access to every scheduled class', 'A reserved Core Culture seat', 'A promise of confidence after one session'].forEach((text) => { if (!form.includes(text)) failures.push(`${page}: missing offer text ${text}`); });
 requireText(page, 'rel="canonical"', 'self-referencing canonical');
 requireText(page, 'application/ld+json', 'structured data');
 requireText(page, 'BreadcrumbList', 'breadcrumb structured data');

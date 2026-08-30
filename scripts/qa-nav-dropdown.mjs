@@ -398,7 +398,7 @@ const assertMobileOpen = (snapshot, label) => {
     JSON.stringify(snapshot.menuItems) === JSON.stringify(expectedMobileMenuItems),
     `${label}: mobile menu order changed unexpectedly (${JSON.stringify(snapshot.menuItems)}).`
   );
-  ensure(!snapshot.menuItems.includes('Reserve Free Intro'), `${label}: mobile menu should not duplicate Reserve Free Intro.`);
+  ensure(!snapshot.menuItems.includes('Reserve Your Free First Visit'), `${label}: mobile menu should not duplicate Reserve Your Free First Visit.`);
   ensure(!snapshot.menuItems.includes('Glossary'), `${label}: mobile top nav should not include Glossary.`);
   ensure(snapshot.topbarSeparatorVisibleText.every((value) => value === '•'), `${label}: topbar separator glyphs changed unexpectedly (${JSON.stringify(snapshot.topbarSeparatorVisibleText)}).`);
   const deduped = new Set(snapshot.menuItems);

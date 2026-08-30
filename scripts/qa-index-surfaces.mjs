@@ -37,7 +37,7 @@ assert.doesNotMatch(head, /confidence guarantee/i);
 const intro = readDist('free-bjj-intro-tannersville-ny/index.html');
 assert.match(intro, /<link[^>]+href="https:\/\/senseisandy\.com\/free-bjj-intro-tannersville-ny"[^>]+rel="canonical"/i);
 assert.match(read('js/progressive-booking.js'), /adult:\s*'adult-beginner'/);
-assert.doesNotMatch(intro, /Adults 16\+|semi-private|Book Free Goal Mapping|Fundamentals|Advanced|LEO \/ Tactical/i);
+assert.doesNotMatch(intro, /Adults 16\+|semi-private|Reserve Your Free First Visit|Fundamentals|Advanced|LEO \/ Tactical/i);
 
 const routePath = (url) => new URL(url, 'https://senseisandy.com').pathname.replace(/\/$/, '') || '/';
 const redirectSources = Object.keys(redirects);

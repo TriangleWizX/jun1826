@@ -251,13 +251,13 @@ const defaultDecisionCopy = (town) => ({
     : `Most families use ${town.main_route} and treat this as a planned weekly anchor.`,
   why_choose: [
     town.route_verified === false
-      ? `Use the Free Intro and current directions to decide whether the trip from ${town.town} fits your week.`
+      ? `Use the Free First Visit and current directions to decide whether the trip from ${town.town} fits your week.`
       : `The route from ${town.town} is familiar, which makes weeknight planning easier.`,
     'Classes run in clear lanes with coached pacing for true beginners.',
     'One room, consistent coaching, and a first-visit process that stays low pressure.'
   ],
   trip_story: town.route_verified === false
-    ? `For ${town.town} families, the first useful question is whether the Tannersville room fits the actual drive. Start with one Free Intro before choosing a recurring plan.`
+    ? `For ${town.town} families, the first useful question is whether the Tannersville room fits the actual drive. Start with one Free First Visit before choosing a recurring plan.`
     : `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
   first_cadence: town.recommendations_verified === false
     ? 'Check the current schedule and text Sandy if you want help deciding whether a youth, teen, adult, or Saturday option fits the drive.'
@@ -273,7 +273,7 @@ const defaultDecisionCopy = (town) => ({
     },
     {
       question: 'Can we test fit before committing long term?',
-      answer: 'Yes. Start with a single Free Intro and decide next steps after you see the room.'
+      answer: 'Yes. Start with a single Free First Visit and decide next steps after you see the room.'
     }
   ],
   proof_items: [
@@ -291,7 +291,7 @@ const defaultDecisionCopy = (town) => ({
     }
   ],
   best_fit: 'Best for families and adult beginners who value coaching quality, clear structure, and low-pressure onboarding.',
-  primary_cta_label: 'Reserve Free Intro',
+  primary_cta_label: 'Reserve Your Free First Visit',
   quiet_cta_line: `If you are comparing options from ${town.town}, start with one intro class before committing to a full weekly plan.`
 });
 
@@ -367,7 +367,7 @@ const generate = async () => {
       '[MetaTitle]': decision.meta_title || `Brazilian Jiu-Jitsu Near ${town.town}, NY | Sensei Sandy`,
       '[MetaDescription]':
         decision.meta_description ||
-        `Brazilian Jiu-Jitsu near ${town.town} NY for families and adults who want calm beginner coaching, clear class lanes, and a Free Intro in Tannersville.`,
+        `Brazilian Jiu-Jitsu near ${town.town} NY for families and adults who want calm beginner coaching, clear class lanes, and a Free First Visit in Tannersville.`,
       '[HeroHeadline]': decision.hero_headline,
       '[HeroSubhead]': decision.hero_subhead,
       '[HeroForLine]': decision.hero_for_line,
@@ -391,7 +391,7 @@ const generate = async () => {
         canonicalUrl,
         town.town,
         decision.meta_title || `Brazilian Jiu-Jitsu Near ${town.town}, NY | Sensei Sandy`,
-        decision.meta_description || `Brazilian Jiu-Jitsu near ${town.town} NY for families and adults who want calm beginner coaching, clear class lanes, and a Free Intro in Tannersville.`,
+        decision.meta_description || `Brazilian Jiu-Jitsu near ${town.town} NY for families and adults who want calm beginner coaching, clear class lanes, and a Free First Visit in Tannersville.`,
         decision.objections
       )
     };

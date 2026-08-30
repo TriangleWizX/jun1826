@@ -242,7 +242,7 @@ const main = async () => {
     ensure(termHtml.includes('<h2>Common class phrases</h2>'), `${term.slug} missing common class phrases heading.`);
     ensure(termHtml.includes('<h2>Related terms</h2>'), `${term.slug} missing related terms heading.`);
     ensure(termHtml.includes('Want to feel this in class?'), `${term.slug} missing shared CTA heading.`);
-    ensure(termHtml.includes('href="/free-bjj-intro-tannersville-ny"'), `${term.slug} missing Reserve Free Intro CTA.`);
+    ensure(termHtml.includes('href="/free-bjj-intro-tannersville-ny"'), `${term.slug} missing Reserve Your Free First Visit CTA.`);
     ensure(termHtml.includes('href="/schedule"'), `${term.slug} missing View Schedule CTA.`);
     ensure(termHtml.includes('<h2>FAQ</h2>'), `${term.slug} missing FAQ heading.`);
     ensure(termHtml.includes('<h2>What local families say</h2>'), `${term.slug} missing reviews heading.`);
