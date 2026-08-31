@@ -34,17 +34,23 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 </div>
 <!-- Filter Pills -->
 <div aria-label="Tournament filters" class="filter-bar mb-5 d-flex justify-content-center flex-wrap gap-2" id="tournament-filters">
-<button class="btn btn-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="all">All</button>
+<button class="btn btn-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="all" aria-pressed="true">All upcoming</button>
 <button class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="first">Best first conversation</button>
 <button class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="family">Family friendly</button>
 <button class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="serious">Serious test</button>
 <button class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="reps">More matches</button>
-<button class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="watch">Watch list <i class="bi bi-bookmark-fill ms-1" style="font-size: 0.75rem;"></i></button>
+<button class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2" data-tournament-filter="watch" aria-pressed="false">Later watch list <i class="bi bi-bookmark-fill ms-1" style="font-size: 0.75rem;"></i></button>
 </div>
 <!-- CSS Grid Tournament Container -->
-<div id="tournament-grid" style="display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-<!-- Generated via JS -->
-</div>
+<p class="small text-muted text-center mb-4">Showing 5 event pages checked · Last checked August 31, 2026</p>
+{% include "partials/tournament-grid.html" %}
+<script>
+document.querySelectorAll('#tournament-filters button').forEach((button) => button.addEventListener('click', () => {
+  const filter = button.dataset.tournamentFilter;
+  document.querySelectorAll('#tournament-filters button').forEach((b) => { const active = b === button; b.classList.toggle('btn-dark', active); b.classList.toggle('btn-outline-dark', !active); b.setAttribute('aria-pressed', active ? 'true' : 'false'); });
+  document.querySelectorAll('#tournament-grid-static .tournament-card').forEach((card) => { card.hidden = filter !== 'all' && card.dataset.tournamentType !== filter; });
+}));
+</script>
 </div>
 </section>
 <!-- ACCORDIONS SECTION (Von Restorff) -->
@@ -63,7 +69,7 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 <ul class="list-unstyled mb-0 px-2">
 <li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Correct age group</strong>, division criteria varies by birth year or actual age.</span></li>
 <li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Correct belt or experience level</strong>, verify match time lengths.</span></li>
-<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Realistic weight small-group class</strong>, verify if weigh-ins are with or without Gi.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Realistic weight class</strong>, verify if weigh-ins are with or without Gi.</span></li>
 <li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Gi and No-gi division availability</strong></span></li>
 <li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Weigh-in rules</strong>, check if there is a weight allowance or if missing weight means DQ.</span></li>
 <li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Refund policy</strong>, check if they offer credits or refunds if injured.</span></li>
@@ -136,7 +142,7 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 <a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/bjj-classes/teens-tannersville-ny">Teen Jiu Jitsu in Tannersville NY</a>
 <a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/free-bjj-intro-tannersville-ny">Reserve a Free First Visit</a>
 <a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/bjj-glossary">Learn Common Jiu Jitsu Terms</a>
-<a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/schedule">View Small-group class Schedule</a>
+<a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/schedule">View Class Schedule</a>
 </div>
 </div>
 </section>
@@ -151,7 +157,7 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 </div>
 <div>
 <h2 class="mb-2 font-serif" style="font-size: 2rem; color: var(--ss-ink);">Start the Journey. We'll Guide the Rest.</h2>
-<p class="mb-0 text-muted" style="max-width: 28rem;">A calm, pressure-Free First Visit for kids and parents. See if our community feels like home.</p>
+<p class="mb-0 text-muted" style="max-width: 28rem;">A calm, pressure-free first visit for kids and parents. See if our community feels like home.</p>
 </div>
 </div>
 <div class="text-center text-md-end flex-shrink-0">
@@ -496,14 +502,14 @@ const FOOD_BY_KEY = {
 
 
   document.addEventListener("DOMContentLoaded", () => {
-    const grid = document.getElementById("tournament-grid");
+    const grid = document.getElementById("tournament-grid-do-not-render");
     const filters = document.getElementById("tournament-filters");
     const nowNY = new Date(new Date().toLocaleString("en-US", {timeZone: "America/New_York"}));
     
     let validEvents = [];
     let schemaEvents = [];
     
-    if (typeof TOURNAMENT_DATA !== 'undefined') {
+    if (false && typeof TOURNAMENT_DATA !== 'undefined') {
         TOURNAMENT_DATA.forEach((event, index) => {
           // Parse date
           const eventDate = new Date(event.dateString + " 12:00:00");
