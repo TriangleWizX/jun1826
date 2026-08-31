@@ -175,7 +175,9 @@ document.querySelectorAll('#tournament-filters button').forEach((button) => butt
 </section>
 <!-- DATA & LOGIC -->
 <script>
-    const TOURNAMENT_DATA = [
+    /* Legacy tournament dataset retired; cards are rendered by the build-time partial. */
+    const TOURNAMENT_DATA = [];
+    /*
   {
     "type": "watch",
     "foodKey": "allentown-pa",
@@ -374,7 +376,7 @@ document.querySelectorAll('#tournament-filters button').forEach((button) => butt
     "location": "Allentown, PA",
     "url": "https://fujibjj.com/pages/bjj-events"
   }
-];
+    */
 
 const FOOD_BY_KEY = {
     "west-hempstead-ny": [
