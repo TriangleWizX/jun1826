@@ -659,3 +659,14 @@
     }, 1000);
   });
 })();
+// Load the First Visit funnel module from the existing global analytics asset.
+// Keeping this loader here avoids requiring a sitewide HTML regeneration for a
+// small, independently deployable instrumentation module.
+(function loadFunnelEvents() {
+  if (document.querySelector('script[data-ss-funnel-events]')) return;
+  const script = document.createElement('script');
+  script.src = '/assets/js/funnel-events.js';
+  script.defer = true;
+  script.dataset.ssFunnelEvents = 'true';
+  document.head.appendChild(script);
+}());

@@ -176,7 +176,7 @@ def verify_local_backup(path):
     print(f'local_backup_verified={backup} bytes={backup.stat().st_size}', flush=True)
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--reuse-existing-backup', action='store_true'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--reuse-existing-backup', action='store_true'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); parser.add_argument('--only', action='append', default=[], help='limit upload to these exact deploy-relative paths; repeatable'); args = parser.parse_args()
     cfg = json.loads((ROOT / args.config).read_text())
     if args.qa_backups:
         client = connect(cfg)
@@ -186,6 +186,9 @@ def main():
             client.close()
         return
     files = changed_outputs(args.commit)
+    if args.only:
+        allowed = set(args.only)
+        files = [item for item in files if item[1] in allowed]
     print(f'payload_files={len(files)} commit={args.commit}')
     for _, rel in files: print(rel)
     if args.dry_run: return
