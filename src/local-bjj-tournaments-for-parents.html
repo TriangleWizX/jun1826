@@ -48,7 +48,13 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 document.querySelectorAll('#tournament-filters button').forEach((button) => button.addEventListener('click', () => {
   const filter = button.dataset.tournamentFilter;
   document.querySelectorAll('#tournament-filters button').forEach((b) => { const active = b === button; b.classList.toggle('btn-dark', active); b.classList.toggle('btn-outline-dark', !active); b.setAttribute('aria-pressed', active ? 'true' : 'false'); });
-  document.querySelectorAll('#tournament-grid-static .tournament-card').forEach((card) => { card.hidden = filter !== 'all' && card.dataset.tournamentType !== filter; });
+  const cards = document.querySelectorAll('#tournament-grid-static .tournament-card');
+  let visible = 0;
+  cards.forEach((card) => { card.hidden = filter !== 'all' && card.dataset.tournamentType !== filter; if (!card.hidden) visible += 1; });
+  let empty = document.getElementById('tournament-filter-empty');
+  if (!empty) { empty = document.createElement('p'); empty.id = 'tournament-filter-empty'; empty.className = 'text-center text-muted p-4'; document.getElementById('tournament-grid-static').after(empty); }
+  empty.textContent = visible ? '' : 'No verified events in this group right now. Ask Sandy before registering elsewhere.';
+  empty.hidden = visible > 0;
 }));
 </script>
 </div>
