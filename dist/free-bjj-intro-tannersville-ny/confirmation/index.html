@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const panel = document.querySelector("#first-visit-details");
     const copy = document.querySelector("[data-confirmation-details]");
     const youth = ["child", "teen"].includes(details.profile);
-    if (copy) copy.textContent = `${youth ? "Arrival time: 20 minutes before class · " : "Visit: 15-minute Goal Mapping · "}${details.selectedClass}. Address: 6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485.`;
+    if (copy) copy.textContent = youth ? `${details.selectedClass}. Arrive 20 minutes before class in clean athletic clothes. Parent stays on site. Address: 6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485.` : `Your 15-minute First Visit: ${details.selectedClass}. Wear normal clothes; no workout. Address: 6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485.`;
     if (panel) panel.hidden = false;
   }
   // Fire generate_lead event ONLY once using sessionStorage deduplication flag

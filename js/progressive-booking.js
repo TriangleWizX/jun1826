@@ -336,6 +336,18 @@
       }
       if (calendlyEvent === 'calendly.event_scheduled') {
         track('booking_submitted', { lane: state.profile || 'unknown', scheduler_event: calendlyEvent });
+        const scheduledEvent = e.data?.payload?.event || e.data?.payload?.invitee || {};
+        const scheduledStart = scheduledEvent.start_time || scheduledEvent.startTime || '';
+        const selectedClass = scheduledStart
+          ? new Date(scheduledStart).toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' })
+          : document.getElementById('booking-class-value')?.value || '';
+        const profileValue = document.getElementById('booking-profile-value');
+        const classValue = document.getElementById('booking-class-value');
+        if (profileValue) profileValue.value = state.profile || profileValue.value;
+        if (classValue && selectedClass) classValue.value = selectedClass;
+        try {
+          sessionStorage.setItem('ss_first_visit_details', JSON.stringify({ profile: state.profile || profileValue?.value || '', selectedClass }));
+        } catch (error) { /* storage may be unavailable in private browsing */ }
     track('booking_confirmed', { lane: state.profile || 'unknown', confirmation_source: 'calendly' });
     const confirmationTitle = document.getElementById('booking-confirmation-title');
     const confirmationCopy = document.getElementById('booking-confirmation-copy');

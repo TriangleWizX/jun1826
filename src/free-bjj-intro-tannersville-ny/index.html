@@ -179,7 +179,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
         <p class="small text-muted">Choose a relevant class preference first. Sandy will confirm the exact first-class plan after your visit.</p>
         <div class="booking-class-choices mb-4" data-booking-class-choices aria-label="Relevant class choices"></div>
         <fieldset class="border rounded-4 p-3 mb-4" data-youth-preferred-days>
-          <legend class="h6 mb-2">When would you like to start? <span class="text-muted fw-normal">(Choose a period)</span></legend>
+          <legend class="h6 mb-2">Which 5 PM days usually work? <span class="text-muted fw-normal">(Choose a period)</span></legend>
           <div class="d-flex flex-wrap gap-3">
             <label><input type="radio" name="preferred_days" value="Before September 8"> Before September 8 · current available dates</label>
             <label><input type="radio" name="preferred_days" value="Placement Week · September 8–12"> Placement Week · September 8–12</label>
@@ -188,13 +188,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
         </fieldset>
           <fieldset class="border rounded-4 p-3 mb-4 d-none" data-adult-preferred-days hidden aria-hidden="true">
           <legend class="h6 mb-2">Which adult class days usually work? <span class="text-muted fw-normal">(Optional)</span></legend>
-          <div class="d-flex flex-wrap gap-3">
-            <label><input type="checkbox" name="preferred_days" value="Monday 6 PM — Gi"> Monday 6 PM — Gi</label>
-            <label><input type="checkbox" name="preferred_days" value="Tuesday 6 PM — Gi"> Tuesday 6 PM — Gi</label>
-            <label><input type="checkbox" name="preferred_days" value="Wednesday 6 PM — No-Gi"> Wednesday 6 PM — No-Gi</label>
-            <label><input type="checkbox" name="preferred_days" value="Friday 6 PM — Gi"> Friday 6 PM — Gi</label>
-            <label><input type="checkbox" name="preferred_days" value="Saturday 10:30 AM — No-Gi"> Saturday 10:30 AM — No-Gi</label>
-          </div>
+          <div class="d-flex flex-wrap gap-3" data-adult-schedule-choices aria-live="polite"></div>
         </fieldset>
         <div class="ss-bezel-shell">
           <div class="ss-bezel-core p-0 overflow-hidden" style="display: block;">
@@ -307,11 +301,11 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
               </div>
 </details>
 <details class="ss-faq-item">
-<summary>What should I wear or bring?</summary>
+<summary>What should I wear?</summary>
 <div class="ss-faq-content">
-                Wear comfortable workout clothes (t-shirt and sweatpants or
-                shorts). Bring a water bottle. We train barefoot on sanitized
-                mats, so no special footwear is needed.
+                Adults: normal clothes. No workout is required. Youth and teens:
+                clean athletic clothes for the coached class. Follow the Gi/No-Gi
+                instructions Sandy confirms for the first class.
               </div>
 </details>
 <details class="ss-faq-item">
@@ -382,8 +376,9 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
   const options = {}; const formatFor = (item, date) => date < '2026-09-08' && ['Monday','Tuesday','Friday'].includes(item.day) ? 'Gi' : item.format;
   const buildOptions = (profile, period) => { const audience = profile === 'adult-beginner' ? 'Adult' : 'Youth/Teen'; const start = new Date(period.start + 'T12:00:00'); const end = new Date(period.end + 'T12:00:00'); const rows = []; for (let date = new Date(start); date <= end && rows.length < 6; date.setDate(date.getDate() + 1)) { const day = date.toLocaleDateString('en-US', { weekday: 'long' }); schedule.groupClasses.filter(item => item.active && item.audience === audience && item.day === day).forEach(item => { if (rows.length < 6) rows.push(`${period.label} · ${date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} · ${item.time} — ${audience} ${formatFor(item, date.toISOString().slice(0,10))}`); }); } return rows; };
   const renderOptions = (profile, period) => { const target = document.querySelector('[data-booking-class-choices]'); if (!target) return; const list = buildOptions(profile, period); target.innerHTML = list.map(label => `<label class="d-block border rounded-3 p-2 mb-2"><input type="radio" name="booking_class_preference" value="${label}" class="me-2" required>${label}</label>`).join(''); target.querySelectorAll('input').forEach(input => input.addEventListener('change', () => { document.getElementById('booking-class-value').value = input.value; })); };
+  const renderAdultDays = () => { const target = document.querySelector('[data-adult-schedule-choices]'); if (!target) return; const items = schedule.groupClasses.filter(item => item.active && item.audience === 'Adult'); target.innerHTML = items.map(item => `<label><input type="checkbox" name="preferred_days" value="${item.day} ${item.time} — ${item.format}"> ${item.day} ${item.time} — ${item.format}</label>`).join(''); };
   document.querySelectorAll('#pb-step-1 [data-profile]').forEach((button) => button.addEventListener('click', () => { document.getElementById('booking-profile-value').value = button.dataset.profile; document.querySelector('[data-booking-student-field]').hidden = !['child', 'teen'].includes(button.dataset.profile); const period = periods[0]; document.querySelectorAll('[data-youth-preferred-days] input').forEach(input => { input.checked = input.value === period.label; }); renderOptions(button.dataset.profile, period); }));
-  document.querySelectorAll('[data-youth-preferred-days] input').forEach(input => input.addEventListener('change', () => { const period = periods.find(item => item.label === input.value) || periods[0]; renderOptions(document.getElementById('booking-profile-value').value || 'teen', period); }));
+  renderAdultDays(); document.querySelectorAll('[data-youth-preferred-days] input').forEach(input => input.addEventListener('change', () => { const period = periods.find(item => item.label === input.value) || periods[0]; renderOptions(document.getElementById('booking-profile-value').value || 'teen', period); }));
 })();
 </script>
 <script src="/js/progressive-booking.js" defer></script>
