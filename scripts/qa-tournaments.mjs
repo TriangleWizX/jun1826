@@ -6,7 +6,7 @@ const html = fs.readFileSync(file, 'utf8');
 const visibleHtml = html.replace(/<script\b[\s\S]*?<\/script>/gi, '');
 const cards = [...visibleHtml.matchAll(/<article class="tournament-card"[\s\S]*?<\/article>/g)].map((m) => m[0]);
 const failures = [];
-if (cards.length !== 5) failures.push(`expected 5 published cards, found ${cards.length}`);
+if (cards.length !== 4) failures.push(`expected 4 published cards, found ${cards.length}`);
 if (visibleHtml.includes('Kids ROLLSTAR Rumbles')) failures.push('expired Rollstar content is visible');
 if (visibleHtml.includes('NAGA Connecticut Grappling Championship')) failures.push('conflicted Connecticut event is visible');
 if (html.includes('getElementById("tournament-grid")')) failures.push('legacy renderer still targets the published grid');
