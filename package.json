@@ -119,6 +119,7 @@
     "academy:reconcile:first-year": "node scripts/reconcile-first-year-classes.mjs",
     "academy:profile:workbook": "python3 scripts/profile-attendance-workbook.py",
     "qa:testing-context": "node scripts/qa-testing-context.mjs",
+    "qa:tournaments": "node scripts/qa-tournaments.mjs",
     "qa:ssbjj-logos": "node scripts/qa-ssbjj-logos.mjs",
     "qa:pathos-experience": "node scripts/qa-pathos-experience.mjs",
     "qa:philosophical-hierarchy": "node scripts/qa-philosophical-hierarchy.mjs",
