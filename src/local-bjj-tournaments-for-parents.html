@@ -13,7 +13,6 @@ permalink: "/local-bjj-tournaments-for-parents.html"
  */
 .page-tournament-guide {
   --tguide-measure: 46rem;
-  --tguide-record-image: 15rem;
   background: var(--color-paper, var(--ss-bg));
   color: var(--color-ink, var(--ss-text));
 }
@@ -106,12 +105,24 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 .page-tournament-guide .tournament-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-sm, 1rem);
+  gap: var(--space-md, 1.5rem);
+}
+
+@media (min-width: 768px) {
+  .page-tournament-guide .tournament-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .page-tournament-guide .tournament-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .page-tournament-guide .tournament-card {
-  display: grid;
-  grid-template-columns: minmax(0, var(--tguide-record-image)) minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
   border: 1px solid var(--color-rule, var(--ss-border));
@@ -122,8 +133,9 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 .page-tournament-guide .tournament-card > img {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 343 / 127;
   object-fit: cover;
 }
 
@@ -329,16 +341,6 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 
   .page-tournament-guide .tguide-hero {
     gap: var(--space-xl, 3rem);
-  }
-
-  .page-tournament-guide .tournament-card {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .page-tournament-guide .tournament-card > img {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 343 / 127;
   }
 
   .page-tournament-guide .tguide-link:nth-child(n) {
