@@ -41,6 +41,8 @@ def changed_outputs(commit):
                 candidate = ROOT / 'dist' / 'hyphen-weekend' / 'index.html'
             elif name == 'src/_includes/schedule-master.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+            elif name in ('src/_data/tournaments.js', 'src/_includes/partials/tournament-grid.html'):
+                candidate = ROOT / 'dist' / 'local-bjj-tournaments-for-parents.html'
             elif name.startswith('src/') and name.endswith('.njk'):
                 relative = name[4:]
                 if relative.endswith('/index.njk'):
