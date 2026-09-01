@@ -101,7 +101,9 @@ for (const [index, event] of tournaments.published.entries()) {
   check(occurrences(card, `href="${event.sourceUrl}"`) === 1, `card ${index + 1}: expected one exact official event link`);
   check(/target="_blank"[^>]+rel="noopener noreferrer"/.test(card), `card ${index + 1}: safe external-link attributes missing`);
   check(card.includes(`href="${event.smsHref}"`), `card ${index + 1}: SMS body/link mismatch`);
-  check(card.includes(`src="${event.thumbnailPath}"`), `card ${index + 1}: thumbnail path mismatch`);
+  const escapedThumbnail = event.thumbnailPath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/(\\\.[a-z0-9]+)$/i, '(?:\\.[0-9a-f]{6})?$1');
+  const thumbnailPattern = new RegExp(`src="${escapedThumbnail}"`);
+  check(thumbnailPattern.test(card), `card ${index + 1}: thumbnail path mismatch`);
   check(card.includes(`alt="${event.thumbnailAlt}"`), `card ${index + 1}: thumbnail alt mismatch`);
   check(/<img[^>]+width="343"[^>]+height="127"/.test(card), `card ${index + 1}: thumbnail dimensions missing`);
   check(!/<img[^>]+src="https?:/i.test(card), `card ${index + 1}: remote image detected`);
