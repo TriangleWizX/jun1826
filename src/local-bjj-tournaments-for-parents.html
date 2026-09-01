@@ -7,28 +7,123 @@ bodyClass: "page-tournament-guide"
 permalink: "/local-bjj-tournaments-for-parents.html"
 ---
 <style>
+/* Hallmark · pre-emit critique: P5 H4 E4 S5 R5 V4
+ * genre: editorial · macrostructure: Index-First Long Document
+ * design-system: design.md · designed-as-app
+ */
+.page-tournament-guide {
+  --tguide-measure: 46rem;
+  --tguide-record-image: 15rem;
+  background: var(--color-paper, var(--ss-bg));
+  color: var(--color-ink, var(--ss-text));
+}
+
+.page-tournament-guide ::selection {
+  background: var(--color-accent, var(--ss-green));
+  color: var(--color-accent-ink, #fff);
+}
+
+.page-tournament-guide .tguide-shell {
+  width: min(100% - (2 * var(--gutter, 1rem)), var(--container-standard, 72rem));
+  margin-inline: auto;
+}
+
+.page-tournament-guide .tguide-opening {
+  padding-block: clamp(var(--space-xl, 3rem), 7vw, var(--space-3xl, 7rem));
+  border-bottom: 1px solid var(--color-rule, var(--ss-border));
+  background: var(--color-paper, var(--ss-bg));
+}
+
+.page-tournament-guide .tguide-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(16rem, 0.75fr);
+  gap: clamp(var(--space-xl, 3rem), 6vw, var(--space-3xl, 7rem));
+  align-items: end;
+}
+
+.page-tournament-guide .tguide-title {
+  max-width: 13ch;
+  margin: 0 0 var(--space-md, 1.5rem);
+  overflow-wrap: anywhere;
+  color: var(--color-ink, var(--ss-text));
+  font-family: var(--font-display, serif);
+  font-size: clamp(2.75rem, 7vw + 0.5rem, 6rem);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+  letter-spacing: var(--tracking-display, -0.025em);
+  line-height: var(--leading-tight, 0.96);
+}
+
+.page-tournament-guide .tguide-intro {
+  max-width: var(--tguide-measure);
+  margin: 0;
+  color: var(--color-ink-2, var(--ss-ink));
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: var(--leading-body, 1.62);
+}
+
+.page-tournament-guide .tguide-verification {
+  padding: var(--space-md, 1.5rem) 0 0;
+  border-top: 2px solid var(--color-accent, var(--ss-green));
+  color: var(--color-muted, var(--ss-muted));
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.6;
+}
+
+.page-tournament-guide .tguide-verification strong {
+  display: block;
+  margin-bottom: var(--space-2xs, 0.5rem);
+  color: var(--color-ink, var(--ss-text));
+  font-size: var(--text-md, 1rem);
+}
+
+.page-tournament-guide .tguide-index {
+  padding-block: clamp(var(--space-xl, 3rem), 6vw, var(--space-2xl, 4.5rem));
+}
+
+.page-tournament-guide .filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs, 0.5rem);
+  justify-content: flex-start;
+  margin-bottom: var(--space-md, 1.5rem);
+}
+
+.page-tournament-guide .tournament-filter {
+  min-height: 44px;
+  padding-inline: var(--space-md, 1.5rem);
+  border-radius: var(--radius-pill, 999px);
+  white-space: nowrap;
+}
+
+.page-tournament-guide .tguide-index-meta {
+  margin: 0 0 var(--space-lg, 2rem);
+  color: var(--color-muted, var(--ss-muted));
+  font-size: var(--text-sm, 0.875rem);
+  font-variant-numeric: tabular-nums;
+}
+
 .page-tournament-guide .tournament-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-sm, 1rem);
 }
 
 .page-tournament-guide .tournament-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, var(--tguide-record-image)) minmax(0, 1fr);
   min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
-  border-radius: 1rem;
-  background: var(--ss-surface, #fff);
-  box-shadow: 0 10px 28px rgba(31, 23, 18, 0.08);
+  border: 1px solid var(--color-rule, var(--ss-border));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-paper-2, var(--ss-surface2));
 }
 
 .page-tournament-guide .tournament-card > img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 343 / 127;
+  height: 100%;
+  min-height: 100%;
   object-fit: cover;
 }
 
@@ -37,17 +132,24 @@ permalink: "/local-bjj-tournaments-for-parents.html"
   flex: 1 1 auto;
   flex-direction: column;
   min-width: 0;
+  padding: var(--space-md, 1.5rem) !important;
 }
 
 .page-tournament-guide .tournament-card .badge {
   align-self: flex-start;
-  margin-bottom: 0.75rem;
-  background: rgba(40, 159, 161, 0.12);
-  color: var(--ss-slate, #306061);
+  margin-bottom: var(--space-xs, 0.75rem);
+  background: var(--color-accent-soft, rgba(17, 106, 66, 0.08));
+  color: var(--color-accent-deep, var(--ss-green));
 }
 
 .page-tournament-guide .tournament-card h2 {
+  margin-bottom: var(--space-xs, 0.75rem);
   overflow-wrap: anywhere;
+  color: var(--color-ink, var(--ss-text));
+  font-family: var(--font-display, serif);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+  line-height: var(--leading-heading, 1.08);
 }
 
 .page-tournament-guide .tournament-actions {
@@ -67,8 +169,10 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 }
 
 .page-tournament-guide .tournament-action {
-  flex: 1 1 10rem;
-  white-space: normal;
+  flex: 0 1 auto;
+  padding-inline: var(--space-md, 1.5rem);
+  border-radius: var(--radius-button, 0.5rem);
+  white-space: nowrap;
 }
 
 .page-tournament-guide .he-reveal {
@@ -77,20 +181,182 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 }
 
 .page-tournament-guide .tournament-action:focus-visible,
-.page-tournament-guide .tournament-filter:focus-visible {
-  outline: 3px solid var(--ss-cyan, #00dde0);
-  outline-offset: 3px;
+.page-tournament-guide .tournament-filter:focus-visible,
+.page-tournament-guide summary:focus-visible,
+.page-tournament-guide .tguide-link:focus-visible {
+  outline: 2px solid var(--color-focus, var(--ss-ink));
+  outline-offset: 2px;
 }
 
-@media (max-width: 900px) {
-  .page-tournament-guide .tournament-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.page-tournament-guide .tguide-section {
+  padding-block: clamp(var(--space-xl, 3rem), 6vw, var(--space-2xl, 4.5rem));
+  border-top: 1px solid var(--color-rule, var(--ss-border));
+}
+
+.page-tournament-guide .tguide-section-heading {
+  max-width: var(--tguide-measure);
+  margin: 0 0 var(--space-lg, 2rem);
+  color: var(--color-ink, var(--ss-text));
+  font-family: var(--font-display, serif);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+}
+
+.page-tournament-guide .tguide-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm, 1rem);
+}
+
+.page-tournament-guide .tguide-detail {
+  border: 1px solid var(--color-rule, var(--ss-border));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-paper-2, var(--ss-surface2));
+}
+
+.page-tournament-guide .tguide-detail summary {
+  min-height: 64px;
+  padding: var(--space-sm, 1rem) var(--space-md, 1.5rem);
+  color: var(--color-ink, var(--ss-text));
+  cursor: pointer;
+}
+
+.page-tournament-guide .tguide-detail-body {
+  padding: var(--space-sm, 1rem) var(--space-md, 1.5rem) var(--space-md, 1.5rem);
+  border-top: 1px solid var(--color-rule, var(--ss-border));
+}
+
+.page-tournament-guide .tguide-detail-body li {
+  color: var(--color-muted, var(--ss-muted));
+}
+
+.page-tournament-guide .tguide-principle {
+  max-width: var(--container-standard, 72rem);
+  margin-inline: auto;
+  padding: clamp(var(--space-lg, 2rem), 5vw, var(--space-2xl, 4.5rem));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-ink, var(--ss-ink));
+  color: var(--color-paper, #fff);
+}
+
+.page-tournament-guide .tguide-principle blockquote {
+  max-width: 22ch;
+  margin: 0 0 var(--space-sm, 1rem);
+  color: inherit;
+  font-family: var(--font-display, serif);
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+  letter-spacing: var(--tracking-display, -0.025em);
+  line-height: var(--leading-heading, 1.08);
+}
+
+.page-tournament-guide .tguide-principle p {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--color-paper-3, rgba(255, 255, 255, 0.86));
+}
+
+.page-tournament-guide .tguide-reading {
+  max-width: var(--tguide-measure);
+}
+
+.page-tournament-guide .tguide-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--color-rule, var(--ss-border));
+}
+
+.page-tournament-guide .tguide-link {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm, 1rem);
+  padding: var(--space-sm, 1rem) 0;
+  border-bottom: 1px solid var(--color-rule, var(--ss-border));
+  color: var(--color-ink, var(--ss-text));
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.page-tournament-guide .tguide-link:nth-child(odd) {
+  padding-right: var(--space-lg, 2rem);
+}
+
+.page-tournament-guide .tguide-link:nth-child(even) {
+  padding-left: var(--space-lg, 2rem);
+}
+
+.page-tournament-guide .tguide-closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-lg, 2rem);
+  align-items: center;
+  padding: clamp(var(--space-lg, 2rem), 5vw, var(--space-xl, 3rem));
+  border: 1px solid var(--color-rule, var(--ss-border));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-paper-2, var(--ss-surface2));
+}
+
+.page-tournament-guide .tguide-closing h2 {
+  margin-bottom: var(--space-2xs, 0.5rem);
+  font-family: var(--font-display, serif);
+  font-style: normal;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page-tournament-guide .tournament-action:hover,
+  .page-tournament-guide .tournament-filter:hover,
+  .page-tournament-guide .tguide-link:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.page-tournament-guide .tournament-action:active,
+.page-tournament-guide .tournament-filter:active,
+.page-tournament-guide .tguide-link:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 767.98px) {
+  .page-tournament-guide .tguide-hero,
+  .page-tournament-guide .tguide-prep-grid,
+  .page-tournament-guide .tguide-links,
+  .page-tournament-guide .tguide-closing {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-tournament-guide .tguide-hero {
+    gap: var(--space-xl, 3rem);
+  }
+
+  .page-tournament-guide .tournament-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-tournament-guide .tournament-card > img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 343 / 127;
+  }
+
+  .page-tournament-guide .tguide-link:nth-child(n) {
+    padding-inline: 0;
   }
 }
 
 @media (max-width: 575.98px) {
-  .page-tournament-guide .tournament-grid {
-    grid-template-columns: 1fr;
+  .page-tournament-guide .tournament-actions {
+    flex-direction: column;
+  }
+
+  .page-tournament-guide .tournament-action {
+    width: 100%;
+  }
+
+  .page-tournament-guide .tguide-title {
+    font-size: clamp(2.65rem, 14vw, 4rem);
   }
 }
 </style>
@@ -102,33 +368,30 @@ permalink: "/local-bjj-tournaments-for-parents.html"
 <span aria-hidden="true">›</span>
 <span>Local BJJ Tournaments for Parents</span>
 </nav>
-<!-- MAIN REDESIGNED COLUMNS SECTION -->
-<section class="he-section he-bg-soft position-relative">
-<div class="container px-4">
-<div class="mb-5 mx-auto text-center" style="max-width: 48rem;">
-<span class="he-eyebrow">Parent Competition Guide</span>
-<h1 class="serif-title mb-4" style="font-size: clamp(3rem, 6vw, 4.5rem);">Local BJJ Tournaments Near Tannersville</h1>
-<p class="lead mb-5" style="font-size: 1.25rem;">
+<section class="tguide-opening">
+<div class="tguide-shell tguide-hero">
+<div>
+<h1 class="tguide-title">Local BJJ Tournaments Near Tannersville</h1>
+<p class="tguide-intro">
           Competition is optional. Learning under resistance happens in every class. For students who want another test, tournaments change the partner, rules, pace, stakes, and amount of coach control so families can see what remains reliable and what should return to training.
         </p>
-<div class="mx-auto bg-white p-4 rounded-4 shadow-sm text-start" style="max-width: 42rem; border: 1px solid rgba(255,255,255,0.4); backdrop-filter: blur(8px);">
-<div class="d-flex gap-3 align-items-center">
-<i class="bi bi-exclamation-triangle-fill text-warning fs-4"></i>
-<div class="small text-muted">
-<strong class="text-dark">Verify before registering:</strong> Tournament dates, brackets, rules, refund policies, and division availability can change. Always verify the official event page before registering. Talk with Coach Sandy first.
-            </div>
 </div>
+<aside class="tguide-verification">
+<strong>Verify before registering</strong>
+Tournament dates, brackets, rules, refund policies, and division availability can change. Always verify the official event page before registering. Talk with Coach Sandy first.
+</aside>
 </div>
-</div>
-<!-- Filter Pills -->
-<div aria-label="Tournament filters" class="filter-bar mb-5 d-flex justify-content-center flex-wrap gap-2" id="tournament-filters">
+</section>
+<section class="tguide-index">
+<div class="tguide-shell">
+<div aria-label="Tournament filters" class="filter-bar" id="tournament-filters">
 <button type="button" class="btn btn-dark btn-sm rounded-pill px-4 py-2 tournament-filter" data-tournament-filter="all" aria-pressed="true">All upcoming</button>
 {% for option in tournaments.filterOptions %}
 <button type="button" class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2 tournament-filter" data-tournament-filter="{{ option.key }}" aria-pressed="false">{{ option.label }}</button>
 {% endfor %}
 </div>
 <!-- CSS Grid Tournament Container -->
-<p class="small text-muted text-center mb-4"><span id="tournament-result-count">Showing {{ tournaments.published.length }} verified events</span> · Last checked {{ tournaments.lastCheckedLabel }}</p>
+<p class="tguide-index-meta"><span id="tournament-result-count">Showing {{ tournaments.published.length }} verified events</span> · Last checked {{ tournaments.lastCheckedLabel }}</p>
 {% include "partials/tournament-grid.html" %}
 <!-- Tournament facts are reviewed against the official event page before publication. -->
 <!-- Tournament card partial release mapping: keep canonical route in deploy payload. -->
@@ -153,18 +416,17 @@ document.querySelectorAll('#tournament-filters button').forEach((button) => butt
 </script>
 </div>
 </section>
-<!-- ACCORDIONS SECTION (Von Restorff) -->
-<section class="he-section bg-white border-top border-bottom" id="parent-registration-checklist">
-<div class="container ss-container mx-auto" style="max-width: 48rem;">
-<h2 class="h3 fw-bold mb-5 text-center text-dark font-serif">Pre-Tournament Preparation</h2>
-<div class="d-flex flex-column gap-4">
+<section class="tguide-section" id="parent-registration-checklist">
+<div class="tguide-shell">
+<h2 class="tguide-section-heading">Pre-Tournament Preparation</h2>
+<div class="tguide-prep-grid">
 <!-- Checklist Accordion -->
-<details class="he-bezel-outer he-reveal">
-<summary class="he-bezel-inner he-accordion-summary" style="padding: 1.25rem 1.5rem;">
+<details class="tguide-detail">
+<summary class="he-accordion-summary">
 <span class="fw-bold font-ui text-dark d-flex align-items-center gap-2"><i class="bi bi-check2-square text-success fs-5"></i>Parent Registration Checklist</span>
 <span class="he-accordion-icon">+</span>
 </summary>
-<div class="px-4 py-4" style="background-color: rgba(255,255,255,0.6); border-radius: 0 0 calc(2rem - 0.25rem) calc(2rem - 0.25rem);">
+<div class="tguide-detail-body">
 <p class="text-muted small mb-4 px-2">Before registering, confirm these key details on the official tournament page:</p>
 <ul class="list-unstyled mb-0 px-2">
 <li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Correct age group</strong>, division criteria varies by birth year or actual age.</span></li>
@@ -181,12 +443,12 @@ document.querySelectorAll('#tournament-filters button').forEach((button) => butt
 </div>
 </details>
 <!-- What to Bring Accordion -->
-<details class="he-bezel-outer he-reveal">
-<summary class="he-bezel-inner he-accordion-summary" style="padding: 1.25rem 1.5rem;">
-<span class="fw-bold font-ui text-dark d-flex align-items-center gap-2"><i class="bi bi-backpack text-primary fs-5"></i>What to Bring (Tournament Bag)</span>
+<details class="tguide-detail">
+<summary class="he-accordion-summary">
+<span class="fw-bold font-ui text-dark d-flex align-items-center gap-2"><i class="bi bi-backpack text-success fs-5"></i>What to Bring (Tournament Bag)</span>
 <span class="he-accordion-icon">+</span>
 </summary>
-<div class="px-4 py-4" style="background-color: rgba(255,255,255,0.6); border-radius: 0 0 calc(2rem - 0.25rem) calc(2rem - 0.25rem);">
+<div class="tguide-detail-body">
 <p class="text-muted small mb-4 px-2">Pack these items the night before the tournament to ensure a stress-free day:</p>
 <ul class="list-unstyled mb-0 px-2">
 <li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Clean gi</strong>, washed, dry, with no tears and of legal length.</span></li>
@@ -203,26 +465,21 @@ document.querySelectorAll('#tournament-filters button').forEach((button) => butt
 </div>
 </div>
 </section>
-<!-- SENSEI SANDY RULE -->
-<section class="he-section bg-light">
-<div class="container ss-container text-center mx-auto" style="max-width: 48rem;">
-<div class="he-bezel-outer p-1 he-reveal" style="background: linear-gradient(135deg, var(--ss-slate, #306061), var(--ss-teal, #289FA1)); border: none; overflow: hidden;">
-<div class="position-absolute rounded-circle" style="top: -80px; right: -80px; width: 250px; height: 250px; background: rgba(255,255,255,0.05); pointer-events: none;"></div>
-<div class="he-bezel-inner" style="background: transparent; box-shadow: none; padding: 4rem 2rem; z-index: 10;">
-<p class="text-uppercase fw-bold small mb-4" style="letter-spacing: 0.2em; color: rgba(255,255,255,0.85);">The Sensei Sandy Rule</p>
-<blockquote class="blockquote fs-2 fw-bold mb-4 font-serif text-white">
+<section class="tguide-section">
+<div class="tguide-shell">
+<div class="tguide-principle">
+<blockquote>
             “Win, lose, or learn, we come back to class better.”
           </blockquote>
-<p class="lead mb-0 fs-6" style="color: rgba(255,255,255,0.9);">
+<p>
             The best tournament outcome is a student who stays safe, learns something real, and wants to keep training.
           </p>
 </div>
 </div>
-</div>
 </section>
-<section class="he-section bg-white border-top border-bottom" aria-labelledby="competition-test-title">
-<div class="container ss-container mx-auto" style="max-width: 52rem;">
-<h2 class="h3 fw-bold mb-3 text-center text-dark font-serif" id="competition-test-title">What a tournament can teach</h2>
+<section class="tguide-section" aria-labelledby="competition-test-title">
+<div class="tguide-shell tguide-reading">
+<h2 class="tguide-section-heading" id="competition-test-title">What a tournament can teach</h2>
 <p class="text-muted">A tournament is an optional testing environment, not a required step or a promotion requirement. Sandy considers the student’s willingness, ability to stop safely, comfort with unfamiliar partners and external rules, and readiness to recover after a difficult round.</p>
 <p class="text-muted mb-0">Afterward, the useful questions are: What felt different? What stayed reliable? Where did the first answer stop working? What should return to class next?</p>
 <ol class="text-muted mt-3 mb-0">
@@ -233,41 +490,32 @@ document.querySelectorAll('#tournament-filters button').forEach((button) => butt
 </ol>
 </div>
 </section>
-<!-- HELPFUL LINKS -->
-<section aria-labelledby="links-title" class="he-section">
-<div class="container ss-container text-center">
-<h2 class="h4 mb-5 font-serif" id="links-title">Helpful Parent Links</h2>
-<div class="d-flex flex-wrap justify-content-center gap-3 mx-auto" style="max-width: 56rem;">
-<a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/bjj-classes/kids-tannersville-ny">Kids Jiu Jitsu in Tannersville NY</a>
-<a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/bjj-classes/teens-tannersville-ny">Teen Jiu Jitsu in Tannersville NY</a>
-<a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/free-bjj-intro-tannersville-ny">Reserve a Free First Visit</a>
-<a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/bjj-glossary">Learn Common Jiu Jitsu Terms</a>
-<a class="btn btn-outline-dark py-2 px-4 rounded-pill font-ui fw-bold he-card-hover" href="/schedule">View Class Schedule</a>
+<section aria-labelledby="links-title" class="tguide-section">
+<div class="tguide-shell">
+<h2 class="tguide-section-heading" id="links-title">Helpful Parent Links</h2>
+<div class="tguide-links">
+<a class="tguide-link" href="/bjj-classes/kids-tannersville-ny"><span>Kids Jiu Jitsu in Tannersville NY</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/bjj-classes/teens-tannersville-ny"><span>Teen Jiu Jitsu in Tannersville NY</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/free-bjj-intro-tannersville-ny"><span>Reserve a Free First Visit</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/bjj-glossary"><span>Learn Common Jiu Jitsu Terms</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/schedule"><span>View Class Schedule</span><span aria-hidden="true">→</span></a>
 </div>
 </div>
 </section>
-<!-- CUSTOM BOTTOM CTA BANNER -->
-<section class="pb-5 pt-4">
-<div class="container">
-<div class="he-bezel-outer p-1 he-reveal mx-auto" style="max-width: 64rem;">
-<div class="he-bezel-inner d-flex flex-column flex-md-row align-items-center justify-content-between gap-4" style="padding: 3rem;">
-<div class="d-flex align-items-center gap-4">
-<div class="d-none d-lg-flex align-items-center justify-content-center rounded-circle" style="width: 72px; height: 72px; flex-shrink: 0; background-color: rgba(0,0,0,0.03); color: var(--ss-slate, #306061);">
-<svg fill="currentColor" height="36" viewbox="0 0 24 24" width="36"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"></path></svg>
+<section class="tguide-section">
+<div class="tguide-shell">
+<div class="tguide-closing">
+<div>
+<h2>Start the Journey. We'll Guide the Rest.</h2>
+<p class="mb-0 text-muted">A calm, pressure-free first visit for kids and parents. See if our community feels like home.</p>
 </div>
 <div>
-<h2 class="mb-2 font-serif" style="font-size: 2rem; color: var(--ss-ink);">Start the Journey. We'll Guide the Rest.</h2>
-<p class="mb-0 text-muted" style="max-width: 28rem;">A calm, pressure-free first visit for kids and parents. See if our community feels like home.</p>
-</div>
-</div>
-<div class="text-center text-md-end flex-shrink-0">
 <a class="he-cta-pill he-nested-btn" href="/free-bjj-intro-tannersville-ny">
 <span>Reserve Your Free First Visit</span>
 <div class="he-cta-icon-wrapper">
 <i class="bi bi-arrow-right"></i>
 </div>
 </a>
-<span class="d-block small text-muted mt-3">Ask questions, understand the fit.</span>
 </div>
 </div>
 </div>

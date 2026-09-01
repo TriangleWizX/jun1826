@@ -46,13 +46,15 @@ const DEFAULT_REJECTED_REPORT = 'src/assets/data/route-style-rejected-selectors.
 const DEFAULT_ASSET_MANIFEST = 'src/assets/data/asset-hash-manifest.json';
 const BOOTSTRAP_INPUT = '/assets/css/bootstrap-site.css';
 const FONTS_STYLESHEET = '/assets/css/fonts.css';
-const SITE_SHELL_STYLESHEET = '/assets/css/site-shell.css';
+const SITE_SHELL_SOURCE_STYLESHEET = '/assets/css/site-shell.css';
+const SITE_SHELL_STYLESHEET = '/assets/css/site-shell.min.css';
 const ICONS_STYLESHEET = '/assets/css/bootstrap-icons-local.css';
 const TOKENS_STYLESHEET = '/tokens.css';
 const LEXEND_FONT = '/assets/fonts/lexend/lexend-latin-variable.woff2';
 const SHARED_STYLESHEETS = new Set([
   FONTS_STYLESHEET,
   SITE_SHELL_STYLESHEET,
+  SITE_SHELL_SOURCE_STYLESHEET,
   ICONS_STYLESHEET,
 ]);
 const ROUTE_BUNDLE_RE = /^\/assets\/css\/routes\/site-([0-9a-f]{12})(?:\.min)?\.css$/i;
@@ -337,16 +339,17 @@ const validatePriorRouteBundle = ({ canonicalHref, priorManifest, route, sourceH
   }
   // Recompute the signature from the current ordered inputs during this build.
   // A stale prior signature is expected after source CSS changes.
-  if (prior.orderedInputs.filter((href) => href === BOOTSTRAP_INPUT).length !== 1) {
+  const migratedInputs = prior.orderedInputs.filter((href) => href !== SITE_SHELL_SOURCE_STYLESHEET);
+  if (migratedInputs.filter((href) => href === BOOTSTRAP_INPUT).length !== 1) {
     throw new Error(`Prior route-style manifest must contain Bootstrap exactly once for ${route}.`);
   }
-  for (const href of prior.orderedInputs) {
+  for (const href of migratedInputs) {
     if (typeof href !== 'string' || !href.startsWith('/') || SHARED_STYLESHEETS.has(href) || isRouteBundleHref(href)) {
       throw new Error(`Prior route-style manifest has an unsafe input for ${route}: ${href}`);
     }
     assertSafeExistingFile(assetPathForHref(href), `Prior route CSS input ${href}`);
   }
-  return [...prior.orderedInputs];
+  return migratedInputs;
 };
 
 const classifyStylesheet = ({

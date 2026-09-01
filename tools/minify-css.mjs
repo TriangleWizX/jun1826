@@ -12,6 +12,7 @@ const THIS_FILE = fileURLToPath(import.meta.url);
 const baseJobs = [
   ["assets/css/bootstrap-site.css", "assets/css/bootstrap-site.min.css"],
   ["assets/css/fonts.css", "assets/css/fonts.min.css"],
+  ["assets/css/site-shell.css", "assets/css/site-shell.min.css"],
   ["assets/css/styles.css", "assets/css/styles.min.css"],
   ["assets/css/ss.css", "assets/css/ss.min.css"],
   ["assets/css/bjj-glossary.css", "assets/css/bjj-glossary.min.css"],
@@ -133,6 +134,15 @@ const collapseWhitespace = (text) => {
   return out;
 };
 
+const stripObsoleteSiteShellGuardrails = (css, source) => {
+  if (source !== 'assets/css/site-shell.css') return css;
+  const marker = css.indexOf('Canonical Tannersville shell guardrail');
+  if (marker < 0) throw new Error('site-shell.css is missing the legacy guardrail marker.');
+  const commentStart = css.lastIndexOf('/*', marker);
+  if (commentStart < 0) throw new Error('site-shell.css legacy guardrail marker is outside a comment.');
+  return css.slice(0, commentStart);
+};
+
 const minifyCss = (css) => {
   // CSS selector whitespace is semantic (`.a :is(...)`, `:is(...) .b`,
   // `.a [data-x]`). Keep one safe separator instead of using punctuation
@@ -148,7 +158,7 @@ const main = async () => {
     const src = resolveWorkspacePath(source);
     const dst = resolveWorkspacePath(target);
     const css = await fs.readFile(src, "utf8");
-    const minified = minifyCss(css);
+    const minified = minifyCss(stripObsoleteSiteShellGuardrails(css, source));
 
     if (check) {
       let current = null;
@@ -176,7 +186,7 @@ const main = async () => {
   }
 };
 
-export { jobs, minifyCss };
+export { jobs, minifyCss, stripObsoleteSiteShellGuardrails };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === THIS_FILE) {
   main().catch((error) => {

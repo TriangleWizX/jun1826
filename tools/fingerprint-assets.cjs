@@ -424,6 +424,7 @@ for (const htmlPath of allHtml) {
   const html = bytes.toString('utf8');
   htmlDocuments.set(htmlPath, { bytes, html });
   for (const attr of collectHtmlAttributes(html)) {
+    if (attr.value.includes('{%') || attr.value.includes('{{')) continue;
     const source = resolveAssetRef(attr.value, htmlPath);
     if (!source || isPinnedAsset(source)) continue;
     if (CSS_EXT.has(path.extname(source).toLowerCase())) {
@@ -541,7 +542,8 @@ for (const [htmlPath, document] of htmlDocuments) {
   for (const attr of attrs) {
     updated += html.slice(cursor, attr.start);
     let normalizedRef = attr.value;
-    const referencedPath = resolveAssetRef(attr.value, htmlPath);
+    const isTemplateRef = attr.value.includes('{%') || attr.value.includes('{{');
+    const referencedPath = isTemplateRef ? null : resolveAssetRef(attr.value, htmlPath);
     if (referencedPath && path.extname(referencedPath).toLowerCase() === '.js' && isHashed(path.basename(referencedPath))) {
       const canonicalPath = unhashedSiblingPath(referencedPath);
       if (fs.existsSync(canonicalPath)) normalizedRef = publicHrefForAsset(canonicalPath);
@@ -550,7 +552,7 @@ for (const [htmlPath, document] of htmlDocuments) {
       const candidate = normalizedRef.replace(/\.[0-9a-f]{6}(?=\.js(?:[?#]|$))/i, '');
       if (fs.existsSync(assetPathForPublicHref(candidate))) normalizedRef = candidate;
     }
-    const source = resolveAssetRef(normalizedRef, htmlPath);
+    const source = isTemplateRef ? null : resolveAssetRef(normalizedRef, htmlPath);
     const target = source && !isPinnedAsset(source) ? resolvedAssets.get(source) : null;
     updated += target ? replacementReference(normalizedRef, htmlPath, target) : normalizedRef;
     cursor = attr.end;
