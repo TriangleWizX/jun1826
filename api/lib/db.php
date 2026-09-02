@@ -444,6 +444,46 @@ function ss_run_migrations(PDO $db): void
         'INSERT OR IGNORE INTO location (id, name, timezone, created_at, updated_at) VALUES
             (\'00000000-0000-0000-0000-000000000010\', \'Main Studio\', \'America/New_York\', datetime(\'now\'), datetime(\'now\'))'
     );
+
+    $db->exec(
+        'CREATE TABLE IF NOT EXISTS weekly_student_audits (
+            id TEXT PRIMARY KEY,
+            student_id TEXT NOT NULL,
+            week_start_date TEXT NOT NULL,
+            week_end_date TEXT NOT NULL,
+            coach_id TEXT,
+            status TEXT NOT NULL DEFAULT \'draft\',
+            main_skill_key TEXT,
+            problem_observed TEXT,
+            observation_context TEXT,
+            help_level TEXT,
+            observed_action TEXT,
+            next_action TEXT,
+            getting_easier TEXT,
+            coach_note TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (student_id, week_start_date),
+            FOREIGN KEY (student_id) REFERENCES person(id)
+        )'
+    );
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_weekly_audits_week ON weekly_student_audits(week_start_date, status)');
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_weekly_audits_student ON weekly_student_audits(student_id, week_start_date)');
+
+    $db->exec(
+        'CREATE TABLE IF NOT EXISTS weekly_student_audit_versions (
+            id TEXT PRIMARY KEY,
+            weekly_student_audit_id TEXT NOT NULL,
+            student_id TEXT NOT NULL,
+            week_start_date TEXT NOT NULL,
+            snapshot_json TEXT NOT NULL,
+            edited_by TEXT,
+            created_at TEXT NOT NULL,
+            FOREIGN KEY (weekly_student_audit_id) REFERENCES weekly_student_audits(id)
+        )'
+    );
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_weekly_audit_versions_audit ON weekly_student_audit_versions(weekly_student_audit_id, created_at)');
+    $db->exec('CREATE INDEX IF NOT EXISTS ix_weekly_audit_versions_student ON weekly_student_audit_versions(student_id, week_start_date)');
 }
 
 function ss_program_id_for_lane(string $lane): ?string

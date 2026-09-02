@@ -49,6 +49,7 @@
     "qa:schema": "node scripts/qa-schema.mjs",
     "qa:funnel": "node scripts/qa-funnel.mjs",
     "qa:youth-intro": "node scripts/qa-youth-intro-rollout.mjs",
+    "qa:weekly-audit": "node scripts/qa-weekly-audit.mjs",
     "campaign:expire-christmas": "node scripts/expire-christmas-in-july.mjs",
     "qa:seo": "node scripts/qa-seo-eleventy.mjs",
     "qa:towns": "node scripts/qa-town-duplication.mjs",

@@ -1,0 +1,1012 @@
+---
+layout: layouts/base.njk
+title: "Weekly Student Audit | Sensei Sandy BJJ"
+description: "Review each student who trained this week. Record one thing you saw and what to try next."
+canonicalUrl: "https://senseisandy.com/weekly-audit"
+robots: "noindex, nofollow"
+audience: "member"
+bodyClass: "ss-page page-weekly-audit"
+permalink: "/weekly-audit.html"
+---
+
+<style>
+  :root {
+    --ss-audit-green: #116A42;
+    --ss-audit-teal: #289FA1;
+    --ss-audit-ink: #362B24;
+    --ss-audit-bg: #FBFAF8;
+    --ss-audit-surface: #FFFFFF;
+    --ss-audit-surface2: #F4F1ED;
+    --ss-audit-text: #1F1712;
+    --ss-audit-muted: #4F433C;
+    --ss-audit-border: rgba(54, 43, 36, 0.14);
+    --ss-audit-radius: 12px;
+    --ss-audit-radius-sm: 8px;
+    --ss-audit-shadow: 0 4px 16px rgba(54, 43, 36, 0.06);
+  }
+
+  .page-weekly-audit {
+    background-color: var(--ss-audit-bg);
+    color: var(--ss-audit-text);
+  }
+
+  .ss-audit-container {
+    max-width: 1280px;
+    margin: 1.5rem auto 4rem;
+    padding: 0 1rem;
+  }
+
+  .ss-audit-header-block {
+    margin-bottom: 1.5rem;
+  }
+
+  .ss-audit-header-block h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ss-audit-ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .ss-audit-intro {
+    font-size: 1.05rem;
+    color: var(--ss-audit-muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  /* Ops Auth Toolbar */
+  .ss-ops-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--ss-audit-surface);
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ss-ops-toolbar label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .ss-ops-toolbar input[type="password"] {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    font-size: 0.95rem;
+  }
+
+  /* Week Navigator & Strip */
+  .ss-week-navigator {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: var(--ss-audit-surface);
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--ss-audit-shadow);
+  }
+
+  .ss-week-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ss-week-controls h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ss-audit-ink);
+  }
+
+  .ss-nav-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--ss-audit-radius-sm);
+    border: 1px solid var(--ss-audit-border);
+    background: var(--ss-audit-surface2);
+    color: var(--ss-audit-text);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .ss-nav-btn:hover, .ss-nav-btn:focus-visible {
+    background: #e8e2dc;
+    border-color: var(--ss-audit-ink);
+  }
+
+  /* Status Strip */
+  .ss-status-strip {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ss-status-metrics {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .ss-metric-item strong {
+    color: var(--ss-audit-ink);
+    font-size: 1.1rem;
+  }
+
+  .ss-progress-bar-wrap {
+    width: 140px;
+    height: 8px;
+    background: var(--ss-audit-surface2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .ss-progress-bar-fill {
+    height: 100%;
+    background: var(--ss-audit-green);
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .ss-indicator-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ss-audit-muted);
+  }
+
+  /* Layout Columns */
+  .ss-audit-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 992px) {
+    .ss-audit-layout {
+      grid-template-columns: 320px minmax(0, 1fr) 340px;
+      align-items: start;
+    }
+  }
+
+  /* Queue Panel (Left) */
+  .ss-queue-panel {
+    background: var(--ss-audit-surface);
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius);
+    padding: 1.25rem;
+    box-shadow: var(--ss-audit-shadow);
+  }
+
+  .ss-queue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--ss-audit-border);
+    padding-bottom: 0.5rem;
+  }
+
+  .ss-queue-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .ss-queue-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 720px;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+  }
+
+  .ss-queue-card {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    background: var(--ss-audit-surface2);
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .ss-queue-card:hover {
+    border-color: var(--ss-audit-teal);
+    background: #ede9e3;
+  }
+
+  .ss-queue-card.is-active {
+    border: 2px solid var(--ss-audit-green);
+    background: #f0f7f3;
+  }
+
+  .ss-queue-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.35rem;
+  }
+
+  .ss-queue-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ss-audit-ink);
+  }
+
+  .ss-queue-classes {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ss-audit-green);
+    margin-bottom: 0.2rem;
+  }
+
+  .ss-queue-dates {
+    font-size: 0.8rem;
+    color: var(--ss-audit-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .ss-queue-action {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Badges */
+  .ss-audit-badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .ss-status-not_started {
+    background: #fde8e8;
+    color: #9b1c1c;
+  }
+
+  .ss-status-draft {
+    background: #fef08a;
+    color: #713f12;
+  }
+
+  .ss-status-complete {
+    background: #def7ec;
+    color: #03543f;
+  }
+
+  .ss-status-needs_observation {
+    background: #e1effe;
+    color: #1e429f;
+  }
+
+  /* Center Workflow Area */
+  .ss-workflow-panel {
+    background: var(--ss-audit-surface);
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius);
+    padding: 1.5rem;
+    box-shadow: var(--ss-audit-shadow);
+  }
+
+  .ss-student-header-box {
+    border-bottom: 1px solid var(--ss-audit-border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ss-student-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ss-student-title-row h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--ss-audit-ink);
+  }
+
+  .ss-student-week-badge {
+    font-size: 0.95rem;
+    color: var(--ss-audit-muted);
+    font-weight: 600;
+  }
+
+  .ss-seen-row {
+    font-size: 0.95rem;
+    color: var(--ss-audit-green);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .ss-session-ul {
+    list-style: disc inside;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--ss-audit-text);
+  }
+
+  .ss-disclosure-box {
+    margin-top: 0.75rem;
+    background: var(--ss-audit-surface2);
+    border-radius: var(--ss-audit-radius-sm);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--ss-audit-border);
+  }
+
+  .ss-disclosure-box summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--ss-audit-ink);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ss-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .ss-details-grid div strong {
+    display: block;
+    color: var(--ss-audit-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Form Elements */
+  .ss-form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .ss-field-label {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ss-audit-ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .ss-field-hint {
+    font-size: 0.85rem;
+    color: var(--ss-audit-muted);
+    margin-top: -0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ss-chips-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .ss-chips-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+  }
+
+  .ss-choice-chip {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    background: var(--ss-audit-surface2);
+    cursor: pointer;
+    min-height: 44px;
+    transition: all 0.15s ease;
+  }
+
+  .ss-choice-chip:hover {
+    background: #eee8e1;
+    border-color: var(--ss-audit-teal);
+  }
+
+  .ss-choice-chip input[type="radio"] {
+    margin-top: 0.2rem;
+    accent-color: var(--ss-audit-green);
+    min-width: 18px;
+    min-height: 18px;
+  }
+
+  .ss-choice-chip:has(input:checked) {
+    border-color: var(--ss-audit-green);
+    background: #f0f7f3;
+  }
+
+  .ss-choice-pill {
+    align-items: center;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .ss-choice-pill input[type="radio"] {
+    margin-top: 0;
+  }
+
+  .ss-pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .ss-textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem;
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--ss-audit-text);
+    resize: vertical;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .ss-textarea:focus {
+    border-color: var(--ss-audit-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(17, 106, 66, 0.15);
+  }
+
+  .ss-section-heading {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--ss-audit-ink);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-top: 1px solid var(--ss-audit-border);
+    padding-top: 1.25rem;
+  }
+
+  /* Actions Bar */
+  .ss-actions-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ss-audit-border);
+  }
+
+  .btn-audit-primary {
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+    background: var(--ss-audit-green);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--ss-audit-radius-sm);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .btn-audit-primary:hover, .btn-audit-primary:focus-visible {
+    background: #0d5434;
+  }
+
+  .btn-audit-secondary {
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    background: var(--ss-audit-surface2);
+    color: var(--ss-audit-ink);
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .btn-audit-secondary:hover, .btn-audit-secondary:focus-visible {
+    background: #e8e2dc;
+  }
+
+  .btn-audit-alt {
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    background: transparent;
+    color: var(--ss-audit-muted);
+    border: 1px dashed var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .btn-audit-alt:hover, .btn-audit-alt:focus-visible {
+    background: #f7f3ee;
+    color: var(--ss-audit-ink);
+    border-color: var(--ss-audit-ink);
+  }
+
+  .ss-status-msg {
+    margin-left: auto;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* Family Preview Panel (Right) */
+  .ss-preview-panel {
+    background: var(--ss-audit-surface);
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius);
+    padding: 1.25rem;
+    box-shadow: var(--ss-audit-shadow);
+  }
+
+  @media (min-width: 992px) {
+    .ss-preview-panel {
+      position: sticky;
+      top: 1rem;
+    }
+  }
+
+  .ss-preview-card {
+    background: #fdfcfb;
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius-sm);
+    padding: 1.25rem;
+    margin-top: 0.75rem;
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+
+  .ss-preview-brand {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ss-audit-teal);
+    margin-bottom: 0.35rem;
+  }
+
+  .ss-preview-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--ss-audit-ink);
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--ss-audit-border);
+    padding-bottom: 0.5rem;
+  }
+
+  .ss-preview-section {
+    margin-bottom: 0.85rem;
+  }
+
+  .ss-preview-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ss-audit-muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .ss-preview-content {
+    font-size: 0.95rem;
+    color: var(--ss-audit-text);
+  }
+
+  .ss-preview-ask {
+    background: #f0f7f3;
+    border-left: 3px solid var(--ss-audit-green);
+    padding: 0.5rem 0.75rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .ss-preview-ask-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--ss-audit-green);
+    text-transform: uppercase;
+  }
+
+  .ss-preview-ask-quote {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--ss-audit-ink);
+  }
+
+  /* Week Complete Screen */
+  .ss-week-complete-card {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: var(--ss-audit-surface);
+    border: 1px solid var(--ss-audit-border);
+    border-radius: var(--ss-audit-radius);
+    box-shadow: var(--ss-audit-shadow);
+  }
+
+  .ss-week-complete-card h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--ss-audit-ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .ss-week-complete-card p {
+    font-size: 1.15rem;
+    color: var(--ss-audit-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .ss-week-complete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Modals */
+  .ss-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(31, 23, 18, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1050;
+  }
+
+  .ss-modal-box {
+    background: #ffffff;
+    border-radius: var(--ss-audit-radius);
+    max-width: 540px;
+    width: 100%;
+    padding: 1.5rem;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--ss-audit-border);
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .ss-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--ss-audit-border);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .ss-modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .ss-modal-close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .ss-history-entry {
+    border-bottom: 1px solid var(--ss-audit-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .ss-history-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .ss-history-entry h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .ss-history-entry p {
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+  }
+
+  /* Errors Container */
+  .ss-error-box {
+    background: #fde8e8;
+    border: 1px solid #f98080;
+    color: #9b1c1c;
+    border-radius: var(--ss-audit-radius-sm);
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ss-error-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+</style>
+
+<div class="ss-audit-container">
+  <div class="ss-audit-header-block">
+    <h1>Weekly Student Audit</h1>
+    <p class="ss-audit-intro">Review each student who trained this week. Record one thing you saw and what to try next.</p>
+
+    <!-- Ops Auth Toolbar -->
+    <div id="auth-toolbar" class="ss-ops-toolbar">
+      <label for="ops-key">Coach Ops Key</label>
+      <input id="ops-key" type="password" placeholder="Enter ops key…" autocomplete="off">
+      <button id="save-key-btn" type="button" class="ss-nav-btn">Save Key</button>
+      <span id="auth-status" class="ss-status-msg text-muted"></span>
+    </div>
+
+    <!-- Week Selector and Progress Strip -->
+    <div class="ss-week-navigator">
+      <div class="ss-week-controls">
+        <button id="prev-week-btn" type="button" class="ss-nav-btn" aria-label="Previous week">← Previous Week</button>
+        <h2 id="current-week-label">Week of …</h2>
+        <button id="next-week-btn" type="button" class="ss-nav-btn" aria-label="Next week">Next Week →</button>
+      </div>
+
+      <div class="ss-status-strip">
+        <div class="ss-status-metrics">
+          <div class="ss-metric-item">Students trained: <strong id="stats-trained">0</strong></div>
+          <div class="ss-metric-item">Reviewed: <strong id="stats-reviewed">0</strong></div>
+          <div class="ss-metric-item">Remaining: <strong id="stats-remaining">0</strong></div>
+        </div>
+        <div class="ss-progress-bar-wrap" aria-hidden="true">
+          <div id="stats-progress-fill" class="ss-progress-bar-fill"></div>
+        </div>
+        <div id="stats-indicator" class="ss-indicator-text">0 of 0 reviewed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main 3-Column Layout -->
+  <div class="ss-audit-layout">
+    <!-- 1. Left: Student Queue -->
+    <aside class="ss-queue-panel" aria-label="Attending students queue">
+      <div class="ss-queue-header">
+        <h3>Attending Students</h3>
+      </div>
+      <div id="empty-attendance-message" class="text-muted small py-3 d-none">
+        No attendance recorded for this week.
+      </div>
+      <div id="student-queue-list" class="ss-queue-list" role="list"></div>
+    </aside>
+
+    <!-- 2. Center: Workflow Area -->
+    <main id="audit-workflow-section" class="ss-workflow-panel" aria-label="Audit form">
+      <!-- Student Audit Header -->
+      <div class="ss-student-header-box">
+        <div class="ss-student-title-row">
+          <h2 id="header-student-name">Student</h2>
+          <span id="header-week-label" class="ss-student-week-badge">Week of …</span>
+        </div>
+        <div id="header-class-count" class="ss-seen-row">Classes seen: 0</div>
+        <ul id="header-session-list" class="ss-session-ul"></ul>
+
+        <div class="d-flex gap-2 align-items-center mb-2">
+          <button id="view-history-btn" type="button" class="btn btn-sm btn-outline-secondary">View History</button>
+        </div>
+
+        <!-- More Details Disclosure -->
+        <details class="ss-disclosure-box">
+          <summary>More details</summary>
+          <div class="ss-details-grid">
+            <div>
+              <strong>Belt</strong>
+              <span id="detail-belt">White Belt</span>
+            </div>
+            <div>
+              <strong>Regular Schedule</strong>
+              <span id="detail-schedule">General</span>
+            </div>
+            <div>
+              <strong>Previous Focus</strong>
+              <span id="detail-prev-focus">None recorded</span>
+            </div>
+            <div>
+              <strong>Last Weekly Audit</strong>
+              <span id="detail-last-audit">None</span>
+            </div>
+            <div>
+              <strong>Last Full Progress Review</strong>
+              <span id="detail-last-review">None on record</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- Last Check-In Disclosure -->
+        <details id="last-checkin-disclosure" class="ss-disclosure-box mt-2 d-none">
+          <summary>Last Check-In (<span id="last-checkin-week">…</span>)</summary>
+          <div class="pt-2">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div><strong>Main Skill:</strong> <span id="last-checkin-skill">…</span></div>
+              <button id="use-same-focus-btn" type="button" class="btn btn-sm btn-outline-primary">Use Same Focus</button>
+            </div>
+            <p class="mb-1"><strong>You did this:</strong> <span id="last-checkin-observed">…</span></p>
+            <p class="mb-1"><strong>Next time:</strong> <span id="last-checkin-next">…</span></p>
+            <p id="last-checkin-coach-note-row" class="text-muted small mb-0 d-none">
+              <em>Coach Note: <span id="last-checkin-coach-note">…</span></em>
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Errors Banner -->
+      <div id="form-error-list" class="ss-error-box d-none" role="alert"></div>
+
+      <!-- Main Skill Section -->
+      <div class="ss-form-group">
+        <label class="ss-field-label">Main Skill</label>
+        <p class="ss-field-hint">Choose the primary area of focus observed this week.</p>
+        <div id="main-skill-container" class="ss-chips-grid" role="radiogroup"></div>
+      </div>
+
+      <!-- What were they trying to do? -->
+      <div class="ss-form-group">
+        <label for="problem-observed" class="ss-field-label">What were they trying to do?</label>
+        <p class="ss-field-hint">Describe the problem being solved (e.g. Get one knee back inside while pinned).</p>
+        <textarea id="problem-observed" class="ss-textarea" rows="2" placeholder="e.g. Get one knee back inside while pinned."></textarea>
+      </div>
+
+      <!-- Where did you see it? -->
+      <div class="ss-form-group">
+        <label class="ss-field-label">Where did you see it?</label>
+        <div id="observation-context-container" class="ss-pill-row" role="radiogroup"></div>
+      </div>
+
+      <!-- How much help did they need? -->
+      <div class="ss-form-group">
+        <label class="ss-field-label">How much help did they need?</label>
+        <div id="help-level-container" class="ss-pill-row" role="radiogroup"></div>
+      </div>
+
+      <!-- Coaching Decision Section -->
+      <h3 class="ss-section-heading">What Comes Next</h3>
+
+      <div class="ss-form-group">
+        <label for="observed-action" class="ss-field-label">You did this.</label>
+        <p class="ss-field-hint">Record one observable action.</p>
+        <textarea id="observed-action" class="ss-textarea" rows="2" placeholder="e.g. Kept your elbows close and turned onto your side."></textarea>
+      </div>
+
+      <div class="ss-form-group">
+        <label for="next-action" class="ss-field-label">Next time, try this.</label>
+        <p class="ss-field-hint">Record one specific next coaching action.</p>
+        <textarea id="next-action" class="ss-textarea" rows="2" placeholder="e.g. Make space and bring one knee back inside."></textarea>
+      </div>
+
+      <div class="ss-form-group">
+        <label for="getting-easier" class="ss-field-label">This is getting easier.</label>
+        <p class="ss-field-hint">Optional. Record one specific area showing improvement.</p>
+        <textarea id="getting-easier" class="ss-textarea" rows="2" placeholder="e.g. Staying calm while pinned."></textarea>
+      </div>
+
+      <!-- Coach-only note -->
+      <div class="ss-form-group">
+        <label for="coach-note" class="ss-field-label">Coach Note</label>
+        <p class="ss-field-hint">Optional. Coach-only class planning note. Excluded from family preview.</p>
+        <textarea id="coach-note" class="ss-textarea" rows="2" placeholder="e.g. Start Tuesday in bottom side-control game. Reward knee recovery."></textarea>
+      </div>
+
+      <!-- Actions Bar -->
+      <div class="ss-actions-bar">
+        <button id="save-next-btn" type="button" class="btn-audit-primary">Save + Next Student</button>
+        <button id="save-note-btn" type="button" class="btn-audit-secondary">Save Student Note</button>
+        <button id="need-observation-btn" type="button" class="btn-audit-alt">Need to See Again</button>
+        <button id="copy-family-btn" type="button" class="btn-audit-secondary">Copy Family Note</button>
+        <span id="save-status-msg" class="ss-status-msg"></span>
+      </div>
+    </main>
+
+    <!-- 3. Right: Live Family Preview -->
+    <aside class="ss-preview-panel" aria-label="Family note preview">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 class="m-0 font-weight-bold" style="font-size: 1.1rem;">Family Preview</h3>
+        <button id="copy-family-sidebar-btn" type="button" class="btn btn-sm btn-outline-secondary">Copy</button>
+      </div>
+      <span id="copy-status-msg" class="badge bg-success text-white mt-2 d-none" role="status"></span>
+
+      <div class="ss-preview-card">
+        <div class="ss-preview-brand">Sandy's Weekly Check-In</div>
+        <div class="ss-preview-title">
+          <span id="family-preview-student">Student</span> — <span id="family-preview-week">Week of …</span>
+        </div>
+
+        <div class="ss-preview-section">
+          <div class="ss-preview-label">This week:</div>
+          <div id="family-preview-observed" class="ss-preview-content">(Record what you saw)</div>
+        </div>
+
+        <div class="ss-preview-section">
+          <div class="ss-preview-label">Next time:</div>
+          <div id="family-preview-next" class="ss-preview-content">(Record what they should try next)</div>
+        </div>
+
+        <div id="family-preview-easier-group" class="ss-preview-section d-none">
+          <div class="ss-preview-label">Getting easier:</div>
+          <div id="family-preview-easier" class="ss-preview-content"></div>
+        </div>
+
+        <div class="ss-preview-ask">
+          <div class="ss-preview-ask-label">Ask me:</div>
+          <div class="ss-preview-ask-quote">"What felt easier?"</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Week Complete Section (Shown when all students in week are reviewed) -->
+  <div id="week-complete-section" class="ss-week-complete-card d-none">
+    <h2>Week Complete</h2>
+    <p id="week-complete-trained" class="mb-1 font-weight-bold">0 students trained</p>
+    <p id="week-complete-reviewed" class="text-success">0 reviewed</p>
+    <div class="ss-week-complete-actions">
+      <button id="view-completed-audits-btn" type="button" class="btn-audit-primary">View Completed Audits</button>
+      <button id="week-complete-prev-btn" type="button" class="btn-audit-secondary">← Previous Week</button>
+    </div>
+  </div>
+</div>
+
+<!-- History Modal -->
+<div id="history-modal" class="ss-modal-overlay d-none" role="dialog" aria-modal="true" aria-labelledby="history-modal-title">
+  <div class="ss-modal-box">
+    <div class="ss-modal-header">
+      <h3 id="history-modal-title">Student History</h3>
+      <button id="close-history-btn" type="button" class="ss-modal-close-btn" aria-label="Close">×</button>
+    </div>
+    <div id="history-modal-body"></div>
+  </div>
+</div>
+
+<!-- Unfinished Week Warning Modal -->
+<div id="unfinished-warning-modal" class="ss-modal-overlay d-none" role="dialog" aria-modal="true" aria-labelledby="warning-modal-title">
+  <div class="ss-modal-box">
+    <div class="ss-modal-header">
+      <h3 id="warning-modal-title">Unfinished Audits</h3>
+    </div>
+    <p id="warning-modal-text" class="mb-4">Students still need review for this week.</p>
+    <div class="d-flex justify-content-end gap-2">
+      <button id="stay-week-btn" type="button" class="btn btn-secondary">Stay This Week</button>
+      <button id="proceed-other-week-btn" type="button" class="btn btn-primary">View Other Week</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/weekly-audit.js" defer></script>

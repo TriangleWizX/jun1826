@@ -26,6 +26,7 @@ $opsProtectedPaths = [
     'attendance/checkin',
     'waivers',
     'exports/attendance.csv',
+    'weekly-audits',
 ];
 
 if (in_array($path, $opsProtectedPaths, true)) {
@@ -59,6 +60,7 @@ if ($path === '' && $method === 'GET') {
             'GET /api/waivers',
             'POST /api/waivers',
             'GET /api/exports/attendance.csv',
+            'GET|POST /api/weekly-audits',
         ],
     ]);
 }
@@ -112,6 +114,9 @@ switch ($path) {
         break;
     case 'exports/attendance.csv':
         require __DIR__ . '/v1/export_attendance_csv.php';
+        break;
+    case 'weekly-audits':
+        require __DIR__ . '/v1/weekly_audits.php';
         break;
     default:
         ss_json(404, [
