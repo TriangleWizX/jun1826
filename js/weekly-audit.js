@@ -309,9 +309,9 @@
     statsIndicator.textContent = `${summary.reviewed} of ${summary.students_trained} reviewed`;
 
     const pct = summary.students_trained > 0
-      ? Math.round((summary.reviewed / summary.students_trained) * 100)
+      ? summary.reviewed / summary.students_trained
       : 0;
-    statsProgressFill.style.width = `${pct}%`;
+    statsProgressFill.style.transform = `scaleX(${pct})`;
   }
 
   function renderQueue() {
