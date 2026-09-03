@@ -40,6 +40,8 @@
   let isDirty = false;
   let isSaving = false;
   let viewingCompletedList = false;
+  let warningModalPreviousFocus = null;
+  let warningModalPreviousBodyOverflow = '';
 
   // DOM Elements
   const opsKeyInput = document.getElementById('ops-key');
@@ -796,13 +798,30 @@
     if (summary.remaining > 0 && students.length > 0) {
       pendingTargetWeek = targetStartDate;
       warningModalText.textContent = `${summary.remaining} students still need review for ${currentWeek.label}.`;
-      warningModal.classList.remove('d-none');
+      setModalVisibility(warningModal, true);
     } else {
       if (isDirty) {
         const discard = window.confirm('You have unsaved changes on this audit. Discard and change week?');
         if (!discard) return;
       }
       loadWeek(targetStartDate);
+    }
+  }
+
+  function setModalVisibility(modal, isVisible) {
+    if (isVisible) {
+      warningModalPreviousFocus = document.activeElement;
+      warningModalPreviousBodyOverflow = document.body.style.overflow;
+    }
+    modal.classList.toggle('d-none', !isVisible);
+    modal.toggleAttribute('hidden', !isVisible);
+    modal.setAttribute('aria-hidden', String(!isVisible));
+    document.body.style.overflow = isVisible ? 'hidden' : warningModalPreviousBodyOverflow;
+    if (isVisible) {
+      window.requestAnimationFrame(() => stayWeekBtn.focus());
+    } else if (warningModalPreviousFocus && typeof warningModalPreviousFocus.focus === 'function') {
+      warningModalPreviousFocus.focus();
+      warningModalPreviousFocus = null;
     }
   }
 
@@ -843,15 +862,28 @@
 
     // Warning modal
     stayWeekBtn.addEventListener('click', () => {
-      warningModal.classList.add('d-none');
+      setModalVisibility(warningModal, false);
       pendingTargetWeek = '';
     });
 
     proceedOtherWeekBtn.addEventListener('click', () => {
-      warningModal.classList.add('d-none');
+      setModalVisibility(warningModal, false);
       if (pendingTargetWeek) {
         loadWeek(pendingTargetWeek);
         pendingTargetWeek = '';
+      }
+    });
+
+    warningModal.addEventListener('click', (event) => {
+      if (event.target === warningModal) {
+        stayWeekBtn.click();
+      }
+    });
+
+    warningModal.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        stayWeekBtn.click();
       }
     });
 
