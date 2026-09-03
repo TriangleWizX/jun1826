@@ -136,7 +136,6 @@
     renderSkillOptions();
     renderContextOptions();
     renderHelpLevelOptions();
-    setupWarningModalDelegation();
     setupEventListeners();
 
     // Default to current week
@@ -145,29 +144,6 @@
       ? requestedWeek
       : getMondayOfCurrentWeek();
     loadWeek(monday);
-  }
-
-  // Keep week-warning actions available even if another optional control fails
-  // during initialization. Event delegation also survives responsive reflow.
-  function setupWarningModalDelegation() {
-    document.addEventListener('click', (event) => {
-      const action = event.target.closest('#stay-week-btn, #proceed-other-week-btn');
-      if (!action || !warningModal || warningModal.hasAttribute('hidden')) return;
-
-      event.preventDefault();
-      setModalVisibility(warningModal, false);
-
-      if (action.id === 'stay-week-btn') {
-        pendingTargetWeek = '';
-        return;
-      }
-
-      if (pendingTargetWeek) {
-        const targetWeek = pendingTargetWeek;
-        pendingTargetWeek = '';
-        loadWeek(targetWeek);
-      }
-    });
   }
 
   function getMondayOfCurrentWeek(baseDate) {
@@ -824,6 +800,7 @@
   function tryChangeWeek(targetStartDate) {
     if (summary.remaining > 0 && students.length > 0) {
       pendingTargetWeek = targetStartDate;
+      stayWeekBtn.href = `/weekly-audit.html?week_start_date=${encodeURIComponent(currentWeek.start)}`;
       warningModalText.textContent = `${summary.remaining} students still need review for ${currentWeek.label}.`;
       proceedOtherWeekBtn.href = `/weekly-audit.html?week_start_date=${encodeURIComponent(targetStartDate)}`;
       setModalVisibility(warningModal, true);
