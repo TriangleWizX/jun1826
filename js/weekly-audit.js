@@ -136,11 +136,38 @@
     renderSkillOptions();
     renderContextOptions();
     renderHelpLevelOptions();
+    setupWarningModalDelegation();
     setupEventListeners();
 
     // Default to current week
-    const monday = getMondayOfCurrentWeek();
+    const requestedWeek = new URLSearchParams(window.location.search).get('week_start_date');
+    const monday = requestedWeek && /^\d{4}-\d{2}-\d{2}$/.test(requestedWeek)
+      ? requestedWeek
+      : getMondayOfCurrentWeek();
     loadWeek(monday);
+  }
+
+  // Keep week-warning actions available even if another optional control fails
+  // during initialization. Event delegation also survives responsive reflow.
+  function setupWarningModalDelegation() {
+    document.addEventListener('click', (event) => {
+      const action = event.target.closest('#stay-week-btn, #proceed-other-week-btn');
+      if (!action || !warningModal || warningModal.hasAttribute('hidden')) return;
+
+      event.preventDefault();
+      setModalVisibility(warningModal, false);
+
+      if (action.id === 'stay-week-btn') {
+        pendingTargetWeek = '';
+        return;
+      }
+
+      if (pendingTargetWeek) {
+        const targetWeek = pendingTargetWeek;
+        pendingTargetWeek = '';
+        loadWeek(targetWeek);
+      }
+    });
   }
 
   function getMondayOfCurrentWeek(baseDate) {
@@ -798,6 +825,7 @@
     if (summary.remaining > 0 && students.length > 0) {
       pendingTargetWeek = targetStartDate;
       warningModalText.textContent = `${summary.remaining} students still need review for ${currentWeek.label}.`;
+      proceedOtherWeekBtn.href = `/weekly-audit.html?week_start_date=${encodeURIComponent(targetStartDate)}`;
       setModalVisibility(warningModal, true);
     } else {
       if (isDirty) {
@@ -860,30 +888,18 @@
       }
     });
 
-    // Warning modal
-    stayWeekBtn.addEventListener('click', () => {
-      setModalVisibility(warningModal, false);
-      pendingTargetWeek = '';
-    });
-
-    proceedOtherWeekBtn.addEventListener('click', () => {
-      setModalVisibility(warningModal, false);
-      if (pendingTargetWeek) {
-        loadWeek(pendingTargetWeek);
-        pendingTargetWeek = '';
-      }
-    });
-
     warningModal.addEventListener('click', (event) => {
       if (event.target === warningModal) {
-        stayWeekBtn.click();
+        setModalVisibility(warningModal, false);
+        pendingTargetWeek = '';
       }
     });
 
     warningModal.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         event.preventDefault();
-        stayWeekBtn.click();
+        setModalVisibility(warningModal, false);
+        pendingTargetWeek = '';
       }
     });
 
