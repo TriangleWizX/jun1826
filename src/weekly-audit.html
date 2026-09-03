@@ -824,6 +824,11 @@ permalink: "/weekly-audit.html"
     z-index: var(--z-modal, 400);
   }
 
+  /* Keep Bootstrap's hidden state authoritative over the overlay layout rule. */
+  .ss-modal-overlay.d-none {
+    display: none;
+  }
+
   .ss-modal-box {
     background: var(--color-paper, #ffffff);
     border-radius: var(--radius-card, 0.75rem);
