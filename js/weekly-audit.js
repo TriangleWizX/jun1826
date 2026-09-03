@@ -39,12 +39,14 @@
   let isDirty = false;
   let isSaving = false;
   let viewingCompletedList = false;
+  const demoMode = new URLSearchParams(window.location.search).get('demo') === '1';
 
   // DOM Elements
   const opsKeyInput = document.getElementById('ops-key');
   const saveKeyBtn = document.getElementById('save-key-btn');
   const authBar = document.getElementById('auth-toolbar');
   const authStatus = document.getElementById('auth-status');
+  const demoBanner = document.getElementById('demo-banner');
 
   const prevWeekBtn = document.getElementById('prev-week-btn');
   const nextWeekBtn = document.getElementById('next-week-btn');
@@ -233,6 +235,24 @@
   async function loadWeek(weekStart) {
     clearErrors();
     saveStatusMsg.textContent = 'Loading week…';
+
+    if (demoMode) {
+      const end = addDays(weekStart, 6);
+      currentWeek = { start: weekStart, end, label: `Week of ${formatDateFriendly(weekStart)}` };
+      students = [{
+        student_id: 'demo-student', student_name: 'Demo Student', classes_attended: 2,
+        class_dates_display: 'Mon, Wed', audit_status: 'not_started', is_reviewed: false,
+        sessions: [], current_audit: null, last_check_in: null
+      }];
+      summary = { students_trained: 1, reviewed: 0, remaining: 1, is_complete: false };
+      authBar.classList.add('d-none');
+      authStatus.textContent = 'Demo mode — sample data only.';
+      demoBanner.classList.remove('d-none');
+      updateWeekDisplay(); renderSummary(); renderQueue();
+      auditSection.classList.remove('d-none'); weekCompleteSection.classList.add('d-none');
+      selectStudent(students[0].student_id); isDirty = false; saveStatusMsg.textContent = '';
+      return;
+    }
 
     try {
       const res = await fetch(`/api/weekly-audits?action=week&week_start_date=${encodeURIComponent(weekStart)}`, {
@@ -605,6 +625,12 @@
   async function saveAudit(status, advanceNext) {
     if (isSaving) return;
     if (!selectedStudentId) return;
+
+    if (demoMode) {
+      saveStatusMsg.textContent = 'Demo mode: nothing was saved.';
+      saveStatusMsg.className = 'ss-status-msg text-muted';
+      return;
+    }
 
     clearErrors();
 
