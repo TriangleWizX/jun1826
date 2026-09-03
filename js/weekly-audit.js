@@ -33,15 +33,12 @@
   // State
   let opsKey = sessionStorage.getItem('youthOpsKey') || sessionStorage.getItem('opsApiKey') || '';
   let currentWeek = { start: '', end: '', label: '' };
-  let pendingTargetWeek = '';
   let students = [];
   let summary = { students_trained: 0, reviewed: 0, remaining: 0, is_complete: false };
   let selectedStudentId = null;
   let isDirty = false;
   let isSaving = false;
   let viewingCompletedList = false;
-  let warningModalPreviousFocus = null;
-  let warningModalPreviousBodyOverflow = '';
 
   // DOM Elements
   const opsKeyInput = document.getElementById('ops-key');
@@ -121,10 +118,6 @@
   const historyModalBody = document.getElementById('history-modal-body');
   const closeHistoryBtn = document.getElementById('close-history-btn');
 
-  const warningModal = document.getElementById('unfinished-warning-modal');
-  const warningModalText = document.getElementById('warning-modal-text');
-  const stayWeekBtn = document.getElementById('stay-week-btn');
-  const proceedOtherWeekBtn = document.getElementById('proceed-other-week-btn');
 
   // Init
   function init() {
@@ -811,23 +804,6 @@
     loadWeek(targetStartDate);
   }
 
-  function setModalVisibility(modal, isVisible) {
-    if (isVisible) {
-      warningModalPreviousFocus = document.activeElement;
-      warningModalPreviousBodyOverflow = document.body.style.overflow;
-    }
-    modal.classList.toggle('d-none', !isVisible);
-    modal.toggleAttribute('hidden', !isVisible);
-    modal.setAttribute('aria-hidden', String(!isVisible));
-    document.body.style.overflow = isVisible ? 'hidden' : warningModalPreviousBodyOverflow;
-    if (isVisible) {
-      window.requestAnimationFrame(() => stayWeekBtn.focus());
-    } else if (warningModalPreviousFocus && typeof warningModalPreviousFocus.focus === 'function') {
-      warningModalPreviousFocus.focus();
-      warningModalPreviousFocus = null;
-    }
-  }
-
   function setupEventListeners() {
     // Auth
     saveKeyBtn.addEventListener('click', () => {
@@ -860,21 +836,6 @@
       auditSection.classList.remove('d-none');
       if (students.length > 0) {
         selectStudent(students[0].student_id);
-      }
-    });
-
-    warningModal.addEventListener('click', (event) => {
-      if (event.target === warningModal) {
-        setModalVisibility(warningModal, false);
-        pendingTargetWeek = '';
-      }
-    });
-
-    warningModal.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        event.preventDefault();
-        setModalVisibility(warningModal, false);
-        pendingTargetWeek = '';
       }
     });
 
