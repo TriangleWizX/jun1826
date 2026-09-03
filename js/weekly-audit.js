@@ -799,18 +799,16 @@
 
   function tryChangeWeek(targetStartDate) {
     if (summary.remaining > 0 && students.length > 0) {
-      pendingTargetWeek = targetStartDate;
-      stayWeekBtn.href = `/weekly-audit.html?week_start_date=${encodeURIComponent(currentWeek.start)}`;
-      warningModalText.textContent = `${summary.remaining} students still need review for ${currentWeek.label}.`;
-      proceedOtherWeekBtn.href = `/weekly-audit.html?week_start_date=${encodeURIComponent(targetStartDate)}`;
-      setModalVisibility(warningModal, true);
-    } else {
-      if (isDirty) {
-        const discard = window.confirm('You have unsaved changes on this audit. Discard and change week?');
-        if (!discard) return;
-      }
-      loadWeek(targetStartDate);
+      const proceed = window.confirm(`${summary.remaining} students still need review for ${currentWeek.label}. View another week?`);
+      if (!proceed) return;
     }
+
+    if (isDirty) {
+      const discard = window.confirm('You have unsaved changes on this audit. Discard and change week?');
+      if (!discard) return;
+    }
+
+    loadWeek(targetStartDate);
   }
 
   function setModalVisibility(modal, isVisible) {
