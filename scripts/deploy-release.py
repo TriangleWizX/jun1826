@@ -5,13 +5,16 @@ import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package')
-DEPLOYABLE_ROOTS = ('assets/', 'admin/', 'athlete-cross-training/', 'back-to-school-bjj-tannersville/', 'fall-practice-reset/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', 'schedule/', 'free-bjj-intro-tannersville-ny/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/')
+DEPLOYABLE_ROOTS = ('assets/', 'winter-rank-drop/', 'admin/', 'athlete-cross-training/', 'back-to-school-bjj-tannersville/', 'fall-practice-reset/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', 'schedule/', 'free-bjj-intro-tannersville-ny/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/')
 ROOT_FILES = {'law-enforcement-bjj.html', 'tactical-longevity.html', 'phoenicia-diner.html', 'scribners.html', 'deer-mountain-inn.html', 'elite-concierge.html','.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'after-booking-promise.html', 'after-school.html', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'core-promise-full.html', 'core-promise-short.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'core-culture-parent-guide.html', 'core-culture-review.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'reviews-village.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'jiu-jitsu-safety-tannersville-ny.html', 'local-bjj-tournaments-for-parents.html', 'success-stories.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    if 'src/winter-rank-drop.html' in names: outputs.add((ROOT / 'dist/winter-rank-drop/index.html', 'winter-rank-drop/index.html'))
+    for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
+        if asset in names: outputs.add((ROOT / asset, asset))
     if 'data/url-registry.json' in names:
         candidate = ROOT / 'dist' / 'sources' / 'kodokan-etiquette' / 'index.html'
         if candidate.is_file():
