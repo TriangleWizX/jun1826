@@ -5,6 +5,7 @@ body.page-bjj-glossary .glossary-page {
   margin-inline: auto;
   text-align: center;
 }
+[hidden] { display: none !important; }
 
 body.page-bjj-glossary .glossary-page :where(h1, h2, h3, h4, p, li, dt, dd) {
   text-align: center;

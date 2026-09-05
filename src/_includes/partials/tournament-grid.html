@@ -1,7 +1,7 @@
 <div id="tournament-grid-static" class="tournament-grid">
 {% for event in tournaments.published %}
 <article class="tournament-card" data-tournament-id="{{ event.id }}" data-tournament-type="{{ event.filterKey }}">
-  <img src="{{ event.thumbnailPath }}" width="343" height="127"{% if not loop.first %} loading="lazy"{% endif %} alt="{{ event.thumbnailAlt }}">
+  <img src="{{ event.thumbnailPath }}" width="343" height="127" decoding="async"{% if not loop.first %} loading="lazy"{% endif %} alt="{{ event.thumbnailAlt }}">
   <div class="p-4">
     <span class="badge rounded-pill">{{ event.editorialLabel }}</span>
     <h2 class="h4">{{ event.name }}</h2>

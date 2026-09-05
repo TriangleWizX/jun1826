@@ -140,7 +140,13 @@ const stripObsoleteSiteShellGuardrails = (css, source) => {
   if (marker < 0) throw new Error('site-shell.css is missing the legacy guardrail marker.');
   const commentStart = css.lastIndexOf('/*', marker);
   if (commentStart < 0) throw new Error('site-shell.css legacy guardrail marker is outside a comment.');
-  return css.slice(0, commentStart);
+  // The legacy shell block is intentionally excluded from the shared bundle,
+  // but the mobile disclosure contract below it is still required at runtime.
+  // Keep that narrowly scoped block while continuing to omit the old shell
+  // and desktop dropdown guardrails.
+  const mobileMarker = css.indexOf('/* Mobile navigation must be closed', commentStart);
+  if (mobileMarker < 0) throw new Error('site-shell.css is missing the mobile navigation contract.');
+  return css.slice(0, commentStart) + css.slice(mobileMarker);
 };
 
 const minifyCss = (css) => {
