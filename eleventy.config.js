@@ -30,7 +30,13 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("admin/**");
   eleventyConfig.ignores.add("partials/**");
   eleventyConfig.ignores.add("snippets/**");
-eleventyConfig.ignores.add("assets/**"); eleventyConfig.addPassthroughCopy({ "assets/730dd3cb-0f20-425a-8771-431897ef21d9.png": "assets/730dd3cb-0f20-425a-8771-431897ef21d9.png", "assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp": "assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp" });
+  eleventyConfig.ignores.add("assets/**");
+  eleventyConfig.addPassthroughCopy({
+    "assets/730dd3cb-0f20-425a-8771-431897ef21d9.png":
+      "assets/730dd3cb-0f20-425a-8771-431897ef21d9.png",
+    "assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp":
+      "assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp",
+  });
 
   // Partials are Apache SSI payloads, not standalone Eleventy pages.
   eleventyConfig.addPassthroughCopy({ "src/partials": "partials" });
