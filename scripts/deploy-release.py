@@ -12,6 +12,14 @@ BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    # Explicit generated outputs are authoritative when shared partials change.
+    for name in names:
+        if not name.startswith('dist/'):
+            continue
+        rel = name[5:]
+        candidate = ROOT / name
+        if candidate.is_file() and (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS)):
+            outputs.add((candidate, rel))
     if 'src/winter-rank-drop.html' in names: outputs.add((ROOT / 'dist/winter-rank-drop/index.html', 'winter-rank-drop/index.html'))
     for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
         if asset in names: outputs.add((ROOT / asset, asset))
