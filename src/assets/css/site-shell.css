@@ -2662,3 +2662,14 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
     touch-action: manipulation;
   }
 }
+/* Final shared-shell stacking contract: route content must never paint over
+   an open Programs/Experience dropdown. */
+body .ss-global-nav-wrapper {
+  position: relative !important;
+  isolation: isolate;
+  z-index: 2000 !important;
+}
+
+body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
+  z-index: 2001 !important;
+}
