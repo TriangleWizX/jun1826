@@ -1445,13 +1445,24 @@ section,
 
 .ss-nav {
   position: relative;
-  z-index: 1200;
+  isolation: isolate;
+  z-index: 2000;
 }
 
 .ss-nav .navbar-collapse,
 .ss-nav .dropdown-menu {
   position: relative;
-  z-index: 1201;
+  z-index: 2001;
+}
+
+/* Bootstrap owns desktop dropdown placement. Keeping the menu in normal flow
+   lets tall route content paint over the open menu (notably on pricing pages).
+   The mobile offcanvas remains independently positioned below. */
+@media (min-width: 992px) {
+  .ss-nav .dropdown-menu {
+    position: absolute;
+    z-index: 2002;
+  }
 }
 
 @media (max-width: 991.98px) {
