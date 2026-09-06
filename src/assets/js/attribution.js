@@ -37,7 +37,9 @@
           utm_medium: queryUtm.utm_medium || "none",
           utm_campaign: queryUtm.utm_campaign || "none",
           landing_page: currentPath,
+          referrer: document.referrer || "direct",
           referring_page: referrer,
+          utm_content: queryUtm.utm_content || "none",
           timestamp: new Date().toISOString()
         };
         sessionStorage.setItem(STORAGE_KEY_FIRST, JSON.stringify(firstTouchData));
@@ -48,6 +50,7 @@
         utm_source: queryUtm.utm_source || "direct",
         utm_medium: queryUtm.utm_medium || "none",
         utm_campaign: queryUtm.utm_campaign || "none",
+        utm_content: queryUtm.utm_content || "none",
         last_page: currentPath,
         timestamp: new Date().toISOString()
       };
@@ -70,11 +73,12 @@
         "attr-first-utm-source": first.utm_source || "direct",
         "attr-first-utm-medium": first.utm_medium || "none",
         "attr-first-utm-campaign": first.utm_campaign || "none",
+        "attr-first-utm-content": first.utm_content || "none",
         "attr-last-utm-source": last.utm_source || "direct",
         "attr-last-utm-medium": last.utm_medium || "none",
         "attr-last-utm-campaign": last.utm_campaign || "none",
         "attr-landing-page": first.landing_page || getCleanPath(),
-        "attr-referring-page": first.referring_page || "direct"
+        "attr-referring-page": first.referrer || first.referring_page || "direct"
       };
 
       Object.keys(map).forEach(function (id) {

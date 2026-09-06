@@ -475,6 +475,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date());
+  document.querySelectorAll('[name="preferred_days"]').forEach((input) => {
+    const label = input.closest('label');
+    if (/Before September 8/.test(input.value)) { input.value = 'Labor Day · Monday, Sept. 7'; if (label) label.lastChild.textContent = ' Labor Day · Monday, Sept. 7'; }
+    if (/Placement Week/.test(input.value)) { input.value = 'Placement Week · Sept. 8–12'; if (label) label.lastChild.textContent = ' Placement Week · Sept. 8–12'; }
+    if (/Fall Routine/.test(input.value)) { input.value = 'Fall Routine · Sept. 14+'; if (label) label.lastChild.textContent = ' Fall Routine · Sept. 14+'; }
+  });
+  document.querySelectorAll('[name="preferred_days"] option, [name="preferred_days"] + label').forEach((node) => {
+    if (today > '2026-09-07' && /Before September 8|current available dates/.test(node.textContent || '')) node.hidden = true;
+  });
+});
+</script>
 <script src="/js/book-free-intro-bridge.min.js" defer></script>
 
 

@@ -88,9 +88,33 @@
     };
   }
 
+  function enrichLeadForm(form) {
+    let first = {};
+    try { first = JSON.parse(sessionStorage.getItem("ss_attr_first_touch") || "{}"); } catch (_) { /* storage may be unavailable */ }
+    const values = {
+      landing_page: first.landing_page || window.location.pathname,
+      referrer: first.referrer || document.referrer || "direct",
+      utm_source: first.utm_source || "direct",
+      utm_medium: first.utm_medium || "none",
+      utm_campaign: first.utm_campaign || "none",
+      utm_content: first.utm_content || "none"
+    };
+    Object.entries(values).forEach(([name, value]) => {
+      let input = form.querySelector(`[name="${name}"]`);
+      if (!input) { input = document.createElement("input"); input.type = "hidden"; input.name = name; form.appendChild(input); }
+      if (!input.value) input.value = value;
+    });
+  }
+
   function init() {
+    if (document.querySelector("#booking-confirmation-title")) track("booking_confirmed", null, {});
     document.addEventListener("click", function (event) {
       const link = event.target.closest("a[href]");
+      if (link && typeof window.SS_TRACK_EVENT === "function") {
+        const href = link.getAttribute("href") || "";
+        const eventName = href.startsWith("sms:") ? "text_sandy_click" : href.startsWith("tel:") ? "call_click" : /pricing|options-pricing/.test(href) ? "pricing_cta_click" : link.dataset.visitorRoute ? "visitor_route_click" : "";
+        if (eventName) track(eventName, link, { cta_label: (link.textContent || "").trim().slice(0, 120), route: link.dataset.visitorRoute || href });
+      }
       if (isBookingLink(link)) {
         track("first_visit_cta_click", link, {
           cta_label: (link.textContent || "").trim().slice(0, 120),
@@ -100,15 +124,16 @@
     });
 
     document.querySelectorAll("#pb-step-3 form, #ss-free-intro-form, form[data-booking-form]").forEach(function (form) {
+      enrichLeadForm(form);
       form.addEventListener("input", function () {
         if (startedForms.has(form)) return;
         startedForms.add(form);
-        track("booking_started", form, formContext(form));
+        track("lead_form_started", form, formContext(form));
       });
       form.addEventListener("submit", function (event) {
         if (!form.checkValidity() || submittedForms.has(form)) return;
         submittedForms.add(form);
-        track("booking_submitted", form, formContext(form));
+        track("first_visit_submitted", form, formContext(form));
       });
     });
   }

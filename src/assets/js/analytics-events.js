@@ -11,6 +11,8 @@
   const analyticsEnabled = !isLocalDev || window.SS_ENABLE_ANALYTICS === true;
 
   window.SS_TRACK_EVENT = function (eventName, eventParams) {
+    const aliases = { first_visit_started: "first_visit_cta_click", profile_selected: "avatar_selected", visit_selected: "visit_window_selected", first_visit_start: "lead_form_started" };
+    eventName = aliases[eventName] || eventName;
     if (!analyticsEnabled) {
       if (isLocalDev) {
         console.log("[Analytics Debug - Disabled in Dev]", eventName, eventParams);
