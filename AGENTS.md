@@ -328,6 +328,10 @@ Note any follow-up risks.
 
 Do not commit unless explicitly asked.
 
+External Network Verification Rules
+
+Before any live DNS, HTTP/HTTPS, remote-byte, or other external-network check, request the required elevated network approval first. Do not run an initial sandboxed network attempt and wait for it to fail; the workspace sandbox may deny DNS sockets with `Operation not permitted`. After approval, run the check through the approved network path and report the evidence separately from local checks.
+
 Deployment Rules
 
 Treat production changes carefully.
