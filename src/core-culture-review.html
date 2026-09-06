@@ -9,7 +9,7 @@ permalink: "/core-culture-review.html"
 ---
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const replacements = [['12-week program Review', '12-Week Program Review'], ['Renew 12-week program', 'Another 12-Week Program']];
+const replacements = [['12-week program Review', '12-Week Program Review'], ['Renew 12-week program', 'Another 12-Week Program'], ['After 12-week program term', 'After 12-Week Program']];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const nodes = [];
   while (walker.nextNode()) nodes.push(walker.currentNode);
