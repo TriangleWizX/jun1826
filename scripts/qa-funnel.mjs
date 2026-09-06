@@ -47,8 +47,12 @@ const makeBaseContext = ({ pathname = '/', search = '' } = {}) => {
     querySelectorAll() {
       return [];
     },
+    head: {
+      appendChild() {}
+    },
     createElement() {
       return {
+        dataset: {},
         setAttribute() {},
         appendChild() {},
         className: '',

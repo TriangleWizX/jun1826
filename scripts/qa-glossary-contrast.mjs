@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 
-const ROOT = process.cwd();
+const ROOT = path.resolve(process.env.SITE_ROOT || 'dist');
 const CHROME_BIN = process.env.CHROME_BIN || 'chromium';
 const MIN_RATIO = 4.5;
 const ROUTE_BUNDLE_RE = /\/assets\/css\/routes\/site-[0-9a-f]{12}\.min(?:\.[0-9a-f]{6})?\.css/i;
@@ -363,6 +363,7 @@ const runChromium = ({ url, viewport }) => new Promise((resolve, reject) => {
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
+    '--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost',
     `--window-size=${viewport.width},${viewport.height}`,
     '--virtual-time-budget=10000',
     '--dump-dom',

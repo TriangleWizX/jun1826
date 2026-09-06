@@ -44,3 +44,8 @@ tmp/*.json
 
 # Thumbnail caches
 .tmb/
+
+# Local IDE and autonomous tooling state
+.serena/
+artifacts/
+

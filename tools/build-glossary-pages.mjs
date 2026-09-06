@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { parseArgs } from 'node:util';
 
 import { CSS_BUNDLE_REGISTRY } from './css-bundle-registry.mjs';
 
@@ -8,7 +9,7 @@ const ROOT = process.cwd();
 const DATA_PATH = path.join(ROOT, 'data', 'glossary-terms.json');
 const OUTPUT_ROOT = path.join(ROOT, 'src', 'bjj-glossary');
 const LEGACY_REDIRECTS_PATH = path.join(ROOT, 'config', 'legacy-redirects.json');
-const ASSETS_DATA_ROOT = path.join(ROOT, 'assets', 'data');
+const ASSETS_DATA_ROOT = path.join(ROOT, 'src', 'assets', 'data');
 const CANONICAL_ORIGIN = 'https://senseisandy.com';
 const CSS_VERSION = '20260420';
 const ANALYTICS_HEAD_INCLUDE = '  <!--#include virtual="/_includes/analytics-head.html" -->';
@@ -294,7 +295,7 @@ const normalizeTerm = (raw) => {
   normalized.faq = ensureArrayMin(normalized.faq, 2, (i) => ({
     q: i === 0 ? `What does ${term.toLowerCase()} mean in BJJ?` : `How should beginners train ${term.toLowerCase()} safely?`,
     a: i === 0
-      ? `${term} means ${normalized.definition.charAt(0).toLowerCase()}${normalized.definition.slice(1)}`
+      ? normalized.summary
       : normalized.safetyNote.replace(/^Safety note:\s*/i, '') + ' ' + normalized.beginnerTranslation
   }));
 
@@ -1142,8 +1143,7 @@ const syncGlossaryRedirects = async (terms) => {
   }
 };
 
-const writeStaticIntegrationAssets = async (terms) => {
-  const searchIndex = terms.map((term) => ({
+const buildSearchIndex = (terms) => terms.map((term) => ({
     slug: term.slug,
     term: term.displayTerm,
     summary: term.summary,
@@ -1168,21 +1168,91 @@ const writeStaticIntegrationAssets = async (terms) => {
     ].join(' '))
   }));
 
+const writeStaticIntegrationAssets = async (terms) => {
+  const searchIndex = buildSearchIndex(terms);
+
   await fs.mkdir(ASSETS_DATA_ROOT, { recursive: true });
   await fs.writeFile(path.join(ASSETS_DATA_ROOT, 'glossary-search.json'), `${JSON.stringify(searchIndex, null, 2)}\n`, 'utf8');
-  const termMap = Object.fromEntries(terms.flatMap((term) => [
-    [term.slug, term.slug],
-    ...(term.aliases || []).map((alias) => [normalizeSearchText(alias), term.slug]),
-    ...(term.redirectFrom || []).map((alias) => [normalizeSearchText(alias), term.slug])
-  ]));
+  const termMap = Object.fromEntries(terms.flatMap((term) => {
+    const record = { slug: term.slug, aliases: term.aliases, redirectFrom: term.redirectFrom, canonical: glossaryPathFor(term.slug) };
+    return [term.slug, ...term.aliases, ...term.redirectFrom].map((alias) => [slugify(alias), record]);
+  }));
   await fs.writeFile(path.join(ASSETS_DATA_ROOT, 'glossary-term-map.json'), `${JSON.stringify(termMap, null, 2)}\n`, 'utf8');
 };
 
+// Sync definition FAQs backed by the term summary, without replacing custom FAQs.
+const syncFaqs = async (terms) => {
+  const pending = [];
+  for (const term of terms) {
+    const definitionQuestion = `What does ${term.term.toLowerCase()} mean in BJJ?`;
+    if (!term.faq.some(({ q, a }) => q === definitionQuestion && a === term.summary)) continue;
+    const file = path.join(OUTPUT_ROOT, term.slug, 'index.html');
+    const original = await fs.readFile(file, 'utf8');
+    const answers = new Map([[definitionQuestion, term.summary]]);
+    const visible = new Set();
+    const structured = new Set();
+    let html = original.replace(/(<details\b[^>]*>\s*<summary>)([\s\S]*?)(<\/summary>\s*<p>)([\s\S]*?)(<\/p>\s*<\/details>)/g,
+      (whole, start, question, middle, answer, end) => {
+        const key = [...answers.keys()].find((q) => escapeHtml(q) === question);
+        if (!key) return whole;
+        visible.add(key);
+        return `${start}${question}${middle}${escapeHtml(answers.get(key))}${end}`;
+      });
+    html = html.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g,
+      (whole, start, body, end) => {
+        const graph = JSON.parse(body);
+        let next = body;
+        for (const node of graph['@graph'] || [graph]) {
+          if (node['@type'] !== 'FAQPage') continue;
+          for (const question of node.mainEntity || []) {
+            if (!answers.has(question.name)) continue;
+            structured.add(question.name);
+            const oldAnswer = question.acceptedAnswer.text;
+            const answer = answers.get(question.name);
+            if (oldAnswer !== answer) {
+              next = next.replace(JSON.stringify(oldAnswer), JSON.stringify(answer));
+            }
+          }
+        }
+        return `${start}${next}${end}`;
+      });
+    // Customized pages can have different FAQ questions. Only sync questions present
+    // on both surfaces; fail before writing if a matching question loses its counterpart.
+    for (const question of new Set([...visible, ...structured])) {
+      if (!visible.has(question) || !structured.has(question)) {
+        throw new Error(`${term.slug}: FAQ surface mismatch for ${question}`);
+      }
+    }
+    if (!visible.has(definitionQuestion) || !structured.has(definitionQuestion)) {
+      throw new Error(`${term.slug}: missing definition FAQ surface`);
+    }
+    if (html !== original) pending.push([file, html]);
+  }
+  const searchPath = path.join(ASSETS_DATA_ROOT, 'glossary-search.json');
+  const searchIndex = buildSearchIndex(terms);
+  const search = `${JSON.stringify(searchIndex, null, 2)}\n`;
+  if (search !== await fs.readFile(searchPath, 'utf8')) pending.push([searchPath, search]);
+  const hubPath = path.join(OUTPUT_ROOT, 'index.html');
+  const hub = await fs.readFile(hubPath, 'utf8');
+  const bySlug = new Map(searchIndex.map((term) => [term.slug, term.searchText]));
+  const nextHub = hub.replace(/<article\b[^>]*\bdata-glossary-card\b[^>]*>/g, (tag) => {
+    const slug = tag.match(/\bdata-slug="([^"]+)"/)?.[1];
+    if (!bySlug.has(slug)) throw new Error(`Unknown glossary hub card: ${slug}`);
+    if (!/\bdata-search="[^"]*"/.test(tag)) throw new Error(`Missing search text: ${slug}`);
+    return tag.replace(/\bdata-search="[^"]*"/, `data-search="${escapeHtml(bySlug.get(slug))}"`);
+  });
+  if (nextHub !== hub) pending.push([hubPath, nextHub]);
+  for (const [file, content] of pending) await fs.writeFile(file, content, 'utf8');
+  console.log(`Synced glossary FAQs and search text: ${pending.length} changed files. Layouts and redirects preserved.`);
+};
+
 const main = async () => {
+  const { values } = parseArgs({ options: { 'sync-faqs': { type: 'boolean', default: false } } });
   const terms = await loadTerms();
   validateTerms(terms);
 
   const sortedTerms = [...terms].sort((a, b) => a.displayTerm.localeCompare(b.displayTerm));
+  if (values['sync-faqs']) return syncFaqs(sortedTerms);
   const termMap = new Map(sortedTerms.map((term) => [term.slug, term]));
   const glossaryFiltersScript = await hashedAssetPath(GLOSSARY_FILTERS_SRC);
 

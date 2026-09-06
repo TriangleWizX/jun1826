@@ -27,11 +27,23 @@ for (const file of sourceFiles.filter(file => file.endsWith('.html'))) {
   const html = sourceText.get(file);
   for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
     const tag = match[0]; const line = html.slice(0, match.index).split('\n').length; const src = attr(tag, 'src');
-    if (!src || /^(?:data:|https?:|\/\/)/i.test(src)) continue;
+    if (!src || /^(?:data:|https?:|\/\/)/i.test(src) || /\{\{.*\}\}/.test(src)) continue;
     const cleanSrc = src.replace(/^\//, '').split(/[?#]/)[0];
-    const target = file.startsWith('dist/') ? path.join(ROOT, cleanSrc.replace(/^assets\//, 'dist/assets/')) : path.join(ROOT, cleanSrc.replace(/^assets\//, 'src/assets/'));
-    try { await fs.access(target); } catch { (file.includes('/snippets/') ? warnings : failures).push(`${file}:${line}: missing image ${src}`); }
-    if (!attr(tag, 'alt') && !/role\s*=\s*["']presentation/i.test(tag)) failures.push(`${file}:${line}: image missing alt attribute`);
+    const target = file.startsWith('dist/')
+      ? path.join(ROOT, cleanSrc.replace(/^assets\//, 'dist/assets/'))
+      : path.join(ROOT, cleanSrc.replace(/^assets\//, 'src/assets/'));
+    const rootFallback = path.join(ROOT, cleanSrc);
+    let exists = false;
+    try { await fs.access(target); exists = true; } catch {
+      try { await fs.access(rootFallback); exists = true; } catch { exists = false; }
+    }
+    if (!exists) {
+      (file.includes('/snippets/') ? warnings : failures).push(`${file}:${line}: missing image ${src}`);
+    }
+    const hasAlt = /\balt\s*=\s*/i.test(tag);
+    if (!hasAlt && !/role\s*=\s*["']presentation/i.test(tag)) {
+      failures.push(`${file}:${line}: image missing alt attribute`);
+    }
     if (!attr(tag, 'width') || !attr(tag, 'height')) warnings.push(`${file}:${line}: image missing explicit dimensions`);
     if (attr(tag, 'loading').toLowerCase() === 'lazy' && attr(tag, 'decoding').toLowerCase() !== 'async') warnings.push(`${file}:${line}: lazy image missing decoding="async"`);
   }

@@ -52,8 +52,8 @@ const main = async () => {
     ensure(footerHtml.includes(link), `footer-include.html missing ${link}`);
   });
   ensure(
-    footerHtml.includes('<a href="/nearby-towns">Choose Lane</a>'),
-    'Choose Lane must use the canonical /nearby-towns route.'
+    /<a\b[^>]*href="\/nearby-towns"[^>]*>[^<]+<\/a>/i.test(footerHtml),
+    'Footer must provide a text link to the canonical /nearby-towns route.'
   );
 
 

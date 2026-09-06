@@ -1676,3 +1676,4 @@ body {
 @media (max-width:60rem){.glossary-hero-grid{grid-template-columns:1fr}.glossary-grid,.day-one-grid,.ss-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:40rem){.glossary-index{padding-block:var(--space-xl)}.glossary-grid,.day-one-grid,.ss-link-grid{grid-template-columns:1fr}.glossary-filter-panel{padding:var(--space-md)}}
 @media (prefers-reduced-motion:reduce){.term-card{transition:none}}
+[hidden]{display:none!important}

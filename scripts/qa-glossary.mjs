@@ -4,7 +4,8 @@ import { ROOT, loadJson } from './url-qa-lib.mjs';
 
 const DATA_PATH = 'data/glossary-terms.json';
 const HUB_PATH = 'bjj-glossary/index.html';
-const BASE_DIR = path.join(ROOT, 'bjj-glossary');
+const SITE_ROOT = path.join(ROOT, 'src');
+const BASE_DIR = path.join(SITE_ROOT, 'bjj-glossary');
 const LEGACY_REDIRECTS_PATH = 'config/legacy-redirects.json';
 const SEARCH_JSON_PATH = 'assets/data/glossary-search.json';
 const TERM_MAP_JSON_PATH = 'assets/data/glossary-term-map.json';
@@ -81,7 +82,7 @@ const ensure = (condition, message) => {
   if (!condition) throw new Error(message);
 };
 
-const readFile = (relPath) => fs.readFile(path.join(ROOT, relPath), 'utf8');
+const readFile = (relPath) => fs.readFile(path.join(SITE_ROOT, relPath), 'utf8');
 
 const normalizeSearchText = (value = '') => String(value)
   .toLowerCase()
@@ -271,7 +272,7 @@ const main = async () => {
 
   const guardHtml = await fs.readFile(path.join(BASE_DIR, 'guard', 'index.html'), 'utf8');
   ensure(guardHtml.includes('Guard teaches smaller students how to stay safe, slow things down, and work back to a better position.'), 'Guard missing supplied why-it-matters copy.');
-  ensure(guardHtml.includes('Guard is not just holding on. Good guard uses movement, distance, frames, grips, and timing.'), 'Guard missing supplied beginner copy.');
+  ensure(guardHtml.includes('In guard, use movement, distance, frames, grips, and timing to manage the person on top.'), 'Guard missing supplied beginner copy.');
 
   const tapHtml = await fs.readFile(path.join(BASE_DIR, 'tap', 'index.html'), 'utf8');
   ensure(tapHtml.includes('Tapping means, “Stop. I am done.” You can tap with your hand, your foot, or your voice.'), 'Tap missing supplied beginner translation.');
@@ -289,8 +290,8 @@ const main = async () => {
   ensure(updatesMetricsBlock.includes('Common language'), 'Updates page missing common language metric.');
   ensure(new RegExp(`\\b${terms.length}\\s+terms\\b`).test(updatesMetricsBlock), `Updates page missing total terms count (${terms.length}) in metrics.`);
 
-  const searchJson = await loadJson(SEARCH_JSON_PATH);
-  const termMapJson = await loadJson(TERM_MAP_JSON_PATH);
+  const searchJson = JSON.parse(await readFile(SEARCH_JSON_PATH));
+  const termMapJson = JSON.parse(await readFile(TERM_MAP_JSON_PATH));
   ensure(Array.isArray(searchJson) && searchJson.length === terms.length, 'glossary-search.json missing terms.');
   ensure(totalInlineNavBytes <= TERM_NAV_INLINE_TOTAL_MAX_BYTES, `Inline term nav payload too large (${totalInlineNavBytes} bytes).`);
   ensure(termMapJson && typeof termMapJson === 'object', 'glossary-term-map.json must be an object map.');

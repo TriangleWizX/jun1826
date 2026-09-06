@@ -1,4 +1,9 @@
-# Metadata for Catskills Gym Searches
+# Catskills gym article metadata
 
-- **Title Tag:** Catskills Gym Alternative: Beginner Jiu-Jitsu | Tannersville
-- **Meta Description:** Ready for capability, not just equipment? Start with the Core Culture (12 Weeks) at $550 Youth / $715 Adult, including a premium gi, onboarding, and Beginner Lane pacing.
+Status: active maintenance note, updated 2026-09-06.
+
+Edit the front matter in `src/blog/catskills-gym-alternative-jiu-jitsu/index.html`. The shared head in `src/_includes/components/head-metadata.njk` renders the page metadata.
+
+Describe beginner jiu-jitsu in Tannersville and the first-visit experience. Keep the description complete and avoid repeated phrases. Do not copy historical program names, prices, or included items into editorial metadata. Use the canonical program data when a fact is required; the public offer authority is `/options-pricing`.
+
+After editing, build the site and inspect the generated title, description, canonical, and social metadata. Run `npm run qa:seo`.

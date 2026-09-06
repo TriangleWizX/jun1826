@@ -93,8 +93,18 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("stripDocumentShell", (content) => {
     if (typeof content !== "string" || !/<html\b/i.test(content)) return content;
     return content.replace(
-      /(?:<!doctype\s+html\s*>\s*)?<html[^>]*>\s*<head>[\s\S]*?<\/head>\s*<body[^>]*>([\s\S]*?)(?:<\/body>\s*<\/html>)?\s*$/i,
-      "$1"
+      /(?:<!doctype\s+html\s*>\s*)?<html[^>]*>\s*<head>([\s\S]*?)<\/head>\s*<body[^>]*>([\s\S]*?)(?:<\/body>\s*<\/html>)?\s*$/i,
+      (_shell, head, body) => {
+        // Glossary definitions and their FAQs belong to the article. Preserve
+        // those graphs while the shared layout owns document metadata and CSS.
+        const glossaryGraphs = [...head.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
+          .filter((script) => {
+            const graph = JSON.parse(script[1]);
+            return (graph["@graph"] || [graph]).some((node) => node["@type"] === "DefinedTerm");
+          })
+          .map((script) => script[0]);
+        return [...glossaryGraphs, body].join("\n");
+      }
     );
   });
 

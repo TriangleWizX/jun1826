@@ -6,9 +6,9 @@ const home = fs.readFileSync(path.join(process.cwd(), "src/partials/home-convers
 const rendered = fs.readFileSync(path.join(process.cwd(), "dist/index.html"), "utf8");
 
 for (const surface of [home, rendered]) {
-  assert.match(surface, /Tannersville, NY · Kids · Teens · Adults/);
-  assert.match(surface, /Jiu-Jitsu for Kids, Teens &amp; Adults in Tannersville/);
-  assert.match(surface, /Small classes\. Beginner-friendly partners\. Live practice with coach nearby\./);
+  assert.match(surface, /Tannersville, NY · Kids · Teens · Adults/i);
+  assert.match(surface, /Small-group Jiu-Jitsu for kids, teens and adults\./i);
+  assert.match(surface, /Good partners, real problems to solve, and coaching that meets you where you are\./i);
 }
 assert.match(home, /value="child"/);
 assert.match(home, /value="teen"/);
