@@ -1,19 +1,28 @@
 ---
 layout: layouts/base.njk
-title: "12-week program Review | Sensei Sandy BJJ"
-description: "A calm end-of-term 12-week program Review for training observations, schedule fit, and choosing the next useful arrangement."
+title: "12-Week Program Review | Sensei Sandy BJJ"
+description: "A calm end-of-term 12-Week Program Review for training observations, schedule fit, and choosing the next useful arrangement."
 canonicalUrl: "https://senseisandy.com/core-culture-review"
 bodyClass: "lane-mixed page-core-culture-review ss-page"
 audience: "member"
 permalink: "/core-culture-review.html"
 ---
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const replacements = [['12-week program Review', '12-Week Program Review'], ['Renew 12-week program', 'Another 12-Week Program']];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((node) => replacements.forEach(([from, to]) => { node.nodeValue = node.nodeValue.replaceAll(from, to); }));
+});
+</script>
 {% from "components/offer-next-step.njk" import offerNextStep %}
 <main id="main-content" class="ss-main" role="main">
 <section class="py-5 py-lg-6 bg-light">
 <div class="container">
 <div class="mx-auto" style="max-width: 860px;">
 <p class="text-uppercase small fw-bold text-success mb-2">After a 12-week program term</p>
-<h1 class="display-5 fw-bold mb-3">12-week program Review</h1>
+<h1 class="display-5 fw-bold mb-3">12-Week Program Review</h1>
 <p class="lead text-muted mb-4">A first term has a defined ending. Before anyone discusses another product, Sandy reviews what became more reliable, what problem should come next, and whether the weekly rhythm still fits.</p>
 <div class="alert alert-light border shadow-sm" role="note"><strong>Observe → Review → Adjust → Choose.</strong> Continuing is one possible outcome. Pausing or stopping is also a valid outcome; a successful term does not require another purchase.</div>
 </div>
@@ -87,3 +96,10 @@ permalink: "/core-culture-review.html"
 </div>
 </section>
 </main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('h3').forEach((heading) => {
+    if (heading.textContent.trim() === 'Renew 12-week program') heading.textContent = 'Another 12-Week Program';
+  });
+});
+</script>

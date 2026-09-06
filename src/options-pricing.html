@@ -8,6 +8,14 @@ extraCss:
   - "/assets/css/pages/options-pricing-highend.css"
 permalink: "/options-pricing.html"
 ---
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((node) => { node.nodeValue = node.nodeValue.replaceAll('12-week program Review', '12-Week Program Review'); });
+});
+</script>
 <main class="op-main" id="main" role="main" tabindex="-1">
 
 <section aria-labelledby="pricing-hero-title" class="op-hero">
@@ -35,7 +43,7 @@ permalink: "/options-pricing.html"
         </div>
         <ul aria-label="How enrollment starts" class="op-hero__signals">
           <li><strong>$0</strong><span>Free First Visit</span></li>
-          <li><strong>12 weeks</strong><span>First core term</span></li>
+          <li><strong>12 weeks</strong><span>First program</span></li>
           <li><strong>By text</strong><span>make-up class</span></li>
         </ul>
       </div>
