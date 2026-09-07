@@ -3,7 +3,7 @@ import path from 'node:path';
 
 export const ROOT = process.cwd();
 
-const SKIP_DIRS = new Set(['.git', '.vscode', '.tmb', '_includes', 'node_modules', 'tmp', '_archive', '_drafts', '.venv', 'near']);
+const SKIP_DIRS = new Set(['.git', '.vscode', '.tmb', '_includes', 'node_modules', 'tmp', '_archive', '_drafts', '.venv', 'near', 'browser-harness']);
 const SSI_DIRECTIVE_RE = /<!--#include\b[\s\S]*?-->/gi;
 const SSI_VIRTUAL_RE = /^<!--#include\s+virtual=(["'])(.*?)\1\s*-->$/i;
 
@@ -48,7 +48,7 @@ export const iterHtmlFiles = async (startDir = ROOT) => {
         continue;
       }
       if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
-      files.push(path.relative(ROOT, full));
+      files.push(path.relative(startDir, full));
     }
   };
 

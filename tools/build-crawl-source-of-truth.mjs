@@ -73,7 +73,10 @@ const NOINDEX_ROUTES = new Set([
   '/annual-track',
   '/waiver',
   '/scribners-thank-you',
-  '/scribners-staff-reset-pass'
+  '/scribners-staff-reset-pass',
+  '/report-card',
+  '/student-hub',
+  '/sources/kodokan-etiquette'
 ]);
 
 const TIER_C_TOWNS = new Set([
@@ -173,11 +176,11 @@ const fileToPath = (relFile) => {
 };
 
 const getPageType = (pathname) => {
-  if (pathname === '/' || pathname === '/free-bjj-intro-tannersville-ny' || pathname === '/options-pricing' || pathname === '/schedule' || pathname === '/bjj-tannersville-ny-directions' || pathname === '/contact' || pathname === '/how-class-works' || pathname === '/jiu-jitsu-safety-tannersville-ny' || pathname === '/success-stories' || pathname === '/bio' || pathname === '/sensei-studio' || pathname === '/bjj-faqs' || pathname === '/show-up-kit' || pathname === '/parent-resources' || pathname === '/school-families-jiu-jitsu' || pathname === '/law-enforcement-bjj' || pathname === '/tactical-longevity' || pathname === '/friday-night-fanatics' || pathname === '/black-belt-track' || pathname === '/nervous-first-timers' || pathname === '/bjj-stretches' || pathname === '/holiday-schedule' || pathname === '/samurai-break' || pathname === '/sensei-jiu-jitsu' || pathname === '/phoenicia-diner' || pathname === '/scribners-jiu-jitsu' || pathname === '/scribners' || pathname === '/partners-hospitality-hunter-windham' || pathname === '/partners-wellness-pt-referrals' || pathname === '/report-card' || pathname === '/rural-bjj-catskills') {
+  if (pathname === '/' || pathname === '/free-bjj-intro-tannersville-ny' || pathname === '/options-pricing' || pathname === '/schedule' || pathname === '/bjj-tannersville-ny-directions' || pathname === '/contact' || pathname === '/how-class-works' || pathname === '/success-stories' || pathname === '/bio' || pathname === '/sensei-studio' || pathname === '/bjj-faqs' || pathname === '/show-up-kit' || pathname === '/parent-resources' || pathname === '/law-enforcement-bjj' || pathname === '/friday-night-fanatics' || pathname === '/black-belt-track' || pathname === '/bjj-stretches' || pathname === '/holiday-schedule' || pathname === '/sensei-jiu-jitsu' || pathname === '/scribners-jiu-jitsu' || pathname === '/scribners' || pathname === '/partners-hospitality-hunter-windham' || pathname === '/partners-wellness-pt-referrals' || pathname === '/report-card' || pathname === '/rural-bjj-catskills') {
     return 'core';
   }
   if (pathname === '/guarantee-terms') return 'policy';
-  if (pathname === '/waiver' || pathname === '/scribners-thank-you' || pathname === '/scribners-staff-reset-pass') return 'conversion';
+  if (pathname === '/waiver' || pathname === '/scribners-thank-you') return 'conversion';
   if (pathname === '/summer-academy' || pathname === '/summer-jiu-jitsu-tannersville') return 'campaign';
   if (pathname === '/programs' || pathname === '/bjj-classes' || pathname.startsWith('/bjj-classes/kids-') || pathname.startsWith('/bjj-classes/teens-') || pathname.startsWith('/bjj-classes/adults-') || pathname === '/kids' || pathname === '/adult-bjj' || pathname === '/teen-jiu-jitsu-tannersville-ny' || pathname === '/private-lessons' || pathname === '/bully-proof-jiu-jitsu-tannersville-ny' || pathname === '/martial-arts-hunter-ny') {
     return 'program';

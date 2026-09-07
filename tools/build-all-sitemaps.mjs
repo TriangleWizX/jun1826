@@ -99,6 +99,8 @@ export const main = async () => {
   await fs.writeFile(LOCATIONS_SITEMAP, buildXml(locationUrls), 'utf8');
   await fs.writeFile(BLOG_SITEMAP, buildXml(blogUrls), 'utf8');
   await fs.writeFile(GLOSSARY_SITEMAP, buildXml(glossaryUrls), 'utf8');
+  await fs.writeFile(path.join(ROOT, 'pages-sitemap.xml'), buildXml(coreUrls), 'utf8');
+  await fs.writeFile(path.join(ROOT, 'blog-sitemap.xml'), buildXml(blogUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-core.xml'), buildXml(coreUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-programs.xml'), buildXml(programUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-locations.xml'), buildXml(locationUrls), 'utf8');

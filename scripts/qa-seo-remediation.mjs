@@ -5,7 +5,7 @@ const ROOT = process.cwd();
 const DIST = path.join(ROOT, 'dist');
 const publicRoutes = [
   '/', '/bjj-classes', '/black-belt-concierge', '/community-partners',
-  '/elite-concierge', '/phoenicia-diner', '/school-families-jiu-jitsu',
+  '/elite-concierge',
   '/show-up-kit', '/summer-academy', '/blog/gi-vs-no-gi-bjj-cheat-code',
   '/blog/bioginastica-movement-no-gi', '/blog/kinetic-chess-onteora-park'
 ];

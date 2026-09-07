@@ -122,7 +122,7 @@ const main = async () => {
     throw new Error('config/url-contract.json is missing canonicalOrigin.');
   }
 
-  const files = await iterHtmlFiles(ROOT);
+  const files = await iterHtmlFiles(path.join(ROOT, 'src'));
   const violations = new Map();
 
   const addViolation = ({ error, url, source, expectedLocation = '' }) => {
@@ -139,7 +139,7 @@ const main = async () => {
   };
 
   for (const relPath of files) {
-    const fullPath = path.join(ROOT, relPath);
+    const fullPath = path.join(ROOT, 'src', relPath);
     const html = await fs.readFile(fullPath, 'utf8');
 
     for (const href of parseAnchorHrefs(html)) {
