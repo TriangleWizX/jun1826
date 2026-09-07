@@ -148,6 +148,24 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
             </button>
           </div>
           
+          <div class="hevd-reveal" style="transition-delay: 275ms;">
+            <button class="pb-card-btn group" data-profile="family" aria-pressed="false">
+              <div class="ss-bezel-shell">
+                <div class="ss-bezel-core">
+                  <div class="pb-card-icon m-0 flex-shrink-0">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h3>Family (Youth + Adult)</h3><p class="small text-muted mb-0">Build one routine together. Youth at 5 PM, adults at 6 PM.</p>
+                  </div>
+                  <div class="ss-btn-trailing-icon">
+                    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+
           <div class="hevd-reveal" style="transition-delay: 300ms;">
             <button class="pb-card-btn group" data-profile="not-sure" aria-pressed="false">
               <div class="ss-bezel-shell">
@@ -156,7 +174,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
                     <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                   </div>
                   <div class="flex-grow-1">
-                    <h3>Not sure—help me choose</h3>
+                    <h3>Not sure: help me choose</h3>
                   </div>
                   <div class="ss-btn-trailing-icon">
                     <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -334,7 +352,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
   <div class="container text-center" style="max-width: 600px;">
     <div class="mt-4 mb-4 p-3 bg-white border rounded-3 text-center shadow-sm">
       <div class="mb-1" style="color: var(--ss-teal); font-size: 0.9rem;"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-      <p class="fst-italic mb-2 text-dark" style="font-family: 'Geist', sans-serif;">"A welcoming community with no big egos. That's rare in any martial art." &mdash; Adam M.</p>
+      <p class="fst-italic mb-2 text-dark" style="font-family: 'Geist', sans-serif;">"A welcoming community with no big egos. That's rare in any martial art." - Adam M.</p>
     </div>
   </div>
 </section>
@@ -378,7 +396,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.min.js" defer></script>'
   const buildOptions = (profile, period) => { const audience = profile === 'adult-beginner' ? 'Adult' : 'Youth/Teen'; const start = new Date(period.start + 'T12:00:00'); const end = new Date(period.end + 'T12:00:00'); const rows = []; for (let date = new Date(start); date <= end && rows.length < 6; date.setDate(date.getDate() + 1)) { const day = date.toLocaleDateString('en-US', { weekday: 'long' }); schedule.groupClasses.filter(item => item.active && item.audience === audience && item.day === day).forEach(item => { if (rows.length < 6) rows.push(`${period.label} · ${date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} · ${item.time} — ${audience} ${formatFor(item, date.toISOString().slice(0,10))}`); }); } return rows; };
   const renderOptions = (profile, period) => { const target = document.querySelector('[data-booking-class-choices]'); if (!target) return; const list = buildOptions(profile, period); target.innerHTML = list.map(label => `<label class="d-block border rounded-3 p-2 mb-2"><input type="radio" name="booking_class_preference" value="${label}" class="me-2" required>${label}</label>`).join(''); target.querySelectorAll('input').forEach(input => input.addEventListener('change', () => { document.getElementById('booking-class-value').value = input.value; })); };
   const renderAdultDays = (period = periods[0]) => { const target = document.querySelector('[data-adult-schedule-choices]'); if (!target) return; const items = schedule.groupClasses.filter(item => item.active && item.audience === 'Adult'); const format = item => period.label.startsWith('Before') && ['Monday','Tuesday','Friday'].includes(item.day) ? 'Gi' : item.format; target.innerHTML = items.map(item => `<label><input type="checkbox" name="preferred_days" value="${item.day} ${item.time} — ${format(item)}"> ${item.day} ${item.time} — ${format(item)}</label>`).join(''); };
-  document.querySelectorAll('#pb-step-1 [data-profile]').forEach((button) => button.addEventListener('click', () => { document.getElementById('booking-profile-value').value = button.dataset.profile; document.querySelector('[data-booking-student-field]').hidden = !['child', 'teen'].includes(button.dataset.profile); const period = periods[0]; document.querySelectorAll('[data-youth-preferred-days] input').forEach(input => { input.checked = input.value === period.label; }); renderOptions(button.dataset.profile, period); }));
+  document.querySelectorAll('#pb-step-1 [data-profile]').forEach((button) => button.addEventListener('click', () => { document.getElementById('booking-profile-value').value = button.dataset.profile; document.querySelector('[data-booking-student-field]').hidden = !['child', 'teen', 'family'].includes(button.dataset.profile); const period = periods[0]; document.querySelectorAll('[data-youth-preferred-days] input').forEach(input => { input.checked = input.value === period.label; }); renderOptions(button.dataset.profile, period); }));
   renderAdultDays(); document.querySelectorAll('[data-youth-preferred-days] input').forEach(input => input.addEventListener('change', () => { const period = periods.find(item => item.label === input.value) || periods[0]; renderOptions(document.getElementById('booking-profile-value').value || 'teen', period); renderAdultDays(period); }));
 })();
 </script>

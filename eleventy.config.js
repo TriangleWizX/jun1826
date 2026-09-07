@@ -163,12 +163,7 @@ eleventyConfig.addTransform("acquisition-page-subtraction", function (content) {
   if (outputPath.endsWith("/schedule/index.html")) {
   output = output.replace(/<section[^>]*aria-labelledby="faq-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-labelledby="schedule-local-planning-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-label="12-week program Schedule Rescheduling Policy"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-labelledby="saturday-nogi"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-labelledby="free-intro-flow"[\s\S]*?<\/section>/i, "");
   }
-  if (outputPath.endsWith("/how-class-works.html")) {
-    for (const id of ["class-breakdown", "beginner-four-part-map", "coaching-basics", "class-timeline-section", "partner-makes-lesson-real", "beginner-lane", "guided-practice", "more-skill-more-choices", "what-parents-expect", "why-we-teach-this-way", "what-students-review"]) {
-      output = output.replace(new RegExp(`<section[^>]*id="${id}"[\\s\\S]*?<\\/section>`, "i"), "");
-      output = output.replace(new RegExp(`<li>\\s*<a[^>]*href="#${id}"[^>]*>[\\s\\S]*?<\\/a>\\s*<\\/li>`, "i"), "");
-    }
-  }
+
   if (outputPath.endsWith("/bjj-classes/adults-tannersville-ny/index.html")) {
     for (const id of ["adults-aeo-title", "private-classes", "program-faq", "nearby-title", "adult-agency-title"]) {
       output = output.replace(new RegExp(`<section[^>]*(?:id="${id}"|aria-labelledby="${id}")[\\s\\S]*?<\\/section>`, "i"), "");
