@@ -1,5 +1,8 @@
-{% macro primaryCta(location="page_body", label="Reserve Your Free First Visit", url="/free-bjj-intro-tannersville-ny#booking-flow", supportingText="Start with a calm first visit; Sandy matches the next class to who is starting.") %}
+{% macro primaryCta(location="page_body", label="Reserve Your Free First Visit", url="/free-bjj-intro-tannersville-ny#booking-flow", supportingText="Start with a calm first visit; Sandy matches the next class to who is starting.", eyebrow="", secondaryText="") %}
 <div class="ss-cta-component d-flex flex-column align-items-start gap-2">
+  {% if eyebrow %}
+  <p class="text-uppercase small fw-bold mb-1" style="color: var(--ss-green, #116A42); letter-spacing: 0.1em;">{{ eyebrow }}</p>
+  {% endif %}
   <div class="d-flex flex-wrap align-items-center gap-3">
     <a href="{{ url }}" 
        class="btn btn-primary btn-lg ss-btn" 
@@ -16,10 +19,10 @@
       Text Sandy (917) 736-8649
     </a>
   </div>
-  {% if supportingText %}
+  {% if secondaryText or supportingText %}
   <div class="small text-muted d-flex align-items-center gap-1 mt-1" style="font-size: 0.875rem;">
     <i class="bi bi-clock-history text-teal" aria-hidden="true" style="color: var(--ss-teal, #289FA1);"></i>
-    <span>{{ supportingText }}</span>
+    <span>{{ secondaryText or supportingText }}</span>
   </div>
   {% endif %}
 </div>
