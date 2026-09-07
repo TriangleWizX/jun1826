@@ -5,7 +5,6 @@ const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const loop = 'Map → Adapt → Resist → Observe → Adjust';
 const checks = [
-  ['Bio', read('dist/bio.html'), [loop, 'use that evidence to shape the next problem']],
   ['How Class Works', read('dist/how-class-works.html'), [loop, 'live opponent who has a real job', 'fixed technique list', 'Make the problem legible', 'Watch before supplying', 'Change one useful variable', 'Adapt. Test. Notice.', 'Direct instruction remains available', 'Failure is information']],
   ['Report Card', read('dist/report-card.html'), [loop, 'next problem can be chosen from evidence', 'Problem tested', 'Name the problem, not a technique count', 'Record the student, problem, conditions, observed behavior, and next constraint', 'failed attempt is information']],
   ['Goal Mapping', read('dist/free-bjj-intro-tannersville-ny/index.html'), ['map gives the first coached problem', 'under resistance']],

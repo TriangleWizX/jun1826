@@ -10,7 +10,7 @@ const checks = [
   ['Teens', read('dist/bjj-classes/teens-tannersville-ny/index.html'), ['serious training without a sink-or-swim culture', 'gradually increasing resistance']],
   ['Adults', read('dist/bjj-classes/adults-tannersville-ny/index.html'), ['real resistance from the beginning—but not random resistance', 'Coach-controlled resistance rounds']],
   ['Pricing', read('dist/options-pricing.html'), ['structured training relationship, not anonymous access to a mat', 'progress feedback']],
-  ['Bio', read('dist/bio.html'), ['Mikinosuke Kawaishi', 'Chris Haueter', 'Map → Adapt → Resist → Observe → Adjust.']],
+  ['Bio', read('dist/bio.html'), ['taught wherever the mats fit', 'coached, not tested', 'Josh Griffiths at Clockwork']],
 ];
 const failures = [];
 for (const [label, html, phrases] of checks) for (const phrase of phrases) if (!html.toLowerCase().includes(phrase.toLowerCase())) failures.push(`${label}: missing "${phrase}"`);

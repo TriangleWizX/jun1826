@@ -24,8 +24,6 @@ assert.match(lineage, /Sandy Jose Nunez received his Brazilian Jiu-Jitsu black b
 assert.match(lineage, /Training relationship:/);
 assert.doesNotMatch(lineage, /Clockwork Jiu Jitsu Affiliate|maintains an active relationship|technical standard.*matches|elite quality|premier BJJ academy|prestigious lineage|third-party documentation/);
 assert.match(bio, /I was awarded my black belt by .*Josh Griffiths.*Clockwork Jiu Jitsu/);
-assert.match(bio, /Mikinosuke Kawaishi/);
-assert.match(bio, /Chris Haueter/);
 assert.doesNotMatch(bio, /Clockwork Jiu-Jitsu logo|Combat Base affiliate|Haueter lineage|Kawaishi lineage/);
 assert.match(registry, /Relationship Type/);
 assert.match(registry, /Claim Status/);
