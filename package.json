@@ -13,7 +13,7 @@
     "qa:hyphen-images": "python3 scripts/normalize-hyphen-images.py --verify",
     "qa:how-class-works:canonical": "node scripts/qa-how-class-works-canonical.mjs",
     "dev": "eleventy --serve",
-    "build": "eleventy && node tools/materialize-ssi-fragments.mjs",
+    "build": "eleventy && node tools/materialize-ssi-fragments.mjs && node tools/fingerprint-assets.cjs",
     "clean": "node -e \"import('fs').then(fs => fs.rmSync('dist', {recursive: true, force: true}))\"",
     "validate": "npm run qa:schedule && npm run build && npm run qa:links:inventory && npm run qa:links:static && npm run qa:links:existence && npm run qa:doctype && npm run validate:release5",
     "validate:release5": "node scripts/qa-release-5.mjs",

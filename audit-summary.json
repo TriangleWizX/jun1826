@@ -1,0 +1,4279 @@
+[
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "1 interactive touch target(s) are under 36px height/width",
+    "pageCount": 9,
+    "pages": [
+      "Homepage",
+      "Free Intro Teens",
+      "Samurai Break",
+      "Reviews Village",
+      "Safety Promise",
+      "Location Class Cairo",
+      "Free Intro Landing",
+      "Success Stories",
+      "Videos Hub"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Homepage",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Free Intro Teens",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Samurai Break",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Reviews Village",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Safety Promise",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=680px) obscures 2 clickable element(s)",
+    "pageCount": 1,
+    "pages": [
+      "Schedule Page"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-360"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Schedule Page",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "blockedBy": "a.ss-action-primary"
+          },
+          {
+            "selector": "a",
+            "text": "Text Before Attending",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "7 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 3,
+    "pages": [
+      "Schedule Page",
+      "Tactical Longevity",
+      "Location Near Hunter"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Schedule Page",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.ss-editorial-lead",
+            "length": 148,
+            "text": "Start with a guided Free First Visit. Compare yout"
+          },
+          {
+            "selector": "p",
+            "length": 150,
+            "text": "Saturday No-Gi is a clean jiu-jitsu entry point fo"
+          },
+          {
+            "selector": "p",
+            "length": 161,
+            "text": "Wear clean athletic clothes you can move in. Visit"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Tactical Longevity",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.mb-5.text-muted",
+            "length": 152,
+            "text": "Train inside the regular adult program with office"
+          },
+          {
+            "selector": "p.mb-4.text-muted",
+            "length": 160,
+            "text": "A private 12-week block for departments that want "
+          },
+          {
+            "selector": "p.text-muted",
+            "length": 155,
+            "text": "Departments explore regular grappling practice bec"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Location Near Hunter",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.mb-2",
+            "length": 220,
+            "text": "If you searched \"martial arts Hunter NY,\" this is "
+          },
+          {
+            "selector": "p.mb-2",
+            "length": 136,
+            "text": "This gives Hunter families a real look at the mat "
+          },
+          {
+            "selector": "p.mb-2",
+            "length": 165,
+            "text": "Most Hunter families treat this as a quick corrido"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Schedule Page",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p.ss-editorial-lead",
+            "length": 148,
+            "text": "Start with a guided Free First Visit. Compare yout"
+          },
+          {
+            "selector": "p",
+            "length": 150,
+            "text": "Saturday No-Gi is a clean jiu-jitsu entry point fo"
+          },
+          {
+            "selector": "p",
+            "length": 161,
+            "text": "Wear clean athletic clothes you can move in. Visit"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Tactical Longevity",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p.mb-5.text-muted",
+            "length": 152,
+            "text": "Train inside the regular adult program with office"
+          },
+          {
+            "selector": "p.mb-4.text-muted",
+            "length": 160,
+            "text": "A private 12-week block for departments that want "
+          },
+          {
+            "selector": "p.text-muted",
+            "length": 155,
+            "text": "Departments explore regular grappling practice bec"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "17 interactive touch target(s) are under 36px height/width",
+    "pageCount": 3,
+    "pages": [
+      "Schedule Page",
+      "School Families",
+      "Blog Article"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Schedule Page",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Text Sandy",
+            "size": "73x18px"
+          },
+          {
+            "selector": "a",
+            "text": "First-time local student? Rese",
+            "size": "329x16px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "School Families",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "41x18px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Community Partners",
+            "size": "145x18px"
+          },
+          {
+            "selector": "a.ss-btn-olive-outline",
+            "text": "Text Sandy",
+            "size": "106x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Schedule Page",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Text Sandy",
+            "size": "73x18px"
+          },
+          {
+            "selector": "a",
+            "text": "First-time local student? Rese",
+            "size": "329x16px"
+          },
+          {
+            "selector": "a",
+            "text": "Text Before Attending",
+            "size": "127x15px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "School Families",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "41x18px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Community Partners",
+            "size": "145x18px"
+          },
+          {
+            "selector": "a.ss-btn-olive-outline",
+            "text": "Text Sandy",
+            "size": "106x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Blog Article",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "48x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Blog",
+            "size": "37x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "235x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "1 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 29,
+    "pages": [
+      "Free Intro Landing",
+      "Free Intro Kids",
+      "Free Intro Teens",
+      "Kids Program",
+      "Teens Program",
+      "Adults Program",
+      "Classes Index",
+      "Options & Pricing",
+      "Student Hub",
+      "Samurai Break",
+      "Scribners",
+      "Scribners Jiu-Jitsu",
+      "Rural BJJ Catskills",
+      "Waiver",
+      "Wellness PT Referrals",
+      "Blog Article",
+      "Blog Index",
+      "BJJ Anatomy Quiz",
+      "Athlete Cross-Training",
+      "Homepage",
+      "Show Up Kit",
+      "Tactical Longevity",
+      "Summer Academy",
+      "Success Stories",
+      "Videos Hub",
+      "Location Near Hunter",
+      "Glossary Term",
+      "Glossary Index",
+      "Location Class Cairo"
+    ],
+    "viewportCount": 8,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414",
+      "Desktop-1024",
+      "Desktop-1280",
+      "Desktop-1440",
+      "Desktop-1920"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Free Intro Landing",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Free Intro Kids",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Free Intro Teens",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Kids Program",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Teens Program",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "2 interactive touch target(s) are under 36px height/width",
+    "pageCount": 8,
+    "pages": [
+      "Free Intro Landing",
+      "Free Intro Kids",
+      "Teens Program",
+      "Success Stories",
+      "Athlete Cross-Training",
+      "Videos Hub",
+      "Homepage",
+      "Free Intro Teens"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Free Intro Landing",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See the evidence behind the ap",
+            "size": "302x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Free Intro Kids",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "/kids",
+            "size": "40x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Teens Program",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See How Class Works",
+            "size": "165x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Success Stories",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Report Card",
+            "size": "92x17px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Athlete Cross-Training",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See current class times and fo",
+            "size": "278x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "7 interactive touch target(s) are under 36px height/width",
+    "pageCount": 4,
+    "pages": [
+      "Kids Program",
+      "Scribners",
+      "Adults Program",
+      "Contact & Booking Form"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Kids Program",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See How Class Works",
+            "size": "165x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Windham",
+            "size": "74x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Haines Falls",
+            "size": "93x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Scribners",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "staff reset pass",
+            "size": "120x20px"
+          },
+          {
+            "selector": "a",
+            "text": "read the Scribners follow-up",
+            "size": "219x20px"
+          },
+          {
+            "selector": "button.accordion-button",
+            "text": "I’ve never done Jiu-Jitsu befo",
+            "size": "205x21px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Adults Program",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See How Class Works",
+            "size": "165x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Windham",
+            "size": "74x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Haines Falls",
+            "size": "93x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Contact & Booking Form",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "(917) 736-8649",
+            "size": "124x21px"
+          },
+          {
+            "selector": "a",
+            "text": "me@senseisandy.com",
+            "size": "186x21px"
+          },
+          {
+            "selector": "a",
+            "text": "",
+            "size": "32x32px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Scribners",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "staff reset pass",
+            "size": "120x20px"
+          },
+          {
+            "selector": "a",
+            "text": "read the Scribners follow-up",
+            "size": "219x20px"
+          },
+          {
+            "selector": "button.accordion-button",
+            "text": "I’ve never done Jiu-Jitsu befo",
+            "size": "205x21px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=664px) obscures 1 clickable element(s)",
+    "pageCount": 5,
+    "pages": [
+      "Teens Program",
+      "Options & Pricing",
+      "Rural BJJ Catskills",
+      "Waiver",
+      "Athlete Cross-Training"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-360"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Teens Program",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.btn.btn-primary",
+            "text": "Plan a Free First Visit",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Options & Pricing",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.op-button.op-button--primary",
+            "text": "Reserve Your Free First Visit\n          ",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Rural BJJ Catskills",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.hero-callout-link",
+            "text": "Reserve Your Free First Visit",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Waiver",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.btn.btn-outline-light",
+            "text": "Call Sandy",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Athlete Cross-Training",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.btn.btn-outline-success",
+            "text": "View the Complete Gi + No-Gi Schedule",
+            "blockedBy": "a.ss-action-home"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "6 interactive touch target(s) are under 36px height/width",
+    "pageCount": 4,
+    "pages": [
+      "Adults Program",
+      "Contact & Booking Form",
+      "After School",
+      "Kids Program"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Adults Program",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See How Class Works",
+            "size": "165x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Windham",
+            "size": "74x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Haines Falls",
+            "size": "93x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Contact & Booking Form",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "(917) 736-8649",
+            "size": "124x21px"
+          },
+          {
+            "selector": "a",
+            "text": "me@senseisandy.com",
+            "size": "186x21px"
+          },
+          {
+            "selector": "a",
+            "text": "",
+            "size": "32x32px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "After School",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "schedule",
+            "size": "60x18px"
+          },
+          {
+            "selector": "a",
+            "text": "pricing",
+            "size": "47x18px"
+          },
+          {
+            "selector": "a",
+            "text": "Kids BJJ",
+            "size": "60x18px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Kids Program",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See How Class Works",
+            "size": "165x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Windham",
+            "size": "74x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Haines Falls",
+            "size": "93x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "After School",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "schedule",
+            "size": "60x18px"
+          },
+          {
+            "selector": "a",
+            "text": "pricing",
+            "size": "47x18px"
+          },
+          {
+            "selector": "a",
+            "text": "Kids BJJ",
+            "size": "60x18px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "3 interactive touch target(s) are under 36px height/width",
+    "pageCount": 4,
+    "pages": [
+      "Classes Index",
+      "BJJ Anatomy Quiz",
+      "Homepage",
+      "Athlete Cross-Training"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Classes Index",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.he-btn-wrapper",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          },
+          {
+            "selector": "a.he-btn-wrapper.m-0",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "BJJ Anatomy Quiz",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "What is BJJ?",
+            "size": "102x20px"
+          },
+          {
+            "selector": "a",
+            "text": "SenseiSandy.com",
+            "size": "136x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Homepage",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Sensei Jiu Jitsu",
+            "size": "122x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Learn what BJJ sensei means",
+            "size": "231x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "BJJ Anatomy Quiz",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "What is BJJ?",
+            "size": "102x20px"
+          },
+          {
+            "selector": "a",
+            "text": "SenseiSandy.com",
+            "size": "136x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Athlete Cross-Training",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "See current class times and fo",
+            "size": "278x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Review visitor and flexible-ac",
+            "size": "323x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Layout",
+    "subcategory": "Flex/Grid Breakage",
+    "severity": "HIGH",
+    "issue": "3 flex/grid container(s) exhibit layout breakage on viewport",
+    "pageCount": 1,
+    "pages": [
+      "Options & Pricing"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "containers",
+        "page": "Options & Pricing",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "div.op-program-grid",
+            "detail": "Grid column template '9.59375px 9.59375px 9.59375px 9.59375px 9.59375px 9.59375px 9.59375px 9.59375px 9.59375px 9.59375px 9.59375px 9.59375px' forced on mobile width 360px"
+          },
+          {
+            "selector": "div.op-household-grid",
+            "detail": "Grid column template '10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px' forced on mobile width 360px"
+          },
+          {
+            "selector": "div.op-other-grid",
+            "detail": "Grid column template '10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px 10.3281px' forced on mobile width 360px"
+          }
+        ]
+      },
+      {
+        "type": "containers",
+        "page": "Options & Pricing",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "div.op-program-grid",
+            "detail": "Grid column template '10.8438px 10.8438px 10.8438px 10.8438px 10.8438px 10.8438px 10.8438px 10.8438px 10.8438px 10.8438px 10.8438px 10.8438px' forced on mobile width 375px"
+          },
+          {
+            "selector": "div.op-household-grid",
+            "detail": "Grid column template '11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px' forced on mobile width 375px"
+          },
+          {
+            "selector": "div.op-other-grid",
+            "detail": "Grid column template '11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px 11.5781px' forced on mobile width 375px"
+          }
+        ]
+      },
+      {
+        "type": "containers",
+        "page": "Options & Pricing",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "div.op-program-grid",
+            "detail": "Grid column template '12.0938px 12.0938px 12.0938px 12.0938px 12.0938px 12.0938px 12.0938px 12.0938px 12.0938px 12.0938px 12.0938px 12.0938px' forced on mobile width 390px"
+          },
+          {
+            "selector": "div.op-household-grid",
+            "detail": "Grid column template '12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px' forced on mobile width 390px"
+          },
+          {
+            "selector": "div.op-other-grid",
+            "detail": "Grid column template '12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px 12.8281px' forced on mobile width 390px"
+          }
+        ]
+      },
+      {
+        "type": "containers",
+        "page": "Options & Pricing",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "div.op-program-grid",
+            "detail": "Grid column template '14.0938px 14.0938px 14.0938px 14.0938px 14.0938px 14.0938px 14.0938px 14.0938px 14.0938px 14.0938px 14.0938px 14.0938px' forced on mobile width 414px"
+          },
+          {
+            "selector": "div.op-household-grid",
+            "detail": "Grid column template '14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px' forced on mobile width 414px"
+          },
+          {
+            "selector": "div.op-other-grid",
+            "detail": "Grid column template '14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px 14.8281px' forced on mobile width 414px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "14 interactive touch target(s) are under 36px height/width",
+    "pageCount": 2,
+    "pages": [
+      "Options & Pricing",
+      "Rural BJJ Catskills"
+    ],
+    "viewportCount": 2,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-390"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Options & Pricing",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Guide",
+            "size": "83x16px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "287x20px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "287x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Rural BJJ Catskills",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a.btn-ss-reserve",
+            "text": "Reserve Your Free First Visit",
+            "size": "244x20px"
+          },
+          {
+            "selector": "a.hero-callout-link",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Rural BJJ Catskills",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a.btn-ss-reserve",
+            "text": "Reserve Your Free First Visit",
+            "size": "244x20px"
+          },
+          {
+            "selector": "a.hero-callout-link",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "5 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 2,
+    "pages": [
+      "Contact & Booking Form",
+      "Success Stories"
+    ],
+    "viewportCount": 3,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Desktop-1920"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Contact & Booking Form",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.small.text-muted",
+            "length": 222,
+            "text": "Youth/Teen classes run at 5:00 PM: No-Gi Monday an"
+          },
+          {
+            "selector": "p",
+            "length": 250,
+            "text": "Looking for after-school martial arts in Tannersvi"
+          },
+          {
+            "selector": "p",
+            "length": 131,
+            "text": "For first visit, use Main Street parking first and"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Contact & Booking Form",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p.small.text-muted",
+            "length": 222,
+            "text": "Youth/Teen classes run at 5:00 PM: No-Gi Monday an"
+          },
+          {
+            "selector": "p",
+            "length": 250,
+            "text": "Looking for after-school martial arts in Tannersvi"
+          },
+          {
+            "selector": "p",
+            "length": 131,
+            "text": "For first visit, use Main Street parking first and"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Success Stories",
+        "vp": "Desktop-1920",
+        "data": [
+          {
+            "selector": "p.lead.col-lg-8",
+            "length": 162,
+            "text": "Reviews are most useful when they answer the quest"
+          },
+          {
+            "selector": "p.fs-5.mb-3",
+            "length": 175,
+            "text": "“Walking in as a beginner was an intimidating expe"
+          },
+          {
+            "selector": "p.small.text-muted",
+            "length": 174,
+            "text": "These excerpts are presented as general student an"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "4 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 4,
+    "pages": [
+      "Show Up Kit",
+      "Success Stories",
+      "Contact & Booking Form",
+      "Location Class Cairo"
+    ],
+    "viewportCount": 5,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414",
+      "Desktop-1024"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Show Up Kit",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.showup-hero-lede",
+            "length": 156,
+            "text": "Your first-visit checklist depends on who is start"
+          },
+          {
+            "selector": "p",
+            "length": 165,
+            "text": "Start calm. Train smart. Adults begin with a conve"
+          },
+          {
+            "selector": "p.showup-final-copy",
+            "length": 136,
+            "text": "Reserve your Free First Visit and we'll make both "
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Success Stories",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.fs-5.mb-3",
+            "length": 175,
+            "text": "“Walking in as a beginner was an intimidating expe"
+          },
+          {
+            "selector": "p.small.text-muted",
+            "length": 174,
+            "text": "These excerpts are presented as general student an"
+          },
+          {
+            "selector": "p.col-lg-8",
+            "length": 187,
+            "text": "Reviews answer one part of the question. How Class"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Show Up Kit",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p.showup-hero-lede",
+            "length": 156,
+            "text": "Your first-visit checklist depends on who is start"
+          },
+          {
+            "selector": "p",
+            "length": 165,
+            "text": "Start calm. Train smart. Adults begin with a conve"
+          },
+          {
+            "selector": "p.showup-final-copy",
+            "length": 136,
+            "text": "Reserve your Free First Visit and we'll make both "
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Success Stories",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p.fs-5.mb-3",
+            "length": 175,
+            "text": "“Walking in as a beginner was an intimidating expe"
+          },
+          {
+            "selector": "p.small.text-muted",
+            "length": 174,
+            "text": "These excerpts are presented as general student an"
+          },
+          {
+            "selector": "p.col-lg-8",
+            "length": 187,
+            "text": "Reviews answer one part of the question. How Class"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Contact & Booking Form",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "p.small.text-muted",
+            "length": 222,
+            "text": "Youth/Teen classes run at 5:00 PM: No-Gi Monday an"
+          },
+          {
+            "selector": "p",
+            "length": 250,
+            "text": "Looking for after-school martial arts in Tannersvi"
+          },
+          {
+            "selector": "p",
+            "length": 131,
+            "text": "For first visit, use Main Street parking first and"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "8 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Show Up Kit"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Show Up Kit",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "39x16px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Resources",
+            "size": "114x16px"
+          },
+          {
+            "selector": "a.showup-check-link",
+            "text": "Finish the waiver",
+            "size": "156x28px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Show Up Kit",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "39x16px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Resources",
+            "size": "114x16px"
+          },
+          {
+            "selector": "a.showup-check-link",
+            "text": "Finish the waiver",
+            "size": "156x28px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Show Up Kit",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "39x16px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Resources",
+            "size": "114x16px"
+          },
+          {
+            "selector": "a.showup-check-link",
+            "text": "Finish the waiver",
+            "size": "156x28px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Show Up Kit",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "39x16px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Resources",
+            "size": "114x16px"
+          },
+          {
+            "selector": "a.showup-check-link",
+            "text": "Finish the waiver",
+            "size": "156x28px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "30 interactive touch target(s) are under 36px height/width",
+    "pageCount": 2,
+    "pages": [
+      "Student Hub",
+      "Location Near Hunter"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Student Hub",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Train",
+            "size": "38x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Progress",
+            "size": "67x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Review Options",
+            "size": "120x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Student Hub",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Train",
+            "size": "38x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Progress",
+            "size": "67x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Review Options",
+            "size": "120x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Location Near Hunter",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "60x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Nearby Towns",
+            "size": "125x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Student Hub",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Train",
+            "size": "38x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Progress",
+            "size": "67x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Review Options",
+            "size": "120x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Student Hub",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Train",
+            "size": "38x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Progress",
+            "size": "67x20px"
+          },
+          {
+            "selector": "a.sh2-nav-logo",
+            "text": "Sensei Sandy",
+            "size": "104x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "15 interactive touch target(s) are under 36px height/width",
+    "pageCount": 4,
+    "pages": [
+      "School Families",
+      "Blog Article",
+      "Options & Pricing",
+      "Rural BJJ Catskills"
+    ],
+    "viewportCount": 3,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "School Families",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "41x18px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Community Partners",
+            "size": "145x18px"
+          },
+          {
+            "selector": "a.ss-link-all",
+            "text": "View all FAQs",
+            "size": "125x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Blog Article",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "48x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Blog",
+            "size": "37x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Adult Jiu-Jitsu",
+            "size": "124x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Options & Pricing",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Guide",
+            "size": "83x16px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "302x20px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "302x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Rural BJJ Catskills",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a.btn-ss-reserve",
+            "text": "Reserve Your Free First Visit",
+            "size": "244x20px"
+          },
+          {
+            "selector": "a.hero-callout-link",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Rural BJJ Catskills",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a.btn-ss-reserve",
+            "text": "Reserve Your Free First Visit",
+            "size": "244x20px"
+          },
+          {
+            "selector": "a.btn-ss-outline-pill",
+            "text": "View Schedule",
+            "size": "134x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "11 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Tactical Longevity"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Tactical Longevity",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "302x26px"
+          },
+          {
+            "selector": "a.btn-tactical.btn-tactical-secondary",
+            "text": "Request Pilot Proposal",
+            "size": "302x26px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "225x22px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Tactical Longevity",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "317x26px"
+          },
+          {
+            "selector": "a.btn-tactical.btn-tactical-secondary",
+            "text": "Request Pilot Proposal",
+            "size": "317x26px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "225x22px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Tactical Longevity",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "332x26px"
+          },
+          {
+            "selector": "a.btn-tactical.btn-tactical-secondary",
+            "text": "Request Pilot Proposal",
+            "size": "332x26px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "225x22px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Tactical Longevity",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "356x26px"
+          },
+          {
+            "selector": "a.btn-tactical.btn-tactical-secondary",
+            "text": "Request Pilot Proposal",
+            "size": "356x26px"
+          },
+          {
+            "selector": "a.btn-tactical.text-decoration-none",
+            "text": "Reserve Your Free First Visit",
+            "size": "225x22px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=664px) obscures 2 clickable element(s)",
+    "pageCount": 3,
+    "pages": [
+      "Summer Academy",
+      "Scribners Jiu-Jitsu",
+      "Wellness PT Referrals"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-360"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Summer Academy",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.kids-btn.kids-btn--primary",
+            "text": "Text Sandy About Future Summer Programs",
+            "blockedBy": "a.ss-action-primary"
+          },
+          {
+            "selector": "a.kids-btn.kids-btn--ghost",
+            "text": "Watch What a Morning Looks Like",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Scribners Jiu-Jitsu",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.btn.btn-primary",
+            "text": "Get My QR Kit",
+            "blockedBy": "nav.ss-mobile-actionbar"
+          },
+          {
+            "selector": "a.btn.btn-outline-dark",
+            "text": "Book for Guest",
+            "blockedBy": "nav.ss-mobile-actionbar"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Wellness PT Referrals",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.btn-wellness-primary",
+            "text": "Refer a Client",
+            "blockedBy": "a.ss-action-home"
+          },
+          {
+            "selector": "a.btn-wellness-outline",
+            "text": "Get My Partner Kit",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "2 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 2,
+    "pages": [
+      "Summer Academy",
+      "Glossary Term"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Summer Academy",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p",
+            "length": 174,
+            "text": "65–80 seconds: Sandy: \"This is a small summer grou"
+          },
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Glossary Term",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p",
+            "length": 146,
+            "text": "An armbar should be practiced slowly. The goal in "
+          },
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Summer Academy",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p",
+            "length": 174,
+            "text": "65–80 seconds: Sandy: \"This is a small summer grou"
+          },
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Glossary Term",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p",
+            "length": 146,
+            "text": "An armbar should be practiced slowly. The goal in "
+          },
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Summer Academy",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "p",
+            "length": 174,
+            "text": "65–80 seconds: Sandy: \"This is a small summer grou"
+          },
+          {
+            "selector": "p.ss-new-brand-desc",
+            "length": 181,
+            "text": "Small-group Jiu-Jitsu where Sandy knows who you ar"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "27 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Summer Academy"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-360"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Summer Academy",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.kids-btn.kids-btn--ghost",
+            "text": "Watch What a Morning Looks Lik",
+            "size": "286x20px"
+          },
+          {
+            "selector": "a",
+            "text": "6045 Main Street, Tannersville",
+            "size": "231x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Tannersville",
+            "size": "91x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "19 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Scribners Jiu-Jitsu"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Scribners Jiu-Jitsu",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Front Desk Script",
+            "size": "119x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Digital Concierge Blurb",
+            "size": "152x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Printable Experience Card",
+            "size": "172x21px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Scribners Jiu-Jitsu",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Front Desk Script",
+            "size": "119x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Digital Concierge Blurb",
+            "size": "152x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Printable Experience Card",
+            "size": "172x21px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Scribners Jiu-Jitsu",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Front Desk Script",
+            "size": "119x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Digital Concierge Blurb",
+            "size": "152x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Printable Experience Card",
+            "size": "172x21px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Scribners Jiu-Jitsu",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Front Desk Script",
+            "size": "119x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Digital Concierge Blurb",
+            "size": "152x21px"
+          },
+          {
+            "selector": "button.accordion-button.collapsed",
+            "text": "Printable Experience Card",
+            "size": "172x21px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=680px) obscures 1 clickable element(s)",
+    "pageCount": 1,
+    "pages": [
+      "Success Stories"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-360"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Success Stories",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.d-block.h-100",
+            "text": "I’m nervous about startingSee what a beg",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "4 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Waiver"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Waiver",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Waiver",
+            "size": "55x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Show-Up Kit",
+            "size": "97x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Waiver",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Waiver",
+            "size": "55x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Show-Up Kit",
+            "size": "97x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Waiver",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Waiver",
+            "size": "55x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Show-Up Kit",
+            "size": "97x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Waiver",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Waiver",
+            "size": "55x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Show-Up Kit",
+            "size": "97x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "16 interactive touch target(s) are under 36px height/width",
+    "pageCount": 3,
+    "pages": [
+      "Wellness PT Referrals",
+      "Schedule Page",
+      "Blog Article"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Wellness PT Referrals",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "43x17px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Community Partners",
+            "size": "146x17px"
+          },
+          {
+            "selector": "button.toolkit-copy-btn",
+            "text": "Copy script",
+            "size": "108x24px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Schedule Page",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Text Sandy",
+            "size": "73x18px"
+          },
+          {
+            "selector": "a",
+            "text": "First-time local student? Rese",
+            "size": "329x16px"
+          },
+          {
+            "selector": "a",
+            "text": "Text Before Attending",
+            "size": "127x15px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Wellness PT Referrals",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "43x17px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Community Partners",
+            "size": "146x17px"
+          },
+          {
+            "selector": "button.toolkit-copy-btn",
+            "text": "Copy script",
+            "size": "108x24px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Blog Article",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "48x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Blog",
+            "size": "37x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "235x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Wellness PT Referrals",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Home",
+            "size": "43x17px"
+          },
+          {
+            "selector": "a.text-decoration-none",
+            "text": "Community Partners",
+            "size": "146x17px"
+          },
+          {
+            "selector": "button.toolkit-copy-btn",
+            "text": "Copy script",
+            "size": "108x24px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "31 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Location Near Hunter"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-360"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Location Near Hunter",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "60x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Nearby Towns",
+            "size": "125x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "10 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 1,
+    "pages": [
+      "Location Class Cairo"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Location Class Cairo",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.lead-text.mb-5",
+            "length": 164,
+            "text": "Choose a realistic weekly rhythm. For families who"
+          },
+          {
+            "selector": "p.lead-text.mb-4",
+            "length": 165,
+            "text": "Pick a realistic weekly rhythm first. The goal isn"
+          },
+          {
+            "selector": "p.lead-text.mb-0",
+            "length": 174,
+            "text": "When making the trip from Cairo, give yourself a b"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Location Class Cairo",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p.lead-text.mb-5",
+            "length": 164,
+            "text": "Choose a realistic weekly rhythm. For families who"
+          },
+          {
+            "selector": "p.lead-text.mb-4",
+            "length": 165,
+            "text": "Pick a realistic weekly rhythm first. The goal isn"
+          },
+          {
+            "selector": "p.lead-text.mb-0",
+            "length": 174,
+            "text": "When making the trip from Cairo, give yourself a b"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Location Class Cairo",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "p.lead-text.mb-5",
+            "length": 164,
+            "text": "Choose a realistic weekly rhythm. For families who"
+          },
+          {
+            "selector": "p.lead-text.mb-4",
+            "length": 165,
+            "text": "Pick a realistic weekly rhythm first. The goal isn"
+          },
+          {
+            "selector": "p.lead-text.mb-0",
+            "length": 174,
+            "text": "When making the trip from Cairo, give yourself a b"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Location Class Cairo",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "p.lead-text.mb-5",
+            "length": 164,
+            "text": "Choose a realistic weekly rhythm. For families who"
+          },
+          {
+            "selector": "p.lead-text.mb-4",
+            "length": 165,
+            "text": "Pick a realistic weekly rhythm first. The goal isn"
+          },
+          {
+            "selector": "p.lead-text.mb-0",
+            "length": 174,
+            "text": "When making the trip from Cairo, give yourself a b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "20 interactive touch target(s) are under 36px height/width",
+    "pageCount": 2,
+    "pages": [
+      "Blog Index",
+      "Glossary Term"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Blog Index",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Spring Fling Is Here",
+            "size": "137x27px"
+          },
+          {
+            "selector": "a",
+            "text": "Your first class",
+            "size": "113x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Beginner guide",
+            "size": "118x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Blog Index",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Spring Fling Is Here",
+            "size": "137x27px"
+          },
+          {
+            "selector": "a",
+            "text": "Your first class",
+            "size": "113x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Beginner guide",
+            "size": "118x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Glossary Term",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a",
+            "text": "BJJ Glossary",
+            "size": "102x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Back to results",
+            "size": "114x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Blog Index",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Spring Fling Is Here",
+            "size": "137x27px"
+          },
+          {
+            "selector": "a",
+            "text": "Your first class",
+            "size": "113x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Beginner guide",
+            "size": "118x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Blog Index",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Spring Fling Is Here",
+            "size": "137x27px"
+          },
+          {
+            "selector": "a",
+            "text": "Your first class",
+            "size": "113x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Beginner guide",
+            "size": "118x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "21 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Glossary Term"
+    ],
+    "viewportCount": 2,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-390"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Glossary Term",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a",
+            "text": "BJJ Glossary",
+            "size": "102x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Back to results",
+            "size": "114x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Glossary Term",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a",
+            "text": "BJJ Glossary",
+            "size": "102x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Back to results",
+            "size": "114x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "82 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 1,
+    "pages": [
+      "Glossary Index"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Mobile-360",
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Glossary Index",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 137,
+            "text": "An ankle lock is a submission that attacks the ank"
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 161,
+            "text": "An ankle pick is a takedown where one hand or arm "
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 150,
+            "text": "Back defense is the set of habits and movements us"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Glossary Index",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 137,
+            "text": "An ankle lock is a submission that attacks the ank"
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 161,
+            "text": "An ankle pick is a takedown where one hand or arm "
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 150,
+            "text": "Back defense is the set of habits and movements us"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Glossary Index",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 137,
+            "text": "An ankle lock is a submission that attacks the ank"
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 161,
+            "text": "An ankle pick is a takedown where one hand or arm "
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 150,
+            "text": "Back defense is the set of habits and movements us"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Glossary Index",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 137,
+            "text": "An ankle lock is a submission that attacks the ank"
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 161,
+            "text": "An ankle pick is a takedown where one hand or arm "
+          },
+          {
+            "selector": "p.term-card__summary.ss-glossary-term-def",
+            "length": 150,
+            "text": "Back defense is the set of habits and movements us"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "723 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Glossary Index"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-360"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Glossary Index",
+        "vp": "Mobile-360",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.ss-community-pill.ss-primary",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a.ss-community-pill",
+            "text": "Visit Student Hub",
+            "size": "136x20px"
+          },
+          {
+            "selector": "button",
+            "text": "Surprise me",
+            "size": "88x21px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=752px) obscures 1 clickable element(s)",
+    "pageCount": 3,
+    "pages": [
+      "Schedule Page",
+      "Kids Program",
+      "Success Stories"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-375"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Schedule Page",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a",
+            "text": "First-time local student? Reserve Your F",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Kids Program",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.btn.btn-primary",
+            "text": "Plan Their Free First Visit",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Success Stories",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.d-block.h-100",
+            "text": "I’m nervous about startingSee what a beg",
+            "blockedBy": "a.ss-action-home"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=736px) obscures 1 clickable element(s)",
+    "pageCount": 2,
+    "pages": [
+      "Teens Program",
+      "Options & Pricing"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-375"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Teens Program",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.btn.btn-secondary",
+            "text": "See the Schedule",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Options & Pricing",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.op-button.op-button--primary",
+            "text": "Reserve Your Free First Visit\n          ",
+            "blockedBy": "a.ss-action-home"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "5 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Classes Index"
+    ],
+    "viewportCount": 3,
+    "viewports": [
+      "Mobile-375",
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Classes Index",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.he-btn-wrapper",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          },
+          {
+            "selector": "a.he-btn-wrapper",
+            "text": "Text Sandy",
+            "size": "106x20px"
+          },
+          {
+            "selector": "a.he-btn-wrapper.m-0",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Classes Index",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.he-btn-wrapper",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          },
+          {
+            "selector": "a.he-btn-wrapper",
+            "text": "Text Sandy",
+            "size": "106x20px"
+          },
+          {
+            "selector": "a.he-btn-wrapper.m-0",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Classes Index",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.he-btn-wrapper",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          },
+          {
+            "selector": "a.he-btn-wrapper",
+            "text": "Text Sandy",
+            "size": "106x20px"
+          },
+          {
+            "selector": "a.he-btn-wrapper.m-0",
+            "text": "Reserve Your Free First Visit",
+            "size": "239x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "28 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Summer Academy"
+    ],
+    "viewportCount": 2,
+    "viewports": [
+      "Mobile-375",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Summer Academy",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.kids-btn.kids-btn--ghost",
+            "text": "Watch What a Morning Looks Lik",
+            "size": "286x20px"
+          },
+          {
+            "selector": "a",
+            "text": "6045 Main Street, Tannersville",
+            "size": "231x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Tannersville",
+            "size": "91x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Summer Academy",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.kids-btn.kids-btn--primary",
+            "text": "Text Sandy About Future Summer",
+            "size": "366x20px"
+          },
+          {
+            "selector": "a",
+            "text": "6045 Main Street, Tannersville",
+            "size": "231x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Tannersville",
+            "size": "91x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=736px) obscures 2 clickable element(s)",
+    "pageCount": 2,
+    "pages": [
+      "Scribners",
+      "Scribners Jiu-Jitsu"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-375"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Scribners",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.btn.btn-primary",
+            "text": "Text “SCRIBNERS”",
+            "blockedBy": "a.ss-action-primary"
+          },
+          {
+            "selector": "a.btn.btn-outline-dark",
+            "text": "Ask Sandy First",
+            "blockedBy": "a.ss-action-home"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Scribners Jiu-Jitsu",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.btn.btn-primary",
+            "text": "Get My QR Kit",
+            "blockedBy": "a.ss-action-primary"
+          },
+          {
+            "selector": "a.btn.btn-outline-dark",
+            "text": "Book for Guest",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "729 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Glossary Index"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-375"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Glossary Index",
+        "vp": "Mobile-375",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.ss-community-pill.ss-primary",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a.ss-community-pill",
+            "text": "Visit Student Hub",
+            "size": "136x20px"
+          },
+          {
+            "selector": "button",
+            "text": "Surprise me",
+            "size": "88x21px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=784px) obscures 1 clickable element(s)",
+    "pageCount": 2,
+    "pages": [
+      "Kids Program",
+      "Success Stories"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-390"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Kids Program",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.btn.btn-primary",
+            "text": "Plan Their Free First Visit",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Success Stories",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.d-block.h-100",
+            "text": "I’m worried about being overwhelmedRead ",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=768px) obscures 1 clickable element(s)",
+    "pageCount": 1,
+    "pages": [
+      "Teens Program"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-390"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Teens Program",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.btn.btn-secondary",
+            "text": "See the Schedule",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=768px) obscures 2 clickable element(s)",
+    "pageCount": 1,
+    "pages": [
+      "Options & Pricing"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-390"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Options & Pricing",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.op-button.op-button--primary",
+            "text": "Reserve Your Free First Visit\n          ",
+            "blockedBy": "a.ss-action-home"
+          },
+          {
+            "selector": "a.op-button.op-button--quiet",
+            "text": "View Schedule\n            ↗",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "13 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Options & Pricing"
+    ],
+    "viewportCount": 2,
+    "viewports": [
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Options & Pricing",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Guide",
+            "size": "83x16px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "317x20px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "317x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Options & Pricing",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Parent Guide",
+            "size": "83x16px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "341x20px"
+          },
+          {
+            "selector": "a.op-text-link",
+            "text": "Reserve Your Free First Visit ",
+            "size": "341x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "29 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Summer Academy"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-390"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Summer Academy",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.kids-btn.kids-btn--primary",
+            "text": "Text Sandy About Future Summer",
+            "size": "361x20px"
+          },
+          {
+            "selector": "a.kids-btn.kids-btn--ghost",
+            "text": "Watch What a Morning Looks Lik",
+            "size": "286x20px"
+          },
+          {
+            "selector": "a",
+            "text": "6045 Main Street, Tannersville",
+            "size": "231x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "33 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Location Near Hunter"
+    ],
+    "viewportCount": 2,
+    "viewports": [
+      "Mobile-390",
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Location Near Hunter",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "60x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Nearby Towns",
+            "size": "125x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          }
+        ]
+      },
+      {
+        "type": "targets",
+        "page": "Location Near Hunter",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "60x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Nearby Towns",
+            "size": "125x19px"
+          },
+          {
+            "selector": "a",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "732 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Glossary Index"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-390"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Glossary Index",
+        "vp": "Mobile-390",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.ss-community-pill.ss-primary",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a.ss-community-pill",
+            "text": "Visit Student Hub",
+            "size": "136x20px"
+          },
+          {
+            "selector": "button",
+            "text": "Surprise me",
+            "size": "88x21px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=836px) obscures 1 clickable element(s)",
+    "pageCount": 3,
+    "pages": [
+      "Schedule Page",
+      "Kids Program",
+      "Success Stories"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Schedule Page",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a",
+            "text": "Text Before Attending",
+            "blockedBy": "nav.ss-mobile-actionbar.is-observed"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Kids Program",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.btn.btn-secondary",
+            "text": "See the Kids Schedule",
+            "blockedBy": "a.ss-action-primary"
+          }
+        ]
+      },
+      {
+        "type": "blocked",
+        "page": "Success Stories",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.d-block.h-100",
+            "text": "I’m worried about being overwhelmedRead ",
+            "blockedBy": "a.ss-action-home"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Sticky Overlap / Obscured Link",
+    "severity": "HIGH",
+    "issue": "Fixed sticky bar (top=820px) obscures 1 clickable element(s)",
+    "pageCount": 1,
+    "pages": [
+      "Options & Pricing"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "blocked",
+        "page": "Options & Pricing",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.op-button.op-button--quiet",
+            "text": "View Schedule\n            ↗",
+            "blockedBy": "a.ss-action-home"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "22 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Glossary Term"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Glossary Term",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a",
+            "text": "Home",
+            "size": "46x20px"
+          },
+          {
+            "selector": "a",
+            "text": "BJJ Glossary",
+            "size": "102x20px"
+          },
+          {
+            "selector": "a",
+            "text": "Back to results",
+            "size": "114x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "subcategory": "Touch Target Under 36px",
+    "severity": "MEDIUM",
+    "issue": "749 interactive touch target(s) are under 36px height/width",
+    "pageCount": 1,
+    "pages": [
+      "Glossary Index"
+    ],
+    "viewportCount": 1,
+    "viewports": [
+      "Mobile-414"
+    ],
+    "samples": [
+      {
+        "type": "targets",
+        "page": "Glossary Index",
+        "vp": "Mobile-414",
+        "data": [
+          {
+            "selector": "a.ss-skip-link",
+            "text": "Skip to main content",
+            "size": "1x1px"
+          },
+          {
+            "selector": "a.ss-community-pill.ss-primary",
+            "text": "Reserve Your Free First Visit",
+            "size": "219x20px"
+          },
+          {
+            "selector": "a.ss-community-pill",
+            "text": "This Week’s Focus",
+            "size": "140x20px"
+          },
+          {
+            "selector": "a.ss-community-pill",
+            "text": "Visit Student Hub",
+            "size": "136x20px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Alignment",
+    "subcategory": "Centered Multi-line Paragraph",
+    "severity": "LOW",
+    "issue": "6 multi-line paragraph(s) are center-aligned, degrading readability",
+    "pageCount": 1,
+    "pages": [
+      "Contact & Booking Form"
+    ],
+    "viewportCount": 4,
+    "viewports": [
+      "Desktop-1024",
+      "Desktop-1280",
+      "Desktop-1440",
+      "Desktop-1920"
+    ],
+    "samples": [
+      {
+        "type": "elements",
+        "page": "Contact & Booking Form",
+        "vp": "Desktop-1024",
+        "data": [
+          {
+            "selector": "p.lead",
+            "length": 253,
+            "text": "Tour the studio, ask questions, map your goal, the"
+          },
+          {
+            "selector": "p.small.text-muted",
+            "length": 222,
+            "text": "Youth/Teen classes run at 5:00 PM: No-Gi Monday an"
+          },
+          {
+            "selector": "p",
+            "length": 250,
+            "text": "Looking for after-school martial arts in Tannersvi"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Contact & Booking Form",
+        "vp": "Desktop-1280",
+        "data": [
+          {
+            "selector": "p.lead",
+            "length": 253,
+            "text": "Tour the studio, ask questions, map your goal, the"
+          },
+          {
+            "selector": "p.small.text-muted",
+            "length": 222,
+            "text": "Youth/Teen classes run at 5:00 PM: No-Gi Monday an"
+          },
+          {
+            "selector": "p",
+            "length": 250,
+            "text": "Looking for after-school martial arts in Tannersvi"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Contact & Booking Form",
+        "vp": "Desktop-1440",
+        "data": [
+          {
+            "selector": "p.lead",
+            "length": 253,
+            "text": "Tour the studio, ask questions, map your goal, the"
+          },
+          {
+            "selector": "p.small.text-muted",
+            "length": 222,
+            "text": "Youth/Teen classes run at 5:00 PM: No-Gi Monday an"
+          },
+          {
+            "selector": "p",
+            "length": 250,
+            "text": "Looking for after-school martial arts in Tannersvi"
+          }
+        ]
+      },
+      {
+        "type": "elements",
+        "page": "Contact & Booking Form",
+        "vp": "Desktop-1920",
+        "data": [
+          {
+            "selector": "p.lead",
+            "length": 253,
+            "text": "Tour the studio, ask questions, map your goal, the"
+          },
+          {
+            "selector": "p.small.text-muted",
+            "length": 222,
+            "text": "Youth/Teen classes run at 5:00 PM: No-Gi Monday an"
+          },
+          {
+            "selector": "p",
+            "length": 250,
+            "text": "Looking for after-school martial arts in Tannersvi"
+          }
+        ]
+      }
+    ]
+  }
+]

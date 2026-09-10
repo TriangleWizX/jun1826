@@ -78,8 +78,8 @@
   }
 
   function formContext(form) {
-    const selected = form.querySelector("[name='student_lane'], [name='audience_lane'], #booking-profile-value");
-    const preferred = form.querySelector("[name='preferred_day'], [name='preferred_class_day'], [name='schedule_pref'], #booking-class-value");
+    const selected = form.querySelector("[name='student_lane'], [name='audience_lane'], #booking-profile-value, #home-profile-value");
+    const preferred = form.querySelector("[name='preferred_day'], [name='preferred_class_day'], [name='schedule_pref'], #booking-class-value, #home-class-value");
     const period = form.querySelector("[name='preferred_days']:checked, [data-requested-start-period]");
     return {
       lane: normalizeLane(selected?.value || query("lane")),
@@ -90,14 +90,17 @@
 
   function enrichLeadForm(form) {
     let first = {};
-    try { first = JSON.parse(sessionStorage.getItem("ss_attr_first_touch") || "{}"); } catch (_) { /* storage may be unavailable */ }
+    try { first = window.SENSEI_LINK_UTILS?.readStoredAttribution?.() || JSON.parse(sessionStorage.getItem("ss_attr_first_touch") || "{}"); } catch (_) { /* storage may be unavailable */ }
+    const params = new URLSearchParams(window.location.search);
     const values = {
       landing_page: first.landing_page || window.location.pathname,
       referrer: first.referrer || document.referrer || "direct",
-      utm_source: first.utm_source || "direct",
-      utm_medium: first.utm_medium || "none",
-      utm_campaign: first.utm_campaign || "none",
-      utm_content: first.utm_content || "none"
+      source_campaign: params.get("campaign") || params.get("utm_campaign") || first.utm_campaign || "none",
+      utm_source: params.get("utm_source") || first.utm_source || "direct",
+      utm_medium: params.get("utm_medium") || first.utm_medium || "none",
+      utm_campaign: params.get("utm_campaign") || first.utm_campaign || "none",
+      utm_content: params.get("utm_content") || first.utm_content || "none",
+      utm_term: params.get("utm_term") || first.utm_term || "none"
     };
     Object.entries(values).forEach(([name, value]) => {
       let input = form.querySelector(`[name="${name}"]`);

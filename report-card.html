@@ -1,403 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="/favicon.ico" rel="icon" sizes="any"/>
-<link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<title>Digital Twin Report Card | Sensei Sandy BJJ</title>
-<meta content="Digital Twin Report Card. Track habits, skill reps, and confidence gains across the lane you train in.  Train with beginner-friendly coaching in." name="description"/>
-
-
-<link href="https://senseisandy.com/report-card" rel="canonical"/>
-<meta content="https://senseisandy.com/report-card" property="og:url"/>
-<meta content="Sensei Sandy BJJ" property="og:site_name"/>
-<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" property="og:image"/>
-<meta content="index, follow" name="robots"/>
-<meta content="Digital Twin Report Card | Sensei Sandy BJJ" property="og:title"/>
-<meta content="Digital Twin Report Card. Track habits, skill reps, and confidence gains across the lane you train in.  Train with beginner-friendly coaching in." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Digital Twin Report Card | Sensei Sandy BJJ" name="twitter:title"/>
-<meta content="Digital Twin Report Card. Track habits, skill reps, and confidence gains across the lane you train in.  Train with beginner-friendly coaching in." name="twitter:description"/>
-<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
-<meta content="https://senseisandy.com/report-card" name="twitter:url"/>
-<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/tokens.css" as="style">
-<link rel="stylesheet" href="/assets/css/routes/site-18ac9c2704ce.min.css">
-<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.css">
-<link rel="stylesheet" href="/assets/css/fonts.css">
-<link rel="stylesheet" href="/assets/css/site-shell.min.css">
-</head>
-<body class="ss-page">
-
-  <!--#include virtual="/nav-include.html" -->
-
-
-<!-- Preload & load Bootstrap early so pages with footer-only includes get the file downloaded earlier -->
-<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-
-<script>
-  (function ensureBootstrapBundle() {
-    const primarySrc = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
-    const fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
-    const bootstrapScriptSelector = 'script[src*="bootstrap.bundle.min.js"]';
-
-    const hasDropdown = () => Boolean(window.bootstrap && window.bootstrap.Dropdown);
-
-    const loadBundle = (src) => {
-      if (hasDropdown()) return;
-      if (document.querySelector(`script[data-ss-bootstrap-loader="${src}"]`)) return;
-
-      const script = document.createElement('script');
-      script.src = src;
-      script.crossOrigin = 'anonymous';
-      script.async = false;
-      script.dataset.ssBootstrapLoader = src;
-      script.addEventListener('load', () => {
-        if (!hasDropdown() && src !== fallbackSrc) loadBundle(fallbackSrc);
-      }, { once: true });
-      script.addEventListener('error', () => {
-        if (src !== fallbackSrc) loadBundle(fallbackSrc);
-      }, { once: true });
-      document.body.appendChild(script);
-    };
-
-    const watchExistingBundle = (script) => {
-      if (!script || script.dataset.ssBootstrapWatched === 'true') return;
-      script.dataset.ssBootstrapWatched = 'true';
-      script.addEventListener('load', () => {
-        if (!hasDropdown()) loadBundle(fallbackSrc);
-      }, { once: true });
-      script.addEventListener('error', () => loadBundle(fallbackSrc), { once: true });
-    };
-
-    const ensureDropdown = () => {
-      if (hasDropdown()) return;
-
-      const existingBundle = document.querySelector(bootstrapScriptSelector);
-      if (existingBundle) {
-        watchExistingBundle(existingBundle);
-      } else {
-        loadBundle(primarySrc);
-      }
-    };
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', ensureDropdown, { once: true });
-    } else {
-      ensureDropdown();
-    }
-  })();
-</script>
-
-<div id="schedule-dialog" class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="schedule-dialog-title" hidden>
-  <div class="schedule-dialog__panel">
-    <button type="button" class="schedule-dialog__close" aria-label="Close scheduling form">&times;</button>
-    <h2 id="schedule-dialog-title">Plan Your First Class</h2>
-    <p>Leave the best number to reach you. Sandy will help you choose the right class time.</p>
-    <form id="schedule-dialog-form" action="https://formspree.io/f/mqazqozk" method="POST">
-      <label for="schedule-lead-name" style="display: block; margin-bottom: 1rem; font-weight: 600;">
-        First name
-        <input type="text" id="schedule-lead-name" name="name" autocomplete="given-name" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
-      </label>
-      <label for="schedule-lead-phone" style="display: block; margin-bottom: 1.5rem; font-weight: 600;">
-        Phone number
-        <input type="tel" id="schedule-lead-phone" name="phone" autocomplete="tel" inputmode="tel" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
-      </label>
-      <input type="hidden" name="_subject" value="New Schedule Request (Modal)">
-      <button type="submit" class="ss-btn ss-btn-primary" style="width: 100%;">Continue to Schedule</button>
-    </form>
-    <p id="schedule-dialog-status" class="ss-lead-capture-status" role="status" aria-live="polite" hidden style="margin-top: 1rem; color: #116A42; font-weight: 600;">
-      Thank you. Sandy will call or text you soon.
-    </p>
-  </div>
-</div>
-
-<script>
-(function initScheduleModal() {
-  const endpoint = 'https://formspree.io/f/mqazqozk';
-  const schedulePath = '/schedule';
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const dialog = document.getElementById('schedule-dialog');
-    if (!dialog) return;
-
-    const panel = dialog.querySelector('.schedule-dialog__panel');
-    const closeBtn = dialog.querySelector('.schedule-dialog__close');
-    const form = document.getElementById('schedule-dialog-form');
-    const status = document.getElementById('schedule-dialog-status');
-    let lastActiveElement = null;
-
-    function openModal(trigger) {
-      lastActiveElement = trigger || document.activeElement;
-      dialog.removeAttribute('hidden');
-      document.body.style.overflow = 'hidden';
-      const firstInput = dialog.querySelector('input, button');
-      if (firstInput) firstInput.focus();
-    }
-
-    function closeModal() {
-      dialog.setAttribute('hidden', '');
-      document.body.style.overflow = '';
-      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
-        lastActiveElement.focus();
-      }
-    }
-
-    document.addEventListener('click', function (e) {
-      const trigger = e.target.closest('.schedule-trigger, [aria-controls="schedule-dialog"]');
-      if (trigger) {
-        e.preventDefault();
-        openModal(trigger);
-      }
-    });
-
-    closeBtn?.addEventListener('click', closeModal);
-
-    dialog.addEventListener('click', function (e) {
-      if (panel && !panel.contains(e.target)) {
-        closeModal();
-      }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !dialog.hasAttribute('hidden')) {
-        closeModal();
-      }
-    });
-
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (!form.reportValidity()) return;
-
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const defaultLabel = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-
-        const payload = {
-          name: form.elements.name.value,
-          phone: form.elements.phone.value,
-          _subject: 'New Schedule Request (Modal)'
-        };
-
-        fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        }).then(function (res) {
-          if (!res.ok) throw new Error('Submission failed');
-          form.hidden = true;
-          if (status) {
-            status.textContent = 'Thank you. Sandy will call or text you soon.';
-            status.hidden = false;
-          }
-          setTimeout(function () {
-            closeModal();
-            const currentPath = window.location.pathname.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
-            const targetPath = schedulePath.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
-            if (currentPath !== targetPath) {
-              window.location.href = schedulePath;
-            }
-          }, 1200);
-        }).catch(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = defaultLabel;
-          if (status) {
-            status.textContent = "We couldn't send that. Please try again or text Sandy at .";
-            status.hidden = false;
-          }
-        });
-      });
-    }
-  });
-})();
-</script>
-
-<script>
-(function markCurrentPage() {
-  const currentPath = window.location.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
-  const allLinks = document.querySelectorAll('#ssMainNav a.nav-link, #ssMainNav a.dropdown-item');
-  allLinks.forEach(link => {
-    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
-    if (linkPath === currentPath) {
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'page');
-
-      const dropdown = link.closest('.dropdown');
-      if (dropdown) {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        if (toggle) {
-          toggle.classList.add('active');
-        }
-      }
-    }
-  });
-})();
-
-document.addEventListener('DOMContentLoaded', function() {
-  const myCollapsible = document.getElementById('ssMainNav');
-  const siteHeader = document.querySelector('.ss-site-header');
-  const toggler = document.querySelector('.ss-menu-button');
-  const skipLink = document.querySelector('.ss-skip-link');
-  const mainContent = document.querySelector('main, [role="main"]');
-
-  if (skipLink && mainContent) {
-    if (!mainContent.id) mainContent.id = 'main-content';
-    if (!mainContent.hasAttribute('tabindex')) mainContent.tabIndex = -1;
-    skipLink.setAttribute('href', '#' + mainContent.id);
-    skipLink.addEventListener('click', function () {
-      window.setTimeout(function () {
-        mainContent.focus({ preventScroll: true });
-      }, 0);
-    });
-  }
-
-  if (myCollapsible && siteHeader) {
-    const lgQuery = window.matchMedia('(min-width: 992px)');
-    const handleResize = (e) => {
-      if (e.matches) {
-        myCollapsible.removeAttribute('inert');
-      } else {
-        if (!myCollapsible.classList.contains('show')) {
-          myCollapsible.setAttribute('inert', '');
-        }
-      }
-    };
-
-    if (lgQuery.addEventListener) {
-      lgQuery.addEventListener('change', handleResize);
-    } else if (lgQuery.addListener) {
-      lgQuery.addListener(handleResize);
-    }
-    handleResize(lgQuery);
-
-    myCollapsible.addEventListener('show.bs.collapse', function () {
-      siteHeader.classList.add('nav-open');
-      myCollapsible.removeAttribute('inert');
-    });
-
-    myCollapsible.addEventListener('shown.bs.collapse', function () {
-      const firstLink = myCollapsible.querySelector('a, button');
-      if (firstLink) firstLink.focus();
-    });
-
-    myCollapsible.addEventListener('hide.bs.collapse', function () {
-      siteHeader.classList.remove('nav-open');
-    });
-
-    myCollapsible.addEventListener('hidden.bs.collapse', function () {
-      if (!lgQuery.matches) {
-        myCollapsible.setAttribute('inert', '');
-      }
-      if (toggler) toggler.focus();
-    });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && myCollapsible.classList.contains('show')) {
-        if (window.bootstrap && window.bootstrap.Collapse) {
-          const bsCollapse = window.bootstrap.Collapse.getInstance(myCollapsible) || new window.bootstrap.Collapse(myCollapsible, { toggle: false });
-          bsCollapse.hide();
-        }
-      }
-    });
-  }
-});
-</script>
-
-<style>
-@media screen and (min-width: 768px) {
-  .header-display-desktop .header-nav-item--folder,
-  .ss-global-nav-wrapper .ss-navbar .dropdown,
-  .ss-navbar .nav-item.dropdown {
-    position: relative;
-  }
-
-  .header-display-desktop .header-nav-item--folder .header-nav-folder-content,
-  .ss-global-nav-wrapper .ss-navbar .dropdown-menu,
-  .ss-navbar .dropdown-menu {
-    display: block !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translateY(10px) !important;
-    transition:
-      opacity 160ms ease,
-      transform 160ms ease,
-      visibility 160ms ease !important;
-  }
-
-  .header-display-desktop .header-nav-item--folder:hover .header-nav-folder-content,
-  .header-display-desktop .header-nav-item--folder:focus-within .header-nav-folder-content,
-  .header-display-desktop .header-nav-item--folder.show .header-nav-folder-content,
-  .header-display-desktop .header-nav-item--folder.open .header-nav-folder-content,
-  .header-display-desktop .header-nav-item--folder.is-open .header-nav-folder-content,
-  .ss-global-nav-wrapper .ss-navbar .dropdown:hover .dropdown-menu,
-  .ss-global-nav-wrapper .ss-navbar .dropdown:focus-within .dropdown-menu,
-  .ss-global-nav-wrapper .ss-navbar .dropdown.show .dropdown-menu,
-  .ss-navbar .dropdown:hover .dropdown-menu,
-  .ss-navbar .dropdown:focus-within .dropdown-menu,
-  .ss-navbar .dropdown.show .dropdown-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translateY(0) !important;
-  }
-}
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const folders = document.querySelectorAll(
-      ".header-display-desktop .header-nav-item--folder, .ss-navbar .dropdown"
-    );
-
-    const closeFolder = function (folder) {
-      folder.classList.remove("open", "is-open", "active-folder", "menu-open", "folder-open");
-      folder.removeAttribute("data-open");
-      folder.removeAttribute("data-folder-status");
-      const menu = folder.querySelector(".dropdown-menu, .header-nav-folder-content");
-      if (menu) menu.classList.remove("show", "open", "is-open");
-      const trigger = folder.querySelector("a, button");
-      if (trigger && trigger.hasAttribute("aria-expanded")) trigger.setAttribute("aria-expanded", "false");
-    };
-
-    folders.forEach(closeFolder);
-
-    document.addEventListener("click", function (event) {
-      folders.forEach(function (folder) {
-        if (!folder.contains(event.target)) closeFolder(folder);
-      });
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key !== "Escape") return;
-      folders.forEach(closeFolder);
-      const focusedElement = document.activeElement;
-      if (focusedElement instanceof HTMLElement) focusedElement.blur();
-    });
-  });
-</script>
-
-
-  
-
-  <div id="scrollProgress"></div>
-
-  
-    <nav aria-label="Breadcrumb" class="ss-breadcrumbs container">
+---
+layout: layouts/base.njk
+title: "Training Report Card | Sensei Sandy BJJ"
+description: "A simple training report card for Sensei Sandy BJJ students and families. See what is working and what to practice next."
+canonicalUrl: "https://senseisandy.com/report-card"
+robots: "noindex, follow"
+audience: "member"
+bodyClass: "ss-page"
+permalink: "/report-card.html"
+---
+<p class="rc-weekly-bridge"><a href="/weekly-audit">Need a quick weekly check-in? Use the Weekly Training Check-In.</a></p>
+<nav aria-label="Breadcrumb" class="ss-breadcrumbs container">
 <a href="/">Home</a>
 <span aria-hidden="true">›</span>
 <a href="/parent-resources">Parent Resources</a>
 <span aria-hidden="true">›</span>
-<span>Digital Twin Report Card</span>
+<span>Training Report Card</span>
 </nav>
 <style>
-    /* Premium Dashboard Styles for Digital Twin Report Card */
+    /* Premium Dashboard Styles for Training Report Card */
     :root {
       --ss-rc-cream: #FBFAF8;
       --ss-rc-white: #FFFFFF;
@@ -588,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
       gap: 1rem;
     }
 
-    /* Overall Grade Card styling */
+    /* Non-numeric snapshot card styling */
     .rc-card--grade {
       text-align: center;
       display: flex;
@@ -764,72 +384,6 @@ document.addEventListener('DOMContentLoaded', function() {
       width: 150px;
       flex-shrink: 0;
     }
-    .rc-slider-container {
-      flex-grow: 1;
-      padding: 8px 0;
-      cursor: ew-resize;
-      position: relative;
-    }
-    .rc-slider-track {
-      height: 6px;
-      background-color: var(--ss-rc-border);
-      border-radius: 3px;
-      overflow: hidden;
-      position: relative;
-    }
-    .rc-slider-fill {
-      height: 100%;
-      background-color: var(--ss-rc-muted);
-      border-radius: 3px;
-      transition: width 0.1s ease;
-    }
-    .rc-domain-row:hover .rc-slider-fill {
-      background-color: var(--ss-rc-blue);
-    }
-    .rc-domain-percent {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--ss-rc-muted);
-      width: 45px;
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .rc-domain-grade-badge {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 20px;
-      width: 40px;
-      text-align: center;
-      flex-shrink: 0;
-      text-transform: uppercase;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-    }
-
-    /* Badges styles */
-    .grade-a-plus, .grade-a, .grade-a-minus {
-      background-color: #E2F0D9;
-      color: #385723;
-    }
-    .grade-b-plus, .grade-b {
-      background-color: #FFF2CC;
-      color: #7F6000;
-    }
-    .grade-c-plus, .grade-c {
-      background-color: #FCE4D6;
-      color: #C65911;
-    }
-    .grade-d-plus, .grade-d {
-      background-color: #F8CBAD;
-      color: #C00000;
-    }
-    .grade-f {
-      background-color: #E7E6E6;
-      color: #595959;
-    }
-
     .rc-performance-footer {
       display: flex;
       align-items: center;
@@ -841,46 +395,6 @@ document.addEventListener('DOMContentLoaded', function() {
       border-top: 1px solid var(--ss-rc-border);
       padding-top: 0.8rem;
       opacity: 0.8;
-    }
-
-    /* Grading Table */
-    .rc-grading-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      margin-top: 0.4rem;
-    }
-    .rc-grading-table th {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--ss-rc-muted);
-      text-align: left;
-      padding: 8px 10px;
-      border-bottom: 1px solid var(--ss-rc-border);
-    }
-    .rc-grading-table td {
-      padding: 7px 10px;
-      border-bottom: 1px solid rgba(54, 43, 36, 0.05);
-      color: var(--ss-rc-dark);
-    }
-    .rc-grading-table tr:last-child td {
-      border-bottom: none;
-    }
-    .rc-grading-table tr:nth-child(even) {
-      background-color: rgba(54, 43, 36, 0.02);
-    }
-    .rc-table-badge {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 12px;
-      display: inline-block;
-      min-width: 28px;
-      text-align: center;
     }
 
     /* Feedback block */
@@ -1215,7 +729,92 @@ document.addEventListener('DOMContentLoaded', function() {
         background: transparent !important;
       }
     }
-  </style>
+.rc-development-map {
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  border-radius: 1rem;
+  background: #fff;
+}
+.rc-development-map h2 { margin: .35rem 0 .5rem; }
+.rc-development-axes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; margin-top: 1.5rem; }
+.rc-development-axes article { padding: 1rem; border-top: 2px solid #116a42; background: #f4f1ed; }
+.rc-development-axes h3 { margin: 0 0 .45rem; font-size: 1rem; }
+.rc-development-axes p { min-height: 3.4em; margin: 0 0 .8rem; font-size: .84rem; color: #4f433c; }
+.rc-development-axes span { display: inline-block; padding: .25rem .5rem; border-radius: 999px; background: rgba(17,106,66,.1); color: #116a42; font-size: .72rem; font-weight: 700; }
+.rc-development-notes { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.25rem; color: #4f433c; font-size: .86rem; }
+.rc-development-notes strong { font-weight: 600; }
+.rc-dashboard-grid > .rc-summary-row .rc-card--grade { display: none; }
+.rc-skill-intro { margin: -0.5rem 0 1.25rem; padding: .85rem 1rem; border-top: 2px solid #116a42; background: #f4f1ed; color: #4f433c; font-size: .88rem; line-height: 1.55; }
+.rc-skill-control { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .35rem; flex: 1; min-width: 0; margin: 0; padding: 0; border: 0; }
+.rc-skill-control label { position: relative; margin: 0; cursor: pointer; }
+.rc-skill-control input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.rc-skill-control label span { display: flex; align-items: center; justify-content: center; min-height: 2.25rem; padding: .35rem .3rem; border: 1px solid rgba(54,43,36,.18); border-radius: .45rem; background: #fff; color: #4f433c; font-size: .7rem; line-height: 1.15; text-align: center; }
+.rc-skill-control input:checked + span { border-color: #116a42; background: rgba(17,106,66,.12); color: #116a42; font-weight: 700; box-shadow: inset 0 0 0 1px #116a42; }
+.rc-skill-control input:focus-visible + span { outline: 3px solid rgba(0,221,224,.7); outline-offset: 2px; }
+.rc-card--skill-guide dl { margin: 0; font-size: .78rem; }
+.rc-card--skill-guide dt { margin-top: .7rem; color: #116a42; font-weight: 700; }
+.rc-card--skill-guide dt:first-child { margin-top: 0; }
+.rc-card--skill-guide dd { margin: .15rem 0 0; color: #4f433c; line-height: 1.45; }
+.rc-parent-interpretation { margin: 1rem 0 0; padding-top: .8rem; border-top: 1px solid rgba(54,43,36,.14); font-size: .78rem; line-height: 1.45; }
+@media (max-width: 900px) { .rc-skill-control { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rc-domain-row { align-items: flex-start; flex-wrap: wrap; } .rc-domain-name { width: calc(100% - 40px); } .rc-skill-control { flex-basis: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-left: 40px; } }
+@media (max-width: 900px) { .rc-development-axes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rc-development-map { padding: 1.25rem; } .rc-development-axes { grid-template-columns: 1fr; } }
+.rc-development-intro { max-width: 68rem; margin: 0 0 1rem; color: #4f433c; line-height: 1.55; }
+.rc-development-axis { display: flex; flex-direction: column; gap: .55rem; }
+.rc-development-axis select { width: 100%; border: 1px solid rgba(54,43,36,.18); border-radius: .45rem; background: #fff; color: #1f1712; padding: .45rem .5rem; font: inherit; font-size: .78rem; }
+.rc-review-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: 1rem; }
+.rc-field-label { display: block; margin-bottom: .3rem; color: #4f433c; font-size: .76rem; font-weight: 700; }
+.rc-review-meta input, .rc-review-meta select, .rc-focus-control select { width: 100%; min-height: 2.5rem; border: 1px solid rgba(54,43,36,.18); border-radius: .45rem; background: #fff; color: #1f1712; padding: .45rem .55rem; font: inherit; }
+.rc-focus-card { margin-top: 1rem; padding: 1rem; border: 1px solid rgba(17,106,66,.2); border-radius: .75rem; background: #f7fbf8; }
+.rc-focus-control { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.rc-focus-help, .rc-coach-guidance { margin: .75rem 0 0; color: #4f433c; font-size: .82rem; line-height: 1.5; }
+.rc-feedback-fields { display: grid; gap: .8rem; }
+.rc-feedback-field textarea { width: 100%; min-height: 5.5rem; resize: vertical; border: 1px solid rgba(54,43,36,.18); border-radius: .55rem; padding: .65rem .7rem; color: #1f1712; font: inherit; line-height: 1.45; }
+.rc-feedback-field textarea:focus, .rc-review-meta input:focus, .rc-review-meta select:focus, .rc-focus-control select:focus, .rc-development-axis select:focus { outline: 3px solid rgba(0,221,224,.55); outline-offset: 2px; }
+.rc-output-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.rc-output-actions button { border: 1px solid #116a42; border-radius: 999px; background: #116a42; color: #fff; padding: .55rem .9rem; font: inherit; font-weight: 700; cursor: pointer; }
+.rc-output-actions button.secondary { background: #fff; color: #116a42; }
+.rc-example-note { color: #8b522e; font-size: .76rem; font-style: italic; }
+@media (max-width: 560px) { .rc-review-meta, .rc-focus-control { grid-template-columns: 1fr; } .rc-output-actions button { width: 100%; } }
+@media print {
+  .rc-page-header, .rc-development-intro, .rc-coach-guidance, .rc-skill-intro, .rc-card--skill-guide, .rc-output-actions, .report-card-copy, .rc-card--action, .rc-footer-branding, .rc-development-notes { display: none !important; }
+  .rc-card:hover { transform: none; }
+  .rc-feedback-field textarea { min-height: 3.5rem; border: 0; padding: 0; }
+  .rc-review-meta input, .rc-review-meta select, .rc-focus-control select, .rc-development-axis select { appearance: none; border: 0; padding-left: 0; }
+}
+/* Clarity pass: functional workbench, not a decorative dashboard. */
+:root { --ss-rc-cream: var(--color-paper, #fbfaf8); --ss-rc-white: var(--color-paper, #fbfaf8); --ss-rc-dark: var(--color-ink, #1f1712); --ss-rc-muted: var(--color-muted, #4f433c); --ss-rc-border: var(--color-rule, rgba(54,43,36,.14)); --ss-rc-green: var(--color-accent, #116a42); }
+body { font-family: var(--font-body, 'Lexend', sans-serif); }
+.rc-page-header { max-width: 56rem; margin: 2rem auto 2.25rem; text-align: left; }
+.rc-page-eyebrow { justify-content: flex-start; letter-spacing: .12em; }
+.rc-page-eyebrow::before { display: none; }
+.rc-page-eyebrow::after { width: 2.5rem; }
+.rc-page-title { font-family: var(--font-display, 'Instrument Serif', Georgia, serif); font-size: clamp(2.35rem, 5vw, 3.75rem); }
+.rc-page-subtitle { max-width: 38rem; margin-bottom: .45rem; line-height: 1.55; }
+.rc-page-kicker { max-width: 38rem; margin: 0 0 1.25rem; color: var(--ss-rc-muted); font-size: .9rem; line-height: 1.5; }
+.rc-page-divider { margin: 0; width: 3rem; background: var(--ss-rc-green); }
+.rc-development-map { background: var(--ss-rc-white); border: 1px solid var(--ss-rc-border); border-radius: .75rem; box-shadow: none; }
+.rc-development-map h2 { font-family: var(--font-display, 'Instrument Serif', Georgia, serif); font-size: 1.9rem; }
+.rc-development-axes article { border-top: 2px solid var(--ss-rc-green); border-radius: .5rem; background: var(--color-paper-2, #f4f1ed); }
+.rc-card { border-color: var(--ss-rc-border); border-radius: .75rem; box-shadow: none; transition: border-color .12s ease, background-color .12s ease; }
+.rc-card:hover { transform: none; box-shadow: none; }
+.rc-summary-row .rc-card { min-height: 8.5rem; }
+.rc-domain-row { border: 1px solid transparent; }
+.rc-domain-row:hover { border-color: var(--ss-rc-border); }
+.rc-skill-control label span { min-height: 2.75rem; font-size: .74rem; }
+.rc-skill-control input:focus-visible + span, .rc-development-axis select:focus-visible, .rc-review-meta input:focus-visible, .rc-review-meta select:focus-visible, .rc-focus-control select:focus-visible, .rc-feedback-field textarea:focus-visible { outline: 3px solid var(--color-focus-inverse, #00a8aa); outline-offset: 2px; }
+.rc-focus-card { border-color: color-mix(in srgb, var(--ss-rc-green) 28%, var(--ss-rc-border)); background: color-mix(in srgb, var(--ss-rc-green) 5%, var(--ss-rc-white)); }
+.rc-feedback-field textarea { min-height: 6.25rem; background: var(--ss-rc-white); }
+.rc-output-actions button { min-height: 2.75rem; }
+.report-card-copy { max-width: 56rem; border-radius: .75rem; box-shadow: none; }
+@media (max-width: 560px) { .rc-page-header { margin-top: 1.25rem; margin-bottom: 1.5rem; padding: 0 1rem; } .rc-dashboard-grid { padding: 0 1rem; gap: 1rem; } .rc-development-map, .rc-card { padding: 1rem; } .rc-skill-control label span { min-height: 3rem; } .rc-summary-row .rc-card { min-height: auto; } }
+@media (max-width: 560px) { .rc-domain-row::after { position: static; order: 3; display: block; width: 100%; padding: 0 0 0 40px; background: transparent; color: var(--ss-rc-muted); box-shadow: none; opacity: 1; transform: none; font-size: .72rem; line-height: 1.4; text-align: left; } }
+ .rc-section-title { max-width: 56rem; margin: 1.25rem auto -0.5rem; padding: 0 0.25rem; color: var(--ss-rc-dark); font-family: var(--font-body, 'Lexend', sans-serif); font-size: 1rem; font-weight: 700; letter-spacing: 0; }
+@media (max-width: 560px) { .rc-section-title { margin-top: .75rem; padding: 0; font-size: .95rem; } }
+</style>
 <main class="ss-main">
 <!-- SVG Vector Watermarks -->
 <!-- Left mountains watermark -->
@@ -1242,17 +841,35 @@ document.addEventListener('DOMContentLoaded', function() {
 <path d="M 87 30 Q 100 15 110 20"></path>
 </svg>
 <header class="rc-page-header">
-<div class="rc-page-eyebrow">Digital Twin</div>
-<h1 class="rc-page-title">Digital Twin Report Card</h1>
-<p class="rc-page-subtitle">Clear insight. Calm progress. Better Jiu-Jitsu.</p>
+<div class="rc-page-eyebrow">Training Report</div>
+<h1 class="rc-page-title">Training Report Card</h1>
+<p class="rc-page-subtitle">A clear way to see what is working and what to try next.</p>
+<p class="rc-page-kicker">Start with the student and review details. Then choose what you saw in class.</p>
 <div class="rc-page-divider"></div>
 </header>
+<section aria-labelledby="development-map-title" class="rc-development-map">
+<div class="rc-card-header"><span class="rc-card-label">Progress Map</span></div>
+<h2 id="development-map-title">How Your Skills Are Growing</h2>
+<p class="rc-page-subtitle">Use these stages to describe real training progress. This is not a school grade.</p>
+<p class="rc-development-intro"><strong>Watch → Practice → Check → Adjust:</strong> use what happened in class to choose the next problem to work on.</p>
+<p class="rc-development-intro">Choose the state that best matches what the student has shown more than once. A state can stay the same. That is useful information, not failure.</p>
+<div class="rc-development-axes">
+<article class="rc-development-axis"><h3>Recognize</h3><p>Do I understand what is happening?</p><label class="visually-hidden" for="development-recognize">Recognize state</label><select id="development-recognize" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Protect</h3><p>Can I remain safe?</p><label class="visually-hidden" for="development-protect">Protect state</label><select id="development-protect" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Solve</h3><p>Can I improve the situation?</p><label class="visually-hidden" for="development-solve">Solve state</label><select id="development-solve" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Adapt</h3><p>Can I respond when my first idea fails?</p><label class="visually-hidden" for="development-adapt">Adapt state</label><select id="development-adapt" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+<article class="rc-development-axis"><h3>Express</h3><p>Am I choosing solutions that fit me?</p><label class="visually-hidden" for="development-express">Express state</label><select id="development-express" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
+</div>
+<div class="rc-development-notes"><strong>What went well?</strong><strong>What will we try next?</strong><strong>What is getting easier?</strong></div>
+<p class="rc-coach-guidance">Coach note: update a state after the student shows a clear change in more than one class. Write down the problem, what happened, and what to try next. Needing a prompt is part of learning. A failed try gives us information. “Reliable” means the skill still works when the situation changes. It does not mean perfect.</p>
+</section>
 <div class="rc-dashboard-grid">
+<h2 class="rc-section-title">1. Tell us who this is</h2>
 <!-- Top Summary Row -->
 <section aria-label="Student Summary Info" class="rc-summary-row">
-<!-- Overall Grade Card -->
-<div class="rc-card rc-card--grade">
-<span class="rc-card-label">Overall Grade</span>
+<!-- Legacy decorative card remains hidden; the report has no numeric snapshot. -->
+<div aria-hidden="true" class="rc-card rc-card--grade">
+<span class="rc-card-label">Development Snapshot</span>
 <div class="rc-grade-wreath">
 <!-- Wreath SVG -->
 <svg class="laurel-wreath" viewbox="0 0 120 120">
@@ -1278,11 +895,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <path d="M 85,19 Q 78,10 72,17 C 66,24 74,28 85,19" fill="#C5A880"></path>
 <path d="M 72,13 Q 64,7 60,16 C 56,25 64,26 72,13" fill="#C5A880"></path>
 </svg>
-<div class="rc-grade-value">A+</div>
+<div class="rc-grade-value"></div>
 </div>
-<div class="rc-grade-percent">97%</div>
-<div class="rc-grade-status">Excellent</div>
-<div class="rc-grade-star">★</div>
+<div class="rc-grade-percent"></div>
+<div class="rc-grade-status"></div>
+<div class="rc-grade-star"></div>
+</div>
+<!-- Review metadata -->
+<div class="rc-card rc-card--review-meta">
+<div class="rc-card-header"><i class="bi bi-calendar3"></i><span class="rc-card-label">Review</span></div>
+<div class="rc-review-meta">
+<div><label class="rc-field-label" for="review-date">Review Date</label><input id="review-date" type="date"/></div>
+<div><label class="rc-field-label" for="review-type">Review Type</label><select id="review-type"><option>Baseline</option><option>Check-In</option><option>Mid-Cycle</option><option>End-of-Term</option><option>Coach Review</option><option>Other</option></select></div>
+</div>
+<span class="rc-example-note">Use the date and setting of this review. A weekly grade is not needed.</span>
 </div>
 <!-- Student Info Card -->
 <div class="rc-card rc-card--student">
@@ -1290,8 +916,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <i class="bi bi-person"></i>
 <span class="rc-card-label">Student</span>
 </div>
-<input aria-label="Student name input" class="rc-value-input" id="student-name" type="text" value="Alex Morgan"/>
-<span class="rc-card-subtext">Student ID SSBJJ-0427</span>
+<input aria-label="Student name input" class="rc-value-input" id="student-name" type="text" placeholder="Student name"/>
+<span class="rc-card-subtext">Student ID is optional.</span>
 </div>
 <!-- Level/Belt Info Card -->
 <div class="rc-card rc-card--level">
@@ -1299,14 +925,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <i class="bi bi-award"></i>
 <span class="rc-card-label">Level</span>
 </div>
-<input aria-label="Level input" class="rc-value-input" id="level" type="text" value="Blue Belt"/>
+<input aria-label="Level input" class="rc-value-input" id="level" type="text" placeholder="Belt / level"/>
 <div aria-label="Belt stripes selector" class="rc-stripes-container" data-stripes="2">
 <span aria-label="Set stripes to 1" class="rc-stripe-block active" role="button"></span>
 <span aria-label="Set stripes to 2" class="rc-stripe-block active" role="button"></span>
 <span aria-label="Set stripes to 3" class="rc-stripe-block" role="button"></span>
 <span aria-label="Set stripes to 4" class="rc-stripe-block" role="button"></span>
 </div>
-<span class="rc-card-subtext" id="stripes-text">Stripe 2 of 4</span>
+<span class="rc-card-subtext" id="stripes-text">Optional stripe detail</span>
 </div>
 <!-- Coaches Info Card -->
 <div class="rc-card rc-card--coaches">
@@ -1314,12 +940,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <i class="bi bi-people"></i>
 <span class="rc-card-label">Coaches</span>
 </div>
-<input aria-label="Coaches input" class="rc-value-input" id="coaches" type="text" value="Sensei Sandy"/>
+<input aria-label="Coaches input" class="rc-value-input" id="coaches" type="text" placeholder="Coach name(s)"/>
 <div class="rc-avatars-row">
 <div class="rc-avatar-placeholder" title="Sensei Sandy">
 <svg viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
 </div>
-<div class="rc-avatar-placeholder" title="Coach Alex">
+<div class="rc-avatar-placeholder" title="Additional coach (optional)">
 <svg viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
 </div>
 </div>
@@ -1330,183 +956,115 @@ document.addEventListener('DOMContentLoaded', function() {
 <i class="bi bi-calendar3"></i>
 <span class="rc-card-label">Schedule</span>
 </div>
-<input aria-label="Schedule input" class="rc-value-input" id="schedule" type="text" value="Mon, Wed, Fri"/>
-<span class="rc-card-subtext">6:00 AM • No-Gi: Sat 9:00 AM</span>
+<input aria-label="Schedule input" class="rc-value-input" id="schedule" type="text" placeholder="Class schedule"/>
+<span class="rc-card-subtext">Optional context for this review</span>
+</div>
+<div class="rc-card rc-card--schedule">
+<div class="rc-card-header"><i class="bi bi-bullseye"></i><span class="rc-card-label">Problem tested</span></div>
+<input aria-label="Problem tested input" class="rc-value-input" id="problem-tested" type="text" placeholder="Problem tested"/>
+<span class="rc-card-subtext">Name the problem, not the number of moves.</span>
+</div>
+<div class="rc-card rc-card--schedule">
+<div class="rc-card-header"><i class="bi bi-signpost-split"></i><span class="rc-card-label">Observation context</span></div>
+<select aria-label="Observation context" class="rc-value-input" id="observation-context">
+<option value="">Choose context (optional)</option>
+<option>Familiar partner</option>
+<option>Changed partner</option>
+<option>Unfamiliar partner</option>
+<option>Increased resistance</option>
+<option>Novel position</option>
+<option>Scrimmage</option>
+<option>Competition</option>
+</select>
+<div><label class="rc-field-label" for="observations-reviewed">Observations reviewed</label><input aria-describedby="observation-volume-note" class="rc-value-input" id="observations-reviewed" inputmode="numeric" min="0" type="number"/></div>
+<div><label class="rc-field-label" for="contexts-observed">Contexts observed</label><input aria-describedby="observation-volume-note" class="rc-value-input" id="contexts-observed" placeholder="e.g. positional start, live round" type="text"/></div>
+<p class="rc-coach-guidance" id="observation-volume-note">These notes give context. They are not a score.</p>
+<span class="rc-card-subtext">Context tells us where the skill worked.</span>
+</div>
+</section>
+<h2 class="rc-section-title">2. Pick one thing to work on</h2>
+<section aria-labelledby="current-focus-title" class="rc-focus-card">
+<div class="rc-card-header"><i class="bi bi-crosshair"></i><span class="rc-card-label" id="current-focus-title">Current Focus</span></div>
+<p class="rc-focus-help">Pick one main area to practice. Add a second only if it helps.</p>
+<div class="rc-focus-control">
+<div><label class="rc-field-label" for="primary-focus">Primary focus</label><select id="primary-focus"><option value="">Choose a primary domain</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
+<div><label class="rc-field-label" for="secondary-focus">Secondary focus (optional)</label><select id="secondary-focus"><option value="">None</option><option>Feet to Floor</option><option>Pinning</option><option>Pin Escapes</option><option>Base Retention</option><option>Guard Passing</option><option>Guard Retention</option><option>Guard</option><option>Submissions</option><option>Submission Escapes</option></select></div>
 </div>
 </section>
 <!-- Main Domain and Details Row -->
+<h2 class="rc-section-title">3. Show what happened in class</h2>
 <div class="rc-main-row">
-<!-- Domain Performance Section (Sliders) -->
+<!-- Domain Performance Section (skill states) -->
 <section aria-labelledby="performance-title" class="rc-card rc-card--performance">
 <div class="rc-performance-header">
 <i class="bi bi-bar-chart-line"></i>
-<span class="rc-card-label" id="performance-title">Domain Performance</span>
+<span class="rc-card-label" id="performance-title">Skill Areas</span>
 </div>
+<div class="rc-skill-intro"><strong>Skills, not grades</strong><br/>These states describe what Sandy sees in live training. They are not permanent labels. A skill may work in one situation and still need practice in another.</div>
 <div class="rc-domains-list">
 <!-- Feet to Floor -->
 <div class="rc-domain-row" data-tip="Takedown accuracy, posture maintenance, and stance stability.">
 <div class="rc-domain-icon"><i class="bi bi-chevron-double-down"></i></div>
 <span class="rc-domain-name">Feet to Floor</span>
-<div aria-label="Feet to Floor slider" class="rc-slider-container" data-score="90">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 90%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">90%</span>
-<span class="rc-domain-grade-badge grade-a">A</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Feet to Floor skill state</legend><label><input type="radio" name="feet-to-floor" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="feet-to-floor" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="feet-to-floor" value="developing"/><span>Developing</span></label><label><input type="radio" name="feet-to-floor" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="feet-to-floor" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Pinning -->
 <div class="rc-domain-row" data-tip="Positional control, weight distribution, and chest-to-chest connection.">
 <div class="rc-domain-icon"><i class="bi bi-lock"></i></div>
 <span class="rc-domain-name">Pinning</span>
-<div aria-label="Pinning slider" class="rc-slider-container" data-score="85">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 85%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">85%</span>
-<span class="rc-domain-grade-badge grade-b">B</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Pinning skill state</legend><label><input type="radio" name="pinning" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="pinning" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="pinning" value="developing"/><span>Developing</span></label><label><input checked="" type="radio" name="pinning" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="pinning" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Pin Escapes -->
 <div class="rc-domain-row" data-tip="Hip escape spacing, frame structure, and timing of weight shifts.">
 <div class="rc-domain-icon"><i class="bi bi-unlock"></i></div>
 <span class="rc-domain-name">Pin Escapes</span>
-<div aria-label="Pin Escapes slider" class="rc-slider-container" data-score="70">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 70%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">70%</span>
-<span class="rc-domain-grade-badge grade-c">C</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Pin Escapes skill state</legend><label><input type="radio" name="pin-escapes" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="pin-escapes" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="pin-escapes" value="developing"/><span>Developing</span></label><label><input type="radio" name="pin-escapes" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="pin-escapes" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Base Retention -->
 <div class="rc-domain-row" data-tip="Three points of contact, posture recovery, and defensive balance.">
 <div class="rc-domain-icon"><i class="bi bi-shield-lock"></i></div>
 <span class="rc-domain-name">Base Retention</span>
-<div aria-label="Base Retention slider" class="rc-slider-container" data-score="95">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 95%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">95%</span>
-<span class="rc-domain-grade-badge grade-a-plus">A+</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Base Retention skill state</legend><label><input type="radio" name="base-retention" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="base-retention" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="base-retention" value="developing"/><span>Developing</span></label><label><input type="radio" name="base-retention" value="contextual"/><span>Contextual</span></label><label><input checked="" type="radio" name="base-retention" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Guard Passing -->
 <div class="rc-domain-row" data-tip="Torreando control, pressure passing, and leg clearance.">
 <div class="rc-domain-icon"><i class="bi bi-arrow-right-circle"></i></div>
 <span class="rc-domain-name">Guard Passing</span>
-<div aria-label="Guard Passing slider" class="rc-slider-container" data-score="60">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 60%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">60%</span>
-<span class="rc-domain-grade-badge grade-f">F</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Guard Passing skill state</legend><label><input type="radio" name="guard-passing" value="not_observed"/><span>Not Yet Observed</span></label><label><input checked="" type="radio" name="guard-passing" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="guard-passing" value="developing"/><span>Developing</span></label><label><input type="radio" name="guard-passing" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="guard-passing" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Guard Retention -->
 <div class="rc-domain-row" data-tip="Knee-to-elbow connection, hip movement, and open guard recovery.">
 <div class="rc-domain-icon"><i class="bi bi-shield-check"></i></div>
 <span class="rc-domain-name">Guard Retention</span>
-<div aria-label="Guard Retention slider" class="rc-slider-container" data-score="75">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 75%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">75%</span>
-<span class="rc-domain-grade-badge grade-c-plus">C+</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Guard Retention skill state</legend><label><input type="radio" name="guard-retention" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="guard-retention" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="guard-retention" value="developing"/><span>Developing</span></label><label><input checked="" type="radio" name="guard-retention" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="guard-retention" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Guard -->
 <div class="rc-domain-row" data-tip="Closed and open guard offensive control and grip configurations.">
 <div class="rc-domain-icon"><i class="bi bi-shield"></i></div>
 <span class="rc-domain-name">Guard</span>
-<div aria-label="Guard slider" class="rc-slider-container" data-score="80">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 80%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">80%</span>
-<span class="rc-domain-grade-badge grade-b">B</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Guard skill state</legend><label><input type="radio" name="guard" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="guard" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="guard" value="developing"/><span>Developing</span></label><label><input type="radio" name="guard" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="guard" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Submissions -->
 <div class="rc-domain-row" data-tip="Submission control setups, joint lock and choke execution.">
 <div class="rc-domain-icon"><i class="bi bi-key"></i></div>
 <span class="rc-domain-name">Submissions</span>
-<div aria-label="Submissions slider" class="rc-slider-container" data-score="50">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 50%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">50%</span>
-<span class="rc-domain-grade-badge grade-f">F</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Submissions skill state</legend><label><input type="radio" name="submissions" value="not_observed"/><span>Not Yet Observed</span></label><label><input checked="" type="radio" name="submissions" value="emerging"/><span>Emerging</span></label><label><input type="radio" name="submissions" value="developing"/><span>Developing</span></label><label><input type="radio" name="submissions" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="submissions" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 <!-- Submission Escapes -->
 <div class="rc-domain-row" data-tip="Early posture defense, hitchhiker structures, and tap timing.">
 <div class="rc-domain-icon"><i class="bi bi-key-fill"></i></div>
 <span class="rc-domain-name">Submission Escapes</span>
-<div aria-label="Submission Escapes slider" class="rc-slider-container" data-score="65">
-<div class="rc-slider-track">
-<div class="rc-slider-fill" style="width: 65%;"></div>
-</div>
-</div>
-<span class="rc-domain-percent">65%</span>
-<span class="rc-domain-grade-badge grade-d">D</span>
+<fieldset class="rc-skill-control"><legend class="visually-hidden">Submission Escapes skill state</legend><label><input type="radio" name="submission-escapes" value="not_observed"/><span>Not Yet Observed</span></label><label><input type="radio" name="submission-escapes" value="emerging"/><span>Emerging</span></label><label><input checked="" type="radio" name="submission-escapes" value="developing"/><span>Developing</span></label><label><input type="radio" name="submission-escapes" value="contextual"/><span>Contextual</span></label><label><input type="radio" name="submission-escapes" value="reliable"/><span>Reliable</span></label></fieldset>
 </div>
 </div>
 <div class="rc-performance-footer">
 <i class="bi bi-info-circle"></i>
-<span>Hover a row for domain tips. Drag bars to adjust values.</span>
+<span>Choose the state that best matches what the student can do during safe practice.</span>
 </div>
 </section>
-<!-- Sidebar stack (Grading details & Feedback) -->
+<!-- Sidebar stack (skill details & Feedback) -->
 <div class="rc-main-right-stack">
-<!-- Grading Legend Card -->
-<section aria-labelledby="grading-legend-title" class="rc-card rc-card--grading-system">
-<div class="rc-card-header">
-<svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 3v18M6 7h12M6 7l-2 8h4l-2-8M18 7l-2 8h4l-2-8M12 21h-4m8 0h-4"></path></svg>
-<span class="rc-card-label" id="grading-legend-title">Grading System</span>
-</div>
-<table class="rc-grading-table">
-<thead>
-<tr>
-<th>Grade</th>
-<th>Score Range</th>
-<th>Verbal Rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="rc-table-badge grade-a-plus">A+</span></td>
-<td>97 – 100</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-a">A</span></td>
-<td>93 – 96</td>
-<td>Outstanding</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-b">B</span></td>
-<td>85 – 92</td>
-<td>Very Good</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-c">C</span></td>
-<td>75 – 84</td>
-<td>Good</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-d">D</span></td>
-<td>65 – 74</td>
-<td>Satisfactory</td>
-</tr>
-<tr>
-<td><span class="rc-table-badge grade-f">F</span></td>
-<td>0 – 64</td>
-<td>Fair</td>
-</tr>
-</tbody>
-</table>
-</section>
+<section aria-labelledby="skill-guide-title" class="rc-card rc-card--skill-guide"><div class="rc-card-header"><i aria-hidden="true" class="bi bi-compass"></i><span class="rc-card-label" id="skill-guide-title">Skill states</span></div><dl><dt>Not Yet Observed</dt><dd>We need more class time to see it. This is not failure.</dd><dt>Emerging</dt><dd>The student can start with help or in an easier situation.</dd><dt>Developing</dt><dd>The student is doing it more often during safe practice.</dd><dt>Contextual</dt><dd>It works in some situations. We are checking it in others.</dd><dt>Reliable</dt><dd>It still works when the situation changes. It does not mean perfect.</dd></dl><p class="rc-parent-interpretation"><strong>Progress is information, not pass or fail.</strong> Each step means the skill is working more often or in more situations.</p></section>
 <!-- Remarks Card -->
 <section aria-labelledby="remarks-title" class="rc-card rc-card--feedback">
 <div class="rc-card-header">
@@ -1514,7 +1072,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <span class="rc-card-label" id="remarks-title">Feedback &amp; Remarks</span>
 </div>
 <div class="rc-feedback-container">
-<div aria-label="Feedback and remarks editor" class="rc-feedback-textarea" contenteditable="true">Excellent work on retaining guard this week. Needs more focus on hip movement during pin escapes. Keep drilling the shrimp!</div>
+<p class="rc-focus-help">Write three short notes about the main focus. Say what happened, not only that the student improved.</p>
+<div class="rc-feedback-fields">
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-working">What went well?</label><textarea id="feedback-working" placeholder="What did the student do well?"></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-next">What will we try next?</label><textarea id="feedback-next" placeholder="What should the student try next?"></textarea></div>
+<div class="rc-feedback-field"><label class="rc-field-label" for="feedback-yours">What is getting easier?</label><textarea id="feedback-yours" placeholder="What is starting to feel easier?"></textarea></div>
+</div>
+<div class="rc-output-actions"><button type="button" id="copy-summary">Copy Summary</button><button class="secondary" type="button" id="clear-report">Clear Review Fields</button><span aria-live="polite" class="visually-hidden" id="copy-status"></span></div>
 <!-- Vector Lotus Watermark -->
 <svg aria-hidden="true" class="lotus-watermark" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
 <path d="M12 21a9 9 0 0 0 9-9c0-5-9-10-9-10S3 7 3 12a9 9 0 0 0 9 9z"></path>
@@ -1526,34 +1090,38 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <!-- Bottom Layout Row -->
+<h2 class="rc-section-title">4. Write what comes next</h2>
 <div class="rc-bottom-row">
 <!-- Instructions Card -->
 <section aria-labelledby="how-to-use-title" class="rc-card rc-card--how-to-use">
 <div class="rc-card-header">
 <i aria-hidden="true" class="bi bi-book"></i>
-<span class="rc-card-label" id="how-to-use-title">Using the digital twin report card</span>
+<span class="rc-card-label" id="how-to-use-title">Using the report card</span>
 </div>
+<h2 class="rc-print-only">Progress Review</h2>
 <div class="rc-steps-grid">
 <div class="rc-step-item">
 <div class="rc-step-number">1</div>
-<p>Adjust domain scores based on weekly training.</p>
+<p>Identify the review date, context, coach, and schedule.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">2</div>
-<p>Record belt level, stripe, and primary coach(es).</p>
+<p>Review the five progress areas. Leaving a state unchanged is okay.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">3</div>
-<p>Write one win and one correction to focus on.</p>
+<p>Choose one main focus. Add a second only if it helps.</p>
 </div>
 <div class="rc-step-item">
 <div class="rc-step-number">4</div>
-<p>Print or save the final card and track progress.</p>
+<p>Write three short notes, then print or copy the summary.</p>
 </div>
 </div>
+<p class="rc-coach-guidance">Update states when recent classes provide enough live evidence—not from attendance, one repetition, or a single unusually easy or difficult round. New conditions can reveal that a capability is more context-dependent; that is useful coaching information.</p>
+<p class="rc-coach-guidance"><strong>Parent role:</strong> Ask, listen, and encourage. Let the coach handle technique. Try: “What felt easier today?” or “What are you working on?” For a young child, say: “You did this part. Next time, we can try this part.”</p>
 </section>
 <!-- CTA Action Card (gold-brown background) -->
-<section aria-label="Book a Free First Visit small-group class" class="rc-card rc-card--action">
+<section aria-label="Review progress and choose the next step" class="rc-card rc-card--action" data-offer-stage="progress" data-audience="member">
 <div class="rc-action-bg-pattern"></div>
 <div class="rc-action-content">
 <svg aria-hidden="true" class="rc-action-logo" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
@@ -1561,235 +1129,106 @@ document.addEventListener('DOMContentLoaded', function() {
 <path d="M12 21c2 0 3-4 3-9s-1-9-3-9-3 4-3 9 1 9 3 9z"></path>
 <path d="M3 12h18"></path>
 </svg>
-<h2 class="rc-action-title">Keep Showing Up.<br/>The Process Works.</h2>
+<h2 class="rc-action-title">Keep practicing.<br/>Then review what comes next.</h2>
 <div class="rc-action-buttons">
-<a class="rc-btn rc-btn--primary" href="/free-bjj-intro-tannersville-ny">
-                Reserve Your Free First Visit <i aria-hidden="true" class="bi bi-arrow-right"></i>
+<a class="rc-btn rc-btn--primary" href="#main-content" data-offer-stage="review" data-audience="member">
+                Review This Progress With Sandy <i aria-hidden="true" class="bi bi-arrow-right"></i>
 </a>
-<a class="rc-btn rc-btn--secondary" href="/show-up-kit">
-<i aria-hidden="true" class="bi bi-briefcase"></i> Preview Show-Up Kit
-              </a>
+<a class="rc-btn rc-btn--secondary" href="/student-hub" data-offer-stage="review" data-audience="member">
+<i aria-hidden="true" class="bi bi-grid"></i> Return to Student Hub
+</a>
 </div>
+<p class="small mt-3 mb-0"><a class="text-white" href="/free-bjj-intro-tannersville-ny">Not training here yet? See how progress works, then start with a Free First Visit.</a></p>
 </div>
 </section>
 </div>
 <!-- Center Branding Footer -->
 <div aria-label="Report card values" class="rc-footer-branding">
-<span>Discipline</span>
+<span>Listen</span>
 <span aria-hidden="true">•</span>
-<span>Purpose</span>
-<span aria-hidden="true">•</span>
+<span>Keep Going</span>
 <svg aria-hidden="true" class="rc-footer-logo" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
 <path d="M12 21a9 9 0 0 0 9-9c0-5-9-10-9-10S3 7 3 12a9 9 0 0 0 9 9z"></path>
 <path d="M12 21c2 0 3-4 3-9s-1-9-3-9-3 4-3 9 1 9 3 9z"></path>
 <path d="M3 12h18"></path>
 </svg>
 <span aria-hidden="true">•</span>
-<span>Progress</span>
+<span>Be Good to Your Partner</span>
 <span aria-hidden="true">•</span>
 <span>Community</span>
 </div>
 </div>
 <!-- Guide SEO copy block -->
 <section aria-labelledby="report-card-guide-title" class="report-card-copy">
-<h2 id="report-card-guide-title">How To Use the Digital Twin Report Card</h2>
-<p>Use the wider <a href="/parent-resources">Parent Resources hub</a> for safety answers, schedule planning, and other family-facing next steps that connect to this tracker.</p>
+<h2 id="report-card-guide-title">How to use the Report Card</h2>
+<h2>How to read this card</h2>
+<p>This card shows what Sandy sees in training. It does not rank students. Look first at the current focus: what is working, what comes next, and what is starting to feel natural.</p>
+<p>The notes come from coached practice in class. They do not measure a medical or school skill. <a href="/how-class-works">See how class works</a> or <a href="/evidence">read the evidence ledger</a>.</p>
+<p>New to a BJJ word? <a href="/bjj-glossary">Browse the beginner BJJ glossary</a> for short, plain-language definitions.</p>
+<p>Helpful terms: <a href="/bjj-glossary/base">Base</a>, <a href="/bjj-glossary/pin">Pin</a>, <a href="/bjj-glossary/pin-escape">Pin Escape</a>, <a href="/bjj-glossary/guard">Guard</a>, <a href="/bjj-glossary/guard-pass">Guard Pass</a>, <a href="/bjj-glossary/guard-retention">Guard Retention</a>, and <a href="/bjj-glossary/submission">Submission</a>.</p>
 <p>
-        The Sensei Sandy BJJ Digital Twin Report Card is a quick way to review training priorities and performance trends for one student, one small-group class lane, or one weekly coaching cycle. Each domain score is editable, so coaches can update values in real time after drills, positional rounds, or notes from live sparring. The final output gives families and students a simple snapshot of what is improving, what is stable, and what needs focused reps next week.
+        The Sensei Sandy BJJ Report Card is a quick way to review one student’s training. It shows what is improving, what is steady, and what problem to work on next.
       </p>
 <p>
-        This report card format built for beginner-friendly Brazilian Jiu-Jitsu coaching in Tannersville, NY, where clear standards and calm communication matter. Instead of vague feedback, each category maps to observable habits like base retention, pin escapes, guard passing, and submissions. That structure helps reduce confusion for new students and gives returning students a predictable progression path.
+        It is made for calm, beginner-friendly Brazilian Jiu-Jitsu coaching in Tannersville, NY. Each area points to a skill we can see in class, such as staying safe, escaping a pin, passing guard, or finishing a hold.
       </p>
 <ul>
-<li>Use the score sliders to adjust each domain based on recent class performance.</li>
-<li>Record the current belt level, class schedule, and coach so each review is traceable.</li>
-<li>Write one specific win and one specific correction in the remarks box.</li>
-<li>Print the final card for at-home practice goals and next-session accountability.</li>
+<li>Choose the state that best matches what the student shows in safe practice.</li>
+<li>Add the date, coach, and class details.</li>
+<li>Write what is working, what comes next, and what feels more natural.</li>
+<li>Print or copy the card to share with the student and family.</li>
 </ul>
 <p>
-        If you are comparing progress over multiple weeks, keep domain definitions consistent and avoid changing grading thresholds mid-cycle. Consistency makes the report card useful for coaching decisions, parent updates, and long-term skill development across kids, teens, and adults.
+        Use the same state meanings each time. Update a state when the student shows a change in repeated training. No change is still information. Skills do not move only up. This keeps reviews useful for coaches, parents, kids, teens, and adults.
       </p>
 <p>
         Keep exploring: <a href="/schedule">Schedule</a> · <a href="/bjj-classes/tannersville-ny">BJJ Small-group classes</a> · <a href="/options-pricing">Options / Pricing</a> · <a href="/private-lessons">Private Coaching</a> · <a href="/contact">Contact</a> · <a href="/blog">Blog</a>
 </p>
 </section>
-</main>
-
-  
-
-  <footer class="ss-new-site-footer" aria-labelledby="ss-footer-title">
-  <div class="ss-new-footer-shell">
-    <div class="ss-new-footer-inner">
-      <h2 id="ss-footer-title" class="visually-hidden">Sensei Sandy BJJ footer</h2>
-
-      <div class="ss-new-footer-top">
-        <div class="ss-new-footer-brand" data-footer-group="primary">
-          <div class="ss-new-brand-row">
-            <img class="ss-new-brand-logo" src="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp" alt="Sensei Sandy BJJ logo" width="60" height="60" decoding="async">
-            <div class="ss-new-brand-title">Sensei Sandy BJJ</div>
-          </div>
-          <p class="ss-new-brand-desc">Calm, technical Jiu-Jitsu where every student is seen, guided, and supported. You will not disappear into the room.</p>
-          <div class="ss-new-contact-list">
-            <div class="ss-new-contact-row">
-              <i class="bi bi-geo-alt" aria-hidden="true"></i>
-              <span>6045 Main Street, 2nd Floor Studio<br>Tannersville, NY 12485</span>
-            </div>
-            <div class="ss-new-contact-row">
-              <i class="bi bi-people" aria-hidden="true"></i>
-              <span>Kids &bull; Teens &bull; Adults</span>
-            </div>
-          </div>
-        </div>
-
-        <nav class="ss-new-footer-nav" aria-label="Footer navigation">
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Start Here</h3>
-            <ul>
-              <li><a href="/nearby-towns">Choose Lane</a></li>
-              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Free First Visit</a></li>
-              <li><a href="/schedule">Schedule</a></li>
-              <li><a href="/holiday-schedule">Holiday Schedule</a></li>
-              <li><a href="/show-up-kit">Show-Up Kit</a></li>
-              <li><a href="/core-culture-parent-guide">Parent Guide</a></li>
-              <li><a href="/bjj-tannersville-ny-directions">Directions</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Programs</h3>
-            <ul>
-              <li><a href="/bjj-classes">All BJJ Classes</a></li>
-              <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
-              <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
-              <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
-              <li><a href="/bjj-classes/kids-tannersville-ny">Summer BJJ</a></li>
-              <li><a href="/private-lessons">Private Lessons</a></li>
-              <li><a href="/bully-proof-jiu-jitsu-tannersville-ny">Bully Proof</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Studio</h3>
-            <ul>
-              <li><a href="/how-class-works">How Class Works</a></li>
-              <li><a href="/success-stories">Success Stories</a></li>
-              <li><a href="/options-pricing">Pricing</a></li>
-              <li><a href="/bio">Bio</a></li>
-              <li><a href="/sensei-studio">Studio Tour</a></li>
-              <li><a href="/bjj-faqs">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Nearby</h3>
-            <ul>
-              <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
-              <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
-              <li><a href="/bjj-classes/windham-ny">Windham</a></li>
-              <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
-              <li><a href="/nearby-towns">Woodstock</a></li>
-              <li><a href="/nearby-towns">Nearby Towns</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Learn</h3>
-            <ul>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/bjj-glossary">BJJ Glossary</a></li>
-              <li><a href="/bjj-stretches">BJJ Stretches</a></li>
-              <li><a href="">BJJ Videos</a></li>
-              <li><a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Friends of the Academy</h3>
-            <ul>
-              <li><a href="/community-partners">Community Partners</a></li>
-              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
-              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-
-      <div class="ss-new-footer-bottom">
-        <div>&copy; 2026 Sensei Sandy BJJ. All Rights Reserved.</div>
-        <div class="ss-new-footer-contacts">
-          <a href="tel:+19177368649" class="ss-new-footer-contact-link">
-            <i class="bi bi-telephone" aria-hidden="true"></i>
-            Call
-          </a>
-          <div class="ss-new-divider" aria-hidden="true"></div>
-          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" class="ss-new-footer-contact-link">
-            <i class="bi bi-chat-dots" aria-hidden="true"></i>
-            Text
-          </a>
-          <div class="ss-new-divider" aria-hidden="true"></div>
-          <a href="mailto:sandy@senseisandy.com" class="ss-new-footer-contact-link">
-            <i class="bi bi-envelope" aria-hidden="true"></i>
-            Email
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<nav class="ss-mobile-actionbar" aria-label="Quick actions">
-  <a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" data-cta-target="text" data-cta-placement="sticky_mobile">Questions about starting? Text Sandy </a>
-</nav>
-
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    (function initStickyVisibility() {
-      const heroCta = document.querySelector([
-        '.home-hero .primary-cta',
-        '.hero-card .btn-white-secondary',
-        '.hero-card .btn-green-primary',
-        '.ss-hero .primary-cta',
-        '#hero-cta'
-      ].join(', '));
-      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
-      const stickyCta = document.querySelector('.ss-mobile-actionbar');
-
-      if (!stickyCta) return;
-      stickyCta.classList.add("is-observed");
-      if (!("IntersectionObserver" in window)) {
-        stickyCta.classList.add("is-visible");
-        return;
-      }
-
-      let heroOut = !heroCta;
-      let footerIn = false;
-      const updateVisibility = function () {
-        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
-      };
-
-      if (heroCta) {
-        const heroObserver = new IntersectionObserver(function (entries) {
-          heroOut = !entries[0].isIntersecting;
-          updateVisibility();
-        }, { threshold: 0.1 });
-        heroObserver.observe(heroCta);
-      }
-
-      if (footerCta) {
-        const footerObserver = new IntersectionObserver(function (entries) {
-          footerIn = entries[0].isIntersecting;
-          updateVisibility();
-        }, { threshold: 0.05 });
-        footerObserver.observe(footerCta);
-      }
-
-      updateVisibility();
-    })();
+(() => {
+  const value = (id) => document.getElementById(id)?.value.trim() || '';
+  const summary = () => {
+    const student = value('student-name') || 'Student';
+    const date = value('review-date');
+    const type = value('review-type');
+    const primary = value('primary-focus') || 'Not selected';
+    const secondary = value('secondary-focus');
+    const lines = [
+      "Sandy's Progress Review",
+      student,
+      date ? `Review date: ${date}` : '',
+      type ? `Review type: ${type}` : '',
+      value('problem-tested') ? `Problem tested: ${value('problem-tested')}` : '',
+      value('observation-context') ? `Observation context: ${value('observation-context')}` : '',
+      value('observations-reviewed') ? `Observations reviewed: ${value('observations-reviewed')}` : '',
+      value('contexts-observed') ? `Contexts observed: ${value('contexts-observed')}` : '',
+      `Current focus: ${primary}${secondary ? `; ${secondary}` : ''}`,
+      '',
+`What went well:\n${value('feedback-working') || '[Not recorded]'}`,
+      '',
+      `Next problem:\n${value('feedback-next') || '[Not recorded]'}`,
+      '',
+`What is getting easier:\n${value('feedback-yours') || '[Not recorded]'}`
+    ];
+    return lines.filter((line, index) => line || (index > 0 && lines[index - 1])).join('\n');
+  };
+  document.getElementById('copy-summary')?.addEventListener('click', async () => {
+    const button = document.getElementById('copy-summary');
+    try {
+      await navigator.clipboard.writeText(summary());
+      button.textContent = 'Summary Copied';
+      document.getElementById('copy-status').textContent = 'Progress summary copied.';
+      setTimeout(() => { button.textContent = 'Copy Summary'; }, 1800);
+    } catch {
+      window.prompt('Copy this progress summary:', summary());
+    }
   });
+  document.getElementById('clear-report')?.addEventListener('click', () => {
+    document.querySelectorAll('#report-card-guide-title ~ * input, #report-card-guide-title ~ * textarea').forEach((field) => { field.value = ''; });
+    ['student-name', 'level', 'coaches', 'schedule', 'problem-tested', 'observation-context', 'observations-reviewed', 'contexts-observed', 'review-date', 'primary-focus', 'secondary-focus', 'feedback-working', 'feedback-next', 'feedback-yours'].forEach((id) => { const field = document.getElementById(id); if (field) field.value = ''; });
+    const type = document.getElementById('review-type'); if (type) type.selectedIndex = 0;
+  });
+})();
 </script>
-
-<script src="/assets/js/goal-mapping.1eeeaa.js" defer fetchpriority="low"></script>
-
-
-  <script src="/assets/js/attribution.c136f0.js" defer></script>
-  <script src="/assets/js/analytics-events.63417f.js" defer></script>
-  
-</body>
-</html>
+</main>

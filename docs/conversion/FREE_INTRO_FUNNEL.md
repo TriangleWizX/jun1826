@@ -1,11 +1,19 @@
-# Free Intro & Goal Mapping Funnel Architecture — SenseiSandy.com
+# Free First Visit Funnel Architecture — SenseiSandy.com
 
 ## Public Funnel Sequence
-1. **Reserve Your Free Intro**: Prospect requests or reserves a visit online via primary acquisition CTAs.
-2. **15-Minute Goal Mapping Visit**: Prospect visits the studio in normal street clothes to tour the room, meet Sandy, discuss goals, and select a class time.
-3. **Coached First Class Reserved**: Sandy locks in the first class reservation and matches the student with a supportive partner.
-4. **Attend First Class Free**: Student attends their first small-group session free with zero obligation to enroll.
+
+1. **Reserve Your Free First Visit**: Choose who is starting and request a preferred time.
+2. **Meet Sandy**: See the room, review safety, discuss goals, and choose the right starting point.
+3. **Choose the coached first class**: Adults schedule class after a 15-minute visit in normal clothes. The specialized youth path may continue into class during the same visit after arriving 20 minutes early in clean athletic clothes.
+4. **Attend the first class free**: Join a coached learning experience with no obligation to enroll.
+
+`goal-mapping` remains an internal identifier and staff concept. Public pages call the acquisition step a Free First Visit so visitors do not have to interpret a second product name.
+
+Submitting the form is a request. Sandy confirms the visit before arrival; a form submit, receipt-page view, staff confirmation, attendance, and purchase are separate stages.
 
 ## Content Components
+
 - Component: `src/_includes/components/free-intro-process.njk`
-- Data Source: `src/_data/free-intro.json`
+- Data source: `src/_data/free-intro.json`
+- Booking route: `src/free-bjj-intro-tannersville-ny/index.html`
+- Confirmation route: `src/free-bjj-intro-tannersville-ny/confirmation/index.njk`

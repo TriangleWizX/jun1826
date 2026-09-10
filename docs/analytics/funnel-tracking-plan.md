@@ -1,31 +1,32 @@
 # First Visit Funnel Tracking
 
-The site measures the visitor path without sending names, email addresses, phone numbers, or message text to analytics.
+The site measures the visitor path without sending names, email addresses, phone numbers, student names, message text, or full user-supplied URLs to analytics.
 
 ## Events
 
 | Event | Trigger | Notes |
 | --- | --- | --- |
-| `first_visit_cta_click` | Booking-link click | Automatic; includes lane, source page, and campaign. |
-| `booking_started` | First valid-form interaction | Automatic; includes requested period and preferred day when selected. |
-| `booking_submitted` | Valid booking-form submit | Automatic; does not mean Sandy has confirmed the appointment. |
-| `visit_confirmed` | Sandy confirms the appointment | Operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `first_visit_showed` | Prospect arrives | Operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `first_class_attended` | First coached class completed | Operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `core_purchased` | 12-week program purchased | Operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `activated_30d` | Chosen early-attendance threshold reached | Operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `renewed` | Student continues the first term | Operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
+| `first_visit_cta_click` | Booking-link click | Includes lane, source page, and campaign when available. |
+| `lead_form_started` | First meaningful form interaction | Fires once per form instance. |
+| `first_visit_submitted` | Valid booking-form submit attempt | Fires once per form instance; does not prove delivery or staff confirmation. |
+| `booking_confirmed` | Receipt-page arrival | Browser-observable only; direct visits and reloads are not staff confirmation. |
+| `visit_confirmed` | Sandy confirms the appointment | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
+| `first_visit_showed` | Prospect arrives | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
+| `first_class_attended` | First coached class completed | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
+| `core_purchased` | 12-week program purchased | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
+| `activated_30d` | Chosen early-attendance threshold reached | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
+| `renewed` | Student continues after the first term | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
 
-Every event carries `lane`, `source_page`, and `campaign`. Booking events may also carry `requested_start_period` and `preferred_day`. A trusted operational integration may add `lead_id` or `customer_id`; do not send contact details.
+Every funnel event carries `lane`, `source_page`, and `campaign` when available. Booking events may also carry `requested_start_period` and `preferred_day`. The homepage and dedicated booking form use the shared funnel producer; page handlers do not emit duplicate start or submit events.
 
 ## Dashboard rates
 
-Use distinct people or lead IDs where available:
+Use distinct people or lead IDs where an existing trusted system provides them:
 
-1. CTA click → booking start
-2. Booking start → booking submit
-3. Booking submit → visit showed
-4. Visit showed → core purchased
-5. Core purchased → activated within 30 days
+1. `first_visit_cta_click` → `lead_form_started`
+2. `lead_form_started` → `first_visit_submitted`
+3. `first_visit_submitted` → `first_visit_showed`
+4. `first_visit_showed` → `core_purchased`
+5. `core_purchased` → `activated_30d`
 
-Break down each rate by `lane` (`kids`, `teens`, `adults`, `family_unsure`) and campaign. The largest loss is the next constraint to investigate.
+Use one consistent cohort and follow-up window. Appointments whose date has not arrived are not no-shows. If only session counts exist, label rates as session-level. Missing operational data is unknown, not zero.

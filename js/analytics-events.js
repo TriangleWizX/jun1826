@@ -663,10 +663,32 @@
 // Keeping this loader here avoids requiring a sitewide HTML regeneration for a
 // small, independently deployable instrumentation module.
 (function loadFunnelEvents() {
-  if (document.querySelector('script[data-ss-funnel-events]')) return;
-  const script = document.createElement('script');
-  script.src = '/assets/js/funnel-events.js';
-  script.defer = true;
-  script.dataset.ssFunnelEvents = 'true';
-  document.head.appendChild(script);
+  const loadFunnel = () => {
+    if (document.querySelector('script[data-ss-funnel-events]')) return;
+    const script = document.createElement('script');
+    script.src = '/assets/js/funnel-events.js';
+    script.dataset.ssFunnelEvents = 'true';
+    document.head.appendChild(script);
+  };
+
+  if (typeof window.SS_TRACK_EVENT === 'function') {
+    loadFunnel();
+    return;
+  }
+
+  const existingCore = document.querySelector('script[data-ss-analytics-core]');
+  if (existingCore && typeof existingCore.addEventListener === 'function') {
+    existingCore.addEventListener('load', loadFunnel, { once: true });
+    return;
+  }
+
+  const core = document.createElement('script');
+  core.src = '/assets/js/analytics-events.js';
+  core.dataset.ssAnalyticsCore = 'true';
+  if (typeof core.addEventListener === 'function') {
+    core.addEventListener('load', loadFunnel, { once: true });
+  } else {
+    loadFunnel();
+  }
+  document.head.appendChild(core);
 }());

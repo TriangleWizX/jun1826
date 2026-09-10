@@ -22,6 +22,85 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Universal element resets for preformatted code and replaced media */
+pre, code, kbd, samp {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  max-width: 100% !important;
+}
+
+img,
+svg,
+iframe,
+video,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-video-section,
+.hero__inner {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Universal Sticky Actionbar Padding Buffer */
+@media (max-width: 767.98px) {
+  body,
+  main.ss-main,
+  .contact-vip-main,
+  .showup-page {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom)) !important;
+  }
+
+  footer.ss-new-site-footer,
+  footer.ss-site-footer {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* Interactive Touch Target Minimum Dimensions (WCAG 2.5.5) */
+.btn,
+.ss-btn,
+.btn-premium,
+.premium-btn,
+.ss-btn-olive,
+.btn-link-pill,
+.glossary-btn,
+.showup-btn,
+.btn-wellness-primary,
+.btn-wellness-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  box-sizing: border-box;
+}
+
+/* Retain accessible 1px offscreen for skip-link while unfocused */
+.ss-skip-link:not(:focus):not(:focus-visible) {
+  width: 1px !important;
+  height: 1px !important;
+}
+.ss-skip-link:focus,
+.ss-skip-link:focus-visible {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+
+/* Mobile Alignment of Multi-Line Copy & Hero Visual Axes */
+@media (max-width: 47.99rem) {
+  .lead,
+  p.ss-home-conversion__subhead,
+  .hero-lead,
+  .page-home p {
+    text-align: start !important;
+  }
+}
+
 /* Universal responsive image contract for routes that load the shell alone. */
 .ss-main picture,
 .ss-main img,
@@ -2534,10 +2613,10 @@ body .ss-global-nav-wrapper .ss-navbar .nav-link::after {
     align-items: center !important;
     justify-content: flex-end !important;
     width: auto !important;
-    max-width: none !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    gap: 0 24px !important;
+    gap: 0 clamp(10px, 1.4vw, 20px) !important;
   }
 
   body .ss-global-nav-wrapper .navbar-nav > .nav-item {

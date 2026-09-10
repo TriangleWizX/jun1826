@@ -1,11 +1,15 @@
 {
   "imageFiles": 1191,
-  "htmlFiles": 879,
+  "htmlFiles": 875,
   "referencedImages": 733,
   "missingReferences": [],
   "warnings": [
+    "dist/after-school/index.html: missing srcset image /assets/images/standingsixseven-mobile.webp",
+    "dist/tactical-longevity/index.html:429: image missing explicit dimensions",
+    "src/after-school.html: missing srcset image /assets/images/standingsixseven-mobile.webp",
     "src/hyphen-weekend.html: missing srcset image {{",
     "src/hyphen-weekend.html: missing srcset image {{",
+    "src/tactical-longevity.html:429: image missing explicit dimensions",
     "src/winter-rank-drop.html: missing srcset image /assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp"
   ],
   "unreferencedSourceImages": [
@@ -478,6 +482,7 @@
     "src/assets/images/sslogowhitebckgrnd.ca43b8.jpg",
     "src/assets/images/sslogowhitebckgrnd.jpg",
     "src/assets/images/sslogowhitebckgrnd.webp",
+    "src/assets/images/standingsixseven.6d8220.png",
     "src/assets/images/standingsixseven.avif",
     "src/assets/images/standingsixseven.png",
     "src/assets/images/student-hub.png",
@@ -561,6 +566,7 @@
     "src/assets/images/studio/sensei-sandy-bjj-second-floor-arrival-1920.avif",
     "src/assets/images/studio/sensei-sandy-bjj-second-floor-arrival-1920.webp",
     "src/assets/images/studio/sensei-sandy-bjj-shoes-off-mat-routine-1024.avif",
+    "src/assets/images/studio/sensei-sandy-bjj-shoes-off-mat-routine-1024.webp",
     "src/assets/images/studio/sensei-sandy-bjj-shoes-off-mat-routine-1440.avif",
     "src/assets/images/studio/sensei-sandy-bjj-shoes-off-mat-routine-1440.webp",
     "src/assets/images/studio/sensei-sandy-bjj-shoes-off-mat-routine-1920.avif",

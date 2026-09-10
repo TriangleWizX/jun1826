@@ -228,13 +228,14 @@
     "canonical": "/bjj-glossary/back-control"
   },
   "hooks-in": {
-    "slug": "back-control",
+    "slug": "hooks",
     "aliases": [
-      "taking the back",
-      "hooks in"
+      "hooks in",
+      "back control hooks",
+      "butterfly hooks"
     ],
     "redirectFrom": [],
-    "canonical": "/bjj-glossary/back-control"
+    "canonical": "/bjj-glossary/hooks"
   },
   "back-defense": {
     "slug": "back-defense",
@@ -401,7 +402,7 @@
     "aliases": [
       "beginner lane bjj",
       "first class lane",
-      "skill-based resistance activities begin at the right pace from day one"
+      "complete class expectation"
     ],
     "redirectFrom": [
       "first-class-lane",
@@ -414,7 +415,7 @@
     "aliases": [
       "beginner lane bjj",
       "first class lane",
-      "skill-based resistance activities begin at the right pace from day one"
+      "complete class expectation"
     ],
     "redirectFrom": [
       "first-class-lane",
@@ -427,7 +428,7 @@
     "aliases": [
       "beginner lane bjj",
       "first class lane",
-      "skill-based resistance activities begin at the right pace from day one"
+      "complete class expectation"
     ],
     "redirectFrom": [
       "first-class-lane",
@@ -435,12 +436,12 @@
     ],
     "canonical": "/bjj-glossary/beginner-lane"
   },
-  "no-hard-sparring-day-one": {
+  "complete-class-expectation": {
     "slug": "beginner-lane",
     "aliases": [
       "beginner lane bjj",
       "first class lane",
-      "skill-based resistance activities begin at the right pace from day one"
+      "complete class expectation"
     ],
     "redirectFrom": [
       "first-class-lane",
@@ -453,7 +454,7 @@
     "aliases": [
       "beginner lane bjj",
       "first class lane",
-      "skill-based resistance activities begin at the right pace from day one"
+      "complete class expectation"
     ],
     "redirectFrom": [
       "first-class-lane",
@@ -552,14 +553,18 @@
     "canonical": "/bjj-glossary/bridge"
   },
   "upa": {
-    "slug": "bridge",
+    "slug": "upa-escape",
     "aliases": [
       "upa",
-      "bridging movement",
-      "hip drive"
+      "trap and roll",
+      "bridge mount escape",
+      "bridge and roll"
     ],
-    "redirectFrom": [],
-    "canonical": "/bjj-glossary/bridge"
+    "redirectFrom": [
+      "upa",
+      "bridge-and-roll"
+    ],
+    "canonical": "/bjj-glossary/upa-escape"
   },
   "bridging-movement": {
     "slug": "bridge",
@@ -1121,14 +1126,14 @@
     "canonical": "/bjj-glossary/crossface"
   },
   "head-line-control": {
-    "slug": "crossface",
+    "slug": "head-line",
     "aliases": [
-      "cross face",
+      "headline bjj",
       "head line control",
-      "shoulder pressure"
+      "winning head line"
     ],
     "redirectFrom": [],
-    "canonical": "/bjj-glossary/crossface"
+    "canonical": "/bjj-glossary/head-line"
   },
   "shoulder-pressure": {
     "slug": "shoulder-pressure",
@@ -2236,14 +2241,13 @@
     "canonical": "/bjj-glossary/heavy-hips"
   },
   "hip-escape": {
-    "slug": "hip-escape",
+    "slug": "shrimp",
     "aliases": [
-      "shrimp movement",
-      "shrimping",
-      "hip movement escape"
+      "hip escape",
+      "shrimping"
     ],
     "redirectFrom": [],
-    "canonical": "/bjj-glossary/hip-escape"
+    "canonical": "/bjj-glossary/shrimp"
   },
   "shrimp-movement": {
     "slug": "hip-escape",
@@ -2256,14 +2260,13 @@
     "canonical": "/bjj-glossary/hip-escape"
   },
   "shrimping": {
-    "slug": "hip-escape",
+    "slug": "shrimp",
     "aliases": [
-      "shrimp movement",
-      "shrimping",
-      "hip movement escape"
+      "hip escape",
+      "shrimping"
     ],
     "redirectFrom": [],
-    "canonical": "/bjj-glossary/hip-escape"
+    "canonical": "/bjj-glossary/shrimp"
   },
   "hip-movement-escape": {
     "slug": "hip-escape",

@@ -1,474 +1,395 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="/favicon.ico" rel="icon" sizes="any"/>
-<link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<title>Options &amp; Pricing | Sensei Sandy BJJ Tannersville NY</title>
-<meta content="Transparent Brazilian Jiu-Jitsu membership options and visitor pricing for kids, teens, adults, and Catskills vacationers in Tannersville, NY." name="description"/>
-
-
-<link href="https://senseisandy.com/options-pricing" rel="canonical"/>
-<meta content="https://senseisandy.com/options-pricing" property="og:url"/>
-<meta content="Sensei Sandy BJJ" property="og:site_name"/>
-<meta content="https://senseisandy.com/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.webp" property="og:image"/>
-
-<meta content="index, follow" name="robots"/>
-<meta content="Options &amp; Pricing | Sensei Sandy BJJ Tannersville NY" property="og:title"/>
-<meta content="Transparent Brazilian Jiu-Jitsu membership options and visitor pricing for kids, teens, adults, and Catskills vacationers in Tannersville, NY." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Options &amp; Pricing | Sensei Sandy BJJ Tannersville NY" name="twitter:title"/>
-<meta content="Transparent Brazilian Jiu-Jitsu membership options and visitor pricing for kids, teens, adults, and Catskills vacationers in Tannersville, NY." name="twitter:description"/>
-<meta content="https://senseisandy.com/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.webp" name="twitter:image"/>
-<meta content="https://senseisandy.com/options-pricing" name="twitter:url"/>
-<!--#include virtual="/_includes/analytics-head.html" -->
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": ["SportsActivityLocation", "LocalBusiness"],
-  "@id": "https://senseisandy.com/#business",
-  "name": "Sensei Sandy BJJ",
-  "url": "https://senseisandy.com/",
-  "telephone": "+1-917-736-8649",
-  "email": "me@senseisandy.com",
-  "address": {"@type":"PostalAddress","streetAddress":"6045 Main Street, 2nd Floor Studio","addressLocality":"Tannersville","addressRegion":"NY","postalCode":"12485","addressCountry":"US"},
-  "sameAs": ["https://www.instagram.com/senseisandybjj/","https://www.facebook.com/p/Sensei-Sandy-BJJ-61579362991950/","https://www.youtube.com/@SenseiSandyBJJ"]
-}
+---
+layout: layouts/pricing.njk
+title: "Options &amp; Pricing in Tannersville NY | Sensei Sandy BJJ"
+description: "See Sensei Sandy BJJ pricing for kids, teens, adults, visitor passes, annual plans, and concierge options in Tannersville, NY. Free First Visit first."
+canonicalUrl: "https://senseisandy.com/options-pricing"
+bodyClass: "lane-mixed page-options-pricing ss-page ss-page-pricing"
+extraCss:
+  - "/assets/css/pages/options-pricing-highend.css"
+permalink: "/options-pricing.html"
+---
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((node) => { node.nodeValue = node.nodeValue.replaceAll('12-week program Review', '12-Week Program Review'); });
+});
 </script>
+<main class="op-main" id="main" role="main" tabindex="-1">
 
-
-
-
-
-<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/tokens.css" as="style">
-<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
-<link rel="stylesheet" href="/assets/css/fonts.min.css">
-<link rel="stylesheet" href="/assets/css/site-shell.min.css">
-
-  
-    <link rel="stylesheet" href="/assets/css/pages/pricing.min.css">
-  
-
-
-
-
-  
-</head>
-<body class="ss-page">
-
-  <!--#include virtual="/nav-include.html" -->
-
-
-  
-
-  
-
-  <div id="scrollProgress"></div>
-
-  
-    <main class="ss-main " id="main-content" role="main">
-      
-<div class="ss-pricing-page-wrapper py-5">
-  <div class="container">
-    <!-- Page Header -->
-    <div class="text-center max-w-3xl mx-auto mb-5">
-      <span class="ss-home-kicker text-uppercase font-weight-bold text-teal mb-2 d-block" style="color: var(--ss-teal, #289FA1); font-size: 0.9rem; letter-spacing: 0.05em;">Transparent Investment</span>
-      <p class="small text-muted mb-2">Fall formats begin Monday, September 14. View the current schedule through September 5, then check the <a href="/schedule">current schedule</a> for special-session updates.</p>
-      <h1 class="h1 font-weight-bold text-ink mb-3" style="color: var(--ss-ink, #362B24);">Simple, Fair Options &amp; Pricing</h1>
-      <p class="lead text-muted" style="color: var(--ss-muted, #4F433C); font-size: 1.15rem;">
-        Start with a free coached class. Choose the lane and weekly rhythm that fits your family's routine.
-      </p>
-    </div>
-
-    <nav class="border rounded-4 p-3 p-md-4 mb-5" aria-label="Choose your buying stage" data-offer-stage="discovery">
-      <h2 class="h4 mb-2">What describes you?</h2>
-      <p class="small text-muted mb-3">Choose the path that matches your situation; the full details remain below.</p>
-      <div class="d-flex flex-wrap gap-2">
-        <a class="btn btn-primary" href="#start" data-analytics-event="pricing_stage_select" data-offer-stage="discovery" data-offer="free-intro">I'm New</a>
-        <a class="btn btn-outline-primary" href="#flexible" data-analytics-event="pricing_stage_select" data-offer-stage="visitor" data-offer="flexible-access">I Need Flexible Access</a>
-        <a class="btn btn-outline-primary" href="#continue" data-analytics-event="pricing_stage_select" data-offer-stage="continuation" data-audience="member">I'm Already Training</a>
-      </div>
-    </nav>
-
-    <!-- Section 1: Start Free -->
-    <div id="start" class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5" style="background: var(--ss-surface2, #F4F1ED); border-left: 6px solid var(--ss-green, #116A42) !important;">
-      <div class="row align-items-center">
-        <div class="col-12 col-lg-8">
-          <span class="badge bg-green text-white mb-2 px-3 py-2" style="background-color: var(--ss-green, #116A42); font-size: 0.85rem;">First Step</span>
-          <h2 class="h3 font-weight-bold text-ink mb-2" style="color: var(--ss-ink, #362B24);">Free First Visit &amp; Goal Mapping Visit</h2>
-          <p class="text-muted mb-0" style="color: var(--ss-muted, #4F433C); font-size: 1.05rem;">
-            Every new student starts with a 15-minute Goal Mapping visit to tour the studio, meet Sandy, and select the right class lane. The general path schedules class afterward in a separate visit; the specialized youth path can place Goal Mapping immediately before class. Normal clothes are fine for the general conversation.
-          </p>
-        </div>
-        <div class="col-12 col-lg-4 text-lg-end mt-4 mt-lg-0">
-          <a href="/free-bjj-intro-tannersville-ny#booking-flow" class="btn btn-primary btn-lg ss-btn" data-event="book_free_intro_click" data-cta-target="intro" data-cta-position="pricing_start_free" data-analytics-event="free_intro_click" data-cta-location="pricing_start_free" data-cta-label="Reserve Your Free First Visit">
-            Reserve Your Free First Visit
-            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+<section aria-labelledby="pricing-hero-title" class="op-hero">
+  <div class="container-xxl">
+    <div class="op-hero__grid">
+      <div class="op-hero__copy op-reveal is-visible">
+        <p class="op-eyebrow">Options &amp; Pricing <span>Tannersville, NY</span></p>
+        <h1 id="pricing-hero-title">Clear pricing.<br/><em>A calm first step.</em></h1>
+        <p class="op-hero__lede">
+          Start with a Free First Visit. Tour the room, review the safety plan, and choose a
+          coach-led small-group BJJ class, capped at 12 students, only after the visit feels right.
+        </p>
+<section class="container py-3" aria-label="Quick prices"><div class="row g-3"><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Free First Visit: $0</strong><br><span class="small text-muted">Meet Sandy, see the room, ask questions.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Kids + Teens: $550</strong><br><span class="small text-muted">First 12 weeks.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Adults: $715</strong><br><span class="small text-muted">First 12 weeks.</span></div></div></div></section>
+        <p class="op-hero__lede">Start with a Free First Visit. Sandy will help you choose the right first class.</p>
+        <p class="op-hero__lede">3 planned classes each week for 12 weeks.</p>
+        <div class="op-actions">
+          <a class="op-button op-button--primary" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="options-pricing-hero" data-cta-target="intro" data-cta-tier="primary" data-goal-mapping="" href="/free-bjj-intro-tannersville-ny#booking-flow">
+            <span>Reserve Your Free First Visit</span>
+            <span aria-hidden="true" class="op-button__icon">&rarr;</span>
+          </a>
+          <a class="op-button op-button--quiet" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="options-pricing-hero" data-cta-target="schedule" data-cta-tier="secondary" href="/schedule">
+            <span>View Schedule</span>
+            <span aria-hidden="true" class="op-button__icon">&nearr;</span>
           </a>
         </div>
-      </div>
-    </div>
-
-    <!-- Section 2: Core Culture (12-Week Terms) -->
-    <div class="mb-5">
-      <div class="text-center mb-4">
-        <h2 class="h2 font-weight-bold text-ink" style="color: var(--ss-ink, #362B24);">Core Culture Memberships (12 Weeks)</h2>
-        <p class="text-muted" style="color: var(--ss-muted, #4F433C);">Our primary 12-week learning blocks with three planned weekly home classes, up to 36 scheduled opportunities, and clear feedback on what is working and what comes next.</p>
-        <p class="small text-muted" style="color: var(--ss-muted, #4F433C);">Core Culture is a structured training relationship, not anonymous access to a mat: Sandy matches the starting conditions, watches what changes, and helps choose the next useful challenge.</p>
-        <p class="small text-muted" style="color: var(--ss-muted, #4F433C);">Youth Core Culture is one shared product for ages 5–17. Kids ages 5–9 and teens ages 10–17 use different developmental guidance while sharing the scheduled Youth + Teen class.</p>
-        <p class="small text-muted" style="color: var(--ss-muted, #4F433C);">When life interrupts a home class, text Sandy. Open-seat rescheduling depends on room capacity and suitable partner fit; a replacement seat is not guaranteed.</p>
+        <ul aria-label="How enrollment starts" class="op-hero__signals">
+          <li><strong>$0</strong><span>Free First Visit</span></li>
+          <li><strong>12 weeks</strong><span>First program</span></li>
+          <li><strong>By text</strong><span>make-up class</span></li>
+        </ul>
       </div>
 
-      <section class="mb-5" aria-labelledby="membership-advantages-title">
-        <div class="text-center mb-4">
-          <h2 id="membership-advantages-title" class="h3 font-weight-bold text-ink" style="color: var(--ss-ink, #362B24);">Core Culture Membership Advantages</h2>
-          <p class="text-muted mb-0">The weekly plan is designed to make progress easier to notice and easier to keep.</p>
-        </div>
-        <div class="row g-3">
-          <div class="col-md-6 col-lg-4"><article class="h-100 p-4 rounded-4 border bg-white"><h3 class="h5">Your spot is planned.</h3><p class="small text-muted mb-0">Three recurring weekly reservations create a dependable training rhythm.</p></article></div>
-          <div class="col-md-6 col-lg-4"><article class="h-100 p-4 rounded-4 border bg-white"><h3 class="h5">You know what is changing.</h3><p class="small text-muted mb-0">Clear progress feedback shows what is becoming reliable and what comes next.</p></article></div>
-          <div class="col-md-6 col-lg-4"><article class="h-100 p-4 rounded-4 border bg-white"><h3 class="h5">Starting is easier.</h3><p class="small text-muted mb-0">A first academy gi is included with qualifying Core Culture enrollment.</p></article></div>
-          <div class="col-md-6 col-lg-4"><article class="h-100 p-4 rounded-4 border bg-white"><h3 class="h5">Life can interrupt.</h3><p class="small text-muted mb-0">Text Sandy when an open, suitable replacement seat may help.</p></article></div>
-          <div class="col-md-6 col-lg-4"><article class="h-100 p-4 rounded-4 border bg-white"><h3 class="h5">The first decision is protected.</h3><p class="small text-muted mb-0">The 30-Day Training Fit Guarantee gives eligible first terms room to become a fair test.</p></article></div>
-          <div class="col-md-6 col-lg-4"><article class="h-100 p-4 rounded-4 border bg-white"><h3 class="h5">Training has a home base.</h3><p class="small text-muted mb-0">Core Culture connects weekly classes with progress reviews and community sessions.</p></article></div>
-        </div>
-      </section>
-
-      <div class="row g-4 justify-content-center">
-        <!-- Youth Core Culture -->
-        <div class="col-12 col-md-6 col-lg-4 d-flex">
-          <div class="ss-options-card card border-0 shadow-sm w-100 p-4 rounded-4 d-flex flex-column" style="background: var(--ss-surface, #FFFFFF); border-top: 4px solid var(--ss-teal, #289FA1) !important;">
-            <div class="mb-3">
-              <span class="badge bg-light text-dark border px-2 py-1" style="font-size: 0.8rem;">Kids &amp; Teens (Ages 5–17)</span>
-              <h3 class="h4 font-weight-bold mt-2 text-ink" style="color: var(--ss-ink, #362B24);">Youth Core Culture</h3>
-              <p class="text-muted">Build a dependable after-school routine around safe partner work, problem-solving, and visible progress.</p>
-            </div>
-            <div class="display-5 font-weight-bold text-green mb-1" style="color: var(--ss-green, #116A42); font-weight: 800;">
-              $550
-            </div>
-            <div class="small text-muted mb-4">per 12 weeks (up to 36 scheduled opportunities)</div>
-            <ul class="list-unstyled mb-4 flex-grow-1" style="line-height: 1.8; font-size: 0.95rem; color: var(--ss-muted, #4F433C);">
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Up to 36 coached small-group classes</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Three planned weekly home-class reservations</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> One academy gi with first qualifying Core Culture enrollment</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Partner matching &amp; safety protocols</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Progress feedback: know what your child is handling more reliably and what comes next</li>
-            </ul>
-            <p class="small text-muted" data-guarantee>30-Day Training Fit Guarantee applies to the first eligible Core Culture term.</p>
-            <a href="/free-bjj-intro-tannersville-ny?lane=kids" data-cta-target="intro" class="btn btn-primary w-100 font-weight-bold mb-2">Reserve Your Free First Visit</a>
-            <a href="/bjj-classes/kids-tannersville-ny" class="btn btn-outline-primary w-100 font-weight-bold">View Kids Program</a>
+      <div class="op-shell op-hero__shell op-reveal is-visible">
+        <div class="op-hero__media">
+          <img alt="Sensei Sandy smiling inside the Tannersville BJJ studio" decoding="async" fetchpriority="high" height="1000" src="https://senseisandy.com/assets/images/sensei-sandy.6e2ade.webp" width="800"/>
+          <div class="op-hero__caption">
+            <span aria-hidden="true" class="op-sequence">01</span>
+            <p><strong>Your start is a coached beginning.</strong> Start with a room tour and safety conversation. Youth may train the same visit; adults normally schedule the coached first class afterward.</p>
           </div>
-        </div>
-
-        <!-- Adult Core Culture -->
-        <div class="col-12 col-md-6 col-lg-4 d-flex">
-          <div class="ss-options-card card border-0 shadow-lg w-100 p-4 rounded-4 d-flex flex-column" style="background: var(--ss-surface, #FFFFFF); border-top: 5px solid var(--ss-green, #116A42) !important;">
-            <div class="mb-3">
-              <span class="badge bg-green text-white px-2 py-1" style="background-color: var(--ss-green, #116A42); font-size: 0.8rem;">Adults (Ages 18+)</span>
-              <h3 class="h4 font-weight-bold mt-2 text-ink" style="color: var(--ss-ink, #362B24);">Adult Core Culture</h3>
-              <p class="text-muted">Build a consistent training rhythm with coached progress, thoughtful partners, and a clear first-term plan.</p>
-            </div>
-            <div class="display-5 font-weight-bold text-green mb-1" style="color: var(--ss-green, #116A42); font-weight: 800;">
-              $715
-            </div>
-            <div class="small text-muted mb-4">per 12 weeks (up to 36 scheduled opportunities)</div>
-            <ul class="list-unstyled mb-4 flex-grow-1" style="line-height: 1.8; font-size: 0.95rem; color: var(--ss-muted, #4F433C);">
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Up to 36 scheduled coached small-group classes</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Three planned weekly home-class reservations</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Saturday Adult No-Gi inclusion</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> One academy gi with first qualifying Core Culture enrollment</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Beginner lane &amp; calm environment</li>
-              <li><i class="bi bi-check-circle-fill text-green me-2" style="color: var(--ss-green, #116A42);"></i> Coached progress: learn which solutions are beginning to work reliably and where to focus next</li>
-            </ul>
-            <p class="small text-muted" data-guarantee>30-Day Training Fit Guarantee applies to the first eligible Core Culture term.</p>
-            <a href="/free-bjj-intro-tannersville-ny?lane=adults" data-cta-target="intro" class="btn btn-primary w-100 font-weight-bold mb-2">Reserve Your Free First Visit</a>
-            <a href="/bjj-classes/adults-tannersville-ny" class="btn btn-outline-primary w-100 font-weight-bold">View Adult Program</a>
-          </div>
-        </div>
-
-        <!-- Community Service Adult -->
-        <div class="col-12 col-md-6 col-lg-4 d-flex">
-          <div class="ss-options-card card border-0 shadow-sm w-100 p-4 rounded-4 d-flex flex-column" style="background: var(--ss-surface, #FFFFFF); border-top: 4px solid var(--ss-slate, #306061) !important;">
-            <div class="mb-3">
-              <span class="badge bg-secondary text-white px-2 py-1" style="font-size: 0.8rem;">First Responders &amp; Teachers</span>
-              <h3 class="h4 font-weight-bold mt-2 text-ink" style="color: var(--ss-ink, #362B24);">Community-Service Adult Core Culture</h3>
-            </div>
-            <div class="display-5 font-weight-bold text-green mb-1" style="color: var(--ss-green, #116A42); font-weight: 800;">
-              $600
-            </div>
-            <div class="small text-muted mb-4">per 12 weeks</div>
-            <p class="small text-muted mb-4" style="font-size: 0.875rem;">
-              First responders, law enforcement, veterans, educators, healthcare workers
-            </p>
-            <p class="small text-muted mb-4">The same coached first-term structure, including clear feedback on what is working and what comes next.</p>
-            <a href="/law-enforcement-bjj" class="btn btn-outline-secondary w-100 font-weight-bold mt-auto">Explore Tactical Longevity for First Responders</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5" aria-labelledby="progress-value-title" style="background: var(--ss-surface2, #F4F1ED);">
-      <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-7">
-          <span class="ss-home-kicker text-uppercase font-weight-bold text-teal mb-2 d-block" style="color: var(--ss-teal, #289FA1); font-size: 0.85rem; letter-spacing: 0.05em;">Coached continuity</span>
-          <h2 id="progress-value-title" class="h3 font-weight-bold text-ink mb-2" style="color: var(--ss-ink, #362B24);">Progress you can understand.</h2>
-          <p class="text-muted mb-2" style="color: var(--ss-muted, #4F433C);">Sandy watches what is becoming reliable in live training, identifies the next useful problem, and gives students and families clear feedback along the way.</p>
-          <p class="small text-muted mb-0">One class can show where you are starting. Repeated training gives Sandy enough situations to see what is changing and what needs a different challenge. That is why Core Culture is organized as a 12-week first term rather than a collection of unrelated drop-ins.</p>
-        </div>
-        <div class="col-12 col-lg-5">
-          <ol class="mb-0 ps-3" style="color: var(--ss-muted, #4F433C); line-height: 1.8;">
-            <li><strong>Notice:</strong> What is working?</li>
-            <li><strong>Coach:</strong> What problem comes next?</li>
-            <li><strong>Review:</strong> What has changed?</li>
-          </ol>
-          <a href="/how-class-works" class="small fw-bold text-decoration-none" style="color: var(--ss-green, #116A42);">See how class works <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Visitors & Short-Term -->
-    <div id="flexible" class="mb-5 py-4 px-3 rounded-4" style="background: var(--ss-surface2, #F4F1ED);">
-      <div class="text-center mb-4">
-        <h2 class="h3 font-weight-bold text-ink" style="color: var(--ss-ink, #362B24);">Visiting the Catskills</h2>
-        <p class="text-muted" style="color: var(--ss-muted, #4F433C);">Drop-in passes for vacationing practitioners and temporary area visitors.</p>
-      </div>
-      <p class="text-center mb-4"><strong>Visiting regularly or own a second home?</strong> <a href="/catskills-home-base">See seasonal class packs and visitor options</a>.</p>
-
-      <div class="row g-3 justify-content-center">
-        <div class="col-12 col-md-4">
-          <div class="card border-0 p-3 rounded-3 text-center bg-white shadow-sm">
-            <h4 class="h5 font-weight-bold mb-1">Single Day Pass</h4>
-            <div class="h3 font-weight-bold text-green my-2">$35</div>
-            <div class="small text-muted mb-3">1 session</div>
-            <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20am%20visiting%20and%20want%20to%20drop%20in" class="btn btn-sm btn-outline-secondary" data-analytics-event="visitor_option_click" data-offer-id="day_pass">Text to Drop In</a>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="card border-0 p-3 rounded-3 text-center bg-white shadow-sm">
-            <h4 class="h5 font-weight-bold mb-1">Vacation Week Pass</h4>
-            <div class="h3 font-weight-bold text-green my-2">$99</div>
-            <div class="small text-muted mb-3">1 week</div>
-            <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20am%20interested%20in%20a%20Vacation%20Week%20pass" class="btn btn-sm btn-outline-secondary" data-analytics-event="visitor_option_click" data-offer-id="vacation_week">Get Vacation Pass</a>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="card border-0 p-3 rounded-3 text-center bg-white shadow-sm">
-            <h4 class="h5 font-weight-bold mb-1">Private Session</h4>
-            <div class="h3 font-weight-bold text-green my-2">$195</div>
-            <div class="small text-muted mb-3">1 session (60 mins)</div>
-            <a href="/private-lessons" class="btn btn-sm btn-outline-secondary" data-analytics-event="private_coaching_click">Private Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 4: Annual Track -->
-    <div class="text-center max-w-2xl mx-auto pt-3">
-<h3 class="h4 font-weight-bold text-ink mb-2">Annual Track (12 Months)</h3>
-<p><a href="/annual-track">See the full Annual Track details</a> for students who want a longer planned training horizon.</p>
-      <p class="small text-muted mb-3">
-        Students choosing a longer planned training horizon can lock in annual rates: Youth $2,100/yr | Adult $2,650/yr | Community Service $2,250/yr.
-      </p>
-    </div>
-
-    <!-- Section 5: Later choices -->
-    <section id="continue" class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5" aria-labelledby="later-choices-title" style="background: var(--ss-surface2, #F4F1ED);">
-      <span class="ss-home-kicker text-uppercase font-weight-bold text-teal mb-2 d-block" style="color: var(--ss-teal, #289FA1); font-size: 0.85rem; letter-spacing: 0.05em;">After your first term</span>
-      <h2 id="later-choices-title" class="h3 font-weight-bold text-ink mb-2" style="color: var(--ss-ink, #362B24);">Longer-term choices are a later decision.</h2>
-      <p class="text-muted mb-3" style="color: var(--ss-muted, #4F433C);">After a Core Culture term and a review of what is working, you can renew Core Culture, consider Annual Track, or apply for Elite Concierge. Finishing a term does not obligate you to continue.</p>
-      <div class="d-flex flex-wrap gap-2">
-        <a href="/annual-track" class="btn btn-outline-primary">See Annual Track</a>
-        <a href="/elite-concierge" class="btn btn-outline-primary">Explore Elite Concierge</a>
-      </div>
-    </section>
-  </div>
-</div>
-
-
-    </main>
-  
-
-  
-    <footer class="ss-new-site-footer">
-  <div class="ss-new-footer-shell">
-    <div class="ss-new-footer-inner">
-
-      <div class="ss-new-footer-top">
-        <div class="ss-new-footer-brand" data-footer-group="primary">
-          <div class="ss-new-brand-row">
-            <img class="ss-new-brand-logo" src="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp" alt="Sensei Sandy BJJ logo" width="60" height="60" decoding="async">
-            <div class="ss-new-brand-title">Sensei Sandy BJJ</div>
-          </div>
-          <p class="ss-new-brand-desc">Small-group Jiu-Jitsu where Sandy knows who you are training with, what problem you are working on, and when to give you more room to solve it. You will not disappear into the room.</p>
-          <div class="ss-new-contact-list">
-            <div class="ss-new-contact-row">
-              <i class="bi bi-geo-alt" aria-hidden="true"></i>
-              <span>6045 Main Street, 2nd Floor Studio<br>Tannersville, NY 12485</span>
-            </div>
-            <div class="ss-new-contact-row">
-              <i class="bi bi-people" aria-hidden="true"></i>
-              <span>Kids &bull; Teens &bull; Adults</span>
-            </div>
-          </div>
-        </div>
-
-        <nav class="ss-new-footer-nav" aria-label="Footer navigation">
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Start Here</h3>
-            <ul>
-              <li><a href="/nearby-towns">Choose Lane</a></li>
-              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Free First Visit</a></li>
-              <li><a href="/schedule">Schedule</a></li>
-              <li><a href="/holiday-schedule">Holiday Schedule</a></li>
-              <li><a href="/show-up-kit">Show-Up Kit</a></li>
-              <li><a href="/core-culture-parent-guide">Parent Guide</a></li>
-              <li><a href="/bjj-tannersville-ny-directions">Directions</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Programs</h3>
-            <ul>
-              <li><a href="/bjj-classes">All BJJ Classes</a></li>
-              <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
-              <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
-              <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
-              <li><a href="/private-lessons">Private Lessons</a></li>
-              <li><a href="/bully-proof-jiu-jitsu-tannersville-ny">Bully Proof</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Studio</h3>
-            <ul>
-              <li><a href="/how-class-works">How Class Works</a></li>
-              <li><a href="/success-stories">Success Stories</a></li>
-              <li><a href="/options-pricing">Pricing</a></li>
-              <li><a href="/bio">Bio</a></li>
-              <li><a href="/sensei-studio">Studio Tour</a></li>
-              <li><a href="/bjj-faqs">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Nearby</h3>
-            <ul>
-              <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
-              <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
-              <li><a href="/bjj-classes/windham-ny">Windham</a></li>
-              <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
-              <li><a href="/nearby-towns">Nearby Towns</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Learn</h3>
-            <ul>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/bjj-glossary">BJJ Glossary</a></li>
-              <li><a href="/bjj-stretches">BJJ Stretches</a></li>
-              <li><a href="https://www.youtube.com/@SenseiSandyBJJ">BJJ Videos</a></li>
-              <li><a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a></li>
-            </ul>
-          </div>
-          <div class="ss-new-nav-col" data-footer-group="secondary">
-            <h3>Friends of the Academy</h3>
-            <ul>
-              <li><a href="/community-partners">Community Partners</a></li>
-              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
-              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-
-      <div class="ss-new-footer-bottom">
-        <div>&copy; 2026 Sensei Sandy BJJ. All Rights Reserved.</div>
-        <div class="ss-new-footer-contacts">
-          <a href="tel:+19177368649" class="ss-new-footer-contact-link">
-            <i class="bi bi-telephone" aria-hidden="true"></i>
-            Call
-          </a>
-          <div class="ss-new-divider" aria-hidden="true"></div>
-          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" class="ss-new-footer-contact-link">
-            <i class="bi bi-chat-dots" aria-hidden="true"></i>
-            Text
-          </a>
-          <div class="ss-new-divider" aria-hidden="true"></div>
-          <a href="mailto:me@senseisandy.com" class="ss-new-footer-contact-link">
-            <i class="bi bi-envelope" aria-hidden="true"></i>
-            Email
-          </a>
         </div>
       </div>
     </div>
   </div>
-</footer>
+</section>
 
-<nav class="ss-mobile-actionbar" aria-label="Quick actions">
-<a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" aria-label="Questions about starting? Text Sandy " data-cta-target="text" data-cta-placement="sticky_mobile">Text Sandy</a>
-<a class="ss-action-home" href="/" aria-label="Home" data-cta-target="home" data-cta-placement="sticky_mobile"><img src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" alt="" width="28" height="28" decoding="async" /> <span class="visually-hidden">Home</span></a>
+<nav class="container-xxl py-4" aria-label="Pricing path">
+  <div class="op-shell p-4">
+    <p class="op-eyebrow mb-2">Choose your path</p>
+    <h2 class="h4 mb-3">What brings you here?</h2>
+    <div class="d-flex flex-wrap gap-2">
+      <a class="op-button op-button--quiet" href="#start">I’m new here</a>
+      <a class="op-button op-button--quiet" href="#flexible">I need flexible training</a>
+      <a class="op-button op-button--quiet" href="#continue">I’m already training here</a>
+    </div>
+  </div>
 </nav>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    (function initStickyVisibility() {
-      const heroCta = document.querySelector([
-        '.home-hero .primary-cta',
-        '.hero-card .btn-white-secondary',
-        '.hero-card .btn-green-primary',
-        '.ss-hero .primary-cta',
-        '#hero-cta'
-      ].join(', '));
-      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
-      const stickyCta = document.querySelector('.ss-mobile-actionbar');
+<section id="start" aria-labelledby="core-pricing-title" class="op-section op-section--paper">
+  <div class="container-xxl">
+    <div class="op-section-heading op-reveal">
+      <div>
+        <p class="op-eyebrow">12-week program</p>
+        <h2 id="core-pricing-title">Choose the class that fits your week.</h2>
+      </div>
+          <p>Your first 12 weeks include:</p>
+          <ul><li>3 classes each week</li><li>Uniform</li><li>Progress feedback</li><li>Make-up classes when space is open</li><li>30-day guarantee</li></ul>
+    </div>
 
-      if (!stickyCta) return;
-      stickyCta.classList.add("is-observed");
-      if (!("IntersectionObserver" in window)) {
-        stickyCta.classList.add("is-visible");
-        return;
-      }
+    <div class="op-program-grid">
+      <article class="op-shell op-program op-program--youth op-reveal">
+        <div class="op-card">
+          <div class="op-card__header">
+            <div>
+              <p class="op-card__kicker">Kids &amp; Teens &middot; Ages 5-17</p>
+              <h3>Youth 12-week program</h3>
+          <p class="op-card__outcome">Twelve weeks to build a routine that stays calm under pressure, solves problems with a partner, and creates real physical confidence.</p>
+            </div>
+            <span aria-hidden="true" class="op-card__number">01</span>
+          </div>
+          <div aria-label="Youth 12-week program prices" class="op-price-ledger">
+            <div class="op-price-ledger__featured">
+              <span>3 planned classes/week</span>
+              <strong>$550</strong>
+              <small>/ 12 weeks</small>
+            </div>
+          </div>
+          <ul class="op-check-list">
+              <li>Three recurring home classes per week; up to 36 scheduled classes</li>
+              <li>Choose three recurring home classes from four weekly youth sessions: Monday and Wednesday No-Gi, Tuesday Gi, and Friday Gi Lab</li>
+            <li>One uniform included with first qualifying 12-week program enrollment</li>
+            <li><strong>Progress feedback:</strong> Know what your child is handling more reliably and what Sandy is helping them work on next</li>
+            <li>Parent-friendly open-seat rescheduling by text when another class has space and a suitable partner</li>
+            <li>30-Day Training Fit Guarantee on the first term</li>
+          </ul>
+          <p class="op-card__note">More than class access: 12-week program includes a planned weekly rhythm, safe resistance, parent communication, and clear student responsibilities. Home classes are default reservations that give Sandy a predictable group to coach; they are not a character test. Read the <a href="/parent-resources">Parent Guide</a>.</p>
+          <p class="op-card__note">Multiple students in one household? Text Sandy for family coordination and pricing. Eligible discounts are discussed during your first visit.</p>
+          <a class="op-text-link" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Reserve Your Free First Visit <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
 
-      let heroOut = !heroCta;
-      let footerIn = false;
-      const updateVisibility = function () {
-        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
-      };
+      <article class="op-shell op-program op-program--adult op-reveal op-delay-1">
+        <div class="op-card op-card--tint">
+          <div class="op-card__header">
+            <div>
+              <p class="op-card__kicker">Adults &middot; Ages 18+</p>
+              <h3>Adult 12-week program</h3>
+              <p class="op-card__outcome">Twelve weeks to build strength, mobility, and focus against controlled resistance in a room with no big egos.</p>
+            </div>
+            <span aria-hidden="true" class="op-card__number">02</span>
+          </div>
+          <div aria-label="Adult 12-week program prices" class="op-price-ledger op-price-ledger--stacked">
+            <div class="op-price-ledger__featured">
+              <span>3 planned classes/week</span>
+              <strong>$715</strong>
+              <small>/ 12 weeks</small>
+            </div>
+          </div>
+          <ul class="op-check-list">
+            <li>Three recurring home classes per week; up to 36 scheduled classes</li>
+            <li>Choose three recurring home classes from five weekly adult sessions, including three No-Gi and two Gi options</li>
+            <li>One uniform included with first qualifying 12-week program enrollment</li>
+            <li><strong>Coached progress:</strong> Learn which solutions are beginning to work reliably and where to focus next</li>
+            <li>Open-seat rescheduling by text when another class has space and a suitable partner</li>
+            <li>30-Day Training Fit Guarantee on the first term</li>
+          </ul>
+          <p class="op-card__note">Changing facilities and gear storage available at the studio.</p>
+          <a class="op-text-link" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow">Reserve Your Free First Visit <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
 
-      if (heroCta) {
-        const heroObserver = new IntersectionObserver(function (entries) {
-          heroOut = !entries[0].isIntersecting;
-          updateVisibility();
-        }, { threshold: 0.1 });
-        heroObserver.observe(heroCta);
-      }
+      <article class="op-shell op-program op-program--community op-reveal">
+        <div class="op-card op-community-card">
+          <div>
+            <p class="op-card__kicker">Qualifying Adults</p>
+            <h3>Community-Service Adult Rate</h3>
+            <p>For teachers, healthcare workers, law enforcement, firefighters, EMTs, military members, and veterans.</p>
+          </div>
+          <div class="op-community-card__price">
+            <span>3 planned classes/week</span>
+            <strong>$600</strong>
+            <small>/ 12 weeks</small>
+          </div>
+          <ul class="op-community-card__benefits">
+            <li>Three recurring regular class timees per week</li>
+            <li>uniform included</li>
+            <li>Up to 36 scheduled classes</li>
+            <li>Clear feedback on what's working and what comes next</li>
+          </ul>
+        </div>
+      </article>
+    </div>
 
-      if (footerCta) {
-        const footerObserver = new IntersectionObserver(function (entries) {
-          footerIn = entries[0].isIntersecting;
-          updateVisibility();
-        }, { threshold: 0.05 });
-        footerObserver.observe(footerCta);
-      }
+    <section aria-labelledby="progress-value-title" class="op-progress-note op-reveal">
+      <div class="op-progress-note__copy">
+        <p class="op-eyebrow">coaching</p>
+        <h2 id="progress-value-title">Progress you can understand.</h2>
+        <p>Progress feedback means Sandy watches what is becoming reliable in live training, identifies the next useful problem, and gives students and families clear feedback along the way. Want to see what that feedback looks like? <a href="/report-card">Preview the Progress Report Card</a>.</p>
+        <p class="op-progress-note__term">One class can show where you are starting. Consistent training gives Sandy enough repeated situations to see what is changing and what needs a different challenge. That is why 12-week program is organized as a 12-week first term rather than a collection of unrelated drop-ins.</p>
+        <details class="mt-3"><summary class="fw-semibold">Why a training term instead of random drop-ins?</summary><p class="small text-muted mt-2 mb-0">Skill studies generally use repeated practice over weeks, not isolated sessions. 12-week program gives Sandy repeated opportunities to observe the same student across changing partners and problems. The 12-week term is an academy coaching structure, not a claim that research has established 12 weeks as the universally optimal BJJ dose.</p></details>
+        <a class="op-text-link" href="/how-class-works">See how class works <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <ol class="op-progress-note__steps">
+        <li><strong>Notice</strong><span>What is working?</span></li>
+        <li><strong>Coach</strong><span>What problem comes next?</span></li>
+        <li><strong>Review</strong><span>What has changed?</span></li>
+      </ol>
+    </section>
 
-      updateVisibility();
-    })();
-  });
-</script>
+    <div class="op-inline-cta op-reveal">
+      <p><strong>$0 Free First Visit:</strong> Meet Sandy first. There is no plan decision required before your visit, and eligible first Youth or Adult 12-week program terms include our 30-Day Training Fit Guarantee.</p>
+      <div class="p-3 rounded-3 mb-3 text-start" style="background-color: #f0f7f4; border-left: 4px solid var(--ss-green, #116A42);">
+      </div>
+      <a class="op-text-link" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Your Free First Visit <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
 
-<script src="/assets/js/goal-mapping.min.js" defer fetchpriority="low"></script>
+<section aria-labelledby="household-pricing-title" class="op-section op-section--forest">
+  <div class="container-xxl">
+    <div class="op-section-heading op-section-heading--light op-reveal">
+      <div>
+        <p class="op-eyebrow">Train Together</p>
+        <h2 id="household-pricing-title">Household plans, without the math maze.</h2>
+      </div>
+      <p>These first-term packages include progress feedback, make-up classes when space is open, and uniforms. Each student is still coached and reviewed as an individual.</p>
+    </div>
 
-  
+    <div class="op-household-grid">
+      <details class="op-household-card op-household-card--family op-reveal">
+        <summary>
+          <span>
+            <small>Two adults + one youth</small>
+            <strong>Family 12-week program</strong>
+          </span>
+          <span class="op-household-card__from">Ask about household coordination</span>
+          <span aria-hidden="true" class="op-details-icon">+</span>
+        </summary>
+        <div class="op-household-card__body">
+          <p>Eligible household pricing is discussed during the Free First Visit. Three uniforms are included with first enrollment.</p>
+          <dl class="op-rate-list">
+            <div><dt>Three recurring regular class timees</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is not a separate public product.</small></dd></div>
+          </dl>
+        </div>
+      </details>
 
-<script src="/js/link-utils.min.js" defer></script>
-<script src="/js/analytics-events.min.js" defer></script>
-  
-</body>
-</html>
+      <details class="op-household-card op-household-card--siblings op-reveal">
+        <summary>
+          <span>
+            <small>Two children</small>
+            <strong>Sibling 12-week program</strong>
+          </span>
+          <span class="op-household-card__from">Ask about household coordination</span>
+          <span aria-hidden="true" class="op-details-icon">+</span>
+        </summary>
+        <div class="op-household-card__body">
+          <p>Eligible sibling pricing is discussed during the Free First Visit. Two uniforms are included with first enrollment.</p>
+          <dl class="op-rate-list">
+            <div><dt>Three recurring regular class timees</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is not a separate public product.</small></dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="op-household-card op-household-card--parent op-reveal op-delay-1">
+        <summary>
+          <span>
+            <small>One adult + one youth</small>
+            <strong>Parent + Youth 12-week program</strong>
+          </span>
+          <span class="op-household-card__from">Ask about household coordination</span>
+          <span aria-hidden="true" class="op-details-icon">+</span>
+        </summary>
+        <div class="op-household-card__body">
+          <p>Eligible parent-and-youth pricing is discussed during the Free First Visit. One adult gi and one youth gi are included.</p>
+          <dl class="op-rate-list">
+            <div><dt>Three recurring regular class timees</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is discussed case by case.</small></dd></div>
+          </dl>
+        </div>
+      </details>
+    </div>
+    <p class="op-household-note op-reveal">Open each plan for the exact weekly combinations. Mixed attendance can be discussed during first visit.</p>
+  </div>
+</section>
+
+<section aria-labelledby="guarantee-title" class="op-section op-section--paper">
+  <div class="container-xxl">
+    <div class="op-assurance-grid">
+      <div class="op-shell op-reveal">
+        <div class="op-assurance-card">
+          <p class="op-eyebrow">30-Day Training Fit Guarantee</p>
+          <h2 id="guarantee-title">Try the room. Keep the decision calm.</h2>
+          <p>Give 12-week program a fair first try: attend at least four classes during your first 30 days. If the program is not the right fit, text Sandy and give us a chance to adjust the schedule, class class, partner matching, or starting plan. If you still prefer to leave, the amount paid for your first 12-week program term is refunded in full under the guarantee terms.</p>
+          <div class="op-assurance-facts" aria-label="Guarantee requirements">
+            <div><strong>4 classes</strong><span>Minimum attendance</span></div>
+            <div><strong>30 days</strong><span>Request deadline</span></div>
+            <div><strong>First term</strong><span>Youth or Adult 12-week program</span></div>
+          </div>
+          <details class="op-terms">
+            <summary>View exclusions and complete terms</summary>
+            <p>Annual plans, renewals, visitor options, class packs, private classes, merchandise, and optional add-ons are excluded.</p>
+            <a href="/guarantee-terms">Read the complete guarantee terms <span aria-hidden="true">&rarr;</span></a>
+          </details>
+        </div>
+      </div>
+
+      <aside aria-label="Student review" class="op-proof-card op-reveal op-delay-1">
+        <p class="op-proof-card__mark" aria-hidden="true">&ldquo;</p>
+        <blockquote>
+          <p>A welcoming community with no big egos. That is rare in any martial art.</p>
+          <footer class="op-proof-card__citation">Adam Mastropaolo</footer>
+        </blockquote>
+        <a href="/success-stories">Read student stories <span aria-hidden="true">&nearr;</span></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="flexible" aria-labelledby="other-options-title" class="op-section op-section--sand">
+  <div class="container-xxl">
+    <div class="op-section-heading op-reveal">
+      <div>
+        <p class="op-eyebrow">Other Ways to Train</p>
+        <h2 id="other-options-title">Visiting or need a flexible schedule?</h2>
+      </div>
+      <p>These options sit outside the standard 12-week first term. Local first-time students should still begin with the Free First Visit.</p>
+    </div>
+
+    <p class="op-section-note">Class packs provide flexibility. The 12-week program adds 3 classes each week and ongoing progress feedback. The up-to-36 figure describes scheduled opportunities over the term, not 36 credits a student must consume.</p>
+    <div class="op-other-grid">
+      <article id="visitor-training" class="op-shell op-other-card op-other-card--visitor op-reveal">
+        <div class="op-card">
+          <div class="op-card__header">
+            <div>
+              <p class="op-card__kicker">Catskills Visitors &amp; Flexible Training</p>
+          <h3>Visitor &amp; flexible access</h3>
+            </div>
+            <span aria-hidden="true" class="op-card__number">A</span>
+          </div>
+          <div class="op-pass-grid">
+            <div><span>Day Pass</span><strong>$35</strong></div>
+            <div><span>Vacation Week</span><strong>$99</strong></div>
+            <div><span>10-Class Pack</span><strong>$300</strong><small>Valid for six months</small></div>
+            <div><span>20-Class Pack</span><strong>$550</strong><small>Valid for 12 months</small></div>
+          </div>
+          <div class="op-flex-rates">
+          </div>
+          <p class="op-card__note">Day Pass and Vacation Week are visitor access: one class, or up to three classes in seven days. Class Packs are usage-based options for seasonal, second-home, or irregular schedules. Local first-time students begin with the Free First Visit.</p>
+          <p class="op-card__note">These options do not include the full 12-week membership benefits. Everyone still receives appropriate coaching, safety management, and partner guidance while in class.</p>
+          <p class="op-card__note"><strong>Visiting regularly or own a second home?</strong> <a href="/catskills-home-base">See seasonal class packs and visitor options</a>.</p>
+          <a class="op-text-link" href="/catskills-home-base">See the Catskills visitor guide <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="op-shell op-other-card op-other-card--private op-reveal op-delay-1">
+        <div class="op-card op-card--ink">
+          <p class="op-card__kicker">One-on-One</p>
+          <h3>Private Coaching</h3>
+          <p class="op-private-price"><strong>$195</strong><span>/ session</span></p>
+          <p>For nervous first-timers, returning adults, visitors, or students working on one specific problem.</p>
+          <ul class="op-check-list op-check-list--light">
+            <li>All ages</li>
+            <li>Generally scheduled mornings</li>
+            <li>Focused, private onboarding</li>
+          </ul>
+          <a class="op-button op-button--paper" data-ss-cta-type="private_lesson" href="/private-lessons">
+            <span>Ask About Private Coaching</span>
+            <span aria-hidden="true" class="op-button__icon">&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+ <article id="continue" class="op-after-first op-reveal">
+        <div class="op-after-first__heading">
+          <p class="op-card__kicker">After Your First Term</p>
+          <h3>Longer-term options are a later decision.</h3>
+          <p>After a 12-week program term, use a <a href="/report-card">Progress Review</a> to look at what is working, what comes next, and whether the schedule still fits. Then you can compare renewing 12-week program, Annual Track, higher-touch Elite Concierge support, or flexible access. Finishing a term does not obligate you to continue.</p>
+        </div>
+        <div class="op-after-first__option">
+          <span>Elite Concierge</span>
+          <strong>$1,050</strong>
+          <small>/ 12 weeks</small>
+          <p class="op-after-first__copy">Continuation-only Adult 12-week program support with gear handling, private coaching, and first consideration when a suitable replacement seat opens. The 30-Day Training Fit Guarantee does not apply.</p>
+          <a data-ss-cta-type="black_belt_concierge" href="/elite-concierge">Explore Concierge <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div id="annual-track" class="op-after-first__option op-after-first__option--accent">
+          <span>Annual Track</span>
+          <strong>Youth $2,100 · Adult $2,650 · Community $2,250</strong>
+          <small>/ year</small>
+          <p class="op-after-first__copy">For students continuing after a 12-week program term who prefer a longer commitment for annual value. Annual plans are excluded from the 30-Day Training Fit Guarantee and do not add another uniform.</p>
+          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20interested%20in%20Annual%20Track%20Savings.">Text Sandy <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="pricing-final-title" class="op-section op-section--final">
+  <div class="container-xxl">
+    <div class="op-final-shell op-reveal">
+      <div class="op-final-card">
+        <div>
+          <p class="op-eyebrow">No Plan Decision Today</p>
+          <h2 id="pricing-final-title">See the room before you choose the routine.</h2>
+          <p>Your Free First Visit includes a room tour, safety walkthrough, first visit, and a coached first-class recommendation.</p>
+        </div>
+        <div class="op-final-card__actions">
+          <a class="op-button op-button--paper" data-cta-lane="mixed" data-cta-placement="final_cta" data-cta-src="options-pricing-final" data-cta-target="intro" data-cta-tier="primary" data-goal-mapping="" href="/free-bjj-intro-tannersville-ny#booking-flow">
+            <span>Reserve Your Free First Visit</span>
+            <span aria-hidden="true" class="op-button__icon">&rarr;</span>
+          </a>
+          <a class="op-final-card__text-link" data-cta-lane="mixed" data-cta-placement="final_cta" data-cta-src="options-pricing-final" data-cta-target="sms" data-cta-tier="secondary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20pricing%20question.">Text Sandy at (917) 736-8649</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>

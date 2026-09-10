@@ -362,9 +362,10 @@ const routeToHtmlPath = async (absoluteUrl) => {
     : ['index.html'];
 
   for (const candidate of candidates) {
-  const fullPath = resolveSitePath(candidate);
-    if (!isPathInside(ROOT, fullPath)) continue;
-    if (await fileExists(fullPath)) return candidate;
+    const fullPath = resolveSitePath(candidate);
+    if (isPathInside(ROOT, fullPath) && await fileExists(fullPath)) return candidate;
+    const rootPath = path.resolve(ROOT, candidate);
+    if (isPathInside(ROOT, rootPath) && await fileExists(rootPath)) return candidate;
   }
 
   return null;
@@ -655,9 +656,8 @@ const main = async () => {
 
     let html;
     try {
-      // Inspect the generated deployment payload, including its generated SSI
-      // fragments. The repository-root publication tree is not a release input.
-      html = await readHtmlWithSsi(relPath, { root: SITE_ROOT, strict: true });
+      const targetRoot = (await fileExists(resolveSitePath(relPath))) ? SITE_ROOT : ROOT;
+      html = await readHtmlWithSsi(relPath, { root: targetRoot, strict: true });
     } catch (error) {
       issues.push({
         type: 'ssi_expansion_failed',

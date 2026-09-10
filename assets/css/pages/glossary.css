@@ -26,8 +26,13 @@
 .glossary-surface--dark{background:var(--color-ink);color:var(--color-paper)}.glossary-surface--dark :is(h2,h3,p,a){color:inherit}.hidden{display:none!important}
 .ss-page-feed .ss-community-post { background: var(--color-paper); color: var(--color-ink); }
 .ss-page-feed .ss-community-pill:not(.ss-primary) { --glossary-pill-bg: #173033; background: var(--glossary-pill-bg) !important; color: var(--color-paper); }
+.glossary-visit-card h2 { color: #f4fbfb !important; }
+.glossary-visit-card li, .glossary-visit-card p { color: #b8cccc !important; }
+details.glossary-advanced-filters summary { color: #8ffcff !important; font-weight: 700; }
+details.glossary-advanced-filters fieldset legend { color: #f4fbfb !important; font-weight: 700; }
 :is(.glossary-btn,.glossary-chip,.glossary-alpha,.glossary-search,.term-card__cta,.related-card):focus-visible{outline:var(--rule-fine) solid var(--color-focus);outline-offset:2px}
 @media (hover:hover) and (pointer:fine){.term-card,.related-card{transition:transform var(--dur-short) var(--ease-out),border-color var(--dur-short) var(--ease-out)}.term-card:hover,.related-card:hover{transform:translateY(-1px);border-color:var(--color-rule-2)}.glossary-btn-primary:hover{background:var(--color-accent-strong)}}
 @media (max-width:60rem){.glossary-hero-grid{grid-template-columns:1fr}.glossary-grid,.related-grid,.relationship-grid,.day-one-grid,.glossary-term-review-grid,.ss-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:40rem){.glossary-index,.glossary-term{padding-block:var(--space-xl)}.glossary-grid,.related-grid,.relationship-grid,.day-one-grid,.glossary-term-review-grid,.ss-link-grid{grid-template-columns:1fr}.glossary-filter-panel,.term-hero,.glossary-term-section{padding:var(--space-md)}.glossary-hero__title{font-size:clamp(2.5rem,13vw,4rem)}}
 @media (prefers-reduced-motion:reduce){.term-card,.related-card{transition:none}}
+[hidden]{display:none!important}

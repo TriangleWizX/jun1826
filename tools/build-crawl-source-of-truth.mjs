@@ -41,7 +41,13 @@ const EXCLUDED_DIRS = new Set([
   'api',
   'node_modules',
   '.git',
-  'playwright-report'
+  'playwright-report',
+  'browser-harness',
+  '.venv',
+  '.tmb',
+  '.vscode',
+  'src',
+  'dist'
 ]);
 
 const EXCLUDED_FILES = new Set([
@@ -232,8 +238,10 @@ export const main = async () => {
     const canonicalHref = extractCanonicalHref(html);
     const wordCount = countWords(html);
 
-    let isIndexable = !hasNoindexTag(html);
-    if (NOINDEX_ROUTES.has(routePath)) {
+    const isRedirect = Boolean(redirects[routePath]);
+    const redirectTarget = isRedirect ? normalizePath(redirects[routePath]) : null;
+    let isIndexable = !isRedirect && !hasNoindexTag(html);
+    if (NOINDEX_ROUTES.has(routePath) || isRedirect) {
       isIndexable = false;
     }
 
@@ -246,11 +254,11 @@ export const main = async () => {
       }
     }
 
-    const pageType = getPageType(routePath);
-    let status = isIndexable ? 'active' : (TIER_C_TOWNS.has(routePath.replace(/^\/(?:bjj-classes|near)\//, '')) ? 'pending-rewrite' : 'active');
+    const pageType = isRedirect ? 'archive' : getPageType(routePath);
+    let status = isRedirect ? 'redirect' : (isIndexable ? 'active' : (TIER_C_TOWNS.has(routePath.replace(/^\/(?:bjj-classes|near)\//, '')) ? 'pending-rewrite' : 'active'));
     if (NOINDEX_ROUTES.has(routePath)) status = 'private';
 
-    const canonicalPath = canonicalHref ? (canonicalHref.startsWith('http') ? new URL(canonicalHref).pathname : canonicalHref) : routePath;
+    const canonicalPath = isRedirect ? redirectTarget : (canonicalHref ? (canonicalHref.startsWith('http') ? new URL(canonicalHref).pathname : canonicalHref) : routePath);
     const sitemapGroup = getSitemapGroup(routePath, pageType, isIndexable);
 
     const registryEntry = {
@@ -260,9 +268,9 @@ export const main = async () => {
       indexable: isIndexable,
       canonicalPath: normalizePath(canonicalPath),
       sitemapGroup,
-      navigationGroup: pageType,
+      navigationGroup: isRedirect ? null : pageType,
       lastSignificantUpdate: TODAY,
-      redirectTarget: null
+      redirectTarget
     };
     registry.push(registryEntry);
 
@@ -271,19 +279,19 @@ export const main = async () => {
     masterExport.push({
       url: `${SITE}${routePath}`,
       path: routePath,
-      statusCode: 200,
-      redirectChain: [],
-      title,
-      metaDescription,
-      h1,
+      statusCode: isRedirect ? 301 : 200,
+      redirectChain: isRedirect ? [redirectTarget] : [],
+      title: isRedirect ? '' : title,
+      metaDescription: isRedirect ? '' : metaDescription,
+      h1: isRedirect ? '' : h1,
       robotsDirective: isIndexable ? 'index,follow' : 'noindex,follow',
       canonical: `${SITE}${normalizePath(canonicalPath)}`,
-      wordCount,
+      wordCount: isRedirect ? 0 : wordCount,
       pageType,
       sitemapInclusion: Boolean(sitemapGroup),
       sitemapGroup,
       lastModified: TODAY,
-      contentHash: hash,
+      contentHash: isRedirect ? '' : hash,
       nearDuplicatePercentage: 0
     });
   }

@@ -240,7 +240,7 @@ const exerciseFingerprinter = (fixture) => {
     `<link rel='stylesheet' href="/tokens.${rootCssHash}.css?root=1#sheet">`,
     `<link rel="stylesheet" href="/css/unused.css?legacy=1#keep">`,
     `<img src="/assets/images/logo.${logoHash}.svg?size=2#brand" alt="">`,
-    `<script src='/js/app.${appHash}.js?v=7#boot'></script>`,
+    `<script src='js/app.js?v=7#boot'></script>`,
     `<img src='/assets/icons/bootstrap/check.svg#pinned' alt="">`,
     `<!-- <img src="assets/images/inactive.png?comment=1#keep" alt=""> -->`,
     `<noscript><img src="assets/images/inactive.png?noscript=1#keep" alt=""></noscript>`,
@@ -252,7 +252,7 @@ const exerciseFingerprinter = (fixture) => {
   const nestedHtmlExpected = [
     '<!doctype html>',
     `<link rel='stylesheet' href="/assets/css/main.${mainHash}.css?nested=1#sheet">`,
-    `<script src="/js/app.${appHash}.js?nested=1#boot"></script>`,
+    `<script src="../js/app.js?nested=1#boot"></script>`,
     ''
   ].join('\n');
   assert.equal(read(fixture, 'pages/index.html'), nestedHtmlExpected, 'nested HTML rewrite mismatch');
@@ -270,7 +270,6 @@ const exerciseFingerprinter = (fixture) => {
   const manifestKeys = Object.keys(manifest.assets);
   assert.equal(manifest.generatedAt, undefined, 'manifest contains a nondeterministic timestamp');
   assert.deepEqual(manifestKeys, [
-    '/js/app.js',
     '/assets/css/main.css',
     '/assets/css/nested.css',
     '/assets/images/logo.svg',

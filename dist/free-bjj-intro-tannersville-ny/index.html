@@ -51,13 +51,13 @@
 
 
 <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/tokens.css" as="style">
+<link rel="preload" href="/tokens.9e9129.css" as="style">
 <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
-<link rel="stylesheet" href="/assets/css/fonts.min.css">
-<link rel="stylesheet" href="/assets/css/site-shell.min.css">
+<link rel="stylesheet" href="/assets/css/fonts.min.dea01e.css">
+<link rel="stylesheet" href="/assets/css/site-shell.min.6ebbaf.css">
 
   
-    <link rel="stylesheet" href="/assets/css/pages/book-free-intro.min.css">
+    <link rel="stylesheet" href="/assets/css/pages/book-free-intro.min.559d0e.css">
   
     <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
   
@@ -131,7 +131,7 @@
           <li><strong>3. Try the right first class.</strong> We’ll help you choose the starting pace.</li>
         </ol>
         <figure class="mt-4 mb-0">
-          <img alt="Clean matted training room and viewing area at Sensei Sandy BJJ in Tannersville" class="w-100 rounded-4" decoding="async" height="577" loading="lazy" src="/assets/images/studio/sensei-sandy-bjj-mat-space-and-viewing-area-1024.webp" style="aspect-ratio: 16 / 9; object-fit: cover;" width="1024">
+          <img alt="Clean matted training room and viewing area at Sensei Sandy BJJ in Tannersville" class="w-100 rounded-4" decoding="async" height="577" loading="lazy" src="/assets/images/studio/sensei-sandy-bjj-mat-space-and-viewing-area-1024.d4d4ef.webp" style="aspect-ratio: 16 / 9; object-fit: cover;" width="1024">
           <figcaption class="small text-muted mt-2">Tour the clean mat space and viewing area before choosing your first class.</figcaption>
         </figure>
       </div>
@@ -483,11 +483,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#pb-step-3 form');
     if (!form) return;
-    form.addEventListener('submit', () => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        form.classList.add('was-validated');
+        form.querySelector(':invalid')?.focus();
+        return;
+      }
       try {
+        sessionStorage.removeItem('ss_lead_fired');
         sessionStorage.setItem('ss_first_visit_details', JSON.stringify({
           profile: document.getElementById('booking-profile-value')?.value || '',
-          selectedClass: document.getElementById('booking-class-value')?.value || ''
+          selectedClass: document.getElementById('booking-class-value')?.value || '',
+          submittedAt: Date.now()
         }));
       } catch (error) { /* storage may be unavailable in private browsing */ }
     });

@@ -95,11 +95,12 @@ permalink: "/bjj-anatomy-quiz.html"
 
         // --- INITIALIZATION ---
         function init() {
+            const canvas = document.getElementById('game-container');
+            if (!canvas) return;
             initScene();
             loadAssetsAndStart();
             window.addEventListener('resize', resize);
             
-            const canvas = document.getElementById('game-container');
             // Listen for pointerdown to handle both mouse and touch efficiently
             canvas.addEventListener('pointerdown', handlePointerDown);
         }
@@ -328,5 +329,9 @@ permalink: "/bjj-anatomy-quiz.html"
             renderer.render(scene, camera);
         }
 
-        init();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init, { once: true });
+        } else {
+            init();
+        }
     </script>
