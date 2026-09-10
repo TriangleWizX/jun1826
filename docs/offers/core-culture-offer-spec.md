@@ -30,7 +30,7 @@ Sandy approves prices, schedules, policies, eligibility, included services, disc
 
 ## Public description
 
-> **Core Culture is a 12-week small-group program with three planned classes each week. During your Free Intro, you will choose three recurring home classes. When your schedule changes, text Sandy to request another appropriate class with space.**
+> **Train up to three times each week. We reserve your regular class times so Sandy can plan the right space, coaching, and training partners. Need a different day? Text Sandy to request an available class.**
 
 ## Each enrollment includes
 
