@@ -2223,7 +2223,7 @@
       "memberRoutes": [
         "/free-bjj-intro-tannersville-ny"
       ],
-      "rejectedCount": 2537,
+      "rejectedCount": 2540,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -2484,6 +2484,7 @@
         " .offcanvas.hiding",
         " .offcanvas.show",
         " .offcanvas.show:not(.hiding)",
+        " .page-book-intro #calendly-embed-onsite iframe",
         " .page-book-intro .ss-navbar .ss-mobile-reserve",
         " .ss-btn-final-text",
         " .ss-form-card .form-select",
@@ -4110,12 +4111,14 @@
         ".p-xxl-3",
         ".p-xxl-4",
         ".p-xxl-5",
+        ".page-book-intro .booking-calendar-entry [data-open-calendar]",
         ".page-book-intro .ss-topbar-actions",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar\"]",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar\"]:hover",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar_text\"]",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar_text\"]:hover",
         ".page-book-intro .ss-topbar-actions a[href^=\"tel:\"]",
+        ".page-book-intro.ss-booking-flow-active .ss-mobile-sticky-cta",
         ".page-item:first-child .page-link",
         ".page-item:last-child .page-link",
         ".page-item:not(:first-child) .page-link",
@@ -4885,7 +4888,7 @@
   "schemaVersion": 1,
   "summary": {
     "bundleCount": 2,
-    "rejectedSelectorCount": 4644,
+    "rejectedSelectorCount": 4647,
     "routeCount": 104
   }
 }

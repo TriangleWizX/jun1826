@@ -25,6 +25,7 @@
       else { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: name, ...payload }); }
     };
     const show = (number) => {
+      document.body.classList.toggle('ss-booking-flow-active', number !== 1);
       steps.forEach((step, index) => {
         if (!step) return;
         const active = index === number - 1;

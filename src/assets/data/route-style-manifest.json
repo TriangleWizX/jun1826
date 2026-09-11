@@ -2344,22 +2344,22 @@
         "/assets/css/pages/book-free-intro.min.css"
       ],
       "droppedRemoteFontImports": [],
-      "gzipBytes": 9630,
+      "gzipBytes": 9709,
       "memberRoutes": [
         "/free-bjj-intro-tannersville-ny"
       ],
       "memberSourceHtml": [
         "free-bjj-intro-tannersville-ny/index.html"
       ],
-      "minifiedBytes": 41771,
-      "minifiedGzipBytes": 9052,
+      "minifiedBytes": 42099,
+      "minifiedGzipBytes": 9127,
       "minifiedHref": "/assets/css/routes/site-1d0842eaa685.min.css",
       "orderedInputs": [
         "/assets/css/bootstrap-site.css",
         "/assets/css/fonts.min.css",
         "/assets/css/pages/book-free-intro.min.css"
       ],
-      "rawBytes": 47791,
+      "rawBytes": 48156,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -2620,6 +2620,7 @@
         " .offcanvas.hiding",
         " .offcanvas.show",
         " .offcanvas.show:not(.hiding)",
+        " .page-book-intro #calendly-embed-onsite iframe",
         " .page-book-intro .ss-navbar .ss-mobile-reserve",
         " .ss-btn-final-text",
         " .ss-form-card .form-select",
@@ -4246,12 +4247,14 @@
         ".p-xxl-3",
         ".p-xxl-4",
         ".p-xxl-5",
+        ".page-book-intro .booking-calendar-entry [data-open-calendar]",
         ".page-book-intro .ss-topbar-actions",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar\"]",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar\"]:hover",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar_text\"]",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar_text\"]:hover",
         ".page-book-intro .ss-topbar-actions a[href^=\"tel:\"]",
+        ".page-book-intro.ss-booking-flow-active .ss-mobile-sticky-cta",
         ".page-item:first-child .page-link",
         ".page-item:last-child .page-link",
         ".page-item:not(:first-child) .page-link",
@@ -158559,15 +158562,15 @@
     "/free-bjj-intro-tannersville-ny": {
       "buildVersion": "route-styles-1",
       "canonicalHref": "/assets/css/routes/site-1d0842eaa685.css",
-      "gzipBytes": 9630,
-      "minifiedGzipBytes": 9052,
+      "gzipBytes": 9709,
+      "minifiedGzipBytes": 9127,
       "minifiedHref": "/assets/css/routes/site-1d0842eaa685.min.css",
       "orderedInputs": [
         "/assets/css/bootstrap-site.css",
         "/assets/css/fonts.min.css",
         "/assets/css/pages/book-free-intro.min.css"
       ],
-      "purgeContentSha256": "4df35a93d3f55c109b51e720c5daedf914194139f8b707f05de7f35521dfcb58",
+      "purgeContentSha256": "ddce391ab0143a0d6fd709f6608737de7240e5d8ece07644d08bc94ca3d312c5",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -158828,6 +158831,7 @@
         " .offcanvas.hiding",
         " .offcanvas.show",
         " .offcanvas.show:not(.hiding)",
+        " .page-book-intro #calendly-embed-onsite iframe",
         " .page-book-intro .ss-navbar .ss-mobile-reserve",
         " .ss-btn-final-text",
         " .ss-form-card .form-select",
@@ -160454,12 +160458,14 @@
         ".p-xxl-3",
         ".p-xxl-4",
         ".p-xxl-5",
+        ".page-book-intro .booking-calendar-entry [data-open-calendar]",
         ".page-book-intro .ss-topbar-actions",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar\"]",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar\"]:hover",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar_text\"]",
         ".page-book-intro .ss-topbar-actions a[data-cta-placement=\"topbar_text\"]:hover",
         ".page-book-intro .ss-topbar-actions a[href^=\"tel:\"]",
+        ".page-book-intro.ss-booking-flow-active .ss-mobile-sticky-cta",
         ".page-item:first-child .page-link",
         ".page-item:last-child .page-link",
         ".page-item:not(:first-child) .page-link",
@@ -161115,7 +161121,7 @@
         },
         {
           "path": "free-bjj-intro-tannersville-ny/index.html",
-          "sha256": "2e66a3bce481ebf9fe3c3be9234956a08513f4ca8d23d763b3e2e6d5129e02a5"
+          "sha256": "582bea3666bf654e1fdf6a94dbea8d19d8e30e47c3a3c155c4f020349fd20dd4"
         },
         {
           "path": "nav-include.html",
@@ -161123,7 +161129,7 @@
         }
       ],
       "sourceHtml": "free-bjj-intro-tannersville-ny/index.html",
-      "sourceHtmlSha256": "2e66a3bce481ebf9fe3c3be9234956a08513f4ca8d23d763b3e2e6d5129e02a5"
+      "sourceHtmlSha256": "582bea3666bf654e1fdf6a94dbea8d19d8e30e47c3a3c155c4f020349fd20dd4"
     },
     "/friday-night-fanatics": {
       "buildVersion": "route-styles-1",

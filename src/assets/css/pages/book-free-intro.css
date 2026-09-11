@@ -81,6 +81,39 @@ body.ss-clockwork.page-book-intro {
   width: 100%;
 }
 
+/* The scheduler is the task surface once a visitor has chosen a lane. Calendly
+   injects an iframe with a 150px default height, so reserve a usable viewport
+   before its script arrives. The popup remains the mobile transport. */
+@media (min-width: 768px) {
+  .page-book-intro #calendly-embed-onsite,
+  .page-book-intro #calendly-embed-onsite iframe {
+    display: block;
+    width: 100%;
+    min-height: clamp(42rem, 72dvh, 54rem);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-book-intro .booking-calendar-entry [data-open-calendar] {
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .page-book-intro .ss-mobile-sticky-cta:has(> :only-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .page-book-intro .ss-mobile-sticky-cta {
+    display: none;
+  }
+}
+
+.page-book-intro.ss-booking-flow-active .ss-mobile-sticky-cta {
+  display: none;
+}
+
 @media (max-width: 991.98px) {
   .page-book-intro .editorial-split-container {
     grid-template-columns: 1fr;
