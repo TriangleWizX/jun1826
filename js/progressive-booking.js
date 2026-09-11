@@ -136,8 +136,14 @@
 
     document.querySelectorAll('[data-profile]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); choose(button.dataset.profile, 'manual'); }));
     document.querySelectorAll('[data-back-to], [data-change-choice]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); show(1); }));
-    document.querySelectorAll('[data-reveal-youth]').forEach((button) => button.addEventListener('click', () => document.querySelector('[data-youth-choice]')?.removeAttribute('hidden')));
-    document.querySelectorAll('[data-collapse-youth]').forEach((button) => button.addEventListener('click', () => document.querySelector('[data-youth-choice]')?.setAttribute('hidden', '')));
+    document.querySelectorAll('[data-reveal-youth]').forEach((button) => button.addEventListener('click', () => {
+      document.querySelector('[data-youth-choice]')?.removeAttribute('hidden');
+      button.setAttribute('aria-expanded', 'true');
+    }));
+    document.querySelectorAll('[data-collapse-youth]').forEach((button) => button.addEventListener('click', () => {
+      document.querySelector('[data-youth-choice]')?.setAttribute('hidden', '');
+      document.querySelector('[data-reveal-youth]')?.setAttribute('aria-expanded', 'false');
+    }));
     window.addEventListener('message', (event) => {
       if (event.origin !== ORIGIN || !event.data || typeof event.data !== 'object') return;
       const type = event.data.event;

@@ -80,8 +80,7 @@
       <h2 class="h4" id="next-step-title">What happens next</h2>
       <ol class="mb-0">
         <li class="mb-2">Sandy confirms the visit and answers any questions.</li>
-        <li class="mb-2" data-confirmation-adult><strong>Adults:</strong> Your 15-minute visit is in normal clothes. There is no workout. Sandy schedules the coached first class afterward.</li>
-        <li class="mb-2" data-confirmation-youth><strong>Children and teens:</strong> Arrive 20 minutes before the class Sandy confirms, in clean athletic clothes. Review safety first; the student may train that day.</li>
+        <li class="mb-2">Your 15-minute visit is in normal clothes. There is no workout. Sandy schedules the coached first class afterward.</li>
         <li>Check the <a href="/schedule">current schedule</a> and <a href="/bjj-tannersville-ny-directions">studio directions</a> before your visit.</li>
       </ol>
       <div id="first-visit-details" class="mt-3 pt-3 border-top" hidden>
@@ -105,12 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const isRecent = Number.isFinite(stored?.submittedAt) && Date.now() - stored.submittedAt < 86400000;
     if (isRecent && typeof stored?.profile === "string" && typeof stored?.selectedClass === "string") details = stored;
   } catch (_) { /* The generic confirmation remains usable without storage. */ }
-
-  const isYouth = ["child", "teen", "family"].includes(details?.profile);
-  const isFamily = details?.profile === "family";
-  const isAdult = ["adult-beginner", "adult", "leo", "community-service"].includes(details?.profile);
-  if (isAdult) document.querySelector("[data-confirmation-youth]")?.remove();
-  if (isYouth && !isFamily) document.querySelector("[data-confirmation-adult]")?.remove();
 
   if (details?.selectedClass) {
     const panel = document.querySelector("#first-visit-details");
