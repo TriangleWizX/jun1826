@@ -150,18 +150,41 @@
       if (fallback) { fallback.href = url; fallback.hidden = false; }
       mount.replaceChildren(); message('');
       if (window.matchMedia('(max-width: 767.98px)').matches) {
+        mount.style.minHeight = '';
         mount.innerHTML = '<div class="booking-calendar-entry"><button type="button" class="btn btn-primary ss-btn-primary w-100" data-open-calendar>See available times</button></div>';
         mount.querySelector('[data-open-calendar]')?.addEventListener('click', openPopup);
         return;
       }
+      mount.style.minHeight = 'max(44rem, 75dvh)';
+      mount.style.width = '100%';
       message('Loading appointment times…');
       load().then(() => {
         if (generation !== state.generation || state.step !== 2 || state.inline) return;
         if (!window.Calendly?.initInlineWidget) throw new Error('Calendar unavailable');
-        state.inline = true; window.Calendly.initInlineWidget({ url, parentElement: mount, prefill: {}, utm: {} });
+        state.inline = true;
+        window.Calendly.initInlineWidget({ url, parentElement: mount, prefill: {}, utm: {} });
+        const widget = mount.querySelector('.calendly-inline-widget');
+        if (widget) {
+          widget.style.minHeight = 'max(44rem, 75dvh)';
+          widget.style.height = '100%';
+          widget.style.width = '100%';
+        }
+        const iframe = mount.querySelector('iframe');
+        if (iframe) {
+          iframe.style.minHeight = 'max(44rem, 75dvh)';
+          iframe.style.height = '100%';
+          iframe.style.width = '100%';
+        }
         state.timer = window.setTimeout(() => { if (generation === state.generation && state.step === 2) failure(); }, 12000);
       }).catch(() => { if (generation === state.generation && state.step === 2) failure(); });
     };
+    const breakpoint = window.matchMedia('(max-width: 767.98px)');
+    breakpoint.addEventListener('change', () => {
+      if (state.step === 2) {
+        state.inline = false;
+        renderCalendar();
+      }
+    });
     const choose = (profile, method) => {
       const previous = state.profile;
       state.profile = profile; state.inline = false; state.url = calendarUrl(); syncFields();

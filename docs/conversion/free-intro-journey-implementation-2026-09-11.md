@@ -93,3 +93,28 @@ Use one batched browser inspection across desktop and mobile, fix findings toget
 Keep the existing event vocabulary: `intro_page_loaded`, `lane_resolved`, `lane_selected`, `calendar_opened`, `availability_viewed`, `time_selected`, `calendly_scheduled`, `calendar_load_failed`, `details_submit_attempt`. Compare page-to-lane progression, lane-to-availability, availability-to-scheduled, and failure rate by viewport and entry source. Account for transport differences: `calendar_opened` currently describes popup opens, so it is not a cross-device denominator. Preparation attempts are not confirmed submissions. Attribute correctly routed bookings and later attendance separately; do not treat calendar opening as the business conversion.
 
 Future experiment: compare the concise first viewport against the existing explanation-heavy composition using correctly scheduled visits per eligible page view, with calendar failure and wrong-lane booking guardrails. Establish traffic volume and measurement integrity before selecting duration or declaring a winner.
+
+## Addendum: Adaptive Widget Geometry & Viewport Sizing (2026-09-11)
+
+### Issue Addressed
+- On desktop viewports (`>= 992px`), `.editorial-split-container` remained in its 2-column split (`0.9fr 1.1fr`), constricting the Calendly inline widget into a narrow ~480px column.
+- PurgeCSS in `tools/build-route-styles.mjs` was purging dynamic runtime selectors (`.page-book-intro.ss-booking-flow-active`, `iframe`, `.booking-calendar-entry`).
+- Calendly injects hardcoded styles (`height: 700px; min-width: 320px`) on `.calendly-inline-widget`.
+- Missing cross-breakpoint resize listener in `js/progressive-booking.js` when crossing 768px.
+
+### Fixes Applied
+1. **Dynamic Full-Width Expansion**: Added `.page-book-intro.ss-booking-flow-active .editorial-split-container { grid-template-columns: minmax(0, 1fr) !important; max-width: 68rem; }` and `.editorial-right { grid-column: 1 !important; grid-row: auto !important; }`. Scoped original 2-column split to `.page-book-intro:not(.ss-booking-flow-active)`.
+2. **Adaptive Widget Geometry**: Set `#calendly-embed-onsite`, `.calendly-inline-widget`, and `iframe` to `min-height: max(44rem, 75dvh); height: 100%; width: 100%`.
+3. **PurgeCSS Runtime Safelist**: Added `'booking-calendar-entry'`, `'iframe'`, `'ss-booking-flow-active'` to `RUNTIME_SAFELIST` in `tools/build-route-styles.mjs`.
+4. **Responsive Breakpoint Listener**: Added `matchMedia('(max-width: 767.98px)')` change listener in `js/progressive-booking.js` to re-render transport smoothly across orientation/resizing.
+
+### Playwright Automated Measurement Matrix
+Verified across 7 distinct viewports:
+- `320px` (Mobile): `containerCols`: 304px, `btnWidth`: 230px, `mountHeight`: 96px, popup transport, 0 overflow.
+- `375px` (Mobile): `containerCols`: 359px, `btnWidth`: 285px, `mountHeight`: 96px, popup transport, 0 overflow.
+- `414px` (Mobile): `containerCols`: 398px, `btnWidth`: 324px, `mountHeight`: 96px, popup transport, 0 overflow.
+- `768px` (Tablet): `containerCols`: 752px (single full column), `mountWidth`: 686px, `mountHeight`: 750px, `iframeHeight`: 750px.
+- `992px` (Desktop): `containerCols`: 976px (single full column), `mountWidth`: 910px, `mountHeight`: 750px, `iframeHeight`: 750px.
+- `1200px` (Large Desktop): `containerCols`: 1088px (single full column), `mountWidth`: 1022px, `mountHeight`: 750px, `iframeHeight`: 750px.
+- `1440px` (Ultra-wide Desktop): `containerCols`: 1088px (single full column), `mountWidth`: 1022px, `mountHeight`: 750px, `iframeHeight`: 750px.
+

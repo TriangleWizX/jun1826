@@ -132,6 +132,7 @@
 .page-book-intro .btn-outline-secondary { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-rule-2); }
 .page-book-intro :is(button, input):disabled { opacity: .4; cursor: not-allowed; transform: none; }
 .page-book-intro [aria-busy="true"] { opacity: .65; }
+.page-book-intro .booking-calendar-entry { padding: var(--space-md) var(--space-sm); text-align: center; }
 .page-book-intro .booking-calendar-entry .btn { width: 100%; }
 .page-book-intro .ss-visit-proof figure { margin: 0 0 var(--space-lg); }
 .page-book-intro .ss-visit-proof img {
@@ -176,22 +177,23 @@
 }
 @media (min-width: 768px) {
   .page-book-intro #calendly-embed-onsite,
-  .page-book-intro #calendly-embed-onsite iframe { min-height: max(44rem, 75dvh); }
-  .page-book-intro.ss-booking-flow-active .editorial-split-container { grid-template-columns: minmax(0, 1fr); max-width: 64rem; }
-  .page-book-intro.ss-booking-flow-active .editorial-right { grid-column: 1; grid-row: auto; }
-  .page-book-intro.ss-booking-flow-active .ss-visit-proof { grid-column: 1; grid-row: auto; }
+  .page-book-intro #calendly-embed-onsite .calendly-inline-widget,
+  .page-book-intro #calendly-embed-onsite iframe { min-height: max(44rem, 75dvh); height: 100%; width: 100%; }
 }
 @media (min-width: 992px) {
-  .page-book-intro .editorial-split-container {
+  .page-book-intro:not(.ss-booking-flow-active) .editorial-split-container {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
     column-gap: var(--space-xl);
     padding-block: var(--space-xl);
   }
-  .page-book-intro .editorial-right { grid-column: 2; grid-row: 1 / span 2; }
-  .page-book-intro .ss-visit-proof { grid-column: 1; grid-row: 2; }
+  .page-book-intro:not(.ss-booking-flow-active) .editorial-right { grid-column: 2; grid-row: 1 / span 2; }
+  .page-book-intro:not(.ss-booking-flow-active) .ss-visit-proof { grid-column: 1; grid-row: 2; }
   .page-book-intro .ss-progressive-booking { padding: var(--space-2xs); }
   .page-book-intro .pb-step { padding: var(--space-md); }
 }
+.page-book-intro.ss-booking-flow-active .editorial-split-container { grid-template-columns: minmax(0, 1fr) !important; max-width: 68rem; }
+.page-book-intro.ss-booking-flow-active .editorial-right { grid-column: 1 !important; grid-row: auto !important; }
+.page-book-intro.ss-booking-flow-active .ss-visit-proof { grid-column: 1 !important; grid-row: auto !important; }
 @media (max-width: 767.98px) {
   .page-book-intro .ss-progressive-booking { padding: var(--space-2xs); }
   .page-book-intro .pb-step { padding: var(--space-xs); }
