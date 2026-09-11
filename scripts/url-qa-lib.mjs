@@ -190,6 +190,7 @@ export const isSkippableHref = (href) => {
     || lower.startsWith('sms:')
     || lower.startsWith('javascript:')
     || lower.startsWith('data:')
+    || lower.startsWith('{{')
   );
 };
 

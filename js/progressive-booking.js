@@ -11,11 +11,22 @@
     if (!flow) return;
     const steps = [1, 2, 3].map((n) => document.getElementById(`pb-step-${n}`));
     const mount = document.getElementById('calendly-embed-onsite');
-    const note = document.getElementById('first-visit-lane-note');
     const status = document.querySelector('[data-calendly-status]');
     const form = document.querySelector('#pb-step-3 form');
     const requested = new URLSearchParams(window.location.search).get('lane');
-    const state = { profile: null, url: null, inline: false, scheduled: new Set() };
+    const state = { profile: null, url: null, inline: false, scheduled: new Set(), step: 1, generation: 0, timer: null, trigger: null };
+    const focus = (element) => {
+      if (!element) return;
+      if (/^H[1-6]$/.test(element.tagName)) element.tabIndex = -1;
+      element.focus({ preventScroll: true });
+      const rect = element.getBoundingClientRect();
+      if (rect.top < 96 || rect.bottom > window.innerHeight) element.scrollIntoView({ block: 'center', behavior: 'instant' });
+    };
+    const cancelPending = () => {
+      state.generation += 1;
+      window.clearTimeout(state.timer);
+      state.timer = null;
+    };
 
     const track = (name, extra = {}) => {
       const query = new URLSearchParams(window.location.search);
@@ -25,6 +36,8 @@
       else { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: name, ...payload }); }
     };
     const show = (number) => {
+      state.step = number;
+      if (number !== 2) cancelPending();
       document.body.classList.toggle('ss-booking-flow-active', number !== 1);
       steps.forEach((step, index) => {
         if (!step) return;
@@ -33,7 +46,8 @@
         step.classList.toggle('pb-step-active', active); step.classList.toggle('pb-step-hidden', !active);
         step.setAttribute('aria-hidden', String(!active));
       });
-      steps[number - 1]?.querySelector('h1, h2, h3')?.focus?.();
+      focus(number === 1 && state.trigger ? state.trigger : steps[number - 1]?.querySelector('h1, h2, h3'));
+      updateSticky();
     };
     const message = (text, error = false) => {
       if (!status) return;
@@ -100,28 +114,53 @@
     };
     const failure = () => {
       if (!mount || !state.url) return;
-      message('The calendar has not loaded. Try again or open it in a new tab.', true);
-      mount.innerHTML = `<a class="btn btn-outline-secondary w-100" target="_blank" rel="noopener" href="${state.url}">Open calendar in a new tab</a>`;
+      message('The calendar has not loaded. Retry or open it in a new tab. You can also text Sandy.', true);
+      // Retain the widget: a slow provider may still recover without losing a selection.
+      if (!mount.querySelector('[data-retry-calendar]')) {
+        const retry = document.createElement('button');
+        retry.type = 'button'; retry.className = 'btn btn-outline-secondary';
+        retry.dataset.retryCalendar = ''; retry.textContent = 'Retry calendar';
+        retry.addEventListener('click', () => { state.inline = false; renderCalendar(); });
+        mount.appendChild(retry);
+      }
       track('calendar_load_failed');
     };
     const openPopup = () => {
       if (!state.url) return;
+      cancelPending();
+      const generation = state.generation;
+      const url = state.url.toString();
+      const button = mount.querySelector('[data-open-calendar]');
+      if (button) { button.disabled = true; button.setAttribute('aria-busy', 'true'); }
       message('Loading appointment times…'); track('calendar_opened', { transport: 'popup' });
-      load().then(() => window.Calendly?.initPopupWidget ? window.Calendly.initPopupWidget({ url: state.url.toString() }) : Promise.reject()).catch(failure);
+      load().then(() => {
+        if (generation !== state.generation || state.step !== 2) return;
+        if (!window.Calendly?.initPopupWidget) throw new Error('Calendar unavailable');
+        window.Calendly.initPopupWidget({ url });
+        message('Calendar opened. If you close it, use See available times to reopen it.');
+      }).catch(() => { if (generation === state.generation && state.step === 2) failure(); })
+        .finally(() => { if (button?.isConnected) { button.disabled = false; button.removeAttribute('aria-busy'); } });
     };
     const renderCalendar = () => {
       if (!mount || !state.url) return;
+      cancelPending();
+      const generation = state.generation;
+      const url = state.url.toString();
+      const fallback = document.querySelector('[data-calendar-external]');
+      if (fallback) { fallback.href = url; fallback.hidden = false; }
       mount.replaceChildren(); message('');
       if (window.matchMedia('(max-width: 767.98px)').matches) {
-        mount.innerHTML = `<div class="booking-calendar-entry"><p>Choose a time for your 15-minute first visit.</p><button type="button" class="btn btn-primary ss-btn-primary w-100" data-open-calendar>See available times</button><a class="d-block mt-3" target="_blank" rel="noopener" href="${state.url}">Open calendar in a new tab</a></div>`;
-        mount.querySelector('[data-open-calendar]')?.addEventListener('click', openPopup, { once: true });
+        mount.innerHTML = '<div class="booking-calendar-entry"><button type="button" class="btn btn-primary ss-btn-primary w-100" data-open-calendar>See available times</button></div>';
+        mount.querySelector('[data-open-calendar]')?.addEventListener('click', openPopup);
         return;
       }
       message('Loading appointment times…');
       load().then(() => {
-        if (state.inline || !window.Calendly?.initInlineWidget) return;
-        state.inline = true; window.Calendly.initInlineWidget({ url: state.url.toString(), parentElement: mount, prefill: {}, utm: {} });
-      }).catch(failure);
+        if (generation !== state.generation || state.step !== 2 || state.inline) return;
+        if (!window.Calendly?.initInlineWidget) throw new Error('Calendar unavailable');
+        state.inline = true; window.Calendly.initInlineWidget({ url, parentElement: mount, prefill: {}, utm: {} });
+        state.timer = window.setTimeout(() => { if (generation === state.generation && state.step === 2) failure(); }, 12000);
+      }).catch(() => { if (generation === state.generation && state.step === 2) failure(); });
     };
     const choose = (profile, method) => {
       const previous = state.profile;
@@ -129,26 +168,28 @@
       document.querySelectorAll('[data-profile]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.profile === profile)));
       const labels = { 'adult-beginner': 'an adult', child: 'a child', teen: 'a teen', leo: 'a community-service adult', family: 'more than one person', 'not-sure': 'help choosing' };
       const choice = document.querySelector('[data-current-choice]'); if (choice) choice.textContent = `Starting path: ${labels[profile] || 'your first visit'}.`;
-      if (note) note.textContent = 'This calendar reserves a 15-minute Goal Mapping visit in normal clothes. Sandy plans the coached first class with you afterward.';
       track('lane_resolved', { selection_method: method });
       if (method === 'manual' && previous !== profile) track('lane_selected', { previous_lane: previous || 'unknown', selected_lane: profile, selection_method: previous ? 'changed' : 'manual' });
       show(2); renderCalendar();
     };
 
-    document.querySelectorAll('[data-profile]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); choose(button.dataset.profile, 'manual'); }));
+    document.querySelectorAll('[data-profile]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); state.trigger = button; choose(button.dataset.profile, 'manual'); }));
     document.querySelectorAll('[data-back-to], [data-change-choice]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); show(1); }));
     document.querySelectorAll('[data-reveal-youth]').forEach((button) => button.addEventListener('click', () => {
       document.querySelector('[data-youth-choice]')?.removeAttribute('hidden');
       button.setAttribute('aria-expanded', 'true');
+      focus(document.querySelector('[data-youth-choice] [data-profile]'));
     }));
     document.querySelectorAll('[data-collapse-youth]').forEach((button) => button.addEventListener('click', () => {
       document.querySelector('[data-youth-choice]')?.setAttribute('hidden', '');
       document.querySelector('[data-reveal-youth]')?.setAttribute('aria-expanded', 'false');
+      focus(document.querySelector('[data-reveal-youth]'));
     }));
     window.addEventListener('message', (event) => {
       if (event.origin !== ORIGIN || !event.data || typeof event.data !== 'object') return;
+      if (state.step !== 2) return;
       const type = event.data.event;
-      if (type === 'calendly.event_type_viewed') { message(''); track('availability_viewed', { scheduler_event: type }); return; }
+      if (type === 'calendly.event_type_viewed') { window.clearTimeout(state.timer); message(''); mount?.querySelector('[data-retry-calendar]')?.remove(); track('availability_viewed', { scheduler_event: type }); return; }
       if (type === 'calendly.date_and_time_selected') { track('time_selected', { scheduler_event: type }); return; }
       if (type !== 'calendly.event_scheduled') return;
       const uri = String(event.data.payload?.event?.uri || event.data.payload?.invitee?.uri || ''); const key = uri || JSON.stringify(event.data.payload || {});
@@ -157,12 +198,29 @@
       const title = document.getElementById('booking-confirmation-title'); const copy = document.getElementById('booking-confirmation-copy');
       if (title) title.textContent = 'Your first visit is booked.';
       if (copy) copy.textContent = 'Use your Calendly confirmation for the date and time. Sandy will plan your coached first class with you afterward.';
+      window.Calendly?.closePopupWidget?.();
       show(3);
+    });
+    const fields = Array.from(form?.querySelectorAll('input:not([type="hidden"])') || []);
+    const validate = (field) => {
+      const error = form.querySelector(`#${field.id}-error`);
+      const invalid = !field.validity.valid;
+      field.setAttribute('aria-invalid', String(invalid));
+      if (error) error.textContent = invalid ? field.validationMessage : '';
+    };
+    fields.forEach((field) => {
+      const error = document.createElement('p');
+      error.id = `${field.id}-error`; error.className = 'pb-field-error';
+      field.setAttribute('aria-describedby', error.id);
+      field.insertAdjacentElement('afterend', error);
+      field.addEventListener('blur', () => validate(field));
+      field.addEventListener('input', () => { if (field.hasAttribute('aria-invalid')) validate(field); });
     });
     form?.addEventListener('submit', (event) => {
       syncFields();
       if (!form.checkValidity()) {
         event.preventDefault();
+        fields.forEach(validate);
         form.classList.add('was-validated');
         form.querySelector(':invalid')?.focus();
         return;
@@ -176,6 +234,19 @@
       } catch (_) {}
       track('details_submit_attempt');
     });
+    const stickyBar = document.querySelector('.ss-mobile-sticky-cta');
+    let flowIntersecting = true;
+    const updateSticky = () => {
+      if (!stickyBar) return;
+      stickyBar.classList.toggle('is-visible', !flowIntersecting && state.step === 1);
+    };
+    if (stickyBar && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        flowIntersecting = entries[0].isIntersecting;
+        updateSticky();
+      }, { threshold: 0.1 });
+      observer.observe(flow);
+    }
     track('intro_page_loaded');
     if (ALIASES[String(requested || '').toLowerCase()]) choose(ALIASES[String(requested).toLowerCase()], 'query');
     else if (requested) message('Choose who is starting, or text Sandy for help.');
