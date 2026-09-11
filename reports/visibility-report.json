@@ -1,14 +1,75 @@
 {
-  "generatedAt": "2026-08-27T04:03:51.750Z",
+  "generatedAt": "2026-09-10T18:30:06.128Z",
   "target": "dist",
   "summary": {
     "html": 451,
-    "css": 413,
-    "checks": 864,
-    "warnings": 714,
-    "failures": 0
+    "css": 445,
+    "checks": 896,
+    "warnings": 716,
+    "failures": 12
   },
-  "failures": [],
+  "failures": [
+    {
+      "kind": "zero-byte-asset",
+      "file": "dist/assets/css/bundles/components-glossary-hub.min.css",
+      "detail": "Empty HTML/CSS/SSI asset can produce a blank page or HTTP 500"
+    },
+    {
+      "kind": "zero-byte-asset",
+      "file": "dist/assets/css/bundles/components-glossary-term.min.css",
+      "detail": "Empty HTML/CSS/SSI asset can produce a blank page or HTTP 500"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/annual-track/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/bjj-videos/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/clean/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/core-promise-full/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/core-promise-short/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/my-promise-short/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/reviews-village/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/scribners-staff-reset-pass/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/tactical-longevity/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    },
+    {
+      "kind": "missing-stylesheet",
+      "file": "dist/videos/index.html",
+      "detail": "Stylesheet not found: /assets/css/routes/site-ac8bb117999c.min.e4502a.css"
+    }
+  ],
   "warnings": [
     {
       "kind": "unresolved-ssi",
@@ -22,12 +83,12 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/after-school.html",
+      "file": "dist/after-school/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/annual-track.html",
+      "file": "dist/annual-track/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -38,11 +99,6 @@
     {
       "kind": "unresolved-ssi",
       "file": "dist/athlete-cross-training/index.html",
-      "detail": "SSI directive remains for server-side processing"
-    },
-    {
-      "kind": "unresolved-ssi",
-      "file": "dist/back-to-school-bjj-tannersville/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1022,7 +1078,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/bjj-videos.html",
+      "file": "dist/bjj-videos/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1367,7 +1423,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/clean.html",
+      "file": "dist/clean/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1387,22 +1443,17 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/core-culture-parent-guide.html",
+      "file": "dist/core-culture-parent-guide/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/core-culture-review.html",
+      "file": "dist/core-promise-full/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/core-promise-full.html",
-      "detail": "SSI directive remains for server-side processing"
-    },
-    {
-      "kind": "unresolved-ssi",
-      "file": "dist/core-promise-short.html",
+      "file": "dist/core-promise-short/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1432,7 +1483,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/deer-mountain-inn.html",
+      "file": "dist/deer-mountain-inn/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1448,11 +1499,6 @@
     {
       "kind": "unresolved-ssi",
       "file": "dist/evidence/index.html",
-      "detail": "SSI directive remains for server-side processing"
-    },
-    {
-      "kind": "unresolved-ssi",
-      "file": "dist/fall-practice-reset/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1577,12 +1623,12 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/my-promise-full.html",
+      "file": "dist/my-promise-full/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/my-promise-short.html",
+      "file": "dist/my-promise-short/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1627,7 +1673,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/nervous-first-timers.html",
+      "file": "dist/nervous-first-timers/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1667,7 +1713,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/phoenicia-diner.html",
+      "file": "dist/phoenicia-diner/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1712,7 +1758,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/reviews-village.html",
+      "file": "dist/reviews-village/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1727,12 +1773,12 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/safety-promise.html",
+      "file": "dist/safety-promise/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/samurai-break.html",
+      "file": "dist/samurai-break/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1742,7 +1788,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/school-families-jiu-jitsu.html",
+      "file": "dist/school-families-jiu-jitsu/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1752,7 +1798,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/scribners-staff-reset-pass.html",
+      "file": "dist/scribners-staff-reset-pass/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1763,6 +1809,11 @@
     {
       "kind": "unresolved-ssi",
       "file": "dist/scribners.html",
+      "detail": "SSI directive remains for server-side processing"
+    },
+    {
+      "kind": "unresolved-ssi",
+      "file": "dist/sensei-bully/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1987,7 +2038,7 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/tactical-longevity.html",
+      "file": "dist/tactical-longevity/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
@@ -1997,13 +2048,23 @@
     },
     {
       "kind": "unresolved-ssi",
-      "file": "dist/videos.html",
+      "file": "dist/videos/index.html",
       "detail": "SSI directive remains for server-side processing"
     },
     {
       "kind": "unresolved-ssi",
       "file": "dist/waiver.html",
       "detail": "SSI directive remains for server-side processing"
+    },
+    {
+      "kind": "unresolved-ssi",
+      "file": "dist/weekly-audit.html",
+      "detail": "SSI directive remains for server-side processing"
+    },
+    {
+      "kind": "duplicate-selector",
+      "file": "dist/assets/css/base.936008.css",
+      "detail": "Repeated selectors may indicate cascade overlap: .mobile-program-nav a | .ss-hero__eyebrow .ss-accent | body.page-success .ss-trust-strip em"
     },
     {
       "kind": "duplicate-selector",
@@ -2068,6 +2129,16 @@
     {
       "kind": "svg-width-rule",
       "file": "dist/assets/css/bundles/components-core.css",
+      "detail": "Global SVG width:100% can stretch dimensionless inline icons"
+    },
+    {
+      "kind": "duplicate-selector",
+      "file": "dist/assets/css/bundles/components-core.min.179b9e.css",
+      "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .btn-primary, .ss-btn--primary | .ss-lane-card | .ss-lane-card p | .ss-pricing-tab"
+    },
+    {
+      "kind": "svg-width-rule",
+      "file": "dist/assets/css/bundles/components-core.min.179b9e.css",
       "detail": "Global SVG width:100% can stretch dimensionless inline icons"
     },
     {
@@ -2432,6 +2503,11 @@
     },
     {
       "kind": "duplicate-selector",
+      "file": "dist/assets/css/pages/adults.96227b.css",
+      "detail": "Repeated selectors may indicate cascade overlap: body.page-programs[data-audience=\"adults\"] .adults-btn--primary | body.page-programs[data-audience=\"adults\"] .adults-btn--primary:hover, body.page-programs[data-audience=\"adults\"] .adults-btn--primary:focus-visible | body.page-programs[data-audience=\"adults\"] .adults-step-num | body.page-programs[data-audience=\"adults\"] .adults-yam-badge"
+    },
+    {
+      "kind": "duplicate-selector",
       "file": "dist/assets/css/pages/adults.css",
       "detail": "Repeated selectors may indicate cascade overlap: body.page-programs[data-audience=\"adults\"] .adults-btn--primary | body.page-programs[data-audience=\"adults\"] .adults-btn--primary:hover, body.page-programs[data-audience=\"adults\"] .adults-btn--primary:focus-visible | body.page-programs[data-audience=\"adults\"] .adults-step-num | body.page-programs[data-audience=\"adults\"] .adults-yam-badge"
     },
@@ -2452,6 +2528,11 @@
     },
     {
       "kind": "duplicate-selector",
+      "file": "dist/assets/css/pages/kids.56c6e1.css",
+      "detail": "Repeated selectors may indicate cascade overlap: body.page-programs.ss-page-kids .kids-btn--primary"
+    },
+    {
+      "kind": "duplicate-selector",
       "file": "dist/assets/css/pages/kids.7a4e72.css",
       "detail": "Repeated selectors may indicate cascade overlap: body.page-programs.ss-page-kids .kids-btn--primary"
     },
@@ -2469,6 +2550,11 @@
       "kind": "duplicate-selector",
       "file": "dist/assets/css/pages/schedule.649ae2.css",
       "detail": "Repeated selectors may indicate cascade overlap: .schedule-table .day-sep th | .page-schedule .ss-hero-lede | .page-schedule .ss-time-card | .page-schedule .ss-time-card:hover, .page-schedule .ss-time-card:focus | .page-schedule .ss-time-card strong"
+    },
+    {
+      "kind": "duplicate-selector",
+      "file": "dist/assets/css/pages/teens.841e23.css",
+      "detail": "Repeated selectors may indicate cascade overlap: body.page-programs[data-audience=\"teens\"] .teens-btn--primary | body.page-programs[data-audience=\"teens\"] .teens-btn--primary:hover, body.page-programs[data-audience=\"teens\"] .teens-btn--primary:focus-visible | body.page-programs[data-audience=\"teens\"] .teens-btn--ghost:hover, body.page-programs[data-audience=\"teens\"] .teens-btn--ghost:focus-visible"
     },
     {
       "kind": "duplicate-selector",
@@ -3207,16 +3293,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-bd0c4e75edb2.css",
-      "detail": "Repeated selectors may indicate cascade overlap: body .ss-global-nav-wrapper .ss-navbar .dropdown-item:hover, body .ss-global-nav-wrapper .ss-navbar .dropdown-item:focus, body .ss-global-nav-wrapper .ss-navbar .dropdown-item.active, body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current=\"page\"]"
-    },
-    {
-      "kind": "duplicate-selector",
-      "file": "dist/assets/css/routes/site-bd0c4e75edb2.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: body .ss-global-nav-wrapper .ss-navbar .dropdown-menu | body .ss-global-nav-wrapper .ss-navbar .dropdown-item:hover,body .ss-global-nav-wrapper .ss-navbar .dropdown-item:focus,body .ss-global-nav-wrapper .ss-navbar .dropdown-item.active,body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current=page]"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/routes/site-c436f4fa87bc.min.21d7c3.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary | .ss-price-card | .ss-eyebrow | .eyebrow"
     },
@@ -3512,11 +3588,6 @@
     },
     {
       "kind": "duplicate-selector",
-      "file": "dist/assets/css/site-shell.min.css",
-      "detail": "Repeated selectors may indicate cascade overlap: body .ss-global-nav-wrapper .ss-navbar .dropdown-item:hover, body .ss-global-nav-wrapper .ss-navbar .dropdown-item:focus, body .ss-global-nav-wrapper .ss-navbar .dropdown-item.active, body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current=\"page\"] | body .ss-floating-chat | body .ss-floating-chat i, body .ss-floating-chat-text"
-    },
-    {
-      "kind": "duplicate-selector",
       "file": "dist/assets/css/ss.3f159d.css",
       "detail": "Repeated selectors may indicate cascade overlap: .btn-primary, .ss-btn--primary | .ss-lane-card p"
     },
@@ -3649,12 +3720,12 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/after-school.html",
+      "file": "dist/after-school/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
       "kind": "html-scanned",
-      "file": "dist/annual-track.html",
+      "file": "dist/annual-track/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -3685,11 +3756,6 @@
     {
       "kind": "html-scanned",
       "file": "dist/athlete-cross-training/index.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
-      "file": "dist/back-to-school-bjj-tannersville/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -4669,7 +4735,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/bjj-videos.html",
+      "file": "dist/bjj-videos/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5014,7 +5080,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/clean.html",
+      "file": "dist/clean/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5034,22 +5100,17 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/core-culture-parent-guide.html",
+      "file": "dist/core-culture-parent-guide/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
       "kind": "html-scanned",
-      "file": "dist/core-culture-review.html",
+      "file": "dist/core-promise-full/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
       "kind": "html-scanned",
-      "file": "dist/core-promise-full.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
-      "file": "dist/core-promise-short.html",
+      "file": "dist/core-promise-short/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5084,7 +5145,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/deer-mountain-inn.html",
+      "file": "dist/deer-mountain-inn/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5100,11 +5161,6 @@
     {
       "kind": "html-scanned",
       "file": "dist/evidence/index.html",
-      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
-    },
-    {
-      "kind": "html-scanned",
-      "file": "dist/fall-practice-reset/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5239,12 +5295,12 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/my-promise-full.html",
+      "file": "dist/my-promise-full/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
       "kind": "html-scanned",
-      "file": "dist/my-promise-short.html",
+      "file": "dist/my-promise-short/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5294,7 +5350,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/nervous-first-timers.html",
+      "file": "dist/nervous-first-timers/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5589,7 +5645,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/phoenicia-diner.html",
+      "file": "dist/phoenicia-diner/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5634,7 +5690,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/reviews-village.html",
+      "file": "dist/reviews-village/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5649,12 +5705,12 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/safety-promise.html",
+      "file": "dist/safety-promise/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
       "kind": "html-scanned",
-      "file": "dist/samurai-break.html",
+      "file": "dist/samurai-break/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5664,7 +5720,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/school-families-jiu-jitsu.html",
+      "file": "dist/school-families-jiu-jitsu/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5674,7 +5730,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/scribners-staff-reset-pass.html",
+      "file": "dist/scribners-staff-reset-pass/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5685,6 +5741,11 @@
     {
       "kind": "html-scanned",
       "file": "dist/scribners.html",
+      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
+    },
+    {
+      "kind": "html-scanned",
+      "file": "dist/sensei-bully/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5819,7 +5880,7 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/tactical-longevity.html",
+      "file": "dist/tactical-longevity/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5829,12 +5890,22 @@
     },
     {
       "kind": "html-scanned",
-      "file": "dist/videos.html",
+      "file": "dist/videos/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
       "kind": "html-scanned",
       "file": "dist/waiver.html",
+      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
+    },
+    {
+      "kind": "html-scanned",
+      "file": "dist/weekly-audit.html",
+      "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
+    },
+    {
+      "kind": "html-scanned",
+      "file": "dist/winter-rank-drop/index.html",
       "detail": "SSI, stylesheet, SVG, and inline-layout checks complete"
     },
     {
@@ -5854,6 +5925,11 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/base.936008.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/base.bfd8e4.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -5865,6 +5941,16 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/base.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/bjj-glossary.596048.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/bjj-glossary.c53c2b.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -5895,6 +5981,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/blog.2dc881.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/blog.2ecb35.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -5960,6 +6051,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/bundles/components-core.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/bundles/components-core.min.179b9e.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6159,6 +6255,11 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/contact-vip.min.432324.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/contact-vip.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -6234,6 +6335,11 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/fonts.4bdca6.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/fonts.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -6245,6 +6351,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/fonts.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/fonts.min.dea01e.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6275,6 +6386,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/global.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/global.min.6e3f66.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6310,6 +6426,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/high-end-near.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/hyphen-weekend.a236a6.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6359,12 +6480,22 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/adults.96227b.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/adults.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/adults.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/athlete-cross-training.ce70b0.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6385,6 +6516,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/birthday-parties.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/bjj-stretches.9f9a28.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6410,6 +6546,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/book-free-intro.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/book-free-intro.min.559d0e.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6450,6 +6591,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/directions.d699d5.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/directions.min.b366e5.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6514,12 +6660,22 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/home.min.0117a0.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/home.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/jiu-jitsu-safety.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/kids.56c6e1.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6564,12 +6720,27 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/options-pricing-highend.d0ec7d.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/parent-resources.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/parent-resources.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/parent-resources.min.dbce14.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/partners-hospitality-hunter-windham.06498f.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6585,6 +6756,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/partners-hospitality-hunter-windham.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/partners.cd1a2a.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6614,12 +6790,22 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/pricing.min.4ab9bf.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/pricing.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/private-classes.190216.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/private-lessons.086491.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6639,6 +6825,11 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/schedule.451c78.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/schedule.649ae2.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -6654,12 +6845,27 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/sensei-jiu-jitsu.53134e.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/sensei-jiu-jitsu.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/sensei-studio.5e1e4d.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/sensei-studio.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/show-up-kit.afc6a2.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6694,6 +6900,11 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/summer-academy.02f0c7.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/summer-academy.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -6714,6 +6925,11 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/pages/teens.841e23.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/pages/teens.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -6725,6 +6941,16 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/pages/teens.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/winter-rank-drop.0fa519.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/pages/winter-rank-drop.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -6819,16 +7045,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-178b0eefd1cc.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-178b0eefd1cc.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-18ac9c2704ce.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -6840,6 +7056,16 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-18ac9c2704ce.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/routes/site-1d0842eaa685.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/routes/site-1d0842eaa685.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7444,16 +7670,6 @@
     },
     {
       "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-bd0c4e75edb2.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
-      "file": "dist/assets/css/routes/site-bd0c4e75edb2.min.css",
-      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
-    },
-    {
-      "kind": "css-scanned",
       "file": "dist/assets/css/routes/site-c436f4fa87bc.min.21d7c3.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7764,6 +7980,11 @@
     },
     {
       "kind": "css-scanned",
+      "file": "dist/assets/css/site-shell.min.6ebbaf.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
       "file": "dist/assets/css/site-shell.min.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
@@ -7790,6 +8011,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/css/ss-global.min.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/assets/css/ss-guide.0fec55.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {
@@ -7895,6 +8121,11 @@
     {
       "kind": "css-scanned",
       "file": "dist/assets/sensei-sandy-goal-mapping-implementation/sensei-sandy-goal-mapping/goal-mapping.css",
+      "detail": "Color, duplicate-selector, and SVG cascade checks complete"
+    },
+    {
+      "kind": "css-scanned",
+      "file": "dist/tokens.9e9129.css",
       "detail": "Color, duplicate-selector, and SVG cascade checks complete"
     },
     {

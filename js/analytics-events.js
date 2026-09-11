@@ -632,6 +632,11 @@
   });
 
   window.addEventListener('message', (e) => {
+    // The first-visit controller owns booking completion on its route. Keeping
+    // this shared listener observational there prevents a second conversion
+    // and the legacy redirect from racing its confirmation state.
+    if ((window.location.pathname || '').replace(/\/+$/, '') === '/free-bjj-intro-tannersville-ny') return;
+    if (e.origin !== 'https://calendly.com') return;
     if (!e?.data || typeof e.data !== 'object') return;
     if (e.data.event !== 'calendly.event_scheduled') return;
     const lane = getLane();
