@@ -1463,6 +1463,26 @@ dialog#help-modal {
     min-width: 0;
   }
 
+  /* Keep the identity and contact groups intact; only availability may wrap. */
+  .ss-global-nav-wrapper .ss-topbar-left,
+  .ss-global-nav-wrapper .ss-topbar-right {
+    flex: 0 0 auto;
+  }
+
+  .ss-global-nav-wrapper .ss-topbar-center {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .ss-global-nav-wrapper .ss-topbar-availability {
+    min-width: 0;
+  }
+
+  .ss-global-nav-wrapper .ss-avail-text {
+    overflow-wrap: anywhere;
+  }
+
   .ss-global-nav-wrapper .ss-topbar-highlight,
   .ss-global-nav-wrapper .ss-topbar-location,
   .ss-global-nav-wrapper .ss-topbar-sms,
