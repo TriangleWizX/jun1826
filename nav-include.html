@@ -45,8 +45,8 @@
 
         <!-- Nav actions: review ticker + CTA — always right, hamburger swapped to left -->
         <div class="ss-nav-actions">
-          <!-- Review ticker: shown on lg+ -->
-          <div class="ss-nav-trust d-none d-lg-flex align-items-center"
+          <!-- Shared captured-review ticker at every viewport width -->
+          <div class="ss-nav-trust align-items-center"
                aria-label="Student experience reviews"
                aria-live="polite"
                aria-atomic="true"
@@ -627,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function() {
 body .ss-global-nav-wrapper .ss-navbar > .container {
   display: grid !important;
   grid-template-columns: 44px minmax(0, 1fr) !important;
-  grid-template-areas: "brand brand" "toggle actions" "menu menu" !important;
+  grid-template-areas: "brand brand" "reviews reviews" "toggle actions" "menu menu" !important;
   align-items: center;
   gap: .5rem .75rem;
   padding-block: .6rem;
@@ -658,12 +658,29 @@ body .ss-global-nav-wrapper .ss-menu-button {
   padding: 0 !important; margin: -1px !important; overflow: hidden !important;
   clip-path: inset(50%) !important; white-space: nowrap !important; border: 0 !important;
 }
-.ss-nav-actions .ss-nav-trust { display: none !important; }
+/* Mobile keeps the same review/booking group, with proof above the action row. */
+.ss-nav-actions .ss-nav-trust {
+  grid-area: reviews;
+  display: flex !important;
+  position: static !important;
+  transform: none !important;
+  align-items: center;
+  min-width: 0;
+  max-width: none;
+  min-height: 44px;
+  margin: 0 !important;
+  padding: .25rem 0;
+  border: 0;
+}
+.ss-nav-actions .ss-nav-trust__text { flex: 1; min-width: 0; }
+.ss-nav-actions .ss-nav-trust__quote { max-width: 100%; }
+.ss-nav-actions .ss-nav-cta { grid-area: actions; }
+
 .ss-nav-actions .ss-nav-cta { flex-shrink: 0; min-height: 44px !important; }
 
 .ss-nav-actions {
   grid-area: actions;
-  display: flex;
+  display: contents;
   align-items: center;
   justify-content: flex-end;
   min-width: 0;
@@ -699,6 +716,7 @@ body .ss-global-nav-wrapper #ssMainNav .dropdown-menu {
 }
 body .ss-global-nav-wrapper #ssMainNav .nav-link { min-height: 44px; }
 @media (min-width: 992px) {
+  .ss-nav-actions { display: flex; }
   body .ss-global-nav-wrapper .ss-navbar > .container {
     grid-template-columns: auto auto minmax(0, 1fr) !important;
     grid-template-areas: "brand toggle actions" "menu menu menu" !important;

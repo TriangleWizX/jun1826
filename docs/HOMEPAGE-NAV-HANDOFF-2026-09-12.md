@@ -31,3 +31,10 @@ Screenshots and raw viewport results: tmp/agy-*.png and tmp/agy-layout-results.j
 Final keyboard Enter/Escape closure and seven-second review rotation passed. SEO title, description, canonical, robots and JSON-LD are unchanged. Canonical/root partials match; the generated fragment differs only by its expected fingerprinted image URL. Repeatable check: `node scripts/qa-home-nav-layout.mjs`.
 
 Release: runtime commit `6406c86` deployed successfully with exactly `index.html`, `nav-include.html`, and `partials/home-conversion-shell.html`. All three public URLs returned HTTP 200 with expected markers. Live 390px and 1366px browser checks passed menu clicks, keyboard Enter/Escape closure, review rotation, CTA fit and review spacing. Live results: `/tmp/agy-live-layout-results.json`. Working tree was clean after the runtime commit. Rollback: revert this scoped commit and redeploy the same three paths, or restore those paths from the verified server archive.
+
+
+## Mobile review follow-up
+
+Use the same captured-review ticker, stars, author and Google reviews link on mobile and desktop. On mobile it occupies a full row above the hamburger/booking row; desktop retains the inline arrangement. Remove the old static mobile quote to avoid duplicate proof. The seven-second rotation check now covers both 390px and 1366px.
+
+Follow-up local verification: build, homepage synthesis and volatile facts passed; all six viewport checks passed with visible reviews, working menu/keyboard controls and successful rotation at 390px and 1366px.
