@@ -538,6 +538,11 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
     Header set Cache-Control "public, max-age=300, s-maxage=300"
   </FilesMatch>
 
+  # Dynamic availability script - short cache to prevent stale mobile execution.
+  <Files "first-visit-availability.js">
+    Header set Cache-Control "public, max-age=60, stale-while-revalidate=300"
+  </Files>
+
   # Default cache for non-fingerprinted static assets.
   <FilesMatch "\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
     Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"

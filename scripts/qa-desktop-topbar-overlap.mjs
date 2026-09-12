@@ -259,10 +259,18 @@ try {
     const mobileAvailInfo = await page.evaluate(() => {
       const el = document.querySelector('.ss-hero-mobile-avail');
       return {
+        visible: !!el && el.offsetWidth > 0 && el.offsetHeight > 0,
+        text: el?.innerText?.trim() || '',
         tagName: el?.tagName,
         href: el?.getAttribute('href') || el?.href || ''
       };
     });
+    if (!mobileAvailInfo.visible) {
+      results.failures.push(`.ss-hero-mobile-avail is not visible at ${vp.width}px`);
+    }
+    if (!/openings? left/i.test(mobileAvailInfo.text)) {
+      results.failures.push(`.ss-hero-mobile-avail text does not include openings left at ${vp.width}px: "${mobileAvailInfo.text}"`);
+    }
     if (mobileAvailInfo.tagName && mobileAvailInfo.tagName !== 'A') {
       results.failures.push(`.ss-hero-mobile-avail is not an <a> tag at ${vp.width}px`);
     }
