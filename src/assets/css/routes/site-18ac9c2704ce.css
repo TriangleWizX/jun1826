@@ -646,11 +646,6 @@ progress {
   width: 50%;
 }
 
-.col-4 {
-  flex: 0 0 auto;
-  width: 33.33333333%;
-}
-
 .col-6 {
   flex: 0 0 auto;
   width: 50%;
@@ -2297,10 +2292,6 @@ textarea.form-control-lg {
   opacity: 0 !important;
 }
 
-.opacity-50 {
-  opacity: 0.5 !important;
-}
-
 .opacity-75 {
   opacity: 0.75 !important;
 }
@@ -2375,10 +2366,6 @@ textarea.form-control-lg {
 
 .border-top {
   border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
-}
-
-.border-end {
-  border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
 
 .border-bottom {
@@ -2484,10 +2471,6 @@ textarea.form-control-lg {
 
 .align-items-stretch {
   align-items: stretch !important;
-}
-
-.align-self-start {
-  align-self: flex-start !important;
 }
 
 .order-4 {
@@ -2701,10 +2684,6 @@ textarea.form-control-lg {
 
 .pt-4 {
   padding-top: 1.5rem !important;
-}
-
-.pt-5 {
-  padding-top: 3rem !important;
 }
 
 .pb-2 {
@@ -3028,9 +3007,6 @@ textarea.form-control-lg {
   .py-lg-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
-  }
-  .pt-lg-0 {
-    padding-top: 0 !important;
   }
   .text-lg-end {
     text-align: right !important;

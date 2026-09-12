@@ -1,5 +1,4 @@
 // Centralized offer + CTA decisions (single source of truth).
-const CALENDLY_BOOKING_URL = 'https://calendly.com/senseisandy?background_color=f8f8f8&primary_color=68963c&text_color=333';
 window.SENSEI_DECISIONS = window.SENSEI_DECISIONS || {
   pricingVisibility: 'site-wide',
   primaryCtaLabel: 'Reserve Free Intro',

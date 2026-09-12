@@ -1,7 +1,8 @@
 (function () {
   'use strict';
-  const ORIGIN = 'https://calendly.com';
-  const HOSTS = new Set(['calendly.com', 'www.calendly.com']);
+  const CAL_ORIGIN = 'https://cal.com';
+  const CAL_LINK = 'senseisandy/first-visit';
+  const CAL_NAMESPACE = 'first-visit';
   const CAMPAIGNS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'campaign'];
   const ALIASES = { adult: 'adult-beginner', adults: 'adult-beginner', 'adult-beginner': 'adult-beginner', kids: 'child', child: 'child', teens: 'teen', teen: 'teen', 'community-service': 'leo', leo: 'leo', family: 'family', 'not-sure': 'not-sure' };
   const ready = (fn) => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn, { once: true }) : fn();
@@ -10,8 +11,8 @@
     const flow = document.getElementById('booking-flow');
     if (!flow) return;
     const steps = [1, 2, 3].map((n) => document.getElementById(`pb-step-${n}`));
-    const mount = document.getElementById('calendly-embed-onsite');
-    const status = document.querySelector('[data-calendly-status]');
+    const mount = document.getElementById('first-visit-calendar');
+    const status = document.querySelector('[data-calendar-status]');
     const form = document.querySelector('#pb-step-3 form');
     const requested = new URLSearchParams(window.location.search).get('lane');
     const state = { profile: null, url: null, inline: false, scheduled: new Set(), step: 1, generation: 0, timer: null, trigger: null };
@@ -53,20 +54,12 @@
       if (!status) return;
       status.textContent = text; status.hidden = !text; status.classList.toggle('text-danger', error);
     };
-    const eventUrl = () => {
-      try {
-        const url = new URL(mount?.dataset.calendlyUrl || '');
-        return url.protocol === 'https:' && HOSTS.has(url.hostname) && url.pathname === '/senseisandy/bjj-goal-mapping-session' ? url : null;
-      } catch (_) { return null; }
-    };
     const calendarUrl = () => {
-      const url = eventUrl();
-      if (!url) return null;
+      const url = new URL(`${CAL_ORIGIN}/${CAL_LINK}`);
       const page = new URLSearchParams(window.location.search);
       CAMPAIGNS.forEach((key) => { const value = page.get(key); if (value && /^[a-z0-9._-]{1,80}$/i.test(value)) url.searchParams.set(key, value); });
       url.searchParams.set('utm_source', url.searchParams.get('utm_source') || 'onsite-booking');
       url.searchParams.set('audience_lane', state.profile || 'unknown');
-      url.searchParams.set('background_color', 'fbfaf8'); url.searchParams.set('text_color', '1f1712'); url.searchParams.set('primary_color', '116a42');
       return url;
     };
     const syncFields = () => {
@@ -95,27 +88,44 @@
         }
       });
     };
-    const load = () => {
-      if (!document.querySelector('link[href*="calendly.com/assets/external/widget.css"]')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        document.head.appendChild(link);
-      }
-      if (window.Calendly?.initPopupWidget && window.Calendly?.initInlineWidget) return Promise.resolve();
-      if (window.SSCalendly?.load) return window.SSCalendly.load();
-      return new Promise((resolve, reject) => {
-        const script = document.querySelector('script[src*="assets.calendly.com/assets/external/widget.js"]');
-        if (!script) return reject(new Error('Calendly script missing'));
-        const timer = window.setTimeout(() => reject(new Error('Calendly load timeout')), 8000);
-        const finish = () => { window.clearTimeout(timer); window.Calendly ? resolve() : reject(new Error('Calendly unavailable')); };
-        script.addEventListener('load', finish, { once: true }); script.addEventListener('error', () => reject(new Error('Calendly load failure')), { once: true });
+    let calApiPromise;
+    const loadCalApi = () => {
+      if (calApiPromise) return calApiPromise;
+      calApiPromise = new Promise((resolve, reject) => {
+        // Official Cal queue bootstrap, loaded only after a starting path is chosen.
+        window.Cal = window.Cal || function () {
+          const cal = window.Cal;
+          const args = arguments;
+          cal.q = cal.q || [];
+          if (args[0] === 'init') {
+            const namespace = args[1];
+            const api = function () { api.q.push(arguments); };
+            api.q = [];
+            cal.ns = cal.ns || {};
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            cal.ns[namespace].q.push(args);
+            cal.q.push(['initNamespace', namespace]);
+            return;
+          }
+          cal.q.push(args);
+        };
+        window.Cal('init', CAL_NAMESPACE, { origin: CAL_ORIGIN });
+        const script = document.createElement('script');
+        script.src = 'https://app.cal.com/embed/embed.js';
+        script.async = true;
+        script.onload = () => resolve(window.Cal.ns[CAL_NAMESPACE]);
+        script.onerror = () => {
+          script.remove();
+          calApiPromise = null;
+          reject(new Error('Calendar script unavailable'));
+        };
+        document.head.appendChild(script);
       });
+      return calApiPromise;
     };
     const failure = () => {
-      if (!mount || !state.url) return;
+      if (!mount) return;
       message('The calendar has not loaded. Retry or open it in a new tab. You can also text Sandy.', true);
-      // Retain the widget: a slow provider may still recover without losing a selection.
       if (!mount.querySelector('[data-retry-calendar]')) {
         const retry = document.createElement('button');
         retry.type = 'button'; retry.className = 'btn btn-outline-secondary';
@@ -125,66 +135,68 @@
       }
       track('calendar_load_failed');
     };
-    const openPopup = () => {
-      if (!state.url) return;
-      cancelPending();
-      const generation = state.generation;
-      const url = state.url.toString();
-      const button = mount.querySelector('[data-open-calendar]');
-      if (button) { button.disabled = true; button.setAttribute('aria-busy', 'true'); }
-      message('Loading appointment times…'); track('calendar_opened', { transport: 'popup' });
-      load().then(() => {
-        if (generation !== state.generation || state.step !== 2) return;
-        if (!window.Calendly?.initPopupWidget) throw new Error('Calendar unavailable');
-        window.Calendly.initPopupWidget({ url });
-        message('Calendar opened. If you close it, use See available times to reopen it.');
-      }).catch(() => { if (generation === state.generation && state.step === 2) failure(); })
-        .finally(() => { if (button?.isConnected) { button.disabled = false; button.removeAttribute('aria-busy'); } });
-    };
     const renderCalendar = () => {
-      if (!mount || !state.url) return;
+      if (!mount) return;
       cancelPending();
       const generation = state.generation;
-      const url = state.url.toString();
+      state.url = calendarUrl();
       const fallback = document.querySelector('[data-calendar-external]');
-      if (fallback) { fallback.href = url; fallback.hidden = false; }
-      mount.replaceChildren(); message('');
-      if (window.matchMedia('(max-width: 767.98px)').matches) {
-        mount.style.minHeight = '';
-        mount.innerHTML = '<div class="booking-calendar-entry"><button type="button" class="btn btn-primary ss-btn-primary w-100" data-open-calendar>See available times</button></div>';
-        mount.querySelector('[data-open-calendar]')?.addEventListener('click', openPopup);
-        return;
-      }
-      mount.style.minHeight = 'max(44rem, 75dvh)';
-      mount.style.width = '100%';
+      if (fallback) { fallback.href = state.url.toString(); fallback.hidden = false; }
+      mount.replaceChildren(); mount.classList.remove('is-ready'); message('');
       message('Loading appointment times…');
-      load().then(() => {
-        if (generation !== state.generation || state.step !== 2 || state.inline) return;
-        if (!window.Calendly?.initInlineWidget) throw new Error('Calendar unavailable');
-        state.inline = true;
-        window.Calendly.initInlineWidget({ url, parentElement: mount, prefill: {}, utm: {} });
-        const widget = mount.querySelector('.calendly-inline-widget');
-        if (widget) {
-          widget.style.minHeight = 'max(44rem, 75dvh)';
-          widget.style.height = '100%';
-          widget.style.width = '100%';
-        }
+      state.timer = window.setTimeout(() => {
+        if (generation === state.generation && state.step === 2) failure();
+      }, 15000);
+      loadCalApi().then((cal) => {
+        if (generation !== state.generation || state.step !== 2) return;
+        // Unsubscribe before remounting so retries and lane changes count once.
+        if (state.listeners) state.listeners.forEach((listener) => cal('off', listener));
+        const current = () => generation === state.generation && state.step === 2;
+        state.listeners = [
+          { action: 'linkReady', callback: () => {
+            if (!current()) return;
+            window.clearTimeout(state.timer); message('');
+            mount.classList.add('is-ready');
+            mount.querySelector('[data-retry-calendar]')?.remove();
+            track('availability_viewed', { scheduler_provider: 'cal', scheduler_event: 'linkReady' });
+          } },
+          { action: 'linkFailed', callback: () => {
+            if (!current()) return;
+            window.clearTimeout(state.timer); failure();
+          } },
+          { action: 'bookingSuccessfulV2', callback: (event) => {
+            if (!current()) return;
+            const data = event.detail?.data || {};
+            if (!data.uid || state.scheduled.has(data.uid)) return;
+            if (data.status !== 'ACCEPTED' || data.paymentRequired) {
+              message('Your booking request was received. Check your booking confirmation for its status, or text Sandy for help.');
+              return;
+            }
+            state.scheduled.add(data.uid);
+            const payload = { scheduler_provider: 'cal', scheduler_event: 'bookingSuccessfulV2', booking_reference_present: true };
+            // Retain the legacy reporting key during migration; never send provider/attendee data.
+            ['calendly_scheduled', 'booking_complete', 'booking_completed', 'book_intro_submit'].forEach((name) => track(name, payload));
+            try {
+              if (sessionStorage.getItem('sensei_homepage_lead_submitted') === 'true') {
+                track('homepage_intro_booked', payload);
+                ['submitted', 'name', 'email', 'phone'].forEach((key) => sessionStorage.removeItem(`sensei_homepage_lead_${key}`));
+              }
+            } catch (_) {}
+            syncFields(); show(3);
+          } }
+        ];
+        state.listeners.forEach((listener) => cal('on', listener));
+        cal('inline', {
+          elementOrSelector: '#first-visit-calendar',
+          calLink: CAL_LINK,
+          config: { ...Object.fromEntries(state.url.searchParams), theme: 'light', layout: 'month_view', useSlotsViewOnSmallScreen: true }
+        });
         const iframe = mount.querySelector('iframe');
-        if (iframe) {
-          iframe.style.minHeight = 'max(44rem, 75dvh)';
-          iframe.style.height = '100%';
-          iframe.style.width = '100%';
-        }
-        state.timer = window.setTimeout(() => { if (generation === state.generation && state.step === 2) failure(); }, 12000);
+        if (iframe) iframe.title = 'Choose a First Visit appointment';
+        cal('ui', { theme: 'light', hideEventTypeDetails: true, layout: 'month_view', cssVarsPerTheme: { light: { 'cal-brand': '#292929' } } });
       }).catch(() => { if (generation === state.generation && state.step === 2) failure(); });
     };
-    const breakpoint = window.matchMedia('(max-width: 767.98px)');
-    breakpoint.addEventListener('change', () => {
-      if (state.step === 2) {
-        state.inline = false;
-        renderCalendar();
-      }
-    });
+
     const choose = (profile, method) => {
       const previous = state.profile;
       state.profile = profile; state.inline = false; state.url = calendarUrl(); syncFields();
@@ -208,22 +220,6 @@
       document.querySelector('[data-reveal-youth]')?.setAttribute('aria-expanded', 'false');
       focus(document.querySelector('[data-reveal-youth]'));
     }));
-    window.addEventListener('message', (event) => {
-      if (event.origin !== ORIGIN || !event.data || typeof event.data !== 'object') return;
-      if (state.step !== 2) return;
-      const type = event.data.event;
-      if (type === 'calendly.event_type_viewed') { window.clearTimeout(state.timer); message(''); mount?.querySelector('[data-retry-calendar]')?.remove(); track('availability_viewed', { scheduler_event: type }); return; }
-      if (type === 'calendly.date_and_time_selected') { track('time_selected', { scheduler_event: type }); return; }
-      if (type !== 'calendly.event_scheduled') return;
-      const uri = String(event.data.payload?.event?.uri || event.data.payload?.invitee?.uri || ''); const key = uri || JSON.stringify(event.data.payload || {});
-      if (state.scheduled.has(key)) return; state.scheduled.add(key);
-      track('calendly_scheduled', { scheduler_event: type, booking_reference_present: Boolean(uri) }); syncFields();
-      const title = document.getElementById('booking-confirmation-title'); const copy = document.getElementById('booking-confirmation-copy');
-      if (title) title.textContent = 'Your first visit is booked.';
-      if (copy) copy.textContent = 'Use your Calendly confirmation for the date and time. Sandy will plan your coached first class with you afterward.';
-      window.Calendly?.closePopupWidget?.();
-      show(3);
-    });
     const fields = Array.from(form?.querySelectorAll('input:not([type="hidden"])') || []);
     const validate = (field) => {
       const error = form.querySelector(`#${field.id}-error`);

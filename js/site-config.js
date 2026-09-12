@@ -32,7 +32,7 @@ window.academyData = academyData;
 
 
 const defaultMonthLabel = new Date().toLocaleString('en-US', { month: 'long' });
-const CALENDLY_BOOKING_URL = 'https://calendly.com/senseisandy?background_color=fbfaf8&primary_color=289fa1&text_color=1f1712';
+const FIRST_VISIT_BOOKING_URL = '/free-bjj-intro-tannersville-ny';
 
 const defaultDecisionConfig = {
   pricingVisibility: 'site-wide',
@@ -243,14 +243,14 @@ const defaultSenseiConfig = {
   currentMonthLabel: defaultMonthLabel,
   newStudentSpots: 3,
   grandSlamSpots: 3,
-  calendlyUrl: 'https://calendly.com/senseisandy?background_color=fbfaf8&primary_color=289fa1&text_color=1f1712',
+  firstVisitUrl: '/free-bjj-intro-tannersville-ny',
   canonicalIntroUrl: 'https://senseisandy.com/free-bjj-intro-tannersville-ny',
   bookIntroUrl: 'https://senseisandy.com/free-bjj-intro-tannersville-ny',
-  kidsCalendlyUrl: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
-  teensCalendlyUrl: 'https://calendly.com/senseisandy/free-first-class-youth-ages-5-17',
-  adultsCalendlyUrl: 'https://calendly.com/senseisandy/free-first-class-adult-bjj',
-  mixedCalendlyUrl: 'https://calendly.com/senseisandy/',
-  tannersvilleCalendlyUrl: 'https://calendly.com/senseisandy?background_color=fbfaf8&primary_color=289fa1&text_color=1f1712',
+  kidsBookingUrl: '/free-bjj-intro-tannersville-ny?lane=kids',
+  teensBookingUrl: '/free-bjj-intro-tannersville-ny?lane=teens',
+  adultsBookingUrl: '/free-bjj-intro-tannersville-ny?lane=adult',
+  mixedBookingUrl: '/free-bjj-intro-tannersville-ny',
+  tannersvilleBookingUrl: '/free-bjj-intro-tannersville-ny',
   smsNumber: '+19177368649',
   primaryCtaLabel: 'Reserve Free Intro',
   primaryCtaUrl: '/free-bjj-intro-tannersville-ny',
@@ -293,7 +293,7 @@ const PRIMARY_CTA_LABEL = window.SENSEI_CONFIG.primaryCtaLabel || 'Reserve Free 
 const PRIMARY_CTA_URL = window.SENSEI_CONFIG.primaryCtaUrl
   || window.SENSEI_CONFIG.bookIntroUrl
   || window.SENSEI_CONFIG.canonicalIntroUrl
-  || CALENDLY_BOOKING_URL;
+  || FIRST_VISIT_BOOKING_URL;
 const SECONDARY_CTA_LABEL = window.SENSEI_CONFIG.secondaryCtaLabel || 'Text Sandy';
 const SECONDARY_CTA_URL = window.SENSEI_CONFIG.secondaryCtaUrl || `sms:${PRIMARY_PHONE}`;
 
@@ -338,8 +338,7 @@ window.SECONDARY_CTA_URL = SECONDARY_CTA_URL;
     try {
       const url = new URL(rawUrl, window.location.origin);
       url.searchParams.set('utm_source', 'website');
-      const isCalendly = url.hostname.includes('calendly.com');
-      url.searchParams.set('utm_medium', isCalendly ? 'calendly' : 'booking');
+      url.searchParams.set('utm_medium', 'booking');
       url.searchParams.set('utm_campaign', campaign);
       return url.toString();
     } catch {

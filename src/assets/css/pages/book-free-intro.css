@@ -7,6 +7,8 @@
   color: var(--color-ink);
 }
 .page-book-intro .ss-main { display: block; }
+/* Keep booking padding inside the viewport when the shared reset is absent. */
+.page-book-intro :is(.container, .ss-progressive-booking, .pb-step) { box-sizing: border-box; }
 .page-book-intro .container {
   width: 100%;
   max-width: var(--container-standard);
@@ -109,10 +111,12 @@
 .page-book-intro #pb-step-2 > p { font-size: .9375rem; }
 .page-book-intro #pb-step-2 a { display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap; }
 .page-book-intro [data-current-choice] { font-weight: 600; }
-.page-book-intro [data-calendly-status] { min-height: 1lh; color: var(--color-ink-2); }
-.page-book-intro [data-calendly-status].text-danger { color: var(--color-ink); font-weight: 600; }
-.page-book-intro #calendly-embed-onsite { width: 100%; }
-.page-book-intro #calendly-embed-onsite iframe { display: block; width: 100%; border: 0; }
+.page-book-intro [data-calendar-status] { min-height: 1lh; color: var(--color-ink-2); }
+.page-book-intro [data-calendar-status].text-danger { color: var(--color-ink); font-weight: 600; }
+.page-book-intro #first-visit-calendar { width: 100%; min-height: 760px; }
+/* Cal reports its own iframe height after loading; do not center it in a fixed blank panel. */
+.page-book-intro #first-visit-calendar.is-ready { min-height: 0; }
+.page-book-intro #first-visit-calendar iframe { display: block; width: 100%; border: 0; }
 .page-book-intro :is(.btn, .ss-btn-primary) {
   display: inline-flex;
   align-items: center;
@@ -174,11 +178,6 @@
   .page-book-intro .pb-card-btn:hover { background: var(--color-paper-2); color: var(--color-ink); }
   .page-book-intro .btn:hover { background: var(--color-accent-strong); color: var(--color-accent-ink); }
   .page-book-intro .form-control:hover { background: var(--color-paper-2); color: var(--color-ink); }
-}
-@media (min-width: 768px) {
-  .page-book-intro #calendly-embed-onsite,
-  .page-book-intro #calendly-embed-onsite .calendly-inline-widget,
-  .page-book-intro #calendly-embed-onsite iframe { min-height: max(44rem, 75dvh); height: 100%; width: 100%; }
 }
 @media (min-width: 992px) {
   .page-book-intro:not(.ss-booking-flow-active) .editorial-split-container {

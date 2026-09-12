@@ -112,6 +112,7 @@
     "qa:fall-pilot": "node scripts/qa-fall-pilot.mjs",
     "qa:volatile-facts": "node scripts/qa-volatile-operational-facts.mjs",
     "qa:first-visit": "node scripts/qa-first-visit-contract.mjs",
+    "qa:cal-migration": "node scripts/qa-cal-migration.mjs",
     "qa:terminology": "node scripts/qa-terminology-contract.mjs",
     "qa:temporal": "node scripts/qa-temporal-programs.mjs",
     "qa:taxonomy": "node scripts/qa-taxonomy.mjs",

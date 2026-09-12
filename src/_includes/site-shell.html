@@ -252,7 +252,7 @@ permalink: "/_includes/site-shell.html"
 <script>
   (function loadSiteScripts() {
     const scripts = [
-      '/js/site-config.e63977.js?v=20260213',
+      '/js/site-config.js?v=20260213',
 '/js/link-utils.min.js?v=20260428',
       '/js/cta-config.js?v=20260217',
       '/js/content-config.js?v=20260214',
@@ -268,19 +268,7 @@ permalink: "/_includes/site-shell.html"
     };
     loadNext(0);
 
-    const loadCalendlyIfNeeded = () => {
-      if (document.querySelector('script[src*="calendly-intent.js"]')) return;
-      const calendlyScript = document.createElement('script');
-      calendlyScript.src = '/js/calendly-intent.fca0f4.js?v=20260210';
-      calendlyScript.defer = true;
-      document.body.appendChild(calendlyScript);
-    };
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadCalendlyIfNeeded, { once: true });
-    } else {
-      loadCalendlyIfNeeded();
-    }
   })();
 </script>
 <script>

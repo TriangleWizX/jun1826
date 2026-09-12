@@ -11,13 +11,11 @@
   const primaryPhone = normalizePhone(senseiCfg.primaryPhone || senseiCfg.phoneNumber || smsNumber || defaultPhone);
   const smsHref = smsNumber ? `sms:${smsNumber}` : '';
   const callHref = primaryPhone ? `tel:${primaryPhone}` : '';
-  const stickyCalendlyUrl = 'https://calendly.com/senseisandy?primary_color=e05500';
 
   const defaultIntroHref = senseiCfg.introHref
     || senseiCfg.bookIntroUrl
     || senseiCfg.canonicalIntroUrl
-    || senseiCfg.calendlyUrl
-    || 'https://calendly.com/senseisandy?background_color=f8f8f8&primary_color=68963c&text_color=333';
+    || '/free-bjj-intro-tannersville-ny';
   const primaryCtaLabel = senseiCfg.primaryCtaLabel || window.PRIMARY_CTA_LABEL || 'Reserve Your Free Intro';
   const primaryCtaHref = senseiCfg.primaryCtaUrl || window.PRIMARY_CTA_URL || defaultIntroHref;
   const secondaryCtaLabel = senseiCfg.secondaryCtaLabel || window.SECONDARY_CTA_LABEL || 'Text Sandy';
@@ -213,7 +211,6 @@
     ensureTextCallPairs();
 
     document.querySelectorAll('[data-cta-target]').forEach((el) => {
-      if (el.classList.contains('js-calendly-open')) return;
       applyCtaToNode(el, el.dataset.ctaTarget);
     });
 
@@ -229,40 +226,7 @@
       setLink(el, href, label);
     });
 
-    const disablePopupOnBookPages = isBookIntroPage();
-    document.querySelectorAll('a[href]').forEach((link) => {
-      if (link.classList.contains('js-calendly-open')) return;
 
-      const rawHref = link.getAttribute('href') || '';
-      if (!rawHref || rawHref.startsWith('#')) return;
-      if (rawHref.startsWith('mailto:') || rawHref.startsWith('sms:') || rawHref.startsWith('tel:')) return;
-
-      let parsed;
-      try {
-        parsed = new URL(rawHref, window.location.origin);
-      } catch (error) {
-        return;
-      }
-
-      const host = parsed.hostname.replace(/^www\./i, '').toLowerCase();
-      if (host !== 'senseisandy.com' && host !== window.location.hostname.replace(/^www\./i, '').toLowerCase()) return;
-      if (!isRootBookIntroPath(parsed.pathname)) return;
-      if (parsed.hash) {
-        if (link.getAttribute('data-calendly-popup') === stickyCalendlyUrl) {
-          link.removeAttribute('data-calendly-popup');
-        }
-        return;
-      }
-
-      if (disablePopupOnBookPages) {
-        if (link.getAttribute('data-calendly-popup') === stickyCalendlyUrl) {
-          link.removeAttribute('data-calendly-popup');
-        }
-        return;
-      }
-
-      link.setAttribute('data-calendly-popup', stickyCalendlyUrl);
-    });
   };
 
   const removeDesktopBar = () => {

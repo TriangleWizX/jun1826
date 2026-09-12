@@ -75,7 +75,7 @@
   
     <script>
   (function syncKidsCtas() {
-    const kidsBookingUrl = (window.SENSEI_CONFIG && window.SENSEI_CONFIG.kidsCalendlyUrl) || '/free-bjj-intro-tannersville-ny?lane=kids';
+    const kidsBookingUrl = (window.SENSEI_CONFIG && window.SENSEI_CONFIG.kidsBookingUrl) || '/free-bjj-intro-tannersville-ny?lane=kids';
     window.SENSEI_DECISIONS = Object.assign({}, window.SENSEI_DECISIONS || {}, {
       primaryCtaLabel: 'Reserve Your Free First Visit',
       primaryCtaUrl: kidsBookingUrl
@@ -306,8 +306,6 @@
     })();
   });
 </script>
-
-<script src="/assets/js/goal-mapping.min.js" defer fetchpriority="low"></script>
 
   
 

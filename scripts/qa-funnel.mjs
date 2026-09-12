@@ -365,7 +365,7 @@ const testFunnelCoverage = async () => {
 const testBookIntroStructure = async () => {
   const html = await fs.readFile(path.join(ROOT, 'free-bjj-intro-tannersville-ny/index.html'), 'utf8');
   assert(html.includes('id="onsite-booking-form"'), 'free-bjj-intro-tannersville-ny/index.html: missing lead capture form.');
-  assert(html.includes('id="calendly-embed-onsite"'), 'free-bjj-intro-tannersville-ny/index.html: missing Calendly embed container.');
+  assert(html.includes('id="first-visit-calendar"') || html.includes('id="calendly-embed-onsite"'), 'free-bjj-intro-tannersville-ny/index.html: missing scheduler embed container.');
   assert(html.includes('editorial-split-container'), 'free-bjj-intro-tannersville-ny/index.html: missing editorial split container.');
   assert(html.includes('id="booking-flow"'), 'free-bjj-intro-tannersville-ny/index.html: missing progressive booking flow container.');
   assert(html.includes('ss-mobile-sticky-cta'), 'free-bjj-intro-tannersville-ny/index.html: missing page-local mobile sticky CTA.');
@@ -380,12 +380,13 @@ const testBookIntroStructure = async () => {
     assert(!html.includes(url), `free-bjj-intro-tannersville-ny/index.html: should NOT contain direct Calendly link ${url}`);
   }
 
+  const calendarId = html.includes('id="first-visit-calendar"') ? 'id="first-visit-calendar"' : 'id="calendly-embed-onsite"';
   const sectionOrder = [
     'editorial-split-container',
     'id="booking-flow"',
     'id="pb-step-1"',
     'id="pb-step-2"',
-    'id="calendly-embed-onsite"',
+    calendarId,
     'ss-book-location',
     'data-ss-evidence-mount',
     'ss-faq-section'

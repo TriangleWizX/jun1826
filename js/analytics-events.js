@@ -202,10 +202,6 @@
     ...overrides
   });
 
-  const isCalendlyHref = (value) => {
-    return /(^|\/\/)([^/]+\.)?calendly\.com(\/|$)/i.test(String(value || ''));
-  };
-
   const getPathFromHref = (href) => {
     if (!href) return '';
     try {
@@ -228,19 +224,6 @@
   const isHomeHeroCta = (el) => {
     if (!el) return false;
     return el.dataset?.ctaPlacement === 'hero' || el.dataset?.ctaSrc === 'home-hero';
-  };
-
-  const getCalendlyTarget = (el) => {
-    const href = el?.getAttribute?.('href') || '';
-    if (isCalendlyHref(href)) return href;
-
-    const popupUrl = el?.getAttribute?.('data-calendly-popup') || '';
-    if (isCalendlyHref(popupUrl)) return popupUrl;
-
-    const dataUrl = el?.dataset?.calendlyUrl || '';
-    if (isCalendlyHref(dataUrl)) return dataUrl;
-
-    return '';
   };
 
   const namedCtaEvents = {
@@ -313,7 +296,6 @@
     if (link) {
       const href = link.getAttribute('href') || '';
       const pathFromHref = getPathFromHref(href);
-      const calendlyTarget = getCalendlyTarget(link);
       const isSms = href.startsWith('sms:');
       const isTel = href.startsWith('tel:');
       const isBookIntro = isBookIntroPath(pathFromHref);
@@ -337,8 +319,8 @@
 
       if (namedCtaEvent) {
         sendEvent(namedCtaEvent, {
-          ...buildCanonicalPayload(link, calendlyTarget || href, { cta_type: namedCtaType }),
-          destination: calendlyTarget || href,
+          ...buildCanonicalPayload(link, href, { cta_type: namedCtaType }),
+          destination: href,
           cta_position: getCtaPosition(link),
           cta_tier: getCtaTier(link, namedCtaType === 'text_sandy' ? 'secondary' : 'primary'),
           location: getLocation(link),
@@ -440,19 +422,7 @@
         }
       }
 
-      if (calendlyTarget) {
-        sendEvent('booking_start', buildCanonicalPayload(link, calendlyTarget, { cta_type: 'calendly' }));
-        sendEvent('calendly_outbound_click', {
-          destination: calendlyTarget,
-          destination_host: 'calendly.com',
-          lane: getLane(link),
-          cta_position: getCtaPosition(link),
-          cta_tier: getCtaTier(link, 'primary'),
-          location: getLocation(link),
-          page_path: window.location.pathname,
-          transport_type: 'beacon'
-        });
-      }
+
 
       if (isBookIntro && !introBtn) {
         const payload = {
@@ -631,38 +601,8 @@
     }
   });
 
-  window.addEventListener('message', (e) => {
-    // The first-visit controller owns booking completion on its route. Keeping
-    // this shared listener observational there prevents a second conversion
-    // and the legacy redirect from racing its confirmation state.
-    if ((window.location.pathname || '').replace(/\/+$/, '') === '/free-bjj-intro-tannersville-ny') return;
-    if (e.origin !== 'https://calendly.com') return;
-    if (!e?.data || typeof e.data !== 'object') return;
-    if (e.data.event !== 'calendly.event_scheduled') return;
-    const lane = getLane();
-    sendEvent('calendly_scheduled', {
-      location: window.SENSEI_BOOKING_LOCATION || 'tannersville',
-      lane,
-      page_path: window.location.pathname
-    });
-    sendEvent('booking_complete', buildCanonicalPayload(null, '', {
-      lane,
-      placement: 'calendly',
-      cta_type: 'conversion'
-    }));
-    sendEvent('booking_completed', buildCanonicalPayload(null, '', { lane, placement: 'calendly', cta_type: 'conversion' }));
-    sendEvent('book_intro_submit', {
-      location: window.SENSEI_BOOKING_LOCATION || 'tannersville',
-      lane,
-      cta_position: 'calendly',
-      page_path: window.location.pathname
-    });
-    
-    // Redirect to Show-Up Kit confirmation path after 1 second (to allow events to dispatch)
-    setTimeout(() => {
-      window.location.href = '/show-up-kit?booked=true';
-    }, 1000);
-  });
+  // Booking completion is emitted by progressive-booking.js via Cal's documented callback.
+
 })();
 // Load the First Visit funnel module from the existing global analytics asset.
 // Keeping this loader here avoids requiring a sitewide HTML regeneration for a

@@ -24,7 +24,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
 
     <!-- RIGHT: Interactive Booking Flow -->
     <form id="onsite-booking-form" hidden aria-hidden="true"></form>
-    <div class="editorial-right ss-progressive-booking" id="booking-flow" aria-label="Reserve your Free First Visit">
+    <div class="editorial-right ss-progressive-booking" id="booking-flow" aria-label="Reserve Free Intro">
       <!-- STEP 1: Select Profile -->
       <div class="pb-step pb-step-active" id="pb-step-1" aria-hidden="false">
         <h2 id="booking-choice-title" tabindex="-1">Who’s starting?</h2>
@@ -57,7 +57,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
           <p>Teacher, healthcare, first responder or veteran?</p>
           <button type="button" class="pb-back-btn" data-profile="leo">Choose this path</button>
         </details>
-        <noscript><p>To reserve without JavaScript, <a href="https://calendly.com/senseisandy/bjj-goal-mapping-session">open the calendar</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p></noscript>
+        <noscript><p>To reserve without JavaScript, <a href="https://cal.com/senseisandy/first-visit">open the calendar</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p></noscript>
       </div>
       <!-- STEP 2: Choose a Time -->
       <div class="pb-step pb-step-hidden" id="pb-step-2" hidden aria-hidden="true">
@@ -70,12 +70,12 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
         </h2>
         <p class="pb-intro">{{ introVisit.supportingText }}</p>
         <p class="small text-muted mb-3">Need help fitting a class into your week? <a href="/schedule">Class schedule</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p>
-        <p><a data-calendar-external href="https://calendly.com/senseisandy/bjj-goal-mapping-session" target="_blank" rel="noopener">Open in new tab</a></p>
+        <p><a data-calendar-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open in new tab</a></p>
         <p class="fw-semibold mb-2" data-current-choice aria-live="polite"></p>
-        <p class="small text-muted" data-calendly-status role="status" aria-live="polite" hidden></p>
+        <p class="small text-muted" data-calendar-status role="status" aria-live="polite" hidden></p>
         <div class="ss-bezel-shell">
           <div class="ss-bezel-core p-0 overflow-hidden">
-            <div data-calendly-url="https://calendly.com/senseisandy/bjj-goal-mapping-session" id="calendly-embed-onsite"></div>
+            <div id="first-visit-calendar" aria-label="First Visit appointment calendar"></div>
           </div>
         </div>
       </div>
@@ -87,10 +87,10 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
               <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             </div>
             <h2 id="booking-confirmation-title" class="h3 mb-3">Your first visit is booked.</h2>
-            <p id="booking-confirmation-copy" class="mb-4">Use your Calendly confirmation for the date and time. Sandy will plan your coached first class with you afterward.</p>
+            <p id="booking-confirmation-copy" class="mb-4">Check your booking confirmation for the date and time. Sandy will plan your coached first class with you afterward.</p>
             <div class="text-start mb-4 p-4 w-100">
               <h4 class="h6 mb-2">Your first visit</h4>
-              <p class="mb-3">• <strong>What to wear:</strong> Normal clothes; no workout is required for this visit.<br>• <strong>What happens next:</strong> Meet Sandy, see the room, discuss goals, and plan the coached first class afterward.</p>
+              <p class="mb-3">• <strong>What to wear:</strong> Normal clothes for adults (no workout required); athletic clothes for kids and teens.<br>• <strong>What to expect:</strong> Adults have a 15-minute first visit in normal clothes with no workout required. Children and teens arrive 20 minutes before class in athletic clothes, review safety, and may train that day.</p>
               <h4 class="h6 mb-2">Location</h4>
               <p class="mb-0">
                 {{ contact.addressLine1 }}, {{ contact.cityStateZip }}
@@ -242,8 +242,8 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
 </main>
 <!-- MOBILE STICKY ACTIONS BAR -->
 <div class="ss-mobile-sticky-cta d-lg-none position-fixed bottom-0 start-0 end-0 p-3 bg-white border-top shadow-lg">
-  <a class="btn btn-primary ss-btn-primary w-100 py-3" href="#booking-flow">Reserve Free Intro</a>
+  <a class="btn btn-primary ss-btn-primary w-100 py-3" href="#booking-flow">Plan Your Free First Visit</a>
 </div>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+
 <script src="/js/progressive-booking.js" defer></script>
