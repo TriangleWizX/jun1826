@@ -34,7 +34,9 @@ if (missingStyles.size) console.warn('Existing site CSS gaps (separate from sche
 assert.deepEqual(failures, [], 'Active generated dependencies must not load Calendly');
 const html = fs.readFileSync(path.join(dist, 'free-bjj-intro-tannersville-ny/index.html'), 'utf8');
 assert.match(html, /https:\/\/senseisandy\.com\/free-bjj-intro-tannersville-ny/);
-for (const marker of ['pb-step-1', 'pb-step-2', 'pb-step-3', 'booking-details-card', 'booking-faq-title', 'location-parking-title', '/waiver']) assert.ok(html.includes(marker), `Preserve ${marker}`);
+for (const marker of ['pb-step-1', 'pb-step-2', 'pb-step-3', 'booking-reachout-banner', 'booking-faq-title', 'location-parking-title', '/waiver']) assert.ok(html.includes(marker), `Preserve ${marker}`);
+assert.ok(html.includes('Sandy will reach out!'), 'Must include Sandy will reach out! banner');
+assert.ok(html.includes('sensei-sandy.webp'), 'Must include optimized sensei-sandy image');
 assert.doesNotMatch(html, /data-cal-link=/, 'The inline mount must not also act as a Cal popup trigger');
 
 const executablePath = process.env.CHROME_PATH || (fs.existsSync(chromium.executablePath()) ? chromium.executablePath() : '/usr/bin/google-chrome');
@@ -94,14 +96,12 @@ try {
     window.__emit('bookingSuccessfulV2', { uid: 'fixture', status: 'ACCEPTED', paymentRequired: false });
   });
   assert.equal(await page.locator('#pb-step-3').isVisible(), true);
-  assert.equal(await page.locator('#booking-profile-value').inputValue(), 'family');
+  assert.equal(await page.locator('#booking-reachout-banner').isVisible(), true);
+  assert.match(await page.locator('#booking-reachout-banner').innerText(), /Sandy will reach out!/);
   const events = await page.evaluate(() => window.__events);
   for (const name of ['calendly_scheduled', 'booking_complete', 'booking_completed', 'book_intro_submit']) assert.equal(events.filter((entry) => entry.name === name).length, 1, `${name} must fire once`);
   assert.ok(!JSON.stringify(events).includes('fixture'), 'Do not send booking identifiers or attendee data to analytics');
-  await page.locator('#pb-step-3 button[type="submit"]').click();
-  assert.equal(await page.locator('#booking-name').getAttribute('aria-invalid'), 'true');
-  assert.equal(await page.evaluate(() => document.activeElement.id), 'booking-name');
-  console.log(`Cal migration QA passed: ${pages.length} generated pages, ${active.size - pages.length} active dependencies; loader recovery, Cal config, lane remount, confirmation, conversion deduplication, and form validation.`);
+  console.log(`Cal migration QA passed: ${pages.length} generated pages, ${active.size - pages.length} active dependencies; loader recovery, Cal config, lane remount, confirmation, conversion deduplication, and reach-out banner.`);
 } finally {
   await browser.close();
 }
