@@ -30,4 +30,4 @@ Screenshots and raw viewport results: tmp/agy-*.png and tmp/agy-layout-results.j
 
 Final keyboard Enter/Escape closure and seven-second review rotation passed. SEO title, description, canonical, robots and JSON-LD are unchanged. Canonical/root partials match; the generated fragment differs only by its expected fingerprinted image URL. Repeatable check: `node scripts/qa-home-nav-layout.mjs`.
 
-Release: pending exact payload review and upload. Rollback: revert this scoped commit and redeploy the same three paths, or restore those paths from the verified server archive.
+Release: runtime commit `6406c86` deployed successfully with exactly `index.html`, `nav-include.html`, and `partials/home-conversion-shell.html`. All three public URLs returned HTTP 200 with expected markers. Live 390px and 1366px browser checks passed menu clicks, keyboard Enter/Escape closure, review rotation, CTA fit and review spacing. Live results: `/tmp/agy-live-layout-results.json`. Working tree was clean after the runtime commit. Rollback: revert this scoped commit and redeploy the same three paths, or restore those paths from the verified server archive.
