@@ -35,6 +35,7 @@
     "qa:skip-link-single-source": "node scripts/qa-skip-link-single-source.mjs",
     "qa:nav-visible-duplicates": "node scripts/qa-nav-visible-duplicates.mjs",
     "qa:sticky-overlap": "node scripts/qa-sticky-overlap.mjs",
+    "qa:desktop:topbar": "node scripts/qa-desktop-topbar-overlap.mjs",
     "qa:doctype": "node scripts/qa-doctype.mjs",
     "qa:ssi": "node scripts/qa-ssi-integrity.mjs && node scripts/qa-ssi-errmsg.mjs && node scripts/qa-ssi-homepage-chain.mjs && node scripts/qa-ssi-leaks.mjs",
     "qa:ssi:integrity": "node scripts/qa-ssi-integrity.mjs",

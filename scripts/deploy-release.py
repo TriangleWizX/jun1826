@@ -29,18 +29,44 @@ def changed_outputs(commit):
             outputs.add((candidate, 'sources/kodokan-etiquette/index.html'))
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
-    fingerprint_release = 'tools/fingerprint-assets.cjs' in names or 'src/assets/data/asset-hash-manifest.json' in names
+    fingerprint_release = 'tools/fingerprint-assets.cjs' in names
     sitewide_release = ('eleventy.config.js' in names or
                         'footer-include.html' in names or
                         'src/_includes/layouts/base.njk' in names or
                         'src/_includes/components/footer.njk' in names or
                         'src/_includes/components/free-intro-process.njk' in names or
                         'src/_includes/footer-high-intent.html' in names)
+    manifest_file = ROOT / 'src/assets/data/asset-hash-manifest.json'
+    manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
+
     for name in names:
         if name.startswith('api/'):
             candidate = ROOT / name
             if candidate.is_file():
                 outputs.add((candidate, name))
+            continue
+        if name.startswith('src/assets/'):
+            asset_rel = name[4:]
+            candidate = ROOT / 'dist' / asset_rel
+            if candidate.is_file() and (asset_rel in ROOT_FILES or asset_rel.startswith(DEPLOYABLE_ROOTS)):
+                outputs.add((candidate, asset_rel))
+            asset_href = '/' + asset_rel
+            if asset_href in manifest:
+                fingerprinted = manifest[asset_href].lstrip('/')
+                candidate_fp = ROOT / 'dist' / fingerprinted
+                if candidate_fp.is_file() and (fingerprinted in ROOT_FILES or fingerprinted.startswith(DEPLOYABLE_ROOTS)):
+                    outputs.add((candidate_fp, fingerprinted))
+            if asset_rel.endswith('.css') and not asset_rel.endswith('.min.css'):
+                min_rel = asset_rel[:-4] + '.min.css'
+                candidate_min = ROOT / 'dist' / min_rel
+                if candidate_min.is_file() and (min_rel in ROOT_FILES or min_rel.startswith(DEPLOYABLE_ROOTS)):
+                    outputs.add((candidate_min, min_rel))
+                min_href = '/' + min_rel
+                if min_href in manifest:
+                    fingerprinted_min = manifest[min_href].lstrip('/')
+                    candidate_min_fp = ROOT / 'dist' / fingerprinted_min
+                    if candidate_min_fp.is_file() and (fingerprinted_min in ROOT_FILES or fingerprinted_min.startswith(DEPLOYABLE_ROOTS)):
+                        outputs.add((candidate_min_fp, fingerprinted_min))
             continue
         if name.startswith('src/'):
             if name == 'src/evidence.html':
@@ -86,7 +112,7 @@ def changed_outputs(commit):
             is_site_html = rel.endswith('.html') and (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS))
             if is_site_html or is_js or is_css or rel == 'assets/data/asset-hash-manifest.json':
                 outputs.add((candidate, rel))
-    return sorted(outputs, key=lambda item: item[1])
+    return sorted(outputs, key=lambda item: (1 if item[1].endswith('.html') else 0, item[1]))
 
 def connect(cfg):
     client = paramiko.SSHClient(); client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
