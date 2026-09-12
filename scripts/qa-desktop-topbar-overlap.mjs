@@ -18,8 +18,10 @@ if (isLive) {
     status: 'available',
     timeframe: 'week',
     timeframeLabel: 'this coming week',
-    availableSlotCount: 46,
+    availableSlotCount: 26,
     nextAvailableLabel: 'Mon, Sep 14',
+    nextAvailableDaySpots: 8,
+    nextAvailableDayLabel: 'Mon, Sep 14',
     spotsPerDayRange: '4–10',
     spotsPerDayLabel: '4–10 spots left each day'
   };
@@ -115,7 +117,7 @@ try {
     await page.waitForSelector('.ss-avail-text');
     await page.waitForFunction(() => {
       const txt = document.querySelector('.ss-avail-text')?.textContent || '';
-      return txt.length > 20 && !txt.includes('Check available times');
+      return (txt.includes('openings left') || txt.includes('opening left')) && !txt.includes('Check available times');
     }, { timeout: 7000 }).catch(() => {});
 
     const measurements = await page.evaluate(() => {
@@ -199,6 +201,20 @@ try {
       results.failures.push(`Horizontal overflow at ${vp.width}px`);
     }
 
+    const availLinkInfo = await page.evaluate(() => {
+      const el = document.querySelector('.ss-topbar-availability');
+      return {
+        tagName: el?.tagName,
+        href: el?.getAttribute('href') || el?.href || ''
+      };
+    });
+    if (availLinkInfo.tagName !== 'A') {
+      results.failures.push(`.ss-topbar-availability is not an <a> tag at ${vp.width}px (got ${availLinkInfo.tagName})`);
+    }
+    if (!availLinkInfo.href.includes('/free-bjj-intro-tannersville-ny#booking-flow')) {
+      results.failures.push(`.ss-topbar-availability href does not direct to cal booking flow at ${vp.width}px (href=${availLinkInfo.href})`);
+    }
+
     if (vp.width === 1366) {
       const topbarLoc = page.locator('.ss-topbar');
       if (await topbarLoc.isVisible()) {
@@ -238,6 +254,20 @@ try {
     }
     if (guardData.menuBtnTarget.width < 44 || guardData.menuBtnTarget.height < 44) {
       results.failures.push(`Menu button tap target too small at ${vp.width}px`);
+    }
+
+    const mobileAvailInfo = await page.evaluate(() => {
+      const el = document.querySelector('.ss-hero-mobile-avail');
+      return {
+        tagName: el?.tagName,
+        href: el?.getAttribute('href') || el?.href || ''
+      };
+    });
+    if (mobileAvailInfo.tagName && mobileAvailInfo.tagName !== 'A') {
+      results.failures.push(`.ss-hero-mobile-avail is not an <a> tag at ${vp.width}px`);
+    }
+    if (mobileAvailInfo.href && !mobileAvailInfo.href.includes('/free-bjj-intro-tannersville-ny#booking-flow')) {
+      results.failures.push(`.ss-hero-mobile-avail href does not direct to cal booking flow at ${vp.width}px`);
     }
 
     results.mobile.push({ viewport: vp, guardData });

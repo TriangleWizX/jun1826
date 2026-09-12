@@ -394,7 +394,7 @@ permalink: "/index.html"
     document.addEventListener('click', (event) => {
       const link = event.target.closest('a[href="#home-first-visit-builder"], a[href*="free-bjj-intro-tannersville-ny"]');
       if (!link) return;
-      if (link.id === 'builder-continue-btn' || link.hasAttribute('data-calendar-external')) return;
+      if (link.id === 'builder-continue-btn' || link.hasAttribute('data-calendar-external') || link.hasAttribute('data-availability-strip') || link.closest('[data-availability-strip]')) return;
       const builder = document.getElementById('home-first-visit-builder');
       if (!builder) return;
       event.preventDefault();

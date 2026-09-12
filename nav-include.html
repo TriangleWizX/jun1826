@@ -11,10 +11,10 @@
           <span class="ss-topbar-location">6045 Main Street, Tannersville</span>
         </div>
         <div class="ss-topbar-center">
-          <div class="ss-topbar-availability" data-availability-strip role="status" aria-live="polite">
+          <a class="ss-topbar-availability" href="/free-bjj-intro-tannersville-ny#booking-flow" data-availability-strip data-calendar-external role="status" aria-live="polite" aria-label="First visit availability: Check openings and reserve free intro">
             <span class="ss-avail-dot" aria-hidden="true"></span>
-            <span class="ss-avail-text" data-availability-text>This week's first visits · Check available times</span>
-          </div>
+            <span class="ss-avail-text" data-availability-text>Check available times</span>
+          </a>
         </div>
         <div class="ss-topbar-right">
           <a class="ss-topbar-sms" href="sms:+19177368649" data-analytics-event="text_sandy_clicked">
@@ -562,6 +562,17 @@ document.addEventListener('DOMContentLoaded', function() {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-accent, #116a42);
+  text-decoration: none;
+  cursor: pointer;
+}
+.ss-topbar-availability:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ss-topbar-availability:focus-visible {
+  outline: 2px solid var(--color-focus, #116a42);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 .ss-avail-dot {
   width: 7px;

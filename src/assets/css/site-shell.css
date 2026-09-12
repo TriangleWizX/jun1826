@@ -1477,6 +1477,20 @@ dialog#help-modal {
 
   .ss-global-nav-wrapper .ss-topbar-availability {
     min-width: 0;
+    color: var(--color-accent, #116a42);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .ss-global-nav-wrapper .ss-topbar-availability:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .ss-global-nav-wrapper .ss-topbar-availability:focus-visible {
+    outline: 2px solid var(--color-focus, #116a42);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   .ss-global-nav-wrapper .ss-avail-text {

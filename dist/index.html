@@ -50,7 +50,7 @@
 <link rel="preload" href="/tokens.9e9129.css" as="style">
 <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
 <link rel="stylesheet" href="/assets/css/fonts.min.dea01e.css">
-<link rel="stylesheet" href="/assets/css/site-shell.min.c971a4.css">
+<link rel="stylesheet" href="/assets/css/site-shell.min.2b117f.css">
 
   
     <link rel="stylesheet" href="/assets/css/global.min.6e3f66.css">
@@ -121,6 +121,17 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--color-accent, #116A42);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .ss-hero-mobile-avail:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ss-hero-mobile-avail:focus-visible {
+    outline: 2px solid var(--color-focus, #116a42);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   /* Main Hero Grid - 3-Column Desktop Viewport */
@@ -682,10 +693,10 @@
 <section class="ss-home-conversion" aria-labelledby="home-conversion-title">
   <!-- Mobile Above-Fold Proof & Availability Cue -->
   <div class="ss-hero-mobile-cue">
-    <div class="ss-hero-mobile-avail" data-availability-strip role="status" aria-live="polite">
+    <a class="ss-hero-mobile-avail" href="/free-bjj-intro-tannersville-ny#booking-flow" data-availability-strip data-calendar-external role="status" aria-live="polite" aria-label="First visit availability: Check openings and reserve free intro">
       <span class="ss-avail-dot" aria-hidden="true"></span>
-      <span data-availability-text>This week's first visits · Check available times</span>
-    </div>
+      <span data-availability-text>Check available times</span>
+    </a>
   </div>
 
   <div class="ss-home-conversion__hero">
@@ -1273,7 +1284,7 @@
     document.addEventListener('click', (event) => {
       const link = event.target.closest('a[href="#home-first-visit-builder"], a[href*="free-bjj-intro-tannersville-ny"]');
       if (!link) return;
-      if (link.id === 'builder-continue-btn' || link.hasAttribute('data-calendar-external')) return;
+      if (link.id === 'builder-continue-btn' || link.hasAttribute('data-calendar-external') || link.hasAttribute('data-availability-strip') || link.closest('[data-availability-strip]')) return;
       const builder = document.getElementById('home-first-visit-builder');
       if (!builder) return;
       event.preventDefault();

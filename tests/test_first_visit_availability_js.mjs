@@ -79,7 +79,7 @@ const api = context.window.SenseiAvailability;
 assert.ok(api, 'SenseiAvailability should be exposed');
 
 // Test formatScarcityCopy
-// 1. High inventory (>= 13)
+// 1. High inventory
 const high = api.formatScarcityCopy({
   status: 'available',
   timeframe: 'week',
@@ -87,9 +87,8 @@ const high = api.formatScarcityCopy({
   availableSlotCount: 20,
   nextAvailableLabel: 'Mon, Sep 14'
 });
-assert.match(high.text, /First visits available this week/);
-assert.match(high.text, /Mon, Sep 14/);
-assert.doesNotMatch(high.text, /20/);
+assert.equal(high.text, '20 openings left on Mon, Sep 14');
+assert.equal(high.ctaUrl, '/free-bjj-intro-tannersville-ny#booking-flow');
 
 // 2. Medium inventory (7-12)
 const med = api.formatScarcityCopy({
@@ -99,8 +98,8 @@ const med = api.formatScarcityCopy({
   availableSlotCount: 8,
   nextAvailableLabel: 'Mon, Sep 14'
 });
-assert.match(med.text, /8 first visits available this week/);
-assert.match(med.text, /Mon, Sep 14/);
+assert.equal(med.text, '8 openings left on Mon, Sep 14');
+assert.equal(med.ctaUrl, '/free-bjj-intro-tannersville-ny#booking-flow');
 
 // 3. Low inventory (3-6)
 const low = api.formatScarcityCopy({
@@ -110,8 +109,8 @@ const low = api.formatScarcityCopy({
   availableSlotCount: 4,
   nextAvailableLabel: 'Mon, Sep 14'
 });
-assert.match(low.text, /Only 4 first visits left this week/);
-assert.match(low.text, /Mon, Sep 14/);
+assert.equal(low.text, '4 openings left on Mon, Sep 14');
+assert.equal(low.ctaUrl, '/free-bjj-intro-tannersville-ny#booking-flow');
 
 // 4. Very low inventory (1-2)
 const veryLow = api.formatScarcityCopy({
@@ -121,7 +120,9 @@ const veryLow = api.formatScarcityCopy({
   availableSlotCount: 1,
   nextAvailableLabel: 'Mon, Sep 14'
 });
-assert.match(veryLow.text, /Only 1 first visit left this week/);
+assert.equal(veryLow.text, '1 opening left on Mon, Sep 14');
+assert.equal(veryLow.badge, '1 Left');
+assert.equal(veryLow.status, 'low');
 
 // 5. Full (0)
 const full = api.formatScarcityCopy({
@@ -139,7 +140,7 @@ const fallback = api.formatScarcityCopy({
   timeframeLabel: 'this week',
   availableSlotCount: null
 });
-assert.match(fallback.text, /First visits available this week · Check available times/);
+assert.equal(fallback.text, 'Check available times');
 
 // 7. Coming week framing (Sunday / upcoming week)
 const coming = api.formatScarcityCopy({
@@ -149,7 +150,7 @@ const coming = api.formatScarcityCopy({
   availableSlotCount: 8,
   nextAvailableLabel: 'Mon, Sep 14'
 });
-assert.match(coming.text, /8 first visits available this coming week · Next opening: Mon, Sep 14/);
+assert.equal(coming.text, '8 openings left on Mon, Sep 14');
 
 // 8. Coming week full
 const comingFull = api.formatScarcityCopy({
@@ -169,46 +170,44 @@ assert.ok(dateInfo.dayOfWeek >= 1 && dateInfo.dayOfWeek <= 7, 'dayOfWeek between
 assert.ok(typeof dateInfo.timeframeLabel === 'string', 'timeframeLabel should be string');
 assert.ok(typeof dateInfo.daysRemaining === 'number', 'daysRemaining should be number');
 
-// 10. Medium inventory with daily adaptive parameters
+// 10. Medium inventory with nextAvailableDaySpots parameter
 const dailyMed = api.formatScarcityCopy({
   status: 'available',
   timeframe: 'week',
   timeframeLabel: 'this week',
-  availableSlotCount: 8,
-  spotsPerDayLabel: '1–2 spots left each day',
-  spotsPerDayRange: '1–2',
-  nextAvailableLabel: 'Mon, Sep 14'
+  availableSlotCount: 26,
+  nextAvailableDaySpots: 8,
+  nextAvailableDayLabel: 'Mon, Sep 14'
 });
-assert.match(dailyMed.text, /8 first visits available this week · 1–2 spots left each day · Next opening: Mon, Sep 14/);
-assert.equal(dailyMed.badge, '1–2/day');
-assert.equal(dailyMed.detail, '1–2 spots left each day');
+assert.equal(dailyMed.text, '8 openings left on Mon, Sep 14');
+assert.equal(dailyMed.badge, '8 Left');
+assert.equal(dailyMed.detail, '8 openings left on Mon, Sep 14');
 
-// 11. Low inventory with daily adaptive parameters
+// 11. Low inventory with 1 opening on next day
 const dailyLow = api.formatScarcityCopy({
   status: 'available',
   timeframe: 'week',
   timeframeLabel: 'this week',
-  availableSlotCount: 4,
-  spotsPerDayLabel: '1 spot left each day',
-  spotsPerDayRange: '1',
-  nextAvailableLabel: 'Mon, Sep 14'
+  availableSlotCount: 15,
+  nextAvailableDaySpots: 1,
+  nextAvailableDayLabel: 'Mon, Sep 14'
 });
-assert.match(dailyLow.text, /Only 4 first visits left this week · 1 spot left each day · Next opening: Mon, Sep 14/);
-assert.equal(dailyLow.badge, '1/day');
-assert.match(dailyLow.detail, /1 spot left each day/);
+assert.equal(dailyLow.text, '1 opening left on Mon, Sep 14');
+assert.equal(dailyLow.badge, '1 Left');
+assert.equal(dailyLow.status, 'low');
 
-// 12. High inventory with daily adaptive parameters
+// 12. Resolution from dailyAvailability array
 const dailyHigh = api.formatScarcityCopy({
   status: 'available',
   timeframe: 'week',
   timeframeLabel: 'this week',
-  availableSlotCount: 18,
-  spotsPerDayLabel: '2–3 spots left each day',
-  spotsPerDayRange: '2–3',
-  nextAvailableLabel: 'Mon, Sep 14'
+  availableSlotCount: 20,
+  dailyAvailability: [
+    { date: '2026-09-14', spotsCount: 6, dayLabel: 'Mon, Sep 14' }
+  ]
 });
-assert.match(dailyHigh.text, /First visits available this week · 2–3 spots left each day · Next opening: Mon, Sep 14/);
-assert.equal(dailyHigh.badge, '2–3/day');
+assert.equal(dailyHigh.text, '6 openings left on Mon, Sep 14');
+assert.equal(dailyHigh.badge, '6 Left');
 
 // 13. Requested date adaptive copy with spots left
 const reqDate = api.formatScarcityCopy({

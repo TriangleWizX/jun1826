@@ -18,10 +18,9 @@ function test_scarcity_copy(array $data): string {
     $status = $data['status'] ?? 'unavailable';
     $timeframeLabel = $data['timeframeLabel'] ?? 'this week';
     $count = $data['availableSlotCount'] ?? null;
-    $next = $data['nextAvailableLabel'] ?? null;
 
     if ($status === 'unavailable' || $count === null) {
-        return "First visits available {$timeframeLabel} · Check available times";
+        return "Check available times";
     }
 
     if ($status === 'full' || $count === 0) {
@@ -30,27 +29,15 @@ function test_scarcity_copy(array $data): string {
             : "This week is full · Check next week’s availability";
     }
 
-    $dailySegment = !empty($data['spotsPerDayLabel']) ? " · {$data['spotsPerDayLabel']}" : "";
-    $nextSuffix = $next ? " · Next opening: {$next}" : "";
+    $nextSpots = $data['nextAvailableDaySpots']
+        ?? (!empty($data['dailyAvailability'][0]['spotsCount']) ? $data['dailyAvailability'][0]['spotsCount'] : $count);
+    $nextDay = $data['nextAvailableDayLabel']
+        ?? (!empty($data['dailyAvailability'][0]['dayLabel']) ? $data['dailyAvailability'][0]['dayLabel'] : ($data['nextAvailableLabel'] ?? ''));
 
-    if ($count >= 13) {
-        return "First visits available {$timeframeLabel}{$dailySegment}{$nextSuffix}";
-    }
-
-    if ($count >= 7) {
-        return "{$count} first visits available {$timeframeLabel}{$dailySegment}{$nextSuffix}";
-    }
-
-    if ($count >= 3) {
-        return "Only {$count} first visits left {$timeframeLabel}{$dailySegment}{$nextSuffix}";
-    }
-
-    if ($count === 2) {
-        return "Only 2 first visits left {$timeframeLabel}{$dailySegment}{$nextSuffix}";
-    }
-
-    // 1-2 slots
-    return "Only {$count} first visit left {$timeframeLabel}{$nextSuffix}";
+    $spotWord = ($nextSpots === 1) ? 'opening' : 'openings';
+    return !empty($nextDay)
+        ? "{$nextSpots} {$spotWord} left on {$nextDay}"
+        : "{$nextSpots} {$spotWord} left";
 }
 
 $asserts = [];
@@ -64,9 +51,7 @@ $high = [
     'nextAvailableLabel' => 'Sat, Sep 12',
 ];
 $copyHigh = test_scarcity_copy($high);
-assert(str_contains($copyHigh, 'First visits available this week'), 'High inventory should say First visits available this week');
-assert(!str_contains($copyHigh, '15'), 'High inventory should not mention 15');
-assert(str_contains($copyHigh, 'Sat, Sep 12'), 'High inventory should include next opening');
+assert(str_contains($copyHigh, '15 openings left on Sat, Sep 12'), 'High inventory should say 15 openings left on Sat, Sep 12');
 $asserts[] = 'Passed: High inventory (>12 slots)';
 
 // Test 2: 9 slots (medium inventory)
@@ -78,8 +63,7 @@ $med = [
     'nextAvailableLabel' => 'Sat, Sep 12',
 ];
 $copyMed = test_scarcity_copy($med);
-assert(str_contains($copyMed, '9 first visits available this week'), 'Medium inventory should show exact count 9');
-assert(str_contains($copyMed, 'Sat, Sep 12'), 'Medium inventory should include next opening');
+assert(str_contains($copyMed, '9 openings left on Sat, Sep 12'), 'Medium inventory should show exact count 9 openings left on Sat, Sep 12');
 $asserts[] = 'Passed: Medium inventory (7-12 slots)';
 
 // Test 3: 4 slots (low inventory)
@@ -91,7 +75,7 @@ $low = [
     'nextAvailableLabel' => 'Mon, Sep 14',
 ];
 $copyLow = test_scarcity_copy($low);
-assert(str_contains($copyLow, 'Only 4 first visits left this week'), 'Low inventory should show Only 4');
+assert(str_contains($copyLow, '4 openings left on Mon, Sep 14'), 'Low inventory should show 4 openings left on Mon, Sep 14');
 $asserts[] = 'Passed: Low inventory (3-6 slots)';
 
 // Test 4: 1 slot (critical inventory)
@@ -103,7 +87,7 @@ $veryLow = [
     'nextAvailableLabel' => 'Mon, Sep 14',
 ];
 $copyVeryLow = test_scarcity_copy($veryLow);
-assert(str_contains($copyVeryLow, 'Only 1 first visit left this week'), 'Critical inventory should show Only 1 first visit left');
+assert(str_contains($copyVeryLow, '1 opening left on Mon, Sep 14'), 'Critical inventory should show 1 opening left on Mon, Sep 14');
 $asserts[] = 'Passed: Very low inventory (1-2 slots)';
 
 // Test 5: 0 slots (full)
@@ -125,7 +109,7 @@ $unavail = [
     'availableSlotCount' => null,
 ];
 $copyUnavail = test_scarcity_copy($unavail);
-assert(str_contains($copyUnavail, 'First visits available this week · Check available times'), 'Fallback should show check available times');
+assert(str_contains($copyUnavail, 'Check available times'), 'Fallback should show check available times');
 $asserts[] = 'Passed: Unavailable / fallback state';
 
 // Test 7: "This coming week" copy test (Sunday framing)
@@ -137,7 +121,7 @@ $comingWeekData = [
     'nextAvailableLabel' => 'Mon, Sep 14',
 ];
 $copyComing = test_scarcity_copy($comingWeekData);
-assert(str_contains($copyComing, '8 first visits available this coming week · Next opening: Mon, Sep 14'), 'Coming week copy should format cleanly');
+assert(str_contains($copyComing, '8 openings left on Mon, Sep 14'), 'Coming week copy should format cleanly');
 $asserts[] = 'Passed: Coming week framing';
 
 // Test 8: Daily adaptive copy with spotsPerDayLabel
@@ -150,7 +134,7 @@ $dailyMed = [
     'nextAvailableLabel' => 'Sat, Sep 12',
 ];
 $copyDailyMed = test_scarcity_copy($dailyMed);
-assert(str_contains($copyDailyMed, '9 first visits available this week · 1–2 spots left each day · Next opening: Sat, Sep 12'), 'Medium inventory with spotsPerDayLabel');
+assert(str_contains($copyDailyMed, '9 openings left on Sat, Sep 12'), 'Medium inventory with spotsPerDayLabel');
 $asserts[] = 'Passed: Daily adaptive medium inventory copy';
 
 // Test 9: Daily adaptive copy for low inventory
@@ -163,7 +147,7 @@ $dailyLow = [
     'nextAvailableLabel' => 'Mon, Sep 14',
 ];
 $copyDailyLow = test_scarcity_copy($dailyLow);
-assert(str_contains($copyDailyLow, 'Only 4 first visits left this week · 1 spot left each day · Next opening: Mon, Sep 14'), 'Low inventory with spotsPerDayLabel');
+assert(str_contains($copyDailyLow, '4 openings left on Mon, Sep 14'), 'Low inventory with spotsPerDayLabel');
 $asserts[] = 'Passed: Daily adaptive low inventory copy';
 
 // Test 10: Requested specific date with spots left
