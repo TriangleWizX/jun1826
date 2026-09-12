@@ -3,7 +3,7 @@
 **Date**: 2026-09-12
 **Target Domain**: `https://senseisandy.com`
 **Component**: Shared Topbar Desktop Availability (`nav-include.html`, `src/assets/css/site-shell.css`)
-**Status**: Scoped Fix Verified Locally; Ready for Deployment & Live Verification
+**Status**: Resolved, Deployed, and Live Verified
 
 ---
 
@@ -68,7 +68,7 @@ Defect confirmed on live production across 6 of 7 desktop breakpoints.
    - Executed `npm run build`, generating:
      - Target: `dist/assets/css/site-shell.min.c971a4.css`
      - Size: 40,169 bytes
-     - SHA-256: `3b469440625a66a152e90f61dae9be9823fef61a9426f30f5c15629c4baefc53`
+     - SHA-256: `286f5754ac03b6d50c122a563e1b226bd0717c33557baa4e5482ca5bbc3e757e`
    - Preserved all 23 historical stale asset siblings in `dist/assets/css/` (including `6ebbaf`) to satisfy additive immutability.
    - Updated `src/assets/data/asset-hash-manifest.json` with mapping:
      `"/assets/css/site-shell.min.css": "/assets/css/site-shell.min.c971a4.css"`
@@ -116,3 +116,47 @@ Local verification with populated availability fixture (`npm run qa:desktop:topb
   If any regression occurs upon release:
   1. SSH to host and restore web root from the validated tarball.
   2. Alternatively, re-point HTML references to historical fingerprinted asset `/assets/css/site-shell.min.6ebbaf.css` (retained additively on remote server).
+
+---
+
+## 7. Post-Deployment Live Verification Evidence
+
+- **Commit**: `998ae563` (`fix(nav): deploy fingerprinted site-shell minified asset to resolve desktop toolbar overlap`)
+- **Deployment**: Executed atomically via `scripts/deploy-release.py` on 2026-09-12.
+  - Payload: 81 files (CSS assets deployed prior to referring HTML pages).
+  - Remote backup reused: `/home/sensdapt/senseisandy-predeploy-20260822T172530Z.tar.gz`.
+  - HTTP byte parity: `https://senseisandy.com/assets/css/site-shell.min.c971a4.css` matches local file exactly (40,169 bytes, SHA-256 `286f5754ac03b6d50c122a563e1b226bd0717c33557baa4e5482ca5bbc3e757e`).
+  - Homepage HTML verified referencing `/assets/css/site-shell.min.c971a4.css`.
+
+### Live Rendered Geometry Measurements (`qa-desktop-topbar-overlap.mjs --live`)
+
+Dynamic API message loaded:
+`First visits available this coming week · 4–10 spots left each day · Next opening: Mon, Sep 14`
+
+| Viewport (px) | Left Gap (px) | Right Gap (px) | Overlap (px) | Topbar Height | Live Result |
+|---|---|---|---|---|---|
+| **992 × 768** | **+37.55px** | **+51.38px** | **0.00px** | 59.06px (wrapped) | **PASS** |
+| **1024 × 768** | **+35.56px** | **+49.08px** | **0.00px** | 59.06px (wrapped) | **PASS** |
+| **1100 × 768** | **+31.73px** | **+44.55px** | **0.00px** | 44.00px (wrapped) | **PASS** |
+| **1200 × 768** | **+45.42px** | **+57.62px** | **0.00px** | 44.00px (clean) | **PASS** |
+| **1280 × 768** | **+45.42px** | **+57.62px** | **0.00px** | 44.00px (clean) | **PASS** |
+| **1366 × 768** | **+45.42px** | **+57.62px** | **0.00px** | 44.00px (clean) | **PASS** |
+| **1440 × 900** | **+45.42px** | **+57.62px** | **0.00px** | 44.00px (clean) | **PASS** |
+
+### Live Mobile Guard Results
+
+- **320 × 568**: `scrollWidth <= innerWidth` (0 overflow), menu button tap target $44 \times 44$px. **PASS**
+- **375 × 667**: `scrollWidth <= innerWidth` (0 overflow), menu button tap target $44 \times 44$px. **PASS**
+- **390 × 844**: `scrollWidth <= innerWidth` (0 overflow), menu button tap target $44 \times 44$px. **PASS**
+- **768 × 1024**: `scrollWidth <= innerWidth` (0 overflow), menu button tap target $44 \times 44$px. **PASS**
+
+### Navigation Interaction Guards
+
+- **Mobile (390px)**: Menu expands on tap (`aria-expanded="true"`), closes on Escape (`aria-expanded="false"`). **PASS**
+- **Desktop (1366px)**: Menu toggles properly, programs dropdown functional, zero layout shifts. **PASS**
+
+### Live Artifacts Captured
+
+- Desktop toolbar screenshot at 1366×768: `tmp/home-cro-verification/1366-topbar.png`
+- Full homepage desktop screenshot at 1366×768: `tmp/home-cro-verification/1366-desktop.png`
+- Live measurement dataset: `tmp/home-cro-verification/live-desktop-topbar-results.json`
