@@ -1,0 +1,570 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "initial": {
+      "cta": {
+        "x": 16,
+        "y": 1044.53125,
+        "width": 288,
+        "height": 52,
+        "bottom": 1096.53125
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 223.1875,
+        "bottom": 223.1875
+      },
+      "cue": {
+        "x": 0,
+        "y": 223.1875,
+        "width": 320,
+        "height": 67.5625,
+        "bottom": 290.75
+      },
+      "columns": "288px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "height": 667,
+    "initial": {
+      "cta": {
+        "x": 16,
+        "y": 929.265625,
+        "width": 343,
+        "height": 52,
+        "bottom": 981.265625
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 223.1875,
+        "bottom": 223.1875
+      },
+      "cue": {
+        "x": 0,
+        "y": 223.1875,
+        "width": 375,
+        "height": 67.5625,
+        "bottom": 290.75
+      },
+      "columns": "343px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "initial": {
+      "cta": {
+        "x": 16,
+        "y": 929.265625,
+        "width": 358,
+        "height": 52,
+        "bottom": 981.265625
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 223.1875,
+        "bottom": 223.1875
+      },
+      "cue": {
+        "x": 0,
+        "y": 223.1875,
+        "width": 390,
+        "height": 67.5625,
+        "bottom": 290.75
+      },
+      "columns": "358px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  },
+  {
+    "width": 414,
+    "height": 896,
+    "initial": {
+      "cta": {
+        "x": 16,
+        "y": 929.265625,
+        "width": 382,
+        "height": 52,
+        "bottom": 981.265625
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 414,
+        "height": 223.1875,
+        "bottom": 223.1875
+      },
+      "cue": {
+        "x": 0,
+        "y": 223.1875,
+        "width": 414,
+        "height": 67.5625,
+        "bottom": 290.75
+      },
+      "columns": "382px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "initial": {
+      "cta": {
+        "x": 16.890625,
+        "y": 677.4375,
+        "width": 326.234375,
+        "height": 52,
+        "bottom": 729.4375
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 223.1875,
+        "bottom": 223.1875
+      },
+      "cue": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0
+      },
+      "columns": "734.219px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  },
+  {
+    "width": 992,
+    "height": 768,
+    "initial": {
+      "cta": {
+        "x": 21.8125,
+        "y": 915.09375,
+        "width": 326.234375,
+        "height": 52,
+        "bottom": 967.09375
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 992,
+        "height": 186.765625,
+        "bottom": 186.765625
+      },
+      "cue": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0
+      },
+      "columns": "346.594px 295px 270px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "initial": {
+      "cta": {
+        "x": 24,
+        "y": 894.84375,
+        "width": 326.234375,
+        "height": 52,
+        "bottom": 946.84375
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 1366,
+        "height": 186.765625,
+        "bottom": 186.765625
+      },
+      "cue": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0
+      },
+      "columns": "483.734px 404.453px 380.656px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "initial": {
+      "cta": {
+        "x": 30,
+        "y": 894.84375,
+        "width": 326.234375,
+        "height": 52,
+        "bottom": 946.84375
+      },
+      "nav": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 186.765625,
+        "bottom": 186.765625
+      },
+      "cue": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0
+      },
+      "columns": "506.359px 423.359px 398.469px",
+      "overflow": false,
+      "image": {
+        "src": "http://127.0.0.1:36035/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp",
+        "width": 1600,
+        "height": 720
+      },
+      "sticky": "none"
+    },
+    "lanes": [
+      "/free-bjj-intro-tannersville-ny?lane=kids#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=teens#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=adults#booking-flow",
+      "/free-bjj-intro-tannersville-ny?lane=family#booking-flow"
+    ],
+    "events": [
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "child",
+          "lane": "kids"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "teen",
+          "lane": "teens"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "adult",
+          "lane": "adults"
+        }
+      },
+      {
+        "name": "audience_selected",
+        "payload": {
+          "audience": "family",
+          "lane": "family"
+        }
+      }
+    ]
+  }
+]

@@ -91,6 +91,15 @@
     padding-bottom: 2.5rem;
   }
 
+  /* This homepage owns its sticky action; suppress the shared competing bar. */
+  body:has(.ss-home-conversion) .ss-mobile-actionbar { display: none !important; }
+  @media (max-width: 359.98px) {
+    .ss-home-conversion .ss-hero-mobile-cue { padding-block: 0.25rem; }
+    .ss-home-conversion .ss-home-conversion__hero { padding-top: 0.5rem; }
+    .ss-home-conversion h1 { margin-bottom: 0.5rem; }
+    .ss-home-conversion .ss-home-conversion__subhead { margin-bottom: 0.5rem; }
+  }
+
   /* Mobile Top Proof & Availability Cue */
   .ss-hero-mobile-cue {
     display: none;
@@ -314,6 +323,22 @@
     font-size: 0.95rem;
   }
 
+  .ss-home-conversion__actions .btn-link,
+  .ss-mobile-sticky-cta .ss-sticky-sms {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .ss-home-conversion__actions .btn-primary { flex-basis: 100%; }
+  .ss-home-conversion__actions a:focus-visible,
+  #builder-continue-btn:focus-visible,
+  .ss-mobile-sticky-cta a:focus-visible {
+    outline: 2px solid var(--color-accent, #116A42);
+    outline-offset: 3px;
+  }
+  #home-first-visit-builder { scroll-margin-top: calc(var(--ss-nav-height, 100px) + 1rem); }
+  .ss-hero-reassurances { margin-bottom: 1rem; }
+
   /* Risk Reversal Notes */
   .ss-hero-reassurances {
     display: flex;
@@ -482,7 +507,7 @@
     box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
     transition: all 0.2s ease;
     text-decoration: none;
-    margin-top: 0.85rem;
+    margin: 0 0 0.85rem;
   }
   #builder-continue-btn:hover {
     background: var(--color-accent-strong, #0d5736);
@@ -616,8 +641,9 @@
     opacity: 0;
   }
   @media (max-width: 767.98px) {
-    .ss-mobile-sticky-cta.is-visible {
-      display: flex;
+    #mobile-sticky-first-visit.is-visible {
+      /* Override shared suppression when the homepage owns the actionbar. */
+      display: flex !important;
       transform: translateY(0);
       opacity: 1;
     }
@@ -668,13 +694,29 @@
       <h1 id="home-conversion-title">Jiu-jitsu for kids, teens, and adults in Tannersville.</h1>
       <p class="ss-home-conversion__subhead">Good partners, real problems to solve, and coaching that meets you where you are.</p>
 
+      <!-- Hero Actions -->
+      <div class="ss-home-conversion__actions">
+        <a class="btn btn-primary" id="hero-primary-cta" data-hero-primary-cta href="#home-first-visit-builder" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="hero">
+          <span>Reserve Free Intro</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-link" href="sms:+19177368649" data-analytics-event="text_sandy_clicked" data-cta-label="Text Sandy" data-cta-location="hero">Text Sandy</a>
+        <a class="btn btn-link" href="/schedule" data-analytics-event="schedule_clicked" data-cta-label="View the Schedule" data-cta-location="hero">View Schedule</a>
+      </div>
+
+      <!-- Risk Reversal Statements -->
+      <div class="ss-hero-reassurances">
+        <span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <strong>Free First Visit</strong> · No payment. No membership commitment.</span>
+
+      </div>
+
       <!-- Dynamic Dream Outcome Panel (Reacts to Audience Selection) -->
       <div class="ss-dynamic-outcome" id="hero-dynamic-outcome" role="region" aria-label="Program fit and outcome details">
         <div class="ss-dynamic-outcome__head">
           <span class="ss-dynamic-outcome__badge" data-outcome-badge>Adult 18+</span>
           <span class="small text-muted">First-visit outcome</span>
         </div>
-        <h3 class="ss-dynamic-outcome__title" data-outcome-title>You don't have to get in shape before you start.</h3>
+        <h2 class="ss-dynamic-outcome__title" data-outcome-title>You don't have to get in shape before you start.</h2>
         <ul class="ss-dynamic-outcome__proof" data-outcome-proof>
           <li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>Beginner-aware rounds</span></li>
           <li><i class="bi bi-people" aria-hidden="true"></i> <span>Thoughtful partner selection</span></li>
@@ -699,18 +741,8 @@
         </div>
       </div>
 
-      <!-- Hero Actions -->
-      <div class="ss-home-conversion__actions">
-        <a class="btn btn-primary" id="hero-primary-cta" data-hero-primary-cta href="#home-first-visit-builder" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="hero">
-          <span>Reserve Your Free First Visit</span>
-          <i class="bi bi-arrow-right" aria-hidden="true"></i>
-        </a>
-        <a class="btn btn-link" href="/schedule" data-analytics-event="schedule_clicked" data-cta-label="View the Schedule" data-cta-location="hero">View the Schedule</a>
-      </div>
 
-      <!-- Risk Reversal Statements -->
       <div class="ss-hero-reassurances">
-        <span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <strong>Free First Visit</strong> · No payment. No membership commitment.</span>
         <span><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> <strong>30-Day Training Fit Guarantee</strong></span>
       </div>
     </div>
@@ -750,6 +782,12 @@
           </button>
         </div>
 
+        <p class="visually-hidden" id="home-audience-status" role="status"></p>
+        <a class="btn btn-primary w-100" id="builder-continue-btn" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_started" data-cta-label="Choose Your Time" data-cta-location="builder_step1">
+          <span>Choose Your Time</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+
         <!-- Studio Preview -->
         <figure class="ss-home-conversion__media">
           <img src="/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ" fetchpriority="high">
@@ -759,10 +797,7 @@
           </figcaption>
         </figure>
 
-        <a class="btn btn-primary w-100" id="builder-continue-btn" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_started" data-cta-label="Choose Your Time" data-cta-location="builder_step1">
-          <span>Continue to Step 2: Choose Your Time</span>
-          <i class="bi bi-arrow-right" aria-hidden="true"></i>
-        </a>
+
 
         <!-- Hidden inputs preserving full contract compatibility with synthesis tests and noscript form -->
         <form action="/free-bjj-intro-tannersville-ny#booking-flow" method="GET" class="visually-hidden" aria-hidden="true">
@@ -811,7 +846,7 @@
             <span>Read all Google reviews →</span>
           </a>
           <a class="btn btn-primary ss-btn w-100" data-hero-primary-cta href="#home-first-visit-builder" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="reviews_column">
-            <span>Reserve Your Free First Visit</span>
+            <span>Reserve Free Intro</span>
             <i class="bi bi-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
@@ -823,10 +858,10 @@
 <!-- Mobile Sticky Bottom CTA (Appears only after Hero CTA scrolls offscreen) -->
 <div class="ss-mobile-sticky-cta" id="mobile-sticky-first-visit" role="region" aria-label="First visit reservation shortcut">
   <a class="btn btn-primary" data-hero-primary-cta href="#home-first-visit-builder" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="sticky_mobile">
-    <span>Reserve Your Free First Visit</span>
+    <span>Reserve Free Intro</span>
     <i class="bi bi-arrow-right" aria-hidden="true"></i>
   </a>
-  <a class="ss-sticky-sms" href="sms:+19177368649" data-analytics-event="text_sandy_clicked">Text</a>
+  <a class="ss-sticky-sms" href="sms:+19177368649" data-analytics-event="text_sandy_clicked">Text Sandy</a>
 </div>
 
 <script>
@@ -890,7 +925,8 @@
     const titleEl = document.querySelector('[data-outcome-title]');
     const proofEl = document.querySelector('[data-outcome-proof]');
     const reversalEl = document.querySelector('[data-outcome-reversal]');
-    const primaryCtas = document.querySelectorAll('[data-hero-primary-cta]');
+    const status = document.getElementById('home-audience-status');
+    if (track && status) status.textContent = `${data.badge} selected. Choose your time when ready.`;
 
     if (badgeEl) badgeEl.textContent = data.badge;
     if (titleEl) titleEl.textContent = data.title;
@@ -958,7 +994,13 @@
       const updateSticky = () => {
         const rect = heroCta.getBoundingClientRect();
         const pastHero = rect.bottom < 0;
-        stickyBar.classList.toggle('is-visible', pastHero && !footerIn);
+        const menuOpen = document.querySelector('.ss-menu-button')?.getAttribute('aria-expanded') === 'true';
+        const continuation = document.getElementById('builder-continue-btn')?.getBoundingClientRect();
+        const choosingTime = continuation && continuation.top < innerHeight && continuation.bottom > 0;
+        const focused = document.activeElement;
+        const focusRect = focused && focused !== document.body && !stickyBar.contains(focused) ? focused.getBoundingClientRect() : null;
+        const coversFocus = focusRect && focusRect.bottom > innerHeight - 100;
+        stickyBar.classList.toggle('is-visible', pastHero && !footerIn && !menuOpen && !choosingTime && !coversFocus);
       };
 
       if ('IntersectionObserver' in window) {
@@ -976,6 +1018,11 @@
         }
       }
 
+      const menuButton = document.querySelector('.ss-menu-button');
+      if (menuButton) new MutationObserver(updateSticky).observe(menuButton, { attributes: true, attributeFilter: ['aria-expanded'] });
+      document.addEventListener('focusin', updateSticky);
+      document.addEventListener('focusout', () => requestAnimationFrame(updateSticky));
+      window.addEventListener('resize', updateSticky, { passive: true });
       window.addEventListener('scroll', updateSticky, { passive: true });
       updateSticky();
     }
@@ -1207,7 +1254,8 @@
       emit('home_view');
       document.addEventListener('click', (event) => {
         const target = event.target.closest('[data-analytics-event]');
-        if (!target) return;
+        if (!target || event.ssAnalyticsTracked) return;
+        event.ssAnalyticsTracked = true;
         emit(target.dataset.analyticsEvent, {
           cta_location: target.dataset.ctaLocation || 'body',
           cta_label: target.dataset.ctaLabel || target.textContent.trim(),

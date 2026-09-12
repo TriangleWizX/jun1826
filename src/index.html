@@ -375,7 +375,8 @@ permalink: "/index.html"
       emit('home_view');
       document.addEventListener('click', (event) => {
         const target = event.target.closest('[data-analytics-event]');
-        if (!target) return;
+        if (!target || event.ssAnalyticsTracked) return;
+        event.ssAnalyticsTracked = true;
         emit(target.dataset.analyticsEvent, {
           cta_location: target.dataset.ctaLocation || 'body',
           cta_label: target.dataset.ctaLabel || target.textContent.trim(),

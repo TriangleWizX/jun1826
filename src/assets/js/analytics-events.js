@@ -5,6 +5,10 @@
 (function () {
   "use strict";
 
+  // Shared shell and page loaders can request this module more than once.
+  if (window.__ssAnalyticsEventsInitialized) return;
+  window.__ssAnalyticsEventsInitialized = true;
+
   window.dataLayer = window.dataLayer || [];
 
   const isLocalDev = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
@@ -38,7 +42,8 @@
   function initGlobalListeners() {
     document.addEventListener("click", function (e) {
       const target = e.target.closest("[data-analytics-event]");
-      if (!target) return;
+      if (!target || e.ssAnalyticsTracked) return;
+      e.ssAnalyticsTracked = true;
 
       const eventName = target.getAttribute("data-analytics-event");
       const ctaLocation = target.getAttribute("data-cta-location") || target.getAttribute("data-link-location") || "body";
