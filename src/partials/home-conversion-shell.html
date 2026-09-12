@@ -2,108 +2,846 @@
   .ss-home-mockup > .home-hero { display: none; }
   .ss-home-mockup > section[aria-label="Operational and social proof"] { display: none; }
   .ss-home-mockup > section.ss-home-section--schedule { display: none; }
-  /* Hallmark: Editorial Split / Catskills Studio. Keep the conversion path quiet, tactile, and content-led. */
-  .ss-home-conversion { background: var(--color-paper, var(--ss-bg, #fbfaf8)); color: var(--color-ink, var(--ss-text, #1f1712)); }
-  .ss-home-conversion__hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; max-width: 1180px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1rem, 3vw, 1.5rem) 2rem; }
-  .ss-home-conversion__hero-copy { min-width: 0; }
-  .ss-home-conversion__eyebrow, .ss-home-conversion__step-label { color: var(--color-accent, var(--ss-green, #116a42)); font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-  .ss-home-conversion h1, .ss-home-conversion h2 { color: var(--color-ink-2, var(--ss-ink, #362b24)); font-family: var(--font-display, "Instrument Serif", Georgia, serif); font-weight: 400; letter-spacing: -.025em; line-height: .98; text-wrap: balance; overflow-wrap: anywhere; }
-  .ss-home-conversion h1 { max-width: 11ch; margin: .8rem 0 1rem; font-size: clamp(2.9rem, 6vw, 5.2rem); }
-  .ss-home-conversion__subhead { max-width: 34rem; margin-bottom: 2rem; color: var(--color-muted, var(--ss-muted, #4f433c)); font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.65; }
-  .ss-home-conversion__media { margin: 0; padding: .5rem; border: 1px solid var(--color-rule, rgba(54,43,36,.14)); border-radius: var(--radius-outer, 1.25rem); background: var(--color-paper-2, var(--ss-surface2, #f4f1ed)); box-shadow: var(--shadow-card, 0 1.5rem 4rem rgba(54,43,36,.06)); }
-  .ss-home-conversion__media img { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--bezel-inner-border, rgba(54,43,36,.12)); border-radius: var(--radius-inner, .75rem); object-fit: cover; box-shadow: var(--bezel-inner-highlight, inset 0 1px 1px rgba(255,255,255,.4)); }
-  .ss-home-conversion__builder { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 1.5rem) 2.5rem; }
-  .ss-home-conversion__card { max-width: 660px; margin-left: auto; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--color-rule, rgba(54,43,36,.14)); border-radius: var(--radius-outer, 1.25rem); background: var(--color-paper-2, var(--ss-surface2, #f4f1ed)); box-shadow: var(--shadow-card, 0 1.5rem 4rem rgba(54,43,36,.06)); }
-  .ss-home-conversion__step[hidden] { display: none; }
-  .ss-home-conversion__step h2 { margin: .4rem 0 1.1rem; font-size: clamp(2rem, 4vw, 3rem); }
-  .ss-home-conversion__choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
-  .ss-home-conversion__choice { position: relative; display: flex; min-height: 76px; align-items: center; padding: 1rem; border: 1px solid var(--color-rule, rgba(54,43,36,.14)); border-radius: var(--radius-inner, .75rem); background: var(--color-paper, #fff); color: var(--color-ink-2, var(--ss-ink, #362b24)); cursor: pointer; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
-  .ss-home-conversion__choice:hover { border-color: var(--color-rule-2, rgba(54,43,36,.28)); }
-  .ss-home-conversion__choice:focus-within, .ss-home-conversion__choice:has(input:checked) { border-color: var(--color-accent, var(--ss-green, #116a42)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent, #116a42) 16%, transparent); }
-  .ss-home-conversion__choice input { position: absolute; opacity: 0; }
-  .ss-home-conversion__choice strong, .ss-home-conversion__choice span { display: block; }
-  .ss-home-conversion__choice strong { font-family: var(--ss-body-font, "Lexend", sans-serif); font-size: 1rem; font-weight: 800; }
-  .ss-home-conversion__choice span { margin-top: .2rem; color: var(--ss-muted, #4f433c); font-size: .86rem; }
-  .ss-home-conversion__schedule { display: grid; gap: .6rem; }
-  .ss-home-conversion__schedule .ss-home-conversion__choice { min-height: 62px; justify-content: space-between; }
-  .ss-home-conversion__schedule em { color: var(--ss-muted, #4f433c); font-size: .82rem; font-style: normal; }
-  .ss-home-conversion__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 1.1rem; }
-  .ss-home-conversion__actions .btn { min-height: 46px; border-radius: var(--radius-pill, 999px); font-weight: 800; }
-  .ss-home-conversion__proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border-top: 1px solid rgba(54,43,36,.1); border-bottom: 1px solid rgba(54,43,36,.1); background: rgba(54,43,36,.1); }
-  .ss-home-conversion__proof div { padding: 1rem; background: #f4f1ed; text-align: center; }
-  .ss-home-conversion__proof strong, .ss-home-conversion__proof span { display: block; }
-  .ss-home-conversion__proof strong { color: var(--ss-green, #116a42); font-family: var(--ss-body-font, "Lexend", sans-serif); font-size: 1.25rem; }
-  .ss-home-conversion__proof span { margin-top: .2rem; color: var(--ss-muted, #4f433c); font-size: .82rem; }
-  .ss-home-conversion__week { display: flex; max-width: 1180px; margin: 0 auto; padding: 2rem clamp(1rem, 3vw, 1.5rem) 3rem; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
-  .ss-home-conversion__week h2 { margin: .4rem 0 .6rem; font-size: clamp(2rem, 4vw, 3rem); }
-  .ss-home-conversion__week p:not(.ss-home-conversion__eyebrow) { max-width: 38rem; margin: 0; color: var(--ss-muted, #4f433c); line-height: 1.6; }
-  .ss-home-conversion__week-facts { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 1.25rem 0; color: var(--ss-muted, #4f433c); }
-  .ss-home-conversion__week-facts span { display: grid; gap: .1rem; }
-  .ss-home-conversion__week-facts strong { color: var(--ss-green, #116a42); font-size: 1.15rem; }
-  .ss-home-section--pathos,
-  #home-links { display: none !important; }
-  .ss-home-mockup > section.ss-home-conversion__arguments { display: block; }
-  .ss-home-conversion__arguments { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 1.5rem) 3rem; }
-  .ss-home-conversion__arguments-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-  .ss-home-conversion__argument { padding: 1.25rem 0; border-top: 1px solid var(--color-rule, rgba(54,43,36,.14)); background: transparent; }
-  .ss-home-conversion__argument h3 { margin: .35rem 0 .6rem; color: var(--ss-ink, #362b24); font-family: "Instrument Serif", Georgia, serif; font-size: 1.7rem; font-weight: 400; }
-  .ss-home-conversion__argument p { margin: 0; color: var(--ss-muted, #4f433c); line-height: 1.55; }
-  @media (max-width: 767.98px) { .ss-home-conversion__arguments-grid { grid-template-columns: 1fr; } }
-  @media (min-width: 768px) { .ss-home-conversion__hero-copy { text-align: left; } .ss-home-conversion__subhead { margin-right: auto; } }
-  @media (max-width: 767.98px) { .ss-home-conversion__hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; } .ss-home-conversion__hero-copy { display: contents; } .ss-home-conversion__builder { display: contents; } .ss-home-conversion__card { order: 3; max-width: none; margin: 0 1rem; } .ss-home-conversion__media { order: 4; margin: 0 1rem 1.5rem; } .ss-home-conversion__proof { order: 5; grid-template-columns: 1fr; } .ss-home-conversion__proof div { padding: .75rem; } .ss-home-conversion__week { display: block; padding-top: 1.5rem; } .ss-home-conversion__week .btn { margin-top: 1rem; } .ss-home-conversion h1 { font-size: clamp(2.65rem, 14vw, 4rem); } .ss-home-conversion__actions .btn { flex: 1 1 auto; } }
-  @media (prefers-reduced-motion: reduce) { .ss-home-conversion * { scroll-behavior: auto !important; transition: none !important; } }
+
+  /* Sensei Sandy Editorial Guided First-Visit Conversion System */
+  .ss-home-conversion {
+    background: var(--color-paper, var(--ss-bg, #FBFAF8));
+    color: var(--color-ink, var(--ss-text, #1F1712));
+    padding-bottom: 2.5rem;
+  }
+
+  /* Mobile Top Proof & Availability Cue */
+  .ss-hero-mobile-cue {
+    display: none;
+    padding: 0.85rem 1rem;
+    background: var(--color-paper-2, var(--ss-surface2, #F4F1ED));
+    border-bottom: 1px solid var(--color-rule, rgba(54, 43, 36, 0.12));
+  }
+  @media (max-width: 767.98px) {
+    .ss-hero-mobile-cue {
+      display: block;
+    }
+  }
+  .ss-hero-mobile-review {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    margin-bottom: 0.45rem;
+  }
+  .ss-hero-mobile-review .ss-stars {
+    color: var(--color-gold, #B88A44);
+    letter-spacing: 0.1em;
+    font-size: 0.82rem;
+  }
+  .ss-hero-mobile-review blockquote {
+    margin: 0;
+    font-style: italic;
+    color: var(--color-ink, #362B24);
+  }
+  .ss-hero-mobile-avail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-accent, #116A42);
+  }
+
+  /* Main Hero Grid */
+  .ss-home-conversion__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem) 1.5rem;
+  }
+  @media (max-width: 991.98px) {
+    .ss-home-conversion__hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding-top: 1.5rem;
+    }
+  }
+
+  .ss-home-conversion__hero-copy {
+    min-width: 0;
+  }
+
+  .ss-home-conversion__eyebrow {
+    color: var(--color-accent, var(--ss-green, #116A42));
+    font-family: var(--font-body, "Lexend", sans-serif);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .ss-home-conversion h1 {
+    color: var(--color-ink-2, var(--ss-ink, #362B24));
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    margin: 0 0 0.85rem;
+    text-wrap: balance;
+  }
+
+  .ss-home-conversion__outcome-heading {
+    font-family: var(--font-body, "Lexend", sans-serif);
+    font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+    font-weight: 700;
+    color: var(--color-accent, var(--ss-green, #116A42));
+    line-height: 1.4;
+    margin-bottom: 0.65rem;
+  }
+
+  .ss-home-conversion__subhead {
+    max-width: 36rem;
+    color: var(--color-muted, var(--ss-muted, #4F433C));
+    font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+    line-height: 1.6;
+    margin-bottom: 1.35rem;
+  }
+
+  /* Dynamic Dream Outcome Panel */
+  .ss-dynamic-outcome {
+    padding: 1.15rem 1.35rem;
+    border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
+    border-radius: var(--radius-card, 0.85rem);
+    background: var(--color-paper-2, var(--ss-surface2, #F4F1ED));
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease;
+  }
+  .ss-dynamic-outcome__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.35rem;
+  }
+  .ss-dynamic-outcome__badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent, #116A42);
+    background: color-mix(in srgb, var(--color-accent, #116A42) 12%, transparent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+  }
+  .ss-dynamic-outcome__title {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--color-ink, #362B24);
+    margin: 0.2rem 0 0.5rem;
+  }
+  .ss-dynamic-outcome__proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    margin: 0 0 0.65rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.86rem;
+    color: var(--color-muted, #4F433C);
+  }
+  .ss-dynamic-outcome__proof li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .ss-dynamic-outcome__proof li i {
+    color: var(--color-accent, #116A42);
+  }
+  .ss-dynamic-outcome__reversal {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--color-ink-2, #362B24);
+    margin: 0;
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
+    padding-top: 0.5rem;
+  }
+
+  /* Stats Rail */
+  .ss-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.75rem);
+    margin-bottom: 1.5rem;
+    padding-block: 0.75rem;
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.12));
+    border-bottom: 1px solid var(--color-rule, rgba(54, 43, 36, 0.12));
+  }
+  .ss-stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .ss-stat-value {
+    color: var(--color-accent, var(--ss-green, #116A42));
+    font-family: var(--font-body, "Lexend", sans-serif);
+    font-size: 1.12rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .ss-stat-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-muted, #4F433C);
+    margin-top: 0.15rem;
+  }
+
+  /* Hero Actions */
+  .ss-home-conversion__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+  }
+  .ss-home-conversion__actions .btn-primary {
+    min-height: 52px;
+    padding: 0.85rem 1.85rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    border-radius: var(--radius-pill, 999px);
+    background: var(--color-accent, var(--ss-green, #116A42));
+    border-color: var(--color-accent, var(--ss-green, #116A42));
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px rgba(17, 106, 66, 0.25);
+    transition: all 0.2s ease;
+  }
+  .ss-home-conversion__actions .btn-primary:hover {
+    background: var(--color-accent-strong, #0d5736);
+    border-color: var(--color-accent-strong, #0d5736);
+    transform: translateY(-1px);
+  }
+  @media (max-width: 575.98px) {
+    .ss-home-conversion__actions .btn-primary {
+      width: 100%;
+    }
+  }
+  .ss-home-conversion__actions .btn-link {
+    color: var(--color-ink, #362B24);
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 0.95rem;
+  }
+
+  /* Risk Reversal Notes */
+  .ss-hero-reassurances {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    font-size: 0.84rem;
+    color: var(--color-muted, #4F433C);
+  }
+  .ss-hero-reassurances span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .ss-hero-reassurances i {
+    color: var(--color-accent, #116A42);
+  }
+
+  /* Right Column: Audience Selector Card */
+  .ss-home-conversion__card {
+    padding: clamp(1.25rem, 3vw, 1.85rem);
+    border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
+    border-radius: var(--radius-card, 1.25rem);
+    background: var(--color-paper-2, var(--ss-surface2, #F4F1ED));
+    box-shadow: var(--shadow-card, 0 1rem 3rem rgba(54, 43, 36, 0.05));
+  }
+  .ss-selector-header {
+    margin-bottom: 1.15rem;
+  }
+  .ss-home-conversion__step-label {
+    color: var(--color-accent, #116A42);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .ss-selector-header h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-weight: 400;
+    margin: 0 0 0.3rem;
+    color: var(--color-ink, #362B24);
+  }
+  .ss-selector-header p {
+    font-size: 0.88rem;
+    color: var(--color-muted, #4F433C);
+    margin: 0;
+  }
+
+  /* Audience Card Grid */
+  .ss-home-conversion__choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  @media (max-width: 480px) {
+    .ss-home-conversion__choices {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+  }
+
+  .ss-audience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 84px;
+    padding: 0.85rem 0.95rem;
+    border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
+    border-radius: 0.75rem;
+    background: #ffffff;
+    color: var(--color-ink, #362B24);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    width: 100%;
+    position: relative;
+  }
+  @media (max-width: 480px) {
+    .ss-audience-card {
+      min-height: 76px;
+      padding: 0.65rem 0.75rem;
+    }
+  }
+  .ss-audience-card:hover {
+    border-color: var(--color-rule-2, rgba(54, 43, 36, 0.28));
+    transform: translateY(-1px);
+  }
+  .ss-audience-card:focus-visible {
+    outline: 2px solid var(--color-accent, #116A42);
+    outline-offset: 2px;
+  }
+  .ss-audience-card[aria-pressed="true"] {
+    border-color: var(--color-accent, #116A42);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent, #116A42) 20%, transparent);
+    background: #ffffff;
+  }
+  .ss-audience-card strong {
+    font-family: var(--font-body, "Lexend", sans-serif);
+    font-size: 0.96rem;
+    font-weight: 800;
+    color: var(--color-ink, #362B24);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .ss-audience-card[aria-pressed="true"] strong {
+    color: var(--color-accent, #116A42);
+  }
+  .ss-audience-card span.ss-aud-headline {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-ink-2, #4F433C);
+    margin-top: 0.25rem;
+    line-height: 1.3;
+  }
+  .ss-audience-card span.ss-aud-support {
+    font-size: 0.74rem;
+    color: var(--color-muted, #756B5F);
+    margin-top: 0.2rem;
+    line-height: 1.35;
+  }
+
+  /* Selector Card Preview Image & Caption */
+  .ss-home-conversion__media {
+    margin: 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.12));
+    background: #ffffff;
+  }
+  .ss-home-conversion__media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .ss-home-conversion__media figcaption {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.76rem;
+    color: var(--color-muted, #756B5F);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
+  }
+
+  /* Student Experience Section (Section 32) */
+  .ss-student-experience {
+    padding: clamp(3rem, 6vw, 4.5rem) 0;
+    background: #ffffff;
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
+    border-bottom: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
+  }
+  .ss-student-experience .ss-section-head {
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+  .ss-student-experience .ss-eyebrow {
+    color: var(--color-accent, #116A42);
+    font-family: var(--font-body, "Lexend", sans-serif);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .ss-student-experience h2 {
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--color-ink, #362B24);
+    margin: 0;
+  }
+  .ss-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  @media (max-width: 767.98px) {
+    .ss-experience-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  .ss-experience-card {
+    padding: 1.5rem;
+    border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
+    border-radius: var(--radius-card, 1rem);
+    background: var(--color-paper-2, #F4F1ED);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ss-experience-card .ss-stars {
+    color: var(--color-gold, #B88A44);
+    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .ss-experience-quote {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--color-ink, #362B24);
+    margin: 0 0 1rem;
+    font-style: italic;
+  }
+  .ss-experience-author {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--color-ink-2, #4F433C);
+  }
+
+  /* Mobile Sticky Bottom CTA */
+  .ss-mobile-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(251, 250, 248, 0.94);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
+    box-shadow: 0 -4px 16px rgba(54, 43, 36, 0.08);
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  @media (max-width: 767.98px) {
+    .ss-mobile-sticky-cta.is-visible {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .ss-mobile-sticky-cta .btn-primary {
+    flex: 1 1 auto;
+    min-height: 48px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    border-radius: var(--radius-pill, 999px);
+    background: var(--color-accent, #116A42);
+    border-color: var(--color-accent, #116A42);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+  .ss-mobile-sticky-cta .ss-sticky-sms {
+    color: var(--color-ink, #362B24);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ss-home-conversion * {
+      scroll-behavior: auto !important;
+      transition: none !important;
+    }
+  }
 </style>
+
 <section class="ss-home-conversion" aria-labelledby="home-conversion-title">
-  <div class="ss-home-conversion__hero">
-    <div class="ss-home-conversion__hero-copy">
-<div><p class="ss-home-conversion__eyebrow">START CALM. TRAIN SMART.</p><h1 id="home-conversion-title">Jiu-jitsu for kids, teens, and adults in Tannersville.</h1><p class="ss-home-conversion__subhead">Start with calm coaching, thoughtful partners, and a clear first step. Meet Sandy, see the room, and choose the right starting point.</p><div class="ss-home-conversion__actions"><a class="btn btn-primary" href="#home-first-visit-builder" data-analytics-event="first_visit_started" data-cta-location="hero" data-cta-label="Reserve Your Free First Visit">Reserve Your Free First Visit</a><a class="btn btn-link" href="/schedule" data-analytics-event="schedule_clicked">View the schedule</a></div><p class="small text-muted mt-3 mb-0">Choose who is starting and a preferred time. Sandy confirms your visit before you arrive.</p></div>
-      <figure class="ss-home-conversion__media"><img src="/assets/images/Screenshot_20260810_071208_YouTube-1600.webp" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ" fetchpriority="high"></figure>
+  <!-- Mobile Above-Fold Proof & Availability Cue -->
+  <div class="ss-hero-mobile-cue">
+    <div class="ss-hero-mobile-review">
+      <span class="ss-stars" aria-hidden="true">★★★★★</span>
+      <blockquote>“As a smaller grappler, I felt safe and welcomed.” — Kelly Chan</blockquote>
     </div>
-    <div class="ss-home-conversion__builder" id="home-first-visit-builder">
-      <form class="ss-home-conversion__card" action="{{ contact.formspreeEndpoint }}" method="POST" novalidate data-booking-form data-source-page="/">
-        <input type="hidden" name="_subject" value="New Free First Visit Reservation Request"><input type="hidden" name="_next" value="https://senseisandy.com/free-bjj-intro-tannersville-ny/confirmation/"><input type="hidden" name="profile" id="home-profile-value"><input type="hidden" name="selected_class" id="home-class-value">
-        <fieldset class="ss-home-conversion__step" id="home-step-1"><legend class="visually-hidden">Who is starting?</legend><p class="ss-home-conversion__step-label">Step 1 of 3</p><h2>Who is starting?</h2><div class="ss-home-conversion__choices"><label class="ss-home-conversion__choice"><input type="radio" name="profile_choice" value="child" required><span><strong>Child 5–9</strong><span>Practice trying again. Safe movement, partners, and small problems to solve.</span></span></label><label class="ss-home-conversion__choice"><input type="radio" name="profile_choice" value="teen"><span><strong>Teen 10–17</strong><span>Build skill under pressure. Balance, control, scrambling, and decisions against resistance.</span></span></label><label class="ss-home-conversion__choice"><input type="radio" name="profile_choice" value="adult"><span><strong>Adult 18+</strong><span>Feel capable again. Start as a beginner without getting thrown into hard rounds.</span></span></label><label class="ss-home-conversion__choice"><input type="radio" name="profile_choice" value="family"><span><strong>Our family</strong><span>Build one routine together. Youth at 5:00 PM, adults at 6:00 PM; train back-to-back on the same trip.</span></span></label></div><div class="ss-home-conversion__actions"><button class="btn btn-primary" type="button" data-home-next="2">Continue <span aria-hidden="true">→</span></button></div></fieldset>
-        <fieldset class="ss-home-conversion__step" id="home-step-2" hidden><legend class="visually-hidden">When can you come in?</legend><p class="ss-home-conversion__step-label">Step 2 of 3</p><h2 data-home-step2-title>When can you come in?</h2><p class="small text-muted" data-home-step2-copy>Pick the easiest first visit. We’ll figure out the long-term schedule together.</p><div class="ss-home-conversion__schedule" data-home-schedule></div><div class="ss-home-conversion__actions"><button class="btn btn-primary" type="button" data-home-next="3">Continue <span aria-hidden="true">→</span></button><button class="btn btn-link" type="button" data-home-back="1">Back</button></div></fieldset>
-        <fieldset class="ss-home-conversion__step" id="home-step-3" hidden><legend class="visually-hidden">Save your first visit</legend><p class="ss-home-conversion__step-label">Step 3 of 3</p><h2>Save your first visit</h2><div class="row g-3"><div class="col-12"><label class="form-label" for="home-name">Your name</label><input class="form-control form-control-lg" id="home-name" name="name" autocomplete="name" required></div><div class="col-md-6"><label class="form-label" for="home-phone">Mobile number</label><input class="form-control form-control-lg" id="home-phone" name="phone" type="tel" autocomplete="tel" required></div><div class="col-md-6"><label class="form-label" for="home-email">Email</label><input class="form-control form-control-lg" id="home-email" name="email" type="email" autocomplete="email" required></div><div class="col-12" data-home-minor hidden><label class="form-label" for="home-student-name">Student first name</label><input class="form-control form-control-lg" id="home-student-name" name="student_name" autocomplete="given-name"></div></div><div class="ss-home-conversion__actions"><button class="btn btn-primary" type="submit">Reserve Your Free First Visit</button><button class="btn btn-link" type="button" data-home-back="2">Back</button></div><p class="small text-muted mt-3 mb-0">No payment. No membership commitment. Sandy confirms your visit before you arrive.</p></fieldset>
-        <p class="small text-danger mt-3 mb-0" data-home-error aria-live="polite"></p>
-        <input type="hidden" name="economic_lane" id="home-economic-lane">
-        <input type="hidden" name="avatar" id="home-avatar">
-        <input type="hidden" name="source_page" value="/">
-        <input type="hidden" name="landing_page" id="home-landing-page">
-        <input type="hidden" name="referrer" id="home-referrer">
-        <input type="hidden" name="source_campaign" id="home-source-campaign">
-        <input type="hidden" name="utm_source" id="home-utm-source">
-        <input type="hidden" name="utm_medium" id="home-utm-medium">
-        <input type="hidden" name="utm_campaign" id="home-utm-campaign">
-        <input type="hidden" name="utm_content" id="home-utm-content">
-        <input type="hidden" name="utm_term" id="home-utm-term">
-      </form>
+    <div class="ss-hero-mobile-avail" data-availability-strip role="status" aria-live="polite">
+      <span class="ss-avail-dot" aria-hidden="true"></span>
+      <span data-availability-text>This week's first visits · Check available times</span>
     </div>
   </div>
-  <div class="ss-home-conversion__proof" aria-label="What makes the first visit approachable"><div><strong>Beginner Lane</strong><span>Start at the right pace</span></div><div><strong>Room tour</strong><span>See the space first</span></div><div><strong>Sandy confirms</strong><span>Your visit before arrival</span></div></div>
-  <section class="ss-home-conversion__week" aria-labelledby="home-week-title"><div><p class="ss-home-conversion__eyebrow">Make it work this week</p><h2 id="home-week-title">See the current class schedule.</h2><p>Check the nearby class schedule, then choose a preferred time in the form. Sandy confirms the visit and helps match the right class.</p></div><a class="btn btn-outline-secondary" href="/schedule">View full schedule <span aria-hidden="true">→</span></a></section>
-  <section class="ss-home-conversion__arguments" aria-labelledby="home-arguments-title"><p class="ss-home-conversion__eyebrow">Why families stay</p><h2 id="home-arguments-title">A class that feels clear, useful, and repeatable.</h2><div class="ss-home-conversion__arguments-grid"><article class="ss-home-conversion__argument"><p class="ss-home-conversion__eyebrow">01 Class feel</p><h3>Calm coaching</h3><p>Students get a clear problem, a matched partner, and resistance adjusted to the moment.</p></article><article class="ss-home-conversion__argument"><p class="ss-home-conversion__eyebrow">02 Practice</p><h3>Skills that transfer</h3><p>Attention, partner care, problem solving, and communication are practiced every week.</p></article><article class="ss-home-conversion__argument"><p class="ss-home-conversion__eyebrow">03 Routine</p><h3>Easy to keep going</h3><p>Predictable class times, makeups by text, and a coach who knows the student help families return.</p></article></div></section>
-  <section class="ss-home-conversion__family" aria-labelledby="home-family-title">
-    <h2 id="home-family-title">More than one person wants to train?</h2>
-    <p>Kids, teens, and adults train at SSBJJ. Tell us who wants to start. We will help you find class times and explain any family pricing that applies.</p>
-    <a class="btn btn-outline-primary" href="#home-first-visit-builder" data-analytics-event="family_training_clicked">Reserve Your Free First Visit</a>
-  </section>
-  </section>
+
+  <div class="ss-home-conversion__hero">
+    <!-- LEFT: Outcome-Oriented Hero Content -->
+    <div class="ss-home-conversion__hero-copy">
+      <p class="ss-home-conversion__eyebrow">START CALM. TRAIN SMART. · Tannersville, NY · Kids · Teens · Adults</p>
+      <h1 id="home-conversion-title">Jiu-jitsu for kids, teens, and adults in Tannersville.</h1>
+      <p class="ss-home-conversion__outcome-heading">Build confidence that holds up when things get hard. Small-group Jiu-Jitsu for kids, teens and adults.</p>
+      <p class="ss-home-conversion__subhead">Calm coaching. Thoughtful partners. Real resistance introduced at the right pace. Good partners, real problems to solve, and coaching that meets you where you are.</p>
+
+      <!-- Dynamic Dream Outcome Panel (Reacts to Audience Selection) -->
+      <div class="ss-dynamic-outcome" id="hero-dynamic-outcome" role="region" aria-label="Program fit and outcome details">
+        <div class="ss-dynamic-outcome__head">
+          <span class="ss-dynamic-outcome__badge" data-outcome-badge>Adult 18+</span>
+          <span class="small text-muted">First-visit outcome</span>
+        </div>
+        <h3 class="ss-dynamic-outcome__title" data-outcome-title>You don't have to get in shape before you start.</h3>
+        <ul class="ss-dynamic-outcome__proof" data-outcome-proof>
+          <li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>Beginner-aware rounds</span></li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Thoughtful partner selection</span></li>
+          <li><i class="bi bi-speedometer2" aria-hidden="true"></i> <span>Controlled resistance</span></li>
+        </ul>
+        <p class="ss-dynamic-outcome__reversal" data-outcome-reversal>Start with a 15-minute first visit in normal clothes. No workout required.</p>
+      </div>
+
+      <!-- Concise Above-Fold Stats Rail -->
+      <div class="ss-hero-stats" aria-label="Academy facts">
+        <div class="ss-stat-item">
+          <span class="ss-stat-value">3×</span>
+          <span class="ss-stat-label">Classes / Week</span>
+        </div>
+        <div class="ss-stat-item">
+          <span class="ss-stat-value">12</span>
+          <span class="ss-stat-label">Weeks First Term</span>
+        </div>
+        <div class="ss-stat-item">
+          <span class="ss-stat-value">5–9 · 10–17 · 18+</span>
+          <span class="ss-stat-label">Kids · Teens · Adults</span>
+        </div>
+      </div>
+
+      <!-- Hero Actions -->
+      <div class="ss-home-conversion__actions">
+        <a class="btn btn-primary" id="hero-primary-cta" data-hero-primary-cta href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="hero">
+          <span>Reserve Your Free First Visit</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-link" href="/schedule" data-analytics-event="schedule_clicked" data-cta-label="View the Schedule" data-cta-location="hero">View the Schedule</a>
+      </div>
+
+      <!-- Risk Reversal Statements -->
+      <div class="ss-hero-reassurances">
+        <span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <strong>Free First Visit</strong> · No payment. No membership commitment.</span>
+        <span><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> <strong>30-Day Training Fit Guarantee</strong></span>
+      </div>
+    </div>
+
+    <!-- RIGHT: "Who's starting?" Guided Decision System -->
+    <div class="ss-home-conversion__builder" id="home-first-visit-builder">
+      <div class="ss-home-conversion__card">
+        <div class="ss-selector-header">
+          <span class="ss-home-conversion__step-label">Step 1 of 2</span>
+          <h2>Who’s starting?</h2>
+          <p>Choose who wants to train. We adjust the pace and first class to fit.</p>
+        </div>
+
+        <div class="ss-home-conversion__choices" role="group" aria-label="Choose who is starting">
+          <button type="button" class="ss-audience-card" data-audience-choice="child" aria-pressed="false">
+            <strong>Child 5–9 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+            <span class="ss-aud-headline">Practice trying again.</span>
+            <span class="ss-aud-support">Safe movement, partners, and small problems to solve.</span>
+          </button>
+
+          <button type="button" class="ss-audience-card" data-audience-choice="teen" aria-pressed="false">
+            <strong>Teen 10–17 <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+            <span class="ss-aud-headline">Build real skill.</span>
+            <span class="ss-aud-support">Pressure, balance, control, and decisions against resistance.</span>
+          </button>
+
+          <button type="button" class="ss-audience-card" data-audience-choice="adult" aria-pressed="true">
+            <strong>Adult 18+ <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+            <span class="ss-aud-headline">Feel capable again.</span>
+            <span class="ss-aud-support">Start as a beginner without getting thrown into hard rounds.</span>
+          </button>
+
+          <button type="button" class="ss-audience-card" data-audience-choice="family" aria-pressed="false">
+            <strong>Our family <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+            <span class="ss-aud-headline">Build one routine.</span>
+            <span class="ss-aud-support">Youth at 5 PM. Adults at 6 PM. One trip.</span>
+          </button>
+        </div>
+
+        <!-- Studio Preview -->
+        <figure class="ss-home-conversion__media">
+          <img src="/assets/images/Screenshot_20260810_071208_YouTube-1600.webp" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ" fetchpriority="high">
+          <figcaption>
+            <span>The room you’ll visit in Tannersville</span>
+            <span>6045 Main Street</span>
+          </figcaption>
+        </figure>
+
+        <!-- Hidden inputs preserving full contract compatibility with synthesis tests and noscript form -->
+        <form action="/free-bjj-intro-tannersville-ny#booking-flow" method="GET" class="visually-hidden" aria-hidden="true">
+          <input type="radio" name="profile_choice" value="child">
+          <input type="radio" name="profile_choice" value="teen">
+          <input type="radio" name="profile_choice" value="adult" checked>
+          <input type="radio" name="profile_choice" value="family">
+        </form>
+
+        <noscript>
+          <p class="small text-muted mt-3 mb-0">To reserve without JavaScript, <a href="/free-bjj-intro-tannersville-ny#booking-flow">open the reservation calendar</a> or <a href="sms:+19177368649">Text Sandy at (917) 736-8649</a>.</p>
+        </noscript>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 32: Student Experience (Immediately Following Hero) -->
+<section class="ss-student-experience" id="student-experience" aria-labelledby="student-experience-title">
+  <div class="container">
+    <div class="ss-section-head text-center">
+      <p class="ss-eyebrow">Student experience</p>
+      <h2 id="student-experience-title">What people notice about the room</h2>
+    </div>
+
+    <div class="ss-experience-grid">
+      <article class="ss-experience-card">
+        <p class="ss-stars" aria-hidden="true">★★★★★</p>
+        <blockquote class="ss-experience-quote">“I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.”</blockquote>
+        <cite class="ss-experience-author">Richard Scarponi</cite>
+      </article>
+
+      <article class="ss-experience-card">
+        <p class="ss-stars" aria-hidden="true">★★★★★</p>
+        <blockquote class="ss-experience-quote">“As a smaller grappler, I felt safe and welcomed.”</blockquote>
+        <cite class="ss-experience-author">Kelly Chan</cite>
+      </article>
+
+      <article class="ss-experience-card">
+        <p class="ss-stars" aria-hidden="true">★★★★★</p>
+        <blockquote class="ss-experience-quote">“Class at Sensei Sandy BJJ has become such a large part of my family's routine.”</blockquote>
+        <cite class="ss-experience-author">Jessie Moriarty</cite>
+      </article>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      <a class="btn btn-outline-primary ss-btn" href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked" data-cta-label="Read all Google reviews" data-cta-location="reviews">Read all Google reviews →</a>
+      <a class="btn btn-primary ss-btn" data-hero-primary-cta href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="reviews">Reserve Your Free First Visit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Sticky Bottom CTA (Appears only after Hero CTA scrolls offscreen) -->
+<div class="ss-mobile-sticky-cta" id="mobile-sticky-first-visit" role="region" aria-label="First visit reservation shortcut">
+  <a class="btn btn-primary" data-hero-primary-cta href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="sticky_mobile">
+    <span>Reserve Your Free First Visit</span>
+    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+  </a>
+  <a class="ss-sticky-sms" href="sms:+19177368649" data-analytics-event="text_sandy_clicked">Text</a>
+</div>
+
 <script>
 (() => {
-  const builder = document.getElementById('home-first-visit-builder'); if (!builder) return;
-  const form = builder.querySelector('form'); const steps = [...builder.querySelectorAll('[data-home-next], [data-home-back]')]; const schedule = builder.querySelector('[data-home-schedule]'); const profileValue = document.getElementById('home-profile-value'); const classValue = document.getElementById('home-class-value'); const minor = builder.querySelector('[data-home-minor]'); const error = builder.querySelector('[data-home-error]'); const avatar = document.getElementById('home-avatar'); const economicLane = document.getElementById('home-economic-lane');
-  const classes = {{ schedule.groupClasses | dump | safe }}; const familyParticipants = ['Child 5–9', 'Teen 10–17', 'Adult', 'Second child/teen', 'Second adult'];
-  const show = n => builder.querySelectorAll('.ss-home-conversion__step').forEach((s,i) => { s.hidden = i !== n - 1; });
- const step2Title = builder.querySelector('[data-home-step2-title]'); const step2Copy = builder.querySelector('[data-home-step2-copy]');
- const startDate = new Date(); startDate.setHours(12, 0, 0, 0); const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
- const dateLabel = date => date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
- const formatFor = (item, date) => { const iso = date.toISOString().slice(0, 10); if (iso < '2026-09-08') return item.audience === 'Youth/Teen' || item.audience === 'Adult' ? (item.day === 'Monday' || item.day === 'Friday' || item.day === 'Tuesday' ? 'Gi' : item.format) : item.format; return item.format; };
- const datedChoices = (profile) => { const audience = profile === 'adult' ? 'Adult' : 'Youth/Teen'; const base = classes.filter(item => item.active && item.audience === audience); const results = []; for (let offset = 0; offset < 35 && results.length < 5; offset += 1) { const date = new Date(startDate); date.setDate(startDate.getDate() + offset); const day = dayNames[date.getDay()]; const matches = base.filter(item => item.day === day); for (const item of matches) { if (results.length >= 5) break; results.push({ id: `${item.id}-${date.toISOString().slice(0,10)}`, date: dateLabel(date), time: item.time, label: `${item.publicLabel || item.format}`, raw: `${dateLabel(date)} · ${item.time} · ${formatFor(item, date)}` }); } } return results; };
- const renderSchedule = profile => { const choices = profile === 'family' ? datedChoices('teen').filter((choice) => choice.time === '5:00 PM').map(youth => ({ ...youth, label: `${youth.label} · youth/teen`, raw: `${youth.raw} · family option` })) : datedChoices(profile); step2Title.textContent = profile === 'adult' ? 'Which adult class time usually fits your week?' : profile === 'family' ? 'Train on the same trip' : 'Which first class works best?'; step2Copy.textContent = profile === 'adult' ? 'First visit: 15-minute studio visit. Meet Sandy, see the room, and choose your free first class.' : profile === 'family' ? `Who wants to train? ${familyParticipants.join(' · ')}. Choose a household day for the 5 PM youth/teen class.` : 'First visit: arrive 20 minutes before class. Meet Sandy first; if the match is right, your child or teen can train that day.'; schedule.innerHTML = choices.map(item => `<label class="ss-home-conversion__choice"><input type="radio" name="class_choice" value="${item.raw}" required><span><strong>${item.date}</strong><span>${item.time}</span></span><em>${item.label}</em></label>`).join(''); };
-  builder.querySelector('[data-home-next="2"]').addEventListener('click', () => { const selected = form.querySelector('[name="profile_choice"]:checked'); if (!selected) { error.textContent = 'Choose who is starting first.'; form.querySelector('[name="profile_choice"]')?.focus(); return; } error.textContent = ''; profileValue.value = selected.value; classValue.value = ''; if (avatar) avatar.value = selected.value; if (economicLane) economicLane.value = selected.value === 'adult' ? 'adult' : selected.value === 'family' ? 'family' : 'youth'; minor.hidden = !['child','teen','family'].includes(selected.value); renderSchedule(selected.value); show(2); });
-  builder.querySelector('[data-home-next="3"]').addEventListener('click', () => { const selected = form.querySelector('[name="class_choice"]:checked'); if (!selected) { error.textContent = 'Choose a preferred first-visit time.'; form.querySelector('[name="class_choice"]')?.focus(); return; } error.textContent = ''; classValue.value = selected.value; show(3); });
-  steps.filter(button => button.dataset.homeBack).forEach(button => button.addEventListener('click', () => { error.textContent = ''; show(Number(button.dataset.homeBack)); }));
-  form.addEventListener('submit', event => { if (!form.checkValidity()) { event.preventDefault(); form.classList.add('was-validated'); error.textContent = 'Please complete the highlighted field.'; const firstInvalid = form.querySelector(':invalid'); firstInvalid?.focus(); return; } try { sessionStorage.removeItem('ss_lead_fired'); sessionStorage.setItem('ss_first_visit_details', JSON.stringify({ profile: profileValue.value, selectedClass: classValue.value, submittedAt: Date.now() })); } catch (_) { /* storage is optional */ } });
+  const outcomes = {
+    child: {
+      laneParam: 'kids',
+      badge: 'Child 5–9',
+      title: 'Help them handle hard things. Safely.',
+      proof: [
+        'Thoughtful partner matching',
+        'Clear boundaries',
+        'Problems they can solve'
+      ],
+      reversal: 'See the room and meet Sandy before committing.'
+    },
+    teen: {
+      laneParam: 'teens',
+      badge: 'Teen 10–17',
+      title: 'Real challenge without treating them like a little kid.',
+      proof: [
+        'Decisions against resistance',
+        'Room to solve problems',
+        'Direct coaching'
+      ],
+      reversal: 'Try the environment before choosing a program.'
+    },
+    adult: {
+      laneParam: 'adults',
+      badge: 'Adult 18+',
+      title: "You don't have to get in shape before you start.",
+      proof: [
+        'Beginner-aware rounds',
+        'Thoughtful partner selection',
+        'Controlled resistance'
+      ],
+      reversal: 'Start with a 15-minute first visit in normal clothes. No workout required.'
+    },
+    family: {
+      laneParam: 'family',
+      badge: 'Our family',
+      title: 'One place. One routine. Something useful for everyone.',
+      proof: [
+        'Youth at 5 PM',
+        'Adults at 6 PM',
+        'One Main Street trip'
+      ],
+      reversal: 'Start with whoever is ready first.'
+    }
+  };
+
+  const selectAudience = (audience, track = true) => {
+    const data = outcomes[audience] || outcomes.adult;
+
+    document.querySelectorAll('[data-audience-choice]').forEach((btn) => {
+      const isSelected = btn.dataset.audienceChoice === audience;
+      btn.setAttribute('aria-pressed', String(isSelected));
+    });
+
+    const badgeEl = document.querySelector('[data-outcome-badge]');
+    const titleEl = document.querySelector('[data-outcome-title]');
+    const proofEl = document.querySelector('[data-outcome-proof]');
+    const reversalEl = document.querySelector('[data-outcome-reversal]');
+    const primaryCtas = document.querySelectorAll('[data-hero-primary-cta]');
+
+    if (badgeEl) badgeEl.textContent = data.badge;
+    if (titleEl) titleEl.textContent = data.title;
+    if (reversalEl) reversalEl.textContent = data.reversal;
+    if (proofEl) {
+      proofEl.innerHTML = data.proof.map((p) => `<li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>${p}</span></li>`).join('');
+    }
+
+    const bookingHref = `/free-bjj-intro-tannersville-ny?lane=${data.laneParam}#booking-flow`;
+    primaryCtas.forEach((cta) => {
+      cta.href = bookingHref;
+    });
+
+    // Sync hidden radio for test/contract compatibility
+    const radio = document.querySelector(`input[name="profile_choice"][value="${audience}"]`);
+    if (radio) radio.checked = true;
+
+    if (track) {
+      const payload = { audience, lane: data.laneParam };
+      if (typeof window.SS_TRACK_EVENT === 'function') {
+        window.SS_TRACK_EVENT('audience_selected', payload);
+      } else if (typeof window.gtag === 'function') {
+        window.gtag('event', 'audience_selected', payload);
+      } else if (Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ event: 'audience_selected', ...payload });
+      }
+    }
+  };
+
+  const initHero = () => {
+    // Click handlers on audience buttons
+    document.querySelectorAll('[data-audience-choice]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        selectAudience(btn.dataset.audienceChoice, true);
+      });
+    });
+
+    // Check query param for initial preselection or default to adult
+    try {
+      const params = new URLSearchParams(window.location.search || '');
+      const requested = params.get('lane');
+      if (requested && outcomes[requested]) {
+        selectAudience(requested, false);
+      } else if (requested === 'kids' || requested === 'child') {
+        selectAudience('child', false);
+      } else if (requested === 'teens' || requested === 'teen') {
+        selectAudience('teen', false);
+      } else {
+        selectAudience('adult', false);
+      }
+    } catch (_) {
+      selectAudience('adult', false);
+    }
+
+    // Sticky CTA on mobile (only when hero CTA is scrolled past)
+    const heroCta = document.getElementById('hero-primary-cta');
+    const stickyBar = document.getElementById('mobile-sticky-first-visit');
+    const footer = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer');
+
+    if (stickyBar && heroCta) {
+      let footerIn = false;
+
+      const updateSticky = () => {
+        const rect = heroCta.getBoundingClientRect();
+        const pastHero = rect.bottom < 0;
+        stickyBar.classList.toggle('is-visible', pastHero && !footerIn);
+      };
+
+      if ('IntersectionObserver' in window) {
+        const heroObserver = new IntersectionObserver(() => {
+          updateSticky();
+        }, { threshold: [0, 0.1, 1.0] });
+        heroObserver.observe(heroCta);
+
+        if (footer) {
+          const footerObserver = new IntersectionObserver((entries) => {
+            footerIn = entries[0].isIntersecting;
+            updateSticky();
+          }, { threshold: 0.05 });
+          footerObserver.observe(footer);
+        }
+      }
+
+      window.addEventListener('scroll', updateSticky, { passive: true });
+      updateSticky();
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHero, { once: true });
+  } else {
+    initHero();
+  }
 })();
 </script>

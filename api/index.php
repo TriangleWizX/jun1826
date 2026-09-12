@@ -40,6 +40,7 @@ if ($path === '' && $method === 'GET') {
         'version' => 'v1',
         'routes' => [
             'GET /api/health',
+            'GET /api/first-visit-availability',
             'POST /api/leads',
             'GET /api/youth-intro/availability',
             'GET|POST|DELETE /api/youth-intro/records',
@@ -68,6 +69,9 @@ if ($path === '' && $method === 'GET') {
 switch ($path) {
     case 'health':
         require __DIR__ . '/v1/health.php';
+        break;
+    case 'first-visit-availability':
+        require __DIR__ . '/v1/first_visit_availability.php';
         break;
     case 'leads':
         require __DIR__ . '/v1/leads.php';

@@ -10,8 +10,14 @@
           <span class="ss-topbar-dot" aria-hidden="true" role="presentation">•</span>
           <span class="ss-topbar-location">6045 Main Street, Tannersville</span>
         </div>
+        <div class="ss-topbar-center">
+          <div class="ss-topbar-availability" data-availability-strip role="status" aria-live="polite">
+            <span class="ss-avail-dot" aria-hidden="true"></span>
+            <span class="ss-avail-text" data-availability-text>This week's first visits · Check available times</span>
+          </div>
+        </div>
         <div class="ss-topbar-right">
-          <a class="ss-topbar-sms" href="sms:+19177368649">
+          <a class="ss-topbar-sms" href="sms:+19177368649" data-analytics-event="text_sandy_clicked">
             <i class="bi bi-chat-text" aria-hidden="true"></i>
             Text Sandy
           </a>
@@ -28,6 +34,14 @@
             <span class="ss-brand-sub">A family training ground in Tannersville, NY</span>
           </span>
         </a>
+
+        <div class="ss-nav-trust d-none d-xl-flex align-items-center" aria-label="Student experience review">
+          <span class="ss-nav-trust__stars" aria-hidden="true">★★★★★</span>
+          <div class="ss-nav-trust__text">
+            <span class="ss-nav-trust__quote">“As a smaller grappler, I felt safe and welcomed.”</span>
+            <span class="ss-nav-trust__author">Kelly Chan · <a href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked">Google reviews →</a></span>
+          </div>
+        </div>
 
         <button class="navbar-toggler ss-menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#ssMainNav"
           aria-controls="ssMainNav" aria-expanded="false" aria-label="Open menu">
@@ -534,7 +548,82 @@ document.addEventListener('DOMContentLoaded', function() {
     transform: translateY(0) !important;
   }
 }
+
+.ss-topbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+.ss-topbar-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body, "Lexend", sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent, #116a42);
+}
+.ss-avail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent, #116a42);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent, #116a42) 22%, transparent);
+  animation: ss-pulse 2.2s infinite ease-in-out;
+}
+@keyframes ss-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.9); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ss-avail-dot { animation: none !important; }
+}
+
+.ss-nav-trust {
+  margin-inline: 1.25rem;
+  padding-inline: 1rem;
+  border-inline: 1px solid var(--color-rule, rgba(54, 43, 36, 0.12));
+  gap: 0.6rem;
+  max-width: 440px;
+  line-height: 1.28;
+}
+.ss-nav-trust__stars {
+  color: var(--color-gold, #b88a44);
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+}
+.ss-nav-trust__quote {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-ink, #362b24);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
+.ss-nav-trust__author {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-muted, #756b5f);
+}
+.ss-nav-trust__author a {
+  color: var(--color-accent, #116a42);
+  font-weight: 600;
+  text-decoration: none;
+}
+.ss-nav-trust__author a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1199.98px) {
+  .ss-nav-trust { display: none !important; }
+}
 </style>
+<script src="/js/first-visit-availability.js" defer></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

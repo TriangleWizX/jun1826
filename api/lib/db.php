@@ -99,6 +99,16 @@ function ss_run_migrations(PDO $db): void
     );
 
     $db->exec(
+        'CREATE TABLE IF NOT EXISTS first_visit_availability_cache (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            cache_key TEXT NOT NULL UNIQUE,
+            payload_json TEXT NOT NULL,
+            fetched_at TEXT NOT NULL,
+            expires_at INTEGER NOT NULL
+        )'
+    );
+
+    $db->exec(
         'CREATE TABLE IF NOT EXISTS rate_limits (
             bucket_key TEXT PRIMARY KEY,
             window_start INTEGER NOT NULL,
