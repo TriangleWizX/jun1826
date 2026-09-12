@@ -63,6 +63,8 @@
     const timeframeLabel = isWeekly ? (data.timeframeLabel || 'this week') : (data.month || 'this month');
     const count = typeof data.availableSlotCount === 'number' ? data.availableSlotCount : null;
     const nextOpening = data.nextAvailableLabel ? ` · Next opening: ${data.nextAvailableLabel}` : '';
+    const isHomepage = typeof window !== 'undefined' && window.location && (window.location.pathname === '/' || window.location.pathname === '/index.html');
+    const defaultCtaUrl = isHomepage ? '#home-first-visit-builder' : '/free-bjj-intro-tannersville-ny#booking-flow';
 
     // Fallback when Cal API is unavailable or count not yet determined
     if (data.status === 'unavailable' || count === null) {
@@ -72,7 +74,7 @@
         badge: 'Open',
         status: 'available',
         ctaText: 'Reserve Your Free First Visit →',
-        ctaUrl: '/free-bjj-intro-tannersville-ny#booking-flow'
+        ctaUrl: defaultCtaUrl
       };
     }
 
@@ -88,7 +90,7 @@
         badge: 'Full',
         status: 'full',
         ctaText: nextCta,
-        ctaUrl: '/free-bjj-intro-tannersville-ny#booking-flow'
+        ctaUrl: defaultCtaUrl
       };
     }
 
@@ -100,7 +102,7 @@
         badge: 'Open',
         status: 'available',
         ctaText: 'Reserve Your Free First Visit →',
-        ctaUrl: '/free-bjj-intro-tannersville-ny#booking-flow'
+        ctaUrl: defaultCtaUrl
       };
     }
 
@@ -112,7 +114,7 @@
         badge: `${count} Left`,
         status: 'available',
         ctaText: 'Reserve Your Free First Visit →',
-        ctaUrl: '/free-bjj-intro-tannersville-ny#booking-flow'
+        ctaUrl: defaultCtaUrl
       };
     }
 
@@ -124,7 +126,7 @@
         badge: `Only ${count} Left`,
         status: 'low',
         ctaText: 'Reserve Your Free First Visit →',
-        ctaUrl: '/free-bjj-intro-tannersville-ny#booking-flow'
+        ctaUrl: defaultCtaUrl
       };
     }
 
@@ -135,7 +137,7 @@
       badge: `Only ${count} Left`,
       status: 'low',
       ctaText: 'Reserve Your Free First Visit →',
-      ctaUrl: '/free-bjj-intro-tannersville-ny#booking-flow'
+      ctaUrl: defaultCtaUrl
     };
   };
 

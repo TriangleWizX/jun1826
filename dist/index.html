@@ -131,26 +131,36 @@
     color: var(--color-accent, #116A42);
   }
 
-  /* Main Hero Grid */
+  /* Main Hero Grid - 3-Column Desktop Viewport */
   .ss-home-conversion__hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: start;
-    max-width: 1240px;
+    grid-template-columns: minmax(0, 1.22fr) minmax(310px, 1.02fr) minmax(285px, 0.96fr);
+    gap: clamp(1.15rem, 1.8vw, 1.85rem);
+    align-items: stretch;
+    max-width: 1380px;
     margin: 0 auto;
-    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem) 1.5rem;
+    padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1rem, 2.2vw, 1.5rem) 1.5rem;
+  }
+  @media (max-width: 1199.98px) and (min-width: 992px) {
+    .ss-home-conversion__hero {
+      grid-template-columns: minmax(0, 1.2fr) minmax(295px, 1fr) minmax(270px, 0.92fr);
+      gap: 1.15rem;
+    }
   }
   @media (max-width: 991.98px) {
     .ss-home-conversion__hero {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.75rem;
       padding-top: 1.5rem;
     }
   }
 
-  .ss-home-conversion__hero-copy {
+  .ss-home-conversion__hero-copy,
+  .ss-home-conversion__builder,
+  .ss-home-conversion__reviews {
     min-width: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .ss-home-conversion__eyebrow {
@@ -472,71 +482,135 @@
     border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
   }
 
-  /* Student Experience Section (Section 32) */
-  .ss-student-experience {
-    padding: clamp(3rem, 6vw, 4.5rem) 0;
-    background: #ffffff;
-    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
-    border-bottom: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
-  }
-  .ss-student-experience .ss-section-head {
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-  }
-  .ss-student-experience .ss-eyebrow {
-    color: var(--color-accent, #116A42);
-    font-family: var(--font-body, "Lexend", sans-serif);
-    font-size: 0.78rem;
+  /* Column 2 Continue Button */
+  #builder-continue-btn {
+    min-height: 46px;
+    font-size: 0.9rem;
     font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
+    padding: 0.65rem 1.15rem;
+    border-radius: var(--radius-pill, 999px);
+    background: var(--color-accent, #116A42);
+    border: 1px solid var(--color-accent, #116A42);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    margin-top: 0.85rem;
   }
-  .ss-student-experience h2 {
-    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
-    color: var(--color-ink, #362B24);
-    margin: 0;
+  #builder-continue-btn:hover {
+    background: var(--color-accent-strong, #0d5736);
+    border-color: var(--color-accent-strong, #0d5736);
+    transform: translateY(-1px);
+    color: #fff;
   }
-  .ss-experience-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-  @media (max-width: 767.98px) {
-    .ss-experience-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-  }
-  .ss-experience-card {
-    padding: 1.5rem;
+
+  /* Column 3: Student Experience Reviews Card */
+  .ss-home-reviews-card {
+    padding: clamp(1.15rem, 2vw, 1.5rem);
     border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
-    border-radius: var(--radius-card, 1rem);
-    background: var(--color-paper-2, #F4F1ED);
+    border-radius: var(--radius-card, 1.25rem);
+    background: var(--color-paper-2, var(--ss-surface2, #F4F1ED));
+    box-shadow: var(--shadow-card, 0 1rem 3rem rgba(54, 43, 36, 0.05));
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .ss-reviews-header {
+    margin-bottom: 0.85rem;
+  }
+  .ss-reviews-header .ss-home-conversion__eyebrow {
+    margin-bottom: 0.25rem;
+  }
+  .ss-reviews-header h2 {
+    font-size: clamp(1.4rem, 1.8vw, 1.85rem);
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0;
+    color: var(--color-ink, #362B24);
+  }
+  .ss-home-reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    flex: 1 1 auto;
+  }
+  .ss-review-item {
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.1));
+    border-radius: 0.75rem;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .ss-experience-card .ss-stars {
+  .ss-review-item .ss-stars {
     color: var(--color-gold, #B88A44);
-    letter-spacing: 0.12em;
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.08em;
+    font-size: 0.82rem;
+    margin-bottom: 0.25rem;
   }
-  .ss-experience-quote {
-    font-size: 0.98rem;
-    line-height: 1.6;
+  .ss-review-quote {
+    font-size: 0.84rem;
+    line-height: 1.42;
     color: var(--color-ink, #362B24);
-    margin: 0 0 1rem;
+    margin: 0 0 0.35rem;
     font-style: italic;
   }
-  .ss-experience-author {
+  .ss-review-author {
     font-style: normal;
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 0.78rem;
     color: var(--color-ink-2, #4F433C);
+  }
+  .ss-reviews-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  .ss-reviews-actions .btn-outline-primary {
+    color: var(--color-accent, #116A42);
+    border-color: var(--color-accent, #116A42);
+    background: transparent;
+    font-weight: 700;
+    font-size: 0.84rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: var(--radius-pill, 999px);
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.18s ease;
+  }
+  .ss-reviews-actions .btn-outline-primary:hover {
+    background: color-mix(in srgb, var(--color-accent, #116A42) 10%, transparent);
+    color: var(--color-accent-strong, #0d5736);
+  }
+  .ss-reviews-actions .btn-primary {
+    font-size: 0.88rem;
+    font-weight: 800;
+    padding: 0.65rem 1.1rem;
+    border-radius: var(--radius-pill, 999px);
+    background: var(--color-accent, #116A42);
+    border-color: var(--color-accent, #116A42);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(17, 106, 66, 0.2);
+    transition: all 0.18s ease;
+  }
+  .ss-reviews-actions .btn-primary:hover {
+    background: var(--color-accent-strong, #0d5736);
+    border-color: var(--color-accent-strong, #0d5736);
+    transform: translateY(-1px);
+    color: #fff;
   }
 
   /* Mobile Sticky Bottom CTA */
@@ -650,7 +724,7 @@
 
       <!-- Hero Actions -->
       <div class="ss-home-conversion__actions">
-        <a class="btn btn-primary" id="hero-primary-cta" data-hero-primary-cta href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="hero">
+        <a class="btn btn-primary" id="hero-primary-cta" data-hero-primary-cta href="#home-first-visit-builder" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="hero">
           <span>Reserve Your Free First Visit</span>
           <i class="bi bi-arrow-right" aria-hidden="true"></i>
         </a>
@@ -664,7 +738,7 @@
       </div>
     </div>
 
-    <!-- RIGHT: "Who's starting?" Guided Decision System -->
+    <!-- MIDDLE COLUMN: "Who's starting?" Guided Decision System -->
     <div class="ss-home-conversion__builder" id="home-first-visit-builder">
       <div class="ss-home-conversion__card">
         <div class="ss-selector-header">
@@ -708,6 +782,11 @@
           </figcaption>
         </figure>
 
+        <a class="btn btn-primary w-100" id="builder-continue-btn" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_started" data-cta-label="Choose Your Time" data-cta-location="builder_step1">
+          <span>Continue to Step 2: Choose Your Time</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+
         <!-- Hidden inputs preserving full contract compatibility with synthesis tests and noscript form -->
         <form action="/free-bjj-intro-tannersville-ny#booking-flow" method="GET" class="visually-hidden" aria-hidden="true">
           <input type="radio" name="profile_choice" value="child">
@@ -721,47 +800,52 @@
         </noscript>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- SECTION 32: Student Experience (Immediately Following Hero) -->
-<section class="ss-student-experience" id="student-experience" aria-labelledby="student-experience-title">
-  <div class="container">
-    <div class="ss-section-head text-center">
-      <p class="ss-eyebrow">Student experience</p>
-      <h2 id="student-experience-title">What people notice about the room</h2>
-    </div>
+    <!-- RIGHT COLUMN: Student Experience Reviews & Validation -->
+    <div class="ss-home-conversion__reviews" id="home-student-reviews" aria-labelledby="home-reviews-heading">
+      <div class="ss-home-reviews-card">
+        <div class="ss-reviews-header">
+          <p class="ss-home-conversion__eyebrow">Student experience</p>
+          <h2 id="home-reviews-heading">What people notice about the room</h2>
+        </div>
 
-    <div class="ss-experience-grid">
-      <article class="ss-experience-card">
-        <p class="ss-stars" aria-hidden="true">★★★★★</p>
-        <blockquote class="ss-experience-quote">“I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.”</blockquote>
-        <cite class="ss-experience-author">Richard Scarponi</cite>
-      </article>
+        <div class="ss-home-reviews-list" data-reviews-list>
+          <article class="ss-review-item">
+            <p class="ss-stars" aria-hidden="true">★★★★★</p>
+            <blockquote class="ss-review-quote">“I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.”</blockquote>
+            <cite class="ss-review-author">Richard Scarponi</cite>
+          </article>
 
-      <article class="ss-experience-card">
-        <p class="ss-stars" aria-hidden="true">★★★★★</p>
-        <blockquote class="ss-experience-quote">“As a smaller grappler, I felt safe and welcomed.”</blockquote>
-        <cite class="ss-experience-author">Kelly Chan</cite>
-      </article>
+          <article class="ss-review-item">
+            <p class="ss-stars" aria-hidden="true">★★★★★</p>
+            <blockquote class="ss-review-quote">“As a smaller grappler, I felt safe and welcomed.”</blockquote>
+            <cite class="ss-review-author">Kelly Chan</cite>
+          </article>
 
-      <article class="ss-experience-card">
-        <p class="ss-stars" aria-hidden="true">★★★★★</p>
-        <blockquote class="ss-experience-quote">“Class at Sensei Sandy BJJ has become such a large part of my family's routine.”</blockquote>
-        <cite class="ss-experience-author">Jessie Moriarty</cite>
-      </article>
-    </div>
+          <article class="ss-review-item">
+            <p class="ss-stars" aria-hidden="true">★★★★★</p>
+            <blockquote class="ss-review-quote">“Class at Sensei Sandy BJJ has become such a large part of my family's routine.”</blockquote>
+            <cite class="ss-review-author">Jessie Moriarty</cite>
+          </article>
+        </div>
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-      <a class="btn btn-outline-primary ss-btn" href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked" data-cta-label="Read all Google reviews" data-cta-location="reviews">Read all Google reviews →</a>
-      <a class="btn btn-primary ss-btn" data-hero-primary-cta href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="reviews">Reserve Your Free First Visit →</a>
+        <div class="ss-reviews-actions">
+          <a class="btn btn-outline-primary ss-btn ss-btn--secondary w-100" href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked" data-cta-label="Read all Google reviews" data-cta-location="reviews_column">
+            <span>Read all Google reviews →</span>
+          </a>
+          <a class="btn btn-primary ss-btn w-100" data-hero-primary-cta href="#home-first-visit-builder" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="reviews_column">
+            <span>Reserve Your Free First Visit</span>
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Mobile Sticky Bottom CTA (Appears only after Hero CTA scrolls offscreen) -->
 <div class="ss-mobile-sticky-cta" id="mobile-sticky-first-visit" role="region" aria-label="First visit reservation shortcut">
-  <a class="btn btn-primary" data-hero-primary-cta href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="sticky_mobile">
+  <a class="btn btn-primary" data-hero-primary-cta href="#home-first-visit-builder" data-analytics-event="first_visit_cta_clicked" data-cta-label="Reserve Your Free First Visit" data-cta-location="sticky_mobile">
     <span>Reserve Your Free First Visit</span>
     <i class="bi bi-arrow-right" aria-hidden="true"></i>
   </a>
@@ -839,9 +923,10 @@
     }
 
     const bookingHref = `/free-bjj-intro-tannersville-ny?lane=${data.laneParam}#booking-flow`;
-    primaryCtas.forEach((cta) => {
-      cta.href = bookingHref;
-    });
+    const continueBtn = document.getElementById('builder-continue-btn');
+    if (continueBtn) {
+      continueBtn.href = bookingHref;
+    }
 
     // Sync hidden radio for test/contract compatibility
     const radio = document.querySelector(`input[name="profile_choice"][value="${audience}"]`);
@@ -978,7 +1063,6 @@
 </div>
 </section>
 
-<!--#include virtual="/partials/reviews-village.html" -->
 <section aria-labelledby="ss-home-double-win-title" class="ss-home-section ss-reveal py-5">
 <div class="container">
 <div class="row g-4 align-items-stretch">
@@ -1160,14 +1244,17 @@
 </script>
 <script>
   (function routeHomepageBookingCtas() {
-    if (window.location.pathname !== '/') return;
+    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
     document.addEventListener('click', (event) => {
-      const link = event.target.closest('a[href*="free-bjj-intro-tannersville-ny"]');
+      const link = event.target.closest('a[href="#home-first-visit-builder"], a[href*="free-bjj-intro-tannersville-ny"]');
+      if (!link) return;
+      if (link.id === 'builder-continue-btn' || link.hasAttribute('data-calendar-external')) return;
       const builder = document.getElementById('home-first-visit-builder');
-      if (!link || !builder) return;
+      if (!builder) return;
       event.preventDefault();
       builder.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      builder.querySelector('input[name="profile_choice"]')?.focus({ preventScroll: true });
+      const activeChoice = builder.querySelector('.ss-audience-card[aria-pressed="true"]') || builder.querySelector('.ss-audience-card');
+      if (activeChoice) activeChoice.focus({ preventScroll: true });
     });
   })();
 </script>

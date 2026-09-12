@@ -208,7 +208,6 @@ permalink: "/index.html"
 </div>
 </section>
 {% endif %}
-<!--#include virtual="/partials/reviews-village.html" -->
 <section aria-labelledby="ss-home-double-win-title" class="ss-home-section ss-reveal py-5">
 <div class="container">
 <div class="row g-4 align-items-stretch">
@@ -390,14 +389,17 @@ permalink: "/index.html"
 </script>
 <script>
   (function routeHomepageBookingCtas() {
-    if (window.location.pathname !== '/') return;
+    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
     document.addEventListener('click', (event) => {
-      const link = event.target.closest('a[href*="free-bjj-intro-tannersville-ny"]');
+      const link = event.target.closest('a[href="#home-first-visit-builder"], a[href*="free-bjj-intro-tannersville-ny"]');
+      if (!link) return;
+      if (link.id === 'builder-continue-btn' || link.hasAttribute('data-calendar-external')) return;
       const builder = document.getElementById('home-first-visit-builder');
-      if (!link || !builder) return;
+      if (!builder) return;
       event.preventDefault();
       builder.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      builder.querySelector('input[name="profile_choice"]')?.focus({ preventScroll: true });
+      const activeChoice = builder.querySelector('.ss-audience-card[aria-pressed="true"]') || builder.querySelector('.ss-audience-card');
+      if (activeChoice) activeChoice.focus({ preventScroll: true });
     });
   })();
 </script>
