@@ -9,7 +9,7 @@ const DESKTOP_VIEWPORT = { width: 1366, height: 900 };
 const MOBILE_VIEWPORT = { width: 390, height: 900 };
 const pages = [
   { label: 'home', relPath: 'index.html' },
-  { label: 'schedule', relPath: 'schedule.html' },
+  { label: 'schedule', relPath: 'schedule/index.html' },
   { label: 'glossary', relPath: 'bjj-glossary/index.html' },
   { label: 'adults', relPath: 'bjj-classes/adults-tannersville-ny/index.html' },
   { label: 'sensei-studio', relPath: 'sensei-studio.html' },
@@ -158,6 +158,12 @@ const navProbe = `
     }
 
     async function runNavProbe() {
+      var toggler = document.querySelector('.ss-menu-button');
+      var panel = document.querySelector('#ssMainNav');
+      var initiallyClosed = panel && getComputedStyle(panel).display === 'none';
+      var togglerVisible = toggler && toggler.getClientRects().length > 0;
+      if (toggler) { toggler.click(); await wait(420); }
+
       var dropdownButton = document.querySelector('#programsDropdownToggle');
       var dropdownMenu = document.querySelector('#programsDropdownMenu');
       var beforeOpen = dropdownSnapshot(dropdownButton, dropdownMenu);
@@ -169,6 +175,9 @@ const navProbe = `
 
       var afterOpen = dropdownSnapshot(dropdownButton, dropdownMenu);
       var payload = {
+        initiallyClosed: initiallyClosed,
+        togglerVisible: togglerVisible,
+        panelOpened: panel && getComputedStyle(panel).display !== 'none',
         topLevelItems: visibleText('#ssMainNav > .navbar-nav > .nav-item > .nav-link, #ssMainNav > .navbar-nav > .nav-item > button.nav-link'),
         topbarSeparatorVisibleText: visibleText('.ss-topbar-dot'),
         topbarText: visibleText('.ss-topbar-inner *'),
@@ -353,6 +362,9 @@ const extractMobileResult = (html) => {
 };
 
 const assertDesktop = (snapshot, label) => {
+  ensure(snapshot.initiallyClosed, `${label}: desktop menu must start collapsed.`);
+  ensure(snapshot.togglerVisible, `${label}: hamburger must be visible.`);
+  ensure(snapshot.panelOpened, `${label}: hamburger must open the desktop menu.`);
   ensure(
     JSON.stringify(snapshot.topLevelItems) === JSON.stringify(expectedDesktopTopLevelItems),
     `${label}: desktop top-level nav order changed unexpectedly (${JSON.stringify(snapshot.topLevelItems)}).`

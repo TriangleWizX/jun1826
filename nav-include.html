@@ -25,8 +25,9 @@
       </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg ss-navbar" aria-label="Main navigation">
+    <nav class="navbar ss-navbar" aria-label="Main navigation">
       <div class="container">
+        <!-- Brand: always left -->
         <a class="navbar-brand ss-brand" href="/" aria-label="Sensei Sandy BJJ homepage">
 <img class="ss-brand-mark" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" alt="Sensei Sandy BJJ" width="44" height="44" decoding="async">
           <span class="ss-brand-copy">
@@ -35,34 +36,39 @@
           </span>
         </a>
 
-        <div class="ss-nav-trust d-none d-xl-flex align-items-center"
-             aria-label="Student experience reviews"
-             aria-live="polite"
-             aria-atomic="true"
-             data-review-rotator>
-          <span class="ss-nav-trust__stars" aria-hidden="true">★★★★★</span>
-          <div class="ss-nav-trust__text">
-            <span class="ss-nav-trust__quote" id="ss-review-quote">"As a smaller grappler, I felt safe and welcomed."</span>
-            <span class="ss-nav-trust__author" id="ss-review-author">Kelly Chan · <a href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11xlzb657l?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked">Google reviews →</a></span>
-          </div>
-        </div>
-
-        <!-- Mobile-only CTA: replaces the text "Menu" slot on row 1 right -->
-        <a class="ss-nav-cta ss-nav-cta--mobile d-flex d-lg-none align-items-center"
-           href="/free-bjj-intro-tannersville-ny#booking-flow"
-           data-cta-placement="header" data-cta-src="site-header-mobile" data-cta-tier="primary"
-           data-analytics-event="reserve_intro_clicked">
-          <span>Reserve Free Intro</span>
-          <span class="ss-nav-cta__icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-        </a>
-
-        <!-- Hamburger: row 2 on mobile, hidden on desktop via navbar-expand-lg -->
+        <!-- Hamburger: always visible on all viewports, immediately after brand -->
         <button class="navbar-toggler ss-menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#ssMainNav"
           aria-controls="ssMainNav" aria-expanded="false" aria-label="Open menu">
-          <i class="bi bi-list ss-hamburger-icon" aria-hidden="true"></i>
+          <svg class="ss-hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>
           <span class="visually-hidden">Menu</span>
         </button>
 
+        <!-- Nav actions: review ticker + CTA — always right, hamburger swapped to left -->
+        <div class="ss-nav-actions">
+          <!-- Review ticker: shown on lg+ -->
+          <div class="ss-nav-trust d-none d-lg-flex align-items-center"
+               aria-label="Student experience reviews"
+               aria-live="polite"
+               aria-atomic="true"
+               data-review-rotator>
+            <span class="ss-nav-trust__stars" aria-hidden="true">★★★★★</span>
+            <div class="ss-nav-trust__text">
+              <span class="ss-nav-trust__quote" id="ss-review-quote">"As a smaller grappler, I felt safe and welcomed."</span>
+              <span class="ss-nav-trust__author" id="ss-review-author">Kelly Chan · <a href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11xlzb657l?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked">Google reviews →</a></span>
+            </div>
+          </div>
+          <!-- CTA: always visible on all viewports -->
+          <a class="ss-nav-cta ss-nav-cta--persistent"
+             href="/#home-first-visit-builder"
+             data-cta-placement="header" data-cta-src="site-header" data-cta-tier="primary"
+             data-analytics-event="reserve_intro_clicked">
+            <span class="ss-nav-cta__full">Reserve Your Free First Visit</span>
+            <span class="ss-nav-cta__short">Reserve Free Intro</span>
+            <span class="ss-nav-cta__icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+          </a>
+        </div>
+
+        <!-- Collapsible nav — always starts collapsed, hamburger opens it at all widths -->
         <div id="ssMainNav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item dropdown">
@@ -96,13 +102,6 @@
 
             <li class="nav-item">
               <a class="nav-link" href="/parent-resources">Parent Hub</a>
-            </li>
-
-            <li class="nav-item d-none d-lg-flex">
-              <a class="ss-nav-cta" href="/free-bjj-intro-tannersville-ny#booking-flow">
-                <span>Reserve Your Free First Visit</span>
-                <span class="ss-nav-cta__icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-              </a>
             </li>
           </ul>
         </div>
@@ -179,11 +178,12 @@
       button.dataset.ssMobileNavReady = 'true';
 
       document.addEventListener('click', function (event) {
-        if (!window.matchMedia('(max-width: 991.98px)').matches) return;
         if (!event.target.closest('.ss-menu-button')) return;
         event.preventDefault();
         event.stopImmediatePropagation();
         const open = nav.classList.toggle('show');
+        nav.removeAttribute('inert');
+        document.querySelector('.ss-site-header')?.classList.toggle('nav-open', open);
         button.setAttribute('aria-expanded', String(open));
         button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       }, true);
@@ -425,18 +425,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   if (myCollapsible && siteHeader) {
-    const lgQuery = window.matchMedia('(min-width: 992px)');
-    const handleResize = (e) => {
-      if (e.matches) myCollapsible.classList.remove('show', 'collapsing');
-    };
-
-    // Fallback for older Safari
-    if (lgQuery.addEventListener) {
-      lgQuery.addEventListener('change', handleResize);
-    } else if (lgQuery.addListener) {
-      lgQuery.addListener(handleResize);
-    }
-    handleResize(lgQuery);
 
     myCollapsible.addEventListener('show.bs.collapse', function () {
       siteHeader.classList.add('nav-open');
@@ -456,14 +444,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (toggler) toggler.focus();
     });
 
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && myCollapsible.classList.contains('show')) {
-        if (window.bootstrap && window.bootstrap.Collapse) {
-          const bsCollapse = window.bootstrap.Collapse.getInstance(myCollapsible) || new window.bootstrap.Collapse(myCollapsible, { toggle: false });
-          bsCollapse.hide();
-        }
-      }
-    });
+
   }
 });
 </script>
@@ -474,10 +455,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.ss-menu-button');
     if (!nav || !button) return;
 
-    const mobile = () => window.matchMedia('(max-width: 991.98px)').matches;
-    const close = () => {
+      const close = () => {
       nav.classList.remove('show', 'collapsing');
       button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', 'Open menu');
+    document.querySelector('.ss-site-header')?.classList.remove('nav-open');
     };
 
     button.addEventListener('click', (event) => {
@@ -489,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     nav.addEventListener('click', (event) => {
       const toggle = event.target.closest('.dropdown-toggle');
-      if (mobile() && toggle && !(window.bootstrap && window.bootstrap.Dropdown)) {
+      if (toggle && !(window.bootstrap && window.bootstrap.Dropdown)) {
         event.preventDefault();
         const dropdown = toggle.closest('.dropdown');
         const menu = dropdown && dropdown.querySelector('.dropdown-menu');
@@ -507,11 +489,11 @@ document.addEventListener('DOMContentLoaded', function() {
         toggle.setAttribute('aria-expanded', String(open));
         return;
       }
-      if (mobile() && event.target.closest('a')) close();
+      if (event.target.closest('a')) close();
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') close();
+      if (event.key === 'Escape' && nav.classList.contains('show')) { close(); button.focus(); }
     });
 
     window.addEventListener('resize', () => {
@@ -634,91 +616,110 @@ document.addEventListener('DOMContentLoaded', function() {
 .ss-nav-trust__author a:hover {
   text-decoration: underline;
 }
-@media (max-width: 1199.98px) {
-  .ss-nav-trust { display: none !important; }
-}
-
 /* =========================================================
-   MOBILE 2-ROW NAVBAR LAYOUT
-   Row 1: Brand (left)  +  CTA button (right)
-   Row 2: Hamburger icon (full width, tap target)
+   ALWAYS-HAMBURGER NAV LAYOUT
+   Works identically at every viewport width.
+   Brand (left) | ☰ Hamburger | [Review ticker] [CTA] (right)
    ========================================================= */
-@media (max-width: 991.98px) {
-  .ss-navbar .container {
-    flex-wrap: wrap;
-    align-items: center;
-    row-gap: 0;
-    padding-bottom: 0;
-  }
 
-  /* Brand fills row 1 left */
-  .ss-navbar .ss-brand {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
+/* Catskills Studio masthead: mobile brand row, then menu and booking action.
+   ID-scoped rules must beat legacy route bundles that force desktop expansion. */
+body .ss-global-nav-wrapper .ss-navbar > .container {
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  grid-template-areas: "brand brand" "toggle actions" "menu menu" !important;
+  align-items: center;
+  gap: .5rem .75rem;
+  padding-block: .6rem;
+}
+body .ss-global-nav-wrapper .ss-brand {
+  grid-area: brand;
+  justify-self: start;
+  min-width: 0;
+  max-width: 15rem;
+  margin: 0;
+}
+body .ss-global-nav-wrapper .ss-brand-copy { text-align: left; align-items: flex-start; }
+body .ss-global-nav-wrapper .ss-brand-mark { width: 44px; height: 44px; }
+body .ss-global-nav-wrapper .ss-menu-button {
+  grid-area: toggle;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  width: auto;
+  padding: .5rem;
+}
+/* Bootstrap Icons list glyph is inline so the menu survives icon-font failure. */
+.ss-hamburger-icon { display: block; width: 24px; height: 24px; flex: none; }
+.ss-menu-button .visually-hidden {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important; overflow: hidden !important;
+  clip-path: inset(50%) !important; white-space: nowrap !important; border: 0 !important;
+}
+.ss-nav-actions .ss-nav-trust { display: none !important; }
+.ss-nav-actions .ss-nav-cta { flex-shrink: 0; min-height: 44px !important; }
 
-  /* Mobile CTA sits on row 1 right (order keeps it after brand) */
-  .ss-nav-cta--mobile {
-    order: 1;
-    flex-shrink: 0;
-    font-size: 0.82rem;
-    padding: 0.45rem 0.85rem;
-    gap: 0.3rem;
+.ss-nav-actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  gap: .75rem;
+}
+.ss-nav-cta__full { display: none; }
+.ss-nav-cta__short { display: inline; }
+body .ss-global-nav-wrapper #ssMainNav {
+  grid-area: menu;
+  display: none !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+}
+body .ss-global-nav-wrapper #ssMainNav.show,
+body .ss-global-nav-wrapper #ssMainNav.collapsing {
+  display: block !important;
+  border-top: 1px solid var(--color-rule-2);
+}
+body .ss-global-nav-wrapper #ssMainNav > .navbar-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  width: 100%;
+  margin: 0 !important;
+  padding-block: .5rem;
+}
+body .ss-global-nav-wrapper #ssMainNav .dropdown-menu {
+  position: static !important;
+  transform: none !important;
+  width: 100%;
+}
+body .ss-global-nav-wrapper #ssMainNav .nav-link { min-height: 44px; }
+@media (min-width: 992px) {
+  body .ss-global-nav-wrapper .ss-navbar > .container {
+    grid-template-columns: auto auto minmax(0, 1fr) !important;
+    grid-template-areas: "brand toggle actions" "menu menu menu" !important;
   }
-  .ss-nav-cta--mobile .ss-nav-cta__icon {
-    font-size: 0.75rem;
+  body .ss-global-nav-wrapper .ss-brand-main { font-size: 1.3rem !important; }
+  body .ss-global-nav-wrapper .ss-brand-sub {
+    max-width: 15rem; white-space: normal; font-size: .75rem !important;
+    line-height: 1.3 !important; letter-spacing: normal !important;
   }
-
-  /* Hamburger: full-width row 2 */
-  .ss-navbar .ss-menu-button {
-    order: 2;
-    width: 100%;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-    border-radius: 0;
-    background: transparent;
-    padding: 0.6rem 0;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ss-muted, #4f433c);
-    min-height: 44px;
-    cursor: pointer;
-  }
-  .ss-navbar .ss-menu-button:hover,
-  .ss-navbar .ss-menu-button:focus-visible {
-    color: var(--ss-green, #116a42);
-    background: transparent;
-    outline: 2px solid var(--ss-green, #116a42);
-    outline-offset: -2px;
-  }
-  .ss-navbar .ss-menu-button[aria-expanded="true"] {
-    color: var(--ss-green, #116a42);
-  }
-  .ss-hamburger-icon {
-    font-size: 1.35rem;
-    line-height: 1;
-  }
-
-  /* Expanded nav: row 3, full width */
-  #ssMainNav {
-    order: 3;
-    width: 100%;
-  }
+  .ss-nav-actions .ss-nav-trust { display: flex !important; position: static !important; transform: none !important; flex: 0 1 18rem; min-width: 0; max-width: 18rem; margin: 0 !important; padding-inline: .75rem; }
+}
+@media (min-width: 1200px) {
+  .ss-nav-cta__full { display: inline; }
+  .ss-nav-cta__short { display: none; }
 }
 
 /* =========================================================
    REVIEW ROTATOR — fade transition
    ========================================================= */
 .ss-nav-trust__text {
+  min-width: 0;
   position: relative;
 }
 .ss-nav-trust__quote,

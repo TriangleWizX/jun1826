@@ -6,8 +6,10 @@ const home = fs.readFileSync(path.join(process.cwd(), "src/partials/home-convers
 const rendered = fs.readFileSync(path.join(process.cwd(), "dist/index.html"), "utf8");
 
 for (const surface of [home, rendered]) {
-  assert.match(surface, /Tannersville, NY · Kids · Teens · Adults/i);
-  assert.match(surface, /Small-group Jiu-Jitsu for kids, teens and adults\./i);
+  assert.match(surface, /Jiu-jitsu for kids, teens, and adults in Tannersville/i);
+  assert.doesNotMatch(surface, />START CALM\. TRAIN SMART\. · Tannersville/);
+  assert.doesNotMatch(surface, /Build confidence that holds up when things get hard/);
+  assert.doesNotMatch(surface, /Small-group Jiu-Jitsu for kids, teens and adults\./i);
   assert.match(surface, /Good partners, real problems to solve, and coaching that meets you where you are\./i);
 }
 assert.match(home, /value="child"/);
