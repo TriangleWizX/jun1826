@@ -66,6 +66,30 @@
     const isHomepage = typeof window !== 'undefined' && window.location && (window.location.pathname === '/' || window.location.pathname === '/index.html');
     const defaultCtaUrl = isHomepage ? '#home-first-visit-builder' : '/free-bjj-intro-tannersville-ny#booking-flow';
 
+    // Day-specific requested date formatting
+    if (data.requestedDate && typeof data.requestedDateSpots === 'number') {
+      const dayLabel = data.requestedDateLabel || data.requestedDate;
+      if (data.requestedDateSpots === 0) {
+        return {
+          text: `${dayLabel} is full · Check other days this week`,
+          detail: `${dayLabel} is full`,
+          badge: 'Full',
+          status: 'full',
+          ctaText: 'See Available Days →',
+          ctaUrl: defaultCtaUrl
+        };
+      }
+      const spotWord = data.requestedDateSpots === 1 ? 'spot' : 'spots';
+      return {
+        text: `Only ${data.requestedDateSpots} ${spotWord} left on ${dayLabel} · Reserve your first visit`,
+        detail: `${data.requestedDateSpots} ${spotWord} left ${dayLabel}`,
+        badge: `${data.requestedDateSpots} Left`,
+        status: data.requestedDateSpots <= 2 ? 'low' : 'available',
+        ctaText: 'Reserve Your Free First Visit →',
+        ctaUrl: defaultCtaUrl
+      };
+    }
+
     // Fallback when Cal API is unavailable or count not yet determined
     if (data.status === 'unavailable' || count === null) {
       return {
@@ -94,12 +118,16 @@
       };
     }
 
+    // Adaptively incorporate spots left each day
+    const dailySegment = data.spotsPerDayLabel ? ` · ${data.spotsPerDayLabel}` : '';
+    const dailyBadge = data.spotsPerDayRange ? `${data.spotsPerDayRange}/day` : null;
+
     // 13+ slots: Generic positive availability, DO NOT show "38 spots left"
     if (count >= 13) {
       return {
-        text: `First visits available ${timeframeLabel}${nextOpening}`,
-        detail: data.nextAvailableLabel ? `Next opening: ${data.nextAvailableLabel}` : 'Spots available',
-        badge: 'Open',
+        text: `First visits available ${timeframeLabel}${dailySegment}${nextOpening}`,
+        detail: data.spotsPerDayLabel || (data.nextAvailableLabel ? `Next opening: ${data.nextAvailableLabel}` : 'Spots available'),
+        badge: dailyBadge || 'Open',
         status: 'available',
         ctaText: 'Reserve Your Free First Visit →',
         ctaUrl: defaultCtaUrl
@@ -109,9 +137,9 @@
     // 7-12 slots: Truthful exact count
     if (count >= 7) {
       return {
-        text: `${count} first visits available ${timeframeLabel}${nextOpening}`,
-        detail: `${count} openings ${timeframeLabel}`,
-        badge: `${count} Left`,
+        text: `${count} first visits available ${timeframeLabel}${dailySegment}${nextOpening}`,
+        detail: data.spotsPerDayLabel || `${count} openings ${timeframeLabel}`,
+        badge: dailyBadge || `${count} Left`,
         status: 'available',
         ctaText: 'Reserve Your Free First Visit →',
         ctaUrl: defaultCtaUrl
@@ -121,20 +149,32 @@
     // 3-6 slots: Truthful scarcity
     if (count >= 3) {
       return {
-        text: `Only ${count} first visits left ${timeframeLabel}${nextOpening}`,
-        detail: `Only ${count} left ${timeframeLabel}`,
-        badge: `Only ${count} Left`,
+        text: `Only ${count} first visits left ${timeframeLabel}${dailySegment}${nextOpening}`,
+        detail: data.spotsPerDayLabel ? `Only ${count} left · ${data.spotsPerDayLabel}` : `Only ${count} left ${timeframeLabel}`,
+        badge: dailyBadge || `Only ${count} Left`,
         status: 'low',
         ctaText: 'Reserve Your Free First Visit →',
         ctaUrl: defaultCtaUrl
       };
     }
 
-    // 1-2 slots: High scarcity
+    // 2 slots
+    if (count === 2) {
+      return {
+        text: `Only 2 first visits left ${timeframeLabel}${dailySegment}${nextOpening}`,
+        detail: data.spotsPerDayLabel ? `Only 2 left · ${data.spotsPerDayLabel}` : `Only 2 left ${timeframeLabel}`,
+        badge: dailyBadge || 'Only 2 Left',
+        status: 'low',
+        ctaText: 'Reserve Your Free First Visit →',
+        ctaUrl: defaultCtaUrl
+      };
+    }
+
+    // 1 slot: High scarcity
     return {
-      text: `Only ${count} first visit left ${timeframeLabel}${nextOpening}`,
-      detail: `Only ${count} left ${timeframeLabel}`,
-      badge: `Only ${count} Left`,
+      text: `Only 1 first visit left ${timeframeLabel}${nextOpening}`,
+      detail: `Only 1 left ${timeframeLabel}`,
+      badge: 'Only 1 Left',
       status: 'low',
       ctaText: 'Reserve Your Free First Visit →',
       ctaUrl: defaultCtaUrl
@@ -171,10 +211,23 @@
       }
     });
 
+    document.querySelectorAll('[data-availability-daily]').forEach((container) => {
+      if (rawData && Array.isArray(rawData.dailyAvailability) && rawData.dailyAvailability.length > 0) {
+        container.innerHTML = rawData.dailyAvailability.map((d) =>
+          `<span class="ss-day-pill" data-date="${d.date}" data-spots="${d.spotsCount}">${d.dayShort}: ${d.spotsLeftLabel}</span>`
+        ).join(' ');
+        container.hidden = false;
+      } else {
+        container.hidden = true;
+      }
+    });
+
     if (rawData && rawData.status === 'available') {
       trackEvent('first_visit_availability_loaded', {
         available_slot_count: rawData.availableSlotCount,
         availability_level: rawData.availabilityLevel,
+        spots_per_day_range: rawData.spotsPerDayRange || 'unknown',
+        days_with_slots: rawData.daysWithSlots || 0,
         month: rawData.month,
         days_remaining: rawData.daysRemaining
       });
@@ -252,9 +305,30 @@
     initAvailability();
   }
 
+  const fetchAvailability = (dateParam) => {
+    const url = dateParam
+      ? `/api/first-visit-availability?date=${encodeURIComponent(dateParam)}`
+      : '/api/first-visit-availability';
+    return fetch(url, { headers: { 'Accept': 'application/json' } })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      });
+  };
+
   window.SenseiAvailability = {
     getNYDateInfo,
     formatScarcityCopy,
-    initAvailability
+    initAvailability,
+    fetchAvailability,
+    getDailyAvailability: () => {
+      const cached = getCachedData();
+      return (cached && Array.isArray(cached.dailyAvailability)) ? cached.dailyAvailability : [];
+    },
+    getSpotsForDate: (dateStr) => {
+      const cached = getCachedData();
+      if (!cached || !cached.slotsByDate) return null;
+      return typeof cached.slotsByDate[dateStr] === 'number' ? cached.slotsByDate[dateStr] : 0;
+    }
   };
 })();

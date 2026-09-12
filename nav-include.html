@@ -35,11 +35,15 @@
           </span>
         </a>
 
-        <div class="ss-nav-trust d-none d-xl-flex align-items-center" aria-label="Student experience review">
+        <div class="ss-nav-trust d-none d-xl-flex align-items-center"
+             aria-label="Student experience reviews"
+             aria-live="polite"
+             aria-atomic="true"
+             data-review-rotator>
           <span class="ss-nav-trust__stars" aria-hidden="true">★★★★★</span>
           <div class="ss-nav-trust__text">
-            <span class="ss-nav-trust__quote">“As a smaller grappler, I felt safe and welcomed.”</span>
-            <span class="ss-nav-trust__author">Kelly Chan · <a href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked">Google reviews →</a></span>
+            <span class="ss-nav-trust__quote" id="ss-review-quote">"As a smaller grappler, I felt safe and welcomed."</span>
+            <span class="ss-nav-trust__author" id="ss-review-author">Kelly Chan · <a href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11xlzb657l?entry=ttu" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked">Google reviews →</a></span>
           </div>
         </div>
 
@@ -710,8 +714,122 @@ document.addEventListener('DOMContentLoaded', function() {
     width: 100%;
   }
 }
+
+/* =========================================================
+   REVIEW ROTATOR — fade transition
+   ========================================================= */
+.ss-nav-trust__text {
+  position: relative;
+}
+.ss-nav-trust__quote,
+.ss-nav-trust__author {
+  transition: opacity 350ms ease;
+}
+.ss-nav-trust--fading .ss-nav-trust__quote,
+.ss-nav-trust--fading .ss-nav-trust__author {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ss-nav-trust__quote,
+  .ss-nav-trust__author {
+    transition: none !important;
+  }
+}
 </style>
 <script src="/js/first-visit-availability.js" defer></script>
+
+<script>
+/* =========================================================
+   REVIEW ROTATOR
+   Cycles 10 captured Google reviews every 7 seconds.
+   No external API required — reviews captured from:
+   https://www.google.com/maps/place/Sensei+Sandy+BJJ/
+   ========================================================= */
+(function initReviewRotator() {
+  var REVIEWS_URL = 'https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11xlzb657l?entry=ttu';
+  var INTERVAL_MS = 7000;
+  var FADE_MS = 350;
+
+  var reviews = [
+    { quote: '\u201cAs a smaller grappler, I felt safe and welcomed.\u201d', author: 'Kelly Chan' },
+    { quote: '\u201cI started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.\u201d', author: 'Richard Scarponi' },
+    { quote: '\u201cClass at Sensei Sandy BJJ has become such a large part of my family\u2019s routine.\u201d', author: 'Jessie Moriarty' },
+    { quote: '\u201cI\u2019ve rarely encountered an instructor as caring, chill, beginner-friendly, optimistic, and good at explaining the fundamentals of jiu-jitsu as Sensei Sandy.\u201d', author: 'Douglas Hopson' },
+    { quote: '\u201cSandy makes you feel comfortable getting on the mats if it\u2019s your first time or even if you are a seasoned practitioner.\u201d', author: 'Tess Robinson' },
+    { quote: '\u201cI have 2 kids in the class twice a week. They entered the class with no experience and now look forward to going after school.\u201d', author: 'Jared Goodrich' },
+    { quote: '\u201cA welcoming community with no big egos. That\u2019s rare in any martial art.\u201d', author: 'Adam Mastropaolo' },
+    { quote: '\u201cHe promotes a relaxed and calm atmosphere while delivering high level Jiu Jitsu that is digestible for both beginners and advanced practitioners alike.\u201d', author: 'Adam Duthie' },
+    { quote: '\u201cI have been doing BJJ since the 1990s and can\u2019t think of a safer, more ethical or skilled academy.\u201d', author: 'Phillip Johansen' },
+    { quote: '\u201cMy 8yr old loves the classes. Since starting, his focus at home and school has drastically improved.\u201d', author: 'Caroline Cosgrove' }
+  ];
+
+  var currentIndex = 0;
+  var timerId = null;
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function getElements() {
+    return {
+      wrapper: document.querySelector('[data-review-rotator]'),
+      quote: document.getElementById('ss-review-quote'),
+      author: document.getElementById('ss-review-author')
+    };
+  }
+
+  function buildAuthorHTML(name) {
+    return name + ' \u00b7 <a href="' + REVIEWS_URL + '" target="_blank" rel="noopener" data-analytics-event="google_reviews_clicked">Google reviews \u2192</a>';
+  }
+
+  function showReview(idx) {
+    var els = getElements();
+    if (!els.wrapper || !els.quote || !els.author) return;
+
+    var review = reviews[idx % reviews.length];
+
+    if (prefersReducedMotion) {
+      els.quote.textContent = review.quote;
+      els.author.innerHTML = buildAuthorHTML(review.author);
+      return;
+    }
+
+    // Fade out
+    els.wrapper.classList.add('ss-nav-trust--fading');
+
+    setTimeout(function () {
+      els.quote.textContent = review.quote;
+      els.author.innerHTML = buildAuthorHTML(review.author);
+      // Fade in
+      els.wrapper.classList.remove('ss-nav-trust--fading');
+    }, FADE_MS);
+  }
+
+  function advance() {
+    currentIndex = (currentIndex + 1) % reviews.length;
+    showReview(currentIndex);
+  }
+
+  function start() {
+    var els = getElements();
+    if (!els.wrapper || !els.quote || !els.author) return;
+
+    // Pause rotation when tab is hidden to avoid stale animations
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        clearInterval(timerId);
+      } else {
+        timerId = setInterval(advance, INTERVAL_MS);
+      }
+    });
+
+    timerId = setInterval(advance, INTERVAL_MS);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+})();
+</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

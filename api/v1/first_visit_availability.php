@@ -49,8 +49,13 @@ $nowTs = $now->getTimestamp();
 $endTs = $endDateObj->setTime(23, 59, 59)->getTimestamp();
 $windowDays = (int)$startDateObj->diff($endDateObj)->format('%a') + 1;
 
+$reqDate = ss_clean_string((string)($_GET['date'] ?? ''), 10);
+if ($reqDate !== '' && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $reqDate)) {
+    $reqDate = '';
+}
+
 $db = ss_db();
-$cacheKey = "avail:week:{$todayYmd}";
+$cacheKey = "avail:week:{$todayYmd}" . ($reqDate !== '' ? ":d:{$reqDate}" : '');
 $currentTime = time();
 
 $stmt = $db->prepare('SELECT payload_json, expires_at FROM first_visit_availability_cache WHERE cache_key = :key LIMIT 1');
@@ -174,6 +179,15 @@ if ($apiKey !== '') {
                 $nextAvailableAt = null;
                 $nextAvailableLabel = null;
                 $timeframeLabel = ($dayOfWeek === 7) ? 'this coming week' : 'this week';
+                $spotsPerDayRange = '0';
+                $spotsPerDayLabel = 'This week is full';
+                $daysWithSlots = 0;
+                $nextAvailableDaySpots = null;
+                $nextAvailableDayLabel = null;
+                $todaySpots = 0;
+                $tomorrowSpots = 0;
+                $dailyAvailability = [];
+                $slotsByDate = [];
             } else {
                 $status = 'available';
                 $firstTs = $sortedTimestamps[0];
@@ -204,6 +218,68 @@ if ($apiKey !== '') {
                 } else {
                     $availabilityLevel = 'high';
                 }
+
+                // Group timestamps by day in America/New_York
+                $slotsByDate = [];
+                foreach ($sortedTimestamps as $ts) {
+                    $slotDate = (new DateTimeImmutable('@' . $ts))->setTimezone($tz)->format('Y-m-d');
+                    if (!isset($slotsByDate[$slotDate])) {
+                        $slotsByDate[$slotDate] = [];
+                    }
+                    $slotsByDate[$slotDate][] = $ts;
+                }
+                ksort($slotsByDate);
+
+                $dailyAvailability = [];
+                $dailyCounts = [];
+                $todayDate = $now->format('Y-m-d');
+                $tomorrowDate = $now->modify('+1 day')->format('Y-m-d');
+                $todaySpots = 0;
+                $tomorrowSpots = 0;
+
+                foreach ($slotsByDate as $ymd => $tsList) {
+                    $countForDay = count($tsList);
+                    $dailyCounts[] = $countForDay;
+                    $dayDt = new DateTimeImmutable($ymd . ' 12:00:00', $tz);
+                    $dayOfWeekNum = (int)$dayDt->format('N');
+                    $dayName = $dayDt->format('l');
+                    $dayShort = $dayDt->format('D');
+                    $dayLabel = $dayDt->format('D, M j');
+
+                    if ($ymd === $todayDate) {
+                        $todaySpots = $countForDay;
+                    }
+                    if ($ymd === $tomorrowDate) {
+                        $tomorrowSpots = $countForDay;
+                    }
+
+                    $dailyAvailability[] = [
+                        'date' => $ymd,
+                        'dayOfWeek' => $dayOfWeekNum,
+                        'dayName' => $dayName,
+                        'dayShort' => $dayShort,
+                        'dayLabel' => $dayLabel,
+                        'spotsCount' => $countForDay,
+                        'spotsLeftLabel' => ($countForDay === 1) ? '1 spot left' : "{$countForDay} spots left",
+                        'status' => ($countForDay <= 2) ? 'low' : 'available',
+                    ];
+                }
+
+                $daysWithSlots = count($dailyAvailability);
+                $minSpotsPerDay = $daysWithSlots > 0 ? min($dailyCounts) : 0;
+                $maxSpotsPerDay = $daysWithSlots > 0 ? max($dailyCounts) : 0;
+
+                if ($minSpotsPerDay === $maxSpotsPerDay) {
+                    $spotsPerDayRange = (string)$minSpotsPerDay;
+                    $spotsPerDayLabel = ($minSpotsPerDay === 1)
+                        ? '1 spot left each day'
+                        : "{$minSpotsPerDay} spots left each day";
+                } else {
+                    $spotsPerDayRange = "{$minSpotsPerDay}–{$maxSpotsPerDay}";
+                    $spotsPerDayLabel = "{$minSpotsPerDay}–{$maxSpotsPerDay} spots left each day";
+                }
+                $nextAvailableDaySpots = $dailyAvailability[0]['spotsCount'];
+                $nextAvailableDayLabel = $dailyAvailability[0]['dayLabel'];
             }
 
             $result = [
@@ -222,8 +298,26 @@ if ($apiKey !== '') {
                 'nextAvailableAt' => $nextAvailableAt,
                 'nextAvailableLabel' => $nextAvailableLabel,
                 'availabilityLevel' => $availabilityLevel,
+                'spotsPerDayRange' => $spotsPerDayRange,
+                'spotsPerDayLabel' => $spotsPerDayLabel,
+                'daysWithSlots' => $daysWithSlots,
+                'nextAvailableDaySpots' => $nextAvailableDaySpots,
+                'nextAvailableDayLabel' => $nextAvailableDayLabel,
+                'todaySpots' => $todaySpots,
+                'tomorrowSpots' => $tomorrowSpots,
+                'dailyAvailability' => $dailyAvailability,
+                'slotsByDate' => array_map('count', $slotsByDate),
                 'generatedAt' => $now->format('c'),
             ];
+
+            if ($reqDate !== '') {
+                $reqSpots = isset($slotsByDate[$reqDate]) ? count($slotsByDate[$reqDate]) : 0;
+                $reqDt = @date_create_immutable_from_format('Y-m-d', $reqDate, $tz);
+                $result['requestedDate'] = $reqDate;
+                $result['requestedDateSpots'] = $reqSpots;
+                $result['requestedDateStatus'] = ($reqSpots === 0) ? 'full' : (($reqSpots <= 2) ? 'low' : 'available');
+                $result['requestedDateLabel'] = $reqDt ? $reqDt->format('D, M j') : $reqDate;
+            }
 
             // Cache successful lookup for 300 seconds (5 minutes)
             $expiresAt = $currentTime + 300;
@@ -262,9 +356,26 @@ $fallback = [
     'nextAvailableAt' => null,
     'nextAvailableLabel' => null,
     'availabilityLevel' => 'unknown',
+    'spotsPerDayRange' => null,
+    'spotsPerDayLabel' => null,
+    'daysWithSlots' => null,
+    'nextAvailableDaySpots' => null,
+    'nextAvailableDayLabel' => null,
+    'todaySpots' => null,
+    'tomorrowSpots' => null,
+    'dailyAvailability' => [],
+    'slotsByDate' => [],
     'message' => 'First visits available by appointment',
     'generatedAt' => $now->format('c'),
 ];
+
+if ($reqDate !== '') {
+    $reqDt = @date_create_immutable_from_format('Y-m-d', $reqDate, $tz);
+    $fallback['requestedDate'] = $reqDate;
+    $fallback['requestedDateSpots'] = null;
+    $fallback['requestedDateStatus'] = 'unknown';
+    $fallback['requestedDateLabel'] = $reqDt ? $reqDt->format('D, M j') : $reqDate;
+}
 
 // Cache fallback briefly (60s) to minimize duplicate external calls
 $expiresAt = $currentTime + 60;

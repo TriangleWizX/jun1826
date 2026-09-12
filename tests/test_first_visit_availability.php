@@ -4,6 +4,17 @@ declare(strict_types=1);
 require_once __DIR__ . '/../api/lib/bootstrap.php';
 
 function test_scarcity_copy(array $data): string {
+    // Day-specific requested date formatting
+    if (isset($data['requestedDate'], $data['requestedDateSpots'])) {
+        $dayLabel = $data['requestedDateLabel'] ?? $data['requestedDate'];
+        $daySpots = (int)$data['requestedDateSpots'];
+        if ($daySpots === 0) {
+            return "{$dayLabel} is full · Check other days this week";
+        }
+        $spotWord = ($daySpots === 1) ? 'spot' : 'spots';
+        return "Only {$daySpots} {$spotWord} left on {$dayLabel} · Reserve your first visit";
+    }
+
     $status = $data['status'] ?? 'unavailable';
     $timeframeLabel = $data['timeframeLabel'] ?? 'this week';
     $count = $data['availableSlotCount'] ?? null;
@@ -14,21 +25,28 @@ function test_scarcity_copy(array $data): string {
     }
 
     if ($status === 'full' || $count === 0) {
-        return "This week is full · Check next week’s availability";
+        return (str_contains($timeframeLabel, 'coming'))
+            ? "This coming week is full · Check next week’s availability"
+            : "This week is full · Check next week’s availability";
     }
 
+    $dailySegment = !empty($data['spotsPerDayLabel']) ? " · {$data['spotsPerDayLabel']}" : "";
     $nextSuffix = $next ? " · Next opening: {$next}" : "";
 
     if ($count >= 13) {
-        return "First visits available {$timeframeLabel}{$nextSuffix}";
+        return "First visits available {$timeframeLabel}{$dailySegment}{$nextSuffix}";
     }
 
     if ($count >= 7) {
-        return "{$count} first visits available {$timeframeLabel}{$nextSuffix}";
+        return "{$count} first visits available {$timeframeLabel}{$dailySegment}{$nextSuffix}";
     }
 
     if ($count >= 3) {
-        return "Only {$count} first visits left {$timeframeLabel}{$nextSuffix}";
+        return "Only {$count} first visits left {$timeframeLabel}{$dailySegment}{$nextSuffix}";
+    }
+
+    if ($count === 2) {
+        return "Only 2 first visits left {$timeframeLabel}{$dailySegment}{$nextSuffix}";
     }
 
     // 1-2 slots
@@ -122,7 +140,102 @@ $copyComing = test_scarcity_copy($comingWeekData);
 assert(str_contains($copyComing, '8 first visits available this coming week · Next opening: Mon, Sep 14'), 'Coming week copy should format cleanly');
 $asserts[] = 'Passed: Coming week framing';
 
-// Test 8: Monday-anchored date calculations across the week
+// Test 8: Daily adaptive copy with spotsPerDayLabel
+$dailyMed = [
+    'status' => 'available',
+    'timeframe' => 'week',
+    'timeframeLabel' => 'this week',
+    'availableSlotCount' => 9,
+    'spotsPerDayLabel' => '1–2 spots left each day',
+    'nextAvailableLabel' => 'Sat, Sep 12',
+];
+$copyDailyMed = test_scarcity_copy($dailyMed);
+assert(str_contains($copyDailyMed, '9 first visits available this week · 1–2 spots left each day · Next opening: Sat, Sep 12'), 'Medium inventory with spotsPerDayLabel');
+$asserts[] = 'Passed: Daily adaptive medium inventory copy';
+
+// Test 9: Daily adaptive copy for low inventory
+$dailyLow = [
+    'status' => 'available',
+    'timeframe' => 'week',
+    'timeframeLabel' => 'this week',
+    'availableSlotCount' => 4,
+    'spotsPerDayLabel' => '1 spot left each day',
+    'nextAvailableLabel' => 'Mon, Sep 14',
+];
+$copyDailyLow = test_scarcity_copy($dailyLow);
+assert(str_contains($copyDailyLow, 'Only 4 first visits left this week · 1 spot left each day · Next opening: Mon, Sep 14'), 'Low inventory with spotsPerDayLabel');
+$asserts[] = 'Passed: Daily adaptive low inventory copy';
+
+// Test 10: Requested specific date with spots left
+$reqDateAvail = [
+    'status' => 'available',
+    'requestedDate' => '2026-09-15',
+    'requestedDateSpots' => 2,
+    'requestedDateLabel' => 'Tue, Sep 15',
+];
+$copyReqDate = test_scarcity_copy($reqDateAvail);
+assert(str_contains($copyReqDate, 'Only 2 spots left on Tue, Sep 15 · Reserve your first visit'), 'Requested date with spots left');
+$asserts[] = 'Passed: Requested date adaptive copy';
+
+// Test 11: Requested specific date that is full
+$reqDateFull = [
+    'status' => 'full',
+    'requestedDate' => '2026-09-15',
+    'requestedDateSpots' => 0,
+    'requestedDateLabel' => 'Tue, Sep 15',
+];
+$copyReqFull = test_scarcity_copy($reqDateFull);
+assert(str_contains($copyReqFull, 'Tue, Sep 15 is full · Check other days this week'), 'Requested date full');
+$asserts[] = 'Passed: Requested date full copy';
+
+// Test 12: Daily grouping & parameter calculation logic
+$tz = new DateTimeZone('America/New_York');
+$mockTimestamps = [
+    strtotime('2026-09-14 17:00:00 EDT'),
+    strtotime('2026-09-14 18:00:00 EDT'),
+    strtotime('2026-09-15 18:00:00 EDT'),
+    strtotime('2026-09-16 18:00:00 EDT'),
+];
+$slotsByDateMock = [];
+foreach ($mockTimestamps as $ts) {
+    $slotDate = (new DateTimeImmutable('@' . $ts))->setTimezone($tz)->format('Y-m-d');
+    if (!isset($slotsByDateMock[$slotDate])) {
+        $slotsByDateMock[$slotDate] = [];
+    }
+    $slotsByDateMock[$slotDate][] = $ts;
+}
+ksort($slotsByDateMock);
+$dailyAvailMock = [];
+$dailyCountsMock = [];
+foreach ($slotsByDateMock as $ymd => $tsList) {
+    $countForDay = count($tsList);
+    $dailyCountsMock[] = $countForDay;
+    $dayDt = new DateTimeImmutable($ymd . ' 12:00:00', $tz);
+    $dailyAvailMock[] = [
+        'date' => $ymd,
+        'dayOfWeek' => (int)$dayDt->format('N'),
+        'dayName' => $dayDt->format('l'),
+        'dayShort' => $dayDt->format('D'),
+        'dayLabel' => $dayDt->format('D, M j'),
+        'spotsCount' => $countForDay,
+        'spotsLeftLabel' => ($countForDay === 1) ? '1 spot left' : "{$countForDay} spots left",
+    ];
+}
+$minSpots = min($dailyCountsMock);
+$maxSpots = max($dailyCountsMock);
+$spotsRange = "{$minSpots}–{$maxSpots}";
+$spotsLabel = "{$minSpots}–{$maxSpots} spots left each day";
+
+assert(count($dailyAvailMock) === 3, 'Should have 3 days with slots');
+assert($minSpots === 1, 'Min spots per day is 1');
+assert($maxSpots === 2, 'Max spots per day is 2');
+assert($spotsRange === '1–2', 'Spots per day range is 1–2');
+assert($spotsLabel === '1–2 spots left each day', 'Label is 1–2 spots left each day');
+assert($dailyAvailMock[0]['spotsCount'] === 2, 'Mon has 2 spots');
+assert($dailyAvailMock[1]['spotsCount'] === 1, 'Tue has 1 spot');
+$asserts[] = 'Passed: Daily grouping & adaptive parameter calculation';
+
+// Test 13: Monday-anchored date calculations across the week
 $tz = new DateTimeZone('America/New_York');
 
 // Helper to compute Monday-anchored window:

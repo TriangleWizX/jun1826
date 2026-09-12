@@ -169,4 +169,72 @@ assert.ok(dateInfo.dayOfWeek >= 1 && dateInfo.dayOfWeek <= 7, 'dayOfWeek between
 assert.ok(typeof dateInfo.timeframeLabel === 'string', 'timeframeLabel should be string');
 assert.ok(typeof dateInfo.daysRemaining === 'number', 'daysRemaining should be number');
 
+// 10. Medium inventory with daily adaptive parameters
+const dailyMed = api.formatScarcityCopy({
+  status: 'available',
+  timeframe: 'week',
+  timeframeLabel: 'this week',
+  availableSlotCount: 8,
+  spotsPerDayLabel: '1–2 spots left each day',
+  spotsPerDayRange: '1–2',
+  nextAvailableLabel: 'Mon, Sep 14'
+});
+assert.match(dailyMed.text, /8 first visits available this week · 1–2 spots left each day · Next opening: Mon, Sep 14/);
+assert.equal(dailyMed.badge, '1–2/day');
+assert.equal(dailyMed.detail, '1–2 spots left each day');
+
+// 11. Low inventory with daily adaptive parameters
+const dailyLow = api.formatScarcityCopy({
+  status: 'available',
+  timeframe: 'week',
+  timeframeLabel: 'this week',
+  availableSlotCount: 4,
+  spotsPerDayLabel: '1 spot left each day',
+  spotsPerDayRange: '1',
+  nextAvailableLabel: 'Mon, Sep 14'
+});
+assert.match(dailyLow.text, /Only 4 first visits left this week · 1 spot left each day · Next opening: Mon, Sep 14/);
+assert.equal(dailyLow.badge, '1/day');
+assert.match(dailyLow.detail, /1 spot left each day/);
+
+// 12. High inventory with daily adaptive parameters
+const dailyHigh = api.formatScarcityCopy({
+  status: 'available',
+  timeframe: 'week',
+  timeframeLabel: 'this week',
+  availableSlotCount: 18,
+  spotsPerDayLabel: '2–3 spots left each day',
+  spotsPerDayRange: '2–3',
+  nextAvailableLabel: 'Mon, Sep 14'
+});
+assert.match(dailyHigh.text, /First visits available this week · 2–3 spots left each day · Next opening: Mon, Sep 14/);
+assert.equal(dailyHigh.badge, '2–3/day');
+
+// 13. Requested date adaptive copy with spots left
+const reqDate = api.formatScarcityCopy({
+  status: 'available',
+  requestedDate: '2026-09-15',
+  requestedDateSpots: 2,
+  requestedDateLabel: 'Tue, Sep 15'
+});
+assert.match(reqDate.text, /Only 2 spots left on Tue, Sep 15 · Reserve your first visit/);
+assert.equal(reqDate.badge, '2 Left');
+assert.equal(reqDate.status, 'low');
+
+// 14. Requested date full
+const reqDateFull = api.formatScarcityCopy({
+  status: 'full',
+  requestedDate: '2026-09-15',
+  requestedDateSpots: 0,
+  requestedDateLabel: 'Tue, Sep 15'
+});
+assert.match(reqDateFull.text, /Tue, Sep 15 is full · Check other days this week/);
+assert.equal(reqDateFull.badge, 'Full');
+assert.equal(reqDateFull.status, 'full');
+
+// 15. Helper functions exposed
+assert.equal(typeof api.getDailyAvailability, 'function', 'getDailyAvailability should be function');
+assert.equal(typeof api.getSpotsForDate, 'function', 'getSpotsForDate should be function');
+assert.equal(typeof api.fetchAvailability, 'function', 'fetchAvailability should be function');
+
 console.log('Client availability JS test passed!');
