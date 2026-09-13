@@ -6,7 +6,7 @@ import paramiko
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package')
 DEPLOYABLE_ROOTS = ('assets/', 'winter-rank-drop/', 'admin/', 'athlete-cross-training/', 'bjj-classes/', 'bjj-glossary/', 'blog/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'social/', 'snippets/', 'sources/', 'schedule/', 'free-bjj-intro-tannersville-ny/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/')
-ROOT_FILES = {'bio.html', 'law-enforcement-bjj.html', 'scribners.html', 'elite-concierge.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html'}
+ROOT_FILES = {'bio.html', 'law-enforcement-bjj.html', 'scribners.html', 'elite-concierge.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html', 'schedule.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 
 def changed_outputs(commit):
@@ -77,12 +77,25 @@ def changed_outputs(commit):
                 candidate = ROOT / 'dist' / 'athlete-cross-training' / 'evidence' / 'index.html'
             elif name == 'src/schedule.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+                if candidate.is_file():
+                    outputs.add((candidate, 'schedule/index.html'))
+                    outputs.add((candidate, 'schedule.html'))
+            elif name in ('src/options-pricing.html', 'src/options-pricing.njk'):
+                html_c = ROOT / 'dist' / 'options-pricing.html'
+                dir_c = ROOT / 'dist' / 'options-pricing' / 'index.html'
+                if html_c.is_file():
+                    outputs.add((html_c, 'options-pricing.html'))
+                if dir_c.is_file():
+                    outputs.add((dir_c, 'options-pricing/index.html'))
             elif name == 'src/fall-practice-reset.html':
                 candidate = ROOT / 'dist' / 'fall-practice-reset' / 'index.html'
             elif name == 'src/hyphen-weekend.html':
                 candidate = ROOT / 'dist' / 'hyphen-weekend' / 'index.html'
             elif name == 'src/_includes/schedule-master.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+                if candidate.is_file():
+                    outputs.add((candidate, 'schedule/index.html'))
+                    outputs.add((candidate, 'schedule.html'))
             elif name in ('src/_data/tournaments.js', 'src/_includes/partials/tournament-grid.html'):
                 candidate = ROOT / 'dist' / 'local-bjj-tournaments-for-parents.html'
             elif name.startswith('src/') and name.endswith('.njk'):
