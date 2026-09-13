@@ -26,6 +26,8 @@ const routes=[
   'bjj-faqs',
   'contact',
   'show-up-kit',
+  'how-class-works',
+  'jiu-jitsu-safety-tannersville-ny',
   'bjj-tannersville-ny-directions',
   'private-lessons',
   'bjj-classes/hunter-ny',

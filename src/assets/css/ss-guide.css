@@ -6,7 +6,19 @@
 
 @media (max-width: 767px) {
   :root {
-    --site-header-offset: 88px;
+    --site-header-offset: 40px;
+  }
+  .ss-guide-page {
+    padding-top: 1.5rem;
+  }
+  .ss-guide-page h1 {
+    font-size: clamp(2rem, 5.5vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+  .ss-guide-page .guide-intro {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
   }
 }
 
