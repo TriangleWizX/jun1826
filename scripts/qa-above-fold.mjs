@@ -37,7 +37,10 @@ const routes=[
   'bjj-classes/haines-falls-ny',
   'bjj-classes/woodstock-ny',
   'blog/jiu-jitsu-near-hunter-mountain',
-  'blog/jiu-jitsu-near-windham-mountain-club'
+  'blog/jiu-jitsu-near-windham-mountain-club',
+  'blog/bjj-schedule-windham-ny',
+  'blog/private-jiu-jitsu-lessons-windham-ny',
+  'blog/gi-bjj-windham-ny'
 ];
 const results=[];
 try {
