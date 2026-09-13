@@ -89,6 +89,11 @@ const routes=[
   'blog/bjj-beginners-over-40-catskills',
   'blog/kids-martial-arts-haines-falls',
   'blog/things-to-do-near-hunter-ny-private-bjj-coaching',
+  'scribners',
+  'scribners-jiu-jitsu',
+  'partners-hospitality-hunter-windham',
+  'partners-wellness-pt-referrals',
+  'community-partners',
   ''
 ];
 const results=[];

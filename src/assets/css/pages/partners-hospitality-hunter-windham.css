@@ -22,7 +22,7 @@
 
 .page-partners-hospitality .hero-serif-title {
   font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
   line-height: 1.05;
   font-weight: 400;
   letter-spacing: -0.015em;
@@ -102,7 +102,7 @@
    Hero Section
    ========================================================================== */
 .hospitality-hero-section {
-  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  padding: clamp(1.25rem, 3vw, 2.25rem) 0;
   background: var(--ss-bg, #FBFAF8);
 }
 
@@ -116,7 +116,7 @@
 .hospitality-hero-left {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .hospitality-hero-left .lead {
