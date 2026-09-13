@@ -5,11 +5,11 @@ description: "Tour the calm Sensei Sandy BJJ studio in Tannersville, NY: clean m
 canonicalUrl: "https://senseisandy.com/sensei-studio"
 bodyClass: "lane-mixed page-sensei-studio"
 extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/sensei-studio.css"
 permalink: "/sensei-studio.html"
 ---
 <main class="ss-main" id="main-content" role="main">
-<!--#include virtual="/partials/teaching-doctrine.html" -->
   <section class="studio-hero">
     <div class="container">
       <div class="row g-5 align-items-center">
@@ -17,10 +17,13 @@ permalink: "/sensei-studio.html"
           <p class="studio-hero-kicker">Studios on Main · Tannersville, NY</p>
           <h1 class="studio-hero-title">Sensei Studio BJJ in Tannersville</h1>
           <p class="studio-hero-desc">Sensei Sandy BJJ is a small, coach-led training room for kids, teens, and adults. Visit the mats, see how the room works, and decide whether the pace feels right before choosing a class.</p>
-          <div class="studio-cta-row">
-            <a class="studio-btn-primary" data-cta-src="studio-hero" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny"><span>Reserve Your Free First Visit</span><span class="btn-arrow-circle"><i class="bi bi-arrow-right-short"></i></span></a>
-            <a class="studio-btn-secondary" href="#studio-details"><span>Tour the Studio</span><span class="btn-arrow-circle-outline"><i class="bi bi-arrow-down-short"></i></span></a>
+          <div class="studio-cta-row mb-3">
+            <a class="studio-btn-primary" data-cta-src="studio-hero" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny#booking-flow"><span>Reserve Free Intro</span><span class="btn-arrow-circle"><i class="bi bi-arrow-right-short"></i></span></a>
+            <a class="studio-btn-secondary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20would%20like%20to%20visit%20the%20studio."><span>Text Sandy to Visit</span><span class="btn-arrow-circle-outline"><i class="bi bi-chat-dots"></i></span></a>
           </div>
+          <p class="small text-muted mb-3">
+            <a href="#studio-details">Tour Details</a> · <a href="/schedule">View Schedule</a> · <a href="/options-pricing">Pricing</a> · <a href="/bjj-tannersville-ny-directions">Directions &amp; Parking</a>
+          </p>
           <div class="studio-benefits-row">
             <div class="studio-benefit-tag"><i class="bi bi-shield-check"></i><span>Beginner-aware coaching</span></div>
             <div class="studio-benefit-tag"><i class="bi bi-people"></i><span>Small groups</span></div>
@@ -61,19 +64,21 @@ permalink: "/sensei-studio.html"
         <div class="narrative-col">
           <div class="narrative-block">
             <h3>Entrance, parking, and arrival</h3>
-            <p>The studio is at 6045 Main Street, 2nd Floor, Tannersville, NY 12485, inside Studios on Main. Use the building landmark and arrival instructions shared before your visit, then follow the route to the second floor.</p>
+            <p>The studio is at {{ business.address.street }}, {{ business.address.city }}, {{ business.address.state }} {{ business.address.zip }}, inside Studios on Main. Use the building landmark and arrival instructions shared before your visit, then follow the route to the second floor.</p>
             <p>Arrival details and any door instructions are shared before a scheduled first visit. If you need help planning the route, text Sandy before you drive.</p>
             <p><a class="studio-btn-secondary" href="/bjj-tannersville-ny-directions"><span>See directions and parking</span><i class="bi bi-arrow-right-short"></i></a></p>
           </div>
           <div class="narrative-block">
             <h3>A low-pressure first visit</h3>
             <p>Your Free First Visit is a chance to meet the coach, see the room, talk through your goals, and learn what the first class will feel like. No experience is required, and you can ask questions before deciding on a weekly rhythm.</p>
-            <p><a class="studio-btn-primary" href="/free-bjj-intro-tannersville-ny"><span>Reserve Your Free First Visit</span><i class="bi bi-arrow-right-short"></i></a></p>
+            <p><a class="studio-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow"><span>Reserve Free Intro</span><i class="bi bi-arrow-right-short"></i></a></p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+<!--#include virtual="/partials/teaching-doctrine.html" -->
 
   <section aria-label="Studio care photos" class="container py-4">
     <div class="p-3 p-md-4 rounded-4 border bg-white">

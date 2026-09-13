@@ -20,7 +20,21 @@ const server=createServer(async(req,res)=>{
 });
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
-const routes=['options-pricing','schedule','bjj-faqs','contact','show-up-kit','bjj-tannersville-ny-directions','private-lessons'];
+const routes=[
+  'options-pricing',
+  'schedule',
+  'bjj-faqs',
+  'contact',
+  'show-up-kit',
+  'bjj-tannersville-ny-directions',
+  'private-lessons',
+  'bjj-classes/hunter-ny',
+  'bjj-classes/windham-ny',
+  'blog/jiu-jitsu-windham-ny',
+  'sensei-jiu-jitsu',
+  'sensei-studio',
+  'bully-proof-jiu-jitsu-tannersville-ny'
+];
 const results=[];
 try {
   for(const [width,height] of [[375,667],[390,844],[768,1024],[1366,768]]) {
@@ -38,7 +52,7 @@ try {
         });
         return {heading:h?.textContent.trim(),headingTop:h?.getBoundingClientRect().top,overflow:document.documentElement.scrollWidth>innerWidth,links,canonical:document.querySelector('link[rel=canonical]')?.href,description:document.querySelector('meta[name=description]')?.content};
       });
-      await page.screenshot({path:path.join(out,`${route}-${width}.png`)});
+      await page.screenshot({path:path.join(out,`${route.replace(/\//g, '_')}-${width}.png`)});
       results.push({route,width,height,...data});
       await page.close();
     }
