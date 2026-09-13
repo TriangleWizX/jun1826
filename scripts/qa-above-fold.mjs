@@ -85,6 +85,10 @@ const routes=[
   'free-bjj-intro-tannersville-ny',
   'law-enforcement-bjj',
   'bring-a-friend',
+  'blog/hunter-elementary-tuesday-drop-off-bjj',
+  'blog/bjj-beginners-over-40-catskills',
+  'blog/kids-martial-arts-haines-falls',
+  'blog/things-to-do-near-hunter-ny-private-bjj-coaching',
   ''
 ];
 const results=[];
