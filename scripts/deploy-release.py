@@ -91,6 +91,8 @@ def changed_outputs(commit):
                 candidate = ROOT / 'dist' / 'fall-practice-reset' / 'index.html'
             elif name == 'src/hyphen-weekend.html':
                 candidate = ROOT / 'dist' / 'hyphen-weekend' / 'index.html'
+            elif name == 'src/blog/beginner-friendly-bjj-tannersville-links/index.html':
+                candidate = ROOT / 'dist' / 'blog' / 'beginner-friendly-bjj-tannersville' / 'index.html'
             elif name == 'src/_includes/schedule-master.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
                 if candidate.is_file():

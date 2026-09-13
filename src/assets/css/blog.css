@@ -835,27 +835,43 @@ body {
   margin-top: 1rem;
 }
 
+.page-blog .ss-article-container {
+  padding-top: 0.5rem !important;
+}
+
 .page-blog .hero-video-section {
   position: relative;
-  padding: clamp(1rem, 4vw, 1.5rem) 1rem clamp(2.5rem, 6vw, 4rem);
+  padding: 0.5rem 0.5rem 1.5rem !important;
   background: transparent !important;
 }
 
 .page-blog .hero-video-section .video-wrapper {
-  border-radius: 2rem;
+  position: relative;
+  border-radius: 1.5rem;
   overflow: hidden;
-  min-height: min(72vw, 38rem);
+  min-height: clamp(140px, 24vw, 220px);
+  max-height: 240px;
   background:
     radial-gradient(circle at top left, rgba(17, 106, 66, 0.14), transparent 28rem),
     linear-gradient(135deg, #f0ece5 0%, #e8e0d5 100%);
-  box-shadow: 0 28px 60px rgba(31, 23, 18, 0.16);
+  box-shadow: 0 20px 40px rgba(31, 23, 18, 0.12);
 }
 
+.page-blog .hero-video-section .video-wrapper picture,
 .page-blog .hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.82;
+  display: block;
 }
 
 .page-blog .hero-video-section .hero-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background:
     linear-gradient(120deg, rgba(21, 15, 10, 0.28), rgba(21, 15, 10, 0.08)),
     linear-gradient(180deg, rgba(17, 106, 66, 0.12), rgba(17, 106, 66, 0));
@@ -863,33 +879,36 @@ body {
 
 .page-blog .hero-content-container {
   position: relative;
-  margin-top: clamp(-12rem, -18vw, -8rem);
+  margin-top: clamp(-5.5rem, -10vw, -3.5rem);
+  padding-inline: 0.5rem;
 }
 
 .page-blog .hero__inner {
   width: min(740px, 100%);
-  margin-left: auto;
-  padding: clamp(1.25rem, 3vw, 2rem);
-  border-radius: 2rem;
-  background: rgba(253, 251, 247, 0.9);
+  margin-inline: auto;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border-radius: 1.5rem;
+  background: rgba(253, 251, 247, 0.95);
   border: 1px solid rgba(54, 43, 36, 0.1);
-  box-shadow: 0 26px 56px rgba(31, 23, 18, 0.14);
+  box-shadow: 0 20px 40px rgba(31, 23, 18, 0.12);
 }
 
 .page-blog .hero__title {
-  font-size: clamp(2.5rem, 6vw, 5rem) !important;
-  line-height: 0.94;
-  letter-spacing: 0;
+  font-size: clamp(1.65rem, 3.5vw, 2.4rem) !important;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   color: var(--ss-ink);
   font-family: var(--ss-blog-serif);
-  font-weight: 400 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem;
 }
 
 .page-blog .hero__subtitle {
   max-width: 40rem;
   color: var(--ss-muted);
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  line-height: 1.65;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
 }
 
 .page-blog .hero__badges {

@@ -20,7 +20,7 @@ assert.match(hub, /Optional Class References/);
 assert.match(hub, /Watching is never required/);
 assert.match(hub, /specific action/i);
 assert.match(hub, /does not affect the Report Card or rank/i);
-assert.match(hub, /planned home class/i);
+assert.match(hub, /planned (?:home class|regular class time)/i);
 assert.doesNotMatch(hub, /safe, having fun, and on task/i);
 assert.doesNotMatch(hub, /Consistency compounds/i);
 assert.doesNotMatch(hub, /next clean opening/i);

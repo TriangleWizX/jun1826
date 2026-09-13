@@ -76,6 +76,12 @@ const routes=[
   'bjj-classes/gilboa-ny',
   'bjj-classes/schoharie-ny',
   'bjj-classes/coxsackie-ny',
+  'parent-resources',
+  'student-hub',
+  'blog/beginner-friendly-bjj-tannersville',
+  'blog/beginners-guide-bjj-human-chess',
+  'blog/catskills-gym-alternative-jiu-jitsu',
+  'blog/after-school-jiu-jitsu-calm-routine-catskills',
   ''
 ];
 const results=[];
