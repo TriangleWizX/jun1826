@@ -23,6 +23,7 @@ const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',hea
 const routes=[
   'bjj-classes',
   'programs',
+  'bio',
   'options-pricing',
   'schedule',
   'bjj-faqs',
