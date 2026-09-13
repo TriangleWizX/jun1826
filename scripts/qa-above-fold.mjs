@@ -82,6 +82,9 @@ const routes=[
   'blog/beginners-guide-bjj-human-chess',
   'blog/catskills-gym-alternative-jiu-jitsu',
   'blog/after-school-jiu-jitsu-calm-routine-catskills',
+  'free-bjj-intro-tannersville-ny',
+  'law-enforcement-bjj',
+  'bring-a-friend',
   ''
 ];
 const results=[];
