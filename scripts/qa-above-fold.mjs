@@ -45,6 +45,11 @@ const routes=[
   'bjj-classes/kids-tannersville-ny',
   'bjj-classes/teens-tannersville-ny',
   'bjj-classes/adults-tannersville-ny',
+  'bjj-classes/elka-park-ny',
+  'bjj-classes/palenville-ny',
+  'bjj-classes/lexington-ny',
+  'bjj-classes/maplecrest-ny',
+  'bjj-classes/cairo-ny',
   ''
 ];
 const results=[];
