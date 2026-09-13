@@ -24,9 +24,9 @@ permalink: "/schedule/"
         </p>
 <div class="ss-hero-actions">
 <a class="ss-btn-premium" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny#booking-flow">
-<span>Reserve Your Free First Visit</span>
+<span>Reserve Free Intro</span>
 <div class="ss-btn-premium-icon">
-<i aria-hidden="true" class="bi bi-arrow-down"></i>
+<i aria-hidden="true" class="bi bi-arrow-right"></i>
 </div>
 </a>
 </div>
@@ -37,7 +37,7 @@ permalink: "/schedule/"
 </ul>
 </div>
 <div class="ss-editorial-right ss-anim-fade-up ss-anim-delay-1">
-<div class="ss-schedule-utility-row"><span>Current Students: Need to reschedule? <a href="sms:+19177368649">Text Sandy</a></span><span>First-time local student? <a href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Your Free First Visit</a></span></div>
+<div class="ss-schedule-utility-row"><span>Current Students: Need to reschedule? <a href="sms:+19177368649">Text Sandy</a></span><span>First-time local student? <a href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a></span></div>
 <!-- Expired September 5 schedule block retired so placement is the first action. -->
 {% if false %}<section class="mb-4" data-current-schedule-through="2026-09-05" aria-labelledby="current-schedule-title">
 <h2 class="h4 mb-2" id="current-schedule-title">Current Schedule Through Saturday, September 5</h2>
@@ -342,19 +342,6 @@ permalink: "/schedule/"
   if (!block) return;
   const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date());
   if (today >= '2026-09-06') block.hidden = true;
-})();
-</script>
-
-<script>
-(() => {
-  const replaceVisitorCopy = (node) => {
-    if (node.nodeType === Node.TEXT_NODE) {
-      node.nodeValue = node.nodeValue.replaceAll('Reserve Your Free First Visit', 'Reserve Your Free First Visit').replaceAll('Reserve Intro', 'Reserve Your Free First Visit').replaceAll('Free First Visit first visit', 'Free First Visit');
-      return;
-    }
-    node.childNodes?.forEach(replaceVisitorCopy);
-  };
-  document.addEventListener('DOMContentLoaded', () => replaceVisitorCopy(document.body));
 })();
 </script>
 </main>
