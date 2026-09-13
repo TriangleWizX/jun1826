@@ -78,7 +78,6 @@ def changed_outputs(commit):
             elif name == 'src/schedule.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
                 if candidate.is_file():
-                    outputs.add((candidate, 'schedule/index.html'))
                     outputs.add((candidate, 'schedule.html'))
             elif name in ('src/options-pricing.html', 'src/options-pricing.njk'):
                 html_c = ROOT / 'dist' / 'options-pricing.html'
@@ -87,6 +86,7 @@ def changed_outputs(commit):
                     outputs.add((html_c, 'options-pricing.html'))
                 if dir_c.is_file():
                     outputs.add((dir_c, 'options-pricing/index.html'))
+                continue
             elif name == 'src/fall-practice-reset.html':
                 candidate = ROOT / 'dist' / 'fall-practice-reset' / 'index.html'
             elif name == 'src/hyphen-weekend.html':
@@ -94,7 +94,6 @@ def changed_outputs(commit):
             elif name == 'src/_includes/schedule-master.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
                 if candidate.is_file():
-                    outputs.add((candidate, 'schedule/index.html'))
                     outputs.add((candidate, 'schedule.html'))
             elif name in ('src/_data/tournaments.js', 'src/_includes/partials/tournament-grid.html'):
                 candidate = ROOT / 'dist' / 'local-bjj-tournaments-for-parents.html'
