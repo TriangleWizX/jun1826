@@ -57,6 +57,13 @@ const routes=[
   'bjj-classes/shandaken-ny',
   'bjj-classes/lanesville-ny',
   'bjj-classes/prattsville-ny',
+  'bjj-classes/ashland-ny',
+  'bjj-classes/round-top-ny',
+  'bjj-classes/acra-ny',
+  'bjj-classes/durham-ny',
+  'bjj-classes/greenville-ny',
+  'bjj-classes/purling-ny',
+  'bjj-classes/leeds-ny',
   ''
 ];
 const results=[];
