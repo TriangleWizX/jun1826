@@ -506,23 +506,32 @@
   opacity: 0.72;
 }
 
+.ss-page-nearby-towns .ss-near-hero.he-section {
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  padding-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
 .ss-page-nearby-towns .ss-near-hero__grid {
   align-items: center;
   grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
 }
 
-.ss-page-nearby-towns h1 {
-  max-width: 11ch;
+.ss-page-nearby-towns h1,
+.ss-page-nearby-towns .he-split-left h1 {
+  max-width: 13ch;
   color: var(--nearby-ink);
-  font-size: 3.35rem;
-  line-height: 0.94;
-  letter-spacing: 0;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.75rem;
 }
 
 .ss-page-nearby-towns .lead {
   color: var(--nearby-muted);
-  font-size: 1.12rem;
-  line-height: 1.62;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .ss-page-nearby-towns .he-eyebrow {
@@ -530,6 +539,11 @@
   background: rgba(255, 255, 255, 0.76);
   color: var(--nearby-green);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  margin-bottom: 0.75rem;
+}
+
+.ss-page-nearby-towns .ss-near-hero__actions {
+  margin-top: 1.25rem;
 }
 
 .ss-page-nearby-towns .he-outer-shell {

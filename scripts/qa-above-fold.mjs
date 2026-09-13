@@ -94,6 +94,13 @@ const routes=[
   'partners-hospitality-hunter-windham',
   'partners-wellness-pt-referrals',
   'community-partners',
+  'nearby-towns',
+  'near/cairo-ny',
+  'near/catskill-ny',
+  'near/haines-falls-ny',
+  'near/hunter-ny',
+  'near/palenville-ny',
+  'near/windham-ny',
   ''
 ];
 const results=[];

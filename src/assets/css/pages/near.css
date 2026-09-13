@@ -10,12 +10,64 @@ body.page-near .near-hero {
   --ss-near-hero: 1;
 }
 
+body.page-near h1,
+body.page-near .near-hero h1 {
+  font-size: clamp(1.65rem, 3.6vw, 2.35rem);
+  line-height: 1.12;
+  font-weight: 700;
+  color: var(--ss-ink);
+  margin-top: 0.45rem;
+  margin-bottom: 0.65rem;
+}
+
+body.page-near .near-hero .lead {
+  font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+  line-height: 1.48;
+  color: var(--ss-muted);
+  margin-bottom: 0.65rem;
+}
+
+body.page-near .near-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin: 0.85rem 0 1rem;
+}
+
+body.page-near .near-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.6rem 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+body.page-near .near-buttons .btn:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 767.98px) {
+  body.page-near .near-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  body.page-near .near-buttons .btn {
+    width: 100%;
+  }
+}
+
 .ss-near-breadcrumbs {
   width: min(1040px, calc(100% - 2rem));
-  margin: 1.25rem auto 0;
+  margin: 0.65rem auto 0;
   color: var(--ss-muted);
-  font-size: 0.92rem;
-  font-weight: 800;
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .ss-near-breadcrumbs ol {
