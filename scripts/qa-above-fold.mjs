@@ -67,6 +67,15 @@ const routes=[
   'bjj-classes/greenville-ny',
   'bjj-classes/purling-ny',
   'bjj-classes/leeds-ny',
+  'bjj-classes/boiceville-ny',
+  'bjj-classes/shokan-ny',
+  'bjj-classes/olive-ny',
+  'bjj-classes/grand-gorge-ny',
+  'bjj-classes/roxbury-ny',
+  'bjj-classes/stamford-ny',
+  'bjj-classes/gilboa-ny',
+  'bjj-classes/schoharie-ny',
+  'bjj-classes/coxsackie-ny',
   ''
 ];
 const results=[];
