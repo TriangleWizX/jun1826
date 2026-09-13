@@ -76,3 +76,8 @@
   color: #fff;
 }
 .page-schedule .ss-cal-slot-name { font-weight: 600; }
+
+/* Leave room for the reservation action below the shared navigation. */
+.page-schedule .ss-hero-editorial-split { padding-top: 1rem; }
+.page-schedule .ss-editorial-title { font-size: clamp(1.8rem, 3vw, 2.75rem); }
+.page-schedule .ss-editorial-lead { font-size: 1rem; line-height: 1.5; }

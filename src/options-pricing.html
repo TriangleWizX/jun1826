@@ -5,6 +5,7 @@ description: "See first-term jiu-jitsu pricing for kids, teens, and adults in Ta
 canonicalUrl: "https://senseisandy.com/options-pricing"
 bodyClass: "lane-mixed page-options-pricing ss-page ss-page-pricing"
 extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/options-pricing-highend.css"
 permalink: "/options-pricing.html"
 ---
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
           Meet Sandy, see the room, and choose the right starting point. Sandy confirms your visit before you arrive.
         </p>
 <section class="container py-3" aria-label="Quick prices"><div class="row g-3"><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Free First Visit: $0</strong><br><span class="small text-muted">Meet Sandy, see the room, ask questions.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Kids + Teens: {{ pricing.coreCulture.youth.displayPrice }}</strong><br><span class="small text-muted">First {{ pricing.coreCulture.youth.term }}.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Adults: {{ pricing.coreCulture.adult.displayPrice }}</strong><br><span class="small text-muted">First {{ pricing.coreCulture.adult.term }}.</span></div></div></div></section>
-        <p class="op-hero__lede">3 planned classes each week for 12 weeks.</p>
+        <p class="op-hero__lede">Both first-term programs include up to three appropriate classes each week, with regular class times reserved, a first qualifying uniform, and progress feedback. <a href="#start">Compare what is included</a>.</p>
         <div class="op-actions">
           <a class="op-button op-button--primary" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="options-pricing-hero" data-cta-target="intro" data-cta-tier="primary" data-goal-mapping="" href="/free-bjj-intro-tannersville-ny#booking-flow">
             <span>Reserve Your Free First Visit</span>
@@ -39,11 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span aria-hidden="true" class="op-button__icon">&nearr;</span>
           </a>
         </div>
-        <ul aria-label="How enrollment starts" class="op-hero__signals">
-          <li><strong>$0</strong><span>Free First Visit</span></li>
-          <li><strong>12 weeks</strong><span>First program</span></li>
-          <li><strong>By text</strong><span>make-up class</span></li>
-        </ul>
+        <p><a href="{{ business.contact.smsHref }}">Text Sandy about pricing</a>. Make-up classes are arranged by text, subject to space and partner fit.</p>
       </div>
 
       <div class="op-shell op-hero__shell op-reveal is-visible">

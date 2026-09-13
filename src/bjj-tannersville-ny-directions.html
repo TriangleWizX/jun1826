@@ -5,6 +5,7 @@ description: "Jiu Jitsu Tannersville directions: parking, entry, and map to Sens
 canonicalUrl: "https://senseisandy.com/bjj-tannersville-ny-directions"
 bodyClass: "lane-mixed page-location page-directions page-directions-board"
 extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/directions.min.css"
 permalink: "/bjj-tannersville-ny-directions.html"
 ---
@@ -17,7 +18,8 @@ permalink: "/bjj-tannersville-ny-directions.html"
         <div class="directions-section-head directions-section-head--compact">
           <div>
             <p class="directions-info__eyebrow">Plan Your Visit</p>
-            <h1 id="directions-info-title">Head to 6045 Main Street, then up to the second-floor studio.</h1>
+            <h1 id="directions-info-title">Head to {{ business.address.street }}, then up to the second-floor studio.</h1>
+            <p>Coming for a reserved visit? <a href="{{ business.mapsUrl }}" target="_blank" rel="noopener">Open Google Maps</a>. Not booked yet? <a href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a> before you travel.</p>
             <p class="directions-info__intro">Use this arrival guide for your first visit to Sensei Sandy BJJ in Tannersville. It covers parking, the Studios on Main entrance, the second-floor route, and what to do if your plans change.</p>
           </div>
           <a
@@ -41,7 +43,7 @@ permalink: "/bjj-tannersville-ny-directions.html"
           <article class="directions-info__item">
             <span class="directions-info__icon" aria-hidden="true"><i class="bi bi-p-square"></i></span>
             <h3>Parking</h3>
-            <p>Use Main Street parking first, then nearby side streets if needed. Arrive 5 to 10 minutes early.</p>
+            <p>Use Main Street parking first, then nearby side streets if needed. Follow the arrival time in your booking confirmation; <a href="/show-up-kit">check your visit preparation</a> before leaving.</p>
           </article>
           <article class="directions-info__item">
             <span class="directions-info__icon" aria-hidden="true"><i class="bi bi-building"></i></span>

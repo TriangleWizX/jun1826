@@ -780,3 +780,8 @@
     font-size: 1.35rem;
   }
 }
+
+/* Keep the request action in the opening view on phones. */
+.page-private-lessons .ss-hero-section { padding-top: 1rem; }
+.page-private-lessons .ss-hero-title { font-size: clamp(1.8rem, 3vw, 2.75rem); }
+.page-private-lessons .ss-hero-description { font-size: 1rem; line-height: 1.5; }

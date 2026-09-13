@@ -30,9 +30,9 @@
 <link rel="stylesheet" href="/assets/css/fonts.min.css">
 <link rel="stylesheet" href="/assets/css/site-shell.min.css">
 {% if extraCss %}
-  {% for cssFile in extraCss %}
+  {%- for cssFile in extraCss %}
     <link rel="stylesheet" href="{{ cssFile }}">
-  {% endfor %}
+  {%- endfor %}
 {% endif %}
 {% if bodyClass and "page-blog" in bodyClass %}
   <link rel="stylesheet" href="/assets/css/blog.css">

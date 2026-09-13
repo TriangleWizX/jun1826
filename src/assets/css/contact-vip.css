@@ -784,3 +784,17 @@ body.page-contact :where(.btn-green-primary, .btn-outline-green, .button) {
     justify-items: center;
   }
 }
+
+/* Keep the contact decision ahead of the photograph on small screens. */
+.contact-vip-main .hero-card { grid-column: 1 / -1; }
+.contact-vip-main .hero-card-content { padding: 1.25rem; }
+.contact-vip-main .hero-card-content h1 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+.contact-vip-main .hero-card-content h1,
+.contact-vip-main .hero-card-content .lead { margin-block: .75rem; }
+@media (max-width: 767px) {
+  .contact-vip-main > .container:first-child { padding-top: 1rem; }
+  .contact-vip-main .hero-card { display: flex; flex-direction: column; }
+  .contact-vip-main .hero-card-content { order: 0; padding: .5rem; }
+  .contact-vip-main .hero-card-image-wrapper { order: 1; margin-top: 1rem; }
+  .contact-vip-main .hero-card-content .lead { font-size: 1rem; line-height: 1.5; }
+}

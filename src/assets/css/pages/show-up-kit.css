@@ -152,3 +152,10 @@ body.page-show-up-kit {
     height: min(72vw, 22rem);
   }
 }
+
+/* Put visit status and preparation actions ahead of supporting detail. */
+.page-show-up-kit .showup-hero { padding-top: 1rem; }
+.page-show-up-kit .showup-hero-title { font-size: clamp(1.8rem, 3vw, 2.75rem); }
+.page-show-up-kit .showup-hero-copy { display: flex; flex-direction: column; }
+.page-show-up-kit .showup-hero-meta { order: 2; }
+.page-show-up-kit .showup-hero-lede { font-size: 1rem; line-height: 1.5; }

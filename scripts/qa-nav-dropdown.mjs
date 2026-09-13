@@ -79,28 +79,29 @@ const contentTypeFor = (filePath) => {
 const resolveRequestPath = async (pathname) => {
   const decoded = decodeURIComponent(pathname);
   const safePath = path.normalize(decoded).replace(/^(\.\.(\/|\\|$))+/, '');
-  let filePath = path.join(ROOT, safePath);
+  const candidateRoots = [path.join(ROOT, 'dist'), ROOT];
 
-  if (!filePath.startsWith(ROOT)) return null;
+  for (const dir of candidateRoots) {
+    let filePath = path.join(dir, safePath);
+    if (!filePath.startsWith(dir)) continue;
 
-  try {
-    const stat = await fs.stat(filePath);
-    if (stat.isDirectory()) filePath = path.join(filePath, 'index.html');
-  } catch {
-    if (!path.extname(filePath)) {
-      const indexPath = path.join(filePath, 'index.html');
-      try {
-        await fs.stat(indexPath);
-        filePath = indexPath;
-      } catch {
-        return null;
+    try {
+      const stat = await fs.stat(filePath);
+      if (stat.isDirectory()) filePath = path.join(filePath, 'index.html');
+      await fs.stat(filePath);
+      return filePath;
+    } catch {
+      if (!path.extname(filePath)) {
+        const indexPath = path.join(filePath, 'index.html');
+        try {
+          await fs.stat(indexPath);
+          return indexPath;
+        } catch {}
       }
-    } else {
-      return null;
     }
   }
 
-  return filePath.startsWith(ROOT) ? filePath : null;
+  return null;
 };
 
 const decodeEntities = (value = '') =>
@@ -278,14 +279,24 @@ const startServer = () => new Promise((resolve, reject) => {
       if (url.pathname === '/__nav-dropdown-check') {
         const relPath = url.searchParams.get('page');
         ensure(pages.some((page) => page.relPath === relPath), `Unsupported nav test page "${relPath}".`);
-        const html = await readHtmlWithSsi(relPath);
+        let html;
+        try {
+          html = await readHtmlWithSsi(relPath, { root: path.join(ROOT, 'dist') });
+        } catch {
+          html = await readHtmlWithSsi(relPath, { root: ROOT });
+        }
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
         res.end(injectProbe(html, navProbe));
         return;
       }
 
       if (url.pathname === '/__mobile-nav-check') {
-        const html = await readHtmlWithSsi('index.html');
+        let html;
+        try {
+          html = await readHtmlWithSsi('index.html', { root: path.join(ROOT, 'dist') });
+        } catch {
+          html = await readHtmlWithSsi('index.html', { root: ROOT });
+        }
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
         res.end(injectProbe(html, mobileNavProbe));
         return;

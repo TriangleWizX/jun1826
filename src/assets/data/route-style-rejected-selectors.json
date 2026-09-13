@@ -106,7 +106,7 @@
         "/success-stories",
         "/summer-academy"
       ],
-      "rejectedCount": 2113,
+      "rejectedCount": 2119,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -1493,7 +1493,13 @@
         ".navbar-expand .offcanvas",
         ".navbar-expand .offcanvas .offcanvas-body",
         ".navbar-expand .offcanvas .offcanvas-header",
+        ".navbar-expand-lg",
+        ".navbar-expand-lg .navbar-collapse",
+        ".navbar-expand-lg .navbar-nav",
+        ".navbar-expand-lg .navbar-nav .dropdown-menu",
+        ".navbar-expand-lg .navbar-nav .nav-link",
         ".navbar-expand-lg .navbar-nav-scroll",
+        ".navbar-expand-lg .navbar-toggler",
         ".navbar-expand-lg .offcanvas",
         ".navbar-expand-lg .offcanvas .offcanvas-body",
         ".navbar-expand-lg .offcanvas .offcanvas-header",
@@ -2228,7 +2234,7 @@
       "memberRoutes": [
         "/free-bjj-intro-tannersville-ny"
       ],
-      "rejectedCount": 2466,
+      "rejectedCount": 2468,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -3079,7 +3085,6 @@
         ".flex-sm-shrink-1",
         ".flex-sm-wrap",
         ".flex-sm-wrap-reverse",
-        ".flex-wrap",
         ".flex-wrap-reverse",
         ".flex-xl-column",
         ".flex-xl-column-reverse",
@@ -3843,7 +3848,13 @@
         ".navbar-expand .offcanvas",
         ".navbar-expand .offcanvas .offcanvas-body",
         ".navbar-expand .offcanvas .offcanvas-header",
+        ".navbar-expand-lg",
+        ".navbar-expand-lg .navbar-collapse",
+        ".navbar-expand-lg .navbar-nav",
+        ".navbar-expand-lg .navbar-nav .dropdown-menu",
+        ".navbar-expand-lg .navbar-nav .nav-link",
         ".navbar-expand-lg .navbar-nav-scroll",
+        ".navbar-expand-lg .navbar-toggler",
         ".navbar-expand-lg .offcanvas",
         ".navbar-expand-lg .offcanvas .offcanvas-body",
         ".navbar-expand-lg .offcanvas .offcanvas-header",
@@ -4429,8 +4440,6 @@
         ".rounded-top-5",
         ".rounded-top-circle",
         ".rounded-top-pill",
-        ".row",
-        ".row > *",
         ".row-cols-1 > *",
         ".row-cols-2 > *",
         ".row-cols-3 > *",
@@ -4667,7 +4676,6 @@
         ".z-2",
         ".z-3",
         ".z-n1",
-        "[list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator",
         "[type=search]",
         "a > code",
         "abbr[title]",
@@ -4703,7 +4711,7 @@
       "memberRoutes": [
         "/law-enforcement-bjj"
       ],
-      "rejectedCount": 2378,
+      "rejectedCount": 2383,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -6259,7 +6267,13 @@
         ".navbar-expand .offcanvas",
         ".navbar-expand .offcanvas .offcanvas-body",
         ".navbar-expand .offcanvas .offcanvas-header",
+        ".navbar-expand-lg",
+        ".navbar-expand-lg .navbar-collapse",
+        ".navbar-expand-lg .navbar-nav",
+        ".navbar-expand-lg .navbar-nav .dropdown-menu",
+        ".navbar-expand-lg .navbar-nav .nav-link",
         ".navbar-expand-lg .navbar-nav-scroll",
+        ".navbar-expand-lg .navbar-toggler",
         ".navbar-expand-lg .offcanvas",
         ".navbar-expand-lg .offcanvas .offcanvas-body",
         ".navbar-expand-lg .offcanvas .offcanvas-header",
@@ -7055,7 +7069,6 @@
         ".z-2",
         ".z-3",
         ".z-n1",
-        "[list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator",
         "[type=search]",
         "a > code",
         "abbr[title]",
@@ -7209,7 +7222,7 @@
   "schemaVersion": 1,
   "summary": {
     "bundleCount": 3,
-    "rejectedSelectorCount": 6957,
+    "rejectedSelectorCount": 6970,
     "routeCount": 104
   }
 }
