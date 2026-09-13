@@ -33,7 +33,11 @@ const routes=[
   'blog/jiu-jitsu-windham-ny',
   'sensei-jiu-jitsu',
   'sensei-studio',
-  'bully-proof-jiu-jitsu-tannersville-ny'
+  'bully-proof-jiu-jitsu-tannersville-ny',
+  'bjj-classes/haines-falls-ny',
+  'bjj-classes/woodstock-ny',
+  'blog/jiu-jitsu-near-hunter-mountain',
+  'blog/jiu-jitsu-near-windham-mountain-club'
 ];
 const results=[];
 try {
