@@ -5,14 +5,15 @@ description: "Kids Jiu-Jitsu in Tannersville, NY for parents who value structure
 canonicalUrl: "https://senseisandy.com/bjj-classes/kids-tannersville-ny"
 bodyClass: "lane-mixed page-programs ss-page ss-page-kids kids-tannersville-page"
 extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/kids.css"
 permalink: "/bjj-classes/kids-tannersville-ny/index.html"
 ---
 <script>
   (function syncKidsCtas() {
-    const kidsBookingUrl = (window.SENSEI_CONFIG && window.SENSEI_CONFIG.kidsBookingUrl) || '/free-bjj-intro-tannersville-ny?lane=kids';
+    const kidsBookingUrl = (window.SENSEI_CONFIG && window.SENSEI_CONFIG.kidsBookingUrl) || '/free-bjj-intro-tannersville-ny?lane=kids#booking-flow';
     window.SENSEI_DECISIONS = Object.assign({}, window.SENSEI_DECISIONS || {}, {
-      primaryCtaLabel: 'Reserve Your Free First Visit',
+      primaryCtaLabel: 'Reserve Free Intro',
       primaryCtaUrl: kidsBookingUrl
     });
 
@@ -24,13 +25,13 @@ permalink: "/bjj-classes/kids-tannersville-ny/index.html"
     if (!navCta) return;
 
     navCta.setAttribute('href', kidsBookingUrl);
-    navCta.setAttribute('data-cta-label', 'Reserve Your Free First Visit');
+    navCta.setAttribute('data-cta-label', 'Reserve Free Intro');
 
     const ctaText = navCta.querySelector('[data-cta-text]');
     if (ctaText) {
-      ctaText.textContent = 'Reserve Your Free First Visit';
+      ctaText.textContent = 'Reserve Free Intro';
     } else {
-      navCta.textContent = 'Reserve Your Free First Visit';
+      navCta.textContent = 'Reserve Free Intro';
     }
   })();
 </script>

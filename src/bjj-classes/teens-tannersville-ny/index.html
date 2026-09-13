@@ -6,14 +6,15 @@ canonicalUrl: "https://senseisandy.com/bjj-classes/teens-tannersville-ny"
 bodyClass: "lane-mixed page-programs ss-page ss-page-teens"
 audience: "teens"
 extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/teens.css"
 permalink: "/bjj-classes/teens-tannersville-ny/index.html"
 ---
 <script>
   (function syncTeensCtas() {
-    const teensBookingUrl = '/free-bjj-intro-tannersville-ny?lane=teens';
+    const teensBookingUrl = '/free-bjj-intro-tannersville-ny?lane=teens#booking-flow';
     window.SENSEI_DECISIONS = Object.assign({}, window.SENSEI_DECISIONS || {}, {
-      primaryCtaLabel: 'Reserve Your Free First Visit',
+      primaryCtaLabel: 'Reserve Free Intro',
       primaryCtaUrl: teensBookingUrl
     });
 
@@ -25,13 +26,13 @@ permalink: "/bjj-classes/teens-tannersville-ny/index.html"
     if (!navCta) return;
 
     navCta.setAttribute('href', teensBookingUrl);
-    navCta.setAttribute('data-cta-label', 'Reserve Your Free First Visit');
+    navCta.setAttribute('data-cta-label', 'Reserve Free Intro');
 
     const ctaText = navCta.querySelector('[data-cta-text]');
     if (ctaText) {
-      ctaText.textContent = 'Reserve Your Free First Visit';
+      ctaText.textContent = 'Reserve Free Intro';
     } else {
-      navCta.textContent = 'Reserve Your Free First Visit';
+      navCta.textContent = 'Reserve Free Intro';
     }
   })();
 </script>

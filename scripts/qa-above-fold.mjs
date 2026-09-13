@@ -40,7 +40,12 @@ const routes=[
   'blog/jiu-jitsu-near-windham-mountain-club',
   'blog/bjj-schedule-windham-ny',
   'blog/private-jiu-jitsu-lessons-windham-ny',
-  'blog/gi-bjj-windham-ny'
+  'blog/gi-bjj-windham-ny',
+  'bjj-classes/tannersville-ny',
+  'bjj-classes/kids-tannersville-ny',
+  'bjj-classes/teens-tannersville-ny',
+  'bjj-classes/adults-tannersville-ny',
+  ''
 ];
 const results=[];
 try {

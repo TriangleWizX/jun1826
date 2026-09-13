@@ -2468,3 +2468,108 @@ body.page-programs[data-audience="teens"] :where(.teens-eyebrow, .eyebrow, .ss-e
     grid-column: span 1;
   }
 }
+
+/* Compact conversion surface: align Teens with Adults and Kids */
+.teens-program-page > .program-conversion-template,
+.teens-program-page .program-conversion-template {
+  margin-block: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.teens-program-page .program-conversion-template .program-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.92fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 2rem);
+}
+
+.teens-program-page .program-conversion-template .program-hero__content {
+  min-width: 0;
+}
+
+.teens-program-page .program-conversion-template h1 {
+  max-width: 12ch;
+  margin: 0 0 0.8rem;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.96;
+}
+
+.teens-program-page .program-conversion-template .lead {
+  max-width: 34rem;
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+  line-height: 1.5;
+}
+
+.teens-program-page .program-conversion-template .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.teens-program-page .program-conversion-template .hero-actions .btn {
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.teens-program-page .program-conversion-template .program-hero__media {
+  position: static;
+  padding: 0.7rem;
+  border-radius: 2rem;
+}
+
+.teens-program-page .program-conversion-template .program-hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 1.45rem;
+  object-fit: cover;
+}
+
+.teens-program-page .program-conversion-template > .benefit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding: 0 clamp(1rem, 3vw, 1.5rem) 1.5rem;
+}
+
+.teens-program-page .program-conversion-template > .benefit-chips span {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(17, 106, 66, 0.14);
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-ink, #362b24);
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+@media (max-width: 767.98px) {
+  .teens-program-page .program-conversion-template .program-hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+  }
+  .teens-program-page .program-conversion-template h1 {
+    max-width: 12ch;
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+  .teens-program-page .program-conversion-template .program-hero__media {
+    order: 2;
+  }
+  .teens-program-page .program-conversion-template .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .teens-program-page .program-conversion-template .hero-actions .btn {
+    width: 100%;
+  }
+}
+
