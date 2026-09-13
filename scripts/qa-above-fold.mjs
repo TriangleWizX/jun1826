@@ -50,6 +50,11 @@ const routes=[
   'bjj-classes/lexington-ny',
   'bjj-classes/maplecrest-ny',
   'bjj-classes/cairo-ny',
+  'bjj-classes/catskill-ny',
+  'bjj-classes/saugerties-ny',
+  'bjj-classes/shandaken-ny',
+  'bjj-classes/lanesville-ny',
+  'bjj-classes/prattsville-ny',
   ''
 ];
 const results=[];
