@@ -21,6 +21,8 @@ const server=createServer(async(req,res)=>{
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
 const routes=[
+  'bjj-classes',
+  'programs',
   'options-pricing',
   'schedule',
   'bjj-faqs',
