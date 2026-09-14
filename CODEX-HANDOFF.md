@@ -166,22 +166,44 @@ As requested in `/goal finish work from codex`, `src/bio.html` was refactored in
 
 ---
 
-## 6. Next Steps for Codex / Pair Agent
+---
 
-1. **Review Changed Files**:
-   - `src/bio.html` (restructured personal bio)
-   - `CODEX-HANDOFF.md` (handoff context)
-   - `crawl-reports/internal-links-inventory.csv` (regenerated from `validate`)
-2. **Production Deployment**:
-   - When authorized by the user, deploy using:
-     ```bash
-     rtk python3 scripts/deploy-release.py
-     ```
-3. **Run Post-Deployment Verification**:
-   - Request external network permission from user, then run:
-     ```bash
-     rtk npm run qa:meta:live
-     rtk npm run qa:links:live
-     rtk npm run qa:blog:slash:live
-     ```
+## 6. Nearby-Town Pages Compression & Standardization (Deployed)
+
+Executed the P2 compression and standardization across all nearby-town pages (`near/*`, `src/near/*`, and `data/near-decision-content.json`):
+
+1. **Repaired Dead In-Page Anchors**:
+   - In `partials/schedule-consistency.html`, updated broken `#ss-lead-capture-form-inline` links to direct `/free-bjj-intro-tannersville-ny#booking-flow`.
+2. **Copywriting & Slop Elimination**:
+   - Cleaned typos (`drops-in` → `drop-ins`, duplicate `class class`) and smoothed awkward AI run-on phrasing across all 6 towns in `data/near-decision-content.json`.
+3. **Streamlined Town Page Layout**:
+   - Upgraded `near/template.html` and `src/near/template.html`:
+     - Added prominent `.near-buttons` in hero linking to `/free-bjj-intro-tannersville-ny#booking-flow` and SMS.
+     - Fixed nested `<picture>` tags to valid HTML5 `<picture>` with mobile/desktop sources.
+     - Packaged commute & route facts into clean, scannable `.ss-trip-card` containers with `.btn-outline-primary` map links.
+     - Streamlined the closing conversion section into a focused callout card.
+4. **Synchronized Eleventy & Static Build**:
+   - Updated `tools/build-near-pages.mjs` to read `src/near/template.html` and compile simultaneously to both `near/[slug]/index.html` and `src/near/[slug]/index.html`, keeping root static and Eleventy source in 100% lockstep.
+5. **Custom Windham Pages Synchronization**:
+   - Updated custom long-form pages `near/windham-ny/index.html` and `src/near/windham-ny/index.html` to standardize hero CTAs with `#booking-flow`.
+6. **Styling & Assets**:
+   - Added scoped `.ss-trip-card` component styling to `src/assets/css/pages/near.css` matching the Sensei Sandy palette.
+7. **Verification & Deployment**:
+   - Passed `qa:near`, `qa:volatile-facts`, `qa:homepage:synthesis`, `qa:funnel`, `scripts/qa-above-fold.mjs`, `qa:stop-slop`, and `validate`.
+   - Pushed commit `0d80534` to branch `migrate-calendly-to-cal` and deployed 12 files to production via `scripts/deploy-release.py`.
+
+---
+
+## 7. Next Opportunities / Backlog
+
+1. **Category 4 Live Network Verification**:
+   - Request external network permission to run live production checks:
+     - `rtk npm run qa:meta:live`
+     - `rtk npm run qa:links:live`
+     - `rtk npm run qa:blog:slash:live`
+2. **Review A/B Test Telemetry in Production**:
+   - Check Google Analytics 4 / Tag Manager for `experiment_impression` events from `hero_cta_copy_v1`.
+3. **Additional CRO Improvements**:
+   - Further page-level CRO audits on program landing pages (`/kids`, `/teen-jiu-jitsu-tannersville-ny`, `/adult-bjj`, `/how-class-works`).
+
 
