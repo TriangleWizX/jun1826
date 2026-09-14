@@ -101,6 +101,13 @@ const routes=[
   'near/hunter-ny',
   'near/palenville-ny',
   'near/windham-ny',
+  'camp-clinics',
+  'summer-academy',
+  'birthday-parties',
+  'elite-concierge',
+  'black-belt-concierge',
+  'inclusion',
+  'free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny',
   ''
 ];
 const results=[];

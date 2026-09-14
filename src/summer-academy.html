@@ -30,30 +30,6 @@ permalink: "/summer-academy.html"
           <p class="kids-lede">
       Six weeks of coached summer mornings where children ages 6-12 build confidence, coordination, self-control, and friendships through real, beginner-friendly no-gi Brazilian Jiu-Jitsu.
           </p>
-          
-          <div class="mb-4">
-            <strong>July 14–August 20</strong><br>
-            <strong>Tuesdays and Thursdays</strong><br>
-            <strong>9:00–11:30 AM</strong><br>
-            <strong>12 Children Maximum</strong>
-          </div>
-
-          {% if temporalPrograms.summerAcademy.enrollmentOpen %}
-            <div class="mb-4">
-              <h3 class="h4" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Founding 12 Tuition: $499</h3>
-              <p>Reserve a place with a <strong>$99 deposit</strong>.</p>
-            </div>
-          {% elseif temporalPrograms.summerAcademy.programState == "IN_PROGRESS" %}
-            <div class="alert alert-info mb-4" role="status">
-              <strong>Current 2026 Summer Academy is underway.</strong><br>
-              Enrollment closed July 7. This page keeps the program logistics for participating families.
-            </div>
-          {% else %}
-            <div class="alert alert-secondary mb-4" role="status">
-              <strong>2026 Summer Academy is complete.</strong><br>
-              The cohort ran July 14–August 20, 2026. Text Sandy about future summer programs.
-            </div>
-          {% endif %}
 
           <div aria-label="Kids intro actions" class="kids-hero-actions">
             {% if temporalPrograms.summerAcademy.enrollmentOpen %}
@@ -70,7 +46,30 @@ permalink: "/summer-academy.html"
               Watch What a Morning Looks Like
             </a>
           </div>
-          <p class="mt-4 small fw-bold text-muted">12 Children Maximum · Beginners Welcome · Parents Welcome to Observe · No-Gi Required</p>
+
+          {% if temporalPrograms.summerAcademy.enrollmentOpen %}
+            <div class="mt-3 mb-2">
+              <h3 class="h5 mb-1" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Founding 12 Tuition: $499</h3>
+              <p class="small mb-0">Reserve a place with a <strong>$99 deposit</strong>.</p>
+            </div>
+          {% elseif temporalPrograms.summerAcademy.programState == "IN_PROGRESS" %}
+            <div class="alert alert-info mt-3 mb-2 py-2 px-3 small" role="status">
+              <strong>Current 2026 Summer Academy is underway.</strong><br>
+              Enrollment closed July 7. This page keeps the program logistics for participating families.
+            </div>
+          {% else %}
+            <div class="alert alert-secondary mt-3 mb-2 py-2 px-3 small" role="status">
+              <strong>2026 Summer Academy is complete.</strong><br>
+              The cohort ran July 14–August 20, 2026. Text Sandy about future summer programs.
+            </div>
+          {% endif %}
+
+          <div class="summer-hero-chips mt-3 d-flex flex-wrap gap-2">
+            <span class="summer-chip">July 14–August 20</span>
+            <span class="summer-chip">Tuesdays &amp; Thursdays · 9:00–11:30 AM</span>
+            <span class="summer-chip">12 Children Maximum</span>
+            <span class="summer-chip">No-Gi Required · Beginners Welcome</span>
+          </div>
         </div>
         <div class="kids-hero-media reveal-on-scroll">
           <picture>

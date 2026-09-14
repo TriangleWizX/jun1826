@@ -27,3 +27,169 @@
     aspect-ratio: 1 / 1;
   }
 }
+
+
+.academy-announcement {
+  background: var(--ss-surface2, #f4f1ed);
+  border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  padding: 0.4rem 1rem;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ss-muted, #4f433c);
+}
+
+/* Summer Academy in-fold mobile CRO adjustments */
+body.page-programs .kids-hero {
+  padding: clamp(1.5rem, 3.5vw, 3rem) 0 clamp(1.25rem, 3vw, 2.5rem);
+}
+
+body.page-programs .kids-hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+}
+
+body.page-programs .kids-lede {
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.55;
+  margin-top: 0.75rem;
+}
+
+/* Scoped button styles for Summer Academy */
+.page-programs .kids-btn {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.45rem 0.45rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: "Lexend", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.page-programs .kids-btn:hover {
+  transform: translateY(-2px);
+}
+
+.page-programs .kids-btn:active {
+  transform: scale(0.98);
+}
+
+.page-programs .kids-btn--primary {
+  background: linear-gradient(180deg, #1b7a4c 0%, var(--ss-green, #116A42) 100%);
+  border-color: rgba(17, 106, 66, 0.16);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(17, 106, 66, 0.2);
+}
+
+.page-programs .kids-btn--primary:hover,
+.page-programs .kids-btn--primary:focus-visible {
+  background: linear-gradient(180deg, #0f5b39 0%, #0d5233 100%);
+  border-color: rgba(17, 106, 66, 0.28);
+  color: #fff;
+  box-shadow: 0 20px 40px rgba(17, 106, 66, 0.26);
+}
+
+.page-programs .kids-btn-icon-wrapper {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.page-programs .kids-btn--primary:hover .kids-btn-icon-wrapper,
+.page-programs .kids-btn--primary:focus-visible .kids-btn-icon-wrapper {
+  transform: translateX(2px);
+  background: #fff;
+  color: var(--ss-green, #116A42);
+}
+
+.page-programs .kids-btn--ghost {
+  background: rgba(255, 250, 242, 0.96);
+  border-color: rgba(33, 29, 24, 0.1);
+  color: var(--ss-ink, #362B24);
+  box-shadow: 0 10px 22px rgba(33, 29, 24, 0.06);
+}
+
+.page-programs .kids-btn--ghost:hover,
+.page-programs .kids-btn--ghost:focus-visible {
+  background: #fffaf2;
+  border-color: rgba(17, 106, 66, 0.16);
+  color: var(--ss-green, #116A42);
+}
+
+.summer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ss-surface2, #f4f1ed);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ss-muted, #4f433c);
+}
+
+@media (max-width: 575.98px) {
+  .academy-announcement {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.76rem;
+  }
+
+  body.page-programs .kids-hero {
+    padding: 0.85rem 0 1.25rem;
+  }
+
+  body.page-programs .kids-hero h1 {
+    font-size: 1.85rem;
+    line-height: 1.05;
+    margin-bottom: 0.4rem;
+  }
+
+  body.page-programs .kids-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.25rem;
+  }
+
+  body.page-programs .kids-lede {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-top: 0.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  body.page-programs .kids-hero-actions {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  body.page-programs .kids-btn {
+    min-height: 46px;
+    font-size: 0.88rem;
+    padding: 0.35rem 0.35rem 0.35rem 1rem;
+    white-space: normal;
+  }
+
+  body.page-programs .kids-btn-icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+}
