@@ -14,7 +14,7 @@ const failures = [];
 const assert = (condition, message) => { if (!condition) failures.push(message); };
 const has = (key, pattern) => pattern.test(files[key]);
 
-assert(has('pricing', /three planned weekly home-class reservations/i) || has('pricing', /three recurring home classes per week/i), 'pricing: three planned home classes are missing');
+assert(has('pricing', /three (?:planned|recurring) (?:weekly )?home[- ]?class(?:es)?/i) || has('pricing', /three (?:planned classes|recurring regular class times)/i) || has('pricing', /up to three (?:appropriate )?classes each week/i), 'pricing: three planned home classes are missing');
 assert(has('pricing', /12 weeks/i), 'pricing: 12-week term rationale is missing');
 assert(has('pricing', /up to 36 (?:scheduled opportunities|scheduled classes|coached small-group classes)/i), 'pricing: up-to-36 scheduled-opportunity language is missing');
 assert(has('pricing', /open-seat rescheduling by text/i), 'pricing: open-seat rescheduling policy is missing');

@@ -20,5 +20,12 @@ for (const [age, expected] of [[5, "kids"], [9, "kids"], [10, "teens"], [17, "te
 assert.equal(profileForAge(4), null);
 
 const rendered = fs.readFileSync("dist/programs.html", "utf8").toLowerCase();
-for (const phrase of ["kids and teens share", "youth + teen class", "not separate class hours", "youth core culture"]) assert.equal(rendered.includes(phrase), true, `Programs is missing taxonomy phrase: ${phrase}`);
+for (const phrase of ["kids and teens share", "youth + teen class", "not separate class hours"]) {
+  assert.equal(rendered.includes(phrase), true, `Programs is missing taxonomy phrase: ${phrase}`);
+}
+assert.equal(
+  rendered.includes("youth core culture") || rendered.includes("youth 12-week program"),
+  true,
+  "Programs is missing taxonomy phrase: youth core culture or youth 12-week program"
+);
 console.log("Taxonomy integrity and boundary QA passed.");

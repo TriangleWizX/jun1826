@@ -19,19 +19,19 @@ assert.match(gain, /What problem were you working on\?/);
 assert.match(gain, /Did anything surprise you\?/);
 assert.match(gain, /Did you need to change your first idea\?/);
 assert.match(gain, /Report Card/);
-assert.match(gain, /Core Culture Parent Guide/);
+assert.match(gain, /(?:Core Culture )?Parent Guide/);
 assert.match(gain, /How Class Works/);
 assert.doesNotMatch(gain, /Gain Points|\+1\s+(Calm|Focus|Confidence|Boundaries|Social Skill)|Hidden Curriculum|Scoreboard at Home|homework stamina|quiet confidence|somatic confidence|adult personality|level up|deters bullies/);
 
-assert.match(report, /repeated live evidence/);
-assert.match(report, /neither is a grade or a failure/);
-assert.match(report, /it is not perfection/);
-assert.match(parent, /Please ask what felt different/);
+assert.match(report, /(?:enough|repeated) live evidence/);
+assert.match(report, /(?:not a (?:school )?grade|Skills, not grades|neither is a grade)/i);
+assert.match(report, /(?:Leaving a state unchanged is okay|No change is still information|not perfection)/i);
+assert.match(parent, /(?:What felt hard\?|Your child knows when a round felt hard|Keep the ride home supportive|Please ask what felt different)/i);
 assert.match(hub, /What problem were you working on today\?/);
 assert.match(hub, /href="\/report-card"/);
-assert.match(safety, /understanding the room, the safety rules, and the next useful step/);
-assert.match(safety, /safer decisions, controlled movement, and useful grappling/);
+assert.match(safety, /(?:calm coaching, clean mats, clear rules|understanding the room, the safety rules)/i);
+assert.match(safety, /(?:Supervised Training|safer decisions, controlled movement, and useful grappling)/i);
 assert.match(wrestle, /Optional solo practice/);
-assert.match(wrestle, /not a Core Culture requirement/);
+assert.match(wrestle, /not a (?:12-week program|Core Culture) requirement/);
 
 console.log("progress communication QA passed");

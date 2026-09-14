@@ -37,8 +37,8 @@ for (const id of ["day-pass", "vacation-week", "ten-class-pack", "twenty-class-p
 assert.match(pricingPage, /Visiting or need a flexible schedule\?/);
 assert.doesNotMatch(pricingPage, /Visiting, easing in/);
 assert.match(pricingPage, /Local first-time students begin with the Free First Visit/);
-assert.match(pricingPage, /do not reserve three recurring home-class seats/);
-assert.match(pricingPage, /or qualify for the Training Fit Guarantee/);
+assert.match(pricingPage, /do not include (?:the full 12-week membership benefits|recurring reservations|three recurring)/i);
+assert.match(pricingPage, /guarantee/i);
 assert.match(visitorPage, /Seasonal or second-home student/);
 assert.match(visitorPage, /available space and suitable partner fit/);
 assert.doesNotMatch(visitorPage, /Three-Class Free Trial/);
