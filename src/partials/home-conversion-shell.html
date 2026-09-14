@@ -643,14 +643,14 @@
       <!-- Dynamic Dream Outcome Panel (Reacts to Audience Selection) -->
       <div class="ss-dynamic-outcome" id="hero-dynamic-outcome" role="region" aria-label="Program fit and outcome details">
         <div class="ss-dynamic-outcome__head">
-          <span class="ss-dynamic-outcome__badge" data-outcome-badge>Adult {{ programs.adults.ageRange }}</span>
+          <span class="ss-dynamic-outcome__badge" data-outcome-badge>Kids · Teens · Adults</span>
           <span class="small text-muted">First-visit outcome</span>
         </div>
-        <h2 class="ss-dynamic-outcome__title" data-outcome-title>You don't have to get in shape before you start.</h2>
+        <h2 class="ss-dynamic-outcome__title" data-outcome-title>Start calm. Train smart. Coached first visit for every age.</h2>
         <ul class="ss-dynamic-outcome__proof" data-outcome-proof>
-          <li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>Beginner-aware rounds</span></li>
+          <li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>Coached situation by situation</span></li>
           <li><i class="bi bi-people" aria-hidden="true"></i> <span>Thoughtful partner selection</span></li>
-          <li><i class="bi bi-speedometer2" aria-hidden="true"></i> <span>Controlled resistance</span></li>
+          <li><i class="bi bi-speedometer2" aria-hidden="true"></i> <span>Skill-based practice at your pace</span></li>
         </ul>
         <p class="ss-dynamic-outcome__reversal" data-outcome-reversal>Start with a 15-minute first visit in normal clothes. No workout required.</p>
       </div>
@@ -673,7 +673,7 @@
 
 
       <div class="ss-hero-reassurances">
-        <span><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> <strong>30-Day Training Fit Guarantee</strong></span>
+        <span><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> <strong>30-Day Training Fit Guarantee</strong> <span class="text-muted">(with 4+ attended classes · <a href="/guarantee-terms">terms</a>)</span></span>
       </div>
     </div>
 
@@ -688,33 +688,33 @@
 
         <div class="ss-home-conversion__choices" role="group" aria-label="Choose who is starting">
           <button type="button" class="ss-audience-card" data-audience-choice="child" aria-pressed="false">
-            <strong>Child {{ programs.kids.ageRange }} <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+            <strong>Child ({{ programs.kids.ageRange }}) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
             <span class="ss-aud-headline">Practice trying again.</span>
             <span class="ss-aud-support">Safe movement, partners, and small problems to solve.</span>
           </button>
 
           <button type="button" class="ss-audience-card" data-audience-choice="teen" aria-pressed="false">
-            <strong>Teen {{ programs.teens.ageRange }} <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+            <strong>Teen ({{ programs.teens.ageRange }}) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
             <span class="ss-aud-headline">Build real skill.</span>
             <span class="ss-aud-support">Pressure, balance, control, and decisions against resistance.</span>
           </button>
 
-          <button type="button" class="ss-audience-card" data-audience-choice="adult" aria-pressed="true">
-            <strong>Adult {{ programs.adults.ageRange }} <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+          <button type="button" class="ss-audience-card" data-audience-choice="adult" aria-pressed="false">
+            <strong>Adult ({{ programs.adults.ageRange }}) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
             <span class="ss-aud-headline">Feel capable again.</span>
             <span class="ss-aud-support">Start as a beginner without getting thrown into hard rounds.</span>
           </button>
 
           <button type="button" class="ss-audience-card" data-audience-choice="family" aria-pressed="false">
-            <strong>Our family <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
+            <strong>Family (2+ students) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
             <span class="ss-aud-headline">Build one routine.</span>
             <span class="ss-aud-support">Youth at 5 PM. Adults at 6 PM. One trip.</span>
           </button>
         </div>
 
-        <p class="visually-hidden" id="home-audience-status" role="status"></p>
-        <a class="btn btn-primary w-100" id="builder-continue-btn" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow" data-analytics-event="first_visit_started" data-cta-label="Choose Your Time" data-cta-location="builder_step1">
-          <span>Choose Your Time</span>
+        <p class="visually-hidden" id="home-audience-status" role="status">Choose who is starting to see specific times, or see all first-visit times.</p>
+        <a class="btn btn-primary w-100" id="builder-continue-btn" href="/free-bjj-intro-tannersville-ny#booking-flow" data-analytics-event="first_visit_started" data-cta-label="See First-Visit Times" data-cta-location="builder_step1">
+          <span>See first-visit times</span>
           <i class="bi bi-arrow-right" aria-hidden="true"></i>
         </a>
 
@@ -733,7 +733,7 @@
         <form action="/free-bjj-intro-tannersville-ny#booking-flow" method="GET" class="visually-hidden" aria-hidden="true">
           <input type="radio" name="profile_choice" value="child">
           <input type="radio" name="profile_choice" value="teen">
-          <input type="radio" name="profile_choice" value="adult" checked>
+          <input type="radio" name="profile_choice" value="adult">
           <input type="radio" name="profile_choice" value="family">
         </form>
 
@@ -754,20 +754,20 @@
         <div class="ss-home-reviews-list" data-reviews-list>
           <article class="ss-review-item">
             <p class="ss-stars" aria-hidden="true">★★★★★</p>
-            <blockquote class="ss-review-quote">“I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.”</blockquote>
-            <cite class="ss-review-author">Richard Scarponi</cite>
+            <blockquote class="ss-review-quote">“My 8yr old loves the classes. His focus at home and school has improved since starting.”</blockquote>
+            <cite class="ss-review-author">Caroline Cosgrove <span class="text-muted">(Parent)</span></cite>
           </article>
 
           <article class="ss-review-item">
             <p class="ss-stars" aria-hidden="true">★★★★★</p>
-            <blockquote class="ss-review-quote">“As a smaller grappler, I felt safe and welcomed.”</blockquote>
-            <cite class="ss-review-author">Kelly Chan</cite>
+            <blockquote class="ss-review-quote">“I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.”</blockquote>
+            <cite class="ss-review-author">Richard Scarponi <span class="text-muted">(Adult Member)</span></cite>
           </article>
 
           <article class="ss-review-item">
             <p class="ss-stars" aria-hidden="true">★★★★★</p>
             <blockquote class="ss-review-quote">“Class at Sensei Sandy BJJ has become such a large part of my family's routine.”</blockquote>
-            <cite class="ss-review-author">Jessie Moriarty</cite>
+            <cite class="ss-review-author">Jessie Moriarty <span class="text-muted">(Parent)</span></cite>
           </article>
         </div>
 
@@ -832,7 +832,7 @@
     },
     family: {
       laneParam: 'family',
-      badge: 'Our family',
+      badge: 'Family (2+ students)',
       title: 'One place. One routine. Something useful for everyone.',
       proof: [
         'Youth at 5 PM',
@@ -841,6 +841,77 @@
       ],
       reversal: 'Start with whoever is ready first.'
     }
+  };
+
+  const reviewsByAudience = {
+    child: [
+      {
+        quote: "My 8yr old loves the classes. His focus at home and school has improved since starting.",
+        author: "Caroline Cosgrove",
+        role: "Parent"
+      },
+      {
+        quote: "I have 2 kids in class twice a week. They started with no experience and now look forward to going after school.",
+        author: "Jared Goodrich",
+        role: "Parent"
+      },
+      {
+        quote: "Class at Sensei Sandy BJJ has become such a large part of my family's routine.",
+        author: "Jessie Moriarty",
+        role: "Parent"
+      }
+    ],
+    teen: [
+      {
+        quote: "They started with no experience and now look forward to going after school.",
+        author: "Jared Goodrich",
+        role: "Parent"
+      },
+      {
+        quote: "I've rarely encountered an instructor as caring, chill, beginner-friendly, optimistic, and skilled at explaining fundamentals as Sensei Sandy.",
+        author: "Douglas Hopson",
+        role: "Adult Student"
+      },
+      {
+        quote: "A welcoming community with no big egos. That's rare in any martial art.",
+        author: "Adam Mastropaolo",
+        role: "Adult Member"
+      }
+    ],
+    adult: [
+      {
+        quote: "I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body but my mind.",
+        author: "Richard Scarponi",
+        role: "Adult Member"
+      },
+      {
+        quote: "As a smaller grappler, I felt safe and welcomed from day one.",
+        author: "Kelly Chan",
+        role: "Adult Student"
+      },
+      {
+        quote: "I have been doing BJJ since the 1990s and can't think of a safer, more ethical, or more skilled academy.",
+        author: "Phillip Johansen",
+        role: "Veteran Practitioner"
+      }
+    ],
+    family: [
+      {
+        quote: "Class at Sensei Sandy BJJ has become such a large part of my family's routine.",
+        author: "Jessie Moriarty",
+        role: "Parent"
+      },
+      {
+        quote: "I have 2 kids in class twice a week. They started with no experience and now look forward to going after school.",
+        author: "Jared Goodrich",
+        role: "Parent"
+      },
+      {
+        quote: "My 8yr old loves the classes. His focus at home and school has improved since starting.",
+        author: "Caroline Cosgrove",
+        role: "Parent"
+      }
+    ]
   };
 
   const selectAudience = (audience, track = true) => {
@@ -863,6 +934,18 @@
     if (reversalEl) reversalEl.textContent = data.reversal;
     if (proofEl) {
       proofEl.innerHTML = data.proof.map((p) => `<li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>${p}</span></li>`).join('');
+    }
+
+    const reviewsList = document.querySelector('[data-reviews-list]');
+    const audienceReviews = reviewsByAudience[audience];
+    if (reviewsList && audienceReviews) {
+      reviewsList.innerHTML = audienceReviews.map((r) => `
+        <article class="ss-review-item">
+          <p class="ss-stars" aria-hidden="true">★★★★★</p>
+          <blockquote class="ss-review-quote">“${r.quote}”</blockquote>
+          <cite class="ss-review-author">${r.author} <span class="text-muted">(${r.role})</span></cite>
+        </article>
+      `).join('');
     }
 
     const bookingHref = `/free-bjj-intro-tannersville-ny?lane=${data.laneParam}#booking-flow`;
@@ -896,7 +979,7 @@
       });
     });
 
-    // Check query param for initial preselection or default to adult
+    // Check query param for initial preselection or keep neutral default
     try {
       const params = new URLSearchParams(window.location.search || '');
       const requested = params.get('lane');
@@ -906,12 +989,28 @@
         selectAudience('child', false);
       } else if (requested === 'teens' || requested === 'teen') {
         selectAudience('teen', false);
-      } else {
+      } else if (requested === 'adults' || requested === 'adult') {
+        selectAudience('adult', false);
+      } else if (requested === 'family') {
+        selectAudience('family', false);
+      } else if (requested) {
         selectAudience('adult', false);
       }
-    } catch (_) {
-      selectAudience('adult', false);
-    }
+    } catch (_) {}
+
+    // A/B Experiment: hero_cta_copy_v1
+    try {
+      if (window.SenseiExperiments) {
+        const variant = window.SenseiExperiments.getVariant('hero_cta_copy_v1', ['control', 'variant']);
+        window.SenseiExperiments.trackImpression('hero_cta_copy_v1', variant);
+        if (variant === 'variant') {
+          const heroCtaSpan = document.querySelector('#hero-primary-cta span');
+          if (heroCtaSpan) heroCtaSpan.textContent = 'See First-Visit Times';
+          const heroCta = document.getElementById('hero-primary-cta');
+          if (heroCta) heroCta.setAttribute('data-cta-label', 'See First-Visit Times');
+        }
+      }
+    } catch (_) {}
 
     // Sticky CTA on mobile (only when hero CTA is scrolled past)
     const heroCta = document.getElementById('hero-primary-cta');

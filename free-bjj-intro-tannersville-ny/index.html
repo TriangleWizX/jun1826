@@ -91,20 +91,19 @@
         <p class="pb-intro">Choose a starting path. Then see appointment times.</p>
         <div class="pb-lanes">
           <div class="pb-lane">
-            <button type="button" class="pb-card-btn" data-profile="adult-beginner" aria-pressed="false" aria-describedby="adult-choice-help"><span>An adult</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" class="pb-card-btn" data-profile="adult-beginner" aria-pressed="false" aria-describedby="adult-choice-help"><span>Adult (18+)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
             <p id="adult-choice-help">Beginner or returning student.</p>
           </div>
-          <div class="pb-lane" data-youth-wrapper>
-            <button class="pb-card-btn" data-reveal-youth type="button" aria-expanded="false" aria-controls="youth-choices" aria-describedby="youth-choice-help"><span>A child or teen</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
-            <p id="youth-choice-help">Choose their age group next.</p>
-            <div data-youth-choice id="youth-choices" hidden>
-              <button type="button" class="pb-card-btn" data-profile="child" aria-pressed="false">Child (age 5-9)</button>
-              <button type="button" class="pb-card-btn" data-profile="teen" aria-pressed="false">Teen (age 10-17)</button>
-              <button type="button" class="pb-back-btn" data-collapse-youth>Back to all choices</button>
-            </div>
+          <div class="pb-lane">
+            <button type="button" class="pb-card-btn" data-profile="child" aria-pressed="false" aria-describedby="child-choice-help"><span>Child (5–9)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <p id="child-choice-help">Movement, partner games, and safety.</p>
           </div>
           <div class="pb-lane">
-            <button type="button" class="pb-card-btn" data-profile="family" aria-pressed="false" aria-describedby="family-choice-help"><span>More than one person</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" class="pb-card-btn" data-profile="teen" aria-pressed="false" aria-describedby="teen-choice-help"><span>Teen (10–17)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <p id="teen-choice-help">Real skill and controlled resistance.</p>
+          </div>
+          <div class="pb-lane">
+            <button type="button" class="pb-card-btn" data-profile="family" aria-pressed="false" aria-describedby="family-choice-help"><span>Family (2+ students)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
             <p id="family-choice-help">Family or training partners.</p>
           </div>
         </div>
@@ -232,7 +231,7 @@
 <details class="ss-faq-item" open="">
 <summary>How is the class coached?</summary>
 <div class="ss-faq-content">
-                No. Your class is coached situation by situation. You will
+                Your class is coached situation by situation. You will
                 start with a room tour, learn our basic safety rules, and try
                 skill-based activities under close personal guidance.
                 Skill-based resistance activities begin at the right pace from

@@ -83,7 +83,32 @@
 <span class="ss-eyebrow-badge" style="margin-bottom: 1rem; display: inline-block;">Tannersville, NY</span>
 <span class="ss-eyebrow-badge" style="margin-bottom: 1rem; display: inline-block; background-color: var(--ss-surface2); border: 1px solid var(--ss-border); margin-left: 0.5rem;">Fall Practice Schedule · Effective September 14</span>
 <h1 class="ss-editorial-title" id="ss-schedule-hero-title">Current and Fall Schedule</h1>
-<script>document.addEventListener('DOMContentLoaded',()=>{const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date());if(today>='2026-09-08'){document.getElementById('ss-schedule-hero-title').textContent='Fall Placement & Practice Schedule';document.getElementById('ss-schedule-a11y-title')?.replaceChildren(document.createTextNode('Fall Placement & Practice Schedule'));}});</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date());
+  if (today >= '2026-09-14') {
+    const heroTitle = document.getElementById('ss-schedule-hero-title');
+    if (heroTitle) heroTitle.textContent = 'Fall Practice Schedule';
+    const a11yTitle = document.getElementById('ss-schedule-a11y-title');
+    if (a11yTitle) a11yTitle.replaceChildren(document.createTextNode('Fall Practice Schedule'));
+    const lead = document.querySelector('.ss-editorial-lead');
+    if (lead) lead.innerHTML = '<strong>Weekly practice schedule.</strong> Youth classes meet at 5:00 PM and adult classes meet at 6:00 PM. Monday and Wednesday are No-Gi, Tuesday and Friday are Gi, and Saturday is Adult No-Gi.';
+    const placementHeading = document.querySelector('h2.h4.mb-3');
+    if (placementHeading && placementHeading.textContent.includes('Fall Placement')) {
+      placementHeading.textContent = 'Weekly Practice Schedule';
+      const placementDesc = placementHeading.nextElementSibling;
+      if (placementDesc && placementDesc.tagName === 'P') {
+        placementDesc.textContent = 'Weekly practice schedule: youth classes meet at 5:00 PM and adult classes meet at 6:00 PM; use the class format listed for each day below.';
+      }
+    }
+    const badge = document.querySelector('.ss-editorial-left .ss-eyebrow-badge:nth-of-type(2)');
+    if (badge) badge.textContent = 'Fall Practice Schedule';
+  } else if (today >= '2026-09-08') {
+    document.getElementById('ss-schedule-hero-title').textContent = 'Fall Placement & Practice Schedule';
+    document.getElementById('ss-schedule-a11y-title')?.replaceChildren(document.createTextNode('Fall Placement & Practice Schedule'));
+  }
+});
+</script>
 <p class="ss-editorial-lead">
           <strong>Fall placement begins September 8. The full fall practice schedule begins Monday, September 14.</strong> Class times remain unchanged: Monday and Wednesday are No-Gi, Tuesday and Friday are Gi, and Saturday is Adult No-Gi.
         </p>

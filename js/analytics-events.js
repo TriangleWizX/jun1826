@@ -59,12 +59,21 @@
   };
 
   const sendEvent = (name, params = {}) => {
+    const experiments = window.SenseiExperiments?.getAll?.() || {};
+    const expPayload = {};
+    if (Object.keys(experiments).length > 0) {
+      expPayload.experiments = experiments;
+      if (experiments.hero_cta_copy_v1) {
+        expPayload.experiment_variant = experiments.hero_cta_copy_v1;
+      }
+    }
     const payload = {
       ...params,
       page_type: params.page_type || getPageType(),
       source_page: window.location.href,
       source_path: window.location.pathname || '/',
       ...getAttribution(),
+      ...expPayload,
       ...params
     };
     if (typeof window.gtag === 'function') {
