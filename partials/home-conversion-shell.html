@@ -999,18 +999,26 @@
     } catch (_) {}
 
     // A/B Experiment: hero_cta_copy_v1
-    try {
-      if (window.SenseiExperiments) {
-        const variant = window.SenseiExperiments.getVariant('hero_cta_copy_v1', ['control', 'variant']);
-        window.SenseiExperiments.trackImpression('hero_cta_copy_v1', variant);
-        if (variant === 'variant') {
-          const heroCtaSpan = document.querySelector('#hero-primary-cta span');
-          if (heroCtaSpan) heroCtaSpan.textContent = 'See First-Visit Times';
-          const heroCta = document.getElementById('hero-primary-cta');
-          if (heroCta) heroCta.setAttribute('data-cta-label', 'See First-Visit Times');
+    const applyHeroExperiment = () => {
+      try {
+        if (window.SenseiExperiments) {
+          const variant = window.SenseiExperiments.getVariant('hero_cta_copy_v1', ['control', 'variant']);
+          window.SenseiExperiments.trackImpression('hero_cta_copy_v1', variant);
+          if (variant === 'variant') {
+            const heroCtaSpan = document.querySelector('#hero-primary-cta span');
+            if (heroCtaSpan) heroCtaSpan.textContent = 'See First-Visit Times';
+            const heroCta = document.getElementById('hero-primary-cta');
+            if (heroCta) heroCta.setAttribute('data-cta-label', 'See First-Visit Times');
+          }
         }
-      }
-    } catch (_) {}
+      } catch (_) {}
+    };
+
+    if (window.SenseiExperiments) {
+      applyHeroExperiment();
+    } else {
+      window.addEventListener('sensei:experiments-ready', applyHeroExperiment, { once: true });
+    }
 
     // Sticky CTA on mobile (only when hero CTA is scrolled past)
     const heroCta = document.getElementById('hero-primary-cta');

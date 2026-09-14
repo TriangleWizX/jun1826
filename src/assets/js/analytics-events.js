@@ -80,6 +80,10 @@
     }
   };
 
+  try {
+    window.dispatchEvent(new CustomEvent("sensei:experiments-ready", { detail: window.SenseiExperiments }));
+  } catch (_) {}
+
   window.SS_TRACK_EVENT = function (eventName, eventParams) {
     const aliases = { first_visit_started: "first_visit_cta_click", profile_selected: "avatar_selected", visit_selected: "visit_window_selected", first_visit_start: "lead_form_started" };
     eventName = aliases[eventName] || eventName;
