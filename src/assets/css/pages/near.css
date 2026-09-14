@@ -614,3 +614,27 @@ body.page-near .ss-windham-inline-note,
 body.page-near .ss-windham-review-card p {
   color: #756b5f;
 }
+
+body.page-near .ss-trip-card {
+  background: #ffffff;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  box-shadow: 0 4px 16px rgba(33, 29, 24, 0.04);
+}
+
+body.page-near .ss-trip-card p strong {
+  color: var(--ss-ink);
+}
+
+body.page-near .ss-trip-card .btn-outline-primary {
+  color: var(--ss-green);
+  border-color: var(--ss-green);
+  transition: all 0.2s ease;
+}
+
+body.page-near .ss-trip-card .btn-outline-primary:hover,
+body.page-near .ss-trip-card .btn-outline-primary:focus-visible {
+  background-color: var(--ss-green);
+  border-color: var(--ss-green);
+  color: #ffffff;
+}
+

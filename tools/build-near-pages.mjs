@@ -9,6 +9,8 @@ const FAST_FACTS_PATH = path.join(ROOT, 'data', 'near-fast-facts.json');
 const DECISION_CONTENT_PATH = path.join(ROOT, 'data', 'near-decision-content.json');
 const PROVENANCE_PATH = path.join(ROOT, 'data', 'location-provenance.json');
 const OUTPUT_ROOT = path.join(ROOT, 'near');
+const SRC_TEMPLATE_PATH = path.join(ROOT, 'src', 'near', 'template.html');
+const SRC_OUTPUT_ROOT = path.join(ROOT, 'src', 'near');
 const CUSTOM_NEAR_SLUGS = new Set(['windham-ny']);
 
 const readJson = async (filePath) => JSON.parse(await fs.readFile(filePath, 'utf8'));
@@ -296,8 +298,9 @@ const defaultDecisionCopy = (town) => ({
 });
 
 const generate = async () => {
-  const [template, towns, legacyRedirectConfig, factsById, decisionBySlug, provenance] = await Promise.all([
+  const [template, srcTemplate, towns, legacyRedirectConfig, factsById, decisionBySlug, provenance] = await Promise.all([
     fs.readFile(TEMPLATE_PATH, 'utf8'),
+    fs.readFile(SRC_TEMPLATE_PATH, 'utf8'),
     readJson(CONFIG_PATH),
     readJson(LEGACY_REDIRECTS_PATH),
     readJson(FAST_FACTS_PATH),
@@ -333,6 +336,8 @@ const generate = async () => {
     if (liveSlugs.has(slug) || CUSTOM_NEAR_SLUGS.has(slug)) continue;
     const aliasDir = path.join(OUTPUT_ROOT, slug);
     await fs.rm(aliasDir, { recursive: true, force: true });
+    const srcAliasDir = path.join(SRC_OUTPUT_ROOT, slug);
+    await fs.rm(srcAliasDir, { recursive: true, force: true });
     removedAliasDirs += 1;
   }
 
@@ -397,11 +402,17 @@ const generate = async () => {
     };
 
     const html = replaceAll(template, replacements);
-
     const outputDir = path.join(OUTPUT_ROOT, town.slug);
     const outputPath = path.join(outputDir, 'index.html');
     await fs.mkdir(outputDir, { recursive: true });
     await fs.writeFile(outputPath, html);
+
+    const srcHtml = replaceAll(srcTemplate, replacements);
+    const srcOutputDir = path.join(SRC_OUTPUT_ROOT, town.slug);
+    const srcOutputPath = path.join(srcOutputDir, 'index.html');
+    await fs.mkdir(srcOutputDir, { recursive: true });
+    await fs.writeFile(srcOutputPath, srcHtml);
+
     generatedCount += 1;
   }
 
