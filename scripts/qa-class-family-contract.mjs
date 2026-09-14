@@ -6,7 +6,7 @@ const root = process.cwd();
 const dist = path.join(root, 'dist');
 const familyRoot = path.join(dist, 'bjj-classes');
 const required = [
-  '/assets/css/site-shell.min.css',
+  /\/assets\/css\/site-shell(?:\.min)?(?:\.[a-f0-9]+)?\.css/,
   '/js/link-utils.min.js',
   '/js/analytics-events.min.js',
 ];
@@ -24,7 +24,8 @@ const pages = fs.existsSync(familyRoot)
 for (const file of pages) {
   const html = fs.readFileSync(file, 'utf8');
   for (const asset of required) {
-    if (!html.includes(asset)) failures.push(`${path.relative(root, file)}: missing ${asset}`);
+    const matched = asset instanceof RegExp ? asset.test(html) : html.includes(asset);
+    if (!matched) failures.push(`${path.relative(root, file)}: missing ${asset}`);
   }
   const cssLinks = [...html.matchAll(/<link[^>]+href=["']([^"']+\.css)["']/gi)].map((match) => match[1]);
   for (const href of cssLinks) {
