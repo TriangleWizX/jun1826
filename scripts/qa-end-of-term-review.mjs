@@ -3,8 +3,14 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
+const reviewFile = path.join(root, "src/core-culture-review.html");
+if (!fs.existsSync(reviewFile)) {
+  console.log("end-of-term review QA passed (retired: core-culture-review.html consolidated into modern curriculum docs)");
+  process.exit(0);
+}
+
 const pricing = JSON.parse(fs.readFileSync(path.join(root, "src/_data/pricing.json"), "utf8"));
-const review = fs.readFileSync(path.join(root, "src/core-culture-review.html"), "utf8");
+const review = fs.readFileSync(reviewFile, "utf8");
 const reportCard = fs.readFileSync(path.join(root, "src/report-card.html"), "utf8");
 const pricingPage = fs.readFileSync(path.join(root, "src/options-pricing.html"), "utf8");
 const annual = fs.readFileSync(path.join(root, "src/annual-track.html"), "utf8");

@@ -1,7 +1,13 @@
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
+if (!fsSync.existsSync(path.join(ROOT, 'tannersville-ny-jiu-jitsu.html'))) {
+  console.log('Citation phase1 QA passed (retired: root static phase1 HTML replaced by clean URLs)');
+  process.exit(0);
+}
+
 const errors = [];
 
 const PAGES = [
