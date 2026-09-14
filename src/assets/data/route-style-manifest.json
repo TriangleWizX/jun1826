@@ -159634,7 +159634,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "cf48ee1c7ea7a9d1c57d2ef11c075cfa1ba76821dedc446872abdf871302a20a",
+      "purgeContentSha256": "092649f035336c5eb80dea948a924d2f6b40ace3c4e392d14b08c88c96d6cac5",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -161759,8 +161759,12 @@
       "signatureHash": "18ac9c2704ce",
       "sourceDependencies": [
         {
+          "path": "_includes/analytics-head.html",
+          "sha256": "9518e18206e0c51f172fc11f2d47bb8127c958f44a1d514da16baf09b0a1bab2"
+        },
+        {
           "path": "free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/index.html",
-          "sha256": "e784c75079fa01a4e8e09ff936bd27b50e24cebd8813463f61a1b032eb27960e"
+          "sha256": "6a2c6f72aa58cc22c3920612488b2d7d6f93cdcc0977ecd5cf50fc7df803478c"
         },
         {
           "path": "nav-include.html",
@@ -161768,7 +161772,7 @@
         }
       ],
       "sourceHtml": "free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/index.html",
-      "sourceHtmlSha256": "e784c75079fa01a4e8e09ff936bd27b50e24cebd8813463f61a1b032eb27960e"
+      "sourceHtmlSha256": "6a2c6f72aa58cc22c3920612488b2d7d6f93cdcc0977ecd5cf50fc7df803478c"
     },
     "/free-bjj-intro-tannersville-ny": {
       "buildVersion": "route-styles-1",
@@ -177149,7 +177153,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "5adeedd4a2d3222cda16cf91dc61e9854c0c0d19f1dd3e89143076f78556565c",
+      "purgeContentSha256": "cdd668db9f39ae9905977109cd1c2aed9d516069dd4085e8d723ff6f51878a2c",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -179275,7 +179279,7 @@
       "sourceDependencies": [
         {
           "path": "jiu-jitsu-safety-tannersville-ny.html",
-          "sha256": "5567df60b4229e6cd11b96614831b1cada8db6e9564981beb0cfc23885bdfccc"
+          "sha256": "b1a0bc7e35f08cb308b3b0df727a366b7d1968e0b9534ab87d2d483fb0a5399f"
         },
         {
           "path": "nav-include.html",
@@ -179291,7 +179295,7 @@
         }
       ],
       "sourceHtml": "jiu-jitsu-safety-tannersville-ny.html",
-      "sourceHtmlSha256": "5567df60b4229e6cd11b96614831b1cada8db6e9564981beb0cfc23885bdfccc"
+      "sourceHtmlSha256": "b1a0bc7e35f08cb308b3b0df727a366b7d1968e0b9534ab87d2d483fb0a5399f"
     },
     "/law-enforcement-bjj": {
       "buildVersion": "route-styles-1",
