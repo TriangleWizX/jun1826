@@ -305,8 +305,42 @@
 }
 
 @media (max-width: 767.98px) {
+  body.ss-page-bjj-classes .ss-near-hero.he-section,
   .ss-page-bjj-classes .ss-near-hero {
-    padding-top: 3.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 1.5rem;
+  }
+
+  body.ss-page-bjj-classes .he-eyebrow,
+  .ss-page-bjj-classes .he-eyebrow {
+    margin-bottom: 0.35rem;
+  }
+
+  body.ss-page-bjj-classes .he-split-left h1,
+  .ss-page-bjj-classes .he-split-left h1 {
+    font-size: clamp(1.65rem, 7vw, 2.4rem);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+  }
+
+  body.ss-page-bjj-classes .lead,
+  .ss-page-bjj-classes .lead {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-top: 0.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  body.ss-page-bjj-classes .ss-near-hero__actions,
+  .ss-page-bjj-classes .ss-near-hero__actions {
+    margin-top: 0.75rem;
+  }
+
+  body.ss-page-bjj-classes .he-btn-wrapper,
+  .ss-page-bjj-classes .he-btn-wrapper {
+    min-height: 48px;
+    padding: 0.65rem 1.15rem;
+    font-size: 0.95rem;
   }
 
   .ss-page-bjj-classes .ss-near-hero__grid,
