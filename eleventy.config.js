@@ -51,6 +51,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
   eleventyConfig.addPassthroughCopy({ "src/site.webmanifest": "site.webmanifest" });
+  eleventyConfig.addPassthroughCopy({ "src/manifest-daily-checkin.json": "manifest-daily-checkin.json" });
+  eleventyConfig.addPassthroughCopy({ "src/sw-daily-checkin.js": "sw-daily-checkin.js" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
   // Apache expands these root-relative SSI targets after deployment. They are
   // deployment artifacts, so copy the canonical root fragments into dist.

@@ -1,0 +1,23 @@
+{
+  "name": "SSBJJ Daily Check-in",
+  "short_name": "Mat Check-in",
+  "description": "Sensei Sandy BJJ Coach Mat-Log & Daily Parent Update Utility",
+  "start_url": "/daily-checkin",
+  "scope": "/daily-checkin",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbfaf8",
+  "theme_color": "#116a42",
+  "icons": [
+    {
+      "src": "/assets/images/brand/ssbjj-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/brand/ssbjj-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -5,8 +5,13 @@ description: "Quick coach mat-log and parent update: log what happened in class 
 canonicalUrl: "https://senseisandy.com/daily-checkin"
 robots: "noindex, follow"
 audience: "member"
-bodyClass: "ss-page page-daily-checkin"
 permalink: "/daily-checkin.html"
+headExtra: |
+  <link rel="manifest" href="/manifest-daily-checkin.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Coach Check-in">
+  <meta name="theme-color" content="#116a42">
 ---
 
 <style>
@@ -32,6 +37,96 @@ permalink: "/daily-checkin.html"
     margin-bottom: 1.75rem;
   }
 
+  .daily-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .daily-network-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .daily-badge-online {
+    background: rgba(17, 106, 66, 0.12);
+    color: var(--color-accent, #116a42);
+  }
+
+  .daily-badge-offline {
+    background: #fde8e8;
+    color: #9b1c1c;
+  }
+
+  .daily-draft-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: #eef7f2;
+    border: 1px solid rgba(17, 106, 66, 0.25);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    margin-top: 0.85rem;
+    font-size: 0.82rem;
+    color: var(--color-ink, #1f1712);
+  }
+
+  .daily-draft-alert i {
+    color: var(--color-accent, #116a42);
+    font-size: 1rem;
+    margin-right: 0.35rem;
+  }
+
+  .daily-draft-clear-btn {
+    background: transparent;
+    border: 1px solid rgba(17, 106, 66, 0.35);
+    border-radius: 0.35rem;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent, #116a42);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .daily-draft-clear-btn:hover {
+    background: var(--color-accent, #116a42);
+    color: #fff;
+  }
+
+  .daily-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0 0.85rem;
+    min-height: 1.5rem;
+  }
+
+  .daily-draft-indicator {
+    font-size: 0.78rem;
+    color: var(--color-accent, #116a42);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .daily-draft-indicator.visible {
+    opacity: 1;
+  }
+
   .daily-eyebrow {
     display: inline-block;
     font-size: 0.75rem;
@@ -39,7 +134,7 @@ permalink: "/daily-checkin.html"
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-accent, #116a42);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0;
   }
 
   .daily-header h1 {
@@ -551,9 +646,21 @@ permalink: "/daily-checkin.html"
 
 <div class="daily-page">
   <header class="daily-header">
-    <span class="daily-eyebrow">Coach Mat-Log &amp; Parent Update</span>
+    <div class="daily-header-top">
+      <span class="daily-eyebrow">Coach Mat-Log &amp; Parent Update</span>
+      <div id="connection-status" class="daily-network-badge daily-badge-online" role="status" aria-live="polite">
+        <i id="connection-icon" class="bi bi-wifi" aria-hidden="true"></i> <span id="connection-text">Online</span>
+      </div>
+    </div>
     <h1>Daily Training Report</h1>
     <p>Record what was observed in class today, choose the next problem to try, and send a calm, clear update.</p>
+    <div id="draft-alert" class="daily-draft-alert" role="status" hidden>
+      <div>
+        <i class="bi bi-clock-history" aria-hidden="true"></i>
+        <span id="draft-message">Restored unsaved draft from today.</span>
+      </div>
+      <button type="button" id="clear-draft-btn" class="daily-draft-clear-btn">Clear Draft</button>
+    </div>
   </header>
 
   <div class="daily-grid">
@@ -634,7 +741,10 @@ permalink: "/daily-checkin.html"
       </section>
 
       <div id="form-error" class="daily-error" role="alert" hidden></div>
-      <p id="save-status" class="daily-help" role="status"></p>
+      <div class="daily-status-row">
+        <p id="save-status" class="daily-help" role="status"></p>
+        <span id="draft-indicator" class="daily-draft-indicator" aria-live="polite"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Draft saved</span>
+      </div>
 
       <!-- Actions -->
       <div class="daily-actions">

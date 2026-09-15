@@ -49,10 +49,24 @@ check(entry !== undefined, 'missing url-registry.json entry for /daily-checkin')
 check(entry?.indexable === false, 'registry must keep daily route non-indexable');
 check(entry?.canonicalPath === '/daily-checkin', 'registry canonical path mismatch');
 
+// Verify PWA & offline features
+check(source.includes('manifest-daily-checkin.json'), 'missing web app manifest reference in headExtra');
+check(source.includes('apple-mobile-web-app-capable'), 'missing apple-mobile-web-app-capable meta tag');
+check(source.includes('daily-network-badge'), 'missing daily-network-badge in template');
+check(source.includes('daily-draft-alert'), 'missing daily-draft-alert in template');
+check(script.includes('saveDraft'), 'missing saveDraft in daily-checkin.js');
+check(script.includes('restoreDraft'), 'missing restoreDraft in daily-checkin.js');
+check(script.includes('clearDraft'), 'missing clearDraft in daily-checkin.js');
+check(script.includes('sw-daily-checkin.js'), 'missing service worker registration in daily-checkin.js');
+check(fs.existsSync('src/manifest-daily-checkin.json'), 'missing src/manifest-daily-checkin.json');
+check(fs.existsSync('src/sw-daily-checkin.js'), 'missing src/sw-daily-checkin.js');
+
 if (fs.existsSync('dist/daily-checkin.html')) {
   const output = read('dist/daily-checkin.html');
   check(output.includes('noindex, follow'), 'generated robots metadata missing in dist');
   check(!read('dist/sitemap.xml').includes('/daily-checkin'), 'daily route leaked into sitemap');
+  check(fs.existsSync('dist/manifest-daily-checkin.json'), 'missing dist/manifest-daily-checkin.json');
+  check(fs.existsSync('dist/sw-daily-checkin.js'), 'missing dist/sw-daily-checkin.js');
 }
 
 if (errors.length) {

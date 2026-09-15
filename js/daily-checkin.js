@@ -196,6 +196,177 @@
     }
   }
 
+  const DRAFT_KEY = 'ssbjj_daily_checkin_draft_v1';
+  let draftSaveTimer = null;
+  let draftIndicatorTimer = null;
+
+  function hasDraftContent(draft) {
+    if (!draft) return false;
+    return !!(
+      (draft.student && draft.student.trim()) ||
+      (draft.problem && draft.problem.trim()) ||
+      (draft.observed && draft.observed.trim()) ||
+      (draft.next && draft.next.trim()) ||
+      (draft.easier && draft.easier.trim())
+    );
+  }
+
+  function saveDraft() {
+    try {
+      const draft = {
+        student: f.student.value,
+        phone: f.phone.value,
+        date: f.date.value,
+        program: f.program.value,
+        skill: f.skill.value,
+        problem: f.problem.value,
+        observed: f.observed.value,
+        context: selectedContext(),
+        next: f.next.value,
+        easier: f.easier.value,
+        savedAt: new Date().toISOString()
+      };
+
+      if (!hasDraftContent(draft)) {
+        localStorage.removeItem(DRAFT_KEY);
+        const indicator = $('draft-indicator');
+        if (indicator) indicator.classList.remove('visible');
+        return;
+      }
+
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+      const indicator = $('draft-indicator');
+      if (indicator) {
+        indicator.classList.add('visible');
+        clearTimeout(draftIndicatorTimer);
+        draftIndicatorTimer = setTimeout(() => {
+          indicator.classList.remove('visible');
+        }, 1800);
+      }
+    } catch {
+      // localStorage may be disabled or full
+    }
+  }
+
+  function triggerDraftSave() {
+    clearTimeout(draftSaveTimer);
+    draftSaveTimer = setTimeout(saveDraft, 250);
+  }
+
+  function restoreDraft() {
+    try {
+      const raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) return;
+      const draft = JSON.parse(raw);
+      if (!hasDraftContent(draft)) return;
+
+      if (draft.student) f.student.value = draft.student;
+      if (draft.phone) f.phone.value = draft.phone;
+      if (draft.date) f.date.value = draft.date;
+      if (draft.program && f.program) f.program.value = draft.program;
+      if (draft.skill && f.skill) f.skill.value = draft.skill;
+      if (draft.problem) f.problem.value = draft.problem;
+      if (draft.observed) f.observed.value = draft.observed;
+      if (draft.next) f.next.value = draft.next;
+      if (draft.easier) f.easier.value = draft.easier;
+
+      if (draft.context) {
+        const rad = document.querySelector(`input[name="observation-context"][value="${draft.context}"]`);
+        if (rad) rad.checked = true;
+      }
+
+      updatePreview();
+
+      const alertEl = $('draft-alert');
+      const msgEl = $('draft-message');
+      if (alertEl && msgEl) {
+        let timeStr = 'earlier';
+        if (draft.savedAt) {
+          try {
+            timeStr = new Date(draft.savedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          } catch {}
+        }
+        msgEl.textContent = `Restored unsaved draft (${timeStr}).`;
+        alertEl.hidden = false;
+      }
+    } catch {
+      // Ignore draft parse failure
+    }
+  }
+
+  function clearDraft() {
+    try {
+      localStorage.removeItem(DRAFT_KEY);
+    } catch {}
+    const alertEl = $('draft-alert');
+    if (alertEl) alertEl.hidden = true;
+    const indicator = $('draft-indicator');
+    if (indicator) indicator.classList.remove('visible');
+  }
+
+  function updateNetworkStatus() {
+    const statusEl = $('connection-status');
+    const iconEl = $('connection-icon');
+    const textEl = $('connection-text');
+    if (!statusEl || !iconEl || !textEl) return;
+
+    if (navigator.onLine) {
+      statusEl.className = 'daily-network-badge daily-badge-online';
+      iconEl.className = 'bi bi-wifi';
+      textEl.textContent = 'Online';
+    } else {
+      statusEl.className = 'daily-network-badge daily-badge-offline';
+      iconEl.className = 'bi bi-wifi-off';
+      textEl.textContent = 'Offline (Mat Mode)';
+    }
+  }
+
+  function renderRoster(students, isCached) {
+    const container = $('roster-chips');
+    const datalist = $('student-roster');
+    if (!container || !students || students.length === 0) return;
+
+    container.innerHTML = '';
+    if (datalist) datalist.innerHTML = '';
+
+    const label = document.createElement('span');
+    label.className = 'daily-roster-label';
+    label.textContent = isCached ? "Checked-in (offline cache):" : "Checked-in today:";
+    container.appendChild(label);
+
+    students.forEach((st) => {
+      if (datalist) {
+        const opt = document.createElement('option');
+        opt.value = st.name;
+        datalist.appendChild(opt);
+      }
+
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'roster-chip';
+      chip.textContent = st.shortName;
+      chip.title = `Auto-fill ${st.name}`;
+      chip.addEventListener('click', () => {
+        f.student.value = st.name;
+        if (st.phone && !f.phone.value) {
+          f.phone.value = st.phone;
+        }
+        if (st.sessionTitle && f.program) {
+          const titleLower = st.sessionTitle.toLowerCase();
+          if (titleLower.includes('kid')) f.program.value = 'kids';
+          else if (titleLower.includes('teen')) f.program.value = 'teens';
+          else if (titleLower.includes('saturday')) f.program.value = 'saturday';
+          else if (titleLower.includes('adult')) f.program.value = 'adults';
+          else if (titleLower.includes('private')) f.program.value = 'private';
+        }
+        updatePreview();
+        triggerDraftSave();
+        if (f.problem) f.problem.focus();
+      });
+      container.appendChild(chip);
+    });
+  }
+
   async function loadAttendanceRoster(targetDate) {
     const container = $('roster-chips');
     const datalist = $('student-roster');
@@ -206,7 +377,7 @@
 
     try {
       const res = await fetch(`/api/attendance?date=${encodeURIComponent(targetDate)}`);
-      if (!res.ok) return;
+      if (!res.ok) throw new Error('API offline');
       const data = await res.json();
       if (!data || !Array.isArray(data.attendance) || data.attendance.length === 0) {
         return;
@@ -231,45 +402,23 @@
         }
       });
 
-      if (uniqueStudents.length === 0) return;
-
-      const label = document.createElement('span');
-      label.className = 'daily-roster-label';
-      label.textContent = "Checked-in today:";
-      container.appendChild(label);
-
-      uniqueStudents.forEach((st) => {
-        if (datalist) {
-          const opt = document.createElement('option');
-          opt.value = st.name;
-          datalist.appendChild(opt);
+      if (uniqueStudents.length > 0) {
+        try {
+          localStorage.setItem(`ssbjj_roster_${targetDate}`, JSON.stringify(uniqueStudents));
+        } catch {}
+        renderRoster(uniqueStudents, false);
+      }
+    } catch {
+      // Offline fallback: check local roster cache
+      try {
+        const raw = localStorage.getItem(`ssbjj_roster_${targetDate}`);
+        if (raw) {
+          const cached = JSON.parse(raw);
+          if (Array.isArray(cached) && cached.length > 0) {
+            renderRoster(cached, true);
+          }
         }
-
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = 'roster-chip';
-        chip.textContent = st.shortName;
-        chip.title = `Auto-fill ${st.name}`;
-        chip.addEventListener('click', () => {
-          f.student.value = st.name;
-          if (st.phone && !f.phone.value) {
-            f.phone.value = st.phone;
-          }
-          if (st.sessionTitle && f.program) {
-            const titleLower = st.sessionTitle.toLowerCase();
-            if (titleLower.includes('kid')) f.program.value = 'kids';
-            else if (titleLower.includes('teen')) f.program.value = 'teens';
-            else if (titleLower.includes('saturday')) f.program.value = 'saturday';
-            else if (titleLower.includes('adult')) f.program.value = 'adults';
-            else if (titleLower.includes('private')) f.program.value = 'private';
-          }
-          updatePreview();
-          if (f.problem) f.problem.focus();
-        });
-        container.appendChild(chip);
-      });
-    } catch (err) {
-      // Graceful offline fallback
+      } catch {}
     }
   }
 
@@ -290,12 +439,17 @@
     $('form-error').hidden = true;
     $('save-status').textContent = '';
 
+    clearDraft();
     loadAttendanceRoster(f.date.value);
     updatePreview();
     f.student.focus();
   }
 
   function init() {
+    updateNetworkStatus();
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+
     f.date.value = todayIso();
     $('new-student').disabled = true;
     loadAttendanceRoster(f.date.value);
@@ -303,6 +457,13 @@
     // Refresh attendance when date changes
     f.date.addEventListener('change', () => {
       loadAttendanceRoster(f.date.value);
+      triggerDraftSave();
+    });
+
+    // Clear draft button
+    $('clear-draft-btn')?.addEventListener('click', () => {
+      clearDraft();
+      resetForm();
     });
 
     // Populate skills
@@ -328,7 +489,10 @@
         wrap.append(radio, text);
         ctxContainer.appendChild(wrap);
       });
-      ctxContainer.addEventListener('change', updatePreview);
+      ctxContainer.addEventListener('change', () => {
+        updatePreview();
+        triggerDraftSave();
+      });
     }
 
     // Populate quick problem chips
@@ -342,16 +506,30 @@
         chip.addEventListener('click', () => {
           f.problem.value = text;
           updatePreview();
+          triggerDraftSave();
         });
         chipsContainer.appendChild(chip);
       });
     }
 
-    // Bind inputs to preview
+    // Bind inputs to preview & auto-save
     Object.values(f).forEach(inputEl => {
-      if (inputEl) inputEl.addEventListener('input', updatePreview);
-      if (inputEl && inputEl.tagName === 'SELECT') inputEl.addEventListener('change', updatePreview);
+      if (inputEl) {
+        inputEl.addEventListener('input', () => {
+          updatePreview();
+          triggerDraftSave();
+        });
+      }
+      if (inputEl && inputEl.tagName === 'SELECT') {
+        inputEl.addEventListener('change', () => {
+          updatePreview();
+          triggerDraftSave();
+        });
+      }
     });
+
+    // Restore any existing draft on startup
+    restoreDraft();
 
     // Send SMS Button
     $('send-sms')?.addEventListener('click', async () => {
@@ -373,6 +551,7 @@
 
       reportDispatched = true;
       $('new-student').disabled = false;
+      clearDraft();
 
       // Construct SMS url
       // iOS supports `sms:+1234567890&body=...`, Android supports `sms:+1234567890?body=...`
@@ -407,6 +586,7 @@
         showStatus('Summary copied to clipboard!', false);
         reportDispatched = true;
         $('new-student').disabled = false;
+        clearDraft();
       } catch {
         window.prompt('Copy this report summary:', summary);
       }
@@ -425,6 +605,7 @@
       document.title = `Sensei-Sandy_Daily-Report_${safe}_${f.date.value}`;
       reportDispatched = true;
       $('new-student').disabled = false;
+      clearDraft();
       showStatus('Print dialog opened. Your report stays on the page.', false);
       window.print();
       setTimeout(() => { document.title = oldTitle; }, 1000);
@@ -443,6 +624,11 @@
     });
 
     updatePreview();
+
+    // Register scoped offline service worker
+    if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+      navigator.serviceWorker.register('/sw-daily-checkin.js', { scope: '/daily-checkin' }).catch(() => {});
+    }
   }
 
   if (document.readyState === 'loading') {
