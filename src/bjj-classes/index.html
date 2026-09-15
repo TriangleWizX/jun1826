@@ -21,9 +21,11 @@ extraCss:
               <a class="he-btn-wrapper" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro <span aria-hidden="true" class="he-btn-icon-circle"><i class="bi bi-arrow-right-short"></i></span></a>
               <a class="he-btn-wrapper" style="background-color: transparent; border: 1px solid var(--ss-ink); color: var(--ss-ink);" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20classes%20at%20the%20studio.">Text Sandy <span aria-hidden="true" class="he-btn-icon-circle" style="background-color: rgba(0,0,0,0.05);"><i class="bi bi-chat"></i></span></a>
             </div>
-            <p class="small text-muted mt-3 mb-0">
-              <a href="/schedule">View Schedule</a> · <a href="/options-pricing">Options &amp; Pricing</a> · <a href="/bjj-tannersville-ny-directions">Directions &amp; Parking</a>
-            </p>
+            <nav class="program-hero__quick-links" aria-label="Quick class links">
+              <a class="program-hero__chip" href="/schedule">View Schedule</a>
+              <a class="program-hero__chip" href="/options-pricing">Options &amp; Pricing</a>
+              <a class="program-hero__chip" href="/bjj-tannersville-ny-directions">Directions &amp; Parking</a>
+            </nav>
             <div class="ss-hero-metrics mt-4" aria-label="Quick highlights">
               <div class="he-outer-shell">
                 <div class="he-inner-core">
@@ -181,5 +183,26 @@ extraCss:
           </div>
         </div>
       </div>
-    </section>
   </main>
+  <script>
+    (() => {
+      const reveals = document.querySelectorAll('.ss-page-bjj-classes .he-reveal, .he-reveal');
+      if (!reveals.length) return;
+
+      const showAll = () => reveals.forEach((element) => element.classList.add('is-visible'));
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+        showAll();
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, entryObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          entryObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+      reveals.forEach((element) => observer.observe(element));
+    })();
+  </script>
