@@ -2354,22 +2354,22 @@
         "/assets/css/pages/book-free-intro.min.css"
       ],
       "droppedRemoteFontImports": [],
-      "gzipBytes": 8776,
+      "gzipBytes": 8761,
       "memberRoutes": [
         "/free-bjj-intro-tannersville-ny"
       ],
       "memberSourceHtml": [
         "free-bjj-intro-tannersville-ny/index.html"
       ],
-      "minifiedBytes": 38339,
-      "minifiedGzipBytes": 8237,
+      "minifiedBytes": 38246,
+      "minifiedGzipBytes": 8221,
       "minifiedHref": "/assets/css/routes/site-1d0842eaa685.min.css",
       "orderedInputs": [
         "/assets/css/bootstrap-site.css",
         "/assets/css/fonts.min.css",
         "/assets/css/pages/book-free-intro.min.css"
       ],
-      "rawBytes": 43711,
+      "rawBytes": 43608,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -4285,6 +4285,7 @@
         ".p-xxl-4",
         ".p-xxl-5",
         ".page-book-intro #first-visit-calendar.is-ready",
+        ".page-book-intro #youth-choices",
         ".page-book-intro .form-control:hover",
         ".page-book-intro [aria-busy=\"true\"]",
         ".page-book-intro [data-calendar-status].text-danger",
@@ -7263,7 +7264,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "ae8690734920952d139ff089e4a79fbc7b899aa193b5a918f290b85e457deaec",
+      "purgeContentSha256": "ef2bf75906a8b809e2b998341642fa36ead77ba59eaea3e75154e43c65134a06",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -9401,7 +9402,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/booking-router.html",
@@ -9424,7 +9425,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "b49dce64bb2e1ea9c60a26941cb9982f1b50e5f8ec1799d0fa617495568259b7",
+      "purgeContentSha256": "b58bc5fbd96491e0684387efc3d776f23cbee4cec10714dad395874abf65a324",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -11554,7 +11555,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "bio.html",
@@ -11569,7 +11570,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "866d7a16aeef5bf283b2ddfaeceba7a4db8db8fea768f801e1ef890f7ac53f8b",
+      "purgeContentSha256": "747b74b06ea43839b8d62e7c351e22a562ed63006273eb3cb8b5f7246f6e4019",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -13699,7 +13700,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "birthday-parties.html",
@@ -13714,7 +13715,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "f721ca3106999d5fdc8de9fa3b0d8a10911cab59dcafa91c7577693372f38477",
+      "purgeContentSha256": "e35a904f19ebf959f7765fde997cef13935f4a6b1d057762fce14872695def79",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -15844,7 +15845,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "bjj-anatomy-quiz.html",
@@ -15859,7 +15860,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "2923ea3100620246f15ec4b9d6c6855932807a9a3f73904acda38761a0bfc9a6",
+      "purgeContentSha256": "0b237513ceac332522bfdc25d47caf79fe221b2c91a65860485a4f6558cbb078",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -17989,7 +17990,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "bjj-faqs.html",
@@ -18004,7 +18005,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "6a19e6cff59f943c729cf92c0ed978ffe363731f0e5a557ae23ede1577eb15ab",
+      "purgeContentSha256": "392b6acd3a03b8888cca4fd9c48bff36f5300b91d432eef4c71da81a5b177d1e",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -20134,7 +20135,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "bjj-stretches.html",
@@ -20149,7 +20150,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "aa84aaa42ae68bcf153bd34bce6f4b1595a61d6a7b5324282a3a0a83cb153b99",
+      "purgeContentSha256": "810c007c7d049ee2845aff9cbd3b79c062dc9b336ca852a900a759b33c226667",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -22279,7 +22280,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/reviews-village.html",
@@ -22298,7 +22299,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "96d14111b7f8940cc85dfeb1d561aa08e506fd40dedd6ee9b7710aa2049cff73",
+      "purgeContentSha256": "c0f1763bfd9a9da834e320cc8bf12a74e36556144732aec231d0808bb304b0ca",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -24432,7 +24433,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "black-belt-concierge.html",
@@ -24447,7 +24448,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "47024e3d04e41d37878d8ecce31a76eca13cb97f762675f4ca3f3feb24c51b77",
+      "purgeContentSha256": "ddb726d127280fe81597007345cecd2f99c715a1f7214e79a22d3407092d16bb",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -26577,7 +26578,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/current-schedule.html",
@@ -26585,7 +26586,7 @@
         },
         {
           "path": "partials/schedule-consistency.html",
-          "sha256": "55ee4bae51ffa94d790f05477aac50d96c17bd4e882ad6c1c629aa81e83f844b"
+          "sha256": "67d9099bbe30c60d0259777c5c236d34b8522a90bbec85ca1f9aae620cccfe04"
         }
       ],
       "sourceHtml": "blog/index.html",
@@ -26600,7 +26601,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "5b472e940be193561963d239a1e601f44da92f234bab590173823d3ba6a3cd92",
+      "purgeContentSha256": "2c4e140f0c3d38f2aab951e8d22f5e865411c13361d471ae8eeca7d987363c3a",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -28730,7 +28731,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/after-school-jiu-jitsu/index.html",
@@ -28745,7 +28746,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "0d3391b6bb9e4244245a002f28c0970a9ddcc4c35388cce64f1f923da74b5459",
+      "purgeContentSha256": "a93b304c1d261e24051a387c9a43eba3c4fef22ffc906c3abb3b8043b6282ded",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -30875,7 +30876,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/after-school-jiu-jitsu-calm-routine-catskills/index.html",
@@ -30890,7 +30891,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "01d6ac7d993d23f789c55ab30c2d0df7aeea8bb80042122fef22326342a7709f",
+      "purgeContentSha256": "f0f44ce2b3b413869f928009986478b9901504a21c8036549c4052c837a1215e",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -33020,7 +33021,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/beginners-guide-bjj-human-chess/index.html",
@@ -33035,7 +33036,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "b0b2609840cfd1dccec2fbf6e56d0a6f641c29d741f576affb22d3046a8c6034",
+      "purgeContentSha256": "7c825baf8984520ce86b6c08a052476f7d908a60c974730192c367640908d812",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -35165,7 +35166,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bio-switch-nervous-system/index.html",
@@ -35180,7 +35181,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "3e5b3f718e28259702fbbe26bb95fd589a5862b47f1a1caeaee4bd5682cfb198",
+      "purgeContentSha256": "a01aa108bde889f0c36dcf678377f9ebe8f8b9a2b894ea11de3cca46109bbc12",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -37310,7 +37311,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bioginastica-movement-no-gi/index.html",
@@ -37325,7 +37326,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "49a39e6772d87813bcfaf66f9da7f945195554d50d886cd1443be62b9204d147",
+      "purgeContentSha256": "8884e43f14cf6dfcb68b2b4e0d0ccb3742e820dbc89bbeac6121d29581bb3447",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -39455,7 +39456,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bjj-36-techniques/index.html",
@@ -39470,7 +39471,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "0040c4e3ebaf3d8e7f028b9f3b672f20c8e60ae762aadf47ba70f19c2e11e0a4",
+      "purgeContentSha256": "587e5db6232c857b3d403219512548b696df7c9bb56a262a31b201e6ee25c276",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -41600,7 +41601,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bjj-beginners-over-40-catskills/index.html",
@@ -41615,7 +41616,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "de546f0b66e9b7a88ec2f3787f2bea8849e3c7e076ddf05b2eb455fd2f16b8ca",
+      "purgeContentSha256": "7e66531932107f616a289cab34e18445dd288518de82b891c46fb61d4ecbb248",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -43745,7 +43746,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bjj-belts-stripes-promotions/index.html",
@@ -43760,7 +43761,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "5b02a6a3170378e7131191f01cbfb473bf5b2b3f9eef6bb124bbe2171890805b",
+      "purgeContentSha256": "97a90bbc93dd9a955973925e0c3962b873f8ed599f56224777bf863c40324eea",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -45890,7 +45891,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bjj-black-belt-degree-time/index.html",
@@ -45905,7 +45906,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "602da6a9b327e8cce443a61973639c518a3b25a8b8485959980b36ede7defd40",
+      "purgeContentSha256": "3de430ca1e92e23f6fdea53952eb6ea0990eef3dc9430757242de3484a25a345",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -48035,7 +48036,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bjj-promotions-how-often/index.html",
@@ -48050,7 +48051,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "fd5645b652f49c2be66ebd48530c0c68cf881767d0c3062c9d1f0fc421254185",
+      "purgeContentSha256": "790de08f8beac14996b6c84e75ddaaf6f4be277ad26af679981277f0343ae312",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -50180,7 +50181,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/bjj-sensei/index.html",
@@ -50195,7 +50196,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "88a249ca59d247a8fa732ab19d9004e553ea11f1c704682d6dee245d1aa58c1c",
+      "purgeContentSha256": "f44dc72d8e3801c385066ab169c2c4142a9038ab0a43c429ab9ae1f220bd6dfc",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -52325,7 +52326,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/cairo-ny-bjj-specialist/index.html",
@@ -52340,7 +52341,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "162c9c2eb5b6a8cfe5927c070d7249d4d5881f9d675b0fedfbcdb5d9f7b11656",
+      "purgeContentSha256": "89470b2681f2fd4251c8dacc2b3c1282c135e4e1b94f2a4bccc76cac7cc6db7f",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -54470,7 +54471,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/can-you-beat-sensei-without-a-black-belt/index.html",
@@ -54485,7 +54486,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "71427cd4e4e29f4f79ff4a03e6ceb0b164fb7679c19db6fff87c8fd0388102e5",
+      "purgeContentSha256": "9846ba9b77c0fb3ce0fdc736b66172a34127651ac84d44d342fc1e16b78eb67f",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -56619,7 +56620,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/catskills-gym-alternative-jiu-jitsu/index.html",
@@ -56634,7 +56635,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "6e8a22c14229e88cc7f9ee732b66b81a8efdd7cbdab587590019b26742a6bfcb",
+      "purgeContentSha256": "f565e4267fcf5d4c4b21e2cf9b9a06cb7bc1ac63ff7c655e4714c16f393dd4d1",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -58764,7 +58765,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/exactly-what-happens-first-bjj-class-minute-by-minute/index.html",
@@ -58779,7 +58780,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "87743f023aa24fbaa1f77f40145d63d025ffa2093a14de94444768f6b3977614",
+      "purgeContentSha256": "74d0ed2850f8abd12dc2a73b832cbc734ff99227a6667cc614e60163ce2b8388",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -60909,7 +60910,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/gain-points-system/index.html",
@@ -60924,7 +60925,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "13adf552cbeff025b664b70cd33db6218a2456996946a836d4a07b56cd7733d3",
+      "purgeContentSha256": "ce872b7e8be244091ec0a939539ef572cf46c4ebb4ce19783a0474c068099261",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -63054,7 +63055,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/gi-bjj-windham-ny/index.html",
@@ -63069,7 +63070,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "c8d99f2ab69053df380a0950b4bc9fab63ec5a129c9ce51d73b630095aa05321",
+      "purgeContentSha256": "7cb518e338f3b6eb14c5df62ab1359d7a15ebb5dcbc26b52d6df55f101239df5",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -65199,7 +65200,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/gi-vs-no-gi-bjj-cheat-code/index.html",
@@ -65214,7 +65215,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "39cf83f25a0a386033fd4166b19978d9851b1dbc1e3f7520f345114deab00cd6",
+      "purgeContentSha256": "100ae7bbb6d5131359fde0fe615777d4354153f5713642fb95df00eb3930eb21",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -67344,7 +67345,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/growth-over-gold-bjj-mindset/index.html",
@@ -67359,7 +67360,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "f02db8a8c8142185f8a1bcf6bb295fe1e4304178e1f0ad39bf010da408af1093",
+      "purgeContentSha256": "05b2b31cb53bb7671a002a1655b189d9a34c40dc7fa129d8162590af25bdfa4e",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -69489,7 +69490,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/how-to-fall-safely-bjj-breakfalls/index.html",
@@ -69504,7 +69505,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "105823f7d62a0da7e0b1caea9ac67e45b43f544913c49c47b319364ab8af3c81",
+      "purgeContentSha256": "d4fc18bf526eade56230a04e7b24de207b0905dd1ca4cd648013838c9bbf3bff",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -71634,7 +71635,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/hunter-elementary-tuesday-drop-off-bjj/index.html",
@@ -71649,7 +71650,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "0178d3063b46cb069544bd4bf01af08bfc80e7b541e1de3d0bf19f8647f66088",
+      "purgeContentSha256": "28f31d8f57c25e8f281633d27dd05d841680e4307f83856530be94a71a63d101",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -73779,7 +73780,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/jiu-jitsu-near-hunter-mountain/index.html",
@@ -73794,7 +73795,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "231c55d6ee46a4c5962428ccf88e82ce405ff4f97579eb0c2f8b1faec3291987",
+      "purgeContentSha256": "2a2237f77e7299ded9b8715c61145e91d5da93611e0b684a81ee8e2805229edb",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -75924,7 +75925,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/jiu-jitsu-near-windham-mountain-club/index.html",
@@ -75939,7 +75940,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "dcd4e611adb581d7f16cec375466938ea878fbb2054203739981f50e4e35533b",
+      "purgeContentSha256": "4f699a9535854c7d8c3b32d510467a8c42f0d789dea857dad6e870b20175cee9",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -78069,7 +78070,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/jiu-jitsu-near-windham-mountain-club-ski-families/index.html",
@@ -78084,7 +78085,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "f8bf0da3d27018ff1c205f86aef647d18bbe077764b00959b0e0bc8873ddc4d2",
+      "purgeContentSha256": "d5b0aa77508c1627f6b222c17ff67a4b055927bd6d1e8eb400ff5c02df9f4d30",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -80214,7 +80215,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/jiu-jitsu-windham-ny/index.html",
@@ -80229,7 +80230,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "ff2d12d9d3013e7ebbecad0c092102c7ef2983e7b92bc18c859d0530005ff70c",
+      "purgeContentSha256": "e32fb6e6a05e29815a22bc9f1e8adfd5ccb1f30ee3ccefcc9dead63c05e7abb5",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -82359,7 +82360,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/kids-jiu-jitsu-windham-ny/index.html",
@@ -82374,7 +82375,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "bb54e51c8c92a302993ce630b497bff9af92895870f3877d37bf32803cad6fb7",
+      "purgeContentSha256": "5d287c80ae87a65172d7673c7368e71a7d461aef8d7648cbf569bb0ab67b399d",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -84504,7 +84505,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/kids-martial-arts-haines-falls/index.html",
@@ -84519,7 +84520,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "61ae254409c48e820c0b378375bfd43fa00cf2aa26d70c26017e7e9ea0364445",
+      "purgeContentSha256": "74222d12823509fcb75828952f3bb2cd0e60928337871f0cf1adf2154d456296",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -86649,7 +86650,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu/index.html",
@@ -86664,7 +86665,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "3ec65ca591996653babb2e29e8c78b20f83dbe00ee7e2cce32f3f45963e7ee19",
+      "purgeContentSha256": "1521b0901435b20d9fb97b2cbb2b61c157bfc2e85bb1a1e62efabf2369e41108",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -88794,7 +88795,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/kids-teens-bjj-belts-ranks-stripes-promotions/index.html",
@@ -88809,7 +88810,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "a1a047b15b25a7d19659dc08f04d5f71660a24ad86dfbaa8aea1b68364bd9492",
+      "purgeContentSha256": "163093ffe44574c09e7076a714322a410c41b6faa3f43fec5829f5fbe70636c1",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -90939,7 +90940,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/kinetic-chess-onteora-park/index.html",
@@ -90954,7 +90955,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "cf9fd64ef37771f9efc58bdfa478b317247e51bde6b758afb702cc9964c262c8",
+      "purgeContentSha256": "8e0b476ce938f146826a3c925811160d9f358567dbe59029bb2bdb01cc32e1f6",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -93084,7 +93085,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu/index.html",
@@ -93099,7 +93100,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "2654ed4e5051122bc35628818a275a4cf0df225946d943f9d362585a89130472",
+      "purgeContentSha256": "385d0b85f0d1843fc96ff08f515db566e06aaf231c13460c973fcf2ca2a234f0",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -95229,7 +95230,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/neck-cranks-bjj-longevity-guide/index.html",
@@ -95244,7 +95245,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "16c5ff3580279a286885cd2efa34a151e64f1e1a39f753b99c5c342e05b329e0",
+      "purgeContentSha256": "d6ddd8f1921005f82c1e56d9ed58d53c8a8c23bdf4591dfebc43614d86d458ed",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -97374,7 +97375,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/no-gi-windham-ny/index.html",
@@ -97389,7 +97390,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "68f623bc4576854744aca3e36ffa8c87afd18bb184af6476aff6956f5f98b72b",
+      "purgeContentSha256": "62b15f07386a45f6993b361882a2c236ae513b081d38c8fab74a0c9c76bca0ca",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -99519,7 +99520,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/private-jiu-jitsu-lessons-windham-ny/index.html",
@@ -99534,7 +99535,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "f44b69a6f8af6a07bf137b92b4d1355b8fb66a2ca51da9365d91e1e64d855fe8",
+      "purgeContentSha256": "042a2eab3ee8a0b17b59828248af805158642e781c5e80cad66c1a72d8d06285",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -101664,7 +101665,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/sanda-vs-jiu-jitsu/index.html",
@@ -101679,7 +101680,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "030c6acdb2f4971b7f2556b0b13d562154afaadfb5dd8073515bebb8fa76819e",
+      "purgeContentSha256": "34842c15f032b12cf2ed693e87412b7642273e97ce64deac7bebc97d31ae2460",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -103809,7 +103810,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/sanda-vs-jiu-jitsu-for-mma/index.html",
@@ -103824,7 +103825,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "42fb373831f34a540b9673f23ae465fcaeab59be3bf857fb22cd35f5f8096cc4",
+      "purgeContentSha256": "5b723eebd3be38abd069d3bef87a501319462e9c661c8e913bccc3f98789446e",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -105954,7 +105955,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/fact-shield-core.html",
@@ -105973,7 +105974,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "eb2869f15bb363baf134c194db041d108ea02349e56f0917c77c539273dafaad",
+      "purgeContentSha256": "b96bfaaa07c259c387569c8f20f178291a72a9174f98e9bde4fa8348394b51e1",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -108103,7 +108104,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/schedule-sensei-reset-protocol/index.html",
@@ -108118,7 +108119,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "05d340c947036f782f97937ef9ed8d547ccb435657a561d89c3287c86c3e479f",
+      "purgeContentSha256": "61e1f0f50a7b82eca7dd3efee28db01fe4fc12c9d4302cd4eff29ab44b199bf5",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -110248,7 +110249,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/schedule-sensei-weekly-template/index.html",
@@ -110263,7 +110264,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "1f39ab4b4b890a192c6d23c8cb22c92bc14fd8f0db2be5b3c1bb940e5d4833f5",
+      "purgeContentSha256": "7437201aaa21f68446fbc9b11e49f074b488ef65a05795bae0e05cd3fbcc5a6d",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -112393,7 +112394,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/seated-guard-basics/index.html",
@@ -112408,7 +112409,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "f1fec4b4f1c74c997d960c8d5d050a445ed448a0036fdb34a752ce908f435e45",
+      "purgeContentSha256": "b7d76b77120f327ebfddf5ec90bdb7e88d58bd657fef99d04f214000c192f506",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -114538,7 +114539,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/sensei-mma-bjj/index.html",
@@ -114553,7 +114554,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "e61a14af7f4f7ff52399d642883a5f3bd47a2e3d790aa5bb5af2bdd70dd05573",
+      "purgeContentSha256": "9fd79a0727821715340219699b49853e5ada8407571dabac4d3cb6ef08894f70",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -116683,7 +116684,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/sensei-rules/index.html",
@@ -116698,7 +116699,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "9cbd37cfa9a22550d369133536c745750e35e44e012b6ad65343510843521a8d",
+      "purgeContentSha256": "7e4c4547766afdab9583f1dbc6bcf9b0669f629d323958b5992df50bb2bdf9f4",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -118828,7 +118829,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/snow-day-protocol-bjj-home-dojo/index.html",
@@ -118843,7 +118844,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "2eef4e82df72def1856d7f5a7df04d4084c229e5013555916978d24035e01a2e",
+      "purgeContentSha256": "10781424844f2cd983ea3dde97340dcb6a7d9323d5cff4d5a801420664e47f45",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -120973,7 +120974,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/spring-fling-is-here/index.html",
@@ -120988,7 +120989,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "e3b5a514ab41ab1e1b48d2496b9c595b9f18a552536b2b9f6306648454ce8fba",
+      "purgeContentSha256": "3c54ab9c0b12b62565210ad3f167d36c12d6321483b70ace74a3af82962b49d7",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -123118,7 +123119,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/current-schedule.html",
@@ -123126,7 +123127,7 @@
         },
         {
           "path": "partials/schedule-consistency.html",
-          "sha256": "55ee4bae51ffa94d790f05477aac50d96c17bd4e882ad6c1c629aa81e83f844b"
+          "sha256": "67d9099bbe30c60d0259777c5c236d34b8522a90bbec85ca1f9aae620cccfe04"
         }
       ],
       "sourceHtml": "blog/tags/adult-bjj/index.html",
@@ -123141,7 +123142,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "5ba25d8f60bf265faee55e942f659c8384ff901a6873f9ce0ef7d2e876f297a8",
+      "purgeContentSha256": "9029e8886e56129d756c35f6eb302dfef514c1379e93ccab8d936ab57430ff4a",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -125271,7 +125272,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/current-schedule.html",
@@ -125279,7 +125280,7 @@
         },
         {
           "path": "partials/schedule-consistency.html",
-          "sha256": "55ee4bae51ffa94d790f05477aac50d96c17bd4e882ad6c1c629aa81e83f844b"
+          "sha256": "67d9099bbe30c60d0259777c5c236d34b8522a90bbec85ca1f9aae620cccfe04"
         }
       ],
       "sourceHtml": "blog/tags/starting-jiu-jitsu/index.html",
@@ -125294,7 +125295,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "4666d00073ab5c4cbc77cbd2ee58d85314f370567bacf3936b843fe473a4c314",
+      "purgeContentSha256": "6a5ea6ce4f12776fc55414bf963624ff85736226526af63fd67d81955efeb44a",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -127424,7 +127425,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/current-schedule.html",
@@ -127432,7 +127433,7 @@
         },
         {
           "path": "partials/schedule-consistency.html",
-          "sha256": "55ee4bae51ffa94d790f05477aac50d96c17bd4e882ad6c1c629aa81e83f844b"
+          "sha256": "67d9099bbe30c60d0259777c5c236d34b8522a90bbec85ca1f9aae620cccfe04"
         }
       ],
       "sourceHtml": "blog/tags/youth/index.html",
@@ -127447,7 +127448,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "4984daba2577aa02c7784375bee5f8f4d63fae2b7fb414ec807487b70821f47b",
+      "purgeContentSha256": "a9290463076870a6537ae6081b301bfd6a1e63dc200bbd91a47c1f0c8ebfd4f4",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -129577,7 +129578,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/takedown-defense/index.html",
@@ -129592,7 +129593,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "5f822ab0f8aa30927a21980df38cb803a7879dfb24b463185bdd0b4bfa17c84a",
+      "purgeContentSha256": "5fe788e3cc8c84f4a015a45c5bca3a7c7cc21db19b6d2aaae59ab64cc5193dc6",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -131722,7 +131723,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/tannersville-bjj-tuesday/index.html",
@@ -131737,7 +131738,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "a5d6573acf12c7cd66cab591d5d0856f728fe91335eeee841563d10494d7a9c9",
+      "purgeContentSha256": "cd399dff4bdee774f6345c96ba87af8f9a0a65736fb5df18e461f629c5de3c46",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -133867,7 +133868,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/teen-jiu-jitsu-hunter-ny/index.html",
@@ -133882,7 +133883,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "977f6ef9868e684e453a655a76df7cbcfb24fc246fe06c5fe1fabc027dbbc012",
+      "purgeContentSha256": "2944caaa29fcd76d41e315792bed090d21541f30c66139c654d9fa37638c5a24",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -136012,7 +136013,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/things-to-do-near-hunter-ny-private-bjj-coaching/index.html",
@@ -136027,7 +136028,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "7164f9bbaeea87ee22079b729c447aebdc926790fa31ccaee75aaf1b2695bf64",
+      "purgeContentSha256": "ddd6901730b9dee40d7f8166ac57250339100b9c1c4e10f5c111baaed20e8a7c",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -138157,7 +138158,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/water-before-training-how-much-when/index.html",
@@ -138172,7 +138173,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "9c152818fb2461093416a1087831df3eba0f3f53e9f8061656fdcfabfbfe7d65",
+      "purgeContentSha256": "42484a0d56659c7393d74a985bdda6e6aec6d542fc85bf82314814c7751cfb50",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -140302,7 +140303,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/what-does-sensei-mean-in-bjj/index.html",
@@ -140317,7 +140318,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "8c7e4b17c7ad589062938b4d7e611938fb4da10358baab5a28dee347d52d09b1",
+      "purgeContentSha256": "64c6976aa1a235721a20b56888a5273cd7c5f7ebdba8dc8a639d94d23c52873e",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -142447,7 +142448,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/what-is-sanda-sanshou/index.html",
@@ -142462,7 +142463,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "b2aab6e105b9d4875876e8925edc75003fbccbf3312e0b8f0c8c24bceb5b1c86",
+      "purgeContentSha256": "da751e2410534bde670b9591ded75f61363f420e0f520c9aab7fcc181788e0b9",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -144592,7 +144593,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "blog/wrestle-ups-scramble/index.html",
@@ -144607,7 +144608,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "718f1afae48e725bf25c7c9a1bbab4826c0434e2e078e5e1cb66c0ce23a957f5",
+      "purgeContentSha256": "74edcf25181ab0d2d099439438043e9ffa554391f8b0ec5578dfecdde747f5f3",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -146737,7 +146738,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "bring-a-friend.html",
@@ -146752,7 +146753,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "83dd36a3e326df336f556e5df46dff06177686d380e67a454456f5c461ecdc0f",
+      "purgeContentSha256": "923ff68aedf290312c841a15c52ab34e2794b16d2339c2006aa85fccf5b5475a",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -148882,7 +148883,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "camp-clinics.html",
@@ -148897,7 +148898,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "188028b615519f7fad16d9163a09218388a11f52c7186ef7192d863d064680a9",
+      "purgeContentSha256": "78ceef58333ba8cde9dbab75c83cd2272329c8716b01086d338cf12a5cac19c6",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -151027,7 +151028,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "catskills-home-base.html",
@@ -151042,7 +151043,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "3f74c4101368ab67014f958b61799ae07eccd08c6241095401943d6a84ba5fab",
+      "purgeContentSha256": "a5f6e8327be16c5ab05c39e985379201768ad09ca8a062ad7d287a8159638827",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -153172,7 +153173,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/conversion-rail.html",
@@ -153191,7 +153192,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "05ee43e5f7081279d1aebbf0fd628fc90a7d608922190aa804025456f47ce35a",
+      "purgeContentSha256": "01d878282234b132d131fda2b70e5e8af30512bcb91c1414891d7163d956a946",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -155321,7 +155322,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "community-partners.html",
@@ -155336,7 +155337,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "d962f9e3c05f92f0cae9acdd3e8f0e7192ad90f1365a7c86618604cdbd753951",
+      "purgeContentSha256": "79a604c9507769ce4708d08bfff974adcb9fb91fb651b00643a82c75145423e4",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -157470,7 +157471,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/booking-router.html",
@@ -157489,7 +157490,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "881421caa72bce4274eb60ced6029ef0b6a16ab5643e83b0d4f0b8f2c708b71b",
+      "purgeContentSha256": "bf47e62cdc49f31af1be71c8385adde08f2b4727d345b38639035595472d472f",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -159619,7 +159620,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "elite-concierge.html",
@@ -159634,7 +159635,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "092649f035336c5eb80dea948a924d2f6b40ace3c4e392d14b08c88c96d6cac5",
+      "purgeContentSha256": "3bd8e947a339ec55d2918e50ac23edc726c9a6e3953fa82e426bc6a3c9327d34",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -161768,7 +161769,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/index.html",
@@ -161777,15 +161778,15 @@
     "/free-bjj-intro-tannersville-ny": {
       "buildVersion": "route-styles-1",
       "canonicalHref": "/assets/css/routes/site-1d0842eaa685.css",
-      "gzipBytes": 8776,
-      "minifiedGzipBytes": 8237,
+      "gzipBytes": 8761,
+      "minifiedGzipBytes": 8221,
       "minifiedHref": "/assets/css/routes/site-1d0842eaa685.min.css",
       "orderedInputs": [
         "/assets/css/bootstrap-site.css",
         "/assets/css/fonts.min.css",
         "/assets/css/pages/book-free-intro.min.css"
       ],
-      "purgeContentSha256": "a3d217b7d73d280584ef6cecc140c6341c7c5334effa4b5cc9abbd35caed64b5",
+      "purgeContentSha256": "35e65a67362a18d8b75a94f72b34c91add29c8076f995558284ebe80d15555d8",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -163701,6 +163702,7 @@
         ".p-xxl-4",
         ".p-xxl-5",
         ".page-book-intro #first-visit-calendar.is-ready",
+        ".page-book-intro #youth-choices",
         ".page-book-intro .form-control:hover",
         ".page-book-intro [aria-busy=\"true\"]",
         ".page-book-intro [data-calendar-status].text-danger",
@@ -164264,15 +164266,15 @@
         },
         {
           "path": "free-bjj-intro-tannersville-ny/index.html",
-          "sha256": "181fc80bca3389c99bb24beb5410c0951fb5faa06613ca772cd95aadef01c103"
+          "sha256": "b52405ffddc5cec1d4ab27bed9ee4cf7d18a5d5a28ffeb26b5aef755e17e1a01"
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "free-bjj-intro-tannersville-ny/index.html",
-      "sourceHtmlSha256": "181fc80bca3389c99bb24beb5410c0951fb5faa06613ca772cd95aadef01c103"
+      "sourceHtmlSha256": "b52405ffddc5cec1d4ab27bed9ee4cf7d18a5d5a28ffeb26b5aef755e17e1a01"
     },
     "/friday-night-fanatics": {
       "buildVersion": "route-styles-1",
@@ -164283,7 +164285,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "de3c42e0a6836dcf61ff4d3b94e197fc275cb0e876f227650a000df4453b198f",
+      "purgeContentSha256": "2ab4795cb9ae5cb80c2b8951c5f690e68bcf4172eade6dfda53c2bdd44b4997e",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -166413,7 +166415,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "friday-night-fanatics.html",
@@ -166428,7 +166430,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "00ca3b3673f544538780b5fbb8f5abd825bec0f36b9460123229f06de434489d",
+      "purgeContentSha256": "6d5cb2c4afe932d4c17f0a0bcd396a625194f0d221fce28040ddf787ee8d8b81",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -168558,7 +168560,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "guarantee-terms.html",
@@ -168573,7 +168575,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "8c53bcdbc796a034d7d773b3c7a488e3157de650905331fe64b4f2d9a8495fbc",
+      "purgeContentSha256": "a26087090a0d11d80e600ec32465f040dd400b4eb753d7726aadf1033ef50ea0",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -170703,7 +170705,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "holiday-schedule.html",
@@ -170718,7 +170720,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "f2e03eaf5cfa35865e1552f0d6776a591d5eeef09a478cb1b3d6ff138715fbed",
+      "purgeContentSha256": "6b90d88c4bb64c75819e47cf0374a5e309c2d4754154fc08c78ac8f522e2fb9f",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -172848,7 +172850,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "how-class-works.html",
@@ -172863,7 +172865,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "e0a2234822cf35515c3ea77fca2af734e371d5aaa36be560f0ab4e680a351b84",
+      "purgeContentSha256": "2b65b1c9fce07613aac7c2d6b7b71e92840d1b2cba1c186ae0981fc30ede5d05",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -174993,7 +174995,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "inclusion.html",
@@ -175008,7 +175010,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "34646efb3bd9330b7cfdb7dae7d9acfc3d622dcee32b6779c6a181adaa7df336",
+      "purgeContentSha256": "ad9bdc4c19961c542c0d1d9b1a411d5a56e3d884fd26c1f3a78dba08710ab0f8",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -177138,7 +177140,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "instagram/index.html",
@@ -177153,7 +177155,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "cdd668db9f39ae9905977109cd1c2aed9d516069dd4085e8d723ff6f51878a2c",
+      "purgeContentSha256": "a162281b215896b0c31f5fd690f2a995241f2e5ae0e5e5e652703da678ef1f8c",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -179283,7 +179285,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/cta-footer-fragment.html",
@@ -179307,7 +179309,7 @@
         "/assets/css/bootstrap-site.css",
         "/assets/css/fonts.min.css"
       ],
-      "purgeContentSha256": "6dcb74ea63bb788d3a3b7a0b179e1a2034dd94b1ab1c4684cbf5927fcf0caf6a",
+      "purgeContentSha256": "56a0b9542d74d00b3c7efecefcb1552aa7bf054db6e547f3d25421098db9e6e7",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -181705,7 +181707,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "law-enforcement-bjj.html",
@@ -181720,7 +181722,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "554e8d8df46cad96136e7dc010ededa552ed93a3a01118f3023527e167046329",
+      "purgeContentSha256": "c34c5bbf30b2a16ee11461d545b1c9c0da63d723681cf7806a33e496ccb6d991",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -183850,7 +183852,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "members/holiday-routine/index.html",
@@ -183865,7 +183867,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "26ab4f7354ac93faf0259ce733c60fe93e5f96333cca3994328fec0374394bfb",
+      "purgeContentSha256": "f11ad76ac7059dd399ca25962a8853d34794fbd777d662db12459145adb2ba38",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -185995,7 +185997,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         }
       ],
       "sourceHtml": "members/winter-training-plan/index.html",
@@ -186010,7 +186012,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "68829165d321a6acd25f5dc7d8ff97b07f6a537735dcf3267e2c058a562828d9",
+      "purgeContentSha256": "90f043ea4c34c6b75c78aa551b9c286277e724d9570d580f0dc9034ca5ad6785",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -188140,7 +188142,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "options-pricing/index.html",
@@ -188159,7 +188161,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "7edfddb650f680173abb7eba25d86eff734147eac4906dda25ef4b900a7f4a50",
+      "purgeContentSha256": "1e311bdbc9b4b89fda4bdb6c791d0965296712279be4f55eebd809707f5cb13b",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -190285,7 +190287,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "parent-resources.html",
@@ -190304,7 +190306,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "6ac18bc0b86a22dbdf8b4f8341ac1a8362d851bbe863356af903b360e2d3368b",
+      "purgeContentSha256": "7dd6978455725232ce6c93f04354be696811ae4319c79421dda1d2006c62592b",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -192430,7 +192432,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/reviews-village.html",
@@ -192453,7 +192455,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "e46bb948df2e0a53f533fe59329596c4c7a9296e6f91c51a4b4404fc116afde0",
+      "purgeContentSha256": "133e2adcd837ecd6efdbdf669c878af22f8061be6f1796d633d7b15e62f3d65b",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -194579,7 +194581,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partners-wellness-pt-referrals.html",
@@ -194598,7 +194600,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "0de21f041afacc8b24d9ca43aeb5859a6ad502a6d23cbb76d03092f0e1805aae",
+      "purgeContentSha256": "2ac5b15de1070a0a2a01f8bb104c1682aa6b9718faa5a618e3b97376daadba52",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -196724,7 +196726,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "research/law-enforcement-bjj-evidence.html",
@@ -196743,7 +196745,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "a976f8105e378fbc32c12db13bae9859a21a00b208a0562996f0dffa1ce06355",
+      "purgeContentSha256": "c1821bcb2e27fc4ea49a1313ccb7dac8e43ecedacafd8fc780f484cb745f6f3e",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -198869,7 +198871,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "research/marietta-police-bjj-case-summary.html",
@@ -198888,7 +198890,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "eee9f6940b3983fe33a96e9fc795e50b9a2d608a277597c4ab39d8667f4bcf2b",
+      "purgeContentSha256": "49d4f8c608ddf24a2bdae36960f0b238dac4edd0ecbb013ad9e968639249c54c",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -201018,7 +201020,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/local-destination-proof.html",
@@ -201041,7 +201043,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "5906e5d09501c580edbeb4ef67d5dc809fbc366355689b85d452f6f44feb0095",
+      "purgeContentSha256": "c8df60ef0075d416d6648646020331521fbdde6d304c545e80818fec10fab882",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -203171,7 +203173,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "schedule.html",
@@ -203190,7 +203192,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "a97486d6d6aed1367411df5fb1974d51135c4b623d47c9c715a0f677093edb75",
+      "purgeContentSha256": "2fdb800c781db13318fe28085fbf1846095446963a6dd1cd850c757741dd44b4",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -205316,7 +205318,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "scribners.html",
@@ -205335,7 +205337,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "d5f23b26720d187279cf698b0baafbbcbd774aea45b7d5207ef93dcf249b0298",
+      "purgeContentSha256": "03a270a5178ab0a5c96a213875616cc8ab10c40bf4aa00b9924ea4e9bc3f9330",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -207465,7 +207467,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "scribners-jiu-jitsu.html",
@@ -207484,7 +207486,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "a39fd61170b5730afcb075fb4fa1076c945285fa8e0773f09e424a1c4ccd276e",
+      "purgeContentSha256": "298d4b42981b48e028bad5f1303f4098af070273642d210f2ecaec854b28bc21",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -209618,7 +209620,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "sensei-jiu-jitsu.html",
@@ -209637,7 +209639,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "a9c948698eb3367fe8470bd34d599bad816aec7f832a5e1a2a9ad2f02baef7ad",
+      "purgeContentSha256": "2657c943d275147de333249a24f73f0889ee8d69d826519bd825b5d73e2491d5",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -211763,7 +211765,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/reviews-village.html",
@@ -211786,7 +211788,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "1717bd7bb13a6846bc53ce3a07e0c5cec6e210d7caa593092486618cd8057507",
+      "purgeContentSha256": "d17d338455332cec8a935656287bbac376fddf95bfafc02747a94525cd12eb9b",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -213912,7 +213914,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/reviews-village.html",
@@ -213935,7 +213937,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "33966462bb265c1bd59af34f9c57d50895a25b8df34b01dcb3913ec69b69125a",
+      "purgeContentSha256": "eb64bd6c2ef70cd2fd0fb858f0b85322a9d75ab43165f16eed833e11f316671c",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -216061,7 +216063,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "sources/index.html",
@@ -216080,7 +216082,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "5476f32c976ddd8ede91ec3c262efed8b2d1625c8202affa558dc5555f0e159d",
+      "purgeContentSha256": "7cc7c9d3f30d69e885764cf830b1daabbaec297dcbf5007cc08f4b153eac2098",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -218206,7 +218208,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "sources/cdc-physical-activity/index.html",
@@ -218225,7 +218227,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "7452d7d6abde9169ca67fd9ec0851bb4873ff18f244fb340408afd882a4965dd",
+      "purgeContentSha256": "2e3d686c2b2c2087dae66f1a09d50970864acc203c923a5c90ef8b91cbd8c7e2",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -220355,7 +220357,7 @@
         },
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "sources/clockwork-bjj-instructors/index.html",
@@ -220374,7 +220376,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "cc8a4a40e48b08c297e34d5c3cb712746d389261fb60104762b9ed86c1157404",
+      "purgeContentSha256": "097444e463738b13f458c91f0ced0b87212a88b8b9f8b574260dbb21f54278c0",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -222500,7 +222502,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "sources/gracie-academy/index.html",
@@ -222519,7 +222521,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "aacc3743b0ffebe5ad061a76f5687cda3294283cad95a5ae3bf057128518bde5",
+      "purgeContentSha256": "6ac9faf19543cda4c0b5b922a45d0cb09af3566b41c144e70ef50d4579aa18cc",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -224645,7 +224647,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "sources/kenny-florian/index.html",
@@ -224664,7 +224666,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "1cb0b7d6717550e3ba2f962bc6e4b9cb084e1a298c77e8bc0f0b97e40d7e89a1",
+      "purgeContentSha256": "f3a61814a98fbccbe87d629959e81cd0db211756b34ee73552ca2d31d268cc9b",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -226790,7 +226792,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "sources/marietta-police-bjj/index.html",
@@ -226809,7 +226811,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "fff4261d2033a212e56f54e0f240a0b89ceb02e172a9937fe039f59bf0edb218",
+      "purgeContentSha256": "69f9515016690541829d0f654d47480fe30ae4cd7ec38ebb54545823f2c5215f",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -228935,7 +228937,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "partials/reviews-village.html",
@@ -228958,7 +228960,7 @@
       "orderedInputs": [
         "/assets/css/bootstrap-site.css"
       ],
-      "purgeContentSha256": "ffa8aa54f29a59ae9b1f831d4a20f8c78a79ba58f8d78302417ad87fab5f450f",
+      "purgeContentSha256": "dcc8c29bccdd9697284ad4aaf4ddfb048311cb69e3e6193db4baac9393de6342",
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -231084,7 +231086,7 @@
       "sourceDependencies": [
         {
           "path": "nav-include.html",
-          "sha256": "5feb3ecdf363c147c9e7e033417cefa409882496072cc3b089c84bfe1f198175"
+          "sha256": "5d0ea8fa12f2ef40ce6834f3f4832a109a86790d5cba19be72805fcbae2e077c"
         },
         {
           "path": "summer-academy.html",

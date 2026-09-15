@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const EXCLUDED_DIRS = new Set(['.git', 'archive', 'tmp', '.tmb', '_drafts']);
+const EXCLUDED_DIRS = new Set(['.git', 'archive', 'tmp', '.tmb', '_drafts', 'tools', 'node_modules', 'artifacts', 'reports', '.agents']);
 const HTML_ROOTS = ['.'];
 const SOURCE_TEMPLATE_FILES = [];
 const THIRD_PARTY_IFRAME_RE = /(?:youtube\.com\/embed|google\.com\/maps|maps\.google)/i;

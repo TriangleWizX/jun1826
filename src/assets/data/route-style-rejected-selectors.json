@@ -2234,7 +2234,7 @@
       "memberRoutes": [
         "/free-bjj-intro-tannersville-ny"
       ],
-      "rejectedCount": 2468,
+      "rejectedCount": 2469,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -4150,6 +4150,7 @@
         ".p-xxl-4",
         ".p-xxl-5",
         ".page-book-intro #first-visit-calendar.is-ready",
+        ".page-book-intro #youth-choices",
         ".page-book-intro .form-control:hover",
         ".page-book-intro [aria-busy=\"true\"]",
         ".page-book-intro [data-calendar-status].text-danger",
@@ -7222,7 +7223,7 @@
   "schemaVersion": 1,
   "summary": {
     "bundleCount": 3,
-    "rejectedSelectorCount": 6970,
+    "rejectedSelectorCount": 6971,
     "routeCount": 104
   }
 }
