@@ -1,0 +1,166 @@
+{
+  "carla": {
+    "recipient": "adult lead or guardian",
+    "delivery": "Optional guidance when the corresponding event occurs; nothing is scheduled or sent.",
+    "stop_conditions": [
+      "reply requiring a personal answer",
+      "opt-out",
+      "cancellation",
+      "incorrect lifecycle stage"
+    ],
+    "steps": [
+      {
+        "event": "after_inquiry",
+        "brief": "Ask child age, preferred days, and what the parent hopes the child enjoys. Explain coached partner activities and confirm the correct youth arrival instructions."
+      },
+      {
+        "event": "before_confirmed_visit",
+        "brief": "Send only the confirmed date/time, clothing, location and youth arrival guidance; invite questions about starting."
+      },
+      {
+        "event": "after_attendance",
+        "brief": "Ask parent what the child enjoyed and what felt difficult. Offer the applicable youth program only after discussing fit."
+      },
+      {
+        "event": "return_requested",
+        "brief": "Discuss a manageable return using actual available classes. Injury-related requests require an individual conversation; do not prescribe rehabilitation or promise a new program."
+      }
+    ]
+  },
+  "ben": {
+    "recipient": "adult lead or guardian",
+    "delivery": "Optional guidance when the corresponding event occurs; nothing is scheduled or sent.",
+    "stop_conditions": [
+      "reply requiring a personal answer",
+      "opt-out",
+      "cancellation",
+      "incorrect lifecycle stage"
+    ],
+    "steps": [
+      {
+        "event": "after_inquiry",
+        "brief": "Explain adult first visit: meet Sandy in normal clothes; no workout required. Ask which available visit time fits."
+      },
+      {
+        "event": "before_confirmed_visit",
+        "brief": "Confirm appointment and directions. Explain that the coached class is planned afterward, not promised at this visit."
+      },
+      {
+        "event": "after_attendance",
+        "brief": "Ask how the visit felt. Confirm the next coached-class step and discuss adult program fit."
+      },
+      {
+        "event": "return_requested",
+        "brief": "Discuss a manageable return using actual available classes. Injury-related requests require an individual conversation; do not prescribe rehabilitation or promise a new program."
+      }
+    ]
+  },
+  "tyler": {
+    "recipient": "adult lead or guardian",
+    "delivery": "Optional guidance when the corresponding event occurs; nothing is scheduled or sent.",
+    "stop_conditions": [
+      "reply requiring a personal answer",
+      "opt-out",
+      "cancellation",
+      "incorrect lifecycle stage"
+    ],
+    "steps": [
+      {
+        "event": "after_guardian_inquiry",
+        "brief": "Ask guardian about age, current sport and season dates. Describe teen grappling without promising improved performance in another sport."
+      },
+      {
+        "event": "before_confirmed_visit",
+        "brief": "Confirm youth arrival instructions and teen-appropriate class. Do not promise a 2\u20133-session trial."
+      },
+      {
+        "event": "after_attendance",
+        "brief": "Ask guardian and teen whether the challenge and schedule fit. Discuss the real enrollment options."
+      },
+      {
+        "event": "return_requested",
+        "brief": "Discuss a manageable return using actual available classes. Injury-related requests require an individual conversation; do not prescribe rehabilitation or promise a new program."
+      }
+    ]
+  },
+  "casey": {
+    "recipient": "adult lead or guardian",
+    "delivery": "Optional guidance when the corresponding event occurs; nothing is scheduled or sent.",
+    "stop_conditions": [
+      "reply requiring a personal answer",
+      "opt-out",
+      "cancellation",
+      "incorrect lifecycle stage"
+    ],
+    "steps": [
+      {
+        "event": "after_inquiry",
+        "brief": "Ask about available training times and eligible service category; do not assume all community workers qualify."
+      },
+      {
+        "event": "before_confirmed_visit",
+        "brief": "Confirm the adult first-visit details. Clarify eligible community-service terms if relevant; do not attach the fit guarantee."
+      },
+      {
+        "event": "after_attendance",
+        "brief": "Discuss actual shift compatibility and qualified program terms. Do not promise unlimited makeups or priority access."
+      },
+      {
+        "event": "return_requested",
+        "brief": "Discuss a manageable return using actual available classes. Injury-related requests require an individual conversation; do not prescribe rehabilitation or promise a new program."
+      }
+    ]
+  },
+  "frankie": {
+    "recipient": "adult lead or guardian",
+    "delivery": "Optional guidance when the corresponding event occurs; nothing is scheduled or sent.",
+    "stop_conditions": [
+      "reply requiring a personal answer",
+      "opt-out",
+      "cancellation",
+      "incorrect lifecycle stage"
+    ],
+    "steps": [
+      {
+        "event": "after_inquiry",
+        "brief": "Ask who wants to train, ages and available days. Explain which classes each person could attend; distinguish shared interest from a shared mixed-age class."
+      },
+      {
+        "event": "before_confirmed_visit",
+        "brief": "Confirm exactly who is booked and when. Give each attendee the appropriate instructions."
+      },
+      {
+        "event": "after_attendance",
+        "brief": "Ask whether the household routine works; discuss individual enrollment choices. No invented family discount or joint-session offer."
+      },
+      {
+        "event": "return_requested",
+        "brief": "Discuss a manageable return using actual available classes. Injury-related requests require an individual conversation; do not prescribe rehabilitation or promise a new program."
+      }
+    ]
+  },
+  "wendy": {
+    "recipient": "adult lead or guardian",
+    "delivery": "Optional guidance when the corresponding event occurs; nothing is scheduled or sent.",
+    "stop_conditions": [
+      "reply requiring a personal answer",
+      "opt-out",
+      "cancellation",
+      "incorrect lifecycle stage"
+    ],
+    "steps": [
+      {
+        "event": "after_inquiry",
+        "brief": "Ask travel dates, training experience and preferred appropriate class. Point to visitor options rather than Core Culture."
+      },
+      {
+        "event": "before_confirmed_visit",
+        "brief": "Confirm available space, class, clothing and location before arrival. Provide the selected pass details."
+      },
+      {
+        "event": "after_attendance",
+        "brief": "Thank them and ask if another class during their stay is useful. Mention packs only for recurring trips."
+      }
+    ]
+  }
+}

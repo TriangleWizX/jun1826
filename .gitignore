@@ -49,3 +49,7 @@ tmp/*.json
 .serena/
 artifacts/
 
+# Ad Studio local cache and draft renders
+tools/ads/output/
+tools/ads/cache/
+

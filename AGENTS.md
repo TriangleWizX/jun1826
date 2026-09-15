@@ -59,6 +59,17 @@ Before changing structure, inspect the actual repository files.
 
 Do not assume a framework unless the repo clearly uses one.
 
+## Offline Ad Studio Tooling (`tools/ads/`)
+
+The offline ad generation and planning suite lives in `tools/ads/` and is excluded from deployment bundles:
+- `npm run ads:weekly`: Generates 500 weekly concepts (250 static, 250 video) in Markdown across 6 buyer personas.
+- `npm run ads:plan`: Plans static ad export batches deterministically.
+- `npm run ads:render`: Renders draft static image PNGs with Pillow and creates a local `review.html`.
+- `npm run ads:brief`: Generates optional task briefs from question-evidence inputs.
+- `npm run test:ads`: Runs the test suite across planning, weekly generator, and workflow modules.
+- Assets: Referenced in `tools/ads/assets.json` and grounded in verified local repository assets (`src/assets/...`).
+- Output protection: Generated batches in `tools/ads/output/` and image caches in `tools/ads/cache/` are gitignored and strictly kept out of public web distributions.
+
 ## MCP Usage Policy
 
 - Use `openaiDeveloperDocs` for any OpenAI, ChatGPT, Codex, MCP, tool-calling, model, API, SDK, or policy-related implementation or guidance work before using other sources.

@@ -22,12 +22,33 @@
 - Adults (ages 18+) starting martial arts without past experience.
 - Mountaintop visitors in Tannersville, Hunter, or Windham booking passes, drop-ins, or private coaching.
 
-## Personas
-| Persona | Cares about | Challenge | Value we promise |
-|---------|-------------|-----------|------------------|
-| **Parents** | Safety, positive coaching, structure, scheduling flexibility | Busy schedules, fear of aggressive combat sports | Rescheduling by text, 30-day guarantee, non-striking grappling |
-| **Adult First-Timers** | Moderate pacing, safety, stress relief, welcoming environment | Fear of injury, looking foolish, intimidation in typical gyms | Dedicated "Beginner Lane", classes capped at 12, guided learning |
-| **First Responders / LEOs** | Tactical grappling, physical durability, control techniques | High stress, demanding shifts | Community-service rate, restraint focus, injury prevention |
+## Personas & Customer Architecture
+
+### Customer Priority Stack
+| Priority | Avatar | Role / Economic Function | Target Audience | Core Job to be Done | Best Entry Path |
+|---|---|---|---|---|---|
+| **1** | **Coach-Mom Carla** | Primary recurring revenue | Local parents (kids 6–12) | “Give my kid something they enjoy that also helps them become more capable.” | Free Intro → Goal Mapping → Youth Core Culture |
+| **2** | **Beginner Ben** | Primary adult recurring revenue | Adults 28–48 | “Finally learn how to grapple without feeling like an idiot or getting injured.” | Free Intro → Adult Core Culture (Beginner Lane) |
+| **3** | **Independent Ian** | Youth retention driver | Kids 7–11 (experience lens) | “Give me something fun where I can move, compete, and get better.” | Experience lens on Carla concepts; live games, wrestling, fun |
+| **4** | **Cross-Training Tyler** | Growth opportunity | Teens 12–17 (athletes) | “Help me become harder to control and more confident physically.” | Free Intro → 2–3 sessions → Core Culture ("Train between seasons") |
+| **5** | **Community Casey** | Referral / community segment | Teachers, EMTs, Police, Nurses | “Challenging activity that helps me decompress and keeps me capable.” | Free Intro → Community-Service Adult Program |
+| **6** | **Family Frankie** | Strategic differentiation | Parents + kids together | “Something worthwhile we can actually do together.” | Family Inquiry → Coached Entry (Shared family routine) |
+| **7** | **Weekend Wendy** | Incremental visitor revenue | Catskills visitors / second homeowners | “Visiting the Catskills? Keep training.” | Day Pass / Vacation Week (Separate visitor funnel) |
+
+### Three-Layer Persona Architecture
+- 🟢 **Primary Buyer Personas (Carla + Ben)**: Dominate homepage design, primary CTAs, and core conversion architecture.
+- 🔵 **Specialized Acquisition Personas (Tyler + Casey + Wendy)**: Dedicated landing pages/sections (`/teens`, community rates, `/options-pricing`) without diluting the primary homepage flow.
+- 🟡 **Experience Personas (Ian + Frankie)**: Define how the training environment feels and guide photography/video direction (live games, partner interaction, family connection).
+
+### Outcome vs. Pedagogy Rule
+Never sell the underlying pedagogy ("constraints-led ecological dynamics", "differential learning") in top-of-funnel messaging. That is how the coaching is delivered. Always sell the outcome the avatar desires:
+- **Parent (Carla)**: "I want my kid to become more confident, disciplined, and capable without aggression."
+- **Child (Ian)**: "You'll play games, wrestle, escape, attack, and figure things out."
+- **Adult (Ben)**: "You don't need to get in shape before starting. Small classes. Controlled resistance. Beginner-friendly partners."
+- **Teen (Tyler)**: "Another sport doesn't have to replace your sport. Become harder to control."
+- **Service Adult (Casey)**: "Train with the people who keep the Catskills running."
+- **Visitor (Wendy)**: "Visiting the Catskills? Keep training."
+- **Family (Frankie)**: "Something your family can learn together."
 
 ## Problems & Pain Points
 **Core problem:** Traditional BJJ and martial arts schools feel intimidating, chaotic, and high-ego. Large class sizes and aggressive rolling on day one lead to injuries and early dropout.

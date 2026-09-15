@@ -397,6 +397,15 @@ node tools/clis/google-ads.js reports get --type ad_performance --date-range las
 # 5. Upload to platform
 ```
 
+### Local SSBJJ Ad Studio (`tools/ads/`)
+
+This repository contains an offline ad creation and planning studio under `tools/ads/`:
+- **500-Concept Weekly Drops**: `npm run ads:weekly` (or `python3 tools/ads/weekly.py --week YYYY-Www`) generates 250 static and 250 video concepts in Markdown organized across 6 personas (Carla, Ben, Tyler, Casey, Frankie, Wendy).
+- **Static Ad Planning**: `npm run ads:plan -- --count 6 --personas ben --series beginner_questions` selects balanced, deterministic batches.
+- **Static Ad Rendering**: `npm run ads:render -- --count 6 --personas ben --series beginner_questions --week run-01` generates PNG drafts and `review.html` using Pillow and local assets (`src/assets/...`).
+- **Task Handoff Brief**: `npm run ads:brief` generates an actionable task brief from `workflow-input.json`.
+- **Automated Tests**: `npm run test:ads` runs 14 unit tests covering planning, weekly generation, and workflow guardrails.
+
 ---
 
 ## Related Skills
