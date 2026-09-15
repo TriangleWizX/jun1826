@@ -136,11 +136,22 @@ def connect(cfg):
 def upload_one(client, cfg, local, rel):
     remote = posixpath.join(cfg['remotePath'], rel); temp = remote + '.codex-upload'
     parent = posixpath.dirname(remote)
-    command = f"mkdir -p {shlex.quote(parent)} && cat > {shlex.quote(temp)} && mv -f {shlex.quote(temp)} {shlex.quote(remote)} && stat -c %s {shlex.quote(remote)}"
+    command = f"mkdir -p {shlex.quote(parent)} && rm -f {shlex.quote(temp)} && cat > {shlex.quote(temp)} && mv -f {shlex.quote(temp)} {shlex.quote(remote)} && stat -c %s {shlex.quote(remote)}"
     stdin, stdout, stderr = client.exec_command(command, timeout=180)
-    stdin.write(local.read_bytes()); stdin.close(); out = stdout.read().decode(errors='replace'); err = stderr.read().decode(errors='replace')
-    if stdout.channel.recv_exit_status() != 0: raise RuntimeError(err or out)
-    return out.strip()
+    try:
+        data = local.read_bytes()
+        stdin.write(data)
+        stdin.flush()
+        stdin.close()
+        out = stdout.read().decode(errors='replace')
+        err = stderr.read().decode(errors='replace')
+        if stdout.channel.recv_exit_status() != 0: raise RuntimeError(err or out)
+        return out.strip()
+    finally:
+        try:
+            stdout.channel.close()
+        except Exception:
+            pass
 
 def remote_run(client, command, timeout=600):
     _, stdout, stderr = client.exec_command(command, timeout=600)
