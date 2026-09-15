@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SenseiSandy.com Website Repo
 
 Marketing site and support tooling for Sensei Sandy Brazilian Jiu-Jitsu.
@@ -74,3 +75,9 @@ Production deploy and rollback steps are documented in:
 ## Documentation Home
 
 Start with `docs/README.md` for the full documentation index.
+
+## Copyright
+
+Copyright © 2026 Hunter Wellness LLC and Sensei Sandy BJJ.  
+All rights reserved. This repository is not open source. See
+[COPYRIGHT.md](COPYRIGHT.md).
