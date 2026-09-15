@@ -12,10 +12,11 @@ $db = ss_db();
 if ($method === 'GET') {
     $sessionId = ss_clean_string($_GET['session_id'] ?? '', 64);
     $personId = ss_clean_string($_GET['person_id'] ?? '', 64);
+    $date = ss_clean_string($_GET['date'] ?? '', 10);
 
     $sql = 'SELECT a.session_id, a.person_id, a.status, a.checked_in_at, a.created_at,
                    s.start_at AS session_start_at, s.end_at AS session_end_at, s.title AS session_title,
-                   p.first_name, p.last_name, p.email
+                   p.first_name, p.last_name, p.email, p.phone
             FROM attendance a
             JOIN session s ON s.id = a.session_id
             JOIN person p ON p.id = a.person_id
@@ -29,6 +30,10 @@ if ($method === 'GET') {
     if ($personId !== '') {
         $sql .= ' AND a.person_id = :person_id';
         $params[':person_id'] = $personId;
+    }
+    if ($date !== '' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
+        $sql .= ' AND date(s.start_at) = :session_date';
+        $params[':session_date'] = $date;
     }
 
     $sql .= ' ORDER BY s.start_at DESC, p.last_name ASC, p.first_name ASC';

@@ -1,0 +1,715 @@
+---
+layout: layouts/base.njk
+title: "Daily Training Report | Sensei Sandy BJJ"
+description: "Quick coach mat-log and parent update: log what happened in class and send a calm, specific next step."
+canonicalUrl: "https://senseisandy.com/daily-checkin"
+robots: "noindex, follow"
+audience: "member"
+bodyClass: "ss-page page-daily-checkin"
+permalink: "/daily-checkin.html"
+---
+
+<style>
+  body.page-daily-checkin > .ss-global-nav-wrapper,
+  body.page-daily-checkin > .ss-header,
+  body.page-daily-checkin > .ss-nav,
+  body.page-daily-checkin > .ss-new-site-footer,
+  body.page-daily-checkin > .ss-mobile-actionbar,
+  body.page-daily-checkin > #scrollProgress,
+  body.page-daily-checkin > .ss-promotion-banner {
+    display: none !important;
+  }
+
+  .daily-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 5rem;
+    color: var(--color-ink, #1f1712);
+  }
+
+  .daily-header {
+    max-width: 60rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .daily-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent, #116a42);
+    margin-bottom: 0.35rem;
+  }
+
+  .daily-header h1 {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .daily-header p {
+    margin: 0;
+    color: var(--color-muted, #4f433c);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .daily-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .daily-form,
+  .daily-preview {
+    border: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
+    border-radius: 1rem;
+    background: var(--color-paper, #fff);
+    padding: clamp(1rem, 2.5vw, 1.75rem);
+    box-shadow: 0 10px 28px rgba(54, 43, 36, 0.06);
+  }
+
+  .daily-form h2,
+  .daily-preview h2 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+  }
+
+  .daily-section {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.12));
+  }
+
+  .daily-section:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .daily-section h3 {
+    margin: 0 0 0.85rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent, #116a42);
+  }
+
+  .daily-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .daily-field {
+    margin-bottom: 0.95rem;
+  }
+
+  .daily-field label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  .daily-field .daily-hint {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--color-muted, #4f433c);
+    margin-top: 0.2rem;
+  }
+
+  .daily-field input,
+  .daily-field select,
+  .daily-field textarea {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--color-rule-2, rgba(54, 43, 36, 0.28));
+    border-radius: 0.5rem;
+    background: #fff;
+    color: inherit;
+    padding: 0.65rem 0.75rem;
+    font: inherit;
+    font-size: 0.95rem;
+  }
+
+  .daily-field textarea {
+    min-height: 76px;
+    resize: vertical;
+  }
+
+  .daily-field input:focus-visible,
+  .daily-field select:focus-visible,
+  .daily-field textarea:focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--color-accent, #116a42) 28%, transparent);
+    outline-offset: 2px;
+    border-color: var(--color-accent, #116a42);
+  }
+
+  /* Quick chips */
+  .daily-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.45rem;
+  }
+
+  .checkin-chip {
+    border: 1px dashed var(--color-rule-2, rgba(54, 43, 36, 0.3));
+    border-radius: 999px;
+    background: #faf8f5;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-muted, #4f433c);
+    cursor: pointer;
+    min-height: 36px;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+
+  .checkin-chip:hover {
+    background: var(--color-accent-soft, #f0f7f3);
+    border-color: var(--color-accent, #116a42);
+    color: var(--color-accent, #116a42);
+  }
+
+  /* Roster auto-fill chips */
+  .daily-roster-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+  }
+
+  .daily-roster-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent, #116a42);
+    margin-right: 0.15rem;
+  }
+
+  .roster-chip {
+    border: 1px solid var(--color-accent, #116a42);
+    border-radius: 999px;
+    background: var(--color-accent-soft, #f0f7f3);
+    color: var(--color-accent, #116a42);
+    padding: 0.3rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 32px;
+    transition: background 0.15s, color 0.15s, transform 0.1s;
+  }
+
+  .roster-chip:hover {
+    background: var(--color-accent, #116a42);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* Context pills */
+  .checkin-contexts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .checkin-context {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--color-rule-2, rgba(54, 43, 36, 0.28));
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  .checkin-context:has(input:checked) {
+    border-color: var(--color-accent, #116a42);
+    background: var(--color-accent-soft, #f0f7f3);
+    font-weight: 700;
+    color: var(--color-accent, #116a42);
+  }
+
+  .checkin-context input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+    clip-path: inset(50%);
+  }
+
+  /* Actions */
+  .daily-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.12));
+  }
+
+  .daily-actions button {
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border-radius: 0.5rem;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    transition: transform 0.12s, box-shadow 0.12s;
+  }
+
+  .daily-actions button:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  .daily-btn-primary {
+    background: var(--color-accent, #116a42);
+    color: #fff;
+    border: 1px solid var(--color-accent, #116a42);
+    box-shadow: 0 4px 12px rgba(17, 106, 66, 0.2);
+  }
+
+  .daily-btn-secondary {
+    background: #fff;
+    color: var(--color-ink, #1f1712);
+    border: 1px solid var(--color-rule-2, rgba(54, 43, 36, 0.28));
+  }
+
+  .daily-btn-outline {
+    background: transparent;
+    color: var(--color-accent, #116a42);
+    border: 1px solid var(--color-accent, #116a42);
+  }
+
+  .daily-actions button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  .daily-error {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #9b1c1c;
+    border-radius: 0.5rem;
+    color: #9b1c1c;
+    background: #fff5f5;
+    font-size: 0.88rem;
+  }
+
+  .daily-help {
+    margin: 0.75rem 0 0;
+    color: var(--color-accent, #116a42);
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  /* Preview pane */
+  .daily-preview {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .print-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .print-brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--color-accent, #116a42);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .print-brand {
+    color: var(--color-accent, #116a42);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .print-type {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-muted, #4f433c);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .print-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+
+  .print-student {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--color-ink, #1f1712);
+  }
+
+  .print-date {
+    font-size: 0.85rem;
+    color: var(--color-muted, #4f433c);
+    font-weight: 600;
+  }
+
+  .print-program-badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: #f4f1ed;
+    color: var(--color-ink, #1f1712);
+    font-size: 0.74rem;
+    font-weight: 600;
+    width: fit-content;
+  }
+
+  .print-block {
+    margin-top: 0.4rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-label {
+    margin-bottom: 0.2rem;
+    color: var(--color-accent, #116a42);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .print-value {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  .print-context {
+    font-size: 0.78rem;
+    color: var(--color-muted, #4f433c);
+    font-style: italic;
+    margin-top: 0.25rem;
+  }
+
+  .print-empty {
+    color: var(--color-muted, #4f433c);
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  .print-car-ride-box {
+    margin-top: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.5rem;
+    background: #f7fbf8;
+    border: 1px solid rgba(17, 106, 66, 0.18);
+  }
+
+  .print-car-ride-title {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent, #116a42);
+    margin: 0 0 0.2rem;
+  }
+
+  .print-car-ride-prompt {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--color-ink, #1f1712);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .print-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-rule, rgba(54, 43, 36, 0.14));
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-muted, #4f433c);
+  }
+
+  /* Bridges footer */
+  .daily-bridges {
+    margin: 2.25rem 0 0;
+    padding: 1.25rem 1rem;
+    border-radius: 0.75rem;
+    background: #f4f1ed;
+    color: var(--color-muted, #4f433c);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .daily-bridges strong {
+    color: var(--color-ink, #1f1712);
+  }
+
+  .daily-bridges a {
+    color: var(--color-accent, #116a42);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Responsive & print */
+  @media (max-width: 860px) {
+    .daily-grid {
+      grid-template-columns: 1fr;
+    }
+    .daily-preview {
+      position: static;
+      order: 2;
+    }
+    .daily-form {
+      order: 1;
+    }
+    .daily-actions {
+      flex-direction: column;
+    }
+    .daily-actions button {
+      width: 100%;
+    }
+  }
+
+  @media print {
+    @page {
+      size: Letter portrait;
+      margin: 0.6in;
+    }
+
+    body {
+      background: #fff !important;
+    }
+
+    body > *:not(.daily-page),
+    .daily-header,
+    .daily-form,
+    .daily-preview > h2,
+    .daily-bridges,
+    .daily-actions {
+      display: none !important;
+    }
+
+    .daily-page,
+    .daily-grid,
+    .daily-preview {
+      display: block !important;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      background: transparent !important;
+    }
+
+    .print-sheet {
+      display: block !important;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    .print-empty {
+      display: none;
+    }
+  }
+</style>
+
+<div class="daily-page">
+  <header class="daily-header">
+    <span class="daily-eyebrow">Coach Mat-Log &amp; Parent Update</span>
+    <h1>Daily Training Report</h1>
+    <p>Record what was observed in class today, choose the next problem to try, and send a calm, clear update.</p>
+  </header>
+
+  <div class="daily-grid">
+    <main class="daily-form" aria-label="Daily training check-in form">
+      <!-- Section 1: Session & Student -->
+      <section class="daily-section">
+        <h3>Session Details</h3>
+        <div class="daily-row-2">
+          <div class="daily-field">
+            <label for="student">Student Name</label>
+            <input id="student" list="student-roster" type="text" autocomplete="name" required placeholder="e.g. Leo M." />
+            <datalist id="student-roster"></datalist>
+            <div class="daily-roster-chips" id="roster-chips" aria-label="Today's checked-in students"></div>
+          </div>
+          <div class="daily-field">
+            <label for="session-date">Class Date</label>
+            <input id="session-date" type="date" required />
+          </div>
+        </div>
+        <div class="daily-row-2">
+          <div class="daily-field">
+            <label for="program">Program</label>
+            <select id="program">
+              <option value="kids">Kids BJJ (5:00 PM)</option>
+              <option value="teens">Teens BJJ (5:00 PM)</option>
+              <option value="adults">Adults BJJ (6:00 PM)</option>
+              <option value="saturday">Saturday Adult No-Gi (10:30 AM)</option>
+              <option value="private">Private Coaching</option>
+            </select>
+          </div>
+          <div class="daily-field">
+            <label for="parent-phone">Parent Phone (Optional)</label>
+            <input id="parent-phone" type="tel" placeholder="+1 (917) ..." inputmode="tel" />
+            <span class="daily-hint">Enables 1-tap text dispatch directly to messaging app.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: What I Saw -->
+      <section class="daily-section">
+        <h3>What I Saw</h3>
+        <div class="daily-field">
+          <label for="main-skill">Main Skill Area</label>
+          <select id="main-skill" required>
+            <option value="">Choose a skill area</option>
+          </select>
+        </div>
+
+        <div class="daily-field">
+          <label for="problem">What problem were they working on?</label>
+          <input id="problem" required placeholder="e.g. Keeping elbows inside while pinned" />
+          <div class="daily-chips" id="quick-chips" aria-label="Quick problem suggestion chips"></div>
+        </div>
+
+        <div class="daily-field">
+          <label for="observed-action">What did you see them do?</label>
+          <textarea id="observed-action" required placeholder="e.g. Stayed calm on the bottom, kept frames tight to the chest, and turned onto their side without giving up the back."></textarea>
+        </div>
+
+        <div class="daily-field">
+          <label>Where was this observed?</label>
+          <div id="context-options" class="checkin-contexts" role="radiogroup"></div>
+        </div>
+      </section>
+
+      <!-- Section 3: What Comes Next -->
+      <section class="daily-section">
+        <h3>What Comes Next</h3>
+        <div class="daily-field">
+          <label for="next-action">Next time, try this.</label>
+          <textarea id="next-action" required placeholder="e.g. Bridge with the feet to make hip space before trying to turn back inside."></textarea>
+        </div>
+
+        <div class="daily-field">
+          <label for="getting-easier">This is getting easier (Optional).</label>
+          <textarea id="getting-easier" placeholder="e.g. Breathing calmly and not panicking when flattened out."></textarea>
+        </div>
+      </section>
+
+      <div id="form-error" class="daily-error" role="alert" hidden></div>
+      <p id="save-status" class="daily-help" role="status"></p>
+
+      <!-- Actions -->
+      <div class="daily-actions">
+        <button id="send-sms" type="button" class="daily-btn-primary">
+          <i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Send Parent Text (SMS)
+        </button>
+        <button id="copy-summary" type="button" class="daily-btn-secondary">
+          <i class="bi bi-clipboard-check" aria-hidden="true"></i> Copy Summary
+        </button>
+        <button id="save-pdf" type="button" class="daily-btn-outline">
+          <i class="bi bi-printer" aria-hidden="true"></i> Save PDF / Print
+        </button>
+        <button id="new-student" type="button" class="daily-btn-secondary">
+          <i class="bi bi-person-plus" aria-hidden="true"></i> Next Student
+        </button>
+      </div>
+    </main>
+
+    <!-- Preview / Print Sheet -->
+    <aside class="daily-preview" aria-label="Daily report preview">
+      <h2>Live Report Slip</h2>
+      <div class="print-sheet">
+        <div class="print-brand-row">
+          <div class="print-brand">Sensei Sandy BJJ</div>
+          <div class="print-type">Daily Training Note</div>
+        </div>
+
+        <div class="print-meta-grid">
+          <p id="preview-student" class="print-student print-empty">Student Name</p>
+          <span id="preview-date" class="print-date print-empty">Session Date</span>
+        </div>
+
+        <div id="preview-program" class="print-program-badge print-empty">Class</div>
+
+        <div class="print-block">
+          <div class="print-label">Main Skill Area</div>
+          <div id="preview-skill" class="print-value print-empty">Choose a skill area</div>
+        </div>
+
+        <div class="print-block">
+          <div class="print-label">What I Saw</div>
+          <p id="preview-problem" class="print-value print-empty">What they were trying to solve</p>
+          <p id="preview-observed" class="print-value print-empty">What you saw them do</p>
+          <div id="preview-context" class="print-context"></div>
+        </div>
+
+        <div class="print-block">
+          <div class="print-label">Next Step To Try</div>
+          <p id="preview-next" class="print-value print-empty">Next step to try</p>
+        </div>
+
+        <div id="preview-easier-block" class="print-block" hidden>
+          <div class="print-label">Getting Easier</div>
+          <p id="preview-easier" class="print-value"></p>
+        </div>
+
+        <div class="print-car-ride-box">
+          <div class="print-car-ride-title">Ride-Home Prompt for Parents</div>
+          <p class="print-car-ride-prompt">"What problem were you working on today?"</p>
+        </div>
+
+        <div class="print-footer">
+          <span>Coach: Sandy</span>
+          <span>Tannersville, NY</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <nav aria-label="Progress review bridges" class="daily-bridges">
+    <strong>Training Review Pathways:</strong>
+    Logging a multi-week observation? Use the <a href="/weekly-audit">Weekly Training Check-In</a>.
+    Reviewing term progress and belt milestones? See the <a href="/report-card">Training Report Card</a>.
+    View daily class times on the <a href="/student-hub">Student Hub</a>.
+  </nav>
+</div>
+
+<script src="/js/daily-checkin.js?v=mat-v1" defer></script>
