@@ -1,0 +1,181 @@
+{
+  "primary": [
+    {
+      "id": "free-intro",
+      "name": "Free First Visit",
+      "category": "Primary Entry",
+      "audience": "All First-Timers",
+ "description": "Start with a 15-minute first visit and studio tour in normal clothes; no workout is required. Sandy recommends and schedules your coached first class afterward. The specialized youth workflow may combine the first visit and class during the same visit.",
+      "priceRef": "free",
+      "displayPrice": "Free",
+      "primaryCta": {
+        "label": "Reserve Your Free First Visit",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "goal-mapping",
+      "name": "First visit before class",
+      "category": "Orientation",
+      "audience": "All First-Timers",
+      "description": "A calm studio tour, safety walkthrough, and schedule conversation. For youth, it happens immediately before the first structured class during the same visit.",
+      "priceRef": "free",
+      "displayPrice": "Included",
+      "primaryCta": {
+        "label": "Reserve Your Free First Visit",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "core-culture-youth",
+      "name": "Youth 12-week program",
+      "category": "Core Membership",
+      "audience": "Youth (5–17)",
+      "term": "12 weeks",
+      "priceRef": "coreCulture.youth",
+      "displayPrice": "$550",
+      "included": [
+        "Up to 36 coached classes",
+        "Up to three appropriate group classes each week, with recurring class times reserved",
+        "Partner matching & progress tracking",
+        "Uniform for first-time enrollment"
+      ],
+      "guarantee": "Minimum 4 classes during first 30 days for the 30-Day Training Fit Guarantee",
+      "primaryCta": {
+        "label": "Reserve Your Free First Visit",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "core-culture-adult",
+      "name": "Adult 12-week program",
+      "category": "Core Membership",
+      "audience": "Adults (18+)",
+      "term": "12 weeks",
+      "priceRef": "coreCulture.adult",
+      "displayPrice": "$715",
+      "included": [
+        "Up to 36 coached classes",
+        "Up to three appropriate group classes each week, with recurring class times reserved",
+        "Saturday Adult No-Gi inclusion",
+        "Uniform for first-time enrollment"
+      ],
+      "guarantee": "Minimum 4 classes during first 30 days for the 30-Day Training Fit Guarantee",
+      "primaryCta": {
+        "label": "Reserve Your Free First Visit",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "active": true,
+      "public": true
+    }
+  ],
+  "secondary": [
+    {
+      "id": "day-pass",
+      "name": "Day Pass",
+      "category": "Visitor",
+      "audience": "Short-term Visitors",
+      "priceRef": "visitorAndSupport.dayPass",
+      "displayPrice": "$35",
+      "accessModel": "open_access",
+      "classesIncluded": "1 appropriate class",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "vacation-week",
+      "name": "Vacation Week Pass",
+      "category": "Visitor",
+      "audience": "Vacationing Families",
+      "priceRef": "visitorAndSupport.vacationWeek",
+      "displayPrice": "$99",
+      "accessModel": "open_access",
+      "classesIncluded": "Up to 3 appropriate classes in 7 consecutive days",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "ten-class-pack",
+      "name": "10-Class Pack",
+      "category": "Flexible Access",
+      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "priceRef": "visitorAndSupport.tenPack",
+      "displayPrice": "$300",
+      "term": "6 months",
+      "accessModel": "open_access",
+      "classesIncluded": "10 consumable class visits",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "twenty-class-pack",
+      "name": "20-Class Pack",
+      "category": "Flexible Access",
+      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "priceRef": "visitorAndSupport.twentyPack",
+      "displayPrice": "$550",
+      "term": "12 months",
+      "accessModel": "open_access",
+      "classesIncluded": "20 consumable class visits",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": false,
+      "guaranteeEligible": false,
+      "active": true,
+      "public": true
+    }
+  ],
+  "support": [
+    {
+      "id": "private-coaching",
+      "name": "Private Coaching",
+      "category": "1-on-1 Instruction",
+      "audience": "Students wanting 1-on-1 progress",
+      "priceRef": "visitorAndSupport.privateCoachingSingle",
+      "displayPrice": "$195",
+      "active": true,
+      "public": true
+    }
+  ],
+  "qualified": [
+    {
+      "id": "elite-concierge",
+      "name": "Elite Concierge",
+      "category": "Continuation Membership",
+      "audience": "Adults continuing after a Core Culture term",
+      "term": "12 weeks",
+      "priceRef": "eliteConcierge",
+      "displayPrice": "$1,050",
+      "guarantee": "Excluded from the 30-Day Training Fit Guarantee",
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "annual-track",
+      "name": "Annual Track",
+      "category": "Long-Term Membership",
+      "audience": "Students continuing after a Core Culture term",
+      "priceRef": "annualTrack",
+      "active": true,
+      "public": true
+    }
+  ]
+}

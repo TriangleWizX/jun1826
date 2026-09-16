@@ -40,7 +40,7 @@ assert.ok(html.includes('sensei-sandy.webp'), 'Must include optimized sensei-san
 assert.doesNotMatch(html, /data-cal-link=/, 'The inline mount must not also act as a Cal popup trigger');
 
 const executablePath = process.env.CHROME_PATH || (fs.existsSync(chromium.executablePath()) ? chromium.executablePath() : '/usr/bin/google-chrome');
-const browser = await chromium.launch({ executablePath, headless: true, args: ['--no-sandbox'] });
+const browser = await chromium.launch({ executablePath, headless: true, args: ['--no-sandbox', '--disable-crash-reporter', '--disable-dev-shm-usage'] });
 try {
   const page = await browser.newPage();
   let failLoader = true;

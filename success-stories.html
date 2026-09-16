@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<title>Success Stories | Sensei Sandy BJJ, Real Results, Real Community</title>
+<meta content="Read real success stories from kids, teens, and adults who found confidence, calm, and community through Brazilian Jiu-Jitsu at Sensei Sandy BJJ in Tan..." name="description"/>
+
+
+<link href="https://senseisandy.com/success-stories" rel="canonical"/>
+<meta content="https://senseisandy.com/success-stories" property="og:url"/>
+<meta content="Sensei Sandy BJJ" property="og:site_name"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" property="og:image"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Success Stories | Sensei Sandy BJJ, Real Results, Real Community" property="og:title"/>
+<meta content="Read real success stories from kids, teens, and adults who found confidence, calm, and community through Brazilian Jiu-Jitsu at Sensei Sandy BJJ in Tan..." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Success Stories | Sensei Sandy BJJ, Real Results, Real Community" name="twitter:title"/>
+<meta content="Read real success stories from kids, teens, and adults who found confidence, calm, and community through Brazilian Jiu-Jitsu at Sensei Sandy BJJ in Tan..." name="twitter:description"/>
+<meta content="https://senseisandy.com/assets/images/IMG_20260415_172726_009.f9acc0.webp" name="twitter:image"/>
+<meta content="https://senseisandy.com/success-stories" name="twitter:url"/>
+<link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/tokens.css" as="style">
+<link rel="stylesheet" href="/assets/css/routes/site-18ac9c2704ce.min.css">
+<link rel="stylesheet" href="/assets/css/bootstrap-icons-local.css">
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site-shell.min.css">
+</head>
+<body class="lane-mixed page-success">
+
+  <!--#include virtual="/nav-include.html" -->
+
+
+<!-- Preload & load Bootstrap early so pages with footer-only includes get the file downloaded earlier -->
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+
+<script>
+  (function ensureBootstrapBundle() {
+    const primarySrc = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+    const fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
+    const bootstrapScriptSelector = 'script[src*="bootstrap.bundle.min.js"]';
+
+    const hasDropdown = () => Boolean(window.bootstrap && window.bootstrap.Dropdown);
+
+    const loadBundle = (src) => {
+      if (hasDropdown()) return;
+      if (document.querySelector(`script[data-ss-bootstrap-loader="${src}"]`)) return;
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.crossOrigin = 'anonymous';
+      script.async = false;
+      script.dataset.ssBootstrapLoader = src;
+      script.addEventListener('load', () => {
+        if (!hasDropdown() && src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => {
+        if (src !== fallbackSrc) loadBundle(fallbackSrc);
+      }, { once: true });
+      document.body.appendChild(script);
+    };
+
+    const watchExistingBundle = (script) => {
+      if (!script || script.dataset.ssBootstrapWatched === 'true') return;
+      script.dataset.ssBootstrapWatched = 'true';
+      script.addEventListener('load', () => {
+        if (!hasDropdown()) loadBundle(fallbackSrc);
+      }, { once: true });
+      script.addEventListener('error', () => loadBundle(fallbackSrc), { once: true });
+    };
+
+    const ensureDropdown = () => {
+      if (hasDropdown()) return;
+
+      const existingBundle = document.querySelector(bootstrapScriptSelector);
+      if (existingBundle) {
+        watchExistingBundle(existingBundle);
+      } else {
+        loadBundle(primarySrc);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ensureDropdown, { once: true });
+    } else {
+      ensureDropdown();
+    }
+  })();
+</script>
+
+<div id="schedule-dialog" class="schedule-dialog" role="dialog" aria-modal="true" aria-labelledby="schedule-dialog-title" hidden>
+  <div class="schedule-dialog__panel">
+    <button type="button" class="schedule-dialog__close" aria-label="Close scheduling form">&times;</button>
+    <h2 id="schedule-dialog-title">Plan Your First Class</h2>
+    <p>Leave the best number to reach you. Sandy will help you choose the right class time.</p>
+    <form id="schedule-dialog-form" action="https://formspree.io/f/mqazqozk" method="POST">
+      <label for="schedule-lead-name" style="display: block; margin-bottom: 1rem; font-weight: 600;">
+        First name
+        <input type="text" id="schedule-lead-name" name="name" autocomplete="given-name" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <label for="schedule-lead-phone" style="display: block; margin-bottom: 1.5rem; font-weight: 600;">
+        Phone number
+        <input type="tel" id="schedule-lead-phone" name="phone" autocomplete="tel" inputmode="tel" required style="display: block; width: 100%; padding: 0.65rem 0.85rem; margin-top: 0.4rem; border: 1px solid rgba(54,43,36,0.2); border-radius: 10px;">
+      </label>
+      <input type="hidden" name="_subject" value="New Schedule Request (Modal)">
+      <button type="submit" class="ss-btn ss-btn-primary" style="width: 100%;">Continue to Schedule</button>
+    </form>
+    <p id="schedule-dialog-status" class="ss-lead-capture-status" role="status" aria-live="polite" hidden style="margin-top: 1rem; color: #116A42; font-weight: 600;">
+      Thank you. Sandy will call or text you soon.
+    </p>
+  </div>
+</div>
+
+<script>
+(function initScheduleModal() {
+  const endpoint = 'https://formspree.io/f/mqazqozk';
+  const schedulePath = '/schedule';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const dialog = document.getElementById('schedule-dialog');
+    if (!dialog) return;
+
+    const panel = dialog.querySelector('.schedule-dialog__panel');
+    const closeBtn = dialog.querySelector('.schedule-dialog__close');
+    const form = document.getElementById('schedule-dialog-form');
+    const status = document.getElementById('schedule-dialog-status');
+    let lastActiveElement = null;
+
+    function openModal(trigger) {
+      lastActiveElement = trigger || document.activeElement;
+      dialog.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      const firstInput = dialog.querySelector('input, button');
+      if (firstInput) firstInput.focus();
+    }
+
+    function closeModal() {
+      dialog.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+        lastActiveElement.focus();
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      const trigger = e.target.closest('.schedule-trigger, [aria-controls="schedule-dialog"]');
+      if (trigger) {
+        e.preventDefault();
+        openModal(trigger);
+      }
+    });
+
+    closeBtn?.addEventListener('click', closeModal);
+
+    dialog.addEventListener('click', function (e) {
+      if (panel && !panel.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !dialog.hasAttribute('hidden')) {
+        closeModal();
+      }
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const defaultLabel = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        const payload = {
+          name: form.elements.name.value,
+          phone: form.elements.phone.value,
+          _subject: 'New Schedule Request (Modal)'
+        };
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (!res.ok) throw new Error('Submission failed');
+          form.hidden = true;
+          if (status) {
+            status.textContent = 'Thank you. Sandy will call or text you soon.';
+            status.hidden = false;
+          }
+          setTimeout(function () {
+            closeModal();
+            const currentPath = window.location.pathname.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            const targetPath = schedulePath.replace(/\.html?$/, '').replace(/\/$/, '') || '/';
+            if (currentPath !== targetPath) {
+              window.location.href = schedulePath;
+            }
+          }, 1200);
+        }).catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = defaultLabel;
+          if (status) {
+            status.textContent = "We couldn't send that. Please try again or text Sandy at .";
+            status.hidden = false;
+          }
+        });
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+(function markCurrentPage() {
+  const currentPath = window.location.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+  const allLinks = document.querySelectorAll('#ssMainNav a.nav-link, #ssMainNav a.dropdown-item');
+  allLinks.forEach(link => {
+    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        if (toggle) {
+          toggle.classList.add('active');
+        }
+      }
+    }
+  });
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  const myCollapsible = document.getElementById('ssMainNav');
+  const siteHeader = document.querySelector('.ss-site-header');
+  const toggler = document.querySelector('.ss-menu-button');
+  const skipLink = document.querySelector('.ss-skip-link');
+  const mainContent = document.querySelector('main, [role="main"]');
+
+  if (skipLink && mainContent) {
+    if (!mainContent.id) mainContent.id = 'main-content';
+    if (!mainContent.hasAttribute('tabindex')) mainContent.tabIndex = -1;
+    skipLink.setAttribute('href', '#' + mainContent.id);
+    skipLink.addEventListener('click', function () {
+      window.setTimeout(function () {
+        mainContent.focus({ preventScroll: true });
+      }, 0);
+    });
+  }
+
+  if (myCollapsible && siteHeader) {
+    const lgQuery = window.matchMedia('(min-width: 992px)');
+    const handleResize = (e) => {
+      if (e.matches) {
+        myCollapsible.removeAttribute('inert');
+      } else {
+        if (!myCollapsible.classList.contains('show')) {
+          myCollapsible.setAttribute('inert', '');
+        }
+      }
+    };
+
+    if (lgQuery.addEventListener) {
+      lgQuery.addEventListener('change', handleResize);
+    } else if (lgQuery.addListener) {
+      lgQuery.addListener(handleResize);
+    }
+    handleResize(lgQuery);
+
+    myCollapsible.addEventListener('show.bs.collapse', function () {
+      siteHeader.classList.add('nav-open');
+      myCollapsible.removeAttribute('inert');
+    });
+
+    myCollapsible.addEventListener('shown.bs.collapse', function () {
+      const firstLink = myCollapsible.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    });
+
+    myCollapsible.addEventListener('hide.bs.collapse', function () {
+      siteHeader.classList.remove('nav-open');
+    });
+
+    myCollapsible.addEventListener('hidden.bs.collapse', function () {
+      if (!lgQuery.matches) {
+        myCollapsible.setAttribute('inert', '');
+      }
+      if (toggler) toggler.focus();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && myCollapsible.classList.contains('show')) {
+        if (window.bootstrap && window.bootstrap.Collapse) {
+          const bsCollapse = window.bootstrap.Collapse.getInstance(myCollapsible) || new window.bootstrap.Collapse(myCollapsible, { toggle: false });
+          bsCollapse.hide();
+        }
+      }
+    });
+  }
+});
+</script>
+
+<style>
+@media screen and (min-width: 768px) {
+  .header-display-desktop .header-nav-item--folder,
+  .ss-global-nav-wrapper .ss-navbar .dropdown,
+  .ss-navbar .nav-item.dropdown {
+    position: relative;
+  }
+
+  .header-display-desktop .header-nav-item--folder .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown-menu,
+  .ss-navbar .dropdown-menu {
+    display: block !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(10px) !important;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      visibility 160ms ease !important;
+  }
+
+  .header-display-desktop .header-nav-item--folder:hover .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder:focus-within .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.show .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.open .header-nav-folder-content,
+  .header-display-desktop .header-nav-item--folder.is-open .header-nav-folder-content,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-global-nav-wrapper .ss-navbar .dropdown.show .dropdown-menu,
+  .ss-navbar .dropdown:hover .dropdown-menu,
+  .ss-navbar .dropdown:focus-within .dropdown-menu,
+  .ss-navbar .dropdown.show .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const folders = document.querySelectorAll(
+      ".header-display-desktop .header-nav-item--folder, .ss-navbar .dropdown"
+    );
+
+    const closeFolder = function (folder) {
+      folder.classList.remove("open", "is-open", "active-folder", "menu-open", "folder-open");
+      folder.removeAttribute("data-open");
+      folder.removeAttribute("data-folder-status");
+      const menu = folder.querySelector(".dropdown-menu, .header-nav-folder-content");
+      if (menu) menu.classList.remove("show", "open", "is-open");
+      const trigger = folder.querySelector("a, button");
+      if (trigger && trigger.hasAttribute("aria-expanded")) trigger.setAttribute("aria-expanded", "false");
+    };
+
+    folders.forEach(closeFolder);
+
+    document.addEventListener("click", function (event) {
+      folders.forEach(function (folder) {
+        if (!folder.contains(event.target)) closeFolder(folder);
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      folders.forEach(closeFolder);
+      const focusedElement = document.activeElement;
+      if (focusedElement instanceof HTMLElement) focusedElement.blur();
+    });
+  });
+</script>
+
+
+  
+
+  <div id="scrollProgress"></div>
+
+  
+    <main class="ss-main" id="main-content" role="main"><!-- ======================================================== HERO, Editorial Split ======================================================== --><section aria-labelledby="ss-hero-headline" class="ss-hero"><!-- LEFT: Headline --><div class="ss-hero__left"><div aria-hidden="true" class="ss-eyebrow-pill sr"><span class="ss-eyebrow-pill__dot"></span> Success Stories </div><h1 class="ss-hero__headline sr sr--d1" id="ss-hero-headline"> Real Stories.<br/><em>Real Results.</em></h1><p class="ss-hero__lead sr sr--d2"> Families, teens, and adults keep repeating the same proof points: welcomed on day one, coached with patience, and kept safe every roll. </p><div class="ss-stat-row sr sr--d3"><div class="ss-stat"><span class="ss-stat__num">50+</span><span class="ss-stat__label">Happy Members</span></div><div class="ss-stat"><span class="ss-stat__num">5★</span><span class="ss-stat__label">Average Rating</span></div><div class="ss-stat"><span class="ss-stat__num">3</span><span class="ss-stat__label">Programs</span></div></div></div><!-- RIGHT: Featured quote stack --><div aria-label="Featured testimonials" class="ss-hero__right"><!-- Featured large quote, Kids --><div class="ss-dbezel sr sr--d2" style="margin-bottom:1rem;"><div class="ss-dbezel__inner"><div class="ss-hero-quote"><div class="ss-hq-header"><span class="ss-hq-badge ss-hq-badge--teal">Kids &amp; Families</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-hq-quote-mark">"</span><p class="ss-hq-body">"I have 2 kids in the class twice a week. They entered with no experience and now look forward to going after school."</p><div class="ss-hq-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--teal">JG</div><div class="ss-hq-author-text"><strong>Jared Goodrich</strong><span>Parent of two students</span></div></div></div></div></div><!-- Mini 2-up row --><div class="ss-hq-mini-row sr sr--d3"><!-- Adults mini --><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-hero-quote ss-hq-mini"><div class="ss-hq-header"><span class="ss-hq-badge ss-hq-badge--green">Adults</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-hq-quote-mark">"</span><p class="ss-hq-body">"Started training at 43. It has helped my body and my mind."</p><div class="ss-hq-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--green">RS</div><div class="ss-hq-author-text"><strong>Richard Scarponi</strong><span>Adult member</span></div></div></div></div></div><!-- Teens mini --><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-hero-quote ss-hq-mini"><div class="ss-hq-header"><span class="ss-hq-badge ss-hq-badge--orange">Teens</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-hq-quote-mark">"</span><p class="ss-hq-body">"Sandy makes you feel comfortable getting on the mats, whether it's your first time or you're seasoned."</p><div class="ss-hq-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--orange">TR</div><div class="ss-hq-author-text"><strong>Tess Robinson</strong><span>Teen practitioner</span></div></div></div></div></div></div></div></section><!-- ======================================================== KIDS & FAMILIES BENTO ======================================================== --><section aria-labelledby="kids-cat-title" class="ss-stories"><!-- Section label bar --><div class="ss-section-label sr"><span class="ss-section-label__tag">Community Voices</span><div aria-hidden="true" class="ss-section-label__line"></div><span class="ss-section-label__count">14 stories</span></div><!-- Kids Category --><div class="ss-category-head sr"><h2 class="ss-category-head__title ss-category-head__title--teal" id="kids-cat-title">Community</h2><span class="ss-category-head__sub">Building focus, confidence &amp; after-school routine</span></div><div class="ss-bento" role="list"><!-- Featured card: large photo + quote (8-col) --><article class="gc-8 ss-story-card ss-story-card--featured sr sr--d1" role="listitem"><div class="ss-dbezel" style="height:100%;"><div class="ss-dbezel__inner" style="height:100%;"><div aria-hidden="true" class="ss-story-card__photo-placeholder ss-story-card__photo-placeholder--teal"><span style="text-align:center;padding:1rem;color:#ffffff;">Kids Jiu-Jitsu<br/><span style="font-size:2.5rem;">🥋</span></span></div><img alt="Happy child in a white Jiu-Jitsu gi high-fiving an instructor" class="ss-story-card__photo" decoding="async" height="200" loading="lazy" onerror="this.style.display='none'" onload="this.previousElementSibling.style.display='none'; this.style.display='block';" src="/assets/images/kids_success.818e8d.png" style="display:none;" width="400"/><span class="ss-story-card__featured-badge">Featured</span><div class="ss-story-card__content"><div class="ss-hq-header" style="margin-bottom:.75rem;"><span class="ss-hq-badge ss-hq-badge--teal">Twice a week</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--teal">"</span><p class="ss-card-body">"I have 2 kids in class twice a week. They started with no experience and now look forward to going after school."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--teal">JG</div><div><p class="ss-card-author__name">Jared Goodrich</p><p class="ss-card-author__role">Parent</p></div></div></div></div></div></article><!-- Stacked 4-col: 2 quotes --><div class="gc-4" style="display:flex; flex-direction:column; gap:1.25rem;"><article class="ss-story-card sr sr--d2" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><div class="ss-hq-header" style="margin-bottom:.75rem;"><span class="ss-hq-badge ss-hq-badge--teal">Focus</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--teal">"</span><p class="ss-card-body ss-card-body--sm">"My 8yr old loves the classes. His focus at home and school has improved since starting."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--teal">CC</div><div><p class="ss-card-author__name">Caroline Cosgrove</p><p class="ss-card-author__role">Parent</p></div></div></div></div></div></article><article class="ss-story-card sr sr--d3" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--teal">"</span><p class="ss-card-body ss-card-body--sm">"Training here has become such a large part of my family's routine. We love it."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--teal">JM</div><div><p class="ss-card-author__name">Jessie Moriarty</p><p class="ss-card-author__role">Parent</p></div></div></div></div></div></article></div><!-- Full-width pull quote --><article class="gc-12 ss-story-card sr sr--d4" role="listitem"><div class="ss-dbezel" style="background: rgba(40,159,161,0.06); border-color: rgba(40,159,161,0.18);"><div class="ss-dbezel__inner" style="background: rgba(40,159,161,0.04);"><div class="ss-story-card__inner ss-pull-quote"><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--teal">"</span><p class="ss-card-body" style="font-family:'Instrument Serif',Georgia,serif; font-size:clamp(1.2rem,2.2vw,1.65rem); line-height:1.35; letter-spacing:-0.01em;">"The instructor creates an environment where my kid <em>wants</em> to practice. They love it."</p><div class="ss-card-author" style="margin-top:1.25rem;"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--teal">SK</div><div><p class="ss-card-author__name">Sarah Kim</p><p class="ss-card-author__role">Parent of two</p></div></div></div></div></div></article></div><!-- ==================================================== TEENS BENTO ==================================================== --><div class="ss-category-head sr"><h2 class="ss-category-head__title ss-category-head__title--orange" id="teens-cat-title">Skill</h2><span class="ss-category-head__sub">Clear instruction · safe sparring · real skill</span></div><div class="ss-bento" role="list"><!-- 5-col featured --><article class="gc-5 ss-story-card ss-story-card--featured sr sr--d1" role="listitem"><div class="ss-dbezel" style="height:100%;"><div class="ss-dbezel__inner" style="height:100%;"><div aria-hidden="true" class="ss-story-card__photo-placeholder ss-story-card__photo-placeholder--orange"><span style="text-align:center;padding:1rem;color:#ffffff;">Teen BJJ<br/><span style="font-size:2.5rem;">🏆</span></span></div><img alt="Two teenagers in Jiu-Jitsu gis shaking hands and smiling after practice" class="ss-story-card__photo" decoding="async" height="200" loading="lazy" onerror="this.style.display='none'" onload="this.previousElementSibling.style.display='none'; this.style.display='block';" src="/assets/images/teens_success.9ab979.png" style="display:none;" width="400"/><span class="ss-story-card__featured-badge">Featured</span><div class="ss-story-card__content"><div class="ss-hq-header" style="margin-bottom:.75rem;"><span class="ss-hq-badge ss-hq-badge--orange">All levels</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--orange">"</span><p class="ss-card-body">"Clear instruction for all levels, with drills that integrate new skills. Best coaching I've had."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--orange">JM</div><div><p class="ss-card-author__name">Jason M.</p><p class="ss-card-author__role">Teen practitioner</p></div></div></div></div></div></article><!-- 7-col right side: 2 stacked + 1 wide --><div class="gc-7" style="display:grid; grid-template-rows: auto auto; gap:1.25rem;"><div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;"><article class="ss-story-card sr sr--d2" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--orange">"</span><p class="ss-card-body ss-card-body--sm">"Sandy makes you feel comfortable on the mats, first time or seasoned practitioner, it doesn't matter."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--orange">TR</div><div><p class="ss-card-author__name">Tess Robinson</p><p class="ss-card-author__role">Student</p></div></div></div></div></div></article><article class="ss-story-card sr sr--d3" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><div class="ss-hq-header" style="margin-bottom:.6rem;"><span class="ss-hq-badge ss-hq-badge--orange">Competitive</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--orange">"</span><p class="ss-card-body ss-card-body--sm">"Clear and engaging for both beginners and competitive athletes. Rare to find that balance."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--gold">KC</div><div><p class="ss-card-author__name">Kelly Chan</p><p class="ss-card-author__role">Competitive grappler</p></div></div></div></div></div></article></div><!-- Wide pull quote --><article class="ss-story-card sr sr--d4" role="listitem"><div class="ss-dbezel" style="background:rgba(224,85,0,0.05); border-color:rgba(224,85,0,0.15);"><div class="ss-dbezel__inner" style="background:rgba(224,85,0,0.03);"><div class="ss-story-card__inner" style="display:flex; align-items:center; gap:1.5rem;"><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--orange" style="font-size:4rem; flex-shrink:0;">"</span><div><p class="ss-card-body">"He adapts to every skill level in the same small-group class. That's hard to do, and he does it with ease."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--brown">MB</div><div><p class="ss-card-author__name">Mike Berenson</p><p class="ss-card-author__role">Parent &amp; student</p></div></div></div></div></div></div></article></div></div><!-- ==================================================== ADULTS BENTO ==================================================== --><div class="ss-category-head sr"><h2 class="ss-category-head__title ss-category-head__title--green" id="adults-cat-title">Safety</h2><span class="ss-category-head__sub">Body, mind &amp; a welcoming community, at any age</span></div><div class="ss-bento" role="list"><!-- Full-width featured --><article class="gc-12 ss-story-card ss-story-card--featured sr sr--d1" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner" style="display:grid; grid-template-columns: 1fr 1.4fr;"><div aria-hidden="true" class="ss-story-card__photo-placeholder ss-story-card__photo-placeholder--green" style="border-radius: var(--radius-inner) 0 0 var(--radius-inner); height:auto; min-height:240px;"><span style="text-align:center;padding:1rem;color:#ffffff;">Adult BJJ<br/><span style="font-size:2.5rem;">💪</span></span></div><img alt="Adult woman in a black Jiu-Jitsu gi smiling and talking to a classmate" decoding="async" height="240" loading="lazy" onerror="this.style.display='none'" onload="this.previousElementSibling.style.display='none'; this.style.display='block';" src="/assets/images/adults_success.1525fd.png" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:0;" width="400"/><div class="ss-story-card__content" style="padding:2rem 2.25rem;"><div class="ss-hq-header" style="margin-bottom:1rem;"><span class="ss-hq-badge ss-hq-badge--green">Featured</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--green" style="font-size:4rem;">"</span><p class="ss-card-body" style="font-size:1.15rem; line-height:1.55;">"I started my BJJ career late in life at 43, but what I have learned from him has not only helped my body, it's helped my mind."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--green">RS</div><div><p class="ss-card-author__name">Richard Scarponi</p><p class="ss-card-author__role">Adult member · Started at 43</p></div></div></div></div></div></article><!-- 4 x 3-col grid --><article class="gc-6 ss-story-card sr sr--d2" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><div class="ss-hq-header" style="margin-bottom:.75rem;"><span class="ss-hq-badge ss-hq-badge--green">Beginner-friendly</span><span aria-label="5 stars" class="ss-hq-stars">★★★★★</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--green">"</span><p class="ss-card-body">"I've rarely encountered an instructor as caring, chill, beginner-friendly, optimistic, and skilled at explaining fundamentals as Sensei Sandy."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--green">DH</div><div><p class="ss-card-author__name">Douglas Hopson</p><p class="ss-card-author__role">Adult student</p></div></div></div></div></div></article><article class="gc-6 ss-story-card sr sr--d3" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><div class="ss-hq-header" style="margin-bottom:.75rem;"><span class="ss-hq-badge ss-hq-badge--green">20+ yrs BJJ</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--green">"</span><p class="ss-card-body">"I have been doing BJJ since the 1990s and can't think of a safer, more ethical, or more skilled academy."</p><div class="ss-card-author"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--brown">PJ</div><div><p class="ss-card-author__name">Phillip Johansen</p><p class="ss-card-author__role">Veteran practitioner</p></div></div></div></div></div></article><article class="gc-4 ss-story-card sr sr--d4" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--green">"</span><p class="ss-card-body ss-card-body--sm">"He promotes a relaxed, calm atmosphere while delivering high-level jiu-jitsu digestible for both beginners and advanced."</p><div class="ss-card-author" style="margin-top:1rem;"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--green">AD</div><div><p class="ss-card-author__name">Adam Duthie</p><p class="ss-card-author__role">Adult member</p></div></div></div></div></div></article><article class="gc-4 ss-story-card sr sr--d5" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><div class="ss-hq-header" style="margin-bottom:.6rem;"><span class="ss-hq-badge ss-hq-badge--green">Smaller grappler</span></div><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--green">"</span><p class="ss-card-body ss-card-body--sm">"As a smaller grappler, I felt safe and welcomed from day one."</p><div class="ss-card-author" style="margin-top:1rem;"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--gold">KC</div><div><p class="ss-card-author__name">Kelly Chan</p><p class="ss-card-author__role">Adult student</p></div></div></div></div></div></article><article class="gc-4 ss-story-card sr sr--d6" role="listitem"><div class="ss-dbezel"><div class="ss-dbezel__inner"><div class="ss-story-card__inner"><span aria-hidden="true" class="ss-card-qmark ss-card-qmark--green">"</span><p class="ss-card-body ss-card-body--sm">"A welcoming community with no big egos. That's rare in any martial art."</p><div class="ss-card-author" style="margin-top:1rem;"><div aria-hidden="true" class="ss-hq-avatar ss-hq-avatar--brown">AM</div><div><p class="ss-card-author__name">Adam Mastropaolo</p><p class="ss-card-author__role">Adult member</p></div></div></div></div></div></article></div></section><!-- ======================================================== TRUST STRIP ======================================================== --><section aria-labelledby="trust-strip-headline" class="ss-trust-strip"><div class="ss-trust-strip__inner"><div><h2 class="ss-trust-strip__headline sr" id="trust-strip-headline"> Every story starts with<br/> the same thing: <em>showing up.</em></h2><div class="ss-trust-pillars sr sr--d2"><div class="ss-trust-pillar"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Welcoming from day one </div><div class="ss-trust-pillar"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Patient coaching, clear steps </div><div class="ss-trust-pillar"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Clean mats + supervised rounds </div><div class="ss-trust-pillar"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Fair pricing · reschedule by text </div></div></div><div class="ss-trust-strip__cta sr sr--d3"><a aria-label="Reserve a Free First Visit class from Trust Strip" class="ss-btn-bib" href="/free-bjj-intro-tannersville-ny" id="trust-strip-cta"> Reserve Your Free First Visit <span aria-hidden="true" class="ss-btn-bib__icon">↗</span></a></div></div></section><!-- ======================================================== BOTTOM CTA ======================================================== --><section aria-labelledby="bottom-cta-headline" class="ss-bottom-cta"><div aria-hidden="true" class="ss-bottom-cta__eyebrow sr">Your story starts here</div><h2 class="ss-bottom-cta__headline sr sr--d1" id="bottom-cta-headline"> Ready to write<br/><em>your story?</em></h2><p class="ss-bottom-cta__sub sr sr--d2"> Join families, teens, and adults from across the Catskills who found confidence, calm, and community on the mats in Tannersville. </p><div class="ss-bottom-cta__actions sr sr--d3"><a aria-label="Reserve Your Free First Visit with a Free First Visit" class="ss-btn-bib" href="/free-bjj-intro-tannersville-ny" id="bottom-cta-primary"> Reserve Your Free First Visit <span aria-hidden="true" class="ss-btn-bib__icon">↗</span></a><a aria-label="Explore Programs for all ages" class="ss-btn-secondary" href="/programs" id="bottom-cta-secondary"> Explore Programs </a></div><p class="ss-bottom-cta__note sr sr--d4">12-week Core Culture track · Reschedule classes by text · 30-day confidence guarantee</p></section><!--#include virtual="/partials/reviews-village.html" --></main><script>document.querySelectorAll('.sr').forEach(function(el){el.classList.add('sr--visible');});</script>
+
+  
+
+  <footer class="ss-new-site-footer" aria-labelledby="ss-footer-title">
+  <div class="ss-new-footer-shell">
+    <div class="ss-new-footer-inner">
+      <h2 id="ss-footer-title" class="visually-hidden">Sensei Sandy BJJ footer</h2>
+
+      <div class="ss-new-footer-top">
+        <div class="ss-new-footer-brand" data-footer-group="primary">
+          <div class="ss-new-brand-row">
+            <img class="ss-new-brand-logo" src="/assets/img/brand/sensei-sandy-bjj-logo-256.905957.webp" alt="Sensei Sandy BJJ logo" width="60" height="60" decoding="async">
+            <div class="ss-new-brand-title">Sensei Sandy BJJ</div>
+          </div>
+          <p class="ss-new-brand-desc">Calm, technical Jiu-Jitsu where every student is seen, guided, and supported. You will not disappear into the room.</p>
+          <div class="ss-new-contact-list">
+            <div class="ss-new-contact-row">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <span>6045 Main Street, 2nd Floor Studio<br>Tannersville, NY 12485</span>
+            </div>
+            <div class="ss-new-contact-row">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              <span>Kids &bull; Teens &bull; Adults</span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="ss-new-footer-nav" aria-label="Footer navigation">
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Start Here</h3>
+            <ul>
+<li><a href="/nearby-towns">Choose class</a></li>
+              <li><a href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping>Free First Visit</a></li>
+              <li><a href="/schedule">Schedule</a></li>
+              <li><a href="/holiday-schedule">Holiday Schedule</a></li>
+              <li><a href="/show-up-kit">Show-Up Kit</a></li>
+              <li><a href="/parent-resources">Parent Guide</a></li>
+              <li><a href="/bjj-tannersville-ny-directions">Directions</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Programs</h3>
+            <ul>
+              <li><a href="/bjj-classes">All BJJ Classes</a></li>
+              <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
+              <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
+              <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
+              <li><a href="/bjj-classes/kids-tannersville-ny">Summer BJJ</a></li>
+              <li><a href="/private-lessons">Private Lessons</a></li>
+              <li><a href="/bully-proof-jiu-jitsu-tannersville-ny">Bully Proof</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Studio</h3>
+            <ul>
+              <li><a href="/how-class-works">How Class Works</a></li>
+              <li><a href="/success-stories">Success Stories</a></li>
+              <li><a href="/options-pricing">Pricing</a></li>
+              <li><a href="/bio">Bio</a></li>
+              <li><a href="/sensei-studio">Studio Tour</a></li>
+              <li><a href="/bjj-faqs">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Nearby</h3>
+            <ul>
+              <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
+              <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
+              <li><a href="/bjj-classes/windham-ny">Windham</a></li>
+              <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
+              <li><a href="/nearby-towns">Woodstock</a></li>
+              <li><a href="/nearby-towns">Nearby Towns</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Learn</h3>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/bjj-glossary">BJJ Glossary</a></li>
+              <li><a href="/bjj-stretches">BJJ Stretches</a></li>
+              <li><a href="https://www.youtube.com/@SenseiSandyBJJ">BJJ Videos</a></li>
+              <li><a href="/sensei-jiu-jitsu">Sensei Jiu-Jitsu</a></li>
+            </ul>
+          </div>
+          <div class="ss-new-nav-col" data-footer-group="secondary">
+            <h3>Friends of the Academy</h3>
+            <ul>
+              <li><a href="/community-partners">Community Partners</a></li>
+              <li><a href="/partners-hospitality-hunter-windham">Hospitality Partners</a></li>
+              <li><a href="/partners-wellness-pt-referrals">Wellness Partners</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="ss-new-footer-bottom">
+        <div>&copy; 2026 Sensei Sandy BJJ. All Rights Reserved.</div>
+        <div class="ss-new-footer-contacts">
+          <a href="tel:+19177368649" class="ss-new-footer-contact-link">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            Call
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" class="ss-new-footer-contact-link">
+            <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            Text
+          </a>
+          <div class="ss-new-divider" aria-hidden="true"></div>
+          <a href="mailto:sandy@senseisandy.com" class="ss-new-footer-contact-link">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="ss-mobile-actionbar" aria-label="Quick actions">
+  <a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" data-cta-target="text" data-cta-placement="sticky_mobile">Questions about starting? Text Sandy </a>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    (function initStickyVisibility() {
+      const heroCta = document.querySelector([
+        '.home-hero .primary-cta',
+        '.hero-card .btn-white-secondary',
+        '.hero-card .btn-green-primary',
+        '.ss-hero .primary-cta',
+        '#hero-cta'
+      ].join(', '));
+      const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
+      const stickyCta = document.querySelector('.ss-mobile-actionbar');
+
+      if (!stickyCta) return;
+      stickyCta.classList.add("is-observed");
+      if (!("IntersectionObserver" in window)) {
+        stickyCta.classList.add("is-visible");
+        return;
+      }
+
+      let heroOut = !heroCta;
+      let footerIn = false;
+      const updateVisibility = function () {
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+      };
+
+      if (heroCta) {
+        const heroObserver = new IntersectionObserver(function (entries) {
+          heroOut = !entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroCta);
+      }
+
+      if (footerCta) {
+        const footerObserver = new IntersectionObserver(function (entries) {
+          footerIn = entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.05 });
+        footerObserver.observe(footerCta);
+      }
+
+      updateVisibility();
+    })();
+  });
+</script>
+
+
+
+  <script src="/assets/js/attribution.c136f0.js" defer></script>
+  <script src="/assets/js/analytics-events.63417f.js" defer></script>
+  
+</body>
+</html>
