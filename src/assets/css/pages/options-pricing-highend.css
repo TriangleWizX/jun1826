@@ -524,15 +524,19 @@ body.page-options-pricing .op-program-grid {
 }
 
 body.page-options-pricing .op-program--youth {
-  grid-column: span 7;
+  grid-column: span 6;
 }
 
 body.page-options-pricing .op-program--adult {
-  grid-column: span 5;
+  grid-column: span 6;
 }
 
 body.page-options-pricing .op-program--community {
   grid-column: 1 / -1;
+}
+
+body.page-options-pricing .op-price-ledger--single {
+  grid-template-columns: 1fr;
 }
 
 body.page-options-pricing .op-price-ledger {
@@ -1890,7 +1894,8 @@ body.page-options-pricing .op-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
-  margin-top: 1.25rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
 }
 
 body.page-options-pricing .op-card__actions .op-button {
@@ -1904,5 +1909,19 @@ body.page-options-pricing .op-card__actions .op-button__icon {
   height: 2.15rem;
   font-size: 0.95rem;
 }
+
+@media (min-width: 1025px) {
+  body.page-options-pricing .op-program-grid .op-card__header {
+    min-height: 11.5rem;
+  }
+  body.page-options-pricing .op-program-grid .op-value-badge-strip {
+    min-height: 3.8rem;
+    align-content: flex-start;
+  }
+  body.page-options-pricing .op-program-grid .op-grand-slam-stack {
+    min-height: 25.5rem;
+  }
+}
 /* Grand Slam Offer styles synchronized */
+
 
