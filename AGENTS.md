@@ -411,3 +411,18 @@ If the request is clearly scoped, proceed with the best safe implementation.
 Do not hard-code current academy schedule, private availability, prices, address, phone, guarantee naming, or program entitlement inside editorial pages. Import canonical values or link to the authority page. The public schedule authority is `/schedule`; private coaching is request-based unless a canonical data source explicitly declares a recurring public slot. Run `npm run qa:volatile-facts` after changing schedule-sensitive content.
 
 @RTK.md
+
+## Restored Codex workflow assets
+
+The restored Codex workflow assets are part of this repository's working
+process and should be included when the task calls for persona selection,
+planning, swarm audits, or Ad Studio work:
+
+- Persona selector: `assets/indranet-prompt-exporter/mcp/lib/auto_persona.py`
+- Persona skill: `assets/indranet-prompt-exporter/skills/plan-persona/SKILL.md`
+- Ad Studio handoff and tooling: `tools/ads/CODEX-HANDOFF-ADS.md` and `tools/ads/`
+
+Run the persona selector for `/plan` and goal work, preserve its selected
+persona and UUID in the artifact, and keep Ad Studio offline-only. Do not treat
+browser profile data, prompt exports, generated campaign batches, or audit
+reports as public deployment payloads.

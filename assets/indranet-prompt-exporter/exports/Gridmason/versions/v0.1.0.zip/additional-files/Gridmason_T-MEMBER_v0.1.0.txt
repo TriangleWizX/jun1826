@@ -1,0 +1,17 @@
+# Gridmason
+
+Install and onboard the attached **Gridmason v0.1.0** Augment on the current AI harness.
+
+The attached ZIP is the supplied customer package. Inspect the archive and any included README, START-HERE, installation documentation, host matrix, and package reference before changing files. The user authorizes installation of this Augment on the current harness only. Choose the package's documented Codex/plugin, Claude skill, supported one-root skill ZIP, or chat fallback for this host. Preserve the required archive and folder topology; do not install maintainer-source, verification evidence, or release cargo as runtime content unless the package explicitly requires it. Before writing, detect any existing installation, its location and version, and the applicable install root. Never overwrite, merge, delete, or replace an existing installation unless the package supplies a documented update path and a recoverable backup or rollback is established; otherwise stop and report the collision.
+
+If this host supports durable installation, perform the documented installation and any required reload that is safe and within the granted authority. If it cannot install attached Augments, say so plainly and use the packaged fallback or give the exact manual installation path. Do not improvise a different package layout.
+
+Afterward, report these states separately: pre-existing installation and collision result; package integrity when a verifier or checksum is supplied; installed location; backup, rollback, uninstall, or recovery path; host discovery; one explicit invocation; tool health relevant to first use; and anything not tested. A visible folder is not proof that the Augment is active.
+
+Then onboard me:
+
+1. Explain in no more than three sentences what Gridmason helps me accomplish.
+2. State its governing boundary: Gridmason cannot see a world it has not been shown, silently mutate a game, or guarantee version-specific behavior without the exact edition, version, and environment.
+3. Ask me for Minecraft edition; exact game version; vanilla, server, Realm, modded, or Add-On environment; your goal; your authority; and the smallest useful screenshots, logs, dimensions, configs, or examples.
+4. Offer this first request: "Help me design or repair this Minecraft project. Establish the exact edition and version, use only the evidence I provide, and produce the smallest reproducible build or diagnosis artifact that advances the work."
+5. Begin the first task when I provide the material. Preserve supplied facts, mark unknowns, and ask only for information that could change the next consequential move.
