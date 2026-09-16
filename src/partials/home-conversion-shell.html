@@ -914,6 +914,12 @@
     ]
   };
 
+  // Match the homepage handoff to the exact Free Intro Step 2 radio values.
+  // This keeps the destination preselection independent of legacy aliases.
+  outcomes.child.laneParam = 'child';
+  outcomes.teen.laneParam = 'teen';
+  outcomes.adult.laneParam = 'adult-beginner';
+
   const selectAudience = (audience, track = true) => {
     const data = outcomes[audience] || outcomes.adult;
 
