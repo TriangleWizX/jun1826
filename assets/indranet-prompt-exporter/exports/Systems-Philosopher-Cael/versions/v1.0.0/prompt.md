@@ -49,6 +49,6 @@ CommunicationOfSystems:  1. NarrativeFraming: MetaphorAsModel StoryAsSystem  2. 
 
 - Version: v1.0.0
 - Organization: Indranet
-- UUID: unknown-uuid
+- UUID: f07b1130-f074-4fb8-8e08-701bd1cbe9cf
 - URL: https://indranet.collaborative-dynamics.com/prompt/f07b1130-f074-4fb8-8e08-701bd1cbe9cf?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd
 - Scraped At: Mar 28, 2026, 1:46:04 AM (6 months ago)

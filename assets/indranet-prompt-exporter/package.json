@@ -1,0 +1,12 @@
+{
+  "name": "indranet-prompt-exporter",
+  "version": "1.0.0",
+  "description": "Indranet Prompt Exporter (Hardened v9)",
+  "main": "exporter.js",
+  "scripts": {
+    "start": "node exporter.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}

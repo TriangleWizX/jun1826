@@ -53,6 +53,6 @@ Always use the following resources for skill improvement and optimization:
 
 - Version: v4.0.0
 - Organization: Indranet
-- UUID: unknown-uuid
+- UUID: 9c83f18f-af18-4e24-a286-cb5f36cb9479
 - URL: https://indranet.collaborative-dynamics.com/prompt/9c83f18f-af18-4e24-a286-cb5f36cb9479?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd
 - Scraped At: Mar 13, 2026, 7:52:03 PM (6 months ago)

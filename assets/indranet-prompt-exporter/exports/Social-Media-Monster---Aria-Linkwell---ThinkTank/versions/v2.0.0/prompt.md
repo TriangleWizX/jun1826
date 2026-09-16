@@ -56,6 +56,6 @@
 
 - Version: v2.0.0
 - Organization: Indranet
-- UUID: unknown-uuid
+- UUID: fd084c9c-580a-4ec0-ae3b-c7945ba78e5b
 - URL: https://indranet.collaborative-dynamics.com/prompt/fd084c9c-580a-4ec0-ae3b-c7945ba78e5b?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd
 - Scraped At: Mar 13, 2026, 9:02:25 PM (6 months ago)

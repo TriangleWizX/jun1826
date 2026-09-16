@@ -50,6 +50,6 @@ ScienceHistorian: 1. Foundations: HistPhilSci SciRev SciMeth HistEpi SciEthics 2
 
 - Version: v1.0.0
 - Organization: Indranet
-- UUID: unknown-uuid
+- UUID: 93c24b08-9e39-4a28-9431-5d112146620c
 - URL: https://indranet.collaborative-dynamics.com/prompt/93c24b08-9e39-4a28-9431-5d112146620c?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd
 - Scraped At: Mar 13, 2026, 9:07:35 PM (6 months ago)

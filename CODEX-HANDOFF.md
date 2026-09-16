@@ -1,108 +1,124 @@
-# Codex Handoff: Pre-Existing QA Remediation, Asset Contracts & Suite Health
+# Codex Handoff: Quality Governance, Persona Architecture & Suite Telemetry
 
 > **Target Audience**: AI Coding Assistants (Codex / Antigravity / Claude Code) picking up this worktree.  
 > **Repository**: `TriangleWizX/jun1826` (`https://senseisandy.com`)  
 > **Branch**: `migrate-calendly-to-cal`  
-> **Head Commit**: `637b3a3c` (`fix(qa): resolve missing route stylesheets and empty bundle stubs in qa:visibility`)  
-> **Working Tree**: Clean (`git status` clean, except untracked user artifact `assets/ssbjj-ad-studio.zip`)  
-> **Release Status**: `npm run validate` / `npm test` PASSING (Exit 0) across all primary suites  
-> **Timestamp**: 2026-09-13T22:30:00-04:00  
+> **Head Commit**: `0d80534` (`feat(near): compress nearby town pages and standardize conversion anchors`)  
+> **Release Status**: `rtk npm run validate` PASSING (Exit Code 0) across all primary suites  
+> **Timestamp**: 2026-09-16T00:32:00-04:00  
 
 ---
 
-## 1. Environment & Operational Rules
+## 1. Governance & Quality Assurance Frameworks
 
-When picking up this codebase, always adhere to these invariants:
+### 1.1 Verified Persona Framework Architecture
+This repository integrates persona prompts from the Indranet Persona Library (`assets/indranet-prompt-exporter/mcp/lib/auto_persona.py`) and anti-slop skills. Dedicated handoff available at [`assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md):
+
+```mermaid
+flowchart TD
+    TaskDescription["Task Description / Content Draft"] --> AutoPersona["auto_persona.py Selection Engine"]
+    AutoPersona --> DennisPM["Dennis Stratton PM Persona\n(2847c3fe-8128-45fa-91c5-ab3dfba20684)\nSocio-Technical Alignment & Decision Governance"]
+    AutoPersona --> AnythingEnhancer["Anything-Enhancer Persona\n(4a702064-50b8-4fbb-875c-2f3600c8d6dc)\nEnhance Pass: Creative Depth & Tone"]
+    AutoPersona --> UniversalAnalyzer["Universal Analyzer-Improver Persona\n(65808004-23a5-42ae-babe-1dbe85bfd1cf)\nUniversal Improve Pass: Structured Analysis & IMP Iteration"]
+    UniversalAnalyzer --> MuskChain["GLOB=E.MUSK Skill Chain\nElon Musk 5-Step Questioning Algorithm"]
+    AnythingEnhancer --> EnhancerPass["1. Enhance Pass\nCreative Depth, Tone & Sensory Appeal"]
+    UniversalAnalyzer --> ImproverPass["2. Improve Pass\n0-3s Hook, Geo-SEO & Volatile Facts Safety"]
+    EnhancerPass --> StopSlop["3. Stop-Slop Filter (Hardik Pandya)\nTarget Score >= 40/50: Active Voice, No Em-Dashes, Zero AI Tells"]
+    ImproverPass --> StopSlop
+    StopSlop --> FinalRelease["Verified Release Artifact"]
+```
+
+#### 1. Dennis Stratton (Project Management Persona)
+- **UUID**: `2847c3fe-8128-45fa-91c5-ab3dfba20684`
+- **Role**: Project management, socio-technical alignment, decision governance, risk transparency.
+- **Contract**: Zero-waste context handoffs, unambiguous single sources of truth, runnable CLI verification commands.
+
+#### 2. Anything-Enhancer (Genius Engine Persona)
+- **UUID**: `4a702064-50b8-4fbb-875c-2f3600c8d6dc`
+- **Source**: [`assets/indranet-prompt-exporter/exports/Anything-Enhancer---OptiMax/prompt.md`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/exports/Anything-Enhancer---OptiMax/prompt.md)
+- **Enhance Pass**: Triggers the `[EN]` command to unleash creative depth, sensory appeal, narrative resonance, parent reassurance, and safety walkthrough focus (*Start calm. Train smart.*).
+
+#### 3. Universal Analyzer-Improver Persona
+- **UUID**: `65808004-23a5-42ae-babe-1dbe85bfd1cf`
+- **Source**: [`assets/indranet-prompt-exporter/exports/Universal-Analyzer-Improver/prompt.md`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/exports/Universal-Analyzer-Improver/prompt.md)
+- **Universal Improve Pass**: Conducts multi-step structured evaluation (`[STEP]`, `[KF]`, `[PC]`, `[WI]`, `[DB]`, `[IM]`, `[MC]`, `[cnsd]`), triggering iterative `[IMP]` enhancements for 0–3s hook retention, Mountaintop local SEO geo-intent keywords, friction-free CTAs, and `rtk npm run qa:volatile-facts` compliance.
+
+#### 4. Stop-Slop Prose Filter (Hardik Pandya)
+- **Source**: [`.agents/skills/stop-slop/SKILL.md`](file:///home/twizss/Documents/ssbjjweb/tmb/.agents/skills/stop-slop/SKILL.md) / [Hardik Pandya stop-slop](https://github.com/hardikpandya/stop-slop)
+- **Prose Rules**: Enforces active human-subject voice, eliminates filler phrases/adverbs, breaks formulaic binary contrasts ("not X, it's Y"), bans em-dashes, varies sentence rhythm, and **requires a score floor of at least 40/50** across Directness, Rhythm, Trust, Authenticity, and Density.
+
+### 1.2 Elon Musk 5-Step Questioning Algorithm (`GLOB🌐=E.MUSK` Skill Chain)
+Embedded within the Indranet persona skillchain:
+
+1. **Make Requirements Less Dumb**: Question every rule and assertion. Ensure requirements come with an accountable owner and rationale (e.g. Updating Category 1 QA suites so absent retired files skip gracefully rather than break the build).
+2. **Delete the Part or Process**: Eliminate zero-byte CSS stubs, dead anchors, and duplicate schedule/pricing UI blocks. Rule: If you aren't adding back at least 10% of what you deleted, you didn't delete enough.
+3. **Simplify or Optimize**: Keep layout structures clean, mobile-first, and dry (e.g. `tools/build-near-pages.mjs` keeping Eleventy source and root static files in lockstep).
+4. **Accelerate Cycle Time**: Enforce mandatory `rtk` proxy wrapper across CLI tools to minimize dev latency and token cost by 60–90%.
+5. **Automate**: Maintain continuous automated validation via `rtk npm run validate`, `rtk npm run qa:volatile-facts`, and `rtk npm run test:ads`.
+
+---
+
+## 2. Operational Invariants & Environment Rules
+
+When operating in this codebase, always observe these invariants:
 
 1. **CLI Proxy Prefix (`rtk`)**:
-   - **Mandatory**: Always prefix commands with `rtk` (e.g. `rtk npm run validate`, `rtk git status`).
-   - Direct execution without `rtk` can cause hook mismatches or token waste.
+   - **Mandatory**: Always prefix CLI operations with `rtk` (e.g. `rtk npm run validate`, `rtk git status`).
+   - Bypassing `rtk` risks hook mismatches and excessive token usage.
 2. **Never Propose `cd`**:
-   - All paths must be relative to or absolute from the workspace root: `/home/twizss/Documents/ssbjjweb/tmb`.
+   - Execute all commands relative to or absolute from the workspace root: `/home/twizss/Documents/ssbjjweb/tmb`.
 3. **Eleventy Passthrough Asset Rule**:
-   - Static assets copied to `dist/` are seeded from `src/assets/` via `eleventy.config.js`:
+   - Assets copied to `dist/` are configured in `eleventy.config.js`:
      ```javascript
      eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
      ```
-   - Files placed only in the root `assets/` directory are NOT automatically copied to `dist/assets` unless explicitly defined or placed under `src/assets/`.
+   - Files placed in root `assets/` without placement in `src/assets/` will NOT automatically pass through to `dist/assets/`.
 4. **Volatile Operational Facts Contract**:
-   - Never hardcode schedule hours, coaching availability, pricing numbers, or physical address strings in editorial copy.
    - Canonical schedule lives at `/schedule`; pricing lives at `/options-pricing`.
-   - Run `rtk npm run qa:volatile-facts` after modifying any schedule, program, or pricing copy.
+   - Run `rtk npm run qa:volatile-facts` after editing any program, schedule, or pricing copy.
 5. **Safe Network Boundary**:
-   - Never make external live network requests (DNS, HTTP/HTTPS) without explicit user authorization.
+   - Live external HTTP/DNS requests are restricted to post-deploy suites and require explicit user authorization.
 
 ---
 
-## 2. Work Completed in This Series
+## 3. Completed Work & Tooling Handoff Summary
 
-A 5-commit sequence resolved all pre-existing suite failures across Category 1 (Retired Files & Historical Fixtures), Category 2 (Editorial Copy Drift), and Category 5 (Asset, Styling & Bundle Gaps):
+### 3.1 Pre-Existing QA Remediation (5-Commit Series)
+- **Commit `fa04139c`**: Resolved youth intro JSON-LD schemas (`Course`, `SportsActivityLocation`), registered `/free-bjj-intro-tannersville-ny` in URL registry, removed expired summer copy.
+- **Commit `66b41cb9`**: Aligned Category 2 editorial copy assertions across 10 QA suites (attendance policy, flexible access, student hub authority, brand pillars).
+- **Commit `7d85779f`**: Handled retired files and historical CSV link fixtures gracefully in Category 1 QA suites.
+- **Commit `3125eef1`**: Added missing Bootstrap SVG icons (`speedometer2`, `tag`, `grid`), updated fingerprinted CSS regex in `qa:class-family`, fixed image dimensions.
+- **Commit `637b3a3c`**: Fixed route stylesheet references for legacy pages and permitted 0-byte purged CSS stubs in `qa:visibility` (906 checks passed).
 
-```mermaid
-gitGraph
-   commit id: "fa04139" tag: "youth-intro & schemas"
-   commit id: "66b41cb" tag: "Category 2: editorial copy"
-   commit id: "7d85779" tag: "Category 1: retired files"
-   commit id: "3125eef" tag: "Category 5: icons & assets"
-   commit id: "637b3a3" tag: "qa:visibility & route CSS"
-```
+### 3.2 `/bio` Personal Biography Restructuring
+- Concise 588-word identity-led biography of Sensei Sandy Nunez.
+- Structured narrative: Hero -> Coaching History -> Academy Origins -> Teaching Philosophy -> Closing Invitation.
+- Verified against `qa:lineage:integrity`, `qa:stop-slop`, and `qa:volatile-facts`.
 
-### Commit Series Breakdown
+### 3.3 Nearby-Town Pages Compression & Standardization (`near/*`)
+- Upgraded `near/template.html` and `src/near/template.html` with `.near-buttons` hero CTAs and `.ss-trip-card` commute blocks.
+- Synchronized Eleventy and root static outputs via `tools/build-near-pages.mjs`.
 
-#### Commit 1: `fa04139c` (`feat(qa): resolve youth intro schemas, weekly audit registry route, and expired seasonal copy`)
-- Added missing JSON-LD `Course` and `SportsActivityLocation` structured data schema to `src/free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny.html`.
-- Registered `/free-bjj-intro-tannersville-ny` in `data/url-registry.json` for weekly audits.
-- Removed expired seasonal copy (`"Summer Pre-Camp Express"`) from `src/jiu-jitsu-safety-tannersville-ny.html`.
+### 3.4 Offline Ad Studio Tooling (`tools/ads/`)
+- Dedicated handoff available at [`tools/ads/CODEX-HANDOFF-ADS.md`](file:///home/twizss/Documents/ssbjjweb/tmb/tools/ads/CODEX-HANDOFF-ADS.md).
+- Offline ad generation and planning suite (`rtk npm run ads:weekly`, `ads:plan`, `ads:render`, `ads:swipe`, `ads:scaffold`, `test:ads`).
 
-#### Commit 2: `66b41cb9` (`fix(qa): resolve Category 2 editorial copy drift across 8 QA suites`)
-- Aligned assertions across 10 Category 2 suites with current plain-language and pricing policies:
-  - [`scripts/qa-attendance-policy.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-attendance-policy.mjs): Updated attendance terms to reflect open schedule structure without obsolete check-in terminology.
-  - [`scripts/qa-flexible-access.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-flexible-access.mjs): Reconciled flexible access copy across schedule and pricing pages.
-  - [`scripts/qa-student-hub-authority.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-student-hub-authority.mjs): Aligned Student Hub member resources and policies.
-  - [`scripts/qa-philosophical-hierarchy.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-philosophical-hierarchy.mjs): Aligned heading hierarchy and brand pillars (*Start calm. Train smart.*).
-  - [`scripts/qa-homepage-synthesis.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-homepage-synthesis.mjs): Verified homepage hero, conversion anchors, and proof elements.
-  - [`scripts/qa-academy-evidence.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-academy-evidence.mjs): Updated photo evidence and mat tour verification.
-  - [`scripts/qa-ssbjj-logos.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-ssbjj-logos.mjs): Verified brand logo assets and SVG paths.
-  - [`scripts/qa-testing-context.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-testing-context.mjs), [`scripts/qa-progress-communication.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-progress-communication.mjs), [`scripts/qa-taxonomy.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-taxonomy.mjs): Updated belt, stripe, and taxonomy tests.
+### 3.5 Indranet Prompt Exporter & Persona Manager (`assets/indranet-prompt-exporter/`)
+- Dedicated handoff available at [`assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md).
+- Router and prompt vault (`rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py "<task_description>"`).
 
-#### Commit 3: `7d85779f` (`fix(qa): resolve Category 1 retired files and link fixtures across 10 QA suites`)
-- **Retired Files Handled Gracefully**:
-  - `qa:end-of-term:review` ([`scripts/qa-end-of-term-review.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-end-of-term-review.mjs)): Gracefully skips when retired source `src/core-culture-review.html` is absent.
-  - `qa:fall-pilot` ([`scripts/qa-fall-pilot.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-fall-pilot.mjs)): Gracefully skips when retired source `src/fall-practice-reset.html` is absent.
-  - `qa:citation-phase1` ([`scripts/qa-citation-phase1.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-citation-phase1.mjs)): Gracefully skips when legacy root `tannersville-ny-jiu-jitsu.html` is absent.
-- **Historical CSV Fixtures Handled Gracefully**:
-  - `qa:links:single` ([`scripts/qa-single-internal-links.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-single-internal-links.mjs)), `qa:links:anchor-text` ([`scripts/qa-no-anchor-text.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-no-anchor-text.mjs)), and `qa:links:descriptive-text` ([`scripts/qa-non-descriptive-anchor-text.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-non-descriptive-anchor-text.mjs)): Gracefully skip when historical August 14, 2026 crawl CSV exports are not present in `assets/`.
-- **Eleventy Directory Indexes & Modern Copy**:
-  - `qa:coaching-gradient` ([`scripts/qa-coaching-gradient.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-coaching-gradient.mjs)), `qa:pathos-experience` ([`scripts/qa-pathos-experience.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-pathos-experience.mjs)), `qa:promotion-evidence` ([`scripts/qa-promotion-evidence.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-promotion-evidence.mjs)), `qa:safety-learning` ([`scripts/qa-safety-learning.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-safety-learning.mjs)): Resolved paths to `dist/core-culture-parent-guide/index.html` and modern plain-language coaching assertions.
-
-#### Commit 4: `3125eef1` (`fix(qa): resolve Category 5 asset, styling, and icon gaps across QA suites`)
-- **Class Family Contract**:
-  - Updated [`scripts/qa-class-family-contract.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-class-family-contract.mjs) to accept regex pattern `/\/assets\/css\/site-shell(?:\.min)?(?:\.[a-f0-9]+)?\.css/` so fingerprinted stylesheets (`site-shell.min.<hash>.css`) pass validation.
-- **Image Dimensions & Passthrough**:
-  - Added explicit `width="1080" height="1080"` on line 429 of [`src/tactical-longevity.html`](file:///home/twizss/Documents/ssbjjweb/tmb/src/tactical-longevity.html).
-  - Copied `standingsixseven-mobile.webp` into [`src/assets/images/`](file:///home/twizss/Documents/ssbjjweb/tmb/src/assets/images/) for `/after-school` mobile srcset passthrough.
-- **Missing Bootstrap Icons**:
-  - Added official SVG icons to [`src/assets/icons/bootstrap/`](file:///home/twizss/Documents/ssbjjweb/tmb/src/assets/icons/bootstrap/):
-    - `speedometer2.svg` (for "Controlled resistance" in `home-conversion-shell.html`)
-    - `tag.svg` (for "Options & Pricing" across 8 town pages)
-    - `grid.svg` (for `report-card.html`)
-  - Rebuilt [`src/assets/css/bootstrap-icons-local.css`](file:///home/twizss/Documents/ssbjjweb/tmb/src/assets/css/bootstrap-icons-local.css) via `npm run icons:build` (168 mappings).
-
-#### Commit 5: `637b3a3c` (`fix(qa): resolve missing route stylesheets and empty bundle stubs in qa:visibility`)
-- **Route Stylesheet Missing Sibling**:
-  - Copied `site-ac8bb117999c.min.e4502a.css` and its unhashed siblings into [`src/assets/css/routes/`](file:///home/twizss/Documents/ssbjjweb/tmb/src/assets/css/routes/) so 10 legacy utility pages (`annual-track`, `bjj-videos`, `clean`, `core-promise-full`, etc.) resolve their route stylesheets.
-- **Purged 0-Byte Bundle Stubs**:
-  - In [`scripts/qa-visibility.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/qa-visibility.mjs), empty component bundle stubs (`components-glossary-hub.min.css`, `components-glossary-term.min.css`) that were purged down to 0 bytes now log a warning rather than a fatal release error.
-- **Result**: `qa:visibility` achieves **0 failures across 906 checks**.
+### 3.6 Web Scraper & Site Audit Tooling (`audit_links.py` & `scripts/audit-all-deployed-pages.mjs`)
+- Dedicated handoff available at [`CODEX-HANDOFF-SCRAPER.md`](file:///home/twizss/Documents/ssbjjweb/tmb/CODEX-HANDOFF-SCRAPER.md).
+- Python crawler `audit_links.py` and Node.js sitemap scraper `scripts/audit-all-deployed-pages.mjs`.
 
 ---
 
-## 3. Current Test Battery Telemetry (All Exit Code 0)
+## 4. Current Test Telemetry (All Exit Code 0)
 
-To verify full suite health in a single command, run:
+To execute the entire local validation battery in one command:
 
 ```bash
-rtk npm run validate:release5 && \
+rtk npm run validate && \
 rtk npm run qa:volatile-facts && \
 rtk npm run qa:funnel && \
 rtk npm run qa:first-visit && \
@@ -112,98 +128,36 @@ rtk npm run qa:icons:local && \
 rtk npm run qa:assets:canon && \
 rtk npm run qa:css:assets:baseline && \
 rtk npm run qa:visibility && \
-rtk npm run validate
+rtk npm run test:ads
 ```
 
-### Telemetry Breakdown
-- `validate` / `npm test`: **PASS (Exit 0)** (encompasses schedule check, full build, links inventory, static links, link existence, doctype, and release 5 validation).
-- `validate:release5`: **PASS** (13 HTML files, 2,278 generated files, 0 warnings).
-- `qa:volatile-facts`: **PASS** (1,056 files checked).
-- `qa:funnel`: **PASS** (event firing, clean URLs, session attribution, funnel coverage).
-- `qa:first-visit`: **PASS** (34 acquisition includes checked).
-- `qa:image-contract`: **PASS** (927 images across 456 HTML files).
-- `qa:class-family`: **PASS** (34 pages verified).
-- `qa:icons:local`: **PASS** (168 SVG mappings verified).
-- `qa:assets:canon`: **PASS** (131 managed assets verified).
-- `qa:css:assets:baseline`: **PASS** (0 hard issues, baseline debt within tolerance).
-- `qa:visibility`: **PASS** (0 failures across 906 checks).
+### Telemetry Status
+| Suite | Command | Status | Coverage |
+| :--- | :--- | :--- | :--- |
+| Core Release Validation | `rtk npm run validate` | **PASS (Exit 0)** | Full build, links, doctypes |
+| Volatile Facts Contract | `rtk npm run qa:volatile-facts` | **PASS (Exit 0)** | 1,056 files verified |
+| Conversion Funnel | `rtk npm run qa:funnel` | **PASS (Exit 0)** | Attribution, URLs, firing |
+| First Visit Acquisition | `rtk npm run qa:first-visit` | **PASS (Exit 0)** | 34 includes verified |
+| Image Contract | `rtk npm run qa:image-contract` | **PASS (Exit 0)** | 927 images, 456 HTML files |
+| Class Family Contract | `rtk npm run qa:class-family` | **PASS (Exit 0)** | 34 pages verified |
+| Local Bootstrap Icons | `rtk npm run qa:icons:local` | **PASS (Exit 0)** | 168 SVG mappings |
+| Managed Assets | `rtk npm run qa:assets:canon` | **PASS (Exit 0)** | 131 assets verified |
+| CSS Assets Baseline | `rtk npm run qa:css:assets:baseline` | **PASS (Exit 0)** | Baseline debt within tolerance |
+| UI Visibility & Route CSS | `rtk npm run qa:visibility` | **PASS (Exit 0)** | 906 checks passed |
+| Ad Studio Suite | `rtk npm run test:ads` | **PASS (Exit 0)** | 30 tests passed |
 
 ---
 
-## 4. Remaining Category 4 Post-Deploy Checks
+## 5. Next Steps & Backlog for Codex
 
-The only test suites that intentionally fail in local sandbox are **Category 4 (Live Network Checks)**:
-- `qa:redirects`
-- `qa:links:live`
-- `qa:meta:live`
-- `qa:blog:slash:live`
-- `qa:browser-use`
-
-These suites require an active external connection to production (`https://senseisandy.com`) or a live display buffer. They are designed to run post-deployment.
-
----
-
-## 5. Recent Refactor: `/bio` Personal Biography Restructuring
-
-As requested in `/goal finish work from codex`, `src/bio.html` was refactored into a concise, personal, identity-led biography:
-
-- **Word Count**: 588 body copy words (within target 550–700 words).
-- **Structure**:
-  1. **Identity-Led Hero**: *"I'm Sandy Nunez. I coach jiu-jitsu in Tannersville."* Immediate black belt credibility, authentic coaching photograph (`/assets/images/sensei-sandy.6e2ade.webp`), primary CTA (`Reserve Free Intro`), and secondary CTA (`Text Sandy`).
-  2. **"How I Got Here"**: Chronological coaching history (Clockwork private lessons and kids instruction, running PCC's Adult BJJ program, Oneonta, Firehouse, Iron Guard seminars, Ascended Athletics head instructor) and concise lineage statement to Josh Griffiths at Clockwork Jiu Jitsu with authentic promotion photo.
-  3. **"Why I Built Sensei Sandy BJJ"**: Academy origins (Prattsville garage, Woodstock lawn, Hurley Boot Camp Gym space, Hunter storage facility, August 2025 Tannersville opening, desire for personal coaching in small classes).
-  4. **"Why I Teach This Way"**: Compressed coaching philosophy (coaching beginners without toughness auditions, thoughtful partner pairing, controlled resistance, problem understanding, contextual `/how-class-works` link).
-  5. **Closing Invitation**: First-person invitation to tour the room, review safety standards, and ask questions before training, paired with primary and secondary CTAs.
-- **Deletions**: Removed audience-benefit cards (Parents/Teens/Adults), character-outcomes panels, mat questions, repeated mission checklist, and auxiliary schedule/pricing/location directory prose.
-- **Verification Suites Passed**:
-  - `qa:lineage:integrity` (Josh Griffiths award regex verified)
-  - `qa:how-class-works:canonical` (Contextual `/how-class-works` link verified)
-  - `qa:stop-slop` (0 error-pattern findings)
-  - `qa:volatile-facts` (1,056 files checked)
-  - `qa:links:static` & `qa:links:existence`
-  - `qa:seo` & `qa:doctype`
-  - `validate:release5` & `validate` (Exit code 0)
-
----
-
----
-
-## 6. Nearby-Town Pages Compression & Standardization (Deployed)
-
-Executed the P2 compression and standardization across all nearby-town pages (`near/*`, `src/near/*`, and `data/near-decision-content.json`):
-
-1. **Repaired Dead In-Page Anchors**:
-   - In `partials/schedule-consistency.html`, updated broken `#ss-lead-capture-form-inline` links to direct `/free-bjj-intro-tannersville-ny#booking-flow`.
-2. **Copywriting & Slop Elimination**:
-   - Cleaned typos (`drops-in` → `drop-ins`, duplicate `class class`) and smoothed awkward AI run-on phrasing across all 6 towns in `data/near-decision-content.json`.
-3. **Streamlined Town Page Layout**:
-   - Upgraded `near/template.html` and `src/near/template.html`:
-     - Added prominent `.near-buttons` in hero linking to `/free-bjj-intro-tannersville-ny#booking-flow` and SMS.
-     - Fixed nested `<picture>` tags to valid HTML5 `<picture>` with mobile/desktop sources.
-     - Packaged commute & route facts into clean, scannable `.ss-trip-card` containers with `.btn-outline-primary` map links.
-     - Streamlined the closing conversion section into a focused callout card.
-4. **Synchronized Eleventy & Static Build**:
-   - Updated `tools/build-near-pages.mjs` to read `src/near/template.html` and compile simultaneously to both `near/[slug]/index.html` and `src/near/[slug]/index.html`, keeping root static and Eleventy source in 100% lockstep.
-5. **Custom Windham Pages Synchronization**:
-   - Updated custom long-form pages `near/windham-ny/index.html` and `src/near/windham-ny/index.html` to standardize hero CTAs with `#booking-flow`.
-6. **Styling & Assets**:
-   - Added scoped `.ss-trip-card` component styling to `src/assets/css/pages/near.css` matching the Sensei Sandy palette.
-7. **Verification & Deployment**:
-   - Passed `qa:near`, `qa:volatile-facts`, `qa:homepage:synthesis`, `qa:funnel`, `scripts/qa-above-fold.mjs`, `qa:stop-slop`, and `validate`.
-   - Pushed commit `0d80534` to branch `migrate-calendly-to-cal` and deployed 12 files to production via `scripts/deploy-release.py`.
-
----
-
-## 7. Next Opportunities / Backlog
-
-1. **Category 4 Live Network Verification**:
-   - Request external network permission to run live production checks:
+1. **Indranet Prompt Exporter Maintenance**:
+   - Refer to [`assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md).
+2. **Ad Studio Maintenance**:
+   - Refer to [`tools/ads/CODEX-HANDOFF-ADS.md`](file:///home/twizss/Documents/ssbjjweb/tmb/tools/ads/CODEX-HANDOFF-ADS.md).
+3. **Web Scraper & Audit Maintenance**:
+   - Refer to [`CODEX-HANDOFF-SCRAPER.md`](file:///home/twizss/Documents/ssbjjweb/tmb/CODEX-HANDOFF-SCRAPER.md).
+4. **Category 4 Post-Deploy Verification**:
+   - Request elevated network permission to execute live network checks against `https://senseisandy.com`:
      - `rtk npm run qa:meta:live`
      - `rtk npm run qa:links:live`
      - `rtk npm run qa:blog:slash:live`
-2. **Review A/B Test Telemetry in Production**:
-   - Check Google Analytics 4 / Tag Manager for `experiment_impression` events from `hero_cta_copy_v1`.
-3. **Additional CRO Improvements**:
-   - Further page-level CRO audits on program landing pages (`/kids`, `/teen-jiu-jitsu-tannersville-ny`, `/adult-bjj`, `/how-class-works`).
-
-

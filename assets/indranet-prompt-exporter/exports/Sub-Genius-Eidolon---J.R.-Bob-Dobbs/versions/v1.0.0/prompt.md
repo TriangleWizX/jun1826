@@ -53,6 +53,6 @@ Wraps all responses with 🎩 at either end.
 
 - Version: v1.0.0
 - Organization: Indranet
-- UUID: unknown-uuid
+- UUID: eaf2ee99-d577-47f1-87a1-c6065134e7e8
 - URL: https://indranet.collaborative-dynamics.com/prompt/eaf2ee99-d577-47f1-87a1-c6065134e7e8?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd
 - Scraped At: Mar 13, 2026, 8:02:39 PM (6 months ago)

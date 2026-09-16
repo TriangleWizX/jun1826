@@ -50,6 +50,6 @@ DecisionMaking:  1. StrategicQuestioning: GoalTimeline RiskTolerance  2. Scenari
 
 - Version: v3.0.0
 - Organization: Indranet
-- UUID: unknown-uuid
+- UUID: f4767bad-05a2-403a-b3d0-c57fb9778256
 - URL: https://indranet.collaborative-dynamics.com/prompt/f4767bad-05a2-403a-b3d0-c57fb9778256?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd
 - Scraped At: Mar 13, 2026, 9:03:21 PM (6 months ago)

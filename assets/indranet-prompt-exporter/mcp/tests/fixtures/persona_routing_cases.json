@@ -1,0 +1,823 @@
+[
+  {
+    "id": "development-python-implementation-1",
+    "split": "development",
+    "task": "Write a Python CSV normalizer that preserves quoted fields and reports malformed rows.",
+    "required_capabilities": [
+      "python"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-implementation"
+  },
+  {
+    "id": "development-python-implementation-2",
+    "split": "development",
+    "task": "Optimize a Python loop that repeatedly recomputes the same dictionary lookup.",
+    "required_capabilities": [
+      "python"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-implementation"
+  },
+  {
+    "id": "development-python-implementation-3",
+    "split": "development",
+    "task": "Implement a Python command line tool that groups log entries by date.",
+    "required_capabilities": [
+      "python"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-implementation"
+  },
+  {
+    "id": "development-python-implementation-4",
+    "split": "development",
+    "task": "Refactor a Python module into small functions without changing its public behavior.",
+    "required_capabilities": [
+      "python"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-implementation"
+  },
+  {
+    "id": "development-python-implementation-5",
+    "split": "development",
+    "task": "Write a Python context manager that always closes an acquired resource.",
+    "required_capabilities": [
+      "python"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-implementation"
+  },
+  {
+    "id": "development-python-implementation-6",
+    "split": "development",
+    "task": "Add Python unit tests for an iterator that must stop at a specified limit.",
+    "required_capabilities": [
+      "python"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-implementation"
+  },
+  {
+    "id": "development-python-diagnosis-1",
+    "split": "development",
+    "task": "Debug a Python KeyError caused by missing optional JSON fields.",
+    "required_capabilities": [
+      "python",
+      "debugging"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-diagnosis"
+  },
+  {
+    "id": "development-python-diagnosis-2",
+    "split": "development",
+    "task": "Find why this Python generator yields each record twice.",
+    "required_capabilities": [
+      "python",
+      "debugging"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-diagnosis"
+  },
+  {
+    "id": "development-python-diagnosis-3",
+    "split": "development",
+    "task": "Diagnose a Python memory leak caused by retained callback references.",
+    "required_capabilities": [
+      "python",
+      "debugging"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-diagnosis"
+  },
+  {
+    "id": "development-python-diagnosis-4",
+    "split": "development",
+    "task": "Explain why a Python exception is swallowed by this broad except block.",
+    "required_capabilities": [
+      "python",
+      "debugging"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a95a4efd-7741-4f01-a6e1-44c05de2cb64",
+      "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3"
+    ],
+    "allow_abstention": false,
+    "family": "python-diagnosis"
+  },
+  {
+    "id": "development-organic-discovery-1",
+    "split": "development",
+    "task": "Audit SEO metadata and canonical URLs for a local service website.",
+    "required_capabilities": [
+      "seo"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+    ],
+    "allow_abstention": false,
+    "family": "organic-discovery"
+  },
+  {
+    "id": "development-organic-discovery-2",
+    "split": "development",
+    "task": "Plan keyword research for a beginner class landing page.",
+    "required_capabilities": [
+      "seo"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+    ],
+    "allow_abstention": false,
+    "family": "organic-discovery"
+  },
+  {
+    "id": "development-organic-discovery-3",
+    "split": "development",
+    "task": "Recommend internal links that improve organic search discovery.",
+    "required_capabilities": [
+      "seo"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+    ],
+    "allow_abstention": false,
+    "family": "organic-discovery"
+  },
+  {
+    "id": "development-organic-discovery-4",
+    "split": "development",
+    "task": "Review duplicate title tags and propose an SEO correction plan.",
+    "required_capabilities": [
+      "seo"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+    ],
+    "allow_abstention": false,
+    "family": "organic-discovery"
+  },
+  {
+    "id": "development-organic-discovery-5",
+    "split": "development",
+    "task": "Improve SEO without writing Python or changing application code.",
+    "required_capabilities": [
+      "seo"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+    ],
+    "allow_abstention": false,
+    "family": "organic-discovery"
+  },
+  {
+    "id": "development-advertising-copy-1",
+    "split": "development",
+    "task": "Write three advertising headlines for a beginner-friendly class.",
+    "required_capabilities": [
+      "copywriting"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a9519f7d-8247-4bee-9075-72420110c5bf"
+    ],
+    "allow_abstention": false,
+    "family": "advertising-copy"
+  },
+  {
+    "id": "development-advertising-copy-2",
+    "split": "development",
+    "task": "Rewrite this landing page promise in clear persuasive language.",
+    "required_capabilities": [
+      "copywriting"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a9519f7d-8247-4bee-9075-72420110c5bf"
+    ],
+    "allow_abstention": false,
+    "family": "advertising-copy"
+  },
+  {
+    "id": "development-advertising-copy-3",
+    "split": "development",
+    "task": "Edit an ad to remove unsupported guarantees while preserving its offer.",
+    "required_capabilities": [
+      "copywriting"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a9519f7d-8247-4bee-9075-72420110c5bf"
+    ],
+    "allow_abstention": false,
+    "family": "advertising-copy"
+  },
+  {
+    "id": "development-advertising-copy-4",
+    "split": "development",
+    "task": "Develop a consistent brand voice for a sequence of short promotional emails.",
+    "required_capabilities": [
+      "copywriting"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a9519f7d-8247-4bee-9075-72420110c5bf"
+    ],
+    "allow_abstention": false,
+    "family": "advertising-copy"
+  },
+  {
+    "id": "development-advertising-copy-5",
+    "split": "development",
+    "task": "Write concise call-to-action copy for a parent considering a first class.",
+    "required_capabilities": [
+      "copywriting"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "a9519f7d-8247-4bee-9075-72420110c5bf"
+    ],
+    "allow_abstention": false,
+    "family": "advertising-copy"
+  },
+  {
+    "id": "development-prompt-construction-1",
+    "split": "development",
+    "task": "Design a prompt that extracts invoice fields into a strict JSON schema.",
+    "required_capabilities": [
+      "prompt_design"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "57e434d9-511e-4fcd-a48a-4cec6319c7c1",
+      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d"
+    ],
+    "allow_abstention": false,
+    "family": "prompt-construction"
+  },
+  {
+    "id": "development-prompt-construction-2",
+    "split": "development",
+    "task": "Improve a prompt that produces vague summaries instead of evidence.",
+    "required_capabilities": [
+      "prompt_design"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "57e434d9-511e-4fcd-a48a-4cec6319c7c1",
+      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d"
+    ],
+    "allow_abstention": false,
+    "family": "prompt-construction"
+  },
+  {
+    "id": "development-prompt-construction-3",
+    "split": "development",
+    "task": "Create a prompt evaluation rubric for factual groundedness and completeness.",
+    "required_capabilities": [
+      "prompt_design"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "57e434d9-511e-4fcd-a48a-4cec6319c7c1",
+      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d"
+    ],
+    "allow_abstention": false,
+    "family": "prompt-construction"
+  },
+  {
+    "id": "development-prompt-construction-4",
+    "split": "development",
+    "task": "Rewrite a system prompt so quoted source text cannot override its task.",
+    "required_capabilities": [
+      "prompt_design"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "57e434d9-511e-4fcd-a48a-4cec6319c7c1",
+      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d"
+    ],
+    "allow_abstention": false,
+    "family": "prompt-construction"
+  },
+  {
+    "id": "development-prompt-construction-5",
+    "split": "development",
+    "task": "Compare two prompt designs for a multilingual customer support assistant.",
+    "required_capabilities": [
+      "prompt_design"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "57e434d9-511e-4fcd-a48a-4cec6319c7c1",
+      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d"
+    ],
+    "allow_abstention": false,
+    "family": "prompt-construction"
+  },
+  {
+    "id": "development-agent-orchestration-1",
+    "split": "development",
+    "task": "Design an agent swarm that assigns bounded tasks and verifies the definition of done.",
+    "required_capabilities": [
+      "agents"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "agent-orchestration"
+  },
+  {
+    "id": "development-agent-orchestration-2",
+    "split": "development",
+    "task": "Improve the persona selector so task requirements control agent assignment.",
+    "required_capabilities": [
+      "agents"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "agent-orchestration"
+  },
+  {
+    "id": "development-agent-orchestration-3",
+    "split": "development",
+    "task": "Define handoff contracts and stop conditions for collaborating agents.",
+    "required_capabilities": [
+      "agents"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "agent-orchestration"
+  },
+  {
+    "id": "development-agent-orchestration-4",
+    "split": "development",
+    "task": "Decide when a multi-agent review offers value over a single agent.",
+    "required_capabilities": [
+      "agents"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "agent-orchestration"
+  },
+  {
+    "id": "development-web-interface-1",
+    "split": "development",
+    "task": "Fix a CSS grid that overflows the mobile viewport.",
+    "required_capabilities": [
+      "frontend"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "web-interface"
+  },
+  {
+    "id": "development-web-interface-2",
+    "split": "development",
+    "task": "Build a responsive navigation menu with a visible primary action.",
+    "required_capabilities": [
+      "frontend"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "web-interface"
+  },
+  {
+    "id": "development-web-interface-3",
+    "split": "development",
+    "task": "Review HTML and CSS for layout shift caused by images without dimensions.",
+    "required_capabilities": [
+      "frontend"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "web-interface"
+  },
+  {
+    "id": "development-web-interface-4",
+    "split": "development",
+    "task": "Refactor a frontend component to share markup across screen sizes.",
+    "required_capabilities": [
+      "frontend"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "web-interface"
+  },
+  {
+    "id": "development-inclusive-interface-1",
+    "split": "development",
+    "task": "Audit keyboard focus order and accessible names in a mobile navigation.",
+    "required_capabilities": [
+      "frontend",
+      "accessibility"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "inclusive-interface"
+  },
+  {
+    "id": "development-inclusive-interface-2",
+    "split": "development",
+    "task": "Fix contrast and focus visibility in a frontend dialog.",
+    "required_capabilities": [
+      "frontend",
+      "accessibility"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "inclusive-interface"
+  },
+  {
+    "id": "development-inclusive-interface-3",
+    "split": "development",
+    "task": "Review a responsive form for missing labels and accessible error announcements.",
+    "required_capabilities": [
+      "frontend",
+      "accessibility"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "inclusive-interface"
+  },
+  {
+    "id": "development-unsupported-specificity-1",
+    "split": "development",
+    "task": "Interpret a veterinary ultrasound and identify the disease.",
+    "required_capabilities": [],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "unsupported-specificity"
+  },
+  {
+    "id": "development-unsupported-specificity-2",
+    "split": "development",
+    "task": "Repair the hydraulic brake assembly on this aircraft.",
+    "required_capabilities": [],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "unsupported-specificity"
+  },
+  {
+    "id": "development-unsupported-specificity-3",
+    "split": "development",
+    "task": "Choose the correct glaze firing curve for this ceramic kiln.",
+    "required_capabilities": [],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "unsupported-specificity"
+  },
+  {
+    "id": "development-unsupported-specificity-4",
+    "split": "development",
+    "task": "Create a nautical tide prediction for an unlisted harbor.",
+    "required_capabilities": [],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "unsupported-specificity"
+  },
+  {
+    "id": "held_out-household-finance-1",
+    "split": "held_out",
+    "task": "Compare debt repayment strategies for a household budget.",
+    "required_capabilities": [
+      "finance"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "964486bb-a079-4dac-9370-af6df971c613"
+    ],
+    "allow_abstention": false,
+    "family": "household-finance"
+  },
+  {
+    "id": "held_out-household-finance-2",
+    "split": "held_out",
+    "task": "Explain how an emergency fund changes personal financial risk.",
+    "required_capabilities": [
+      "finance"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "964486bb-a079-4dac-9370-af6df971c613"
+    ],
+    "allow_abstention": false,
+    "family": "household-finance"
+  },
+  {
+    "id": "held_out-household-finance-3",
+    "split": "held_out",
+    "task": "Review retirement savings assumptions without recommending individual securities.",
+    "required_capabilities": [
+      "finance"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "964486bb-a079-4dac-9370-af6df971c613"
+    ],
+    "allow_abstention": false,
+    "family": "household-finance"
+  },
+  {
+    "id": "held_out-household-finance-4",
+    "split": "held_out",
+    "task": "Build a personal finance spending plan; do not write Python code.",
+    "required_capabilities": [
+      "finance"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "964486bb-a079-4dac-9370-af6df971c613"
+    ],
+    "allow_abstention": false,
+    "family": "household-finance"
+  },
+  {
+    "id": "held_out-genetic-science-1",
+    "split": "held_out",
+    "task": "Explain how DNA transcription differs from translation.",
+    "required_capabilities": [
+      "genetics"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "92f73f1e-bec5-463b-98a7-23efea80cd36"
+    ],
+    "allow_abstention": false,
+    "family": "genetic-science"
+  },
+  {
+    "id": "held_out-genetic-science-2",
+    "split": "held_out",
+    "task": "Compare Mendelian inheritance with polygenic traits.",
+    "required_capabilities": [
+      "genetics"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "92f73f1e-bec5-463b-98a7-23efea80cd36"
+    ],
+    "allow_abstention": false,
+    "family": "genetic-science"
+  },
+  {
+    "id": "held_out-genetic-science-3",
+    "split": "held_out",
+    "task": "Review a genetics lesson for confusion between genes and chromosomes.",
+    "required_capabilities": [
+      "genetics"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "92f73f1e-bec5-463b-98a7-23efea80cd36"
+    ],
+    "allow_abstention": false,
+    "family": "genetic-science"
+  },
+  {
+    "id": "held_out-physical-science-1",
+    "split": "held_out",
+    "task": "Explain the distinction between quantum superposition and classical uncertainty.",
+    "required_capabilities": [
+      "physics"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "121dcee1-8488-4843-94c4-fb2400fba20c",
+      "fe98a807-fd09-4155-a48c-df623b291079"
+    ],
+    "allow_abstention": false,
+    "family": "physical-science"
+  },
+  {
+    "id": "held_out-physical-science-2",
+    "split": "held_out",
+    "task": "Derive the motion of a damped harmonic oscillator.",
+    "required_capabilities": [
+      "physics"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "121dcee1-8488-4843-94c4-fb2400fba20c",
+      "fe98a807-fd09-4155-a48c-df623b291079"
+    ],
+    "allow_abstention": false,
+    "family": "physical-science"
+  },
+  {
+    "id": "held_out-physical-science-3",
+    "split": "held_out",
+    "task": "Check a physics explanation of conservation of momentum.",
+    "required_capabilities": [
+      "physics"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "121dcee1-8488-4843-94c4-fb2400fba20c",
+      "fe98a807-fd09-4155-a48c-df623b291079"
+    ],
+    "allow_abstention": false,
+    "family": "physical-science"
+  },
+  {
+    "id": "held_out-digital-assets-1",
+    "split": "held_out",
+    "task": "Explain cryptocurrency custody and exchange counterparty risk.",
+    "required_capabilities": [
+      "crypto"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "1ac5e4aa-b601-434b-8f54-3553cd948b32"
+    ],
+    "allow_abstention": false,
+    "family": "digital-assets"
+  },
+  {
+    "id": "held_out-digital-assets-2",
+    "split": "held_out",
+    "task": "Compare proof-of-work and proof-of-stake cryptocurrency networks.",
+    "required_capabilities": [
+      "crypto"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "1ac5e4aa-b601-434b-8f54-3553cd948b32"
+    ],
+    "allow_abstention": false,
+    "family": "digital-assets"
+  },
+  {
+    "id": "held_out-secure-mathematics-1",
+    "split": "held_out",
+    "task": "Review authenticated encryption and nonce reuse risks.",
+    "required_capabilities": [
+      "cryptography"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "8b0818f1-6531-446d-9ab7-06a8529c0bbe"
+    ],
+    "allow_abstention": false,
+    "family": "secure-mathematics"
+  },
+  {
+    "id": "held_out-secure-mathematics-2",
+    "split": "held_out",
+    "task": "Explain digital signatures and key exchange; exclude cryptocurrency trading.",
+    "required_capabilities": [
+      "cryptography"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "8b0818f1-6531-446d-9ab7-06a8529c0bbe"
+    ],
+    "allow_abstention": false,
+    "family": "secure-mathematics"
+  },
+  {
+    "id": "held_out-built-environment-1",
+    "split": "held_out",
+    "task": "Design a building floor plan with accessible circulation and daylight.",
+    "required_capabilities": [
+      "building_architecture"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "built-environment"
+  },
+  {
+    "id": "held_out-built-environment-2",
+    "split": "held_out",
+    "task": "Review an architectural site layout for pedestrian entrances and emergency exits.",
+    "required_capabilities": [
+      "building_architecture"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "built-environment"
+  },
+  {
+    "id": "held_out-technology-law-1",
+    "split": "held_out",
+    "task": "Identify legal questions in a software licensing dispute for counsel to review.",
+    "required_capabilities": [
+      "legal"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "8a63a7fb-7bcb-419d-9aa0-f3ee64d77fc0"
+    ],
+    "allow_abstention": false,
+    "family": "technology-law"
+  },
+  {
+    "id": "held_out-technology-law-2",
+    "split": "held_out",
+    "task": "Draft a neutral negotiation agenda for a technology contract disagreement.",
+    "required_capabilities": [
+      "legal"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "8a63a7fb-7bcb-419d-9aa0-f3ee64d77fc0"
+    ],
+    "allow_abstention": false,
+    "family": "technology-law"
+  },
+  {
+    "id": "held_out-science-pedagogy-1",
+    "split": "held_out",
+    "task": "Design a classroom lesson that teaches children how to ask scientific questions.",
+    "required_capabilities": [
+      "teaching"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [
+      "49ab734f-da98-4351-a3c6-879dbc4c37f2"
+    ],
+    "allow_abstention": false,
+    "family": "science-pedagogy"
+  },
+  {
+    "id": "held_out-language-transfer-1",
+    "split": "held_out",
+    "task": "Translate a medical appointment reminder from English to Spanish without adding claims.",
+    "required_capabilities": [
+      "translation"
+    ],
+    "expected_mode": "single",
+    "acceptable_uuids": [],
+    "allow_abstention": true,
+    "family": "language-transfer"
+  }
+]

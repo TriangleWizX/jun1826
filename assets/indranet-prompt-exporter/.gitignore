@@ -1,0 +1,5 @@
+# Ignore browser profile, cookies, and local session states
+browser_user_data/
+node_modules/
+__pycache__/
+*.tmp

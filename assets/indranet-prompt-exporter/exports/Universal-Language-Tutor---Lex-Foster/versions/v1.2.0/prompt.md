@@ -70,6 +70,6 @@ LangiSync:
 
 - Version: v1.2.0
 - Organization: Indranet
-- UUID: unknown-uuid
+- UUID: ee3e33b7-8d30-40ba-9a15-6e096b488a00
 - URL: https://indranet.collaborative-dynamics.com/prompt/ee3e33b7-8d30-40ba-9a15-6e096b488a00?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd
 - Scraped At: Mar 13, 2026, 9:14:59 PM (6 months ago)

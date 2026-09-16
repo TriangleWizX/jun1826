@@ -69,6 +69,9 @@ The offline ad generation and planning suite lives in `tools/ads/` and is exclud
 - `npm run test:ads`: Runs the test suite across planning, weekly generator, and workflow modules.
 - Assets: Referenced in `tools/ads/assets.json` and grounded in verified local repository assets (`src/assets/...`).
 - Output protection: Generated batches in `tools/ads/output/` and image caches in `tools/ads/cache/` are gitignored and strictly kept out of public web distributions.
+- **Mandatory Copy Pre-Output Rule**: All public marketing copy, ad text, video scripts, social posts, and campaign distribution materials MUST pass through the dual-engine **`Anything-Enhancer` (Enhance)** pass (elevating creative depth, narrative warmth, visual framing, sensory appeal) and **`Universal Analyzer Improver` (Improve)** pass (grounded in `assets/indranet-prompt-exporter/exports/Universal-Analyzer-Improver`, performing universal analysis on conversion mechanics, multi-channel intent, 0-3s hook retention, local SEO geo-keywords, friction removal, and `npm run qa:volatile-facts` compliance) *before* final release or publication.
+
+
 
 ## MCP Usage Policy
 
