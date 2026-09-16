@@ -74,6 +74,17 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
         </h2>
         <p class="pb-intro">{{ introVisit.supportingText }}</p>
         <p class="small text-muted mb-3">Need help fitting a class into your week? <a href="/schedule">Class schedule</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p>
+        <fieldset class="pb-starting-choice" aria-describedby="starting-choice-help">
+          <legend>Who’s starting?</legend>
+          <p id="starting-choice-help" class="small text-muted">Update the starting path if you need to.</p>
+          <div class="pb-starting-choice__options">
+            <label><input type="radio" name="starting-profile" value="adult-beginner"> <span>Adult</span></label>
+            <label><input type="radio" name="starting-profile" value="child"> <span>Child 5–9</span></label>
+            <label><input type="radio" name="starting-profile" value="teen"> <span>Teen 10–17</span></label>
+            <label><input type="radio" name="starting-profile" value="family"> <span>More than one person</span></label>
+            <label><input type="radio" name="starting-profile" value="not-sure"> <span>Not sure</span></label>
+          </div>
+        </fieldset>
         <p><a data-calendar-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open in new tab</a></p>
         <p class="fw-semibold mb-2" data-current-choice aria-live="polite"></p>
         <p class="small text-muted" data-calendar-status role="status" aria-live="polite" hidden></p>

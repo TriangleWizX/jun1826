@@ -111,6 +111,11 @@
 .page-book-intro #pb-step-2 > p { font-size: .9375rem; }
 .page-book-intro #pb-step-2 a { display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap; }
 .page-book-intro [data-current-choice] { font-weight: 600; }
+.page-book-intro .pb-starting-choice { border: 0; padding: 0; margin: 0 0 var(--space-sm); }
+.page-book-intro .pb-starting-choice legend { float: left; width: 100%; font-family: var(--font-display); font-size: 1.125rem; margin-bottom: var(--space-2xs); }
+.page-book-intro .pb-starting-choice__options { display: grid; clear: both; gap: var(--space-2xs); }
+.page-book-intro .pb-starting-choice label { display: flex; align-items: center; gap: var(--space-2xs); min-height: 44px; cursor: pointer; }
+.page-book-intro .pb-starting-choice input { flex: 0 0 auto; width: 1.125rem; height: 1.125rem; accent-color: var(--color-accent); }
 .page-book-intro [data-calendar-status] { min-height: 1lh; color: var(--color-ink-2); }
 .page-book-intro [data-calendar-status].text-danger { color: var(--color-ink); font-weight: 600; }
 .page-book-intro #first-visit-calendar { width: 100%; min-height: 760px; }

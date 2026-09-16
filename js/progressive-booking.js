@@ -201,6 +201,7 @@
       const previous = state.profile;
       state.profile = profile; state.inline = false; state.url = calendarUrl(); syncFields();
       document.querySelectorAll('[data-profile]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.profile === profile)));
+      document.querySelectorAll('input[name="starting-profile"]').forEach((radio) => { radio.checked = radio.value === profile; });
       const labels = { 'adult-beginner': 'an adult', child: 'a child', teen: 'a teen', leo: 'a community-service adult', family: 'more than one person', 'not-sure': 'help choosing' };
       const choice = document.querySelector('[data-current-choice]'); if (choice) choice.textContent = `Starting path: ${labels[profile] || 'your first visit'}.`;
       track('lane_resolved', { selection_method: method });
@@ -209,6 +210,7 @@
     };
 
     document.querySelectorAll('[data-profile]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); state.trigger = button; choose(button.dataset.profile, 'manual'); }));
+    document.querySelectorAll('input[name="starting-profile"]').forEach((radio) => radio.addEventListener('change', () => choose(radio.value, 'manual')));
     document.querySelectorAll('[data-back-to], [data-change-choice]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); show(1); }));
     document.querySelectorAll('[data-reveal-youth]').forEach((button) => button.addEventListener('click', () => {
       document.querySelector('[data-youth-choice]')?.removeAttribute('hidden');
