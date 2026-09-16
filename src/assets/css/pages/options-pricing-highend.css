@@ -1885,4 +1885,24 @@ body.page-options-pricing .op-guarantee-card p {
   color: var(--op-muted);
   line-height: 1.6;
 }
+
+body.page-options-pricing .op-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+body.page-options-pricing .op-card__actions .op-button {
+  min-height: 2.9rem;
+  padding: 0.35rem 0.45rem 0.35rem 1.15rem;
+  font-size: 0.86rem;
+}
+
+body.page-options-pricing .op-card__actions .op-button__icon {
+  width: 2.15rem;
+  height: 2.15rem;
+  font-size: 0.95rem;
+}
 /* Grand Slam Offer styles synchronized */
+
