@@ -63,7 +63,7 @@ flowchart TD
 | Link Crawler Script | [`audit_links.py`](file:///home/twizss/Documents/ssbjjweb/tmb/audit_links.py) | BeautifulSoup4 DOM parsing. Always maintain `time.sleep(0.5)` server throttling. |
 | Sitemap Auditor Script | [`scripts/audit-all-deployed-pages.mjs`](file:///home/twizss/Documents/ssbjjweb/tmb/scripts/audit-all-deployed-pages.mjs) | Sitemap-driven live page scraper. User-Agent `SenseiSandyAudit/1.0`. |
 | External Network Rules | AGENTS.md | **Mandatory Approval**: Before executing live scraping checks against production (`https://senseisandy.com`), request elevated network permission. |
-| Quality Pipeline | Dual-Engine + Stop-Slop | Scraped data used in editorial copy must pass `Anything-Enhancer` + `Universal Analyzer-Improver` + `GLOB🌐=E.MUSK` + `stop-slop` (score >= 40/50). |
+| Quality Pipeline | Dual-Engine + Stop-Slop | Scraped data used in editorial copy must pass [`Anything-Enhancer`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/exports/Anything-Enhancer---OptiMax/prompt.md) + [`Universal Analyzer-Improver`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/exports/Universal-Analyzer-Improver/prompt.md) + `GLOB🌐=E.MUSK` + `stop-slop` (score >= 40/50). |
 
 ---
 

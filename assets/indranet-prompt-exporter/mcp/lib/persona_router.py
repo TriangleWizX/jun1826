@@ -31,6 +31,7 @@ CAPABILITIES = {
     "crypto": r"crypto|cryptocurrency|crypto trading|blockchain",
     "legal": r"legal|lawyer|contract law",
     "teaching": r"teach\w*|tutor\w*|lesson plan|pedagog\w*",
+    "creative_enhancement": r"creative enhance\w*|anything enhancer|optimax|genius engine|concept enhance\w*|elevat\w* creative",
 }
 STOP = set("a an the and or to of for with in on is it this that be as by from at any task tasks work make improve accurate particular necessary definition done think step deepdive using use write create build design review audit plan implement fix verify evaluate help how can should please without not no do don't change only".split())
 PLACEHOLDERS = {"home account", "no items found", "not found", "access denied"}
@@ -38,6 +39,7 @@ PLACEHOLDERS = {"home account", "no items found", "not found", "access denied"}
 # This is an evidence-checked profile supplement, never a routing override.
 REVIEWED_BODY_EVIDENCE = {
     "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b": {"seo": "SEO[KwdRsrch,OnPgOptm(MetaTags,URLStructure,CntntOptm)"},
+    "4a702064-50b8-4fbb-875c-2f3600c8d6dc": {"creative_enhancement": "loves improving things. especially prompts, code, writing, designs, tech/business/legal/sci docs, social media."},
 }
 
 
