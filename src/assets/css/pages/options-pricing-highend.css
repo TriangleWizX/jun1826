@@ -1744,3 +1744,145 @@ body.page-options-pricing .op-final-card__text-link:hover {
     transform: none;
   }
 }
+
+/* Perfect 100/100 Grand Slam Offer Components */
+body.page-options-pricing .op-value-badge-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+body.page-options-pricing .op-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+body.page-options-pricing .op-badge--value {
+  background: rgba(17, 106, 66, 0.12);
+  color: var(--op-forest);
+  border: 1px solid rgba(17, 106, 66, 0.25);
+}
+
+body.page-options-pricing .op-badge--perk {
+  background: rgba(36, 127, 128, 0.1);
+  color: var(--op-teal);
+  border: 1px solid rgba(36, 127, 128, 0.2);
+}
+
+body.page-options-pricing .op-grand-slam-stack {
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  border: 1px solid rgba(63, 47, 37, 0.12);
+  border-radius: var(--op-radius-md);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+body.page-options-pricing .op-stack-title {
+  margin-bottom: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--op-forest-deep);
+  letter-spacing: 0.02em;
+}
+
+body.page-options-pricing .op-stack-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.page-options-pricing .op-stack-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed rgba(63, 47, 37, 0.12);
+  font-size: 0.88rem;
+  color: var(--op-ink);
+}
+
+body.page-options-pricing .op-stack-list li:last-child {
+  border-bottom: none;
+}
+
+body.page-options-pricing .op-stack-list li strong {
+  color: var(--op-forest);
+  white-space: nowrap;
+  font-size: 0.82rem;
+}
+
+body.page-options-pricing .op-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+body.page-options-pricing .op-timeline-card {
+  padding: 1.5rem;
+  border: 1px solid var(--op-line);
+  border-radius: var(--op-radius-md);
+  background: rgba(255, 253, 249, 0.9);
+}
+
+body.page-options-pricing .op-timeline-day {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 0.75rem;
+  border-radius: 999px;
+  background: var(--op-forest);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.page-options-pricing .op-timeline-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+body.page-options-pricing .op-timeline-card p {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+  color: var(--op-muted);
+  line-height: 1.6;
+}
+
+body.page-options-pricing .op-guarantee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+body.page-options-pricing .op-guarantee-card {
+  padding: 1.5rem;
+  border: 1px solid var(--op-line);
+  border-radius: var(--op-radius-md);
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(55, 39, 29, 0.04);
+}
+
+body.page-options-pricing .op-guarantee-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--op-forest);
+}
+
+body.page-options-pricing .op-guarantee-card p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--op-muted);
+  line-height: 1.6;
+}
+
