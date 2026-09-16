@@ -3,37 +3,467 @@ layout: layouts/pricing.njk
 title: "BJJ Pricing in Tannersville, NY | Sensei Sandy"
 description: "See first-term jiu-jitsu pricing for kids, teens, and adults in Tannersville. Start with a Free First Visit; find visitor and continuing-student options."
 canonicalUrl: "https://senseisandy.com/options-pricing"
+bodyClass: "lane-mixed page-options-pricing ss-page ss-page-pricing"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
-  - "/assets/css/pages/pricing.min.css"
+  - "/assets/css/pages/options-pricing-highend.css"
 permalink: "/options-pricing/index.html"
 ---
-<main class="container py-5" id="main-content">
-<header class="text-center mb-4 pricing-entry">
-<p class="text-uppercase small fw-bold text-success">Options &amp; Pricing · Tannersville, NY</p>
-<h1>See the price. Start with a free visit.</h1>
-<p class="lead">Free First Visit: $0. Meet Sandy before choosing a program.</p>
-<p><strong>Kids &amp; Teens: {{ pricing.coreCulture.youth.displayPrice }}</strong> for the first {{ pricing.coreCulture.youth.term }}.<br><strong>Adults: {{ pricing.coreCulture.adult.displayPrice }}</strong> for the first {{ pricing.coreCulture.adult.term }}.</p>
-<div class="my-3">
-  <a class="btn btn-primary btn-lg px-4 py-2" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-analytics-event="pricing_first_visit_clicked">Reserve Free Intro</a>
-</div>
-<div class="pricing-entry__sublinks my-3" aria-label="Secondary pricing actions">
-  <a class="btn-sublink" href="{{ business.contact.smsHref }}">Text Sandy</a>
-  <a class="btn-sublink" href="/schedule">View Schedule</a>
-  <a class="btn-sublink" href="/bjj-tannersville-ny-directions">Directions &amp; Parking</a>
-</div>
-<p class="mt-3">Up to three appropriate classes each week with regular times reserved, a first qualifying uniform, and progress feedback. <a href="#start">Compare inclusions and terms</a>.</p>
-</header>
+<main class="op-main" id="main" role="main" tabindex="-1">
 
-<nav class="mb-5 p-3 rounded-4 border bg-white" aria-label="Pricing path"><p class="small fw-bold mb-2">What brings you here?</p><div class="d-flex flex-wrap gap-2"><a class="btn btn-outline-primary" href="#start">New to the academy</a><a class="btn btn-outline-secondary" href="#flexible">Visiting or training seasonally</a><a class="btn btn-outline-secondary" href="#continue">Already training here</a></div></nav>
+<section aria-labelledby="pricing-hero-title" class="op-hero">
+  <div class="container-xxl">
+    <div class="op-hero__grid">
+      <div class="op-hero__copy op-reveal is-visible">
+        <p class="op-eyebrow">Options &amp; Pricing <span>Tannersville, NY</span></p>
+        <h1 id="pricing-hero-title">See the price.<br/><em>Start with a free visit.</em></h1>
+        <p class="op-hero__lede">
+          Meet Sandy, see the room, and choose the right starting point. Sandy confirms your visit before you arrive.
+        </p>
+<section class="container py-3" aria-label="Quick prices"><div class="row g-3"><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Free First Visit: $0</strong><br><span class="small text-muted">Meet Sandy, see the room, ask questions.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Kids + Teens: {{ pricing.coreCulture.youth.displayPrice }}</strong><br><span class="small text-muted">First {{ pricing.coreCulture.youth.term }}.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Adults: {{ pricing.coreCulture.adult.displayPrice }}</strong><br><span class="small text-muted">First {{ pricing.coreCulture.adult.term }}.</span></div></div></div></section>
+        <p class="op-hero__lede">Both first-term programs include up to three appropriate classes each week, with regular class times reserved, a first qualifying uniform, and progress feedback. <a href="#start">Compare what is included</a>.</p>
+        <div class="op-actions">
+          <a class="op-button op-button--primary" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="options-pricing-hero" data-cta-target="intro" data-cta-tier="primary" data-goal-mapping="" href="/free-bjj-intro-tannersville-ny#booking-flow">
+            <span>Reserve Free Intro</span>
+            <span aria-hidden="true" class="op-button__icon">&rarr;</span>
+          </a>
+          <a class="op-button op-button--quiet" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="options-pricing-hero" data-cta-target="schedule" data-cta-tier="secondary" href="/schedule">
+            <span>View Schedule</span>
+            <span aria-hidden="true" class="op-button__icon">&nearr;</span>
+          </a>
+        </div>
+        <p class="small text-muted mt-3 mb-0">
+          <a href="{{ business.contact.smsHref }}">Text Sandy about pricing</a> · <a href="/bjj-tannersville-ny-directions">Directions &amp; Parking</a>. Make-up classes are arranged by text, subject to room capacity and suitable partner fit.
+        </p>
+      </div>
 
-<section id="start" class="mb-5" aria-labelledby="pricing-start-title"><p class="text-uppercase small fw-bold text-success">Your first 12 weeks</p><h2 id="pricing-start-title">Choose the program that fits who is starting.</h2><p>Pricing stays visible before you request a visit. The first qualifying uniform and progress feedback are included. Youth and Adult first terms may qualify for the 30-Day Progress Guarantee after at least 10 classes in the first 30 days; <a href="/guarantee-terms">read the full terms</a>.</p><div class="row g-4"><article class="col-md-6" aria-labelledby="pricing-youth-title"><div class="h-100 p-4 rounded-4 border bg-white"><p class="text-uppercase small fw-bold text-success">Kids &amp; Teens</p><h3 id="pricing-youth-title">{{ pricing.coreCulture.youth.name }} · {{ pricing.coreCulture.youth.displayPrice }}</h3><p>Train up to three times each week for {{ pricing.coreCulture.youth.term }}. We reserve your regular class times so Sandy can plan space, coaching, and suitable training partners. Need a different day? Text Sandy to request an available class.</p><div class="d-flex flex-wrap gap-2"><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Reserve for a child</a><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow">Reserve for a teen</a></div></div></article><article class="col-md-6" aria-labelledby="pricing-adult-title"><div class="h-100 p-4 rounded-4 border bg-white"><p class="text-uppercase small fw-bold text-success">Adults</p><h3 id="pricing-adult-title">{{ pricing.coreCulture.adult.name }} · {{ pricing.coreCulture.adult.displayPrice }}</h3><p>Train up to three times each week for {{ pricing.coreCulture.adult.term }}. We reserve your regular class times so Sandy can plan space, coaching, and suitable training partners. Need a different day? Text Sandy to request an available class.</p><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow">Reserve for an adult</a></div></article></div></section>
+      <div class="op-shell op-hero__shell op-reveal is-visible">
+        <div class="op-hero__media">
+          <img alt="Sensei Sandy smiling inside the Tannersville BJJ studio" decoding="async" fetchpriority="high" height="1000" src="https://senseisandy.com/assets/images/sensei-sandy.6e2ade.webp" width="800"/>
+          <div class="op-hero__caption">
+            <span aria-hidden="true" class="op-sequence">01</span>
+            <p><strong>Your first visit is a coached walkthrough.</strong> Start with a room tour and safety conversation. Youth may train the same visit; adults normally schedule the coached first class afterward.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="mb-5 p-4 rounded-4 border bg-white" id="community-service-adult" aria-labelledby="pricing-community-title"><p class="text-uppercase small fw-bold text-success">Qualified adult rate</p><h2 id="pricing-community-title">{{ pricing.coreCulture.communityServiceAdult.name }} · {{ pricing.coreCulture.communityServiceAdult.displayPrice }}</h2><p>{{ pricing.coreCulture.communityServiceAdult.eligibility }}. The community-service rate is outside the 30-Day Progress Guarantee.</p><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=community-service#booking-flow">Reserve Free Intro</a></section>
+<nav class="container-xxl py-4" aria-label="Pricing path">
+  <div class="op-shell p-4">
+    <p class="op-eyebrow mb-2">Choose your path</p>
+    <h2 class="h4 mb-3">What brings you here?</h2>
+    <div class="d-flex flex-wrap gap-2">
+      <a class="op-button op-button--quiet" href="#start">New to the academy</a>
+      <a class="op-button op-button--quiet" href="#flexible">Visiting or training seasonally</a>
+      <a class="op-button op-button--quiet" href="#continue">Already training here</a>
+    </div>
+  </div>
+</nav>
 
-<section class="mb-5 p-4 rounded-4 border bg-light" id="flexible" aria-labelledby="pricing-visitor-title"><span id="visitor-training" aria-hidden="true"></span><p class="text-uppercase small fw-bold text-success">Visitors &amp; flexible access</p><h2 id="pricing-visitor-title">Visiting or training seasonally?</h2><p>Advance requests depend on available space and suitable partner fit. Packs do not include recurring reservations, a uniform, progress feedback, or the guarantee.</p><div class="row g-3"><div class="col-sm-6 col-lg-3"><h3 class="h5">{{ pricing.visitorAndSupport.dayPass.name }} · {{ pricing.visitorAndSupport.dayPass.displayPrice }}</h3><p>{{ pricing.visitorAndSupport.dayPass.classesIncluded }}.</p></div><div class="col-sm-6 col-lg-3"><h3 class="h5">{{ pricing.visitorAndSupport.vacationWeek.name }} · {{ pricing.visitorAndSupport.vacationWeek.displayPrice }}</h3><p>{{ pricing.visitorAndSupport.vacationWeek.classesIncluded }}.</p></div><div class="col-sm-6 col-lg-3"><h3 class="h5">{{ pricing.visitorAndSupport.tenPack.name }} · {{ pricing.visitorAndSupport.tenPack.displayPrice }}</h3><p>Valid for {{ pricing.visitorAndSupport.tenPack.validity }}.</p></div><div class="col-sm-6 col-lg-3"><h3 class="h5">{{ pricing.visitorAndSupport.twentyPack.name }} · {{ pricing.visitorAndSupport.twentyPack.displayPrice }}</h3><p>Valid for {{ pricing.visitorAndSupport.twentyPack.validity }}.</p></div></div><a class="btn btn-outline-primary mt-3" href="/catskills-home-base" data-analytics-event="visitor_training_clicked">See visitor and seasonal options</a><hr><h3>Private coaching · {{ pricing.visitorAndSupport.privateCoachingSingle.displayPrice }}</h3><p>One-to-one coaching is scheduled by request.</p><a href="/private-lessons">See private coaching</a></section>
+<section id="start" aria-labelledby="core-pricing-title" class="op-section op-section--paper">
+  <div class="container-xxl">
+    <div class="op-section-heading op-reveal">
+      <div>
+        <p class="op-eyebrow">12-Week Grand Slam Tuition Tracks <span>5.0x Value Anchors</span></p>
+        <h2 id="core-pricing-title">Choose the track engineered for your outcome.</h2>
+      </div>
+      <p>Every first 12-week program includes reserved class times, your uniform and belt, written progress report cards, zero testing fees, and our Ironclad 4-Part Guarantee Stack. <a href="#guarantee-stack">Compare our guarantees</a>.</p>
+    </div>
 
-<section class="mb-5 p-4 rounded-4 border bg-white" id="continue" aria-labelledby="pricing-continue-title"><p class="text-uppercase small fw-bold text-success">For current students</p><h2 id="pricing-continue-title">Review your next term.</h2><p>After your first term, review what is working, what comes next, and whether the schedule still fits. Finishing a term does not obligate you to continue.</p><p id="annual-track"><strong>Annual Track</strong> is a continuation choice after a completed first term and progress review. Annual plans and renewals are outside the 30-Day Progress Guarantee.</p><a class="btn btn-outline-primary" href="/report-card">Start with a Progress Review</a></section>
+    <div class="op-program-grid">
+      <article class="op-shell op-program op-program--youth op-reveal">
+        <div class="op-card">
+          <div class="op-card__header">
+            <div>
+              <p class="op-card__kicker">Coach-Mom Carla &amp; Independent Ian &middot; Ages 5-17</p>
+              <h3>The 12-Week Catskills Kids Confidence &amp; Anti-Bully Sprint</h3>
+              <p class="op-card__outcome">Twelve weeks of small-group coaching where kids solve problems with real partners, build body control, and develop calm confidence without aggression.</p>
+            </div>
+            <span aria-hidden="true" class="op-card__number">01</span>
+          </div>
 
-<section class="text-center p-4 rounded-4 bg-success text-white" aria-labelledby="pricing-final-title"><h2 id="pricing-final-title">See the room before you choose the routine.</h2><p>Choose who is starting and a preferred time. Sandy confirms your visit before you arrive.</p><a class="btn btn-light" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro">Reserve Free Intro</a></section>
+          <div class="op-value-badge-strip">
+            <span class="op-badge op-badge--value">5.0x Value Package ($2,750 Total Value)</span>
+            <span class="op-badge op-badge--perk">Gi &amp; Belt Included</span>
+            <span class="op-badge op-badge--perk">No Testing Fees</span>
+          </div>
+
+          <div aria-label="Youth 12-Week Confidence Track prices" class="op-price-ledger">
+            <div class="op-price-ledger__featured">
+              <span>3 planned classes/week</span>
+              <strong>$550</strong>
+              <small>/ 12-week term</small>
+            </div>
+          </div>
+
+          <div class="op-grand-slam-stack">
+            <p class="op-stack-title"><strong>Itemized Grand Slam Value Stack ($2,750 Total Value):</strong></p>
+            <ul class="op-stack-list">
+              <li><span>Core Mentorship &amp; BJJ Curriculum (36 Sessions)</span> <strong>$1,500 Value</strong></li>
+              <li><span>Priority Regional Tournament Coaching &amp; Cornering (2 Events/Yr)</span> <strong>$300 Value</strong></li>
+              <li><span>Parent Integration Guide &amp; VIP SMS Rescheduling Line</span> <strong>$197 Value</strong></li>
+              <li><span>Introductory 1-on-1 Assessment &amp; Room Tour</span> <strong>$158 Value</strong></li>
+              <li><span>Bi-Weekly Progress Report Cards &amp; Habit Tracking</span> <strong>$150 Value</strong></li>
+              <li><span>Async Adaptation Vault (2x/wk YouTube Practice Access)</span> <strong>$150 Value</strong></li>
+              <li><span>Official Sensei Sandy Single-Weave Gi &amp; White Belt</span> <strong>$120 Value</strong></li>
+              <li><span>1-on-1 Safety &amp; Posture Walkthrough</span> <strong>$100 Value</strong></li>
+              <li><span>Belt Rank Stripes &amp; ALL Grading Fees Included</span> <strong>$75 Value</strong></li>
+            </ul>
+          </div>
+
+          <ul class="op-check-list">
+            <li>Train up to three times each week (up to 36 scheduled classes)</li>
+            <li>Choose three recurring home classes from four weekly youth sessions</li>
+            <li>Parent-friendly open-seat rescheduling by text when space is open</li>
+            <li>30-Day Coached Progress Guarantee after 10 classes in first 30 days</li>
+          </ul>
+          <p class="op-card__note">Training more than one child? Text Sandy for household options. Read the <a href="/parent-resources">Parent Guide</a>.</p>
+          <a class="op-text-link" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Reserve Free Intro <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+ 
+      <article class="op-shell op-program op-program--adult op-reveal op-delay-1">
+        <div class="op-card op-card--tint">
+          <div class="op-card__header">
+            <div>
+              <p class="op-card__kicker">Beginner Ben &middot; Ages 18+</p>
+              <h3>The 12-Week "Start Calm" Mountaintop Beginner Integration</h3>
+              <p class="op-card__outcome">Twelve weeks to learn real grappling skills, build mobility, and decompress against controlled resistance in a room with zero big egos.</p>
+            </div>
+            <span aria-hidden="true" class="op-card__number">02</span>
+          </div>
+
+          <div class="op-value-badge-strip">
+            <span class="op-badge op-badge--value">5.0x Value Package ($3,575 Total Value)</span>
+            <span class="op-badge op-badge--perk">Gi &amp; Belt Included</span>
+            <span class="op-badge op-badge--perk">Beginner Lane Match</span>
+          </div>
+
+          <div aria-label="Adult 12-Week Track prices" class="op-price-ledger op-price-ledger--stacked">
+            <div class="op-price-ledger__featured">
+              <span>3 planned classes/week</span>
+              <strong>$715</strong>
+              <small>/ 12-week term</small>
+            </div>
+          </div>
+
+          <div class="op-grand-slam-stack">
+            <p class="op-stack-title"><strong>Itemized Grand Slam Value Stack ($3,575 Total Value):</strong></p>
+            <ul class="op-stack-list">
+              <li><span>Core Functional BJJ &amp; Coaching (36 Sessions)</span> <strong>$2,000 Value</strong></li>
+              <li><span>Regional Tournament Coaching &amp; Cornering (2 Events/Yr)</span> <strong>$300 Value</strong></li>
+              <li><span>Technical Thursday Loom Video Movement Reviews</span> <strong>$200 Value</strong></li>
+              <li><span>Body Recovery &amp; Longevity Protocols</span> <strong>$197 Value</strong></li>
+              <li><span>Functional Nutrition &amp; Mobility Protocol</span> <strong>$183 Value</strong></li>
+              <li><span>Private Intro &amp; Goal-Setting Assessment</span> <strong>$150 Value</strong></li>
+              <li><span>Async Adaptation Vault (2x/wk YouTube Instructional Line)</span> <strong>$150 Value</strong></li>
+              <li><span>Official Sensei Sandy Gi &amp; White Belt</span> <strong>$120 Value</strong></li>
+              <li><span>VIP SMS Text-to-Reschedule Concierge Line</span> <strong>$100 Value</strong></li>
+              <li><span>1-on-1 Room Tour &amp; Safety Walkthrough</span> <strong>$100 Value</strong></li>
+              <li><span>Belt Rank Stripes &amp; ALL Grading Fees Included</span> <strong>$75 Value</strong></li>
+            </ul>
+          </div>
+
+          <ul class="op-check-list">
+            <li>Train up to three times each week (up to 36 scheduled classes)</li>
+            <li>Choose three recurring home classes from five weekly adult sessions</li>
+            <li>Direct text rescheduling with Sandy when work or travel changes your week</li>
+            <li>30-Day Coached Progress Guarantee after 10 classes in first 30 days</li>
+          </ul>
+          <p class="op-card__note">You do not need to get in shape before starting. Changing facilities and gear storage available at the studio.</p>
+          <a class="op-text-link" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow">Reserve Free Intro <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+ 
+      <article class="op-shell op-program op-program--community op-reveal">
+        <div class="op-card op-community-card">
+          <div>
+            <p class="op-card__kicker">Community Casey &middot; Qualifying Service Pros</p>
+            <h3>The 12-Week Catskills First-Responder Resilience Track</h3>
+            <p>For teachers, healthcare workers, law enforcement, firefighters, EMTs, military members, and veterans.</p>
+          </div>
+          <div class="op-value-badge-strip">
+            <span class="op-badge op-badge--value">$3,000 Total Value</span>
+            <span class="op-badge op-badge--perk">Gi &amp; Belt Included</span>
+          </div>
+          <div class="op-community-card__price">
+            <span>3 planned classes/week</span>
+            <strong>$600</strong>
+            <small>/ 12-week term</small>
+          </div>
+          <ul class="op-community-card__benefits">
+            <li>Train up to three times each week with regular class times reserved</li>
+            <li>First qualifying uniform and belt included</li>
+            <li>Up to 36 scheduled classes over 12 weeks</li>
+            <li>No belt testing fees or mandatory association dues</li>
+            <li>Train alongside fellow community members keeping the Catskills running</li>
+            <li>Community-service rate is outside the 30-Day Training Fit Guarantee (<a href="/guarantee-terms">terms</a>)</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <!-- 14-DAY IMMEDIATE WIN TIMELINE -->
+    <section id="timeline-wins" aria-labelledby="timeline-title" class="op-timeline-section op-reveal mt-5">
+      <div class="op-shell p-4">
+        <p class="op-eyebrow">Immediate Results</p>
+        <h3 id="timeline-title" class="h2 mb-3">Your 14-Day Timeline to Confidence</h3>
+        <p class="text-muted mb-4">We don't make you wait months to feel progress. Your 12-Week Track is engineered for immediate, measurable wins from your very first visit.</p>
+        
+        <div class="op-timeline-grid">
+          <div class="op-timeline-card">
+            <div class="op-timeline-day">Day 1</div>
+            <h4>The Safety &amp; Posture Win</h4>
+            <p>Leave your first visit knowing how to fall safely, protect your posture, and execute a fundamental escape. Receive your included Gi and Belt on the spot.</p>
+          </div>
+          <div class="op-timeline-card">
+            <div class="op-timeline-day">Day 7</div>
+            <h4>The Movement &amp; Flow Milestone</h4>
+            <p>Receive your first Technical Thursday Loom video review. Visually see your balance improving and your body adapting to fundamental movements at your pace.</p>
+          </div>
+          <div class="op-timeline-card">
+            <div class="op-timeline-day">Day 14</div>
+            <h4>The Confidence Milestone</h4>
+            <p>Receive your first Progress Report Card. The beginner anxiety vanishes as you actively participate, drill safely with partners, and apply techniques with growing confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="progress-value-title" class="op-progress-note op-reveal mt-5">
+      <div class="op-progress-note__copy">
+        <p class="op-eyebrow">coaching</p>
+        <h2 id="progress-value-title">Progress you can understand.</h2>
+        <p>Progress feedback means Sandy watches what is becoming reliable in live training, identifies the next useful problem, and gives students and families clear feedback along the way. Want to see what that feedback looks like? <a href="/report-card">Preview the Progress Report Card</a>.</p>
+        <p class="op-progress-note__term">One class can show where you are starting. Consistent training gives Sandy enough repeated situations to see what is changing and what needs a different challenge. That is why training is organized as a 12-week first term rather than a collection of unrelated drop-ins.</p>
+        <details class="mt-3"><summary class="fw-semibold">Why a training term instead of random drop-ins?</summary><p class="small text-muted mt-2 mb-0">Skill studies generally use repeated practice over weeks, not isolated sessions. The 12-week track gives Sandy repeated opportunities to observe the same student across changing partners and problems. The 12-week term is an academy coaching structure, not a claim that research has established 12 weeks as the universally optimal BJJ dose.</p></details>
+        <a class="op-text-link" href="/how-class-works">See how class works <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <ol class="op-progress-note__steps">
+        <li><strong>Notice</strong><span>What is working?</span></li>
+        <li><strong>Coach</strong><span>What problem comes next?</span></li>
+        <li><strong>Review</strong><span>What has changed?</span></li>
+      </ol>
+    </section>
+
+    <div class="op-inline-cta op-reveal">
+      <p><strong>$0 Free First Visit:</strong> Meet Sandy first. There is no plan decision required before your visit. Eligible first Youth or Adult 12-week terms are backed by our 30-Day Training Fit Guarantee after at least 10 classes in the first 30 days. The community-service rate is outside the 30-Day Training Fit Guarantee (<a href="/guarantee-terms">terms</a>).</p>
+      <a class="op-text-link" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="household-pricing-title" class="op-section op-section--forest">
+  <div class="container-xxl">
+    <div class="op-section-heading op-section-heading--light op-reveal">
+      <div>
+        <p class="op-eyebrow">Train Together</p>
+        <h2 id="household-pricing-title">Household plans, without the math maze.</h2>
+      </div>
+      <p>These first-term packages include progress feedback, make-up classes when space is open, and uniforms. Each student is still coached and reviewed as an individual.</p>
+    </div>
+
+    <div class="op-household-grid">
+      <details class="op-household-card op-household-card--family op-reveal">
+        <summary>
+          <span>
+            <small>Two adults + one youth</small>
+            <strong>Family Track (12 Weeks)</strong>
+          </span>
+          <span class="op-household-card__from">Ask about household coordination</span>
+          <span aria-hidden="true" class="op-details-icon">+</span>
+        </summary>
+        <div class="op-household-card__body">
+          <p>Eligible household pricing is discussed during the Free First Visit. Three uniforms are included with first enrollment.</p>
+          <dl class="op-rate-list">
+            <div><dt>Three recurring class times</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is not a separate public product.</small></dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="op-household-card op-household-card--siblings op-reveal">
+        <summary>
+          <span>
+            <small>Two children</small>
+            <strong>Sibling Track (12 Weeks)</strong>
+          </span>
+          <span class="op-household-card__from">Ask about household coordination</span>
+          <span aria-hidden="true" class="op-details-icon">+</span>
+        </summary>
+        <div class="op-household-card__body">
+          <p>Eligible sibling pricing is discussed during the Free First Visit. Two uniforms are included with first enrollment.</p>
+          <dl class="op-rate-list">
+            <div><dt>Three recurring class times</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is not a separate public product.</small></dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="op-household-card op-household-card--parent op-reveal op-delay-1">
+        <summary>
+          <span>
+            <small>One adult + one youth</small>
+            <strong>Parent + Youth Track (12 Weeks)</strong>
+          </span>
+          <span class="op-household-card__from">Ask about household coordination</span>
+          <span aria-hidden="true" class="op-details-icon">+</span>
+        </summary>
+        <div class="op-household-card__body">
+          <p>Eligible parent-and-youth pricing is discussed during the Free First Visit. One adult gi and one youth gi are included.</p>
+          <dl class="op-rate-list">
+            <div><dt>Three recurring class times</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is discussed case by case.</small></dd></div>
+          </dl>
+        </div>
+      </details>
+    </div>
+    <p class="op-household-note op-reveal">Open each plan for the exact weekly combinations. Mixed attendance can be discussed during first visit.</p>
+  </div>
+</section>
+
+<!-- THE IRONCLAD 4-PART GUARANTEE STACK -->
+<section id="guarantee-stack" aria-labelledby="guarantee-title" class="op-section op-section--paper">
+  <div class="container-xxl">
+    <div class="op-section-heading op-reveal">
+      <div>
+        <p class="op-eyebrow">Risk Reversal</p>
+        <h2 id="guarantee-title">The Ironclad 4-Part Guarantee Stack.</h2>
+      </div>
+      <p>We eliminate every objection so you can make your decision with complete confidence.</p>
+    </div>
+
+    <div class="op-guarantee-grid op-reveal">
+      <div class="op-guarantee-card">
+        <h4>1. The $0 "Start Calm" First Visit</h4>
+        <p>Your first visit is a coached room tour and walkthrough with zero sales pressure. If you don't feel entirely safe and welcomed, you pay nothing.</p>
+      </div>
+      <div class="op-guarantee-card">
+        <h4>2. 30-Day Coached Progress Guarantee</h4>
+        <p>Train at least 10 times in your first 30 days. If you don't feel you're making clear progress, text Sandy and we'll add 4 weeks (28 calendar days) to your term at no charge (<a href="/guarantee-terms">terms</a>).</p>
+      </div>
+      <div class="op-guarantee-card">
+        <h4>3. 100% Hidden-Fee Elimination Guarantee</h4>
+        <p>Your single-weave Gi uniform and white belt are included in your 12-week tuition. We never charge belt testing fees or mandatory association dues.</p>
+      </div>
+      <div class="op-guarantee-card">
+        <h4>4. Partner Safety Match Guarantee</h4>
+        <p>New adult students train in a dedicated Beginner Lane paired with calm, vetted partners. Safety and controlled resistance are non-negotiable baselines.</p>
+      </div>
+    </div>
+
+    <div class="mt-5 op-reveal">
+      <aside aria-label="Student review" class="op-proof-card">
+        <p class="op-proof-card__mark" aria-hidden="true">&ldquo;</p>
+        <blockquote>
+          <p>A welcoming community with no big egos. That is rare in any martial art.</p>
+          <footer class="op-proof-card__citation">Adam Mastropaolo</footer>
+        </blockquote>
+        <a href="/success-stories">Read student stories <span aria-hidden="true">&nearr;</span></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="flexible" aria-labelledby="other-options-title" class="op-section op-section--sand">
+  <div class="container-xxl">
+    <div class="op-section-heading op-reveal">
+      <div>
+        <p class="op-eyebrow">Other Ways to Train</p>
+        <h2 id="other-options-title">Visiting or need a flexible schedule?</h2>
+      </div>
+      <p>These options sit outside the standard 12-week first term. Local first-time students should still begin with the Free First Visit.</p>
+    </div>
+
+    <p class="op-section-note">Class packs provide flexibility. The 12-week track adds up to 3 classes each week and ongoing progress feedback. The up-to-36 figure describes scheduled opportunities over the term, not 36 credits a student must consume.</p>
+    <div class="op-other-grid">
+      <article id="visitor-training" class="op-shell op-other-card op-other-card--visitor op-reveal">
+        <div class="op-card">
+          <div class="op-card__header">
+            <div>
+              <p class="op-card__kicker">Catskills Visitors &amp; Flexible Training</p>
+              <h3>Catskills Visitor "Keep Training" Pass</h3>
+            </div>
+            <span aria-hidden="true" class="op-card__number">A</span>
+          </div>
+          <div class="op-pass-grid">
+            <div><span>Day Pass</span><strong>$35</strong></div>
+            <div><span>Vacation Week</span><strong>$99</strong></div>
+            <div><span>10-Class Pack</span><strong>$300</strong><small>Valid for six months</small></div>
+            <div><span>20-Class Pack</span><strong>$550</strong><small>Valid for 12 months</small></div>
+          </div>
+          <p class="op-card__note">Day Pass and Vacation Week are visitor access: one class, or up to three classes in seven days. Class Packs are usage-based options for seasonal, second-home, or irregular schedules. Local first-time students begin with the Free First Visit.</p>
+          <p class="op-card__note">These options do not include the full 12-week membership benefits. Everyone still receives appropriate coaching, safety management, and partner guidance while in class.</p>
+          <p class="op-card__note"><strong>Visiting regularly or own a second home?</strong> <a href="/catskills-home-base">See seasonal class packs and visitor options</a>.</p>
+          <a class="op-text-link" href="/catskills-home-base">See the Catskills visitor guide <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="op-shell op-other-card op-other-card--private op-reveal op-delay-1">
+        <div class="op-card op-card--ink">
+          <p class="op-card__kicker">One-on-One</p>
+          <h3>Private Coaching</h3>
+          <p class="op-private-price"><strong>$195</strong><span>/ session</span></p>
+          <p>For nervous first-timers, returning adults, visitors, or students working on one specific problem.</p>
+          <ul class="op-check-list op-check-list--light">
+            <li>All ages</li>
+            <li>Scheduled by request</li>
+            <li>Focused, private onboarding</li>
+          </ul>
+          <a class="op-button op-button--paper" data-ss-cta-type="private_lesson" href="/private-lessons">
+            <span>Ask About Private Coaching</span>
+            <span aria-hidden="true" class="op-button__icon">&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+ <article id="continue" class="op-after-first op-reveal">
+        <div class="op-after-first__heading">
+          <p class="op-card__kicker">After Your First Term</p>
+          <h3>Longer-term options are a later decision.</h3>
+          <p>After your first term, use a <a href="/report-card">Progress Review</a> to look at what is working, what comes next, and whether the schedule still fits. Then you can compare renewing your 12-week track, Annual Track, higher-touch Elite Concierge support, or flexible access. Finishing a term does not obligate you to continue.</p>
+        </div>
+        <div class="op-after-first__option">
+          <span>Elite Concierge</span>
+          <strong>$1,050</strong>
+          <small>/ 12 weeks</small>
+          <p class="op-after-first__copy">Continuation-only adult track support with gear handling, private coaching, and first consideration when a suitable replacement seat opens. The 30-Day Progress Guarantee does not apply.</p>
+          <a data-ss-cta-type="black_belt_concierge" href="/elite-concierge">Explore Concierge <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div id="annual-track" class="op-after-first__option op-after-first__option--accent">
+          <div class="op-value-badge-strip mb-2">
+            <span class="op-badge op-badge--value">5.0x Value Package ($13,250 Total Value)</span>
+          </div>
+          <span>The Year-1 White-to-Blue Pipeline (Tannersville)</span>
+          <strong>Youth $2,100 &middot; Adult $2,650 &middot; Community $2,250</strong>
+          <small>/ year</small>
+          <p class="op-after-first__copy">For students continuing after an initial 12-week term who prefer a longer commitment for annual value ($13,250 in total year-long coaching, weekly reviews, goal assessments, and tournament support). Annual plans are excluded from the 30-Day Progress Guarantee and do not add another uniform.</p>
+          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20interested%20in%20Annual%20Track%20Savings.">Text Sandy <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="pricing-final-title" class="op-section op-section--final">
+  <div class="container-xxl">
+    <div class="op-final-shell op-reveal">
+      <div class="op-final-card">
+        <div>
+          <p class="op-eyebrow">No Plan Decision Today</p>
+          <h2 id="pricing-final-title">See the room before you choose the routine.</h2>
+          <p>Your Free First Visit includes a room tour, safety walkthrough, and a coached first-class recommendation.</p>
+        </div>
+        <div class="op-final-card__actions">
+          <a class="op-button op-button--paper" data-cta-lane="mixed" data-cta-placement="final_cta" data-cta-src="options-pricing-final" data-cta-target="intro" data-cta-tier="primary" data-goal-mapping="" href="/free-bjj-intro-tannersville-ny#booking-flow">
+            <span>Reserve Free Intro</span>
+            <span aria-hidden="true" class="op-button__icon">&rarr;</span>
+          </a>
+          <a class="op-final-card__text-link" data-cta-lane="mixed" data-cta-placement="final_cta" data-cta-src="options-pricing-final" data-cta-target="sms" data-cta-tier="secondary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20pricing%20question.">Text Sandy at (917) 736-8649</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Grand Slam Offer synchronized -->
 </main>
