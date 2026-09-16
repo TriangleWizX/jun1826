@@ -9,14 +9,6 @@ extraCss:
   - "/assets/css/pages/options-pricing-highend.css"
 permalink: "/options-pricing.html"
 ---
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  const nodes = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-  nodes.forEach((node) => { node.nodeValue = node.nodeValue.replaceAll('12-week program Review', '12-Week Program Review'); });
-});
-</script>
 <main class="op-main" id="main" role="main" tabindex="-1">
 
 <section aria-labelledby="pricing-hero-title" class="op-hero">
@@ -74,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="container-xxl">
     <div class="op-section-heading op-reveal">
       <div>
-        <p class="op-eyebrow">12-week program</p>
+        <p class="op-eyebrow">12-Week Tuition Tracks</p>
         <h2 id="core-pricing-title">Choose the class that fits your week.</h2>
       </div>
           <p>Your first 12 weeks include:</p>
@@ -87,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="op-card__header">
             <div>
               <p class="op-card__kicker">Kids &amp; Teens &middot; Ages 5-17</p>
-              <h3>Youth 12-week program</h3>
+              <h3>12-Week Confidence Track</h3>
           <p class="op-card__outcome">Twelve weeks to build a routine that stays calm under pressure, solves problems with a partner, and creates real physical confidence.</p>
             </div>
             <span aria-hidden="true" class="op-card__number">01</span>
           </div>
-          <div aria-label="Youth 12-week program prices" class="op-price-ledger">
+          <div aria-label="Youth 12-Week Confidence Track prices" class="op-price-ledger">
             <div class="op-price-ledger__featured">
               <span>3 planned classes/week</span>
               <strong>$550</strong>
@@ -102,12 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul class="op-check-list">
               <li>Train up to three times each week; up to 36 scheduled classes</li>
               <li>Choose three recurring home classes from four weekly youth sessions: Monday and Wednesday No-Gi, Tuesday Gi, and Friday Gi Lab</li>
-            <li>One uniform included with first qualifying 12-week program enrollment</li>
+            <li>One uniform included with first qualifying 12-week enrollment</li>
             <li><strong>Progress feedback:</strong> Know what your child is handling more reliably and what Sandy is helping them work on next</li>
             <li>Parent-friendly open-seat rescheduling by text when another class has space and a suitable partner</li>
-            <li>30-Day Training Fit Guarantee on the first term after at least four classes in the first 30 days; <a href="/guarantee-terms">full terms</a></li>
+            <li>30-Day Progress Guarantee on the first term after at least 10 classes in the first 30 days; <a href="/guarantee-terms">full terms</a></li>
           </ul>
-          <p class="op-card__note">More than class access: 12-week program includes a planned weekly rhythm, safe resistance, parent communication, and clear student responsibilities. Home classes are default reservations that give Sandy a predictable group to coach; they are not a character test. Read the <a href="/parent-resources">Parent Guide</a>.</p>
+          <p class="op-card__note">More than class access: The 12-Week Confidence Track includes a planned weekly rhythm, safe resistance, parent communication, and clear student responsibilities. Home classes are default reservations that give Sandy a predictable group to coach; they are not a character test. Read the <a href="/parent-resources">Parent Guide</a>.</p>
           <p class="op-card__note">Multiple students in one household? Text Sandy for family coordination and pricing. Eligible discounts are discussed during your first visit.</p>
           <a class="op-text-link" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Reserve Free Intro <span aria-hidden="true">&rarr;</span></a>
         </div>
@@ -118,12 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="op-card__header">
             <div>
               <p class="op-card__kicker">Adults &middot; Ages 18+</p>
-              <h3>Adult 12-week program</h3>
+              <h3>12-Week Beginner Track</h3>
               <p class="op-card__outcome">Twelve weeks to build strength, mobility, and focus against controlled resistance in a room with no big egos.</p>
             </div>
             <span aria-hidden="true" class="op-card__number">02</span>
           </div>
-          <div aria-label="Adult 12-week program prices" class="op-price-ledger op-price-ledger--stacked">
+          <div aria-label="Adult 12-Week Beginner Track prices" class="op-price-ledger op-price-ledger--stacked">
             <div class="op-price-ledger__featured">
               <span>3 planned classes/week</span>
               <strong>$715</strong>
@@ -133,10 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul class="op-check-list">
             <li>Train up to three times each week; up to 36 scheduled classes</li>
             <li>Choose three recurring home classes from five weekly adult sessions, including three No-Gi and two Gi options</li>
-            <li>One uniform included with first qualifying 12-week program enrollment</li>
+            <li>One uniform included with first qualifying 12-week enrollment</li>
             <li><strong>Coached progress:</strong> Learn which solutions are beginning to work reliably and where to focus next</li>
             <li>Open-seat rescheduling by text when another class has space and a suitable partner</li>
-            <li>30-Day Training Fit Guarantee on the first term after at least four classes in the first 30 days; <a href="/guarantee-terms">full terms</a></li>
+            <li>30-Day Progress Guarantee on the first term after at least 10 classes in the first 30 days; <a href="/guarantee-terms">full terms</a></li>
           </ul>
           <p class="op-card__note">Changing facilities and gear storage available at the studio.</p>
           <a class="op-text-link" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow">Reserve Free Intro <span aria-hidden="true">&rarr;</span></a>
@@ -157,9 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <ul class="op-community-card__benefits">
             <li>Train up to three times each week, with regular class times reserved</li>
-            <li>uniform included</li>
+            <li>First qualifying uniform included</li>
             <li>Up to 36 scheduled classes</li>
             <li>Clear feedback on what's working and what comes next</li>
+            <li>Community-service rate is outside the 30-Day Progress Guarantee</li>
           </ul>
         </div>
       </article>
@@ -170,8 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="op-eyebrow">coaching</p>
         <h2 id="progress-value-title">Progress you can understand.</h2>
         <p>Progress feedback means Sandy watches what is becoming reliable in live training, identifies the next useful problem, and gives students and families clear feedback along the way. Want to see what that feedback looks like? <a href="/report-card">Preview the Progress Report Card</a>.</p>
-        <p class="op-progress-note__term">One class can show where you are starting. Consistent training gives Sandy enough repeated situations to see what is changing and what needs a different challenge. That is why 12-week program is organized as a 12-week first term rather than a collection of unrelated drop-ins.</p>
-        <details class="mt-3"><summary class="fw-semibold">Why a training term instead of random drop-ins?</summary><p class="small text-muted mt-2 mb-0">Skill studies generally use repeated practice over weeks, not isolated sessions. 12-week program gives Sandy repeated opportunities to observe the same student across changing partners and problems. The 12-week term is an academy coaching structure, not a claim that research has established 12 weeks as the universally optimal BJJ dose.</p></details>
+        <p class="op-progress-note__term">One class can show where you are starting. Consistent training gives Sandy enough repeated situations to see what is changing and what needs a different challenge. That is why training is organized as a 12-week first term rather than a collection of unrelated drop-ins.</p>
+        <details class="mt-3"><summary class="fw-semibold">Why a training term instead of random drop-ins?</summary><p class="small text-muted mt-2 mb-0">Skill studies generally use repeated practice over weeks, not isolated sessions. The 12-week track gives Sandy repeated opportunities to observe the same student across changing partners and problems. The 12-week term is an academy coaching structure, not a claim that research has established 12 weeks as the universally optimal BJJ dose.</p></details>
         <a class="op-text-link" href="/how-class-works">See how class works <span aria-hidden="true">&rarr;</span></a>
       </div>
       <ol class="op-progress-note__steps">
@@ -182,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </section>
 
     <div class="op-inline-cta op-reveal">
-      <p><strong>$0 Free First Visit:</strong> Meet Sandy first. There is no plan decision required before your visit. Eligible first Youth or Adult 12-week program terms may qualify for our 30-Day Training Fit Guarantee after at least four classes in the first 30 days. The community-service rate is excluded.</p>
+      <p><strong>$0 Free First Visit:</strong> Meet Sandy first. There is no plan decision required before your visit. Eligible first Youth or Adult 12-week terms are backed by our 30-Day Progress Guarantee after at least 10 classes in the first 30 days. The community-service rate is outside the 30-Day Progress Guarantee.</p>
       <a class="op-text-link" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro <span aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
@@ -203,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <summary>
           <span>
             <small>Two adults + one youth</small>
-            <strong>Family 12-week program</strong>
+            <strong>Family Track (12 Weeks)</strong>
           </span>
           <span class="op-household-card__from">Ask about household coordination</span>
           <span aria-hidden="true" class="op-details-icon">+</span>
@@ -220,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <summary>
           <span>
             <small>Two children</small>
-            <strong>Sibling 12-week program</strong>
+            <strong>Sibling Track (12 Weeks)</strong>
           </span>
           <span class="op-household-card__from">Ask about household coordination</span>
           <span aria-hidden="true" class="op-details-icon">+</span>
@@ -237,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <summary>
           <span>
             <small>One adult + one youth</small>
-            <strong>Parent + Youth 12-week program</strong>
+            <strong>Parent + Youth Track (12 Weeks)</strong>
           </span>
           <span class="op-household-card__from">Ask about household coordination</span>
           <span aria-hidden="true" class="op-details-icon">+</span>
@@ -259,17 +252,17 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="op-assurance-grid">
       <div class="op-shell op-reveal">
         <div class="op-assurance-card">
-          <p class="op-eyebrow">30-Day Training Fit Guarantee</p>
-          <h2 id="guarantee-title">Try the room. Keep the decision calm.</h2>
-          <p>Give the 12-week program a fair first try: attend at least four classes during your first 30 days. If the program is not the right fit, text Sandy and give us a chance to adjust the schedule, class, partner matching, or starting plan. If you still prefer to leave, the amount paid for your first eligible Youth or Adult 12-week program term is refunded in full under the guarantee terms.</p>
+          <p class="op-eyebrow">30-Day Progress Guarantee</p>
+          <h2 id="guarantee-title">Show up. Make progress. Keep the decision calm.</h2>
+          <p>Give your 12-week track a fair first try: train at least 10 times during your first 30 days. If you don't feel you're making meaningful progress, text Sandy before the end of those 30 days and we'll add four weeks (28 calendar days) to your program at no charge under the guarantee terms.</p>
           <div class="op-assurance-facts" aria-label="Guarantee requirements">
-            <div><strong>4 classes</strong><span>Minimum attendance</span></div>
+            <div><strong>10 classes</strong><span>Minimum attendance</span></div>
             <div><strong>30 days</strong><span>Request deadline</span></div>
-            <div><strong>First term</strong><span>Youth or Adult 12-week program</span></div>
+            <div><strong>4 weeks</strong><span>Extension at no charge</span></div>
           </div>
           <details class="op-terms">
             <summary>View exclusions and complete terms</summary>
-            <p>Annual plans, renewals, visitor options, class packs, private classes, merchandise, and optional add-ons are excluded.</p>
+            <p>Community-service pricing, annual plans, renewals, visitor options, class packs, private classes, merchandise, and optional add-ons are excluded.</p>
             <a href="/guarantee-terms">Read the complete guarantee terms <span aria-hidden="true">&rarr;</span></a>
           </details>
         </div>
@@ -297,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <p>These options sit outside the standard 12-week first term. Local first-time students should still begin with the Free First Visit.</p>
     </div>
 
-    <p class="op-section-note">Class packs provide flexibility. The 12-week program adds 3 classes each week and ongoing progress feedback. The up-to-36 figure describes scheduled opportunities over the term, not 36 credits a student must consume.</p>
+    <p class="op-section-note">Class packs provide flexibility. The 12-week track adds up to 3 classes each week and ongoing progress feedback. The up-to-36 figure describes scheduled opportunities over the term, not 36 credits a student must consume.</p>
     <div class="op-other-grid">
       <article id="visitor-training" class="op-shell op-other-card op-other-card--visitor op-reveal">
         <div class="op-card">
@@ -343,20 +336,20 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="op-after-first__heading">
           <p class="op-card__kicker">After Your First Term</p>
           <h3>Longer-term options are a later decision.</h3>
-          <p>After a 12-week program term, use a <a href="/report-card">Progress Review</a> to look at what is working, what comes next, and whether the schedule still fits. Then you can compare renewing 12-week program, Annual Track, higher-touch Elite Concierge support, or flexible access. Finishing a term does not obligate you to continue.</p>
+          <p>After a 12-week term, use a <a href="/report-card">Progress Review</a> to look at what is working, what comes next, and whether the schedule still fits. Then you can compare renewing your 12-week track, Annual Track, higher-touch Elite Concierge support, or flexible access. Finishing a term does not obligate you to continue.</p>
         </div>
         <div class="op-after-first__option">
           <span>Elite Concierge</span>
           <strong>$1,050</strong>
           <small>/ 12 weeks</small>
-          <p class="op-after-first__copy">Continuation-only Adult 12-week program support with gear handling, private coaching, and first consideration when a suitable replacement seat opens. The 30-Day Training Fit Guarantee does not apply.</p>
+          <p class="op-after-first__copy">Continuation-only adult track support with gear handling, private coaching, and first consideration when a suitable replacement seat opens. The 30-Day Progress Guarantee does not apply.</p>
           <a data-ss-cta-type="black_belt_concierge" href="/elite-concierge">Explore Concierge <span aria-hidden="true">&rarr;</span></a>
         </div>
         <div id="annual-track" class="op-after-first__option op-after-first__option--accent">
           <span>Annual Track</span>
           <strong>Youth $2,100 · Adult $2,650 · Community $2,250</strong>
           <small>/ year</small>
-          <p class="op-after-first__copy">For students continuing after a 12-week program term who prefer a longer commitment for annual value. Annual plans are excluded from the 30-Day Training Fit Guarantee and do not add another uniform.</p>
+          <p class="op-after-first__copy">For students continuing after an initial 12-week term who prefer a longer commitment for annual value. Annual plans are excluded from the 30-Day Progress Guarantee and do not add another uniform.</p>
           <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20interested%20in%20Annual%20Track%20Savings.">Text Sandy <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>

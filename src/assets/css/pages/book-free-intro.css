@@ -133,7 +133,18 @@
   white-space: nowrap;
   text-decoration: none;
 }
-.page-book-intro .btn-outline-secondary { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-rule-2); }
+.page-book-intro .btn-outline-secondary,
+.page-book-intro .btn-outline-dark {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-rule-2);
+}
+.page-book-intro .editorial-left :is(.d-flex, .editorial-actions) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  margin-block: var(--space-sm, 16px) !important;
+}
 .page-book-intro :is(button, input):disabled { opacity: .4; cursor: not-allowed; transform: none; }
 .page-book-intro [aria-busy="true"] { opacity: .65; }
 .page-book-intro .booking-calendar-entry { padding: var(--space-md) var(--space-sm); text-align: center; }

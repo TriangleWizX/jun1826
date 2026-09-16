@@ -4,6 +4,8 @@ title: "Instagram Start Here | Sensei Sandy BJJ"
 description: "Came from Instagram? Start here with a Free First Visit, text Sandy first, choose Youth or Adult, or get directions to Sensei Sandy BJJ. Learn more at Sensei San"
 canonicalUrl: "https://senseisandy.com/instagram"
 bodyClass: "ss-page"
+extraCss:
+  - "/assets/css/pages/instagram.css"
 permalink: "/instagram/index.html"
 ---
 <main class="ig-shell" role="main">
@@ -28,7 +30,7 @@ permalink: "/instagram/index.html"
 <ul aria-label="First visit trust points" class="chip-row">
 <li>Room tour first</li>
 <li>Safety explained</li>
-<li>Beginner class</li>
+<li>Beginner Lane</li>
 <li>Skill-based resistance activities begin at the right pace from day one</li>
 <li>Reschedule by text</li>
 </ul>
@@ -63,10 +65,10 @@ permalink: "/instagram/index.html"
 </article>
 <article class="decision-card">
 <h3>Need help choosing?</h3>
-<p>Text first if you want help choosing the right class or the least stressful way to begin.</p>
+<p>Text first if you want help choosing the right lane or the least stressful way to begin.</p>
 <ul aria-label="Help details" class="decision-meta">
 <li>Fast answer</li>
-<li>class help</li>
+<li>Find your lane</li>
 <li>Low pressure</li>
 </ul>
 <div class="decision-actions">
@@ -107,7 +109,7 @@ permalink: "/instagram/index.html"
 <article class="step-card">
 <div class="step-number">2</div>
 <h3>Safety gets explained.</h3>
-<p>We cover tapping, pacing, boundaries, and Beginner class before you step onto the mat.</p>
+<p>We cover tapping, pacing, boundaries, and Beginner Lane before you step onto the mat.</p>
 </article>
 <article class="step-card">
 <div class="step-number">3</div>
@@ -131,10 +133,10 @@ permalink: "/instagram/index.html"
 <p class="mt-2">Above Main Street. If you want the simplest route from Instagram to the room, tap directions.</p>
 </div>
 <ul aria-label="Location details" class="location-pills">
+<li>Beginner lane</li>
+<li>Coached pacing</li>
 <li>2nd floor studio</li>
-<li>Main Street</li>
-<li>Grappling only</li>
-<li>Grappling-only training</li>
+<li>Tannersville Main St</li>
 </ul>
 </div>
 <div class="reassure-actions">
@@ -155,5 +157,16 @@ permalink: "/instagram/index.html"
 </div>
 </main>
 <div aria-label="Mobile quick actions" class="sticky-cta">
-<a class="cta cta-primary" href="sms:+19177368649?body=Hi%20Sensei%20Sandy%2C%20I%20came%20from%20Instagram.%20I%20have%20a%20question%20about%20starting.">Questions about starting? Text Sandy (917) 736 - 8649</a>
+<a class="cta cta-primary" href="sms:+19177368649?body=Hi%20Sensei%20Sandy%2C%20I%20came%20from%20Instagram.%20I%20have%20a%20question%20about%20starting.">Questions about starting? Text Sandy: +1 (917) 736-8649</a>
 </div>
+<script>
+  (function initInstagramSticky() {
+    const sticky = document.querySelector('.sticky-cta');
+    const heroCta = document.querySelector('.hero .cta-primary');
+    if (!sticky || !heroCta || !('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      sticky.classList.toggle('is-visible', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    observer.observe(heroCta);
+  })();
+</script>
