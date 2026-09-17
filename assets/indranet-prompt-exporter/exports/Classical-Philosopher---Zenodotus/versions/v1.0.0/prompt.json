@@ -73,7 +73,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 7:11:27 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:09 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Classical Philosopher - Zenodotus",
+    "sha256": "0bab4405ad0c59cc1da9eb48e7bda1185b0ee26043a242d3ecbf0c67eabde18f",
+    "bytes": 27913,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "973304b2-63e5-48e2-a309-17bbb60081bf",
   "id": "973304b2-63e5-48e2-a309-17bbb60081bf",
@@ -92,6 +99,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Classical-Philosopher---Zenodotus"
 }

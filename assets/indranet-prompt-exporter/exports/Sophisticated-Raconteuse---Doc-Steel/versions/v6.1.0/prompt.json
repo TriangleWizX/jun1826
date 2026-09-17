@@ -23,8 +23,12 @@
   "created": "Mar 13, 2026, 9:09:10 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:00 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/3a144eef-f98d-498b-afd7-461ff6f3769a",
-    "alt": "Sophisticated Raconteuse - Doc Steel"
+    "file": "thumbnail.png",
+    "alt": "Sophisticated Raconteuse - Doc Steel",
+    "sha256": "4e225bbe8312cec74944285ce920d031da6bba8b56702b8cfb5d5a4f5869a0e0",
+    "bytes": 29619,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "3392fd87-dbfb-47f7-836a-e1ce159902b4",
@@ -43,9 +47,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Sophisticated-Raconteuse---Doc-Steel"
 }

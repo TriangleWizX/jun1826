@@ -15,8 +15,12 @@
   "created": "Mar 13, 2026, 8:11:49 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:05 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/940cae20-1362-4364-90e4-1bfcfac30626",
-    "alt": "INSTRUCTIONS - GlaDOS the AI Overseer"
+    "file": "thumbnail.png",
+    "alt": "INSTRUCTIONS - GlaDOS the AI Overseer",
+    "sha256": "4567dd14f9dbab1960a791bb5c612e2b3497efa9ca8c02696fec3f79fda39e83",
+    "bytes": 28260,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "954fc4aa-30ce-48cb-b892-8700fdf52e71",
@@ -35,9 +39,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "INSTRUCTIONS---GlaDOS-the-AI-Overseer"
 }

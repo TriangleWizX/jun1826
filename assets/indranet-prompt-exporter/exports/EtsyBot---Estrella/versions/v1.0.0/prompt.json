@@ -16,7 +16,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:59:06 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:01 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "EtsyBot - Estrella",
+    "sha256": "ab0ad9545aa2170c8fafc73c5c90f2e8f4dec9eeb7806f492fb0ab44f9939535",
+    "bytes": 29782,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "ea2e6055-7410-43e0-a6b6-ec1b276c5bce",
   "id": "ea2e6055-7410-43e0-a6b6-ec1b276c5bce",
@@ -35,6 +42,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "EtsyBot---Estrella"
 }

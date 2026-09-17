@@ -1,5 +1,30 @@
 """Bounded work contracts consumed by a host runtime; never implicitly spawn."""
 from .persona_router import task_brief, select_persona, compile_guidance
+import re
+
+INSTRUCTION_FALLBACK = "e144b81f-10ea-41a6-a06c-03d69dfb738f"
+
+def select_instruction_asset(task, catalog, preferred_uuid=None):
+    """Select an instruction profile without importing the quick CLI."""
+    profiles = [p for p in catalog["profiles"] if str(p.get("title", "")).lower().startswith("instruction") and p.get("readiness") == "ready"]
+    if preferred_uuid:
+        match = next((p for p in profiles if p.get("uuid") == preferred_uuid), None)
+        if match is None:
+            raise ValueError("requested instruction asset is unavailable")
+        return match
+    positive = task_brief(task)["positive_task"]
+    # Platform names alone do not establish a video-production task.
+    domains = [
+        (r"python|refactor|debug|software|coding|persona routing|html|css", "25a8fe8a-c164-4e8e-8236-3a6585bfa165"),
+        (r"publishing|placement|ledger|business|operations|project management|seo", "c3369696-d996-447e-8973-5f2cd73d33c9"),
+        (r"video sales letter|video script|storyboard|produce.*video", "59b0d954-cf57-433a-b31f-d55dd5e1e226"),
+        (r"copy|content|headline|blog|article|editorial", "6e94db8f-e23d-4387-8cc6-bac209e890aa"),
+    ]
+    uid = next((uid for pattern, uid in domains if re.search(r"\b(?:" + pattern + r")\b", positive, re.I)), INSTRUCTION_FALLBACK)
+    match = next((p for p in profiles if p["uuid"] == uid), None)
+    if match is None:
+        raise ValueError("selected instruction asset is unavailable or not ready")
+    return match
 from pathlib import Path
 
 
@@ -8,8 +33,9 @@ def plan_execution(brief, catalog, workstreams=None, max_agents=4, workspace_roo
     if isinstance(max_agents, bool) or not isinstance(max_agents, int) or not 1 <= max_agents <= 4:
         raise ValueError("max_agents must be 1..4 including the coordinator")
     selection = select_persona(brief, catalog)
+    coordinator_instruction = select_instruction_asset(brief["task"], catalog, brief.get("instruction_uuid"))
     root = {"schema_version": 1, "status": "planned", "max_agents": max_agents,
-            "catalog_hash": catalog["catalog_hash"], "coordinator": compile_guidance(selection, brief, catalog),
+        "catalog_hash": catalog["catalog_hash"], "coordinator": dict(compile_guidance(selection, brief, catalog), instruction_asset=coordinator_instruction),
             "completion_gate": "Coordinator must inspect final artifacts and verification evidence for every DoD ID after integration. Worker agreement is insufficient.",
             "runtime_policy": {"recursive_spawn": False, "max_retries_per_worker": 1,
                                "restart": "Check the existing runtime handle before retrying; no retry based only on elapsed time.",
@@ -67,16 +93,17 @@ def plan_execution(brief, catalog, workstreams=None, max_agents=4, workspace_roo
                          constraints=brief["constraints"], authorized_actions=actions,
                          **({"required_capabilities": stream["required_capabilities"]} if "required_capabilities" in stream else {}))
         result = select_persona(sub, catalog, stream.get("persona_uuid"))
+        instruction = select_instruction_asset(stream["task"], catalog, stream.get("instruction_uuid"))
         if stream.get("persona_uuid") and result["status"] == "unavailable":
             raise ValueError(sid + " requested an unavailable persona")
         workers.append({"id": sid, "state": "queued", "runtime_handle": None,
-                        "selection_status": result["status"], "guidance": compile_guidance(result, sub, catalog),
-                        "dod_ids": owns, "contribution": stream["contribution"],
-                        "deliverable": stream["deliverable"], "depends_on": stream.get("depends_on", []),
-                        "read_paths": [canonical[p] for p in stream["read_paths"]], "write_paths": [canonical[p] for p in stream.get("write_paths", [])],
-                        "allowed_tools": stream.get("allowed_tools", []), "verification": stream["verification"],
-                        "budget": dict(budget, max_attempts=budget.get("max_attempts", 2)),
-                        "stop_condition": "Return the bounded deliverable and evidence for owned DoD IDs, or a specific blocker. Do not spawn children."})
+        "selection_status": result["status"], "instruction_asset": instruction, "guidance": compile_guidance(result, sub, catalog),
+        "dod_ids": owns, "contribution": stream["contribution"],
+        "deliverable": stream["deliverable"], "depends_on": stream.get("depends_on", []),
+        "read_paths": [canonical[p] for p in stream["read_paths"]], "write_paths": [canonical[p] for p in stream.get("write_paths", [])],
+        "allowed_tools": stream.get("allowed_tools", []), "verification": stream["verification"],
+        "budget": dict(budget, max_attempts=budget.get("max_attempts", 2)),
+        "stop_condition": "Return the bounded deliverable and evidence for owned DoD IDs, or a specific blocker. Do not spawn children."})
     if covered != dod.keys():
         raise ValueError("Every DoD criterion needs an owner; unassigned: " + ", ".join(sorted(dod.keys() - covered)))
     for worker in workers:

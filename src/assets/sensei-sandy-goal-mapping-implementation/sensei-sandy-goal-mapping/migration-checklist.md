@@ -2,7 +2,7 @@
 
 ## 1. Create the new Calendly event
 
-Create `BJJ first visit Visit`, confirm the final public URL, and update
+Create `BJJ First Visit`, confirm the final public URL, and update
 `CALENDLY_URL` in `goal-mapping.js` if the slug differs.
 
 ## 2. Install the shared launcher
@@ -59,7 +59,7 @@ step instead of a separate third step.
 
 Keep the URL temporarily for backlinks and search equity, but change:
 
-- Page title: `BJJ first visit Visit | Sensei Sandy BJJ`
+- Page title: `BJJ First Visit | Sensei Sandy BJJ`
 - H1: `Your First Step Toward Consistent Training`
 - Intro: `Meet Sandy for 15 minutes. Map your goal, schedule, and best starting
   class before choosing your first class.`
@@ -89,7 +89,7 @@ considerations`.
 
 Replace offers named `Free Introductory BJJ Class` with:
 
-- Offer/service name: `Complimentary BJJ first visit Visit`
+- Offer/service name: `Complimentary BJJ First Visit`
 - Price: `0`
 - Duration: `PT15M`
 - URL: the new on-site page or Calendly event URL

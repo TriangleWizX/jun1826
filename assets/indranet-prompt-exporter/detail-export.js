@@ -101,7 +101,7 @@ async function versions(page) {
   return {kind:'current',options:[{label:'current'}]};
 }
 
-async function exportDetails(page, exportsRoot, downloadPrompt, renderMarkdown) {
+async function exportDetails(page, exportsRoot, downloadPrompt, renderMarkdown, thumbnailMap = {}) {
   const plan=await versions(page); const records=[];
   for(const option of plan.options) {
     if(plan.kind==='select') await page.locator('select').nth(plan.index).selectOption(option.value);
@@ -200,14 +200,67 @@ async function exportDetails(page, exportsRoot, downloadPrompt, renderMarkdown) 
         errors.push(`Attachment ${attachment.name}: ${e.message}`);
       }
     }
-    if(data.thumbnail) {
+    // Thumbnail processing
+    const uuidLower = (data.uuid || '').toLowerCase();
+    const catalogDataUrl = (thumbnailMap && typeof thumbnailMap === 'object') ? thumbnailMap[uuidLower] : null;
+
+    if (catalogDataUrl) {
       try {
-        const response=await page.context().request.get(data.thumbnail.url,{timeout:30000});
-        const mime=response.headers()['content-type'] || '';
-        if(!response.ok() || !mime.startsWith('image/'))throw Error('Thumbnail response is not an image');
-        const bytes=await response.body();
-        data.thumbnail={...data.thumbnail,...saveAsset(dir,'thumbnail',`thumbnail.${safe(mime.split('/')[1].split(';')[0])}`,bytes)};
-      } catch(e) {errors.push(`Thumbnail: ${e.message}`);}
+        const base64Data = catalogDataUrl.replace(/^data:image\/\w+;base64,/, '');
+        const bytes = Buffer.from(base64Data, 'base64');
+        const receipt = saveAsset(dir, 'thumbnail', 'thumbnail.png', bytes);
+        data.thumbnail = {
+          file: 'thumbnail.png',
+          alt: data.title || 'Prompt Image',
+          sha256: receipt.sha256,
+          bytes: bytes.length,
+          url: 'thumbnail.png',
+          status: 'extracted_from_canvas'
+        };
+        fs.mkdirSync(promptDir, { recursive: true });
+        fs.writeFileSync(path.join(promptDir, 'thumbnail.png'), bytes);
+      } catch (e) {
+        errors.push(`Thumbnail Canvas: ${e.message}`);
+      }
+    } else if (data.thumbnail && data.thumbnail.url) {
+      try {
+        if (data.thumbnail.url.startsWith('http')) {
+          const response = await page.context().request.get(data.thumbnail.url, { timeout: 30000 });
+          const mime = response.headers()['content-type'] || '';
+          if (!response.ok() || !mime.startsWith('image/')) throw Error('Thumbnail response is not an image');
+          const bytes = await response.body();
+          data.thumbnail = { ...data.thumbnail, ...saveAsset(dir, 'thumbnail', `thumbnail.${safe(mime.split('/')[1].split(';')[0])}`, bytes) };
+        } else {
+          // Attempt DOM canvas extraction on detail page
+          const domDataUrl = await page.evaluate(() => {
+            const img = document.querySelector('img');
+            if (!img || img.naturalWidth < 10) return null;
+            const canvas = document.createElement('canvas');
+            canvas.width = img.naturalWidth || img.clientWidth;
+            canvas.height = img.naturalHeight || img.clientHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            return canvas.toDataURL('image/png');
+          });
+          if (domDataUrl && domDataUrl.length > 200) {
+            const base64Data = domDataUrl.replace(/^data:image\/\w+;base64,/, '');
+            const bytes = Buffer.from(base64Data, 'base64');
+            const receipt = saveAsset(dir, 'thumbnail', 'thumbnail.png', bytes);
+            data.thumbnail = {
+              file: 'thumbnail.png',
+              alt: data.title || 'Prompt Image',
+              sha256: receipt.sha256,
+              bytes: bytes.length,
+              url: 'thumbnail.png',
+              status: 'extracted_from_dom_canvas'
+            };
+            fs.mkdirSync(promptDir, { recursive: true });
+            fs.writeFileSync(path.join(promptDir, 'thumbnail.png'), bytes);
+          }
+        }
+      } catch (e) {
+        errors.push(`Thumbnail: ${e.message}`);
+      }
     }
     data.missing_fields=['title','description','notes','created','updated'].filter(k=>!data[k]);
     data.errors=[...fatalErrors, ...errors];

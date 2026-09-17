@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 9:13:30 PM (6 months ago)",
   "updated": "May 3, 2026, 11:31:59 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "ThinkTank - Personal Finance Optimizer and Advisor - Aria Thorne",
+    "sha256": "b25cc7ac34b4a34cef78acd2bcae7c5ebebd971a5e5d4ea23351d8b1be22d16f",
+    "bytes": 26681,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "964486bb-a079-4dac-9370-af6df971c613",
   "id": "964486bb-a079-4dac-9370-af6df971c613",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "ThinkTank---Personal-Finance-Optimizer-and-Advisor---Aria-Thorne"
 }

@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:47:21 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:02 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/f0983aba-9ed1-43c2-98cf-7d64486b38e4",
-    "alt": "TikTok Script Assistant - Script Shaper"
+    "file": "thumbnail.png",
+    "alt": "TikTok Script Assistant - Script Shaper",
+    "sha256": "9cc57538eedcd31ea3cf497984e692bce3a3e9dadb14a6345bb943bdaaa3a701",
+    "bytes": 25645,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "f9336bf0-c20e-4407-a03a-983799850a10",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "TikTok-Script-Assistant---Script-Shaper"
 }

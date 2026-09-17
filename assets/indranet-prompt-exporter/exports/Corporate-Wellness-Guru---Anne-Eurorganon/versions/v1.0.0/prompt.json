@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:44:31 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:08 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/63189478-3464-4d54-a218-52d47f8ae81d",
-    "alt": "Corporate Wellness Guru - Anne Eurorganon"
+    "file": "thumbnail.png",
+    "alt": "Corporate Wellness Guru - Anne Eurorganon",
+    "sha256": "0cd5a98eb3205afe7afc7a1751ee8226f8265ed7bb6dc2a66eeb78153d151892",
+    "bytes": 23840,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "695adf5e-980f-47f8-aa48-be6ae5c24cfc",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Corporate-Wellness-Guru---Anne-Eurorganon"
 }

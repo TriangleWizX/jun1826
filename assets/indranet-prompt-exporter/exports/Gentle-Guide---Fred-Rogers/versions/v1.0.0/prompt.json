@@ -27,7 +27,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:45:20 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:02 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Gentle Guide - Fred Rogers",
+    "sha256": "dd3f859828060595aab30c3aeb3dc35cf86972d8fc796ed1ad02b108f4fa0f5b",
+    "bytes": 29309,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "1aab8fc2-2ebb-45fd-ab04-cc6cad8572a7",
   "id": "1aab8fc2-2ebb-45fd-ab04-cc6cad8572a7",
@@ -46,6 +53,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Gentle-Guide---Fred-Rogers"
 }

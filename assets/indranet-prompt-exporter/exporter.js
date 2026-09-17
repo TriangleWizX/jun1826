@@ -15,7 +15,7 @@ const BASE_DIR = __dirname;
 const USER_DATA_DIR = path.join(BASE_DIR, 'browser_user_data');
 const EXPORTS_DIR = path.join(BASE_DIR, 'exports');
 const CHECKPOINT_PATH = path.join(EXPORTS_DIR, 'checkpoint.json');
-const TARGET_URL = 'https://indranet.collaborative-dynamics.com/';
+const DEFAULT_TARGET_URL = 'https://indranet.collaborative-dynamics.com/account?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd&organizationTab=org_prompt&rpp=1000';
 const PROMPT_URL_REGEX = /\/prompt\/[0-9a-f-]{20,}/i;
 
 function safeComponent(str, fallback = 'item') {
@@ -202,6 +202,9 @@ async function main() {
   console.log('==================================================');
   console.log(' Indranet Prompt Exporter (Title-Based Folder Structure)');
   console.log('==================================================');
+  const catalogUrlArgIdx = process.argv.indexOf('--catalog-url');
+  const TARGET_URL = catalogUrlArgIdx !== -1 ? process.argv[catalogUrlArgIdx + 1] : DEFAULT_TARGET_URL;
+
   console.log(`Target URL: ${TARGET_URL}`);
   console.log(`Exports Root: ${EXPORTS_DIR}`);
 
@@ -209,9 +212,12 @@ async function main() {
   const isHeadless = process.argv.includes('--headless');
   const checkMissingMode = process.argv.includes('--check-missing');
   const resumeMissingMode = process.argv.includes('--resume-missing');
+  const discoverOnlyMode = process.argv.includes('--discover-only');
   const targetUrlArgIdx = process.argv.indexOf('--url');
   const singleUrl = targetUrlArgIdx !== -1 ? process.argv[targetUrlArgIdx + 1] : null;
-  const autoMode = process.argv.includes('--auto') || isHeadless || !!singleUrl || resumeMissingMode;
+  const limitArgIdx = process.argv.indexOf('--limit');
+  const exportLimit = limitArgIdx !== -1 ? parseInt(process.argv[limitArgIdx + 1], 10) : Infinity;
+  const autoMode = process.argv.includes('--auto') || isHeadless || !!singleUrl || resumeMissingMode || discoverOnlyMode;
 
   // Verify on-disk complete prompts to enable safe incremental resumption
   const knownExportedUuids = new Set();
@@ -353,23 +359,61 @@ async function main() {
   });
 
   const page = context.pages().length > 0 ? context.pages()[0] : await context.newPage();
-  if (!singleUrl && !resumeMissingMode) {
-    await page.goto(TARGET_URL);
+  console.log(`Navigating to catalog source to prime organization session: ${TARGET_URL}`);
+  await page.goto(TARGET_URL, { waitUntil: 'domcontentloaded', timeout: 45000 });
+  await page.waitForTimeout(3000);
 
-    if (!autoMode) {
-      console.log('\n--------------------------------------------------');
-      console.log('ACTION REQUIRED:');
-      console.log('1. Log in to Indranet in the opened browser window.');
-      console.log('2. Complete Discord OAuth or CAPTCHA verification if prompted.');
-      console.log('3. Navigate to the Prompts / Catalog dashboard.');
-      console.log('--------------------------------------------------');
-
-      await askQuestion('\nPress ENTER in this terminal once you are signed in and ready to run Exporter... ');
-    } else {
-      console.log('\nRunning in automated mode with persistent session profile...');
-      await page.waitForTimeout(3000);
-    }
+  if (TARGET_URL.includes('/account') || TARGET_URL.includes('organizationTab')) {
+    console.log('Ensuring Organization Prompt tab is active...');
+    await page.evaluate(() => {
+      const tabs = Array.from(document.querySelectorAll('a, button, [role="tab"]'));
+      const promptTab = tabs.find(t => t.innerText && t.innerText.trim() === 'Prompt');
+      if (promptTab) promptTab.click();
+    });
+    await page.waitForTimeout(4000);
   }
+
+  if (!autoMode) {
+    console.log('\n--------------------------------------------------');
+    console.log('ACTION REQUIRED:');
+    console.log('1. Log in to Indranet in the opened browser window.');
+    console.log('2. Complete Discord OAuth or CAPTCHA verification if prompted.');
+    console.log('3. Navigate to the Prompts / Catalog dashboard.');
+    console.log('--------------------------------------------------');
+
+    await askQuestion('\nPress ENTER in this terminal once you are signed in and ready to run Exporter... ');
+  } else {
+    console.log('\nRunning in automated mode with persistent session profile...');
+    await page.waitForTimeout(1000);
+  }
+
+async function getCatalogThumbnailForUuid(catalogPage, uuid) {
+  if (!catalogPage || !uuid) return null;
+  try {
+    return await catalogPage.evaluate((targetUuid) => {
+      const match = targetUuid.toLowerCase();
+      const imgs = Array.from(document.images).filter(i => i.alt === "Prompt Image" || (i.src && i.src.startsWith("blob:")));
+      for (const img of imgs) {
+        let container = img.parentElement;
+        for (let depth = 0; depth < 6 && container; depth++) {
+          const link = container.querySelector("a[href*=\"/prompt/\"]");
+          if (link && (link.getAttribute("href") || "").toLowerCase().includes(match)) {
+            const canvas = document.createElement("canvas");
+            canvas.width = img.naturalWidth || img.clientWidth || 100;
+            canvas.height = img.naturalHeight || img.clientHeight || 100;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            return canvas.toDataURL("image/png");
+          }
+          container = container.parentElement;
+        }
+      }
+      return null;
+    }, uuid);
+  } catch (e) {
+    return null;
+  }
+}
 
   console.log('\nStarting catalog export pipeline...');
 
@@ -392,9 +436,14 @@ async function main() {
         }
       }
     }
-    console.log(`Processing direct export queue: ${queue.length} prompt(s)...`);
+    console.log(`Processing direct export queue: ${queue.length} prompt(s)... (limit: ${exportLimit === Infinity ? 'none' : exportLimit})`);
 
+    let exportedCount = 0;
     for (let i = 0; i < queue.length; i++) {
+      if (exportedCount >= exportLimit) {
+        console.log(`\nReached batch limit of ${exportLimit} prompt(s). Stopping run.`);
+        break;
+      }
       const fullUrl = queue[i];
       const pid = getPromptId(fullUrl);
       console.log(`\n[${i + 1}/${queue.length}] Exporting ${pid}...`);
@@ -402,6 +451,9 @@ async function main() {
 
       let detailPage;
       try {
+        const thumbDataUrl = await getCatalogThumbnailForUuid(page, pid);
+        const thumbMap = thumbDataUrl ? { [pid.toLowerCase()]: thumbDataUrl } : {};
+
         detailPage = await context.newPage();
         await detailPage.goto(fullUrl, { waitUntil: 'domcontentloaded' });
         try {
@@ -409,7 +461,7 @@ async function main() {
         } catch (e) {}
         await detailPage.waitForTimeout(1000);
 
-        const records = await require('./detail-export').exportDetails(detailPage, EXPORTS_DIR, downloadPrompt, renderMarkdown);
+        const records = await require('./detail-export').exportDetails(detailPage, EXPORTS_DIR, downloadPrompt, renderMarkdown, thumbMap);
         const hasError = records.some(record => record.status === 'failed' || !record.title || record.text?.startsWith('HOME\nACCOUNT'));
         if (hasError) {
           skipped.push(fullUrl);
@@ -417,6 +469,7 @@ async function main() {
           exportedIds.add(pid);
           knownExportedUuids.add(pid);
           exportedRecords.push(...records);
+          exportedCount++;
         }
 
         checkpoint.visited_urls = Array.from(visitedUrls);
@@ -435,24 +488,24 @@ async function main() {
   } else {
 
   while (true) {
-    console.log(`\n[Page ${pageNum}] Scrolling and scanning visible prompt cards...`);
-    // Auto-scroll the page to trigger lazy loading of catalog cards
+    console.log(`\n[Page ${pageNum}] Scrolling and scanning visible prompt cards and rows...`);
+    // Auto-scroll the page to trigger lazy loading / hydration
     await page.evaluate(async () => {
       await new Promise((resolve) => {
         let totalHeight = 0;
-        const distance = 400;
+        const distance = 500;
         const timer = setInterval(() => {
           const scrollHeight = document.body.scrollHeight;
           window.scrollBy(0, distance);
           totalHeight += distance;
-          if (totalHeight >= scrollHeight || totalHeight > 15000) {
+          if (totalHeight >= scrollHeight || totalHeight > 60000) {
             clearInterval(timer);
             resolve();
           }
-        }, 120);
+        }, 80);
       });
     });
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 
     const links = await page.$$eval('a[href]', (anchors) =>
       anchors.map(a => ({ text: a.innerText.trim(), href: a.getAttribute('href') }))
@@ -461,9 +514,33 @@ async function main() {
     const targetLinks = links.filter(l => l.href && PROMPT_URL_REGEX.test(l.href));
     allDiscoveredLinks.push(...targetLinks);
 
-    console.log(`Found ${targetLinks.length} prompt link(s) matching catalog pattern on Page ${pageNum}.`);
+    let newlyAdded = 0;
+    for (const link of targetLinks) {
+      let fullUrl = link.href.startsWith('/') ? `https://indranet.collaborative-dynamics.com${link.href}` : link.href;
+      if (!visitedUrls.has(fullUrl)) {
+        visitedUrls.add(fullUrl);
+        newlyAdded++;
+      }
+    }
+    checkpoint.visited_urls = Array.from(visitedUrls);
+    atomicWriteSync(CHECKPOINT_PATH, JSON.stringify(checkpoint, null, 2), true);
+
+    console.log(`Found ${targetLinks.length} prompt link(s) on Page ${pageNum} (${newlyAdded} new). Total discovered: ${visitedUrls.size}`);
+
+    if (discoverOnlyMode) {
+      console.log(`\n--discover-only complete. Registered ${visitedUrls.size} prompt URLs in checkpoint.json.`);
+      const missing = Array.from(visitedUrls).filter(u => !knownExportedUuids.has(getPromptId(u)));
+      console.log(`Verified complete on disk: ${knownExportedUuids.size}`);
+      console.log(`Pending in export queue:    ${missing.length}`);
+      await context.close();
+      return;
+    }
 
     for (const link of targetLinks) {
+      if (exportedRecords.length >= exportLimit) {
+        console.log(`\nReached batch limit of ${exportLimit} prompt(s). Stopping run.`);
+        break;
+      }
       let fullUrl = link.href.startsWith('/') ? `https://indranet.collaborative-dynamics.com${link.href}` : link.href;
       const pid = getPromptId(fullUrl);
 
@@ -479,6 +556,9 @@ async function main() {
 
       let detailPage;
       try {
+        const thumbDataUrl = await getCatalogThumbnailForUuid(page, pid);
+        const thumbMap = thumbDataUrl ? { [pid.toLowerCase()]: thumbDataUrl } : {};
+
         detailPage = await context.newPage();
         await detailPage.goto(fullUrl, { waitUntil: 'domcontentloaded' });
         try {
@@ -486,7 +566,7 @@ async function main() {
         } catch (e) {}
         await detailPage.waitForTimeout(1000);
 
-        const records = await require('./detail-export').exportDetails(detailPage, EXPORTS_DIR, downloadPrompt, renderMarkdown);
+        const records = await require('./detail-export').exportDetails(detailPage, EXPORTS_DIR, downloadPrompt, renderMarkdown, thumbMap);
         const hasError = records.some(record => record.status === 'failed' || !record.title || record.text?.startsWith('HOME\nACCOUNT'));
         if (hasError) {
           skipped.push(fullUrl);
@@ -509,6 +589,10 @@ async function main() {
       } finally {
         if (detailPage) await detailPage.close();
       }
+    }
+
+    if (exportedRecords.length >= exportLimit) {
+      break;
     }
 
     const nextButton = await page.$("button:has-text('Next'), a:has-text('Next'), [aria-label*='Next'], .pagination-next");

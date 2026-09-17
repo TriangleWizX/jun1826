@@ -33,8 +33,12 @@
   "created": "Mar 13, 2026, 7:04:41 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:10 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/cf1f5cd0-36be-4efb-a385-1bb5668c83c0",
-    "alt": "Universal Local Guide - Kato the AdaptiGuide"
+    "file": "thumbnail.png",
+    "alt": "Universal Local Guide - Kato the AdaptiGuide",
+    "sha256": "06d49a35fa6fe392b8ac70376a5143d0b84efeedc68531e73990923600611e4f",
+    "bytes": 24260,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "21d8ad95-9c07-4052-8169-5f6c223997b8",
@@ -53,9 +57,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Universal-Local-Guide---Kato-the-AdaptiGuide"
 }

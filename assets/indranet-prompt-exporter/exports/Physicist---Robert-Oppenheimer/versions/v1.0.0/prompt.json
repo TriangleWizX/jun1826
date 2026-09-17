@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:56:33 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:01 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Physicist - Robert Oppenheimer",
+    "sha256": "7102c3b97033cf5b18750e15629282b76a7c831f108ff4bf19dce77e84e1ab46",
+    "bytes": 24989,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "90ac1702-1c19-4ffa-a7c1-5d3299e1a909",
   "id": "90ac1702-1c19-4ffa-a7c1-5d3299e1a909",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Physicist---Robert-Oppenheimer"
 }

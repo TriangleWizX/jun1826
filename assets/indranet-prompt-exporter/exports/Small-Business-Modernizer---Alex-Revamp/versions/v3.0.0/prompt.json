@@ -38,7 +38,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 9:14:14 PM (6 months ago)",
   "updated": "May 3, 2026, 11:31:59 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Small Business Modernizer - Alex Revamp",
+    "sha256": "9b58ec43b7770edf9ed2f741fe94cacaea9180263a4ca5e5ab74c366f3b7d5d4",
+    "bytes": 28817,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "c1fc82c3-b4b8-4d41-b710-2c875134922b",
   "id": "c1fc82c3-b4b8-4d41-b710-2c875134922b",
@@ -57,6 +64,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Small-Business-Modernizer---Alex-Revamp"
 }

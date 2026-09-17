@@ -29,7 +29,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 9:07:35 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:00 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Science Historian and Communicator - James Burke",
+    "sha256": "ca9fc890237f3b56c2ab71209e58612139eddb66a72a7ae14f92defb8f42a1f6",
+    "bytes": 26770,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "93c24b08-9e39-4a28-9431-5d112146620c",
   "id": "93c24b08-9e39-4a28-9431-5d112146620c",
@@ -48,6 +55,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Science-Historian-and-Communicator---James-Burke"
 }

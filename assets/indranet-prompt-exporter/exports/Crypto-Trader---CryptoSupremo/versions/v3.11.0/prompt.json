@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:40:05 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:03 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/1b889635-ea76-4555-9bdf-fc2bbda619c2",
-    "alt": "Crypto Trader - CryptoSupremo"
+    "file": "thumbnail.png",
+    "alt": "Crypto Trader - CryptoSupremo",
+    "sha256": "aaec80d6ed86b958e1228ea3649954c3348c4962e91e4b01b2fe695dcd57789a",
+    "bytes": 26522,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "1ac5e4aa-b601-434b-8f54-3553cd948b32",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Crypto-Trader---CryptoSupremo"
 }

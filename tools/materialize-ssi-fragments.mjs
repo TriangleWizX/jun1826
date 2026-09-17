@@ -37,9 +37,13 @@ const copyFragmentTree = async (relativeDir) => {
 await fs.rm(path.join(outputRoot, 'partials'), { recursive: true, force: true });
 await copyFragmentTree('partials');
 
-// This legacy-named root file is also consumed as an SSI fragment.
-const ctaSource = await fs.readFile(path.join(sourceRoot, 'cta-footer.html'), 'utf8');
+// These legacy-named root files are also consumed as SSI fragments.
+const ctaSource = await fs.readFile(path.join(sourceRoot, 'partials', 'cta-footer.html'), 'utf8');
 await fs.writeFile(path.join(outputRoot, 'cta-footer.html'), stripFrontMatter(ctaSource));
+const navSource = await fs.readFile(path.join(sourceRoot, 'partials', 'nav-include.html'), 'utf8');
+await fs.writeFile(path.join(outputRoot, 'nav-include.html'), stripFrontMatter(navSource));
+const footerSource = await fs.readFile(path.join(sourceRoot, 'partials', 'footer-include.html'), 'utf8');
+await fs.writeFile(path.join(outputRoot, 'footer-include.html'), stripFrontMatter(footerSource));
 
 // Only root-level SSI include sources are published as deployable fragments.
 const includeDir = path.join(sourceRoot, '_includes');

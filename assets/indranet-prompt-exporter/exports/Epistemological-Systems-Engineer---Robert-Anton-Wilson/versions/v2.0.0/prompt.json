@@ -29,7 +29,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:20:58 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:04 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Epistemological Systems Engineer - Robert Anton Wilson",
+    "sha256": "ab7b924f003be2e3a44f74d8296808481a7f82f2461165d746fcddc81b2a2078",
+    "bytes": 16711,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "082731d5-a913-4072-8e74-1f19de76dc5a",
   "id": "082731d5-a913-4072-8e74-1f19de76dc5a",
@@ -48,6 +55,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Epistemological-Systems-Engineer---Robert-Anton-Wilson"
 }

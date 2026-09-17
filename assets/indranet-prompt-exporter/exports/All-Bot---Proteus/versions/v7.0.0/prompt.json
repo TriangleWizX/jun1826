@@ -47,7 +47,14 @@
   "tier": "FREE TIER",
   "created": "Mar 16, 2026, 5:11:59 PM (6 months ago)",
   "updated": "May 3, 2026, 11:31:48 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "All-Bot - Proteus",
+    "sha256": "cd7b43ee46dedf097b2068c9d8ad56385bf497451d6dd3b55714dc5342cedac0",
+    "bytes": 26595,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "url": "https://indranet.collaborative-dynamics.com/prompt/57fab628-6147-476f-84ef-0aa5616d571e?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd",
   "uuid": "57fab628-6147-476f-84ef-0aa5616d571e",
@@ -66,5 +73,5 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial"
+  "status": "complete"
 }

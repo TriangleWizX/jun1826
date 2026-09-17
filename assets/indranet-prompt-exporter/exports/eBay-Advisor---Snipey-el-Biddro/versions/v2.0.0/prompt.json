@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:06:03 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:05 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/42a019fd-c93c-49a5-8b21-becb45f48cd8",
-    "alt": "eBay Advisor - Snipey el Biddro"
+    "file": "thumbnail.png",
+    "alt": "eBay Advisor - Snipey el Biddro",
+    "sha256": "56596f5c0706b4aed78fc0e7382ae58bed7c125585052a3a3cbade4d9f500395",
+    "bytes": 25701,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "691210df-72ac-4da2-9758-4bdfabbc2bfd",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "eBay-Advisor---Snipey-el-Biddro"
 }

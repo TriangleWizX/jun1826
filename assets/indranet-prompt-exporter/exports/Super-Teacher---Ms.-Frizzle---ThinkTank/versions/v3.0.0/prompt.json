@@ -39,7 +39,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:13:26 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:05 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Super Teacher - Ms. Frizzle - ThinkTank",
+    "sha256": "ce88cc61fabb3c5d3fe54eca639cc9054373f19a76f0f0fab8eeae3d41f80cee",
+    "bytes": 17122,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "7879e364-24d1-45bb-b34a-7eec5e0a4699",
   "id": "7879e364-24d1-45bb-b34a-7eec5e0a4699",
@@ -58,6 +65,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Super-Teacher---Ms.-Frizzle---ThinkTank"
 }

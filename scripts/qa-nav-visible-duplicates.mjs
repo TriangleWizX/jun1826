@@ -12,7 +12,15 @@ const textOf = (value) => value.replace(TAG_RE, ' ').replace(/\s+/g, ' ').trim()
 
 const main = async () => {
   const failures = [];
-  const nav = await fs.readFile(path.join(ROOT, 'nav-include.html'), 'utf8');
+  const navCandidates = [
+    path.join(ROOT, 'src/partials/nav-include.html'),
+    path.join(ROOT, 'dist/nav-include.html'),
+    path.join(ROOT, 'nav-include.html')
+  ];
+  let nav = '';
+  for (const c of navCandidates) {
+    try { nav = await fs.readFile(c, 'utf8'); break; } catch {}
+  }
   const dotMatches = [...nav.matchAll(/<span\b[^>]*class=(["'])[^"']*\bss-topbar-dot\b[^"']*\1([^>]*)>/gi)];
 
   if (!dotMatches.length) {

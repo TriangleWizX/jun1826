@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:44:30 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:03 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/695dbcc8-1e9c-440a-87c6-9510c9c58b65",
-    "alt": "Superhuman Space Engineer - AstroPioneer - ThinkTank"
+    "file": "thumbnail.png",
+    "alt": "Superhuman Space Engineer - AstroPioneer - ThinkTank",
+    "sha256": "a2819ccb2d34668ac117b14a2e72aca8701bec50a19b5916881fdb01c3070705",
+    "bytes": 27988,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "ddbd83b1-9be7-4b73-833d-4c6a75398ccf",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Superhuman-Space-Engineer---AstroPioneer---ThinkTank"
 }

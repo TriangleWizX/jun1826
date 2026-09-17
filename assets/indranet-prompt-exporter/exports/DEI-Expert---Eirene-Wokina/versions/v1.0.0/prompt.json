@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:49:59 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:07 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/773b5533-89c0-4bae-bb5e-9f8f431a57b1",
-    "alt": "DEI Expert - Eirene Wokina"
+    "file": "thumbnail.png",
+    "alt": "DEI Expert - Eirene Wokina",
+    "sha256": "2ec21d9a988c82ad33dd0a6e844fa04b00d0158ecd286fbf16c0e33b46d77c96",
+    "bytes": 25010,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "5c1da056-d32c-4494-a4f3-65640762df37",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "DEI-Expert---Eirene-Wokina"
 }

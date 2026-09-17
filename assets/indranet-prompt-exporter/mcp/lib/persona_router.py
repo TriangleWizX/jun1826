@@ -13,6 +13,8 @@ from uuid import UUID
 SCHEMA_VERSION = 1
 # Task vocabulary is separate from persona names: new personas need no UUID rule.
 CAPABILITIES = {
+    "publishing_operations": r"publishing|editorial calendar|content distribution|cross.platform|social media|content strategy",
+    "project_management": r"project management|project manager|project coordination|workstream|milestones",
     "python": r"python|pythia|pythonslayer",
     "debugging": r"debug\w*|diagnos\w*|find why|troubleshoot\w*|exception|stack trace|root cause",
     "seo": r"seo|search engine optimi\w*|canonical|meta tags|metadata|indexing|robots|keyword research|organic search|title tags",
@@ -197,6 +199,8 @@ def select_persona(brief, catalog, preferred_uuid=None):
     candidates = []
     for profile in catalog["profiles"]:
         if profile["readiness"] != "ready":
+            continue
+        if profile["title"].lower().startswith(("workflow__", "input-field-tool", "instructions", "instruction -")):
             continue
         if profile["domain_scopes"] and not any(_matches(re.escape(s), brief["positive_task"]) for s in profile["domain_scopes"]) and profile["uuid"] != preferred_uuid:
             continue

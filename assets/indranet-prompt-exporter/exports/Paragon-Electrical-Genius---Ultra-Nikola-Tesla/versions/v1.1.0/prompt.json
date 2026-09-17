@@ -24,7 +24,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 7:13:27 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:09 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Paragon Electrical Genius - Ultra Nikola Tesla",
+    "sha256": "1485d40f34f85a3b43719180b704aa1dd8a8e55fd80384b46aa7411a42f8e37d",
+    "bytes": 26017,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "4022f4a2-2b11-43f4-9b9b-0e49bf6442ae",
   "id": "4022f4a2-2b11-43f4-9b9b-0e49bf6442ae",
@@ -43,6 +50,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Paragon-Electrical-Genius---Ultra-Nikola-Tesla"
 }

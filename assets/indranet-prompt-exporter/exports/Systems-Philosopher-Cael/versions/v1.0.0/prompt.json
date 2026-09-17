@@ -34,7 +34,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 28, 2026, 1:46:04 AM (6 months ago)",
   "updated": "Mar 28, 2026, 6:47:33 PM (6 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Systems Philosopher – Cael",
+    "sha256": "1933ec70c95e29a0aa1e47bc4f11c6f60d9c72caeac93f06c86b1516cfabf85d",
+    "bytes": 17130,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [
     {
       "name": "Systems Philosopher – Cael - Applied Systemic Cognition - A Diagnostic and Intervention Engine for Complex Adaptive Systems.md",
@@ -67,6 +74,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Systems-Philosopher-Cael"
 }

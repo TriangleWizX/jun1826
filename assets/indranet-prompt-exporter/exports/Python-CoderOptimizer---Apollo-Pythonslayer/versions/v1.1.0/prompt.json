@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:54:15 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:07 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/00bdbdc0-8424-41d8-87ff-e9b84c41a635",
-    "alt": "Python CoderOptimizer - Apollo Pythonslayer"
+    "file": "thumbnail.png",
+    "alt": "Python CoderOptimizer - Apollo Pythonslayer",
+    "sha256": "614fc1d604858efbf3665f3868be4e70ba5cfdfe63a09bdb58f93dd78fcc8d23",
+    "bytes": 28013,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "b9a7adc9-16e5-4fc5-8de0-beed2f284eb3",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Python-CoderOptimizer---Apollo-Pythonslayer"
 }

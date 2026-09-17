@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:50:37 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:07 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/eeee5489-b218-4635-b6d7-e20d6e264ad2",
-    "alt": "Idea Deepener-Improver - Ponder"
+    "file": "thumbnail.png",
+    "alt": "Idea Deepener-Improver - Ponder",
+    "sha256": "98dd12bf748bd54a692abc528c0b11e35308552a52acefe64283ea8e8b3f7a9d",
+    "bytes": 27709,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "28879e5d-90e5-45bc-b574-a2f98a77ea8a",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Idea-Deepener-Improver---Ponder"
 }

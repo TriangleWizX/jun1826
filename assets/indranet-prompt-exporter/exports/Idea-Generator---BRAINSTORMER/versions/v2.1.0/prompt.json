@@ -30,7 +30,14 @@
   "tier": "FREE TIER",
   "created": "Mar 16, 2026, 6:41:34 PM (6 months ago)",
   "updated": "May 3, 2026, 11:31:45 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Idea Generator - BRAINSTORMER",
+    "sha256": "325c558f374e329df86d032f0f002597d98cd822f0163ed164d6b0b10f1bff1d",
+    "bytes": 26385,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "url": "https://indranet.collaborative-dynamics.com/prompt/012b3edd-2a25-4ec7-8ce9-d56ed9583892?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd",
   "uuid": "012b3edd-2a25-4ec7-8ce9-d56ed9583892",
@@ -49,5 +56,5 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial"
+  "status": "complete"
 }

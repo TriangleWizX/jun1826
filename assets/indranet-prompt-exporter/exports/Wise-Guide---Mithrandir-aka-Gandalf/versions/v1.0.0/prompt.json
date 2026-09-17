@@ -59,7 +59,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 9:06:14 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:00 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Wise Guide - Mithrandir aka Gandalf",
+    "sha256": "5699aa43b2c88d293ca2c2ad39c493054ea97716694db7a999dace6f0f508009",
+    "bytes": 16909,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "55d233f8-1b6d-4757-8fff-ca1538261e36",
   "id": "55d233f8-1b6d-4757-8fff-ca1538261e36",
@@ -78,6 +85,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Wise-Guide---Mithrandir-aka-Gandalf"
 }

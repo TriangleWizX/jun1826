@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:48:40 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:02 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "UltraPhilip K. Dick",
+    "sha256": "b087ee273acc33e471b4494d2fb7796a32c0d292ba2cbee332badae8c60f4c8b",
+    "bytes": 27963,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "db18816f-d6a3-4434-8579-fc6de627edc8",
   "id": "db18816f-d6a3-4434-8579-fc6de627edc8",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "UltraPhilip-K.-Dick"
 }

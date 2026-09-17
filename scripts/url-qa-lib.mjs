@@ -132,17 +132,31 @@ export const expandSsiIncludes = async (html, {
     try {
       includeHtml = await fs.readFile(normalizedIncludePath, 'utf8');
     } catch (error) {
-      if (strict) {
-        const reason = error?.code ? ` (${error.code})` : '';
-        throw createSsiIncludeError({
-          cause: error,
-          message: `SSI include cannot be read: /${includeTarget}${reason}`,
-          reason: 'read_failed',
-          stack,
-          target: normalizedIncludePath
-        });
+      const fallbackCandidates = [
+        path.join(resolvedRoot, 'src', 'partials', includeTarget),
+        path.join(resolvedRoot, 'dist', includeTarget),
+      ];
+      let found = false;
+      for (const fallbackPath of fallbackCandidates) {
+        try {
+          includeHtml = await fs.readFile(fallbackPath, 'utf8');
+          found = true;
+          break;
+        } catch {}
       }
-      continue;
+      if (!found) {
+        if (strict) {
+          const reason = error?.code ? ` (${error.code})` : '';
+          throw createSsiIncludeError({
+            cause: error,
+            message: `SSI include cannot be read: /${includeTarget}${reason}`,
+            reason: 'read_failed',
+            stack,
+            target: normalizedIncludePath
+          });
+        }
+        continue;
+      }
     }
 
     const expanded = await expandSsiIncludes(includeHtml, {

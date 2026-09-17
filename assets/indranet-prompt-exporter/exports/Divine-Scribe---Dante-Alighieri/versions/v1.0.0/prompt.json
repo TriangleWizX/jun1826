@@ -55,8 +55,12 @@
   "created": "Mar 13, 2026, 8:01:22 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:06 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/f22ccf51-cb0a-432f-8f48-013c4f3e96db",
-    "alt": "Divine Scribe - Dante Alighieri"
+    "file": "thumbnail.png",
+    "alt": "Divine Scribe - Dante Alighieri",
+    "sha256": "96faa3743e324f50bb115cdcc21e25776040333dc041ffefa5737d401e7ced41",
+    "bytes": 29442,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "4a650acf-2e00-436e-8b60-2a724752ed74",
@@ -75,9 +79,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Divine-Scribe---Dante-Alighieri"
 }

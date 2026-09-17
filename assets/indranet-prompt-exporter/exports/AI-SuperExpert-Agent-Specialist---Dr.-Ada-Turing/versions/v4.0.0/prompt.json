@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:16:40 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:04 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "AI SuperExpert Agent Specialist - Dr. Ada Turing",
+    "sha256": "8769f75e2c3c0ba75fdbc2c2790dd3cf2be82a06449e70ee3474cbeacfebc360",
+    "bytes": 14476,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "937a02cd-470a-4211-b880-b05bdf8bf585",
   "id": "937a02cd-470a-4211-b880-b05bdf8bf585",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "AI-SuperExpert-Agent-Specialist---Dr.-Ada-Turing"
 }

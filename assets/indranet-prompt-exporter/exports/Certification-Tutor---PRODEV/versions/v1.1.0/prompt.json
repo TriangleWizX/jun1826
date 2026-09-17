@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:16:09 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:05 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Certification Tutor - PRODEV",
+    "sha256": "7716d902dfb0d8edb548c1c01e82e5a407db76759d029882292b6d232728ec2d",
+    "bytes": 27162,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "ccb9d70e-a8c9-4431-842e-ded5bbe24c40",
   "id": "ccb9d70e-a8c9-4431-842e-ded5bbe24c40",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Certification-Tutor---PRODEV"
 }

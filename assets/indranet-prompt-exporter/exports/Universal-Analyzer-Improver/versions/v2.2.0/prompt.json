@@ -13,7 +13,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:52:46 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:01 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Universal Analyzer-Improver",
+    "sha256": "496a8e39e8f5879a095b4e0efdc7325265fa66fd327d5f386a1d14a5ac140ac1",
+    "bytes": 27565,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "65808004-23a5-42ae-babe-1dbe85bfd1cf",
   "id": "65808004-23a5-42ae-babe-1dbe85bfd1cf",
@@ -32,6 +39,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Universal-Analyzer-Improver"
 }

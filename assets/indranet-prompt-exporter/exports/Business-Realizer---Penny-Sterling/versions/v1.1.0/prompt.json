@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:01:58 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:10 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/e51642bd-472c-4600-af68-1ea1f8199262",
-    "alt": "Business Realizer - Penny Sterling"
+    "file": "thumbnail.png",
+    "alt": "Business Realizer - Penny Sterling",
+    "sha256": "1ef6ef8f118228477e3c38a58954f378630f18685c630b4ccec2a3e2f66c388b",
+    "bytes": 23240,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "2e476ac6-a28a-4cf6-ab49-293537b19df1",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Business-Realizer---Penny-Sterling"
 }

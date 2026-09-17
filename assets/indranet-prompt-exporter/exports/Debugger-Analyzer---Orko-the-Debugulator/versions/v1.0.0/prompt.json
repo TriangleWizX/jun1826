@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:37:41 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:03 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/7f781c7f-8a98-417c-96d5-588b351c93d3",
-    "alt": "Debugger-Analyzer - Orko the Debugulator"
+    "file": "thumbnail.png",
+    "alt": "Debugger-Analyzer - Orko the Debugulator",
+    "sha256": "cc54aabe1e7fece1a3b7fcfd42849a7b656ec2472ff76dc88bc9916bfc774ea4",
+    "bytes": 26675,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "d4f92b03-1a52-49e1-8ffa-c7f2ce8cabfa",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Debugger-Analyzer---Orko-the-Debugulator"
 }

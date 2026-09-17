@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 7:55:04 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:07 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "ExoMerge - Transcending Time and Space",
+    "sha256": "a0b5e3a659bbf027e8f92cdf20e41d6a1e94352eb684d4a2fe07bfe11f93c50c",
+    "bytes": 29791,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "93d09381-f321-4169-8206-1dc8149d3e41",
   "id": "93d09381-f321-4169-8206-1dc8149d3e41",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "ExoMerge---Transcending-Time-and-Space"
 }

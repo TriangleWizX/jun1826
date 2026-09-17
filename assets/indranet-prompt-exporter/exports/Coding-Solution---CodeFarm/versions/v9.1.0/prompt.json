@@ -20,7 +20,14 @@
   "tier": "FREE TIER",
   "created": "Mar 16, 2026, 7:58:43 PM (6 months ago)",
   "updated": "May 3, 2026, 11:31:44 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Coding Solution - CodeFarm",
+    "sha256": "be56e6b5a036a48a5d5fd84efb2da6799b05d9a6b9e1aac7fb6971b25378ff22",
+    "bytes": 27238,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "url": "https://indranet.collaborative-dynamics.com/prompt/19c0dba7-ee75-4d2d-afd0-2425be1ef819?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd",
   "uuid": "19c0dba7-ee75-4d2d-afd0-2425be1ef819",
@@ -39,5 +46,5 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial"
+  "status": "complete"
 }

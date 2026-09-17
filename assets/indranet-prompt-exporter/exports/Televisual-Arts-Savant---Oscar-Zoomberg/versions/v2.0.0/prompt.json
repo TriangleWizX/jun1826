@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:49:09 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:02 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Televisual Arts Savant - Oscar Zoomberg",
+    "sha256": "d5d2fd441d05ecc91dddb591ef9701ca1ce66137eb4166764e40926b652b6d78",
+    "bytes": 27169,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "94fa8d73-8392-4535-a33d-15e62b4b902c",
   "id": "94fa8d73-8392-4535-a33d-15e62b4b902c",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Televisual-Arts-Savant---Oscar-Zoomberg"
 }

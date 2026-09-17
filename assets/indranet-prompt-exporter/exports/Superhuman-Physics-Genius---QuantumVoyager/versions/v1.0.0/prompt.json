@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:37:30 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:09 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/f851e159-f3d7-4505-b32d-5ee8ebea46c6",
-    "alt": "Superhuman Physics Genius - QuantumVoyager"
+    "file": "thumbnail.png",
+    "alt": "Superhuman Physics Genius - QuantumVoyager",
+    "sha256": "d27fdb2d8264a76987e537485c08998ba040801c895f36541513ef26a2542303",
+    "bytes": 28014,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "121dcee1-8488-4843-94c4-fb2400fba20c",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Superhuman-Physics-Genius---QuantumVoyager"
 }

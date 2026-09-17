@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:18:59 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:04 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/60ba2c9c-f2a9-401f-bb73-0ca4351ba737",
-    "alt": "Certification Tutor - PRODEV  Microsoft"
+    "file": "thumbnail.png",
+    "alt": "Certification Tutor - PRODEV Microsoft",
+    "sha256": "18a68ffdcd80f7e2509ed19752b16b0c0e1888d38e81815db030a40bf8f91281",
+    "bytes": 24169,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "99bffbec-644a-45d2-9804-24a4a2336336",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Certification-Tutor---PRODEV-Microsoft"
 }

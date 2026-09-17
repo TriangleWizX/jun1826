@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:55:40 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:07 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/f06451b0-b243-4453-87e6-553049587fef",
-    "alt": "Cover"
+    "file": "thumbnail.png",
+    "alt": "Super Expert Geneticist - GeneWarden - ThinkTank",
+    "sha256": "bfaacda7533af0302ace37122b2a47287ae6b2869bdb0cad48a92617420faef1",
+    "bytes": 26779,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "92f73f1e-bec5-463b-98a7-23efea80cd36",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Super-Expert-Geneticist---GeneWarden---ThinkTank"
 }

@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 9:02:25 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:00 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/cee0eb0f-9dc4-48ad-bfa0-81d88eaf658d",
-    "alt": "Social Media Monster - Aria Linkwell - ThinkTank"
+    "file": "thumbnail.png",
+    "alt": "Social Media Monster - Aria Linkwell - ThinkTank",
+    "sha256": "5d5e277cc597ab4129bcc4fc1f5aa60b8ebd264e49a61680490be77195c85a9c",
+    "bytes": 24876,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Social-Media-Monster---Aria-Linkwell---ThinkTank"
 }

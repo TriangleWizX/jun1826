@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:19:35 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:04 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/2614944f-b346-4b46-98b4-d58fd135a5ab",
-    "alt": "Aesop"
+    "file": "thumbnail.png",
+    "alt": "Aesop",
+    "sha256": "66869346c9a020bbbfa66a24526f1653001f679b7537d7f464b1fe7d88004bf0",
+    "bytes": 25918,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "ae96526b-3b9a-43fc-a190-57984645224c",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Aesop"
 }

@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:08:24 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:09 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/b5422e94-c78a-4654-8251-2def60149064",
-    "alt": "PowerShell Coder - Optimus-Shell"
+    "file": "thumbnail.png",
+    "alt": "PowerShell Coder - Optimus-Shell",
+    "sha256": "7e3529ba7137605ac67ab0344bb8a6b6d4241684a5b67dbdc7750b6b6fc5467b",
+    "bytes": 25681,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "cb8c63bf-372e-407a-9511-6c00b69bc291",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "PowerShell-Coder---Optimus-Shell"
 }

@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:07:03 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:05 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/d46641c5-9929-4e19-8858-981af9f67584",
-    "alt": "Jerry the LLM Cognition Guy"
+    "file": "thumbnail.png",
+    "alt": "Jerry the LLM Cognition Guy",
+    "sha256": "686fa76339cf7d45b832afea2c68badfeeec41ab1662205276a662abc077f4ad",
+    "bytes": 26040,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "b201a3eb-7d78-4e7e-895c-af100e1ccdb4",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Jerry-the-LLM-Cognition-Guy"
 }

@@ -10,7 +10,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const ROOT_REAL = fs.realpathSync(ROOT);
 const ASSET_SOURCE_ROOT = path.join(ROOT, 'src', 'assets');
 const DEFAULT_ASSET_MANIFEST_PATH = path.join(ASSET_SOURCE_ROOT, 'data', 'asset-hash-manifest.json');
-const DEFAULT_SITEMAPS = Object.freeze(['pages-sitemap.xml', 'blog-sitemap.xml']);
+const DEFAULT_SITEMAPS = Object.freeze(['sitemap-core.xml', 'sitemap-blog.xml']);
 const HTML_EXTENSIONS = Object.freeze(['.html', '.shtml']);
 const HASHED_ASSET_RE = /\.[0-9a-f]{6}(?=\.[^.]+$)/i;
 const BUNDLE_HASH_RE = /\.[0-9a-f]{12}(?=\.(?:min\.)?[^.]+$)/i;
@@ -551,13 +551,20 @@ const resolveVirtualTarget = (target) => {
   if (!normalized || normalized === '.' || normalized === '..' || normalized.startsWith('../')) {
     throw new Error(`SSI virtual target escapes the workspace: ${target}`);
   }
-  const candidates = [
+  const candidateBases = [
     normalized,
     `${normalized}.html`,
     `${normalized}.shtml`,
     path.posix.join(normalized, 'index.html'),
     path.posix.join(normalized, 'index.shtml'),
   ];
+  const candidates = [];
+  for (const c of candidateBases) {
+    candidates.push(c);
+    candidates.push(path.posix.join('src', 'partials', c));
+    candidates.push(path.posix.join('src', c));
+    candidates.push(path.posix.join('dist', c));
+  }
   for (const candidate of candidates) {
     const absolutePath = path.resolve(ROOT, ...candidate.split('/'));
     const stat = lstatIfExists(absolutePath);

@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 7:52:24 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:07 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Music Industry Helper - Cadius",
+    "sha256": "5eadf6f9baaa422dd595a71278f4bad875a2d7c6a9725d0dfeb9fa9a6cfbdc68",
+    "bytes": 26298,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "6b90fdc6-ebae-49ed-b689-bda3503543a8",
   "id": "6b90fdc6-ebae-49ed-b689-bda3503543a8",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Music-Industry-Helper---Cadius"
 }

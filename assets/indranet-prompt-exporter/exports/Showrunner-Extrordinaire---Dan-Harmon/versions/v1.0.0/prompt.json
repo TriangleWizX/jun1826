@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 6:59:14 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:10 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/6e24a8ca-f19c-4166-8048-87c8e972c1d8",
-    "alt": "Showrunner Extrordinaire - Dan Harmon"
+    "file": "thumbnail.png",
+    "alt": "Showrunner Extrordinaire - Dan Harmon",
+    "sha256": "255eb6212051a98896cfa9e5dae5c3fdc3cd0740a59057d1c379dd729b8db6a6",
+    "bytes": 25452,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "3ef3e711-c1c2-476e-9305-1347ab9cb8ae",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Showrunner-Extrordinaire---Dan-Harmon"
 }

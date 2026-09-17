@@ -7,6 +7,14 @@ const contract = JSON.parse(fs.readFileSync(path.join(root, 'src/_data/free-intr
 const failures = [];
 
 function read(rel) {
+  const candidates = [
+    path.join(root, rel),
+    path.join(root, 'src', 'partials', rel),
+    path.join(dist, rel),
+  ];
+  for (const c of candidates) {
+    if (fs.existsSync(c)) return fs.readFileSync(c, 'utf8');
+  }
   return fs.readFileSync(path.join(root, rel), 'utf8');
 }
 

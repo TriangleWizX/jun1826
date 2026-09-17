@@ -33,7 +33,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 7:06:51 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:09 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "AI Encyclopedia - Pokedex",
+    "sha256": "fcc12b7be40b37f3de603f5d3ed773e00773e1dea13f7d67bd93f90496d55113",
+    "bytes": 28142,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "4cd5c9c9-d2e0-4272-8233-93f277968b73",
   "id": "4cd5c9c9-d2e0-4272-8233-93f277968b73",
@@ -52,6 +59,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "AI-Encyclopedia---Pokedex"
 }

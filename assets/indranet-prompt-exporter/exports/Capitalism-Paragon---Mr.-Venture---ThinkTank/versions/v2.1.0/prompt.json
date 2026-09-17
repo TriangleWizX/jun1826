@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:59:31 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:06 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/c93eb183-f235-4f45-bf20-a7538bdd9a04",
-    "alt": "Capitalism Paragon - Mr. Venture - ThinkTank"
+    "file": "thumbnail.png",
+    "alt": "Capitalism Paragon - Mr. Venture - ThinkTank",
+    "sha256": "971ec1953fa9bde7b7833ef7befda257462df3546b59014ae795cb30b2312b07",
+    "bytes": 26150,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "2ad745f3-79c5-440b-a6a0-e08b87c2bdb4",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Capitalism-Paragon---Mr.-Venture---ThinkTank"
 }

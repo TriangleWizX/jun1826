@@ -1,0 +1,62 @@
+{
+  "task": "Operationalize and verify the Week 38 cross-platform publishing target as exactly 100 placements: 30 original Instagram/Facebook posts plus 70 additional public platform-native placements across TikTok 16, YouTube Shorts 16, Snapchat 12, LinkedIn 10, Google Business Profile 7, Nextdoor 8, and Patch.com 1. Work offline; do not claim live publication without public URL evidence.",
+  "definition_of_done": [
+    {"id": "dod-1", "criterion": "The source plan and deployment handoff express the exact 30 + 70 = 100 math and preserve separate Meta-original and cross-platform counts."},
+    {"id": "dod-2", "criterion": "Every additional-platform allocation has a bounded slot range, native output expectation, and a per-slot record requiring a public URL before confirmation."},
+    {"id": "dod-3", "criterion": "Platform mapping preserves local brand, permission, volatile-fact, and no-invented-proof constraints without asserting unpublished results."},
+    {"id": "dod-4", "criterion": "Independent local verification passes and the coordinator reconciles all DoD evidence after workstream review."}
+  ],
+  "constraints": [
+    "Offline-only; no live publishing or external HTTP checks.",
+    "Preserve unrelated dirty and untracked work.",
+    "Ad Studio output remains excluded from public deployment bundles.",
+    "Do not invent testimonials, reach, availability, permissions, public URLs, or business outcomes.",
+    "Patch.com remains one editorial submission, not repeated reposts."
+  ],
+  "authorized_actions": ["read", "write", "recommend"],
+  "required_capabilities": ["agents", "copywriting", "debugging"],
+  "workstreams": [
+    {
+      "id": "plan-ledger",
+      "task": "Audit and implement the exact 100-placement allocation ledger in the Week 38 plan and deployment handoff.",
+      "deliverable": "A source-backed placement ledger with exact platform counts and per-slot confirmation rules.",
+      "contribution": "Owns the count math and ledger artifact.",
+      "dod_ids": ["dod-1", "dod-2"],
+      "depends_on": [],
+      "read_paths": ["tools/ads/CROSS-PLATFORM-PLAN-2026-W38.md", "tools/ads/CROSS-PLATFORM-DEPLOYMENT-WEEK1.md"],
+      "write_paths": ["tools/ads/CROSS-PLATFORM-DEPLOYMENT-WEEK1.md"],
+      "allowed_tools": ["sed", "rg", "apply_patch"],
+      "verification": ["Recompute platform total as 70 and grand total as 100.", "Confirm no aggregate range is counted as a published placement."],
+      "authorized_actions": ["read", "write", "recommend"],
+      "budget": {"max_attempts": 2, "tokens": 4000}
+    },
+    {
+      "id": "platform-safety",
+      "task": "Review the cross-platform playbooks and source concepts for native-format, permission, volatile-fact, and unsupported-claim risks.",
+      "deliverable": "An evidence-based safety and platform mapping review with bounded corrections only.",
+      "contribution": "Owns platform-native adaptation and claim-safety review.",
+      "dod_ids": ["dod-3"],
+      "depends_on": ["plan-ledger"],
+      "read_paths": ["tools/ads/CROSS-PLATFORM-PLAN-2026-W38.md", "tools/ads/CROSS-PLATFORM-DEPLOYMENT-WEEK1.md", "tools/ads/CODEX-HANDOFF-ADS.md"],
+      "write_paths": [],
+      "allowed_tools": ["sed", "rg"],
+      "verification": ["List each platform's native expectation and confirm it does not imply live publication.", "Flag any unsupported availability, permission, or outcome claim."],
+      "authorized_actions": ["read", "recommend"],
+      "budget": {"max_attempts": 2, "tokens": 4000}
+    },
+    {
+      "id": "completion-qa",
+      "task": "Independently verify the integrated Week 38 artifacts and Ad Studio tests, then reconcile every DoD criterion.",
+      "deliverable": "A completion review with commands, outputs, and explicit achieved or unproven status for each DoD ID.",
+      "contribution": "Owns independent verification and coordinator handoff evidence.",
+      "dod_ids": ["dod-4"],
+      "depends_on": ["plan-ledger", "platform-safety"],
+      "read_paths": ["tools/ads/AGY-CROSS-PLATFORM-BRIEF-2026-W38.json", "tools/ads/CROSS-PLATFORM-PLAN-2026-W38.md", "tools/ads/CROSS-PLATFORM-DEPLOYMENT-WEEK1.md", "assets/indranet-prompt-exporter/mcp/tests/test_goal_instructions.py"],
+      "write_paths": [],
+      "allowed_tools": ["python3", "npm", "node", "sed", "rg"],
+      "verification": ["Run npm run test:ads.", "Run a deterministic 70 + 30 = 100 ledger assertion.", "Report public URLs as unverified when none are present."],
+      "authorized_actions": ["read", "recommend"],
+      "budget": {"max_attempts": 2, "tokens": 4000}
+    }
+  ]
+}

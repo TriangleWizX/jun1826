@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:57:11 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:01 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/300809e0-94b5-4a9c-9206-f5354ee6ed37",
-    "alt": "Concept Mappter - Describo"
+    "file": "thumbnail.png",
+    "alt": "Concept Mappter - Describo",
+    "sha256": "ab17c7ad0edcdb7b34f4dad9c78c48533a623a0b41d1c01a5002b41d14b02405",
+    "bytes": 25703,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "119a6801-550e-40b6-8de5-96595fd049de",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Concept-Mappter---Describo"
 }

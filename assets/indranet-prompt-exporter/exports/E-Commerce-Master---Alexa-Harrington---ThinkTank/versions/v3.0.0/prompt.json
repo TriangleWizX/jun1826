@@ -39,8 +39,12 @@
   "created": "Mar 13, 2026, 8:10:37 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:05 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/ab795132-1bd5-4a65-8be7-e7400028d943",
-    "alt": "E-Commerce Master - Alexa Harrington - ThinkTank"
+    "file": "thumbnail.png",
+    "alt": "E-Commerce Master - Alexa Harrington - ThinkTank",
+    "sha256": "c374c925791240cfb428e949889747cd5ee2c4cbb09144c738ce6689b5289266",
+    "bytes": 26656,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "60fc6cfb-7f52-46b8-88c1-73de594283c3",
@@ -59,9 +63,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "E-Commerce-Master---Alexa-Harrington---ThinkTank"
 }

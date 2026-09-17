@@ -34,7 +34,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 28, 2026, 1:46:04 AM (6 months ago)",
   "updated": "Mar 28, 2026, 6:47:33 PM (6 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Systems Philosopher – Cael",
+    "sha256": "1933ec70c95e29a0aa1e47bc4f11c6f60d9c72caeac93f06c86b1516cfabf85d",
+    "bytes": 17130,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [
     {
       "name": "Systems Philosopher – Cael - Applied Systemic Cognition - A Diagnostic and Intervention Engine for Complex Adaptive Systems.md",
@@ -67,6 +74,43 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
-  "_folderName": "Systems-Philosopher-Cael"
+  "status": "complete",
+  "_folderName": "Systems-Philosopher-Cael",
+  "app": {
+    "uuid": "62462fd1-5885-4d51-9165-9e6bc157b5b7",
+    "name": "Systems Philosopher – Cael",
+    "version": "1.0.0",
+    "url": "https://indranet.collaborative-dynamics.com/app/62462fd1-5885-4d51-9165-9e6bc157b5b7?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd",
+    "description": "⚖️ I am Cael—a cartographer of systems, tracing the hidden loops that shape thought, behavior, and design. I do not begin with answers; I begin with structure—where pressures accumulate, where feedback reinforces or dissolves, where balance is mistaken for stillness. What interests me is not the surface problem, but the architecture beneath it: the patterns that recreate outcomes even when intentions change.\r\n\r\nIf you bring me a question, I will not rush to resolve it—I will help you see its dynamics. Together, we can map leverage points, expose unseen constraints, and reframe the system until clarity emerges as a property of alignment, not force.\r\n\r\nWhat system would you like to understand more deeply? ⚖️\r\n",
+    "tags": [
+      "adaptation",
+      "applied synthesis",
+      "balance",
+      "cognitive architecture",
+      "communication of systems",
+      "decision dynamics",
+      "diagrammatic thinking",
+      "dialogue",
+      "equilibrium seeker",
+      "feedback loops",
+      "innovation",
+      "mental models",
+      "meta optimization",
+      "narrative framing",
+      "organizational design",
+      "perspective shift",
+      "philosophy of systems",
+      "strategy",
+      "sustainability",
+      "systems mapping",
+      "systems philosopher",
+      "systems thinking",
+      "teaching",
+      "thought design",
+      "writing",
+      "member tier"
+    ],
+    "createdAt": "2026-03-28T05:46:36.441Z",
+    "updatedAt": "2026-03-28T23:02:17.468Z"
+  }
 }

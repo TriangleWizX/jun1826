@@ -73,7 +73,6 @@
         "/class-rules",
         "/community-partners",
         "/contact",
-        "/elite-concierge",
         "/free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny",
         "/friday-night-fanatics",
         "/guarantee-terms",
@@ -2234,7 +2233,7 @@
       "memberRoutes": [
         "/free-bjj-intro-tannersville-ny"
       ],
-      "rejectedCount": 2469,
+      "rejectedCount": 2476,
       "rejectedSelectors": [
         "\n  .card-group > .card:not(:first-child) .card-footer",
         "\n  .card-group > .card:not(:first-child) .card-header",
@@ -2429,6 +2428,7 @@
         " .container-sm",
         " .container-xl",
         " .disabled > .page-link",
+        " .editorial-actions",
         " .form-check-input.is-invalid",
         " .form-check-input.is-invalid ~ .form-check-label",
         " .form-check-input.is-invalid:checked",
@@ -2496,6 +2496,7 @@
         " .offcanvas.hiding",
         " .offcanvas.show",
         " .offcanvas.show:not(.hiding)",
+        " .page-book-intro .btn-outline-dark",
         " .ss-culture-explanation",
         " .ss-culture-explanation > div",
         " .was-validated .form-select:invalid:not([multiple])[size=\"1\"]",
@@ -4152,6 +4153,11 @@
         ".page-book-intro #first-visit-calendar.is-ready",
         ".page-book-intro #youth-choices",
         ".page-book-intro .form-control:hover",
+        ".page-book-intro .pb-starting-choice",
+        ".page-book-intro .pb-starting-choice input",
+        ".page-book-intro .pb-starting-choice label",
+        ".page-book-intro .pb-starting-choice legend",
+        ".page-book-intro .pb-starting-choice__options",
         ".page-book-intro [aria-busy=\"true\"]",
         ".page-book-intro [data-calendar-status].text-danger",
         ".page-item:first-child .page-link",
@@ -7223,7 +7229,7 @@
   "schemaVersion": 1,
   "summary": {
     "bundleCount": 3,
-    "rejectedSelectorCount": 6971,
-    "routeCount": 104
+    "rejectedSelectorCount": 6978,
+    "routeCount": 103
   }
 }

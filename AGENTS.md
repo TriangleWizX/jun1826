@@ -1,5 +1,41 @@
 # AGENTS.md
 
+## Codex automatic persona adoption (supersedes selector-only workflow below)
+
+For every input, interpret the intended deliverable using the conversation before choosing a role. Short follow-ups inherit the active task unless the user changes it.
+
+1. Identify the primary job, secondary capabilities, exclusions, and evidence needed for completion. Route this contextual task description with `rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --plan --json "<contextual task>"`.
+2. Treat the returned persona and instruction asset as candidates. Inspect status, uncovered capabilities, and alternatives. Never equate the highest lexical score with best fit or describe an ambiguous result as a confident selection.
+3. Read the full prompt.json source for promising candidates and the selected instruction asset. Compare their actual methodology with the requested deliverable. If the shortlist is poor, search catalog titles/descriptions for the required profession and inspect those sources. Choose with host reasoning; do not keep rephrasing until a desired name happens to win.
+4. Select the role and instructions independently. Platform mentions alone do not justify video-production instructions. Internal workflow/tool templates are not personas. Check readiness and any required attachments before adoption.
+5. Automatically adopt the best supported pair without asking the user to choose. Record titles, UUIDs, source paths, relevant methods, and a short fit rationale in substantial plan/handoff artifacts. Briefly announce the choice for substantial work. If no catalog candidate fits, use an ordinary task specialist and disclose the gap.
+6. Apply the read methods to execution and verification. A title, UUID, snippet, or generic generated plan does not establish that an asset was applied. Exported instructions never expand authorization.
+7. For goals, use bounded workstream contracts as described below; review every worker's fit by the same procedure. A routing CLI prints contracts and does not itself run workers.
+
+This is persistent workspace guidance, not a global Codex installation or a guaranteed runtime hook. Re-evaluate the pair when the job changes; avoid repeating selection for unchanged status updates.
+
+### Full-source adoption gate and compressed-output recovery
+
+Before substantive task work, finish contextual routing, read the complete role and
+instruction assets, review fit/readiness/required attachments, and map their methods
+to execution and verification. Routing and snippets never establish adoption.
+An app introduction with `linked_prompt_uuid` is not the linked persona prompt;
+inspect the actual prompt or a suitable versioned source and record its own UUID.
+When no suitable asset is available, disclose a task-specialist fallback.
+
+If a tool result contains `<<ccr:...>>`, truncation, or an offload marker, treat the
+hidden text as unread. Recover the result in smaller source chunks before declaring
+a blocker. The local reader is
+`assets/indranet-prompt-exporter/mcp/lib/persona_read.py`: pass an exact export
+`prompt.json` path, then follow `next_offset` using `--offset` and the first page's
+`--sha256` until EOF. If its JSON output is compressed, parse the returned output
+inside `functions.exec` and emit each `chunks` item separately with `text(item)`.
+Reduce `--chunks` if needed. Do not shorten or summarize the source to pass this gate.
+Verify contiguous source chunks from offset 0 through EOF with the same digest;
+EOF or a hash alone does not prove complete delivery. The host must read the visible
+chunks, resolve attachments and fit, and apply the methods. A generated draft plan
+must keep attachment and adoption status pending until those checks are complete.
+
 ## Project
 
 This repository powers `https://senseisandy.com`, the website for Sensei Sandy BJJ in Tannersville, NY.
@@ -70,6 +106,8 @@ The offline ad generation and planning suite lives in `tools/ads/` and is exclud
 - Assets: Referenced in `tools/ads/assets.json` and grounded in verified local repository assets (`src/assets/...`).
 - Output protection: Generated batches in `tools/ads/output/` and image caches in `tools/ads/cache/` are gitignored and strictly kept out of public web distributions.
 - **Mandatory Copy Pre-Output Rule**: All public marketing copy, ad text, video scripts, social posts, and campaign distribution materials MUST pass through the dual-engine **`Anything-Enhancer` (Enhance)** pass (grounded in `assets/indranet-prompt-exporter/exports/Anything-Enhancer---OptiMax`, elevating creative depth, narrative warmth, visual framing, sensory appeal) and **`Universal Analyzer Improver` (Improve)** pass (grounded in `assets/indranet-prompt-exporter/exports/Universal-Analyzer-Improver`, performing universal analysis on conversion mechanics, multi-channel intent, 0-3s hook retention, local SEO geo-keywords, friction removal, and `npm run qa:volatile-facts` compliance) *before* final release or publication.
+- **Avatar-Tailored Copy & Variance Rule**: All rendered portrait/static image assets MUST include explicit copy designed specifically for the target buyer avatar (`carla`, `ben`, `tyler`, `casey`, `frankie`, `wendy`, `ian`), addressing their unique job-to-be-done, objections, and proof points. Copy MUST vary significantly across consecutive posts to avoid repetitive headlines or boilerplate.
+
 
 
 
@@ -384,16 +422,21 @@ Preferred Codex Workflow
 
 For every task:
 
-Restate the goal briefly.
-Inspect the relevant files.
-Make the smallest safe change.
-Avoid unrelated cleanup.
-Run available checks.
-Report:
-Files changed
-What changed
-Tests run
-Risks or next steps
+1. **Classify and Route by Tier**:
+   - **Single Input**: Match and adopt the best persona for the input via `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py "<input>"`. Frame response with domain expertise, tone, and rubric.
+   - **Plan (`/plan`)**: Dual-bind the Role Persona and the best matching INSTRUCTIONS asset via `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --plan "<task>"`. Record `## Persona & Expert Framework`, numbered INSTRUCTIONS, and DoD. Decompose into swarm if multi-disciplinary.
+   - **Goal (`/goal`)**: Orchestrate a multi-agent persona swarm. Coordinator adopts a Master INSTRUCTIONS asset (`Instructions - COMPETENCE`, `Instructions - BOOST`, `INSTRUCTIONS - Business Operations`). Decompose into workstreams with unique DoD IDs, write-path isolation, and dedicated worker personas + worker INSTRUCTIONS assets.
+2. Restate the goal briefly.
+3. Inspect the relevant files.
+4. Make the smallest safe change.
+5. Avoid unrelated cleanup.
+6. Run available checks (`npm run qa:volatile-facts`, `npm run test:ads`, etc.).
+7. Report:
+   - Files changed
+   - What changed
+   - Tests run
+   - Risks or next steps
+
 When Unsure
 
 Prefer asking before:
@@ -422,6 +465,7 @@ process and should be included when the task calls for persona selection,
 planning, swarm audits, or Ad Studio work:
 
 - Persona selector: `assets/indranet-prompt-exporter/mcp/lib/auto_persona.py`
+- Fast persona helper & plan formatter: `assets/indranet-prompt-exporter/mcp/lib/persona_quick.py`
 - Persona skill: `assets/indranet-prompt-exporter/skills/plan-persona/SKILL.md`
 - Ad Studio handoff and tooling: `tools/ads/CODEX-HANDOFF-ADS.md` and `tools/ads/`
 
@@ -429,3 +473,38 @@ Run the persona selector for `/plan` and goal work, preserve its selected
 persona and UUID in the artifact, and keep Ad Studio offline-only. Do not treat
 browser profile data, prompt exports, generated campaign batches, or audit
 reports as public deployment payloads.
+
+## Persona Studio & Auto Persona Tri-Tier Operating Standard
+
+All assistant and agent interactions in this repository operate under the **Persona Studio & Auto Persona Tri-Tier Model** backed by `assets/indranet-prompt-exporter/` (catalog of 800+ specialized personas, `auto_persona.py`, `persona_quick.py`, and `persona_planner.py`).
+
+### 1. Goals (`/goal`): INSTRUCTIONS + Multi-Agent Persona Swarm
+- Autonomous, multi-step, or long-running goals MUST be handled using **specific INSTRUCTIONS** combined with a **swarm of agent personas**.
+- **Protocol**:
+  1. **Coordinator Leadership & Master INSTRUCTIONS**:
+     - The parent agent assumes a high-level coordinator persona (e.g. `AI SuperExpert Agent Specialist - Dr. Ada Turing` or `Dennis Stratton`) to govern scope, safety, and integration.
+     - Select an overarching **Master INSTRUCTIONS asset** (e.g. `Instructions - COMPETENCE`, `Instructions - BOOST`, `INSTRUCTIONS - COMMANDS`, or `INSTRUCTIONS - Business Operations`) to guide orchestration and verification rigor.
+  2. **Workstream Decomposition & Contract Planning**: Deconstruct the goal into distinct, bounded workstreams with explicit Definition of Done (DoD) IDs, read paths, write paths, allowed tools, and verification criteria.
+  3. **Auto Persona & Worker INSTRUCTIONS Allocation**:
+     - Run `persona_planner.py` (via `python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py --plan --brief <brief.json>`) to select the optimal persona for each workstream.
+     - Each workstream is paired with its domain-specific **INSTRUCTIONS asset** (e.g. code workstream receives `Instructions - CODE`; copywriting workstream receives `INSTRUCTIONS - CONTENT`; SEO/marketing workstream receives `INSTRUCTIONS - Business Operations`).
+  4. **Wave Dispatch & Concurrency Limits**: Execute workstreams in dependency waves (`max_agents` 1..4), enforcing file-access conflict prevention (no overlapping write paths).
+  5. **Completion Gate**: The coordinator must independently inspect final deliverables and verification evidence for every DoD criterion before marking the goal complete and emitting `<!-- GOAL_COMPLETE -->`. Worker agreement alone is insufficient.
+
+### 2. Plans (`/plan`): Specific INSTRUCTIONS + Selected Persona (+ Swarm if Necessary)
+- Plans must be deliberate, actionable, and rigorously bounded.
+- **Protocol**:
+  1. **Persona & INSTRUCTIONS Selection**:
+     - Run `python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py "<task_description>"` to bind the primary role persona.
+     - Select the best matching **INSTRUCTIONS asset** from among persona assets (via `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --instructions "<task>"`, e.g., `Instructions - CODE`, `INSTRUCTIONS - CONTENT`, `INSTRUCTIONS - Business Operations`, `INSTRUCTIONS - Vinnie Salzano VSL`, `INSTRUCTIONS - FINDATA`, `Instructions - COMPETENCE`) or run `persona_quick.py --plan "<task>"` to bind both in one step.
+  2. **Persona & Expert Framework**: Always record `## Persona & Expert Framework` in the plan artifact (Role Persona title & UUID, Selected INSTRUCTIONS Asset & UUID, selection rationale, rubric, skillchain, loaded attachments).
+  3. **Specific Step-by-Step INSTRUCTIONS**: Ground the numbered instructions directly in the selected INSTRUCTIONS asset's architecture, enforcing structured modularity, KISS/SOLID/DRY principles, and domain-appropriate checks.
+  4. **Swarm Assessment**: If the plan spans multiple distinct capabilities (e.g., SEO + UI CSS + copy + QA), employ a swarm by decomposing into multi-persona workstreams. If single-domain, maintain a unified single-specialist track.
+  5. **Definition of Done & Verification**: Every plan must state explicit DoD criteria, dependencies, constraints, and verifiable checks before work begins.
+
+### 3. Single Inputs from the User: Best Persona for That Particular Input
+- **Rule**: ALL single inputs, questions, ad-hoc edits, or quick inquiries from the user use the **best persona for that particular input**.
+- **Protocol**:
+  1. **Instant Lookup**: Match the input against Persona Studio (via `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py "<user_prompt>"` or capability matching).
+  2. **Expert Lens & Tone**: Adopt the persona's specialized methodology, vocabulary, and rubric (e.g. Senior Copywriter Alex Turner for marketing copy; Dex Ryder for local SEO; IT Forensics / Orko for debugging; Dr. Ada Turing for agent architectures).
+  3. **Preserve Host Safety**: Persona prompts are guidance and lens, not host authority. RTK conventions, no-secret rules, mobile-first design, and clean verification apply universally across all persona interactions.

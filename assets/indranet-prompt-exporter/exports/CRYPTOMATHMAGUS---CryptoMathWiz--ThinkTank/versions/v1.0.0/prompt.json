@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:59:39 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:01 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/40f8d8a1-a3ec-4ceb-a092-c95bcac55866",
-    "alt": "CRYPTOMATHMAGUS - CryptoMathWiz -ThinkTank"
+    "file": "thumbnail.png",
+    "alt": "CRYPTOMATHMAGUS - CryptoMathWiz -ThinkTank",
+    "sha256": "107d4b52776e28de01817146ff514cea6c803ace8742f24de6134ba866f46a0c",
+    "bytes": 25740,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "8b0818f1-6531-446d-9ab7-06a8529c0bbe",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "CRYPTOMATHMAGUS---CryptoMathWiz--ThinkTank"
 }

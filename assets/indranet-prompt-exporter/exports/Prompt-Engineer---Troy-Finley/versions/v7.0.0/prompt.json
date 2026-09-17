@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:38:34 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:09 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/6a4a2dac-4d6c-44bb-a9b3-f2adbf33d6c0",
-    "alt": "Prompt Engineer - Troy Finley"
+    "file": "thumbnail.png",
+    "alt": "Prompt Engineer - Troy Finley",
+    "sha256": "0f02609214509a7563d61abc2176c51f08f1a53e17f8d471971483f9d3ddbb3e",
+    "bytes": 25057,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Prompt-Engineer---Troy-Finley"
 }

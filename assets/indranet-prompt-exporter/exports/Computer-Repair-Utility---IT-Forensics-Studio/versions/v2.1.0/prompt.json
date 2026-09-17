@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:34:58 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:04 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/7a65e5a2-9db2-49e2-8fab-e18703d58e69",
-    "alt": "Computer Repair Utility - IT Forensics Studio"
+    "file": "thumbnail.png",
+    "alt": "Computer Repair Utility - IT Forensics Studio",
+    "sha256": "ea8cb48303ff037077241e5d5bcaf23bf075661f781d23862bab63d0c0f31b59",
+    "bytes": 25445,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "9d73053d-f13d-4972-a15d-cec366c8e94c",
@@ -28,9 +32,7 @@
   "scraped_at": "2026-09-15T17:47:37.949Z",
   "additional_files": [],
   "missing_fields": [],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Computer-Repair-Utility---IT-Forensics-Studio"
 }

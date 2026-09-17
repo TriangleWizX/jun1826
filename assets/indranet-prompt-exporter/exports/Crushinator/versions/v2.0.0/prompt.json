@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:53:39 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:07 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/956c442d-a810-446b-b20b-891a3c5ad49c",
-    "alt": "Crushinator"
+    "file": "thumbnail.png",
+    "alt": "Crushinator",
+    "sha256": "6c650d0b1a48bc76d58799986d3b4b6ffa876750c3f3c255deacc1e10ff96613",
+    "bytes": 24297,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "d6a58395-b0e5-421c-b94a-846b1226d34a",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Crushinator"
 }

@@ -14,28 +14,32 @@ The **Indranet Prompt Exporter & Persona Router** suite in `assets/indranet-prom
 ### Key Operational Rules
 1. **Never Commit Credentials / Browser Profiles**: `browser_user_data/` and exported private prompt tokens are strictly `.gitignore`d or protected from public release. Never commit OAuth tokens, cookies, or credentials.
 2. **Offline-First Router**: `auto_persona.py` runs 100% locally against `assets/indranet-prompt-exporter/exports/` without requiring live network connections.
-3. **AGY Policy Invariant**:
-   - For every `/plan` or complex task, run `PYTHONPATH=. python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py "<task_description>"` to select the optimal persona (e.g. Dennis Stratton PM, Pythia, Solon, Orko, Anything-Enhancer, Universal Analyzer-Improver).
-   - Incorporate the selected persona's domain guidelines, rubric, and skillchain into the plan document under `## Persona & Expert Framework`.
+3. **Tri-Tier Operating Invariants for Codex**:
+   - **Single Inputs**: All single inputs use the best persona for that particular input (instant lookup via `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py "<prompt>"` in ~26ms). Adopt the persona's expert lens, rubric, and tone.
+   - **Plans (`/plan`)**: Dual-bind the Role Persona and best matching **INSTRUCTIONS Asset** (`persona_quick.py --plan "<task>"` or `--instructions "<task>"`). Emits `## Persona & Expert Framework`, numbered `## Specific INSTRUCTIONS` grounded in the instruction asset, and DoD. Swarm if multi-disciplinary.
+   - **Goals (`/goal`)**: Orchestrate a multi-agent persona swarm. Coordinator adopts a Master INSTRUCTIONS asset (`Instructions - COMPETENCE`, `Instructions - BOOST`, `INSTRUCTIONS - Business Operations`). Workstreams receive dedicated worker personas + worker INSTRUCTIONS assets with write-path isolation and wave execution.
 
 ---
 
 ## 2. CLI Execution & Verification Reference
 
 ```bash
-# 1. Automatic Persona Selection for Task
-rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py "offer a handoff to codex"
+# 1. Fast Persona Lookup for Single Inputs (<26ms)
+rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py "troubleshoot mobile overflow"
 
-# 2. JSON Output Mode with Compiled Guidance
-rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py "SEO audit" --json
+# 2. Pick Best INSTRUCTIONS Asset Among Persona Assets
+rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --instructions "refactor python parser"
 
-# 3. Execution Plan Brief Mode (Multi-agent workstreams)
-rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py --plan --max-agents 4 "full site refactor"
+# 3. Generate Full Plan with Persona + INSTRUCTIONS Asset Bound
+rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --plan "adult schedule section refactor"
 
-# 4. Catalog Audit Mode (Check exports integrity)
+# 4. Multi-Agent Swarm Execution Plan Brief Mode
+rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py --plan --brief /path/to/brief.json
+
+# 5. Catalog Audit Mode (Check exports integrity)
 rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py --audit
 
-# 5. Run Unit Test Suite
+# 6. Run Persona Unit Test Suite
 rtk proxy python3 -m unittest discover -s assets/indranet-prompt-exporter/mcp/tests -p 'test_*.py'
 ```
 

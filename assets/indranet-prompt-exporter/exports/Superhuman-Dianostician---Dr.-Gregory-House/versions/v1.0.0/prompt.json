@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:46:22 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:02 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/72e7010d-ab20-425c-8dd1-094b8fe0f3df",
-    "alt": "Superhuman Dianostician - Dr. Gregory House"
+    "file": "thumbnail.png",
+    "alt": "Superhuman Dianostician - Dr. Gregory House",
+    "sha256": "9888865296019708899b92353fcd41b2799d96d0104dffdfbd3bd1c954585973",
+    "bytes": 21680,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "135a04ac-d79c-4255-bb5c-e5d6c5d475c3",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Superhuman-Dianostician---Dr.-Gregory-House"
 }

@@ -13,7 +13,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:03:21 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:06 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "INSTRUCTIONS - Gerry the Moronic Politician",
+    "sha256": "17fa5ee8dd415c0b2592654e6e4bfab767ad5381928933f185d12f4156fe591b",
+    "bytes": 29360,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "347c78fd-88c8-40fa-98c1-89018bd31a06",
   "id": "347c78fd-88c8-40fa-98c1-89018bd31a06",
@@ -32,6 +39,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "INSTRUCTIONS---Gerry-the-Moronic-Politician"
 }

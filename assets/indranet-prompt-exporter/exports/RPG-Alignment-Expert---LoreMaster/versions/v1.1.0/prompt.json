@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:48:27 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:08 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/64da1bb1-c798-4f4f-9d7d-c560e98c882a",
-    "alt": "RPG Alignment Expert - LoreMaster"
+    "file": "thumbnail.png",
+    "alt": "RPG Alignment Expert - LoreMaster",
+    "sha256": "63b5d61984fdec44bd7f0cf4dc67342ca196c75f130e87d7f160231c275050f1",
+    "bytes": 25834,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "f11f7d6c-9754-4384-9bbf-fd7c592bb041",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "RPG-Alignment-Expert---LoreMaster"
 }

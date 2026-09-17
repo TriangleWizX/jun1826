@@ -23,7 +23,14 @@
   "tier": "MEMBER TIER",
   "created": "Aug 10, 2026, 1:45:39 PM (about 1 month ago)",
   "updated": "Aug 10, 2026, 1:46:25 PM (about 1 month ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Gridmason",
+    "sha256": "bb90fcd72c11ed942a350ea1bb6b97dcd1a9a5cb49c1038c062fddfcfc9a7723",
+    "bytes": 27738,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [
     {
       "name": "Gridmason T-Member v0.1.0.zip",

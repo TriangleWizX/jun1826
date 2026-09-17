@@ -1,6 +1,7 @@
 import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 import { ROOT, readHtmlWithSsi } from './url-qa-lib.mjs';
 
@@ -430,8 +431,13 @@ const assertMobileOpen = (snapshot, label) => {
 
 const runStaticAudit = async (reason) => {
   console.warn(`Browser nav audit unavailable (${reason}). Running static nav contract audit.`);
+  const navPath = [
+    path.join(ROOT, 'src/partials/nav-include.html'),
+    path.join(ROOT, 'dist/nav-include.html'),
+    path.join(ROOT, 'nav-include.html')
+  ].find((p) => { try { return fsSync.existsSync(p); } catch { return false; } }) || path.join(ROOT, 'nav-include.html');
   const [navHtml, componentsCss] = await Promise.all([
-    fs.readFile(path.join(ROOT, 'nav-include.html'), 'utf8'),
+    fs.readFile(navPath, 'utf8'),
     fs.readFile(path.join(ROOT, 'assets/css/components.css'), 'utf8')
   ]);
 

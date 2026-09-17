@@ -3,6 +3,7 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 const HTACCESS_PATH = path.join(ROOT, ".htaccess");
+const SRC_HTACCESS_PATH = path.join(ROOT, "src", ".htaccess");
 const LEGACY_REDIRECTS_PATH = path.join(ROOT, "config", "legacy-redirects.json");
 const URL_CONTRACT_PATH = path.join(ROOT, "config", "url-contract.json");
 
@@ -190,9 +191,18 @@ const main = async () => {
   }
 
   if (write) {
+    let changed = false;
     if (desiredHtaccess !== currentHtaccess) {
       await fs.writeFile(HTACCESS_PATH, desiredHtaccess, "utf8");
-      console.log("Updated .htaccess managed legacy redirect block.");
+      changed = true;
+    }
+    const currentSrcHtaccess = await fs.readFile(SRC_HTACCESS_PATH, "utf8").catch(() => null);
+    if (desiredHtaccess !== currentSrcHtaccess) {
+      await fs.writeFile(SRC_HTACCESS_PATH, desiredHtaccess, "utf8");
+      changed = true;
+    }
+    if (changed) {
+      console.log("Updated .htaccess and src/.htaccess managed legacy redirect block.");
       return;
     }
     console.log(".htaccess managed legacy redirect block already up to date.");

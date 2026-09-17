@@ -10,8 +10,12 @@
   "created": "Apr 4, 2026, 5:21:52 AM (5 months ago)",
   "updated": "Apr 4, 2026, 5:22:45 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/b933edf5-4c21-495a-987b-6d1f43fba0a0",
-    "alt": "Multiversal Scientist - Rick Sanchez"
+    "file": "thumbnail.png",
+    "alt": "Multiversal Scientist - Rick Sanchez",
+    "sha256": "760ac9ea57ccee0657cbd81b7fc76cfd01cc2e25be37bf00ef831852569b91b6",
+    "bytes": 16237,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "107a5411-fc37-4344-af1b-568b8924587e",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Multiversal-Scientist---Rick-Sanchez"
 }

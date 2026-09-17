@@ -12,26 +12,35 @@
 ## 1. Governance & Quality Assurance Frameworks
 
 ### 1.1 Verified Persona Framework Architecture
-This repository integrates persona prompts from the Indranet Persona Library (`assets/indranet-prompt-exporter/mcp/lib/auto_persona.py`) and anti-slop skills. Dedicated handoff available at [`assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md):
+This repository integrates persona prompts from the Indranet Persona Library (`assets/indranet-prompt-exporter/mcp/lib/auto_persona.py`, `persona_quick.py`) and anti-slop skills under a binding **Tri-Tier Operating Model**:
+
+1. **Single Inputs**: Best persona dynamic selection (`python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py "<prompt>"`).
+2. **Plans (`/plan`)**: Dual-binding of Role Persona + best matching **INSTRUCTIONS Asset** (`persona_quick.py --plan "<task>"` / `--instructions "<task>"`).
+3. **Goals (`/goal`)**: Master INSTRUCTIONS framework for coordinator + multi-agent swarm with workstream contracts and worker-specific INSTRUCTIONS assets.
+
+Dedicated handoffs available at [`assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md`](file:///home/twizss/Documents/ssbjjweb/tmb/assets/indranet-prompt-exporter/CODEX-HANDOFF-INDRANET.md) and [`persona_studio_onboarding_handbook.md`](file:///home/twizss/.gemini/antigravity-cli/brain/911c8981-c7a2-4e70-a3ad-4b40606422df/persona_studio_onboarding_handbook.md):
 
 ```mermaid
 flowchart TD
-    TaskDescription["Task Description / Content Draft"] --> AutoPersona["auto_persona.py Selection Engine"]
-    AutoPersona --> DennisPM["Dennis Stratton PM Persona\n(2847c3fe-8128-45fa-91c5-ab3dfba20684)\nSocio-Technical Alignment & Decision Governance"]
-    AutoPersona --> AnythingEnhancer["Anything-Enhancer Persona\n(4a702064-50b8-4fbb-875c-2f3600c8d6dc)\nEnhance Pass: Creative Depth & Tone"]
-    AutoPersona --> UniversalAnalyzer["Universal Analyzer-Improver Persona\n(65808004-23a5-42ae-babe-1dbe85bfd1cf)\nUniversal Improve Pass: Structured Analysis & IMP Iteration"]
-    UniversalAnalyzer --> MuskChain["GLOB=E.MUSK Skill Chain\nElon Musk 5-Step Questioning Algorithm"]
-    AnythingEnhancer --> EnhancerPass["1. Enhance Pass\nCreative Depth, Tone & Sensory Appeal"]
-    UniversalAnalyzer --> ImproverPass["2. Improve Pass\n0-3s Hook, Geo-SEO & Volatile Facts Safety"]
-    EnhancerPass --> StopSlop["3. Stop-Slop Filter (Hardik Pandya)\nTarget Score >= 40/50: Active Voice, No Em-Dashes, Zero AI Tells"]
-    ImproverPass --> StopSlop
-    StopSlop --> FinalRelease["Verified Release Artifact"]
+    UserPrompt["Codex Task / Goal / Plan"] --> TriTier{"Tri-Tier Classifier"}
+    TriTier -->|"Single Input"| QuickPersona["persona_quick.py\nBest Persona Adoption (<26ms)"]
+    TriTier -->|"/plan"| PlanDual["persona_quick.py --plan\nDual-Bind: Role Persona + INSTRUCTIONS Asset"]
+    TriTier -->|"/goal"| SwarmPlan["auto_persona.py --plan --brief\nMaster INSTRUCTIONS + Swarm Contracts"]
+    
+    PlanDual --> PlanDoc["Implementation Plan\n## Persona & Expert Framework\n## Specific INSTRUCTIONS"]
+    SwarmPlan --> Waves["Dependency Waves & DoD Verification Gates"]
 ```
 
-#### 1. Dennis Stratton (Project Management Persona)
-- **UUID**: `2847c3fe-8128-45fa-91c5-ab3dfba20684`
-- **Role**: Project management, socio-technical alignment, decision governance, risk transparency.
-- **Contract**: Zero-waste context handoffs, unambiguous single sources of truth, runnable CLI verification commands.
+#### Key Architecture Personas & Instruction Sets:
+- **Dennis Stratton (PM)**: `2847c3fe-8128-45fa-91c5-ab3dfba20684` — Decision governance & handoffs.
+- **Dr. Ada Turing (Swarm Coordinator)**: `5915f1d9-9acc-41bf-b8be-66baf6f3140c` — Swarm leadership & wave synthesis.
+- **Dex Ryder (Local Site Commander)**: `fc749ccb-f42b-4b36-afdf-44e7aae9c6ef` — Local SEO, semantic HTML, mobile-first performance.
+- **Master Instructions Assets**:
+  - `Instructions - CODE` (`25a8fe8a-c164-4e8e-8236-3a6585bfa165`)
+  - `INSTRUCTIONS - CONTENT` (`6e94db8f-e23d-4387-8cc6-bac209e890aa`)
+  - `INSTRUCTIONS - Business Operations` (`c3369696-d996-447e-8973-5f2cd73d33c9`)
+  - `Instructions - COMPETENCE` (`e144b81f-10ea-41a6-a06c-03d69dfb738f`)
+  - `INSTRUCTIONS - Vinnie Salzano VSL` (`59b0d954-cf57-433a-b31f-d55dd5e1e226`)
 
 #### 2. Anything-Enhancer (Genius Engine Persona)
 - **UUID**: `4a702064-50b8-4fbb-875c-2f3600c8d6dc`

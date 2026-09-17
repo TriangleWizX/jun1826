@@ -11,8 +11,12 @@
   "created": "Mar 13, 2026, 8:46:49 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:02 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/1830e10c-1d3d-49fb-983b-c5308d0dc83d",
-    "alt": "INSTRUCTIONS - CONCEIVE"
+    "file": "thumbnail.png",
+    "alt": "INSTRUCTIONS - CONCEIVE",
+    "sha256": "690e605be3956b51fbf3958765bd4177cc842cec54c4314b83ca1cf5b3b7153b",
+    "bytes": 28696,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "0bf2f911-8a69-4526-8d5e-ba87bdcdec85",
@@ -31,9 +35,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "INSTRUCTIONS---CONCEIVE"
 }

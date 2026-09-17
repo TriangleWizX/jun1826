@@ -9,7 +9,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:02:39 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:06 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Sub-Genius Eidolon - J.R. Bob Dobbs",
+    "sha256": "58926319c3ff6d85f4562d81a0ed3456aa00646af7d3243d5aefc3c54f6eebf4",
+    "bytes": 27156,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "eaf2ee99-d577-47f1-87a1-c6065134e7e8",
   "id": "eaf2ee99-d577-47f1-87a1-c6065134e7e8",
@@ -28,6 +35,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Sub-Genius-Eidolon---J.R.-Bob-Dobbs"
 }

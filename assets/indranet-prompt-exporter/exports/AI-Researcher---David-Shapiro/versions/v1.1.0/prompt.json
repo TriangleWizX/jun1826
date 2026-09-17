@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 9:08:05 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:00 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/ba385510-c046-45f2-81bf-1fc6d8a2a0dd",
-    "alt": "AI Researcher - David Shapiro"
+    "file": "thumbnail.png",
+    "alt": "AI Researcher - David Shapiro",
+    "sha256": "ca1ae703fc574e4f9a709704d9f84bf66c12b0c6db187cdcc7c51bbc1c160c9a",
+    "bytes": 30700,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "1de89564-39af-43ee-bf1b-5a1f252ab644",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "AI-Researcher---David-Shapiro"
 }

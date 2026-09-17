@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:45:07 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:08 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/3a08ef39-aa35-4c75-bcdb-da6a8873f6ed",
-    "alt": "Career Counselor - CAREER-X"
+    "file": "thumbnail.png",
+    "alt": "Career Counselor - CAREER-X",
+    "sha256": "7d5a3f47ff5f917dd3c583ac22231c680fa82128da3d06c7bae54527a022a807",
+    "bytes": 27936,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "1c7c3de7-72a5-4dc7-8045-80d0cecd1dc1",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Career-Counselor---CAREER-X"
 }

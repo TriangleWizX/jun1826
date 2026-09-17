@@ -40,7 +40,14 @@
   "tier": "MEMBER TIER",
   "created": "Mar 13, 2026, 8:18:28 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:04 AM (5 months ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Public Intellectual - Noam Chomsky",
+    "sha256": "ab51abb995efc516b419ee4b19e05a90fb792c11c0b36ddb355b0c04d0e6a5b5",
+    "bytes": 24412,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [],
   "uuid": "03eba9fb-85e2-44b3-aaf1-3dba53e1443a",
   "id": "03eba9fb-85e2-44b3-aaf1-3dba53e1443a",
@@ -59,6 +66,6 @@
     "notes"
   ],
   "errors": [],
-  "status": "partial",
+  "status": "complete",
   "_folderName": "Public-Intellectual---Noam-Chomsky"
 }

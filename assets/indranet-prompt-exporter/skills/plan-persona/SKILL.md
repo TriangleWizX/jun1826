@@ -1,26 +1,46 @@
 ---
 name: plan-persona
-description: Automatically selects and applies the best Indranet persona prompt and reference assets for plans, goals, and related execution or verification work.
+description: Guides contextual persona routing, full-source review, host adoption, and evidenced application for plans, goals, and related work.
 ---
 
 Use this skill for `/plan` requests and for creating, refining, decomposing, or execution-planning a goal. Do not create a goal merely because this skill applies to an ordinary task.
 
 ## Workflow Execution Steps
 
-1. **Select Persona Prompt**:
-   Run `python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py "<task_description>"` for the actual planning or goal task. Preserve the selector's result; do not invent a persona, rubric, skillchain, or attachment contents.
+**Pre-work gate:** Interpret short prompts using the active conversation. Routing
+returns candidates, not adopted experts. Read each selected full `prompt.json`,
+evaluate methodology and readiness, inspect required attachments, and record how
+the read methods guide the actual task before substantive implementation.
+
+**Recover unread output:** `<<ccr:...>>`, offload markers, and truncation mean the
+source is still unread. Use `rtk proxy python3
+assets/indranet-prompt-exporter/mcp/lib/persona_read.py EXACT_EXPORT_PROMPT_JSON`.
+Follow `next_offset` with `--offset` and `--sha256` until EOF. If the displayed JSON
+is compressed, parse the tool result inside `functions.exec` and emit each chunk
+separately with `text(chunk)`. The reader preserves all JSON source fields and
+rejects changes between pages. Never count a hash, EOF, or snippet as host adoption.
+
+**Identity:** An app introduction can occupy a root `prompt.json` while the actual
+persona exists under `versions/`. Check type, UUID, linked prompt, and actual text;
+record the exact versioned path and UUID when chosen. Do not claim the router
+selected an unavailable version. Disclose a specialist fallback when necessary.
+
+1. **Select Persona Prompt & INSTRUCTIONS Asset**:
+   - For plans and contextual single inputs, run `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --plan "<task_description>"` to obtain role and instruction candidates. Independently review both before adopting them; score and timing are not evidence of fit.
+   - For goals, run `auto_persona.py --plan --brief <brief.json>` to assign a coordinator Master INSTRUCTIONS asset and allocate worker personas with domain-specific INSTRUCTIONS assets across dependency waves.
 2. **Record the framework**:
    Add a `## Persona & Expert Framework` section to the plan or goal artifact with:
-   - Persona title and UUID.
+   - Role Persona title and UUID.
+   - Selected INSTRUCTIONS Asset title and UUID.
    - Selection rationale.
-   - Relevant rubric and skillchain.
+   - Relevant rubric, execution methodology, and skillchain.
    - Loaded attachments, or the explicit value `none`.
-   - How the persona changes planning, execution, and verification.
-   If the automatic choice is incomplete or mismatched, keep it for traceability and supplement it with relevant domain skills. Label supplements separately from the selected persona.
+   - How the persona and instructions change planning, execution, and verification.
 3. **Plan work and goals**:
-   For a goal, state the concrete objective and definition of done. Separate the desired outcome from implementation tasks, and identify scope, constraints, dependencies, risks, blockers, and measurable verification evidence. For a plan, describe the intended outcome, bounded work, dependencies, and checks at the level needed to execute safely.
+   - For a plan, deliver numbered, concrete INSTRUCTIONS grounded in the selected INSTRUCTIONS asset, and evaluate whether multi-disciplinary scope requires decomposing into a swarm.
+   - For a goal, decompose into bounded workstreams with unique Definition of Done (DoD) IDs, explicit read/write paths (avoiding concurrency write conflicts), and empirical checks.
 4. **Execute and verify**:
-   Apply the selected persona's documented principles, rubric, and skillchain during execution and verification. Keep evidence boundaries explicit: distinguish repository facts, user decisions, external checks, analytics, and business outcomes. Do not claim an external or business result from local evidence alone.
+   Apply the selected persona's and INSTRUCTIONS asset's documented principles, rubric, and skillchain during execution and verification. Keep evidence boundaries explicit: distinguish repository facts, user decisions, external checks, analytics, and business outcomes.
 5. **Report goal state honestly**:
    Classify a goal as `active` while required work remains, `complete` only when its definition of done and verification evidence are satisfied, or `genuinely blocked` when an external dependency or missing required input prevents meaningful progress. Never mark a goal complete because of elapsed effort, a token or budget limit, or partial progress.
 

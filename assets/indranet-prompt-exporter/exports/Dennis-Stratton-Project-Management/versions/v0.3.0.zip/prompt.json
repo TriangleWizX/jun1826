@@ -23,13 +23,21 @@
   "tier": "MEMBER TIER",
   "created": "Aug 23, 2026, 4:18:58 PM (23 days ago)",
   "updated": "Aug 23, 2026, 4:19:00 PM (23 days ago)",
-  "thumbnail": null,
+  "thumbnail": {
+    "file": "thumbnail.png",
+    "alt": "Dennis Stratton Project Management",
+    "sha256": "d21fceb20be457aa2c279009a1777e95abbf6e5c326b047c62d086ab141dc88c",
+    "bytes": 13643,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
+  },
   "attachments": [
     {
       "name": "Dennis Stratton Project Management v0.3.0.zip",
       "href": null
     }
   ],
+  "url": "https://indranet.collaborative-dynamics.com/prompt/2847c3fe-8128-45fa-91c5-ab3dfba20684?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd",
   "uuid": "2847c3fe-8128-45fa-91c5-ab3dfba20684",
   "id": "2847c3fe-8128-45fa-91c5-ab3dfba20684",
   "text": "START-HERE.md",
@@ -38,10 +46,9 @@
     "suggested_filename": "prompt-original.txt",
     "sha256": "08b88580828a102b1e65f9ba3940f9b1ea802d38869bc32be1dea0e754cfc899",
     "bytes": 13,
-    "status": "extracted_from_dom"
+    "status": "skipped_verified"
   },
-  "url": "https://indranet.collaborative-dynamics.com/prompt/2847c3fe-8128-45fa-91c5-ab3dfba20684?userOrganizationUUID=7e92f936-9b8e-45c8-8b5d-eef5bc5457cd",
-  "scraped_at": "2026-09-15T17:51:18.637Z",
+  "scraped_at": "2026-09-16T06:12:43.009Z",
   "additional_files": [
     {
       "name": "Dennis Stratton Project Management v0.3.0.zip",
@@ -54,6 +61,5 @@
   ],
   "missing_fields": [],
   "errors": [],
-  "status": "complete",
-  "_folderName": "Dennis-Stratton-Project-Management"
+  "status": "complete"
 }

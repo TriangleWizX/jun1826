@@ -24,8 +24,12 @@
   "created": "Mar 13, 2026, 7:40:35 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:08 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/6c5a4256-3161-444a-8c0c-5d3c94e24b5b",
-    "alt": "Medeval Fantasy Political Genius - Prince Arutha"
+    "file": "thumbnail.png",
+    "alt": "Medeval Fantasy Political Genius - Prince Arutha",
+    "sha256": "97070bd373727811e7e6798ebb241724344cad09ad5cdc7002409e09bd202e16",
+    "bytes": 24607,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "c42e2386-41f2-4f79-83cf-60e1a9158439",
@@ -44,9 +48,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Medeval-Fantasy-Political-Genius---Prince-Arutha"
 }

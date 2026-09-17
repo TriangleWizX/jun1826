@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 7:57:30 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:06 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/728f87ad-9226-45cf-a666-c5bbafd3e037",
-    "alt": "Syn-D the Omnicapable EXPERIMENT"
+    "file": "thumbnail.png",
+    "alt": "Syn-D the Omnicapable EXPERIMENT",
+    "sha256": "741877460eff4f9790aeb0d8bb5ace21e4e6cbf89fe98f8d367a36b1e5334f69",
+    "bytes": 29030,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "9a70dd47-0c1b-4b09-8853-cb9e36bb9e6e",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Syn-D-the-Omnicapable-EXPERIMENT"
 }

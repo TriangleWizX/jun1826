@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 9:11:44 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:00 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/b422185c-5700-4df6-891c-e5106f4f24bf",
-    "alt": "Business Plan Reviewer - Brainspec"
+    "file": "thumbnail.png",
+    "alt": "Business Plan Reviewer - Brainspec",
+    "sha256": "209dea0ea22b9efd8e6179c7dd3c36693dbbb75bd7610da8891633536fc60544",
+    "bytes": 27141,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "f146a25d-874f-42e5-9b75-7b1db0c4ef4e",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Business-Plan-Reviewer---Brainspec"
 }

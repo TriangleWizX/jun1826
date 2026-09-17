@@ -29,9 +29,11 @@ def iter_html_files(root: str) -> Iterable[str]:
 
 
 def load_includes() -> tuple[str, str]:
-    with open("nav-include.html", "r", encoding="utf-8") as f:
+    nav_path = "src/partials/nav-include.html" if os.path.exists("src/partials/nav-include.html") else "nav-include.html"
+    footer_path = "src/partials/footer-include.html" if os.path.exists("src/partials/footer-include.html") else "footer-include.html"
+    with open(nav_path, "r", encoding="utf-8") as f:
         nav_html = f.read()
-    with open("footer-include.html", "r", encoding="utf-8") as f:
+    with open(footer_path, "r", encoding="utf-8") as f:
         footer_html = f.read()
     return nav_html, footer_html
 

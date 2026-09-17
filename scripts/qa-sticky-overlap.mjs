@@ -205,10 +205,16 @@ const shouldFallback = (error) => /listen EPERM|spawn .* ENOENT|snap-confine/i.t
 
 const runStaticAudit = async (reason) => {
   console.warn(`Browser sticky overlap audit unavailable (${reason}). Running static sticky contract audit.`);
-  const [navHtml, globalCss] = await Promise.all([
-    fs.readFile(path.join(ROOT, 'nav-include.html'), 'utf8'),
-    fs.readFile(path.join(ROOT, 'src/assets/css/global.css'), 'utf8')
-  ]);
+  const navCandidates = [
+    path.join(ROOT, 'src/partials/nav-include.html'),
+    path.join(ROOT, 'dist/nav-include.html'),
+    path.join(ROOT, 'nav-include.html')
+  ];
+  let navHtml = '';
+  for (const c of navCandidates) {
+    try { navHtml = await fs.readFile(c, 'utf8'); break; } catch {}
+  }
+  const globalCss = await fs.readFile(path.join(ROOT, 'src/assets/css/global.css'), 'utf8');
 
   ensure(navHtml.includes('.ss-mobile-actions'), 'nav-include.html: expected mobile sticky actions class missing.');
   ensure(/env\(safe-area-inset-bottom\)/.test(navHtml) || /env\(safe-area-inset-bottom\)/.test(globalCss), 'safe-area-inset-bottom guard missing from sticky/footer styles.');

@@ -55,10 +55,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/sw-daily-checkin.js": "sw-daily-checkin.js" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
   // Apache expands these root-relative SSI targets after deployment. They are
-  // deployment artifacts, so copy the canonical root fragments into dist.
-  eleventyConfig.addPassthroughCopy("nav-include.html");
-  eleventyConfig.addPassthroughCopy("footer-include.html");
-  eleventyConfig.addPassthroughCopy({ "src/pages-sitemap.xml": "pages-sitemap.xml" });
+  // deployment artifacts, so copy the canonical partial fragments into dist.
+  eleventyConfig.addPassthroughCopy({ "src/partials/nav-include.html": "nav-include.html" });
+  eleventyConfig.addPassthroughCopy({ "src/partials/footer-include.html": "footer-include.html" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap-core.xml": "sitemap-core.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap-programs.xml": "sitemap-programs.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap-locations.xml": "sitemap-locations.xml" });
@@ -148,48 +147,7 @@ export default function (eleventyConfig) {
     return content.replace("Happy Members", "Students Coached");
   });
 
-eleventyConfig.addTransform("copy-integrity-normalization", function (content) {
-  const outputPath = this.page?.outputPath || "";
-  if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
-    content = content.replace(/home-class/gi, "class");
-  let output = content.replace(/\bvisit\s+visit\b/gi, "visit").replace(/\bclass\s+class\b/gi, "class").replace(/\bprogram\s+program\b/gi, "program").replace(/\b12-week\s+12-week\b/gi, "12-week");
-  if (outputPath.endsWith("/fall-practice-reset/index.html")) {
-    output = output.replace(/School starts September 3\. placement begins September 8; the full weekly format begins September 14\. Fall Placement Week runs September 8–12\. Four youth classes meet at 5 PM\. Choose three recurring regular class times for the fall schedule\./gi, "Fall Placement Week runs September 8–12. Fall classes begin September 14. Choose 3 class days: Monday No-Gi, Tuesday Gi, Wednesday No-Gi, or Friday Gi.").replace(/Four youth (?:class )?options 5 PM/gi, "Choose 3 class days").replace(/Friday Gi Lab/gi, "Gi").replace(/Reserve three recurring regular class times by September 12; make-up (?:classes? is|classes are) available(?: by text when plans change| when space is open)\./gi, "Make-up classes are available when space is open.");
-  }
-  return output.replace(/Four youth class options 5 PM/gi, "Choose 3 class days").replace(/Reserve three recurring regular class times by September 12; make-up class available by text when plans change\./gi, "Make-up classes are available when space is open.");
-});
-eleventyConfig.addTransform("acquisition-page-subtraction", function (content) {
-  const outputPath = this.page?.outputPath || "";
-  if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
-  let output = content;
-  if (outputPath.endsWith("/schedule/index.html")) {
-  output = output.replace(/<section[^>]*aria-labelledby="faq-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-labelledby="schedule-local-planning-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-label="12-week program Schedule Rescheduling Policy"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-labelledby="saturday-nogi"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*aria-labelledby="free-intro-flow"[\s\S]*?<\/section>/i, "");
-  }
 
-  if (outputPath.endsWith("/bjj-classes/adults-tannersville-ny/index.html")) {
-    for (const id of ["adults-aeo-title", "private-classes", "program-faq", "nearby-title", "adult-agency-title"]) {
-      output = output.replace(new RegExp(`<section[^>]*(?:id="${id}"|aria-labelledby="${id}")[\\s\\S]*?<\\/section>`, "i"), "");
-    }
-    output = output.replace(/<section[^>]*ss-culture-explanation[\s\S]*?<\/section>/i, "");
-  }
-  if (outputPath.endsWith("/bjj-classes/teens-tannersville-ny/index.html")) {
-    output = output.replace(/<section[^>]*id="teen-culture-title"[\s\S]*?<\/section>/i, "").replace(/<section[^>]*ss-culture-explanation[\s\S]*?<\/section>/i, "");
-  }
-  if (outputPath.endsWith("/bjj-classes/kids-tannersville-ny/index.html")) {
-    output = output.replace(/<section[^>]*ss-culture-explanation[\s\S]*?<\/section>/i, "");
-  }
-  const acquisitionRoute = /\/(?:index\.html|schedule\/index\.html|options-pricing(?:\/index)?\.html|contact\.html|free-bjj-intro-tannersville-ny\/index\.html|fall-practice-reset\/index\.html|holiday-schedule\.html|bjj-classes\/(?:kids|teens|adults)-tannersville-ny\/index\.html|show-up-kit\.html)$/.test(outputPath);
-  if (acquisitionRoute) {
-    output = output.replace(/recurring regular class timees?/gi, "class days").replace(/home-class reservations?/gi, "class reservations").replace(/home-class schedules?/gi, "weekly class plans").replace(/home-class seats?/gi, "weekly class places").replace(/open-seat rescheduling/gi, "make-up classes when space is open").replace(/\bUp 36\b/gi, "Up to 36").replace(/\bOne uniform first\b/gi, "One uniform for first").replace(/Starting easier\. first uniform included/gi, "Starting easier. One uniform is included").replace(/first visit\s+Visit/gi, "First Visit");
-  }
-  output = output.replace(/<section[^>]*class="[^"]*ss-culture-explanation[^"]*"[\s\S]*?<\/section>/gi, "").replace(/<section[^>]*aria-labelledby="teen-culture-title"[\s\S]*?<\/section>/i, "");
-  return output;
-});
-eleventyConfig.addTransform("plain-language-copy-cleanup", function (content) {
-    const outputPath = this.page?.outputPath || "";
-if (typeof content !== "string" || !outputPath.endsWith(".html")) return content;
-    return content.replaceAll("timees", "times").replaceAll("12-week program is organized as a 12-week", "the program is organized as a 12-week").replace(/12-week 12-week program/gi, "12-week program").replace(/class class/gi, "class").replace(/starting lane/gi, "first class").replace(/dedicated beginner lanes/gi, "dedicated beginner classes").replace(/dedicated beginner lane/gi, "Dedicated Beginner Class").replace(/dedicated beginner class\b/gi, "Dedicated Beginner Class").replace(/beginner lanes/gi, "beginner classes").replace(/beginner lane/gi, "beginner class").replace(/Fall formats begin Monday, September 14\. View (?:the )?current schedule through September 5; (?:the )?academy is closed September 7\./gi, "Fall Placement Week runs September 8–12. The full Fall Practice Schedule begins September 14; the academy is closed Monday, September 7 for Labor Day.").replaceAll("Labor Day No-Gi / Open Mat runs September 7 at 5:00 PM youth and 6:00 PM adults.", "the academy is closed Monday, September 7 for Labor Day.").replace(/Labor Day No-Gi \/ Open Mat runs September 7(?: at 5:00 PM youth 6:00 PM adults)?/gi, "the academy is closed Monday, September 7 for Labor Day").replace(/Labor Day No-Gi \/ Open Mat at 5:00 PM youth and 6:00 PM adults/gi, "Labor Day closure").replace(/Labor Day classes run Monday, September 7 as (?:a )?No-Gi \/ Open Mat schedule/gi, "The academy is closed Monday, September 7 for Labor Day").replace(/academy is closed Monday, September 7 for Labor Day at 5:00 PM youth 6:00 PM adults/gi, "the academy is closed Monday, September 7 for Labor Day").replace(/<span class="ss-status ss-status-special">No-Gi \/ Open Mat<\/span>/gi, "<span class=\"ss-status ss-status-closed\">Closed</span>").replace(/<li>August 24: closed<\/li>/gi, "").replace(/Last reviewed:<\/strong> August 19, 2026/gi, "Last reviewed:</strong> August 25, 2026").replace(/Why live problems matter\??/gi, "Practice that changes with you");
-  });
 
   return {
     dir: {

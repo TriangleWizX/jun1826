@@ -10,8 +10,12 @@
   "created": "Mar 13, 2026, 8:12:19 PM (6 months ago)",
   "updated": "May 3, 2026, 11:32:05 AM (5 months ago)",
   "thumbnail": {
-    "url": "blob:https://indranet.collaborative-dynamics.com/a7abe62b-342a-47cc-9edf-26369ef91f81",
-    "alt": "Legal-Techno Pacifier - Holden Accord - EMERGENT"
+    "file": "thumbnail.png",
+    "alt": "Legal-Techno Pacifier - Holden Accord - EMERGENT",
+    "sha256": "527d39eaf77c56afb56ddc1123bd4c0505d184a35405999a0ee718a4fe007516",
+    "bytes": 27456,
+    "url": "thumbnail.png",
+    "status": "extracted_from_canvas"
   },
   "attachments": [],
   "uuid": "8a63a7fb-7bcb-419d-9aa0-f3ee64d77fc0",
@@ -30,9 +34,7 @@
   "missing_fields": [
     "notes"
   ],
-  "errors": [
-    "Thumbnail: apiRequestContext.get: Protocol \"blob:\" not supported. Expected \"http:\""
-  ],
-  "status": "partial",
+  "errors": [],
+  "status": "complete",
   "_folderName": "Legal-Techno-Pacifier---Holden-Accord---EMERGENT"
 }
