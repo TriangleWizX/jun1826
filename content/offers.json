@@ -70,6 +70,43 @@
   "privateCoaching": {
     "price": 195
   },
+  "optionalAddOns": {
+    "laundryAndStorage": {
+      "price": 195,
+      "termWeeks": 12,
+      "weeklyBags": 1,
+      "maximumSetsPerBag": 3,
+      "turnaroundHours": 72
+    },
+    "visitorLaundryPass": {
+      "price": 35,
+      "validDays": 7,
+      "maximumSets": 3,
+      "turnaroundHours": 48
+    },
+    "singleGiWash": {
+      "price": 20,
+      "turnaroundHours": 48
+    },
+    "youthGiLaundryRotation": {
+      "price": 275,
+      "termWeeks": 12,
+      "weeklyBags": 1,
+      "maximumSetsPerBag": 3,
+      "turnaroundHours": 72,
+      "includesSecondGi": true,
+      "storageIncluded": true
+    },
+    "adultGiLaundryRotation": {
+      "price": 285,
+      "termWeeks": 12,
+      "weeklyBags": 1,
+      "maximumSetsPerBag": 3,
+      "turnaroundHours": 72,
+      "includesSecondGi": true,
+      "storageIncluded": true
+    }
+  },
   "pricingPolicies": {
     "communityAndHouseholdDiscounts": {
       "stackable": false,

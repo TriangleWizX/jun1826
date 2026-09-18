@@ -42,7 +42,8 @@
         "Up to 36 coached classes",
         "Up to three appropriate group classes each week, with recurring class times reserved",
         "Partner matching & progress tracking",
-        "Uniform for first-time enrollment"
+        "Uniform for first-time enrollment",
+        "Async Practice Vault (Sensei Video Instructional Line)"
       ],
       "guarantee": "Minimum 4 classes during first 30 days for the 30-Day Training Fit Guarantee",
       "primaryCta": {
@@ -64,7 +65,8 @@
         "Up to 36 coached classes",
         "Up to three appropriate group classes each week, with recurring class times reserved",
         "Saturday Adult No-Gi inclusion",
-        "Uniform for first-time enrollment"
+        "Uniform for first-time enrollment",
+        "Async Practice Vault (Sensei Video Instructional Line)"
       ],
       "guarantee": "Minimum 4 classes during first 30 days for the 30-Day Training Fit Guarantee",
       "primaryCta": {
@@ -153,6 +155,50 @@
       "displayPrice": "$195",
       "active": true,
       "public": true
+    },
+    {
+      "id": "laundry-storage-addon",
+      "name": "Gear Laundry & Storage Add-On",
+      "category": "Gear Support",
+      "audience": "Active Adult Core & Annual Track students",
+      "term": "12 weeks",
+      "priceRef": "optionalAddOns.laundryAndStorage",
+      "displayPrice": "$195",
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "visitor-laundry-pass",
+      "name": "Visitor Gear Laundry Pass",
+      "category": "Visitor Support",
+      "audience": "Catskills short-term visitors and vacationers",
+      "term": "7 consecutive days",
+      "priceRef": "optionalAddOns.visitorLaundryPass",
+      "displayPrice": "$35",
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "youth-laundry-rotation",
+      "name": "Youth Dual-Gi Laundry Rotation Pass",
+      "category": "Youth Support",
+      "audience": "Active Youth Core Culture students",
+      "term": "12 weeks",
+      "priceRef": "optionalAddOns.youthGiLaundryRotation",
+      "displayPrice": "$275",
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "adult-laundry-rotation",
+      "name": "Adult Dual-Gi Commuter Rotation Pass",
+      "category": "Adult Support",
+      "audience": "Active Adult Core & Annual Track students",
+      "term": "12 weeks",
+      "priceRef": "optionalAddOns.adultGiLaundryRotation",
+      "displayPrice": "$285",
+      "active": true,
+      "public": true
     }
   ],
   "qualified": [
@@ -174,6 +220,17 @@
       "category": "Long-Term Membership",
       "audience": "Students continuing after a Core Culture term",
       "priceRef": "annualTrack",
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "async-practice-vault",
+      "name": "Async Practice Vault & Video Review Line",
+      "category": "Digital Practice & Continuity",
+      "audience": "Enrolled Core Culture Students & Continuing Alumni",
+      "priceRef": "includedInCoreCulture",
+      "displayPrice": "Included ($150 Value)",
+      "description": "12-week on-demand modular video curriculum, weekly technique drops, and direct async movement review line.",
       "active": true,
       "public": true
     }

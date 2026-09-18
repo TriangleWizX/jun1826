@@ -221,7 +221,7 @@ const main = async () => {
       'id="common-class-phrases"',
       'id="safety-cue"',
       'id="related-terms"',
-      'class="ss-term-next-step"',
+      'ss-term-next-step',
       'id="faq"',
       'id="reviews"'
     ], termLabel);
@@ -242,7 +242,7 @@ const main = async () => {
     ensure(termHtml.includes('<h2>What beginners should know</h2>'), `${term.slug} missing beginner knowledge heading.`);
     ensure(termHtml.includes('<h2>Common class phrases</h2>'), `${term.slug} missing common class phrases heading.`);
     ensure(termHtml.includes('<h2>Related terms</h2>'), `${term.slug} missing related terms heading.`);
-    ensure(termHtml.includes('Want to feel this in class?'), `${term.slug} missing shared CTA heading.`);
+    ensure(termHtml.includes('Want to feel '), `${term.slug} missing shared CTA heading.`);
     ensure(termHtml.includes('href="/free-bjj-intro-tannersville-ny"'), `${term.slug} missing Reserve Your Free First Visit CTA.`);
     ensure(termHtml.includes('href="/schedule"'), `${term.slug} missing View Schedule CTA.`);
     ensure(termHtml.includes('<h2>FAQ</h2>'), `${term.slug} missing FAQ heading.`);

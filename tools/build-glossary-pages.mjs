@@ -511,41 +511,136 @@ const renderBuyerPathsSection = () => `<section class="ss-glossary-paths glossar
   <div class="ss-paths-inner">
     <div class="ss-paths-header">
       <p class="ss-paths-eyebrow">Beginner BJJ Glossary</p>
-      <h2>Pick a learning path.</h2>
+      <h2>Pick your beginner learning path.</h2>
       <p>
-        Start with the group of terms that matches what you want to understand first.
+        Every family member and new student starts at their own pace. Select your path to explore essential mat vocabulary.
       </p>
     </div>
 
     <div class="ss-path-grid">
       <article class="ss-path-card" data-path="parent">
-        <h3>Position Map</h3>
-        <p>Learn where you are: guard, mount, back control, turtle, and side control.</p>
-        <a class="ss-path-link" href="/bjj-glossary/guard">Start with Guard</a>
+        <h3>Parents &amp; Kids (Coach-Mom Carla &amp; Independent Ian)</h3>
+        <p>Cooperative youth movement, positive room structure, and personal space confidence.</p>
+        <a class="ss-path-link" href="/bjj-glossary/bully-proof">Explore Youth Terms &rarr;</a>
+        <div class="ss-path-chips" aria-label="Parent glossary shortcuts">
+          <a href="/bjj-glossary/bully-proof">Bully Proof</a>
+          <a href="/bjj-glossary/safety">Safety First</a>
+          <a href="/bjj-glossary/beginner-lane">Beginner Lane</a>
+        </div>
       </article>
 
       <article class="ss-path-card" data-path="adult-beginner">
-        <h3>Movement Map</h3>
-        <p>Learn how to move: shrimp, bridge, technical stand up, and guard recovery.</p>
-        <a class="ss-path-link" href="/bjj-glossary/shrimp">Start with Shrimp</a>
+        <h3>Adult Beginners (Beginner Ben &amp; Community Casey)</h3>
+        <p>Calm position mapping, mechanical leverage, and step-by-step cooperative drills.</p>
+        <a class="ss-path-link" href="/bjj-glossary/guard">Explore Adult Foundations &rarr;</a>
+        <div class="ss-path-chips" aria-label="Adult beginner shortcuts">
+          <a href="/bjj-glossary/guard">Guard</a>
+          <a href="/bjj-glossary/mount">Mount</a>
+          <a href="/bjj-glossary/side-control">Side Control</a>
+        </div>
       </article>
 
       <article class="ss-path-card" data-path="sparring-nerves">
-        <h3>Control Map</h3>
-        <p>Learn how to stay connected: grip, frame, underhook, seatbelt, and body lock.</p>
-        <a class="ss-path-link" href="/bjj-glossary/grip">Start with Grip</a>
+        <h3>Teens &amp; Control (Cross-Training Tyler)</h3>
+        <p>Dynamic movement geometry, connection control, and calm partner pacing.</p>
+        <a class="ss-path-link" href="/bjj-glossary/grip">Explore Control Terms &rarr;</a>
+        <div class="ss-path-chips" aria-label="Control shortcuts">
+          <a href="/bjj-glossary/grip">Grip</a>
+          <a href="/bjj-glossary/frame">Frame</a>
+          <a href="/bjj-glossary/underhook">Underhook</a>
+        </div>
       </article>
 
       <article class="ss-path-card" data-path="self-defense">
-        <h3>Safety Map</h3>
-        <p>Learn the safety language: tap, reset, partner care, and controlled rounds.</p>
-        <a class="ss-path-link" href="/bjj-faqs">Start with Safety</a>
+        <h3>Household &amp; Visitors (Family Frankie &amp; Weekend Wendy)</h3>
+        <p>Flexible scheduling, clear safety expectations, and cooperative training under one roof.</p>
+        <a class="ss-path-link" href="/bjj-faqs">Explore FAQs &amp; Safety &rarr;</a>
         <div class="ss-path-chips" aria-label="Safety glossary shortcuts">
           <a href="/bjj-glossary/safety">Safety</a>
           <a href="/bjj-glossary/beginner-lane">Beginner Lane</a>
-          <a href="/bjj-glossary/bully-proof">Bully Proof</a>
+          <a href="/bjj-glossary/tap">The Tap</a>
         </div>
       </article>
+    </div>
+  </div>
+</section>`;
+
+const VAULT_CURRICULUM_MAP = new Map([
+  ['frame', { week: 'Week 1', title: 'Mountaintop Defensive Frame', track: 'Adult Track' }],
+  ['frames', { week: 'Week 1', title: 'Mountaintop Defensive Frame', track: 'Adult Track' }],
+  ['frame-recovery', { week: 'Week 1', title: 'Mountaintop Defensive Frame', track: 'Adult Track' }],
+  ['base', { week: 'Week 1', title: 'Building Base & Structural Geometry', track: 'Adult & Youth Tracks' }],
+  ['posture', { week: 'Week 2', title: 'Closed Guard Posture & Safe Ties', track: 'Adult Track' }],
+  ['closed-guard', { week: 'Week 2', title: 'Closed Guard Posture & Inside Control', track: 'Adult Track' }],
+  ['guard', { week: 'Week 2', title: 'Guard Fundamentals & Safe Distance', track: 'Adult & Youth Tracks' }],
+  ['shrimp', { week: 'Week 3 & 4', title: 'Mechanical Hip Escape (Carpet Shrimp)', track: 'Adult & Youth Tracks' }],
+  ['hip-escape', { week: 'Week 3 & 4', title: 'Mechanical Hip Escape (Carpet Shrimp)', track: 'Adult & Youth Tracks' }],
+  ['guard-recovery', { week: 'Week 3', title: 'Restoring Guard with Hip Mobility', track: 'Adult Track' }],
+  ['guard-retention', { week: 'Week 3', title: 'Restoring Guard with Hip Mobility', track: 'Adult Track' }],
+  ['mount', { week: 'Week 4', title: 'Mount Survival & Mechanical Upa Bridge', track: 'Adult Track' }],
+  ['upa-escape', { week: 'Week 4', title: 'Mechanical Upa Bridge & Roll', track: 'Adult Track' }],
+  ['bridge', { week: 'Week 4', title: 'Glute Bridge & Hip Elevation', track: 'Adult & Youth Tracks' }],
+  ['side-control', { week: 'Week 5', title: 'Side Control Defense & Elbow-Knee Wedge', track: 'Adult Track' }],
+  ['elbow-knee-escape', { week: 'Week 5', title: 'The Elbow-Knee Wedge & Reguarding', track: 'Adult Track' }],
+  ['underhook', { week: 'Week 5 & 8', title: 'Underhook Framing & Safe Recovery', track: 'Adult Track' }],
+  ['guard-pass', { week: 'Week 6', title: 'Low-Pressure Guard Passing', track: 'Adult Track' }],
+  ['knee-slice', { week: 'Week 6', title: 'Knee Slice Passing Geometry', track: 'Adult Track' }],
+  ['back-control', { week: 'Week 7', title: 'Back Control Stability & Hand Fighting', track: 'Adult Track' }],
+  ['seatbelt', { week: 'Week 7', title: 'Seatbelt Control & Harness Safety', track: 'Adult Track' }],
+  ['rear-naked-choke', { week: 'Week 7', title: 'Back Position Finishes with Control', track: 'Adult Track' }],
+  ['half-guard', { week: 'Week 8', title: 'Half-Guard Frame & Knee Shield', track: 'Adult Track' }],
+  ['knee-shield', { week: 'Week 8', title: 'Knee Shield Distance Management', track: 'Adult Track' }],
+  ['turtle', { week: 'Week 9', title: 'Turtle Defense & Safe Base Recovery', track: 'Adult Track' }],
+  ['triangle-choke', { week: 'Week 10', title: 'Guard Control Triangle & Posture', track: 'Adult Track' }],
+  ['triangle', { week: 'Week 10', title: 'Guard Control Triangle & Posture', track: 'Adult Track' }],
+  ['kimura', { week: 'Week 11', title: 'Kimura Control Grip & Shoulder Safety', track: 'Adult Track' }],
+  ['tap', { week: 'Core Safety', title: 'The Universal Tap & Safe Reset Protocol', track: 'All Tracks' }],
+  ['safety', { week: 'Core Safety', title: 'Partner Care & Cooperative Pacing', track: 'All Tracks' }],
+  ['beginner-lane', { week: 'Orientation', title: 'Beginner Lane & Coached Walkthrough', track: 'All Tracks' }],
+  ['bully-proof', { week: 'Youth Track', title: 'Personal Space Bubble & De-escalation', track: 'Youth Track' }]
+]);
+
+const renderFlywheelGrandSlamSection = () => `<section class="glossary-shell glossary-flywheel-section" aria-label="Student Learning Flywheel & Grand Slam Offer">
+  <div class="glossary-section-header">
+    <div>
+      <p class="glossary-eyebrow">The Sensei Sandy Learning Flywheel</p>
+      <h2 id="flywheel-title">From Plain-English Vocabulary to Mat Confidence</h2>
+    </div>
+    <p>How our beginner glossary, video practice vault, and coached classes fit together into one seamless learning journey.</p>
+  </div>
+
+  <div class="glossary-flywheel-grid" aria-label="Three-step learning progression">
+    <article class="glossary-flywheel-step">
+      <span class="step-num">Step 01</span>
+      <h3>Learn the Language</h3>
+      <p>Demystify Brazilian Jiu-Jitsu terminology before stepping onto the mat. Plain-English definitions, coach cues, and safety guidelines give you clear understanding from day one.</p>
+      <span class="step-asset">Free Day-One Glossary Blueprint</span>
+    </article>
+
+    <article class="glossary-flywheel-step">
+      <span class="step-num">Step 02</span>
+      <h3>Walk the Mats</h3>
+      <p>Meet Sandy, tour our Tannersville studio, and experience cooperative partner drills. A coached, relaxed orientation where you ask questions and feel our calm pacing.</p>
+      <a class="step-link" href="/free-bjj-intro-tannersville-ny">Reserve Free First Visit &rarr;</a>
+    </article>
+
+    <article class="glossary-flywheel-step">
+      <span class="step-num">Step 03</span>
+      <h3>12-Week Core Culture</h3>
+      <p>Enroll in our foundational 12-week track: custom academy Gi &amp; white belt included, 36 coached classes, partner safety matching, and full Async Practice Vault access.</p>
+      <a class="step-link" href="/options-pricing#start">Explore Grand Slam Stack &rarr;</a>
+    </article>
+  </div>
+
+  <div class="glossary-vault-teaser">
+    <div class="glossary-vault-teaser-copy">
+      <span class="glossary-pill ss-primary">Included with Enrollment</span>
+      <h3>Async Practice Vault Video Companion ($150 Value)</h3>
+      <p>Every core position in this glossary is backed by 2-minute coached video breakdowns and home practice drills in our student portal.</p>
+    </div>
+    <div class="glossary-vault-teaser-actions">
+      <span class="glossary-btn glossary-btn-secondary">Practice Vault companion — coming soon</span>
+      <a class="glossary-btn glossary-btn-secondary" href="/options-pricing#start">View 12-Week Tuition Tracks</a>
     </div>
   </div>
 </section>`;
@@ -569,12 +664,12 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
       </div>
 
       <aside class="glossary-visit-card" aria-label="First visit reassurance">
-        <h2>Your first visit is not a fight.</h2>
+        <h2>Your first visit is a coached learning experience.</h2>
         <ul>
           <li>Tour the room</li>
-          <li>Learn how to tap</li>
-          <li>Understand safety</li>
-          <li>Start calmly</li>
+          <li>Learn the safe tap &amp; reset</li>
+          <li>Understand cooperative partner safety</li>
+          <li>Start calmly at your own pace</li>
         </ul>
         <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
       </aside>
@@ -594,7 +689,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
       <a class="day-one-card" href="/bjj-glossary/tap">
         <span class="num">01</span>
         <h3>Tap</h3>
-        <p>The safe way to say stop.</p>
+        <p>The safe way to reset.</p>
       </a>
 
       <a class="day-one-card" href="/bjj-glossary/guard">
@@ -635,10 +730,12 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
     </div>
 
     <div class="glossary-start-cta">
-      <p>You do not need every term today. Start with these seven.</p>
+      <p>Begin with these seven foundational words for your first class.</p>
       <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
     </div>
   </section>
+
+  ${renderFlywheelGrandSlamSection()}
 
   <section class="ss-page-feed" aria-label="BJJ glossary learning path">
     <article class="ss-community-post">
@@ -798,29 +895,66 @@ const renderRelationshipLinks = (slugs, termMap) =>
     .map((item) => `<li><a href="${escapeHtml(glossaryPathFor(item.slug))}">${escapeHtml(item.displayTerm)}</a></li>`)
     .join('\n');
 
-const renderTermNextStep = () => `
-<section class="ss-term-next-step" aria-labelledby="term-next-step-title">
+const renderTermNextStep = (term) => {
+  const vaultMatch = term ? VAULT_CURRICULUM_MAP.get(term.slug) : null;
+  const termName = term ? escapeHtml(term.displayTerm) : 'this concept';
+
+  const vaultBanner = vaultMatch ? `
+    <aside class="glossary-vault-feature-box p-3 mb-4 rounded-3 border bg-white text-dark shadow-sm" aria-label="Practice Vault Video Lesson">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="glossary-pill ss-primary">Async Practice Vault &middot; ${escapeHtml(vaultMatch.week)}</span>
+        <span class="glossary-pill">${escapeHtml(vaultMatch.track)}</span>
+      </div>
+      <h3 class="h5 fw-bold mb-1" style="color: var(--ss-ink, #362B24);">${termName} in the 12-Week Video Line</h3>
+      <p class="small text-muted mb-3">Watch the 2-minute coached breakdown of <em>${escapeHtml(vaultMatch.title)}</em> and practice the home carpet drill in our student portal.</p>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-2 border-top">
+        <span class="text-muted small">Included free with 12-Week Core Culture enrollment</span>
+        <span class="glossary-btn glossary-btn-secondary">Vault lesson coming soon</span>
+      </div>
+    </aside>
+  ` : '';
+
+  return `
+<section class="ss-term-next-step glossary-card glossary-surface--dark" aria-labelledby="term-next-step-title">
   <div class="container">
     <p class="ss-eyebrow">Train the word</p>
-    <h2 id="term-next-step-title">Want to feel this in class?</h2>
+    <h2 id="term-next-step-title">Want to feel ${escapeHtml(term ? term.displayTerm.toLowerCase() : 'this')} in class?</h2>
     <p>
-      Start with a guided Free First Visit. We’ll show you the room, explain the safety rules, and help you choose the right class lane.
+      Your first class is a coached learning experience. We will guide you through a calm room tour, explain the partner safety rules, and help you choose the right class lane.
     </p>
 
-    <div class="ss-link-grid">
-      <a href="/bjj-glossary">Browse the Beginner Glossary</a>
-      <a href="/student-hub">See This Week’s Focus</a>
-      <a href="/schedule">View Class Schedule</a>
-      <a href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
+    ${vaultBanner}
+
+    <div class="glossary-grandslam-banner p-3 mb-4 rounded-3 bg-white text-dark shadow-sm" aria-label="Grand Slam Tuition Offer">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+        <span class="glossary-pill ss-primary">Grand Slam Tuition Offer</span>
+        <span class="small fw-semibold text-muted">5.1x Value Package</span>
+      </div>
+      <h3 class="h5 fw-bold mb-2" style="color: var(--ss-ink, #362B24);">12-Week Core Culture Immersion</h3>
+      <p class="small text-muted mb-3">
+        Includes your official custom academy Gi &amp; white belt ($120&ndash;$145 value), 36 coached classes, dedicated partner safety matching, full Async Practice Vault access ($150 value), Day-One Mat Vocabulary Blueprint ($47 value), and our 30-Day Training Fit Guarantee.
+      </p>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Coached Free First Visit</a>
+        <a class="glossary-btn glossary-btn-secondary" href="/options-pricing#start">Compare 12-Week Tuition Tracks</a>
+      </div>
     </div>
 
-    <div class="ss-inline-actions">
-      <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
-      <a class="btn btn-outline-primary" href="/schedule">View Schedule</a>
+    <div class="ss-link-grid">
+      <a href="/bjj-glossary">Browse Beginner Glossary</a>
+      <span>Async Practice Vault companion coming soon</span>
+      <a href="/schedule">View Class Schedule</a>
+      <a href="/free-bjj-intro-tannersville-ny">Reserve Coached First Visit</a>
+    </div>
+
+    <div class="ss-inline-actions mt-3">
+      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
+      <a class="glossary-btn glossary-btn-secondary" href="/options-pricing">See Options &amp; Pricing</a>
     </div>
   </div>
 </section>
 `;
+};
 
 const renderReviewsSection = () => `<section id="reviews" class="glossary-card glossary-term-section glossary-term-reviews">
     <h2>What local families say</h2>
@@ -927,7 +1061,7 @@ const renderTermPage = (term, termMap, glossaryFiltersScript) => {
     </div>
   </section>
 
-  ${renderTermNextStep()}
+  ${renderTermNextStep(term)}
 
   <section id="faq" class="glossary-card glossary-term-section">
     <h2>FAQ</h2>
@@ -1047,7 +1181,7 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
         <article class="glossary-card glossary-surface--light">
           <h2>How terms are chosen</h2>
           <p>The glossary is built around terms a new student is likely to hear in class, during drilling, or while reviewing a video after class. Priority goes to words that reduce confusion fast: safety language, major positions, common movements, and simple submission names that show up early.</p>
-          <p>That means the glossary is not trying to become an encyclopedia of every niche variation. It is trying to make local beginner class language clearer, especially for adults starting from zero, parents checking whether a class feels safe, and kids or teens hearing a new term for the first time.</p>
+          <p>That means the glossary is not trying to become an encyclopedia of every niche variation. It is trying to make local beginner class language clearer, especially for adults starting on day one, parents checking whether a class feels safe, and kids or teens hearing a new term for the first time.</p>
         </article>
         <article class="glossary-card glossary-surface--light">
           <h2>Current priorities</h2>
@@ -1064,7 +1198,7 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
         <article class="glossary-card glossary-surface--light">
           <h2>How to use the glossary before class</h2>
           <p>Keep it short. Pick two or three words you expect to hear, read the quick definition, and then stop. A glossary should lower uncertainty before class, not turn into homework that makes the first visit feel heavier.</p>
-          <p>For brand-new adults, terms like <a href="/bjj-glossary/base">base</a>, <a href="/bjj-glossary/posture">posture</a>, <a href="/bjj-glossary/frame">frame</a>, and <a href="/bjj-glossary/tap">tap</a> usually do more good than chasing advanced technique names. For kids and teens, the useful words are often even simpler: stop, reset, balance, stand up safely, and protect your partner.</p>
+          <p>For brand-new adults, terms like <a href="/bjj-glossary/base">base</a>, <a href="/bjj-glossary/posture">posture</a>, <a href="/bjj-glossary/frame">frame</a>, and <a href="/bjj-glossary/tap">tap</a> usually do more good than chasing advanced technique names. For kids and teens, the useful words are often even simpler: reset, balance, stand up safely, and protect your partner.</p>
         </article>
         <article class="glossary-card glossary-surface--light">
           <h2>Helpful next pages</h2>
@@ -1092,7 +1226,7 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
         <div class="glossary-term-faq-list">
           <details class="glossary-card">
             <summary>Why publish an updates page for a glossary?</summary>
-            <p>Because the glossary changes over time. This page gives students and parents a quick way to see that coverage is improving, beginner terms are being clarified, and new class language is not being dropped into the site without context.</p>
+            <p>Because the glossary changes over time. This page gives students and parents a quick way to see that coverage is improving, beginner terms are being clarified, and new class language is being introduced with clear local context.</p>
           </details>
           <details class="glossary-card">
             <summary>Is the glossary only for complete beginners?</summary>

@@ -174,5 +174,64 @@
       "term": "6 sessions",
       "active": true
     }
+  },
+  "optionalAddOns": {
+    "laundryAndStorage": {
+      "name": "Gear Laundry & Storage Add-On",
+      "price": 195,
+      "displayPrice": "$195",
+      "term": "12 weeks",
+      "weeklyBags": 1,
+      "maximumSetsPerBag": 3,
+      "turnaroundHours": 72,
+      "storageIncluded": true,
+      "eligibility": "Active Adult Core Culture and Annual Track students",
+      "active": true
+    },
+    "visitorLaundryPass": {
+      "name": "Visitor Gear Laundry Pass",
+      "price": 35,
+      "displayPrice": "$35",
+      "term": "7 consecutive days",
+      "maximumSets": 3,
+      "turnaroundHours": 48,
+      "eligibility": "Visitors on Day Pass or Vacation Week Pass",
+      "active": true
+    },
+    "singleGiWash": {
+      "name": "Single Gi Wash & Dry",
+      "price": 20,
+      "displayPrice": "$20",
+      "term": "1 gi wash",
+      "turnaroundHours": 48,
+      "eligibility": "Visiting and active students",
+      "active": true
+    },
+    "youthGiLaundryRotation": {
+      "name": "Youth Dual-Gi Laundry Rotation Pass",
+      "price": 275,
+      "displayPrice": "$275",
+      "term": "12 weeks",
+      "includesSecondGi": true,
+      "weeklyBags": 1,
+      "maximumSetsPerBag": 3,
+      "turnaroundHours": 72,
+      "storageIncluded": true,
+      "eligibility": "Active Youth Core Culture students",
+      "active": true
+    },
+    "adultGiLaundryRotation": {
+      "name": "Adult Dual-Gi Commuter Rotation Pass",
+      "price": 285,
+      "displayPrice": "$285",
+      "term": "12 weeks",
+      "includesSecondGi": true,
+      "weeklyBags": 1,
+      "maximumSetsPerBag": 3,
+      "turnaroundHours": 72,
+      "storageIncluded": true,
+      "eligibility": "Active Adult Core Culture and Annual Track students",
+      "active": true
+    }
   }
 }

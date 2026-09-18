@@ -648,3 +648,19 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   background-color: rgba(0, 221, 224, 0.15) !important;
   font-weight: 700 !important;
 }
+
+/* WCAG Contrast Overrides for Glossary Flywheel & Vault Teaser */
+.glossary-flywheel-step h3,
+.glossary-vault-teaser-copy h3 {
+  color: #f4fbfb !important;
+}
+
+.glossary-flywheel-step p,
+.glossary-vault-teaser-copy p {
+  color: #b8cccc !important;
+}
+
+.glossary-flywheel-step .step-link {
+  color: #8ffcff !important;
+}
+
