@@ -42,7 +42,7 @@ def create_header(im, draw, logo_img, category_tag="SENSEI SANDY BJJ • TANNERS
     draw.text((180, 68), 'SENSEI SANDY BJJ', font=font(34), fill='#F3CF52')
     draw.text((180, 114), category_tag.upper(), font=font(20), fill='#E0D9D1')
 
-def create_footer(im, draw, w, h, cta_text="PLAN A FREE FIRST VISIT", url_text="SenseiSandy.com • Text (917) 736-8649"):
+def create_footer(im, draw, w, h, cta_text="RESERVE FREE INTRO", url_text="SenseiSandy.com • Text (917) 736-8649"):
     btn_box = (60, h - 165, w - 60, h - 95)
     draw.rounded_rectangle(btn_box, radius=16, fill='#F3CF52')
 
