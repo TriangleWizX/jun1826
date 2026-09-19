@@ -107,7 +107,7 @@ window.SENSEI_SANDY_CLASS_FOCUS_WEEKS = [
           label: "Safe Belly Up Backpack",
           href: "https://www.youtube.com/embed/cWna3irZy8A",
           description:
-            "Quick example: movement, balance, and position without relying on monkey hooks."
+            "Quick example: movement, balance, and position using active foot frames rather than monkey hooks."
         }
       ]
     },

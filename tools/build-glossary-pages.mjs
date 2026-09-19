@@ -1197,7 +1197,7 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
       <div class="ss-path-grid">
         <article class="glossary-card glossary-surface--light">
           <h2>How to use the glossary before class</h2>
-          <p>Keep it short. Pick two or three words you expect to hear, read the quick definition, and then stop. A glossary should lower uncertainty before class, not turn into homework that makes the first visit feel heavier.</p>
+          <p>Keep it short. Pick two or three words you expect to hear, read the quick definition, and then get ready for class. A glossary should lower uncertainty before class, not turn into homework that makes the first visit feel heavier.</p>
           <p>For brand-new adults, terms like <a href="/bjj-glossary/base">base</a>, <a href="/bjj-glossary/posture">posture</a>, <a href="/bjj-glossary/frame">frame</a>, and <a href="/bjj-glossary/tap">tap</a> usually do more good than chasing advanced technique names. For kids and teens, the useful words are often even simpler: reset, balance, stand up safely, and protect your partner.</p>
         </article>
         <article class="glossary-card glossary-surface--light">

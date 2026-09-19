@@ -8,7 +8,7 @@ export const bottleSizes = [
 ];
 export const drinkFamilies = [
   { id: "bright", name: "Bright", product: "Clarified Lime", description: "Cold. Bright. Clean.", supporting: "Crisp citrus built for the first glass after you put your bags down.", pairs: "rum · gin · tequila", garnish: ["lime"], container: "quart_mason_jar" },
-  { id: "silk", name: "Silk", product: "Clarified Sour", description: "Soft. Bright. Aromatic.", supporting: "A polished sour built for cocktail hour without turning the rental kitchen into a bar.", pairs: "gin", garnish: ["lemon"], container: "quart_mason_jar" },
+  { id: "silk", name: "Silk", product: "Clarified Sour", description: "Soft. Bright. Aromatic.", supporting: "A polished sour built for cocktail hour while keeping the rental kitchen tidy and calm.", pairs: "gin", garnish: ["lemon"], container: "quart_mason_jar" },
   { id: "deep", name: "Deep", product: "Spirit-Forward", description: "Slow. Aromatic. Ready for the fire.", supporting: "A darker Bottle Match for dinner ending, big ice and nowhere else to be.", pairs: "rye · bourbon", garnish: ["orange", "cherry"], container: "pint_mason_jar" }
 ];
 export const drinkPackages = [
