@@ -667,7 +667,7 @@ window.SECONDARY_CTA_URL = SECONDARY_CTA_URL;
       return 'cta';
     };
 
-    document.querySelectorAll('a[href*="calendly.com/"]').forEach((link) => {
+    document.querySelectorAll('a[href*="calendly.com/"], a[href*="cal.com/"]').forEach((link) => {
       const type = detectCtaType(link);
       const campaign = `${pageId}_${type}`;
       const updated = withUtm(link.getAttribute('href') || '', campaign);

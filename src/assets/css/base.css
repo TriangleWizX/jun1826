@@ -2655,13 +2655,13 @@ ul {
     min-height: 85vh;
 }
 
-.page-book-intro #calendlyInline {
+.page-book-intro #first-visit-calendar {
     min-height: 85vh;
     height: 100%;
     width: 100%;
 }
 
-.page-book-intro #calendlyInline iframe {
+.page-book-intro #first-visit-calendar iframe {
     min-height: 85vh;
     width: 100%;
     border: 0;
@@ -3542,7 +3542,7 @@ body[data-layout="booking"] .booking-embed__frame {
     min-height: 400vh
 }
 
-body[data-layout="booking"] #calendlyInline,body[data-layout="booking"] #calendlyInline iframe {
+body[data-layout="booking"] #first-visit-calendar,body[data-layout="booking"] #first-visit-calendar iframe {
     height: 100%;
     min-height: 400vh
 }
@@ -3943,8 +3943,8 @@ a:hover{ color:var(--ss-deepteal); }
   font-weight:800;
 }
 
-.page-home main a[href*="calendly.com"],
-.page-programs main a[href*="calendly.com"]{
+.page-home main a[href*="cal.com"],
+.page-programs main a[href*="cal.com"]{
   display:inline-flex;
   align-items:center;
   justify-content:center;

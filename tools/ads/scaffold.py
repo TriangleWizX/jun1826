@@ -48,6 +48,7 @@ WINNING_CONVERTER_POSTS = {
             "Kids & Teens | Mon / Tue / Wed / Fri 5 PM\n"
             "Parents & Adults | 6 PM — jump in or cheer them on!\n\n"
             "✅ 1-hour, play-based lessons\n"
+            "✅ Calm, structured partner drills\n"
             "✅ 1st-Degree Black-Belt coach & local\n"
             "✅ Stroller-friendly studio at 6045 Main St, Tannersville\n\n"
             "Comment START or DM START to claim your family’s spot. See you on the mats! 🥋"
@@ -60,7 +61,8 @@ WINNING_CONVERTER_POSTS = {
             "First class is FREE at Sensei Sandy BJJ. Comment START and I’ll DM you the 30-second sign-up link. 👇\n\n"
             "Beginner Lane | Mon / Tue / Wed / Fri 6 PM\n"
             "Saturday No-Gi | 10:30 AM\n\n"
-            "✅ Zero live sparring on Day 1 — cooperative coached movement\n"
+            "✅ Cooperative, coached movement from day one\n"
+            "✅ Calm, structured partner drills\n"
             "✅ 1st-Degree Black-Belt coach & local\n"
             "✅ Welcoming beginner room at 6045 Main St, Tannersville\n\n"
             "Comment START or DM START to claim your spot. See you on the mats! 🥋"
@@ -73,7 +75,8 @@ WINNING_CONVERTER_POSTS = {
             "First class is FREE at Sensei Sandy BJJ. Comment START and I’ll DM you the 30-second sign-up link. 👇\n\n"
             "Adult Decompression | Mon / Tue / Wed / Fri 6 PM\n"
             "Saturday Reset | 10:30 AM\n\n"
-            "✅ 45-minute safe sweat where work stress is impossible to hold\n"
+            "✅ 45-minute safe sweat where work stress clears away\n"
+            "✅ Supportive team environment and respectful room\n"
             "✅ 1st-Degree Black-Belt coach & local\n"
             "✅ Clean, welcoming studio at 6045 Main St, Tannersville\n\n"
             "Comment START or DM START to claim your spot. See you on the mats! 🥋"
@@ -86,7 +89,8 @@ WINNING_CONVERTER_POSTS = {
             "First class is FREE at Sensei Sandy BJJ. Comment START and I’ll DM you the 30-second sign-up link. 👇\n\n"
             "Teens & Athletes | Mon / Tue / Wed / Fri 5 PM\n"
             "Adult Open Training | 6 PM\n\n"
-            "✅ Rotational strength & joint integrity for winter injury prevention\n"
+            "✅ Rotational strength, balance, and joint durability for snow sports\n"
+            "✅ Dynamic knee stability and core power\n"
             "✅ 1st-Degree Black-Belt coach & local\n"
             "✅ Located at 6045 Main St, Tannersville (6 mins from Hunter Mountain)\n\n"
             "Comment START or DM START to claim your athletic spot. See you on the mats! 🥋"
@@ -99,7 +103,8 @@ WINNING_CONVERTER_POSTS = {
             "First class is FREE at Sensei Sandy BJJ. Comment START and I’ll DM you the 30-second sign-up link. 👇\n\n"
             "Youth & Teens | 5 PM\n"
             "Adults & Parents | 6 PM — jump in or cheer them on!\n\n"
-            "✅ Shared family martial arts journey without split driving\n"
+            "✅ Shared family martial arts journey under one roof\n"
+            "✅ Cooperative partner practice for kids and adults\n"
             "✅ 1st-Degree Black-Belt coach & local\n"
             "✅ Stroller-friendly studio at 6045 Main St, Tannersville\n\n"
             "Comment START or DM START to claim your family’s spot. See you on the mats! 🥋"
@@ -107,17 +112,17 @@ WINNING_CONVERTER_POSTS = {
         'comment_trigger': 'START'
     },
     'wendy': {
-        'headline': "🍂 Visiting the Catskills this weekend? Don't break your training routine while enjoying the foliage and SkyRides.",
+        'headline': "🍂 Visiting the Catskills this weekend? Maintain your training routine while enjoying the foliage and SkyRides.",
         'body': (
-            "Visitor passes available at Sensei Sandy BJJ. Comment VISIT and I’ll DM you the pass link. 👇\n\n"
+            "Visitor passes available at Sensei Sandy BJJ. Comment START and I’ll DM you the pass link. 👇\n\n"
             "Saturday Adult No-Gi | 10:30 AM\n"
             "Weekday Evenings | 6 PM\n\n"
-            "✅ Clean mats, zero ego, active competitors & visitors welcome\n"
+            "✅ Clean mats, respectful room, active competitors & visitors welcome\n"
             "✅ 1st-Degree Black-Belt coach & local\n"
             "✅ Located right on Main St in Tannersville (6 mins from Hunter)\n\n"
-            "Comment VISIT or DM VISIT to claim your mat pass. See you on the mats! 🥋"
+            "Comment START or DM START to claim your mat pass. See you on the mats! 🥋"
         ),
-        'comment_trigger': 'VISIT'
+        'comment_trigger': 'START'
     },
     'ian': {
         'headline': "🥋 Kid POV: Learn how to escape bear hugs and roll like a turtle!",
@@ -125,6 +130,7 @@ WINNING_CONVERTER_POSTS = {
             "Fun games, safe balance drills, and real escapes at Sensei Sandy BJJ in Tannersville.\n\n"
             "Kids Class | Mon / Tue / Wed / Fri 5 PM\n\n"
             "✅ 100% play-based partner escapes\n"
+            "✅ Fun games and agility practice\n"
             "✅ 1st-Degree Black Belt coach Sandy\n\n"
             "Ask mom or dad to comment START! See you on the mats! 🥋"
         ),
@@ -145,7 +151,7 @@ LOCAL_ANCHORS = [
         'event': 'Ski & Snowboard Pre-Season Conditioning',
         'location': 'Hunter Mountain & Windham Mountain Club',
         'persona': 'tyler',
-        'theme': 'Off-season balance, grip, and knee injury resilience before the snow falls',
+        'theme': 'Off-season balance, grip, and knee stability before the snow falls',
         'context': 'Ski season is around the corner. Controlled grappling builds the rotational core stability, hip mobility, and balance athletes need on the slopes.'
     },
     {
@@ -153,27 +159,27 @@ LOCAL_ANCHORS = [
         'location': 'Hunter Mountain (6 mins from studio)',
         'persona': 'wendy',
         'theme': 'Keep training while visiting the mountaintop for foliage & SkyRides',
-        'context': 'Visiting the Catskills for the autumn festivals? Dont skip your weekly training routine. Sensei Sandy BJJ offers easy visitor drop-in passes.'
+        'context': 'Visiting the Catskills for the autumn festivals? Maintain your weekly training routine on vacation. Sensei Sandy BJJ offers easy visitor drop-in passes.'
     },
     {
         'event': 'Couch to Mats (Before Winter Hits)',
         'location': 'Mountaintop Adults (Tannersville, Hunter, Windham)',
         'persona': 'ben',
-        'theme': 'Start training now before the dark, cold Catskills winter locks you inside',
-        'context': 'Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.'
+        'theme': 'Start training now before the dark, cold Catskills winter arrives',
+        'context': 'Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.'
     },
     {
         'event': 'Mountaintop Service & Shift Work Decompression',
         'location': 'Greene County Teachers, EMTs, Firefighters, & Hospitality',
         'persona': 'casey',
         'theme': 'Mental reset for the people who keep the mountaintop running',
-        'context': 'Shift work and tourist seasons take a toll. 45 minutes on the mats gives local public servants a safe sweat where work stress is impossible to hold.'
+        'context': 'Shift work and tourist seasons take a toll. 45 minutes on the mats gives local public servants a safe sweat where work stress clears away.'
     },
     {
         'event': 'Windham 32nd Annual Autumn Affair',
         'location': 'Windham & Tannersville Families',
         'persona': 'frankie',
-        'theme': 'Shared family physical competence without sideline waiting',
+        'theme': 'Shared family physical competence under one roof',
         'context': 'Tired of dropping kids off and waiting in the parking lot? Family jiu-jitsu gives parents and children a shared martial arts journey.'
     }
 ]
@@ -184,7 +190,7 @@ SCHEDULE_SLOTS = [
     ('Monday', '07:30 AM', 'carla', 'Static Feed Ad (4:5)', 'Problem-Aware', 'Instagram / Facebook',
      'cash_converter', 'Photo: Sandy welcoming parent & child at studio entrance. Warm natural lighting. Full text of Post #2 conversion copy with "Mountain Top Moms!" callout.'),
     ('Monday', '12:00 PM', 'ben', 'Short-Form Reel / TikTok', 'Contrarian', 'Reels / TikTok / Shorts',
-     'viral_loop', 'Video (10s loop): Sandy calmly redirecting a heavy partner push with a simple angle step. Text overlay: "Don\'t meet force with force. Meet force with an angle."'),
+     'viral_loop', 'Video (10s loop): Sandy calmly redirecting a heavy partner push with a simple angle step. Text overlay: "Redirect incoming force. Meet pressure with an angle."'),
     ('Monday', '03:30 PM', 'carla', 'Interactive Story Poll', 'Question', 'Instagram Stories',
      'cash_converter', 'Story Poll Sticker: "Does your child crash or melt down after 7 hours on Chromebooks at school? [Yes / Screen burnout is real]."'),
     ('Monday', '06:30 PM', 'casey', 'Static Feed Ad (1:1)', 'Story', 'Facebook / Meta',
@@ -196,47 +202,47 @@ SCHEDULE_SLOTS = [
     ('Tuesday', '11:30 AM', 'tyler', 'Short-Form Reel / TikTok', 'Aspirational', 'Reels / TikTok / Shorts',
      'tactical_clinic', 'Video (15s): Pre-ski conditioning. Sandy demonstrating rotational hip base and knee alignment during single-leg defense. "Skiers: build balance before the snow hits."'),
     ('Tuesday', '02:30 PM', 'carla', 'Short-Form Reel / TikTok', 'Social Proof', 'Reels / Facebook',
-     'viral_loop', 'Video (12s loop): Coached youth partner drill. Two kids executing clean balance escapes, finishing with high fives and smiles. Zero aggression.'),
+     'viral_loop', 'Video (12s loop): Coached youth partner drill. Two kids executing clean balance escapes, finishing with high fives and smiles. Pure cooperative focus.'),
     ('Tuesday', '05:00 PM', 'ian', 'Behind-The-Scenes Story', 'POV/Relatable', 'Instagram Stories',
      'viral_loop', 'POV phone clip: Sandy setting out cones for the youth warm-up agility game right before 5:00 PM class. Text: "Fun begins at 5."'),
     ('Tuesday', '07:00 PM', 'wendy', 'Static Feed Ad (4:5)', 'Solution-Aware', 'Meta Local Ads',
-     'crucible_proof', 'Exterior of 6045 Main St Tannersville. Post #2 Visitor Variant: "Visiting Hunter or Windham for foliage? Comment VISIT for your drop-in mat pass."'),
+     'crucible_proof', 'Exterior of 6045 Main St Tannersville. Post #2 Visitor Variant: "Visiting Hunter or Windham for foliage? Comment START for your drop-in mat pass."'),
 
     # Wednesday (4 assets)
     ('Wednesday', '07:30 AM', 'ben', 'Static Feed Ad (4:5)', 'Classic DR', 'Instagram / Facebook',
-     'cash_converter', 'Post #2 Adult Converter: "Mountain Top Adults! Looking for a safe 45-min sweat? Zero live sparring on Day 1. Comment START."'),
+     'cash_converter', 'Post #2 Adult Converter: "Mountain Top Adults! Looking for a safe 45-min sweat? Cooperative coached movement from day one. Comment START."'),
     ('Wednesday', '12:00 PM', 'carla', 'Short-Form Reel / TikTok', 'Pattern Interrupt', 'Reels / TikTok / Shorts',
-     'tactical_clinic', 'Video (15s micro-clinic): Sandy demonstrates the "wrist twist escape" for kids. "How leverage beats grip strength without throwing a punch."'),
+     'tactical_clinic', 'Video (15s micro-clinic): Sandy demonstrates the "wrist twist escape" for kids. "How leverage beats grip strength using pure body mechanics."'),
     ('Wednesday', '03:30 PM', 'tyler', 'Static Feed Ad (1:1)', 'Comparison', 'Instagram / Facebook',
      'tactical_clinic', 'Graphic: "Treadmill cardio vs. grappling endurance: Why ground mechanics build real athletic durability for winter sports."'),
     ('Wednesday', '06:30 PM', 'frankie', 'Interactive Story Q&A', 'Question', 'Instagram Stories',
-     'cash_converter', 'Story Q&A: "Can parents and kids train on the same evening without splitting schedules? Ask Sandy how the schedule aligns."'),
+     'cash_converter', 'Story Q&A: "Can parents and kids train on the same evening under one roof? Ask Sandy how the schedule aligns."'),
 
     # Thursday (4 assets)
     ('Thursday', '08:00 AM', 'carla', 'Educational Carousel (3-Slide)', 'Proof', 'Instagram / Facebook',
      'cash_converter', 'Post #2 Reassurance: Slide 1: "Play-based lessons." Slide 2: "1st-Degree Black-Belt local coach." Slide 3: "Stroller-friendly studio on Main St."'),
     ('Thursday', '11:30 AM', 'casey', 'Short-Form Reel / TikTok', 'Authority', 'Reels / TikTok / Shorts',
-     'tactical_clinic', 'Video (18s Tactical Clinic): "Opening the Closed Guard" breakdown. Sandy showing hip wedge, lapel control, and posture break. "Stop pulling elbows; use geometry."'),
+     'tactical_clinic', 'Video (18s Tactical Clinic): "Opening the Closed Guard" breakdown. Sandy showing hip wedge, lapel control, and posture break. "Use leverage, hip angles, and posture."'),
     ('Thursday', '03:00 PM', 'ben', 'Interactive Story Poll', 'Curiosity', 'Instagram Stories',
-     'cash_converter', 'Story Poll: "Biggest hesitation about starting martial arts? [Fear of injury / Out of shape / Intimidating gym]. Sandy replies directly to every vote."'),
+     'cash_converter', 'Story Poll: "Biggest hesitation about starting martial arts? [Unsure where to start / Out of shape / Nervous]. Sandy replies directly to every vote."'),
     ('Thursday', '07:00 PM', 'frankie', 'Static Feed Ad (4:5)', 'Story', 'Instagram / Facebook',
      'cash_converter', 'Post #2 Family Model: "Mountain Top Families! Tired of scrolling in the car? Kids at 5 PM, adults at 6 PM. Comment START."'),
 
     # Friday (5 assets)
     ('Friday', '07:30 AM', 'wendy', 'Short-Form Reel / TikTok', 'Urgency', 'Reels / TikTok / Shorts',
-     'crucible_proof', 'Video (15s): Sandy inviting Catskills weekend visitors to Saturday morning No-Gi. "Don\'t skip mat time on vacation. 5 visitor spots open for Saturday 10:30 AM."'),
+     'crucible_proof', 'Video (15s): Sandy inviting Catskills weekend visitors to Saturday morning No-Gi. "Keep your training momentum on vacation. 5 visitor spots open for Saturday 10:30 AM."'),
     ('Friday', '11:00 AM', 'ben', 'Short-Form Reel / TikTok', 'POV/Relatable', 'Reels / TikTok / Shorts',
      'crucible_proof', 'Post-Tournament Crucible Reel: Sandy on camera after competition: "Why competing under active pressure keeps my beginner coaching safer and more honest."'),
     ('Friday', '02:00 PM', 'carla', 'Static Feed Ad (1:1)', 'Fear', 'Facebook / Instagram',
-     'cash_converter', 'Parent reassurance: "Confidence without aggression. How play-based jiu-jitsu gives children quiet boundary protection without fighting."'),
+     'cash_converter', 'Parent reassurance: "Quiet confidence and balance. How play-based jiu-jitsu gives children strong boundary protection through cooperative drills."'),
     ('Friday', '04:30 PM', 'ian', 'Weekend Hype Story', 'Pattern Interrupt', 'Instagram Stories',
      'viral_loop', 'Boomerang / short 5s clip of Sandy giving a student a stripe or high five after a clean escape drill. Text: "Friday energy on the mats."'),
     ('Friday', '07:00 PM', 'tyler', 'Short-Form Reel / TikTok', 'Contrarian', 'Reels / TikTok / Shorts',
-     'tactical_clinic', 'Video (15s): "Why bench press won\'t save your ACL on black diamond runs this winter—and how mat hip mobility will."'),
+     'tactical_clinic', 'Video (15s): "How ground grappling builds dynamic knee stability, hip mobility, and balance for black diamond ski runs this winter."'),
 
     # Saturday (4 assets)
     ('Saturday', '08:30 AM', 'wendy', 'Static Feed Ad (4:5)', 'Most-Aware', 'Meta Mountain Geotarget',
-     'crucible_proof', 'Saturday Adult No-Gi reminder (10:30 AM). Clean mats, zero ego, active competitors and first-timers learning side-by-side.'),
+     'crucible_proof', 'Saturday Adult No-Gi reminder (10:30 AM). Clean mats, respectful room, active competitors and first-timers learning side-by-side.'),
     ('Saturday', '10:00 AM', 'ben', 'Live Mat Tour Story', 'Social Proof', 'Instagram Stories',
      'cash_converter', 'Live video walk-through: Sandy walking through the studio showing clean mats, stroller parking, and warm atmosphere right before Saturday class.'),
     ('Saturday', '01:00 PM', 'frankie', 'Short-Form Reel / TikTok', 'UGC', 'Reels / Facebook',
@@ -246,7 +252,7 @@ SCHEDULE_SLOTS = [
 
     # Sunday (4 assets)
     ('Sunday', '09:00 AM', 'ben', 'Educational Carousel (3-Slide)', 'Contrarian', 'Instagram / Facebook',
-     'tactical_clinic', 'Slide 1: "Why passive stretching won\'t fix your stiff lower back." Slide 2: "Active hip escapes & bridge mechanics." Slide 3: "Rebuilding resilience over 35."'),
+     'tactical_clinic', 'Slide 1: "How ground grappling builds lower back mobility and core strength." Slide 2: "Active hip escapes & bridge mechanics." Slide 3: "Rebuilding resilience over 35."'),
     ('Sunday', '12:00 PM', 'carla', 'Weekly Reset Story', 'Question', 'Instagram Stories',
      'cash_converter', 'Schedule Planning Sticker: "Holding 2 new student slots for Monday & Tuesday 5:00 PM youth classes. Comment START to reserve."'),
     ('Sunday', '03:30 PM', 'carla', 'Short-Form Reel / TikTok', 'UGC', 'Reels / TikTok / Shorts',

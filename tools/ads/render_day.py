@@ -285,8 +285,8 @@ def render_tuesday(out_dir, date_str, logo_img, adult_photo, kids_photo, exterio
         out_dir, 2, 3,
         "Day 1 is Coached Learning. Cooperative and Calm.",
         [
-            "In our Beginner Lane, you don't fight killers or get smashed by 20-year-olds.",
-            "You learn how to fall safely, protect your neck, and escape pressure.",
+            "In our Beginner Lane, you practice with respectful partners and guided coaching.",
+            "You learn how to fall safely, protect your balance, and move with leverage.",
             "We pair you with a cooperative partner who matches your exact pace."
         ],
         kids_photo, logo_img, slot_prefix="slot01"
@@ -595,9 +595,306 @@ def render_friday(out_dir, date_str, logo_img, adult_photo, kids_photo, exterior
     write_review_html(out_dir, date_str, "Friday", rendered_cards, desc)
     return rendered_cards
 
+def render_saturday(out_dir, date_str, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig):
+    rendered_cards = []
+
+    # 0. ORIGINAL WINNING FB POST #2 CONVERTER
+    if fb_converter_orig.exists():
+        shutil.copy(fb_converter_orig, out_dir / 'reference_post2_converter.jpg')
+        rendered_cards.append({
+            'slot': 'REF', 'type': 'Original Winning Ad Asset', 'avatar': 'Coach Sandy',
+            'file': 'reference_post2_converter.jpg', 'caption': 'The original winning creative baseline (Post #2 Model)'
+        })
+
+    # 1. SLOT #23: STATIC FEED AD (Weekend Wendy - Visitor Drop-in)
+    r23 = render_static_ad_portrait(
+        out_dir, "slot23_static_ad_wendy.png",
+        "Colors in the Catskills: Weekend Visitor BJJ",
+        "Visiting Hunter or Windham for the autumn foliage festivals? Maintain your weekly training momentum on vacation. Sensei Sandy BJJ offers easy visitor drop-in passes. Saturday Adult No-Gi at 10:30 AM right on Main St in Tannersville.",
+        exterior_photo, logo_img,
+        "VISITOR PASS • 6045 MAIN ST",
+        "SEE VISITOR OPTIONS",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 23, 'type': 'Static Feed Ad (1080x1350)', 'avatar': 'Weekend Wendy',
+        'file': r23, 'caption': '08:30 AM Static Feed Ad: Catskills fall foliage visitor drop-in passes',
+        'destination': 'https://senseisandy.com/options-pricing?utm_source=social&utm_medium=meta&utm_campaign=ssbjj_2026-W38&utm_content=post-23-wendy'
+    })
+
+    # 2. SLOT #24: LIVE MAT TOUR STORY CARD (Beginner Ben - Room Walkthrough)
+    r24 = render_story_card(
+        out_dir, "slot24_mat_tour_ben.png",
+        "Tour the Studio Before Saturday Class",
+        "Pristine mats. Clean space. Welcoming team.\n\nSaturday Adult No-Gi starts at 10:30 AM.\n\nStep in and experience what cooperative coached learning feels like.",
+        mats_photo, logo_img, badge="LIVE STUDIO TOUR"
+    )
+    rendered_cards.append({
+        'slot': 24, 'type': 'Story Card (1080x1920)', 'avatar': 'Beginner Ben',
+        'file': r24, 'caption': '10:00 AM Live Mat Tour Story: Clean mats, stroller parking, welcoming room',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-24-ben'
+    })
+
+    # 3. SLOT #25: REEL COVER CARD (Family-Activity Frankie - Teen CalmMind)
+    r25 = render_story_card(
+        out_dir, "slot25_reel_cover_frankie.png",
+        "Teens Staying Calm Under Pressure",
+        "How martial arts teaches teenagers quiet emotional resilience, breathing, and body control under gentle physical resistance.",
+        kids_photo, logo_img, badge="FAMILY TRAINING"
+    )
+    rendered_cards.append({
+        'slot': 25, 'type': 'Reel Cover / Title Card (1080x1920)', 'avatar': 'Family-Activity Frankie',
+        'file': r25, 'caption': '01:00 PM Reel: Teen emotional resilience and shared family training under one roof',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W38&utm_content=post-25-frankie'
+    })
+
+    # 4. SLOT #26: STATIC FEED AD (Community Casey - Weekend Shift Decompression)
+    r26 = render_static_ad_portrait(
+        out_dir, "slot26_static_ad_casey.png",
+        "Weekend Decompression for Mountain Crews",
+        "For mountaintop hospitality, EMTs, teachers, and municipal teams: shake off shift fatigue with 45 minutes of pure physical focus. Supportive room, calm coaching, 6045 Main St.",
+        adult_photo, logo_img,
+        "COMMUNITY DECOMPRESSION",
+        "COMMENT START FOR FREE INTRO",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 26, 'type': 'Static Feed Ad (1080x1350)', 'avatar': 'Community Casey',
+        'file': r26, 'caption': '05:00 PM Static Feed Ad: Shift worker decompression and weekend sweat',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=facebook&utm_campaign=ssbjj_2026-W38&utm_content=post-26-casey'
+    })
+
+    # 5. GBP-05: GOOGLE BUSINESS PROFILE SQUARE GRAPHIC (Casey / Shift Reset)
+    gbp5 = render_square_graphic(
+        out_dir, "slot_gbp05_shift_reset.png",
+        "Mountaintop Shift Decompression & Adult BJJ",
+        "Recharge after busy mountain shifts. Sensei Sandy BJJ provides cooperative beginner coaching in a welcoming, respectful environment at 6045 Main St, Tannersville.",
+        exterior_photo, logo_img,
+        "COMMUNITY ADULTS • TANNERSVILLE, NY",
+        "RESERVE FREE INTRO",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 'GBP-05', 'type': 'Google Business Profile Square (1080x1080)', 'avatar': 'Community Casey',
+        'file': gbp5, 'caption': 'Day 5 GBP Post: Weekend shift decompression and adult community training',
+        'destination': 'https://senseisandy.com/schedule?utm_source=google&utm_medium=organic&utm_campaign=gbp_post_05'
+    })
+
+    desc = "All 6 visual exports for Saturday: Reference post, Wendy visitor static ad, Ben mat tour story card, Frankie teen resilience reel cover, Casey shift decompression static ad, and GBP-05 weekend community graphic."
+    write_review_html(out_dir, date_str, "Saturday", rendered_cards, desc)
+    return rendered_cards
+
+def render_sunday(out_dir, date_str, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig):
+    rendered_cards = []
+
+    # 0. ORIGINAL WINNING FB POST #2 CONVERTER
+    if fb_converter_orig.exists():
+        shutil.copy(fb_converter_orig, out_dir / 'reference_post2_converter.jpg')
+        rendered_cards.append({
+            'slot': 'REF', 'type': 'Original Winning Ad Asset', 'avatar': 'Coach Sandy',
+            'file': 'reference_post2_converter.jpg', 'caption': 'The original winning creative baseline (Post #2 Model)'
+        })
+
+    # 1. SLOT #27: CAROUSEL SLIDES (Beginner Ben - Lower Back Mobility)
+    s1 = render_carousel_slide(
+        out_dir, 1, 3,
+        "How Ground Grappling Restores Lower Back Mobility",
+        [
+            "Desk work and mountain driving cause chronic hip tightness.",
+            "Passive stretching provides only temporary relief.",
+            "Swipe to see how active mat movement restores lasting mobility."
+        ],
+        adult_photo, logo_img, slot_prefix="slot27"
+    )
+    rendered_cards.append({
+        'slot': 27, 'type': 'Carousel Slide 1/3 (1080x1350)', 'avatar': 'Beginner Ben',
+        'file': s1, 'caption': 'Slide 1: Mobility mechanics over 35'
+    })
+
+    s2 = render_carousel_slide(
+        out_dir, 2, 3,
+        "Active Hip Escapes and Bridge Mechanics",
+        [
+            "BJJ movements strengthen deep spinal stabilizers naturally.",
+            "Gentle hip bridges restore functional pelvic alignment.",
+            "You move through full range of motion with cooperative coaching."
+        ],
+        mats_photo, logo_img, slot_prefix="slot27"
+    )
+    rendered_cards.append({
+        'slot': 27, 'type': 'Carousel Slide 2/3 (1080x1350)', 'avatar': 'Beginner Ben',
+        'file': s2, 'caption': 'Slide 2: Core stability and bridge mechanics'
+    })
+
+    s3 = render_carousel_slide(
+        out_dir, 3, 3,
+        "Rebuild Athletic Durability Over 35",
+        [
+            "Adult Beginner Lane runs Monday, Tuesday, Wednesday, Friday at 6 PM.",
+            "Saturday morning No-Gi at 10:30 AM.",
+            "First class is FREE. Comment START for the sign-up link."
+        ],
+        exterior_photo, logo_img, slot_prefix="slot27"
+    )
+    rendered_cards.append({
+        'slot': 27, 'type': 'Carousel Slide 3/3 (1080x1350)', 'avatar': 'Beginner Ben',
+        'file': s3, 'caption': 'Slide 3: Direct conversion micro-commitment'
+    })
+
+    # 2. SLOT #28: STORY POLL CARD (Coach-Mom Carla - Weekly Youth Reset)
+    r28 = render_story_card(
+        out_dir, "slot28_story_poll_carla.png",
+        "Holding 2 Spots for This Week's Youth BJJ",
+        "Monday & Tuesday at 5:00 PM.\n\nScreen-free movement, safe falling, and playful balance drills for ages 5-15.\n\nComment START to reserve your child's first visit.",
+        kids_photo, logo_img, badge="WEEKLY RESET POLL"
+    )
+    rendered_cards.append({
+        'slot': 28, 'type': 'Story Card (1080x1920)', 'avatar': 'Coach-Mom Carla',
+        'file': r28, 'caption': '12:00 PM Story Poll: Holding 2 new student slots for youth classes',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-28-carla'
+    })
+
+    # 3. SLOT #29: REEL COVER CARD (Coach-Mom Carla - First 5 Minutes)
+    r29 = render_story_card(
+        out_dir, "slot29_reel_cover_carla.png",
+        "A Child's First Five Minutes on the Mat",
+        "Safe breakfalls, the turtle roll game, and high fives. Warm, play-based coaching for mountain kids in Tannersville.",
+        kids_photo, logo_img, badge="YOUTH INTRO"
+    )
+    rendered_cards.append({
+        'slot': 29, 'type': 'Reel Cover / Title Card (1080x1920)', 'avatar': 'Coach-Mom Carla',
+        'file': r29, 'caption': '03:30 PM Reel: First five minutes on the mats walkthrough',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W38&utm_content=post-29-carla'
+    })
+
+    # 4. SLOT #30: STATIC FEED AD SQUARE (Beginner Ben Retargeting)
+    r30 = render_square_graphic(
+        out_dir, "slot30_static_ad_ben.png",
+        "Monday Starts Tomorrow: Beginner Lane at 6 PM",
+        "Two spots open for Monday's Adult Beginner Lane. Cooperative coached movement from day one with respectful partners at 6045 Main St. Comment START to reserve.",
+        adult_photo, logo_img,
+        "ADULT BEGINNER LANE • 6:00 PM",
+        "COMMENT START FOR FREE INTRO",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 30, 'type': 'Static Feed Ad (1080x1080)', 'avatar': 'Beginner Ben',
+        'file': r30, 'caption': '06:00 PM Static Feed Ad: Monday starts tomorrow retargeting',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=meta&utm_campaign=ssbjj_2026-W38&utm_content=post-30-ben'
+    })
+
+    # 5. GBP-06: GOOGLE BUSINESS PROFILE SQUARE GRAPHIC (Ben / Beginner Schedule)
+    gbp6 = render_square_graphic(
+        out_dir, "slot_gbp06_monday_kickoff.png",
+        "Step Into the Beginner Lane This Week",
+        "Looking for a fresh fitness routine? Adult BJJ classes run Mon / Tue / Wed / Fri at 6:00 PM. Cooperative movement, pure leverage, clean mats. 6045 Main St, Tannersville.",
+        mats_photo, logo_img,
+        "WEEKLY SCHEDULE • TANNERSVILLE, NY",
+        "RESERVE FREE INTRO",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 'GBP-06', 'type': 'Google Business Profile Square (1080x1080)', 'avatar': 'Beginner Ben',
+        'file': gbp6, 'caption': 'Day 6 GBP Post: Weekly adult beginner schedule kickoff',
+        'destination': 'https://senseisandy.com/schedule?utm_source=google&utm_medium=organic&utm_campaign=gbp_post_06'
+    })
+
+    desc = "All 8 visual exports for Sunday: Reference post, 3-slide mobility carousel for Beginner Ben, Carla youth reset story card, Carla first 5 mins reel cover, Ben Monday retargeting square ad, and GBP-06 schedule kickoff graphic."
+    write_review_html(out_dir, date_str, "Sunday", rendered_cards, desc)
+    return rendered_cards
+
+def render_monday(out_dir, date_str, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig):
+    rendered_cards = []
+
+    # 0. ORIGINAL WINNING FB POST #2 CONVERTER
+    if fb_converter_orig.exists():
+        shutil.copy(fb_converter_orig, out_dir / 'reference_post2_converter.jpg')
+        rendered_cards.append({
+            'slot': 'REF', 'type': 'Original Winning Ad Asset', 'avatar': 'Coach Sandy',
+            'file': 'reference_post2_converter.jpg', 'caption': 'The original winning creative baseline (Post #2 Model)'
+        })
+
+    # 1. SLOT W39-01: STATIC FEED AD (Coach-Mom Carla - HTC Screen Reset)
+    w01 = render_static_ad_portrait(
+        out_dir, "slot_w39_01_static_carla.png",
+        "Mountain Top Moms: Afternoon Screen Reset at 5 PM",
+        "After hours of Chromebooks and desk sitting, give your child a joyful physical outlet. Play-based lessons, safe falling drills, and quiet confidence at 6045 Main St, Tannersville.",
+        kids_photo, logo_img,
+        "HTC AFTER-SCHOOL RESET",
+        "COMMENT START FOR FREE INTRO",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 'W39-01', 'type': 'Static Feed Ad (1080x1350)', 'avatar': 'Coach-Mom Carla',
+        'file': w01, 'caption': '07:30 AM Static Feed Ad: Screen-free youth afternoon routine at 5 PM',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W39&utm_content=post-01-carla'
+    })
+
+    # 2. SLOT W39-02: REEL COVER CARD (Beginner Ben - Meet Pressure With Angle)
+    w02 = render_story_card(
+        out_dir, "slot_w39_02_reel_cover_ben.png",
+        "Mechanical Leverage: Meet Pressure With an Angle",
+        "Why redirecting force with an angle step beats pushing back. Master mechanical balance in our Beginner Lane.",
+        adult_photo, logo_img, badge="PHYSICS OVER MUSCLE"
+    )
+    rendered_cards.append({
+        'slot': 'W39-02', 'type': 'Reel Cover / Title Card (1080x1920)', 'avatar': 'Beginner Ben',
+        'file': w02, 'caption': '12:00 PM Reel: Physics over muscle and angle redirection',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W39&utm_content=post-02-ben'
+    })
+
+    # 3. SLOT W39-03: STORY POLL CARD (Coach-Mom Carla - Screen Burnout)
+    w03 = render_story_card(
+        out_dir, "slot_w39_03_story_poll_carla.png",
+        "Afternoon Screen Fatigue Check",
+        "Does your child need an active energy reset after school?\n\n[ A ] Yes, screen fatigue is real\n[ B ] Need an active outlet\n\nYouth BJJ begins today at 5:00 PM!",
+        kids_photo, logo_img, badge="AFTERNOON RESET POLL"
+    )
+    rendered_cards.append({
+        'slot': 'W39-03', 'type': 'Story Card (1080x1920)', 'avatar': 'Coach-Mom Carla',
+        'file': w03, 'caption': '03:30 PM Story Poll: Afternoon screen fatigue check and 5 PM class invite',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W39&utm_content=post-03-carla'
+    })
+
+    # 4. SLOT W39-04: STATIC FEED AD SQUARE (Community Casey - Shift Reset)
+    w04 = render_square_graphic(
+        out_dir, "slot_w39_04_static_casey.png",
+        "Monday Evening Decompression at 6 PM",
+        "Clear your mental slate after Monday's shift. 45 minutes of cooperative grappling movement where work stress clears away. Respectful room, supportive coaching, 6045 Main St.",
+        exterior_photo, logo_img,
+        "SHIFT DECOMPRESSION • 6:00 PM",
+        "COMMENT START FOR FREE INTRO",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 'W39-04', 'type': 'Static Feed Ad (1080x1080)', 'avatar': 'Community Casey',
+        'file': w04, 'caption': '06:30 PM Static Feed Ad: Shift worker decompression at 6 PM',
+        'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=facebook&utm_campaign=ssbjj_2026-W39&utm_content=post-04-casey'
+    })
+
+    # 5. GBP-07: GOOGLE BUSINESS PROFILE SQUARE GRAPHIC (Casey - Evening Schedule)
+    gbp7 = render_square_graphic(
+        out_dir, "slot_gbp07_evening_classes.png",
+        "Evening Martial Arts Schedule in Tannersville",
+        "Youth and Teens at 5:00 PM. Adults at 6:00 PM. Coached learning for families and beginners on Main Street. First class is free.",
+        mats_photo, logo_img,
+        "TANNERSVILLE MARTIAL ARTS",
+        "RESERVE FREE INTRO",
+        "SenseiSandy.com • Text (917) 736-8649"
+    )
+    rendered_cards.append({
+        'slot': 'GBP-07', 'type': 'Google Business Profile Square (1080x1080)', 'avatar': 'Community Casey',
+        'file': gbp7, 'caption': 'Day 7 GBP Post: Evening schedule for youth and adults under one roof',
+        'destination': 'https://senseisandy.com/schedule?utm_source=google&utm_medium=organic&utm_campaign=gbp_post_07'
+    })
+
+    desc = "All 6 visual exports for Monday: Reference post, Carla screen reset static ad, Ben force-angle reel cover, Carla screen burnout story card, Casey shift decompression square ad, and GBP-07 evening schedule graphic."
+    write_review_html(out_dir, date_str, "Monday", rendered_cards, desc)
+    return rendered_cards
+
 def main():
     parser = argparse.ArgumentParser(description="Render all graphics for a specific day")
-    parser.add_argument('--day', default='auto', help="Day of the week (Tuesday, Thursday, Friday, or auto)")
+    parser.add_argument('--day', default='auto', help="Day of the week (Monday, Tuesday, Thursday, Friday, Saturday, Sunday, or auto)")
     parser.add_argument('--date', default=datetime.date.today().strftime('%Y-%m-%d'), help="Calendar date YYYY-MM-DD")
     args = parser.parse_args()
 
@@ -625,17 +922,25 @@ def main():
     if not fb_converter_orig.exists():
         fb_converter_orig = ROOT / 'output/tuesday-2026-09-15/reference_post2_converter.jpg'
 
-    if target_day.lower() == 'tuesday':
+    day_lower = target_day.lower()
+    if day_lower == 'monday':
+        cards = render_monday(out_dir, args.date, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig)
+    elif day_lower == 'tuesday':
         cards = render_tuesday(out_dir, args.date, logo_img, adult_photo, kids_photo, exterior_photo, fb_converter_orig)
-    elif target_day.lower() == 'thursday':
+    elif day_lower == 'thursday':
         cards = render_thursday(out_dir, args.date, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig)
-    elif target_day.lower() == 'friday':
+    elif day_lower == 'friday':
         cards = render_friday(out_dir, args.date, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig)
+    elif day_lower == 'saturday':
+        cards = render_saturday(out_dir, args.date, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig)
+    elif day_lower == 'sunday':
+        cards = render_sunday(out_dir, args.date, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig)
     else:
-        print(f"Day '{target_day}' does not have a dedicated day renderer yet. Defaulting to Thursday production render.")
+        print(f"Day '{target_day}' defaulting to Thursday production render.")
         cards = render_thursday(out_dir, args.date, logo_img, adult_photo, kids_photo, exterior_photo, mats_photo, fb_converter_orig)
 
     print(f"Successfully rendered {len(cards)} graphics for {target_day} ({args.date}): {out_dir.resolve()}")
 
 if __name__ == '__main__':
     main()
+

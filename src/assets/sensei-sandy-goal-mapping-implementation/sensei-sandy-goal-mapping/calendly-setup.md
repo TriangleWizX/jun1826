@@ -1,4 +1,6 @@
-# Calendly Event Setup
+# Calendly Event Setup (Historical Archive)
+
+> **Migration Note**: Scheduling has migrated to Cal.com (`https://cal.com/senseisandy/first-visit`). This setup record is preserved for reference of custom qualification questions.
 
 ## Event type
 

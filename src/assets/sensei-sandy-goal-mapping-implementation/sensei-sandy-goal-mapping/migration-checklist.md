@@ -1,4 +1,6 @@
-# Sitewide Migration Checklist
+# Sitewide Migration Checklist (Historical Archive)
+
+> **Migration Note**: The booking flow has migrated to Cal.com (`https://cal.com/senseisandy/first-visit`) with native site navigation to `/free-bjj-intro-tannersville-ny#booking-flow` powered by `js/progressive-booking.js`.
 
 ## 1. Create the new Calendly event
 

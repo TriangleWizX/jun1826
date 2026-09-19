@@ -2023,7 +2023,8 @@ img,
 }
 
 .ss-calendly,
-#calendlyInline {
+#calendlyInline,
+#first-visit-calendar {
   border: 1px solid var(--ss-border) !important;
   border-radius: var(--ss-r2) !important;
   background: var(--ss-surface-solid);
