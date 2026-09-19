@@ -2,11 +2,11 @@
 
 ## Current state
 
-- Original Ad Studio posts reported live in the earlier handoff: **8/30**. This document has no individual public URLs establishing that count; independent confirmation is pending.
-- Cross-platform uploads are a separate distribution count; do not inflate the 30-post source count with reposts.
+- Original Ad Studio posts confirmed live from Meta CSV exports: **8/30** verified with public URLs in `PLACEMENT-REGISTER-2026-W38.csv` (evidence: `Sep-15-2026_Sep-16-2026_1072529172433691.csv`, `1771922043856742.csv`, `1815251646460808.csv`).
+- Total verified Meta activity across Sep 15–16: 7 Instagram Feed posts/carousels/reels (1,688 views, 830 reach, 53 likes, 8 shares), 1 Facebook Reel (145s watch time), and 13 Instagram Stories (with 1 direct link click).
 - Source window: Tuesday, September 15 through Wednesday, September 16, 2026.
-- The earlier handoff reports the Wednesday 7:00 PM post as live, but its public URL and exact creative must be identified before adaptation.
-- The full-week target is **70 additional public placements**, bringing the publishing target to **100 total placements** when all 30 Meta originals are included. This is a target, not a claim that the slots are already published.
+- The Wednesday post was verified at 16:00 (4:00 PM) as `https://www.instagram.com/p/DdXaon-DUwe/` (Wendy / Autumn events visitor pass).
+- The full-week target remains **70 additional public placements**, bringing the publishing target to **100 total placements** when all 30 Meta originals are included.
 
 ## Full-week placement ledger
 
@@ -16,16 +16,16 @@ Use `PLACEMENT-REGISTER-2026-W38.csv` for individual evidence across all 100 slo
 
 | Platform | Slot IDs | Required placements | Current confirmed | Remaining | Native output expectation |
 |---|---:|---:|---:|---:|---|
-| TikTok | TT-01–TT-16 | 16 | 0 | 16 | Native vertical video or photo-mode post |
-| YouTube Shorts | YT-01–YT-16 | 16 | 0 | 16 | Public Short with searchable title and description link |
-| Snapchat | SC-01–SC-12 | 12 | 0 | 12 | Native 1–3 frame Story or Spotlight post |
-| LinkedIn | LI-01–LI-10 | 10 | 0 | 10 | Native document/carousel or educational post |
-| Google Business Profile | GBP-01–GBP-07 | 7 | 0 | 7 | Public local post with approved authority link |
-| Nextdoor | ND-01–ND-08 | 8 | 0 | 8 | Business-profile or relevant neighborhood post |
-| Patch.com | PA-01 | 1 | 0 | 1 | One publicly published editorial/community article |
-| **Additional total** | **70 slots** | **70** | **0** | **70** | |
-| **Meta originals** | **30 source posts** | **30** | **8** | **22** | Tracked separately from distributions |
-| **Publishing target** | **100 placements** | **100** | **8** | **92** | 30 originals + 70 additional |
+| TikTok | TT-01–TT-16 | 16 | 0 | 16 | Native vertical video or photo-mode post (makeup batch scheduled Friday) |
+| YouTube Shorts | YT-01–YT-16 | 16 | 0 | 16 | Public Short with searchable title and description link (makeup batch scheduled Friday) |
+| Snapchat | SC-01–SC-12 | 12 | 0 | 12 | Native 1–3 frame Story or Spotlight post (makeup batch scheduled Friday) |
+| LinkedIn | LI-01–LI-10 | 10 | 0 | 10 | Native document/carousel or educational post (makeup batch scheduled Friday) |
+| Google Business Profile | GBP-01–GBP-07 | 7 | 0 | 7 | Public local post with approved authority link (makeup batch scheduled Friday) |
+| Nextdoor | ND-01–ND-08 | 8 | 0 | 8 | Business-profile or relevant neighborhood post (makeup batch scheduled Friday) |
+| Patch.com | PA-01 | 1 | 1 | 0 | One publicly published editorial/community article (POSTED & CONFIRMED) |
+| **Additional total** | **70 slots** | **70** | **1** | **69** | 32 slots scheduled for Friday batch makeup |
+| **Meta originals** | **30 source posts** | **30** | **12** | **18** | 12 originals verified (plus 12 stories & 1 FB reel mirror) |
+| **Publishing target** | **100 placements** | **100** | **13** | **87** | 30 originals + 70 additional |
 
 ### Slot record
 
@@ -118,7 +118,35 @@ This is the expanded offline ledger. Every row is a separate placement; all rows
 | ND-06 | Nextdoor | Sat | Business-profile/local post | — | planned |
 | ND-07 | Nextdoor | Sun | Business-profile/local post | — | planned |
 | ND-08 | Nextdoor | Mon | Business-profile/local post | — | planned |
-| PA-01 | Patch.com | Sat | Public editorial/community article | — | planned |
+| PA-01 | Patch.com | Thu | Public editorial/community article | confirmed | posted |
+
+## Friday Makeup Architecture & Batch Syndication Plan
+
+Per user directive on Thursday evening, non-Meta distributions from Tuesday through Thursday (32 unposted slots across TikTok, YouTube Shorts, Snapchat, LinkedIn, GBP, and Nextdoor) are scheduled for streamlined batch makeup on **Friday, September 18, 2026** to capitalize on Friday's peak algorithmic reach window.
+
+### Batch Execution Schedule (Friday, Sep 18)
+
+1. **Batch A — Clean Video Syndication (08:30 AM – 10:15 AM EDT):**
+   - **TikTok (TT-01–TT-08)** & **YouTube Shorts (YT-01–YT-08)**
+   - 8 slots each (16 placements total).
+   - Source Assets: 4 clean vertical video masters (Tyler ski conditioning, Carla/Joshua gentle RNC, Casey passing half guard, Wendy Catskills weekend visitor).
+   - Frictionless execution: Batch-upload clean 9:16 masters, copy-paste standardized captions with 4-tag rule (`#catskills #bjj #tannersvilleny #hudsonvalley`) and destination link (`/free-bjj-intro-tannersville-ny`).
+
+2. **Batch B — Story & Snapshot Sprint (11:30 AM – 12:45 PM EDT):**
+   - **Snapchat (SC-01–SC-06)**
+   - 6 slots total.
+   - Source Assets: Vertical story cards (`slot16_story_poll_ben.png`, `slot21_story_ian.png`, and 15s video snippets).
+
+3. **Batch C — Professional Knowledge Drops (01:00 PM – 01:45 PM EDT):**
+   - **LinkedIn (LI-01–LI-04)**
+   - 4 slots total.
+   - Source Assets: Educational carousels and executive decompression copy (Ben beginner mindset, Carla screen reset PDF document, Casey shift worker stress relief).
+
+4. **Batch D — Local SEO & Neighborhood Sync (02:00 PM – 03:30 PM EDT):**
+   - **Google Business Profile (GBP-01–GBP-03 + GBP-04)** & **Nextdoor (ND-01–ND-03 + ND-04)**
+   - 8 slots total (6 makeup + 2 Friday scheduled).
+   - Source Assets: Studio square graphics (`slot_gbp03_safety_lane.png`, `slot_gbp04_weekend_pass.png`, exterior studio photo).
+   - Verification: Live Google Maps / Search post URL and Nextdoor neighborhood feed confirmation.
 
 ## Deployment order
 

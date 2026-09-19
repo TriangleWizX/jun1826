@@ -51,10 +51,10 @@
 - **Platform:** Reels / TikTok / Shorts
 - **Target Avatar:** Beginner Ben (`ben`)
 - **Winning Archetype:** `The Viral Reach Loop (Reel #1 Model — #1 Most Viewed)`
-- **Production Cue:** Video (10s loop): Sandy calmly redirecting a heavy partner push with a simple angle step. Text overlay: "Don't meet force with force. Meet force with an angle."
+- **Production Cue:** Video (10s loop): Sandy calmly redirecting a heavy partner push with a simple angle step. Text overlay: "Redirect incoming force. Meet pressure with an angle."
 - **Hook Category:** `Contrarian` (k10k Hook #258)
 - **Hook Template:** *"Stop wasting money on [COMMON SPEND]. Try this instead."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W38&utm_content=post-02-ben)
 
 ### #03 | 03:30 PM — Interactive Story Poll
@@ -118,7 +118,7 @@
 - **Production Cue:** Post #2 Adult Model: Slide 1: "Think you need to get in shape before trying BJJ?" Slide 2: "That's like needing to know math before school." Slide 3: "Comment START for 30-sec link."
 - **Hook Category:** `Curiosity` (k10k Hook #628)
 - **Hook Template:** *"Two weeks into [HABIT], I caught my reflection and didn't recognize it."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-05-ben)
 
 > 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
@@ -129,7 +129,7 @@
 > Beginner Lane | Mon / Tue / Wed / Fri 6 PM
 > Saturday No-Gi | 10:30 AM
 > 
-> ✅ Zero live sparring on Day 1 — cooperative coached movement
+> ✅ Cooperative, coached movement from day one
 > ✅ 1st-Degree Black-Belt coach & local
 > ✅ Welcoming beginner room at 6045 Main St, Tannersville
 > 
@@ -151,7 +151,7 @@
 - **Platform:** Reels / Facebook
 - **Target Avatar:** Coach-Mom Carla (`carla`)
 - **Winning Archetype:** `The Viral Reach Loop (Reel #1 Model — #1 Most Viewed)`
-- **Production Cue:** Video (12s loop): Coached youth partner drill. Two kids executing clean balance escapes, finishing with high fives and smiles. Zero aggression.
+- **Production Cue:** Video (12s loop): Coached youth partner drill. Two kids executing clean balance escapes, finishing with high fives and smiles. Cooperative and safe.
 - **Hook Category:** `Social Proof` (k10k Hook #1259)
 - **Hook Template:** *"[BIG NUMBER] [AUDIENCE] used [PRODUCT] last [TIMEFRAME]. Here's the receipts."*
 - **Local Mountain Context:** Back-to-School / HTC Routine — *HTC kids are back in school, spending hours on Chromebooks and sitting. Evening classes at 5:00 PM reset focus and body awareness.*
@@ -171,10 +171,10 @@
 - **Platform:** Meta Local Ads
 - **Target Avatar:** Weekend Wendy (`wendy`)
 - **Winning Archetype:** `The Crucible / Tournament Proof (Reel #3 Model)`
-- **Production Cue:** Exterior of 6045 Main St Tannersville. Post #2 Visitor Variant: "Visiting Hunter or Windham for foliage? Comment VISIT for your drop-in mat pass."
+- **Production Cue:** Exterior of 6045 Main St Tannersville. Post #2 Visitor Variant: "Visiting Hunter or Windham for foliage? Comment START for your drop-in mat pass."
 - **Hook Category:** `Solution-Aware` (k10k Hook #717)
 - **Hook Template:** *"You don't need more [PRODUCT]. You need the right [PRODUCT] used the right way."*
-- **Local Mountain Context:** Colors in the Catskills (Hunter Mountain Fall Festival) — *Visiting the Catskills for the autumn festivals? Dont skip your weekly training routine. Sensei Sandy BJJ offers easy visitor drop-in passes.*
+- **Local Mountain Context:** Colors in the Catskills (Hunter Mountain Fall Festival) — *Visiting the Catskills for the autumn festivals? Maintain your weekly training routine on vacation. Sensei Sandy BJJ offers easy visitor drop-in passes.*
 - **Direct Call to Action:** [SEE VISITOR OPTIONS](https://senseisandy.com/options-pricing?utm_source=social&utm_medium=meta&utm_campaign=ssbjj_2026-W38&utm_content=post-09-wendy)
 
 ## 📅 WEDNESDAY, SEPTEMBER 16, 2026
@@ -183,10 +183,10 @@
 - **Platform:** Instagram / Facebook
 - **Target Avatar:** Beginner Ben (`ben`)
 - **Winning Archetype:** `The Cash Converter (Post #2 Model — 2 Conversions)`
-- **Production Cue:** Post #2 Adult Converter: "Mountain Top Adults! Looking for a safe 45-min sweat? Zero live sparring on Day 1. Comment START."
+- **Production Cue:** Post #2 Adult Converter: "Mountain Top Adults! Looking for a safe 45-min sweat? Cooperative, coached movement from day one. Comment START."
 - **Hook Category:** `Classic DR` (k10k Hook #1823)
 - **Hook Template:** *"What every [AUDIENCE] should know about [TOPIC] — but doesn't."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-10-ben)
 
 > 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
@@ -197,7 +197,7 @@
 > Beginner Lane | Mon / Tue / Wed / Fri 6 PM
 > Saturday No-Gi | 10:30 AM
 > 
-> ✅ Zero live sparring on Day 1 — cooperative coached movement
+> ✅ Cooperative, coached movement from day one
 > ✅ 1st-Degree Black-Belt coach & local
 > ✅ Welcoming beginner room at 6045 Main St, Tannersville
 > 
@@ -209,7 +209,7 @@
 - **Platform:** Reels / TikTok / Shorts
 - **Target Avatar:** Coach-Mom Carla (`carla`)
 - **Winning Archetype:** `Tactical Micro-Clinic (Opening Closed Guard Model)`
-- **Production Cue:** Video (15s micro-clinic): Sandy demonstrates the "wrist twist escape" for kids. "How leverage beats grip strength without throwing a punch."
+- **Production Cue:** Video (15s micro-clinic): Sandy demonstrates the "wrist twist escape" for kids. "How leverage beats grip strength using pure technique."
 - **Hook Category:** `Pattern Interrupt` (k10k Hook #1405)
 - **Hook Template:** *"Whatever you're doing — pause it."*
 - **Local Mountain Context:** Back-to-School / HTC Routine — *HTC kids are back in school, spending hours on Chromebooks and sitting. Evening classes at 5:00 PM reset focus and body awareness.*
@@ -229,7 +229,7 @@
 - **Platform:** Instagram Stories
 - **Target Avatar:** Family-Activity Frankie (`frankie`)
 - **Winning Archetype:** `The Cash Converter (Post #2 Model — 2 Conversions)`
-- **Production Cue:** Story Q&A: "Can parents and kids train on the same evening without splitting schedules? Ask Sandy how the schedule aligns."
+- **Production Cue:** Story Q&A: "Can parents and kids train on the same evening under one roof? Ask Sandy how the schedule aligns."
 - **Hook Category:** `Question` (k10k Hook #1083)
 - **Hook Template:** *"Who are you when you're not performing?"*
 - **Local Mountain Context:** Windham 32nd Annual Autumn Affair — *Tired of dropping kids off and waiting in the parking lot? Family jiu-jitsu gives parents and children a shared martial arts journey.*
@@ -243,7 +243,7 @@
 > Youth & Teens | 5 PM
 > Adults & Parents | 6 PM — jump in or cheer them on!
 > 
-> ✅ Shared family martial arts journey without split driving
+> ✅ Shared family martial arts journey under one roof
 > ✅ 1st-Degree Black-Belt coach & local
 > ✅ Stroller-friendly studio at 6045 Main St, Tannersville
 > 
@@ -253,41 +253,67 @@
 
 ## 📅 THURSDAY, SEPTEMBER 17, 2026
 
-### #14 | 08:00 AM — Educational Carousel (3-Slide)
+### #14 (Slot 10) | 12:00 PM — Educational Carousel (3-Slide)
 - **Platform:** Instagram / Facebook
 - **Target Avatar:** Coach-Mom Carla (`carla`)
-- **Winning Archetype:** `The Cash Converter (Post #2 Model — 2 Conversions)`
-- **Production Cue:** Post #2 Reassurance: Slide 1: "Play-based lessons." Slide 2: "1st-Degree Black-Belt local coach." Slide 3: "Stroller-friendly studio on Main St."
+- **Winning Archetype:** `The Cash Converter (Post #2 HTC Screen Reset Model — 2 Conversions)`
+- **Production Cue:** Enhanced 3-Slide Carousel: Slide 1: "HTC Kids Spend 6 Hours on Screens. Reset Their Energy." Slide 2: "1st-Degree Black Belt Coaching. Built for Safety." Slide 3: "Reserve Your Child's Free Intro This Week. Kids 5 PM, Adults 6 PM."
 - **Hook Category:** `Proof` (k10k Hook #218)
 - **Hook Template:** *"We pulled the receipts from [NUMBER] customers. The pattern was wild."*
-- **Local Mountain Context:** Back-to-School / HTC Routine — *HTC kids are back in school, spending hours on Chromebooks and sitting. Evening classes at 5:00 PM reset focus and body awareness.*
-- **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-14-carla)
+- **Local Mountain Context:** Back-to-School / HTC Routine — *HTC kids spend six hours a day on Chromebooks and sitting. Evening classes at 5:00 PM reset focus, posture, and body awareness.*
+- **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=slot-10-carla-enhanced)
 
-> 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
-> **💚 Mountain Top Moms! Looking for a screen-free hour where the kids burn off energy and build confidence?**
+> 📝 **Ready-to-Post Copy (Stop-Slop Calibrated):**
+> **HTC kids spend six hours a day behind Chromebooks and classroom desks.**
 > 
-> First class is FREE at Sensei Sandy BJJ. Comment START and I’ll DM you the 30-second sign-up link. 👇
+> By 3:30 PM, kids arrive home restless or exhausted from sitting still.
 > 
-> Kids & Teens | Mon / Tue / Wed / Fri 5 PM
-> Parents & Adults | 6 PM — jump in or cheer them on!
+> At Sensei Sandy Brazilian Jiu-Jitsu in Tannersville, we teach kids body control and confidence through disciplined partner practice:
 > 
-> ✅ 1-hour, play-based lessons
-> ✅ 1st-Degree Black-Belt coach & local
-> ✅ Stroller-friendly studio at 6045 Main St, Tannersville
+> • Safe falling mechanics and posture drills that protect kids on the playground and ski slopes.
+> • Controlled partner training led by a 1st-degree black belt, with clear rules, cooperative drills, and respectful practice.
 > 
-> Comment START or DM START to claim your family’s spot. See you on the mats! 🥋
+> Your child starts with a 1-on-1 guided intro. Coach Sandy walks them onto clean mats, introduces them to the team, and teaches basic movements at a calm pace.
 > 
-> 👉 *DM Link:* https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-14-carla
+> Comment START below, tap the link in our bio, or text Sandy at (917) 736-8649 to book a Free Intro this week.
+> 
+> Kids class: 5:00 PM | Mon, Tue, Wed, Fri
+> 6045 Main St, Tannersville NY (right on the mountain)
+> 
+> 👉 *DM Link:* https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=slot-10-carla-enhanced
 
 ### #15 | 11:30 AM — Short-Form Reel / TikTok
 - **Platform:** Reels / TikTok / Shorts
 - **Target Avatar:** Community Casey (`casey`)
-- **Winning Archetype:** `Tactical Micro-Clinic (Opening Closed Guard Model)`
-- **Production Cue:** Video (18s Tactical Clinic): "Opening the Closed Guard" breakdown. Sandy showing hip wedge, lapel control, and posture break. "Stop pulling elbows; use geometry."
+- **Winning Archetype:** `Tactical Micro-Clinic (Passing Half Guard to North-South Model)`
+- **Production Cue:** Video (18s Tactical Clinic): "Passing Half Guard to North-South" breakdown. Sandy demonstrating chest-to-chest flattening pressure, backward hip walk toward North-South, and clean disengagement. "Stop yanking trapped legs forward; walk backwards to North-South."
 - **Hook Category:** `Authority` (k10k Hook #1309)
 - **Hook Template:** *"As an ex-[ROLE] at [COMPANY], here's the thing they don't want you to ask."*
 - **Local Mountain Context:** Mountaintop Service & Shift Work Decompression — *Shift work and tourist seasons take a toll. 45 minutes on the mats gives local public servants a safe sweat where work stress is impossible to hold.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W38&utm_content=post-15-casey)
+
+> 📝 **Ready-to-Post Copy (Stop-Slop & Reach Calibrated):**
+> **Stuck in half guard? Stop yanking your leg.**
+> 
+> When you try to pry your knee free with leg strength, you twist your joints and gas your gas tank.
+> 
+> Instead, change the angle:
+> 
+> • Drop heavy chest-to-chest pressure and pin both of their shoulders flat to the mat.
+> • Walk your hips backward toward North-South until their leg lock opens from leverage, sliding your foot free using pure mechanical leverage.
+> 
+> When you spend your day on your feet running kitchens, resort counters, or mountain calls, you want training that restores your body, not beats it up.
+> 
+> A 45-minute evening class at Sensei Sandy BJJ gives you a safe, full-body sweat rooted in Clockwork NYC lineage technique with @clockworkbjj. Every round is cooperative and coached.
+> 
+> Comment START below, tap the link in our bio, or text Sandy at (917) 736-8649 to reserve your Free Intro class.
+> 
+> Adult Beginner Lane:
+> Monday, Tuesday, Wednesday, Friday at 6:00 PM
+> Saturday No-Gi at 10:30 AM
+> 6045 Main St, Tannersville NY (right on the mountain)
+> 
+> 👉 *DM Link:* https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W38&utm_content=post-15-casey
 
 ### #16 | 03:00 PM — Interactive Story Poll
 - **Platform:** Instagram Stories
@@ -296,7 +322,7 @@
 - **Production Cue:** Story Poll: "Biggest hesitation about starting martial arts? [Fear of injury / Out of shape / Intimidating gym]. Sandy replies directly to every vote."
 - **Hook Category:** `Curiosity` (k10k Hook #622)
 - **Hook Template:** *"The reason [POPULAR ADVICE] doesn't work for [AUDIENCE] is rarely discussed."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-16-ben)
 
 > 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
@@ -307,7 +333,7 @@
 > Beginner Lane | Mon / Tue / Wed / Fri 6 PM
 > Saturday No-Gi | 10:30 AM
 > 
-> ✅ Zero live sparring on Day 1 — cooperative coached movement
+> ✅ Cooperative, coached movement from day one
 > ✅ 1st-Degree Black-Belt coach & local
 > ✅ Welcoming beginner room at 6045 Main St, Tannersville
 > 
@@ -319,25 +345,27 @@
 - **Platform:** Instagram / Facebook
 - **Target Avatar:** Family-Activity Frankie (`frankie`)
 - **Winning Archetype:** `The Cash Converter (Post #2 Model — 2 Conversions)`
-- **Production Cue:** Post #2 Family Model: "Mountain Top Families! Tired of scrolling in the car? Kids at 5 PM, adults at 6 PM. Comment START."
+- **Production Cue:** Post #2 Family Model: "Mountain families: Train together under one roof. Kids at 5 PM, adults at 6 PM. Comment START."
 - **Hook Category:** `Story` (k10k Hook #903)
 - **Hook Template:** *"My mentor handed me a napkin with three words on it. I still have it."*
-- **Local Mountain Context:** Windham 32nd Annual Autumn Affair — *Tired of dropping kids off and waiting in the parking lot? Family jiu-jitsu gives parents and children a shared martial arts journey.*
+- **Local Mountain Context:** Windham 32nd Annual Autumn Affair — *Tired of dropping kids off and waiting in the parking lot? Family jiu-jitsu gives parents and children a shared martial arts journey under one roof.*
 - **Direct Call to Action:** [PLAN A FAMILY FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-17-frankie)
 
-> 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
-> **👨‍👩‍👧‍👦 Mountain Top Families! Tired of dropping kids off and scrolling on your phone in the parking lot?**
+> 📝 **Ready-to-Post Copy (4-Rubric Calibrated):**
+> **Mountain families: Stop sitting in cold parking lots while your kids train.**
 > 
-> First class is FREE at Sensei Sandy BJJ. Comment START and I’ll DM you the 30-second sign-up link. 👇
+> Between school pickups and evening sports, parents spend hours waiting in idling cars, scrolling phones, and running split commutes across the mountaintop.
 > 
-> Youth & Teens | 5 PM
-> Adults & Parents | 6 PM — jump in or cheer them on!
+> At Sensei Sandy Brazilian Jiu-Jitsu in Tannersville, your family trains under one roof:
 > 
-> ✅ Shared family martial arts journey without split driving
-> ✅ 1st-Degree Black-Belt coach & local
-> ✅ Stroller-friendly studio at 6045 Main St, Tannersville
+> • Youth and Teens train at 5:00 PM, learning balance, safe falling, and body control.
+> • Adults and parents step onto the mats at 6:00 PM for a coached, full-body workout with supportive partners and structured coaching.
 > 
-> Comment START or DM START to claim your family’s spot. See you on the mats! 🥋
+> Watch your kids from our lounge, or jump into class yourself. Every newcomer starts with a coached 1-on-1 intro. Coach Sandy walks your family onto clean mats and introduces the basic movements at a calm pace.
+> 
+> Comment START below, tap the link in our bio, or text Sandy at (917) 736-8649 to reserve your family's Free Intro this week.
+> 
+> 6045 Main St, Tannersville NY (right on the mountain)
 > 
 > 👉 *DM Link:* https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-17-frankie
 
@@ -347,10 +375,10 @@
 - **Platform:** Reels / TikTok / Shorts
 - **Target Avatar:** Weekend Wendy (`wendy`)
 - **Winning Archetype:** `The Crucible / Tournament Proof (Reel #3 Model)`
-- **Production Cue:** Video (15s): Sandy inviting Catskills weekend visitors to Saturday morning No-Gi. "Don't skip mat time on vacation. 5 visitor spots open for Saturday 10:30 AM."
+- **Production Cue:** Video (15s): Sandy inviting Catskills weekend visitors to Saturday morning No-Gi. "Keep your training sharp on vacation. 5 visitor spots open for Saturday 10:30 AM."
 - **Hook Category:** `Urgency` (k10k Hook #1163)
 - **Hook Template:** *"The [TAX LAW/POLICY] sunsets December 31. After that, this strategy is gone."*
-- **Local Mountain Context:** Colors in the Catskills (Hunter Mountain Fall Festival) — *Visiting the Catskills for the autumn festivals? Dont skip your weekly training routine. Sensei Sandy BJJ offers easy visitor drop-in passes.*
+- **Local Mountain Context:** Colors in the Catskills (Hunter Mountain Fall Festival) — *Visiting the Catskills for the autumn festivals? Maintain your weekly training routine on vacation. Sensei Sandy BJJ offers easy visitor drop-in passes.*
 - **Direct Call to Action:** [SEE VISITOR OPTIONS](https://senseisandy.com/options-pricing?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W38&utm_content=post-18-wendy)
 
 ### #19 | 11:00 AM — Short-Form Reel / TikTok
@@ -360,14 +388,14 @@
 - **Production Cue:** Post-Tournament Crucible Reel: Sandy on camera after competition: "Why competing under active pressure keeps my beginner coaching safer and more honest."
 - **Hook Category:** `POV/Relatable` (k10k Hook #448)
 - **Hook Template:** *"POV: you Googled "[COMMON SEARCH]" three nights in a row."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=reels&utm_campaign=ssbjj_2026-W38&utm_content=post-19-ben)
 
 ### #20 | 02:00 PM — Static Feed Ad (1:1)
 - **Platform:** Facebook / Instagram
 - **Target Avatar:** Coach-Mom Carla (`carla`)
 - **Winning Archetype:** `The Cash Converter (Post #2 Model — 2 Conversions)`
-- **Production Cue:** Parent reassurance: "Confidence without aggression. How play-based jiu-jitsu gives children quiet boundary protection without fighting."
+- **Production Cue:** Parent reassurance: "Quiet confidence and balance. How play-based jiu-jitsu gives children calm boundary protection and safe falling skills."
 - **Hook Category:** `Fear` (k10k Hook #1670)
 - **Hook Template:** *"Three words on your [LABEL/STATEMENT] that should send you running."*
 - **Local Mountain Context:** Back-to-School / HTC Routine — *HTC kids are back in school, spending hours on Chromebooks and sitting. Evening classes at 5:00 PM reset focus and body awareness.*
@@ -403,7 +431,7 @@
 - **Platform:** Reels / TikTok / Shorts
 - **Target Avatar:** Cross-Training Tyler (`tyler`)
 - **Winning Archetype:** `Tactical Micro-Clinic (Opening Closed Guard Model)`
-- **Production Cue:** Video (15s): "Why bench press won't save your ACL on black diamond runs this winter—and how mat hip mobility will."
+- **Production Cue:** Video (15s): "Build knee resilience and rotational core stability for black diamond runs this winter through mat hip mobility."
 - **Hook Category:** `Contrarian` (k10k Hook #1131)
 - **Hook Template:** *"Your [PRACTICE] isn't working because you're [PRACTICE_ING] about your [DISTRACTION]."*
 - **Local Mountain Context:** Ski & Snowboard Pre-Season Conditioning — *Ski season is around the corner. Controlled grappling builds the rotational core stability, hip mobility, and balance athletes need on the slopes.*
@@ -415,10 +443,10 @@
 - **Platform:** Meta Mountain Geotarget
 - **Target Avatar:** Weekend Wendy (`wendy`)
 - **Winning Archetype:** `The Crucible / Tournament Proof (Reel #3 Model)`
-- **Production Cue:** Saturday Adult No-Gi reminder (10:30 AM). Clean mats, zero ego, active competitors and first-timers learning side-by-side.
+- **Production Cue:** Saturday Adult No-Gi reminder (10:30 AM). Clean mats, welcoming team atmosphere, active competitors and first-timers learning side-by-side.
 - **Hook Category:** `Most-Aware` (k10k Hook #800)
 - **Hook Template:** *"You asked for a [SIZE] travel size. We made it. Available now in the bundle."*
-- **Local Mountain Context:** Colors in the Catskills (Hunter Mountain Fall Festival) — *Visiting the Catskills for the autumn festivals? Dont skip your weekly training routine. Sensei Sandy BJJ offers easy visitor drop-in passes.*
+- **Local Mountain Context:** Colors in the Catskills (Hunter Mountain Fall Festival) — *Visiting the Catskills for the autumn festivals? Maintain your weekly training routine on vacation. Sensei Sandy BJJ offers easy visitor drop-in passes.*
 - **Direct Call to Action:** [SEE VISITOR OPTIONS](https://senseisandy.com/options-pricing?utm_source=social&utm_medium=meta&utm_campaign=ssbjj_2026-W38&utm_content=post-23-wendy)
 
 ### #24 | 10:00 AM — Live Mat Tour Story
@@ -428,7 +456,7 @@
 - **Production Cue:** Live video walk-through: Sandy walking through the studio showing clean mats, stroller parking, and warm atmosphere right before Saturday class.
 - **Hook Category:** `Social Proof` (k10k Hook #1247)
 - **Hook Template:** *"It's the [PRODUCT] [CELEBRITY-TYPE] keeps reordering."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-24-ben)
 
 > 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
@@ -439,7 +467,7 @@
 > Beginner Lane | Mon / Tue / Wed / Fri 6 PM
 > Saturday No-Gi | 10:30 AM
 > 
-> ✅ Zero live sparring on Day 1 — cooperative coached movement
+> ✅ Cooperative, coached movement from day one
 > ✅ 1st-Degree Black-Belt coach & local
 > ✅ Welcoming beginner room at 6045 Main St, Tannersville
 > 
@@ -464,7 +492,7 @@
 - **Production Cue:** Weekend Decompression: "For the hospitality, emergency, and mountain service crews: sweat the week out safely. Comment START."
 - **Hook Category:** `Classic DR` (k10k Hook #1855)
 - **Hook Template:** *"The simple swap that turned my [BAD METRIC] into [GOOD METRIC] in [TIMEFRAME]."*
-- **Local Mountain Context:** Mountaintop Service & Shift Work Decompression — *Shift work and tourist seasons take a toll. 45 minutes on the mats gives local public servants a safe sweat where work stress is impossible to hold.*
+- **Local Mountain Context:** Mountaintop Service & Shift Work Decompression — *Shift work and tourist seasons take a toll. 45 minutes on the mats gives local public servants a safe sweat where work stress fades into physical focus.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=facebook&utm_campaign=ssbjj_2026-W38&utm_content=post-26-casey)
 
 > 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
@@ -475,7 +503,7 @@
 > Adult Decompression | Mon / Tue / Wed / Fri 6 PM
 > Saturday Reset | 10:30 AM
 > 
-> ✅ 45-minute safe sweat where work stress is impossible to hold
+> ✅ 45-minute safe sweat where work stress fades into physical focus
 > ✅ 1st-Degree Black-Belt coach & local
 > ✅ Clean, welcoming studio at 6045 Main St, Tannersville
 > 
@@ -489,10 +517,10 @@
 - **Platform:** Instagram / Facebook
 - **Target Avatar:** Beginner Ben (`ben`)
 - **Winning Archetype:** `Tactical Micro-Clinic (Opening Closed Guard Model)`
-- **Production Cue:** Slide 1: "Why passive stretching won't fix your stiff lower back." Slide 2: "Active hip escapes & bridge mechanics." Slide 3: "Rebuilding resilience over 35."
+- **Production Cue:** Slide 1: "Active hip escapes and bridge mechanics for lower back mobility." Slide 2: "Building core resilience and functional movement." Slide 3: "Rebuilding athleticism over 35."
 - **Hook Category:** `Contrarian` (k10k Hook #1158)
 - **Hook Template:** *"The [MOVEMENT] made a lot of people [NEGATIVE_OUTCOME] and more [NEGATIVE_TRAIT]."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-27-ben)
 
 ### #28 | 12:00 PM — Weekly Reset Story
@@ -538,7 +566,7 @@
 - **Production Cue:** Retargeting Post (Model of Post #2): "Monday starts tomorrow. 2 spots left for the Beginner Lane. Comment START or DM START for the 30-sec link."
 - **Hook Category:** `Urgency` (k10k Hook #1212)
 - **Hook Template:** *"Three replies in. We're picking five. Math is brutal."*
-- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Dont spend the next six months sedentary on the couch. The Beginner Lane lets ordinary adults learn grappling safely with zero meathead ego.*
+- **Local Mountain Context:** Couch to Mats (Before Winter Hits) — *Spend the upcoming winter active and agile on the mats. The Beginner Lane lets ordinary adults learn grappling safely with supportive partners and cooperative coaching.*
 - **Direct Call to Action:** [PLAN A FREE FIRST VISIT](https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=meta&utm_campaign=ssbjj_2026-W38&utm_content=post-30-ben)
 
 > 📝 **Ready-to-Post Copy (Proven Post #2 Template):**
@@ -549,7 +577,7 @@
 > Beginner Lane | Mon / Tue / Wed / Fri 6 PM
 > Saturday No-Gi | 10:30 AM
 > 
-> ✅ Zero live sparring on Day 1 — cooperative coached movement
+> ✅ Cooperative, coached movement from day one
 > ✅ 1st-Degree Black-Belt coach & local
 > ✅ Welcoming beginner room at 6045 Main St, Tannersville
 > 
