@@ -47,6 +47,22 @@
     "gi": "No additional gi; the first qualifying Core Culture gi carries forward",
     "active": true
   },
+  "adultPrivateCoachingIntensive": {
+    "name": "Adult Private Coaching Intensive",
+    "price": 7150,
+    "displayPrice": "$7,150",
+    "term": "12 weeks",
+    "stage": "continuation",
+    "eligibility": "Adults continuing after one completed Adult Core Culture term; application and schedule review required",
+    "privateSessions": 6,
+    "privateSessionDurationMinutes": 60,
+    "capacity": 3,
+    "schedule": "Morning private coaching by request; protected blocks confirmed before enrollment",
+    "groupTraining": "Adult Core Culture terms: three planned home classes weekly, up to 36 scheduled classes; placement, capacity, and partner fit control",
+    "payment": "Paid in full before enrollment",
+    "guarantee": "No automatic 30-Day Training Fit Guarantee; application review and separate terms required",
+    "active": true
+  },
   "coreCulture": {
     "youth": {
       "name": "Youth 12-week program",

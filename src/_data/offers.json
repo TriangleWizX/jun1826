@@ -224,6 +224,27 @@
       "public": true
     },
     {
+      "id": "adult-private-coaching-intensive",
+      "name": "Adult Private Coaching Intensive",
+      "category": "Application Coaching Intensive",
+      "audience": "Adults continuing after one completed Adult Core Culture term",
+      "term": "12 weeks",
+      "priceRef": "adultPrivateCoachingIntensive",
+      "displayPrice": "$7,150",
+      "included": [
+        "Six scheduled 60-minute private coaching sessions",
+        "Adult Core Culture group-training terms under current placement and capacity limits",
+        "Application and schedule review"
+      ],
+      "guarantee": "No automatic 30-Day Training Fit Guarantee; separate terms confirmed before enrollment",
+      "primaryCta": {
+        "label": "Apply for Private Coaching Review",
+        "url": "/adult-private-coaching-intensive.html"
+      },
+      "active": true,
+      "public": true
+    },
+    {
       "id": "async-practice-vault",
       "name": "Async Practice Vault & Video Review Line",
       "category": "Digital Practice & Continuity",
