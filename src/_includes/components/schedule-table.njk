@@ -1,47 +1,202 @@
-<div class="table-responsive ss-schedule-table-wrapper">
-  <table class="table table-bordered align-middle text-center mb-0">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">Day</th>
-        <th scope="col">Youth &amp; Teens (Ages 5–17)</th>
-        <th scope="col">Adults (Ages 18+)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Monday</th>
-        <td><span class="badge bg-secondary me-1">No-Gi</span> 5:00 PM</td>
-        <td><span class="badge bg-secondary me-1">No-Gi</span> 6:00 PM</td>
-      </tr>
-      <tr>
-        <th scope="row">Tuesday</th>
-        <td><span class="badge bg-primary me-1">Gi</span> 5:00 PM</td>
-        <td><span class="badge bg-primary me-1">Gi</span> 6:00 PM</td>
-      </tr>
-      <tr>
-        <th scope="row">Wednesday</th>
-        <td><span class="badge bg-secondary me-1">No-Gi</span> 5:00 PM</td>
-        <td><span class="badge bg-secondary me-1">No-Gi</span> 6:00 PM</td>
-      </tr>
-      <tr>
-        <th scope="row">Thursday</th>
-        <td colspan="2" class="text-muted italic">Private Coaching &amp; Mat Maintenance</td>
-      </tr>
-      <tr>
-        <th scope="row">Friday</th>
-        <td><span class="badge bg-primary me-1">Gi</span> 5:00 PM</td>
-        <td><span class="badge bg-primary me-1">Gi</span> 6:00 PM</td>
-      </tr>
-      <tr>
-        <th scope="row">Saturday</th>
-        <td class="text-muted">By Approval</td>
-        <td><span class="badge bg-secondary me-1">No-Gi</span> 10:30 AM</td>
-      </tr>
-      <tr>
-        <th scope="row">Sunday</th>
-        <td colspan="2" class="text-muted">Closed / Rest</td>
-      </tr>
-    </tbody>
-  </table>
-  <p class="small text-muted text-center mt-2 mb-0"><strong>Drive once, train together:</strong> Youth &amp; Teens at 5:00 PM, Adults &amp; Parents at 6:00 PM back-to-back.</p>
+<div class="ss-schedule-wrapper">
+  
+  <!-- MOBILE DAY CARDS (Hidden on tablet/desktop) -->
+  <div class="d-md-none ss-schedule-mobile">
+    
+    <!-- Monday -->
+    <div class="card mb-3 shadow-sm border-0 bg-white">
+      <div class="card-header bg-dark text-white fw-bold py-2">Monday</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item py-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Youth & Teens <span class="text-muted fw-normal small">(Ages 5-17)</span></span>
+              <span class="badge bg-secondary me-1">No-Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">5:00 PM</div>
+          </div>
+        </li>
+        <li class="list-group-item py-3 bg-light">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Adults <span class="text-muted fw-normal small">(Ages 18+)</span></span>
+              <span class="badge bg-secondary me-1">No-Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">6:00 PM</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tuesday -->
+    <div class="card mb-3 shadow-sm border-0 bg-white">
+      <div class="card-header bg-dark text-white fw-bold py-2">Tuesday</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item py-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Youth & Teens <span class="text-muted fw-normal small">(Ages 5-17)</span></span>
+              <span class="badge bg-primary me-1">Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">5:00 PM</div>
+          </div>
+        </li>
+        <li class="list-group-item py-3 bg-light">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Adults <span class="text-muted fw-normal small">(Ages 18+)</span></span>
+              <span class="badge bg-primary me-1">Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">6:00 PM</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Wednesday -->
+    <div class="card mb-3 shadow-sm border-0 bg-white">
+      <div class="card-header bg-dark text-white fw-bold py-2">Wednesday</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item py-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Youth & Teens <span class="text-muted fw-normal small">(Ages 5-17)</span></span>
+              <span class="badge bg-secondary me-1">No-Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">5:00 PM</div>
+          </div>
+        </li>
+        <li class="list-group-item py-3 bg-light">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Adults <span class="text-muted fw-normal small">(Ages 18+)</span></span>
+              <span class="badge bg-secondary me-1">No-Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">6:00 PM</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Thursday -->
+    <div class="card mb-3 shadow-sm border-0 bg-white">
+      <div class="card-header bg-dark text-white fw-bold py-2">Thursday</div>
+      <div class="card-body py-3">
+        <p class="text-muted fst-italic mb-0 text-center">Private Coaching & Mat Maintenance</p>
+      </div>
+    </div>
+
+    <!-- Friday -->
+    <div class="card mb-3 shadow-sm border-0 bg-white">
+      <div class="card-header bg-dark text-white fw-bold py-2">Friday</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item py-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Youth & Teens <span class="text-muted fw-normal small">(Ages 5-17)</span></span>
+              <span class="badge bg-primary me-1">Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">5:00 PM</div>
+          </div>
+        </li>
+        <li class="list-group-item py-3 bg-light">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Adults <span class="text-muted fw-normal small">(Ages 18+)</span></span>
+              <span class="badge bg-primary me-1">Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">6:00 PM</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Saturday -->
+    <div class="card mb-3 shadow-sm border-0 bg-white">
+      <div class="card-header bg-dark text-white fw-bold py-2">Saturday</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item py-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Youth & Teens <span class="text-muted fw-normal small">(Ages 5-17)</span></span>
+            </div>
+            <div class="fw-bold text-muted">By Approval</div>
+          </div>
+        </li>
+        <li class="list-group-item py-3 bg-light">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="d-block fw-bold text-dark mb-1">Adults <span class="text-muted fw-normal small">(Ages 18+)</span></span>
+              <span class="badge bg-secondary me-1">No-Gi</span>
+            </div>
+            <div class="fs-5 fw-bold text-dark">10:30 AM</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Sunday -->
+    <div class="card mb-4 shadow-sm border-0 bg-white">
+      <div class="card-header bg-dark text-white fw-bold py-2">Sunday</div>
+      <div class="card-body py-3">
+        <p class="text-muted mb-0 text-center">Closed / Rest</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DESKTOP GRID (Hidden on mobile) -->
+  <div class="d-none d-md-block ss-schedule-desktop">
+    <div class="table-responsive shadow-sm bg-white rounded">
+      <table class="table table-bordered align-middle text-center mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" class="py-3">Day</th>
+            <th scope="col" class="py-3">Youth &amp; Teens (Ages 5–17)</th>
+            <th scope="col" class="py-3">Adults (Ages 18+)</th>
+          </tr>
+        </thead>
+        <tbody class="fw-medium">
+          <tr>
+            <th scope="row" class="bg-light">Monday</th>
+            <td class="py-3"><span class="badge bg-secondary me-2">No-Gi</span> <span class="fs-5">5:00 PM</span></td>
+            <td class="py-3"><span class="badge bg-secondary me-2">No-Gi</span> <span class="fs-5">6:00 PM</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="bg-light">Tuesday</th>
+            <td class="py-3"><span class="badge bg-primary me-2">Gi</span> <span class="fs-5">5:00 PM</span></td>
+            <td class="py-3"><span class="badge bg-primary me-2">Gi</span> <span class="fs-5">6:00 PM</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="bg-light">Wednesday</th>
+            <td class="py-3"><span class="badge bg-secondary me-2">No-Gi</span> <span class="fs-5">5:00 PM</span></td>
+            <td class="py-3"><span class="badge bg-secondary me-2">No-Gi</span> <span class="fs-5">6:00 PM</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="bg-light">Thursday</th>
+            <td colspan="2" class="text-muted fst-italic py-3">Private Coaching &amp; Mat Maintenance</td>
+          </tr>
+          <tr>
+            <th scope="row" class="bg-light">Friday</th>
+            <td class="py-3"><span class="badge bg-primary me-2">Gi</span> <span class="fs-5">5:00 PM</span></td>
+            <td class="py-3"><span class="badge bg-primary me-2">Gi</span> <span class="fs-5">6:00 PM</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="bg-light">Saturday</th>
+            <td class="text-muted py-3">By Approval</td>
+            <td class="py-3"><span class="badge bg-secondary me-2">No-Gi</span> <span class="fs-5">10:30 AM</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="bg-light">Sunday</th>
+            <td colspan="2" class="text-muted py-3">Closed / Rest</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <p class="small text-muted text-center mt-3 mb-0">
+    <strong>Drive once, train together:</strong> Youth &amp; Teens at 5:00 PM, Adults &amp; Parents at 6:00 PM back-to-back.
+  </p>
+
 </div>
