@@ -88,27 +88,7 @@
     };
   }
 
-  function enrichLeadForm(form) {
-    let first = {};
-    try { first = window.SENSEI_LINK_UTILS?.readStoredAttribution?.() || JSON.parse(sessionStorage.getItem("ss_attr_first_touch") || "{}"); } catch (_) { /* storage may be unavailable */ }
-    const params = new URLSearchParams(window.location.search);
-    const values = {
-      landing_page: first.landing_page || window.location.pathname,
-      referrer: first.referrer || document.referrer || "direct",
-      source_campaign: params.get("campaign") || params.get("utm_campaign") || first.utm_campaign || "none",
-      utm_source: params.get("utm_source") || first.utm_source || "direct",
-      utm_medium: params.get("utm_medium") || first.utm_medium || "none",
-      utm_campaign: params.get("utm_campaign") || first.utm_campaign || "none",
-      utm_content: params.get("utm_content") || first.utm_content || "none",
-      utm_term: params.get("utm_term") || first.utm_term || "none"
-    };
-    Object.entries(values).forEach(([name, value]) => {
-      let input = form.querySelector(`[name="${name}"]`);
-      if (!input) { input = document.createElement("input"); input.type = "hidden"; input.name = name; form.appendChild(input); }
-      if (!input.value) input.value = value;
-    });
-  }
-
+  
   function init() {
     if (document.querySelector("#booking-confirmation-title")) track("booking_confirmed", null, {});
     document.addEventListener("click", function (event) {
@@ -127,7 +107,6 @@
     });
 
     document.querySelectorAll("#pb-step-3 form, #ss-free-intro-form, form[data-booking-form]").forEach(function (form) {
-      enrichLeadForm(form);
       form.addEventListener("input", function () {
         if (startedForms.has(form)) return;
         startedForms.add(form);

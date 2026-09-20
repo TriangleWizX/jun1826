@@ -59,3 +59,10 @@ tools/ads/cache/
 src/assets/css/**/*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].css
 src/assets/css/*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].css
 
+
+# Ignore built hashed/minified JS files
+src/assets/js/**/*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].js
+src/assets/js/*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].js
+src/assets/js/**/*.min.js
+src/assets/js/*.min.js
+

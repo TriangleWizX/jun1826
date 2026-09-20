@@ -85,9 +85,7 @@
   } catch (_) {}
 
   window.SS_TRACK_EVENT = function (eventName, eventParams) {
-    const aliases = { first_visit_started: "first_visit_cta_click", profile_selected: "avatar_selected", visit_selected: "visit_window_selected", first_visit_start: "lead_form_started" };
-    eventName = aliases[eventName] || eventName;
-    if (!analyticsEnabled) {
+        if (!analyticsEnabled) {
       if (isLocalDev) {
         console.log("[Analytics Debug - Disabled in Dev]", eventName, eventParams);
       }
@@ -104,7 +102,6 @@
     }
 
     const payload = Object.assign({
-      event: eventName,
       page_path: window.location.pathname
     }, expPayload, eventParams || {});
 
@@ -115,7 +112,12 @@
     delete payload.guardian_name;
     delete payload.goals;
 
-    window.dataLayer.push(payload);
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, payload);
+    } else {
+      payload.event = eventName;
+      window.dataLayer.push(payload);
+    }
   };
 
   function initGlobalListeners() {

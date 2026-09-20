@@ -75,7 +75,10 @@
     const selected = classChoice._slots?.find((slot) => slot.classId === classChoice.value);
     setAppointment(selected || null);
   });
+  let abortController = null;
   async function refreshAvailability() {
+    if (abortController) abortController.abort();
+    abortController = new AbortController();
     const previousClassId = classChoice.value || form.scheduledClassId.value;
     classChoice.replaceChildren(new Option('Choose an available class', ''));
     classChoice._slots = [];
@@ -84,7 +87,7 @@
     availabilityBox.hidden = false;
     availabilityBox.textContent = 'Checking intro availability…';
     try {
-      const response = await fetch(`/api/youth-intro/availability?date=${encodeURIComponent(form.preferredDate.value)}&lane=${encodeURIComponent(form.ageLane.value)}`, { headers: { Accept: 'application/json' } });
+      const response = await fetch(`/api/youth-intro/availability?date=${encodeURIComponent(form.preferredDate.value)}&lane=${encodeURIComponent(form.ageLane.value)}`, { signal: abortController.signal, headers: { Accept: 'application/json' } });
       const result = await response.json();
       const statuses = (result.availability || []).map((slot) => `${slot.day} ${slot.startTime}: ${slot.status}`).join(' · ');
       const selectable = (result.availability || []).filter((slot) => slot.status === 'Available');

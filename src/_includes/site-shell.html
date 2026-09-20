@@ -249,28 +249,7 @@ permalink: "/_includes/site-shell.html"
     window.addEventListener('load', attachAll);
   })();
 </script>
-<script>
-  (function loadSiteScripts() {
-    const scripts = [
-      '/js/site-config.js?v=20260213',
-'/js/link-utils.min.js?v=20260428',
-      '/js/cta-config.js?v=20260217',
-      '/js/content-config.js?v=20260214',
-'/js/analytics-events.min.js',
-    ];
-    const loadNext = (idx) => {
-      if (idx >= scripts.length) return;
-      const script = document.createElement('script');
-      script.src = scripts[idx];
-      script.defer = true;
-      script.onload = () => loadNext(idx + 1);
-      document.body.appendChild(script);
-    };
-    loadNext(0);
 
-
-  })();
-</script>
 <script>
   (function highlightActiveNav() {
     const nav = document.getElementById('mainNav');
