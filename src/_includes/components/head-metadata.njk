@@ -7,7 +7,8 @@
 <title>{{ title | default("Sensei Sandy Jiu-Jitsu | Sandy Jiu Jitsu Tannersville NY") }}</title>
 <meta content="{{ description | default("Sensei Sandy Jiu-Jitsu (Sandy Jiu Jitsu) offers calm, beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Free First Visit for kids, teens, and adults.") | metaDescription }}" name="description"/>
 {% set canonical = canonicalUrl or page.url %}
-{% set canonicalHref = canonical if canonical.startsWith("http") else "https://senseisandy.com" ~ canonical %}
+{% set safeCanonical = canonical if canonical.startsWith("/") else "/" ~ canonical %}
+{% set canonicalHref = canonical if canonical.startsWith("http") else "https://senseisandy.com" ~ safeCanonical %}
 <link href="{{ canonicalHref }}" rel="canonical"/>
 <meta content="{{ canonicalHref }}" property="og:url"/>
 <meta content="Sensei Sandy BJJ" property="og:site_name"/>
