@@ -401,7 +401,7 @@
   align-items: center;
   text-decoration: none;
   background: var(--ss-green, #116A42);
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   padding: 10px 14px;
   box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
 }

@@ -1,6 +1,6 @@
 :root {
     --color-black: #050505;
-    --color-white: #ffffff;
+    --color-white: var(--ss-surface);
     --color-accent: #b98a3c;
     --color-danger: #b4563d;
     --primary-color: var(--color-black);
@@ -17,8 +17,8 @@
     --font-heading: 'Clash Display', 'Geist', sans-serif;
     --section-padding: clamp(5rem, 8vw, 8rem);
     --surface-0: var(--background-color);
-    --surface-1: #ffffff;
-    --surface-2: #f4f1ed;
+    --surface-1: var(--ss-surface);
+    --surface-2: var(--ss-surface2);
     --border-color: rgba(0, 0, 0, 0.05);
     --text-muted: #666666;
     --link-color: #050505;
@@ -769,7 +769,7 @@ img {
 
 .hero-split {
     padding: 4rem 1.5rem;
-    background: linear-gradient(to bottom,#ffffff 0%,var(--secondary-color)100%);
+    background: linear-gradient(to bottom,var(--ss-surface) 0%,var(--secondary-color)100%);
     overflow: hidden
 }
 
@@ -1055,12 +1055,12 @@ img {
 }
 
 .town-link,a.town-link,a.ss-location-link,a[href*="Tannersville"],a[href*="Hunter"] {
-    color: #ffffff;
+    color: var(--ss-surface);
     font-weight: 600
 }
 
 .ss-location-link {
-    color: #ffffff !important;
+    color: var(--ss-surface) !important;
 }
 
 #locations .ss-location-link {
@@ -1072,7 +1072,7 @@ a.ss-location-link[href="https://www.google.com/maps/search/?api=1&query=Hunter%
 }
 
 a.town-link:focus-visible,a.ss-location-link:focus-visible,a[href*="Tannersville"]:focus-visible,a[href*="Hunter"]:focus-visible,a.town-link:hover,a.ss-location-link:hover,a[href*="Tannersville"]:hover,a[href*="Hunter"]:hover {
-    color: #ffffff
+    color: var(--ss-surface)
 }
 
 @media(max-width: 768px) {
@@ -1727,11 +1727,11 @@ ul {
 }
 
 .footer-address a {
-    color: #ffffff;
+    color: var(--ss-surface);
 }
 
 .footer-brand > p:nth-child(3) > a {
-    color: #ffffff;
+    color: var(--ss-surface);
 }
 
 .hero-content-container--contact .ss-location-link {
@@ -1967,7 +1967,7 @@ ul {
 }
 
 .village-section {
-    background: linear-gradient(to bottom,#ffffff,var(--secondary-color))
+    background: linear-gradient(to bottom,var(--ss-surface),var(--secondary-color))
 }
 
 .village-card {
@@ -2670,7 +2670,7 @@ ul {
 .page-book-intro .ss-book__details {
     border: 1px solid rgba(15,12,8,0.08);
     border-radius: 18px;
-    background: #ffffff;
+    background: var(--ss-surface);
     padding: 1.5rem;
     box-shadow: 0 15px 40px rgba(15,12,8,0.08);
 }
@@ -2748,7 +2748,7 @@ ul {
 }
 
 .offer-block__card {
-    background: #ffffff;
+    background: var(--ss-surface);
     border-radius: 28px;
     padding: clamp(1.5rem,3vw,2.5rem);
     border: 1px solid rgba(15,12,8,0.08);
@@ -2942,7 +2942,7 @@ ul {
 
 .ss-hero__eyebrow {
     margin: 0 0 10px;
-    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ss-muted);
@@ -2957,7 +2957,7 @@ ul {
 .ss-hero__subhead {
     margin: 0 0 18px;
     color: var(--ss-muted);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.45;
     max-width: 55ch;
 }
@@ -2974,7 +2974,7 @@ ul {
 }
 
 .ss-hero__location-note a {
-    color: #ffffff;
+    color: var(--ss-surface);
     text-decoration: underline;
 }
 
@@ -3054,7 +3054,7 @@ ul {
     padding: 0 0 0 18px;
     color: var(--ss-muted);
     line-height: 1.55;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .ss-hero__right {
@@ -3067,7 +3067,7 @@ ul {
 
 .ss-card__title {
     margin: 0 0 10px;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 0.01em;
 }
 
@@ -3076,7 +3076,7 @@ ul {
     padding: 0 0 0 18px;
     color: var(--ss-muted);
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .ss-card__mini {
@@ -3093,7 +3093,7 @@ ul {
     border: 1px solid var(--ss-border);
     background: rgba(255,255,255,0.04);
     color: var(--ss-muted);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 @media (max-width: 860px) {
@@ -3109,7 +3109,7 @@ ul {
 }
 
 .ss-hero, .ss-hero * {
-    color: #ffffff;
+    color: var(--ss-surface);
 }
 
 .ss-hero .ss-btn--primary, .ss-hero .ss-btn--primary * {
@@ -3121,7 +3121,7 @@ ul {
 }
 
 .mobile-program-nav a {
-    color: #ffffff;
+    color: var(--ss-surface);
 }
 
 .mobile-program-nav a:hover, .mobile-program-nav a:focus {
@@ -3133,11 +3133,11 @@ ul {
 }
 
 .navbar-nav .nav-link {
-    color: #ffffff;
+    color: var(--ss-surface);
 }
 
 .ss-hero__eyebrow .ss-accent {
-    color: #ffffff;
+    color: var(--ss-surface);
     transition: color 0.2s ease;
 }
 
@@ -3146,7 +3146,7 @@ ul {
 }
 
 .ss-hero__eyebrow .ss-accent {
-    color: #ffffff !important;
+    color: var(--ss-surface) !important;
 }
 
 .ss-hero__eyebrow:hover .ss-accent {
@@ -3154,15 +3154,15 @@ ul {
 }
 
 .ss-hero__eyebrow {
-    color: #ffffff !important;
+    color: var(--ss-surface) !important;
 }
 
 .ss-hero__eyebrow .ss-accent {
-    color: #ffffff !important;
+    color: var(--ss-surface) !important;
 }
 
 #hero .ss-hero__left .small.text-white.mb-2 > a:nth-child(1):hover {
-    color: #ffffff !important;
+    color: var(--ss-surface) !important;
 }
 
 #meet-instructor .col-md-8 > p:nth-of-type(8) a {
@@ -3198,7 +3198,7 @@ ul {
 
 .ss-book__eyebrow {
     margin: 0 0 10px;
-    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ss-muted);
@@ -3213,7 +3213,7 @@ ul {
 .ss-book__subhead {
     margin: 0 0 16px;
     color: var(--ss-muted);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.45;
     max-width: 60ch;
 }
@@ -3234,7 +3234,7 @@ ul {
     padding: 0 0 0 18px;
     color: var(--ss-muted);
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .ss-book__section {
@@ -3243,7 +3243,7 @@ ul {
 
 .ss-book__h2 {
     margin: 0 0 12px;
-    font-size: 18px;
+    font-size: 1.125rem;
     letter-spacing: 0.01em;
 }
 
@@ -3269,14 +3269,14 @@ ul {
 
 .ss-book .ss-card__title {
     margin: 0 0 8px;
-    font-size: 15px;
+    font-size: 0.9375rem;
 }
 
 .ss-book .ss-card__text {
     margin: 0 0 8px;
     color: var(--ss-muted);
     line-height: 1.55;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .ss-faq {
@@ -3296,7 +3296,7 @@ ul {
     margin: 10px 0 0;
     color: var(--ss-muted);
     line-height: 1.55;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .ss-book__final {
@@ -3307,7 +3307,7 @@ ul {
 .ss-book__tiny {
     margin: 12px 0 0;
     color: var(--ss-muted);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .ss-book .ss-link {
@@ -3526,7 +3526,7 @@ body[data-layout="booking"] .ss-book__buttons .ss-btn {
 }
 
 body[data-layout="booking"] .ss-book a.ss-location-link,body[data-layout="booking"] .ss-book a.ss-location-link:visited,body[data-layout="booking"] .ss-book a.ss-location-link:hover,body[data-layout="booking"] .ss-book a.ss-location-link:focus,body[data-layout="booking"] .ss-book a[href*="Tannersville"],body[data-layout="booking"] .ss-book a[href*="Tannersville"]:visited,body[data-layout="booking"] .ss-book a[href*="Tannersville"]:hover,body[data-layout="booking"] .ss-book a[href*="Tannersville"]:focus {
-    color: #ffffff!important;
+    color: var(--ss-surface)!important;
 }
 
 body[data-layout="booking"] .ss-book .text-muted a.ss-location-link,body[data-layout="booking"] .ss-book .text-muted a[href*="Tannersville"] {
@@ -3588,7 +3588,7 @@ section {
 .site-header,
 .navbar,
 .site-header.scrolled {
-  background: linear-gradient(180deg, #ffffff 0%, #f6f1ec 100%);
+  background: linear-gradient(180deg, var(--ss-surface) 0%, #f6f1ec 100%);
   border-bottom: 1px solid rgba(54,43,36,0.10);
 }
 
@@ -3625,7 +3625,7 @@ section {
 .ss-btn--primary {
   background: var(--ss-green);
   border-color: var(--ss-green);
-  color: #ffffff;
+  color: var(--ss-surface);
   border-radius: 999px;
   padding: 14px 20px;
   font-weight: 700;
@@ -3637,7 +3637,7 @@ section {
 .ss-btn--primary:hover,
 .ss-btn--primary:focus {
   filter: brightness(0.95);
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .btn-outline,
@@ -3653,7 +3653,7 @@ section {
 .ss-btn--secondary:hover {
   background: var(--ss-deepteal);
   border-color: var(--ss-deepteal);
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .section,
@@ -3991,7 +3991,7 @@ a:hover{ color:var(--ss-deepteal); }
   background:rgba(0,221,224,.10);
   color:var(--ss-deepteal);
   font-weight:800;
-  font-size:13px;
+  font-size: 0.8125rem;
 }
 .page-home .ss-card__mini{ display:flex; flex-wrap:wrap; gap:10px; }
 
@@ -4316,7 +4316,7 @@ body {
     min-height: 44px;
     padding: 0 14px;
     border-radius: 999px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 800;
     line-height: 1.15;
     text-align: center;
@@ -4370,19 +4370,19 @@ body {
   }
 
   .ss-mobile-cta-call {
-    color: #ffffff;
-    background: #116A42;
+    color: var(--ss-surface);
+    background: var(--ss-green);
     box-shadow: 0 8px 18px rgba(17, 106, 66, 0.32);
   }
 
   .ss-mobile-cta-schedule {
-    color: #362b24;
-    background: #00dde0;
+    color: var(--ss-ink);
+    background: var(--ss-cyan);
     box-shadow: 0 8px 18px rgba(0, 221, 224, 0.28);
   }
 
   .ss-mobile-cta a:focus-visible {
-    outline: 3px solid #ffffff;
+    outline: 3px solid var(--ss-surface);
     outline-offset: 3px;
   }
 }
@@ -4466,7 +4466,7 @@ body {
   overflow: hidden;
   background:
     radial-gradient(circle at 12% 12%, rgba(0, 221, 224, 0.18), transparent 34%),
-    linear-gradient(135deg, #fff8ef 0%, #ffffff 56%, rgba(40, 159, 161, 0.10) 100%);
+    linear-gradient(135deg, #fff8ef 0%, var(--ss-surface) 56%, rgba(40, 159, 161, 0.10) 100%);
   border-bottom: 1px solid var(--ss-border);
 }
 
@@ -4677,7 +4677,7 @@ body {
   border: 1px solid rgba(40, 159, 161, 0.22);
   background:
     radial-gradient(circle at top left, rgba(0, 221, 224, 0.16), transparent 30%),
-    #ffffff;
+    var(--ss-surface);
 }
 
 .ss-footer-simple {
@@ -4785,16 +4785,16 @@ body.page-success .ss-trust-pillar svg {
 
 body.page-success {
   background: #fdfbf7;
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-hero {
   background: #fdfbf7;
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-hero :is(h1, h2, h3, p, span, strong) {
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-hero :is(.ss-hq-badge, .ss-hq-stars, .ss-eyebrow-pill) {
@@ -4803,45 +4803,45 @@ body.page-success .ss-hero :is(.ss-hq-badge, .ss-hq-stars, .ss-eyebrow-pill) {
 
 body.page-success .ss-hero__headline,
 body.page-success .ss-hero__headline em {
-  color: #362b24 !important;
+  color: var(--ss-ink) !important;
 }
 
 body.page-success .ss-hero__right,
 body.page-success .ss-hero__left {
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-hero__right {
-  background: #f4f1ed;
+  background: var(--ss-surface2);
 }
 
 body.page-success .ss-hero__right .ss-dbezel,
 body.page-success .ss-hero__right .ss-dbezel__inner {
   background: #fff;
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-hero__right :is(h2, h3, h4, p, span, strong) {
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-stories {
   background: #fdfbf7;
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-stories :is(h2, h3, h4, p, span, strong) {
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 /* Final success-page contrast layer: legacy base variables set some child
    components to white even when their surface is light. */
 body.page-success .ss-hero__right * {
-  color: #362b24 !important;
+  color: var(--ss-ink) !important;
 }
 
 body.page-success .ss-stories * {
-  color: #362b24 !important;
+  color: var(--ss-ink) !important;
 }
 
 body.page-success .ss-trust-strip * {
@@ -4866,7 +4866,7 @@ body.page-success .ss-trust-strip em {
 }
 
 body.page-success :is(.ss-dbezel, .ss-story-card) {
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 body.page-success :is(.ss-dbezel, .ss-story-card) :is(h2, h3, h4, p, span, strong) {

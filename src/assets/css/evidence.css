@@ -5,7 +5,7 @@
 .ss-evidence {
   margin: 3rem 0 2rem;
   padding: 2rem 0;
-  background: #FBFAF8;
+  background: var(--ss-bg);
   border-top: 1px solid rgba(54, 43, 36, 0.12);
   border-bottom: 1px solid rgba(54, 43, 36, 0.12);
 }
@@ -17,7 +17,7 @@
 
 .ss-evidence__header .eyebrow {
   margin-bottom: .35rem;
-  color: #116A42;
+  color: var(--ss-green);
   font-weight: 800;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -25,13 +25,13 @@
 
 .ss-evidence__header h2 {
   margin-bottom: .5rem;
-  color: #362B24;
+  color: var(--ss-ink);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   line-height: 1.1;
 }
 
 .ss-evidence__header p {
-  color: #4F433C;
+  color: var(--ss-muted);
   font-size: 1rem;
 }
 
@@ -47,26 +47,26 @@
 }
 
 .ss-evidence-accordion .accordion-button {
-  color: #362B24;
+  color: var(--ss-ink);
   font-weight: 800;
   background: #fff;
 }
 
 .ss-evidence-accordion .accordion-button:not(.collapsed) {
-  color: #306061;
-  background: #F4F1ED;
+  color: var(--ss-slate);
+  background: var(--ss-surface2);
   box-shadow: none;
 }
 
 .ss-evidence-fact {
   margin-bottom: .75rem;
-  color: #1F1712;
+  color: var(--ss-text);
   font-size: 1rem;
   line-height: 1.55;
 }
 
 .ss-evidence a {
-  color: #306061;
+  color: var(--ss-slate);
   font-weight: 800;
   text-decoration-thickness: .08em;
   text-underline-offset: .18em;
@@ -74,7 +74,7 @@
 
 .ss-evidence a:hover,
 .ss-evidence a:focus-visible {
-  color: #116A42;
+  color: var(--ss-green);
 }
 
 /* LEO Evidence Card */
@@ -87,7 +87,7 @@
 
 .leo-evidence .eyebrow {
   margin-bottom: .35rem;
-  color: #116A42;
+  color: var(--ss-green);
   font-weight: 800;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -163,7 +163,7 @@
   height: 100%;
   border-radius: 1rem;
   border: 1px solid var(--card-border-color, rgba(54, 43, 36, 0.14));
-  background: #FFFFFF;
+  background: var(--ss-surface);
   padding: 2rem;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 20px rgba(54, 43, 36, 0.03);
@@ -183,7 +183,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  color: #FFFFFF;
+  color: var(--ss-surface);
   background: var(--card-badge-bg);
 }
 

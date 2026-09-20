@@ -1,11 +1,11 @@
 /* Shared partner-page presentation modeled on the wellness referral lane. */
 body.partner-page {
-  --partner-paper: #fbfaf8;
+  --partner-paper: var(--ss-bg);
   --partner-surface: #fff;
-  --partner-ink: #362b24;
-  --partner-muted: #4f433c;
+  --partner-ink: var(--ss-ink);
+  --partner-muted: var(--ss-muted);
   --partner-line: rgba(54, 43, 36, .14);
-  --partner-teal: #289fa1;
+  --partner-teal: var(--ss-teal);
   background: var(--partner-paper);
   color: var(--partner-ink);
 }
@@ -78,7 +78,7 @@ body.partner-page .btn-wellness-outline {
 
 body.partner-page .btn-wellness-primary {
   color: #fff;
-  background: #306061;
+  background: var(--ss-slate);
 }
 body.partner-page .btn-wellness-outline {
   color: var(--partner-ink);

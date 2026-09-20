@@ -71,12 +71,12 @@
 .ss-summer-confidence-page .ss-hero {
   background:
     radial-gradient(circle at top left, rgba(40, 159, 161, 0.16), transparent 38%),
-    linear-gradient(135deg, #ffffff 0%, #fbfaf8 42%, #f4f1ed 100%);
+    linear-gradient(135deg, var(--ss-surface) 0%, var(--ss-bg) 42%, var(--ss-surface2) 100%);
   border-bottom: 1px solid var(--ss-border);
 }
 
 .ss-summer-confidence-page .bg-white {
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
 }
 
 /* ---------- Cards ---------- */
@@ -149,7 +149,7 @@
 .ss-summer-confidence-page .btn-primary {
   background: var(--ss-green);
   border-color: var(--ss-green);
-  color: #ffffff;
+  color: var(--ss-surface);
   box-shadow: 0 10px 22px rgba(17, 106, 66, 0.22);
 }
 
@@ -157,7 +157,7 @@
 .ss-summer-confidence-page .btn-primary:focus {
   background: var(--ss-green-dark);
   border-color: var(--ss-green-dark);
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .ss-summer-confidence-page .btn-outline-primary {
@@ -170,12 +170,12 @@
 .ss-summer-confidence-page .btn-outline-primary:focus {
   background: var(--ss-teal);
   border-color: var(--ss-teal);
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .ss-summer-confidence-page .btn-outline-light {
   border-color: rgba(255, 255, 255, 0.72);
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .ss-summer-confidence-page .btn-outline-light:hover,
@@ -350,8 +350,8 @@
 .ss-summer-confidence-page .ss-dark-cta {
   background:
     radial-gradient(circle at top right, rgba(0, 221, 224, 0.18), transparent 34%),
-    linear-gradient(135deg, #362B24 0%, #306061 100%);
-  color: #ffffff;
+    linear-gradient(135deg, var(--ss-ink) 0%, var(--ss-slate) 100%);
+  color: var(--ss-surface);
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 24px 60px rgba(54, 43, 36, 0.18);
@@ -359,7 +359,7 @@
 
 .ss-summer-confidence-page .ss-dark-cta h2,
 .ss-summer-confidence-page .ss-dark-cta p {
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .ss-summer-confidence-page .ss-dark-cta .eyebrow {

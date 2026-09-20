@@ -13,9 +13,9 @@
   --hub-ink:      #1A1410;
   --hub-ink-2:    #2E261E;
   --hub-muted:    #6B5D52;
-  --hub-green:    #116A42;
+  --hub-green:    var(--ss-green);
   --hub-green-2:  #0D5233;
-  --hub-teal:     #289FA1;
+  --hub-teal:     var(--ss-teal);
   --hub-gold:     #B88A44;
   --hub-border:   rgba(26, 20, 16, 0.10);
   --hub-border-2: rgba(26, 20, 16, 0.06);

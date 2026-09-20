@@ -573,7 +573,7 @@ hr { border-color: var(--ss-border); opacity: 1; }
     border-radius: 999px;
 
     background: var(--ss-green, #116A42);
-    color: #ffffff !important;
+    color: var(--ss-surface) !important;
     font-size: clamp(0.70rem, 3.2vw, 0.92rem) !important;
     font-weight: 700;
     line-height: 1;

@@ -24,13 +24,13 @@ body.page-glossary.page-bjj-glossary {
   --glossary-dark-muted: #b8cccc;
   --glossary-dark-border: rgba(255, 255, 255, 0.14);
   --glossary-dark-border-strong: rgba(0, 221, 224, 0.42);
-  --glossary-light-bg: #fbfaf8;
-  --glossary-light-panel: #ffffff;
-  --glossary-light-panel-soft: #f4f1ed;
-  --glossary-light-text: #1f1712;
-  --glossary-light-muted: #4f433c;
+  --glossary-light-bg: var(--ss-bg);
+  --glossary-light-panel: var(--ss-surface);
+  --glossary-light-panel-soft: var(--ss-surface2);
+  --glossary-light-text: var(--ss-text);
+  --glossary-light-muted: var(--ss-muted);
   --glossary-light-border: rgba(54, 43, 36, 0.16);
-  --glossary-accent: #00dde0;
+  --glossary-accent: var(--ss-cyan);
   --glossary-accent-text: #8ffcff;
   --glossary-orange: #b94700;
   --glossary-orange-text: #ff9a58;
@@ -166,7 +166,7 @@ body.page-glossary.page-bjj-glossary .glossary-btn {
 body.page-glossary.page-bjj-glossary .glossary-btn-primary {
   background: var(--glossary-orange) !important;
   border-color: var(--glossary-orange) !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   box-shadow: 0 14px 28px rgba(185, 71, 0, 0.3);
 }
 
@@ -174,7 +174,7 @@ body.page-glossary.page-bjj-glossary .glossary-btn-primary:hover,
 body.page-glossary.page-bjj-glossary .glossary-btn-primary:focus-visible {
   background: #9f3d00 !important;
   border-color: #9f3d00 !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 body.page-glossary.page-bjj-glossary .glossary-btn-secondary {
@@ -232,7 +232,7 @@ body.page-glossary.page-bjj-glossary .glossary-results-header p {
 body.page-glossary.page-bjj-glossary .glossary-search {
   border-color: rgba(0, 221, 224, 0.72) !important;
   background: #102625 !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 body.page-glossary.page-bjj-glossary .glossary-search::placeholder {
@@ -362,7 +362,7 @@ body.page-glossary.page-bjj-glossary .ss-path-link {
 
 body.page-glossary.page-bjj-glossary .ss-path-link:hover,
 body.page-glossary.page-bjj-glossary .ss-path-link:focus-visible {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 body.page-glossary.page-bjj-glossary .ss-path-chips {
@@ -510,7 +510,7 @@ body.page-glossary-term.page-bjj-glossary section[id] a:hover,
 body.page-glossary-term.page-bjj-glossary .glossary-card a:focus-visible,
 body.page-glossary-term.page-bjj-glossary .term-card a:focus-visible,
 body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 @media (max-width: 920px) {
@@ -553,7 +553,7 @@ body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
 
 .ss-mini-link strong {
   display: block;
-  color: #1f1712 !important;
+  color: var(--ss-text) !important;
   /* Force dark text on white background */
   font-size: 1.1rem;
   line-height: 1.2;
@@ -562,7 +562,7 @@ body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
 
 .ss-mini-link span {
   display: block;
-  color: #4f433c !important;
+  color: var(--ss-muted) !important;
   /* Force muted dark text on white background */
   font-size: 0.9rem;
   line-height: 1.3;
@@ -574,7 +574,7 @@ body.page-glossary.page-bjj-glossary a.glossary-btn-secondary,
 .glossary-shell.glossary-next-steps a.glossary-btn-secondary,
 .glossary-next-steps .d-flex a.glossary-btn-secondary,
 .glossary-start-cta a.glossary-btn-secondary {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   border-color: rgba(255, 255, 255, 0.45) !important;
   background: rgba(255, 255, 255, 0.15) !important;
   display: inline-flex !important;
@@ -636,15 +636,15 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 }
 
 .ss-term-next-step a.btn-primary {
-  background-color: #00dde0 !important;
-  border-color: #00dde0 !important;
+  background-color: var(--ss-cyan) !important;
+  border-color: var(--ss-cyan) !important;
   color: #052324 !important;
   font-weight: 700 !important;
 }
 
 .ss-term-next-step a.btn-outline-primary {
-  color: #ffffff !important;
-  border-color: #00dde0 !important;
+  color: var(--ss-surface) !important;
+  border-color: var(--ss-cyan) !important;
   background-color: rgba(0, 221, 224, 0.15) !important;
   font-weight: 700 !important;
 }

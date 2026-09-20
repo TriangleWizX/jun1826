@@ -17,13 +17,13 @@
   padding: 2rem;
   border: 1px solid rgba(40, 159, 161, 0.18);
   border-radius: 24px;
-  background: #ffffff;
+  background: var(--ss-surface);
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
 }
 
 .pricing-preview-card .eyebrow {
   margin-bottom: 0.5rem;
-  color: #289fa1;
+  color: var(--ss-teal);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -241,13 +241,13 @@
   .page-schedule .schedule-table tbody td[data-label="Time"] {
     padding-top: 12px;
     padding-bottom: 12px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 900;
     letter-spacing: .01em;
   }
 
   .page-schedule .schedule-table tbody td[data-label="Class"] {
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 850;
   }
 
@@ -259,7 +259,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 950;
     padding: 4px 10px;
     border-radius: 999px;
@@ -693,7 +693,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   background:
     radial-gradient(900px 320px at 12% 0%, rgba(40, 159, 161, 0.16), transparent 58%),
     linear-gradient(180deg, #fffdfa 0%, #f7f2ed 100%);
-  color: #1f1712;
+  color: var(--ss-text);
   padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.25rem, 5vw, 4rem);
 }
 
@@ -724,7 +724,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   max-width: 620px;
   font-size: clamp(1.2rem, 2.5vw, 1.65rem);
   line-height: 1.35;
-  color: #4f433c;
+  color: var(--ss-muted);
 }
 
 .page-schedule .ss-time-row {
@@ -741,7 +741,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   border: 1px solid rgba(54, 43, 36, 0.14);
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.94);
-  color: #1f1712;
+  color: var(--ss-text);
   text-decoration: none;
   box-shadow: 0 12px 28px rgba(31, 23, 18, 0.09);
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
@@ -752,7 +752,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   transform: translateY(-2px);
   background: #fff;
   border-color: rgba(40, 159, 161, 0.45);
-  color: #1f1712;
+  color: var(--ss-text);
   box-shadow: 0 16px 34px rgba(31, 23, 18, 0.12);
 }
 
@@ -761,21 +761,21 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   font-size: clamp(1.4rem, 3vw, 2rem);
   line-height: 1;
   font-weight: 900;
-  color: #1f1712;
+  color: var(--ss-text);
 }
 
 .page-schedule .ss-time-card span {
   display: block;
   margin-top: 0.35rem;
   font-size: 0.98rem;
-  color: #4f433c;
+  color: var(--ss-muted);
 }
 
 .page-schedule .ss-first-day-proof {
   margin: 1.25rem 0;
   font-weight: 800;
   font-size: 1.05rem;
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 .page-schedule .ss-schedule-hero .ss-safety-strip {
@@ -1046,7 +1046,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
 
 /* Schedule card component refactor (scoped to /schedule) */
 .page-schedule .ssched {
-  --ssched-surface: #ffffff;
+  --ssched-surface: var(--ss-surface);
   --ssched-surface-subtle: #f8fafc;
   --ssched-border: #d6dde5;
   --ssched-text: #101828;
@@ -1162,7 +1162,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   padding: 20px 16px;
   border: 1px solid var(--ssched-border);
   border-radius: var(--ssched-radius);
-  background: linear-gradient(180deg, #ffffff 0%, #f4faf9 100%);
+  background: linear-gradient(180deg, var(--ss-surface) 0%, #f4faf9 100%);
   box-shadow: var(--ssched-shadow);
 }
 
@@ -1611,7 +1611,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
 }
 
 .page-schedule .schedule-panel strong {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 .page-schedule .schedule-panel a {
@@ -1769,8 +1769,8 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
 
 .page-schedule .schedule-panel .cta,
 .page-schedule .schedule-panel .btn-primary {
-  background: #116A42;
-  border-color: #116A42;
+  background: var(--ss-green);
+  border-color: var(--ss-green);
 }
 
 .page-schedule .schedule-panel .btn-outline-primary {
@@ -1799,7 +1799,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #289FA1;
+  color: var(--ss-teal);
 }
 
 .page-schedule .schedule-help-card h2 {
@@ -2148,7 +2148,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
 .ss-best-first-visit {
   background:
     radial-gradient(circle at top left, rgba(17, 106, 66, 0.10), transparent 32rem),
-    #FBFAF8;
+    var(--ss-bg);
 }
 
 .ss-visit-card,
@@ -2156,12 +2156,12 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   padding: 1.25rem;
   border-radius: 1.25rem;
   border: 1px solid rgba(54, 43, 36, 0.14);
-  background: #FFFFFF;
+  background: var(--ss-surface);
   box-shadow: 0 10px 30px rgba(54, 43, 36, 0.06);
 }
 
 .ss-featured {
-  border: 2px solid #116A42;
+  border: 2px solid var(--ss-green);
 }
 
 .ss-badge {
@@ -2169,7 +2169,7 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   padding: .35rem .65rem;
   border-radius: 999px;
   background: rgba(17, 106, 66, 0.10);
-  color: #116A42;
+  color: var(--ss-green);
   font-size: .75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -2180,15 +2180,15 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   padding: .9rem 1rem;
   border-radius: 999px;
   border: 1px solid rgba(54, 43, 36, 0.14);
-  background: #FFFFFF;
+  background: var(--ss-surface);
   font-weight: 800;
-  color: #1F1712;
+  color: var(--ss-text);
 }
 
 .ss-saturday-block {
   background:
     radial-gradient(circle at bottom right, rgba(40, 159, 161, 0.12), transparent 30rem),
-    #FBFAF8;
+    var(--ss-bg);
 }
 
 .ss-checklist {
@@ -2207,6 +2207,6 @@ body[data-layout="booking"] .ss-book .schedule-location-switch .text-muted a[hre
   content: "✓";
   position: absolute;
   left: 0;
-  color: #116A42;
+  color: var(--ss-green);
   font-weight: 900;
 }

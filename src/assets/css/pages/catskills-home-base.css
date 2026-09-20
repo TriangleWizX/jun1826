@@ -126,7 +126,7 @@ body.page-catskills-home-base .ss-section {
 }
 
 .ss-promise-title {
-  color: #ffffff;
+  color: var(--ss-surface);
   font-family: "Instrument Serif", Georgia, serif;
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   font-weight: 400;
@@ -136,7 +136,7 @@ body.page-catskills-home-base .ss-section {
 }
 
 .ss-promise-copy {
-  color: #ffffff;
+  color: var(--ss-surface);
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   line-height: 1.6;
   opacity: 0.9;

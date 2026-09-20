@@ -272,7 +272,7 @@
 .page-camp-clinics .btn-primary {
   background-color: #585D4C !important;
   border-color: #585D4C !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   border-radius: 50px;
   padding: 0.8rem 1.75rem;
   font-weight: 700;
@@ -286,7 +286,7 @@
   background-color: #474B3D !important;
   border-color: #474B3D !important;
   transform: translateY(-2px);
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 .page-camp-clinics .btn-outline-dark {
@@ -302,7 +302,7 @@
 .page-camp-clinics .btn-outline-dark:hover {
   background-color: var(--ss-ink, #362B24) !important;
   border-color: var(--ss-ink, #362B24) !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 /* Hero section spacing override */
@@ -488,13 +488,13 @@
   height: 40px;
   border-radius: 50%;
   background-color: var(--ss-teal, #289FA1);
-  color: #ffffff;
+  color: var(--ss-surface);
   font-weight: 700;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #ffffff;
+  border: 3px solid var(--ss-surface);
   box-shadow: 0 4px 10px rgba(54, 43, 36, 0.08);
   z-index: 3;
 }
@@ -663,7 +663,7 @@
 
 .page-camp-clinics .arrow-btn:hover {
   background: var(--ss-ink, #362B24);
-  color: #ffffff;
+  color: var(--ss-surface);
   border-color: var(--ss-ink, #362B24);
 }
 
@@ -779,7 +779,7 @@
 
 /* Final CTA section */
 .page-camp-clinics .final-cta-section {
-  background-color: #ffffff;
+  background-color: var(--ss-surface);
   padding: 5rem 0 7rem;
 }
 
@@ -825,7 +825,7 @@
 /* Custom Footer */
 .page-camp-clinics .custom-camp-footer {
   background-color: #585D4C;
-  color: #FBFAF8;
+  color: var(--ss-bg);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -833,7 +833,7 @@
 }
 
 .page-camp-clinics .custom-camp-footer a {
-  color: #FBFAF8;
+  color: var(--ss-bg);
   text-decoration: none;
   transition: opacity 0.3s ease;
 }

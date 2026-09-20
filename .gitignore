@@ -54,3 +54,8 @@ artifacts/
 tools/ads/output/
 tools/ads/cache/
 
+
+# Ignore built hashed CSS files
+src/assets/css/**/*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].css
+src/assets/css/*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].css
+

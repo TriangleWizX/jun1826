@@ -961,7 +961,7 @@ footer h4,
   padding: clamp(3rem, 6vw, 5.5rem) 0;
   background:
     radial-gradient(circle at top left, rgba(224, 85, 0, .14), transparent 34rem),
-    linear-gradient(135deg, var(--ss-bg, #FBFAF8), var(--ss-surface-2, #F4F1ED));
+    linear-gradient(135deg, var(--ss-bg, var(--ss-bg)), var(--ss-surface-2, var(--ss-surface2)));
 }
 
 .ss-showup-hero-grid {

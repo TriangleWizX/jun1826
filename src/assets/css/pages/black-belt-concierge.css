@@ -8,8 +8,8 @@ body.page-black-belt-concierge {
   --bbc-paper-deep: #f1e6d6;
   --bbc-mist: #e8f6f3;
   --bbc-sage: #86aa91;
-  --bbc-teal: #289fa1;
-  --bbc-green: #116a42;
+  --bbc-teal: var(--ss-teal);
+  --bbc-green: var(--ss-green);
   --bbc-line: rgba(58, 36, 24, 0.14);
   --bbc-shadow: 0 28px 80px rgba(36, 22, 15, 0.14);
   --bbc-ease: cubic-bezier(0.32, 0.72, 0, 1);
@@ -1103,11 +1103,11 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
    ========================================================= */
 
 .page-black-belt-concierge main {
-  --bbc-ink: #1f1712;
+  --bbc-ink: var(--ss-text);
   --bbc-copy: #4b4039;
   --bbc-muted: #65574e;
 
-  --bbc-surface: #ffffff;
+  --bbc-surface: var(--ss-surface);
   --bbc-surface-soft: #fff8ef;
   --bbc-border: rgba(54, 43, 36, 0.18);
 
@@ -1204,7 +1204,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   [data-theme="dark"]
 ) {
   --bbc-local-text: var(--bbc-on-dark);
-  --bbc-local-heading: #ffffff;
+  --bbc-local-heading: var(--ss-surface);
   --bbc-local-muted: var(--bbc-on-dark-muted);
 
   color: var(--bbc-local-text);
@@ -1447,7 +1447,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .btn-orange,
   .cta-primary
 ) {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   background-color: var(--bbc-orange) !important;
   border-color: var(--bbc-orange) !important;
 }
@@ -1457,7 +1457,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .btn-orange,
   .cta-primary
 ):hover {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   background-color: var(--bbc-orange-hover) !important;
   border-color: var(--bbc-orange-hover) !important;
 }
@@ -1466,7 +1466,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .btn-secondary,
   .btn-teal
 ) {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   background-color: var(--bbc-teal) !important;
   border-color: var(--bbc-teal) !important;
 }
@@ -1476,7 +1476,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .btn-outline-secondary
 ) {
   color: var(--bbc-teal) !important;
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
   border-color: var(--bbc-teal) !important;
 }
 
@@ -1484,7 +1484,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .btn-outline-primary,
   .btn-outline-secondary
 ):hover {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   background: var(--bbc-teal) !important;
 }
 
@@ -1501,7 +1501,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .fact-pill
 ) {
   color: var(--bbc-ink) !important;
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
   border: 1px solid rgba(255, 255, 255, 0.38);
   opacity: 1 !important;
 }
@@ -1510,7 +1510,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .badge.bg-dark,
   .badge.text-bg-dark
 ) {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   background: var(--bbc-dark) !important;
 }
 
@@ -1528,18 +1528,18 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
 
 .page-black-belt-concierge main table {
   color: var(--bbc-copy) !important;
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
 }
 
 .page-black-belt-concierge main table thead th {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   background: var(--bbc-dark-2) !important;
   border-color: rgba(255, 255, 255, 0.22) !important;
 }
 
 .page-black-belt-concierge main table tbody :where(th, td) {
   color: var(--bbc-copy) !important;
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
   border-color: var(--bbc-border) !important;
 }
 
@@ -1575,7 +1575,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .form-select
 ) {
   color: var(--bbc-ink) !important;
-  background-color: #ffffff !important;
+  background-color: var(--ss-surface) !important;
   border-color: rgba(54, 43, 36, 0.38) !important;
   opacity: 1 !important;
 }
@@ -1593,7 +1593,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
 
 .page-black-belt-concierge main form option {
   color: var(--bbc-ink);
-  background: #ffffff;
+  background: var(--ss-surface);
 }
 
 .page-black-belt-concierge main form :where(
@@ -1604,7 +1604,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .form-select
 ):focus {
   color: var(--bbc-ink) !important;
-  background-color: #ffffff !important;
+  background-color: var(--ss-surface) !important;
   border-color: var(--bbc-teal) !important;
   box-shadow: 0 0 0 0.25rem rgba(23, 107, 109, 0.22) !important;
 }
@@ -1613,7 +1613,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
 .page-black-belt-concierge main input:-webkit-autofill:hover,
 .page-black-belt-concierge main input:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--bbc-ink) !important;
-  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px var(--ss-surface) inset !important;
 }
 
 /* Keyboard visibility */

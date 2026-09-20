@@ -22,7 +22,7 @@
   background:
     radial-gradient(circle at 86% 12%, rgba(40, 159, 161, 0.14), transparent 28rem),
     radial-gradient(circle at 14% 88%, rgba(17, 106, 66, 0.08), transparent 22rem),
-    linear-gradient(135deg, #ffffff 0%, var(--policy-surface-2) 100%);
+    linear-gradient(135deg, var(--ss-surface) 0%, var(--policy-surface-2) 100%);
   border-bottom: 1px solid var(--policy-border);
   padding: clamp(4rem, 9vw, 6.5rem) 0 clamp(3.5rem, 8vw, 5.5rem);
   position: relative;

@@ -467,7 +467,7 @@
   height: 38px;
   border-radius: 50%;
   background: var(--ss-slate, #306061);
-  color: #FFFFFF;
+  color: var(--ss-surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -678,7 +678,7 @@
   width: 90px;
   height: 90px;
   padding: 0.5rem;
-  background: #FFFFFF;
+  background: var(--ss-surface);
   border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
   border-radius: 0.5rem;
   display: flex;
@@ -782,7 +782,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: var(--ss-surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -878,7 +878,7 @@
   border-radius: 1.5rem;
   padding: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 5vw, 4rem);
   box-shadow: 0 12px 36px rgba(54, 43, 36, 0.12);
-  color: #FFFFFF;
+  color: var(--ss-surface);
   overflow: hidden;
 }
 
@@ -898,7 +898,7 @@
 }
 
 .final-cta-left h2 {
-  color: #FFFFFF;
+  color: var(--ss-surface);
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: 800;
   letter-spacing: -0.025em;
@@ -947,7 +947,7 @@
 .btn-cta-light-outline {
   background-color: transparent;
   border: 1.5px solid rgba(255, 255, 255, 0.85);
-  color: #FFFFFF;
+  color: var(--ss-surface);
   font-family: 'Lexend', sans-serif;
   font-weight: 700;
   border-radius: 999px;
@@ -963,7 +963,7 @@
 
 .btn-cta-light-outline:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-color: #FFFFFF;
+  border-color: var(--ss-surface);
   transform: translateY(-2px);
 }
 

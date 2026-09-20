@@ -110,8 +110,8 @@
   font-family: var(--bs-body-font-family);
   background:
     radial-gradient(circle at 18% 12%, rgba(40, 159, 161, 0.12), transparent 28rem),
-    linear-gradient(180deg, #fbfaf8 0%, #f4f1ed 100%);
-  color: #1f1712;
+    linear-gradient(180deg, var(--ss-bg) 0%, var(--ss-surface2) 100%);
+  color: var(--ss-text);
 }
 
 .ss-page-bjj-classes .ss-near-hero {
@@ -133,7 +133,7 @@
   border-radius: 999px;
   padding: 0.35rem 0.75rem;
   margin-bottom: 1rem;
-  color: #116a42;
+  color: var(--ss-green);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -152,7 +152,7 @@
 .ss-page-bjj-classes .lead {
   max-width: 44rem;
   margin-top: 1.25rem;
-  color: #4f433c;
+  color: var(--ss-muted);
   font-size: clamp(1.05rem, 2vw, 1.35rem);
 }
 
@@ -202,7 +202,7 @@
 .ss-page-bjj-classes .program-hero__chip:focus-visible,
 .program-hero__chip:hover,
 .program-hero__chip:focus-visible {
-  background: #ffffff;
+  background: var(--ss-surface);
   border-color: var(--ss-green, #116a42);
   color: var(--ss-green, #116a42);
   box-shadow: 0 4px 12px rgba(17, 106, 66, 0.12);
@@ -243,14 +243,14 @@
 .ss-page-bjj-classes .ss-check-list li {
   position: relative;
   padding-left: 1.6rem;
-  color: #362b24;
+  color: var(--ss-ink);
 }
 
 .ss-page-bjj-classes .ss-check-list li::before {
   position: absolute;
   left: 0;
   content: "✓";
-  color: #116a42;
+  color: var(--ss-green);
   font-weight: 800;
 }
 
@@ -275,7 +275,7 @@
 }
 
 .ss-page-bjj-classes .ss-section-heading p {
-  color: #4f433c;
+  color: var(--ss-muted);
 }
 
 .ss-page-bjj-classes .ss-town-grid {
@@ -292,7 +292,7 @@
   border: 1px solid rgba(54, 43, 36, 0.12);
   border-radius: 1rem;
   padding: 0.9rem 1rem;
-  color: #1f1712;
+  color: var(--ss-text);
   text-decoration: none;
   background: rgba(255, 255, 255, 0.82);
   transition: transform 520ms cubic-bezier(0.32, 0.72, 0, 1), border-color 520ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 520ms cubic-bezier(0.32, 0.72, 0, 1);
@@ -300,7 +300,7 @@
 
 .ss-page-bjj-classes .ss-town-grid a::after {
   content: "→";
-  color: #116a42;
+  color: var(--ss-green);
 }
 
 .ss-page-bjj-classes .ss-town-grid a:hover,
@@ -321,13 +321,13 @@
   gap: 0.65rem;
   min-height: 11rem;
   padding: clamp(1.25rem, 3vw, 2rem);
-  color: #1f1712;
+  color: var(--ss-text);
   text-decoration: none;
   transition: transform 520ms cubic-bezier(0.32, 0.72, 0, 1), box-shadow 520ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .ss-page-bjj-classes .ss-lane-card span {
-  color: #116a42;
+  color: var(--ss-green);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -431,7 +431,7 @@
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
   background: rgba(17, 106, 66, 0.08);
-  color: #116a42;
+  color: var(--ss-green);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -443,7 +443,7 @@
 .ss-page-bjj-classes .ss-cta-band h2 {
   display: block;
   margin-top: 0.9rem;
-  color: #1f1712;
+  color: var(--ss-text);
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   line-height: 1.08;
 }
@@ -453,7 +453,7 @@
 .ss-page-bjj-classes .ss-lane-card--rich p,
 .ss-page-bjj-classes .ss-cta-band p {
   margin: 0.75rem 0 0;
-  color: #4f433c;
+  color: var(--ss-muted);
   line-height: 1.6;
 }
 
@@ -521,19 +521,19 @@
 
 /* Nearby towns hub rebuild */
 .ss-page-nearby-towns {
-  --nearby-ink: #1f1712;
-  --nearby-muted: #4f433c;
-  --nearby-paper: #fbfaf8;
+  --nearby-ink: var(--ss-text);
+  --nearby-muted: var(--ss-muted);
+  --nearby-paper: var(--ss-bg);
   --nearby-panel: rgba(255, 255, 255, 0.92);
-  --nearby-panel-strong: #ffffff;
+  --nearby-panel-strong: var(--ss-surface);
   --nearby-line: rgba(54, 43, 36, 0.12);
-  --nearby-green: #116a42;
-  --nearby-teal: #289fa1;
-  --nearby-cyan: #00dde0;
+  --nearby-green: var(--ss-green);
+  --nearby-teal: var(--ss-teal);
+  --nearby-cyan: var(--ss-cyan);
   --nearby-bezier: cubic-bezier(0.32, 0.72, 0, 1);
   background:
     linear-gradient(145deg, rgba(17, 106, 66, 0.08) 0%, rgba(251, 250, 248, 0) 34%),
-    linear-gradient(180deg, #fbfaf8 0%, #f6f1ea 46%, #ffffff 100%);
+    linear-gradient(180deg, var(--ss-bg) 0%, #f6f1ea 46%, var(--ss-surface) 100%);
 }
 
 .ss-page-nearby-towns #main-content {
@@ -834,7 +834,7 @@
 
 .ss-page-nearby-towns .ss-nearby-final {
   background:
-    linear-gradient(180deg, #ffffff 0%, rgba(244, 241, 237, 0.92) 100%);
+    linear-gradient(180deg, var(--ss-surface) 0%, rgba(244, 241, 237, 0.92) 100%);
 }
 
 .ss-page-nearby-towns .ss-nearby-final-shell {
@@ -847,7 +847,7 @@
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(135deg, #0f5135 0%, #173f3f 62%, #1f1712 100%);
+    linear-gradient(135deg, #0f5135 0%, #173f3f 62%, var(--ss-text) 100%);
   border-color: rgba(255, 255, 255, 0.14);
   color: #fff;
 }

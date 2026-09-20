@@ -8,7 +8,7 @@
 
 @media (max-width: 767px) {
     .page-videos .ss-video__title {
-        color: #ffffff !important;
+        color: var(--ss-surface) !important;
     }
 }
 
@@ -259,7 +259,7 @@
     color: var(--text);
     border-radius: 999px;
     padding: 8px 10px;
-    font-size: 14px;
+    font-size: 0.875rem;
     cursor: pointer
 }
 
@@ -522,7 +522,7 @@
     background:
         radial-gradient(1200px 520px at 12% -12%, rgba(17, 106, 66, 0.14), transparent 60%),
         radial-gradient(900px 380px at 92% 4%, rgba(40, 159, 161, 0.14), transparent 58%),
-        linear-gradient(180deg, #fbfaf8 0%, #f4f0ea 100%);
+        linear-gradient(180deg, var(--ss-bg) 0%, #f4f0ea 100%);
 }
 
 .page-videos-hub .video-hero {
@@ -665,7 +665,7 @@
 .page-videos-hub .ss-chip.is-active {
     background: var(--ss-green);
     border-color: var(--ss-green);
-    color: #ffffff;
+    color: var(--ss-surface);
     box-shadow: 0 12px 24px rgba(17, 106, 66, 0.22);
 }
 
@@ -756,7 +756,7 @@
     padding: .72rem 1rem;
     border-radius: 999px;
     background: var(--ss-green);
-    color: #ffffff;
+    color: var(--ss-surface);
     font-weight: 800;
     text-decoration: none;
     box-shadow: 0 10px 22px rgba(17, 106, 66, 0.16);
@@ -1020,7 +1020,7 @@
     place-items: center;
     background: rgba(0,0,0,.60);
     color: #fff;
-    font-size: 18px
+    font-size: 1.125rem
 }
 
 .ss-videos .ss-video__body {
@@ -1030,14 +1030,14 @@
 }
 
 .ss-videos .ss-video__title {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.25;
     font-weight: 700;
     margin: 0
 }
 
 .ss-videos .ss-video__meta {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--muted)
 }
 
@@ -1063,7 +1063,7 @@
 }
 
 .ss-videos .ss-vg-now {
-    font-size: 12px;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--muted);
@@ -1072,13 +1072,13 @@
 
 .ss-videos .ss-vg-nowtitle {
     margin: 0 0 6px;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.25;
     font-weight: 700
 }
 
 .ss-videos .ss-vg-nowdate {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--muted)
 }
 

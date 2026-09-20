@@ -1,7 +1,7 @@
 /* =========================================
    Sensei Sandy Global Theme (Bootstrap 5)
    Goals: centered spacing, high contrast, low conflict
-   Palette: #116A42 #289FA1 #00DDE0 #8B522E #306061 #362B24
+   Palette: var(--ss-green) var(--ss-teal) var(--ss-cyan) var(--ss-brown) var(--ss-slate) var(--ss-ink)
 ========================================= */
 
 :root{
@@ -364,12 +364,12 @@ h1,h2,h3,h4{
   padding: 1.25rem;
   border: 1px solid rgba(54, 43, 36, 0.14);
   border-radius: 1rem;
-  background: #FBFAF8;
+  background: var(--ss-bg);
 }
 
 .ss-links h2 {
   margin: 0 0 .75rem;
-  color: #362B24;
+  color: var(--ss-ink);
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   line-height: 1.15;
 }
@@ -384,7 +384,7 @@ h1,h2,h3,h4{
 }
 
 .ss-links a {
-  color: #306061;
+  color: var(--ss-slate);
   font-weight: 700;
   text-decoration-thickness: .08em;
   text-underline-offset: .18em;
@@ -392,5 +392,5 @@ h1,h2,h3,h4{
 
 .ss-links a:hover,
 .ss-links a:focus-visible {
-  color: #116A42;
+  color: var(--ss-green);
 }

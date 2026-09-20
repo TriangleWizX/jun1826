@@ -3,16 +3,16 @@
    Calm, clear, and mobile-ergonomic with guaranteed 48px tap targets. */
 
 :root {
-  --ig-bg: #FBFAF8;
-  --ig-paper: #FFFFFF;
-  --ig-surface-2: #F4F1ED;
-  --ig-ink: #362B24;
-  --ig-muted: #4F433C;
+  --ig-bg: var(--ss-bg);
+  --ig-paper: var(--ss-surface);
+  --ig-surface-2: var(--ss-surface2);
+  --ig-ink: var(--ss-ink);
+  --ig-muted: var(--ss-muted);
   --ig-line: rgba(54, 43, 36, 0.14);
-  --ig-accent: #8B522E;
+  --ig-accent: var(--ss-brown);
   --ig-accent-dark: #6e3e20;
-  --ig-accent-soft: #F4F1ED;
-  --ig-pine: #116A42;
+  --ig-accent-soft: var(--ss-surface2);
+  --ig-pine: var(--ss-green);
   --ig-pine-soft: #e2ede7;
   --ig-sun: #E05500;
   --ig-shadow: 0 16px 36px rgba(54, 43, 36, 0.08);
@@ -188,32 +188,32 @@
 
 .cta-primary {
   background: var(--ig-pine);
-  color: #FFFFFF !important;
+  color: var(--ss-surface) !important;
   box-shadow: 0 8px 20px rgba(17, 106, 66, 0.22);
 }
 
 .cta-primary:hover,
 .cta-primary:focus-visible {
   background: #0d5334;
-  color: #FFFFFF !important;
+  color: var(--ss-surface) !important;
   box-shadow: 0 12px 26px rgba(17, 106, 66, 0.32);
 }
 
 .cta-secondary {
-  background: #306061;
-  color: #FFFFFF !important;
+  background: var(--ss-slate);
+  color: var(--ss-surface) !important;
   box-shadow: 0 8px 20px rgba(48, 96, 97, 0.2);
 }
 
 .cta-secondary:hover,
 .cta-secondary:focus-visible {
   background: #234849;
-  color: #FFFFFF !important;
+  color: var(--ss-surface) !important;
   box-shadow: 0 12px 26px rgba(48, 96, 97, 0.3);
 }
 
 .cta-outline {
-  background: #FFFFFF;
+  background: var(--ss-surface);
   border-color: rgba(17, 106, 66, 0.4);
   color: var(--ig-pine) !important;
 }
@@ -246,7 +246,7 @@
   padding: 8px 14px;
   border: 1px solid var(--ig-line);
   border-radius: 999px;
-  background: #FFFFFF;
+  background: var(--ss-surface);
   color: var(--ig-pine);
   font-size: 0.9rem;
   font-weight: 600;
@@ -320,7 +320,7 @@
 .decision-meta li {
   padding: 6px 12px;
   border-radius: 999px;
-  background: #FFFFFF;
+  background: var(--ss-surface);
   border: 1px solid var(--ig-line);
   color: var(--ig-ink);
   font-size: 0.85rem;
@@ -350,7 +350,7 @@
 }
 
 .trust-item {
-  background: #FFFFFF;
+  background: var(--ss-surface);
   border: 1px solid var(--ig-line);
 }
 

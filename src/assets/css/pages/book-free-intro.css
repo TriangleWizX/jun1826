@@ -188,7 +188,7 @@
   margin-bottom: var(--space-lg);
   border-top: 1px solid var(--color-rule-2, rgba(54, 43, 36, 0.14));
   border-bottom: 1px solid var(--color-rule-2, rgba(54, 43, 36, 0.14));
-  background-color: var(--color-paper-2, #F4F1ED);
+  background-color: var(--color-paper-2, var(--ss-surface2));
 }
 .page-book-intro .ss-reachout-banner picture {
   position: absolute;

@@ -92,7 +92,7 @@ body.page-partners-schools .ss-site-header {
 
 .ss-btn-olive {
   background-color: var(--ss-olive);
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   border: 1px solid var(--ss-olive);
   padding: 0.85rem 1.75rem;
   border-radius: 999px;
@@ -296,7 +296,7 @@ body.page-partners-schools .ss-site-header {
 
 .ss-visit-card:hover .ss-visit-card__icon {
   background: var(--ss-olive);
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .ss-visit-card h3 {
@@ -352,7 +352,7 @@ body.page-partners-schools .ss-site-header {
 
 .ss-timeline-step__number {
   background: var(--ss-ink);
-  color: #ffffff;
+  color: var(--ss-surface);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -893,7 +893,7 @@ body.page-partners-schools .ss-site-header {
 .partner-mobile-sticky .btn-primary {
   background-color: var(--ss-olive);
   border-color: var(--ss-olive);
-  color: #ffffff;
+  color: var(--ss-surface);
 }
 
 .partner-mobile-sticky .btn-outline-dark {

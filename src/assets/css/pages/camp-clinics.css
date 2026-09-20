@@ -1,7 +1,7 @@
 .page-camp-clinics {
   --camp-hero-bg: radial-gradient(circle at top left, rgba(40, 159, 161, 0.12), transparent 34rem),
     radial-gradient(circle at 90% 10%, rgba(107, 76, 48, 0.12), transparent 18rem),
-    var(--ss-bg, #fbfaf8);
+    var(--ss-bg, var(--ss-bg));
 }
 
 .page-camp-clinics .partner-hero.camp-hero {

@@ -106,7 +106,7 @@ a {
 .ss-post-card__tag {
   margin: 0 0 0.5rem 0;
   color: var(--ss-green);
-  font-size: 10px !important;
+  font-size: 0.625rem !important;
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -633,7 +633,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   background: var(--ss-green, #116A42);
   border: none;
   font-size: clamp(0.78rem, 3.4vw, 0.95rem) !important;

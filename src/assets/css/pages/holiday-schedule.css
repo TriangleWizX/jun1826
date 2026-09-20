@@ -1,12 +1,12 @@
 /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
 
 body.page-holiday-schedule {
-  --holiday-paper: var(--color-paper, #fbfaf8);
-  --holiday-paper-2: var(--color-paper-2, #f4f1ed);
-  --holiday-ink: var(--color-ink, #362b24);
-  --holiday-muted: var(--color-muted, #4f433c);
+  --holiday-paper: var(--color-paper, var(--ss-bg));
+  --holiday-paper-2: var(--color-paper-2, var(--ss-surface2));
+  --holiday-ink: var(--color-ink, var(--ss-ink));
+  --holiday-muted: var(--color-muted, var(--ss-muted));
   --holiday-rule: var(--color-rule, rgba(54, 43, 36, 0.14));
-  --holiday-green: var(--color-accent, #116a42);
+  --holiday-green: var(--color-accent, var(--ss-green));
   background: var(--holiday-paper-2);
   color: var(--holiday-ink);
 }

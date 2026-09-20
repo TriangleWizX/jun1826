@@ -2688,7 +2688,7 @@ body.page-programs.ss-page-kids .kids-yam-copy {
 .kids-program-page .program-conversion-template .program-hero__chip:focus-visible,
 .program-hero__chip:hover,
 .program-hero__chip:focus-visible {
-  background: #ffffff;
+  background: var(--ss-surface);
   border-color: var(--ss-green, #116a42);
   color: var(--ss-green, #116a42);
   box-shadow: 0 4px 12px rgba(17, 106, 66, 0.12);

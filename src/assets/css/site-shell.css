@@ -1477,7 +1477,7 @@ dialog#help-modal {
 
   .ss-global-nav-wrapper .ss-topbar-availability {
     min-width: 0;
-    color: var(--color-accent, #116a42);
+    color: var(--color-accent, var(--ss-green));
     text-decoration: none;
     cursor: pointer;
   }
@@ -1488,7 +1488,7 @@ dialog#help-modal {
   }
 
   .ss-global-nav-wrapper .ss-topbar-availability:focus-visible {
-    outline: 2px solid var(--color-focus, #116a42);
+    outline: 2px solid var(--color-focus, var(--ss-green));
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -2149,7 +2149,7 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
   padding: 0.45rem !important;
   border: 1px solid rgba(37, 30, 26, 0.08) !important;
   border-radius: 1rem !important;
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
   box-shadow: 0 18px 42px rgba(37, 30, 26, 0.12) !important;
 }
 
@@ -2178,12 +2178,12 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current="page"] {
 body .ss-floating-chat {
   border-color: #e05500 !important;
   background: #e05500 !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 body .ss-floating-chat i,
 body .ss-floating-chat-text {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 @media (min-width: 62rem) {
@@ -2223,7 +2223,7 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
   padding: 0.45rem !important;
   border: 1px solid rgba(37, 30, 26, 0.08) !important;
   border-radius: 1rem !important;
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
   box-shadow: 0 18px 42px rgba(37, 30, 26, 0.12) !important;
 }
 
@@ -2256,12 +2256,12 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current="page"] {
 body .ss-floating-chat {
   border-color: #e05500 !important;
   background: #e05500 !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 body .ss-floating-chat i,
 body .ss-floating-chat-text {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 @media (min-width: 62rem) {
@@ -2496,7 +2496,7 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
   padding: 0.45rem !important;
   border: 1px solid rgba(37, 30, 26, 0.08) !important;
   border-radius: 1rem !important;
-  background: #ffffff !important;
+  background: var(--ss-surface) !important;
   box-shadow: 0 18px 42px rgba(37, 30, 26, 0.12) !important;
 }
 
@@ -2525,12 +2525,12 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-item[aria-current="page"] {
 body .ss-floating-chat {
   border-color: #e05500 !important;
   background: #e05500 !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 body .ss-floating-chat i,
 body .ss-floating-chat-text {
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 @media (min-width: 62rem) {

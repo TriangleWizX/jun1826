@@ -165,7 +165,7 @@
 /* Buttons */
 .btn-green-primary {
   background-color: var(--ss-green);
-  color: #FFFFFF !important;
+  color: var(--ss-surface) !important;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.9rem 1.75rem;
@@ -187,7 +187,7 @@
 }
 
 .btn-white-secondary {
-  background-color: #FFFFFF;
+  background-color: var(--ss-surface);
   color: var(--ss-text) !important;
   font-weight: 700;
   font-size: 0.9rem;
@@ -380,7 +380,7 @@
 
 .social-row a:hover {
   background-color: var(--ss-green);
-  color: #FFFFFF;
+  color: var(--ss-surface);
 }
 
 /* Map Column */
@@ -402,7 +402,7 @@
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background: #FFFFFF;
+  background: var(--ss-surface);
   color: var(--ss-text) !important;
   font-size: 0.8rem;
   font-weight: 700;

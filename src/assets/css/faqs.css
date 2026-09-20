@@ -83,7 +83,7 @@
 /* Brand Button Styling */
 .btn-brand-olive {
   background-color: #4F5840 !important;
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
   border: 1px solid transparent !important;
   padding: 0.8rem 1.6rem !important;
   border-radius: 8px !important;
@@ -102,11 +102,11 @@
 .btn-brand-olive:focus {
   background-color: #3d4332 !important;
   transform: translateY(-1px);
-  color: #ffffff !important;
+  color: var(--ss-surface) !important;
 }
 
 .btn-brand-outline {
-  background-color: #ffffff !important;
+  background-color: var(--ss-surface) !important;
   color: var(--ss-ink, #362B24) !important;
   border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)) !important;
   padding: 0.8rem 1.6rem !important;
@@ -221,7 +221,7 @@
 .faq-filter-btn.active {
   background-color: #4F5840;
   border-color: #4F5840;
-  color: #ffffff;
+  color: var(--ss-surface);
   box-shadow: 0 6px 16px rgba(79, 88, 64, 0.12);
 }
 
@@ -275,7 +275,7 @@
   height: 28px;
   border-radius: 50%;
   background: #4F5840;
-  color: #ffffff;
+  color: var(--ss-surface);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -402,7 +402,7 @@
   max-width: 960px;
   margin-inline: auto;
   padding: clamp(36px, 7vw, 64px) 32px;
-  background: linear-gradient(135deg, #FBFAF8 0%, #F4F1ED 100%);
+  background: linear-gradient(135deg, var(--ss-bg) 0%, var(--ss-surface2) 100%);
   border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
   border-radius: 24px;
   box-shadow: 0 12px 32px rgba(54, 43, 36, 0.05);

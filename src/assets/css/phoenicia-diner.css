@@ -82,7 +82,7 @@
 .ss-phoenicia-diner-page .bg-dark {
   background:
     radial-gradient(circle at top left, rgba(40, 159, 161, 0.34), transparent 34%),
-    linear-gradient(135deg, var(--ss-ink), #1f1712) !important;
+    linear-gradient(135deg, var(--ss-ink), var(--ss-text)) !important;
 }
 
 .ss-phoenicia-diner-page .border,

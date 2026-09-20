@@ -29,7 +29,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #116a42;
+  --bs-primary: var(--ss-green);
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -78,9 +78,9 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #1f1712;
+  --bs-body-color: var(--ss-text);
   --bs-body-color-rgb: 31, 23, 18;
-  --bs-body-bg: #fbfaf8;
+  --bs-body-bg: var(--ss-bg);
   --bs-body-bg-rgb: 251, 250, 248;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -93,13 +93,13 @@
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
-  --bs-link-color: #116a42;
+  --bs-link-color: var(--ss-green);
   --bs-link-color-rgb: 17, 106, 66;
   --bs-link-decoration: underline;
   --bs-link-hover-color: #0e5535;
   --bs-link-hover-color-rgb: 14, 85, 53;
   --bs-code-color: #d63384;
-  --bs-highlight-color: #1f1712;
+  --bs-highlight-color: var(--ss-text);
   --bs-highlight-bg: #fff3cd;
   --bs-border-width: 1px;
   --bs-border-style: solid;
@@ -506,8 +506,8 @@ progress {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #116a42;
-  --bs-btn-border-color: #116a42;
+  --bs-btn-bg: var(--ss-green);
+  --bs-btn-border-color: var(--ss-green);
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #0e5a38;
   --bs-btn-hover-border-color: #0e5535;
@@ -517,24 +517,24 @@ progress {
   --bs-btn-active-border-color: #0d5032;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #116a42;
-  --bs-btn-disabled-border-color: #116a42;
+  --bs-btn-disabled-bg: var(--ss-green);
+  --bs-btn-disabled-border-color: var(--ss-green);
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #116a42;
-  --bs-btn-border-color: #116a42;
+  --bs-btn-color: var(--ss-green);
+  --bs-btn-border-color: var(--ss-green);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #116a42;
-  --bs-btn-hover-border-color: #116a42;
+  --bs-btn-hover-bg: var(--ss-green);
+  --bs-btn-hover-border-color: var(--ss-green);
   --bs-btn-focus-shadow-rgb: 17, 106, 66;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #116a42;
-  --bs-btn-active-border-color: #116a42;
+  --bs-btn-active-bg: var(--ss-green);
+  --bs-btn-active-border-color: var(--ss-green);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #116a42;
+  --bs-btn-disabled-color: var(--ss-green);
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #116a42;
+  --bs-btn-disabled-border-color: var(--ss-green);
   --bs-gradient: none;
 }
 
@@ -624,7 +624,7 @@ progress {
   --bs-dropdown-link-hover-color: var(--bs-body-color);
   --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg);
   --bs-dropdown-link-active-color: #fff;
-  --bs-dropdown-link-active-bg: #116a42;
+  --bs-dropdown-link-active-bg: var(--ss-green);
   --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
   --bs-dropdown-item-padding-x: 1rem;
   --bs-dropdown-item-padding-y: 0.25rem;
@@ -980,7 +980,7 @@ progress {
   --bs-progress-border-radius: var(--bs-border-radius);
   --bs-progress-box-shadow: var(--bs-box-shadow-inset);
   --bs-progress-bar-color: #fff;
-  --bs-progress-bar-bg: #116a42;
+  --bs-progress-bar-bg: var(--ss-green);
   --bs-progress-bar-transition: width 0.6s ease;
   display: flex;
   height: var(--bs-progress-height);
