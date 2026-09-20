@@ -25,12 +25,12 @@ PILLARS = {
     'tactical_clinic': {
         'name': 'Tactical Micro-Clinic (Opening Closed Guard Model)',
         'description': '15-20s tactical breakdown solving a universal grappling friction point with physics/leverage.',
-        'formula': 'Common Mistake Hook -> Mechanical Physics Leverage -> "Jiu-jitsu is physics, not muscle" -> Bio Link CTA'
+        'formula': 'Common Mistake Hook -> Mechanical Physics Leverage -> "Jiu-jitsu runs on pure mechanical physics" -> Bio Link CTA'
     },
     'crucible_proof': {
         'name': 'The Crucible / Tournament Proof (Reel #3 Model)',
         'description': 'Earned legitimacy, testing under uncooperative tournament pressure with humility, and bringing proven safety home.',
-        'formula': 'Why Coach Still Competes -> Testing Real Pressure -> Zero McDojo Theory -> Tannersville Pride CTA'
+        'formula': 'Why Coach Still Competes -> Testing Real Pressure -> Proven Practical Application -> Tannersville Pride CTA'
     },
     'viral_loop': {
         'name': 'The Viral Reach Loop (Reel #1 Model — #1 Most Viewed)',

@@ -328,7 +328,7 @@ def render_tuesday(out_dir, date_str, logo_img, adult_photo, kids_photo, exterio
     r3 = render_story_card(
         out_dir, "slot03_reel_cover_carla.png",
         "Screen-Free Focus for Mountain Kids",
-        "Coached youth partner games at 5:00 PM. Confidence without aggression at 6045 Main St, Tannersville.",
+        "Coached youth partner games at 5:00 PM. Quiet confidence through structured drilling at 6045 Main St, Tannersville.",
         kids_photo, logo_img, badge="YOUTH 5 PM"
     )
     rendered_cards.append({
@@ -351,8 +351,8 @@ def render_tuesday(out_dir, date_str, logo_img, adult_photo, kids_photo, exterio
     # 5. SLOT #05: STATIC FEED AD (Weekend Wendy - Visitor Drop-in)
     r5 = render_static_ad_portrait(
         out_dir, "slot05_static_ad_wendy.png",
-        "Visiting the Catskills? Don't Skip Mat Time.",
-        "Visiting for foliage or Hunter Mountain SkyRides? Drop in for clean, ego-free jiu-jitsu at 6045 Main St, Tannersville. Active competitors and visitors welcome. Saturday No-Gi 10:30 AM & Weekdays 6:00 PM.",
+        "Visiting the Catskills? Keep Your Training Momentum.",
+        "Visiting for foliage or Hunter Mountain SkyRides? Drop in for clean, respectful jiu-jitsu at 6045 Main St, Tannersville. Active competitors and visitors welcome. Saturday No-Gi 10:30 AM & Weekdays 6:00 PM.",
         exterior_photo, logo_img,
         "VISITOR PASSES • 6 MINS FROM HUNTER",
         "COMMENT VISIT FOR PASS LINK",
@@ -438,7 +438,7 @@ def render_thursday(out_dir, date_str, logo_img, adult_photo, kids_photo, exteri
     r15 = render_story_card(
         out_dir, "slot15_reel_cover_casey.png",
         "Passing Half Guard: Chest-to-Chest to North-South",
-        "Stop yanking your trapped leg forward. Drop heavy chest pressure and walk your hips backward to North-South. Gravity opens the lock with zero strain.",
+        "Keep your trapped leg planted. Drop heavy chest pressure and walk your hips backward to North-South. Gravity opens the lock using pure mechanical leverage.",
         adult_photo, logo_img, badge="HALF GUARD PASS • ADULT 6 PM"
     )
     rendered_cards.append({
@@ -451,7 +451,7 @@ def render_thursday(out_dir, date_str, logo_img, adult_photo, kids_photo, exteri
     r16 = render_story_card(
         out_dir, "slot16_story_poll_ben.png",
         "What Holds You Back From Trying Martial Arts?",
-        "[ A ] Fear of injury on Day 1\n[ B ] Not in shape right now\n[ C ] Intimidating gym vibes\n\nBeginner Lane: cooperative movement, calm pacing, and a 1st-degree black belt coach.",
+        "[ A ] Fear of injury on Day 1\n[ B ] Need to build conditioning\n[ C ] Intimidating gym vibes\n\nBeginner Lane: cooperative movement, calm pacing, and a 1st-degree black belt coach.",
         mats_photo, logo_img, badge="INTERACTIVE POLL"
     )
     rendered_cards.append({
@@ -463,7 +463,7 @@ def render_thursday(out_dir, date_str, logo_img, adult_photo, kids_photo, exteri
     # 4. SLOT #17: STATIC FEED AD (Family-Activity Frankie - Parking Lot Solution)
     r17 = render_static_ad_portrait(
         out_dir, "slot17_static_ad_frankie.png",
-        "Mountain Families: Stop Waiting in the Parking Lot.",
+        "Mountain Families: Train Together Under One Roof.",
         "Tired of driving kids to practice and scrolling in a cold car? At Sensei Sandy BJJ, kids train at 5:00 PM and adults train at 6:00 PM. Build balance, discipline, and stamina under one roof at 6045 Main St, Tannersville. Coached beginner lane with structured partner drills and supportive coaches.",
         exterior_photo, logo_img,
         "FAMILY JIU-JITSU • 6045 MAIN ST, TANNERSVILLE",
@@ -472,7 +472,7 @@ def render_thursday(out_dir, date_str, logo_img, adult_photo, kids_photo, exteri
     )
     rendered_cards.append({
         'slot': 17, 'type': 'Static Feed Ad (1080x1350)', 'avatar': 'Family-Activity Frankie',
-        'file': r17, 'caption': '07:00 PM Static Feed Ad: Family martial arts journey without split commutes',
+        'file': r17, 'caption': '07:00 PM Static Feed Ad: Family martial arts journey with a unified schedule',
         'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-17-frankie'
     })
 
@@ -488,7 +488,7 @@ def render_thursday(out_dir, date_str, logo_img, adult_photo, kids_photo, exteri
     )
     rendered_cards.append({
         'slot': 'GBP-03', 'type': 'Google Business Profile Square (1080x1080)', 'avatar': 'Safety-Minded Adult/Parent',
-        'file': gbp3, 'caption': 'Day 3 GBP Post: Technical coached graphic highlighting beginner safety and zero-ego learning',
+        'file': gbp3, 'caption': 'Day 3 GBP Post: Technical coached graphic highlighting beginner safety and respectful learning',
         'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=google&utm_medium=organic&utm_campaign=gbp_post_03'
     })
 
@@ -609,8 +609,8 @@ def render_saturday(out_dir, date_str, logo_img, adult_photo, kids_photo, exteri
     # 1. SLOT #23: STATIC FEED AD (Weekend Wendy - Visitor Drop-in)
     r23 = render_static_ad_portrait(
         out_dir, "slot23_static_ad_wendy.png",
-        "Colors in the Catskills: Weekend Visitor BJJ",
-        "Visiting Hunter or Windham for the autumn foliage festivals? Maintain your weekly training momentum on vacation. Sensei Sandy BJJ offers easy visitor drop-in passes. Saturday Adult No-Gi at 10:30 AM right on Main St in Tannersville.",
+        "Catskills Visitor Pass: Train on Vacation",
+        "Visiting Hunter or Windham for the autumn foliage? Maintain your weekly training momentum on vacation. Sensei Sandy BJJ offers easy visitor drop-in passes. Weekday classes Mon / Tue / Wed / Fri at 6 PM and Saturday No-Gi at 10:30 AM at 6045 Main St.",
         exterior_photo, logo_img,
         "VISITOR PASS • 6045 MAIN ST",
         "SEE VISITOR OPTIONS",
@@ -618,20 +618,20 @@ def render_saturday(out_dir, date_str, logo_img, adult_photo, kids_photo, exteri
     )
     rendered_cards.append({
         'slot': 23, 'type': 'Static Feed Ad (1080x1350)', 'avatar': 'Weekend Wendy',
-        'file': r23, 'caption': '08:30 AM Static Feed Ad: Catskills fall foliage visitor drop-in passes',
+        'file': r23, 'caption': 'Static Feed Ad: Catskills fall foliage visitor drop-in passes (Weekday 6 PM & Sat 10:30 AM)',
         'destination': 'https://senseisandy.com/options-pricing?utm_source=social&utm_medium=meta&utm_campaign=ssbjj_2026-W38&utm_content=post-23-wendy'
     })
 
-    # 2. SLOT #24: LIVE MAT TOUR STORY CARD (Beginner Ben - Room Walkthrough)
+    # 2. SLOT #24: STUDIO WALKTHROUGH STORY CARD (Beginner Ben - Room Walkthrough)
     r24 = render_story_card(
         out_dir, "slot24_mat_tour_ben.png",
-        "Tour the Studio Before Saturday Class",
-        "Pristine mats. Clean space. Welcoming team.\n\nSaturday Adult No-Gi starts at 10:30 AM.\n\nStep in and experience what cooperative coached learning feels like.",
-        mats_photo, logo_img, badge="LIVE STUDIO TOUR"
+        "Tour Our Clean Mountaintop Studio",
+        "Pristine mats. Clean space. Welcoming team.\n\nAdult Beginner Lane runs Mon / Tue / Wed / Fri at 6:00 PM.\n\nStep in and experience what cooperative coached learning feels like.",
+        mats_photo, logo_img, badge="STUDIO WALKTHROUGH"
     )
     rendered_cards.append({
         'slot': 24, 'type': 'Story Card (1080x1920)', 'avatar': 'Beginner Ben',
-        'file': r24, 'caption': '10:00 AM Live Mat Tour Story: Clean mats, stroller parking, welcoming room',
+        'file': r24, 'caption': 'Studio Walkthrough Story: Clean mats, stroller parking, welcoming room',
         'destination': 'https://senseisandy.com/free-bjj-intro-tannersville-ny?utm_source=social&utm_medium=instagram&utm_campaign=ssbjj_2026-W38&utm_content=post-24-ben'
     })
 

@@ -439,7 +439,9 @@
 
 ## 📅 SATURDAY, SEPTEMBER 19, 2026
 
-### #23 | 08:30 AM — Static Feed Ad (4:5)
+> ⚠️ **Rollover Notice**: Saturday slots (#23, #24, #25, #26) are rescheduled to Monday Sep 21 to ensure all 30 posts are completed before Tuesday Sep 22. Slot #23 and #24 copy updated to accommodate Monday posting.
+
+### #23 | 08:30 AM (Rescheduled to Sun 11:00 AM / Mon 09:30 AM) — Static Feed Ad (4:5)
 - **Platform:** Meta Mountain Geotarget
 - **Target Avatar:** Weekend Wendy (`wendy`)
 - **Winning Archetype:** `The Crucible / Tournament Proof (Reel #3 Model)`
