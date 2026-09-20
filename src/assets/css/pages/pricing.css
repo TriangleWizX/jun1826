@@ -510,16 +510,16 @@ body.page-options-pricing .ss-eyebrow {
 
 body.page-options-pricing .ss-pricing-accordion .accordion-collapse.collapse.show,
 body.page-options-pricing .ss-pricing-accordion .accordion-collapse.collapsing {
-  position: static !important;
-  top: auto !important;
-  right: auto !important;
-  left: auto !important;
-  z-index: auto !important;
-  background: transparent !important;
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-  transform: none !important;
-  clip-path: none !important;
+  position: static;
+  top: auto;
+  right: auto;
+  left: auto;
+  z-index: auto;
+  background: transparent;
+  border-bottom: 0;
+  box-shadow: none;
+  transform: none;
+  clip-path: none;
 }
 
 /* =========================

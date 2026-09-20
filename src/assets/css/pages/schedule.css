@@ -20,7 +20,7 @@
 .page-schedule :is(a,button,input,select,textarea):focus-visible{outline:var(--rule-fine) solid var(--color-focus);outline-offset:2px}.page-schedule [aria-disabled=true],.page-schedule :disabled{opacity:.4;cursor:not-allowed;pointer-events:none}.page-schedule [data-state=loading] .ss-btn-text{opacity:.55}.page-schedule [aria-invalid=true]{border-color:var(--color-error)}.page-schedule [data-state=success]{border-color:var(--color-success)}
 @media (hover:hover) and (pointer:fine){.ss-btn-primary:hover,.ss-action-primary:hover{background:var(--color-accent-strong);transform:translateY(-1px)}.ss-btn-primary:hover .ss-btn-icon-wrapper{transform:translate(1px,-1px) scale(1.05)}}
 @media (max-width:60rem){.ss-hero-editorial-split{grid-template-columns:1fr}.ss-info-grid,.ss-hero-features-row{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:40rem){.ss-hero-editorial-split,.ss-section{padding-block:var(--space-xl)}.ss-double-bezel-inner,.ss-calendar-bezel-inner{padding:var(--space-md)}.ss-info-grid,.ss-hero-features-row,.ss-saturday-grid,.ss-location-grid{grid-template-columns:1fr}.ss-cal-slot{grid-template-columns:1fr;gap:var(--space-2xs)}.ss-mobile-actionbar{position:sticky;bottom:0;z-index:var(--z-sticky);display:flex;gap:var(--space-xs);padding:var(--space-xs) var(--gutter);background:var(--color-paper);border-top:var(--rule-hair) solid var(--color-rule)}}
-@media (prefers-reduced-motion:reduce){.page-schedule *{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){.page-schedule *{transition:none;animation:none}}
 
 /* Keep section introductions in the same centered reading frame as the hero. */
 .page-schedule .ss-section-head { margin-inline: auto; text-align: center; }

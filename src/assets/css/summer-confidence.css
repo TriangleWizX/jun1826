@@ -55,7 +55,7 @@
 }
 
 .ss-summer-confidence-page .text-body-secondary {
-  color: var(--ss-muted) !important;
+  color: var(--ss-muted);
 }
 
 /* ---------- Sections ---------- */
@@ -76,7 +76,7 @@
 }
 
 .ss-summer-confidence-page .bg-white {
-  background: var(--ss-surface) !important;
+  background: var(--ss-surface);
 }
 
 /* ---------- Cards ---------- */
@@ -461,11 +461,11 @@
   }
 
   .ss-summer-confidence-page .lead.fs-4 {
-    font-size: 1.15rem !important;
+    font-size: 1.15rem;
   }
 
   .ss-summer-confidence-page .fs-5 {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   .ss-summer-confidence-page .ss-card,
@@ -497,7 +497,7 @@
   }
 
   .ss-summer-confidence-page form.ss-card {
-    padding: 1.15rem !important;
+    padding: 1.15rem;
   }
 }
 
@@ -518,9 +518,9 @@
   .ss-summer-confidence-page *,
   .ss-summer-confidence-page *::before,
   .ss-summer-confidence-page *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-    animation: none !important;
+    scroll-behavior: auto;
+    transition: none;
+    animation: none;
   }
 }
 
@@ -557,7 +557,7 @@
 .ss-summer-confidence-page .ss-hero,
 .ss-summer-confidence-page .ss-section,
 .ss-summer-confidence-page .bg-white {
-  background: #f7f3ec !important;
+  background: #f7f3ec;
 }
 
 .ss-summer-confidence-page .ss-card,

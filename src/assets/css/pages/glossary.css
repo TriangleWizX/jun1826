@@ -25,11 +25,11 @@
 .glossary-term-section h2{margin-top:0;font-size:var(--text-2xl)}.glossary-term-check-list,.glossary-term-faq-list{padding-inline-start:var(--space-lg)}.glossary-term-pagination{justify-content:space-between}
 .glossary-surface--dark{background:var(--color-ink);color:var(--color-paper)}.glossary-surface--dark :is(h2,h3,p,a){color:inherit}.hidden{display:none!important}
 .ss-page-feed .ss-community-post { background: var(--color-paper); color: var(--color-ink); }
-.ss-page-feed .ss-community-pill:not(.ss-primary) { --glossary-pill-bg: #173033; background: var(--glossary-pill-bg) !important; color: var(--color-paper); }
-.glossary-visit-card h2 { color: #f4fbfb !important; }
-.glossary-visit-card li, .glossary-visit-card p { color: #b8cccc !important; }
-details.glossary-advanced-filters summary { color: #8ffcff !important; font-weight: 700; }
-details.glossary-advanced-filters fieldset legend { color: #f4fbfb !important; font-weight: 700; }
+.ss-page-feed .ss-community-pill:not(.ss-primary) { --glossary-pill-bg: #173033; background: var(--glossary-pill-bg); color: var(--color-paper); }
+.glossary-visit-card h2 { color: #f4fbfb; }
+.glossary-visit-card li, .glossary-visit-card p { color: #b8cccc; }
+details.glossary-advanced-filters summary { color: #8ffcff; font-weight: 700; }
+details.glossary-advanced-filters fieldset legend { color: #f4fbfb; font-weight: 700; }
 .glossary-flywheel-section{margin-block:var(--space-2xl);padding:var(--space-xl);border:var(--rule-hair) solid var(--color-rule);border-radius:var(--radius-outer);background:var(--color-paper-2);box-shadow:var(--shadow-card)}
 .glossary-flywheel-step{display:flex;flex-direction:column;gap:var(--space-xs);padding:var(--space-md);background:var(--color-paper);border:var(--rule-hair) solid var(--color-rule);border-radius:var(--radius-card);box-shadow:var(--bezel-inner-highlight)}
 .glossary-flywheel-step .step-num{font:700 var(--text-xs)/1 var(--font-body);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--color-accent-deep)}

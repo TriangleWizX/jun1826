@@ -828,7 +828,7 @@
 }
 
 .ss-page-nearby-towns .ss-nearby-location-card p {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   font-size: 1.2rem;
 }
 
@@ -868,7 +868,7 @@
 
 .ss-page-nearby-towns .ss-nearby-final-card h2,
 .ss-page-nearby-towns .ss-nearby-final-card p {
-  color: #fff !important;
+  color: #fff;
 }
 
 .ss-page-nearby-towns .ss-nearby-final-card .he-btn-wrapper:first-child {

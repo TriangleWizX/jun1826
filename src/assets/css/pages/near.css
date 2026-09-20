@@ -424,7 +424,7 @@ body.page-near .near-buttons .btn:hover {
 .near-section.alt,
 .bg-light,
 .bg-body-tertiary {
-  background: var(--ss-surface-alt) !important;
+  background: var(--ss-surface-alt);
 }
 
 .lane-card,
@@ -463,8 +463,8 @@ body.page-near .near-buttons .btn:hover {
 
 .ss-calendly,
 #calendlyInline {
-  border: 1px solid var(--ss-border) !important;
-  border-radius: var(--ss-r2) !important;
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-r2);
   background: var(--ss-surface-solid);
 }
 
@@ -476,8 +476,8 @@ textarea,
 .ss-input,
 .ss-textarea {
   min-height: 46px;
-  border-radius: 12px !important;
-  border: 1px solid var(--ss-border) !important;
+  border-radius: 12px;
+  border: 1px solid var(--ss-border);
   background: #fff;
 }
 
@@ -486,8 +486,8 @@ select:focus,
 textarea:focus,
 .form-control:focus,
 .form-select:focus {
-  border-color: rgba(31, 158, 163, 0.64) !important;
-  box-shadow: var(--ss-ring) !important;
+  border-color: rgba(31, 158, 163, 0.64);
+  box-shadow: var(--ss-ring);
 }
 
 @media (max-width: 991px) {

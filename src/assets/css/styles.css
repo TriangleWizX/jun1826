@@ -249,8 +249,8 @@ color:rgba(255, 255, 255, 0.85)
     }
 
     .navbar-nav.flex-column {
-        flex-direction: row !important;
-        width: auto !important
+        flex-direction: row;
+        width: auto
     }
 
     .navbar-nav {
@@ -409,7 +409,7 @@ color:rgba(255, 255, 255, 0.85)
     font-size: 1.25rem;
     letter-spacing: 0.3em;
     margin-top: 0.4rem;
-    color: #fff !important;
+    color: #fff;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35)
 }
 
@@ -720,7 +720,7 @@ color:rgba(255, 255, 255, 0.85)
 .hero-video-section {
     position: relative;
     width: 100%;
-    min-height: clamp(60vh, 70vh, 76vh) !important;
+    min-height: clamp(60vh, 70vh, 76vh);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1042,7 +1042,7 @@ color:rgba(255, 255, 255, 0.85)
 .hero-video-section .text-white,
 .hero-video-section .text-white-50,
 .hero-video-section .link-light {
-    color: var(--heading-color) !important
+    color: var(--heading-color)
 }
 
 .hero-video-section .link-light:hover,
@@ -1097,7 +1097,7 @@ color:rgba(255, 255, 255, 0.85)
 }
 
 .hero__badges .text-warning {
-    color: var(--accent-ink) !important
+    color: var(--accent-ink)
 }
 
 .hero__cta {
@@ -1347,9 +1347,9 @@ div {
 
 @media(max-width: 767px) {
     .private-core-cta {
-        align-items: center !important;
+        align-items: center;
         width: 100%;
-        max-width: none !important
+        max-width: none
     }
 
     .private-core-cta .btn {
@@ -1360,7 +1360,7 @@ div {
 
 @media(max-width: 768px) {
     .hero-video-section {
-        min-height: auto !important;
+        min-height: auto;
         max-height: none;
         padding: clamp(2.25rem, 6vw, 3rem)1.25rem 3rem;
         align-items: center
@@ -1620,11 +1620,11 @@ ul {
     z-index: 9999;
     width: 90%;
     max-width: 450px;
-    background-color: var(--button-color) !important;
-    color: white !important;
+    background-color: var(--button-color);
+    color: white;
     font-weight: bold;
     padding: 0.8rem 1.5rem;
-    border-radius: 50rem !important;
+    border-radius: 50rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 2px solid #fff;
     animation: floatUp 1s ease-out;
@@ -1633,8 +1633,8 @@ ul {
 }
 
 .sticky-cta:hover {
-    background-color: var(--button-hover) !important;
-    color: #fff !important
+    background-color: var(--button-hover);
+    color: #fff
 }
 
 @media(min-width: 992px) {
@@ -1713,7 +1713,7 @@ ul {
 }
 
 .text-center {
-    text-align: center !important;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1721,7 +1721,7 @@ ul {
 }
 
 .mt-4 {
-    margin-top: 1.5rem !important
+    margin-top: 1.5rem
 }
 
 .cta-subnote-sm {
@@ -1807,8 +1807,8 @@ ul {
 }
 
 .bg-warning {
-    background-color: var(--accent-color) !important;
-    color: #fff !important
+    background-color: var(--accent-color);
+    color: #fff
 }
 
 .nav-link i.bi-shield-check {
@@ -1915,7 +1915,7 @@ ul {
 
 .stretch-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     border-color: var(--bs-primary)
 }
 
@@ -2099,7 +2099,7 @@ ul {
 .cta-hero-block *::before,
 .cta-hero-block *::after,
 .cta-hero-block__actions a {
-    color: #fff !important
+    color: #fff
 }
 
 .cta-hero-block *,
@@ -2202,7 +2202,7 @@ ul {
 }
 
 .cta-proof-block__snippet {
-    color: #0f0c08 !important;
+    color: #0f0c08;
 }
 
 .cta-proof-block--on-dark {
@@ -2888,25 +2888,25 @@ Sensei Sandy CRO: Hero + Sticky Bar
 
 /* Force Tannersville eyebrow accent to start white */
 .ss-hero__eyebrow .ss-accent {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 .ss-hero__eyebrow:hover .ss-accent {
-    color: var(--button-color) !important;
+    color: var(--button-color);
 }
 
 /* Force SS eyebrow to white, accent orange on hover */
 .ss-hero__eyebrow {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 .ss-hero__eyebrow .ss-accent {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 #hero .ss-hero__left .small.text-white.mb-2>a:nth-child(1),
 #hero .ss-hero__left .small.text-white.mb-2>a:nth-child(1):hover {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 #meet-instructor .col-md-8>p:nth-of-type(7) a,
@@ -2919,7 +2919,7 @@ Sensei Sandy CRO: Hero + Sticky Bar
 }
 
 .ss-hero__eyebrow:hover .ss-accent {
-    color: var(--button-color) !important;
+    color: var(--button-color);
 }
 
 /* =========================
@@ -3213,7 +3213,7 @@ body[data-layout="booking"] .desktop-sticky-cta {
 }
 
 body[data-layout="booking"].body-has-sticky {
-    padding-bottom: 0 !important
+    padding-bottom: 0
 }
 
 body[data-layout="booking"] .ss-book__hero {
@@ -3250,13 +3250,13 @@ body[data-layout="booking"] .ss-book__buttons .ss-btn {
 }
 
 .ss-book .text-muted {
-    color: var(--ss-muted) !important;
+    color: var(--ss-muted);
 }
 
 body[data-layout="booking"] .ss-book__headline,
 body[data-layout="booking"] .ss-book__h2,
 body[data-layout="booking"] .ss-book__subhead {
-    color: var(--ss-text) !important;
+    color: var(--ss-text);
 }
 
 body[data-layout="booking"] .booking-embed__frame {
@@ -3313,12 +3313,12 @@ textarea:focus-visible,
         justify-content: center;
         gap: .18rem;
         padding: .55rem .5rem;
-        text-decoration: none !important;
+        text-decoration: none;
         font-size: 1rem;
         font-weight: 900;
         line-height: 1;
         letter-spacing: -.02em;
-        color: var(--ss-ink) !important;
+        color: var(--ss-ink);
         background: #fff;
         border: 1px solid rgba(54, 43, 36, .13);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, .75);
@@ -3352,10 +3352,10 @@ textarea:focus-visible,
 .page-bjj-glossary .quick-start-card,
 .page-bjj-glossary .filter-panel .card,
 .page-bjj-glossary .map-card {
-    background: var(--ss-surface) !important;
-    color: var(--ss-ink) !important;
-    opacity: 1 !important;
-    text-shadow: none !important;
+    background: var(--ss-surface);
+    color: var(--ss-ink);
+    opacity: 1;
+    text-shadow: none;
 }
 
 /* Force all text inside light cards to readable contrast */
@@ -3388,7 +3388,7 @@ textarea:focus-visible,
 .page-bjj-glossary .path-card h1,
 .page-bjj-glossary .path-card h2,
 .page-bjj-glossary .path-card h3 {
-    color: var(--ss-teal-dark) !important;
+    color: var(--ss-teal-dark);
     font-weight: 800;
 }
 
@@ -3400,7 +3400,7 @@ textarea:focus-visible,
 .page-bjj-glossary .cta-card p,
 .page-bjj-glossary .intro-card p,
 .page-bjj-glossary .ready-card p {
-    color: var(--ss-muted) !important;
+    color: var(--ss-muted);
 }
 
 /* Links inside light cards */
@@ -3411,7 +3411,7 @@ textarea:focus-visible,
 .page-bjj-glossary .cta-card a,
 .page-bjj-glossary .intro-card a,
 .page-bjj-glossary .ready-card a {
-    color: var(--ss-green) !important;
+    color: var(--ss-green);
     font-weight: 800;
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
@@ -3423,18 +3423,18 @@ textarea:focus-visible,
 .page-bjj-glossary .btn-orange,
 .page-bjj-glossary .reserve-free-intro,
 .page-bjj-glossary a[href*="free-bjj-intro-tannersville-ny"] {
-    background: var(--ss-green) !important;
-    color: var(--ss-surface) !important;
-    border-color: var(--ss-green) !important;
-    opacity: 1 !important;
-    text-shadow: none !important;
+    background: var(--ss-green);
+    color: var(--ss-surface);
+    border-color: var(--ss-green);
+    opacity: 1;
+    text-shadow: none;
 }
 
 /* Top “Ready to see the words in class?” band */
 .page-bjj-glossary .ready-card,
 .page-bjj-glossary .cta-card,
 .page-bjj-glossary .glossary-cta {
-    background: var(--ss-surface-soft) !important;
+    background: var(--ss-surface-soft);
     border: 1px solid var(--ss-border);
 }
 
@@ -3444,14 +3444,14 @@ textarea:focus-visible,
 .page-bjj-glossary .cta-card p,
 .page-bjj-glossary .glossary-cta strong,
 .page-bjj-glossary .glossary-cta p {
-    color: var(--ss-teal-dark) !important;
+    color: var(--ss-teal-dark);
 }
 
 /* Keep the dark search/filter shell readable */
 .page-bjj-glossary .glossary-search-shell,
 .page-bjj-glossary .filter-shell,
 .page-bjj-glossary .glossary-filters {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 .page-bjj-glossary .glossary-search-shell label,
@@ -3460,19 +3460,19 @@ textarea:focus-visible,
 .page-bjj-glossary .glossary-search-shell strong,
 .page-bjj-glossary .filter-shell strong,
 .page-bjj-glossary .glossary-filters strong {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 /* Search input contrast */
 .page-bjj-glossary input[type="search"],
 .page-bjj-glossary input[type="text"] {
-    background: #102625 !important;
-    color: var(--ss-surface) !important;
-    border: 1px solid var(--ss-teal) !important;
+    background: #102625;
+    color: var(--ss-surface);
+    border: 1px solid var(--ss-teal);
 }
 
 .page-bjj-glossary input::placeholder {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Pills and letter buttons */
@@ -3481,11 +3481,11 @@ textarea:focus-visible,
 .page-bjj-glossary .filter-chip,
 .page-bjj-glossary .letter-filter,
 .page-bjj-glossary .letter-btn {
-    background: var(--ss-surface) !important;
-    color: var(--ss-ink) !important;
-    border: 1px solid var(--ss-border) !important;
-    opacity: 1 !important;
-    text-shadow: none !important;
+    background: var(--ss-surface);
+    color: var(--ss-ink);
+    border: 1px solid var(--ss-border);
+    opacity: 1;
+    text-shadow: none;
 }
 
 .page-bjj-glossary .pill:hover,
@@ -3493,16 +3493,16 @@ textarea:focus-visible,
 .page-bjj-glossary .filter-chip:hover,
 .page-bjj-glossary .letter-filter:hover,
 .page-bjj-glossary .letter-btn:hover {
-    background: var(--ss-surface2) !important;
-    color: var(--ss-teal-dark) !important;
+    background: var(--ss-surface2);
+    color: var(--ss-teal-dark);
 }
 
 /* Badge text in the white card */
 .page-bjj-glossary .badge,
 .page-bjj-glossary .eyebrow,
 .page-bjj-glossary .kicker {
-    color: var(--ss-green) !important;
-    background: rgba(17, 106, 66, 0.09) !important;
+    color: var(--ss-green);
+    background: rgba(17, 106, 66, 0.09);
 }
 
 /* Prevent translucent panels from washing out text */

@@ -231,7 +231,7 @@ body {
   top: 0;
   z-index: 1040;
   backdrop-filter: blur(12px);
-  background: rgba(248, 247, 245, 0.86) !important;
+  background: rgba(248, 247, 245, 0.86);
 }
 
 .ss-nav--glass {
@@ -250,9 +250,9 @@ body {
 
 .ss-btn--primary,
 .btn-primary {
-  background: var(--ss-adapt-primary) !important;
-  border-color: var(--ss-adapt-primary) !important;
-  box-shadow: 0 12px 26px rgba(17, 106, 66, 0.28) !important;
+  background: var(--ss-adapt-primary);
+  border-color: var(--ss-adapt-primary);
+  box-shadow: 0 12px 26px rgba(17, 106, 66, 0.28);
 }
 
 .ss-home-hero__bullets {
@@ -315,7 +315,7 @@ body {
 .ss-proof-carousel .text-muted,
 .ss-proof-carousel__name,
 .ss-proof-carousel__footer p {
-  color: rgba(248, 247, 245, 0.84) !important;
+  color: rgba(248, 247, 245, 0.84);
 }
 
 .ss-proof-carousel__control {
@@ -325,8 +325,8 @@ body {
 }
 
 .ss-proof-carousel__footer .btn {
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
 }
 
 #home-faq .ss-accordion__item[open] {
@@ -370,7 +370,7 @@ body {
 
   .page-home.page-home-mobile-layer .ss-header__utility {
     position: static;
-    background: #f8f7f5 !important;
+    background: #f8f7f5;
     border-bottom: 0;
     padding-top: 0.2rem;
     padding-bottom: 0.15rem;
@@ -390,11 +390,11 @@ body {
   }
 
   .page-home.page-home-mobile-layer .ss-header__utility-contactrow {
-    width: auto !important;
-    padding: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
-    gap: 0 !important;
+    width: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    gap: 0;
   }
 
   .page-home.page-home-mobile-layer .ss-header__utility-contactlabel,
@@ -468,8 +468,8 @@ body {
 
   .page-home.page-home-mobile-layer .ss-mobile-home-stack {
     display: block;
-    padding-top: 0.8rem !important;
-    padding-bottom: 0.8rem !important;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
   }
 
   .ss-mobile-home-stack__card {
@@ -560,11 +560,11 @@ body {
   .ss-nav,
   .ss-nav--glass,
   .ss-header--glass {
-    z-index: 99999 !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    overflow: visible !important;
-    contain: none !important;
+    z-index: 99999;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    overflow: visible;
+    contain: none;
   }
 
   .navbar .navbar-collapse.show,
@@ -573,27 +573,27 @@ body {
   .ss-nav .navbar-collapse.collapsing,
   .ss-mobile-menu.show,
   .ss-mobile-menu.is-open {
-    position: absolute !important;
-    top: 100% !important;
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
-    background: #fffdf9 !important;
-    border-bottom: 1px solid rgba(54, 43, 36, 0.14) !important;
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12) !important;
-    z-index: 100000 !important;
-    pointer-events: auto !important;
-    transform: none !important;
-    clip-path: none !important;
+    background: #fffdf9;
+    border-bottom: 1px solid rgba(54, 43, 36, 0.14);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+    z-index: 100000;
+    pointer-events: auto;
+    transform: none;
+    clip-path: none;
   }
 
   .navbar-collapse a,
   .ss-mobile-menu a,
   .nav-link,
   .dropdown-item {
-    position: relative !important;
-    z-index: 100001 !important;
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
+    position: relative;
+    z-index: 100001;
+    pointer-events: auto;
+    touch-action: manipulation;
   }
 
   .ss-mobile-actions,
@@ -602,6 +602,6 @@ body {
   .bottom-action-bar,
   .mobile-bottom-bar,
   .cta-bar {
-    z-index: 90000 !important;
+    z-index: 90000;
   }
 }

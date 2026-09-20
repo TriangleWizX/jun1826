@@ -263,36 +263,36 @@
 .page-camp-clinics h3,
 .page-camp-clinics .serif-title,
 .page-camp-clinics .serif-title-large {
-  font-family: 'Instrument Serif', Georgia, serif !important;
+  font-family: 'Instrument Serif', Georgia, serif;
   font-weight: 500;
   color: var(--ss-ink, #362B24);
 }
 
 /* Custom Olive Green Button for Camp Clinics */
 .page-camp-clinics .btn-primary {
-  background-color: #585D4C !important;
-  border-color: #585D4C !important;
-  color: var(--ss-surface) !important;
+  background-color: #585D4C;
+  border-color: #585D4C;
+  color: var(--ss-surface);
   border-radius: 50px;
   padding: 0.8rem 1.75rem;
   font-weight: 700;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(88, 93, 76, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(88, 93, 76, 0.2);
 }
 
 .page-camp-clinics .btn-primary:hover,
 .page-camp-clinics .btn-primary:focus,
 .page-camp-clinics .btn-primary:active {
-  background-color: #474B3D !important;
-  border-color: #474B3D !important;
+  background-color: #474B3D;
+  border-color: #474B3D;
   transform: translateY(-2px);
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
 }
 
 .page-camp-clinics .btn-outline-dark {
-  border: 2px solid var(--ss-border, rgba(54, 43, 36, 0.2)) !important;
-  color: var(--ss-ink, #362B24) !important;
-  background: transparent !important;
+  border: 2px solid var(--ss-border, rgba(54, 43, 36, 0.2));
+  color: var(--ss-ink, #362B24);
+  background: transparent;
   border-radius: 50px;
   padding: 0.8rem 1.75rem;
   font-weight: 700;
@@ -300,9 +300,9 @@
 }
 
 .page-camp-clinics .btn-outline-dark:hover {
-  background-color: var(--ss-ink, #362B24) !important;
-  border-color: var(--ss-ink, #362B24) !important;
-  color: var(--ss-surface) !important;
+  background-color: var(--ss-ink, #362B24);
+  border-color: var(--ss-ink, #362B24);
+  color: var(--ss-surface);
 }
 
 /* Hero section spacing override */
@@ -710,12 +710,12 @@
 
 @media (max-width: 991px) {
   .page-camp-clinics .testimonials-row {
-    flex-wrap: wrap !important;
-    overflow: visible !important;
+    flex-wrap: wrap;
+    overflow: visible;
   }
   .page-camp-clinics .testimonial-col {
-    width: 100% !important;
-    flex-shrink: unset !important;
+    width: 100%;
+    flex-shrink: unset;
   }
   .page-camp-clinics .toolkit-side-card {
     margin-top: 2rem;
@@ -724,10 +724,10 @@
 
 @media (min-width: 992px) {
   .page-camp-clinics .testimonials-row {
-    overflow: visible !important;
+    overflow: visible;
   }
   .page-camp-clinics .testimonial-col {
-    width: 33.333% !important;
+    width: 33.333%;
   }
 }
 
@@ -739,28 +739,28 @@
 
 .page-camp-clinics .faq-section .accordion-item {
   border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
-  border-radius: 1rem !important;
+  border-radius: 1rem;
   overflow: hidden;
   background-color: #fffaf2;
 }
 
 .page-camp-clinics .faq-section .accordion-button {
-  background-color: #fffaf2 !important;
-  color: var(--ss-text, #1F1712) !important;
+  background-color: #fffaf2;
+  color: var(--ss-text, #1F1712);
   font-weight: 700;
   font-size: 1.1rem;
   padding: 1.5rem;
-  box-shadow: none !important;
+  box-shadow: none;
   border: none;
 }
 
 .page-camp-clinics .faq-section .accordion-button::after {
   content: '+';
-  background-image: none !important;
+  background-image: none;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--ss-green, #116A42);
-  transform: none !important;
+  transform: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -903,5 +903,5 @@
 }
 
 .page-camp-clinics .faq-section .accordion-button {
-  background: #fffaf2 !important;
+  background: #fffaf2;
 }

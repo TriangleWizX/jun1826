@@ -49,7 +49,7 @@ body.page-glossary.page-bjj-glossary .ss-main {
   background:
     radial-gradient(circle at top left, rgba(0, 221, 224, 0.14), transparent 34rem),
     radial-gradient(circle at top right, rgba(17, 106, 66, 0.10), transparent 30rem),
-    var(--glossary-dark-bg) !important;
+    var(--glossary-dark-bg);
   color: var(--glossary-dark-text);
 }
 
@@ -58,7 +58,7 @@ body.page-glossary.page-bjj-glossary .ss-main>section {
 }
 
 body.page-glossary.page-bjj-glossary .ss-main>section::before {
-  content: none !important;
+  content: none;
   display: none !important;
 }
 
@@ -66,97 +66,97 @@ body.page-glossary.page-bjj-glossary .glossary-surface--dark {
   border: 1px solid var(--glossary-dark-border);
   background:
     radial-gradient(circle at 15% 20%, rgba(0, 221, 224, 0.14), transparent 34%),
-    linear-gradient(135deg, #0b3032 0%, #111c22 52%, #071214 100%) !important;
+    linear-gradient(135deg, #0b3032 0%, #111c22 52%, #071214 100%);
   color: var(--glossary-dark-text);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-surface--dark :where(h1, h2, h3, h4, label, legend, summary) {
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-surface--dark :where(p, li, .glossary-filter-group > p, .glossary-results-header p) {
-  color: var(--glossary-dark-muted) !important;
+  color: var(--glossary-dark-muted);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-surface--light {
   border: 1px solid var(--glossary-light-border);
-  background: var(--glossary-light-panel) !important;
+  background: var(--glossary-light-panel);
   color: var(--glossary-light-text);
   box-shadow: 0 18px 45px rgba(31, 23, 18, 0.12);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-surface--light :where(h1, h2, h3, h4, label, legend, summary) {
-  color: var(--glossary-light-text) !important;
+  color: var(--glossary-light-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-surface--light :where(p, li) {
-  color: var(--glossary-light-muted) !important;
+  color: var(--glossary-light-muted);
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post {
-  border-color: var(--glossary-light-border) !important;
-  background: var(--glossary-light-panel) !important;
+  border-color: var(--glossary-light-border);
+  background: var(--glossary-light-panel);
   color: var(--glossary-light-text);
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post :where(h2, .ss-community-author) {
-  color: var(--glossary-light-text) !important;
+  color: var(--glossary-light-text);
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post :where(p, .ss-community-context) {
-  color: var(--glossary-light-muted) !important;
+  color: var(--glossary-light-muted);
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-avatar {
-  background: var(--glossary-light-panel-soft) !important;
-  color: var(--glossary-light-text) !important;
+  background: var(--glossary-light-panel-soft);
+  color: var(--glossary-light-text);
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary) {
-  border-color: var(--glossary-light-border) !important;
-  background: var(--glossary-light-panel) !important;
-  color: var(--glossary-light-text) !important;
+  border-color: var(--glossary-light-border);
+  background: var(--glossary-light-panel);
+  color: var(--glossary-light-text);
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary):hover,
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary):focus-visible {
-  border-color: rgba(40, 159, 161, 0.45) !important;
-  color: var(--glossary-light-text) !important;
+  border-color: rgba(40, 159, 161, 0.45);
+  color: var(--glossary-light-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-hero-grid,
 body.page-glossary.page-bjj-glossary .glossary-start-path {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
-    var(--glossary-dark-panel) !important;
-  border-color: var(--glossary-dark-border) !important;
-  color: var(--glossary-dark-text) !important;
+    var(--glossary-dark-panel);
+  border-color: var(--glossary-dark-border);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-hero h1,
 body.page-glossary.page-bjj-glossary .glossary-section-header h2,
 body.page-glossary.page-bjj-glossary .day-one-card h3 {
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-eyebrow,
 body.page-glossary.page-bjj-glossary .day-one-card .num,
 body.page-glossary.page-bjj-glossary .ss-paths-eyebrow {
-  color: var(--glossary-accent-text) !important;
+  color: var(--glossary-accent-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-hero-copy>p:not(.glossary-eyebrow),
 body.page-glossary.page-bjj-glossary .glossary-section-header p,
 body.page-glossary.page-bjj-glossary .day-one-card p,
 body.page-glossary.page-bjj-glossary .glossary-start-cta p {
-  color: var(--glossary-dark-muted) !important;
+  color: var(--glossary-dark-muted);
 }
 
 body.page-glossary.page-bjj-glossary .day-one-card {
-  background: var(--glossary-dark-panel-soft) !important;
-  border-color: var(--glossary-dark-border) !important;
-  color: var(--glossary-dark-text) !important;
+  background: var(--glossary-dark-panel-soft);
+  border-color: var(--glossary-dark-border);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-btn {
@@ -164,30 +164,30 @@ body.page-glossary.page-bjj-glossary .glossary-btn {
 }
 
 body.page-glossary.page-bjj-glossary .glossary-btn-primary {
-  background: var(--glossary-orange) !important;
-  border-color: var(--glossary-orange) !important;
-  color: var(--ss-surface) !important;
+  background: var(--glossary-orange);
+  border-color: var(--glossary-orange);
+  color: var(--ss-surface);
   box-shadow: 0 14px 28px rgba(185, 71, 0, 0.3);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-btn-primary:hover,
 body.page-glossary.page-bjj-glossary .glossary-btn-primary:focus-visible {
-  background: #9f3d00 !important;
-  border-color: #9f3d00 !important;
-  color: var(--ss-surface) !important;
+  background: #9f3d00;
+  border-color: #9f3d00;
+  color: var(--ss-surface);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-btn-secondary {
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: var(--glossary-dark-text) !important;
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-btn-secondary:hover,
 body.page-glossary.page-bjj-glossary .glossary-btn-secondary:focus-visible {
-  border-color: var(--glossary-dark-border-strong) !important;
-  background: rgba(0, 221, 224, 0.16) !important;
-  color: var(--glossary-dark-text) !important;
+  border-color: var(--glossary-dark-border-strong);
+  background: rgba(0, 221, 224, 0.16);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-next-steps {
@@ -207,36 +207,36 @@ body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-start-cta {
 body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-start-cta p {
   flex-basis: 100%;
   margin: 0;
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-filter-panel {
-  position: relative !important;
-  top: auto !important;
-  z-index: 2 !important;
-  float: none !important;
-  border-color: var(--glossary-dark-border) !important;
+  position: relative;
+  top: auto;
+  z-index: 2;
+  float: none;
+  border-color: var(--glossary-dark-border);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
-    var(--glossary-dark-panel) !important;
-  color: var(--glossary-dark-text) !important;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24) !important;
+    var(--glossary-dark-panel);
+  color: var(--glossary-dark-text);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-filter-header label,
 body.page-glossary.page-bjj-glossary .glossary-filter-group>p,
 body.page-glossary.page-bjj-glossary .glossary-results-header p {
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-search {
-  border-color: rgba(0, 221, 224, 0.72) !important;
-  background: #102625 !important;
-  color: var(--ss-surface) !important;
+  border-color: rgba(0, 221, 224, 0.72);
+  background: #102625;
+  color: var(--ss-surface);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-search::placeholder {
-  color: rgba(255, 255, 255, 0.74) !important;
+  color: rgba(255, 255, 255, 0.74);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-utility-links button,
@@ -244,9 +244,9 @@ body.page-glossary.page-bjj-glossary .glossary-utility-links select,
 body.page-glossary.page-bjj-glossary #reset-filters,
 body.page-glossary.page-bjj-glossary .glossary-chip,
 body.page-glossary.page-bjj-glossary .glossary-alpha {
-  border-color: rgba(255, 255, 255, 0.22) !important;
-  background: var(--glossary-pill-bg) !important;
-  color: var(--glossary-dark-text) !important;
+  border-color: rgba(255, 255, 255, 0.22);
+  background: var(--glossary-pill-bg);
+  color: var(--glossary-dark-text);
   opacity: 1;
   text-shadow: none;
 }
@@ -263,9 +263,9 @@ body.page-glossary.page-bjj-glossary .glossary-alpha:hover,
 body.page-glossary.page-bjj-glossary .glossary-alpha:focus-visible,
 body.page-glossary.page-bjj-glossary .glossary-alpha.is-active,
 body.page-glossary.page-bjj-glossary .glossary-alpha[aria-pressed="true"] {
-  border-color: var(--glossary-accent) !important;
-  background: var(--glossary-accent) !important;
-  color: #062022 !important;
+  border-color: var(--glossary-accent);
+  background: var(--glossary-accent);
+  color: #062022;
 }
 
 body.page-glossary.page-bjj-glossary .glossary-utility-links button:hover,
@@ -276,15 +276,15 @@ body.page-glossary.page-bjj-glossary .glossary-chip:not(.is-active):not([aria-pr
 body.page-glossary.page-bjj-glossary .glossary-chip:not(.is-active):not([aria-pressed="true"]):focus-visible,
 body.page-glossary.page-bjj-glossary .glossary-alpha:not(.is-active):not([aria-pressed="true"]):hover,
 body.page-glossary.page-bjj-glossary .glossary-alpha:not(.is-active):not([aria-pressed="true"]):focus-visible {
-  border-color: rgba(0, 221, 224, 0.58) !important;
-  background: var(--glossary-pill-hover-bg) !important;
-  color: var(--glossary-dark-text) !important;
+  border-color: rgba(0, 221, 224, 0.58);
+  background: var(--glossary-pill-hover-bg);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-alpha.is-disabled {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  background: var(--glossary-pill-disabled-bg) !important;
-  color: var(--glossary-pill-disabled-text) !important;
+  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--glossary-pill-disabled-bg);
+  color: var(--glossary-pill-disabled-text);
   opacity: 1;
 }
 
@@ -309,7 +309,7 @@ body.page-glossary.page-bjj-glossary .ss-paths-header {
 
 body.page-glossary.page-bjj-glossary .ss-paths-header h2 {
   margin: 0 0 8px;
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
   font-size: clamp(1.45rem, 3vw, 2.2rem);
   line-height: 1.05;
   letter-spacing: 0;
@@ -318,7 +318,7 @@ body.page-glossary.page-bjj-glossary .ss-paths-header h2 {
 body.page-glossary.page-bjj-glossary .ss-paths-header p {
   max-width: 680px;
   margin: 0 auto;
-  color: var(--glossary-dark-muted) !important;
+  color: var(--glossary-dark-muted);
 }
 
 body.page-glossary.page-bjj-glossary .ss-path-grid {
@@ -331,16 +331,16 @@ body.page-glossary.page-bjj-glossary .ss-path-card {
   min-width: 0;
   min-height: 100%;
   padding: 16px;
-  border: 1px solid var(--glossary-dark-border) !important;
+  border: 1px solid var(--glossary-dark-border);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.07) !important;
-  color: var(--glossary-dark-text) !important;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--glossary-dark-text);
   box-shadow: none;
 }
 
 body.page-glossary.page-bjj-glossary .ss-path-card h3 {
   margin: 0 0 8px;
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
   font-size: 1rem;
   line-height: 1.2;
 }
@@ -348,13 +348,13 @@ body.page-glossary.page-bjj-glossary .ss-path-card h3 {
 body.page-glossary.page-bjj-glossary .ss-path-card p {
   min-height: auto;
   margin: 0 0 12px;
-  color: var(--glossary-dark-muted) !important;
+  color: var(--glossary-dark-muted);
   font-size: 0.92rem;
   line-height: 1.45;
 }
 
 body.page-glossary.page-bjj-glossary .ss-path-link {
-  color: var(--glossary-accent-text) !important;
+  color: var(--glossary-accent-text);
   font-weight: 900;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
@@ -362,7 +362,7 @@ body.page-glossary.page-bjj-glossary .ss-path-link {
 
 body.page-glossary.page-bjj-glossary .ss-path-link:hover,
 body.page-glossary.page-bjj-glossary .ss-path-link:focus-visible {
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
 }
 
 body.page-glossary.page-bjj-glossary .ss-path-chips {
@@ -380,7 +380,7 @@ body.page-glossary.page-bjj-glossary .ss-path-chips a {
   border: 1px solid rgba(0, 221, 224, 0.36);
   border-radius: 999px;
   background: var(--glossary-pill-bg);
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
   font-size: 0.76rem;
   font-weight: 800;
   line-height: 1;
@@ -389,9 +389,9 @@ body.page-glossary.page-bjj-glossary .ss-path-chips a {
 
 body.page-glossary.page-bjj-glossary .ss-path-chips a:hover,
 body.page-glossary.page-bjj-glossary .ss-path-chips a:focus-visible {
-  border-color: var(--glossary-accent) !important;
-  background: var(--glossary-pill-hover-bg) !important;
-  color: var(--glossary-dark-text) !important;
+  border-color: var(--glossary-accent);
+  background: var(--glossary-pill-hover-bg);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-card,
@@ -399,16 +399,16 @@ body.page-glossary.page-bjj-glossary .term-card.glossary-card,
 body.page-glossary.page-bjj-glossary .ss-glossary-term-card.glossary-card {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
-    var(--glossary-dark-panel) !important;
-  border-color: var(--glossary-dark-border) !important;
-  color: var(--glossary-dark-text) !important;
+    var(--glossary-dark-panel);
+  border-color: var(--glossary-dark-border);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-card h3,
 body.page-glossary.page-bjj-glossary .glossary-card h3 a,
 body.page-glossary.page-bjj-glossary .term-card__title,
 body.page-glossary.page-bjj-glossary .term-card__title a {
-  color: var(--glossary-dark-text) !important;
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-card p,
@@ -416,36 +416,36 @@ body.page-glossary.page-bjj-glossary .term-card__summary,
 body.page-glossary.page-bjj-glossary .ss-glossary-term-def,
 body.page-glossary.page-bjj-glossary .glossary-related,
 body.page-glossary.page-bjj-glossary .glossary-related span {
-  color: var(--glossary-dark-muted) !important;
+  color: var(--glossary-dark-muted);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-related a {
-  color: var(--glossary-dark-text) !important;
-  border-bottom-color: var(--glossary-dark-border-strong) !important;
+  color: var(--glossary-dark-text);
+  border-bottom-color: var(--glossary-dark-border-strong);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-pill {
   min-height: 26px;
   align-items: center;
-  border: 1px solid rgba(0, 221, 224, 0.42) !important;
-  background: var(--glossary-pill-bg) !important;
-  color: var(--glossary-accent-text) !important;
+  border: 1px solid rgba(0, 221, 224, 0.42);
+  background: var(--glossary-pill-bg);
+  color: var(--glossary-accent-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-card-cta,
 body.page-glossary.page-bjj-glossary .term-card__cta,
 body.page-glossary.page-bjj-glossary .ss-glossary-term-cta {
-  border: 1px solid var(--glossary-dark-border-strong) !important;
-  background: rgba(0, 221, 224, 0.14) !important;
-  color: var(--glossary-dark-text) !important;
+  border: 1px solid var(--glossary-dark-border-strong);
+  background: rgba(0, 221, 224, 0.14);
+  color: var(--glossary-dark-text);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-card-cta:hover,
 body.page-glossary.page-bjj-glossary .glossary-card-cta:focus-visible,
 body.page-glossary.page-bjj-glossary .term-card__cta:hover,
 body.page-glossary.page-bjj-glossary .term-card__cta:focus-visible {
-  background: var(--glossary-accent) !important;
-  color: #062022 !important;
+  background: var(--glossary-accent);
+  color: #062022;
 }
 
 body.page-glossary-term.page-bjj-glossary {
@@ -463,11 +463,11 @@ body.page-glossary-term.page-bjj-glossary .term-card,
 body.page-glossary-term.page-bjj-glossary .ss-glossary-rich-sidebar-card,
 body.page-glossary-term.page-bjj-glossary .on-this-page,
 body.page-glossary-term.page-bjj-glossary section[id] {
-  border-color: var(--glossary-term-dark-border) !important;
+  border-color: var(--glossary-term-dark-border);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
-    var(--glossary-term-dark-panel) !important;
-  color: var(--glossary-term-dark-text) !important;
+    var(--glossary-term-dark-panel);
+  color: var(--glossary-term-dark-text);
 }
 
 body.page-glossary-term.page-bjj-glossary .term-hero h1,
@@ -477,7 +477,7 @@ body.page-glossary-term.page-bjj-glossary .glossary-card h4,
 body.page-glossary-term.page-bjj-glossary .term-card h3,
 body.page-glossary-term.page-bjj-glossary .related-term-card h3,
 body.page-glossary-term.page-bjj-glossary summary {
-  color: var(--glossary-term-dark-text) !important;
+  color: var(--glossary-term-dark-text);
 }
 
 body.page-glossary-term.page-bjj-glossary .term-meta,
@@ -487,21 +487,21 @@ body.page-glossary-term.page-bjj-glossary .glossary-card li,
 body.page-glossary-term.page-bjj-glossary .term-card p,
 body.page-glossary-term.page-bjj-glossary section[id] p,
 body.page-glossary-term.page-bjj-glossary section[id] li {
-  color: var(--glossary-term-dark-muted) !important;
+  color: var(--glossary-term-dark-muted);
 }
 
 body.page-glossary-term.page-bjj-glossary .term-tags span,
 body.page-glossary-term.page-bjj-glossary .glossary-pill,
 body.page-glossary-term.page-bjj-glossary .badge {
-  border: 1px solid rgba(0, 221, 224, 0.34) !important;
-  background: rgba(0, 221, 224, 0.13) !important;
-  color: var(--glossary-term-dark-text) !important;
+  border: 1px solid rgba(0, 221, 224, 0.34);
+  background: rgba(0, 221, 224, 0.13);
+  color: var(--glossary-term-dark-text);
 }
 
 body.page-glossary-term.page-bjj-glossary .glossary-card a,
 body.page-glossary-term.page-bjj-glossary .term-card a,
 body.page-glossary-term.page-bjj-glossary section[id] a {
-  color: var(--glossary-term-accent) !important;
+  color: var(--glossary-term-accent);
 }
 
 body.page-glossary-term.page-bjj-glossary .glossary-card a:hover,
@@ -510,7 +510,7 @@ body.page-glossary-term.page-bjj-glossary section[id] a:hover,
 body.page-glossary-term.page-bjj-glossary .glossary-card a:focus-visible,
 body.page-glossary-term.page-bjj-glossary .term-card a:focus-visible,
 body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
 }
 
 @media (max-width: 920px) {
@@ -543,7 +543,7 @@ body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
 /* Fix visibility issues for .ss-mini-link sidebar items on term pages */
 .ss-mini-link {
   display: block;
-  text-decoration: none !important;
+  text-decoration: none;
   transition: transform 0.2s ease;
 }
 
@@ -553,7 +553,7 @@ body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
 
 .ss-mini-link strong {
   display: block;
-  color: var(--ss-text) !important;
+  color: var(--ss-text);
   /* Force dark text on white background */
   font-size: 1.1rem;
   line-height: 1.2;
@@ -562,7 +562,7 @@ body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
 
 .ss-mini-link span {
   display: block;
-  color: var(--ss-muted) !important;
+  color: var(--ss-muted);
   /* Force muted dark text on white background */
   font-size: 0.9rem;
   line-height: 1.3;
@@ -574,52 +574,52 @@ body.page-glossary.page-bjj-glossary a.glossary-btn-secondary,
 .glossary-shell.glossary-next-steps a.glossary-btn-secondary,
 .glossary-next-steps .d-flex a.glossary-btn-secondary,
 .glossary-start-cta a.glossary-btn-secondary {
-  color: var(--ss-surface) !important;
-  border-color: rgba(255, 255, 255, 0.45) !important;
-  background: rgba(255, 255, 255, 0.15) !important;
+  color: var(--ss-surface);
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.15);
   display: inline-flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  visibility: visible;
+  opacity: 1;
 }
 
 body.page-glossary.page-bjj-glossary .glossary-pill {
-  background: var(--glossary-pill-bg) !important;
-  color: #8ffcff !important;
+  background: var(--glossary-pill-bg);
+  color: #8ffcff;
   font-weight: 700;
-  border: 1px solid rgba(0, 221, 224, 0.42) !important;
+  border: 1px solid rgba(0, 221, 224, 0.42);
 }
 
 /* WCAG Contrast Fixes for Glossary Controls & Filters */
 body.page-glossary.page-bjj-glossary details.glossary-advanced-filters summary,
 .glossary-shell details.glossary-advanced-filters summary {
-  color: #8ffcff !important;
+  color: #8ffcff;
   font-weight: 700;
 }
 
 body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset legend,
 .glossary-shell details.glossary-advanced-filters fieldset legend {
-  color: #f4fbfb !important;
+  color: #f4fbfb;
   font-weight: 700;
 }
 
 .glossary-visit-card h2 {
-  color: #f4fbfb !important;
+  color: #f4fbfb;
 }
 
 .glossary-visit-card li,
 .glossary-visit-card p {
-  color: #b8cccc !important;
+  color: #b8cccc;
 }
 
 #copy-term-link {
-  color: #211d18 !important;
-  background-color: #efe8dc !important;
-  border-color: rgba(33, 29, 24, 0.28) !important;
+  color: #211d18;
+  background-color: #efe8dc;
+  border-color: rgba(33, 29, 24, 0.28);
 }
 
 .ss-term-next-step {
-  background: #091a1c !important;
-  color: #f4fbfb !important;
+  background: #091a1c;
+  color: #f4fbfb;
   padding: 2.5rem 1.5rem;
   border-radius: 16px;
   margin: 2rem 0;
@@ -628,39 +628,39 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 .ss-term-next-step h2,
 .ss-term-next-step p,
 .ss-term-next-step .ss-eyebrow {
-  color: #f4fbfb !important;
+  color: #f4fbfb;
 }
 
 .ss-term-next-step .ss-link-grid a {
-  color: #8ffcff !important;
+  color: #8ffcff;
 }
 
 .ss-term-next-step a.btn-primary {
-  background-color: var(--ss-cyan) !important;
-  border-color: var(--ss-cyan) !important;
-  color: #052324 !important;
-  font-weight: 700 !important;
+  background-color: var(--ss-cyan);
+  border-color: var(--ss-cyan);
+  color: #052324;
+  font-weight: 700;
 }
 
 .ss-term-next-step a.btn-outline-primary {
-  color: var(--ss-surface) !important;
-  border-color: var(--ss-cyan) !important;
-  background-color: rgba(0, 221, 224, 0.15) !important;
-  font-weight: 700 !important;
+  color: var(--ss-surface);
+  border-color: var(--ss-cyan);
+  background-color: rgba(0, 221, 224, 0.15);
+  font-weight: 700;
 }
 
 /* WCAG Contrast Overrides for Glossary Flywheel & Vault Teaser */
 .glossary-flywheel-step h3,
 .glossary-vault-teaser-copy h3 {
-  color: #f4fbfb !important;
+  color: #f4fbfb;
 }
 
 .glossary-flywheel-step p,
 .glossary-vault-teaser-copy p {
-  color: #b8cccc !important;
+  color: #b8cccc;
 }
 
 .glossary-flywheel-step .step-link {
-  color: #8ffcff !important;
+  color: #8ffcff;
 }
 

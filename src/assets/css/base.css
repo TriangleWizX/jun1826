@@ -334,8 +334,8 @@ img {
     }
 
     .navbar-nav.flex-column {
-        flex-direction: row !important;
-        width: auto !important
+        flex-direction: row;
+        width: auto
     }
 
     .navbar-nav {
@@ -493,7 +493,7 @@ img {
     font-size: 1.25rem;
     letter-spacing: 0.3em;
     margin-top: 0.4rem;
-    color: #fff !important;
+    color: #fff;
     text-shadow: 0 2px 6px rgba(0,0,0,0.35)
 }
 
@@ -568,7 +568,7 @@ img {
 }
 
 .nav-link.active,.navbar-nav .nav-link:hover,.navbar-nav .nav-link:focus {
-    color: var(--button-color)!important
+    color: var(--button-color)
 }
 
 .about-dropdown {
@@ -576,7 +576,7 @@ img {
 }
 
 .about-dropdown.is-current > .nav-link {
-    color: var(--button-color)!important
+    color: var(--button-color)
 }
 
 .programs-dropdown {
@@ -612,18 +612,18 @@ img {
 /* Ensure Bootstrap JS toggling the .show class actually makes the menu visible */
 .dropdown-menu.show, .dropdown.show > .dropdown-menu {
     display: block !important;
-    visibility: visible !important;
+    visibility: visible;
 }
 
 /* Global safety overrides: make sure nav/header do not clip dropdowns and dropdowns float above everything */
 .ss-site-header, .ss-nav, .navbar, .ss-container {
-  overflow: visible !important;
+  overflow: visible;
 }
 
 .navbar .dropdown-menu, .ss-nav .dropdown-menu, .dropdown-menu {
-  position: absolute !important;
-  z-index: 200000 !important;
-  pointer-events: auto !important;
+  position: absolute;
+  z-index: 200000;
+  pointer-events: auto;
 }
 
 .programs-dropdown__menu {
@@ -666,28 +666,28 @@ img {
 }
 
 .btn-primary {
-    background-color: var(--button-color)!important;
-    border-color: var(--button-color)!important;
-    color: #0f172a !important;
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    color: #0f172a;
     box-shadow: 0 4px 14px rgba(245,158,11,0.4)
 }
 
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active {
-    background-color: var(--button-hover)!important;
-    border-color: var(--button-hover)!important;
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
     transform: translateY(-2px);
-    color: #0f172a !important
+    color: #0f172a
 }
 
 .btn-outline,.btn-outline-primary {
     background: transparent;
-    border: 2px solid var(--button-color)!important;
-    color: var(--button-color)!important
+    border: 2px solid var(--button-color);
+    color: var(--button-color)
 }
 
 .btn-outline:hover,.btn-outline-primary:hover {
-    background: var(--button-color)!important;
-    color: #fff !important;
+    background: var(--button-color);
+    color: #fff;
     transform: translateY(-2px) scale(1.02);
 }
 
@@ -903,7 +903,7 @@ img {
 .hero-video-section {
     position: relative;
     width: 100%;
-    min-height: clamp(60vh,70vh,76vh)!important;
+    min-height: clamp(60vh,70vh,76vh);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1060,15 +1060,15 @@ img {
 }
 
 .ss-location-link {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 #locations .ss-location-link {
-    color: #0a0a0a !important;
+    color: #0a0a0a;
 }
 
 a.ss-location-link[href="https://www.google.com/maps/search/?api=1&query=Hunter%2C+NY"]:visited {
-    color: #000 !important;
+    color: #000;
 }
 
 a.town-link:focus-visible,a.ss-location-link:focus-visible,a[href*="Tannersville"]:focus-visible,a[href*="Hunter"]:focus-visible,a.town-link:hover,a.ss-location-link:hover,a[href*="Tannersville"]:hover,a[href*="Hunter"]:hover {
@@ -1204,7 +1204,7 @@ a.town-link:focus-visible,a.ss-location-link:focus-visible,a[href*="Tannersville
 }
 
 .hero-video-section .text-white,.hero-video-section .text-white-50,.hero-video-section .link-light {
-    color: var(--heading-color)!important
+    color: var(--heading-color)
 }
 
 .hero-video-section .link-light:hover,.hero-video-section .hero-link:hover {
@@ -1311,7 +1311,7 @@ a.town-link:focus-visible,a.ss-location-link:focus-visible,a[href*="Tannersville
 }
 
 .hero__badges .text-warning {
-    color: var(--accent-ink)!important
+    color: var(--accent-ink)
 }
 
 .hero__cta {
@@ -1558,9 +1558,9 @@ a.town-link:focus-visible,a.ss-location-link:focus-visible,a[href*="Tannersville
 
 @media(max-width: 767px) {
     .private-core-cta {
-        align-items:center !important;
+        align-items:center;
         width: 100%;
-        max-width: none !important
+        max-width: none
     }
 
     .private-core-cta .btn {
@@ -1571,7 +1571,7 @@ a.town-link:focus-visible,a.ss-location-link:focus-visible,a[href*="Tannersville
 
 @media(max-width: 768px) {
     .hero-video-section {
-        min-height:auto !important;
+        min-height:auto;
         max-height: none;
         padding: clamp(2.25rem,6vw,3rem)1.25rem 3rem;
         align-items: center
@@ -1735,7 +1735,7 @@ ul {
 }
 
 .hero-content-container--contact .ss-location-link {
-    color: #000 !important;
+    color: #000;
 }
 
 .how-card a[href*="destination=5VW8%2B52+Tannersville"] {
@@ -1850,11 +1850,11 @@ ul {
     z-index: 9999;
     width: 90%;
     max-width: 450px;
-    background-color: var(--button-color)!important;
-    color: white !important;
+    background-color: var(--button-color);
+    color: white;
     font-weight: bold;
     padding: 0.8rem 1.5rem;
-    border-radius: 50rem !important;
+    border-radius: 50rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     border: 2px solid #fff;
     animation: floatUp 1s ease-out;
@@ -1863,8 +1863,8 @@ ul {
 }
 
 .sticky-cta:hover {
-    background-color: var(--button-hover)!important;
-    color: #fff !important
+    background-color: var(--button-hover);
+    color: #fff
 }
 
 @media(min-width: 992px) {
@@ -1942,7 +1942,7 @@ ul {
 }
 
 .text-center {
-    text-align: center!important;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1950,7 +1950,7 @@ ul {
 }
 
 .mt-4 {
-    margin-top: 1.5rem!important
+    margin-top: 1.5rem
 }
 
 .cta-subnote-sm {
@@ -2036,8 +2036,8 @@ ul {
 }
 
 .bg-warning {
-    background-color: var(--accent-color)!important;
-    color: #0f172a !important
+    background-color: var(--accent-color);
+    color: #0f172a
 }
 
 .nav-link i.bi-shield-check {
@@ -2143,7 +2143,7 @@ ul {
 
 .stretch-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,0.175)!important;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.175);
     border-color: var(--bs-primary)
 }
 
@@ -2324,7 +2324,7 @@ ul {
 }
 
 .cta-hero-block *,.cta-hero-block *::before,.cta-hero-block *::after,.cta-hero-block__actions a {
-    color: #fff !important
+    color: #fff
 }
 
 .cta-hero-block *,.cta-hero-block *::before,.cta-hero-block *::after {
@@ -2424,7 +2424,7 @@ ul {
 }
 
 .cta-proof-block__snippet {
-    color: #0f0c08 !important;
+    color: #0f0c08;
 }
 
 .cta-proof-block--on-dark {
@@ -2636,7 +2636,7 @@ ul {
 }
 
 .schedule-location-switch__button a {
-    color: #0a0a0a !important;
+    color: #0a0a0a;
 }
 
 .page-book-intro .ss-book__section:nth-of-type(2) {
@@ -3146,23 +3146,23 @@ ul {
 }
 
 .ss-hero__eyebrow .ss-accent {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 .ss-hero__eyebrow:hover .ss-accent {
-    color: var(--button-color) !important;
+    color: var(--button-color);
 }
 
 .ss-hero__eyebrow {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 .ss-hero__eyebrow .ss-accent {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 #hero .ss-hero__left .small.text-white.mb-2 > a:nth-child(1):hover {
-    color: var(--ss-surface) !important;
+    color: var(--ss-surface);
 }
 
 #meet-instructor .col-md-8 > p:nth-of-type(8) a {
@@ -3174,7 +3174,7 @@ ul {
 }
 
 .ss-hero__eyebrow:hover .ss-accent {
-    color: var(--button-color) !important;
+    color: var(--button-color);
 }
 
 .ss-book {
@@ -3490,7 +3490,7 @@ body[data-layout="booking"] .mobile-sticky-cta,body[data-layout="booking"] .desk
 }
 
 body[data-layout="booking"].body-has-sticky {
-    padding-bottom: 0 !important
+    padding-bottom: 0
 }
 
 body[data-layout="booking"] .ss-book__hero {
@@ -3522,19 +3522,19 @@ body[data-layout="booking"] .ss-book__buttons .ss-btn {
 }
 
 .ss-book .text-muted {
-    color: var(--ss-muted)!important;
+    color: var(--ss-muted);
 }
 
 body[data-layout="booking"] .ss-book a.ss-location-link,body[data-layout="booking"] .ss-book a.ss-location-link:visited,body[data-layout="booking"] .ss-book a.ss-location-link:hover,body[data-layout="booking"] .ss-book a.ss-location-link:focus,body[data-layout="booking"] .ss-book a[href*="Tannersville"],body[data-layout="booking"] .ss-book a[href*="Tannersville"]:visited,body[data-layout="booking"] .ss-book a[href*="Tannersville"]:hover,body[data-layout="booking"] .ss-book a[href*="Tannersville"]:focus {
-    color: var(--ss-surface)!important;
+    color: var(--ss-surface);
 }
 
 body[data-layout="booking"] .ss-book .text-muted a.ss-location-link,body[data-layout="booking"] .ss-book .text-muted a[href*="Tannersville"] {
-    color: var(--ss-text)!important;
+    color: var(--ss-text);
 }
 
 body[data-layout="booking"] .ss-book__headline,body[data-layout="booking"] .ss-book__h2,body[data-layout="booking"] .ss-book__subhead {
-    color: var(--ss-text)!important;
+    color: var(--ss-text);
 }
 
 body[data-layout="booking"] .booking-embed__frame {
@@ -3750,9 +3750,9 @@ body a.btn-primary,
 body button.btn-primary,
 body input.btn-primary,
 body .btn.btn-primary{
-  background-color: var(--ss-green) !important;
-  border-color: var(--ss-green) !important;
-  color:#fff !important;
+  background-color: var(--ss-green);
+  border-color: var(--ss-green);
+  color:#fff;
 }
 */
 
@@ -3811,8 +3811,8 @@ a:hover{ color:var(--ss-deepteal); }
 
 .page-home main > section,
 .page-programs main > section{
-  padding-top:clamp(44px, 5.5vw, 84px) !important;
-  padding-bottom:clamp(44px, 5.5vw, 84px) !important;
+  padding-top:clamp(44px, 5.5vw, 84px);
+  padding-bottom:clamp(44px, 5.5vw, 84px);
 }
 
 .page-home h1, .page-programs h1{
@@ -3902,7 +3902,7 @@ a:hover{ color:var(--ss-deepteal); }
 .page-programs a.ss-btn,
 .page-home .btn,
 .page-programs .btn{
-  border-radius:999px !important;
+  border-radius:999px;
   font-weight:800;
   letter-spacing:.01em;
   padding:12px 18px;
@@ -3911,9 +3911,9 @@ a:hover{ color:var(--ss-deepteal); }
 .page-home .ss-btn--primary,
 .page-home .btn-primary,
 .page-programs .btn-primary{
-  background:var(--ss-green) !important;
-  border-color:var(--ss-green) !important;
-  color:#fff !important;
+  background:var(--ss-green);
+  border-color:var(--ss-green);
+  color:#fff;
   box-shadow:0 10px 24px rgba(17, 106, 66,.22);
 }
 .page-home .ss-btn--primary:hover,
@@ -3926,18 +3926,18 @@ a:hover{ color:var(--ss-deepteal); }
 .page-home .ss-btn--secondary,
 .page-home .btn-outline-primary,
 .page-programs .btn-outline-primary{
-  background:rgba(40,159,161,.10) !important;
-  color:var(--ss-teal) !important;
-  border-color:rgba(40,159,161,.35) !important;
+  background:rgba(40,159,161,.10);
+  color:var(--ss-teal);
+  border-color:rgba(40,159,161,.35);
 }
 .page-home .btn-outline-dark,
 .page-programs .btn-outline-dark{
-  border-color:rgba(255,255,255,.45) !important;
-  color:#fff !important;
+  border-color:rgba(255,255,255,.45);
+  color:#fff;
 }
 .page-home .btn-link,
 .page-programs .btn-link{
-  color:var(--ss-teal) !important;
+  color:var(--ss-teal);
   text-decoration:underline;
   text-underline-offset:3px;
   font-weight:800;
@@ -4042,13 +4042,13 @@ a:hover{ color:var(--ss-deepteal); }
 .page-home #why-different{
   background:
     radial-gradient(900px 420px at 50% 0%, rgba(40,159,161,.12), transparent 65%),
-    rgba(40,159,161,.06) !important;
+    rgba(40,159,161,.06);
 }
 .page-home #why-different .small.fw-semibold{
   color:var(--ss-ink);
 }
 .page-home #why-different .small.text-muted{
-  color:rgba(54,43,36,.72) !important;
+  color:rgba(54,43,36,.72);
 }
 
 .page-home #home-faq .accordion-item{
@@ -4102,7 +4102,7 @@ a:hover{ color:var(--ss-deepteal); }
   .page-home #home-faq .accordion-button:not(.collapsed){
     background:rgba(0,221,224,.14);
   }
-  .page-home #why-different{ background:rgba(40,159,161,.10) !important; }
+  .page-home #why-different{ background:rgba(40,159,161,.10); }
 }
 
 /* =========================================================
@@ -4200,12 +4200,12 @@ body {
   [class*="mobile"][class*="action"],
   [class*="mobile"][class*="cta"] {
     display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   body.body-has-sticky {
-    padding-bottom: 0 !important;
+    padding-bottom: 0;
   }
 
   .ss-header,
@@ -4235,21 +4235,21 @@ body {
   }
 
   .ss-header__utility {
-    min-height: 44px !important;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+    min-height: 44px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .ss-nav {
-    min-height: auto !important;
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
+    min-height: auto;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   .ss-lanes {
-    min-height: 48px !important;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+    min-height: 48px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-top: 1px solid rgba(54, 43, 36, 0.10);
   }
 
@@ -4803,7 +4803,7 @@ body.page-success .ss-hero :is(.ss-hq-badge, .ss-hq-stars, .ss-eyebrow-pill) {
 
 body.page-success .ss-hero__headline,
 body.page-success .ss-hero__headline em {
-  color: var(--ss-ink) !important;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-hero__right,
@@ -4837,19 +4837,19 @@ body.page-success .ss-stories :is(h2, h3, h4, p, span, strong) {
 /* Final success-page contrast layer: legacy base variables set some child
    components to white even when their surface is light. */
 body.page-success .ss-hero__right * {
-  color: var(--ss-ink) !important;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-stories * {
-  color: var(--ss-ink) !important;
+  color: var(--ss-ink);
 }
 
 body.page-success .ss-trust-strip * {
-  color: #fff !important;
+  color: #fff;
 }
 
 body.page-success .ss-trust-strip em {
-  color: #e4bd70 !important;
+  color: #e4bd70;
 }
 
 body.page-success .ss-trust-strip {

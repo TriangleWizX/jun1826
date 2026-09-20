@@ -33,7 +33,7 @@
 .page-back-to-school .bts-hero .btn { min-height: 48px; }
 .page-back-to-school .bts-hero .bg-white {
   border-radius: 1.25rem;
-  box-shadow: 0 1.25rem 3rem rgba(20, 55, 42, .22) !important;
+  box-shadow: 0 1.25rem 3rem rgba(20, 55, 42, .22);
 }
 .page-back-to-school .bts-card {
   height: 100%;
@@ -62,5 +62,5 @@
   .page-back-to-school .bts-hero::before { inset: 48% 0 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .page-back-to-school *, .page-back-to-school *::before, .page-back-to-school *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .page-back-to-school *, .page-back-to-school *::before, .page-back-to-school *::after { scroll-behavior: auto; transition-duration: .01ms; animation-duration: .01ms; }
 }

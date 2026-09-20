@@ -38,9 +38,9 @@ html:has(body.page-home), body.page-home {
 .home-hero h1 span { display: block; }
 .home-hero__desc { max-width: 35rem; margin: 0 0 2rem; font: 400 clamp(var(--text-md), 1.7vw, var(--text-lg))/var(--leading-body) var(--home-sans); }
 .home-hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-bottom: 1.25rem; }
-.page-home .home-hero__actions .btn-primary { color: #fff !important; background: var(--home-accent); border-color: var(--home-accent); }
-.page-home .home-hero__actions .btn-outline-secondary { color: var(--home-accent) !important; border: 1px solid rgba(17,106,66,.38); background: transparent; }
-.page-home .home-hero__actions .btn-primary:hover, .page-home .home-hero__actions .btn-primary:focus-visible { color: #fff !important; background: #0d5736; border-color: #0d5736; }
+.page-home .home-hero__actions .btn-primary { color: #fff; background: var(--home-accent); border-color: var(--home-accent); }
+.page-home .home-hero__actions .btn-outline-secondary { color: var(--home-accent); border: 1px solid rgba(17,106,66,.38); background: transparent; }
+.page-home .home-hero__actions .btn-primary:hover, .page-home .home-hero__actions .btn-primary:focus-visible { color: #fff; background: #0d5736; border-color: #0d5736; }
 .home-hero__reassurance { display: flex; flex-wrap: wrap; gap: .65rem 1rem; margin: 0 0 1.25rem; color: var(--home-muted); font: .78rem/1.4 var(--home-sans); }
 .home-hero__reassurance span { display: inline-flex; align-items: center; gap: .4rem; }
 .home-hero__reassurance i { color: var(--home-accent); font-size: .95rem; }
@@ -62,8 +62,8 @@ html:has(body.page-home), body.page-home {
 .home-hero__detail strong { color: var(--home-accent); font-weight: 650; }
 
 /* Trust strip and the class lanes use varied proportions rather than a repeated row. */
-.page-home .ss-home-section[aria-label="Operational and social proof"] { padding-block: 1.25rem; background: var(--home-surface-2) !important; border-color: var(--home-rule) !important; }
-.page-home .ss-home-section[aria-label="Operational and social proof"] .container > div { color: var(--home-muted) !important; font: .75rem/1.4 var(--home-sans) !important; }
+.page-home .ss-home-section[aria-label="Operational and social proof"] { padding-block: 1.25rem; background: var(--home-surface-2); border-color: var(--home-rule); }
+.page-home .ss-home-section[aria-label="Operational and social proof"] .container > div { color: var(--home-muted); font: .75rem/1.4 var(--home-sans); }
 .page-home .ss-home-section[aria-label="Operational and social proof"] .container > div { display: grid !important; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; align-items: stretch; }
 .page-home .ss-home-section[aria-label="Operational and social proof"] .container > div > span:first-child { grid-column: 1 / -1; justify-content: center; padding: 0 0 1rem; }
 .page-home .academy-fact { display: grid; gap: .12rem; align-content: center; min-height: 4.5rem; padding: .55rem .8rem; border-left: 1px solid var(--home-rule); text-align: left; }
@@ -103,7 +103,7 @@ html:has(body.page-home), body.page-home {
 .ss-lane-bento-body p, .ss-lane-bento-footer { margin: 0; font: .8rem/1.5 var(--home-sans); }
 
 /* Schedule remains a table on wide screens and becomes readable day cards on phones. */
-.page-home .ss-home-section--schedule { background: var(--home-surface-2) !important; }
+.page-home .ss-home-section--schedule { background: var(--home-surface-2); }
 .page-home .ss-home-section--schedule table { margin-inline: auto; overflow: hidden; border-color: var(--home-rule); border-radius: 1rem; font: .82rem/1.4 var(--home-sans); }
 .page-home .ss-home-section--schedule th { color: var(--home-accent); font-weight: 650; }
 .page-home .ss-home-section--schedule td, .page-home .ss-home-section--schedule th { padding: 1rem; border-color: var(--home-rule); }
@@ -115,14 +115,14 @@ html:has(body.page-home), body.page-home {
 .page-home .ss-home-step__index { font: .8rem/1 var(--home-sans); letter-spacing: .12em; }
 .page-home .ss-home-step h3 { margin: 2rem 0 .5rem; font-size: 1.8rem; }
 .page-home .ss-home-step p { margin: 0; font: .85rem/1.65 var(--home-sans); }
-.page-home .ss-home-flow-card .bg-light, .page-home .ss-home-flow-card .bg-white { border-color: var(--home-rule) !important; box-shadow: none !important; }
+.page-home .ss-home-flow-card .bg-light, .page-home .ss-home-flow-card .bg-white { border-color: var(--home-rule); box-shadow: none; }
 
 /* Shared downstream homepage sections: give existing content the same quiet system. */
-.page-home .ss-home-section:not(.ss-home-section--schedule) .border, .page-home .drop-in-banner, .page-home .ss-culture-explanation > div { border-color: var(--home-rule) !important; }
+.page-home .ss-home-section:not(.ss-home-section--schedule) .border, .page-home .drop-in-banner, .page-home .ss-culture-explanation > div { border-color: var(--home-rule); }
 .page-home .ss-home-section .bg-white, .page-home .ss-home-section .rounded-4 { border-radius: var(--home-radius); }
 .page-home .ss-home-experience-card, .page-home .ss-home-option-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .page-home .ss-home-experience-card h3, .page-home .ss-home-option-card h3 { min-height: 2rem; margin-bottom: .75rem; }
-.page-home .ss-home-experience-card p:last-child, .page-home .ss-home-option-card p:last-child { margin-top: auto !important; }
+.page-home .ss-home-experience-card p:last-child, .page-home .ss-home-option-card p:last-child { margin-top: auto; }
 .page-home .ss-home-option-card > p.fw-bold { min-height: 1.5rem; }
 .page-home .ss-home-option-card h3, .page-home .ss-home-option-card p { width: 100%; text-align: center; }
 .page-home .ss-reviews-village__card { justify-items: center; text-align: center; }
@@ -168,7 +168,7 @@ html:has(body.page-home), body.page-home {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page-home *, .page-home *::before, .page-home *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .page-home *, .page-home *::before, .page-home *::after { scroll-behavior: auto; transition-duration: .01ms; animation-duration: .01ms; animation-iteration-count: 1; }
 }
 
 /* Keep the location promise, address, arrival note, and actions on one editorial measure. */

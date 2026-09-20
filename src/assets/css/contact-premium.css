@@ -165,7 +165,7 @@
 /* Buttons */
 .btn-green-primary {
   background-color: var(--ss-green);
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.9rem 1.75rem;
@@ -188,7 +188,7 @@
 
 .btn-white-secondary {
   background-color: var(--ss-surface);
-  color: var(--ss-text) !important;
+  color: var(--ss-text);
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.9rem 1.75rem;
@@ -403,7 +403,7 @@
   bottom: 1rem;
   left: 1rem;
   background: var(--ss-surface);
-  color: var(--ss-text) !important;
+  color: var(--ss-text);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.6rem 1.15rem;
@@ -626,9 +626,9 @@
 }
 
 .contact-reassurance-box {
-  background: var(--ss-surface, #FFFFFF) !important;
-  border: 1px solid rgba(54, 43, 36, 0.05) !important;
-  border-radius: calc(1.15rem - 0.3rem) !important;
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.05);
+  border-radius: calc(1.15rem - 0.3rem);
   padding: 0.85rem 1rem;
   display: flex;
   align-items: flex-start;
@@ -636,7 +636,7 @@
   font-size: 0.9rem;
   line-height: 1.45;
   color: var(--ss-muted);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 20px rgba(54, 43, 36, 0.02) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 20px rgba(54, 43, 36, 0.02);
 }
 
 .reassurance-icon {

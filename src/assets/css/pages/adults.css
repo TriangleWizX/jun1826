@@ -2260,5 +2260,5 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .adults-program-page .program-conversion-template * { scroll-behavior: auto !important; transition: none !important; }
+  .adults-program-page .program-conversion-template * { scroll-behavior: auto; transition: none; }
 }

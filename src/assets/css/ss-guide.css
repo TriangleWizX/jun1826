@@ -439,25 +439,25 @@
 
 .ss-btn-primary {
   background: var(--ss-teal, #289FA1);
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
 }
 
 .ss-btn-primary:hover,
 .ss-btn-primary:focus-visible {
   background: var(--ss-green, #116A42);
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
 }
 
 .ss-btn-secondary {
   background: var(--ss-surface);
-  color: var(--ss-ink, #362B24) !important;
+  color: var(--ss-ink, #362B24);
   border-color: var(--guide-border);
 }
 
 .ss-btn-secondary:hover,
 .ss-btn-secondary:focus-visible {
   border-color: var(--ss-teal, #289FA1);
-  color: var(--ss-teal, #289FA1) !important;
+  color: var(--ss-teal, #289FA1);
 }
 
 /* =========================================================
@@ -476,14 +476,14 @@
   .ss-global-nav-wrapper .ss-navbar .dropdown-menu,
   .ss-navbar .dropdown-menu {
     display: block !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translateY(10px) !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
     transition:
       opacity 160ms ease,
       transform 160ms ease,
-      visibility 160ms ease !important;
+      visibility 160ms ease;
   }
 
   .header-display-desktop .header-nav-item--folder:hover .header-nav-folder-content,
@@ -497,10 +497,10 @@
   .ss-navbar .dropdown:hover .dropdown-menu,
   .ss-navbar .dropdown:focus-within .dropdown-menu,
   .ss-navbar .dropdown.show .dropdown-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translateY(0) !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 }
 .ss-teaching-doctrine {

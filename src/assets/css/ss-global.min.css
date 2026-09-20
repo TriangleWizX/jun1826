@@ -44,9 +44,9 @@ a:hover {
 }
 
 :focus-visible {
-    outline: 3px solid var(--ss-focus) !important;
-    outline-offset: 3px !important;
-    box-shadow: none !important;
+    outline: 3px solid var(--ss-focus);
+    outline-offset: 3px;
+    box-shadow: none;
 }
 
 .ss-shell {
@@ -75,7 +75,7 @@ a:hover {
 }
 
 .container {
-    max-width: var(--ss-max) !important
+    max-width: var(--ss-max)
 }
 
 h1,
@@ -89,18 +89,18 @@ h4 {
 
 .lead,
 .text-muted {
-    color: var(--ss-muted) !important;
+    color: var(--ss-muted);
 }
 
 .site-header,
 .navbar {
-    background: rgba(11, 12, 15, .92) !important;
+    background: rgba(11, 12, 15, .92);
     border-bottom: 1px solid var(--ss-border);
     backdrop-filter: blur(12px);
 }
 
 .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, .86) !important;
+    color: rgba(255, 255, 255, .86);
     font-weight: 650;
     letter-spacing: .06em;
     text-transform: uppercase;
@@ -109,40 +109,40 @@ h4 {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-    color: var(--ss-cyan) !important;
+    color: var(--ss-cyan);
 }
 
 .btn {
-    border-radius: 999px !important;
-    font-weight: 700 !important;
+    border-radius: 999px;
+    font-weight: 700;
     letter-spacing: .06em;
     padding: .85rem 1.35rem;
-    border-width: 1px !important;
+    border-width: 1px;
 }
 
 .btn-primary {
-    background: var(--ss-cta) !important;
-    border-color: var(--ss-cta) !important;
-    color: #fff !important;
+    background: var(--ss-cta);
+    border-color: var(--ss-cta);
+    color: #fff;
     box-shadow: 0 10px 28px rgba(224, 85, 0, .30);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background: var(--ss-cta-hover) !important;
-    border-color: var(--ss-cta-hover) !important;
+    background: var(--ss-cta-hover);
+    border-color: var(--ss-cta-hover);
     transform: translateY(-1px);
 }
 
 .btn-outline-primary {
-    background: transparent !important;
-    border-color: rgba(255, 255, 255, .22) !important;
-    color: rgba(255, 255, 255, .92) !important;
+    background: transparent;
+    border-color: rgba(255, 255, 255, .22);
+    color: rgba(255, 255, 255, .92);
 }
 
 .btn-outline-primary:hover {
-    background: rgba(255, 255, 255, .08) !important;
-    border-color: rgba(255, 255, 255, .30) !important;
+    background: rgba(255, 255, 255, .08);
+    border-color: rgba(255, 255, 255, .30);
 }
 
 .ss-cta-row {
@@ -166,9 +166,9 @@ h4 {
 .lane-card,
 .action-card,
 .image-card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03)) !important;
-    border: 1px solid var(--ss-border) !important;
-    border-radius: var(--ss-radius-lg) !important;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+    border: 1px solid var(--ss-border);
+    border-radius: var(--ss-radius-lg);
     box-shadow: var(--ss-shadow);
     color: var(--ss-text);
 }
@@ -187,10 +187,10 @@ h4 {
 
 .form-control,
 .form-select {
-    border-radius: 14px !important;
-    border: 1px solid var(--ss-border) !important;
-    background: rgba(255, 255, 255, .06) !important;
-    color: var(--ss-text) !important;
+    border-radius: 14px;
+    border: 1px solid var(--ss-border);
+    background: rgba(255, 255, 255, .06);
+    color: var(--ss-text);
 }
 
 .form-control::placeholder {
@@ -198,7 +198,7 @@ h4 {
 }
 
 .site-footer {
-    background: rgba(11, 12, 15, .96) !important;
+    background: rgba(11, 12, 15, .96);
     border-top: 1px solid var(--ss-border);
 }
 
@@ -295,10 +295,10 @@ h4 {
 }
 
 .yam-proof h2 {
-    margin: 0 0 0.75rem !important;
-    font-size: clamp(1.65rem, 4vw, 2.5rem) !important;
-    line-height: 1.05 !important;
-    color: #1c1917 !important;
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.65rem, 4vw, 2.5rem);
+    line-height: 1.05;
+    color: #1c1917;
 }
 
 .yam-proof__intro {
@@ -306,7 +306,7 @@ h4 {
     margin: 0 0 1.35rem;
     font-size: 1rem;
     line-height: 1.6;
-    color: #44403c !important;
+    color: #44403c;
 }
 
 .yam-proof__grid {
@@ -320,7 +320,7 @@ h4 {
     border-radius: 18px;
     background: #fff;
     box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
-    border: none !important;
+    border: none;
 }
 
 .yam-card figure {
@@ -342,12 +342,12 @@ h4 {
 
 .yam-card figcaption strong {
     font-size: 1rem;
-    color: #1c1917 !important;
+    color: #1c1917;
 }
 
 .yam-card figcaption span {
     font-size: 0.9rem;
-    color: #57534e !important;
+    color: #57534e;
 }
 
 .yam-proof__actions {

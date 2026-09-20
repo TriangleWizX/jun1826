@@ -539,7 +539,7 @@ body.page-programs.ss-page-kids .kids-schedule-note {
 }
 
 body.page-programs.ss-page-kids .kids-fit-item {
-  align-items: flex-start !important;
+  align-items: flex-start;
   gap: 0.75rem;
   padding: 0.84rem 0.9rem;
 }
@@ -1791,13 +1791,13 @@ body.page-programs.ss-page-kids .kids-parent-proof {
   display: grid;
   gap: 0.45rem;
   margin: 0 0 clamp(1rem, 2vw, 1.25rem);
-  border: 1px solid rgba(17, 106, 66, 0.14) !important;
-  border-radius: 1.15rem !important;
+  border: 1px solid rgba(17, 106, 66, 0.14);
+  border-radius: 1.15rem;
   background:
     linear-gradient(135deg, rgba(17, 106, 66, 0.08), rgba(40, 159, 161, 0.06)),
-    rgba(255, 250, 242, 0.94) !important;
-  box-shadow: none !important;
-  padding: clamp(0.9rem, 1.8vw, 1.15rem) !important;
+    rgba(255, 250, 242, 0.94);
+  box-shadow: none;
+  padding: clamp(0.9rem, 1.8vw, 1.15rem);
 }
 
 body.page-programs.ss-page-kids .kids-parent-proof p {
@@ -1805,17 +1805,17 @@ body.page-programs.ss-page-kids .kids-parent-proof p {
 }
 
 body.page-programs.ss-page-kids .kids-parent-proof p:first-child {
-  color: var(--ss-green, #116a42) !important;
+  color: var(--ss-green, #116a42);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
 }
 
 body.page-programs.ss-page-kids .kids-parent-proof .fst-italic {
   max-width: 58ch;
-  color: var(--ss-ink, #362b24) !important;
+  color: var(--ss-ink, #362b24);
   font-family: "Instrument Serif", Georgia, serif;
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem) !important;
-  font-style: normal !important;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-style: normal;
   line-height: 1.15;
 }
 
@@ -1826,7 +1826,7 @@ body.page-programs.ss-page-kids .kids-parent-proof .fw-bold {
 
 body.page-programs.ss-page-kids .kids-parent-proof a {
   width: fit-content;
-  margin-top: 0.25rem !important;
+  margin-top: 0.25rem;
   color: var(--ss-green, #116a42);
   font-weight: 800;
   text-decoration-thickness: 0.08em;
@@ -1844,7 +1844,7 @@ body.page-programs.ss-page-kids .kids-improvement-grid {
 
 body.page-programs.ss-page-kids .kids-improvement-grid .kids-fit-item {
   min-height: 0;
-  align-items: flex-start !important;
+  align-items: flex-start;
   gap: 0.65rem;
   height: 100%;
   border-color: rgba(54, 43, 36, 0.1);
@@ -1856,7 +1856,7 @@ body.page-programs.ss-page-kids .kids-improvement-grid .kids-fit-icon {
   flex: 0 0 2rem;
   width: 2rem;
   height: 2rem;
-  margin-right: 0 !important;
+  margin-right: 0;
   font-size: 0.92rem;
 }
 
@@ -1979,7 +1979,7 @@ body.page-programs.ss-page-kids .kids-yam-copy {
 
 @media (max-width: 767.98px) {
   body.page-programs.ss-page-kids .kids-parent-proof .fst-italic {
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
   }
 
   body.page-programs.ss-page-kids .kids-improvement-grid {
@@ -2539,7 +2539,7 @@ body.page-programs.ss-page-kids .kids-yam-copy {
 
 .kids-program-page .schedule-panel {
   grid-column: span 4;
-  position: static !important; /* Override sticky inside grid */
+  position: static; /* Override sticky inside grid */
 }
 
 .kids-program-page .benefits-panel {
@@ -2608,9 +2608,9 @@ body.page-programs.ss-page-kids .kids-yam-copy {
 /* Compact conversion surface: align Kids with Adults and Teens */
 .kids-program-page > .program-conversion-template,
 .kids-program-page .program-conversion-template {
-  margin-block: 0 !important;
-  width: 100% !important;
-  max-width: none !important;
+  margin-block: 0;
+  width: 100%;
+  max-width: none;
 }
 
 .kids-program-page .program-conversion-template .program-hero {

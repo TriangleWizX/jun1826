@@ -90,7 +90,7 @@
   background: var(--policy-slate);
   border: 1px solid var(--policy-slate);
   border-radius: 999px;
-  color: #fff !important;
+  color: #fff;
   display: inline-flex;
   font-family: "Lexend", system-ui, sans-serif;
   font-size: 0.95rem;
@@ -111,7 +111,7 @@
 .policy-button:focus-visible {
   background: var(--policy-green);
   border-color: var(--policy-green);
-  color: #fff !important;
+  color: #fff;
   box-shadow: 0 6px 20px rgba(17, 106, 66, 0.28);
 }
 
@@ -136,7 +136,7 @@
 .policy-button-secondary {
   background: var(--policy-surface);
   border: 1px solid var(--policy-border);
-  color: var(--policy-ink) !important;
+  color: var(--policy-ink);
   padding: 0.72rem 1.4rem;
   box-shadow: 0 2px 8px rgba(54, 43, 36, 0.04);
 }
@@ -145,7 +145,7 @@
 .policy-button-secondary:focus-visible {
   background: var(--policy-surface-2);
   border-color: var(--policy-teal);
-  color: var(--policy-teal) !important;
+  color: var(--policy-teal);
   box-shadow: 0 4px 14px rgba(40, 159, 161, 0.15);
 }
 
@@ -336,7 +336,7 @@
 .policy-contact h2,
 .policy-contact p,
 .policy-contact a {
-  color: #fff !important;
+  color: #fff;
 }
 
 .policy-contact h2 {
@@ -399,7 +399,7 @@
   .policy-button-icon,
   .policy-nav a,
   .ss-bezel-shell {
-    transition: none !important;
+    transition: none;
   }
 }
 

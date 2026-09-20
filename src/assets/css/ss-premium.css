@@ -67,12 +67,12 @@ section, .section{
 }
 
 /* If Bootstrap spacing classes exist, tighten them sitewide */
-.py-5{padding-top:2.25rem !important; padding-bottom:2.25rem !important;}
-.pt-5{padding-top:2.25rem !important;}
-.pb-5{padding-bottom:2.25rem !important;}
-.my-5{margin-top:2.25rem !important; margin-bottom:2.25rem !important;}
-.mt-5{margin-top:2.25rem !important;}
-.mb-5{margin-bottom:2.25rem !important;}
+.py-5{padding-top:2.25rem; padding-bottom:2.25rem;}
+.pt-5{padding-top:2.25rem;}
+.pb-5{padding-bottom:2.25rem;}
+.my-5{margin-top:2.25rem; margin-bottom:2.25rem;}
+.mt-5{margin-top:2.25rem;}
+.mb-5{margin-bottom:2.25rem;}
 
 /* Tighten headings + lists */
 ul,ol{margin-bottom:0.9rem;}
@@ -83,10 +83,10 @@ hr{border-color: var(--ss-border); opacity: 1;}
    Surfaces (less “cheap”)
 ------------------ */
 .card, .ss-card, .shadow-sm{
-  border: 1px solid var(--ss-border) !important;
-  border-radius: var(--ss-radius-2) !important;
-  background: var(--ss-surface) !important;
-  box-shadow: var(--ss-shadow-1) !important;
+  border: 1px solid var(--ss-border);
+  border-radius: var(--ss-radius-2);
+  background: var(--ss-surface);
+  box-shadow: var(--ss-shadow-1);
 }
 .card:hover, .ss-card:hover{
   box-shadow: var(--ss-shadow-2);
@@ -94,7 +94,7 @@ hr{border-color: var(--ss-border); opacity: 1;}
   transition: 180ms ease;
 }
 .bg-light, .bg-body-tertiary{
-  background: var(--ss-surface2) !important;
+  background: var(--ss-surface2);
 }
 
 /* Images: consistent rounding */
@@ -106,7 +106,7 @@ img, .img-fluid{
    Buttons / CTAs (teal-first)
 ------------------ */
 .btn, button, .btn-primary, .btn-outline-primary{
-  border-radius: 999px !important;
+  border-radius: 999px;
 }
 .btn{
   padding: 0.72rem 1.05rem;
@@ -114,22 +114,22 @@ img, .img-fluid{
   letter-spacing: 0.01em;
 }
 .btn-primary{
-  background: var(--ss-teal) !important;
-  border-color: var(--ss-teal) !important;
-  color: #fff !important;
+  background: var(--ss-teal);
+  border-color: var(--ss-teal);
+  color: #fff;
   box-shadow: 0 10px 22px rgba(40,159,161,0.22);
 }
 .btn-primary:hover{
-  background: var(--ss-slate) !important;
-  border-color: var(--ss-slate) !important;
+  background: var(--ss-slate);
+  border-color: var(--ss-slate);
 }
 .btn-outline-primary{
-  color: var(--ss-teal) !important;
-  border-color: rgba(40,159,161,0.35) !important;
-  background: rgba(40,159,161,0.06) !important;
+  color: var(--ss-teal);
+  border-color: rgba(40,159,161,0.35);
+  background: rgba(40,159,161,0.06);
 }
 .btn-outline-primary:hover{
-  background: rgba(40,159,161,0.14) !important;
+  background: rgba(40,159,161,0.14);
 }
 
 /* Small accent use (orange only for “warning/limited/price”) */

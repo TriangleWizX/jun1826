@@ -213,9 +213,9 @@ hr { border-color: var(--ss-border); opacity: 1; }
    Bootstrap 5 only provides order-0 … order-5.
    These extend the set so flex-ordered page sections work beyond 5.
 ========================= */
-.order-6 { order: 6 !important; }
-.order-7 { order: 7 !important; }
-.order-8 { order: 8 !important; }
+.order-6 { order: 6; }
+.order-7 { order: 7; }
+.order-8 { order: 8; }
 
 /* =========================
    Global Final CTA + Footer
@@ -573,16 +573,16 @@ hr { border-color: var(--ss-border); opacity: 1; }
     border-radius: 999px;
 
     background: var(--ss-green, #116A42);
-    color: var(--ss-surface) !important;
-    font-size: clamp(0.70rem, 3.2vw, 0.92rem) !important;
+    color: var(--ss-surface);
+    font-size: clamp(0.70rem, 3.2vw, 0.92rem);
     font-weight: 700;
     line-height: 1;
     text-align: center;
     text-decoration: none;
     letter-spacing: -0.01em;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
     transition:
@@ -592,7 +592,7 @@ hr { border-color: var(--ss-border); opacity: 1; }
 
   .ss-mobile-actionbar a::before,
   .ss-mobile-actionbar button::before {
-    content: none !important;
+    content: none;
   }
 
   body:has(.ss-mobile-actionbar) .ss-mobile-sticky-cta,
@@ -1013,10 +1013,10 @@ body {
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    scroll-behavior: auto;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
   }
 }
 /* Contrast guard: primary CTA pills use a dark green surface, so their labels
@@ -1036,7 +1036,7 @@ body {
   .ss-action-primary,
   .ss-mobile-sticky-cta a
 ) {
-  color: #fff !important;
+  color: #fff;
 }
 
 :where(
@@ -1084,7 +1084,7 @@ body {
   .ss-action-primary,
   .ss-mobile-sticky-cta a
 ):active {
-  color: #fff !important;
+  color: #fff;
 }
 
 /* The community-service rate belongs only on adult/pricing surfaces. */
@@ -1096,4 +1096,4 @@ body {
 :where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary),
 :where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):hover,
 :where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):focus-visible,
-:where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):active { color: #fff !important; }
+:where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):active { color: #fff; }

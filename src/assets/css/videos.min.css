@@ -1,5 +1,5 @@
 .page-videos .hero-content-container .lead a {
-    color: var(--button-color) !important;
+    color: var(--button-color);
 }
 
 .page-videos .ss-video__title {
@@ -8,7 +8,7 @@
 
 @media (max-width: 767px) {
     .page-videos .ss-video__title {
-        color: var(--ss-surface) !important;
+        color: var(--ss-surface);
     }
 }
 
@@ -179,7 +179,7 @@
 
 .ss-videos__context .container>p:nth-of-type(2) a:nth-of-type(2),
 .ss-videos__context .container>p:nth-of-type(2) a:nth-of-type(2):visited {
-    color: #000 !important
+    color: #000
 }
 
 .ss-videos__iframe iframe {
@@ -210,7 +210,7 @@
 .ss-videos .ss-videos__noscript,
 .ss-videos .ss-videos__rail .d-flex {
     text-align: center;
-    justify-content: center !important
+    justify-content: center
 }
 
 .ss-videos .ss-videos__rail .d-flex {
@@ -547,7 +547,7 @@
     border-radius: 1.1rem;
     overflow: hidden;
     background: rgba(255, 255, 255, .03);
-    border: 1px solid rgba(255, 255, 255, .08) !important;
+    border: 1px solid rgba(255, 255, 255, .08);
 }
 
 .ss-videos-hub .ss-video-thumb {
@@ -567,7 +567,7 @@
 .ss-videos-hub .ss-video-pill {
     font-weight: 700;
     color: #184b4c;
-    background: #eef7f7 !important;
+    background: #eef7f7;
     border: 1px solid rgba(40, 159, 161, .14);
 }
 

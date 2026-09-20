@@ -85,16 +85,16 @@ body.page-black-belt-concierge .bbc-hero::after {
 body.page-black-belt-concierge .bbc-hero .ss-container,
 body.page-black-belt-concierge .bbc-section .container,
 body.page-black-belt-concierge .bbc-section .ss-container {
-  width: min(1160px, calc(100vw - 40px)) !important;
-  max-width: 1160px !important;
+  width: min(1160px, calc(100vw - 40px));
+  max-width: 1160px;
 }
 
 body.page-black-belt-concierge .bbc-hero .row,
 body.page-black-belt-concierge .bbc-section .row {
   min-width: 0;
-  max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body.page-black-belt-concierge .bbc-hero [class*="col-"],
@@ -343,8 +343,8 @@ body.page-black-belt-concierge .bbc-note {
   min-height: 0;
   overflow: visible;
   padding: clamp(1.25rem, 3vw, 2rem);
-  max-width: 100% !important;
-  box-sizing: border-box !important;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 body.page-black-belt-concierge .bbc-card h3,
@@ -611,10 +611,10 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   body.page-black-belt-concierge .bbc-hero .ss-container,
   body.page-black-belt-concierge .bbc-section .container,
   body.page-black-belt-concierge .bbc-section .ss-container {
-    width: min(100%, calc(100vw - 28px)) !important;
-    max-width: calc(100vw - 28px) !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    width: min(100%, calc(100vw - 28px));
+    max-width: calc(100vw - 28px);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   body.page-black-belt-concierge .bbc-hero::before {
@@ -634,7 +634,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   body.page-elite-concierge .bbc-hero h1#bbc-hero-title {
     max-width: 100%;
     margin-top: 0.5rem;
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 0.75rem;
     font-size: clamp(1.85rem, 5.5vw, 2.75rem);
     line-height: 1.06;
     letter-spacing: -0.015em;
@@ -643,7 +643,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   body.page-black-belt-concierge .bbc-hero .lead,
   body.page-elite-concierge .bbc-hero .lead {
     margin-top: 0.5rem;
-    margin-bottom: 1.15rem !important;
+    margin-bottom: 1.15rem;
     font-size: clamp(0.95rem, 1.25vw, 1.05rem);
     line-height: 1.5;
   }
@@ -671,13 +671,13 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   body.page-black-belt-concierge .bbc-hero .row,
   body.page-black-belt-concierge .bbc-section .row,
   body.page-black-belt-concierge .bbc-form-shell .row {
-    --bs-gutter-x: 0 !important;
+    --bs-gutter-x: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    max-width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
 
   body.page-black-belt-concierge .bbc-hero [class*="col-"],
@@ -1173,7 +1173,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .microcopy,
   .fine-print
 ) {
-  color: var(--bbc-local-muted) !important;
+  color: var(--bbc-local-muted);
   opacity: 1;
 }
 
@@ -1218,7 +1218,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
       145deg,
       var(--bbc-dark),
       var(--bbc-dark-2)
-    ) !important;
+    );
 }
 
 /* Force inherited Bootstrap/global colors to follow dark sections */
@@ -1256,7 +1256,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   blockquote,
   figcaption
 ) {
-  color: inherit !important;
+  color: inherit;
 }
 
 /* Muted text must remain visible on dark backgrounds */
@@ -1289,8 +1289,8 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .microcopy,
   .fine-print
 ) {
-  color: var(--bbc-on-dark-muted) !important;
-  opacity: 1 !important;
+  color: var(--bbc-on-dark-muted);
+  opacity: 1;
 }
 
 /* ---------------------------------------------------------
@@ -1315,7 +1315,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   --bbc-local-heading: var(--bbc-ink);
   --bbc-local-muted: var(--bbc-muted);
 
-  color: var(--bbc-local-text) !important;
+  color: var(--bbc-local-text);
 }
 
 .page-black-belt-concierge main :where(
@@ -1330,8 +1330,8 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .concierge-card,
   .form-card
 ) {
-  background: var(--bbc-surface) !important;
-  border-color: var(--bbc-border) !important;
+  background: var(--bbc-surface);
+  border-color: var(--bbc-border);
 }
 
 .page-black-belt-concierge main :where(
@@ -1347,7 +1347,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .concierge-card,
   .form-card
 ) :where(h1, h2, h3, h4, h5, h6, strong) {
-  color: var(--bbc-ink) !important;
+  color: var(--bbc-ink);
 }
 
 .page-black-belt-concierge main :where(
@@ -1363,7 +1363,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .concierge-card,
   .form-card
 ) :where(p, li, label, blockquote, figcaption) {
-  color: var(--bbc-copy) !important;
+  color: var(--bbc-copy);
 }
 
 .page-black-belt-concierge main :where(
@@ -1379,8 +1379,8 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .concierge-card,
   .form-card
 ) :where(.text-muted, .form-text, .microcopy, small) {
-  color: var(--bbc-muted) !important;
-  opacity: 1 !important;
+  color: var(--bbc-muted);
+  opacity: 1;
 }
 
 /* ---------------------------------------------------------
@@ -1418,7 +1418,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .bbc-section--dark,
   [data-theme="dark"]
 ) a:not(.btn) {
-  color: var(--bbc-cyan-light) !important;
+  color: var(--bbc-cyan-light);
 }
 
 /* Restore dark links inside light cards */
@@ -1435,7 +1435,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .concierge-card,
   .form-card
 ) a:not(.btn) {
-  color: var(--bbc-teal) !important;
+  color: var(--bbc-teal);
 }
 
 /* ---------------------------------------------------------
@@ -1447,9 +1447,9 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .btn-orange,
   .cta-primary
 ) {
-  color: var(--ss-surface) !important;
-  background-color: var(--bbc-orange) !important;
-  border-color: var(--bbc-orange) !important;
+  color: var(--ss-surface);
+  background-color: var(--bbc-orange);
+  border-color: var(--bbc-orange);
 }
 
 .page-black-belt-concierge main :where(
@@ -1457,35 +1457,35 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .btn-orange,
   .cta-primary
 ):hover {
-  color: var(--ss-surface) !important;
-  background-color: var(--bbc-orange-hover) !important;
-  border-color: var(--bbc-orange-hover) !important;
+  color: var(--ss-surface);
+  background-color: var(--bbc-orange-hover);
+  border-color: var(--bbc-orange-hover);
 }
 
 .page-black-belt-concierge main :where(
   .btn-secondary,
   .btn-teal
 ) {
-  color: var(--ss-surface) !important;
-  background-color: var(--bbc-teal) !important;
-  border-color: var(--bbc-teal) !important;
+  color: var(--ss-surface);
+  background-color: var(--bbc-teal);
+  border-color: var(--bbc-teal);
 }
 
 .page-black-belt-concierge main :where(
   .btn-outline-primary,
   .btn-outline-secondary
 ) {
-  color: var(--bbc-teal) !important;
-  background: var(--ss-surface) !important;
-  border-color: var(--bbc-teal) !important;
+  color: var(--bbc-teal);
+  background: var(--ss-surface);
+  border-color: var(--bbc-teal);
 }
 
 .page-black-belt-concierge main :where(
   .btn-outline-primary,
   .btn-outline-secondary
 ):hover {
-  color: var(--ss-surface) !important;
-  background: var(--bbc-teal) !important;
+  color: var(--ss-surface);
+  background: var(--bbc-teal);
 }
 
 /* ---------------------------------------------------------
@@ -1500,18 +1500,18 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .feature-pill,
   .fact-pill
 ) {
-  color: var(--bbc-ink) !important;
-  background: var(--ss-surface) !important;
+  color: var(--bbc-ink);
+  background: var(--ss-surface);
   border: 1px solid rgba(255, 255, 255, 0.38);
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .page-black-belt-concierge main :where(
   .badge.bg-dark,
   .badge.text-bg-dark
 ) {
-  color: var(--ss-surface) !important;
-  background: var(--bbc-dark) !important;
+  color: var(--ss-surface);
+  background: var(--bbc-dark);
 }
 
 .page-black-belt-concierge main :where(
@@ -1519,7 +1519,7 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .badge.bg-info,
   .badge.bg-light
 ) {
-  color: var(--bbc-ink) !important;
+  color: var(--bbc-ink);
 }
 
 /* ---------------------------------------------------------
@@ -1527,30 +1527,30 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
    --------------------------------------------------------- */
 
 .page-black-belt-concierge main table {
-  color: var(--bbc-copy) !important;
-  background: var(--ss-surface) !important;
+  color: var(--bbc-copy);
+  background: var(--ss-surface);
 }
 
 .page-black-belt-concierge main table thead th {
-  color: var(--ss-surface) !important;
-  background: var(--bbc-dark-2) !important;
-  border-color: rgba(255, 255, 255, 0.22) !important;
+  color: var(--ss-surface);
+  background: var(--bbc-dark-2);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .page-black-belt-concierge main table tbody :where(th, td) {
-  color: var(--bbc-copy) !important;
-  background: var(--ss-surface) !important;
-  border-color: var(--bbc-border) !important;
+  color: var(--bbc-copy);
+  background: var(--ss-surface);
+  border-color: var(--bbc-border);
 }
 
 .page-black-belt-concierge main table tbody tr:nth-child(even) :where(th, td) {
-  background: #f7f1e9 !important;
+  background: #f7f1e9;
 }
 
 .page-black-belt-concierge main table tfoot :where(th, td),
 .page-black-belt-concierge main table .total-row :where(th, td) {
-  color: var(--bbc-ink) !important;
-  background: #e4f1f1 !important;
+  color: var(--bbc-ink);
+  background: #e4f1f1;
   font-weight: 800;
 }
 
@@ -1563,8 +1563,8 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   legend,
   .form-check-label
 ) {
-  color: var(--bbc-ink) !important;
-  opacity: 1 !important;
+  color: var(--bbc-ink);
+  opacity: 1;
 }
 
 .page-black-belt-concierge main form :where(
@@ -1574,10 +1574,10 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .form-control,
   .form-select
 ) {
-  color: var(--bbc-ink) !important;
-  background-color: var(--ss-surface) !important;
-  border-color: rgba(54, 43, 36, 0.38) !important;
-  opacity: 1 !important;
+  color: var(--bbc-ink);
+  background-color: var(--ss-surface);
+  border-color: rgba(54, 43, 36, 0.38);
+  opacity: 1;
 }
 
 .page-black-belt-concierge main form :where(
@@ -1587,8 +1587,8 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .form-control,
   .form-select
 )::placeholder {
-  color: #6a5c53 !important;
-  opacity: 1 !important;
+  color: #6a5c53;
+  opacity: 1;
 }
 
 .page-black-belt-concierge main form option {
@@ -1603,22 +1603,22 @@ body.page-black-belt-concierge .bbc-reveal.is-visible {
   .form-control,
   .form-select
 ):focus {
-  color: var(--bbc-ink) !important;
-  background-color: var(--ss-surface) !important;
-  border-color: var(--bbc-teal) !important;
-  box-shadow: 0 0 0 0.25rem rgba(23, 107, 109, 0.22) !important;
+  color: var(--bbc-ink);
+  background-color: var(--ss-surface);
+  border-color: var(--bbc-teal);
+  box-shadow: 0 0 0 0.25rem rgba(23, 107, 109, 0.22);
 }
 
 .page-black-belt-concierge main input:-webkit-autofill,
 .page-black-belt-concierge main input:-webkit-autofill:hover,
 .page-black-belt-concierge main input:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--bbc-ink) !important;
-  box-shadow: 0 0 0 1000px var(--ss-surface) inset !important;
+  -webkit-text-fill-color: var(--bbc-ink);
+  box-shadow: 0 0 0 1000px var(--ss-surface) inset;
 }
 
 /* Keyboard visibility */
 .page-black-belt-concierge main :where(a, button, input, select, textarea):focus-visible {
-  outline: 3px solid var(--bbc-cyan-light) !important;
+  outline: 3px solid var(--bbc-cyan-light);
   outline-offset: 3px;
 }
 
@@ -1661,8 +1661,8 @@ body.page-black-belt-concierge .bbc-comparison-table tr.highlighted {
 }
 
 body.page-black-belt-concierge .bbc-comparison-table tr.highlighted td {
-  font-weight: 700 !important;
-  color: var(--bbc-green) !important;
+  font-weight: 700;
+  color: var(--bbc-green);
 }
 
 .bbc-sample-plan-card {

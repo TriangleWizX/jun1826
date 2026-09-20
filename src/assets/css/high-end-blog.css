@@ -54,14 +54,14 @@
 
 /* Fluid Animation for buttons */
 .page-blog .ss-btn, .page-blog .btn {
-  border-radius: 9999px !important;
-  padding: 0.75rem 1.5rem !important;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
   transition:
     transform 700ms cubic-bezier(0.32, 0.72, 0, 1),
     box-shadow 700ms cubic-bezier(0.32, 0.72, 0, 1),
     background-color 700ms cubic-bezier(0.32, 0.72, 0, 1),
     border-color 700ms cubic-bezier(0.32, 0.72, 0, 1),
-    color 700ms cubic-bezier(0.32, 0.72, 0, 1) !important;
+    color 700ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .page-blog .ss-btn:active, .page-blog .btn:active {

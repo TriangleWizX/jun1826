@@ -534,7 +534,7 @@
 }
 
 .page-private-lessons .ss-price-card .mt-auto {
-  margin-top: auto !important;
+  margin-top: auto;
 }
 
 .page-private-lessons .ss-price-card .btn {
@@ -670,12 +670,12 @@
 .page-private-lessons section:last-of-type .mx-auto {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(33, 29, 24, 0.12) !important;
-  border-radius: 2rem !important;
+  border: 1px solid rgba(33, 29, 24, 0.12);
+  border-radius: 2rem;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 250, 242, 0.96)),
     linear-gradient(135deg, rgba(17, 106, 66, 0.04), rgba(40, 159, 161, 0.03));
-  box-shadow: 0 24px 54px rgba(33, 29, 24, 0.08) !important;
+  box-shadow: 0 24px 54px rgba(33, 29, 24, 0.08);
   backdrop-filter: blur(14px);
 }
 

@@ -188,41 +188,41 @@
 
 .cta-primary {
   background: var(--ig-pine);
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
   box-shadow: 0 8px 20px rgba(17, 106, 66, 0.22);
 }
 
 .cta-primary:hover,
 .cta-primary:focus-visible {
   background: #0d5334;
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
   box-shadow: 0 12px 26px rgba(17, 106, 66, 0.32);
 }
 
 .cta-secondary {
   background: var(--ss-slate);
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
   box-shadow: 0 8px 20px rgba(48, 96, 97, 0.2);
 }
 
 .cta-secondary:hover,
 .cta-secondary:focus-visible {
   background: #234849;
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
   box-shadow: 0 12px 26px rgba(48, 96, 97, 0.3);
 }
 
 .cta-outline {
   background: var(--ss-surface);
   border-color: rgba(17, 106, 66, 0.4);
-  color: var(--ig-pine) !important;
+  color: var(--ig-pine);
 }
 
 .cta-outline:hover,
 .cta-outline:focus-visible {
   border-color: var(--ig-pine);
   background: rgba(17, 106, 66, 0.06);
-  color: var(--ig-pine) !important;
+  color: var(--ig-pine);
 }
 
 .meta-note,

@@ -144,7 +144,7 @@ body.page-tannersville::before {
 
 .btn-premium--primary {
   background-color: var(--ss-green);
-  color: var(--ss-surface) !important;
+  color: var(--ss-surface);
   border-color: var(--ss-green);
   box-shadow: 0 10px 30px -8px rgba(17, 106, 66, 0.3);
 }
@@ -158,7 +158,7 @@ body.page-tannersville::before {
 
 .btn-premium--secondary {
   background-color: transparent;
-  color: var(--ss-text) !important;
+  color: var(--ss-text);
   border-color: var(--ss-border);
 }
 
@@ -546,7 +546,7 @@ body.page-tannersville::before {
   border-radius: 9999px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--ss-muted) !important;
+  color: var(--ss-muted);
   text-decoration: none;
   transition: var(--t-transition-fluid);
   background-color: var(--ss-surface);
@@ -554,7 +554,7 @@ body.page-tannersville::before {
 
 .btn-link-pill:hover {
   border-color: var(--ss-green);
-  color: var(--ss-green) !important;
+  color: var(--ss-green);
   background-color: rgba(17, 106, 66, 0.03);
   transform: translateY(-1px);
 }
