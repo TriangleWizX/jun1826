@@ -1845,7 +1845,8 @@ img,
 }
 
 .ss-calendly,
-#calendlyInline {
+#calendlyInline,
+#first-visit-calendar {
   border: 1px solid var(--ss-border);
   border-radius: var(--ss-r2);
   background: var(--ss-surface-solid);

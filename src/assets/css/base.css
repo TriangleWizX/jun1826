@@ -3565,11 +3565,22 @@ body[data-layout="booking"] #first-visit-calendar,body[data-layout="booking"] #f
   --ss-bg:#fbfaf8;
   --ss-card:#ffffff;
 
-  --ss-radius:18px;
+  /* Canonical UI contract. Keep the shorter names below as compatibility
+     aliases until the component bundles have migrated. */
+  --ss-surface:#ffffff;
+  --ss-surface-2:#f4f1ed;
+  --ss-surface2:var(--ss-surface-2);
+  --ss-radius-card:18px;
+  --ss-radius-control:12px;
+  --ss-radius-pill:999px;
+  --ss-content-max:1120px;
+  --ss-copy-max:65ch;
+
+  --ss-radius:var(--ss-radius-card);
   --ss-shadow:0 12px 30px rgba(54,43,36,.10);
   --ss-shadow-soft:0 8px 22px rgba(54,43,36,.08);
 
-  --ss-max:1120px;
+  --ss-max:var(--ss-content-max);
 }
 
 body {

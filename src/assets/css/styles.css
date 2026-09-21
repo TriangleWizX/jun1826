@@ -2654,7 +2654,7 @@ Sensei Sandy CRO: Hero + Sticky Bar
 }
 
 .ss-hero__wrap {
-    max-width: var(--ss-max);
+    max-width: var(--ss-content-max);
     margin: 0 auto;
     padding: 44px 18px;
 }
@@ -2670,7 +2670,7 @@ Sensei Sandy CRO: Hero + Sticky Bar
     padding: 26px 22px;
     border: 1px solid var(--ss-border);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-    border-radius: var(--ss-radius);
+    border-radius: var(--ss-radius-card);
     box-shadow: var(--ss-shadow);
 }
 
@@ -2798,7 +2798,7 @@ Sensei Sandy CRO: Hero + Sticky Bar
 
 .ss-hero__right {
     padding: 26px 22px;
-    border-radius: var(--ss-radius);
+    border-radius: var(--ss-radius-card);
     border: 1px solid var(--ss-border);
     background: var(--ss-surface);
     box-shadow: var(--ss-shadow);
@@ -2933,7 +2933,7 @@ Reserve Free Intro (Beginner Friendly) Page Styles
 }
 
 .ss-book__wrap {
-    max-width: var(--ss-max);
+    max-width: var(--ss-content-max);
     margin: 0 auto;
     padding: 0 18px;
 }
@@ -3010,7 +3010,7 @@ Reserve Free Intro (Beginner Friendly) Page Styles
 .ss-book .ss-card {
     border: 1px solid var(--ss-border);
     background: var(--ss-surface);
-    border-radius: var(--ss-radius);
+    border-radius: var(--ss-radius-card);
     padding: 18px 16px;
     box-shadow: var(--ss-shadow);
 }
@@ -3493,7 +3493,7 @@ textarea:focus-visible,
 .page-bjj-glossary .filter-chip:hover,
 .page-bjj-glossary .letter-filter:hover,
 .page-bjj-glossary .letter-btn:hover {
-    background: var(--ss-surface2);
+    background: var(--ss-surface-2);
     color: var(--ss-teal-dark);
 }
 
