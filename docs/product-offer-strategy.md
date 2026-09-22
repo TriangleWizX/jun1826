@@ -1,5 +1,7 @@
 ## 〔Final〕 Product and Offer Strategy
 
+**Authority update — September 22, 2026:** The canonical `src/_data/pricing.json` and `src/_data/offers.json` records, updated September 18 in commit `f40d746a`, define the 10- and 20-Class Packs as active, public, open-access flexible visitor options. `scripts/qa-flexible-access.mjs` encodes the same invariant. This supersedes the older restricted-pack language below. Packs remain secondary; every class request still requires available space and suitable partner fit. New local first-timers should begin with the Free First Visit. `content/offers.json` has been aligned to that current rule.
+
 ### Objective
 
 Give every offer one defined role, audience, price, call to action, page destination, and search treatment.
@@ -27,8 +29,7 @@ The website should direct new local students toward this path. Visitor passes, p
 | Level                | Offers                                               | Public treatment                                         |
 | -------------------- | ---------------------------------------------------- | -------------------------------------------------------- |
 | Primary              | Free Intro, Goal Mapping Visit, Core Culture         | Main navigation, homepage funnel, program pages          |
-| Secondary            | Day Pass, Vacation Week, Private Coaching            | Visitor section or secondary CTA                         |
-| Restricted           | 10-Class Pack, 20-Class Pack                         | Available to approved visitors or existing relationships |
+| Secondary            | Day Pass, Vacation Week, 10-Class Pack, 20-Class Pack, Private Coaching | Visitor section or secondary CTA |
 | Premium              | Keyholder, Concierge, Annual Track                   | Member upsell or qualified landing page                  |
 | Business development | Law enforcement, hospitality, community partnerships | Separate campaign pages                                  |
 | Archived             | 6-Week Test Drive, expired seasonal promotions       | Redirect and remove from navigation                      |
@@ -56,17 +57,14 @@ Do not describe Core Culture as unlimited access.
 
 ### Visitor Products
 
-Keep these products active:
+Keep all four products active as secondary visitor/flexible-access options:
 
 * **Day Pass:** $35
 * **Vacation Week:** $99 for up to three classes within seven days
+* **10-Class Pack:** $300 for 10 class visits over six months
+* **20-Class Pack:** $550 for 20 class visits over twelve months
 
-Keep these products restricted:
-
-* **10-Class Pack:** $300 with a six-month expiration
-* **20-Class Pack:** $550 with a twelve-month expiration
-
-Do not place class packs in the primary navigation. Public class-pack promotion would give local prospects a way to avoid Core Culture.
+Keep the packs in the visitor options route, not the primary navigation. New local first-timers should start with the Free First Visit. Flexible-access products do not include recurring home-class reservations, longitudinal progress feedback, a uniform, or the Core Culture guarantee. Each requested class depends on available space and suitable partner fit.
 
 ### Premium Products
 
@@ -109,8 +107,8 @@ On **August 1, 2026**:
 | Community-Service Core Culture | Teachers, healthcare workers, law enforcement, veterans, firefighters, EMS, first responders |                          $600 | 12 weeks                              | Check Eligibility              | Verification required                         | Active          | Index when supported by substantive copy   | `/community-service-bjj`                 |
 | Day Pass                       | Short-term visitors                                                                          |                           $35 | One day                               | Request a Day Pass             | Capacity and partner availability             | Active          | Index                                      | `/visitor-passes`                        |
 | Vacation Week                  | Vacationing visitors                                                                         |                           $99 | Up to three classes within seven days | Request a Vacation Week        | Capacity and partner availability             | Active          | Index                                      | `/visitor-passes`                        |
-| 10-Class Pack                  | Approved recurring visitors                                                                  |                          $300 | Six-month expiration                  | Contact the Academy            | Approval required                             | Restricted      | Noindex                                    | `/visitor-class-packs`                   |
-| 20-Class Pack                  | Approved recurring visitors                                                                  |                          $550 | Twelve-month expiration               | Contact the Academy            | Approval required                             | Restricted      | Noindex                                    | `/visitor-class-packs`                   |
+| 10-Class Pack | Seasonal, second-home, or irregular-schedule students | $300 | 10 visits / six months | View Visitor Options | Each class request: space and suitable partner fit | Active | Index | `/catskills-home-base.html` |
+| 20-Class Pack | Seasonal, second-home, or irregular-schedule students | $550 | 20 visits / twelve months | View Visitor Options | Each class request: space and suitable partner fit | Active | Index | `/catskills-home-base.html` |
 | Private Coaching               | Adults, youth, families, competitors                                                         |              $195 per session | One session                           | Request Private Coaching       | Scheduling availability                       | Active          | Index                                      | `/private-coaching`                      |
 | Keyholder Upgrade              | Qualified Core Culture members                                                               |                          $225 | Core Culture term                     | Ask About Keyholder Access     | Active membership and approval                | Active          | Noindex                                    | `/keyholder`                             |
 | Adult Keyholder Culture        | Qualified adult members                                                                      |                          $940 | 12 weeks                              | Apply for Keyholder Access     | Approval required                             | Active          | Noindex                                    | `/keyholder`                             |

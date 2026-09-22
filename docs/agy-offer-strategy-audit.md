@@ -1,7 +1,9 @@
 # Sensei Sandy BJJ — Offer Strategy Audit & Implementation Plan
 
-**Authoritative Source:** `docs/product-offer-strategy.md`  
-**Audit Date:** July 2026  
+**Authoritative Source:** `docs/product-offer-strategy.md`
+**Audit Date:** July 2026
+
+**Status note — September 22, 2026:** This is a historical audit. Its restricted-pack recommendations were superseded by the September 18 canonical pricing/offer update, which makes the 10- and 20-Class Packs active, public, open-access secondary visitor options. See `docs/product-offer-strategy.md` for current policy.
 **Repository:** Sensei Sandy BJJ (`https://senseisandy.com`)
 
 ---

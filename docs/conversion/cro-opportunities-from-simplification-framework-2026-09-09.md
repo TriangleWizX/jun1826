@@ -24,7 +24,7 @@ Recommended sequence:
 - `src/programs.html:15-27` describes three audience cards, the first-visit process, a goal-mapping conversation, and the shared youth product. It also asks visitors to process several operational distinctions before booking.
 - `src/programs.html:128-150` exposes private coaching, visitor access, and flexible class packs under “More Ways to Train.” These are legitimate products but compete for attention with the local beginner path.
 - `src/programs.html:158-203` contains a hidden first-visit and shared-benefits section. Hidden content cannot do CRO work; if these objections matter, selected parts belong in the visible decision path.
-- `src/options-pricing.html` is the public pricing destination and is built around multiple offer categories. The strategy document `docs/product-offer-strategy.md` explicitly classifies Core Culture as primary, visitor products as secondary, packs as restricted, and annual/keyholder as qualification-only.
+- `src/options-pricing.html` is the public pricing destination and is built around multiple offer categories. At the time of this September 9 audit, the strategy classified Core Culture as primary, visitor products as secondary, packs as restricted, and annual/keyholder as qualification-only. The September 18 canonical pricing/offer update superseded the pack restriction; current packs are active public secondary options.
 - `src/how-class-works.html:17-51` and `docs/tree.md:217-229` use reserved-window, home-class, makeup, and missed-reservation language. This is a likely friction source if the intended product becomes “train up to three times per week” rather than contractual recurring seats.
 - The existing funnel documentation and QA references in `docs/conversion/FREE_INTRO_FUNNEL.md`, `docs/analytics/funnel-tracking-plan.md`, and `scripts/qa-funnel.mjs` provide a measurement base. Do not create new KPIs during the proposed freeze; use the existing stages and lane fields.
 - The worktree is already heavily modified and contains unrelated generated/source changes. Any implementation should be path-scoped and should not overwrite or clean those changes.
@@ -61,7 +61,7 @@ Recommended sequence:
 
 **Hypothesis:** Showing every valid product to a new local prospect weakens the intended Free Intro → Core path and increases choice anxiety.
 
-**Current friction:** The pricing page is a broad options catalog. The strategy document says Core Culture is primary, Day Pass/Vacation Week secondary, packs restricted, and Annual/Keyholder qualification-only. This is a direct architecture-versus-strategy opportunity.
+**Historical friction (September 9):** The pricing page was a broad options catalog while the strategy then classified class packs as restricted. The September 18 canonical pricing/offer update aligned pack status with the public flexible-access page. Keep Core Culture primary, visitor options secondary, and Annual/Keyholder qualification-only; do not treat the old pack restriction as current policy.
 
 **Opportunity:** Make the pricing page answer “What should a new local beginner choose?” first. Present Core for youth/teens and adults as the recommended next paid step after the Free Intro. Place visitor products in a clearly labeled visitor section. Move packs, annual, keyholder, and concierge behind qualification or member-context disclosures.
 
