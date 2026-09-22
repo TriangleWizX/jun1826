@@ -480,6 +480,72 @@ permalink: "/options-pricing/index.html"
   </div>
 </section>
 
+<section id="laundry-support" aria-labelledby="laundry-options-title" class="op-section op-section--paper">
+  <div class="container-xxl">
+    <div class="op-section-heading op-reveal">
+      <div>
+        <p class="op-eyebrow">Gear Support</p>
+        <h2 id="laundry-options-title">Laundry and gear care.</h2>
+      </div>
+      <p>Optional laundry services for visitors and active students. Check the eligibility and turnaround details for each option.</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="op-shell op-other-card h-100">
+          <div class="op-card">
+            <p class="op-card__kicker">{{ pricing.optionalAddOns.singleGiWash.eligibility }}</p>
+            <h3>{{ pricing.optionalAddOns.singleGiWash.name }}</h3>
+            <p class="op-private-price"><strong>{{ pricing.optionalAddOns.singleGiWash.displayPrice }}</strong><span>/ wash</span></p>
+            <p>Includes {{ pricing.optionalAddOns.singleGiWash.term }}, with a {{ pricing.optionalAddOns.singleGiWash.turnaroundHours }}-hour turnaround.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="op-shell op-other-card h-100">
+          <div class="op-card">
+            <p class="op-card__kicker">{{ pricing.optionalAddOns.visitorLaundryPass.eligibility }}</p>
+            <h3>{{ pricing.optionalAddOns.visitorLaundryPass.name }}</h3>
+            <p class="op-private-price"><strong>{{ pricing.optionalAddOns.visitorLaundryPass.displayPrice }}</strong><span>/ {{ pricing.optionalAddOns.visitorLaundryPass.term }}</span></p>
+            <p>Up to {{ pricing.optionalAddOns.visitorLaundryPass.maximumSets }} sets, with a {{ pricing.optionalAddOns.visitorLaundryPass.turnaroundHours }}-hour turnaround.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="op-shell op-other-card h-100">
+          <div class="op-card">
+            <p class="op-card__kicker">{{ pricing.optionalAddOns.laundryAndStorage.eligibility }}</p>
+            <h3>{{ pricing.optionalAddOns.laundryAndStorage.name }}</h3>
+            <p class="op-private-price"><strong>{{ pricing.optionalAddOns.laundryAndStorage.displayPrice }}</strong><span>/ {{ pricing.optionalAddOns.laundryAndStorage.term }}</span></p>
+            <p>{{ pricing.optionalAddOns.laundryAndStorage.weeklyBags }} bag each week, up to {{ pricing.optionalAddOns.laundryAndStorage.maximumSetsPerBag }} sets per bag. {{ pricing.optionalAddOns.laundryAndStorage.turnaroundHours }}-hour turnaround.{% if pricing.optionalAddOns.laundryAndStorage.storageIncluded %} Storage included.{% endif %}</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="op-shell op-other-card h-100">
+          <div class="op-card">
+            <p class="op-card__kicker">{{ pricing.optionalAddOns.youthGiLaundryRotation.eligibility }}</p>
+            <h3>{{ pricing.optionalAddOns.youthGiLaundryRotation.name }}</h3>
+            <p class="op-private-price"><strong>{{ pricing.optionalAddOns.youthGiLaundryRotation.displayPrice }}</strong><span>/ {{ pricing.optionalAddOns.youthGiLaundryRotation.term }}</span></p>
+            <p>{% if pricing.optionalAddOns.youthGiLaundryRotation.includesSecondGi %}Includes a second gi. {% endif %}{{ pricing.optionalAddOns.youthGiLaundryRotation.weeklyBags }} bag each week, up to {{ pricing.optionalAddOns.youthGiLaundryRotation.maximumSetsPerBag }} sets per bag, with a {{ pricing.optionalAddOns.youthGiLaundryRotation.turnaroundHours }}-hour turnaround.{% if pricing.optionalAddOns.youthGiLaundryRotation.storageIncluded %} Storage included.{% endif %}</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <article class="op-shell op-other-card h-100">
+          <div class="op-card">
+            <p class="op-card__kicker">{{ pricing.optionalAddOns.adultGiLaundryRotation.eligibility }}</p>
+            <h3>{{ pricing.optionalAddOns.adultGiLaundryRotation.name }}</h3>
+            <p class="op-private-price"><strong>{{ pricing.optionalAddOns.adultGiLaundryRotation.displayPrice }}</strong><span>/ {{ pricing.optionalAddOns.adultGiLaundryRotation.term }}</span></p>
+            <p>{% if pricing.optionalAddOns.adultGiLaundryRotation.includesSecondGi %}Includes a second gi. {% endif %}{{ pricing.optionalAddOns.adultGiLaundryRotation.weeklyBags }} bag each week, up to {{ pricing.optionalAddOns.adultGiLaundryRotation.maximumSetsPerBag }} sets per bag, with a {{ pricing.optionalAddOns.adultGiLaundryRotation.turnaroundHours }}-hour turnaround.{% if pricing.optionalAddOns.adultGiLaundryRotation.storageIncluded %} Storage included.{% endif %}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p class="op-section-note">Ask Sandy about the laundry option that fits your pass or program. <a href="{{ business.contact.smsHref }}">Text Sandy</a>.</p>
+  </div>
+</section>
+
 <section aria-labelledby="pricing-final-title" class="op-section op-section--final">
   <div class="container-xxl">
     <div class="op-final-shell op-reveal">
