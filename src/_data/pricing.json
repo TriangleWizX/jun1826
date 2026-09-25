@@ -166,6 +166,54 @@
       "active": true
     }
   },
+  "householdBundles": {
+    "firstTerm": {
+      "termWeeks": 12,
+      "frequencyPerPersonPerWeek": 3,
+      "scheduledClassesPerPerson": 36,
+      "uniformsIncluded": true,
+      "oneAdultTwoYouth": {
+        "name": "One adult plus two youth",
+        "price": 1500,
+        "displayPrice": "$1,500",
+        "matchingIndividualTotal": 1787.5,
+        "savingsAmount": 287.5,
+        "savingsPercent": 16.1,
+        "active": true
+      },
+      "twoAdultsOneYouth": {
+        "name": "Two adults plus one youth",
+        "price": 1650,
+        "displayPrice": "$1,650",
+        "matchingIndividualTotal": 1925,
+        "savingsAmount": 275,
+        "savingsPercent": 14.3,
+        "active": true
+      }
+    },
+    "annualFamily": {
+      "name": "Annual Family Track",
+      "price": 5400,
+      "displayPrice": "$5,400",
+      "termMonths": 12,
+      "continuationOnly": true,
+      "adults": 1,
+      "youth": 2,
+      "frequencyPerPersonPerWeek": 3,
+      "scheduledClassesPerPerson": 144,
+      "scheduledClassesTotal": 432,
+      "individualAnnualTotal": 6435,
+      "savingsAmount": 1035,
+      "savingsPercent": 16.1,
+      "annualizedFirstTermFamilyTotal": 6000,
+      "savingsVsAnnualizedFirstTermFamily": 600,
+      "savingsVsAnnualizedFirstTermFamilyPercent": 10,
+      "averagePricePerScheduledClass": 12.5,
+      "additionalUniformIncluded": false,
+      "guaranteeEligible": false,
+      "active": true
+    }
+  },
   "visitorAndSupport": {
     "dayPass": {
       "name": "Single Day Pass",

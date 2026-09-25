@@ -83,6 +83,10 @@ export default function (eleventyConfig) {
   // Custom Nunjucks/liquid filters if needed
   eleventyConfig.addFilter("json", (obj) => JSON.stringify(obj, null, 2));
   eleventyConfig.addFilter("usd", (value) => `$${Number(value).toFixed(2).replace(/\.00$/, "")}`);
+  eleventyConfig.addFilter("usdGrouped", (value) => {
+    const amount = Number(value);
+    return `$${amount.toLocaleString("en-US", { minimumFractionDigits: Number.isInteger(amount) ? 0 : 2, maximumFractionDigits: 2 })}`;
+  });
   eleventyConfig.addFilter("metaDescription", (value) => {
     const text = String(value || "").replace(/\s+/g, " ").trim();
     const expanded = text.length < 120

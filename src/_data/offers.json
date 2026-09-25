@@ -219,7 +219,20 @@
       "name": "Annual Track",
       "category": "Long-Term Membership",
       "audience": "Students continuing after a Core Culture term",
+      "term": "12 months",
       "priceRef": "annualTrack",
+      "displayPrice": "Youth $800–$1,980; Adult $1,000–$2,475 / year",
+      "active": true,
+      "public": true
+    },
+    {
+      "id": "annual-family-track",
+      "name": "Annual Family Track",
+      "category": "Long-Term Household Membership",
+      "audience": "One adult and two youth continuing after a Core Culture term",
+      "term": "12 months",
+      "priceRef": "householdBundles.annualFamily",
+      "displayPrice": "$5,400 / year",
       "active": true,
       "public": true
     },
