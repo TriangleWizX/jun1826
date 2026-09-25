@@ -34,7 +34,7 @@ before every old CTA has been rewritten.
 
 Use:
 
-- **Primary:** Reserve Free Intro
+- **Primary:** Reserve Free First Visit
 - **Compact nav/mobile:** Start Here
 - **Supporting line:** 15 minutes. Meet Sandy. Leave with your recommended class
   and weekly plan.
@@ -42,7 +42,7 @@ Use:
 
 Retire these as primary labels:
 
-- Reserve Free Intro
+- Reserve Free First Visit
 - Book Your First Class
 - Claim Your Free Class
 - Try a Class
@@ -65,7 +65,7 @@ Keep the URL temporarily for backlinks and search equity, but change:
 - H1: `Your First Step Toward Consistent Training`
 - Intro: `Meet Sandy for 15 minutes. Map your goal, schedule, and best starting
   class before choosing your first class.`
-- Primary CTA: `Reserve Free Intro`
+- Primary CTA: `Reserve Free First Visit`
 
 Remove the class-booking form and the always-loaded scheduling section.
 
@@ -89,7 +89,7 @@ considerations`.
 
 ## 7. Update metadata and structured data
 
-Replace offers named `Free Introductory BJJ Class` with:
+Replace offers named `Free First Visitductory BJJ Class` with:
 
 - Offer/service name: `Complimentary BJJ First Visit`
 - Price: `0`

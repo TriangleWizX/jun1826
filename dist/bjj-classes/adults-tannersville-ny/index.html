@@ -79,7 +79,7 @@
   (function syncAdultsCtas() {
     const adultsBookingUrl = (window.SENSEI_CONFIG && window.SENSEI_CONFIG.adultsBookingUrl) || '/free-bjj-intro-tannersville-ny?lane=adult#booking-flow';
     window.SENSEI_DECISIONS = Object.assign({}, window.SENSEI_DECISIONS || {}, {
-      primaryCtaLabel: 'Reserve Free Intro',
+      primaryCtaLabel: 'Reserve Free First Visit',
       primaryCtaUrl: adultsBookingUrl
     });
 
@@ -91,13 +91,13 @@
     if (!navCta) return;
 
     navCta.setAttribute('href', adultsBookingUrl);
-    navCta.setAttribute('data-cta-label', 'Reserve Free Intro');
+    navCta.setAttribute('data-cta-label', 'Reserve Free First Visit');
 
     const ctaText = navCta.querySelector('[data-cta-text]');
     if (ctaText) {
-      ctaText.textContent = 'Reserve Free Intro';
+      ctaText.textContent = 'Reserve Free First Visit';
     } else {
-      navCta.textContent = 'Reserve Free Intro';
+      navCta.textContent = 'Reserve Free First Visit';
     }
   })();
 </script>
