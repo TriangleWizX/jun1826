@@ -36,6 +36,7 @@ def changed_outputs(commit):
                         'src/_includes/components/footer.njk' in names or
                         'src/_includes/components/free-intro-process.njk' in names or
                         'src/_includes/footer-high-intent.html' in names)
+    glossary_release = ('.gitignore' in names or 'scripts/deploy-release.py' in names) and (ROOT / 'src' / 'bjj-glossary').is_dir()
     manifest_file = ROOT / 'src/assets/data/asset-hash-manifest.json'
     manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
 
@@ -126,6 +127,10 @@ def changed_outputs(commit):
             is_site_html = rel.endswith('.html') and (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS))
             if is_site_html or is_js or is_css or rel == 'assets/data/asset-hash-manifest.json':
                 outputs.add((candidate, rel))
+    if glossary_release:
+        for candidate in (ROOT / 'dist' / 'bjj-glossary').rglob('*'):
+            if candidate.is_file():
+                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
     return sorted(outputs, key=lambda item: (1 if item[1].endswith('.html') else 0, item[1]))
 
 def connect(cfg):
