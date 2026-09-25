@@ -968,6 +968,33 @@ body.page-options-pricing .op-household-note {
   text-align: center;
 }
 
+body.page-options-pricing #annual-anchor .op-household-note {
+  max-width: 72ch;
+  margin-inline: auto;
+  color: var(--color-ink-2);
+  font-size: 0.95rem;
+  line-height: var(--leading-body);
+  text-align: start;
+}
+
+body.page-options-pricing #annual-anchor .table {
+  margin-bottom: 0;
+  border-color: var(--color-rule);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+body.page-options-pricing #annual-anchor .table thead th {
+  color: var(--color-ink-2);
+  background: var(--color-paper-2);
+}
+
+body.page-options-pricing #annual-anchor .table td,
+body.page-options-pricing #annual-anchor .table th {
+  padding: var(--space-sm) var(--space-md);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Guarantee and proof */
 body.page-options-pricing .op-assurance-grid {
   display: grid;
@@ -1923,5 +1950,4 @@ body.page-options-pricing .op-card__actions .op-button__icon {
   }
 }
 /* Grand Slam Offer styles synchronized */
-
 
