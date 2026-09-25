@@ -72,6 +72,9 @@
     "active": true
   },
   "coreCulture": {
+    "termWeeks": 12,
+    "plannedClassesPerWeek": 3,
+    "scheduledClassesPerTerm": 36,
     "youth": {
       "name": "Youth 12-week program",
       "price": 550,
@@ -96,6 +99,9 @@
     }
   },
   "annualTrack": {
+    "termMonths": 12,
+    "cycles": 4,
+    "scheduledClassesPerCycle": 36,
     "youth": {
       "name": "Youth Annual Track",
       "price": 2100,
@@ -125,6 +131,7 @@
       "price": 35,
       "displayPrice": "$35",
       "term": "1 session",
+      "classCount": 1,
       "accessModel": "open_access",
       "audience": "Short-term visitors",
       "classesIncluded": "1 appropriate class",
@@ -141,6 +148,7 @@
       "price": 99,
       "displayPrice": "$99",
       "term": "1 week",
+      "maximumClasses": 3,
       "accessModel": "open_access",
       "audience": "Visitors staying in the Catskills",
       "classesIncluded": "Up to 3 appropriate classes",
@@ -157,6 +165,7 @@
       "price": 300,
       "displayPrice": "$300",
       "term": "10 classes",
+      "classCount": 10,
       "accessModel": "open_access",
       "audience": "Seasonal, second-home, or irregular-schedule students",
       "classesIncluded": "10 consumable class visits",
@@ -173,6 +182,7 @@
       "price": 550,
       "displayPrice": "$550",
       "term": "20 classes",
+      "classCount": 20,
       "accessModel": "open_access",
       "audience": "Seasonal, second-home, or irregular-schedule students",
       "classesIncluded": "20 consumable class visits",
