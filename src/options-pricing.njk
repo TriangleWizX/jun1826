@@ -30,7 +30,15 @@ permalink: "/options-pricing/index.html"
             <span aria-hidden="true" class="op-button__icon">&nearr;</span>
           </a>
         </div>
-<section class="container py-3" aria-label="Quick prices"><div class="row g-3"><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Free First Visit: $0</strong><br><span class="small text-muted">Meet Sandy, see the room, ask questions.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Youth: from {{ pricing.coreCulture.frequencyLadder.youth[1].monthly | usd }}</strong><br><span class="small text-muted">For one class each week; one month.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Adult: from {{ pricing.coreCulture.frequencyLadder.adult[1].monthly | usd }}</strong><br><span class="small text-muted">For one class each week; one month.</span></div></div></div></section>
+<section class="op-annual-high-anchor" aria-label="Highest annual training frequency">
+  <p class="op-eyebrow">Annual continuation · 3× weekly</p>
+  <div class="op-annual-high-anchor__rates">
+    <p><strong>Youth: {{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }} / year</strong><span>3 planned classes each week</span></p>
+    <p><strong>Adult: {{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }} / year</strong><span>3 planned classes each week</span></p>
+  </div>
+  <p class="op-annual-high-anchor__note">Annual continuation rates are available after a Core Culture term and review.</p>
+</section>
+<section class="container py-3" aria-label="Low price anchors"><div class="row g-3"><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Free First Visit: $0</strong><br><span class="small text-muted">Meet Sandy, see the room, ask questions.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Youth: {{ pricing.coreCulture.frequencyLadder.youth[1].monthly | usdGrouped }} / month</strong><br><span class="small text-muted">1 class each week; monthly option.</span></div></div><div class="col-md-4"><div class="p-3 border rounded-3 bg-white"><strong>Adult: {{ pricing.coreCulture.frequencyLadder.adult[1].monthly | usdGrouped }} / month</strong><br><span class="small text-muted">1 class each week; monthly option.</span></div></div></div></section>
         <p class="op-hero__lede">Choose one, two, or three planned classes each week. First qualifying Youth and Adult terms include a uniform and the applicable guarantee; six-month and annual options are continuation-only. <a href="#start">Compare prices and class value</a>.</p>
         <p class="small text-muted mt-3 mb-0">
           <a href="{{ business.contact.smsHref }}">Text Sandy about pricing</a> · <a href="/bjj-tannersville-ny-directions">Directions &amp; Parking</a>. Make-up classes are arranged by text, subject to room capacity and suitable partner fit.
@@ -61,9 +69,9 @@ permalink: "/options-pricing/index.html"
         <caption class="visually-hidden">Annual continuation prices by weekly training frequency</caption>
         <thead><tr><th scope="col">Weekly classes per person</th><th scope="col">Youth</th><th scope="col">Adult</th></tr></thead>
         <tbody>
-          <tr><th scope="row">1×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[1].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1].annual | usdGrouped }}</td></tr>
-          <tr><th scope="row">2×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[2].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2].annual | usdGrouped }}</td></tr>
           <tr><th scope="row">3×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }}</td></tr>
+          <tr><th scope="row">2×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[2].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2].annual | usdGrouped }}</td></tr>
+          <tr><th scope="row">1×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[1].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1].annual | usdGrouped }}</td></tr>
         </tbody>
       </table>
     </div>

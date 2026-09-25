@@ -26,8 +26,15 @@ assert.equal(family.averagePricePerScheduledClass, Number((family.price / schedu
 assert.equal(family.savingsPercent, pricing.householdBundles.firstTerm.oneAdultTwoYouth.savingsPercent);
 assert.equal(family.continuationOnly, true);
 assert.equal(family.guaranteeEligible, false);
+assert.ok(pricing.productPolicy.continuationOnly.includes("householdBundles.annualFamily"));
+assert.ok(pricing.productPolicy.guaranteeExcluded.includes("householdBundles.annualFamily"));
 assert.equal(offers.qualified.find((offer) => offer.id === "annual-family-track")?.priceRef, "householdBundles.annualFamily");
 assert.match(page, /Annual Family Track: \$5,400/);
+assert.ok(page.indexOf("$1,980 / year") < page.indexOf("Youth: $75 / month"), "annual youth 3x high anchor should precede monthly low anchor");
+assert.ok(page.indexOf("$2,475 / year") < page.indexOf("Adult: $95 / month"), "annual adult 3x high anchor should precede monthly low anchor");
+const annualTable = page.slice(page.indexOf("Annual continuation prices"), page.indexOf("</table>", page.indexOf("Annual continuation prices")));
+assert.ok(annualTable.indexOf("3×") < annualTable.indexOf("2×") && annualTable.indexOf("2×") < annualTable.indexOf("1×"), "annual frequency table should descend from the high anchor");
+assert.match(page, /Free First Visit: \$0/);
 assert.match(page, /\$6,435 individual total/);
 assert.match(page, /\$1,035/);
 assert.match(page, /\$12\.50 per scheduled class/);

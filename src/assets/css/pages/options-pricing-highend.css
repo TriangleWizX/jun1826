@@ -968,6 +968,55 @@ body.page-options-pricing .op-household-note {
   text-align: center;
 }
 
+body.page-options-pricing .op-annual-high-anchor {
+  max-width: var(--container-standard);
+  margin: var(--space-sm) auto 0;
+  padding: var(--space-md);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-card);
+  color: var(--color-ink);
+  background: var(--color-paper-2);
+}
+
+body.page-options-pricing .op-annual-high-anchor > .op-eyebrow {
+  margin-bottom: var(--space-xs);
+}
+
+body.page-options-pricing .op-annual-high-anchor__rates {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xs) var(--space-md);
+}
+
+body.page-options-pricing .op-annual-high-anchor__rates p {
+  margin: 0;
+}
+
+body.page-options-pricing .op-annual-high-anchor__rates strong,
+body.page-options-pricing .op-annual-high-anchor__rates span {
+  display: block;
+}
+
+body.page-options-pricing .op-annual-high-anchor__rates strong {
+  font-variant-numeric: tabular-nums;
+}
+
+body.page-options-pricing .op-annual-high-anchor__rates span,
+body.page-options-pricing .op-annual-high-anchor__note {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+body.page-options-pricing .op-annual-high-anchor__note {
+  margin: var(--space-xs) 0 0;
+}
+
+@media (max-width: 40rem) {
+  body.page-options-pricing .op-annual-high-anchor__rates {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 body.page-options-pricing #annual-anchor .op-household-note {
   max-width: 72ch;
   margin-inline: auto;
@@ -1950,4 +1999,3 @@ body.page-options-pricing .op-card__actions .op-button__icon {
   }
 }
 /* Grand Slam Offer styles synchronized */
-
