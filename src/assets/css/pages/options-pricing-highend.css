@@ -1282,7 +1282,7 @@ body.page-options-pricing .op-private-price span {
 }
 
 body.page-options-pricing .op-private-price strong {
-  color: #fffaf2;
+  color: var(--op-ink);
   font-family: "Instrument Serif", Georgia, serif;
   font-size: clamp(3.8rem, 6vw, 5.5rem);
   font-weight: 400;
@@ -1290,7 +1290,14 @@ body.page-options-pricing .op-private-price strong {
   line-height: 0.82;
 }
 
-body.page-options-pricing .op-private-price span,
+body.page-options-pricing .op-card--ink .op-private-price strong {
+  color: #fffaf2;
+}
+
+body.page-options-pricing .op-private-price span {
+  color: var(--op-muted);
+}
+
 body.page-options-pricing .op-card--ink > p:not(.op-card__kicker, .op-private-price) {
   color: rgba(255, 255, 255, 0.68);
 }
@@ -1298,6 +1305,24 @@ body.page-options-pricing .op-card--ink > p:not(.op-card__kicker, .op-private-pr
 body.page-options-pricing .op-private-price span {
   margin-top: 0.45rem;
   font-size: 0.7rem;
+}
+
+body.page-options-pricing .op-card--ink .op-private-price span {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.page-options-pricing #laundry-support .op-private-price {
+  margin: 1.2rem 0 0.75rem;
+}
+
+body.page-options-pricing #laundry-support .op-private-price strong {
+  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+body.page-options-pricing #laundry-support .op-private-price span {
+  font-size: 0.78rem;
 }
 
 body.page-options-pricing .op-card--ink > p:not(.op-card__kicker, .op-private-price) {
