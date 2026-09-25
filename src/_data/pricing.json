@@ -71,8 +71,40 @@
     "guarantee": "No automatic 30-Day Training Fit Guarantee; application review and separate terms required",
     "active": true
   },
-  "coreCulture": {
+    "coreCulture": {
     "termWeeks": 12,
+    "frequencyLadder": {
+      "youth": {
+        "1": { "monthly": 75, "12Weeks": 220, "6Months": 425, "annual": 800, "perClass": { "monthly": 18.33, "12Weeks": 18.33, "6Months": 17.71, "annual": 16.67 } },
+        "2": { "monthly": 150, "12Weeks": 440, "6Months": 825, "annual": 1600, "perClass": { "monthly": 18.75, "12Weeks": 18.33, "6Months": 17.19, "annual": 16.67 } },
+        "3": { "monthly": 185, "12Weeks": 550, "6Months": 1050, "annual": 1980, "perClass": { "monthly": 15.42, "12Weeks": 15.28, "6Months": 14.58, "annual": 13.75 } }
+      },
+      "adult": {
+        "1": { "monthly": 95, "12Weeks": 275, "6Months": 525, "annual": 1000, "perClass": { "monthly": 23.75, "12Weeks": 22.92, "6Months": 21.88, "annual": 20.83 } },
+        "2": { "monthly": 185, "12Weeks": 550, "6Months": 1050, "annual": 2000, "perClass": { "monthly": 23.13, "12Weeks": 22.92, "6Months": 21.88, "annual": 20.83 } },
+        "3": { "monthly": 230, "12Weeks": 687.5, "6Months": 1300, "annual": 2475, "perClass": { "monthly": 19.17, "12Weeks": 19.10, "6Months": 18.06, "annual": 17.19 } }
+      }
+    },
+    "termOptions": ["monthly", "12 weeks", "6 months", "annual"],
+    "frequenciesPerWeek": [1, 2, 3],
+    "frequencyLabels": ["1× / week", "2× / week", "3× / week"],
+    "monthlyPerClass": { "youth": [18.33, 18.75, 15.42], "adult": [23.75, 23.13, 19.17] },
+    "term12WeeksPerClass": { "youth": [18.33, 18.33, 15.28], "adult": [22.92, 22.92, 19.10] },
+    "term6MonthsPerClass": { "youth": [17.71, 17.19, 14.58], "adult": [21.88, 21.88, 18.06] },
+    "annualPerClass": { "youth": [16.67, 16.67, 13.75], "adult": [20.83, 20.83, 17.19] },
+    "scheduledClassesPerWeek": { "1": 1, "2": 2, "3": 3 },
+    "frequencyLadder": {
+      "youth": {
+        "1": { "monthly": 75, "12Weeks": 220, "6Months": 425, "annual": 800 },
+        "2": { "monthly": 150, "12Weeks": 440, "6Months": 825, "annual": 1600 },
+        "3": { "monthly": 185, "12Weeks": 550, "6Months": 1050, "annual": 1980 }
+      },
+      "adult": {
+        "1": { "monthly": 95, "12Weeks": 275, "6Months": 525, "annual": 1000 },
+        "2": { "monthly": 185, "12Weeks": 550, "6Months": 1050, "annual": 2000 },
+        "3": { "monthly": 230, "12Weeks": 687.5, "6Months": 1300, "annual": 2475 }
+      }
+    },
     "plannedClassesPerWeek": 3,
     "scheduledClassesPerTerm": 36,
     "youth": {
@@ -102,6 +134,15 @@
     "termMonths": 12,
     "cycles": 4,
     "scheduledClassesPerCycle": 36,
+    "continuationOnly": true,
+    "frequencyLadderPrices": {
+      "youth": [800, 1600, 1980],
+      "adult": [1000, 2000, 2475]
+    },
+    "sixMonthContinuationPrices": {
+      "youth": [425, 825, 1050],
+      "adult": [525, 1050, 1300]
+    },
     "youth": {
       "name": "Youth Annual Track",
       "price": 2100,
