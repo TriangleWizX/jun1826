@@ -81,3 +81,24 @@
 .page-schedule .ss-hero-editorial-split { padding-top: 1rem; }
 .page-schedule .ss-editorial-title { font-size: clamp(1.8rem, 3vw, 2.75rem); }
 .page-schedule .ss-editorial-lead { font-size: 1rem; line-height: 1.5; }
+
+/* The schedule uses only its route and page bundles, so give its primary action the shared button treatment here. */
+.page-schedule .ss-hero-actions .ss-btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 44px;
+  padding: var(--space-2xs) var(--space-md);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font: 700 var(--text-sm)/1.2 var(--font-body);
+  text-decoration: none;
+}
+
+.page-schedule .ss-hero-actions .ss-btn-premium-icon {
+  background: var(--color-accent-strong);
+  color: var(--color-accent-ink);
+}

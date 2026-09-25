@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.join(__dirname, '..');
+const includeDir = path.join(root, 'src', '_includes');
 
 // Import the data
 const schedulePath = path.join(root, 'data', 'schedule.js');
@@ -34,9 +35,10 @@ function generateCompact() {
   html += `  <ul class="list-unstyled">\n`;
   
   for (const cls of scheduleData.groupClasses) {
+    const audience = `${cls.publicLabel || cls.audience} · Ages ${cls.ages}`;
     html += `    <li class="mb-2">\n`;
     html += `      <strong>${cls.days.join(', ')}</strong><br>\n`;
-    html += `      ${cls.publicLabel || cls.audience}: ${cls.start}–${cls.end} (${cls.format})\n`;
+    html += `      ${audience}: ${cls.start}–${cls.end} (${cls.format})\n`;
     if (cls.note) {
       html += `      <br><small class="text-muted">${cls.note}</small>\n`;
     }
@@ -61,9 +63,10 @@ function generateFull() {
   html += `    <div class="col-md-6 mb-4">\n`;
   html += `      <h3 class="h5 border-bottom pb-2 mb-3">Group Classes</h3>\n`;
   for (const cls of scheduleData.groupClasses) {
+    const audience = `${cls.publicLabel || cls.audience} · Ages ${cls.ages}`;
     html += `      <div class="card mb-3 shadow-sm border-0">\n`;
     html += `        <div class="card-body">\n`;
-    html += `          <h4 class="h6 fw-bold text-success mb-1">${cls.publicLabel || cls.audience} (${cls.format})</h4>\n`;
+    html += `          <h4 class="h6 fw-bold text-success mb-1">${audience} · ${cls.format}</h4>\n`;
     html += `          <p class="mb-1 text-dark fw-medium">${cls.days.join(', ')}</p>\n`;
     html += `          <p class="mb-0 text-muted"><i class="bi bi-clock me-2"></i>${cls.start} – ${cls.end}</p>\n`;
     if (cls.note) {
@@ -97,7 +100,7 @@ function generateStudioBento() {
   for (const day of dayOrder) {
     const classes = scheduleData.groupClasses
       .filter((entry) => entry.days.includes(day))
-      .map((entry) => `${entry.start} ${entry.publicLabel || `${entry.audience} · ${entry.format}`}`)
+      .map((entry) => `${entry.start} ${entry.publicLabel || entry.audience} · Ages ${entry.ages} · ${entry.format}`)
       .join(' · ');
     html += `<div class="bento-schedule-row"><span class="bento-sched-day">${abbreviations[day]}</span><span class="bento-sched-class">${classes}</span></div>`;
   }
@@ -108,8 +111,8 @@ function generateStudioBento() {
 const compactHtml = generateCompact();
 const fullHtml = generateFull();
 
-fs.writeFileSync(path.join(root, '_includes', 'schedule-compact.html'), compactHtml);
-fs.writeFileSync(path.join(root, '_includes', 'schedule-full.html'), fullHtml);
-fs.writeFileSync(path.join(root, '_includes', 'schedule-studio-bento.html'), generateStudioBento());
+fs.writeFileSync(path.join(includeDir, 'schedule-compact.html'), compactHtml);
+fs.writeFileSync(path.join(includeDir, 'schedule-full.html'), fullHtml);
+fs.writeFileSync(path.join(includeDir, 'schedule-studio-bento.html'), generateStudioBento());
 
 console.log('Successfully generated schedule components from data/schedule.js');

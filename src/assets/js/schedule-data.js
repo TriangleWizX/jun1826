@@ -47,7 +47,7 @@ window.SSBJJ_SCHEDULE = {
       "publicLabel": "Friday Gi Lab"
     },
     {
-      "id": "weekday-adult-1800",
+      "id": "weekday-adult-gi-1800",
       "days": [
         "Monday",
         "Wednesday"
@@ -56,7 +56,7 @@ window.SSBJJ_SCHEDULE = {
       "end": "7:00 PM",
       "audience": "Adult",
       "ages": "18+",
-      "format": "No-Gi"
+      "format": "Gi"
     },
     {
       "id": "tuesday-friday-adult-gi",
