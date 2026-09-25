@@ -20,6 +20,12 @@ permalink: "/options-pricing/index.html"
         <p class="op-hero__lede">
           Meet Sandy, see the room, and choose the right starting point. Sandy confirms your visit before you arrive.
         </p>
+        <div class="op-hero__lede" aria-label="Annual continuation price anchor">
+          <p class="op-eyebrow">Annual continuation rates · reviewed after a first term</p>
+          <p><strong>Youth:</strong> {{ pricing.coreCulture.frequencyLadder.youth[1].annual | usd }} / {{ pricing.coreCulture.frequencyLadder.youth[2].annual | usd }} / {{ pricing.coreCulture.frequencyLadder.youth[3].annual | usd }}
+          <span aria-hidden="true"> · </span><strong>Adult:</strong> {{ pricing.coreCulture.frequencyLadder.adult[1].annual | usd }} / {{ pricing.coreCulture.frequencyLadder.adult[2].annual | usd }} / {{ pricing.coreCulture.frequencyLadder.adult[3].annual | usd }} <small>(1× / 2× / 3× weekly)</small></p>
+          <p class="small text-muted">These continuation prices are shown first as a long-term reference; they are not first-term offers. Start with a 12-week term and review options with Sandy.</p>
+        </div>
         <div class="op-actions">
           <a class="op-button op-button--primary" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="options-pricing-hero" data-cta-target="intro" data-cta-tier="primary" data-goal-mapping="" href="/free-bjj-intro-tannersville-ny#booking-flow">
             <span>Reserve Your Free First Visit</span>
@@ -109,7 +115,7 @@ permalink: "/options-pricing/index.html"
             <li>Parent-friendly open-seat rescheduling by text when space is open</li>
             <li>Eligible first-term Youth offers include the 30-Day Training Fit Guarantee after at least four classes in the first 30 days (<a href="/guarantee-terms">terms</a>)</li>
           </ul>
-          <p class="op-card__note">Training more than one child? Text Sandy for household options. Read the <a href="/parent-resources">Parent Guide</a>.</p>
+          <p class="op-card__note">The listed family rate covers one adult and two youth training 3× per week each. For other household combinations, request an individual quote; no standard bundle rate is listed. Read the <a href="/parent-resources">Parent Guide</a>.</p>
           <div class="op-card__actions">
             <a class="op-button op-button--primary" data-cta-lane="kids" data-cta-placement="pricing_card" data-cta-src="options-pricing-youth" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">
               <span>Reserve for a Child</span>
@@ -270,23 +276,27 @@ permalink: "/options-pricing/index.html"
         <p class="op-eyebrow">Train Together</p>
         <h2 id="household-pricing-title">Simple, clear plans for the whole household.</h2>
       </div>
-      <p>These first-term packages include progress feedback, make-up classes when space is open, and uniforms. Each student is still coached and reviewed as an individual.</p>
+      <p>These household prices are for 12 weeks and include academy uniforms for all three participants with first enrollment. Each student is still coached and reviewed as an individual.</p>
     </div>
+
+    <p class="op-household-note op-reveal">The comparisons below use current individual 12-week rates for the same household and frequency. Savings are shown only when the household amount is below the individual total; class placement, room capacity, and suitable partner fit still apply.</p>
 
     <div class="op-household-grid">
       <details class="op-household-card op-household-card--family op-reveal">
         <summary>
           <span>
-            <small>Two adults + one youth</small>
+            <small>One adult + two youth</small>
             <strong>Family Track (12 Weeks)</strong>
           </span>
-          <span class="op-household-card__from">Ask about household coordination</span>
+          <span class="op-household-card__from">$1,500 / 12 weeks</span>
           <span aria-hidden="true" class="op-details-icon">+</span>
         </summary>
         <div class="op-household-card__body">
-          <p>Eligible household pricing is discussed during the Free First Visit. Three uniforms are included with first enrollment.</p>
+          <p>For one adult and two youth. Academy uniforms are included for all three participants with first enrollment.</p>
           <dl class="op-rate-list">
-            <div><dt>Three recurring class times</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is not a separate public product.</small></dd></div>
+            <div><dt>1× per person each week</dt><dd><strong>$715 individual total; bundle is $785 more</strong> <small>109.8% above the individual total.</small></dd></div>
+            <div><dt>2× per person each week</dt><dd><strong>$1,430 individual total; bundle is $70 more</strong> <small>4.9% above the individual total.</small></dd></div>
+            <div><dt>3× per person each week</dt><dd><strong>$1,787.50 individual total; save $287.50 (16.1%)</strong></dd></div>
           </dl>
         </div>
       </details>
@@ -294,38 +304,37 @@ permalink: "/options-pricing/index.html"
       <details class="op-household-card op-household-card--siblings op-reveal">
         <summary>
           <span>
-            <small>Two children</small>
-            <strong>Sibling Track (12 Weeks)</strong>
+            <small>Two adults + one youth</small>
+            <strong>Family Track (12 Weeks)</strong>
           </span>
-          <span class="op-household-card__from">Ask about household coordination</span>
+          <span class="op-household-card__from">$1,650 / 12 weeks</span>
           <span aria-hidden="true" class="op-details-icon">+</span>
         </summary>
         <div class="op-household-card__body">
-          <p>Eligible sibling pricing is discussed during the Free First Visit. Two uniforms are included with first enrollment.</p>
+          <p>For two adults and one youth. Academy uniforms are included for all three participants with first enrollment.</p>
           <dl class="op-rate-list">
-            <div><dt>Three recurring class times</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is not a separate public product.</small></dd></div>
+            <div><dt>1× per person each week</dt><dd><strong>$770 individual total; bundle is $880 more</strong> <small>114.3% above the individual total.</small></dd></div>
+            <div><dt>2× per person each week</dt><dd><strong>$1,540 individual total; bundle is $110 more</strong> <small>7.1% above the individual total.</small></dd></div>
+            <div><dt>3× per person each week</dt><dd><strong>$1,925 individual total; save $275 (14.3%)</strong></dd></div>
           </dl>
         </div>
       </details>
 
-      <details class="op-household-card op-household-card--parent op-reveal op-delay-1">
-        <summary>
-          <span>
-            <small>One adult + one youth</small>
-            <strong>Parent + Youth Track (12 Weeks)</strong>
-          </span>
-          <span class="op-household-card__from">Ask about household coordination</span>
-          <span aria-hidden="true" class="op-details-icon">+</span>
-        </summary>
+      <article class="op-household-card op-household-card--parent op-reveal op-delay-1">
         <div class="op-household-card__body">
-          <p>Eligible parent-and-youth pricing is discussed during the Free First Visit. One adult gi and one youth gi are included.</p>
-          <dl class="op-rate-list">
-            <div><dt>Three recurring class times</dt><dd><strong>Ask during first visit</strong> <small>Household coordination is discussed case by case.</small></dd></div>
-          </dl>
+          <p><strong>Other household combinations</strong></p>
+          <p>Only the two household combinations shown here have listed bundle rates. For mixed attendance or another household setup, request a quote; pricing for other combinations is not specified here.</p>
+          <a class="op-text-link" href="{{ business.contact.smsHref }}">Request a household quote by text <span aria-hidden="true">&rarr;</span></a>
         </div>
-      </details>
+      </article>
     </div>
-    <p class="op-household-note op-reveal">Open each plan for the exact weekly combinations. Mixed attendance can be discussed during first visit.</p>
+    <details class="op-household-card op-household-card--parent op-reveal">
+      <summary><span><small>Historical annual-family idea</small><strong>Annual household option</strong></span><span class="op-household-card__from">$3,300 / year*</span><span aria-hidden="true" class="op-details-icon">+</span></summary>
+      <div class="op-household-card__body">
+        <p><strong>*Not currently an active published rate.</strong> A prior $3,300 annual-family figure is missing a confirmed household configuration, per-person weekly frequency, payment terms, and included benefits. It remains subject to confirmation by Sandy.</p>
+        <p>For reference only, if it covered one adult and two youth training 3× weekly, their listed annual individual total would be $4,075; $3,300 would be $775 (19.0%) lower. That comparison does not establish eligibility or approval.</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -417,8 +426,8 @@ permalink: "/options-pricing/index.html"
             <div><span>10-Class Pack</span><strong>{{ pricing.visitorAndSupport.tenPack.displayPrice }}</strong><small>Valid {{ pricing.visitorAndSupport.tenPack.validity }} · ${{ (pricing.visitorAndSupport.tenPack.price / pricing.visitorAndSupport.tenPack.classCount) | round(2) }} per class</small></div>
             <div><span>20-Class Pack</span><strong>{{ pricing.visitorAndSupport.twentyPack.displayPrice }}</strong><small>Valid {{ pricing.visitorAndSupport.twentyPack.validity }} · ${{ (pricing.visitorAndSupport.twentyPack.price / pricing.visitorAndSupport.twentyPack.classCount) | round(2) }} per class</small></div>
           </div>
-          <p class="op-card__note">Day Pass and Vacation Week are visitor access: one class, or up to three classes in seven days. Class Packs are usage-based options for seasonal, second-home, or irregular schedules. Local first-time students begin with the Free First Visit.</p>
-          <p class="op-card__note">Visitor and flexible-access options provide class access for a trip, seasonal stay, or irregular schedule. Core Culture adds recurring class reservations and progress feedback. Every student receives appropriate coaching, safety management, and partner guidance while in class.</p>
+          <p class="op-card__note">Per-class comparison: $35 Day Pass; $33 Vacation Week if all three classes are attended; $30 per 10-Class Pack class; $27.50 per 20-Class Pack class. These visitor options cost more per class than annual continuation rates (about $13.75–$20.83), in exchange for short-term or irregular-use access. Core Culture and Annual Track are designed for recurring weekly training; the visitor passes are not a substitute membership ladder.</p>
+          <p class="op-card__note">Class packs provide flexible access for a trip, seasonal stay, second home, or irregular schedule. Local first-time students begin with the Free First Visit. Every student receives appropriate coaching, safety management, and partner guidance while in class.</p>
           <p class="op-card__note"><strong>Visiting regularly or own a second home?</strong> <a href="/catskills-home-base">See seasonal class packs and visitor options</a>.</p>
           <a class="op-text-link" href="/catskills-home-base">See the Catskills visitor guide <span aria-hidden="true">&rarr;</span></a>
         </div>
