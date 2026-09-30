@@ -2,17 +2,23 @@
   'use strict';
 
   const SKILLS = [
-    ['feet_to_floor', 'Standing and falling safely'],
-    ['pin_escapes', 'Getting out from the bottom'],
-    ['guard', 'Using the legs from the bottom'],
-    ['guard_retention', 'Keeping the legs in front'],
-    ['submission_escapes', 'Getting safe from a hold'],
-    ['pinning', 'Staying on top'],
-    ['base_retention', 'Keeping balance on top'],
-    ['guard_passing', 'Getting past the legs'],
-    ['submissions', 'Finishing a hold safely']
+    ['feet_to_floor', 'Fall safely'],
+    ['pin_escapes', 'Get free when held down'],
+    ['guard', 'Use legs to keep space'],
+    ['guard_retention', 'Keep legs in front'],
+    ['submission_escapes', 'Get free from a hold'],
+    ['pinning', 'Stay on top'],
+    ['base_retention', 'Keep balance on top'],
+    ['guard_passing', 'Get past the legs'],
+    ['submissions', 'Finish with a safe hold']
   ];
-  const CONTEXTS = ['Game', 'Position', 'Live', 'Drill', 'Other'];
+  const CONTEXTS = [
+    { value: 'Game', label: 'Game' },
+    { value: 'Position', label: 'Position (start in one spot)' },
+    { value: 'Live', label: 'Live (move and choose)' },
+    { value: 'Drill', label: 'Drill (repeat a move)' },
+    { value: 'Other', label: 'Other' }
+  ];
   const $ = (id) => document.getElementById(id);
   const form = {
     student: $('student'), week: $('week-of'), skill: $('main-skill'),
@@ -28,7 +34,8 @@
   }
 
   function selectedContext() {
-    return document.querySelector('input[name="observation-context"]:checked')?.value || '';
+    const selected = document.querySelector('input[name="observation-context"]:checked');
+    return selected?.closest('label')?.querySelector('span')?.textContent || '';
   }
 
   function checkinType() {
@@ -36,7 +43,7 @@
   }
 
   function checkinTypeLabel() {
-    return checkinType() === 'youth' ? 'Youth check-in' : 'Adult check-in';
+    return checkinType() === 'youth' ? 'Youth check-in · Grown-up can help' : 'Adult check-in';
   }
 
   function setPreview(id, value, emptyText) {
@@ -53,27 +60,28 @@
     const weekLong = week ? new Date(`${week}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '';
     const weekShort = week ? new Date(`${week}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '';
 
-    setPreview('preview-student', name, 'Name');
+    setPreview('preview-student', name, 'Student name');
     setPreview('preview-week', weekLong ? `Week of ${weekLong}` : '', 'Week of …');
     setPreview('preview-skill', skill, 'Pick a skill');
-    setPreview('preview-problem', form.problem.value.trim(), 'Coach: What did I see?');
-    setPreview('preview-observed', form.observed.value.trim(), 'Student: What did you say?');
-    setPreview('preview-next', form.next.value.trim(), 'Coach: What will I help you try next?');
+    setPreview('preview-problem', form.problem.value.trim(), 'I saw you…');
+    setPreview('preview-observed', form.observed.value.trim(), 'I learned…');
+    setPreview('preview-next', form.next.value.trim(), 'My next step');
     $('preview-context').textContent = context ? `Where: ${context}` : '';
     $('preview-easier').textContent = form.easier.value.trim();
     $('preview-easier-block').hidden = !form.easier.value.trim();
 
     $('receipt-type').textContent = checkinTypeLabel();
-    $('receipt-blank-type').textContent = `${checkinTypeLabel()} · Name: __________________ · Week of: __________________`;
-    $('receipt-student').textContent = name ? `Name: ${name}` : 'Name: __________________';
+    $('receipt-blank-type').textContent = checkinTypeLabel();
+    $('receipt-student').textContent = name ? `Student name: ${name}` : 'Student name: __________________';
     $('receipt-week').textContent = weekShort ? `Week of: ${weekShort}` : 'Week of: ______________';
     $('receipt-skill').textContent = skill || '________________';
     $('receipt-problem').textContent = form.problem.value.trim();
     $('receipt-observed').textContent = form.observed.value.trim();
-    $('receipt-context').textContent = context ? `☒ ${context}` : '☐ Game　☐ Position　☐ Live　☐ Drill　☐ Other';
+    $('receipt-context').textContent = context ? `☒ ${context}` : '☐ Game　☐ Set spot　☐ Choose moves　☐ Repeat move　☐ Other';
     $('receipt-next').textContent = form.next.value.trim();
     $('receipt-easier').textContent = form.easier.value.trim();
     $('receipt-easier-block').hidden = !form.easier.value.trim();
+    $('youth-help').hidden = checkinType() !== 'youth';
     document.body.dataset.printMode = $('print-mode').value;
     document.querySelector('.checkin-preview').dataset.previewMode = $('print-mode').value;
   }
@@ -84,8 +92,8 @@
     if (!form.week.value) errors.push('Pick a week.');
     if (!form.skill.value) errors.push('Pick a skill.');
     if (!form.problem.value.trim()) errors.push('Write what you saw.');
-    if (!form.observed.value.trim()) errors.push('Write what the student said.');
-    if (!form.next.value.trim()) errors.push('Write what you will help the student try next.');
+    if (!form.observed.value.trim()) errors.push('Add the student’s words.');
+    if (!form.next.value.trim()) errors.push('Write your next step.');
     return errors;
   }
 
@@ -114,15 +122,15 @@
       option.textContent = label;
       form.skill.appendChild(option);
     });
-    CONTEXTS.forEach((label) => {
+    CONTEXTS.forEach((context) => {
       const wrapper = document.createElement('label');
       wrapper.className = 'checkin-context';
       const input = document.createElement('input');
       input.type = 'radio';
       input.name = 'observation-context';
-      input.value = label;
+      input.value = context.value;
       const text = document.createElement('span');
-      text.textContent = label;
+      text.textContent = context.label;
       wrapper.append(input, text);
       $('context-options').appendChild(wrapper);
     });
@@ -146,12 +154,12 @@
       document.title = `Sensei-Sandy_Check-In_${safeName}_${form.week.value}`;
       printInvoked = true;
       $('new-student').disabled = false;
-      $('save-status').textContent = 'Print dialog opened. Choose 2.2 inch paper or save as PDF.';
+      $('save-status').textContent = 'Choose your printer or save as PDF.';
       window.print();
       setTimeout(() => { document.title = originalTitle; }, 1000);
     });
     $('new-student').addEventListener('click', () => {
-      if (!printInvoked && (form.student.value.trim() || form.problem.value.trim() || form.observed.value.trim() || form.next.value.trim()) && !window.confirm('Start a new check-in and clear this one?')) return;
+      if (!printInvoked && (form.student.value.trim() || form.problem.value.trim() || form.observed.value.trim() || form.next.value.trim()) && !window.confirm('Start a new check-in? Your words will be cleared.')) return;
       reset();
     });
     preview();
