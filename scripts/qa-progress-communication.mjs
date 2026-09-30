@@ -23,7 +23,7 @@ assert.match(gain, /(?:Core Culture )?Parent Guide/);
 assert.match(gain, /How Class Works/);
 assert.doesNotMatch(gain, /Gain Points|\+1\s+(Calm|Focus|Confidence|Boundaries|Social Skill)|Hidden Curriculum|Scoreboard at Home|homework stamina|quiet confidence|somatic confidence|adult personality|level up|deters bullies/);
 
-assert.match(report, /(?:enough|repeated) live evidence/);
+assert.match(report, /I change a stage after I see enough in class/);
 assert.match(report, /(?:not a (?:school )?grade|Skills, not grades|neither is a grade)/i);
 assert.match(report, /(?:A stage can stay the same|No change is still information|not perfection)/i);
 assert.match(parent, /(?:What felt hard\?|Your child knows when a round felt hard|Keep the ride home supportive|Please ask what felt different)/i);

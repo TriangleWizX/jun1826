@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Daily Training Report | Sensei Sandy BJJ"
-description: "A clear training note from the coach: what you worked on, what I saw, and one next step."
+description: "Your coach notes what you tried and what to try next."
 canonicalUrl: "https://senseisandy.com/daily-checkin"
 robots: "noindex, follow"
 audience: "member"
@@ -652,8 +652,8 @@ headExtra: |
         <i id="connection-icon" class="bi bi-wifi" aria-hidden="true"></i> <span id="connection-text">Online</span>
       </div>
     </div>
-    <h1>Daily Training Report</h1>
-    <p>Record what was observed in class today, choose the next problem to try, and send a calm, clear update.</p>
+    <h1>Daily Check-In</h1>
+    <p>Write what you did in class. Pick one thing to try next. Send a kind note.</p>
     <div id="draft-alert" class="daily-draft-alert" role="status" hidden>
       <div>
         <i class="bi bi-clock-history" aria-hidden="true"></i>
@@ -667,7 +667,7 @@ headExtra: |
     <main class="daily-form" aria-label="Daily training check-in form">
       <!-- Section 1: Session & Student -->
       <section class="daily-section">
-        <h3>Session Details</h3>
+        <h3>Class Details</h3>
         <div class="daily-row-2">
           <div class="daily-field">
             <label for="student">Student Name</label>
@@ -694,16 +694,16 @@ headExtra: |
           <div class="daily-field">
             <label for="parent-phone">Text To (Optional)</label>
             <input id="parent-phone" type="tel" placeholder="+1 (917) ..." inputmode="tel" />
-            <span class="daily-hint">Add a number to open a ready-to-send text.</span>
+            <span class="daily-hint">Add a number to open a text you can send.</span>
           </div>
         </div>
       </section>
 
       <!-- Section 2: What I Saw -->
       <section class="daily-section">
-        <h3>What You Worked On</h3>
+        <h3>What You Did</h3>
         <div class="daily-field">
-          <label for="main-skill">Main Skill Area</label>
+          <label for="main-skill">Main skill</label>
           <select id="main-skill" required>
             <option value="">Choose a skill area</option>
           </select>
@@ -716,26 +716,26 @@ headExtra: |
         </div>
 
         <div class="daily-field">
-          <label for="observed-action">What did I see you do?</label>
+          <label for="observed-action">What did I see?</label>
           <textarea id="observed-action" required placeholder="e.g. I saw you stay calm, make space with your arms, and turn to your side."></textarea>
         </div>
 
         <div class="daily-field">
-          <label>Where did I see it?</label>
+          <label>Where did we try it?</label>
           <div id="context-options" class="checkin-contexts" role="radiogroup"></div>
         </div>
       </section>
 
       <!-- Section 3: What Comes Next -->
       <section class="daily-section">
-        <h3>What Comes Next</h3>
+        <h3>Next Step</h3>
         <div class="daily-field">
-          <label for="next-action">What will I help you try next?</label>
+          <label for="next-action">What will we try next?</label>
           <textarea id="next-action" required placeholder="e.g. Next, I will help you push with your feet to make space."></textarea>
         </div>
 
         <div class="daily-field">
-          <label for="getting-easier">What feels easier now? (Optional)</label>
+          <label for="getting-easier">What feels easier?</label>
           <textarea id="getting-easier" placeholder="e.g. I can stay calm and keep trying when held down."></textarea>
         </div>
       </section>
@@ -749,7 +749,7 @@ headExtra: |
       <!-- Actions -->
       <div class="daily-actions">
         <button id="send-sms" type="button" class="daily-btn-primary">
-          <i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Send Text (SMS)
+          <i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Send a text
         </button>
         <button id="copy-summary" type="button" class="daily-btn-secondary">
           <i class="bi bi-clipboard-check" aria-hidden="true"></i> Copy Summary
@@ -780,7 +780,7 @@ headExtra: |
         <div id="preview-program" class="print-program-badge print-empty">Class</div>
 
         <div class="print-block">
-          <div class="print-label">Main Skill Area</div>
+          <div class="print-label">Main skill</div>
           <div id="preview-skill" class="print-value print-empty">Choose a skill area</div>
         </div>
 
@@ -815,9 +815,9 @@ headExtra: |
   </div>
 
   <nav aria-label="Progress review bridges" class="daily-bridges">
-    <strong>Training Review Pathways:</strong>
-    Logging a multi-week observation? Use the <a href="/weekly-audit">Weekly Training Check-In</a>.
-    Reviewing term progress and belt milestones? See the <a href="/report-card">Training Report Card</a>.
+    <strong>More ways to check progress:</strong>
+    For a week of notes, use the <a href="/weekly-audit">Weekly Check-In</a>.
+    For term progress and belt goals, see the <a href="/report-card">Training Report Card</a>.
     View daily class times on the <a href="/student-hub">Student Hub</a>.
   </nav>
 </div>

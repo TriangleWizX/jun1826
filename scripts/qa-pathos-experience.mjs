@@ -47,7 +47,7 @@ checkPhrases('Parent Guide', parent, [
 checkPhrases('Report Card', report, [
   /(?:specific observation|Write three short notes|notes add context|Where I saw it)/i,
   /(?:next constraint|what to try next|what comes next)/i,
-  /(?:failed attempt is information|information, not failure|useful information)/i
+  /(?:A try can teach us too|failed attempt is information|information, not failure|useful information)/i
 ]);
 
 if (/guaranteed success|no resistance|avoid(?:ing)? difficult partners/i.test(home + intro)) failures.push('pathos: challenge was softened into avoidance');

@@ -11,7 +11,7 @@ const read = (file) => {
 };
 const checks = [
   ['how-class-works', read('dist/how-class-works.html'), ['More Skill Means More Choices', 'removes prompts', 'student to recognize', 'safety, partner matching']],
-  ['report-card', read('dist/report-card.html'), [/(?:What feels easier to you now\?|feels easier to you|what problem to work on next)/i, /(?:Prompt dependence is context|These notes add context\. They are not a score|This tells us where I saw the skill work)/i, 'Recognize', 'Protect', 'Solve', 'Adapt', 'Express']],
+  ['report-card', read('dist/report-card.html'), [/(?:What feels easier now\?|feels easier to you|what problem to work on next)/i, /(?:These notes show what I saw in class|These notes add context)/i, 'Recognize', 'Protect', 'Solve', 'Adapt', 'Express']],
   ['kids lane', read('dist/bjj-classes/kids-tannersville-ny/index.html'), [/(?:try their own answer before asking for one|room to make decisions|learn safely|coached movement and partner practice)/i]],
   ['teens lane', read('dist/bjj-classes/teens-tannersville-ny/index.html'), [/(?:Recognize it\. Choose\. Adjust\. Make it yours\.|Make choices|test solutions against resistance|sink-or-swim|personal autonomy)/i]],
   ['adults lane', read('dist/bjj-classes/adults-tannersville-ny/index.html'), [/(?:principles you can use without waiting for instructions|Controlled resistance|Useful skills for real resistance|Simple positions and goals)/i]],
@@ -33,7 +33,7 @@ for (const [label, html, phrases] of checks) {
 const report = read('dist/report-card.html');
 const axes = ['Recognize', 'Protect', 'Solve', 'Adapt', 'Express'];
 if (axes.some((axis) => (report.match(new RegExp(`<h3>${axis}</h3>`, 'g')) || []).length !== 1)) failures.push('report-card: development axes must remain exactly once each');
-for (const phrase of ['A Note From Your Coach', 'What did I see you do?', 'What will we practice next?', 'Next, I will help you:']) {
+for (const phrase of ['A Note from your coach', 'What did I see you do?', 'What will we practice next?', 'Next, I will help you:']) {
   if (!report.includes(phrase)) failures.push(`report-card: missing student-readable coach copy "${phrase}"`);
 }
 if (/independence.{0,40}(percent|%|score)|coachability.{0,40}(percent|%|score)/i.test(report)) failures.push('report-card: independence/coachability metric detected');
