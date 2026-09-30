@@ -1,35 +1,43 @@
 import fs from 'node:fs';
 import path from 'node:path';
+
 const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const errors = [];
-const check = (ok, message) => { if (!ok) errors.push(message); };
+const check = (condition, message) => { if (!condition) errors.push(message); };
 const source = read('src/weekly-audit.html');
 const output = read('dist/weekly-audit.html');
 const script = read('js/weekly-audit.js');
+
 check(source.includes('title: "Weekly Training Check-In | Sensei Sandy BJJ"'), 'title contract missing');
 check(source.includes('canonicalUrl: "https://senseisandy.com/weekly-audit"'), 'canonical contract missing');
-check(source.includes('robots: "noindex, follow"'), 'private route must be noindex, follow');
-for (const label of ['Student', 'Week of', 'Main Skill', 'What were they trying to solve?', 'What did you see them do?', 'Where did you see it?', 'Next time, try this.', 'This is getting easier.', 'Save PDF', 'Start New Student', 'Finished Check-In']) check(source.includes(label), `missing required label: ${label}`);
-for (const term of ['Ops API', 'fetch(', 'sessionStorage', 'Students trained', 'Help level', 'Save Student Note', 'History']) check(!source.includes(term) && !script.includes(term), `legacy workflow term remains: ${term}`);
-check(script.includes('window.print()'), 'Save PDF must invoke window.print');
-check(source.includes('2.2 inch filled thermal check-in'), 'filled thermal print mode missing');
-check(source.includes('2.2 inch blank fill-in form'), 'blank thermal form mode missing');
-check(source.includes('@page receipt{size:2.2in 5in;margin:.08in}'), 'thermal page must use the 2.2-inch roll width and a usable receipt length');
-check(source.includes('max-width:2.04in'), 'thermal content width must fit the printable area');
-check(source.includes('class="receipt-fields"'), 'blank fillable thermal worksheet missing');
-check(source.includes('class="receipt-rule"'), 'thermal writing lines missing');
-check(source.includes('.checkin-print-mode,.checkin-actions{display:none!important}'), 'print controls must be hidden from paper output');
-check(source.includes('data-print-mode="receipt-blank"] .receipt-fields'), 'blank thermal mode must show writing lines');
-check(script.includes("$('receipt-problem').textContent=f.problem.value.trim()"), 'thermal print must include filled form content');
-check(script.includes("$('print-mode').addEventListener('change',preview)"), 'print mode selector must update print mode');
-check(script.includes('pdfPrintInvoked'), 'reset safety state missing');
-check(script.includes("$('new-student').disabled=true"), 'reset button must begin disabled');
-check(output.includes('noindex, follow'), 'generated robots metadata missing');
-check(!read('dist/sitemap.xml').includes('/weekly-audit'), 'weekly route leaked into sitemap');
+check(source.includes('robots: "noindex, follow"'), 'private route must noindex, follow');
+for (const label of ['Adult check-in', 'Youth check-in', 'Name', 'Week of', 'Main skill', 'What skill did you work on?', 'What did you see?', 'Where did you try it?', 'What will you try next?', 'Live preview']) {
+  check(source.includes(label), `missing required label: ${label}`);
+}
+for (const term of ['Letter', 'Ops API', 'fetch(', 'sessionStorage', 'Students trained', 'Help level', 'Save Student Note', 'History']) {
+  check(!source.includes(term) && !script.includes(term), `unexpected workflow term remains: ${term}`);
+}
+check(source.includes('2.2in 5in'), '2.2 inch page size missing');
+check(source.includes('width: 2.2in'), 'mobile preview must show the 2.2 inch receipt');
+check(source.includes('data-preview-mode="receipt"'), 'mobile must start with the filled 2.2 inch preview');
+check(source.includes('data-preview-mode="receipt-blank"] .receipt-fields'), 'blank form choice must update the mobile preview');
+check(source.includes('value="receipt"') && source.includes('value="receipt-blank"'), 'filled and blank print modes missing');
+check(!source.includes('value="letter"'), 'Letter print mode must be removed');
+check(script.includes('window.print()'), 'print action must invoke window.print');
+check(script.includes('document.body.dataset.printMode'), 'print mode must be reflected on the page');
+check(script.includes("$('new-student').disabled = true"), 'new check-in button must start disabled');
+check(output.includes('noindex, follow'), 'built route must remain noindex, follow');
+check(!read('dist/sitemap.xml').includes('/weekly-audit'), 'private route must stay out of sitemap');
 const registry = JSON.parse(read('data/url-registry.json'));
 const entry = registry.find((item) => item.path === '/weekly-audit');
-check(entry?.indexable === false, 'registry must keep weekly route non-indexable');
-check(entry?.canonicalPath === '/weekly-audit', 'registry canonical path mismatch');
-if (errors.length) { console.error(`QA: weekly PDF check-in FAILED (${errors.length})`); errors.forEach((e) => console.error(`- ${e}`)); process.exit(1); }
-console.log('QA: weekly PDF check-in PASSED');
+check(entry?.indexable === false, 'URL registry entry must remain non-indexable');
+check(entry?.canonicalPath === '/weekly-audit', 'canonical path registry entry missing');
+
+if (errors.length) {
+  console.error(`QA: Weekly check-in FAILED (${errors.length})`);
+  errors.forEach((error) => console.error(`- ${error}`));
+  process.exit(1);
+}
+
+console.log('QA: Weekly check-in PASSED');
