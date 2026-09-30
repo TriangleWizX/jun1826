@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Daily Training Report | Sensei Sandy BJJ"
-description: "Quick coach mat-log and parent update: log what happened in class and send a calm, specific next step."
+description: "A clear training note from the coach: what you worked on, what I saw, and one next step."
 canonicalUrl: "https://senseisandy.com/daily-checkin"
 robots: "noindex, follow"
 audience: "member"
@@ -692,9 +692,9 @@ headExtra: |
             </select>
           </div>
           <div class="daily-field">
-            <label for="parent-phone">Parent Phone (Optional)</label>
+            <label for="parent-phone">Text To (Optional)</label>
             <input id="parent-phone" type="tel" placeholder="+1 (917) ..." inputmode="tel" />
-            <span class="daily-hint">Enables 1-tap text dispatch directly to messaging app.</span>
+            <span class="daily-hint">Add a number to open a ready-to-send text.</span>
           </div>
         </div>
       </section>
@@ -710,18 +710,18 @@ headExtra: |
         </div>
 
         <div class="daily-field">
-          <label for="problem">What problem were they working on?</label>
-          <input id="problem" required placeholder="e.g. Keeping elbows inside while pinned" />
+          <label for="problem">What were you working on?</label>
+          <input id="problem" required placeholder="e.g. I was trying to keep my elbows close" />
           <div class="daily-chips" id="quick-chips" aria-label="Quick problem suggestion chips"></div>
         </div>
 
         <div class="daily-field">
-          <label for="observed-action">What did you see them do?</label>
-          <textarea id="observed-action" required placeholder="e.g. Stayed calm on the bottom, kept frames tight to the chest, and turned onto their side while protecting the back."></textarea>
+          <label for="observed-action">What did I see you do?</label>
+          <textarea id="observed-action" required placeholder="e.g. I saw you stay calm, make space with your arms, and turn to your side."></textarea>
         </div>
 
         <div class="daily-field">
-          <label>Where was this observed?</label>
+          <label>Where did I see it?</label>
           <div id="context-options" class="checkin-contexts" role="radiogroup"></div>
         </div>
       </section>
@@ -730,13 +730,13 @@ headExtra: |
       <section class="daily-section">
         <h3>What Comes Next</h3>
         <div class="daily-field">
-          <label for="next-action">Next time, try this.</label>
-          <textarea id="next-action" required placeholder="e.g. Bridge with the feet to make hip space before trying to turn back inside."></textarea>
+          <label for="next-action">What will I help you try next?</label>
+          <textarea id="next-action" required placeholder="e.g. Next, I will help you push with your feet to make space."></textarea>
         </div>
 
         <div class="daily-field">
-          <label for="getting-easier">This is getting easier (Optional).</label>
-          <textarea id="getting-easier" placeholder="e.g. Breathing calmly and not panicking when flattened out."></textarea>
+          <label for="getting-easier">What feels easier now? (Optional)</label>
+          <textarea id="getting-easier" placeholder="e.g. I can stay calm and keep trying when held down."></textarea>
         </div>
       </section>
 
@@ -749,7 +749,7 @@ headExtra: |
       <!-- Actions -->
       <div class="daily-actions">
         <button id="send-sms" type="button" class="daily-btn-primary">
-          <i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Send Parent Text (SMS)
+          <i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Send Text (SMS)
         </button>
         <button id="copy-summary" type="button" class="daily-btn-secondary">
           <i class="bi bi-clipboard-check" aria-hidden="true"></i> Copy Summary
@@ -785,25 +785,25 @@ headExtra: |
         </div>
 
         <div class="print-block">
-          <div class="print-label">What I Saw</div>
-          <p id="preview-problem" class="print-value print-empty">What they were trying to solve</p>
-          <p id="preview-observed" class="print-value print-empty">What you saw them do</p>
+          <div class="print-label">What You Worked On</div>
+          <p id="preview-problem" class="print-value print-empty">What you were working on</p>
+          <p id="preview-observed" class="print-value print-empty">What I saw you do</p>
           <div id="preview-context" class="print-context"></div>
         </div>
 
         <div class="print-block">
-          <div class="print-label">Next Step To Try</div>
-          <p id="preview-next" class="print-value print-empty">Next step to try</p>
+          <div class="print-label">What We Will Try Next</div>
+          <p id="preview-next" class="print-value print-empty">What I will help you try next</p>
         </div>
 
         <div id="preview-easier-block" class="print-block" hidden>
-          <div class="print-label">Getting Easier</div>
+          <div class="print-label">What Feels Easier Now</div>
           <p id="preview-easier" class="print-value"></p>
         </div>
 
         <div class="print-car-ride-box">
-          <div class="print-car-ride-title">Ride-Home Prompt for Parents</div>
-          <p class="print-car-ride-prompt">"What problem were you working on today?"</p>
+          <div class="print-car-ride-title">A Question to Ask</div>
+          <p class="print-car-ride-prompt">"What did you work on today?"</p>
         </div>
 
         <div class="print-footer">

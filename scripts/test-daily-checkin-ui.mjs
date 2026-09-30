@@ -147,7 +147,7 @@ try {
       await page.fill('#getting-easier', 'Breathing calmly and not panicking under heavy chest pressure.');
 
       // 5. Select context by clicking the touch-friendly label
-      await page.locator('.checkin-context:has-text("Positional Round")').click();
+      await page.locator('.checkin-context:has-text("Practice one spot")').click();
 
       // 6. Verify preview reflects inputs
       const previewStudent = await page.textContent('#preview-student');
@@ -156,7 +156,7 @@ try {
       const previewEasier = await page.textContent('#preview-easier');
 
       if (previewStudent !== 'Leo Miller') throw new Error(`Preview student mismatch: ${previewStudent}`);
-      if (!previewSkill.includes('Getting out from bottom')) throw new Error(`Preview skill mismatch: ${previewSkill}`);
+      if (!previewSkill.includes('Get free when held down')) throw new Error(`Preview skill mismatch: ${previewSkill}`);
       if (previewProblem !== problemVal) throw new Error(`Preview problem mismatch: ${previewProblem}`);
       if (!previewEasier.includes('Breathing calmly')) throw new Error(`Preview easier mismatch: ${previewEasier}`);
 

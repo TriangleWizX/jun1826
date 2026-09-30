@@ -20,11 +20,11 @@ const requiredLabels = [
   'Student Name',
   'Class Date',
   'Main Skill Area',
-  'What problem were they working on?',
-  'What did you see them do?',
-  'Where was this observed?',
-  'Next time, try this.',
-  'Send Parent Text (SMS)',
+  'What were you working on?',
+  'What did I see you do?',
+  'Where did I see it?',
+  'What will I help you try next?',
+  'Send Text (SMS)',
   'Copy Summary',
   'Save PDF / Print',
   'Next Student',
@@ -37,6 +37,8 @@ for (const label of requiredLabels) {
 
 check(script.includes('window.print()'), 'Save PDF must invoke window.print');
 check(script.includes('formatSmsMessage'), 'SMS formatting function missing');
+check(script.includes('Next, I will help you:'), 'SMS must use coach-first-person next-step wording');
+check(script.includes('You were working on:'), 'summary must address the student directly');
 check(script.includes("$('new-student').disabled = true"), 'reset button must begin disabled');
 check(source.includes('/weekly-audit'), 'missing bridge link to weekly audit');
 check(source.includes('/report-card'), 'missing bridge link to report card');

@@ -2,23 +2,23 @@
   'use strict';
 
   const SKILLS = [
-    ['feet_to_floor', 'Standing and falling safely'],
-    ['pin_escapes', 'Getting out from bottom'],
-    ['guard', 'Using the legs from bottom'],
-    ['guard_retention', 'Keeping the legs in front'],
-    ['submission_escapes', 'Getting safe from a hold'],
-    ['pinning', 'Staying on top'],
-    ['base_retention', 'Keeping balance on top'],
-    ['guard_passing', 'Getting past the legs'],
-    ['submissions', 'Finishing a hold safely']
+    ['feet_to_floor', 'Fall safely'],
+    ['pin_escapes', 'Get free when held down'],
+    ['guard', 'Use legs to keep space'],
+    ['guard_retention', 'Keep legs in front'],
+    ['submission_escapes', 'Get free from a hold'],
+    ['pinning', 'Stay on top'],
+    ['base_retention', 'Keep balance on top'],
+    ['guard_passing', 'Get past the legs'],
+    ['submissions', 'Finish with a safe hold']
   ];
 
   const CONTEXTS = [
-    'Positional Round',
-    'Game',
-    'Live Round',
-    'Guided Practice',
-    'Other'
+    ['Positional Round', 'Practice one spot'],
+    ['Game', 'Jiu-jitsu game'],
+    ['Live Round', 'Practice with a partner'],
+    ['Guided Practice', 'Coach-led practice'],
+    ['Other', 'Other']
   ];
 
   const QUICK_PROBLEMS = [
@@ -92,16 +92,16 @@
     const skillLabel = f.skill.value ? f.skill.options[f.skill.selectedIndex]?.textContent : '';
     put('preview-skill', skillLabel, 'Choose a main skill');
 
-    put('preview-problem', f.problem.value.trim(), 'What they were trying to solve');
-    put('preview-observed', f.observed.value.trim(), 'What you saw them do');
+    put('preview-problem', f.problem.value.trim(), 'What you were working on');
+    put('preview-observed', f.observed.value.trim(), 'What I saw you do');
 
     const c = selectedContext();
     const ctxEl = $('preview-context');
     if (ctxEl) {
-      ctxEl.textContent = c ? `Observed during: ${c}` : '';
+      ctxEl.textContent = c ? `We practiced: ${contextLabel(c)}` : '';
     }
 
-    put('preview-next', f.next.value.trim(), 'Next step to try');
+    put('preview-next', f.next.value.trim(), 'What I will help you try next');
 
     const easierVal = f.easier.value.trim();
     put('preview-easier', easierVal, '');
@@ -111,14 +111,18 @@
     }
   }
 
+  function contextLabel(value) {
+    return CONTEXTS.find(([key]) => key === value)?.[1] || value;
+  }
+
   function validate() {
     const errs = [];
     if (!f.student.value.trim()) errs.push('Enter student name.');
     if (!f.date.value) errs.push('Choose a date.');
     if (!f.skill.value) errs.push('Select a main skill.');
-    if (!f.problem.value.trim()) errs.push('Add what they were trying to do.');
-    if (!f.observed.value.trim()) errs.push('Add what you saw them do.');
-    if (!f.next.value.trim()) errs.push('Add what they should try next.');
+    if (!f.problem.value.trim()) errs.push('Add what the student was working on.');
+    if (!f.observed.value.trim()) errs.push('Add what you saw the student do.');
+    if (!f.next.value.trim()) errs.push('Add what you will help the student try next.');
     return errs;
   }
 
@@ -130,14 +134,15 @@
     const nxt = f.next.value.trim();
     const easier = f.easier.value.trim();
 
-    let msg = `Hi! Quick training note from Sandy at Sensei Sandy BJJ regarding ${student}'s class today.\n\n`;
-    msg += `• Focus: ${skill}${prob ? ` (${prob})` : ''}\n`;
-    msg += `• What we saw: ${obs}\n`;
-    msg += `• What to try next: ${nxt}\n`;
+    let msg = `Hi! A quick training note from Sandy at Sensei Sandy BJJ about ${student}'s class today.\n\n`;
+    msg += `• Skill we worked on: ${skill}\n`;
+    if (prob) msg += `• You were working on: ${prob}\n`;
+    msg += `• I saw you: ${obs}\n`;
+    msg += `• Next, I will help you: ${nxt}\n`;
     if (easier) {
-      msg += `• Getting easier: ${easier}\n`;
+      msg += `• You are finding this easier: ${easier}\n`;
     }
-    msg += `\nRide-home question to ask: "What problem were you working on today?"\n- Sensei Sandy`;
+    msg += `\nAsk: "What did you work on today?"\n- Sensei Sandy`;
     return msg;
   }
 
@@ -156,12 +161,12 @@
       `Sensei Sandy BJJ - Daily Training Report`,
       `Student: ${student}`,
       `Date: ${date} ${prog ? `(${prog})` : ''}`,
-      `Main Skill: ${skill}`,
-      `Problem Tested: ${prob || '[Not specified]'}`,
-      `Context: ${ctx || '[None]'}`,
-      `Observed Action: ${obs || '[Not specified]'}`,
-      `Next Step: ${nxt || '[Not specified]'}`,
-      easier ? `Getting Easier: ${easier}` : '',
+      `Skill we worked on: ${skill}`,
+      `You were working on: ${prob || '[Not specified]'}`,
+      `Practice: ${ctx ? contextLabel(ctx) : '[Not specified]'}`,
+      `I saw you: ${obs || '[Not specified]'}`,
+      `Next, I will help you: ${nxt || '[Not specified]'}`,
+      easier ? `You are finding this easier: ${easier}` : '',
       `Coach: Sandy`
     ].filter(Boolean).join('\n');
   }
@@ -485,7 +490,7 @@
         radio.name = 'observation-context';
         radio.value = label;
         const text = document.createElement('span');
-        text.textContent = label;
+        text.textContent = label[1];
         wrap.append(radio, text);
         ctxContainer.appendChild(wrap);
       });
