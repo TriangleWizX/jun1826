@@ -12,7 +12,7 @@ const script = read('js/weekly-audit.js');
 check(source.includes('title: "Weekly Training Check-In | Sensei Sandy BJJ"'), 'title contract missing');
 check(source.includes('canonicalUrl: "https://senseisandy.com/weekly-audit"'), 'canonical contract missing');
 check(source.includes('robots: "noindex, follow"'), 'private route must noindex, follow');
-for (const label of ['Adult check-in', 'Youth check-in', 'Name', 'Week of', 'Main skill', 'What skill did you work on?', 'What did you see?', 'Where did you try it?', 'What will you try next?', 'Live preview']) {
+for (const label of ['Adult check-in', 'Youth check-in', 'Name', 'Week of', 'Main skill', 'Coach: What did I see?', 'Student: What did you say?', 'Where did you try it?', 'Coach: What will I help you try next?', 'What feels easier?', 'Live preview']) {
   check(source.includes(label), `missing required label: ${label}`);
 }
 for (const term of ['Letter', 'Ops API', 'fetch(', 'sessionStorage', 'Students trained', 'Help level', 'Save Student Note', 'History']) {
@@ -26,6 +26,12 @@ check(source.includes('value="receipt"') && source.includes('value="receipt-blan
 check(!source.includes('value="letter"'), 'Letter print mode must be removed');
 check(script.includes('window.print()'), 'print action must invoke window.print');
 check(script.includes('document.body.dataset.printMode'), 'print mode must be reflected on the page');
+check(script.includes('Write what the student said.'), 'validation must identify the student feedback field');
+check(source.includes('I note what I saw. I write your words.'), 'coach voice intro missing');
+check(source.includes('placeholder="I saw you…"'), 'coach observation stem missing');
+check(source.includes('placeholder="You said, “I learned…”"'), 'student feedback stem missing');
+check(source.includes('placeholder="Next, I will help you…"'), 'coach next step stem missing');
+check(source.includes('id="receipt-blank-type"'), 'blank receipt must keep an audience-aware header');
 check(script.includes("$('new-student').disabled = true"), 'new check-in button must start disabled');
 check(output.includes('noindex, follow'), 'built route must remain noindex, follow');
 check(!read('dist/sitemap.xml').includes('/weekly-audit'), 'private route must stay out of sitemap');

@@ -56,9 +56,9 @@
     setPreview('preview-student', name, 'Name');
     setPreview('preview-week', weekLong ? `Week of ${weekLong}` : '', 'Week of …');
     setPreview('preview-skill', skill, 'Pick a skill');
-    setPreview('preview-problem', form.problem.value.trim(), 'What skill did you work on?');
-    setPreview('preview-observed', form.observed.value.trim(), 'What did you see?');
-    setPreview('preview-next', form.next.value.trim(), 'What will you try next?');
+    setPreview('preview-problem', form.problem.value.trim(), 'Coach: What did I see?');
+    setPreview('preview-observed', form.observed.value.trim(), 'Student: What did you say?');
+    setPreview('preview-next', form.next.value.trim(), 'Coach: What will I help you try next?');
     $('preview-context').textContent = context ? `Where: ${context}` : '';
     $('preview-easier').textContent = form.easier.value.trim();
     $('preview-easier-block').hidden = !form.easier.value.trim();
@@ -83,9 +83,9 @@
     if (!form.student.value.trim()) errors.push('Add a name.');
     if (!form.week.value) errors.push('Pick a week.');
     if (!form.skill.value) errors.push('Pick a skill.');
-    if (!form.problem.value.trim()) errors.push('Write the skill you worked on.');
-    if (!form.observed.value.trim()) errors.push('Write what you saw.');
-    if (!form.next.value.trim()) errors.push('Write what you will try next time.');
+    if (!form.problem.value.trim()) errors.push('Write what you saw.');
+    if (!form.observed.value.trim()) errors.push('Write what the student said.');
+    if (!form.next.value.trim()) errors.push('Write what you will help the student try next.');
     return errors;
   }
 
