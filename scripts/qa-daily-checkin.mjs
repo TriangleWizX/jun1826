@@ -24,6 +24,8 @@ const requiredLabels = [
   'What did I see you do?',
   'Where did I see it?',
   'What will I help you try next?',
+  'Coach and Student Check-in',
+  'What You Worked On',
   'Send Text (SMS)',
   'Copy Summary',
   'Save PDF / Print',
