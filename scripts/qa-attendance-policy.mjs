@@ -32,7 +32,7 @@ assert(!has('tannersville', /indoor weekly discipline/i), 'Tannersville: Indoor 
 assert(has('tannersville', /indoor.*weekly practice/i), 'Tannersville: weekly practice replacement is missing');
 assert(has('teens', /recurring training schedule gives teens a place to practice/i), 'Teen page: in-academy routine explanation is missing');
 assert(!has('teens', /school discipline|study habits|makes teens responsible/i), 'Teen page: unsupported school-discipline transfer remains');
-assert(has('reportCard', /not from attendance, one repetition/i), 'Report Card: attendance exclusion is missing');
+assert(has('reportCard', /do not update a stage from attendance, one repetition/i), 'Report Card: attendance exclusion is missing');
 assert(!/attendance\s*(?:score|state)|attendance.*promotion|promotion.*attendance|perfect-attendance|classes until stripe/i.test(files.reportCard + files.parent), 'Assessment: attendance is connected mechanically to evaluation or promotion');
 
 if (failures.length) {

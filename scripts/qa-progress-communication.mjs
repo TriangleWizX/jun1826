@@ -25,7 +25,7 @@ assert.doesNotMatch(gain, /Gain Points|\+1\s+(Calm|Focus|Confidence|Boundaries|S
 
 assert.match(report, /(?:enough|repeated) live evidence/);
 assert.match(report, /(?:not a (?:school )?grade|Skills, not grades|neither is a grade)/i);
-assert.match(report, /(?:Leaving a state unchanged is okay|No change is still information|not perfection)/i);
+assert.match(report, /(?:A stage can stay the same|No change is still information|not perfection)/i);
 assert.match(parent, /(?:What felt hard\?|Your child knows when a round felt hard|Keep the ride home supportive|Please ask what felt different)/i);
 assert.match(hub, /What problem were you working on today\?/);
 assert.match(hub, /href="\/report-card"/);

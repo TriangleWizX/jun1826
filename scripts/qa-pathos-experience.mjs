@@ -45,7 +45,7 @@ checkPhrases('Parent Guide', parent, [
 ]);
 
 checkPhrases('Report Card', report, [
-  /(?:specific observation|Write three short notes|notes give context|Observation context)/i,
+  /(?:specific observation|Write three short notes|notes add context|Where I saw it)/i,
   /(?:next constraint|what to try next|what comes next)/i,
   /(?:failed attempt is information|information, not failure|useful information)/i
 ]);

@@ -18,10 +18,10 @@ const checks = [
   ]],
   ['Report Card', read('dist/report-card.html'), [
     loop,
-    /(?:next problem can be chosen from evidence|use what happened in class to choose the next problem|Problem tested)/i,
+    /(?:next problem can be chosen from evidence|I use what happened in class to choose what we can practice next|Problem tested)/i,
     /(?:Problem tested|problem-tested)/i,
     /(?:Name the problem, not a technique count|Skills, not grades|Write down the problem)/i,
-    /(?:Record the student, problem, conditions, observed behavior, and next constraint|Write down the problem, what happened, and what to try next)/i,
+    /(?:Record the student, problem, conditions, observed behavior, and next constraint|I write down the problem, what happened, and what we will try next)/i,
     /(?:failed attempt is information|useful information, not failure|Progress is information, not pass or fail)/i
   ]],
   ['Goal Mapping', read('dist/free-bjj-intro-tannersville-ny/index.html'), [
