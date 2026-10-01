@@ -814,6 +814,48 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 @media (max-width: 560px) { .rc-domain-row::after { position: static; order: 3; display: block; width: 100%; padding: 0 0 0 40px; background: transparent; color: var(--ss-rc-muted); box-shadow: none; opacity: 1; transform: none; font-size: .72rem; line-height: 1.4; text-align: left; } }
  .rc-section-title { max-width: 56rem; margin: 1.25rem auto -0.5rem; padding: 0 0.25rem; color: var(--ss-rc-dark); font-family: var(--font-body, 'Lexend', sans-serif); font-size: 1rem; font-weight: 700; letter-spacing: 0; }
 @media (max-width: 560px) { .rc-section-title { margin-top: .75rem; padding: 0; font-size: .95rem; } }
+
+/* Hallmark · genre: editorial · macrostructure: Workbench · design-system: design.md · designed-as-app */
+/* Align the review workspace with Weekly Audit without changing printed reports. */
+@media screen {
+  .ss-main { max-width: 1180px; margin: 0 auto; padding: var(--space-lg) var(--space-sm) var(--space-xl); overflow-x: clip; }
+  .rc-page-header { max-width: none; margin: 0 0 var(--space-lg); padding: 0; }
+  .rc-page-title { margin: 0 0 var(--space-2xs); font-weight: 400; line-height: 1.05; overflow-wrap: anywhere; }
+  .rc-page-subtitle { font-size: var(--text-md); }
+  .rc-page-eyebrow, .rc-page-divider, .rc-watermark-left, .rc-watermark-right, .lotus-watermark, .rc-action-bg-pattern, .rc-action-logo, .rc-footer-logo { display: none; }
+  .rc-development-map { max-width: none; margin: 0 0 var(--space-lg); padding: var(--space-lg); background: var(--color-paper); }
+  .rc-development-axes article { background: transparent; border-radius: 0; border-top: 1px solid var(--color-rule); padding: var(--space-sm) 0 0; }
+  .rc-development-axis select { min-height: 46px; font-size: var(--text-sm); background: var(--color-paper); }
+  .rc-summary-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rc-summary-row .rc-card { min-width: 0; }
+  .rc-summary-row input, .rc-summary-row select { max-width: 100%; }
+  .rc-dashboard-grid { max-width: none; padding: 0; gap: var(--space-lg); }
+  .rc-section-title { max-width: none; width: 100%; margin: 0; padding: 0; font-size: var(--text-lg); }
+  .rc-card { padding: var(--space-md); background: var(--color-paper); }
+  .rc-card-label { color: var(--color-ink); font-size: var(--text-md); letter-spacing: 0; text-transform: none; }
+  .rc-field-label { font-size: var(--text-sm); color: var(--color-ink); }
+  .rc-value-input { font-size: var(--text-lg); }
+  .rc-domain-row { flex-wrap: wrap; gap: var(--space-xs); padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-rule); }
+  .rc-domain-name { flex: 1; font-size: var(--text-md); }
+  .rc-skill-control { flex-basis: 100%; margin-left: 0; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-2xs); }
+  .rc-skill-control label span { min-height: 46px; font-size: var(--text-xs); background: var(--color-paper); }
+  .rc-focus-help, .rc-coach-guidance, .rc-card--skill-guide dl, .rc-parent-interpretation { font-size: var(--text-sm); }
+  .rc-output-actions button { border-radius: var(--radius-button); }
+  .rc-card--action { background: var(--color-paper-2); color: var(--color-ink); }
+  .rc-action-title { color: var(--color-ink); font-family: var(--font-display); font-weight: 400; }
+  .rc-card--action .text-white { color: var(--color-accent) !important; }
+  .report-card-copy { max-width: 1180px; margin: var(--space-lg) auto; background: transparent; border: 0; border-top: 1px solid var(--color-rule); padding: var(--space-lg) var(--space-sm); }
+}
+@media screen and (max-width: 800px) {
+  .ss-main { padding: var(--space-sm) var(--space-xs) var(--space-lg); }
+  .rc-development-map, .rc-card { padding: var(--space-sm); }
+  .rc-summary-row, .rc-main-row, .rc-bottom-row { grid-template-columns: minmax(0, 1fr); }
+  .rc-dashboard-grid { gap: var(--space-md); }
+  .rc-skill-control { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rc-domain-row::after { position: static; display: block; width: 100%; order: 3; opacity: 1; transform: none; background: transparent; color: var(--color-muted); padding: 0; box-shadow: none; font-size: var(--text-xs); }
+  .rc-development-axes { grid-template-columns: minmax(0, 1fr); }
+  .rc-development-axes p { min-height: 0; }
+}
 </style>
 <main class="ss-main">
 <!-- SVG Vector Watermarks -->
@@ -851,7 +893,6 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <div class="rc-card-header"><span class="rc-card-label">Progress Map</span></div>
 <h2 id="development-map-title">Skills You Are Learning</h2>
 <p class="rc-page-subtitle">These stages show what I see in class. They are not grades.</p>
-<p class="rc-development-intro">I pick a stage after I see a skill more than once. A stage can stay the same. This helps us pick what to practice.</p>
 <p class="rc-development-intro">I pick a stage after I see a skill more than once. A stage can stay the same. This helps us pick what to practice.</p>
 <div class="rc-development-axes">
 <article class="rc-development-axis"><h3>Recognize</h3><p>Can you tell what is going on?</p><label class="visually-hidden" for="development-recognize">Recognize state</label><select id="development-recognize" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
