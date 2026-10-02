@@ -37,7 +37,12 @@ try{
     await page.locator('footer').last().scrollIntoViewIfNeeded();
     await page.screenshot({path:path.join(output,`live-${viewport.width}-footer.png`)});
     assert.deepEqual(errors,[]);
-    results.push({viewport,tracking:true,cardAndSourcePrefill:true,noOverflow:true,ctaAboveFold:true,formVisible:true,pageErrors:errors,realSubmissions:0});
+    await page.goto(base+'/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01',{waitUntil:'networkidle'});
+    assert.equal(await page.locator('#friend-pass-card-code').inputValue(),'ST01');
+    assert.equal(await page.locator('#friend-pass-source-url').inputValue(),page.url());
+    assert(page.url().includes('utm_content=gt01'));
+    assert.deepEqual(errors,[]);
+    results.push({viewport,tracking:true,cardAndSourcePrefill:true,legacyMapsToST:true,originalLegacySourcePreserved:true,noOverflow:true,ctaAboveFold:true,formVisible:true,pageErrors:errors,realSubmissions:0});
     await context.close();
   }
   fs.writeFileSync(path.join(output,'live-browser-results.json'),JSON.stringify(results,null,2));

@@ -40,5 +40,100 @@
       "pageErrors": [],
       "realSubmissions": 0
     }
-  ]
+  ],
+  "release_commit": "0374d43129871ee59eac69d130cd1e05856aca43",
+  "live_browser": [
+    {
+      "viewport": {
+        "width": 375,
+        "height": 900
+      },
+      "tracking": true,
+      "cardAndSourcePrefill": true,
+      "legacyMapsToST": true,
+      "originalLegacySourcePreserved": true,
+      "noOverflow": true,
+      "ctaAboveFold": true,
+      "formVisible": true,
+      "pageErrors": [],
+      "realSubmissions": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "tracking": true,
+      "cardAndSourcePrefill": true,
+      "legacyMapsToST": true,
+      "originalLegacySourcePreserved": true,
+      "noOverflow": true,
+      "ctaAboveFold": true,
+      "formVisible": true,
+      "pageErrors": [],
+      "realSubmissions": 0
+    }
+  ],
+  "http": [
+    {
+      "url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01",
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01",
+      "status": 200,
+      "ST_input": true,
+      "metadata": true,
+      "offerAndEndpointPreserved": true
+    },
+    {
+      "url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st10",
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st10",
+      "status": 200,
+      "ST_input": true,
+      "metadata": true,
+      "offerAndEndpointPreserved": true
+    },
+    {
+      "url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "status": 200,
+      "ST_input": true,
+      "metadata": true,
+      "offerAndEndpointPreserved": true
+    },
+    {
+      "url": "https://senseisandy.com/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01",
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01",
+      "status": 200,
+      "ST_input": true,
+      "metadata": true,
+      "offerAndEndpointPreserved": true
+    },
+    {
+      "url": "https://senseisandy.com/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st10",
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st10",
+      "status": 200,
+      "ST_input": true,
+      "metadata": true,
+      "offerAndEndpointPreserved": true
+    },
+    {
+      "url": "https://senseisandy.com/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "status": 200,
+      "ST_input": true,
+      "metadata": true,
+      "offerAndEndpointPreserved": true
+    }
+  ],
+  "remote_bytes": {
+    "mode": "after",
+    "path": "bring-a-friend.html",
+    "bytes": 23260,
+    "sha256": "d55da741c947bcc78730510e224dbdd3a3a1c4d2b49e56ec3bdf7edb815b23cf"
+  },
+  "rollback": {
+    "mode": "before",
+    "path": "bring-a-friend.html",
+    "bytes": 22696,
+    "sha256": "d30b932f24ddfbaa4ee3dd454b67cc5eb0b2a5176398ad393c0b21a08331964f"
+  }
 }

@@ -33,6 +33,10 @@ The reading estimate uses a small local syllable counter with explicit word over
 
 The full `qa:cal-migration` scan found an existing missing `/assets/js/analytics-events.min.js` on the unrelated Hyphen Weekend route, plus old CSS references on unrelated routes. The affected booking fixture passes. Those unrelated pages are excluded from this release. `qa:definition-of-done` is not a script in this checkout; the available focused checks were used. No gate was weakened to mask those gaps.
 
+## ST code update
+
+Current codes are ST01–ST10. The site update is deployed and verified. See `CARD-CODE-RELEASE.md` and `card-code-qa.json` for the new QR, form and live checks. Historical release results retain their original GT codes. ST01 hardware checks below remain pending.
+
 ## Website release
 
 See RELEASE.md for the exact payload, commit, backup, deployment, and live evidence. Local checks alone do not prove deployment.
