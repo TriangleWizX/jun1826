@@ -1,0 +1,364 @@
+{
+  "release_commit": "d2a551ae",
+  "remote_exact_bytes": [
+    {
+      "path": "assets/css/pages/shiney-ticket.css",
+      "bytes": 7044,
+      "sha256": "ba0d3473f3662713597a58bcda442a7d0cb74462cabb140524552e1c397efa6d"
+    },
+    {
+      "path": "assets/css/pages/shiney-ticket.d0acd0.css",
+      "bytes": 7044,
+      "sha256": "ba0d3473f3662713597a58bcda442a7d0cb74462cabb140524552e1c397efa6d"
+    },
+    {
+      "path": "assets/data/asset-hash-manifest.json",
+      "bytes": 13802,
+      "sha256": "71acbca4f2509f482ecbebe99d0aa1646d68d51b10de71c798fd0e59ccde2dfe"
+    },
+    {
+      "path": "bjj-classes/adults-tannersville-ny/index.html",
+      "bytes": 26409,
+      "sha256": "09a5e901ed2cd7022f0340007373e9462d43cc8751dbb993649e2e3c66fb344d"
+    },
+    {
+      "path": "bjj-classes/haines-falls-ny/index.html",
+      "bytes": 24579,
+      "sha256": "853f4cfac8327e0ecd03f2f510c4d864640ac6c4b7ce6e3d4a1021a3ee79764e"
+    },
+    {
+      "path": "bjj-classes/hunter-ny/index.html",
+      "bytes": 24625,
+      "sha256": "4c1ea65c964a5a75c07564ec04a640b2d5a0a1831a6832e6b9a475edc8328c67"
+    },
+    {
+      "path": "bjj-classes/tannersville-ny/index.html",
+      "bytes": 26167,
+      "sha256": "dad23a6848ca744928030aa7ab1f6b4dfe98448d8fed1c4d1a14a281efed902e"
+    },
+    {
+      "path": "bjj-classes/windham-ny/index.html",
+      "bytes": 24599,
+      "sha256": "f996fbd676fa481c240d37d4f2a2c3e19b302a944490d7eb3aca98a8b4b18ab0"
+    },
+    {
+      "path": "bring-a-friend.html",
+      "bytes": 22696,
+      "sha256": "d30b932f24ddfbaa4ee3dd454b67cc5eb0b2a5176398ad393c0b21a08331964f"
+    },
+    {
+      "path": "contact.html",
+      "bytes": 20305,
+      "sha256": "33fa1b357f0dd03e866672ba420cdcfdd3637ebcfafb951cd1865994e562342b"
+    },
+    {
+      "path": "free-bjj-intro-tannersville-ny/confirmation/index.html",
+      "bytes": 13820,
+      "sha256": "11b317542a031586687d4bdce206ff53adf0bd01a45ab6bc61a5e843a3f7789b"
+    },
+    {
+      "path": "free-bjj-intro-tannersville-ny/index.html",
+      "bytes": 27364,
+      "sha256": "a2f41946bfcf137d59805bd458ebfbb4245dfdba03d26c66db226135ea77841b"
+    },
+    {
+      "path": "how-class-works.html",
+      "bytes": 25325,
+      "sha256": "482cb1bd3a134cac66f9278e552052857ac511b969a52eeb60c6d7e2a81f2040"
+    },
+    {
+      "path": "index.html",
+      "bytes": 73552,
+      "sha256": "2ddac24b2c43c9afea75afdd9dcb592fe5c12730a43e4e7b427498f7e76a1802"
+    },
+    {
+      "path": "options-pricing.html",
+      "bytes": 11126,
+      "sha256": "932ef30380a4c6813aa44ed359fef2eb4d6347d96aa74767a48fc803630f9e71"
+    },
+    {
+      "path": "options-pricing/index.html",
+      "bytes": 51171,
+      "sha256": "67199872a4cf2f298fda0d8ca33ae22f05b3994888c0c021dceea34406f81e0e"
+    },
+    {
+      "path": "partials/acquisition-editorial-rail.html",
+      "bytes": 1198,
+      "sha256": "c01630a6a45429cf80b4336225f99935f2f9e7061952c3ee5e612bcef018297a"
+    },
+    {
+      "path": "partials/booking-router.html",
+      "bytes": 2423,
+      "sha256": "e961c53917aeb2dd8b51b02b963c12a2655f1dd3b1f6287c8f3905db208cb104"
+    },
+    {
+      "path": "partials/conversion-rail.html",
+      "bytes": 2260,
+      "sha256": "fd1b62862c24d0a108d4db518958c2e15a1c2d024f7944be96c3582f0e6722e8"
+    },
+    {
+      "path": "partials/home-conversion-shell.html",
+      "bytes": 40515,
+      "sha256": "2751f553c04fb05061c2994703014bbc76b958fccfdd097fda181a641dfa4e54"
+    },
+    {
+      "path": "partials/program-conversion-adults.html",
+      "bytes": 13792,
+      "sha256": "56fa2f6499e482f33eb64401f77c4e772709eb0a044afae35912a68afb72eea4"
+    },
+    {
+      "path": "programs.html",
+      "bytes": 28529,
+      "sha256": "7addadbb3052d53b5e240139c73c06f266e2e55fa170d66b8865850003d8ea31"
+    },
+    {
+      "path": "show-up-kit.html",
+      "bytes": 30825,
+      "sha256": "12da94ac64ecd78e01eeb1240e05d2dc1cbfabbf5b76a9c65418cbb9c2077b36"
+    }
+  ],
+  "http_routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/programs",
+      "status": 200,
+      "final_url": "https://senseisandy.com/programs",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/programs.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/programs",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "final_url": "https://senseisandy.com/contact",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/contact.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/contact",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/show-up-kit",
+      "status": 200,
+      "final_url": "https://senseisandy.com/show-up-kit",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/show-up-kit.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/show-up-kit",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/how-class-works",
+      "status": 200,
+      "final_url": "https://senseisandy.com/how-class-works",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/how-class-works.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/how-class-works",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/options-pricing",
+      "status": 200,
+      "final_url": "https://senseisandy.com/options-pricing",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/options-pricing.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/options-pricing",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/options-pricing/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/options-pricing",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/free-bjj-intro-tannersville-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/free-bjj-intro-tannersville-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/free-bjj-intro-tannersville-ny/index.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/free-bjj-intro-tannersville-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/free-bjj-intro-tannersville-ny/confirmation/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/free-bjj-intro-tannersville-ny/confirmation",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/free-bjj-intro-tannersville-ny/confirmation/index.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/free-bjj-intro-tannersville-ny/confirmation",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/adults-tannersville-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/adults-tannersville-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/adults-tannersville-ny/index.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/adults-tannersville-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/haines-falls-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/haines-falls-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/haines-falls-ny/index.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/haines-falls-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/hunter-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/hunter-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/hunter-ny/index.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/hunter-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/tannersville-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/tannersville-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/tannersville-ny/index.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/tannersville-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/windham-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/windham-ny",
+      "metadata": true,
+      "expected_policy": true
+    },
+    {
+      "route": "/bjj-classes/windham-ny/index.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/windham-ny",
+      "metadata": true,
+      "expected_policy": true
+    }
+  ],
+  "css_exact_http_bytes": [
+    "assets/css/pages/shiney-ticket.css",
+    "assets/css/pages/shiney-ticket.d0acd0.css"
+  ],
+  "browser": [
+    {
+      "viewport": {
+        "width": 375,
+        "height": 900
+      },
+      "tracking": true,
+      "cardAndSourcePrefill": true,
+      "noOverflow": true,
+      "ctaAboveFold": true,
+      "formVisible": true,
+      "pageErrors": [],
+      "realSubmissions": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "tracking": true,
+      "cardAndSourcePrefill": true,
+      "noOverflow": true,
+      "ctaAboveFold": true,
+      "formVisible": true,
+      "pageErrors": [],
+      "realSubmissions": 0
+    }
+  ],
+  "real_form_submissions": 0,
+  "rollback_source_commit": "054245d7b37c55f927d8b9716e7e6a4a34a7bdf3",
+  "retained_backup": {
+    "name": "senseisandy-predeploy-20260822T172530Z.tar.gz",
+    "mtime": 1787419641.8753922,
+    "bytes": 1112366137,
+    "gzip_and_required_roots_valid": true,
+    "payload_paths_absent_from_older_backup": [
+      "assets/css/pages/shiney-ticket.css",
+      "assets/css/pages/shiney-ticket.d0acd0.css",
+      "partials/home-conversion-shell.html",
+      "partials/program-conversion-adults.html"
+    ]
+  }
+}
