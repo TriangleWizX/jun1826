@@ -7,7 +7,7 @@ Started October 1; prepared October 2, 2026. Owner: Sandy. Scope: GT01-only pilo
 The guest gets four free classes in two weeks. Train with the friend who gave you the card. Sandy starts the pass at the first attended class. That class counts as one of four. That date is day one. Use all four by the end of day 14. Sandy sets each class and gives the guest the end date. The member earns the same $35 credit when the friend's first eligible 12-week plan payment clears.
 
 1. Read [the playbook](PLAYBOOK.md) for the offer, handoffs, economics, and weekly decisions.
-2. Rewrite GT01 with its new `shiney_ticket` link in [card-urls.csv](card-urls.csv). Keep it rewritable. Read it back, close NFC Tools, and tap it. Check the full link and code.
+2. GT01 now has the new `shiney_ticket` link. Sandy reports that the read-back and Android tap open the right page and code.
 3. Use [the GT01 print sheet](shiney-ticket-GT01.pdf) at actual size. It contains one front/back pair and a scale check. The matching QR and NFC record use the same link.
 4. Scan the printed GT01 QR. Leave GT02–GT10 blank and in reserve.
 5. Put copies of the blank CSV templates in your existing restricted operations storage before recording people or transactions. Keep this repository's copies blank.
@@ -37,7 +37,7 @@ The guest gets four free classes in two weeks. Train with the friend who gave yo
 
 ## Name and link
 
-The name is **Shiney Ticket**, with Sandy's exact spelling. The new links use `utm_campaign=shiney_ticket`. GT01's old link passed Sandy's Android test. The new link needs a physical rewrite and test. The old link still opens the page, but its campaign stays `golden_ticket` until the card is rewritten.
+The name is **Shiney Ticket**, with Sandy's exact spelling. The new links use `utm_campaign=shiney_ticket`. GT01's old and new links passed Sandy's Android tests. The new campaign is now user-verified. The old link still opens the page, but its campaign stays `golden_ticket` until the card is rewritten.
 
 ## Current status
 

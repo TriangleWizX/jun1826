@@ -42,8 +42,8 @@ See RELEASE.md for the exact payload, commit, backup, deployment, and live evide
 | Step | State |
 |---|---|
 | Old GT01 write, read-back, and Android open | Passed, reported by Sandy for `golden_ticket` |
-| New GT01 rewrite to `shiney_ticket` | Pending |
-| New GT01 read-back and browser open | Pending |
+| New GT01 rewrite to `shiney_ticket` | Passed, reported by Sandy |
+| New GT01 read-back and browser open | Passed, reported by Sandy |
 | Actual printed QR scan | Pending |
 | Actual inbox receipt with code and source URL | Pending |
 | Blank logs copied to private storage | Pending |

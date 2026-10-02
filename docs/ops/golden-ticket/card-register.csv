@@ -1,5 +1,5 @@
 card_id,physical_status,current_cycle_id,programmed_at,android_model,readback_pass,browser_pass,printed_qr_pass,last_tested_at,evidence_reference,expected_campaign,prior_campaign,prior_readback_pass,prior_browser_pass,prior_tested_at,prior_evidence_reference
-GT01,rewrite_awaiting_check,,2026-10-02,Android; model not provided,,,,,new_campaign_rewrite_pending,shiney_ticket,golden_ticket,pass,pass,2026-10-02,user_report_in_thread_2026-10-02
+GT01,programmed_awaiting_print_check,,2026-10-02,Android; model not provided,pass,pass,,2026-10-02,user_report_2026-10-02_shiney_campaign_gt01,shiney_ticket,golden_ticket,pass,pass,2026-10-02,user_report_in_thread_2026-10-02
 GT02,unprogrammed,,,,,,,,,shiney_ticket,,,,,
 GT03,unprogrammed,,,,,,,,,shiney_ticket,,,,,
 GT04,unprogrammed,,,,,,,,,shiney_ticket,,,,,

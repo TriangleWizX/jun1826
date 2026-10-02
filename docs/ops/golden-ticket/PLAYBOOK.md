@@ -43,7 +43,7 @@ Keep card custody, invitation cycles, guests, and reward transactions separate. 
 
 ### Prepare
 
-1. Rewrite GT01 with `utm_campaign=shiney_ticket`, read it back, and test browser opening and the new printed QR. The user-reported pass belongs to the old campaign. Keep the other nine cards blank.
+1. GT01 is written with `utm_campaign=shiney_ticket`; Sandy reports successful read-back and browser opening with the correct code. Test the new printed QR next. Keep the other nine cards blank.
 2. Keep the links free of names, phone numbers, or member IDs. Use the fixed public code `gt01` through `gt10`.
 3. Copy the blank ledgers into restricted operations storage. Use internal member/guest references there, with personal contact data retained in the existing customer system. Do not fill these repository templates with customer information.
 4. Confirm actual class space and Sandy's available arrival/welcome window before offering a guest a specific slot. Use the current schedule, not times printed on cards.

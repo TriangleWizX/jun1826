@@ -1,6 +1,6 @@
 # Shiney Ticket: GT01 on Android
 
-Current scope: GT01 only. Sandy tested the old link. Rewrite the card with the new link below. Keep the other nine blank.
+Current scope: GT01 only. Sandy reports that the new link below reads back and opens the right Shiney Ticket page and code on Android. Keep the other nine blank. The steps below are for reference.
 
 `https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01`
 
