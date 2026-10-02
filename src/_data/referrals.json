@@ -1,0 +1,39 @@
+{
+  "name": "Shiney Ticket",
+  "campaign": "shiney_ticket",
+  "adultOnly": true,
+  "firstTimeGuestsOnly": true,
+  "memberInvitationRequired": true,
+  "classesIncluded": 4,
+  "windowDays": 14,
+  "activationEvent": "first_attended_class",
+  "activatedBy": "Sandy",
+  "firstClassCounts": true,
+  "dayOneIsActivationDate": true,
+  "expiresAtEndOfLocalDay": true,
+  "timezone": "America/New_York",
+  "partnerAttendanceByConfirmation": true,
+  "reservationRequiredEachClass": true,
+  "waiverRequired": true,
+  "reward": {
+    "name": "Shiney Ticket credit",
+    "amount": 35,
+    "trigger": "qualifying_first_12_week_program_enrollment_first_payment_cleared",
+    "uses": [
+      "academy gear",
+      "events",
+      "account credit"
+    ],
+    "onePerNewReferredStudent": true,
+    "cashValue": false,
+    "immediateFamilyExcluded": true,
+    "communityServicePricingStacking": false
+  },
+  "publicCopy": {
+    "offer": "Four free classes in two weeks. Train with the friend who invited you.",
+    "activation": "Sandy starts your pass at your first class. That class counts as one of four. Use all four by the end of day 14.",
+    "activationNote": "Tapping or scanning your card opens this page. Your pass starts when you attend class.",
+    "classPlan": "Sandy confirms each class and space. Ask to train with your friend. Sandy matches each pair.",
+    "reward": "Your friend joins their first 12-week plan. Their first payment clears. You earn $35 to use at the school."
+  }
+}

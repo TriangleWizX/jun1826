@@ -1,15 +1,18 @@
 {
   "primaryCtaLabel": "Reserve Your Free First Visit",
- "supportingText": "Start with a 15-minute first visit in normal clothes; no workout is required, and Sandy schedules your coached first class afterward.",
+  "supportingText": "Start with a 15-minute Free First Visit. Adults can choose to train that day. Sandy must confirm the class first. You can choose sparring too. This means live practice with a matched partner. You can pause or end a round at any time. Youth use their own visit and class plan.",
   "goalMappingDurationMinutes": 15,
-  "goalMappingClothing": "Normal clothes; no workout required",
+  "goalMappingClothing": "For a visit, wear your own day clothes. To train, wear clean sports clothes. Follow Sandy's class and arrival plan.",
   "generalPath": {
     "name": "Free First Visit",
     "firstStep": "15-minute Goal Mapping visit",
     "workoutRequired": false,
     "normalClothes": true,
-    "classSameVisit": false,
-    "nextStep": "Sandy recommends and schedules the coached first class afterward"
+    "classSameVisit": true,
+    "nextStep": "After the visit, adults may choose a coach-confirmed class that day or plan a later class",
+    "visitRequired": true,
+    "sameDayTrainingElective": true,
+    "coachConfirmationRequired": true
   },
   "youthCombinedPath": {
     "name": "Youth first visit + coached class",
@@ -24,25 +27,51 @@
       "stepNumber": 1,
       "title": "Reserve Your Free First Visit",
       "subtitle": "First visit before class",
-      "description": "Request your visit online. Pick your preferred student lane (Kids, Teens, Adults) and general schedule preferences."
+      "description": "Ask for your first visit. Choose Kids, Teens, or Adults. Share what times suit you."
     },
     {
       "stepNumber": 2,
       "title": "Meet Sandy for your first visit",
       "subtitle": "One-visit starting plan",
-      "description": "Tour the mats, review safety, discuss goals, and set the starting plan. The general path schedules class afterward; the specialized youth path can combine both during one visit."
+      "description": "Meet Sandy. See the room and learn the rules. Talk about your goals and plan your class."
     },
     {
       "stepNumber": 3,
       "title": "Choose the right first class",
       "subtitle": "Matched, coached first class",
-      "description": "The general first visit uses normal clothes and requires no workout. Specialized youth requests plan for 60–75 minutes and arrive 20 minutes early in clean athletic clothing. Adults receive class-specific scheduling guidance."
+      "description": "Adults can choose to train after the visit that day. Sandy confirms the class first. You can also choose a later day. Youth follow their own class plan."
     },
     {
       "stepNumber": 4,
       "title": "Free First Class",
       "subtitle": "Coached Learning Experience",
-      "description": "Step onto the mat for a calm, guided introduction to Jiu-Jitsu with complete freedom to decide afterwards."
+      "description": "Try a coached first class at your pace. Adults can choose live partner practice. You can pause or end a round at any time."
     }
-  ]
+  ],
+  "adultFirstDay": {
+    "visitRequired": true,
+    "sameDayTrainingElective": true,
+    "sparringElective": true,
+    "coachConfirmationRequired": true,
+    "waiverRequiredBeforeTraining": true,
+    "studentConsentRequired": true,
+    "partnerMatchingRequired": true,
+    "challenge": {
+      "name": "The Sandy Challenge",
+      "elective": true,
+      "adultOnly": true,
+      "coachLed": true,
+      "timed": true,
+      "agreedRulesRequired": true,
+      "verbalStopSignal": "pause",
+      "publicDescription": "Try a timed round with Sandy. A belt holds his arms at his sides. He uses movement to defend. You both agree on rules first. Either of you can say \"pause\" to end the round. Sandy releases the belt when the round ends. You choose if you take part."
+    }
+  },
+  "publicCopy": {
+    "overview": "Start with a 15-minute Free First Visit. Adults can choose to train that day. Sandy must confirm the class first. You can choose sparring too. This means live practice with a matched partner. You can pause or end a round at any time. Youth use their own visit and class plan.",
+    "clothing": "For a visit, wear your own day clothes. To train, wear clean sports clothes. Follow Sandy's class and arrival plan.",
+    "adultTraining": "Meet Sandy for your first visit. Then choose to train that day or come back for class. Sandy confirms the plan with you.",
+    "sparring": "Sparring is live practice with a partner. You can choose to try it on day one. Sandy matches the partner and pace. You can pause or end a round at any time.",
+    "challenge": "Try a timed round with Sandy. A belt holds his arms at his sides. He uses movement to defend. You both agree on rules first. Either of you can say \"pause\" to end the round. Sandy releases the belt when the round ends. You choose if you take part."
+  }
 }

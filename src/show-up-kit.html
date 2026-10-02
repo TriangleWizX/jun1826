@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Show-Up Kit: Your First Visit, Then Your First Class | Sensei Sandy"
-description: "Prepare for your Free First Visit at Sensei Sandy BJJ. The standard visit is 15 minutes; a same-visit class is available only through the specialized youth booking workflow."
+description: "Plan your first visit at Sensei Sandy BJJ. Adults can choose to train that day. See what to wear, what to bring, and how Sandy sets the class."
 canonicalUrl: "https://senseisandy.com/show-up-kit"
 socialImage: "https://senseisandy.com/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.webp"
 bodyClass: "page-show-up-kit ss-page ss-page-show-up-kit"
@@ -24,12 +24,12 @@ permalink: "/show-up-kit.html"
 <div class="showup-hero-copy">
 <p class="showup-hero-kicker">Show-Up Kit · For your reserved visit</p>
 <h1 class="showup-hero-title" data-showup-hero-headline="" id="showup-title"><span>Your First Visit,</span><span>Then Your First Class</span></h1>
-<p class="showup-hero-lede" data-showup-hero-lede="">The standard Free First Visit is 15 minutes in normal clothes; no workout is required. A same-visit class is available only through the specialized youth booking workflow. Follow the arrival details in your booking confirmation.</p>
+<p class="showup-hero-lede" data-showup-hero-lede="">{{ freeIntro.publicCopy.overview }}</p>
 <div class="showup-hero-summary">
 <p>Not booked yet? <a href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free First Visit</a>. Already booked? Follow the arrival and clothing instructions in your confirmation, then use the checklist below.</p>
 </div>
 <div class="showup-hero-meta">
-<span><span class="showup-meta-label">Adult First Visit</span><span class="showup-meta-value">Normal clothes · No workout · 5 minutes early</span></span>
+<span><span class="showup-meta-label">Adult First Visit</span><span class="showup-meta-value">Meet Sandy · Choose your class plan</span></span>
 <span><span class="showup-meta-label">First Class</span><span class="showup-meta-value">Training clothes · Water · 10 minutes early</span></span>
 <span>
 <span class="showup-meta-label">Questions</span>
@@ -84,17 +84,17 @@ permalink: "/show-up-kit.html"
 <article class="showup-panel showup-panel--accent">
 <p class="showup-panel__eyebrow">Step 1</p>
 <h2 class="showup-panel__title" id="showup-bento-title">Adult First Visit</h2>
-<p class="showup-panel__lede">15 minutes. No workout required.</p>
+<p class="showup-panel__lede">15 minutes. Adults can choose to train after the visit. Sandy confirms the class first.</p>
 <div class="showup-check-grid">
 <div class="showup-check-item">
 <span><svg aria-hidden="true" class="showup-icon" focusable="false"><use href="#showup-icon-shirt"></use></svg></span>
-<strong>Adults: wear normal clothes</strong>
-<span>No workout during this appointment.</span>
+<strong>Adults: dress for your plan</strong>
+<span>{{ freeIntro.publicCopy.clothing }}</span>
 </div>
 <div class="showup-check-item">
 <span><svg aria-hidden="true" class="showup-icon" focusable="false"><use href="#showup-icon-doc-check"></use></svg></span>
 <strong>Bring your calendar</strong>
-<span>Sandy will recommend and schedule the coached first class afterward. Youth and teen visitors use the combined-visit checklist below.</span>
+<span>{{ freeIntro.publicCopy.adultTraining }} Youth and teen visitors use the checklist below.</span>
 </div>
 <div class="showup-check-item">
 <span><svg aria-hidden="true" class="showup-icon" focusable="false"><use href="#showup-icon-droplet"></use></svg></span>
@@ -137,7 +137,7 @@ permalink: "/show-up-kit.html"
 <div class="showup-check-item">
 <span><svg aria-hidden="true" class="showup-icon" focusable="false"><use href="#showup-icon-doc-check"></use></svg></span>
 <strong>Complete the waiver</strong>
-<span>Complete it before training or on-site as Sandy confirms; it is not a workout requirement for first visit.</span>
+<span>Fill out your waiver before you train. Sandy will tell you how.</span>
 </div>
 <div class="showup-check-item">
 <span><svg aria-hidden="true" class="showup-icon" focusable="false"><use href="#showup-icon-parking"></use></svg></span>
@@ -190,7 +190,7 @@ permalink: "/show-up-kit.html"
 <div class="showup-timeline-intro">
 <p class="showup-panel__eyebrow">Your First Visit</p>
 <h2 class="showup-panel__title" id="showup-visit-title">A calm sequence from door to next step.</h2>
-<p class="showup-panel__lede">Adult First Visits are not training. Youth First Visits may continue directly into class. Sandy helps you understand the room, your goals, and the class that fits.</p>
+<p class="showup-panel__lede">{{ freeIntro.publicCopy.adultTraining }} Youth follow their own class plan.</p>
 </div>
 <ol class="showup-timeline-list">
 <li class="showup-timeline-item">
@@ -218,7 +218,7 @@ permalink: "/show-up-kit.html"
 <div class="showup-step-num">04</div>
 <div>
 <h3>Choose the next step</h3>
-<p>Sandy recommends and schedules the coached first class afterward at your pace.</p>
+<p>{{ freeIntro.publicCopy.overview }}</p>
 </div>
 </li>
 </ol>

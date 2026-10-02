@@ -102,10 +102,10 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
               <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             </div>
             <h2 id="booking-confirmation-title" class="h3 mb-3">Your first visit is booked.</h2>
-            <p id="booking-confirmation-copy" class="mb-4">Check your booking confirmation for the date and time. Sandy will plan your coached first class with you afterward.</p>
+            <p id="booking-confirmation-copy" class="mb-4">Check your booking confirmation for the date and time. You can ask Sandy about training that day. He must confirm the class first.</p>
             <div class="text-start mb-4 p-4 w-100">
               <h4 class="h6 mb-2">Your first visit</h4>
-              <p class="mb-3">• <strong>What to wear:</strong> Normal clothes for the standard first visit; no workout is required. If a youth booking uses the specialized visit-and-class path, arrive 20 minutes early in clean athletic clothes; the student may train during that same visit.<br>• <strong>What to expect:</strong> The standard first visit is 15 minutes. Sandy recommends and schedules the coached first class afterward. Only the specialized youth workflow combines the visit and class during the same visit.</p>
+              <p class="mb-3">{{ freeIntro.publicCopy.overview }}</p>
               <h4 class="h6 mb-2">Day-One Preparation</h4>
               <p class="mb-3">• <strong>Learn the Words:</strong> Explore our <a href="/bjj-glossary#first-class-starter-pack">7 Day-One Words</a> to get familiar with tap, guard, and frames before you walk in.</p>
               <h4 class="h6 mb-2">Location</h4>
@@ -195,14 +195,14 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
 <details class="ss-faq-item" open="">
 <summary>What happens at a beginner BJJ first visit in Tannersville?</summary>
 <div class="ss-faq-content">
-                Start with a room tour, safety walkthrough, and a conversation about your goals and schedule. The standard 15-minute visit is in normal clothes and does not include a workout; Sandy recommends and schedules your coached first class afterward. A same-visit class is available only through the specialized youth booking workflow. For youth, a parent or guardian joins the visit.
+                {{ freeIntro.publicCopy.overview }} For youth, a parent or guardian joins the visit.
               </div>
 </details>
 <details class="ss-faq-item">
 <summary>What should I wear?</summary>
 <div class="ss-faq-content">
-                Adults: normal clothes. No workout is required. Youth and teens:
-                clean athletic clothes for the coached class. Follow the Gi/No-Gi
+                Adults: {{ freeIntro.publicCopy.clothing }} Youth and teens:
+                clean athletic clothes for the coached class. They may train during their visit. Follow the Gi/No-Gi
                 instructions Sandy confirms for the first class.
               </div>
 </details>
@@ -238,6 +238,16 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
 
 
 
+<section class="container py-4" aria-labelledby="adult-first-day-options">
+<h2 id="adult-first-day-options">Adults: choose your first day</h2>
+<p>{{ freeIntro.publicCopy.adultTraining }}</p>
+<p>{{ freeIntro.publicCopy.clothing }}</p>
+<h3>Live partner practice</h3>
+<p>{{ freeIntro.publicCopy.sparring }}</p>
+<h3>{{ freeIntro.adultFirstDay.challenge.name }}</h3>
+<p>{{ freeIntro.publicCopy.challenge }}</p>
+<p>Sandy confirms each class and the plan first. Fill out your waiver before you train.</p>
+</section>
 </main>
 <!-- MOBILE STICKY ACTIONS BAR -->
 <div class="ss-mobile-sticky-cta d-lg-none position-fixed bottom-0 start-0 end-0 p-3 bg-white border-top shadow-lg">

@@ -19,10 +19,15 @@ function read(rel) {
 }
 
 if (contract.generalPath?.firstStep !== '15-minute Goal Mapping visit') failures.push('general first step is not the 15-minute Goal Mapping visit');
-if (contract.generalPath?.workoutRequired !== false) failures.push('general path allows a workout during Goal Mapping');
+if (contract.generalPath?.workoutRequired !== false) failures.push('general path requires a workout during Goal Mapping');
 if (contract.generalPath?.normalClothes !== true) failures.push('general path does not require normal clothes');
-if (contract.generalPath?.classSameVisit !== false) failures.push('general path combines class during the same visit');
-if (!/schedules the coached first class afterward/i.test(contract.generalPath?.nextStep || '')) failures.push('general path does not schedule the coached first class afterward');
+if (contract.generalPath?.classSameVisit !== true || contract.generalPath?.sameDayTrainingElective !== true) failures.push('adult same-day training is not elective');
+if (contract.generalPath?.visitRequired !== true) failures.push('adult first visit is not required');
+if (contract.adultFirstDay?.sparringElective !== true || contract.adultFirstDay?.coachConfirmationRequired !== true || contract.adultFirstDay?.waiverRequiredBeforeTraining !== true) failures.push('adult consent/confirmation/waiver contract is missing');
+if (contract.adultFirstDay?.studentConsentRequired !== true || contract.adultFirstDay?.partnerMatchingRequired !== true) failures.push('adult consent and partner matching are required');
+const challenge = contract.adultFirstDay?.challenge;
+if (challenge?.elective !== true || challenge?.adultOnly !== true || challenge?.coachLed !== true || challenge?.timed !== true || challenge?.agreedRulesRequired !== true || challenge?.verbalStopSignal !== 'pause') failures.push('adult challenge choices and pause rules are missing');
+if (!/coach-confirmed class that day or plan a later class/i.test(contract.generalPath?.nextStep || '')) failures.push('adult choice of same-day or later class is missing');
 if (contract.youthCombinedPath?.classSameVisit !== true) failures.push('specialized youth path is not separately modeled');
 
 const nav = read('nav-include.html');
@@ -71,7 +76,7 @@ const protectedPaths = {
   'programs.html': ['Free First Visit', 'coached first class'],
   'how-class-works.html': ['Free First Visit', 'first class'],
   'bjj-classes/adults-tannersville-ny/index.html': ['Free First Visit'],
-  'free-bjj-intro-tannersville-ny/index.html': ['Free First Visit', 'no workout is required']
+  'free-bjj-intro-tannersville-ny/index.html': ['Free First Visit', 'Adults can choose to train that day', 'Sparring is live practice']
 };
 for (const [rel, required] of Object.entries(protectedPaths)) {
   const html = fs.readFileSync(path.join(dist, rel), 'utf8');

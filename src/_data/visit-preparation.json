@@ -2,11 +2,11 @@
   "goalMapping": {
     "label": "Goal Mapping Visit",
     "duration": "About 15 minutes",
-    "clothing": "Normal everyday clothes",
+    "clothing": "For a visit, wear your own day clothes. To train, wear clean sports clothes. Follow Sandy's class and arrival plan.",
     "workout": false,
     "arrivalMinutes": 5,
     "bring": ["Your calendar or schedule questions"],
-    "expect": ["Studio tour", "Plain-language safety conversation", "Goals and schedule fit", "First-class recommendation"],
+    "expect": ["Studio tour", "Plain-language safety conversation", "Goals and schedule fit", "Choose a confirmed same-day class or a later class"],
     "waiver": "Complete it before the visit or on-site; follow Sandy's confirmation instructions."
   },
   "firstClass": {
@@ -28,5 +28,13 @@
     "parentOnSite": true,
     "loanerGi": "Ask whether a loaner is available; availability is not guaranteed.",
     "waiver": "Required before confirmation."
+  },
+  "adultSameDay": {
+    "elective": true,
+    "requiresCompletedFirstVisit": true,
+    "requiresCoachConfirmation": true,
+    "clothing": "Clean athletic clothing plus the class-specific Gi / No-Gi guidance",
+    "waiverRequired": true,
+    "sparringElective": true
   }
 }

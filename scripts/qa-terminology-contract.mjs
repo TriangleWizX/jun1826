@@ -54,7 +54,7 @@ for (const route of routes) {
 }
 
 const booking = visibleText(fs.readFileSync(path.join(root, "dist/free-bjj-intro-tannersville-ny/index.html"), "utf8"));
-if (!/15-minute[\s\S]*normal clothes[\s\S]*no workout/i.test(booking)) failures.push("adult First Visit contract is missing");
+if (!/15-minute[\s\S]*Adults can choose to train that day/i.test(booking)) failures.push("adult elective same-day policy is missing");
 if (!/20 minutes[\s\S]*athletic clothes[\s\S]*may train/i.test(booking)) failures.push("youth First Visit contract is missing");
 
 if (failures.length) {
