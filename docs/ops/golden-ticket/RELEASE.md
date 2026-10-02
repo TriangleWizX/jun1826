@@ -1,5 +1,7 @@
 # Shiney Ticket website release
 
+ST card-code migration: see [CARD-CODE-RELEASE.md](CARD-CODE-RELEASE.md). The release record below preserves the earlier GT checks as history.
+
 Date: October 2, 2026. Owner approved deployment in this conversation. Release is scoped to the Shiney Ticket and the global adult first-day policy.
 
 ## Result

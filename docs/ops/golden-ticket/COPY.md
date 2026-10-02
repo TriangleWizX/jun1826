@@ -16,7 +16,7 @@ Start calm. Train smart.
 
 Sensei Sandy BJJ · Tannersville
 
-GT01 [change to match the card]
+ST01 [change to match the card]
 
 ## Back
 
@@ -34,7 +34,7 @@ senseisandy.com/bring-a-friend
 
 Text Sandy: +1 (917) 736-8649
 
-GT01 [change to match the card]
+ST01 [change to match the card]
 
 ## Sandy's ask after a real positive moment
 
@@ -50,7 +50,7 @@ GT01 [change to match the card]
 
 ## Guest text fallback
 
-“Hi Sandy, I have card GT01. [Member name] invited me to train. Can we plan my first class?”
+“Hi Sandy, I have card ST01. [Member name] invited me to train. Can we plan my first class?”
 
 ## Sandy's confirmation
 

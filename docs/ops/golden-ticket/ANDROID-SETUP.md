@@ -1,27 +1,27 @@
-# Shiney Ticket: GT01 on Android
+# Shiney Ticket: ST01 on Android
 
-Current scope: GT01 only. Sandy reports that the new link below reads back and opens the right Shiney Ticket page and code on Android. Keep the other nine blank. The steps below are for reference.
+Current scope: ST01 only. Rename the pilot card and write the new link below. The old GT01 link passed Sandy's Android check; ST01 needs a new write, read-back, tap and printed QR scan. Keep the other nine cards blank.
 
-`https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01`
+`https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01`
 
 Use the free NFC Tools app from Wakdev and an Android phone with NFC. The developer confirms NTAG215 support and URL record writing. An NFC Tasks automation record is unnecessary for this job. Guests need a compatible phone/browser or the QR fallback.
 
-## Do GT01 first
+## Do ST01 first
 
 1. Enable NFC in Android settings. Charge/unlock the phone. Remove metal accessories if they interfere. Put nine cards aside so you work with one tag at a time.
-2. Open NFC Tools → Read. Hold GT01 near the phone's NFC antenna until detected. Antenna position differs by phone. Verify NTAG215, writable status, and available space. If it is locked or differs from the purchased type, set it aside and record the result.
-3. Label it GT01 in plain ink or with the matching nonmetallic label. A gold color is fine; metal foil can interfere with the antenna. Test again after applying any finish.
-4. Open Write → Add a record → URL/URI. Enter the exact `url` from GT01's row in `card-urls.csv`. Menu labels can vary by app version. Ensure the saved record has exactly one `https://` prefix.
-5. Keep one web-address record. Write it to GT01. Leave the tag rewritable during the pilot. Do not set permanent lock bits or a password as part of these instructions.
-6. Read it back. Compare the entire URL, particularly `utm_campaign=shiney_ticket` and `utm_content=gt01`. Check the link is `senseisandy.com/bring-a-friend`, not the general first-visit calendar or a third-party shortener.
+2. Open NFC Tools → Read. Hold ST01 near the phone's NFC antenna until detected. Antenna position differs by phone. Verify NTAG215, writable status, and available space. If it is locked or differs from the purchased type, set it aside and record the result.
+3. Label it ST01 in plain ink or with the matching nonmetallic label. A gold color is fine; metal foil can interfere with the antenna. Test again after applying any finish.
+4. Open Write → Add a record → URL/URI. Enter the exact `url` from ST01's row in `card-urls.csv`. Menu labels can vary by app version. Ensure the saved record has exactly one `https://` prefix.
+5. Keep one web-address record. Write it to ST01. Leave the tag rewritable during the pilot. Do not set permanent lock bits or a password as part of these instructions.
+6. Read it back. Compare the entire URL, particularly `utm_campaign=shiney_ticket` and `utm_content=st01`. Check the link is `senseisandy.com/bring-a-friend`, not the general first-visit calendar or a third-party shortener.
 7. Close the writing screen, unlock the phone, and tap the card as a guest would. Open the browser prompt. Confirm the Shiney Ticket page with four free classes, the code in the address bar, the request form, and the text fallback. A tap opens the page. Sandy confirms the class and starts the pass at the first attended class.
-8. Scan GT01's printed QR with the phone camera. It must open the identical URL. Test at the actual printed size, not only on a large computer display.
+8. Scan ST01's printed QR with the phone camera. It must open the identical URL. Test at the actual printed size, not only on a large computer display.
 9. Record Android model, test date, read-back success, browser success, and printed-QR success in the private register. If available, try another NFC-capable phone too. Cross-device behavior remains unverified until tested.
-10. Stop at GT01 for this pilot. If Sandy later expands, use each remaining card's own code and matching label.
+10. Stop at ST01 for this pilot. If Sandy later expands, use each remaining card's own code and matching label.
 
 ## Print and physical finish
 
-Print `shiney-ticket-GT01.pdf` at 100% / actual size, with Fit-to-page disabled. Measure the one-inch scale bar. Each panel is 85.6 × 54 mm, a common bank-card size; measure your blank cards before trimming. The sheet places a front and a back beside each other for each code; cut and apply as pairs. It is not a duplex alignment template or an Avery stock template.
+Print `shiney-ticket-ST01.pdf` at 100% / actual size, with Fit-to-page disabled. Measure the one-inch scale bar. Each panel is 85.6 × 54 mm, a common bank-card size; measure your blank cards before trimming. The sheet places a front and a back beside each other for each code; cut and apply as pairs. It is not a duplex alignment template or an Avery stock template.
 
 Use plain nonmetallic adhesive paper or a sleeve that leaves the card readable. The QR has black modules on white, including its quiet zone. Keep glue, cuts, foil and decoration away from the QR. The functional label is deliberately simple; no image editor or paid printing service is required.
 

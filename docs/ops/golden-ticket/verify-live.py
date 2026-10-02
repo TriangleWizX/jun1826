@@ -9,7 +9,7 @@ from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 
 root = Path(__file__).resolve().parents[3]
-out = root / '.tmb/shiney-release'
+out = root / '.tmb/shiney-st-release/full-policy-check'
 out.mkdir(parents=True, exist_ok=True)
 spec = importlib.util.spec_from_file_location('release', root / 'scripts/deploy-release.py')
 release = importlib.util.module_from_spec(spec)
@@ -41,7 +41,7 @@ try:
 finally:
     client.close()
 
-query = '?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01'
+query = '?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01'
 routes = ['/', '/bring-a-friend'+query, '/bring-a-friend.html'+query]
 for name in ['programs','contact','show-up-kit','how-class-works','options-pricing']:
     routes += ['/'+name,'/'+name+'.html']
@@ -65,7 +65,7 @@ for route in routes:
     text = soup.get_text(' ',strip=True)
     assert 'Adult First Visits are not training' not in text, route
     if 'bring-a-friend' in route:
-        assert 'utm_campaign=shiney_ticket' in final and 'utm_content=gt01' in final
+        assert 'utm_campaign=shiney_ticket' in final and 'utm_content=st01' in final
         for marker in ['Shiney Ticket','Four free classes in two weeks','day 14','The Sandy Challenge']:
             assert marker.lower() in text.lower(), (route,marker)
         assert 'Golden Ticket' not in text
@@ -84,6 +84,6 @@ for rel in css:
     with urlopen('https://senseisandy.com/'+rel,timeout=30) as response:
         assert response.status == 200
         assert response.read() == (root / 'dist' / rel).read_bytes()
-result={'release_commit':'d2a551ae','remote_exact_bytes':verified,'http_routes':http,'css_exact_http_bytes':css,'backup':backup_proof,'real_form_submissions':0}
+result={'original_policy_release_commit':'d2a551ae','checked_card_prefix':'ST','remote_exact_bytes':verified,'http_routes':http,'css_exact_http_bytes':css,'backup':backup_proof,'real_form_submissions':0}
 (out/'live-results.json').write_text(json.dumps(result,indent=2))
 print(json.dumps({'remote_files_verified':len(verified),'http_routes_passed':len(http),'css_http_verified':len(css),'retained_backup':backup_proof['name'],'real_form_submissions':0},indent=2))

@@ -2,7 +2,7 @@
 
 ## 1. The decision
 
-Use GT01 as the single reusable invitation for now, as Sandy requested. Start with one willing adult member and one suitable adult friend. Keep GT02–GT10 blank in reserve; expansion waits for a later decision. The first review is after seven days; the inventory review is after fourteen days; the first pilot review is after thirty days from actual launch. Those review dates are separate from each guest's 14-day pass window.
+Use ST01 as the single reusable invitation for now, as Sandy requested. Start with one willing adult member and one suitable adult friend. Keep ST02–ST10 blank in reserve; expansion waits for a later decision. The first review is after seven days; the inventory review is after fourteen days; the first pilot review is after thirty days from actual launch. Those review dates are separate from each guest's 14-day pass window.
 
 The member gives their friend an easy first step and a familiar face. The guest receives four free classes within 14 calendar days, starting at their first attended class and activated by Sandy. The first class counts; its local date is day one. Each class and the friend's attendance are confirmed by Sandy. The existing $35 academy credit rewards a qualifying enrollment. Cards rotate back into circulation; the guest's progress continues in a separate record.
 
@@ -33,7 +33,7 @@ The book's gift-card example uses a monetary credit and a deadline. We adapt its
 
 ## 4. Two objects, two records
 
-**Physical invitation:** GT01–GT10. NFC and QR open an HTTPS page. Anyone with the URL can copy it. The card code is a routing hint, not an identity check, secure voucher, payment instrument, or proof of eligibility.
+**Physical invitation:** ST01–ST10. NFC and QR open an HTTPS page. Anyone with the URL can copy it. The card code is a routing hint, not an identity check, secure voucher, payment instrument, or proof of eligibility.
 
 **Earned credit:** a private ledger entry linked to one unique new referred student and one eligible referring member. It arises only after the qualifying first payment clears. Returning or losing a card does not erase a valid referral or an earned credit.
 
@@ -43,8 +43,8 @@ Keep card custody, invitation cycles, guests, and reward transactions separate. 
 
 ### Prepare
 
-1. GT01 is written with `utm_campaign=shiney_ticket`; Sandy reports successful read-back and browser opening with the correct code. Test the new printed QR next. Keep the other nine cards blank.
-2. Keep the links free of names, phone numbers, or member IDs. Use the fixed public code `gt01` through `gt10`.
+1. Rename the pilot card ST01. Write the new `utm_campaign=shiney_ticket&utm_content=st01` URL, read it back, then test the Android tap and new printed QR. Keep the other nine cards blank. All four new-code checks are pending.
+2. Keep the links free of names, phone numbers, or member IDs. Use the fixed public code `st01` through `st10`.
 3. Copy the blank ledgers into restricted operations storage. Use internal member/guest references there, with personal contact data retained in the existing customer system. Do not fill these repository templates with customer information.
 4. Confirm actual class space and Sandy's available arrival/welcome window before offering a guest a specific slot. Use the current schedule, not times printed on cards.
 5. Brief anyone handling replies on the difference between a request, a confirmed class, an attended class, and a cleared enrollment payment.
@@ -54,7 +54,7 @@ Keep card custody, invitation cycles, guests, and reward transactions separate. 
 6. Select one member who has expressed a genuine positive experience and wants to invite someone. A newly enthusiastic member can qualify; seniority is not the selection rule.
 7. Ask privately after class, when there is time for a short conversation. Use the invitation in `COPY.md`. Ask for one friend they already know would enjoy this kind of training.
 8. Show the member how to tap or scan. Explain that Sandy confirms the class before anyone travels. Explain the $35 policy privately and accurately; lead the invitation with the friend's experience.
-9. Record an issue-cycle ID such as `GT01-001`, the internal member reference, issue date, and next check-in. Give the member the card to pass to the friend. Do not require the friend to enroll for the member to receive thanks.
+9. Record an issue-cycle ID such as `ST01-001`, the internal member reference, issue date, and next check-in. Give the member the card to pass to the friend. Do not require the friend to enroll for the member to receive thanks.
 
 ### Pass and request
 
@@ -143,4 +143,4 @@ Hormozi sources are in `/home/twizss/.codex/skills/hormozi-orchestra/knowledge/`
 
 Operational authorities: `src/bring-a-friend.html`; `src/_data/referrals.json`, `free-intro.json`, `offers.json`, `pricing.json`, `contact.json`; current user decisions; live `/bring-a-friend`. Product-marketing context was used for audience orientation only where consistent with current sources.
 
-Kit completion requires ten matching URL/QR pairs, writable-capacity checks, usable print layout, blank ledgers, Android steps, preserved reward terms, truthful copy, and verified source capture. The active launch scope is GT01 only; the other nine payloads are optional future inventory. Launch completion additionally requires physical read/scan tests, a confirmed operational receipt path, real member assignments, and Sandy's actual class arrangements. Referral results require actual request, attendance, payment, and retention evidence. See `VERIFICATION.md`; unperformed stages remain pending.
+Kit completion requires ten matching URL/QR pairs, writable-capacity checks, usable print layout, blank ledgers, Android steps, preserved reward terms, truthful copy, and verified source capture. The active launch scope is ST01 only; the other nine payloads are optional future inventory. Launch completion additionally requires physical read/scan tests, a confirmed operational receipt path, real member assignments, and Sandy's actual class arrangements. Referral results require actual request, attendance, payment, and retention evidence. See `VERIFICATION.md`; unperformed stages remain pending.

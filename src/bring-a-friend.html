@@ -49,7 +49,7 @@ permalink: "/bring-a-friend.html"
 <input name="offer_id" type="hidden" value="shiney_ticket"/>
 <input name="offer_classes" type="hidden" value="{{ referrals.classesIncluded }}"/>
 <input name="activation_event" type="hidden" value="{{ referrals.activationEvent }}"/>
-<div class="ss-form-field"><label for="friend-pass-card-code">Card code (if you have one)</label><input id="friend-pass-card-code" name="referral_card" type="text" maxlength="4" pattern="[Gg][Tt][0-9]{2}" placeholder="GT01"/></div>
+<div class="ss-form-field"><label for="friend-pass-card-code">Card code (if you have one)</label><input id="friend-pass-card-code" name="referral_card" type="text" maxlength="4" pattern="[Ss][Tt](0[1-9]|10)" placeholder="ST01" aria-describedby="friend-pass-code-help"/><small id="friend-pass-code-help">Use ST01 to ST10.</small></div>
 <input id="friend-pass-source-url" name="source_url" type="hidden" value=""/>
 <div class="form-honeypot" aria-hidden="true">
 <label for="friend-pass-company">Company</label>
@@ -123,10 +123,19 @@ permalink: "/bring-a-friend.html"
   if (sourceUrl) sourceUrl.value = window.location.href;
   const cardCode = new URLSearchParams(window.location.search).get('utm_content') || '';
   const cardInput = document.getElementById('friend-pass-card-code');
-  if (cardInput && /^gt[0-9]{2}$/i.test(cardCode)) cardInput.value = cardCode.toUpperCase();
+  // Keep already-written cards useful while all new labels and links use ST.
+  function normalizeCardCode(value) {
+    const match = /^[gs]t(0[1-9]|10)$/i.exec(value.trim());
+    return match ? 'ST' + match[1] : value;
+  }
+  if (cardInput) {
+    if (/^[gs]t(0[1-9]|10)$/i.test(cardCode)) cardInput.value = normalizeCardCode(cardCode);
+    cardInput.addEventListener('change', () => { cardInput.value = normalizeCardCode(cardInput.value); });
+  }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (cardInput) cardInput.value = normalizeCardCode(cardInput.value);
     if (form.getAttribute('aria-busy') === 'true' || !form.reportValidity()) return;
     status.classList.remove('is-error');
     status.textContent = 'Sending your request…';

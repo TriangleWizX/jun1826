@@ -1,0 +1,44 @@
+# Shiney Ticket ST card codes
+
+October 2, 2026. Requested scope: rename GT01 and related notation to ST01 globally. The active pilot is ST01; ST02–ST10 stay blank reserves.
+
+## Behavior and scope
+
+Current URLs use `utm_campaign=shiney_ticket` and `utm_content=st01` through `st10`. Card labels, QR filenames, both PDFs, copy, Android steps, issue-cycle examples and staff inventory now use ST. The pilot sheet is `shiney-ticket-ST01.pdf`.
+
+The website shows ST codes. Old GT links and typed GT codes map to the matching ST code. The original `source_url` stays intact for attribution. Only issued codes 01–10 pass validation; the card field stays optional. The offer, four classes, 14-day activation rule, $35 reward, booking path and form endpoint are unchanged.
+
+Historical GT release results remain unchanged. The inventory stores `previous_card_id` for the rename; old hardware proof is in `history/card-register-before-st.csv`. ST01 is `rewrite_awaiting_check`. Past GT01 success does not prove a new ST01 write or scan. Guest and reward ledgers remain blank.
+
+The one GT01 reference in the existing VSL plan was changed to ST01 in place. That unrelated, untracked plan stays outside this commit and deployment. The kit's historical directory name remains stable so existing file links still work.
+
+## Checks
+
+- Build and volatile operational facts: passed, 1,061 files checked.
+- Browser form checks: 48 URL cases and 8 typed-code cases passed, including all ten ST/GT codes in either case and invalid bounds.
+- One intercepted form submission sends ST01, retains the original GT source URL and keeps the four-class offer. No real form was sent.
+- All ten QR PNGs and eleven PDF QR regions decode to their exact CSV links. URL lengths and NTAG215 capacity pass.
+- Chrome at 375 × 900 and 1440 × 1000: ST01/source prefill, visible CTA, one H1, form visible, no horizontal overflow or page errors. Form screenshot reviewed.
+- `git diff --check` passed. No dependencies changed.
+
+`card-code-qa.json` records the local results. `verify-card-codes.mjs` is an offline form fixture. `verify-live-browser.mjs` supports a local base URL and defaults to production; it permits only site GET/HEAD requests.
+
+The only new public text is “Use ST01 to ST10.” It uses short words and a direct instruction. The offer and prior four-rubric copy review remain unchanged; this is a card-code change, not a new marketing claim.
+
+## Release and rollback
+
+Deploy only `bring-a-friend.html`. The exact generated-page diff against the live SFTP snapshot contains the card input and its normalization code only. Concurrent changes to other pages and shared policy data are excluded.
+
+Before upload, the exact production page was saved at `.tmb/shiney-st-release/before-bring-a-friend.html` with its hash in `before-remote.json`. Roll back by uploading that single saved page, or restore the prior source and rebuild in an isolated checkout. No whole-site rollback or remote cleanup is needed.
+
+Production upload and live checks: pending.
+
+## Specialist methods
+
+The automatic selector returned no suitable role. Catalog review located the versioned Coding Solution - CodeFarm source, UUID `19c0dba7-ee75-4d2d-afd0-2425be1ef819`, at `assets/indranet-prompt-exporter/exports/Coding-Solution---CodeFarm/versions/v9.1.0/prompt.json`. Its lightweight review applies here: bound the rename, preserve old-link compatibility, verify concrete behavior and review the precise release diff. This version lists no attachments.
+
+The independent Instructions - COMPETENCE asset, UUID `e144b81f-10ea-41a6-a06c-03d69dfb738f`, is in `assets/indranet-prompt-exporter/exports/index.json`; its full prompt text supplies source evaluation, change management and technical documentation. The catalog entry is partial, with notes missing and no required attachments. No missing attachment is claimed as loaded. Persona material grants no permission or proof of results.
+
+## Remaining physical launch work
+
+Write ST01, read it back and tap it. Print its new sheet at actual size and scan the QR. Confirm one real request reaches Sandy with the code and source URL, set up private logs and complete the first member handoff. Keep all guest activation, attendance and reward outcomes evidence-based.

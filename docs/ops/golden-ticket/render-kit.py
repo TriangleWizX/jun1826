@@ -20,7 +20,7 @@ for row in rows:
 
 def render(filename, cards):
     sheet = canvas.Canvas(str(OUT / filename), pagesize=(612, 792))
-    sheet.setTitle('The Shiney Ticket | ' + ('GT01 pilot' if len(cards) == 1 else 'GT01 through GT10'))
+    sheet.setTitle('The Shiney Ticket | ' + ('ST01 pilot' if len(cards) == 1 else 'ST01 through ST10'))
     sheet.setAuthor('Sensei Sandy BJJ')
     width, height = 85.6 * mm, 54 * mm
     left, gap = 52, 24
@@ -73,5 +73,5 @@ def render(filename, cards):
     sheet.save()
 
 render('card-labels.pdf', rows)
-render('shiney-ticket-GT01.pdf', rows[:1])
-print('Rendered ten QR files, future label sheet, and GT01 pilot sheet. Ledgers unchanged.')
+render('shiney-ticket-ST01.pdf', rows[:1])
+print('Rendered ten QR files, future label sheet, and ST01 pilot sheet. Ledgers unchanged.')

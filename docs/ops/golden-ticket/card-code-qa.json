@@ -1,0 +1,44 @@
+{
+  "form": {
+    "queryCases": 48,
+    "typedCases": 8,
+    "legacyMapsToST": true,
+    "originalSourcePreserved": true,
+    "mockSubmissions": 1,
+    "realSubmissions": 0
+  },
+  "qr": {
+    "pngQRsDecoded": 10,
+    "pdfQRsDecoded": 11,
+    "allMatchCurrentURLs": true,
+    "physicalPrintCheck": "pending"
+  },
+  "local_browser": [
+    {
+      "viewport": {
+        "width": 375,
+        "height": 900
+      },
+      "tracking": true,
+      "cardAndSourcePrefill": true,
+      "noOverflow": true,
+      "ctaAboveFold": true,
+      "formVisible": true,
+      "pageErrors": [],
+      "realSubmissions": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "tracking": true,
+      "cardAndSourcePrefill": true,
+      "noOverflow": true,
+      "ctaAboveFold": true,
+      "formVisible": true,
+      "pageErrors": [],
+      "realSubmissions": 0
+    }
+  ]
+}

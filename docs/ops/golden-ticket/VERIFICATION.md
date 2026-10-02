@@ -4,7 +4,7 @@ Prepared October 2, 2026. These records show what was checked. Real guest result
 
 ## Approved choices
 
-- Use GT01 now. Keep the other nine cards blank.
+- Use ST01 now. Keep the other nine cards blank.
 - Use the name Shiney Ticket and campaign `shiney_ticket`.
 - Give a new adult guest four free classes in two weeks with their friend.
 - Sandy starts day one at the first attended class. That class counts as one of four. The final date is the local start date plus 13 calendar days.
@@ -26,7 +26,7 @@ Prepared October 2, 2026. These records show what was checked. Real guest result
 | Booking fixture | Existing Cal.com recovery and confirmation fixture, with provider mocked | Pass: loader retry, lanes, accepted booking, deduplicated events, privacy |
 | QR and PDFs | OpenCV decoded each PNG and each of ten PDF regions at 200 dpi | Pass: all match the new CSV links |
 | Capacity | 128 URL bytes, 128 conservative NDEF/TLV bytes, below 504-byte NTAG215 user memory | Fits on paper |
-| Print size | GT01 has one US Letter page; front/back panels 85.6 × 54 mm with scale bar | Digital check; physical print still pending |
+| Print size | ST01 has one US Letter page; front/back panels 85.6 × 54 mm with scale bar | Digital check; physical print still pending |
 | Reading level | Approximate Flesch–Kincaid estimates and manual plain-language review | Offer and changed shared policy prose estimated at grade 3 or below |
 
 The reading estimate uses a small local syllable counter with explicit word overrides. It is not a certified reading test. Brand names, street address, and tiny headings are reviewed as labels; their isolated formula scores do not measure paragraph readability. The longest changed shared prose estimate is 2.94. The four copy rubrics are recorded in RELEASE.md.
@@ -41,9 +41,9 @@ See RELEASE.md for the exact payload, commit, backup, deployment, and live evide
 
 | Step | State |
 |---|---|
-| Old GT01 write, read-back, and Android open | Passed, reported by Sandy for `golden_ticket` |
-| New GT01 rewrite to `shiney_ticket` | Passed, reported by Sandy |
-| New GT01 read-back and browser open | Passed, reported by Sandy |
+| Prior GT01 write, read-back and Android open | Passed, reported by Sandy; historical evidence only |
+| ST01 rewrite to `utm_content=st01` | Pending |
+| ST01 read-back and browser open | Pending |
 | Actual printed QR scan | Pending |
 | Actual inbox receipt with code and source URL | Pending |
 | Blank logs copied to private storage | Pending |
@@ -51,6 +51,6 @@ See RELEASE.md for the exact payload, commit, backup, deployment, and live evide
 | Sandy's activation and attended classes | Future guest outcome |
 | Cleared payment and earned $35 | Future qualifying outcome |
 
-A scan does not activate a pass. Staff keep the guest's fixed window and count attendance. Reusing GT01 does not renew that guest's window. Codes are public hints; Sandy confirms the referrer with the guest and handoff records. Backend delivery and staff operations still need real evidence.
+A scan does not activate a pass. Staff keep the guest's fixed window and count attendance. Reusing ST01 does not renew that guest's window. Codes are public hints; Sandy confirms the referrer with the guest and handoff records. Backend delivery and staff operations still need real evidence.
 
 No customer records are stored here. The existing deployment tool excludes this folder. Keep customer-filled copies in the private operations system.

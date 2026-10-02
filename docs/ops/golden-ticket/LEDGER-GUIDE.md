@@ -1,18 +1,18 @@
 # Private ledger setup
 
-The guest, issue, reward and scorecard CSVs are blank templates. The card register records GT01's user-reported technical check; it contains no customer data. Import copies into your existing private spreadsheet or operational system. Restrict access to people who handle these referrals. Keep names, phone numbers, email, payment details, and health information out of these repository files and all NFC/QR links. Use opaque internal references in the private copies; they can still link to personal records and need access controls.
+The guest, issue, reward and scorecard CSVs are blank templates. The card register tracks current ST codes and contains no customer data. Past GT01 hardware proof is saved in `history/card-register-before-st.csv`. Import copies into your existing private spreadsheet or operational system. Restrict access to people who handle referrals. Keep names, phone numbers, email, payment details, and health information out of repository files and NFC/QR links. Use opaque internal references in private copies; they can still link to personal records and need access controls.
 
 Dates: ISO format (`2026-10-02`); use full local date/time with offset where appointment ordering matters. Blank means unknown or not yet occurred. A blank is not a failed conversion. Use one internal guest reference per actual person; look for existing records before adding another.
 
 ## Card register
 
-Exactly ten rows. `physical_status` is one of `unprogrammed`, `rewrite_awaiting_check`, `programmed_awaiting_print_check`, `ready`, `issued`, `returned_awaiting_check`, `lost`, `retired`. A returned card becomes ready after inspection/read-back. The eight counts must total ten. GT01 has passed the new-link read-back and Android tap, as reported by Sandy; its printed QR still needs a physical check; the other nine remain unprogrammed reserves. `current_cycle_id` identifies custody, not the only possible referral.
+Exactly ten rows. `physical_status` is one of `unprogrammed`, `rewrite_awaiting_check`, `programmed_awaiting_print_check`, `ready`, `issued`, `returned_awaiting_check`, `lost`, `retired`. A returned card becomes ready after inspection/read-back. The eight counts must total ten. ST01 is `rewrite_awaiting_check`; its new URL write, read-back, Android tap and printed QR scan are pending. The other nine remain unprogrammed reserves. `current_cycle_id` identifies custody, not the only possible referral.
 
 Record read-back, browser, and printed-QR checks as `pass`, `fail`, or blank. Evidence can identify the operator/date/device in a private record. User-reported checks are useful, but label them as reports rather than independently captured device evidence.
 
 ## Issue cycles
 
-One row per handoff: `GT01-001`, `GT01-002`, etc. Never overwrite an old row. `pass_status` is `not_reported`, `reported`, or `guest_confirmed`. A member's report proves an invitation report, not attendance. A cycle can close when the card returns while its guest remains active in `referrals.csv`.
+One row per handoff: `ST01-001`, `ST01-002`, etc. Never overwrite an old row. `pass_status` is `not_reported`, `reported`, or `guest_confirmed`. A member's report proves an invitation report, not attendance. A cycle can close when the card returns while its guest remains active in `referrals.csv`.
 
 ## Guest progress
 
@@ -28,7 +28,7 @@ Keep one activation per unique guest. `ticket_activated_at` is the first attende
 
 The first visit, tap, scan, form request, and cancelled class do not activate the pass. A guest who only visits stays unactivated. Give the guest their end date when they first train. Record `classes_used` as 1 at activation, then increase only for actual attended classes, up to 4. `ticket_status` can be `not_started`, `active`, `used`, or `expired`. Sandy confirms each class and the friend's attendance.
 
-Use `class-attendance.csv` for one row per real class. Link `referral_id`; record a unique sequence 1 through 4, attendance time, and confirming staff evidence. Before class, confirm the guest is within their own window and has classes left. Keep that guest's first activation date fixed when GT01 returns, is tapped again, or is handed to another person. Look up existing guest records to prevent a fresh window for the same person. Staff handle this check; the website has no automatic expiry engine.
+Use `class-attendance.csv` for one row per real class. Link `referral_id`; record a unique sequence 1 through 4, attendance time, and confirming staff evidence. Before class, confirm the guest is within their own window and has classes left. Keep that guest's first activation date fixed when ST01 returns, is tapped again, or is handed to another person. Look up existing guest records to prevent a fresh window for the same person. Staff handle this check; the website has no automatic expiry engine.
 
 ## Reward transactions
 
