@@ -1,5 +1,7 @@
 # Private ledger setup
 
+The private working Google Sheet is ready: **Shiney Ticket — ST01 pilot log**. See PRIVATE-LOG.md for its tabs and verification. Use that sheet for live entries; keep these source CSVs blank.
+
 The guest, issue, reward and scorecard CSVs are blank templates. The card register tracks current ST codes and contains no customer data. Past GT01 hardware proof is saved in `history/card-register-before-st.csv`. Import copies into your existing private spreadsheet or operational system. Restrict access to people who handle referrals. Keep names, phone numbers, email, payment details, and health information out of repository files and NFC/QR links. Use opaque internal references in private copies; they can still link to personal records and need access controls.
 
 Dates: ISO format (`2026-10-02`); use full local date/time with offset where appointment ordering matters. Blank means unknown or not yet occurred. A blank is not a failed conversion. Use one internal guest reference per actual person; look for existing records before adding another.

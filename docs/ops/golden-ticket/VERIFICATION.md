@@ -50,7 +50,7 @@ See RELEASE.md for the exact payload, commit, backup, deployment, and live evide
 | ST01 read-back and browser open | Pending |
 | Actual printed QR scan | Pending |
 | Actual inbox receipt with code and source URL | Pending |
-| Blank logs copied to private storage | Pending |
+| Blank logs copied to private storage | Passed: private Google Sheet created and read back; see PRIVATE-LOG.md |
 | First member handoff | Pending |
 | Sandy's activation and attended classes | Future guest outcome |
 | Cleared payment and earned $35 | Future qualifying outcome |
