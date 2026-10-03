@@ -56,24 +56,24 @@ assert.match(page, /\$1,035/);
 assert.match(page, /\$12\.50 per scheduled class/);
 assert.doesNotMatch(page, /\$3,300/);
 
-// Global price range anchored at highest annual track 3x monthly down to lowest 1x monthly
+// Global price range anchored at 3x monthly pricing down to lowest 1x monthly
 const homePage = fs.readFileSync(path.join(root, "dist/index.html"), "utf8");
 const annualPage = fs.readFileSync(path.join(root, "dist/annual-track/index.html"), "utf8");
 
-const adultAnnual3xMonthly = pricing.coreCulture.frequencyLadder.adult[3].annual / 12;
-const youthAnnual3xMonthly = pricing.coreCulture.frequencyLadder.youth[3].annual / 12;
+const adult3xMonthly = pricing.coreCulture.frequencyLadder.adult[3].monthly;
+const youth3xMonthly = pricing.coreCulture.frequencyLadder.youth[3].monthly;
 const youth1xMonthly = pricing.coreCulture.frequencyLadder.youth[1].monthly;
 const adult1xMonthly = pricing.coreCulture.frequencyLadder.adult[1].monthly;
 
-assert.equal(adultAnnual3xMonthly, 206.25);
-assert.equal(youthAnnual3xMonthly, 165);
+assert.equal(adult3xMonthly, 245);
+assert.equal(youth3xMonthly, 185);
 assert.equal(youth1xMonthly, 75);
 assert.equal(adult1xMonthly, 95);
 
-assert.match(homePage, /\$206 to \$75 \/ month/);
-assert.match(annualPage, /\$206 to \$95 \/ month/);
-assert.match(annualPage, /\$165 to \$75 \/ month/);
-assert.match(page, /\$206 to \$75 \/ month/);
+assert.match(homePage, /\$245 to \$75 \/ month/);
+assert.match(annualPage, /\$245 to \$95 \/ month/);
+assert.match(annualPage, /\$185 to \$75 \/ month/);
+assert.match(page, /\$245 to \$75 \/ month/);
 assert.match(page, /\$165 \/ month equivalent/);
 assert.match(page, /\$206\.25 \/ month equivalent/);
 

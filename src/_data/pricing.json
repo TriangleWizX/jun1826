@@ -2,14 +2,14 @@
   "currency": "USD",
   "currencySymbol": "$",
   "globalPriceRange": {
-    "highAnchorMonthly": 206.25,
-    "highAnchorMonthlyDisplay": "$206 / month",
+    "highAnchorMonthly": 245,
+    "highAnchorMonthlyDisplay": "$245 / month",
     "lowAnchorMonthly": 75,
     "lowAnchorMonthlyDisplay": "$75 / month",
-    "rangeDisplay": "$206 to $75 / month",
-    "adultMonthlyRangeDisplay": "$206 to $95 / month",
-    "youthMonthlyRangeDisplay": "$165 to $75 / month",
-    "description": "Tuition range anchored at the highest annual track monthly rate for 3× weekly ($206.25/mo adult, $165/mo youth) down to the lowest monthly rate for 1× weekly ($95/mo adult, $75/mo youth)."
+    "rangeDisplay": "$245 to $75 / month",
+    "adultMonthlyRangeDisplay": "$245 to $95 / month",
+    "youthMonthlyRangeDisplay": "$185 to $75 / month",
+    "description": "Monthly tuition range anchored at the 3× monthly rate ($245/mo adult, $185/mo youth) down to the lowest 1× monthly rate ($95/mo adult, $75/mo youth)."
   },
   "productPolicy": {
     "firstPaidTerm": ["coreCulture.youth", "coreCulture.adult", "coreCulture.communityServiceAdult"],
