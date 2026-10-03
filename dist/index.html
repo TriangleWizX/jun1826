@@ -56,7 +56,8 @@
 <link rel="stylesheet" href="/assets/css/site-shell.min.3e1fd8.css">
 
     <link rel="stylesheet" href="/assets/css/global.min.6e3f66.css">
-    <link rel="stylesheet" href="/assets/css/pages/home.min.00f174.css?v=bf4945a8">
+    <link rel="stylesheet" href="/assets/css/routes/site-18ac9c2704ce.min.css">
+    <link rel="stylesheet" href="/assets/css/pages/home.min.a213e5.css?v=bf4945a8">
 
 
 
@@ -89,6 +90,20 @@
     background: var(--color-paper, var(--ss-bg, #FBFAF8));
     color: var(--color-ink, var(--ss-text, #1F1712));
     padding-bottom: 2.5rem;
+    text-align: left;
+  }
+  .ss-home-conversion h1,
+  .ss-home-conversion h2,
+  .ss-home-conversion p,
+  .ss-home-conversion li,
+  .ss-home-conversion blockquote,
+  .ss-home-conversion cite {
+    text-align: left;
+  }
+  .ss-home-conversion .ss-stat-item,
+  .ss-home-conversion .ss-reviews-header,
+  .ss-home-conversion .ss-review-item {
+    text-align: left;
   }
 
   /* This homepage owns its sticky action; suppress the shared competing bar. */
@@ -316,6 +331,7 @@
     gap: 0.5rem;
     box-shadow: 0 4px 14px rgba(17, 106, 66, 0.25);
     transition: all 0.2s ease;
+    text-decoration: none;
   }
   .ss-home-conversion__actions .btn-primary:hover {
     background: var(--color-accent-strong, #0d5736);
@@ -358,10 +374,14 @@
     font-size: 0.84rem;
     color: var(--color-muted, #4F433C);
   }
-  .ss-hero-reassurances span {
+  .ss-hero-reassurances > span {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+  .ss-hero-reassurances span.text-muted {
+    display: inline;
   }
   .ss-hero-reassurances i {
     color: var(--color-accent, #116A42);
@@ -1235,7 +1255,7 @@
 <div class="col-sm-6"><h3 class="h6">Problem solving</h3><p class="small text-muted mb-0">Tries another useful solution when the first one fails.</p></div>
 <div class="col-sm-6"><h3 class="h6">Communication</h3><p class="small text-muted mb-0">Tells the coach when something is confusing or uncomfortable.</p></div>
 </div>
-<a class="btn btn-outline-primary ss-btn mt-4" href="/report-card">See How Progress Feedback Works <span aria-hidden="true">→</span></a>
+<a class="btn btn-outline-primary ss-btn mt-4" href="/report-card">See How Progress Feedback Works&nbsp;<span aria-hidden="true">→</span></a>
 </article>
 </div>
 </div>

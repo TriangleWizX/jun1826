@@ -8,6 +8,20 @@
     background: var(--color-paper, var(--ss-bg, #FBFAF8));
     color: var(--color-ink, var(--ss-text, #1F1712));
     padding-bottom: 2.5rem;
+    text-align: left;
+  }
+  .ss-home-conversion h1,
+  .ss-home-conversion h2,
+  .ss-home-conversion p,
+  .ss-home-conversion li,
+  .ss-home-conversion blockquote,
+  .ss-home-conversion cite {
+    text-align: left;
+  }
+  .ss-home-conversion .ss-stat-item,
+  .ss-home-conversion .ss-reviews-header,
+  .ss-home-conversion .ss-review-item {
+    text-align: left;
   }
 
   /* This homepage owns its sticky action; suppress the shared competing bar. */
@@ -235,6 +249,7 @@
     gap: 0.5rem;
     box-shadow: 0 4px 14px rgba(17, 106, 66, 0.25);
     transition: all 0.2s ease;
+    text-decoration: none;
   }
   .ss-home-conversion__actions .btn-primary:hover {
     background: var(--color-accent-strong, #0d5736);
@@ -277,10 +292,14 @@
     font-size: 0.84rem;
     color: var(--color-muted, #4F433C);
   }
-  .ss-hero-reassurances span {
+  .ss-hero-reassurances > span {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+  .ss-hero-reassurances span.text-muted {
+    display: inline;
   }
   .ss-hero-reassurances i {
     color: var(--color-accent, #116A42);

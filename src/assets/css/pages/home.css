@@ -1,11 +1,64 @@
 /* Hallmark · macrostructure: Editorial Split · tone: editorial luxury · anchor hue: forest green */
 /* Homepage-only visual system. Content, routes, and shared shell remain upstream. */
  
-/* Final homepage copy-centering overrides for the family, progress, community, kids, pricing, and arrival blocks. */
-.page-home [aria-labelledby="ss-home-double-win-title"], .page-home [aria-labelledby="ss-home-double-win-title"] article, .page-home [aria-labelledby="ss-home-double-win-title"] .row, .page-home [aria-labelledby="ss-home-double-win-title"] p, .page-home [aria-labelledby="ss-home-double-win-title"] .ss-home-kicker, .page-home [aria-labelledby="ss-home-double-win-title"] .btn, .page-home [aria-label^="Arrival"] .ss-home-location__copy, .page-home [aria-label^="Arrival"] .ss-home-location__copy h2, .page-home [aria-label^="Arrival"] .ss-home-location__copy p, .page-home [aria-label^="Arrival"] .ss-home-location__copy .btn, .page-home [aria-labelledby="ss-home-pricing-title"] .ss-home-option-card, .page-home [aria-labelledby="ss-home-pricing-title"] .ss-home-option-card h3, .page-home [aria-labelledby="ss-home-pricing-title"] .ss-home-option-card p { text-align: center; }
-.page-home [aria-label^="Arrival"] .ss-home-location__copy { max-width: 42rem; margin-inline: auto; }
-.page-home [aria-label^="Arrival"] .ss-home-location__copy h2, .page-home [aria-label^="Arrival"] .ss-home-location__copy p { max-width: none; margin-left: auto; margin-right: auto; }
-.page-home [aria-label^="Arrival"] .ss-home-location__copy .d-flex { justify-content: center; }
+/* Double-win family value and progress cards */
+.page-home [aria-labelledby="ss-home-double-win-title"],
+.page-home [aria-labelledby="ss-home-double-win-title"] article,
+.page-home [aria-labelledby="ss-home-double-win-title"] .row,
+.page-home [aria-labelledby="ss-home-double-win-title"] p,
+.page-home [aria-labelledby="ss-home-double-win-title"] h2,
+.page-home [aria-labelledby="ss-home-double-win-title"] h3,
+.page-home [aria-labelledby="ss-home-double-win-title"] .ss-home-kicker {
+  text-align: left;
+}
+.page-home [aria-labelledby="ss-home-double-win-title"] .ss-home-kicker {
+  display: block;
+  margin: 0 0 0.5rem;
+}
+.page-home [aria-labelledby="ss-home-double-win-title"] article > h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  line-height: 1.25;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.page-home [aria-labelledby="ss-home-double-win-title"] article h3.h6 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  color: var(--home-ink);
+}
+.page-home [aria-labelledby="ss-home-double-win-title"] .ss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  max-width: fit-content;
+  text-align: center;
+}
+.page-home [aria-labelledby="ss-home-double-win-title"] .ss-btn span[aria-hidden="true"] {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Community bar: 3 classes each week for 12 weeks */
+.page-home [aria-labelledby="ss-home-community-title"] {
+  text-align: left;
+}
+.page-home [aria-labelledby="ss-home-community-title"] h2,
+.page-home [aria-labelledby="ss-home-community-title"] p {
+  text-align: left;
+}
+
+/* The part kids feel */
+.page-home [aria-labelledby="ss-home-double-win-title"] .col-md-7 {
+  text-align: left;
+}
+.page-home [aria-labelledby="ss-home-double-win-title"] .col-md-7 h2,
+.page-home [aria-labelledby="ss-home-double-win-title"] .col-md-7 p {
+  text-align: left;
+}
 html:has(body.page-home), body.page-home {
   --home-paper: var(--ss-bg, #fbfaf8);
   --home-surface: var(--ss-surface, #fff);
