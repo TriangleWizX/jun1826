@@ -23,15 +23,31 @@ assert.equal(family.savingsVsAnnualizedFirstTermFamily, fourTermTotal - family.p
 assert.equal(family.savingsVsAnnualizedFirstTermFamilyPercent, Number((((fourTermTotal - family.price) / fourTermTotal) * 100).toFixed(1)));
 assert.equal(family.scheduledClassesTotal, scheduledClassTotal);
 assert.equal(family.averagePricePerScheduledClass, Number((family.price / scheduledClassTotal).toFixed(2)));
-assert.equal(family.savingsPercent, pricing.householdBundles.firstTerm.oneAdultTwoYouth.savingsPercent);
 assert.equal(family.continuationOnly, true);
 assert.equal(family.guaranteeEligible, false);
+
+const adult12W = pricing.coreCulture.frequencyLadder.adult[3]["12Weeks"];
+const youth12W = pricing.coreCulture.frequencyLadder.youth[3]["12Weeks"];
+const oneAdultTwoYouth = pricing.householdBundles.firstTerm.oneAdultTwoYouth;
+const twoAdultsOneYouth = pricing.householdBundles.firstTerm.twoAdultsOneYouth;
+
+assert.equal(adult12W, 715);
+assert.equal(oneAdultTwoYouth.matchingIndividualTotal, adult12W + youth12W * 2);
+assert.equal(oneAdultTwoYouth.savingsAmount, oneAdultTwoYouth.matchingIndividualTotal - oneAdultTwoYouth.price);
+assert.equal(oneAdultTwoYouth.savingsPercent, Number((((oneAdultTwoYouth.matchingIndividualTotal - oneAdultTwoYouth.price) / oneAdultTwoYouth.matchingIndividualTotal) * 100).toFixed(1)));
+
+assert.equal(twoAdultsOneYouth.matchingIndividualTotal, adult12W * 2 + youth12W);
+assert.equal(twoAdultsOneYouth.savingsAmount, twoAdultsOneYouth.matchingIndividualTotal - twoAdultsOneYouth.price);
+assert.equal(twoAdultsOneYouth.savingsPercent, Number((((twoAdultsOneYouth.matchingIndividualTotal - twoAdultsOneYouth.price) / twoAdultsOneYouth.matchingIndividualTotal) * 100).toFixed(1)));
+
 assert.ok(pricing.productPolicy.continuationOnly.includes("householdBundles.annualFamily"));
 assert.ok(pricing.productPolicy.guaranteeExcluded.includes("householdBundles.annualFamily"));
 assert.equal(offers.qualified.find((offer) => offer.id === "annual-family-track")?.priceRef, "householdBundles.annualFamily");
 assert.match(page, /Annual Family Track: \$5,400/);
-assert.ok(page.indexOf("$1,980 / year") < page.indexOf("Youth: $75 / month"), "annual youth 3x high anchor should precede monthly low anchor");
-assert.ok(page.indexOf("$2,475 / year") < page.indexOf("Adult: $95 / month"), "annual adult 3x high anchor should precede monthly low anchor");
+assert.match(page, /Youth: \$185 \/ month/);
+assert.match(page, /Adult: \$245 \/ month/);
+assert.match(page, /Youth: \$1,980 \/ year/);
+assert.match(page, /Adult: \$2,475 \/ year/);
 const annualTable = page.slice(page.indexOf("Annual continuation prices"), page.indexOf("</table>", page.indexOf("Annual continuation prices")));
 assert.ok(annualTable.indexOf("3×") < annualTable.indexOf("2×") && annualTable.indexOf("2×") < annualTable.indexOf("1×"), "annual frequency table should descend from the high anchor");
 assert.match(page, /Free First Visit: \$0/);
