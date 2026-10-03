@@ -1,6 +1,16 @@
 {
   "currency": "USD",
   "currencySymbol": "$",
+  "globalPriceRange": {
+    "highAnchorMonthly": 206.25,
+    "highAnchorMonthlyDisplay": "$206 / month",
+    "lowAnchorMonthly": 75,
+    "lowAnchorMonthlyDisplay": "$75 / month",
+    "rangeDisplay": "$206 to $75 / month",
+    "adultMonthlyRangeDisplay": "$206 to $95 / month",
+    "youthMonthlyRangeDisplay": "$165 to $75 / month",
+    "description": "Tuition range anchored at the highest annual track monthly rate for 3× weekly ($206.25/mo adult, $165/mo youth) down to the lowest monthly rate for 1× weekly ($95/mo adult, $75/mo youth)."
+  },
   "productPolicy": {
     "firstPaidTerm": ["coreCulture.youth", "coreCulture.adult", "coreCulture.communityServiceAdult"],
     "continuationOnly": ["eliteConcierge", "annualTrack", "householdBundles.annualFamily"],
@@ -130,6 +140,10 @@
     "sixMonthContinuationPrices": {
       "youth": [425, 825, 1050],
       "adult": [525, 1050, 1300]
+    },
+    "monthlyEquivalents": {
+      "youth": [66.67, 133.33, 165],
+      "adult": [83.33, 166.67, 206.25]
     },
     "youth": {
       "name": "Youth Annual Track",
