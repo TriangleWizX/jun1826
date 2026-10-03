@@ -117,17 +117,25 @@
 
 .birthday-hero::after {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
-  z-index: 50;
+  z-index: 1;
   pointer-events: none;
   opacity: 0.02;
   background-image: radial-gradient(var(--ss-ink) 1px, transparent 0);
   background-size: 8px 8px;
 }
 
+.birthday-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
 .birthday-hero-copy {
-  padding: clamp(2rem, 5vw, 4.5rem) 0;
+  padding-block: clamp(2rem, 5vw, 4.5rem);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .birthday-page-main .birthday-hero-copy h1 {
@@ -135,6 +143,9 @@
   line-height: 1.04;
   letter-spacing: -0.015em;
   margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .birthday-page-main .birthday-hero-copy .lead {
@@ -532,7 +543,8 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 991.98px) {
   .birthday-hero-copy {
-    padding-bottom: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
   }
   .birthday-hero-card {
     margin-bottom: 2rem;
@@ -559,7 +571,7 @@
 @media (max-width: 575.98px) {
   .birthday-hero-copy {
     padding-top: 1.25rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
   }
   .birthday-badge {
     margin-bottom: 0.5rem;
@@ -567,9 +579,11 @@
     font-size: 0.68rem;
   }
   .birthday-page-main .birthday-hero-copy h1 {
-    font-size: clamp(1.8rem, 6.8vw, 2.35rem);
-    line-height: 1.08;
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+    line-height: 1.1;
     margin-bottom: 0.65rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   .birthday-page-main .birthday-hero-copy .lead {
     font-size: 0.95rem;
