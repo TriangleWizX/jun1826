@@ -1,4 +1,8 @@
 /* Sensei Studio: keep dimensionless inline icons from becoming viewport-wide media. */
+body.page-sensei-studio {
+  overflow-x: hidden;
+}
+
 body.page-sensei-studio svg {
   display: inline-block;
   width: 1.5rem;
@@ -198,4 +202,44 @@ body.page-sensei-studio .narrative-block p { max-width: 58ch; line-height: 1.7; 
   body.page-sensei-studio .narrative-grid { grid-template-columns: 1fr; }
   body.page-sensei-studio .narrative-title-row { text-align: center; }
   body.page-sensei-studio .narrative-title-row h2 { margin-inline: auto; }
+  body.page-sensei-studio .ss-main { padding-bottom: 5.5rem; }
 }
+
+/* Mobile Floating Sticky Actions */
+body.page-sensei-studio .studio-mobile-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(251, 250, 248, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  box-shadow: 0 -4px 16px rgba(54, 43, 36, 0.08);
+}
+
+body.page-sensei-studio .studio-mobile-sticky .studio-btn-primary,
+body.page-sensei-studio .studio-mobile-sticky .studio-btn-secondary {
+  flex: 1;
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+
+body.page-sensei-studio .studio-mobile-sticky .studio-btn-primary {
+  background: var(--ss-green, #116A42);
+  color: #FFFFFF !important;
+}
+
+body.page-sensei-studio .studio-mobile-sticky .studio-btn-secondary {
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-ink, #362B24) !important;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+}
+
