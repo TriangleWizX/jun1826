@@ -1,6 +1,8 @@
+> Creative direction superseded by [the outcome-led shoot draft](../vsl-outcome-shoot-order-2026-10-03/SHOOT-ORDER.md). Retain this document as prior planning history; use the new script for recording.
+
 # Record this VSL: four key positions
 
-Current copy for October 2, 2026. This is the public offer: one free first class; the next three classes use the paid plan the student chooses. Use the [plan](PLAN.md) for delivery and source limits. The separate Shiney Ticket offer is not part of this cut.
+Current copy for October 2, 2026. This is the public offer: one free first class; the next three classes use the paid plan the student chooses. Use the [plan](PLAN.md) for delivery and source limits. The separate Mountain Tap Card offer is not part of this cut.
 
 Record S01–S08 as eight short takes. Keep your phone, light and sound setup the same. The sound from your takes is the voiceover. Place real class clips over it in InShot and mute those added clips. Your face stays visible for the offer and choice.
 

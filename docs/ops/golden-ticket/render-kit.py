@@ -20,7 +20,7 @@ for row in rows:
 
 def render(filename, cards):
     sheet = canvas.Canvas(str(OUT / filename), pagesize=(612, 792))
-    sheet.setTitle('The Shiney Ticket | ' + ('ST01 pilot' if len(cards) == 1 else 'ST01 through ST10'))
+    sheet.setTitle('The Mountain Tap Card | MTP')
     sheet.setAuthor('Sensei Sandy BJJ')
     width, height = 85.6 * mm, 54 * mm
     left, gap = 52, 24
@@ -40,8 +40,8 @@ def render(filename, cards):
         if index % 4 == 0:
             if index:
                 sheet.showPage()
-            text(left, 765, 'THE SHINEY TICKET | PRINT AT 100%', 12, 'Helvetica-Bold')
-            text(left, 747, 'Front left. Back right. Use plain paper. Keep the other nine cards blank.', 8)
+            text(left, 765, 'THE MOUNTAIN TAP CARD | PRINT AT 100%', 12, 'Helvetica-Bold')
+            text(left, 747, 'Front left. Back right. Use plain paper. Program label MTP.', 8)
             text(left, 732, 'Each side: 85.6 x 54 mm. Check your card size before you cut.', 8)
             sheet.setStrokeColor(HexColor('#302920'))
             sheet.line(left, 34, left + inch, 34)
@@ -51,7 +51,7 @@ def render(filename, cards):
         y = 555 - (index % 4) * (height + 18)
         x = left
         panel(x, y)
-        text(x + 14, y + height - 24, 'THE SHINEY TICKET', 16, 'Helvetica-Bold', '#164B38')
+        text(x + 14, y + height - 24, 'THE MOUNTAIN TAP CARD', 13, 'Helvetica-Bold', '#164B38')
         text(x + 14, y + height - 51, 'Train with your friend.', 13, 'Helvetica-Bold')
         text(x + 14, y + height - 74, 'Four free classes in two weeks.', 11)
         text(x + 14, y + 48, 'Your first class starts day one.', 10)
@@ -73,5 +73,5 @@ def render(filename, cards):
     sheet.save()
 
 render('card-labels.pdf', rows)
-render('shiney-ticket-ST01.pdf', rows[:1])
-print('Rendered ten QR files, future label sheet, and ST01 pilot sheet. Ledgers unchanged.')
+render('mountain-tap-card-MTP.pdf', rows[:1])
+print('Rendered MTP QR file, card-labels sheet, and mountain-tap-card-MTP.pdf. Ledgers unchanged.')

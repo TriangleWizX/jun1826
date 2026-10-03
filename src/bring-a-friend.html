@@ -1,28 +1,28 @@
 ---
 layout: layouts/base.njk
-title: "Shiney Ticket | Bring a Friend to BJJ in Tannersville"
-description: "A member invites you to train at Sensei Sandy BJJ in Tannersville. Get four free classes in two weeks. Sandy starts your pass at your first class."
+title: "The Mountain Tap Card | Bring a Friend to BJJ in Tannersville"
+description: "A member invites you to train at Sensei Sandy BJJ in Tannersville with The Mountain Tap Card. Get four free classes in two weeks. Sandy starts your pass at your first class."
 canonicalUrl: "https://senseisandy.com/bring-a-friend"
 bodyClass: "page-bring-friend"
 extraCss:
   - "/assets/css/pages/shiney-ticket.css"
 permalink: "/bring-a-friend.html"
 ---
-<main class="shiney-page" id="main-content" data-shiney-release="2026-10-02" data-pilot-status="ready">
+<main class="shiney-page" id="main-content" data-program-code="MTP" data-mountain-tap-release="2026-10-03" data-pilot-status="ready">
 <section class="shiney-hero" aria-labelledby="shiney-title">
 <div class="shiney-wrap shiney-hero-grid">
 <div class="shiney-intro">
 <p class="shiney-kicker">An invite from your friend</p>
 <h1 id="shiney-title">Good friends.<br>Shared mat time.</h1>
-<p class="shiney-lede">Your friend saved you a <strong>{{ referrals.name }}</strong>. {{ referrals.publicCopy.offer }}</p>
-<a class="shiney-button" href="#friend-pass-form" data-analytics-event="friend_pass_click" data-cta-src="shiney-hero" data-offer="shiney-ticket">Plan Our First Class <span aria-hidden="true">↗</span></a>
+<p class="shiney-lede">Your friend gave you <strong>{{ referrals.name }}</strong>. {{ referrals.publicCopy.offer }}</p>
+<a class="shiney-button" href="#friend-pass-form" data-analytics-event="friend_pass_click" data-cta-src="mountain-tap-hero" data-offer="mountain-tap-card">Plan Our First Class <span aria-hidden="true">↗</span></a>
 <p class="shiney-small">For a member and a new adult guest.<br>Ask Sandy to set the class first.</p>
 </div>
-<aside class="shiney-ticket" aria-label="Shiney Ticket offer">
-<div class="shiney-ticket-top"><span>Sensei Sandy BJJ</span><span>Tannersville, NY</span></div>
-<p class="shiney-ticket-name">The<br><em>Shiney Ticket</em></p>
+<aside class="shiney-ticket" aria-label="The Mountain Tap Card offer">
+<div class="shiney-ticket-top"><span>Sensei Sandy BJJ</span><span>Tannersville, NY · MTP</span></div>
+<p class="shiney-ticket-name">The<br><em>Mountain Tap Card</em></p>
 <div class="shiney-ticket-count"><strong>{{ referrals.classesIncluded }}</strong><span>free classes<br>with your friend</span></div>
-<div class="shiney-ticket-stub"><span><strong>{{ referrals.windowDays }} days</strong><br>from your first class</span><span class="shiney-ticket-seal" aria-hidden="true">SS</span></div>
+<div class="shiney-ticket-stub"><span><strong>{{ referrals.windowDays }} days</strong><br>from your first class</span><span class="shiney-ticket-seal" aria-hidden="true">MTP</span></div>
 <p class="shiney-ticket-foot">A member's invite. A coached start.</p>
 </aside>
 </div>
@@ -40,16 +40,16 @@ permalink: "/bring-a-friend.html"
 <div class="shiney-choice-details"><h3>Want to try live practice?</h3><p>{{ freeIntro.publicCopy.sparring }}</p><h3>{{ freeIntro.adultFirstDay.challenge.name }}</h3><p>{{ freeIntro.publicCopy.challenge }}</p></div>
 </div></section>
 <section class="shiney-wrap shiney-form-section" id="friend-pass-form" aria-labelledby="friend-pass-form-heading">
-<div class="shiney-form-intro"><p class="shiney-kicker">Your invite starts here</p><h2 id="friend-pass-form-heading">Let's plan<br>your first class.</h2><p>Fill this out with your friend. Sandy will text to set the class.</p><p>{{ referrals.publicCopy.activationNote }}</p><a class="shiney-text-link" href="{{ contact.smsHref }}">Text Sandy instead ↗</a><p class="shiney-small">{{ contact.addressLine1 }}<br>{{ contact.cityStateZip }}</p></div>
+<div class="shiney-form-intro"><p class="shiney-kicker">Your invite starts here</p><h2 id="friend-pass-form-heading">Let's plan<br>your first class.</h2><p>Fill this out with your friend. Tell Sandy who invited you so we can match you up and thank your friend. Sandy will text to set the class.</p><p>{{ referrals.publicCopy.activationNote }}</p><a class="shiney-text-link" href="{{ contact.smsHref }}">Text Sandy instead ↗</a><p class="shiney-small">{{ contact.addressLine1 }}<br>{{ contact.cityStateZip }}</p></div>
 <div class="shiney-form-panel"><form action="https://formspree.io/f/myzpdvay" class="ss-form-shell" data-cta-position="form" id="friend-pass-form-shell" method="POST">
 <div class="ss-form-frame">
-<input name="form_name" type="hidden" value="Shiney Ticket Request"/>
-<input name="_subject" type="hidden" value="Sensei Sandy Shiney Ticket Request"/>
+<input name="form_name" type="hidden" value="Mountain Tap Card Request"/>
+<input name="_subject" type="hidden" value="Sensei Sandy Mountain Tap Card Request"/>
 <input name="_next" type="hidden" value="/"/>
-<input name="offer_id" type="hidden" value="shiney_ticket"/>
+<input name="offer_id" type="hidden" value="mountain_tap_card"/>
 <input name="offer_classes" type="hidden" value="{{ referrals.classesIncluded }}"/>
 <input name="activation_event" type="hidden" value="{{ referrals.activationEvent }}"/>
-<div class="ss-form-field"><label for="friend-pass-card-code">Card code (if you have one)</label><input id="friend-pass-card-code" name="referral_card" type="text" maxlength="4" pattern="[Ss][Tt](0[1-9]|10)" placeholder="ST01" aria-describedby="friend-pass-code-help"/><small id="friend-pass-code-help">Use ST01 to ST10.</small></div>
+<div class="ss-form-field"><label for="friend-pass-card-code">Program label</label><input id="friend-pass-card-code" name="referral_card" type="text" maxlength="8" pattern="[Mm][Tt][Pp]|[Ss][Tt](0[1-9]|10)|[Gg][Tt](0[1-9]|10)" placeholder="MTP" value="MTP" aria-describedby="friend-pass-code-help"/><small id="friend-pass-code-help">The Mountain Tap Card (MTP). We track your invite by your referring friend's name below.</small></div>
 <input id="friend-pass-source-url" name="source_url" type="hidden" value=""/>
 <div class="form-honeypot" aria-hidden="true">
 <label for="friend-pass-company">Company</label>
@@ -57,29 +57,29 @@ permalink: "/bring-a-friend.html"
 </div>
 <div class="ss-form-grid">
 <div class="ss-form-field">
-<label for="friend-pass-name">Member name</label>
-<input autocomplete="name" id="friend-pass-name" name="student_name" required="" type="text"/>
+<label for="friend-pass-name">Referring member name (your friend)</label>
+<input autocomplete="name" id="friend-pass-name" name="student_name" required="" type="text" placeholder="Friend who trains here"/>
 </div>
 <div class="ss-form-field">
-<label for="friend-pass-phone">Member phone</label>
-<input autocomplete="tel" id="friend-pass-phone" name="student_phone" required="" type="tel"/>
+<label for="friend-pass-phone">Referring member phone</label>
+<input autocomplete="tel" id="friend-pass-phone" name="student_phone" required="" type="tel" placeholder="Member's phone"/>
 </div>
 <div class="ss-form-field">
-<label for="friend-pass-friend-name">Guest name</label>
-<input id="friend-pass-friend-name" name="friend_name" required="" type="text"/>
+<label for="friend-pass-friend-name">Guest name (you)</label>
+<input id="friend-pass-friend-name" name="friend_name" required="" type="text" placeholder="Your name"/>
 </div>
 <div class="ss-form-field">
 <label for="friend-pass-age">Adult guest age</label>
-<input id="friend-pass-age" inputmode="numeric" min="18" max="120" name="friend_age" required="" type="number"/>
+<input id="friend-pass-age" inputmode="numeric" min="18" max="120" name="friend_age" required="" type="number" placeholder="18+"/>
 </div>
 
 <div class="ss-form-field">
 <label for="friend-pass-friend-phone">Guest phone</label>
-<input autocomplete="tel" id="friend-pass-friend-phone" name="friend_phone" required="" type="tel"/>
+<input autocomplete="tel" id="friend-pass-friend-phone" name="friend_phone" required="" type="tel" placeholder="Your cell phone"/>
 </div>
 <div class="ss-form-field">
 <label for="friend-pass-friend-email">Guest email</label>
-<input autocomplete="email" id="friend-pass-friend-email" name="friend_email" type="email"/>
+<input autocomplete="email" id="friend-pass-friend-email" name="friend_email" type="email" placeholder="Your email"/>
 </div>
 <div class="ss-form-field">
 
@@ -110,7 +110,7 @@ permalink: "/bring-a-friend.html"
 </div>
 </div>
 </section>
-<section class="shiney-wrap shiney-terms" aria-labelledby="shiney-terms-title"><div><p class="shiney-kicker">For the member who shares</p><h2 id="shiney-terms-title">The Shiney Ticket reward</h2><p>{{ referrals.publicCopy.reward }}</p><p>Use it for gear, events, or your account.</p></div><div class="shiney-terms-list"><p>One reward per new guest who joins.</p><p>You can use it at the school. It has no cash value.</p><p>This gift is for friends. It does not cover your close family.</p><p>Use our base rates with this credit. It does not stack with our rates for those who serve the public.</p><p>Each free class needs space and Sandy's OK. Your friend needs to be new and age 18 or up. Day one is your first attended class. All four classes must end by day 14.</p></div></section>
+<section class="shiney-wrap shiney-terms" aria-labelledby="shiney-terms-title"><div><p class="shiney-kicker">For the member who shares</p><h2 id="shiney-terms-title">The Mountain Tap Card reward</h2><p>{{ referrals.publicCopy.reward }}</p><p>Use it for gear, events, or your account.</p></div><div class="shiney-terms-list"><p>One reward per new guest who joins.</p><p>You can use it at the school. It has no cash value.</p><p>This gift is for friends. It does not cover your close family.</p><p>Use our base rates with this credit. It does not stack with our rates for those who serve the public.</p><p>Each free class needs space and Sandy's OK. Your friend needs to be new and age 18 or up. Day one is your first attended class. All four classes must end by day 14.</p></div></section>
 <section class="shiney-wrap shiney-local"><p>Train in Tannersville with a friend. We serve Hunter and Windham too. Friends from Haines Falls and the Catskills can join.</p><nav aria-label="Plan your visit"><a href="/schedule">Class schedule ↗</a><a href="/bjj-tannersville-ny-directions">Find the studio ↗</a><a href="/how-class-works">How class works ↗</a></nav></section>
 </main>
 <script>(function friendPassForm() {
@@ -121,15 +121,22 @@ permalink: "/bring-a-friend.html"
   if (!form || !success || !status) return;
 
   if (sourceUrl) sourceUrl.value = window.location.href;
-  const cardCode = new URLSearchParams(window.location.search).get('utm_content') || '';
+  const cardCode = (new URLSearchParams(window.location.search).get('utm_content') || '').trim();
   const cardInput = document.getElementById('friend-pass-card-code');
-  // Keep already-written cards useful while all new labels and links use ST.
+  // Normalize program label to MTP while mapping legacy ST/GT codes gracefully
   function normalizeCardCode(value) {
-    const match = /^[gs]t(0[1-9]|10)$/i.exec(value.trim());
-    return match ? 'ST' + match[1] : value;
+    if (!value) return 'MTP';
+    const clean = value.trim();
+    if (/^mtp$/i.test(clean)) return 'MTP';
+    if (/^[gs]t(0[1-9]|10)$/i.test(clean)) return 'MTP';
+    return clean.toUpperCase();
   }
   if (cardInput) {
-    if (/^[gs]t(0[1-9]|10)$/i.test(cardCode)) cardInput.value = normalizeCardCode(cardCode);
+    if (cardCode) {
+      cardInput.value = normalizeCardCode(cardCode);
+    } else if (!cardInput.value) {
+      cardInput.value = 'MTP';
+    }
     cardInput.addEventListener('change', () => { cardInput.value = normalizeCardCode(cardInput.value); });
   }
 

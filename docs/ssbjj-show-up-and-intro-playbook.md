@@ -15,7 +15,7 @@ Current entry policy, October 2, 2026. Authority: `src/_data/free-intro.json` an
 
 The general local offer is one free first class. If a student continues, later classes use the paid plan they choose. Give consistent written price, term, frequency, and inclusions before enrollment. The fourteen-day learning aim is four attended classes covering standing, guard, chest to chest, and chest to back. The free class counts as class one. Attendance and understanding require separate checks.
 
-The member-invited adult Shiney Ticket is a separate offer with its own four-free-class rules. Use its current playbook and records. The paid Training Fit Guarantee has separate eligibility and full terms; it is not a fourteen-day trial guarantee. See `/guarantee-terms`.
+The member-invited adult Mountain Tap Card is a separate offer with its own four-free-class rules (program label MTP, tracked primarily by the referring friend). Use its current playbook and records. The paid Training Fit Guarantee has separate eligibility and full terms; it is not a fourteen-day trial guarantee. See `/guarantee-terms`.
 
 ## Short message drafts
 

@@ -8,7 +8,7 @@ Adults meet Sandy for a 15-minute goal visit before training. They may choose a 
 
 Visit only: day clothes. Training: clean sports clothes and Sandy's class-specific gear plan. Youth keep their separate combined visit/class, a parent or guardian stays, arrival is 20 minutes before class, and the full visit takes 60–75 minutes. Sandy verifies the waiver before confirming the youth class. One complimentary reschedule remains in place, with manual review after another missed visit.
 
-The four-class learning aim covers standing, guard, chest to chest, and chest to back. It does not make all four classes free. The member-invited Shiney Ticket has its own four-free-class terms and was left separate.
+The four-class learning aim covers standing, guard, chest to chest, and chest to back. It does not make all four classes free. The member-invited Mountain Tap Card has its own four-free-class terms and was left separate.
 
 ## Scope and changes
 

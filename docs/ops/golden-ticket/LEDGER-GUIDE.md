@@ -1,24 +1,24 @@
 # Private ledger setup
 
-The private working Google Sheet is ready: **Shiney Ticket — ST01 pilot log**. See PRIVATE-LOG.md for its tabs and verification. Use that sheet for live entries; keep these source CSVs blank.
+The private working Google Sheet is ready: **The Mountain Tap Card — MTP log**. See PRIVATE-LOG.md for its tabs and verification. Use that sheet for live entries; keep these source CSVs blank.
 
-The guest, issue, reward and scorecard CSVs are blank templates. The card register tracks current ST codes and contains no customer data. Past GT01 hardware proof is saved in `history/card-register-before-st.csv`. Import copies into your existing private spreadsheet or operational system. Restrict access to people who handle referrals. Keep names, phone numbers, email, payment details, and health information out of repository files and NFC/QR links. Use opaque internal references in private copies; they can still link to personal records and need access controls.
+The guest, issue, reward and scorecard CSVs are blank templates. The card register tracks the active MTP program code and contains no customer data. Past GT01/ST01 hardware proof is saved in `history/`. Import copies into your existing private spreadsheet or operational system. Restrict access to people who handle referrals. Keep names, phone numbers, email, payment details, and health information out of repository files and NFC/QR links. Use opaque internal references in private copies; they can still link to personal records and need access controls.
 
-Dates: ISO format (`2026-10-02`); use full local date/time with offset where appointment ordering matters. Blank means unknown or not yet occurred. A blank is not a failed conversion. Use one internal guest reference per actual person; look for existing records before adding another.
+Dates: ISO format (`2026-10-03`); use full local date/time with offset where appointment ordering matters. Blank means unknown or not yet occurred. A blank is not a failed conversion. Use one internal guest reference per actual person; look for existing records before adding another.
 
-## Card register
+## Program register & tracking mechanism
 
-Exactly ten rows. `physical_status` is one of `unprogrammed`, `rewrite_awaiting_check`, `programmed_awaiting_print_check`, `ready`, `issued`, `returned_awaiting_check`, `lost`, `retired`. A returned card becomes ready after inspection/read-back. The eight counts must total ten. ST01 is `ready`; its new URL write, read-back, Android tap and printed QR scan passed user verification (October 2, 2026), and it is ready for member handoff. The other nine remain unprogrammed reserves. `current_cycle_id` identifies custody, not the only possible referral.
+The active program label is **MTP**. Tracking sequential numbers (ST01, ST02, ST03, etc.) on cards is unnecessary. The **referring member (the friend who is referring)** is the primary tracking mechanism. Cards are physical tokens programmed with the unified MTP program URL (`utm_campaign=mountain_tap_card&utm_content=mtp`).
 
-Record read-back, browser, and printed-QR checks as `pass`, `fail`, or blank. Evidence can identify the operator/date/device in a private record. User-reported checks are useful, but label them as reports rather than independently captured device evidence.
+Record read-back, browser, and printed-QR checks as `pass`, `fail`, or blank. Evidence can identify the operator/date/device in a private record.
 
 ## Issue cycles
 
-One row per handoff: `ST01-001`, `ST01-002`, etc. Never overwrite an old row. `pass_status` is `not_reported`, `reported`, or `guest_confirmed`. A member's report proves an invitation report, not attendance. A cycle can close when the card returns while its guest remains active in `referrals.csv`.
+One row per handoff to a member if tracked. A member's report proves an invitation report, not attendance.
 
-## Guest progress
+## Guest progress & referring friend attribution
 
-Each unique guest gets one referral row. `attribution_confidence` is `guest_confirmed`, `source_url_only`, `member_report_only`, or `unresolved`. Code plus current custody is insufficient for a reused card with delayed inquiries. Reconcile the referring member and original cycle with the guest before assigning reward credit.
+Each unique guest gets one referral row. **The primary tracking key is the referring member's name and phone number.** When the guest submits the form, calls, or texts, Sandy records the referring member. Attribution is confirmed directly with the guest and referring member before assigning reward credit.
 
 `engaged_at`: actual inbound request/conversation. `class_confirmed_at`: Sandy confirmed the arrangement. `scheduled_class_at`: when the class will occur. `class_attended_at`: actual attendance. `joined_at`: accepted enrollment. `first_payment_cleared_at`: verified cleared payment. These are distinct facts.
 

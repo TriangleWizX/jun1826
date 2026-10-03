@@ -1,3 +1,5 @@
+> Creative direction superseded by [the outcome-led shoot draft](../vsl-outcome-shoot-order-2026-10-03/SHOOT-ORDER.md). Retain this document as prior planning history; use the new script for recording.
+
 # A clear first class, then four positions in fourteen days
 
 Internal plan, October 2, 2026. Student copy is in [SCRIPT.md](SCRIPT.md). This iteration supersedes the October 1 VSL's arrival, clothing, learning promise and paid-next-step wording. Existing recordings remain useful assets; see the retake map below.
@@ -39,7 +41,7 @@ The new copy still uses the supplied VSL structure: promise and concern, visible
 | Consent, waiver, partner matching; live practice optional; pause/end available | Same source, `adultFirstDay` | Delivered before training; pace/choice shown in S05 |
 | Adult group choices | `src/_data/schedule.json` | Check actual class/space for every plan; no standing time guarantee in the VSL |
 | 1/2/3-per-week paid ladder; older fixed three-per-week terms also remain | `pricing.json`, `offers.json`, `content/offers.json`, offer specification | State paid choice clearly; resolve exact written price/frequency terms before quoting or taking payment |
-| Member-invited first-time adults have a separate four-free-class Shiney Ticket | `src/_data/referrals.json` | Keep separate from this public one-free-plus-paid offer |
+| Member-invited first-time adults have a separate four-free-class Mountain Tap Card (program label MTP, tracked primarily by referring friend) | `src/_data/referrals.json` | Keep separate from this public one-free-plus-paid offer |
 | Intro funnel, completion and renewal data are not yet measured | `src/_data/academy-metrics.json` | Establish counts; make no improvement claim |
 | Ben's time/family concerns are owner-reported hypotheses | `docs/ads/paying-customer-avatar-audit-2026-09-28.md` | Useful planning context, not a population survey |
 
@@ -152,7 +154,7 @@ Proposed distribution order:
 
 Measure requests that become attended classes and learning progress. Local views alone do not establish impact. The existing payer audit supports testing practical time/fit language, not claiming market demand or a demographic result.
 
-The approved Shiney Ticket remains separate: first-time adult guests invited by a member have four free classes under its own terms and fixed pass window. It is not the public paid-continuation plan. Its current ST01-only pilot and existing private ledgers remain in force. Do not expand it, reset a guest's window, add a child to it or present the member's $35 credit as a guest bonus.
+The approved Mountain Tap Card (program label MTP, tracked primarily by referring friend) remains separate: first-time adult guests invited by a member have four free classes under its own terms and fixed pass window. It is not the public paid-continuation plan. Its referral attribution is tracked by referring friend name/phone on `/bring-a-friend`. Do not expand it, reset a guest's window, add a child to it or present the member's $35 credit as a guest bonus.
 
 ## 9. VSL production and retakes
 

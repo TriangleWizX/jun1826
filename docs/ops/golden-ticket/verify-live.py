@@ -41,7 +41,7 @@ try:
 finally:
     client.close()
 
-query = '?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01'
+query = '?utm_source=member_referral&utm_medium=offline&utm_campaign=mountain_tap_card&utm_content=mtp'
 routes = ['/', '/bring-a-friend'+query, '/bring-a-friend.html'+query]
 for name in ['programs','contact','show-up-kit','how-class-works','options-pricing']:
     routes += ['/'+name,'/'+name+'.html']
@@ -52,7 +52,7 @@ for town in ['adults-tannersville','haines-falls','hunter','tannersville','windh
 http = []
 for route in routes:
     url = 'https://senseisandy.com'+route
-    with urlopen(Request(url,headers={'User-Agent':'ShineyTicket-release-check','Cache-Control':'no-cache'}),timeout=30) as response:
+    with urlopen(Request(url,headers={'User-Agent':'MountainTapCard-release-check','Cache-Control':'no-cache'}),timeout=30) as response:
         assert response.status == 200
         html = response.read().decode('utf-8')
         final = response.geturl()
@@ -65,14 +65,14 @@ for route in routes:
     text = soup.get_text(' ',strip=True)
     assert 'Adult First Visits are not training' not in text, route
     if 'bring-a-friend' in route:
-        assert 'utm_campaign=shiney_ticket' in final and 'utm_content=st01' in final
-        for marker in ['Shiney Ticket','Four free classes in two weeks','day 14','The Sandy Challenge']:
+        assert 'utm_campaign=mountain_tap_card' in final and 'utm_content=mtp' in final
+        for marker in ['Mountain Tap Card','Four free classes in two weeks','day 14','The Sandy Challenge']:
             assert marker.lower() in text.lower(), (route,marker)
         assert 'Golden Ticket' not in text
-        for name,value in [('offer_id','shiney_ticket'),('offer_classes','4'),('activation_event','first_attended_class')]:
+        for name,value in [('offer_id','mountain_tap_card'),('offer_classes','4'),('activation_event','first_attended_class')]:
             assert soup.find('input',attrs={'name':name})['value']==value
         assert soup.find('link',attrs={'rel':'canonical'})['href']=='https://senseisandy.com/bring-a-friend'
-        assert soup.find('main')['data-shiney-release']=='2026-10-02'
+        assert soup.find('main')['data-program-code']=='MTP'
         assert soup.find('form',id='friend-pass-form-shell')['action']=='https://formspree.io/f/myzpdvay'
     if route in ['/how-class-works','/how-class-works.html','/free-bjj-intro-tannersville-ny/','/free-bjj-intro-tannersville-ny/index.html']:
         assert 'The Sandy Challenge' in text and 'Sparring is live practice' in text, route

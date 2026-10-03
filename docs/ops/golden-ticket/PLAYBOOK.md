@@ -1,22 +1,22 @@
-# The Shiney Ticket operating playbook
+# The Mountain Tap Card operating playbook
 
 ## 1. The decision
 
-Use ST01 as the single reusable invitation for now, as Sandy requested. Start with one willing adult member and one suitable adult friend. Keep ST02–ST10 blank in reserve; expansion waits for a later decision. The first review is after seven days; the inventory review is after fourteen days; the first pilot review is after thirty days from actual launch. Those review dates are separate from each guest's 14-day pass window.
+Use **The Mountain Tap Card** with program label **MTP**. Tracking sequential numbers like ST02, ST03, etc. is unnecessary. **Tracking the friend who is referring is the primary tracking mechanism.** Start with willing adult members and their adult friends. The operational review is conducted weekly. Those review dates are separate from each guest's 14-day pass window.
 
-The member gives their friend an easy first step and a familiar face. The guest receives four free classes within 14 calendar days, starting at their first attended class and activated by Sandy. The first class counts; its local date is day one. Each class and the friend's attendance are confirmed by Sandy. The existing $35 academy credit rewards a qualifying enrollment. Cards rotate back into circulation; the guest's progress continues in a separate record.
+The member gives their friend an easy first step and a familiar face. The guest receives four free classes within 14 calendar days, starting at their first attended class and activated by Sandy. The first class counts; its local date is day one. Each class and the friend's attendance are confirmed by Sandy. The existing $35 academy credit rewards a qualifying enrollment. Cards carry the clean program label MTP; the guest's referral is tracked directly to the referring member.
 
 **The loop:** good class experience → thoughtful invitation → reserved friend class → welcoming coached experience → suitable enrollment → another good experience → a future invitation. The card supports the handoff. Sandy's welcome and the student's ongoing experience sustain the loop.
 
 ## 2. Evidence and offer boundaries
 
-Sandy confirmed: adult friends first; Android; prearranged first class with the referring friend; retain the existing $35 policy.
+Sandy confirmed: adult friends first; Android/NFC; prearranged first class with the referring friend; retain the existing $35 policy.
 
-`src/bring-a-friend.html` and the fetched public `/bring-a-friend` page describe the existing member Friend Pass: active students invite first-time guests; Sandy confirms the appropriate class, available space and arrival time; reservation and waiver are required; the Shiney Ticket includes four free classes within the guest's own 14-day window. Partner matching and capacity still apply. Ask to attend together; Sandy confirms that arrangement. Sharing a class does not promise that the two friends will be paired for every activity.
+`src/bring-a-friend.html` and the public `/bring-a-friend` page describe the existing member Friend Pass: active students invite first-time guests; Sandy confirms the appropriate class, available space and arrival time; reservation and waiver are required; The Mountain Tap Card includes four free classes within the guest's own 14-day window. Partner matching and capacity still apply. Ask to attend together; Sandy confirms that arrangement. Sharing a class does not promise that the two friends will be paired for every activity.
 
-The global adult policy in `src/_data/free-intro.json` requires the first visit, then allows optional coach-confirmed same-day training or a later class. First-day sparring and The Sandy Challenge are elective. Waiver, consent, partner matching, agreed rules, and a verbal pause remain part of the class plan. Youth retain their own workflow. This pilot requests a class with the inviting friend through the Friend Pass form.
+The global adult policy in `src/_data/free-intro.json` requires the first visit, then allows optional coach-confirmed same-day training or a later class. First-day sparring and The Sandy Challenge are elective. Waiver, consent, partner matching, agreed rules, and a verbal pause remain part of the class plan. Youth retain their own workflow. This program requests a class with the inviting friend through the Friend Pass form.
 
-Canonical `src/_data/referrals.json` now records the approved guest offer, activation rules, and existing $35 reward terms. Sandy explicitly reconfirmed them here. This packet preserves them; it does not silently create or remove an incentive. The generic testimonials on that page were not independently substantiated during this task and are not reused as proof in this kit.
+Canonical `src/_data/referrals.json` records the approved guest offer, activation rules, and existing $35 reward terms. Sandy explicitly reconfirmed them here. This packet preserves them; it does not silently create or remove an incentive. The generic testimonials on that page were not independently substantiated during this task and are not reused as proof in this kit.
 
 ## 3. What Hormozi contributes, and what we adapt
 
@@ -33,49 +33,48 @@ The book's gift-card example uses a monetary credit and a deadline. We adapt its
 
 ## 4. Two objects, two records
 
-**Physical invitation:** ST01–ST10. NFC and QR open an HTTPS page. Anyone with the URL can copy it. The card code is a routing hint, not an identity check, secure voucher, payment instrument, or proof of eligibility.
+**Physical invitation:** The Mountain Tap Card (program label **MTP**). NFC and QR open `https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=mountain_tap_card&utm_content=mtp`. The card label MTP identifies the program. Sequential numbers on individual cards are unnecessary; cards are reusable tokens.
 
-**Earned credit:** a private ledger entry linked to one unique new referred student and one eligible referring member. It arises only after the qualifying first payment clears. Returning or losing a card does not erase a valid referral or an earned credit.
+**Primary tracking mechanism & earned credit:** The referring member's identity (name and phone). The guest or member enters the referring member's name on the form or via text. A private ledger entry links the new referred student directly to the referring member. Credit arises when the friend's qualifying first payment clears.
 
-Keep card custody, invitation cycles, guests, and reward transactions separate. Otherwise a returned card can overwrite a guest who has not yet enrolled.
+Keep member/guest referral relationships, attendance, and reward transactions cleanly attributed in private records.
 
 ## 5. The operating sequence
 
 ### Prepare
 
-1. Rename the pilot card ST01. Write the new `utm_campaign=shiney_ticket&utm_content=st01` URL, read it back, then test the Android tap and new printed QR. Keep the other nine cards blank. ST01 new-code checks passed (verified by Sandy October 2, 2026), and ST01 is ready for member handoff.
-2. Keep the links free of names, phone numbers, or member IDs. Use the fixed public code `st01` through `st10`.
-3. Copy the blank ledgers into restricted operations storage. Use internal member/guest references there, with personal contact data retained in the existing customer system. Do not fill these repository templates with customer information.
+1. Program cards with the unified Mountain Tap Card URL: `utm_campaign=mountain_tap_card&utm_content=mtp`. Read it back, then test the Android tap and printed QR.
+2. Keep the links clean and unified: `https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=mountain_tap_card&utm_content=mtp`.
+3. Copy the blank ledgers into restricted operations storage. Use internal member/guest references there, with personal contact data retained in the existing customer system.
 4. Confirm actual class space and Sandy's available arrival/welcome window before offering a guest a specific slot. Use the current schedule, not times printed on cards.
 5. Brief anyone handling replies on the difference between a request, a confirmed class, an attended class, and a cleared enrollment payment.
 
 ### Ask and issue
 
-6. Select one member who has expressed a genuine positive experience and wants to invite someone. A newly enthusiastic member can qualify; seniority is not the selection rule.
-7. Ask privately after class, when there is time for a short conversation. Use the invitation in `COPY.md`. Ask for one friend they already know would enjoy this kind of training.
+6. Select members who express genuine positive experiences and want to invite a friend.
+7. Ask privately after class, when there is time for a short conversation. Use the invitation in `COPY.md`.
 8. Show the member how to tap or scan. Explain that Sandy confirms the class before anyone travels. Explain the $35 policy privately and accurately; lead the invitation with the friend's experience.
-9. Record an issue-cycle ID such as `ST01-001`, the internal member reference, issue date, and next check-in. Give the member the card to pass to the friend. Do not require the friend to enroll for the member to receive thanks.
+9. Hand the member a Mountain Tap Card to pass to their friend.
 
 ### Pass and request
 
-10. The member offers the card. The friend chooses whether to proceed. The member and friend can complete the existing Friend Pass form together, or use its text option. That form asks for the member's details and the guest's details and includes a required permission-to-share checkbox.
-11. If the guest uses text instead, ask them to include the printed card code and who invited them. Contact details remain in the normal private conversation. A member should obtain the friend's agreement before sharing their details or starting a group introduction.
-12. Mark a handoff reported by the member as `reported`, not as a verified lead. A verified inbound request or conversation creates the guest record. Multiple taps do not create multiple guests.
+10. The member offers the card. The friend chooses whether to proceed. The member and friend complete the request form together or text Sandy. The form captures the referring member's name as the primary referral attribution.
+11. If the guest uses text instead, ask them who invited them. Contact details remain in the normal private conversation.
+12. A verified inbound request creates the guest record, with the referring member noted as the attribution source.
 
 ### Confirm and welcome
 
-13. Sandy reviews first-time guest eligibility, adult lane, capacity, suitable placement, waiver, and the friend's intended attendance. Then Sandy confirms the specific class and arrival details. Receipt of a form is not confirmation.
-14. Ask for the code and inviting member when either is missing. Reconcile against the issue history. A late inquiry from an earlier cycle remains attributed to that earlier invitation if confirmed; never assume the current card holder is the referrer.
-15. On arrival, complete the required first visit and waiver check. Offer the adult their training and sparring choices. The Sandy Challenge is optional and coach-led with agreed rules, verbal pause, and belt release at the end. When the guest attends their first class, Sandy records activation, class one, and the final valid date (local start date + 13 days). Give that date to the guest and plan the remaining three classes with the friend. Check expiry and classes used before each attendance. Let Sandy choose partners.
-16. Recover the card at the visit if practical. Thank the guest and member. Record the returned card, inspect it, and read back the URL before reissue. A guest who forgot the card can still attend a confirmed visit.
+13. Sandy reviews first-time guest eligibility, adult lane, capacity, suitable placement, waiver, and the friend's intended attendance. Then Sandy confirms the specific class and arrival details.
+14. Sandy verifies the referring member with the guest upon inquiry.
+15. On arrival, complete the required first visit and waiver check. Offer the adult their training and sparring choices. When the guest attends their first class, Sandy records activation, class one, and the final valid date (local start date + 13 days). Give that date to the guest and plan the remaining three classes with the friend.
+16. Recover or rotate the card if practical. A guest who forgot the card can still attend a confirmed visit because tracking is based on the referring member.
 
 ### Next step, reward, repeat
 
-17. After class, ask how it felt and whether the guest wants help with the next step. Discuss the existing suitable program and actual schedule if invited. Record first-class attendance independently of enrollment.
-18. When an eligible new referred student enrolls in their first twelve-week program and their first payment clears, create one $35 credit entry. Verify referral attribution, exclusions, payment evidence, and prior reward entries before issuing it.
-19. Record every redemption and remaining balance. Thank the referring member without sharing the guest's private enrollment or payment details beyond what is necessary to explain their own earned reward.
-20. Confirm the new student's next appropriate class. Track a second attendance and later active status. Ask for a future invitation after a real positive experience and willingness, not as a requirement of joining.
-21. Reissue a returned, tested card with a new cycle ID. Keep all earlier guest/reward records. Ten cards can support many cycles.
+17. After class, ask how it felt and whether the guest wants help with the next step. Record first-class attendance independently of enrollment.
+18. When an eligible new referred student enrolls in their first twelve-week program and their first payment clears, create one $35 credit entry for the referring member.
+19. Record every redemption and remaining balance. Thank the referring member without sharing private guest payment details beyond what explains the reward.
+20. Confirm the new student's next class. Repeat the referral invitation after a real positive experience.
 
 ## 6. Preserve the existing $35 policy
 
@@ -143,4 +142,4 @@ Hormozi sources are in `/home/twizss/.codex/skills/hormozi-orchestra/knowledge/`
 
 Operational authorities: `src/bring-a-friend.html`; `src/_data/referrals.json`, `free-intro.json`, `offers.json`, `pricing.json`, `contact.json`; current user decisions; live `/bring-a-friend`. Product-marketing context was used for audience orientation only where consistent with current sources.
 
-Kit completion requires ten matching URL/QR pairs, writable-capacity checks, usable print layout, blank ledgers, Android steps, preserved reward terms, truthful copy, and verified source capture. The active launch scope is ST01 only; the other nine payloads are optional future inventory. Launch completion additionally requires physical read/scan tests (passed for ST01), a confirmed operational receipt path (passed), real member assignments, and Sandy's actual class arrangements. Referral results require actual request, attendance, payment, and retention evidence. See `VERIFICATION.md`; unperformed operational stages remain pending.
+Kit completion requires matching URL/QR pair, writable-capacity checks, usable print layout, blank ledgers, Android steps, preserved reward terms, truthful copy, and verified source capture. The active program label is MTP; sequential numbers are retired since referring friend tracking is primary. Launch completion additionally requires physical read/scan tests, a confirmed operational receipt path, real member assignments, and Sandy's actual class arrangements. Referral results require actual request, attendance, payment, and retention evidence. See `VERIFICATION.md`; unperformed operational stages remain pending.

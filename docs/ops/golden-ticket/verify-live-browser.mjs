@@ -7,7 +7,7 @@ const base=process.env.SHINEY_BASE_URL || 'https://senseisandy.com';
 const output=path.resolve(process.env.SHINEY_QA_OUTPUT || '.tmb/shiney-st-release');
 fs.mkdirSync(output,{recursive:true});
 const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
-const target=base+'/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01';
+const target=base+'/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=mountain_tap_card&utm_content=mtp';
 const results=[];
 try{
   for(const viewport of [{width:375,height:900},{width:1440,height:1000}]){
@@ -22,8 +22,8 @@ try{
     page.on('pageerror',error=>errors.push(error.message));
     await page.goto(target,{waitUntil:'networkidle'});
     await page.evaluate(()=>document.fonts.ready);
-    assert(page.url().includes('utm_campaign=shiney_ticket') && page.url().includes('utm_content=st01'));
-    assert.equal(await page.locator('#friend-pass-card-code').inputValue(),'ST01');
+    assert(page.url().includes('utm_campaign=mountain_tap_card') && page.url().includes('utm_content=mtp'));
+    assert.equal(await page.locator('#friend-pass-card-code').inputValue(),'MTP');
     assert.equal(await page.locator('#friend-pass-source-url').inputValue(),page.url());
     assert.equal(await page.locator('h1').count(),1);
     assert.equal(await page.locator('.shiney-ticket').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(23, 71, 53)');
@@ -37,12 +37,12 @@ try{
     await page.locator('footer').last().scrollIntoViewIfNeeded();
     await page.screenshot({path:path.join(output,`live-${viewport.width}-footer.png`)});
     assert.deepEqual(errors,[]);
-    await page.goto(base+'/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=gt01',{waitUntil:'networkidle'});
-    assert.equal(await page.locator('#friend-pass-card-code').inputValue(),'ST01');
+    await page.goto(base+'/bring-a-friend.html?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01',{waitUntil:'networkidle'});
+    assert.equal(await page.locator('#friend-pass-card-code').inputValue(),'MTP');
     assert.equal(await page.locator('#friend-pass-source-url').inputValue(),page.url());
-    assert(page.url().includes('utm_content=gt01'));
+    assert(page.url().includes('utm_content=st01'));
     assert.deepEqual(errors,[]);
-    results.push({viewport,tracking:true,cardAndSourcePrefill:true,legacyMapsToST:true,originalLegacySourcePreserved:true,noOverflow:true,ctaAboveFold:true,formVisible:true,pageErrors:errors,realSubmissions:0});
+    results.push({viewport,tracking:true,cardAndSourcePrefill:true,legacyMapsToMTP:true,originalLegacySourcePreserved:true,noOverflow:true,ctaAboveFold:true,formVisible:true,pageErrors:errors,realSubmissions:0});
     await context.close();
   }
   fs.writeFileSync(path.join(output,'live-browser-results.json'),JSON.stringify(results,null,2));

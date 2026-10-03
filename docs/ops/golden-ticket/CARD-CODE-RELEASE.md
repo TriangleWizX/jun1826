@@ -1,29 +1,23 @@
-# Shiney Ticket ST card codes
+# The Mountain Tap Card (MTP) Release
 
-October 2, 2026. Requested scope: rename GT01 and related notation to ST01 globally. The active pilot is ST01; ST02–ST10 stay blank reserves.
+October 3, 2026. Requested scope: change Shiney Ticket to The Mountain Tap Card globally. Program labels should be MTP instead of ST01 style. Tracking sequential numbers like ST02, ST03, etc. is unnecessary. Make tracking the friend who is referring the primary tracking mechanism.
 
 ## Behavior and scope
 
-Current URLs use `utm_campaign=shiney_ticket` and `utm_content=st01` through `st10`. Card labels, QR filenames, both PDFs, copy, Android steps, issue-cycle examples and staff inventory now use ST. The pilot sheet is `shiney-ticket-ST01.pdf`.
+Current URLs use `utm_campaign=mountain_tap_card` and `utm_content=mtp`. The program label is **MTP**. Sequential numbers (ST01–ST10, GT01–GT10) are retired as unnecessary. The active print sheet is `mountain-tap-card-MTP.pdf`.
 
-The website shows ST codes. Old GT links and typed GT codes map to the matching ST code. The original `source_url` stays intact for attribution. Only issued codes 01–10 pass validation; the card field stays optional. The offer, four classes, 14-day activation rule, $35 reward, booking path and form endpoint are unchanged.
+The website shows **The Mountain Tap Card** in public copy and card art. The program label is MTP. Legacy ST and GT links map to MTP while preserving the full original `source_url` for attribution.
 
-Historical GT release results remain unchanged. The inventory stores `previous_card_id` for the rename; old hardware proof is in `history/card-register-before-st.csv`. ST01 is `ready`; its rewrite, readback, tap, printed QR, and inbox delivery checks passed user verification (October 2, 2026). Guest and reward ledgers remain blank.
-
-The one GT01 reference in the existing VSL plan was changed to ST01 in place. That unrelated, untracked plan stays outside this commit and deployment. The kit's historical directory name remains stable so existing file links still work.
+**Primary tracking mechanism:**
+Tracking the referring friend (the member who invited the guest) is the primary tracking mechanism. The form collects the referring member's name and phone number as the primary attribution keys, ensuring Sandy attributes the $35 referral credit directly to the referring member upon enrollment without relying on physical card serial numbers.
 
 ## Checks
 
-- Build and volatile operational facts: passed, 1,061 files checked.
-- Browser form checks: 48 URL cases and 8 typed-code cases passed, including all ten ST/GT codes in either case and invalid bounds.
-- One intercepted form submission sends ST01, retains the original GT source URL and keeps the four-class offer. No real form was sent.
-- All ten QR PNGs and eleven PDF QR regions decode to their exact CSV links. URL lengths and NTAG215 capacity pass.
-- Chrome at 375 × 900 and 1440 × 1000: ST01/source prefill, visible CTA, one H1, form visible, no horizontal overflow or page errors. Form screenshot reviewed.
-- `git diff --check` passed. No dependencies changed.
-
-`card-code-qa.json` records the local results. `verify-card-codes.mjs` is an offline form fixture. `verify-live-browser.mjs` supports a local base URL and defaults to production; it permits only site GET/HEAD requests.
-
-The only new public text is “Use ST01 to ST10.” It uses short words and a direct instruction. The offer and prior four-rubric copy review remain unchanged; this is a card-code change, not a new marketing claim.
+- Build and volatile operational facts: passed, 1,078 files checked.
+- Browser form checks: verified MTP program label, default values, legacy parameter normalization (ST/GT -> MTP), and referring member form fields.
+- One intercepted form submission sends MTP with referring member name and phone, retaining full source URL and four-class offer.
+- QR PNG and PDF match the approved MTP link. Capacity passes NTAG215 user memory.
+- `git diff --check` passed. No unnecessary dependencies changed.
 
 ## Release and rollback
 

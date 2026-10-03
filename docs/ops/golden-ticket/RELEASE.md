@@ -1,8 +1,8 @@
-# Shiney Ticket website release
+# The Mountain Tap Card (MTP) website release
 
-ST card-code migration: see [CARD-CODE-RELEASE.md](CARD-CODE-RELEASE.md). The release record below preserves the earlier GT checks as history.
+> **Update (October 3, 2026):** Rebranded globally from "Shiney Ticket" to **"The Mountain Tap Card"** with program label **`MTP`** and primary tracking mechanism set to the referring friend (`student_name`, `student_phone`). Sequential numbers (ST01–ST10) are retired as unnecessary. See [CARD-CODE-RELEASE.md](CARD-CODE-RELEASE.md). The release record below preserves earlier ST and GT checks as history.
 
-Date: October 2, 2026. Owner approved deployment in this conversation. Release is scoped to the Shiney Ticket and the global adult first-day policy.
+Date: October 2, 2026 (Updated October 3, 2026). Owner approved deployment in this conversation. Release is scoped to The Mountain Tap Card and the global adult first-day policy.
 
 ## Result
 

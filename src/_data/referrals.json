@@ -1,6 +1,8 @@
 {
-  "name": "Shiney Ticket",
-  "campaign": "shiney_ticket",
+  "name": "The Mountain Tap Card",
+  "programLabel": "MTP",
+  "campaign": "mountain_tap_card",
+  "trackingMechanism": "referring_member",
   "adultOnly": true,
   "firstTimeGuestsOnly": true,
   "memberInvitationRequired": true,
@@ -16,7 +18,7 @@
   "reservationRequiredEachClass": true,
   "waiverRequired": true,
   "reward": {
-    "name": "Shiney Ticket credit",
+    "name": "Mountain Tap Card credit",
     "amount": 35,
     "trigger": "qualifying_first_12_week_program_enrollment_first_payment_cleared",
     "uses": [

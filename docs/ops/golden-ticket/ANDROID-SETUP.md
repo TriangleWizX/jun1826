@@ -1,27 +1,26 @@
-# Shiney Ticket: ST01 on Android
+# The Mountain Tap Card: Android NFC Setup
 
-Current scope: ST01 only. ST01 new write, read-back, tap, and printed QR scan passed Sandy's Android check on October 2, 2026; card is marked ready for member handoff. Keep the other nine cards blank.
+Scope: Program cards with program label **MTP**. All cards share the unified Mountain Tap Card link:
 
-`https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01`
+`https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=mountain_tap_card&utm_content=mtp`
 
 Use the free NFC Tools app from Wakdev and an Android phone with NFC. The developer confirms NTAG215 support and URL record writing. An NFC Tasks automation record is unnecessary for this job. Guests need a compatible phone/browser or the QR fallback.
 
-## Do ST01 first
+## Programming cards (MTP)
 
-1. Enable NFC in Android settings. Charge/unlock the phone. Remove metal accessories if they interfere. Put nine cards aside so you work with one tag at a time.
-2. Open NFC Tools → Read. Hold ST01 near the phone's NFC antenna until detected. Antenna position differs by phone. Verify NTAG215, writable status, and available space. If it is locked or differs from the purchased type, set it aside and record the result.
-3. Label it ST01 in plain ink or with the matching nonmetallic label. A gold color is fine; metal foil can interfere with the antenna. Test again after applying any finish.
-4. Open Write → Add a record → URL/URI. Enter the exact `url` from ST01's row in `card-urls.csv`. Menu labels can vary by app version. Ensure the saved record has exactly one `https://` prefix.
-5. Keep one web-address record. Write it to ST01. Leave the tag rewritable during the pilot. Do not set permanent lock bits or a password as part of these instructions.
-6. Read it back. Compare the entire URL, particularly `utm_campaign=shiney_ticket` and `utm_content=st01`. Check the link is `senseisandy.com/bring-a-friend`, not the general first-visit calendar or a third-party shortener.
-7. Close the writing screen, unlock the phone, and tap the card as a guest would. Open the browser prompt. Confirm the Shiney Ticket page with four free classes, the code in the address bar, the request form, and the text fallback. A tap opens the page. Sandy confirms the class and starts the pass at the first attended class.
-8. Scan ST01's printed QR with the phone camera. It must open the identical URL. Test at the actual printed size, not only on a large computer display.
-9. Record Android model, test date, read-back success, browser success, and printed-QR success in the private register. If available, try another NFC-capable phone too. Cross-device behavior remains unverified until tested.
-10. Stop at ST01 for this pilot. If Sandy later expands, use each remaining card's own code and matching label.
+1. Enable NFC in Android settings. Charge/unlock the phone. Remove metal accessories if they interfere.
+2. Open NFC Tools → Read. Hold the card near the phone's NFC antenna until detected. Antenna position differs by phone. Verify NTAG215, writable status, and available space.
+3. Label it **MTP** or use the matching nonmetallic print label.
+4. Open Write → Add a record → URL/URI. Enter the exact URL: `https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=mountain_tap_card&utm_content=mtp`. Ensure the saved record has exactly one `https://` prefix.
+5. Keep one web-address record. Write it to the card. Leave the tag rewritable. Do not set permanent lock bits or a password.
+6. Read it back. Compare the entire URL, particularly `utm_campaign=mountain_tap_card` and `utm_content=mtp`. Check the link is `senseisandy.com/bring-a-friend`.
+7. Close the writing screen, unlock the phone, and tap the card as a guest would. Open the browser prompt. Confirm The Mountain Tap Card page with four free classes, MTP in the program label field, the request form, and the text fallback.
+8. Scan the printed MTP QR with the phone camera. It must open the identical URL.
+9. Hand cards to members. Tracking sequential numbers like ST02, ST03 is unnecessary; **tracking the friend who is referring is the primary tracking mechanism**.
 
 ## Print and physical finish
 
-Print `shiney-ticket-ST01.pdf` at 100% / actual size, with Fit-to-page disabled. Measure the one-inch scale bar. Each panel is 85.6 × 54 mm, a common bank-card size; measure your blank cards before trimming. The sheet places a front and a back beside each other for each code; cut and apply as pairs. It is not a duplex alignment template or an Avery stock template.
+Print `mountain-tap-card-MTP.pdf` at 100% / actual size, with Fit-to-page disabled. Measure the one-inch scale bar. Each panel is 85.6 × 54 mm, a common bank-card size; measure your blank cards before trimming. The sheet places a front and a back beside each other with program label MTP.
 
 Use plain nonmetallic adhesive paper or a sleeve that leaves the card readable. The QR has black modules on white, including its quiet zone. Keep glue, cuts, foil and decoration away from the QR. The functional label is deliberately simple; no image editor or paid printing service is required.
 

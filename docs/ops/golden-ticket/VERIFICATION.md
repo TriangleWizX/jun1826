@@ -1,11 +1,12 @@
-# Shiney Ticket checks
+# The Mountain Tap Card (MTP) checks
 
-Prepared October 2, 2026. These records show what was checked. Real guest results need their own proof.
+Prepared October 2, 2026; updated October 3, 2026 for The Mountain Tap Card (`MTP`). These records show what was checked. Real guest results need their own proof.
 
 ## Approved choices
 
-- Use ST01 now. Keep the other nine cards blank.
-- Use the name Shiney Ticket and campaign `shiney_ticket`.
+- Use program label MTP. Tracking sequential numbers like ST02, ST03 is retired as unnecessary.
+- Primary tracking mechanism is the referring friend (`student_name`, `student_phone`).
+- Use the name The Mountain Tap Card and campaign `mountain_tap_card` (canonical `referrals.json`).
 - Give a new adult guest four free classes in two weeks with their friend.
 - Sandy starts day one at the first attended class. That class counts as one of four. The final date is the local start date plus 13 calendar days.
 - The adult first visit stays required. Same-day training, sparring, and The Sandy Challenge are choices. Sandy confirms the class, checks the waiver, and sets the rules.

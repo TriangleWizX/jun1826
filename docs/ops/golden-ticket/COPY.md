@@ -1,10 +1,10 @@
-# Shiney Ticket copy
+# The Mountain Tap Card copy
 
 Use the exact confirmed class details in individual replies. Bracketed details are placeholders to replace before sending. This packet sends nothing. Card copy is for an offline referral card, not a social post; social comment triggers and hashtags do not belong on this card.
 
 ## Front
 
-THE SHINEY TICKET
+THE MOUNTAIN TAP CARD
 
 Bring a friend to train.
 
@@ -16,7 +16,7 @@ Start calm. Train smart.
 
 Sensei Sandy BJJ · Tannersville
 
-ST01 [change to match the card]
+MTP
 
 ## Back
 
@@ -34,7 +34,7 @@ senseisandy.com/bring-a-friend
 
 Text Sandy: +1 (917) 736-8649
 
-ST01 [change to match the card]
+MTP
 
 ## Sandy's ask after a real positive moment
 
@@ -42,15 +42,15 @@ ST01 [change to match the card]
 
 ## Member's invitation
 
-“I'd love to train with you. This pass gives you four free classes in two weeks. Your first class starts day one. Tap this card to ask Sandy. We'll pick a class with his help.”
+“I'd love to train with you. This card gives you four free classes in two weeks. Your first class starts day one. Tap this card to ask Sandy. We'll pick a class with his help.”
 
 ## Explain the request form
 
-“Let's fill this out together. It asks for both our names. Sandy will confirm the class by text.”
+“Let's fill this out together. It asks for both our names so Sandy knows we're training together. Sandy will confirm the class by text.”
 
 ## Guest text fallback
 
-“Hi Sandy, I have card ST01. [Member name] invited me to train. Can we plan my first class?”
+“Hi Sandy, [Member name] gave me The Mountain Tap Card (MTP). Can we plan my first class?”
 
 ## Sandy's confirmation
 
