@@ -1,0 +1,335 @@
+/* ==========================================================================
+   SENSEI SANDY BJJ - 30-DAY TRAINING FIT GUARANTEE TERMS STYLESHEET
+   ========================================================================== */
+
+body.page-guarantee-terms {
+  background-color: var(--ss-bg, #FBFAF8);
+  color: var(--ss-text, #1F1712);
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.page-guarantee-terms .gt-main {
+  width: min(100% - 2rem, 64rem);
+  margin-inline: auto;
+  padding-block: clamp(1rem, 3vw, 2rem) clamp(3rem, 7vw, 6rem);
+}
+
+.page-guarantee-terms .gt-breadcrumbs,
+.page-guarantee-terms .gt-shell {
+  width: min(100%, 54rem);
+  margin-inline: auto;
+}
+
+.page-guarantee-terms .gt-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.75rem 1.5rem;
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.page-guarantee-terms .gt-breadcrumbs a {
+  color: var(--ss-muted, #4F433C);
+  text-decoration: none;
+}
+
+.page-guarantee-terms .gt-breadcrumbs a:hover {
+  color: var(--ss-teal, #289FA1);
+  text-decoration: underline;
+}
+
+.page-guarantee-terms .gt-hero,
+.page-guarantee-terms .gt-section {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.page-guarantee-terms .gt-hero {
+  padding: clamp(1.75rem, 5vw, 3.5rem);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at 85% 15%, rgba(40, 159, 161, 0.08), transparent 45%),
+              radial-gradient(circle at 15% 85%, rgba(17, 106, 66, 0.06), transparent 45%),
+              var(--ss-surface, #FFFFFF);
+  box-shadow: 0 1rem 3rem rgba(54, 43, 36, 0.05);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.page-guarantee-terms .gt-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  color: var(--ss-green, #116A42);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.page-guarantee-terms .gt-hero h1,
+.page-guarantee-terms .gt-section h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  color: var(--ss-ink, #362B24);
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.page-guarantee-terms .gt-hero h1 {
+  margin-inline: auto;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 24ch;
+}
+
+.page-guarantee-terms .gt-hero .gt-sub {
+  color: var(--ss-muted, #4F433C);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-guarantee-terms .gt-hero .lead-text {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ss-ink, #362B24);
+}
+
+.page-guarantee-terms .gt-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-guarantee-terms .gt-section {
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(54, 43, 36, 0.03);
+}
+
+.page-guarantee-terms .gt-section h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.page-guarantee-terms .gt-section p {
+  color: var(--ss-ink, #362B24);
+  line-height: 1.6;
+  font-size: 1.02rem;
+}
+
+/* Step cards grid */
+.page-guarantee-terms .gt-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.page-guarantee-terms .gt-step-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-guarantee-terms .gt-step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.75rem 1.5rem rgba(54, 43, 36, 0.08);
+}
+
+.page-guarantee-terms .gt-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--ss-green, #116A42);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.page-guarantee-terms .gt-step-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.5rem;
+}
+
+.page-guarantee-terms .gt-step-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 0;
+}
+
+/* Refund callout */
+.page-guarantee-terms .gt-refund-box {
+  background: linear-gradient(135deg, rgba(17, 106, 66, 0.07) 0%, rgba(40, 159, 161, 0.07) 100%);
+  border: 2px dashed var(--ss-green, #116A42);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.page-guarantee-terms .gt-refund-box h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.75rem;
+  color: var(--ss-green, #116A42);
+  margin-bottom: 0.75rem;
+}
+
+.page-guarantee-terms .gt-refund-box p {
+  max-width: 48ch;
+  margin-inline: auto;
+  font-size: 1.05rem;
+}
+
+/* Exclusions card */
+.page-guarantee-terms .gt-exclusions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.page-guarantee-terms .gt-exclusion-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.5rem;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ss-ink, #362B24);
+}
+
+/* Contact card */
+.page-guarantee-terms .gt-contact-card {
+  text-align: center;
+  background: linear-gradient(135deg, var(--ss-surface2, #F4F1ED) 0%, var(--ss-surface, #FFFFFF) 100%);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.page-guarantee-terms .gt-contact-card h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 0.75rem;
+}
+
+.page-guarantee-terms .gt-phone-link {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ss-green, #116A42);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.page-guarantee-terms .gt-phone-link:hover {
+  color: var(--ss-teal, #289FA1);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.page-guarantee-terms .ss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.page-guarantee-terms .ss-btn-primary {
+  background-color: var(--ss-green, #116A42);
+  color: #FFFFFF !important;
+}
+
+.page-guarantee-terms .ss-btn-primary:hover {
+  background-color: var(--ss-teal, #289FA1);
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+.page-guarantee-terms .ss-btn-secondary {
+  background-color: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-ink, #362B24) !important;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+}
+
+.page-guarantee-terms .ss-btn-secondary:hover {
+  background-color: var(--ss-surface, #FFFFFF);
+  border-color: var(--ss-teal, #289FA1);
+  color: var(--ss-teal, #289FA1) !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile Sticky Action Bar */
+.page-guarantee-terms .gt-mobile-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(251, 250, 248, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  box-shadow: 0 -4px 16px rgba(54, 43, 36, 0.08);
+}
+
+.page-guarantee-terms .gt-mobile-sticky .ss-btn {
+  flex: 1;
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .page-guarantee-terms .gt-main {
+    padding-bottom: 5.5rem;
+  }
+}
