@@ -205,6 +205,113 @@ body.page-sensei-studio .narrative-block p { max-width: 58ch; line-height: 1.7; 
   body.page-sensei-studio .ss-main { padding-bottom: 5.5rem; }
 }
 
+/* Teaching Doctrine Section */
+body.page-sensei-studio .ss-teaching-doctrine {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+}
+
+body.page-sensei-studio .ss-teaching-doctrine__card {
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at 85% 15%, rgba(40, 159, 161, 0.06), transparent 45%),
+              radial-gradient(circle at 15% 85%, rgba(17, 106, 66, 0.05), transparent 45%),
+              var(--ss-surface, #FFFFFF);
+  box-shadow: 0 0.5rem 2rem rgba(54, 43, 36, 0.04);
+}
+
+body.page-sensei-studio .guide-eyebrow,
+body.page-sensei-studio .ss-teaching-doctrine .guide-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  color: var(--ss-green, #116A42);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+body.page-sensei-studio #teaching-doctrine-title,
+body.page-sensei-studio .ss-teaching-doctrine h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  color: var(--ss-ink, #362B24);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+body.page-sensei-studio .ss-teaching-doctrine__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-block: 1.75rem 2rem;
+  text-align: center;
+}
+
+body.page-sensei-studio .ss-teaching-doctrine__grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1.25rem;
+  border-radius: 1rem;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-top: 3px solid var(--ss-green, #116A42);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.page-sensei-studio .ss-teaching-doctrine__grid article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1.25rem rgba(54, 43, 36, 0.06);
+}
+
+body.page-sensei-studio .ss-teaching-doctrine__grid h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ss-green, #116A42);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+body.page-sensei-studio .ss-teaching-doctrine__grid p {
+  color: var(--ss-ink, #362B24);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+}
+
+body.page-sensei-studio .ss-teaching-doctrine__summary,
+body.page-sensei-studio .ss-teaching-doctrine > p:last-child {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  max-width: 50ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  body.page-sensei-studio .ss-teaching-doctrine__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 /* Mobile Floating Sticky Actions */
 body.page-sensei-studio .studio-mobile-sticky {
   position: fixed;
