@@ -32,6 +32,7 @@ const baseJobs = [
   ["assets/css/pages/guarantee-terms.css", "assets/css/pages/guarantee-terms.min.css"],
   ["assets/css/pages/sensei-studio.css", "assets/css/pages/sensei-studio.min.css"],
   ["assets/css/pages/sensei-jiu-jitsu.css", "assets/css/pages/sensei-jiu-jitsu.min.css"],
+  ["assets/css/pages/bully-proof.css", "assets/css/pages/bully-proof.min.css"],
   ["assets/css/pages/near.css", "assets/css/pages/near.min.css"],
   ["assets/css/pages/directions.css", "assets/css/pages/directions.min.css"],
   ["assets/css/pages/tannersville.css", "assets/css/pages/tannersville.min.css"],
