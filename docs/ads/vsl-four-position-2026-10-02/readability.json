@@ -1,0 +1,151 @@
+{
+  "method": "Flesch-Kincaid estimate; CMU pronunciations, maximum syllables for alternate pronunciations; explicit overrides; numbers 1 and 3 expanded; hyphenated words split; punctuation defines sentences.",
+  "dictionary": "/usr/share/pocketsphinx/model/en-us/cmudict-en-us.dict",
+  "overrides": {
+    "jiu": 1,
+    "jitsu": 2,
+    "tannersville": 3,
+    "mountaintop": 3,
+    "sandy": 2,
+    "coached": 1,
+    "i'll": 1,
+    "you'll": 1,
+    "fifteen": 2
+  },
+  "limits": "Not certified comprehension. Names included. Short overlay labels checked manually. Message placeholders must be replaced and rechecked before use. Negative grades reflect formula behavior on short simple prose.",
+  "results": {
+    "S01": {
+      "words": 36,
+      "sentences": 6,
+      "syllables": 42,
+      "fk_grade": 0.52
+    },
+    "S02": {
+      "words": 62,
+      "sentences": 9,
+      "syllables": 71,
+      "fk_grade": 0.61
+    },
+    "S03": {
+      "words": 43,
+      "sentences": 7,
+      "syllables": 49,
+      "fk_grade": 0.25
+    },
+    "S04": {
+      "words": 55,
+      "sentences": 9,
+      "syllables": 61,
+      "fk_grade": -0.12
+    },
+    "S05": {
+      "words": 47,
+      "sentences": 6,
+      "syllables": 51,
+      "fk_grade": 0.27
+    },
+    "S06": {
+      "words": 71,
+      "sentences": 8,
+      "syllables": 77,
+      "fk_grade": 0.67
+    },
+    "S07": {
+      "words": 33,
+      "sentences": 3,
+      "syllables": 35,
+      "fk_grade": 1.22
+    },
+    "S08": {
+      "words": 34,
+      "sentences": 6,
+      "syllables": 37,
+      "fk_grade": -0.54
+    },
+    "master": {
+      "words": 381,
+      "sentences": 54,
+      "syllables": 423,
+      "fk_grade": 0.26
+    },
+    "social_cta": {
+      "words": 18,
+      "sentences": 3,
+      "syllables": 22,
+      "fk_grade": 1.17
+    },
+    "social_discovery": {
+      "words": 41,
+      "sentences": 7,
+      "syllables": 49,
+      "fk_grade": 0.8
+    },
+    "confirmation": {
+      "words": 48,
+      "sentences": 7,
+      "syllables": 54,
+      "fk_grade": 0.36
+    },
+    "visit_only": {
+      "words": 25,
+      "sentences": 3,
+      "syllables": 28,
+      "fk_grade": 0.88
+    },
+    "reminder": {
+      "words": 29,
+      "sentences": 3,
+      "syllables": 31,
+      "fk_grade": 0.79
+    },
+    "after_class_one": {
+      "words": 31,
+      "sentences": 4,
+      "syllables": 33,
+      "fk_grade": -0.01
+    },
+    "missed_class": {
+      "words": 18,
+      "sentences": 2,
+      "syllables": 18,
+      "fk_grade": -0.28
+    },
+    "learning_check": {
+      "words": 19,
+      "sentences": 4,
+      "syllables": 19,
+      "fk_grade": -1.94
+    },
+    "reteach": {
+      "words": 13,
+      "sentences": 2,
+      "syllables": 13,
+      "fk_grade": -1.25
+    },
+    "position_standing": {
+      "words": 9,
+      "sentences": 2,
+      "syllables": 10,
+      "fk_grade": -0.72
+    },
+    "position_guard": {
+      "words": 13,
+      "sentences": 2,
+      "syllables": 13,
+      "fk_grade": -1.25
+    },
+    "position_chest_chest": {
+      "words": 9,
+      "sentences": 2,
+      "syllables": 9,
+      "fk_grade": -2.03
+    },
+    "position_chest_back": {
+      "words": 9,
+      "sentences": 2,
+      "syllables": 11,
+      "fk_grade": 0.59
+    }
+  },
+  "all_prose_at_or_below_grade_3": true
+}

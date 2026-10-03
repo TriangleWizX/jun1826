@@ -2,38 +2,55 @@
   "goalMapping": {
     "label": "Goal Mapping Visit",
     "duration": "About 15 minutes",
-    "clothing": "For a visit, wear your own day clothes. To train, wear clean sports clothes. Follow Sandy's class and arrival plan.",
+    "clothing": "For a visit, wear your day clothes. To train, wear clean sports clothes. Follow the class plan Sandy sends you.",
     "workout": false,
     "arrivalMinutes": 5,
-    "bring": ["Your calendar or schedule questions"],
-    "expect": ["Studio tour", "Plain-language safety conversation", "Goals and schedule fit", "Choose a confirmed same-day class or a later class"],
-    "waiver": "Complete it before the visit or on-site; follow Sandy's confirmation instructions."
+    "bring": [
+      "Your questions and dates that fit"
+    ],
+    "expect": [
+      "See the room",
+      "Learn the rules",
+      "Talk about your goals",
+      "Choose a class. Sandy must confirm it."
+    ],
+    "waiver": "Fill out your waiver before you train. Follow the plan Sandy sends you."
   },
   "firstClass": {
     "label": "Coached First Class",
-    "duration": "Normal class duration",
-    "clothing": "Clean athletic clothing plus the class-specific Gi / No-Gi guidance",
+    "duration": "Check your class plan.",
+    "clothing": "Wear clean sports clothes. Follow the class plan Sandy sends you.",
     "workout": true,
     "arrivalMinutes": 10,
-    "bring": ["Water"],
-    "remove": ["Jewelry", "Zippers, buttons, or hard/sharp hardware"],
-    "expect": ["Active safety walkthrough", "Partner matching", "Beginner-paced movement", "Coached resistance activities"]
+    "bring": [
+      "Water"
+    ],
+    "remove": [
+      "Take off rings, chains, and studs.",
+      "Wear clothes with soft seams. Choose clothes free of zips, buttons, and hard parts."
+    ],
+    "expect": [
+      "Learn the rules",
+      "Meet your partner",
+      "Try one clear task",
+      "Work at the pace Sandy sets with you."
+    ]
   },
   "youthCombinedIntro": {
-    "label": "Youth Combined Intro + Class",
-    "duration": "One 45-minute class; plan 60–75 minutes total",
-    "clothing": "Clean athletic clothing or assigned uniform",
+    "label": "Youth visit and class",
+    "duration": "Class: 45 minutes. Full visit: 60–75 minutes.",
+    "clothing": "Wear clean sports clothes or the gear Sandy asks for.",
     "workout": true,
     "arrivalMinutes": 20,
     "parentOnSite": true,
-    "loanerGi": "Ask whether a loaner is available; availability is not guaranteed.",
-    "waiver": "Required before confirmation."
+    "loanerGi": "Ask Sandy if you can borrow a gi.",
+    "waiver": "Sign and send the waiver first. Then Sandy can confirm the class."
   },
   "adultSameDay": {
     "elective": true,
     "requiresCompletedFirstVisit": true,
     "requiresCoachConfirmation": true,
-    "clothing": "Clean athletic clothing plus the class-specific Gi / No-Gi guidance",
+    "clothing": "Wear clean sports clothes. Follow the class plan Sandy sends you.",
     "waiverRequired": true,
     "sparringElective": true
   }

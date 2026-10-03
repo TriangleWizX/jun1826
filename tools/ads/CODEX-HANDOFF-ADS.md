@@ -140,16 +140,28 @@ Every daily slot in the active schedule (Carousels, Video Reels, Stories, Static
    - Enforce rhythm rule: two items beat three in bulleted lists.
    - Strictly ban em-dashes and ensure active voice with human subjects.
 
-4. **Stage 4: Visual Asset Iteration & Re-rendering**
-   - Verify layout boundaries and text wrapping in `tools/ads/render_day.py`.
-   - Re-render production assets into `tools/ads/output/` (4:5 portrait for carousels/feed ads; 9:16 vertical for stories/reels).
-   - Re-generate `review.html` gallery for immediate local inspection.
+4. **Stage 4: Canva production for static and image/carousel posts**
+   - Follow `tools/ads/CANVA-STATIC-CREATIVE-WORKFLOW.md`.
+   - Copy the approved single-image or three-image Canva master for each post;
+     edit that copy's post-specific words, CTA, and verified address/offer footer.
+   - Keep the master untouched and the image area editable for the user to
+     replace. Return the direct Canva edit link with the post ID.
+   - Local PNG rendering and `review.html` are not the production creative
+     workflow. Never ask the user to duplicate the Canva master.
 
-5. **Stage 5: Master Scaffold & Registry Synchronization**
-   - Populate `converter_copy` with complete headline, body, bullets, and comment triggers in `tools/ads/week-10x-scaffold-YYYY-Wxx.json`.
-   - Update ready-to-post copy blocks in `tools/ads/week-10x-scaffold-YYYY-Wxx.md`.
-   - Synchronize `tools/ads/CROSS-PLATFORM-DEPLOYMENT-WEEK1.md`.
+5. **Stage 5: Video/Reel production from user-owned footage**
+   - Follow `tools/ads/REEL-SOURCE-TO-INSHOT-WORKFLOW.md` when sourcing from
+     Google Photos or YouTube and editing in InShot on mobile.
+   - Match footage to the active post ID and audience job; verify reuse rights,
+     student privacy/publication permission, and that the visible action supports
+     the stated teaching point before editing.
+   - Keep the original, make a post-specific vertical export, and review the
+     complete video with sound and muted before posting. Never treat a clip
+     locator, edit, export, or scheduled post as publication evidence.
+
+6. **Stage 6: Brief and placement registry synchronization**
+   - Keep the post ID, avatar, theme, caption, creative direction, and reply destination in the text brief.
+   - Record the Canva copy's direct edit link and image-replacement status beside its post ID.
+   - For video, record the source label, export filename, and edit status beside its post ID; keep personal library links and student identifiers out of shared trackers.
+   - Keep Facebook and Instagram as one creative unit; publication credit still requires native post URLs/IDs.
    - Execute verification: `rtk npm run test:ads` and `rtk npm run qa:volatile-facts`.
-
-
-

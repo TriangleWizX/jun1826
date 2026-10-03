@@ -162,7 +162,8 @@
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
-      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b",
+      "2d52210b-edae-48f2-b5a5-095e3dd4c523"
     ],
     "allow_abstention": false,
     "family": "organic-discovery"
@@ -176,7 +177,8 @@
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
-      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b",
+      "2d52210b-edae-48f2-b5a5-095e3dd4c523"
     ],
     "allow_abstention": false,
     "family": "organic-discovery"
@@ -190,7 +192,9 @@
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
-      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b",
+      "2d52210b-edae-48f2-b5a5-095e3dd4c523",
+      "b21e9982-9049-4073-a600-4abe17dab700"
     ],
     "allow_abstention": false,
     "family": "organic-discovery"
@@ -204,7 +208,9 @@
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
-      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b",
+      "2d52210b-edae-48f2-b5a5-095e3dd4c523",
+      "b21e9982-9049-4073-a600-4abe17dab700"
     ],
     "allow_abstention": false,
     "family": "organic-discovery"
@@ -218,7 +224,8 @@
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
-      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b"
+      "fd084c9c-580a-4ec0-ae3b-c7945ba78e5b",
+      "2d52210b-edae-48f2-b5a5-095e3dd4c523"
     ],
     "allow_abstention": false,
     "family": "organic-discovery"
@@ -228,6 +235,7 @@
     "split": "development",
     "task": "Write three advertising headlines for a beginner-friendly class.",
     "required_capabilities": [
+      "advertising_copy",
       "copywriting"
     ],
     "expected_mode": "single",
@@ -242,6 +250,7 @@
     "split": "development",
     "task": "Rewrite this landing page promise in clear persuasive language.",
     "required_capabilities": [
+      "advertising_copy",
       "copywriting"
     ],
     "expected_mode": "single",
@@ -256,6 +265,7 @@
     "split": "development",
     "task": "Edit an ad to remove unsupported guarantees while preserving its offer.",
     "required_capabilities": [
+      "advertising_copy",
       "copywriting"
     ],
     "expected_mode": "single",
@@ -270,11 +280,13 @@
     "split": "development",
     "task": "Develop a consistent brand voice for a sequence of short promotional emails.",
     "required_capabilities": [
-      "copywriting"
+      "copywriting",
+      "email_copywriting"
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
-      "a9519f7d-8247-4bee-9075-72420110c5bf"
+      "a9519f7d-8247-4bee-9075-72420110c5bf",
+      "92d4fd5d-ddb5-4fd6-9fc4-6a5ad1e85467"
     ],
     "allow_abstention": false,
     "family": "advertising-copy"
@@ -284,6 +296,7 @@
     "split": "development",
     "task": "Write concise call-to-action copy for a parent considering a first class.",
     "required_capabilities": [
+      "advertising_copy",
       "copywriting"
     ],
     "expected_mode": "single",
@@ -318,7 +331,8 @@
     "expected_mode": "single",
     "acceptable_uuids": [
       "57e434d9-511e-4fcd-a48a-4cec6319c7c1",
-      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d"
+      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d",
+      "f00b336a-64db-447c-b0ce-0c7f78c7b8ff"
     ],
     "allow_abstention": false,
     "family": "prompt-construction"
@@ -333,7 +347,8 @@
     "expected_mode": "single",
     "acceptable_uuids": [
       "57e434d9-511e-4fcd-a48a-4cec6319c7c1",
-      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d"
+      "0a71d6c7-cc75-4312-9cf3-107c9b7fa42d",
+      "f00b336a-64db-447c-b0ce-0c7f78c7b8ff"
     ],
     "allow_abstention": false,
     "family": "prompt-construction"
@@ -548,7 +563,8 @@
     "split": "held_out",
     "task": "Compare debt repayment strategies for a household budget.",
     "required_capabilities": [
-      "finance"
+      "finance",
+      "household_finance"
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
@@ -562,7 +578,8 @@
     "split": "held_out",
     "task": "Explain how an emergency fund changes personal financial risk.",
     "required_capabilities": [
-      "finance"
+      "finance",
+      "household_finance"
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
@@ -590,7 +607,8 @@
     "split": "held_out",
     "task": "Build a personal finance spending plan; do not write Python code.",
     "required_capabilities": [
-      "finance"
+      "finance",
+      "household_finance"
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
@@ -651,7 +669,8 @@
     "expected_mode": "single",
     "acceptable_uuids": [
       "121dcee1-8488-4843-94c4-fb2400fba20c",
-      "fe98a807-fd09-4155-a48c-df623b291079"
+      "fe98a807-fd09-4155-a48c-df623b291079",
+      "031fb44c-fc55-440e-b752-642602aa3bed"
     ],
     "allow_abstention": false,
     "family": "physical-science"
@@ -666,7 +685,8 @@
     "expected_mode": "single",
     "acceptable_uuids": [
       "121dcee1-8488-4843-94c4-fb2400fba20c",
-      "fe98a807-fd09-4155-a48c-df623b291079"
+      "fe98a807-fd09-4155-a48c-df623b291079",
+      "031fb44c-fc55-440e-b752-642602aa3bed"
     ],
     "allow_abstention": false,
     "family": "physical-science"
@@ -681,7 +701,8 @@
     "expected_mode": "single",
     "acceptable_uuids": [
       "121dcee1-8488-4843-94c4-fb2400fba20c",
-      "fe98a807-fd09-4155-a48c-df623b291079"
+      "fe98a807-fd09-4155-a48c-df623b291079",
+      "031fb44c-fc55-440e-b752-642602aa3bed"
     ],
     "allow_abstention": false,
     "family": "physical-science"
@@ -747,6 +768,7 @@
     "split": "held_out",
     "task": "Design a building floor plan with accessible circulation and daylight.",
     "required_capabilities": [
+      "accessibility",
       "building_architecture"
     ],
     "expected_mode": "single",
@@ -771,7 +793,8 @@
     "split": "held_out",
     "task": "Identify legal questions in a software licensing dispute for counsel to review.",
     "required_capabilities": [
-      "legal"
+      "legal",
+      "technology_law"
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
@@ -785,7 +808,8 @@
     "split": "held_out",
     "task": "Draft a neutral negotiation agenda for a technology contract disagreement.",
     "required_capabilities": [
-      "legal"
+      "legal",
+      "technology_law"
     ],
     "expected_mode": "single",
     "acceptable_uuids": [
@@ -816,7 +840,9 @@
       "translation"
     ],
     "expected_mode": "single",
-    "acceptable_uuids": [],
+    "acceptable_uuids": [
+      "b57c8524-97fa-4a2f-8268-a91d3c3dd8ae"
+    ],
     "allow_abstention": true,
     "family": "language-transfer"
   }

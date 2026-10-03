@@ -2,7 +2,7 @@
   <div class="mb-4 text-center">
     <span class="ss-home-kicker text-uppercase font-weight-bold text-teal mb-1 d-block" style="color: var(--ss-teal, #289FA1); font-size: 0.85rem; letter-spacing: 0.05em;">Step 1 of 4</span>
     <h2 class="h3 font-weight-bold mb-2" style="color: var(--ss-ink, #362B24);">Reserve Your Free First Visit</h2>
-    <p class="text-muted small mb-0" style="color: var(--ss-muted, #4F433C);">Sandy will contact you to confirm your 15-minute first visit.</p>
+    <p class="text-muted small mb-0" style="color: var(--ss-muted, #4F433C);" data-free-intro-copy>Sandy will text or call you. He will confirm your 15-minute first visit.</p>
   </div>
 
   <form id="ss-free-intro-form" action="{{ contact.formspreeEndpoint }}" method="POST" class="needs-validation" novalidate>
@@ -35,12 +35,12 @@
           <option value="Community Service">Community service</option>
           <option value="Not sure">Not sure</option>
         </select>
-        <div class="invalid-feedback">Please select who will be attending.</div>
+        <div class="invalid-feedback">Choose who is starting.</div>
       </div>
 
       <div class="col-12">
         <fieldset class="border-0 p-0 m-0">
-          <legend class="form-label small">Does this student currently train or compete in another sport? <span class="text-muted fw-normal">(Optional)</span></legend>
+          <legend class="form-label small">Does this student play a sport? <span class="text-muted fw-normal">(Optional)</span></legend>
           <div class="d-flex flex-wrap gap-3">
             <label><input type="radio" name="other_sport" value="Yes"> Yes</label>
             <label><input type="radio" name="other_sport" value="No"> No</label>
@@ -64,7 +64,7 @@
       <div class="col-12 col-md-6">
         <label for="form-phone" class="form-label font-weight-bold small text-ink" style="font-weight: 600; color: var(--ss-ink, #362B24);">Mobile Phone Number *</label>
         <input type="tel" class="form-control form-control-lg" id="form-phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="(917) 000-0000" style="border-radius: 10px; font-size: 1rem; border: 1px solid rgba(54,43,36,0.2);">
-        <div class="invalid-feedback">Please enter a valid mobile number for text confirmation.</div>
+        <div class="invalid-feedback">Enter a phone number so Sandy can text you.</div>
       </div>
 
       <!-- Email Address -->
@@ -118,7 +118,7 @@
       <!-- Submit Button -->
       <div class="col-12 mt-4">
         <button type="submit" class="btn btn-primary btn-lg ss-btn w-100 py-3" id="form-submit-btn" style="font-weight: 700;">
-          Request Free First Visit &amp; first visit
+          Request Free First Visit
           <i class="bi bi-arrow-right me-1" aria-hidden="true"></i>
         </button>
       </div>
@@ -126,7 +126,7 @@
       <div class="col-12 text-center mt-3">
         <p class="small text-muted mb-0" style="font-size: 0.825rem;">
           <i class="bi bi-shield-check me-1 text-green" style="color: var(--ss-green, #116A42);"></i>
-          Your information is private and strictly confidential. We will text or call you to confirm your visit.
+          Sandy will text or call to confirm your visit. He can help you plan your first class.
         </p>
       </div>
     </div>

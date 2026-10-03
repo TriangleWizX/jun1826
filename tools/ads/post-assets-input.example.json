@@ -1,0 +1,30 @@
+{
+  "week": "2026-W40",
+  "posts": [
+    {
+      "id": "fri-youth-stripe",
+      "type": "static",
+      "avatar": "carla",
+      "theme": "A first stripe, one step at a time",
+      "description": "Youth milestone post for parents. Use an approved photo of the students after the stripe moment.",
+      "image": "tools/ads/example-assets/youth-stripe.jpg",
+      "image_alt": "Youth BJJ students pose together after receiving a first stripe.",
+      "caption": "A first stripe marks a proud step in the BJJ journey.\n\nYouth students learn focus, movement, and skill with coach support.\n\nComment START for the link.\n\n#catskills #bjj #tannersvilleny #hudsonvalley",
+      "platforms": ["facebook", "instagram"]
+    },
+    {
+      "id": "fri-first-visit-steps",
+      "type": "carousel",
+      "avatar": "ben",
+      "theme": "See your first visit step by step",
+      "description": "Beginner walkthrough carousel. Replace each image path with a supplied local screenshot or photo.",
+      "image_alt": "Beginner BJJ class activity at Sensei Sandy.",
+      "caption": "Your first class is a coached learning experience.\n\nSee the room, learn one step, and build from there.\n\nComment START for the link.\n\n#catskills #bjj #tannersvilleny #hudsonvalley",
+      "slides": [
+        {"image": "tools/ads/example-assets/visit-01.jpg", "text": "See the room.", "alt": "A beginner looks around the BJJ training room."},
+        {"image": "tools/ads/example-assets/visit-02.jpg", "text": "Learn one step.", "alt": "A coach shows a beginner one movement."}
+      ],
+      "platforms": ["facebook", "instagram"]
+    }
+  ]
+}

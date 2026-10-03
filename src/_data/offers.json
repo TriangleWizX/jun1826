@@ -5,7 +5,7 @@
       "name": "Free First Visit",
       "category": "Primary Entry",
       "audience": "All First-Timers",
-      "description": "Start with a 15-minute Free First Visit. Adults can choose to train that day. Sandy must confirm the class first. You can choose sparring too. This means live practice with a matched partner. You can pause or end a round at any time. Youth use their own visit and class plan.",
+      "description": "Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day, after the visit. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan.",
       "priceRef": "free",
       "displayPrice": "Free",
       "primaryCta": {
@@ -20,7 +20,7 @@
       "name": "First visit before class",
       "category": "Orientation",
       "audience": "All First-Timers",
-      "description": "A calm studio tour, safety walkthrough, and schedule conversation. For youth, it happens immediately before the first structured class during the same visit.",
+      "description": "Meet Sandy. See the room and learn the rules. Talk about your goals. Adults can choose a class after the visit that day. Sandy confirms the class first. Kids and teens use their own class plan.",
       "priceRef": "free",
       "displayPrice": "Included",
       "primaryCta": {
@@ -34,10 +34,10 @@
       "id": "core-culture-youth",
       "name": "Youth Core Culture frequency ladder",
       "category": "Core Membership",
-      "audience": "Youth (5–17)",
+      "audience": "Youth (5\u201317)",
       "term": "12 weeks",
       "priceRef": "coreCulture.youth",
-      "displayPrice": "$220–$550 / 12 weeks",
+      "displayPrice": "$220\u2013$550 / 12 weeks",
       "included": [
         "Choose 1, 2, or 3 planned classes each week at the corresponding canonical frequency price",
         "First-term offer; recurring class times are confirmed under placement and capacity rules",
@@ -60,7 +60,7 @@
       "audience": "Adults (18+)",
       "term": "12 weeks",
       "priceRef": "coreCulture.adult",
-      "displayPrice": "$275–$687.50 / 12 weeks",
+      "displayPrice": "$275\u2013$687.50 / 12 weeks",
       "included": [
         "Choose 1, 2, or 3 planned classes each week at the corresponding canonical frequency price",
         "First-term offer; recurring class times are confirmed under placement and capacity rules",
@@ -221,7 +221,7 @@
       "audience": "Students continuing after a Core Culture term",
       "term": "12 months",
       "priceRef": "annualTrack",
-      "displayPrice": "Youth $800–$1,980; Adult $1,000–$2,475 / year",
+      "displayPrice": "Youth $800\u2013$1,980; Adult $1,000\u2013$2,475 / year",
       "active": true,
       "public": true
     },

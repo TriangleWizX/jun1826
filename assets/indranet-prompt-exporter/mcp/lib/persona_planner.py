@@ -1,16 +1,24 @@
 """Bounded work contracts consumed by a host runtime; never implicitly spawn."""
 from .persona_router import task_brief, select_persona, compile_guidance
 import re
+from uuid import UUID
 
 INSTRUCTION_FALLBACK = "e144b81f-10ea-41a6-a06c-03d69dfb738f"
 
 def select_instruction_asset(task, catalog, preferred_uuid=None):
     """Select an instruction profile without importing the quick CLI."""
+    if preferred_uuid is not None:
+        if not isinstance(preferred_uuid, str):
+            raise ValueError("instruction_uuid must be a string")
+        try:
+            preferred_uuid = str(UUID(preferred_uuid))
+        except ValueError as exc:
+            raise ValueError("instruction_uuid must be a valid UUID") from exc
     profiles = [p for p in catalog["profiles"] if str(p.get("title", "")).lower().startswith("instruction") and p.get("readiness") == "ready"]
     if preferred_uuid:
         match = next((p for p in profiles if p.get("uuid") == preferred_uuid), None)
         if match is None:
-            raise ValueError("requested instruction asset is unavailable")
+            raise ValueError("requested instruction asset UUID is unavailable or not ready: " + preferred_uuid)
         return match
     positive = task_brief(task)["positive_task"]
     # Platform names alone do not establish a video-production task.
@@ -28,14 +36,22 @@ def select_instruction_asset(task, catalog, preferred_uuid=None):
 from pathlib import Path
 
 
-def plan_execution(brief, catalog, workstreams=None, max_agents=4, workspace_root=None):
+def plan_execution(brief, catalog, workstreams=None, max_agents=4, workspace_root=None,
+                   coordinator_persona_uuid=None, coordinator_instruction_uuid=None):
     workspace = Path(workspace_root or Path(__file__).resolve().parents[4]).resolve()
     if isinstance(max_agents, bool) or not isinstance(max_agents, int) or not 1 <= max_agents <= 4:
         raise ValueError("max_agents must be 1..4 including the coordinator")
-    selection = select_persona(brief, catalog)
-    coordinator_instruction = select_instruction_asset(brief["task"], catalog, brief.get("instruction_uuid"))
+    if coordinator_persona_uuid is None:
+        coordinator_persona_uuid = brief.get("persona_uuid")
+    if coordinator_instruction_uuid is None:
+        coordinator_instruction_uuid = brief.get("instruction_uuid")
+    selection = select_persona(brief, catalog, coordinator_persona_uuid)
+    if coordinator_persona_uuid and selection["status"] == "unavailable":
+        raise ValueError("coordinator requested an unavailable persona UUID: " + coordinator_persona_uuid)
+    coordinator_instruction = select_instruction_asset(brief["task"], catalog, coordinator_instruction_uuid)
     root = {"schema_version": 1, "status": "planned", "max_agents": max_agents,
-        "catalog_hash": catalog["catalog_hash"], "coordinator": dict(compile_guidance(selection, brief, catalog), instruction_asset=coordinator_instruction),
+        "catalog_hash": catalog["catalog_hash"], "coordinator": dict(compile_guidance(selection, brief, catalog),
+            selection_status=selection["status"], instruction_asset=coordinator_instruction),
             "completion_gate": "Coordinator must inspect final artifacts and verification evidence for every DoD ID after integration. Worker agreement is insufficient.",
             "runtime_policy": {"recursive_spawn": False, "max_retries_per_worker": 1,
                                "restart": "Check the existing runtime handle before retrying; no retry based only on elapsed time.",
@@ -95,7 +111,7 @@ def plan_execution(brief, catalog, workstreams=None, max_agents=4, workspace_roo
         result = select_persona(sub, catalog, stream.get("persona_uuid"))
         instruction = select_instruction_asset(stream["task"], catalog, stream.get("instruction_uuid"))
         if stream.get("persona_uuid") and result["status"] == "unavailable":
-            raise ValueError(sid + " requested an unavailable persona")
+            raise ValueError(sid + " requested an unavailable persona UUID: " + stream["persona_uuid"])
         workers.append({"id": sid, "state": "queued", "runtime_handle": None,
         "selection_status": result["status"], "instruction_asset": instruction, "guidance": compile_guidance(result, sub, catalog),
         "dod_ids": owns, "contribution": stream["contribution"],

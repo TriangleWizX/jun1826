@@ -1,5 +1,8 @@
 # Free First Visit journey implementation
 
+> Policy update, October 2, 2026: this is historical analysis. Current adult entry is a required fifteen-minute goal visit, then an elective same-day or later free class confirmed by Sandy. Visit-only guests wear day clothes; training guests follow Sandy’s gear plan. Use `src/_data/free-intro.json` and `docs/ssbjj-show-up-and-intro-playbook.md` for current rules.
+
+
 Status: implementation specification; completion evidence pending.
 
 This specification applies the September 11 design deep-dive to `/free-bjj-intro-tannersville-ny`. The requested improvement authorizes implementation within this route and its booking controller. It does not authorize deployment or an actual appointment or preparation-form submission.

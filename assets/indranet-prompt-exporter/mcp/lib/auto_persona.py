@@ -12,14 +12,14 @@ from mcp.lib.persona_router import load_profiles, task_brief, select_persona, co
 from mcp.lib.persona_planner import plan_execution
 
 
-def select_best_persona(task_description, exports_dir=None):
+def select_best_persona(task_description, exports_dir=None, persona_uuid=None):
     """Compatible callable with diagnostics; no match has explicit null identity."""
     catalog = load_profiles(exports_dir or BASE_DIR / "exports")
     brief = task_brief(task_description)
-    result = select_persona(brief, catalog)
+    result = select_persona(brief, catalog, persona_uuid)
     selected = result["selected"]
     profile = next((p for p in catalog["profiles"] if selected and p["uuid"] == selected["uuid"]), {})
-    return dict(result, persona_title=profile.get("title"), uuid=profile.get("uuid"),
+    return dict(result, requested_persona_uuid=persona_uuid, persona_title=profile.get("title"), uuid=profile.get("uuid"),
                 version=profile.get("version"), tags=profile.get("tags", []),
                 description=profile.get("description", ""), notes="",
                 prompt_text=profile.get("prompt_text", ""), attachments=profile.get("attachments", []),
@@ -34,7 +34,8 @@ def main(argv=None):
     parser.add_argument("--audit", action="store_true", help="Readiness and provenance without prompt bodies")
     parser.add_argument("--brief", type=Path, help="JSON task, DoD, constraints, actions and optional workstreams")
     parser.add_argument("--plan", action="store_true", help="Emit host work contracts; never spawns agents")
-    parser.add_argument("--persona-uuid", help="Exact persona identity; unavailable candidates fail visibly")
+    parser.add_argument("--persona-uuid", help="Exact persona UUID; in --plan, selects the coordinator and overrides brief persona_uuid")
+    parser.add_argument("--instruction-uuid", help="Exact coordinator INSTRUCTIONS asset UUID for --plan; overrides brief instruction_uuid")
     parser.add_argument("--max-agents", type=int, default=4, help="Capacity including coordinator, 1..4")
     args = parser.parse_args(argv)
     try:
@@ -48,11 +49,15 @@ def main(argv=None):
                 raise ValueError("Supply a task or a brief containing task text")
             brief = task_brief(data["task"], **{k: v for k, v in data.items() if k != "task"})
             if args.plan:
-                if args.persona_uuid:
-                    raise ValueError("Use workstream persona_uuid overrides in a plan brief")
-                output = plan_execution(brief, catalog, data.get("workstreams"), args.max_agents)
+                output = plan_execution(brief, catalog, data.get("workstreams"), args.max_agents,
+                    coordinator_persona_uuid=args.persona_uuid if args.persona_uuid is not None else data.get("persona_uuid"),
+                    coordinator_instruction_uuid=args.instruction_uuid if args.instruction_uuid is not None else data.get("instruction_uuid"))
             else:
+                if args.instruction_uuid is not None:
+                    raise ValueError("--instruction-uuid requires --plan; use persona_quick.py for single-input persona and instruction selection")
                 output = select_persona(brief, catalog, args.persona_uuid)
+                if args.persona_uuid is not None:
+                    output["requested_persona_uuid"] = args.persona_uuid
                 output["brief"] = brief
                 output["guidance"] = compile_guidance(output, brief, catalog)
                 output["catalog_diagnostics"] = catalog["diagnostics"]
@@ -64,6 +69,8 @@ def main(argv=None):
             print("Status:", output["status"])
             print("Selection Reason:", output["selection_reason"])
             print("UUID:", selected["uuid"] if selected else "none")
+            if output.get("requested_persona_uuid") is not None:
+                print("Requested Persona UUID:", output["requested_persona_uuid"])
             print("Uncovered requirements:", ", ".join(output["uncovered"]) or "none")
             print("Attachments loaded: none")
             print("Use --json for fit evidence and compiled guidance; --plan --brief FILE for worker contracts.")

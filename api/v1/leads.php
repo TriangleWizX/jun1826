@@ -57,11 +57,15 @@ $messageConsent = !empty($data['messageConsent']) ? 1 : 0;
 $onsiteAcknowledged = !empty($data['onsite']) ? 1 : 0;
 $arrivalAcknowledged = !empty($data['arrival']) ? 1 : 0;
 $rescheduleAcknowledged = !empty($data['reschedule']) ? 1 : 0;
-$consentTextVersion = 'youth-intro-v1';
+$consentTextVersion = ss_clean_string($data['consent_text_version'] ?? 'youth-intro-v1', 40);
 $messageConsentAt = $messageConsent === 1 ? ss_now_iso() : null;
 $requestKey = ss_clean_string($data['idempotency_key'] ?? '', 120);
 
 $errors = [];
+// Older cached forms omit the version and retain their original consent record.
+if ($isYouthIntro && !in_array($consentTextVersion, ['youth-intro-v1', 'youth-intro-v2-2026-10-02'], true)) {
+    $errors['consent_text_version'] = 'Refresh the form and try again.';
+}
 $allowedContactMethods = ['phone', 'email', 'text', 'unknown'];
 $allowedLanes = ['kids', 'teens', 'adults', 'mixed', 'private', 'youth_intro', 'unknown'];
 

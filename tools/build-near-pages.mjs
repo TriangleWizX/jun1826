@@ -253,13 +253,13 @@ const defaultDecisionCopy = (town) => ({
     : `Most families use ${town.main_route} and treat this as a planned weekly anchor.`,
   why_choose: [
     town.route_verified === false
-      ? `Use the Free First Visit and current directions to decide whether the trip from ${town.town} fits your week.`
+      ? `Plan a Free First Visit. Check the route from ${town.town}. Ask Sandy which class fits your week.`
       : `The route from ${town.town} is familiar, which makes weeknight planning easier.`,
     'Classes run in clear lanes with coached pacing for true beginners.',
-    'One room, consistent coaching, and a first-visit process that stays low pressure.'
+    'Meet Sandy. See the room. Plan your first class.'
   ],
   trip_story: town.route_verified === false
-    ? `For ${town.town} families, the first useful question is whether the Tannersville room fits the actual drive. Start with one Free First Visit before choosing a recurring plan.`
+    ? `Check the route from ${town.town}. Start with a Free First Visit. Ask which class fits your week.`
     : `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
   first_cadence: town.recommendations_verified === false
     ? 'Check the current schedule and text Sandy if you want help deciding whether a youth, teen, adult, or Saturday option fits the drive.'
@@ -271,11 +271,11 @@ const defaultDecisionCopy = (town) => ({
     },
     {
       question: 'Will beginners be overwhelmed on day one?',
-      answer: 'No. Day one is controlled, coach-led, and beginner-paced with a skill-first first class.'
+      answer: 'Sandy guides your first class at your pace. He helps you learn each step.'
     },
     {
       question: 'Can we test fit before committing long term?',
-      answer: 'Yes. Start with a single Free First Visit and decide next steps after you see the room.'
+      answer: 'Start with a Free First Visit. See the room. Ask Sandy which class fits your week.'
     }
   ],
   proof_items: [
@@ -294,7 +294,7 @@ const defaultDecisionCopy = (town) => ({
   ],
   best_fit: 'Best for families and adult beginners who value coaching quality, clear structure, and low-pressure onboarding.',
   primary_cta_label: 'Reserve Your Free First Visit',
-  quiet_cta_line: `If you are comparing options from ${town.town}, start with one intro class before committing to a full weekly plan.`
+  quiet_cta_line: `Start with a Free First Visit. See the room. Ask Sandy which class fits your week.`
 });
 
 const generate = async () => {

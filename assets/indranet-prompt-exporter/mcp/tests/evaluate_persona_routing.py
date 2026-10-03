@@ -56,7 +56,7 @@ def evaluate(split="development"):
             if uid is None:
                 return bool(case["allow_abstention"])
             return uid in acceptable if acceptable else None
-        rows.append({"id": case["id"], "split": case["split"], "task": case["task"],
+        rows.append({"id": case["id"], "split": case["split"], "family": case.get("family", "unspecified"), "task": case["task"],
                      "legacy_uuid": old_id, "new_uuid": new_id,
                      "legacy_acceptable": grade(old_id), "new_acceptable": grade(new_id),
                      "new_status": result["status"], "new_uncovered": result["uncovered"],
@@ -67,6 +67,16 @@ def evaluate(split="development"):
         grades = [r[prefix + "_acceptable"] for r in rows]
         summary[prefix] = {"acceptable": grades.count(True), "unacceptable": grades.count(False), "ungraded": grades.count(None),
                            "abstentions": sum(r[prefix + "_uuid"] is None for r in rows)}
+    summary["by_family"] = {}
+    for family in sorted({row["family"] for row in rows}):
+        family_rows = [row for row in rows if row["family"] == family]
+        grades = [row["new_acceptable"] for row in family_rows]
+        summary["by_family"][family] = {
+            "cases": len(family_rows), "acceptable": grades.count(True),
+            "unacceptable": grades.count(False), "ungraded": grades.count(None),
+            "abstentions": sum(row["new_uuid"] is None for row in family_rows),
+            "extraction_matches": sum(row["required_extraction_matches"] for row in family_rows),
+        }
     summary["extraction_matches"] = sum(r["required_extraction_matches"] for r in rows)
     return {"scope": "Offline routing labels only; no persona task-outcome or swarm cost claims", "split": split,
             "catalog_hash": current["catalog_hash"], "fixture_hash": hashlib.sha256(path.read_bytes()).hexdigest(),

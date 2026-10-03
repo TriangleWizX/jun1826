@@ -69,7 +69,8 @@ src/assets/js/*.min.js
 
 # Ignore generated build artifacts in src
 src/sitemap*.xml
-src/near/
+# Town source pages must reach Eleventy; keep only the generator template ignored.
+src/near/template.html
 src/partials/videos/
 
 

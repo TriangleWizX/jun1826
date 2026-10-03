@@ -1,5 +1,7 @@
 # Sitewide Migration Checklist (Historical Archive)
 
+> Current policy (2026-10-02): Meet Sandy for 15 minutes. Talk about your goals. Adults can choose a class after the visit that day. Sandy confirms the class before you train. You can choose a later day. Your first class is free. You choose if you keep training. Sandy will show you the paid plans. Each next class uses the plan you choose. This file records past setup work. Use the current [Free First Visit page](/free-bjj-intro-tannersville-ny) for your visit.
+
 > **Migration Note**: The booking flow has migrated to Cal.com (`https://cal.com/senseisandy/first-visit`) with native site navigation to `/free-bjj-intro-tannersville-ny#booking-flow` powered by `js/progressive-booking.js`.
 
 ## 1. Create the new Calendly event
@@ -89,14 +91,14 @@ considerations`.
 
 ## 7. Update metadata and structured data
 
-Replace offers named `Free First Visitductory BJJ Class` with:
+Replace offers named `Legacy Intro Class` with:
 
 - Offer/service name: `Complimentary BJJ First Visit`
 - Price: `0`
 - Duration: `PT15M`
 - URL: the new on-site page or Calendly event URL
 
-Update page descriptions that promise a free first class.
+Keep the first-class-free terms clear. Your first class is free. You choose if you keep training. Sandy will show you the paid plans. Each next class uses the plan you choose.
 
 ## 8. Tracking
 

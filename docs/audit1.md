@@ -1,5 +1,8 @@
 1. Standardize the Free Intro
 
+> Policy update, October 2, 2026: this is historical analysis. Current adult entry is a required fifteen-minute goal visit, then an elective same-day or later free class confirmed by Sandy. Visit-only guests wear day clothes; training guests follow Sandy’s gear plan. Use `src/_data/free-intro.json` and `docs/ssbjj-show-up-and-intro-playbook.md` for current rules.
+
+
 The homepage calls it a two-visit process: a 15-minute Goal Mapping appointment, followed by a reserved class. The booking page also says “15 minutes,” “normal clothes,” and “no workout required.” However, global CTA blocks promise that the visitor will “begin guided partner practice,” which sounds like it happens during the same appointment.
 
 Use this exact global model:

@@ -48,10 +48,12 @@ Sandy approves prices, schedules, policies, eligibility, included services, disc
 
 ## Student path
 
-1. Reserve a Free Intro.
-2. Complete Goal Mapping.
-3. Choose three home classes.
-4. Start Core Culture.
+Entry policy updated October 2, 2026 from `src/_data/free-intro.json`. Paid prices elsewhere in this older specification are outside this entry-policy audit; reconcile them with current pricing authority before quoting.
+
+1. Request a Free First Visit.
+2. Complete the fifteen-minute goal visit before adult training. An adult may elect a coach-confirmed same-day free first class or a later class. Youth use their separate combined workflow.
+3. Attend the free first class. If continuing, choose a paid plan and its confirmed class dates.
+4. Start Core Culture under the chosen written terms.
 5. Review progress during weeks 10 and 11.
 6. Continue through another Core term or Annual Track.
 

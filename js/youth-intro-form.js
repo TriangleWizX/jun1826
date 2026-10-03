@@ -19,7 +19,7 @@
   const ageLaneLabel = form.querySelector('label[for="ageLane"]');
   // Age is the reliable first-pass router; keep the derived value in the
   // submission for Sandy/admin overrides without asking parents to classify it.
-  if (ageLaneLabel) ageLaneLabel.textContent = 'Student profile (set from age)';
+  if (ageLaneLabel) ageLaneLabel.textContent = 'Class group (based on age)';
   if (form.ageLane) {
     form.ageLane.setAttribute('aria-readonly', 'true');
     form.ageLane.tabIndex = -1;
@@ -32,7 +32,7 @@
   const success = document.getElementById('yi-success');
   const calendarLink = document.createElement('a');
   calendarLink.className = 'btn btn-outline-secondary ms-2';
-  calendarLink.textContent = 'Add requested time to calendar';
+  calendarLink.textContent = 'Save this time. Wait for Sandy to confirm.';
   calendarLink.download = 'youth-intro-request.ics';
   calendarLink.hidden = true;
   success.querySelector('a')?.after(calendarLink);
@@ -42,7 +42,7 @@
     const end = new Date(start.getTime() + (45 * 60 * 1000));
     const stamp = (value) => value.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
     const escapeIcs = (value) => value.replace(/[\\;,]/g, '\\$&').replace(/\n/g, '\\n');
-    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Sensei Sandy BJJ//Youth Intro//EN', 'BEGIN:VEVENT', `UID:${requestKeyInput.value}@senseisandy.com`, `DTSTART:${stamp(start)}`, `DTEND:${stamp(end)}`, `SUMMARY:${escapeIcs(`Youth intro request for ${form.studentName.value}`)}`, 'LOCATION:6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485', 'DESCRIPTION:Requested time pending Sandy confirmation. Arrive 20 minutes early. Parent or guardian remains on-site.', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Sensei Sandy BJJ//Youth Intro//EN', 'BEGIN:VEVENT', `UID:${requestKeyInput.value}@senseisandy.com`, `DTSTART:${stamp(start)}`, `DTEND:${stamp(end)}`, `SUMMARY:${escapeIcs(`Youth intro request for ${form.studentName.value}`)}`, 'LOCATION:6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485', 'DESCRIPTION:Wait for Sandy to confirm this time. Come 20 minutes early for class. A parent or guardian must stay. Stay for the visit and class.', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
     calendarLink.href = `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`;
     calendarLink.hidden = false;
   }
@@ -55,7 +55,7 @@
   form.ageLane.closest('.mb-3').appendChild(availabilityBox);
   const classChoiceWrap = document.createElement('div');
   classChoiceWrap.className = 'mb-3';
-  classChoiceWrap.innerHTML = '<label for="classChoice">Available class</label><select class="form-select" id="classChoice" name="classChoice" required><option value="">Choose a date and age lane first</option></select><div class="yi-note">Only classes with an available intro seat and approved partner are selectable.</div>';
+  classChoiceWrap.innerHTML = '<label for="classChoice">Available class</label><select class="form-select" id="classChoice" name="classChoice" required><option value="">Choose a date and age lane first</option></select><div class="yi-note">Choose a class with a free seat. Sandy must approve a partner for your child.</div>';
   form.ageLane.closest('.mb-3').after(classChoiceWrap);
   const classChoice = classChoiceWrap.querySelector('select');
   function setAppointment(slot) {
@@ -85,7 +85,7 @@
     setAppointment(null);
     if (!form.preferredDate.value || !form.ageLane.value) return;
     availabilityBox.hidden = false;
-    availabilityBox.textContent = 'Checking intro availability…';
+    availabilityBox.textContent = 'Checking class seats…';
     try {
       const response = await fetch(`/api/youth-intro/availability?date=${encodeURIComponent(form.preferredDate.value)}&lane=${encodeURIComponent(form.ageLane.value)}`, { signal: abortController.signal, headers: { Accept: 'application/json' } });
       const result = await response.json();
@@ -95,10 +95,10 @@
       selectable.forEach((slot) => classChoice.add(new Option(`${slot.day} at ${slot.startTime}`, slot.classId)));
       const restored = selectable.find((slot) => slot.classId === previousClassId);
       if (restored || selectable.length === 1) { classChoice.value = (restored || selectable[0]).classId; setAppointment(restored || selectable[0]); }
-      availabilityBox.textContent = statuses || 'No youth intro classes are available for that date and age lane.';
+      availabilityBox.textContent = statuses || 'Please choose a new date for this age group.';
     } catch (_) {
       setAppointment(null);
-      availabilityBox.textContent = 'Availability could not be checked. Sandy will review the request manually.';
+      availabilityBox.textContent = 'Text Sandy to check class seats. He will review your request.';
     }
   }
   let current = Number(sessionStorage.getItem('youthIntroStep') || 1);
@@ -109,9 +109,9 @@
   function showAlternativeRoute() {
     const type = form.studentType.value;
     const age = Number(form.studentAge.value);
-    if (type === 'returning') { routeBox.innerHTML = 'Returning students should use <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20a%20returning%20student%20looking%20to%20re-enter.">Text Sandy for a re-entry request</a>.'; routeBox.hidden = false; return true; }
-    if (type === 'visitor') { routeBox.innerHTML = 'Catskills visitors should use the <a href="/catskills-home-base.html">visitor training options</a>.'; routeBox.hidden = false; return true; }
-    if (Number.isFinite(age) && (age < 5 || age > 17)) { routeBox.innerHTML = 'This intro is for ages 5–17. Please use <a href="/options-pricing">the alternate options</a> or <a href="sms:+19177368649">text Sandy</a> for help.'; routeBox.hidden = false; return true; }
+    if (type === 'returning') { routeBox.innerHTML = 'Trained here before? Use <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20a%20returning%20student%20looking%20to%20re-enter.">Text Sandy to plan your next class</a>.'; routeBox.hidden = false; return true; }
+    if (type === 'visitor') { routeBox.innerHTML = 'Here for a short stay? See the <a href="/catskills-home-base.html">class plans for your stay</a>.'; routeBox.hidden = false; return true; }
+    if (Number.isFinite(age) && (age < 5 || age > 17)) { routeBox.innerHTML = 'This intro is for ages 5–17. Please use <a href="/options-pricing">other class plans</a> or <a href="sms:+19177368649">text Sandy</a> for help.'; routeBox.hidden = false; return true; }
     routeBox.hidden = true;
     return false;
   }
@@ -123,6 +123,6 @@
   form.preferredDate.addEventListener('change', refreshAvailability);
   form.ageLane.addEventListener('change', refreshAvailability);
   document.querySelectorAll('[data-cta="reserve-free-intro"]').forEach((link) => link.addEventListener('click', () => track('intro_cta_click', { cta_location: link.dataset.ctaLocation || 'unknown' })));
-  form.addEventListener('submit', async (event) => { event.preventDefault(); if (!valid()) return; error.hidden = true; const data = Object.fromEntries(new FormData(form)); data.funnel = 'youth_intro'; data.name = data.guardianName; data.phone = data.mobile; data.contact_method = 'text'; data.interest_lane = 'youth_intro'; data.message = `Youth intro for ${data.studentName}, age ${data.studentAge}. Goal: ${data.mainGoal}. Participation notes: ${data.participationNotes}`; data.source_url = location.href; ['utm_source','utm_medium','utm_campaign'].forEach((key) => { data[key] = new URLSearchParams(location.search).get(key) || ''; }); track('intro_form_submit'); try { const response = await fetch(form.action, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(data) }); if (!response.ok) throw new Error('Request failed'); document.getElementById('yi-success-name').textContent = data.studentName; form.hidden = true; document.querySelector('.yi-progress').hidden = true; document.getElementById('yi-step-label').hidden = true; document.getElementById('yi-success').hidden = false; sessionStorage.removeItem('youthIntroData'); sessionStorage.removeItem('youthIntroStep'); } catch (submitError) { error.textContent = 'We could not send this request. Please text Sandy at +1 (917) 736-8649.'; error.hidden = false; } });
-  try { const saved = JSON.parse(sessionStorage.getItem('youthIntroData') || '{}'); Object.entries(saved).forEach(([key, value]) => { const field = form.elements[key]; if (field) field.value = value; }); } catch (_) {} show(Math.min(Math.max(current, 1), 5)); if (form.preferredDate.value && form.ageLane.value) refreshAvailability(); track('intro_page_view'); track('intro_form_start');
+  form.addEventListener('submit', async (event) => { event.preventDefault(); if (!valid()) return; error.hidden = true; const data = Object.fromEntries(new FormData(form)); data.funnel = 'youth_intro'; data.name = data.guardianName; data.phone = data.mobile; data.contact_method = 'text'; data.interest_lane = 'youth_intro'; data.message = `Youth intro for ${data.studentName}, age ${data.studentAge}. Goal: ${data.mainGoal}. Participation notes: ${data.participationNotes}`; data.source_url = location.href; ['utm_source','utm_medium','utm_campaign'].forEach((key) => { data[key] = new URLSearchParams(location.search).get(key) || ''; }); track('intro_form_submit'); try { const response = await fetch(form.action, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(data) }); if (!response.ok) throw new Error('Request failed'); document.getElementById('yi-success-name').textContent = data.studentName; form.hidden = true; document.querySelector('.yi-progress').hidden = true; document.getElementById('yi-step-label').hidden = true; document.getElementById('yi-success').hidden = false; sessionStorage.removeItem('youthIntroData'); sessionStorage.removeItem('youthIntroStep'); } catch (submitError) { error.textContent = 'Text Sandy for help: +1 (917) 736-8649.'; error.hidden = false; } });
+  try { const saved = JSON.parse(sessionStorage.getItem('youthIntroData') || '{}'); Object.entries(saved).forEach(([key, value]) => { const field = form.elements[key]; if (field && key !== 'consent_text_version') field.value = value; }); } catch (_) {} show(Math.min(Math.max(current, 1), 5)); if (form.preferredDate.value && form.ageLane.value) refreshAvailability(); track('intro_page_view'); track('intro_form_start');
 }());

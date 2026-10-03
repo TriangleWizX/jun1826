@@ -19,6 +19,14 @@ The **Indranet Prompt Exporter & Persona Router** suite in `assets/indranet-prom
    - **Plans (`/plan`)**: Dual-bind the Role Persona and best matching **INSTRUCTIONS Asset** (`persona_quick.py --plan "<task>"` or `--instructions "<task>"`). Emits `## Persona & Expert Framework`, numbered `## Specific INSTRUCTIONS` grounded in the instruction asset, and DoD. Swarm if multi-disciplinary.
    - **Goals (`/goal`)**: Orchestrate a multi-agent persona swarm. Coordinator adopts a Master INSTRUCTIONS asset (`Instructions - COMPETENCE`, `Instructions - BOOST`, `INSTRUCTIONS - Business Operations`). Workstreams receive dedicated worker personas + worker INSTRUCTIONS assets with write-path isolation and wave execution.
 
+### Exact UUID overrides
+
+An explicit persona UUID is an identity choice, not a ranking hint. Preserve it across tool and prompt workflows, and report an unavailable or unready UUID instead of silently substituting another persona. `persona_quick.py --persona-uuid UUID "<task>"` supports ordinary single inputs; add `--plan` for the persona + INSTRUCTIONS pair, and optionally `--instruction-uuid UUID` to pin the instructions asset. For goals, top-level brief fields `persona_uuid` and `instruction_uuid` select the coordinator; workstream-level fields with the same names select workers. The corresponding `auto_persona.py --plan` CLI flags override the brief's coordinator fields. In natural-language prompts, apply the same rule even when no selector function is invoked.
+
+### Routing evidence and catalog coverage
+
+The router loads standalone prompts from `exports/index.json` and nested version folders. It excludes app introductions, requires strong title, summary, or tag evidence for every recognized task capability, and abstains when no supported capability or ready persona exists. Keep broad capabilities (such as finance or legal) separate from task subtypes when their specialists differ; body-only keyword mentions must not qualify a persona by themselves. Update the offline routing fixtures only after checking both the selected and accepted prompt sources. Current evaluation: `python3 assets/indranet-prompt-exporter/mcp/tests/evaluate_persona_routing.py --split all`.
+
 ---
 
 ## 2. CLI Execution & Verification Reference
@@ -33,8 +41,14 @@ rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --ins
 # 3. Generate Full Plan with Persona + INSTRUCTIONS Asset Bound
 rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --plan "adult schedule section refactor"
 
+# 3a. Pin an exact role and (optionally) exact INSTRUCTIONS asset
+rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --plan --persona-uuid PERSONA_UUID --instruction-uuid INSTRUCTION_UUID "adult schedule section refactor"
+
 # 4. Multi-Agent Swarm Execution Plan Brief Mode
 rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py --plan --brief /path/to/brief.json
+
+# Coordinator may also be pinned with CLI flags or top-level brief UUID fields;
+# each workstream can independently specify persona_uuid and instruction_uuid.
 
 # 5. Catalog Audit Mode (Check exports integrity)
 rtk proxy python3 assets/indranet-prompt-exporter/mcp/lib/auto_persona.py --audit

@@ -1,5 +1,8 @@
 # CRO fixes scaffold: simplify the first decision
 
+> Policy update, October 2, 2026: this is historical analysis. Current adult entry is a required fifteen-minute goal visit, then an elective same-day or later free class confirmed by Sandy. Visit-only guests wear day clothes; training guests follow Sandy’s gear plan. Use `src/_data/free-intro.json` and `docs/ssbjj-show-up-and-intro-playbook.md` for current rules.
+
+
 Date: 2026-09-09
 
 Status: implementation specification; website changes have not been made

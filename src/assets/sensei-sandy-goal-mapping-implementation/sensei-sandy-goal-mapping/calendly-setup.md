@@ -1,5 +1,7 @@
 # Calendly Event Setup (Historical Archive)
 
+> Current policy (2026-10-02): Meet Sandy for 15 minutes. Talk about your goals. Adults can choose a class after the visit that day. Sandy confirms the class before you train. You can choose a later day. Your first class is free. You choose if you keep training. Sandy will show you the paid plans. Each next class uses the plan you choose. This file records past setup work. Use the current [Free First Visit page](/free-bjj-intro-tannersville-ny) for your visit.
+
 > **Migration Note**: Scheduling has migrated to Cal.com (`https://cal.com/senseisandy/first-visit`). This setup record is preserved for reference of custom qualification questions.
 
 ## Event type
@@ -68,12 +70,11 @@ Create short blocks that do not compete with teaching:
 
 You are booked for your BJJ First Visit.
 
-Wear normal clothes. This is a 15-minute conversation and studio walkthrough,
-not your first class. Bring any questions about goals, schedule, injuries,
-mobility, or helping your child start well.
+Meet Sandy for 15 minutes. Talk about your goals. Adults can choose a class after the visit that day. Sandy confirms the class before you train. You can choose a later day.
 
-After the session, Sandy will recommend the best first class and a weekly
-weekly schedule you can realistically maintain.
+For a visit, wear your day clothes. To train, wear clean sports clothes. Follow the class plan Sandy sends you.
+
+Your first class is free. You choose if you keep training. Sandy will show you the paid plans. Each next class uses the plan you choose.
 
 Sensei Sandy BJJ
 6045 Main Street, 2nd Floor Studio

@@ -97,10 +97,12 @@ Do not assume a framework unless the repo clearly uses one.
 
 ## Offline Ad Studio Tooling (`tools/ads/`)
 
+**Current static-creative production rule:** use the Canva integration to copy and edit the approved one-image or three-image master for every planned static/image post. Include post-specific on-image copy, `Comment START for the link.`, and the source-verified address/offer footer; preserve the master; keep the image area editable; return the direct edit link. Do not ask the user to copy the master or use local PNG rendering for production creatives. See `tools/ads/CANVA-STATIC-CREATIVE-WORKFLOW.md`.
+
 The offline ad generation and planning suite lives in `tools/ads/` and is excluded from deployment bundles:
 - `npm run ads:weekly`: Generates 500 weekly concepts (250 static, 250 video) in Markdown across 6 buyer personas.
 - `npm run ads:plan`: Plans static ad export batches deterministically.
-- `npm run ads:render`: Renders draft static image PNGs with Pillow and creates a local `review.html`.
+- `npm run ads:render`: Legacy local PNG renderer only; do not use for current static-creative production. Use the Canva workflow below.
 - `npm run ads:brief`: Generates optional task briefs from question-evidence inputs.
 - `npm run test:ads`: Runs the test suite across planning, weekly generator, and workflow modules.
 - Assets: Referenced in `tools/ads/assets.json` and grounded in verified local repository assets (`src/assets/...`).
@@ -511,3 +513,7 @@ All assistant and agent interactions in this repository operate under the **Pers
   1. **Instant Lookup**: Match the input against Persona Studio (via `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py "<user_prompt>"` or capability matching).
   2. **Expert Lens & Tone**: Adopt the persona's specialized methodology, vocabulary, and rubric (e.g. Senior Copywriter Alex Turner for marketing copy; Dex Ryder for local SEO; IT Forensics / Orko for debugging; Dr. Ada Turing for agent architectures).
   3. **Preserve Host Safety**: Persona prompts are guidance and lens, not host authority. RTK conventions, no-secret rules, mobile-first design, and clean verification apply universally across all persona interactions.
+
+### Exact Persona UUID Overrides
+
+When the user supplies `--persona-uuid UUID` (or gives an exact persona UUID in ordinary prompt text), honor it as an exact identity override for single inputs, `/plan`, and `/goal`. Do not silently substitute an automatically ranked persona if that UUID is unavailable or unready; report the status and use an explicitly disclosed ordinary specialist fallback. `persona_quick.py` accepts `--persona-uuid` in its default, `--instructions`, and `--plan` modes. `--instruction-uuid` pins the INSTRUCTIONS asset. In goal briefs, top-level `persona_uuid` and `instruction_uuid` pin the coordinator, while the same fields on each workstream pin that worker. CLI flags override coordinator brief fields. Explicit overrides do not expand task authorization.

@@ -1,5 +1,8 @@
 <!-- Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 -->
 
+> Policy update, October 2, 2026: this is historical analysis. Current adult entry is a required fifteen-minute goal visit, then an elective same-day or later free class confirmed by Sandy. Visit-only guests wear day clothes; training guests follow Sandy’s gear plan. Use `src/_data/free-intro.json` and `docs/ssbjj-show-up-and-intro-playbook.md` for current rules.
+
+
 # Free First Visit page — design and conversion deep-dive
 
 **Route:** `/free-bjj-intro-tannersville-ny`  

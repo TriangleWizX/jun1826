@@ -22,6 +22,7 @@
     "ads:brief": "python3 tools/ads/workflow.py",
     "ads:swipe": "python3 tools/ads/swipe.py",
     "ads:scaffold": "python3 tools/ads/scaffold.py",
+    "ads:assets": "python3 tools/ads/post_assets.py",
     "test:ads": "python3 -m unittest discover -s tools/ads -p 'test_*.py'"
   },
   "dependencies": {},

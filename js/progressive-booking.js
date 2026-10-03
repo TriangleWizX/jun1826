@@ -125,7 +125,7 @@
     };
     const failure = () => {
       if (!mount) return;
-      message('The calendar has not loaded. Retry or open it in a new tab. You can also text Sandy.', true);
+      message('Try the dates again or open a new tab. Text Sandy for help.', true);
       if (!mount.querySelector('[data-retry-calendar]')) {
         const retry = document.createElement('button');
         retry.type = 'button'; retry.className = 'btn btn-outline-secondary';
@@ -169,7 +169,7 @@
             const data = event.detail?.data || {};
             if (!data.uid || state.scheduled.has(data.uid)) return;
             if (data.status !== 'ACCEPTED' || data.paymentRequired) {
-              message('Your booking request was received. Check your booking confirmation for its status, or text Sandy for help.');
+              message('We got your request. Check your email for the next step. Text Sandy for help.');
               return;
             }
             state.scheduled.add(data.uid);

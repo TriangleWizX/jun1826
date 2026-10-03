@@ -620,7 +620,7 @@ const renderFlywheelGrandSlamSection = () => `<section class="glossary-shell glo
     <article class="glossary-flywheel-step">
       <span class="step-num">Step 02</span>
       <h3>Walk the Mats</h3>
-      <p>Meet Sandy, tour our Tannersville studio, and experience cooperative partner drills. A coached, relaxed orientation where you ask questions and feel our calm pacing.</p>
+      <p>Meet Sandy. See the room and learn the rules. Ask which class fits your week. Sandy guides your first class at your pace.</p>
       <a class="step-link" href="/free-bjj-intro-tannersville-ny">Reserve Free First Visit &rarr;</a>
     </article>
 
@@ -920,7 +920,7 @@ const renderTermNextStep = (term) => {
     <p class="ss-eyebrow">Train the word</p>
     <h2 id="term-next-step-title">Want to feel ${escapeHtml(term ? term.displayTerm.toLowerCase() : 'this')} in class?</h2>
     <p>
-      Your first class is a coached learning experience. We will guide you through a calm room tour, explain the partner safety rules, and help you choose the right class lane.
+      Meet Sandy for a free visit. See the room and learn the rules. Talk about your goals. Sandy helps you plan your first class.
     </p>
 
     ${vaultBanner}

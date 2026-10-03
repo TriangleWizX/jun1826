@@ -1,5 +1,42 @@
 # SSBJJ Ad Studio — 500 weekly concepts
 
+## Current finished-static workflow: Canva copies
+
+For production static and image/carousel creatives, use the approved Canva
+masters through the Canva integration. The agent creates and edits a separate
+copy for each post, including the headline, supporting copy, `Comment START for
+the link.`, and the verified address/offer footer. The user receives a direct
+edit link and replaces the image(s) in that copy. Never ask the user to copy the
+master, never edit the master, and do not use the local PNG renderer as a
+production creative workflow. See
+[`CANVA-STATIC-CREATIVE-WORKFLOW.md`](CANVA-STATIC-CREATIVE-WORKFLOW.md) for the
+approved masters and current batch links.
+
+## Supplemental local asset inventory (not finished creative)
+
+This optional packet command inventories supplied local images and captions; it
+does not create or edit Canva designs. It is not the production workflow for
+static or carousel graphics. Use it only when a separate local manifest is
+specifically useful, alongside the Canva-copy workflow above.
+
+1. Copy `post-assets-input.example.json` to an ignored working file.
+2. Put your approved screenshots/photos anywhere inside this repository and edit
+   each `image` or carousel `slides[].image` path.
+3. Add the theme, description, alt text, and copy/paste caption. Captions must
+   include the exact `Comment START for the link.` CTA.
+4. Run:
+
+```bash
+npm run ads:assets -- --input tools/ads/post-assets-input.json --week 2026-W40
+```
+
+The command creates a new protected text/manifest run under
+`tools/ads/output/post-assets/<week>/` containing `posts.md`, `manifest.csv`,
+`review.html`, and `validation.json`. Its review page is only a local inventory
+of supplied images, not a finished Canva creative or posting receipt. Facebook
+and Instagram stay one unique cross-post in each packet. A new run label or
+`--output` path is required if the destination already exists.
+
 The standard weekly output is **500 concepts in simple Markdown: 250 static and 250 video**. This user-directed standard supersedes the earlier dormant-volume decision. Concepts are text briefs; finished images and videos are separate production work.
 
 ## Quick Commands (from repository root)
@@ -11,9 +48,6 @@ npm run ads:weekly
 
 # Plan a static ad run
 npm run ads:plan -- --count 6 --personas ben --series beginner_questions
-
-# Render static draft ads (PNGs + review.html)
-npm run ads:render -- --count 6 --personas ben --series beginner_questions --week run-01
 
 # Generate an optional task brief
 npm run ads:brief
@@ -43,12 +77,17 @@ The bank combines 25 topics with 10 different treatments for each medium. These 
 
 The first pack is included. No testimonials or finished video files are fabricated. Scenes describe footage to find or capture; asset matching remains manual. Check current offers before production. Preserve original photos, logo and permissions. No ad is published by this tool.
 
-The old 1–200 PNG renderer remains available for its existing 42 static concepts. It does not automatically consume this 500-concept Markdown bank, and it does not render video. Use the new weekly command for the requested standard output.
+The old 1–200 PNG renderer remains available for its existing 42 static concepts
+for legacy/reference use only. Do not run it for current production creatives;
+the Canva copy workflow above is authoritative. The weekly concept command is
+planning material, not a finished creative or evidence of publication.
 
-## Earlier renderer instructions
+## Legacy renderer reference (not current production workflow)
 
 
-For optional finished PNG production, use the renderer below. The 500-concept weekly standard above governs ideation; no separate capture schedule or automatic follow-up is imposed. No website, CRM or ad-account integration is enabled.
+The following instructions are retained only for maintaining or reproducing old
+local renders. They are superseded for new static production by the Canva
+workflow above. No website, CRM or ad-account integration is enabled.
 
 ## Start here
 

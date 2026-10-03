@@ -4,8 +4,8 @@
 
 1. **Reserve Your Free First Visit**: Choose who is starting and request a preferred time.
 2. **Meet Sandy**: See the room, review safety, discuss goals, and choose the right starting point.
-3. **Choose the coached first class**: Adults schedule class after a 15-minute visit in normal clothes. The specialized youth path may continue into class during the same visit after arriving 20 minutes early in clean athletic clothes.
-4. **Attend the first class free**: Join a coached learning experience with no obligation to enroll.
+3. **Choose the coached first class**: Adults complete the 15-minute goal visit first. They may choose a class that same day or later, once Sandy confirms it. Visit-only guests wear day clothes; training guests follow Sandy’s sports-clothes and class-gear plan. Youth use their own combined workflow, with a parent or guardian on-site, arrival 20 minutes early, and a verified waiver before confirmation.
+4. **Attend the first class free**: Sandy guides the class at the student’s pace. Later classes use the paid plan the student chooses.
 
 `goal-mapping` remains an internal identifier and staff concept. Public pages call the acquisition step a Free First Visit so visitors do not have to interpret a second product name.
 

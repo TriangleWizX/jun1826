@@ -27,7 +27,9 @@ selected an unavailable version. Disclose a specialist fallback when necessary.
 
 1. **Select Persona Prompt & INSTRUCTIONS Asset**:
    - For plans and contextual single inputs, run `python3 assets/indranet-prompt-exporter/mcp/lib/persona_quick.py --plan "<task_description>"` to obtain role and instruction candidates. Independently review both before adopting them; score and timing are not evidence of fit.
-   - For goals, run `auto_persona.py --plan --brief <brief.json>` to assign a coordinator Master INSTRUCTIONS asset and allocate worker personas with domain-specific INSTRUCTIONS assets across dependency waves.
+   - If the user supplies `--persona-uuid UUID` or an equivalent exact ID, preserve it as an exact override. For a single input use `persona_quick.py --persona-uuid UUID`; for a plan add `--plan`. Add `--instruction-uuid UUID` to select the exact INSTRUCTIONS asset. Never silently replace an unavailable or unready ID with an automatic candidate.
+   - For goals, run `auto_persona.py --plan --brief <brief.json>`. The brief may set top-level `persona_uuid` and `instruction_uuid` for the coordinator; each workstream may set its own `persona_uuid` and `instruction_uuid`. CLI `--persona-uuid` and `--instruction-uuid` override the corresponding coordinator fields.
+   - In ordinary prompts that do not invoke a selector function, treat a supplied exact UUID the same way: inspect that identity, report whether it is available and ready, and use it only if valid. Continue with an explicitly disclosed ordinary specialist fallback when it cannot be used.
 2. **Record the framework**:
    Add a `## Persona & Expert Framework` section to the plan or goal artifact with:
    - Role Persona title and UUID.

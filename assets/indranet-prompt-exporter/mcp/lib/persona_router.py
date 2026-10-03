@@ -16,22 +16,26 @@ CAPABILITIES = {
     "publishing_operations": r"publishing|editorial calendar|content distribution|cross.platform|social media|content strategy",
     "project_management": r"project management|project manager|project coordination|workstream|milestones",
     "python": r"python|pythia|pythonslayer",
-    "debugging": r"debug\w*|diagnos\w*|find why|troubleshoot\w*|exception|stack trace|root cause",
+    "debugging": r"debug\w*|troubleshoot\w*|exception|stack trace|traceback|runtime error|keyerror|typeerror|memory leak",
     "seo": r"seo|search engine optimi\w*|canonical|meta tags|metadata|indexing|robots|keyword research|organic search|title tags",
     "copywriting": r"copywrit\w*|sales copy|email sales|persuasive email|ad copy|advertising headlines|persuasive language|edit an ad|brand voice|promotional emails|call.to.action copy",
-    "agents": r"agents?|multi.agent|swarm|persona select\w*|persona rout\w*",
-    "prompt_design": r"prompts?|prompt engineer\w*|prompt design\w*|prompt optim\w*|prompt evalu\w*|prompt improve\w*",
+    "advertising_copy": r"advertising copy|ad copy|advertising headlines?|ad headlines?|edit an ad|landing.page (?:promise|copy)|parent considering|call.to.action copy",
+    "email_copywriting": r"email.{0,20}copywrit\w*|copywrit\w*.{0,20}email|email marketing|promotional emails?|email sequence|email campaign",
+    "agents": r"multi.agent|agent swarm|agent orchestration|agent assignment|agent coordination|collaborating agents|persona select\w*|persona rout(?:er|ing)",
+    "prompt_design": r"prompt engineer\w*|prompt design\w*|design (?:a )?prompt|prompt optim\w*|prompt evalu\w*|prompt improv\w*|improve (?:a )?prompt|create (?:a )?prompt|system prompt|prompt construction|prompt scanner|prompt audit|prompt designs?",
     "frontend": r"frontend|front.end|css|html|responsive|navigation|overflow|web layout",
     "accessibility": r"accessibility|accessible|wcag|screen reader|keyboard focus|contrast|focus visibility",
     "translation": r"translat\w*|language tutor",
-    "finance": r"financ\w*|retirement|investment|budgeting|tax planning",
-    "genetics": r"genetic\w*|genome|genomic\w*|dna|rna|gene expression",
-    "physics": r"physics|physicist|quantum",
+    "finance": r"financ\w*|debt repayment|household budget|emergency fund|retirement|investment\w*|budget\w*|tax planning|spending plan",
+    "household_finance": r"personal finance|personal financial planning|household budget|debt management|debt repayment|emergency fund|retirement planning|spending plan|budgeting",
+    "genetics": r"genetic\w*|genome|genomic\w*|dna|rna|gene expression|mendelian|inheritance|polygenic",
+    "physics": r"physics|physicist|quantum|conservation of momentum|damped harmonic oscillator|harmonic oscillator|kinematics|thermodynamics",
     "software_architecture": r"software architecture|system architecture|distributed systems",
-    "building_architecture": r"building architecture|building design|architectural design",
-    "cryptography": r"cryptograph\w*|encryption|digital signature",
+    "building_architecture": r"building architecture|building design|architectural site layout|building floor plan|floor plan|building layout|site planning",
+    "cryptography": r"cryptograph\w*|encryption|digital signatures?|key exchange|nonce reuse|authenticated encryption",
     "crypto": r"crypto|cryptocurrency|crypto trading|blockchain",
-    "legal": r"legal|lawyer|contract law",
+    "legal": r"legal|lawyer|contract law|technology contract|software licensing|license dispute|contract dispute|contract disagreement",
+    "technology_law": r"legal.tech\w*|technology law|technology contract|software licensing|software license|licensing dispute|technology contract disagreement",
     "teaching": r"teach\w*|tutor\w*|lesson plan|pedagog\w*",
     "creative_enhancement": r"creative enhance\w*|anything enhancer|optimax|genius engine|concept enhance\w*|elevat\w* creative",
 }
@@ -69,6 +73,17 @@ def _digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
 
+def _source_type(record):
+    """Distinguish executable persona prompts from app introductions."""
+    declared = record.get("type")
+    if isinstance(declared, str) and declared.strip():
+        return declared.strip().lower()
+    url = record.get("url") or ""
+    if record.get("linked_prompt_uuid") or re.search(r"/app/", str(url), re.I):
+        return "app"
+    return "prompt"
+
+
 def load_profiles(exports_dir):
     """Reconcile index and immediate export records without changing either.
 
@@ -77,7 +92,7 @@ def load_profiles(exports_dir):
     """
     root = Path(exports_dir).resolve()
     records, diagnostics = [], []
-    paths = [root / "index.json"] + sorted(root.glob("*/prompt.json"))
+    paths = [root / "index.json"] + sorted(root.rglob("prompt.json"))
     for path in paths:
         if not path.exists():
             continue
@@ -93,7 +108,9 @@ def load_profiles(exports_dir):
                 if not isinstance(item, dict):
                     diagnostics.append({"source": str(path), "error": "record is not an object"})
                     continue
-                records.append((item, str(path.relative_to(root))))
+                record = dict(item)
+                record["_router_source_type"] = _source_type(item)
+                records.append((record, str(path.relative_to(root))))
         except (OSError, ValueError) as exc:
             diagnostics.append({"source": str(path), "error": str(exc)})
     grouped = {}
@@ -104,7 +121,8 @@ def load_profiles(exports_dir):
             continue
         grouped.setdefault(uid, []).append((record, source))
     profiles = []
-    fields = ("title", "description", "notes", "text", "version", "tags", "additional_files")
+    fields = ("title", "description", "notes", "text", "version", "tags", "additional_files",
+              "_router_source_type", "linked_prompt_uuid")
     for uid, variants in sorted(grouped.items()):
         record = variants[0][0]
         hashes = {_digest({k: p.get(k) for k in fields}) for p, _ in variants}
@@ -129,7 +147,7 @@ def load_profiles(exports_dir):
         evidence = {}
         for capability, pattern in CAPABILITIES.items():
             hits = []
-            for field, content, weight in (("title", title, 3), ("description", description, 2), ("tags", tags_str, 2), ("text", body, 1)):
+            for field, content, weight in (("title", title, 5), ("description", description, 3), ("tags", tags_str, 2), ("text", body, 1)):
                 matches = _matches(pattern, content)
                 if matches:
                     m = matches[0]
@@ -142,7 +160,9 @@ def load_profiles(exports_dir):
                                                            "weight": 2, "reviewed": True})
         scopes = [name for name in ("etsy", "ebay", "minecraft", "pokemon")
                   if _matches(re.escape(name), title + " " + description)]
-        profiles.append({"uuid": uid, "title": title, "version": record.get("version"), "domain_scopes": scopes,
+        profiles.append({"uuid": uid, "title": title, "version": record.get("version"), "tags": raw_tags,
+                         "source_type": record.get("_router_source_type", "prompt"),
+                         "linked_prompt_uuid": record.get("linked_prompt_uuid"), "domain_scopes": scopes,
                          "content_hash": _digest({k: record.get(k) for k in fields}),
                          "sources": sorted({source for _, source in variants}),
                          "readiness": readiness, "capabilities": evidence,
@@ -170,6 +190,14 @@ def task_brief(task, **overrides):
             active.append(clause)
     positive = " ".join(active)
     inferred = [k for k, pattern in CAPABILITIES.items() if _matches(pattern, positive)]
+    technical_context = _matches(
+        r"python|software|source code|\bcode\b|program|script|repository|router|api|exception|stack trace|traceback|runtime error|keyerror|typeerror|css|html|javascript|database|memory leak",
+        positive,
+    )
+    if technical_context and _matches(r"diagnos\w*|find why|root cause", positive):
+        inferred.append("debugging")
+    if "debugging" in inferred and not technical_context and not _matches(r"debug\w*|exception|traceback|stack trace|runtime error|keyerror|typeerror", positive):
+        inferred.remove("debugging")
     if "genetics" in inferred and "translation" in inferred and not _matches(r"french|spanish|german|english|language", positive):
         inferred.remove("translation")
     # A protected capability may still be inspected; excluded wording cannot add it.
@@ -194,10 +222,19 @@ def task_brief(task, **overrides):
 
 
 def select_persona(brief, catalog, preferred_uuid=None):
+    if preferred_uuid is not None:
+        if not isinstance(preferred_uuid, str):
+            raise ValueError("persona_uuid must be a string")
+        try:
+            preferred_uuid = str(UUID(preferred_uuid))
+        except ValueError as exc:
+            raise ValueError("persona_uuid must be a valid UUID") from exc
     required = set(brief["required_capabilities"])
     query = _tokens(brief["positive_task"])
     candidates = []
     for profile in catalog["profiles"]:
+        if profile.get("source_type", "prompt") != "prompt":
+            continue
         if profile["readiness"] != "ready":
             continue
         if profile["title"].lower().startswith(("workflow__", "input-field-tool", "instructions", "instruction -")):
@@ -207,13 +244,21 @@ def select_persona(brief, catalog, preferred_uuid=None):
         strengths = {k: max(x["weight"] for x in v) for k, v in profile["capabilities"].items()}
         covered = required & strengths.keys()
         # A body-only passing mention does not establish a specialist's primary fit.
-        primary = {k for k in covered if strengths[k] >= 2}
-        overlap = query & _tokens(profile["title"] + " " + profile["description"])
-        if required and not primary and profile["uuid"] != preferred_uuid:
+        # A direct capability statement in a persona summary is meaningful evidence;
+        # broad catalog tags and incidental prompt-body mentions are not.
+        primary = {k for k in covered if strengths[k] >= 3}
+        profile_tags = profile.get("tags") or []
+        tags_text = " ".join(profile_tags) if isinstance(profile_tags, list) else str(profile_tags)
+        overlap = query & _tokens(profile["title"] + " " + tags_text)
+        source_overlap = query & _tokens(profile.get("description", "") + " " + profile.get("prompt_text", ""))
+        if required and not required <= primary and profile["uuid"] != preferred_uuid:
             continue
-        if not required and (len(overlap) < 2 or not query) and profile["uuid"] != preferred_uuid:
+        if not required and profile["uuid"] != preferred_uuid:
             continue
-        score = sum(strengths[k] * 10 for k in covered) + min(len(overlap), 4)
+        # Reward task terms that the persona source actually specializes in. This
+        # helps distinguish, for example, household financial planning from
+        # financial writing while keeping body mentions too weak to qualify alone.
+        score = sum(strengths[k] * 10 for k in primary) + min(len(overlap), 4) + min(len(source_overlap), 8)
         # Missing requirements remain gaps: never claim a body mention covers them.
         supported = sorted(primary)
         candidates.append({"uuid": profile["uuid"], "persona_title": profile["title"],
