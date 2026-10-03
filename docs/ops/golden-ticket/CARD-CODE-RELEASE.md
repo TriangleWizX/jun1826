@@ -8,7 +8,7 @@ Current URLs use `utm_campaign=shiney_ticket` and `utm_content=st01` through `st
 
 The website shows ST codes. Old GT links and typed GT codes map to the matching ST code. The original `source_url` stays intact for attribution. Only issued codes 01–10 pass validation; the card field stays optional. The offer, four classes, 14-day activation rule, $35 reward, booking path and form endpoint are unchanged.
 
-Historical GT release results remain unchanged. The inventory stores `previous_card_id` for the rename; old hardware proof is in `history/card-register-before-st.csv`. ST01 is `rewrite_awaiting_check`. Past GT01 success does not prove a new ST01 write or scan. Guest and reward ledgers remain blank.
+Historical GT release results remain unchanged. The inventory stores `previous_card_id` for the rename; old hardware proof is in `history/card-register-before-st.csv`. ST01 is `ready`; its rewrite, readback, tap, printed QR, and inbox delivery checks passed user verification (October 2, 2026). Guest and reward ledgers remain blank.
 
 The one GT01 reference in the existing VSL plan was changed to ST01 in place. That unrelated, untracked plan stays outside this commit and deployment. The kit's historical directory name remains stable so existing file links still work.
 
@@ -41,4 +41,4 @@ The independent Instructions - COMPETENCE asset, UUID `e144b81f-10ea-41a6-a06c-0
 
 ## Remaining physical launch work
 
-Write ST01, read it back and tap it. Print its new sheet at actual size and scan the QR. Confirm one real request reaches Sandy with the code and source URL, set up private logs and complete the first member handoff. Keep all guest activation, attendance and reward outcomes evidence-based.
+ST01 rewrite, read-back, tap, printed QR scan, and real request receipt have all passed verification (reported and confirmed by Sandy October 2, 2026). Private logs are established in Google Sheets (see `PRIVATE-LOG.md`). The card is marked `ready` in `card-register.csv`. The immediate next operational step is the first member handoff. All guest activation, attendance, and reward outcomes remain evidence-based.

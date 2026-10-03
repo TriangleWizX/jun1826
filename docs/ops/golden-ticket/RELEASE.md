@@ -40,7 +40,7 @@ Offer and changed shared-policy paragraphs estimate at grade 3 or below, with a 
 
 Build, volatile facts, first-visit contract, terminology contract, unified checks, phone/desktop layout, controlled form states, and the controlled booking fixture pass. All ten PNG and PDF QR payloads match the new CSV URLs. No synthetic form was sent to the provider.
 
-The full-site booking scan has a pre-existing missing script on Hyphen Weekend and old CSS references outside this payload. The checkout has no `qa:definition-of-done` script. These are recorded as existing gaps. Sandy reports that the new GT01 link reads back and opens the correct page and code on Android. Real inbox delivery, the physical printed QR scan, manual guest activation, and referral outcomes remain to be proven.
+The full-site booking scan has a pre-existing missing script on Hyphen Weekend and old CSS references outside this payload. The checkout has no `qa:definition-of-done` script. These are recorded as existing gaps. Sandy confirmed the rewritten ST01 link, Android tap, and printed QR scan passed verification on October 2, 2026. Real inbox delivery was verified via Formspree with card code and source link intact. Manual guest activation, attendance, and referral outcomes remain future facts.
 
 ## Payload and rollback
 

@@ -8,7 +8,7 @@ Dates: ISO format (`2026-10-02`); use full local date/time with offset where app
 
 ## Card register
 
-Exactly ten rows. `physical_status` is one of `unprogrammed`, `rewrite_awaiting_check`, `programmed_awaiting_print_check`, `ready`, `issued`, `returned_awaiting_check`, `lost`, `retired`. A returned card becomes ready after inspection/read-back. The eight counts must total ten. ST01 is `rewrite_awaiting_check`; its new URL write, read-back, Android tap and printed QR scan are pending. The other nine remain unprogrammed reserves. `current_cycle_id` identifies custody, not the only possible referral.
+Exactly ten rows. `physical_status` is one of `unprogrammed`, `rewrite_awaiting_check`, `programmed_awaiting_print_check`, `ready`, `issued`, `returned_awaiting_check`, `lost`, `retired`. A returned card becomes ready after inspection/read-back. The eight counts must total ten. ST01 is `ready`; its new URL write, read-back, Android tap and printed QR scan passed user verification (October 2, 2026), and it is ready for member handoff. The other nine remain unprogrammed reserves. `current_cycle_id` identifies custody, not the only possible referral.
 
 Record read-back, browser, and printed-QR checks as `pass`, `fail`, or blank. Evidence can identify the operator/date/device in a private record. User-reported checks are useful, but label them as reports rather than independently captured device evidence.
 

@@ -43,7 +43,7 @@ Keep card custody, invitation cycles, guests, and reward transactions separate. 
 
 ### Prepare
 
-1. Rename the pilot card ST01. Write the new `utm_campaign=shiney_ticket&utm_content=st01` URL, read it back, then test the Android tap and new printed QR. Keep the other nine cards blank. All four new-code checks are pending.
+1. Rename the pilot card ST01. Write the new `utm_campaign=shiney_ticket&utm_content=st01` URL, read it back, then test the Android tap and new printed QR. Keep the other nine cards blank. ST01 new-code checks passed (verified by Sandy October 2, 2026), and ST01 is ready for member handoff.
 2. Keep the links free of names, phone numbers, or member IDs. Use the fixed public code `st01` through `st10`.
 3. Copy the blank ledgers into restricted operations storage. Use internal member/guest references there, with personal contact data retained in the existing customer system. Do not fill these repository templates with customer information.
 4. Confirm actual class space and Sandy's available arrival/welcome window before offering a guest a specific slot. Use the current schedule, not times printed on cards.
@@ -143,4 +143,4 @@ Hormozi sources are in `/home/twizss/.codex/skills/hormozi-orchestra/knowledge/`
 
 Operational authorities: `src/bring-a-friend.html`; `src/_data/referrals.json`, `free-intro.json`, `offers.json`, `pricing.json`, `contact.json`; current user decisions; live `/bring-a-friend`. Product-marketing context was used for audience orientation only where consistent with current sources.
 
-Kit completion requires ten matching URL/QR pairs, writable-capacity checks, usable print layout, blank ledgers, Android steps, preserved reward terms, truthful copy, and verified source capture. The active launch scope is ST01 only; the other nine payloads are optional future inventory. Launch completion additionally requires physical read/scan tests, a confirmed operational receipt path, real member assignments, and Sandy's actual class arrangements. Referral results require actual request, attendance, payment, and retention evidence. See `VERIFICATION.md`; unperformed stages remain pending.
+Kit completion requires ten matching URL/QR pairs, writable-capacity checks, usable print layout, blank ledgers, Android steps, preserved reward terms, truthful copy, and verified source capture. The active launch scope is ST01 only; the other nine payloads are optional future inventory. Launch completion additionally requires physical read/scan tests (passed for ST01), a confirmed operational receipt path (passed), real member assignments, and Sandy's actual class arrangements. Referral results require actual request, attendance, payment, and retention evidence. See `VERIFICATION.md`; unperformed operational stages remain pending.

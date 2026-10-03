@@ -35,7 +35,7 @@ The full `qa:cal-migration` scan found an existing missing `/assets/js/analytics
 
 ## ST code update
 
-Current codes are ST01–ST10. The site update is deployed and verified. See `CARD-CODE-RELEASE.md` and `card-code-qa.json` for the new QR, form and live checks. Historical release results retain their original GT codes. ST01 hardware checks below remain pending.
+Current codes are ST01–ST10. The site update is deployed and verified. See `CARD-CODE-RELEASE.md` and `card-code-qa.json` for the new QR, form and live checks. Historical release results retain their original GT codes. ST01 physical rewrite, read-back, browser open, printed QR scan, and real inbox delivery checks passed (reported and confirmed by Sandy October 2, 2026). ST01 is ready for member handoff.
 
 ## Website release
 
@@ -46,12 +46,12 @@ See RELEASE.md for the exact payload, commit, backup, deployment, and live evide
 | Step | State |
 |---|---|
 | Prior GT01 write, read-back and Android open | Passed, reported by Sandy; historical evidence only |
-| ST01 rewrite to `utm_content=st01` | Pending |
-| ST01 read-back and browser open | Pending |
-| Actual printed QR scan | Pending |
-| Actual inbox receipt with code and source URL | Pending |
+| ST01 rewrite to `utm_content=st01` | Passed, verified by Sandy in thread 2026-10-02 |
+| ST01 read-back and browser open | Passed, verified by Sandy in thread 2026-10-02 |
+| Actual printed QR scan | Passed, verified by Sandy in thread 2026-10-02 |
+| Actual inbox receipt with code and source URL | Passed: Formspree receipt confirmed with card code and source link intact |
 | Blank logs copied to private storage | Passed: private Google Sheet created and read back; see PRIVATE-LOG.md |
-| First member handoff | Pending |
+| First member handoff | Ready for issue / Pending first handoff |
 | Sandy's activation and attended classes | Future guest outcome |
 | Cleared payment and earned $35 | Future qualifying outcome |
 

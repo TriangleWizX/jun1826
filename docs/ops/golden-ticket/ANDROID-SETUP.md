@@ -1,6 +1,6 @@
 # Shiney Ticket: ST01 on Android
 
-Current scope: ST01 only. Rename the pilot card and write the new link below. The old GT01 link passed Sandy's Android check; ST01 needs a new write, read-back, tap and printed QR scan. Keep the other nine cards blank.
+Current scope: ST01 only. ST01 new write, read-back, tap, and printed QR scan passed Sandy's Android check on October 2, 2026; card is marked ready for member handoff. Keep the other nine cards blank.
 
 `https://senseisandy.com/bring-a-friend?utm_source=member_referral&utm_medium=offline&utm_campaign=shiney_ticket&utm_content=st01`
 
