@@ -47,7 +47,7 @@
       "realSubmissions": 0
     }
   ],
-  "release_commit": "0374d43129871ee59eac69d130cd1e05856aca43",
+  "release_commit": "55ce830",
   "live_browser": [
     {
       "viewport": {
@@ -133,6 +133,11 @@
   "remote_bytes": {
     "mode": "after",
     "path": "bring-a-friend.html",
+    "bytes": 23296,
+    "sha256": "ec08c9d9d3a27450538125b39859929e875c3a030dd556be9345f0d0680019df"
+  },
+  "prior_st_release": {
+    "commit": "0374d43129871ee59eac69d130cd1e05856aca43",
     "bytes": 23260,
     "sha256": "d55da741c947bcc78730510e224dbdd3a3a1c4d2b49e56ec3bdf7edb815b23cf"
   },
