@@ -2,9 +2,6 @@
   const THEME_KEY = 'glossaryTheme';
   const STATE_KEY = 'glossaryLastState';
   const SCROLL_KEY = 'glossaryLastScrollY';
-  const VIDEO_VOLUME_KEY = 'glossaryVideoVolume';
-  const VIDEO_MUTE_KEY = 'glossaryMuteState';
-  const VIDEO_CAPTIONS_KEY = 'glossaryCaptionState';
 
   function normalizeSearchText(value) {
     return String(value || '')
@@ -21,8 +18,12 @@
   function getGlossaryState() {
     const params = new URLSearchParams(window.location.search);
     const letter = (params.get('l') || params.get('letter') || '').trim().toUpperCase();
+    let termSlug = (params.get('t') || '').trim();
+    if (!termSlug && window.location.hash) {
+      termSlug = window.location.hash.replace(/^#/, '').trim();
+    }
     return {
-      t: normalizeSearchText(params.get('t') || ''),
+      t: normalizeSearchText(termSlug),
       q: normalizeSearchText(params.get('q') || ''),
       cat: (params.get('cat') || 'all').trim(),
       level: (params.get('level') || 'all').trim(),
@@ -70,17 +71,15 @@
 
   function buildTermUrl(slug, state) {
     const params = new URLSearchParams();
-    if (state.t) params.set('t', state.t);
-    if (state.q) params.set('q', state.q);
-    if (state.cat && state.cat !== 'all') params.set('cat', state.cat);
-    if (state.level && state.level !== 'all') params.set('level', state.level);
-    if (state.context && state.context !== 'all') params.set('context', state.context);
-    if (state.common && state.common !== 'all') params.set('common', state.common);
-    if (state.path && state.path !== 'all') params.set('path', state.path);
-    if (state.l) params.set('l', state.l);
-    if (state.rand) params.set('rand', '1');
+    if (slug) params.set('t', slug);
+    if (state && state.q) params.set('q', state.q);
+    if (state && state.cat && state.cat !== 'all') params.set('cat', state.cat);
+    if (state && state.level && state.level !== 'all') params.set('level', state.level);
+    if (state && state.context && state.context !== 'all') params.set('context', state.context);
+    if (state && state.common && state.common !== 'all') params.set('common', state.common);
+    if (state && state.l) params.set('l', state.l);
     const qs = params.toString();
-    return qs ? `/bjj-glossary/${slug}?${qs}` : `/bjj-glossary/${slug}`;
+    return qs ? `/bjj-glossary?${qs}` : `/bjj-glossary?t=${slug}`;
   }
 
   function applyTheme(theme) {
@@ -103,196 +102,355 @@
     });
   }
 
-  function copyText(text) {
+  function showToast(message) {
+    let toast = document.getElementById('glossary-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'glossary-toast';
+      toast.className = 'glossary-toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message || 'Link copied to clipboard!';
+    toast.classList.add('is-visible');
+    window.clearTimeout(toast._timeout);
+    toast._timeout = window.setTimeout(() => {
+      toast.classList.remove('is-visible');
+    }, 2200);
+  }
+
+  function copyText(text, successMessage) {
     if (!text) return;
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).catch(() => {});
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMessage || 'Link copied to clipboard!');
+      }).catch(() => {});
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMessage || 'Link copied to clipboard!');
+      } catch (err) {}
+      document.body.removeChild(textarea);
     }
   }
 
-  function matchesState(item, state) {
-    if (state.cat !== 'all' && item.category !== state.cat) return false;
-    if (state.level !== 'all' && item.level !== state.level) return false;
-    if (state.context !== 'all' && !(item.contexts || []).includes(state.context)) return false;
-    if (state.common === 'common' && !item.common) return false;
-    if (state.common === 'foundational' && !item.foundational) return false;
-    if (state.path !== 'all' && !(item.paths || []).includes(state.path)) return false;
-    if (state.l && item.letter !== state.l) return false;
-
-    if (state.t) {
-      const exactNeedle = normalizeSearchText(state.t);
-      const exactPool = [item.slug, item.term, ...(item.aliases || []), ...(item.redirectFrom || [])].map(normalizeSearchText);
-      return exactPool.includes(exactNeedle);
-    }
-
-    if (!state.q) return true;
-    return String(item.searchText || '').includes(state.q);
-  }
-
-  function buildCardState(card) {
-    const contexts = String(card.dataset.contexts || '').split(',').map((x) => x.trim()).filter(Boolean);
-    const paths = String(card.dataset.paths || '').split(/\s+/).map((x) => x.trim()).filter(Boolean);
-    return {
-      slug: card.dataset.slug || '',
-      category: card.dataset.category || '',
-      level: card.dataset.level || '',
-      letter: (card.dataset.letter || '').toUpperCase(),
-      term: card.querySelector('h3 a')?.textContent || '',
-      aliases: [],
-      redirectFrom: [],
-      contexts,
-      paths,
-      common: card.dataset.common === '1',
-      foundational: card.dataset.foundational === '1',
-      searchText: normalizeSearchText(card.dataset.search || '')
-    };
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   function initIndexPage() {
     const root = document.getElementById('glossary-index');
     if (!root) return;
 
-    const searchInput = root.querySelector('#glossary-q');
-    const cards = Array.from(root.querySelectorAll('[data-glossary-card]'));
-    const categoryButtons = Array.from(root.querySelectorAll('[data-filter-category]'));
-    const levelButtons = Array.from(root.querySelectorAll('[data-filter-level]'));
-    const contextButtons = Array.from(root.querySelectorAll('[data-filter-context]'));
-    const categorySelect = root.querySelector('[data-filter-category-select]');
-    const levelSelect = root.querySelector('[data-filter-level-select]');
-    const contextSelect = root.querySelector('[data-filter-context-select]');
-    const quickButtons = Array.from(root.querySelectorAll('[data-filter-common]'));
-    const pathButtons = Array.from(root.querySelectorAll('[data-path]'));
-    const letterLinks = Array.from(root.querySelectorAll('[data-letter-link]'));
-    const rail = root.querySelector('#glossary-az-rail');
-    const resultEl = root.querySelector('#result-count');
-    const emptyEl = root.querySelector('#glossary-empty');
-    const resetBtn = root.querySelector('#reset-filters');
-    const mobileResetBtn = root.querySelector('#mobile-reset-filters');
-    const copyStateBtn = root.querySelector('#copy-state-link');
-    const randomInlineBtn = root.querySelector('#surprise-me-inline');
-    const randomAzBtn = root.querySelector('#surprise-me-az');
+    // Load data from embedded script
+    let terms = [];
+    const dataEl = document.getElementById('glossary-data');
+    if (dataEl) {
+      try {
+        terms = JSON.parse(dataEl.textContent || '[]');
+      } catch (e) {
+        terms = [];
+      }
+    }
 
-    if (!searchInput || !cards.length) return;
+    if (!terms.length) return;
 
-    const state = getGlossaryState();
-    let visibleCards = [];
+    const termMap = new Map();
+    terms.forEach((t) => termMap.set(t.slug, t));
 
-    function syncControls() {
-      searchInput.value = state.t || state.q || '';
-
-      categoryButtons.forEach((button) => {
-        const active = (button.dataset.filterCategory || 'all') === state.cat;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    // Build Autolink dictionary for cross-linking
+    const autolinkPairs = [];
+    terms.forEach((t) => {
+      if (t.rawTerm && t.rawTerm.length >= 3) autolinkPairs.push({ text: t.rawTerm, slug: t.slug });
+      if (t.term && t.term !== t.rawTerm && t.term.length >= 3) autolinkPairs.push({ text: t.term, slug: t.slug });
+      (t.aliases || []).forEach((a) => {
+        if (a && a.length >= 3) autolinkPairs.push({ text: a, slug: t.slug });
       });
+    });
+    autolinkPairs.sort((a, b) => b.text.length - a.text.length);
 
-      if (categorySelect) categorySelect.value = state.cat || 'all';
+    function autolinkText(text, currentSlug) {
+      if (!text) return '';
+      let safe = escapeHtml(text);
+      const filtered = autolinkPairs.filter((p) => p.slug !== currentSlug && p.text.length >= 4);
+      if (!filtered.length) return safe;
 
-      levelButtons.forEach((button) => {
-        const active = (button.dataset.filterLevel || 'all') === state.level;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
+      // Extract unique patterns up to 60 prominent terms
+      const seen = new Set();
+      const unique = [];
+      for (const item of filtered) {
+        const lower = item.text.toLowerCase();
+        if (!seen.has(lower)) {
+          seen.add(lower);
+          unique.push(item);
+          if (unique.length >= 60) break;
+        }
+      }
 
-      if (levelSelect) levelSelect.value = state.level || 'all';
-
-      contextButtons.forEach((button) => {
-        const active = (button.dataset.filterContext || 'all') === state.context;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-
-      if (contextSelect) contextSelect.value = state.context || 'all';
-
-      quickButtons.forEach((button) => {
-        const active = (button.dataset.filterCommon || 'all') === state.common;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-
-      pathButtons.forEach((button) => {
-        const active = (button.dataset.path || 'all') === state.path;
-        button.classList.toggle('is-active', active);
-        button.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-
-      letterLinks.forEach((link) => {
-        const letter = (link.dataset.letterLink || '').toUpperCase();
-        const active = Boolean(state.l) && state.l === letter;
-        link.classList.toggle('is-active', active);
-        link.setAttribute('aria-pressed', active ? 'true' : 'false');
+      const escapedPatterns = unique.map((u) => u.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      const re = new RegExp(`\\b(${escapedPatterns.join('|')})\\b`, 'gi');
+      return safe.replace(re, (match) => {
+        const found = unique.find((u) => u.text.toLowerCase() === match.toLowerCase());
+        if (!found) return match;
+        return `<button type="button" class="glossary-inline-chip" data-slug="${found.slug}">${match}</button>`;
       });
     }
 
-    function resolveExactMatch(items, exactTerm) {
-      if (!exactTerm) return null;
-      const needle = normalizeSearchText(exactTerm);
-      for (const item of items) {
-        const exactPool = [item.slug, item.term, ...(item.aliases || []), ...(item.redirectFrom || [])].map(normalizeSearchText);
-        if (exactPool.includes(needle)) return item;
+    // DOM Elements
+    const searchInput = root.querySelector('#glossary-q');
+    const clearBtn = root.querySelector('#glossary-search-clear');
+    const surpriseBtn = root.querySelector('#surprise-me-btn');
+    const copyLinkBtn = root.querySelector('#copy-term-link-btn');
+    const resetBtn = root.querySelector('#reset-filters');
+    const emptyResetBtn = root.querySelector('#empty-reset-btn');
+    const categoryButtons = Array.from(root.querySelectorAll('[data-filter-category]'));
+    const commonButtons = Array.from(root.querySelectorAll('[data-filter-common]'));
+    const contextButtons = Array.from(root.querySelectorAll('[data-filter-context]'));
+    const letterLinks = Array.from(root.querySelectorAll('[data-letter-link]'));
+    const directoryItems = Array.from(root.querySelectorAll('.glossary-directory-item'));
+    const resultCountEl = root.querySelector('#result-count');
+    const directoryCountEl = root.querySelector('#directory-count');
+    const emptyEl = root.querySelector('#glossary-empty');
+    const readerCard = root.querySelector('#glossary-active-card');
+    const quickTermChips = Array.from(root.querySelectorAll('[data-quick-term]'));
+
+    const state = getGlossaryState();
+    let visibleTerms = [];
+    let currentSelectedSlug = state.t || 'tap';
+
+    if (!termMap.has(currentSelectedSlug)) {
+      currentSelectedSlug = 'tap';
+    }
+
+    function renderActiveReader(slug, shouldScrollMobile) {
+      const term = termMap.get(slug);
+      if (!term || !readerCard) return;
+
+      currentSelectedSlug = slug;
+      state.t = slug;
+      setGlossaryState(state);
+
+      // Update directory item active states
+      directoryItems.forEach((btn) => {
+        const isActive = btn.dataset.slug === slug;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        if (isActive) {
+          const list = btn.closest('.glossary-directory-list');
+          if (list) {
+            const relTop = btn.offsetTop - list.offsetTop;
+            if (relTop < list.scrollTop || relTop > list.scrollTop + list.clientHeight - btn.clientHeight) {
+              list.scrollTop = Math.max(0, relTop - 20);
+            }
+          }
+        }
+      });
+
+      // Compute Previous / Next terms based on visible terms
+      const currentIndex = visibleTerms.findIndex((t) => t.slug === slug);
+      const prevTerm = currentIndex > 0 ? visibleTerms[currentIndex - 1] : null;
+      const nextTerm = currentIndex >= 0 && currentIndex < visibleTerms.length - 1 ? visibleTerms[currentIndex + 1] : null;
+
+      const relatedList = (term.related || []).map((rSlug) => termMap.get(rSlug)).filter(Boolean);
+      const aliasesText = term.aliases && term.aliases.length ? term.aliases.join(', ') : '';
+
+      readerCard.innerHTML = `
+        <div class="reader-card-inner">
+          <div class="reader-header">
+            <div class="reader-badge-row">
+              <span class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel || term.category)}</span>
+              <span class="reader-pill reader-pill-level">${escapeHtml(term.levelLabel || term.level)}</span>
+              ${term.isFoundational ? '<span class="reader-pill reader-pill-foundational">🌟 Day 1 Essential</span>' : ''}
+              ${term.curriculum ? `<span class="reader-pill reader-pill-curriculum">${escapeHtml(term.curriculum.week)} · ${escapeHtml(term.curriculum.title)}</span>` : ''}
+            </div>
+            <div class="reader-title-row">
+              <h2 class="reader-title" id="reader-title">${escapeHtml(term.term)}</h2>
+              <div class="reader-nav-actions">
+                ${prevTerm ? `<button type="button" class="reader-nav-btn" id="reader-prev-btn" data-slug="${escapeHtml(prevTerm.slug)}" title="Previous: ${escapeHtml(prevTerm.term)}">← Prev</button>` : ''}
+                ${nextTerm ? `<button type="button" class="reader-nav-btn" id="reader-next-btn" data-slug="${escapeHtml(nextTerm.slug)}" title="Next: ${escapeHtml(nextTerm.term)}">Next →</button>` : ''}
+                <button type="button" class="reader-nav-btn reader-copy-btn" id="reader-copy-btn" title="Copy link to ${escapeHtml(term.term)}">🔗 Copy Link</button>
+                <a class="reader-nav-btn reader-ext-link" id="reader-standalone-link" href="/bjj-glossary/${escapeHtml(term.slug)}" title="Open standalone page">↗</a>
+              </div>
+            </div>
+            ${aliasesText ? `<p class="reader-aliases"><strong>Also known as:</strong> ${escapeHtml(aliasesText)}</p>` : ''}
+          </div>
+
+          <div class="reader-body">
+            <div class="reader-section reader-definition">
+              <h3 class="reader-section-title">Quick Definition</h3>
+              <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
+            </div>
+
+            ${term.beginnerTranslation ? `
+            <div class="reader-callout reader-translation-box">
+              <div class="callout-header">
+                <span class="callout-icon">💬</span>
+                <h3 class="callout-title">In Everyday Words</h3>
+              </div>
+              <p class="callout-text" id="reader-translation">${autolinkText(term.beginnerTranslation, term.slug)}</p>
+            </div>` : ''}
+
+            ${term.whyItMatters ? `
+            <div class="reader-section">
+              <h3 class="reader-section-title">Why It Matters on the Mat</h3>
+              <p class="reader-text" id="reader-why">${autolinkText(term.whyItMatters, term.slug)}</p>
+            </div>` : ''}
+
+            ${term.whatBeginnersShouldKnow ? `
+            <div class="reader-section">
+              <h3 class="reader-section-title">What Beginners Should Know</h3>
+              <p class="reader-text" id="reader-beginners">${autolinkText(term.whatBeginnersShouldKnow, term.slug)}</p>
+            </div>` : ''}
+
+            ${(term.coachCue || (term.commonClassPhrases && term.commonClassPhrases.length)) ? `
+            <div class="reader-callout reader-cues-box">
+              <div class="callout-header">
+                <span class="callout-icon">🥋</span>
+                <h3 class="callout-title">Coach Cues in Class</h3>
+              </div>
+              ${term.coachCue ? `<p class="coach-primary-cue" id="reader-coach-cue"><strong>Sandy’s cue:</strong> “${escapeHtml(term.coachCue.replace(/^Coach cue:\s*/i, ''))}”</p>` : ''}
+              ${term.commonClassPhrases && term.commonClassPhrases.length ? `
+              <ul class="coach-phrases-list" id="reader-phrases">
+                ${term.commonClassPhrases.map((p) => `<li>${escapeHtml(p)}</li>`).join('\n')}
+              </ul>` : ''}
+            </div>` : ''}
+
+            ${term.safetyNote ? `
+            <div class="reader-callout reader-safety-box">
+              <div class="callout-header">
+                <span class="callout-icon">🛡️</span>
+                <h3 class="callout-title">Beginner Safety Cue</h3>
+              </div>
+              <p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote.replace(/^Safety note:\s*/i, ''))}</p>
+            </div>` : ''}
+
+            ${relatedList.length ? `
+            <div class="reader-section reader-related-section">
+              <h3 class="reader-section-title">Connected Mat Vocabulary</h3>
+              <div class="reader-related-chips" id="reader-related-chips">
+                ${relatedList.map((r) => `<button type="button" class="reader-related-chip" data-slug="${escapeHtml(r.slug)}">${escapeHtml(r.displayTerm || r.term)} →</button>`).join('\n')}
+              </div>
+            </div>` : ''}
+
+            <div class="reader-cta-card">
+              <div class="reader-cta-copy">
+                <h4>Want to feel this in class?</h4>
+                <p>Every student begins with cooperative partner care and guided pacing. Sandy walks you through every movement step by step.</p>
+              </div>
+              <div class="reader-cta-actions">
+                <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free First Visit</a>
+                <a class="glossary-btn glossary-btn-secondary" href="/schedule">View Class Schedule</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      if (shouldScrollMobile && window.innerWidth < 992) {
+        const readerEl = root.querySelector('#glossary-reader');
+        if (readerEl) {
+          readerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
-      return null;
+    }
+
+    function matchesFilters(term) {
+      if (state.cat !== 'all' && term.category !== state.cat) return false;
+      if (state.level !== 'all' && term.level !== state.level) return false;
+      if (state.context !== 'all' && !(term.contexts || []).includes(state.context)) return false;
+      if (state.common === 'common' && !term.common) return false;
+      if (state.common === 'foundational' && !term.foundational) return false;
+      if (state.l && term.letter !== state.l) return false;
+
+      if (!state.q) return true;
+      const needle = state.q;
+      if (term.slug.includes(needle)) return true;
+      if (term.term && term.term.toLowerCase().includes(needle)) return true;
+      if (term.searchText && term.searchText.includes(needle)) return true;
+      return false;
+    }
+
+    function syncControls() {
+      if (searchInput) {
+        searchInput.value = state.q || '';
+        if (clearBtn) clearBtn.hidden = !state.q;
+      }
+
+      categoryButtons.forEach((btn) => {
+        const cat = btn.dataset.filterCategory || 'all';
+        const isActive = cat === state.cat;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      commonButtons.forEach((btn) => {
+        const commonVal = btn.dataset.filterCommon || 'all';
+        const isActive = commonVal === state.common;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      contextButtons.forEach((btn) => {
+        const ctx = btn.dataset.filterContext || 'all';
+        const isActive = ctx === state.context;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      const hasActiveFilters = Boolean(state.q || state.cat !== 'all' || state.common !== 'all' || state.context !== 'all' || state.l);
+      if (resetBtn) resetBtn.hidden = !hasActiveFilters;
     }
 
     function applyFilters() {
-      let visibleCount = 0;
+      visibleTerms = [];
       const visibleLetters = new Set();
-      const built = cards.map((card) => ({ card, item: buildCardState(card) }));
 
-      visibleCards = [];
-      built.forEach(({ card, item }) => {
-        const visible = matchesState(item, state);
-        card.hidden = !visible;
-        if (visible) {
-          visibleCards.push({ card, item });
-          visibleCount += 1;
-          visibleLetters.add(item.letter);
+      terms.forEach((t) => {
+        if (matchesFilters(t)) {
+          visibleTerms.push(t);
+          if (t.letter) visibleLetters.add(t.letter.toUpperCase());
         }
       });
 
-      const exactStateActive = Boolean(state.t) && !state.q;
-      if (exactStateActive) {
-        const exact = resolveExactMatch(visibleCards.map((x) => x.item), state.t);
-        if (exact) {
-          const targetUrl = buildTermUrl(exact.slug, state);
-          if (`/bjj-glossary/${exact.slug}` !== window.location.pathname) {
-            window.location.replace(targetUrl);
-            return;
-          }
-        }
-      }
+      // Update directory item visibility
+      const visibleSlugSet = new Set(visibleTerms.map((t) => t.slug));
+      directoryItems.forEach((btn) => {
+        const isVis = visibleSlugSet.has(btn.dataset.slug);
+        btn.hidden = !isVis;
+      });
 
+      // Update counts
+      const count = visibleTerms.length;
+      if (resultCountEl) resultCountEl.textContent = String(count);
+      if (directoryCountEl) directoryCountEl.textContent = `${count} term${count === 1 ? '' : 's'}`;
+      if (emptyEl) emptyEl.hidden = count > 0;
+
+      // Update A-Z letters
       letterLinks.forEach((link) => {
-        const letter = (link.dataset.letterLink || '').toUpperCase();
-        const enabled = visibleLetters.has(letter) || state.l === letter;
+        const l = (link.dataset.letterLink || '').toUpperCase();
+        const enabled = visibleLetters.has(l) || state.l === l;
         link.classList.toggle('is-disabled', !enabled);
+        link.classList.toggle('is-active', state.l === l);
         link.setAttribute('aria-disabled', enabled ? 'false' : 'true');
-        link.tabIndex = enabled ? 0 : -1;
       });
 
-      if (resultEl) resultEl.textContent = String(visibleCount);
-      if (emptyEl) {
-        emptyEl.hidden = visibleCount > 0;
-        emptyEl.classList.toggle('hidden', visibleCount > 0);
-      }
-
-      cards.forEach((card) => {
-        const slug = card.dataset.slug;
-        if (!slug) return;
-        const url = buildTermUrl(slug, state);
-        card.querySelectorAll('[data-term-link]').forEach((link) => {
-          link.setAttribute('href', url);
-        });
-      });
-
-      if (state.rand && visibleCards.length) {
-        const idx = Math.floor(Math.random() * visibleCards.length);
-        const picked = visibleCards[idx];
-        if (picked && picked.item && picked.item.slug) {
-          const nextState = { ...state, rand: false };
-          setGlossaryState(nextState);
-          window.location.assign(buildTermUrl(picked.item.slug, nextState));
-        }
+      // If currently selected term is not visible, select the first visible term
+      if (!visibleSlugSet.has(currentSelectedSlug) && visibleTerms.length > 0) {
+        renderActiveReader(visibleTerms[0].slug, false);
+      } else if (visibleSlugSet.has(currentSelectedSlug)) {
+        renderActiveReader(currentSelectedSlug, false);
       }
     }
 
@@ -303,137 +461,179 @@
       applyFilters();
     }
 
-    function runRandom() {
-      applyFilters();
-      if (!visibleCards.length) return;
-      const idx = Math.floor(Math.random() * visibleCards.length);
-      const picked = visibleCards[idx];
-      if (!picked || !picked.item || !picked.item.slug) return;
-      window.location.assign(buildTermUrl(picked.item.slug, state));
+    function selectTerm(slug, shouldScrollMobile) {
+      if (!slug || !termMap.has(slug)) return;
+      currentSelectedSlug = slug;
+      state.t = slug;
+      setGlossaryState(state);
+      renderActiveReader(slug, shouldScrollMobile !== false);
     }
 
-    categoryButtons.forEach((button) => {
-      button.addEventListener('click', () => commit({ cat: button.dataset.filterCategory || 'all' }));
-    });
-    if (categorySelect) {
-      categorySelect.addEventListener('change', () => commit({ cat: categorySelect.value || 'all' }));
+    // Event Listeners: Search
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const text = normalizeSearchText(searchInput.value || '');
+        commit({ q: text });
+      });
     }
 
-    levelButtons.forEach((button) => {
-      button.addEventListener('click', () => commit({ level: button.dataset.filterLevel || 'all' }));
-    });
-    if (levelSelect) {
-      levelSelect.addEventListener('change', () => commit({ level: levelSelect.value || 'all' }));
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          searchInput.focus();
+        }
+        commit({ q: '' });
+      });
     }
 
-    contextButtons.forEach((button) => {
-      button.addEventListener('click', () => commit({ context: button.dataset.filterContext || 'all' }));
+    // Event Listeners: Filters
+    categoryButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.filterCategory || 'all';
+        commit({ cat: state.cat === cat ? 'all' : cat });
+      });
     });
-    if (contextSelect) {
-      contextSelect.addEventListener('change', () => commit({ context: contextSelect.value || 'all' }));
-    }
 
-    quickButtons.forEach((button) => {
-      button.addEventListener('click', () => commit({ common: button.dataset.filterCommon || 'all' }));
+    commonButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.filterCommon || 'all';
+        commit({ common: state.common === val ? 'all' : val });
+      });
     });
-    pathButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const nextPath = button.dataset.path || 'all';
-        commit({ path: state.path === nextPath ? 'all' : nextPath });
-        const target = root.querySelector('#glossary-results') || root;
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    contextButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const ctx = btn.dataset.filterContext || 'all';
+        commit({ context: state.context === ctx ? 'all' : ctx });
       });
     });
 
     letterLinks.forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const clicked = (link.dataset.letterLink || '').toUpperCase();
-        commit({ l: state.l === clicked ? '' : clicked });
+      link.addEventListener('click', () => {
+        const l = (link.dataset.letterLink || '').toUpperCase();
+        commit({ l: state.l === l ? '' : l });
       });
     });
 
-    searchInput.addEventListener('input', () => {
-      const text = normalizeSearchText(searchInput.value || '');
-      if (state.t) commit({ t: '', q: text });
-      else commit({ q: text });
-    });
-
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        commit({ t: '', q: '', cat: 'all', level: 'all', context: 'all', common: 'all', path: 'all', l: '', rand: false });
-      });
-    }
-
-    if (mobileResetBtn) {
-      mobileResetBtn.addEventListener('click', () => {
-        commit({ t: '', q: '', cat: 'all', level: 'all', context: 'all', common: 'all', path: 'all', l: '', rand: false });
-      });
-    }
-
-    if (copyStateBtn) {
-      copyStateBtn.addEventListener('click', () => {
-        copyText(window.location.href);
-        copyStateBtn.textContent = 'Copied link';
-        window.setTimeout(() => { copyStateBtn.textContent = 'Copy filtered link'; }, 1600);
-      });
-    }
-
-    [randomInlineBtn, randomAzBtn].forEach((btn) => {
+    [resetBtn, emptyResetBtn].forEach((btn) => {
       if (!btn) return;
-      btn.addEventListener('click', runRandom);
+      btn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        commit({ q: '', cat: 'all', level: 'all', context: 'all', common: 'all', l: '', rand: false });
+      });
     });
 
+    // Event Listeners: Directory items
+    directoryItems.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectTerm(btn.dataset.slug, true);
+      });
+    });
+
+    // Event Listeners: Day 1 Hero Chips
+    quickTermChips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const termSlug = chip.dataset.quickTerm;
+        selectTerm(termSlug, true);
+        const appSection = root.querySelector('#glossary-app');
+        if (appSection) {
+          appSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Event Delegation: Reader clicks (prev, next, copy, related chips, inline chips)
+    if (readerCard) {
+      readerCard.addEventListener('click', (e) => {
+        const target = e.target.closest('button');
+        if (!target) return;
+
+        if (target.id === 'reader-copy-btn') {
+          const shareUrl = `${window.location.origin}/bjj-glossary?t=${currentSelectedSlug}`;
+          copyText(shareUrl, 'Term link copied to clipboard!');
+          return;
+        }
+
+        const slug = target.dataset.slug;
+        if (slug) {
+          e.preventDefault();
+          selectTerm(slug, true);
+        }
+      });
+    }
+
+    // Top action buttons: Surprise Me & Copy Link
+    if (surpriseBtn) {
+      surpriseBtn.addEventListener('click', () => {
+        const pool = visibleTerms.length ? visibleTerms : terms;
+        const picked = pool[Math.floor(Math.random() * pool.length)];
+        if (picked) {
+          selectTerm(picked.slug, true);
+          showToast(`Surprise: ${picked.term}!`);
+        }
+      });
+    }
+
+    if (copyLinkBtn) {
+      copyLinkBtn.addEventListener('click', () => {
+        const shareUrl = `${window.location.origin}/bjj-glossary?t=${currentSelectedSlug}`;
+        copyText(shareUrl, 'Term link copied to clipboard!');
+      });
+    }
+
+    // Global Keyboard Shortcuts
     document.addEventListener('keydown', (event) => {
       const active = document.activeElement;
       const activeTag = active && active.tagName ? active.tagName.toLowerCase() : '';
 
+      // '/' to focus search
       if (event.key === '/' && activeTag !== 'input' && activeTag !== 'textarea') {
         event.preventDefault();
-        searchInput.focus();
+        if (searchInput) {
+          searchInput.focus();
+          searchInput.select();
+        }
+        return;
       }
 
+      // Escape to clear search
       if (event.key === 'Escape' && active === searchInput) {
         searchInput.value = '';
-        commit({ q: '', t: '' });
+        commit({ q: '' });
+        searchInput.blur();
+        return;
+      }
+
+      // Arrow navigation when focused on directory or reader
+      if (['ArrowDown', 'ArrowUp'].includes(event.key) && (activeTag !== 'input' && activeTag !== 'textarea')) {
+        const currentIndex = visibleTerms.findIndex((t) => t.slug === currentSelectedSlug);
+        if (currentIndex < 0) return;
+        event.preventDefault();
+        const nextIndex = event.key === 'ArrowDown'
+          ? Math.min(currentIndex + 1, visibleTerms.length - 1)
+          : Math.max(currentIndex - 1, 0);
+        if (nextIndex !== currentIndex && visibleTerms[nextIndex]) {
+          selectTerm(visibleTerms[nextIndex].slug, false);
+        }
       }
     });
 
-    if (rail) {
-      rail.addEventListener('keydown', (event) => {
-        if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
-        const focusables = letterLinks.filter((el) => el.tabIndex !== -1);
-        const index = focusables.indexOf(document.activeElement);
-        if (index < 0) return;
-        event.preventDefault();
-        const next = event.key === 'ArrowRight'
-          ? focusables[Math.min(index + 1, focusables.length - 1)]
-          : focusables[Math.max(index - 1, 0)];
-        if (next) next.focus();
-      });
-    }
+    // Hash change listener (browser back / forward)
+    window.addEventListener('popstate', () => {
+      const freshState = getGlossaryState();
+      Object.assign(state, freshState);
+      syncControls();
+      applyFilters();
+      if (freshState.t && termMap.has(freshState.t)) {
+        renderActiveReader(freshState.t, false);
+      }
+    });
 
-    const searchParam = state.q || state.t;
-    if (searchParam) searchInput.value = searchParam;
-    else setTimeout(() => searchInput.focus(), 0);
-
+    // Initial Hydration
     syncControls();
     applyFilters();
-
-    root.querySelectorAll('[data-term-link]').forEach((link) => {
-      link.addEventListener('click', () => {
-        try {
-          sessionStorage.setItem(SCROLL_KEY, String(window.scrollY || 0));
-        } catch (error) {}
-      });
-    });
-
-    try {
-      const savedY = Number(sessionStorage.getItem(SCROLL_KEY));
-      if (Number.isFinite(savedY) && savedY > 0) {
-        window.setTimeout(() => window.scrollTo({ top: savedY, behavior: 'auto' }), 60);
-      }
-    } catch (error) {}
+    renderActiveReader(currentSelectedSlug, false);
   }
 
   function initTermPage() {
@@ -449,6 +649,13 @@
       const el = document.getElementById(id);
       if (el) el.setAttribute('href', backHref);
     });
+
+    const copyBtn = document.getElementById('copy-term-link');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        copyText(window.location.href, 'Term link copied to clipboard!');
+      });
+    }
 
     let navData = null;
     try {
@@ -466,8 +673,6 @@
     if (nextEl) nextEl.hidden = true;
 
     const indexSrc = String(navData.indexSrc || '/assets/data/glossary-search.json').trim();
-    const hasContext = Boolean(state.t || state.q || state.cat !== 'all' || state.level !== 'all' || state.context !== 'all' || state.common !== 'all' || state.path !== 'all' || state.l);
-
     fetch(indexSrc, { credentials: 'same-origin' })
       .then((res) => (res.ok ? res.json() : null))
       .then((json) => {
@@ -479,100 +684,30 @@
           level: String(item?.level || '').trim(),
           letter: String(item?.letter || '').trim().toUpperCase(),
           aliases: Array.isArray(item?.aliases) ? item.aliases : [],
-          redirectFrom: Array.isArray(item?.redirectFrom) ? item.redirectFrom : [],
-          contexts: Array.isArray(item?.contexts) ? item.contexts : [],
-          common: Boolean(item?.common ?? item?.isCommon),
-          foundational: Boolean(item?.foundational ?? item?.isFoundational),
           searchText: normalizeSearchText(item?.searchText || '')
         })).filter((item) => item.slug);
 
-        const filtered = hasContext ? terms.filter((item) => matchesState(item, state)) : terms;
-        const index = filtered.findIndex((item) => item.slug === navData.currentSlug);
-        const prev = index > 0 ? filtered[index - 1] : null;
-        const next = index >= 0 && index < filtered.length - 1 ? filtered[index + 1] : null;
+        const index = terms.findIndex((item) => item.slug === navData.currentSlug);
+        const prev = index > 0 ? terms[index - 1] : null;
+        const next = index >= 0 && index < terms.length - 1 ? terms[index + 1] : null;
 
-        if (prevEl) {
-          if (prev) {
-            prevEl.hidden = false;
-            prevEl.setAttribute('href', buildTermUrl(prev.slug, state));
-          } else prevEl.hidden = true;
+        if (prevEl && prev) {
+          prevEl.hidden = false;
+          prevEl.setAttribute('href', buildTermUrl(prev.slug, state));
+          prevEl.textContent = `← ${prev.term}`;
         }
-        if (nextEl) {
-          if (next) {
-            nextEl.hidden = false;
-            nextEl.setAttribute('href', buildTermUrl(next.slug, state));
-          } else nextEl.hidden = true;
+        if (nextEl && next) {
+          nextEl.hidden = false;
+          nextEl.setAttribute('href', buildTermUrl(next.slug, state));
+          nextEl.textContent = `${next.term} →`;
         }
       })
-      .catch(() => {
-        if (prevEl) prevEl.hidden = true;
-        if (nextEl) nextEl.hidden = true;
-      });
-
-    const copyTermButton = document.getElementById('copy-term-link');
-    if (copyTermButton) {
-      copyTermButton.addEventListener('click', () => {
-        copyText(window.location.href);
-        copyTermButton.textContent = 'Copied link';
-        window.setTimeout(() => { copyTermButton.textContent = 'Copy term link'; }, 1600);
-      });
-    }
+      .catch(() => {});
   }
 
-  function initMediaPreferences() {
-    const videos = Array.from(document.querySelectorAll('video[data-glossary-video], #glossary-term video'));
-    if (!videos.length) return;
-
-    const storedVol = Number(localStorage.getItem(VIDEO_VOLUME_KEY));
-    const storedMute = localStorage.getItem(VIDEO_MUTE_KEY);
-    const storedCaption = localStorage.getItem(VIDEO_CAPTIONS_KEY);
-
-    videos.forEach((video) => {
-      if (Number.isFinite(storedVol) && storedVol >= 0 && storedVol <= 1) video.volume = storedVol;
-      if (storedMute === '1' || storedMute === '0') video.muted = storedMute === '1';
-      video.autoplay = false;
-
-      Array.from(video.textTracks || []).forEach((track) => {
-        if (storedCaption === 'showing') track.mode = 'showing';
-        else if (storedCaption === 'hidden') track.mode = 'hidden';
-      });
-
-      video.addEventListener('volumechange', () => {
-        localStorage.setItem(VIDEO_VOLUME_KEY, String(video.volume));
-        localStorage.setItem(VIDEO_MUTE_KEY, video.muted ? '1' : '0');
-      });
-    });
-
-    document.addEventListener('keydown', (event) => {
-      const active = document.activeElement;
-      if (!(active instanceof HTMLVideoElement)) return;
-
-      if (event.key === 'ArrowLeft') {
-        event.preventDefault();
-        active.currentTime = Math.max(0, active.currentTime - 5);
-      }
-      if (event.key === 'ArrowRight') {
-        event.preventDefault();
-        active.currentTime = Math.min(active.duration || Number.MAX_SAFE_INTEGER, active.currentTime + 5);
-      }
-      if (event.key.toLowerCase() === 'm') {
-        event.preventDefault();
-        active.muted = !active.muted;
-        localStorage.setItem(VIDEO_MUTE_KEY, active.muted ? '1' : '0');
-      }
-      if (event.key.toLowerCase() === 'c') {
-        event.preventDefault();
-        const tracks = Array.from(active.textTracks || []);
-        if (!tracks.length) return;
-        const showing = tracks.some((t) => t.mode === 'showing');
-        tracks.forEach((t) => { t.mode = showing ? 'hidden' : 'showing'; });
-        localStorage.setItem(VIDEO_CAPTIONS_KEY, showing ? 'hidden' : 'showing');
-      }
-    });
-  }
-
-  initTheme();
-  initIndexPage();
-  initTermPage();
-  initMediaPreferences();
+  document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initIndexPage();
+    initTermPage();
+  });
 })();
