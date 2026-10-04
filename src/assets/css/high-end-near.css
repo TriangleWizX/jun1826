@@ -592,14 +592,60 @@
   grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
 }
 
-.ss-page-nearby-towns h1,
-.ss-page-nearby-towns .he-split-left h1 {
-  max-width: 13ch;
+body.ss-page-nearby-towns *,
+body.ss-page-nearby-towns *::before,
+body.ss-page-nearby-towns *::after {
+  box-sizing: border-box;
+}
+
+.ss-page-nearby-towns .he-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  visibility: visible !important;
+}
+
+.ss-page-nearby-towns .ss-near-hero.he-section {
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  padding-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.ss-page-nearby-towns .ss-near-hero__grid {
+  align-items: center;
+  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+}
+
+body.ss-page-nearby-towns .he-split-left h1,
+body.ss-page-nearby-towns h1 {
+  max-width: 100% !important;
   color: var(--nearby-ink);
-  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-  line-height: 1.05;
+  font-family: "Instrument Serif", serif !important;
+  font-size: clamp(2rem, 6.8vw, 2.75rem) !important;
+  line-height: 1.08 !important;
   letter-spacing: -0.015em;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  text-wrap: balance !important;
+  word-break: normal !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+}
+
+@media (min-width: 768px) {
+  body.ss-page-nearby-towns .he-split-left h1,
+  body.ss-page-nearby-towns h1 {
+    font-size: clamp(3rem, 4.5vw, 4.25rem) !important;
+    line-height: 1.05 !important;
+    max-width: 18ch !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.ss-page-nearby-towns .he-split-left h1,
+  body.ss-page-nearby-towns h1 {
+    font-size: 4.75rem !important;
+    line-height: 1.05 !important;
+    max-width: 18ch !important;
+  }
 }
 
 .ss-page-nearby-towns .lead {
@@ -611,6 +657,12 @@
 }
 
 .ss-page-nearby-towns .he-eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  white-space: nowrap;
+  line-height: 1.2;
   border: 1px solid rgba(17, 106, 66, 0.2);
   background: rgba(255, 255, 255, 0.76);
   color: var(--nearby-green);
@@ -620,6 +672,9 @@
 
 .ss-page-nearby-towns .ss-near-hero__actions {
   margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
 }
 
 .ss-page-nearby-towns .he-outer-shell {
@@ -638,6 +693,8 @@
 }
 
 .ss-page-nearby-towns .he-btn-wrapper {
+  box-sizing: border-box !important;
+  max-width: 100%;
   min-height: 3.3rem;
   border: 1px solid rgba(31, 23, 18, 0.16);
   box-shadow: 0 1rem 2.2rem rgba(17, 106, 66, 0.16);
@@ -692,10 +749,39 @@
     #fff;
 }
 
-.ss-page-nearby-towns .ss-nearby-first-panel .ss-check-list {
-  margin-top: 1rem;
-  padding-top: 1rem;
+.ss-page-nearby-towns .ss-check-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
   border-top: 1px solid var(--nearby-line);
+  padding-top: 1rem;
+}
+
+.ss-page-nearby-towns .ss-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: var(--ss-ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.ss-page-nearby-towns .ss-check-list li::before {
+  content: "✓";
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.1rem;
+  border-radius: 999px;
+  background: var(--nearby-green, #116a42);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 900;
 }
 
 .ss-page-nearby-towns .ss-nearby-lanes {
@@ -730,16 +816,20 @@
   box-shadow: 0 1.8rem 3.4rem rgba(54, 43, 36, 0.11);
 }
 
-.ss-page-nearby-towns .ss-nearby-lane-card,
-.ss-page-nearby-towns .ss-nearby-town-card {
+.ss-page-nearby-towns .ss-nearby-lane-card {
   position: relative;
   overflow: hidden;
-  min-height: 15rem;
+  height: 100% !important;
+  min-height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-decoration: none !important;
   color: var(--nearby-ink);
+  padding: 2rem;
+  border-radius: calc(2rem - 0.375rem);
 }
 
-.ss-page-nearby-towns .ss-nearby-lane-card::before,
-.ss-page-nearby-towns .ss-nearby-town-card::before {
+.ss-page-nearby-towns .ss-nearby-lane-card::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
@@ -760,18 +850,22 @@
   background: var(--ss-slate, #306061);
 }
 
-.ss-page-nearby-towns .ss-nearby-lane-card strong,
-.ss-page-nearby-towns .ss-nearby-town-card strong {
-  max-width: 100%;
-  letter-spacing: 0;
+.ss-page-nearby-towns .ss-nearby-lane-card strong {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 0.85rem;
+  color: var(--nearby-ink);
+  display: block;
 }
 
-.ss-page-nearby-towns .ss-nearby-lane-card p,
-.ss-page-nearby-towns .ss-nearby-town-card p,
-.ss-page-nearby-towns .ss-nearby-region-card p,
-.ss-page-nearby-towns .ss-nearby-location-card p,
-.ss-page-nearby-towns .ss-nearby-final-card p {
-  line-height: 1.62;
+.ss-page-nearby-towns .ss-nearby-lane-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ss-muted);
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 .ss-page-nearby-towns .ss-nearby-towns-list {
@@ -780,41 +874,169 @@
     var(--nearby-paper);
 }
 
+.ss-page-nearby-towns .ss-town-group-heading {
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.ss-page-nearby-towns .ss-town-group-heading h3 {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--nearby-ink);
+  margin-bottom: 0.35rem;
+}
+
+.ss-page-nearby-towns .ss-town-group-heading p {
+  color: var(--ss-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
 .ss-page-nearby-towns .ss-nearby-town-grid {
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.25rem;
 }
 
 .ss-page-nearby-towns .ss-nearby-town-card {
-  min-height: 10.5rem;
+  position: relative;
+  min-height: auto;
+  height: 100% !important;
+  padding: 1.5rem 1.5rem 1.75rem;
+  overflow: visible;
+  display: flex !important;
+  flex-direction: column !important;
+  text-decoration: none !important;
+  background: #fff;
+  border-radius: calc(2rem - 0.375rem);
+  color: var(--nearby-ink);
+}
+
+.ss-page-nearby-towns .ss-nearby-town-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.35rem;
+  background: var(--nearby-green);
+  opacity: 0.92;
+  border-top-left-radius: calc(2rem - 0.375rem);
+  border-bottom-left-radius: calc(2rem - 0.375rem);
+}
+
+.ss-page-nearby-towns .ss-nearby-town-card .he-eyebrow {
+  margin-bottom: 0.65rem;
+  max-width: calc(100% - 2.5rem);
+  white-space: nowrap;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.ss-page-nearby-towns .ss-nearby-town-card strong {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--nearby-ink);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.ss-page-nearby-towns .ss-nearby-town-card strong span {
+  font-size: 0.82rem;
+  color: var(--ss-muted);
+  font-weight: 500;
+  margin-top: 0.15rem;
+  display: block;
+}
+
+.ss-page-nearby-towns .ss-nearby-town-card p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ss-muted);
+  margin: 0;
+  margin-top: auto;
 }
 
 .ss-page-nearby-towns .ss-nearby-town-card::after {
-  content: "->";
+  content: "→";
   position: absolute;
-  right: 1.5rem;
   top: 1.25rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
   color: var(--nearby-green);
-  font-weight: 800;
-  transform: translateX(0);
-  transition: transform 640ms var(--nearby-bezier);
+  opacity: 0.45;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .ss-page-nearby-towns .ss-nearby-town-card:hover::after,
 .ss-page-nearby-towns .ss-nearby-town-card:focus-visible::after {
-  transform: translateX(0.25rem);
+  opacity: 1;
+  transform: translateX(4px);
+  color: var(--nearby-green);
 }
 
 .ss-page-nearby-towns .ss-nearby-region-card {
-  padding: 1.5rem;
+  padding: 2rem;
   background:
     linear-gradient(90deg, rgba(17, 106, 66, 0.08), rgba(255, 255, 255, 0.94)),
     #fff;
 }
 
-.ss-page-nearby-towns .ss-nearby-location-card {
-  min-height: 14rem;
+.ss-page-nearby-towns .ss-region-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .ss-page-nearby-towns .ss-region-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.ss-page-nearby-towns .ss-county-group strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ss-green);
+  margin-bottom: 0.65rem;
+}
+
+.ss-page-nearby-towns .ss-county-pills {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.ss-page-nearby-towns .ss-county-pill {
+  display: inline-flex;
   align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  color: var(--nearby-ink);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ss-page-nearby-towns .ss-county-pill:hover,
+.ss-page-nearby-towns .ss-county-pill:focus-visible {
+  background: var(--ss-green);
+  border-color: var(--ss-green);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.ss-page-nearby-towns .ss-nearby-location-card {
+  padding: 2rem;
+  display: block;
 }
 
 .ss-page-nearby-towns .ss-nearby-location-card .ss-section-heading {
@@ -827,9 +1049,117 @@
   letter-spacing: 0;
 }
 
-.ss-page-nearby-towns .ss-nearby-location-card p {
+.ss-page-nearby-towns .ss-nearby-location-card .lead {
   margin-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+}
+
+.ss-page-nearby-towns .ss-location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ss-page-nearby-towns .ss-location-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.ss-page-nearby-towns .ss-location-box {
+  padding: 1.35rem;
+  background: #fff;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.04);
+}
+
+.ss-page-nearby-towns .ss-location-box h3 {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--nearby-ink);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ss-page-nearby-towns .ss-location-box h3 i {
+  color: var(--ss-green);
+}
+
+.ss-page-nearby-towns .ss-location-box p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ss-muted);
+  margin: 0;
+}
+
+.ss-page-nearby-towns .ss-location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.ss-page-nearby-towns .ss-outline-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  border: 1px solid var(--nearby-ink);
+  background: transparent;
+  color: var(--nearby-ink);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ss-page-nearby-towns .ss-outline-pill-btn:hover,
+.ss-page-nearby-towns .ss-outline-pill-btn:focus-visible {
+  background: var(--nearby-ink);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.ss-page-nearby-towns .ss-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .ss-page-nearby-towns .ss-faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ss-page-nearby-towns .ss-faq-card {
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.04);
+}
+
+.ss-page-nearby-towns .ss-faq-card h3 {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--nearby-ink);
+  margin-bottom: 0.65rem;
+}
+
+.ss-page-nearby-towns .ss-faq-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ss-muted);
+  margin: 0;
 }
 
 .ss-page-nearby-towns .ss-nearby-final {
@@ -846,10 +1176,66 @@
 .ss-page-nearby-towns .ss-nearby-final-card {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background:
     linear-gradient(135deg, #0f5135 0%, #173f3f 62%, var(--ss-text) 100%);
   border-color: rgba(255, 255, 255, 0.14);
   color: #fff;
+  padding: 2.25rem;
+  gap: 1.75rem;
+}
+
+@media (min-width: 992px) {
+  .ss-page-nearby-towns .ss-nearby-final-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 3.5rem;
+  }
+}
+
+.ss-page-nearby-towns .ss-nearby-final-content {
+  flex: 1 1 auto;
+  max-width: 42rem;
+}
+
+.ss-page-nearby-towns .ss-nearby-final-card h2 {
+  color: #fff !important;
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.ss-page-nearby-towns .ss-nearby-final-card p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ss-page-nearby-towns .ss-nearby-final-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 576px) {
+  .ss-page-nearby-towns .ss-nearby-final-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ss-page-nearby-towns .ss-nearby-final-actions .he-btn-wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .ss-page-nearby-towns .ss-nearby-final-card::after {
@@ -863,11 +1249,6 @@
 .ss-page-nearby-towns .ss-nearby-final-card .he-eyebrow {
   border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-}
-
-.ss-page-nearby-towns .ss-nearby-final-card h2,
-.ss-page-nearby-towns .ss-nearby-final-card p {
   color: #fff;
 }
 
@@ -897,10 +1278,6 @@
     padding-bottom: 5.5rem;
   }
 
-  .ss-page-nearby-towns h1 {
-    font-size: 4.8rem;
-  }
-
   .ss-page-nearby-towns .ss-section-heading h2 {
     font-size: 3.15rem;
   }
@@ -911,10 +1288,6 @@
 }
 
 @media (min-width: 1200px) {
-  .ss-page-nearby-towns h1 {
-    font-size: 5.75rem;
-  }
-
   .ss-page-nearby-towns .ss-nearby-hero__metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -940,12 +1313,6 @@
     padding-top: 3.25rem;
   }
 
-  .ss-page-nearby-towns h1 {
-    max-width: 10.5ch;
-    font-size: 2.9rem;
-    line-height: 0.98;
-  }
-
   .ss-page-nearby-towns .lead {
     font-size: 1rem;
   }
@@ -963,17 +1330,11 @@
     padding: 1.35rem;
   }
 
-  .ss-page-nearby-towns .ss-nearby-lane-card {
-    min-height: 13rem;
-  }
-
-  .ss-page-nearby-towns .ss-nearby-town-grid {
+  .ss-page-nearby-towns .ss-nearby-town-grid,
+  .ss-page-nearby-towns .ss-region-grid,
+  .ss-page-nearby-towns .ss-location-grid,
+  .ss-page-nearby-towns .ss-faq-grid {
     grid-template-columns: 1fr;
-  }
-
-  .ss-page-nearby-towns .ss-nearby-final-card .he-btn-wrapper {
-    width: 100%;
-    justify-content: space-between;
   }
 }
 
