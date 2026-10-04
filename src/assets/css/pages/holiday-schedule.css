@@ -18,54 +18,44 @@ body.page-holiday-schedule {
 }
 
 .page-holiday-schedule .ss-hero--holiday {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(15rem, 0.75fr);
-  gap: clamp(2rem, 7vw, 7rem);
-  align-items: end;
-  padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(3rem, 7vw, 6rem);
-  border-bottom: 1px solid var(--holiday-rule);
+  background: radial-gradient(circle at 85% 15%, rgba(40, 159, 161, 0.08), transparent 45%),
+              radial-gradient(circle at 15% 85%, rgba(139, 82, 46, 0.05), transparent 45%),
+              var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--holiday-rule, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem);
+  box-shadow: 0 1rem 3rem rgba(54, 43, 36, 0.04);
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-/* The shared hero uses a dark image treatment; keep every text layer readable on it. */
-.page-holiday-schedule .ss-hero--holiday :is(h1, .ss-hero-lede, .ss-update-note, .ss-trust-row) {
-  color: rgba(255, 252, 247, 0.96);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.32);
-}
-
-.page-holiday-schedule .ss-hero--holiday .ss-update-note,
-.page-holiday-schedule .ss-hero--holiday .ss-trust-row {
-  color: rgba(255, 252, 247, 0.78);
-}
-
-.page-holiday-schedule .ss-hero--holiday .ss-update-note {
-  border-top-color: rgba(255, 255, 255, 0.28);
-}
-
-.page-holiday-schedule .ss-hero--holiday::after {
-  content: "SEASONAL HOURS / 2026";
-  align-self: stretch;
+.page-holiday-schedule .ss-hero-container {
+  max-width: 52rem;
+  margin-inline: auto;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 0 0 0.4rem;
-  color: var(--holiday-green);
-  font: 700 0.7rem/1 var(--font-body, Lexend, sans-serif);
-  letter-spacing: 0.14em;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  flex-direction: column;
+  align-items: center;
 }
 
-.page-holiday-schedule .ss-hero--holiday .ss-eyebrow,
+.page-holiday-schedule .ss-hero--holiday .ss-eyebrow {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.08);
+  border: 1px solid rgba(17, 106, 66, 0.2);
+  color: var(--holiday-green, #116A42);
+  font: 700 0.8rem/1.2 var(--font-body, Lexend, sans-serif);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
 .page-holiday-schedule .ss-section .ss-eyebrow {
   margin-bottom: 1rem;
   color: var(--holiday-green);
   font: 700 0.72rem/1.2 var(--font-body, Lexend, sans-serif);
   letter-spacing: 0.13em;
   text-transform: uppercase;
-}
-
-.page-holiday-schedule .ss-hero--holiday .ss-eyebrow {
-  color: #b7eee1;
 }
 
 .page-holiday-schedule h1,
@@ -79,62 +69,113 @@ body.page-holiday-schedule {
 }
 
 .page-holiday-schedule h1 {
-  max-width: 10ch;
+  color: var(--holiday-ink, #362B24);
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 24ch;
+  margin-inline: auto;
   margin-bottom: 1.25rem;
-  font-size: clamp(3.2rem, 8vw, 6.8rem);
-  line-height: 0.92;
+  text-shadow: none;
 }
 
 .page-holiday-schedule .ss-hero-lede {
-  max-width: 38rem;
-  color: var(--holiday-muted);
-  font: 400 clamp(1rem, 1.5vw, 1.2rem)/1.65 var(--font-body, Lexend, sans-serif);
+  color: var(--holiday-muted, #4F433C);
+  font: 400 clamp(1.05rem, 1.6vw, 1.2rem)/1.6 var(--font-body, Lexend, sans-serif);
+  max-width: 44rem;
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+  text-shadow: none;
 }
 
-.page-holiday-schedule .ss-update-note,
-.page-holiday-schedule .ss-trust-row {
-  color: var(--holiday-muted);
-  font: 500 0.82rem/1.5 var(--font-body, Lexend, sans-serif);
-}
-
-.page-holiday-schedule .ss-update-note {
-  margin: 1.5rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--holiday-rule);
+.page-holiday-schedule .ss-hero--holiday .ss-update-note {
+  display: inline-flex;
+  align-items: center;
+  font: 500 0.82rem/1.4 var(--font-body, Lexend, sans-serif);
+  color: var(--holiday-muted, #4F433C);
+  background: var(--holiday-paper-2, #F4F1ED);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--holiday-rule, rgba(54, 43, 36, 0.14));
+  margin: 0 auto 1.5rem;
+  text-shadow: none;
 }
 
 .page-holiday-schedule .ss-cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
-  margin: 1.75rem 0 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 auto 1.5rem;
+  width: 100%;
 }
 
 .page-holiday-schedule .ss-btn {
-  min-height: 44px;
-  border-radius: 0.45rem;
-  padding: 0.75rem 1rem;
-  font: 700 0.82rem/1 var(--font-body, Lexend, sans-serif);
+  min-height: 48px;
+  border-radius: 999px;
+  padding: 0.75rem 1.4rem;
+  font: 700 0.88rem/1.2 var(--font-body, Lexend, sans-serif);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
 .page-holiday-schedule .ss-btn-primary {
-  background: var(--holiday-green);
-  border-color: var(--holiday-green);
-  color: var(--holiday-paper);
+  background: var(--holiday-green, #116A42);
+  border: 1px solid var(--holiday-green, #116A42);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
 }
 
-.page-holiday-schedule .ss-btn-secondary,
+.page-holiday-schedule .ss-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(17, 106, 66, 0.28);
+  background: #0d5434;
+}
+
+.page-holiday-schedule .ss-btn-secondary {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--holiday-rule, rgba(54, 43, 36, 0.22));
+  color: var(--holiday-ink, #362B24);
+  text-shadow: none;
+}
+
+.page-holiday-schedule .ss-btn-secondary:hover {
+  background: var(--holiday-paper-2, #F4F1ED);
+  border-color: var(--holiday-ink, #362B24);
+  transform: translateY(-1px);
+}
+
 .page-holiday-schedule .ss-btn-ghost {
   background: transparent;
-  border: 1px solid var(--holiday-rule);
-  color: var(--holiday-ink);
+  border: 1px solid var(--holiday-rule, rgba(54, 43, 36, 0.18));
+  color: var(--holiday-muted, #4F433C);
+  text-shadow: none;
 }
 
-.page-holiday-schedule .ss-hero--holiday .ss-btn-secondary,
-.page-holiday-schedule .ss-hero--holiday .ss-btn-ghost {
-  border-color: rgba(255, 255, 255, 0.5);
-  color: #fffdf9;
+.page-holiday-schedule .ss-btn-ghost:hover {
+  background: var(--holiday-paper-2, #F4F1ED);
+  color: var(--holiday-green, #116A42);
+  border-color: var(--holiday-green, #116A42);
+  transform: translateY(-1px);
+}
+
+.page-holiday-schedule .ss-trust-row {
+  font: 500 0.85rem/1.5 var(--font-body, Lexend, sans-serif);
+  color: var(--holiday-muted, #4F433C);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
   text-shadow: none;
 }
 
@@ -310,13 +351,8 @@ body.page-holiday-schedule {
 }
 
 @media (max-width: 52rem) {
-  .page-holiday-schedule .ss-hero--holiday,
   .page-holiday-schedule .ss-section-heading {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .page-holiday-schedule .ss-hero--holiday::after {
-    display: none;
   }
 
   .page-holiday-schedule .ss-section-heading > p:last-child {
@@ -331,8 +367,13 @@ body.page-holiday-schedule {
     padding-inline: 1rem;
   }
 
+  .page-holiday-schedule .ss-hero--holiday {
+    padding: 2rem 1.25rem;
+    border-radius: 1rem;
+  }
+
   .page-holiday-schedule h1 {
-    font-size: clamp(3rem, 16vw, 4.5rem);
+    font-size: clamp(2rem, 8.5vw, 2.75rem);
   }
 
   .page-holiday-schedule .ss-cta-row,
