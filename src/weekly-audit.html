@@ -78,6 +78,14 @@ body.page-weekly-audit > .ss-promotion-banner { display: none !important; }
 .receipt-fields { display: none; }
 .checkin-bridge { margin: 1.5rem 0 0; color: var(--color-muted, #4f433c); font-size: .9rem; }
 .checkin-bridge a { color: var(--color-accent, #116a42); font-weight: 700; }
+.checkin-suite-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .65rem; padding: .55rem .85rem; margin-bottom: 1.25rem; border-radius: .5rem; background: #f4f1ed; font-size: .82rem; color: var(--color-muted, #4f433c); }
+.checkin-suite-tag { font-weight: 700; color: var(--color-ink, #1f1712); text-transform: uppercase; font-size: .72rem; letter-spacing: .05em; }
+.checkin-suite-step { display: inline-flex; align-items: center; gap: .3rem; color: var(--color-accent, #116a42); font-weight: 600; text-decoration: none; }
+.checkin-suite-step:hover { text-decoration: underline; }
+.checkin-suite-step.is-active { color: var(--color-ink, #1f1712); font-weight: 700; text-decoration: none; }
+.checkin-suite-sep { color: rgba(54, 43, 36, 0.35); }
+.checkin-journey-note { margin-top: .45rem; font-size: .95rem; color: var(--color-muted, #4f433c); }
+.checkin-bridge-ascend { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--color-rule, rgba(54,43,36,.14)); font-size: .85rem; line-height: 1.55; }
 @media (max-width: 800px) {
  .checkin-page { padding: 1rem .75rem 2rem; }
  .checkin-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
@@ -107,9 +115,20 @@ body.page-weekly-audit > .ss-promotion-banner { display: none !important; }
 </style>
 
 <main class="checkin-page">
+  <nav aria-label="Progress Suite" class="checkin-suite-nav">
+    <span class="checkin-suite-tag">Training Progress Suite:</span>
+    <a href="/daily-checkin" class="checkin-suite-step"><i class="bi bi-journal-text" aria-hidden="true"></i> Daily Note</a>
+    <span class="checkin-suite-sep" aria-hidden="true">→</span>
+    <span class="checkin-suite-step is-active"><i class="bi bi-calendar-week" aria-hidden="true"></i> Weekly Check-In</span>
+    <span class="checkin-suite-sep" aria-hidden="true">→</span>
+    <a href="/report-card" class="checkin-suite-step"><i class="bi bi-card-checklist" aria-hidden="true"></i> Report Card</a>
+    <span class="checkin-suite-sep" aria-hidden="true">·</span>
+    <a href="/student-hub" class="checkin-suite-step"><i class="bi bi-grid" aria-hidden="true"></i> Student Hub</a>
+  </nav>
   <header class="checkin-header">
     <h1>Weekly Check-In</h1>
     <p>I write what I saw. You tell me what you learned. We pick one next step.</p>
+    <p class="checkin-journey-note">Connect your daily class notes into a steady weekly rhythm. From your first four classes to your full 12-week term, track your path forward.</p>
   </header>
   <div class="checkin-grid">
     <form class="checkin-form" aria-label="Weekly check-in form" novalidate>
@@ -123,6 +142,15 @@ body.page-weekly-audit > .ss-promotion-banner { display: none !important; }
         <p id="youth-help" class="checkin-help" hidden>A grown-up can help write your words.</p>
         <div class="checkin-field"><label for="student">Student name</label><input id="student" name="student" autocomplete="off" required></div>
         <div class="checkin-field"><label for="week-of">Week of</label><input id="week-of" name="week-of" type="date" required></div>
+        <div class="checkin-field">
+          <label for="training-phase">Training Phase</label>
+          <select id="training-phase" name="training-phase">
+            <option value="weekly">Regular Weekly Rhythm</option>
+            <option value="class4">Week 1–2 · Class 4 Milestone (Mountain Tap Pass or First Cohort)</option>
+            <option value="midterm">Week 6 · Mid-Term Progress</option>
+            <option value="termend">Week 12 · Term Completion & Annual Track Ascension</option>
+          </select>
+        </div>
       </fieldset>
       <fieldset class="checkin-section">
         <legend>What I saw</legend>
@@ -143,10 +171,18 @@ body.page-weekly-audit > .ss-promotion-banner { display: none !important; }
     <section class="checkin-preview" aria-label="Your check-in" data-preview-mode="receipt">
       <h2>Your check-in</h2>
       <div class="checkin-print-mode"><label for="print-mode">Choose what to print</label><select id="print-mode"><option value="receipt">My check-in · 2.2 in</option><option value="receipt-blank">Blank check-in · 2.2 in</option></select></div>
-      <div class="print-sheet"><div class="print-brand">Sensei Sandy BJJ</div><h2>Weekly Check-In</h2><p id="preview-student" class="print-student print-empty"></p><div id="preview-week" class="print-week print-empty"></div><div class="print-block"><div class="print-label">Skill</div><div id="preview-skill" class="print-value print-empty"></div></div><div class="print-block"><div class="print-label">Coach saw</div><div id="preview-problem" class="print-value print-empty"></div></div><div class="print-block"><div class="print-label">Student said</div><div id="preview-observed" class="print-value print-empty"></div><div id="preview-context" class="print-week"></div></div><div class="print-block"><div class="print-label">My next step</div><div id="preview-next" class="print-value print-empty"></div></div><div id="preview-easier-block" class="print-block" hidden><div class="print-label">Student: What feels easier now?</div><div id="preview-easier" class="print-value"></div></div><div class="print-footer print-week">Coach: Sandy</div></div>
-      <div class="receipt-sheet"><div class="receipt-brand">Sensei Sandy BJJ</div><h2>Weekly Check-In</h2><div class="receipt-filled"><div class="receipt-meta" id="receipt-type">Adult check-in</div><div class="receipt-meta" id="receipt-student"></div><div class="receipt-meta" id="receipt-week"></div><div class="receipt-block"><div class="receipt-label">Skill</div><div class="receipt-value" id="receipt-skill"></div></div><div class="receipt-block"><div class="receipt-label">Coach saw</div><div class="receipt-value" id="receipt-problem"></div></div><div class="receipt-block"><div class="receipt-label">Student said</div><div class="receipt-value" id="receipt-observed"></div></div><div class="receipt-block"><div class="receipt-label">We tried it here</div><div class="receipt-choices" id="receipt-context"></div></div><div class="receipt-block"><div class="receipt-label">My next step</div><div class="receipt-value" id="receipt-next"></div></div><div class="receipt-block" id="receipt-easier-block" hidden><div class="receipt-label">Student: What feels easier now?</div><div class="receipt-value" id="receipt-easier"></div></div></div><div class="receipt-fields"><div class="receipt-meta" id="receipt-blank-type">Adult check-in</div><div class="receipt-meta">Student name: ______________</div><div class="receipt-meta">Week of: ______________</div><div class="receipt-block"><div class="receipt-label">Skill</div><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">Coach saw</div><span class="receipt-rule"></span><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">Student said</div><span class="receipt-rule"></span><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">We tried it here</div><div class="receipt-choices">☐ Game　☐ Set spot　☐ Other<br>☐ Choose moves　☐ Repeat move</div></div><div class="receipt-block"><div class="receipt-label">My next step</div><span class="receipt-rule"></span><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">Student: What feels easier now?</div><span class="receipt-rule"></span></div></div></div>
+      <div class="print-sheet"><div class="print-brand">Sensei Sandy BJJ</div><h2>Weekly Check-In</h2><p id="preview-student" class="print-student print-empty"></p><div id="preview-week" class="print-week print-empty"></div><div id="preview-phase" class="print-week"></div><div class="print-block"><div class="print-label">Skill</div><div id="preview-skill" class="print-value print-empty"></div></div><div class="print-block"><div class="print-label">Coach saw</div><div id="preview-problem" class="print-value print-empty"></div></div><div class="print-block"><div class="print-label">Student said</div><div id="preview-observed" class="print-value print-empty"></div><div id="preview-context" class="print-week"></div></div><div class="print-block"><div class="print-label">My next step</div><div id="preview-next" class="print-value print-empty"></div></div><div id="preview-easier-block" class="print-block" hidden><div class="print-label">Student: What feels easier now?</div><div id="preview-easier" class="print-value"></div></div><div class="print-footer print-week">Coach: Sandy</div></div>
+      <div class="receipt-sheet"><div class="receipt-brand">Sensei Sandy BJJ</div><h2>Weekly Check-In</h2><div class="receipt-filled"><div class="receipt-meta" id="receipt-type">Adult check-in</div><div class="receipt-meta" id="receipt-student"></div><div class="receipt-meta" id="receipt-week"></div><div class="receipt-meta" id="receipt-phase"></div><div class="receipt-block"><div class="receipt-label">Skill</div><div class="receipt-value" id="receipt-skill"></div></div><div class="receipt-block"><div class="receipt-label">Coach saw</div><div class="receipt-value" id="receipt-problem"></div></div><div class="receipt-block"><div class="receipt-label">Student said</div><div class="receipt-value" id="receipt-observed"></div></div><div class="receipt-block"><div class="receipt-label">We tried it here</div><div class="receipt-choices" id="receipt-context"></div></div><div class="receipt-block"><div class="receipt-label">My next step</div><div class="receipt-value" id="receipt-next"></div></div><div class="receipt-block" id="receipt-easier-block" hidden><div class="receipt-label">Student: What feels easier now?</div><div class="receipt-value" id="receipt-easier"></div></div></div><div class="receipt-fields"><div class="receipt-meta" id="receipt-blank-type">Adult check-in</div><div class="receipt-meta">Student name: ______________</div><div class="receipt-meta">Week of: ______________</div><div class="receipt-block"><div class="receipt-label">Skill</div><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">Coach saw</div><span class="receipt-rule"></span><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">Student said</div><span class="receipt-rule"></span><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">We tried it here</div><div class="receipt-choices">☐ Game　☐ Set spot　☐ Other<br>☐ Choose moves　☐ Repeat move</div></div><div class="receipt-block"><div class="receipt-label">My next step</div><span class="receipt-rule"></span><span class="receipt-rule"></span></div><div class="receipt-block"><div class="receipt-label">Student: What feels easier now?</div><span class="receipt-rule"></span></div></div></div>
     </section>
   </div>
-  <p class="checkin-bridge"><a href="/daily-checkin">Class note</a> · <a href="/report-card">Your progress</a></p>
+  <div class="checkin-bridge">
+    <p><a href="/daily-checkin">Class note</a> · <a href="/report-card">Your progress</a> · <a href="/student-hub">Student Hub</a></p>
+    <div class="checkin-bridge-ascend">
+      <strong>Your Next Step on the Mats:</strong><br>
+      • <em>Class 4 guest on The Mountain Tap Card?</em> You now have 4 classes of real movement proof. Confirm your 12-week <a href="/options-pricing#start">Core Culture term</a>.<br>
+      • <em>First 12-week cohort student?</em> Class 4 establishes your steady habit. Review your developmental stages on the <a href="/report-card">Training Report Card</a>.<br>
+      • <em>Completing your 12-week term?</em> Ascend to the 12-month <a href="/annual-track">Annual Track</a> for continuous growth and locked tuition.
+    </div>
+  </div>
 </main>
 <script src="/js/weekly-audit.js?v=coach-student-copy-v3" defer></script>

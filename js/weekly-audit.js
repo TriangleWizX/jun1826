@@ -21,7 +21,7 @@
   ];
   const $ = (id) => document.getElementById(id);
   const form = {
-    student: $('student'), week: $('week-of'), skill: $('main-skill'),
+    student: $('student'), week: $('week-of'), phase: $('training-phase'), skill: $('main-skill'),
     problem: $('problem'), observed: $('observed-action'), next: $('next-action'), easier: $('getting-easier')
   };
   let printInvoked = false;
@@ -62,6 +62,15 @@
 
     setPreview('preview-student', name, 'Student name');
     setPreview('preview-week', weekLong ? `Week of ${weekLong}` : '', 'Week of …');
+
+    const phaseSelect = $('training-phase');
+    const phaseText = phaseSelect && phaseSelect.value !== 'weekly' ? phaseSelect.options[phaseSelect.selectedIndex]?.textContent : '';
+    const prevPhase = $('preview-phase');
+    if (prevPhase) {
+      prevPhase.textContent = phaseText ? `Phase: ${phaseText}` : '';
+      prevPhase.hidden = !phaseText;
+    }
+
     setPreview('preview-skill', skill, 'Pick a skill');
     setPreview('preview-problem', form.problem.value.trim(), 'I saw you…');
     setPreview('preview-observed', form.observed.value.trim(), 'I learned…');
@@ -74,6 +83,13 @@
     $('receipt-blank-type').textContent = checkinTypeLabel();
     $('receipt-student').textContent = name ? `Student name: ${name}` : 'Student name: __________________';
     $('receipt-week').textContent = weekShort ? `Week of: ${weekShort}` : 'Week of: ______________';
+
+    const recPhase = $('receipt-phase');
+    if (recPhase) {
+      recPhase.textContent = phaseText ? `Phase: ${phaseText}` : '';
+      recPhase.hidden = !phaseText;
+    }
+
     $('receipt-skill').textContent = skill || '________________';
     $('receipt-problem').textContent = form.problem.value.trim();
     $('receipt-observed').textContent = form.observed.value.trim();
@@ -104,6 +120,7 @@
     form.observed.value = '';
     form.next.value = '';
     form.easier.value = '';
+    if ($('training-phase')) $('training-phase').selectedIndex = 0;
     document.querySelectorAll('input[name="observation-context"]').forEach((input) => { input.checked = false; });
     printInvoked = false;
     $('new-student').disabled = true;

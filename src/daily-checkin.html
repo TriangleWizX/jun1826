@@ -580,6 +580,69 @@ headExtra: |
     text-underline-offset: 3px;
   }
 
+  .daily-bridges-list {
+    margin: 0.6rem 0 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+
+  .daily-bridges-list li {
+    margin-bottom: 0.4rem;
+  }
+
+  /* Progress Suite Mini-Nav */
+  .daily-suite-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem 0.65rem;
+    padding: 0.55rem 0.85rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+    background: #f4f1ed;
+    font-size: 0.82rem;
+    color: var(--color-muted, #4f433c);
+  }
+
+  .daily-suite-tag {
+    font-weight: 700;
+    color: var(--color-ink, #1f1712);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+
+  .daily-suite-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--color-accent, #116a42);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .daily-suite-step:hover {
+    text-decoration: underline;
+  }
+
+  .daily-suite-step.is-active {
+    color: var(--color-ink, #1f1712);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .daily-suite-sep {
+    color: rgba(54, 43, 36, 0.35);
+  }
+
+  .print-milestone-badge {
+    background: #eef7f2;
+    color: var(--color-accent, #116a42);
+    border: 1px solid rgba(17, 106, 66, 0.3);
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+
   /* Responsive & print */
   @media (max-width: 860px) {
     .daily-grid {
@@ -670,6 +733,17 @@ headExtra: |
 </style>
 
 <div class="daily-page">
+  <nav aria-label="Progress Suite" class="daily-suite-nav">
+    <span class="daily-suite-tag">Training Progress Suite:</span>
+    <span class="daily-suite-step is-active"><i class="bi bi-journal-text" aria-hidden="true"></i> Daily Note</span>
+    <span class="daily-suite-sep" aria-hidden="true">→</span>
+    <a href="/weekly-audit" class="daily-suite-step"><i class="bi bi-calendar-week" aria-hidden="true"></i> Weekly Check-In</a>
+    <span class="daily-suite-sep" aria-hidden="true">→</span>
+    <a href="/report-card" class="daily-suite-step"><i class="bi bi-card-checklist" aria-hidden="true"></i> Report Card</a>
+    <span class="daily-suite-sep" aria-hidden="true">·</span>
+    <a href="/student-hub" class="daily-suite-step"><i class="bi bi-grid" aria-hidden="true"></i> Student Hub</a>
+  </nav>
+
   <header class="daily-header">
     <div class="daily-header-top">
       <span class="daily-eyebrow">Coach and Student Check-in</span>
@@ -721,6 +795,16 @@ headExtra: |
             <input id="parent-phone" type="tel" placeholder="+1 (917) ..." inputmode="tel" />
             <span class="daily-hint">Add a number to open a text you can send.</span>
           </div>
+        </div>
+        <div class="daily-field">
+          <label for="milestone">Training Milestone</label>
+          <select id="milestone">
+            <option value="regular">Regular Class Note</option>
+            <option value="class4">Class 4 Milestone (Mountain Tap Card or First Cohort)</option>
+            <option value="midterm">Week 6 Mid-Term Check</option>
+            <option value="termend">Week 12 Term Completion & Annual Track Ascension</option>
+          </select>
+          <span class="daily-hint">Class 4 completes the Mountain Tap guest pass and cements the 12-week habit.</span>
         </div>
       </section>
 
@@ -803,6 +887,7 @@ headExtra: |
         </div>
 
         <div id="preview-program" class="print-program-badge print-empty">Class</div>
+        <div id="preview-milestone-badge" class="print-program-badge print-milestone-badge" hidden>Class 4 Milestone</div>
 
         <div class="print-block">
           <div class="print-label">Main skill</div>
@@ -828,7 +913,7 @@ headExtra: |
 
         <div class="print-car-ride-box">
           <div class="print-car-ride-title">A Question to Ask</div>
-          <p class="print-car-ride-prompt">"What did you work on today?"</p>
+          <p id="preview-car-ride-prompt" class="print-car-ride-prompt">"What did you work on today?"</p>
         </div>
 
         <div class="print-footer">
@@ -840,10 +925,14 @@ headExtra: |
   </div>
 
   <nav aria-label="Progress review bridges" class="daily-bridges">
-    <strong>More ways to check progress:</strong>
-    For a week of notes, use the <a href="/weekly-audit">Weekly Check-In</a>.
-    For term progress and belt goals, see the <a href="/report-card">Training Report Card</a>.
-    View daily class times on the <a href="/student-hub">Student Hub</a>.
+    <strong>Ascending Enrollment & Progress Path:</strong>
+    <ul class="daily-bridges-list">
+      <li><strong>Class 4 Milestone:</strong> You completed your first 4 classes. Review your weekly consistency on the <a href="/weekly-audit">Weekly Check-In</a> or build your baseline on the <a href="/report-card">Training Report Card</a>. Ready for the next step? Choose your 12-week <a href="/options-pricing#start">Core Culture Term</a>.</li>
+      <li><strong>Weekly Rhythm:</strong> Connect your daily mat reflections into a consistent weekly habit on the <a href="/weekly-audit">Weekly Check-In</a>.</li>
+      <li><strong>Term Goals & Belts:</strong> Track your 9 developmental skill areas on the <a href="/report-card">Training Report Card</a>.</li>
+      <li><strong>Annual Mastery:</strong> Continuing students complete Core Culture and ascend to the 12-month <a href="/annual-track">Annual Track</a>.</li>
+      <li><strong>Class Schedule:</strong> View all class times and arrive calm on the <a href="/student-hub">Student Hub</a>.</li>
+    </ul>
   </nav>
 </div>
 

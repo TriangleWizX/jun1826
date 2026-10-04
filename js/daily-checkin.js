@@ -37,6 +37,7 @@
     phone: $('parent-phone'),
     date: $('session-date'),
     program: $('program'),
+    milestone: $('milestone'),
     skill: $('main-skill'),
     problem: $('problem'),
     observed: $('observed-action'),
@@ -89,6 +90,36 @@
     const prog = f.program.value ? f.program.options[f.program.selectedIndex]?.textContent : '';
     put('preview-program', prog, 'Class');
 
+    const milestoneEl = $('preview-milestone-badge');
+    const carRidePromptEl = $('preview-car-ride-prompt');
+    const milestoneVal = f.milestone ? f.milestone.value : 'regular';
+    if (milestoneEl) {
+      if (milestoneVal === 'class4') {
+        milestoneEl.textContent = 'Class 4 Milestone Reached';
+        milestoneEl.hidden = false;
+        if (carRidePromptEl) {
+          carRidePromptEl.textContent = '"Four classes complete! What movement felt easiest today?"';
+        }
+      } else if (milestoneVal === 'midterm') {
+        milestoneEl.textContent = 'Week 6 Mid-Term Check';
+        milestoneEl.hidden = false;
+        if (carRidePromptEl) {
+          carRidePromptEl.textContent = '"Halfway through the term! Which skill are you most excited to try next?"';
+        }
+      } else if (milestoneVal === 'termend') {
+        milestoneEl.textContent = 'Week 12 Term Complete · Annual Ascension';
+        milestoneEl.hidden = false;
+        if (carRidePromptEl) {
+          carRidePromptEl.textContent = '"Twelve weeks completed! Look how much your body learned."';
+        }
+      } else {
+        milestoneEl.hidden = true;
+        if (carRidePromptEl) {
+          carRidePromptEl.textContent = '"What did you work on today?"';
+        }
+      }
+    }
+
     const skillLabel = f.skill.value ? f.skill.options[f.skill.selectedIndex]?.textContent : '';
     put('preview-skill', skillLabel, 'Choose a main skill');
 
@@ -133,8 +164,17 @@
     const obs = f.observed.value.trim();
     const nxt = f.next.value.trim();
     const easier = f.easier.value.trim();
+    const milestoneVal = f.milestone ? f.milestone.value : 'regular';
 
     let msg = `Hi! A quick training note from Sandy at Sensei Sandy BJJ about ${student}'s class today.\n\n`;
+    if (milestoneVal === 'class4') {
+      msg += `🎉 Milestone: Class 4 complete! Great movement habit and body balance.\n\n`;
+    } else if (milestoneVal === 'midterm') {
+      msg += `⭐ Week 6 Mid-Term check! Steady progress across positions.\n\n`;
+    } else if (milestoneVal === 'termend') {
+      msg += `🏆 12-Week Term Complete! Ready for the Annual Track.\n\n`;
+    }
+
     msg += `• Skill we worked on: ${skill}\n`;
     if (prob) msg += `• You were working on: ${prob}\n`;
     msg += `• I saw you: ${obs}\n`;
@@ -142,7 +182,14 @@
     if (easier) {
       msg += `• You are finding this easier: ${easier}\n`;
     }
-    msg += `\nAsk: "What did you work on today?"\n- Sensei Sandy`;
+
+    if (milestoneVal === 'class4') {
+      msg += `\nAsk: "Four classes complete! What movement felt easiest today?"\nNext step: Build your baseline at https://senseisandy.com/report-card or plan your 12-week Core Culture term at https://senseisandy.com/options-pricing#start\n- Sensei Sandy`;
+    } else if (milestoneVal === 'termend') {
+      msg += `\nAsk: "Twelve weeks completed! Look how much your body learned."\nNext step: Review your progress at https://senseisandy.com/report-card or explore the Annual Track at https://senseisandy.com/annual-track\n- Sensei Sandy`;
+    } else {
+      msg += `\nAsk: "What did you work on today?"\n- Sensei Sandy`;
+    }
     return msg;
   }
 
@@ -156,17 +203,20 @@
     const ctx = selectedContext();
     const nxt = f.next.value.trim();
     const easier = f.easier.value.trim();
+    const milestoneLabel = f.milestone && f.milestone.value !== 'regular' ? f.milestone.options[f.milestone.selectedIndex]?.textContent : '';
 
     return [
       `Sensei Sandy BJJ - Daily Training Report`,
       `Student: ${student}`,
       `Date: ${date} ${prog ? `(${prog})` : ''}`,
+      milestoneLabel ? `Milestone: ${milestoneLabel}` : '',
       `Skill we worked on: ${skill}`,
       `You were working on: ${prob || '[Not specified]'}`,
       `Practice: ${ctx ? contextLabel(ctx) : '[Not specified]'}`,
       `I saw you: ${obs || '[Not specified]'}`,
       `Next, I will help you: ${nxt || '[Not specified]'}`,
       easier ? `You are finding this easier: ${easier}` : '',
+      milestoneLabel ? `Next Step: Review your progress at https://senseisandy.com/report-card` : '',
       `Coach: Sandy`
     ].filter(Boolean).join('\n');
   }
@@ -223,6 +273,7 @@
         phone: f.phone.value,
         date: f.date.value,
         program: f.program.value,
+        milestone: f.milestone ? f.milestone.value : 'regular',
         skill: f.skill.value,
         problem: f.problem.value,
         observed: f.observed.value,
@@ -269,6 +320,7 @@
       if (draft.phone) f.phone.value = draft.phone;
       if (draft.date) f.date.value = draft.date;
       if (draft.program && f.program) f.program.value = draft.program;
+      if (draft.milestone && f.milestone) f.milestone.value = draft.milestone;
       if (draft.skill && f.skill) f.skill.value = draft.skill;
       if (draft.problem) f.problem.value = draft.problem;
       if (draft.observed) f.observed.value = draft.observed;
@@ -437,6 +489,7 @@
     f.easier.value = '';
     f.date.value = todayIso();
     if (f.program) f.program.selectedIndex = 0;
+    if (f.milestone) f.milestone.selectedIndex = 0;
 
     document.querySelectorAll('input[name="observation-context"]').forEach(x => { x.checked = false; });
     reportDispatched = false;

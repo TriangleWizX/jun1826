@@ -8,7 +8,16 @@ audience: "member"
 bodyClass: "ss-page"
 permalink: "/report-card.html"
 ---
-<p class="rc-weekly-bridge">Need a quick check-in? Use the <a href="/daily-checkin">Daily Check-In</a> or <a href="/weekly-audit">Weekly Check-In</a>.</p>
+<nav aria-label="Progress Suite" class="rc-suite-nav container">
+  <span class="rc-suite-tag">Training Progress Suite:</span>
+  <a href="/daily-checkin" class="rc-suite-step"><i class="bi bi-journal-text" aria-hidden="true"></i> Daily Note</a>
+  <span class="rc-suite-sep" aria-hidden="true">→</span>
+  <a href="/weekly-audit" class="rc-suite-step"><i class="bi bi-calendar-week" aria-hidden="true"></i> Weekly Check-In</a>
+  <span class="rc-suite-sep" aria-hidden="true">→</span>
+  <span class="rc-suite-step is-active"><i class="bi bi-card-checklist" aria-hidden="true"></i> Report Card</span>
+  <span class="rc-suite-sep" aria-hidden="true">·</span>
+  <a href="/student-hub" class="rc-suite-step"><i class="bi bi-grid" aria-hidden="true"></i> Student Hub</a>
+</nav>
 <nav aria-label="Breadcrumb" class="ss-breadcrumbs container">
 <a href="/">Home</a>
 <span aria-hidden="true">›</span>
@@ -520,6 +529,7 @@ permalink: "/report-card.html"
       gap: 12px;
       width: 100%;
       justify-content: center;
+      flex-wrap: wrap;
     }
     .rc-btn {
       font-family: 'Lexend', sans-serif;
@@ -559,6 +569,112 @@ permalink: "/report-card.html"
     .rc-btn--secondary:hover {
       background-color: var(--ss-rc-cream);
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Progress Suite Mini-Nav */
+    .rc-suite-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem 0.65rem;
+      padding: 0.65rem 1rem;
+      margin: 1.5rem auto 0.75rem;
+      max-width: 1200px;
+      border-radius: var(--ss-rc-radius-sm);
+      background: var(--ss-rc-white);
+      border: 1px solid var(--ss-rc-border);
+      box-shadow: var(--ss-rc-shadow);
+      font-size: 0.82rem;
+      color: var(--ss-rc-muted);
+    }
+    .rc-suite-tag {
+      font-family: 'Lexend', sans-serif;
+      font-weight: 700;
+      color: var(--ss-rc-dark);
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+    }
+    .rc-suite-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--ss-rc-gold-dark);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .rc-suite-step:hover {
+      color: var(--ss-rc-dark);
+      text-decoration: underline;
+    }
+    .rc-suite-step.is-active {
+      color: var(--ss-rc-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .rc-suite-sep {
+      color: rgba(54, 43, 36, 0.35);
+    }
+
+    /* Ascension Pathway in How to Use */
+    .rc-ascension-pathway {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--ss-rc-border);
+    }
+    .rc-pathway-title {
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ss-rc-dark);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .rc-pathway-title i {
+      color: var(--ss-rc-gold-dark);
+    }
+    .rc-pathway-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    .rc-pathway-step {
+      background: var(--ss-rc-cream);
+      padding: 0.75rem 0.85rem;
+      border-radius: var(--ss-rc-radius-sm);
+      border: 1px solid var(--ss-rc-border);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+    .rc-pathway-step strong {
+      display: block;
+      color: var(--ss-rc-gold-dark);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      font-size: 0.82rem;
+    }
+    .rc-pathway-step p {
+      margin: 0;
+      color: var(--ss-rc-muted);
+    }
+    .rc-pathway-step a {
+      color: var(--ss-rc-gold-dark);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .rc-action-desc {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.85rem;
+      margin: -0.5rem 0 1.25rem;
+      text-align: center;
+      max-width: 480px;
+    }
+    @media (max-width: 600px) {
+      .rc-pathway-steps {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Footer branding system */
@@ -948,7 +1064,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <div class="rc-card-header"><i class="bi bi-calendar3"></i><span class="rc-card-label">Review</span></div>
 <div class="rc-review-meta">
 <div><label class="rc-field-label" for="review-date">Review Date</label><input id="review-date" type="date"/></div>
-<div><label class="rc-field-label" for="review-type">Review Type</label><select id="review-type"><option>Baseline</option><option>Check-In</option><option>Mid-Cycle</option><option>End-of-Term</option><option>Coach Review</option><option>Other</option></select></div>
+<div><label class="rc-field-label" for="review-type">Review Type</label><select id="review-type"><option value="Baseline">Class 4 Milestone / Baseline (Day 4 Pass or Week 2 Cohort)</option><option value="Check-In">Month 1 Check-In</option><option value="Mid-Cycle">Mid-Cycle Progress (Week 6)</option><option value="End-of-Term">End-of-Term Review (Week 12 · Annual Ascension)</option><option value="Coach Review">Coach Review</option><option value="Other">Other</option></select></div>
 </div>
 <span class="rc-example-note">Record the date and setting for this learning review.</span>
 </div>
@@ -1161,6 +1277,27 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 </div>
 <p class="rc-coach-guidance">Stage updates reflect steady, repeatable practice across multiple partner sessions rather than one try or one easy round. I look for enough signs from class. A new partner helps show what to practice next.</p>
 <p class="rc-coach-guidance"><strong>For parents and caregivers:</strong> Ask, listen, and cheer your child on. Let the coach teach the moves. Ask, “What felt easy today?” or “What did you try?” For a young child, say: “I saw you try. Your coach can help you try again.”</p>
+<div class="rc-ascension-pathway">
+  <div class="rc-pathway-title"><i class="bi bi-diagram-3" aria-hidden="true"></i> The 4-Step Progress &amp; Enrollment Flow</div>
+  <div class="rc-pathway-steps">
+    <div class="rc-pathway-step">
+      <strong>1. Day 4 Milestone:</strong>
+      <p>Whether visiting on The Mountain Tap Card or starting your first term, Class 4 gives you observable proof of balance, base, and safe partner practice. Build your baseline here, then confirm your 12-week <a href="/options-pricing#start">Core Culture term</a>.</p>
+    </div>
+    <div class="rc-pathway-step">
+      <strong>2. Weekly Rhythm:</strong>
+      <p>Log mat reflections on the <a href="/daily-checkin">Daily Note</a> and track habits on the <a href="/weekly-audit">Weekly Check-In</a>. Skills develop steadily from Emerging to Developing.</p>
+    </div>
+    <div class="rc-pathway-step">
+      <strong>3. Mid-Cycle Check:</strong>
+      <p>At Week 6 (Class 18), review your 9 skill areas and adjust your focus for the second half of the term.</p>
+    </div>
+    <div class="rc-pathway-step">
+      <strong>4. Term Completion &amp; Annual Track:</strong>
+      <p>At Week 12 (Class 36), complete your Core Culture Review. Ascend to the 12-month <a href="/annual-track">Annual Track</a> for continuous growth and locked tuition.</p>
+    </div>
+  </div>
+</div>
 </section>
 <!-- CTA Action Card (gold-brown background) -->
 <section aria-label="Review progress and choose the next step" class="rc-card rc-card--action" data-offer-stage="progress" data-audience="member">
@@ -1172,12 +1309,19 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <path d="M3 12h18"></path>
 </svg>
 <h2 class="rc-action-title">Keep practicing.<br/>Then pick what comes next.</h2>
+<p class="rc-action-desc">Ready to take your next step? Choose the path that matches your training milestone:</p>
 <div class="rc-action-buttons">
-<a class="rc-btn rc-btn--primary" href="#main-content" data-offer-stage="review" data-audience="member">
-                Talk with Sandy about this <i aria-hidden="true" class="bi bi-arrow-right"></i>
+<a class="rc-btn rc-btn--primary" href="/options-pricing#start" data-offer-stage="core" data-audience="member">
+  <i aria-hidden="true" class="bi bi-mortarboard"></i> Reserve 12-Week Core Culture
+</a>
+<a class="rc-btn rc-btn--primary" href="/annual-track" data-offer-stage="continuation" data-audience="member">
+  <i aria-hidden="true" class="bi bi-arrow-repeat"></i> Ascend to Annual Track
+</a>
+<a class="rc-btn rc-btn--secondary" href="sms:+19177368649" data-offer-stage="review" data-audience="member">
+  <i aria-hidden="true" class="bi bi-chat-dots"></i> Text Sandy: (917) 736-8649
 </a>
 <a class="rc-btn rc-btn--secondary" href="/student-hub" data-offer-stage="review" data-audience="member">
-<i aria-hidden="true" class="bi bi-grid"></i> Return to Student Hub
+  <i aria-hidden="true" class="bi bi-grid"></i> Return to Student Hub
 </a>
 </div>
 <p class="small mt-3 mb-0"><a class="text-white" href="/free-bjj-intro-tannersville-ny">Not training here yet? See how progress works, then start with a Free First Visit.</a></p>
