@@ -816,8 +816,9 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 @media (max-width: 560px) { .rc-section-title { margin-top: .75rem; padding: 0; font-size: .95rem; } }
 
 /* Hallmark · genre: editorial · macrostructure: Workbench · design-system: design.md · designed-as-app */
-/* Align the review workspace with Weekly Audit without changing printed reports. */
+/* Align the review workspace with Weekly Audit while preserving letter-size printed reports. */
 @media screen {
+  .rc-avatar-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
   .ss-main { max-width: 1180px; margin: 0 auto; padding: var(--space-lg) var(--space-sm) var(--space-xl); overflow-x: clip; }
   .rc-page-header { max-width: none; margin: 0 0 var(--space-lg); padding: 0; }
   .rc-page-title { margin: 0 0 var(--space-2xs); font-weight: 400; line-height: 1.05; overflow-wrap: anywhere; }
@@ -857,7 +858,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
   .rc-development-axes p { min-height: 0; }
 }
 </style>
-<main class="ss-main">
+<main class="ss-main" id="main-content">
 <!-- SVG Vector Watermarks -->
 <!-- Left mountains watermark -->
 <svg class="rc-watermark-left" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="0.3" viewbox="0 0 100 100">
@@ -885,14 +886,14 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <header class="rc-page-header">
 <div class="rc-page-eyebrow">A Note from your coach</div>
 <h1 class="rc-page-title">Training Report Card</h1>
-<p class="rc-page-subtitle">These stages show what I see in class. They are not grades.</p>
+<p class="rc-page-subtitle">These stages show what I observe in class as you build your skills.</p>
 <p class="rc-page-kicker">I watch you in class. Then we pick one step.</p>
 <div class="rc-page-divider"></div>
 </header>
 <section aria-labelledby="development-map-title" class="rc-development-map">
 <div class="rc-card-header"><span class="rc-card-label">Progress Map</span></div>
 <h2 id="development-map-title">Skills You Are Learning</h2>
-<p class="rc-page-subtitle">These stages show what I see in class. They are not grades.</p>
+<p class="rc-page-subtitle">These stages show what I observe in class as you build your skills.</p>
 <p class="rc-development-intro">I pick a stage after I see a skill more than once. A stage can stay the same. This helps us pick what to practice.</p>
 <div class="rc-development-axes">
 <article class="rc-development-axis"><h3>Recognize</h3><p>Can you tell what is going on?</p><label class="visually-hidden" for="development-recognize">Recognize state</label><select id="development-recognize" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
@@ -902,7 +903,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <article class="rc-development-axis"><h3>Express</h3><p>Can you show what you need?</p><label class="visually-hidden" for="development-express">Express state</label><select id="development-express" data-development-state><option>Not Yet Observed</option><option>Emerging</option><option>Developing</option><option>Contextual</option><option>Reliable</option></select></article>
 </div>
 <div class="rc-development-notes"><strong>What I saw you do</strong><strong>What we will practice next</strong><strong>What feels easier to you</strong></div>
-<p class="rc-coach-guidance">I change a stage after I see enough in class. I write what you tried and what we will try next. A prompt can help you learn. A try can teach us too. “Reliable” means you can use the skill when things change. It does not mean perfect.</p>
+<p class="rc-coach-guidance">I change a stage after I see enough in class. I write what you tried and what we will try next. A prompt can help you learn. Every try teaches us too. “Reliable” means you apply the skill with calm control across changing partners and situations.</p>
 </section>
 <div class="rc-dashboard-grid">
 <h2 class="rc-section-title">1. Add name and date</h2>
@@ -949,7 +950,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <div><label class="rc-field-label" for="review-date">Review Date</label><input id="review-date" type="date"/></div>
 <div><label class="rc-field-label" for="review-type">Review Type</label><select id="review-type"><option>Baseline</option><option>Check-In</option><option>Mid-Cycle</option><option>End-of-Term</option><option>Coach Review</option><option>Other</option></select></div>
 </div>
-<span class="rc-example-note">Use the date and setting of this review. This is not a weekly grade.</span>
+<span class="rc-example-note">Record the date and setting for this learning review.</span>
 </div>
 <!-- Student Info Card -->
 <div class="rc-card rc-card--student">
@@ -984,10 +985,10 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <input aria-label="Coaches input" class="rc-value-input" id="coaches" type="text" placeholder="Coach name(s)"/>
 <div class="rc-avatars-row">
 <div class="rc-avatar-placeholder" title="Sensei Sandy">
-<svg viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+<img alt="Sensei Sandy" class="rc-avatar-img" height="32" loading="lazy" src="/assets/images/sensei-sandy-320.webp" width="32"/>
 </div>
-<div class="rc-avatar-placeholder" title="Additional coach (optional)">
-<svg viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+<div class="rc-avatar-placeholder" title="Coach Josh">
+<img alt="Coach Josh" class="rc-avatar-img" height="32" loading="lazy" src="/assets/images/avatar_josh.551d87.png" width="32"/>
 </div>
 </div>
 </div>
@@ -1019,7 +1020,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 </select>
 <div><label class="rc-field-label" for="observations-reviewed">How many times did I see it?</label><input aria-describedby="observation-volume-note" class="rc-value-input" id="observations-reviewed" inputmode="numeric" min="0" type="number"/></div>
 <div><label class="rc-field-label" for="contexts-observed">Where else did I see it?</label><input aria-describedby="observation-volume-note" class="rc-value-input" id="contexts-observed" placeholder="e.g. practice start, partner round" type="text"/></div>
-<p class="rc-coach-guidance" id="observation-volume-note">These notes show what I saw in class. They add context. They do not give a score.</p>
+<p class="rc-coach-guidance" id="observation-volume-note">These notes show what I saw in class. They add context and highlight clear practice goals.</p>
 <span class="rc-card-subtext">This tells us where I saw you use the skill.</span>
 </div>
 </section>
@@ -1105,7 +1106,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 </section>
 <!-- Sidebar stack (skill details & Feedback) -->
 <div class="rc-main-right-stack">
-<section aria-labelledby="skill-guide-title" class="rc-card rc-card--skill-guide"><div class="rc-card-header"><i aria-hidden="true" class="bi bi-compass"></i><span class="rc-card-label" id="skill-guide-title">What the stages mean</span></div><dl><dt>Not Yet Observed</dt><dd>I have not seen it yet. This is not failure.</dd><dt>Emerging</dt><dd>You can start with my help or in an easier spot.</dd><dt>Developing</dt><dd>You do it more often during safe practice.</dd><dt>Contextual</dt><dd>You can do it in some spots. We are trying it in others.</dd><dt>Reliable</dt><dd>You can do it when things change. It does not mean perfect.</dd></dl><p class="rc-parent-interpretation"><strong>This is not a pass or fail.</strong> Each step shows what you can do in class.</p></section>
+<section aria-labelledby="skill-guide-title" class="rc-card rc-card--skill-guide"><div class="rc-card-header"><i aria-hidden="true" class="bi bi-compass"></i><span class="rc-card-label" id="skill-guide-title">What the stages mean</span></div><dl><dt>Not Yet Observed</dt><dd>I have yet to see this in live practice. Every skill has its starting moment.</dd><dt>Emerging</dt><dd>You start smoothly with coach guidance or in a calm partner drill.</dd><dt>Developing</dt><dd>You apply the skill more often during regular safe practice.</dd><dt>Contextual</dt><dd>You perform the skill well in familiar spots, and we expand it into new situations.</dd><dt>Reliable</dt><dd>You apply the skill with calm control and balance across changing rounds.</dd></dl><p class="rc-parent-interpretation"><strong>Every milestone marks real progress.</strong> Each step shows what you can do on the mats.</p></section>
 <!-- Remarks Card -->
 <section aria-labelledby="remarks-title" class="rc-card rc-card--feedback">
 <div class="rc-card-header">
@@ -1158,7 +1159,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <p>I write three short notes. Then I print or copy the report.</p>
 </div>
 </div>
-<p class="rc-coach-guidance">I do not change a stage based on attendance, one try, or one easy or hard round. I look for enough signs from class. A new place may show us what to practice next.</p>
+<p class="rc-coach-guidance">Stage updates reflect steady, repeatable practice across multiple partner sessions rather than one try or one easy round. I look for enough signs from class. A new partner helps show what to practice next.</p>
 <p class="rc-coach-guidance"><strong>For parents and caregivers:</strong> Ask, listen, and cheer your child on. Let the coach teach the moves. Ask, “What felt easy today?” or “What did you try?” For a young child, say: “I saw you try. Your coach can help you try again.”</p>
 </section>
 <!-- CTA Action Card (gold-brown background) -->
@@ -1202,12 +1203,12 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <!-- Guide SEO copy block -->
 <section aria-labelledby="report-card-guide-title" class="report-card-copy">
 <h2 id="report-card-guide-title">How to Use This Report Card</h2>
-<p>This card shows what I see in class. It does not rank students. See what you learn, what to try, and what feels easy.</p>
-<p>I write notes from class. They do not test health or school skills. <a href="/how-class-works">See how class works</a> or <a href="/evidence">read our proof</a>.</p>
+<p>This card maps observable skills from class. See what you learn, what to practice next, and what feels comfortable.</p>
+<p>I write notes from class. These observations focus purely on movement, balance, and cooperative partner skills on our mats. <a href="/how-class-works">See how class works</a> or <a href="/evidence">read our proof</a>.</p>
 <p>New to BJJ words? Use the <a href="/bjj-glossary">BJJ word list</a>.</p>
 <p>Learn these words: <a href="/bjj-glossary/base">Base</a>, <a href="/bjj-glossary/pin">Pin</a>, <a href="/bjj-glossary/pin-escape">Pin Escape</a>, <a href="/bjj-glossary/guard">Guard</a>, <a href="/bjj-glossary/guard-pass">Guard Pass</a>, <a href="/bjj-glossary/guard-retention">Guard Retention</a>, and <a href="/bjj-glossary/submission">Submission</a>.</p>
 <p>We use this card in Tannersville, NY. It tracks skills you use in class, like staying safe, moving from under a partner, and getting past their legs.</p>
-<ul><li>I pick a stage after I see a skill more than once.</li><li>I add the date, coach, and class.</li><li>I write what you did and what we will try.</li><li>I print or copy the card for you and your family.</li></ul>
+<ul><li>I pick a stage after I see a skill in multiple classes.</li><li>I add the date, coach, and class.</li><li>I write what you did and what we will try.</li><li>I print or copy the card for you and your family.</li></ul>
 <p>I use the same stage names each time. A stage can stay the same. This helps us pick what to practice next.</p>
 <p>Learn more: <a href="/schedule">Class times</a> · <a href="/bjj-classes/tannersville-ny">BJJ classes</a> · <a href="/options-pricing">Prices</a> · <a href="/private-lessons">Private lessons</a> · <a href="/contact">Contact</a> · <a href="/blog">Blog</a></p>
 </section>
