@@ -173,7 +173,7 @@ body.page-partners-wellness .btn-wellness-outline:focus-visible {
 .wellness-hero-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 575 / 305;
+  aspect-ratio: 16 / 9;
   border-radius: 1.25rem;
   object-fit: cover;
   display: block;
@@ -514,7 +514,8 @@ body.page-partners-wellness .btn-wellness-outline:focus-visible {
 .menu-card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 0.35rem;
   display: block;
 }
 
@@ -569,81 +570,6 @@ body.page-partners-wellness .btn-wellness-outline:focus-visible {
   color: #fff;
 }
 
-/* ==========================================================================
-   6. What Providers Are Saying
-   ========================================================================== */
-.testimonial-section {
-  margin-bottom: 5.5rem;
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.35rem;
-}
-
-.testimonial-card {
-  background: var(--ss-surface, #FFFFFF);
-  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
-  border-radius: 1.25rem;
-  padding: 1.85rem 1.6rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.02);
-  position: relative;
-}
-
-.testimonial-quote-icon {
-  font-size: 3rem;
-  line-height: 1;
-  color: rgba(40, 159, 161, 0.12);
-  position: absolute;
-  top: 0.5rem;
-  left: 1.25rem;
-  font-family: Georgia, serif;
-}
-
-.testimonial-text {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: var(--ss-text, #1F1712);
-  font-style: italic;
-  margin-bottom: 1.5rem;
-  margin-top: 0.75rem;
-  position: relative;
-  z-index: 2;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
-  padding-top: 0.85rem;
-}
-
-.testimonial-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
-  flex-shrink: 0;
-}
-
-.testimonial-info h5 {
-  font-size: 0.88rem;
-  font-weight: 700;
-  margin: 0 0 0.15rem 0;
-  color: var(--ss-ink, #362B24);
-}
-
-.testimonial-info p {
-  font-size: 0.78rem;
-  color: var(--ss-muted, #4F433C);
-  margin: 0;
-}
 
 /* ==========================================================================
    7. Provider Toolkit
@@ -749,26 +675,29 @@ body.page-partners-wellness .btn-wellness-outline:focus-visible {
   border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
   box-shadow: 0 12px 36px rgba(54, 43, 36, 0.08);
   min-height: 320px;
+  display: flex;
 }
 
 .toolkit-img-container {
   width: 100%;
   height: 100%;
+  flex: 1;
   position: relative;
+  display: flex;
 }
 
 .toolkit-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 85% center;
+  object-position: center center;
   display: block;
 }
 
 .toolkit-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(54, 43, 36, 0.45);
+  background: rgba(54, 43, 36, 0.42);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1151,10 +1080,6 @@ body.page-partners-wellness .btn-wellness-outline:focus-visible {
     gap: 1.15rem;
   }
 
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-    gap: 1.15rem;
-  }
 
   .wellness-floating-cards {
     grid-template-columns: 1fr;
