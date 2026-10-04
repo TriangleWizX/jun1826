@@ -39,7 +39,7 @@ console.log(`Avg words per sentence: ${wordsPerSentence.toFixed(2)}`);
 console.log(`Avg syllables per word: ${syllablesPerWord.toFixed(2)}`);
 console.log(`Flesch-Kincaid Grade Level: ${fkgl.toFixed(2)}`);
 
-const bannedWords = ['zero', 'without', '\\bno\\b', 'stop', "don't", 'do not', "won't", 'never', 'injury', 'injuries', 'hurt', 'pain', 'roughhousing', 'muscling', 'ego'];
+const bannedWords = ['zero', 'without', '\\bno\\b(?!-gi)', 'stop', "don't", 'do not', "won't", 'never', 'injury', 'injuries', 'hurt', 'pain', 'roughhousing', 'muscling', 'ego'];
 const bannedFound = [];
 for (const bw of bannedWords) {
   const re = new RegExp(bw, 'gi');
