@@ -351,3 +351,45 @@ body.page-holiday-schedule {
     transition-duration: 0.01ms;
   }
 }
+
+/* Mobile Floating Sticky Actions */
+@media (max-width: 767.98px) {
+  body.page-holiday-schedule .ss-mobile-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+    background: rgba(251, 250, 248, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+    box-shadow: 0 -4px 20px rgba(54, 43, 36, 0.08);
+  }
+
+  body.page-holiday-schedule .ss-mobile-sticky a {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 999px;
+    text-decoration: none;
+  }
+
+  body.page-holiday-schedule {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-holiday-schedule .ss-mobile-sticky {
+    display: none !important;
+  }
+}

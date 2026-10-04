@@ -36,6 +36,7 @@ const baseJobs = [
   ["assets/css/pages/bio.css", "assets/css/pages/bio.min.css"],
   ["assets/css/pages/bjj-stretches.css", "assets/css/pages/bjj-stretches.min.css"],
   ["assets/css/pages/show-up-kit.css", "assets/css/pages/show-up-kit.min.css"],
+  ["assets/css/pages/holiday-schedule.css", "assets/css/pages/holiday-schedule.min.css"],
   ["assets/css/pages/near.css", "assets/css/pages/near.min.css"],
   ["assets/css/pages/directions.css", "assets/css/pages/directions.min.css"],
   ["assets/css/pages/tannersville.css", "assets/css/pages/tannersville.min.css"],
