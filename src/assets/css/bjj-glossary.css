@@ -1,11 +1,18 @@
-/* BJJ Glossary Infil-Style Interactive Architecture */
+/* ==========================================================================
+   Sensei Sandy BJJ Glossary — Unified Brand Visual System
+   Consistent with the core Sensei Sandy warm paper / white card / green palette.
+   ========================================================================== */
 
+/* 1. Base Layout & Alignment */
 body.page-bjj-glossary .glossary-page {
   width: min(calc(100% - 2rem), 1280px);
   margin-inline: auto;
   text-align: left;
 }
-[hidden] { display: none !important; }
+
+[hidden] {
+  display: none !important;
+}
 
 body.page-bjj-glossary .glossary-page :where(h1, h2, h3, h4, p, li, dt, dd) {
   text-align: left;
@@ -16,84 +23,72 @@ body.page-bjj-glossary .glossary-page :where(ul, ol) {
   list-style-position: outside;
 }
 
-body.page-glossary.page-bjj-glossary {
-  --glossary-dark-bg: #071314;
-  --glossary-dark-panel: #0d2022;
-  --glossary-dark-panel-soft: #112b2d;
-  --glossary-dark-text: #f4fbfb;
-  --glossary-dark-muted: #b8cccc;
-  --glossary-dark-border: rgba(255, 255, 255, 0.14);
-  --glossary-dark-border-strong: rgba(0, 221, 224, 0.42);
-  --glossary-light-bg: #FBFAF8;
-  --glossary-light-panel: #FFFFFF;
-  --glossary-light-panel-soft: #F4F1ED;
-  --glossary-light-text: #1F1712;
-  --glossary-light-muted: #4F433C;
-  --glossary-light-border: rgba(54, 43, 36, 0.16);
-  --glossary-accent: var(--ss-cyan);
-  --glossary-accent-text: #8ffcff;
-  --glossary-orange: #b94700;
-  --glossary-orange-text: #ff9a58;
-  --glossary-pill-bg: #173033;
-  --glossary-pill-hover-bg: #1c3b3f;
-  --glossary-pill-disabled-bg: #122224;
-  --glossary-pill-disabled-text: #8ea4a4;
-  --ss-text: var(--glossary-dark-text);
-  --ss-muted: var(--glossary-dark-muted);
-  --ss-border: var(--glossary-dark-border);
-  background: var(--glossary-dark-bg);
-  color: var(--glossary-dark-text);
+/* 2. Sensei Sandy Design Tokens for Glossary Pages */
+body.page-glossary.page-bjj-glossary,
+body.page-glossary-term.page-bjj-glossary {
+  --glossary-bg: var(--ss-bg, #FBFAF8);
+  --glossary-panel: var(--ss-surface, #FFFFFF);
+  --glossary-panel-soft: var(--ss-surface2, #F4F1ED);
+  --glossary-text: var(--ss-text, #1F1712);
+  --glossary-muted: var(--ss-muted, #4F433C);
+  --glossary-border: var(--ss-border, rgba(54, 43, 36, 0.12));
+  --glossary-border-strong: rgba(54, 43, 36, 0.22);
+  --glossary-accent: var(--ss-green, #116A42);
+  --glossary-accent-hover: #0d5434;
+  --glossary-accent-light: rgba(17, 106, 66, 0.08);
+  --glossary-teal: var(--ss-teal, #289FA1);
+  --glossary-pill-bg: var(--ss-surface2, #F4F1ED);
+  --glossary-pill-hover-bg: #ECE7E1;
+  --glossary-pill-text: var(--ss-text, #1F1712);
+  --glossary-pill-disabled-bg: transparent;
+  --glossary-pill-disabled-text: rgba(79, 67, 60, 0.4);
+  --ss-text: var(--glossary-text);
+  --ss-muted: var(--glossary-muted);
+  --ss-border: var(--glossary-border);
+  background: var(--glossary-bg) !important;
+  color: var(--glossary-text) !important;
 }
 
-body.page-glossary.page-bjj-glossary .ss-main {
-  background:
-    radial-gradient(circle at top left, rgba(0, 221, 224, 0.14), transparent 34rem),
-    radial-gradient(circle at top right, rgba(17, 106, 66, 0.10), transparent 30rem),
-    var(--glossary-dark-bg);
-  color: var(--glossary-dark-text);
+body.page-glossary.page-bjj-glossary .ss-main,
+body.page-glossary-term.page-bjj-glossary .ss-main {
+  background: var(--ss-bg, #FBFAF8) !important;
+  color: var(--ss-text, #1F1712) !important;
 }
 
-body.page-glossary.page-bjj-glossary .ss-main>section {
+body.page-glossary.page-bjj-glossary .ss-main > section,
+body.page-glossary-term.page-bjj-glossary .ss-main > section {
   background: transparent;
 }
 
-body.page-glossary.page-bjj-glossary .ss-main>section::before {
+body.page-glossary.page-bjj-glossary .ss-main > section::before,
+body.page-glossary-term.page-bjj-glossary .ss-main > section::before {
   content: none;
   display: none !important;
 }
 
-body.page-glossary.page-bjj-glossary .glossary-surface--dark {
-  border: 1px solid var(--glossary-dark-border);
-  background:
-    radial-gradient(circle at 15% 20%, rgba(0, 221, 224, 0.14), transparent 34%),
-    linear-gradient(135deg, #0b3032 0%, #111c22 52%, #071214 100%);
-  color: var(--glossary-dark-text);
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+/* 3. Reusable Surface Wrappers */
+body.page-glossary.page-bjj-glossary .glossary-surface--dark,
+body.page-glossary.page-bjj-glossary .glossary-surface--light,
+body.page-glossary-term.page-bjj-glossary .glossary-surface--dark,
+body.page-glossary-term.page-bjj-glossary .glossary-surface--light {
+  border: 1px solid var(--glossary-border);
+  background: var(--glossary-panel);
+  color: var(--glossary-text);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(31, 23, 18, 0.05);
 }
 
-body.page-glossary.page-bjj-glossary .glossary-surface--dark :where(h1, h2, h3, h4, label, legend, summary) {
-  color: var(--glossary-dark-text);
+body.page-glossary.page-bjj-glossary :is(.glossary-surface--dark, .glossary-surface--light) :where(h1, h2, h3, h4, label, legend, summary),
+body.page-glossary-term.page-bjj-glossary :is(.glossary-surface--dark, .glossary-surface--light) :where(h1, h2, h3, h4, label, legend, summary) {
+  color: var(--glossary-text);
 }
 
-body.page-glossary.page-bjj-glossary .glossary-surface--dark :where(p, li, .glossary-filter-group > p, .glossary-results-header p) {
-  color: var(--glossary-dark-muted);
+body.page-glossary.page-bjj-glossary :is(.glossary-surface--dark, .glossary-surface--light) :where(p, li, .glossary-filter-group > p, .glossary-results-header p),
+body.page-glossary-term.page-bjj-glossary :is(.glossary-surface--dark, .glossary-surface--light) :where(p, li) {
+  color: var(--glossary-muted);
 }
 
-body.page-glossary.page-bjj-glossary .glossary-surface--light {
-  border: 1px solid var(--glossary-light-border);
-  background: var(--glossary-light-panel);
-  color: var(--glossary-light-text);
-  box-shadow: 0 18px 45px rgba(31, 23, 18, 0.12);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-surface--light :where(h1, h2, h3, h4, label, legend, summary) {
-  color: var(--glossary-light-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-surface--light :where(p, li) {
-  color: var(--glossary-light-muted);
-}
-
+/* 4. Community Feed Card (ABC Component) */
 body.page-glossary.page-bjj-glossary .ss-page-feed {
   width: min(920px, calc(100% - 24px));
   margin: 36px auto;
@@ -103,9 +98,9 @@ body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post {
   display: block;
   background: #FFFFFF !important;
   color: #1F1712 !important;
-  border: 1px solid rgba(54, 43, 36, 0.16) !important;
+  border: 1px solid rgba(54, 43, 36, 0.14) !important;
   border-radius: 20px !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 10px 26px rgba(31, 23, 18, 0.06) !important;
   padding: clamp(20px, 3.2vw, 32px) !important;
   text-align: left !important;
 }
@@ -155,9 +150,9 @@ body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-context {
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-label {
   display: inline-flex !important;
   align-items: center !important;
-  background: rgba(17, 106, 66, 0.12) !important;
+  background: rgba(17, 106, 66, 0.09) !important;
   color: #116A42 !important;
-  border: 1px solid rgba(17, 106, 66, 0.25) !important;
+  border: 1px solid rgba(17, 106, 66, 0.22) !important;
   border-radius: 999px !important;
   padding: 4px 12px !important;
   font-size: 0.8rem !important;
@@ -209,7 +204,7 @@ body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill.ss-primary
   background: var(--ss-green, #116A42) !important;
   color: #FFFFFF !important;
   border: 1px solid var(--ss-green, #116A42) !important;
-  box-shadow: 0 6px 16px rgba(17, 106, 66, 0.25) !important;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22) !important;
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill.ss-primary:hover,
@@ -223,580 +218,107 @@ body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill.ss-primary
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary) {
   background: #F4F1ED !important;
   color: #1F1712 !important;
-  border: 1px solid rgba(54, 43, 36, 0.22) !important;
+  border: 1px solid rgba(54, 43, 36, 0.18) !important;
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary):hover,
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary):focus-visible {
   background: #ECE7E1 !important;
   color: #1F1712 !important;
-  border-color: rgba(54, 43, 36, 0.45) !important;
+  border-color: rgba(54, 43, 36, 0.35) !important;
   transform: translateY(-1px) !important;
 }
 
-body.page-glossary.page-bjj-glossary .glossary-hero-grid,
-body.page-glossary.page-bjj-glossary .glossary-start-path {
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
-    var(--glossary-dark-panel);
-  border-color: var(--glossary-dark-border);
-  color: var(--glossary-dark-text);
+/* 5. Buttons (Primary & Secondary) */
+body.page-glossary.page-bjj-glossary .glossary-btn,
+body.page-glossary-term.page-bjj-glossary .glossary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
 }
 
-body.page-glossary.page-bjj-glossary .glossary-hero h1,
-body.page-glossary.page-bjj-glossary .glossary-section-header h2,
-body.page-glossary.page-bjj-glossary .day-one-card h3 {
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-eyebrow,
-body.page-glossary.page-bjj-glossary .day-one-card .num,
-body.page-glossary.page-bjj-glossary .ss-paths-eyebrow {
-  color: var(--glossary-accent-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-hero-copy>p:not(.glossary-eyebrow),
-body.page-glossary.page-bjj-glossary .glossary-section-header p,
-body.page-glossary.page-bjj-glossary .day-one-card p,
-body.page-glossary.page-bjj-glossary .glossary-start-cta p {
-  color: var(--glossary-dark-muted);
-}
-
-body.page-glossary.page-bjj-glossary .day-one-card {
-  background: var(--glossary-dark-panel-soft);
-  border-color: var(--glossary-dark-border);
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-btn {
-  text-shadow: none;
-}
-
-body.page-glossary.page-bjj-glossary .glossary-btn-primary {
-  background: var(--glossary-orange);
-  border-color: var(--glossary-orange);
-  color: var(--ss-surface);
-  box-shadow: 0 14px 28px rgba(185, 71, 0, 0.3);
+body.page-glossary.page-bjj-glossary .glossary-btn-primary,
+body.page-glossary-term.page-bjj-glossary .glossary-btn-primary {
+  background: var(--ss-green, #116A42) !important;
+  border: 1px solid var(--ss-green, #116A42) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.22);
 }
 
 body.page-glossary.page-bjj-glossary .glossary-btn-primary:hover,
-body.page-glossary.page-bjj-glossary .glossary-btn-primary:focus-visible {
-  background: #9f3d00;
-  border-color: #9f3d00;
-  color: var(--ss-surface);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-btn-secondary {
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-btn-secondary:hover,
-body.page-glossary.page-bjj-glossary .glossary-btn-secondary:focus-visible {
-  border-color: var(--glossary-dark-border-strong);
-  background: rgba(0, 221, 224, 0.16);
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-next-steps {
-  margin: 28px auto 0;
-  padding: clamp(18px, 3vw, 28px);
-  border-radius: 28px;
-}
-
-body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-start-cta {
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin: 0;
-  text-align: center;
-}
-
-body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-start-cta p {
-  flex-basis: 100%;
-  margin: 0;
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-filter-panel {
-  position: relative;
-  top: auto;
-  z-index: 2;
-  float: none;
-  border-color: var(--glossary-dark-border);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
-    var(--glossary-dark-panel);
-  color: var(--glossary-dark-text);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-filter-header label,
-body.page-glossary.page-bjj-glossary .glossary-filter-group>p,
-body.page-glossary.page-bjj-glossary .glossary-results-header p {
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-search {
-  border-color: rgba(0, 221, 224, 0.72);
-  background: #102625;
-  color: var(--ss-surface);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-search::placeholder {
-  color: rgba(255, 255, 255, 0.74);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-utility-links button,
-body.page-glossary.page-bjj-glossary .glossary-utility-links select,
-body.page-glossary.page-bjj-glossary #reset-filters,
-body.page-glossary.page-bjj-glossary .glossary-chip,
-body.page-glossary.page-bjj-glossary .glossary-alpha {
-  border-color: rgba(255, 255, 255, 0.22);
-  background: var(--glossary-pill-bg);
-  color: var(--glossary-dark-text);
-  opacity: 1;
-  text-shadow: none;
-}
-
-body.page-glossary.page-bjj-glossary .glossary-utility-links button:hover,
-body.page-glossary.page-bjj-glossary .glossary-utility-links button:focus-visible,
-body.page-glossary.page-bjj-glossary .glossary-utility-links select:hover,
-body.page-glossary.page-bjj-glossary #reset-filters:hover,
-body.page-glossary.page-bjj-glossary .glossary-chip:hover,
-body.page-glossary.page-bjj-glossary .glossary-chip:focus-visible,
-body.page-glossary.page-bjj-glossary .glossary-chip.is-active,
-body.page-glossary.page-bjj-glossary .glossary-chip[aria-pressed="true"],
-body.page-glossary.page-bjj-glossary .glossary-alpha:hover,
-body.page-glossary.page-bjj-glossary .glossary-alpha:focus-visible,
-body.page-glossary.page-bjj-glossary .glossary-alpha.is-active,
-body.page-glossary.page-bjj-glossary .glossary-alpha[aria-pressed="true"] {
-  border-color: var(--glossary-accent);
-  background: var(--glossary-accent);
-  color: #062022;
-}
-
-body.page-glossary.page-bjj-glossary .glossary-utility-links button:hover,
-body.page-glossary.page-bjj-glossary .glossary-utility-links button:focus-visible,
-body.page-glossary.page-bjj-glossary .glossary-utility-links select:hover,
-body.page-glossary.page-bjj-glossary #reset-filters:hover,
-body.page-glossary.page-bjj-glossary .glossary-chip:not(.is-active):not([aria-pressed="true"]):hover,
-body.page-glossary.page-bjj-glossary .glossary-chip:not(.is-active):not([aria-pressed="true"]):focus-visible,
-body.page-glossary.page-bjj-glossary .glossary-alpha:not(.is-active):not([aria-pressed="true"]):hover,
-body.page-glossary.page-bjj-glossary .glossary-alpha:not(.is-active):not([aria-pressed="true"]):focus-visible {
-  border-color: rgba(0, 221, 224, 0.58);
-  background: var(--glossary-pill-hover-bg);
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-alpha.is-disabled {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: var(--glossary-pill-disabled-bg);
-  color: var(--glossary-pill-disabled-text);
-  opacity: 1;
-}
-
-body.page-glossary.page-bjj-glossary .glossary-secondary-paths .ss-glossary-paths {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin: 16px 0 0;
-  padding: clamp(18px, 3vw, 28px);
-  border-radius: 20px;
-}
-
-body.page-glossary.page-bjj-glossary .ss-paths-inner {
-  max-width: 100%;
-}
-
-body.page-glossary.page-bjj-glossary .ss-paths-header {
-  max-width: 760px;
-  margin: 0 auto 18px;
-  text-align: center;
-}
-
-body.page-glossary.page-bjj-glossary .ss-paths-header h2 {
-  margin: 0 0 8px;
-  color: var(--glossary-dark-text);
-  font-size: clamp(1.45rem, 3vw, 2.2rem);
-  line-height: 1.05;
-  letter-spacing: 0;
-}
-
-body.page-glossary.page-bjj-glossary .ss-paths-header p {
-  max-width: 680px;
-  margin: 0 auto;
-  color: var(--glossary-dark-muted);
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-card {
-  min-width: 0;
-  min-height: 100%;
-  padding: 16px;
-  border: 1px solid var(--glossary-dark-border);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--glossary-dark-text);
-  box-shadow: none;
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-card h3 {
-  margin: 0 0 8px;
-  color: var(--glossary-dark-text);
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-card p {
-  min-height: auto;
-  margin: 0 0 12px;
-  color: var(--glossary-dark-muted);
-  font-size: 0.92rem;
-  line-height: 1.45;
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-link {
-  color: var(--glossary-accent-text);
-  font-weight: 900;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-link:hover,
-body.page-glossary.page-bjj-glossary .ss-path-link:focus-visible {
-  color: var(--ss-surface);
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-chips {
-  display: flex !important;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 2px;
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-chips a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 5px 8px;
-  border: 1px solid rgba(0, 221, 224, 0.36);
-  border-radius: 999px;
-  background: var(--glossary-pill-bg);
-  color: var(--glossary-dark-text);
-  font-size: 0.76rem;
-  font-weight: 800;
-  line-height: 1;
-  text-decoration: none;
-}
-
-body.page-glossary.page-bjj-glossary .ss-path-chips a:hover,
-body.page-glossary.page-bjj-glossary .ss-path-chips a:focus-visible {
-  border-color: var(--glossary-accent);
-  background: var(--glossary-pill-hover-bg);
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-card,
-body.page-glossary.page-bjj-glossary .term-card.glossary-card,
-body.page-glossary.page-bjj-glossary .ss-glossary-term-card.glossary-card {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
-    var(--glossary-dark-panel);
-  border-color: var(--glossary-dark-border);
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-card h3,
-body.page-glossary.page-bjj-glossary .glossary-card h3 a,
-body.page-glossary.page-bjj-glossary .term-card__title,
-body.page-glossary.page-bjj-glossary .term-card__title a {
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-card p,
-body.page-glossary.page-bjj-glossary .term-card__summary,
-body.page-glossary.page-bjj-glossary .ss-glossary-term-def,
-body.page-glossary.page-bjj-glossary .glossary-related,
-body.page-glossary.page-bjj-glossary .glossary-related span {
-  color: var(--glossary-dark-muted);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-related a {
-  color: var(--glossary-dark-text);
-  border-bottom-color: var(--glossary-dark-border-strong);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-pill {
-  min-height: 26px;
-  align-items: center;
-  border: 1px solid rgba(0, 221, 224, 0.42);
-  background: var(--glossary-pill-bg);
-  color: var(--glossary-accent-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-card-cta,
-body.page-glossary.page-bjj-glossary .term-card__cta,
-body.page-glossary.page-bjj-glossary .ss-glossary-term-cta {
-  border: 1px solid var(--glossary-dark-border-strong);
-  background: rgba(0, 221, 224, 0.14);
-  color: var(--glossary-dark-text);
-}
-
-body.page-glossary.page-bjj-glossary .glossary-card-cta:hover,
-body.page-glossary.page-bjj-glossary .glossary-card-cta:focus-visible,
-body.page-glossary.page-bjj-glossary .term-card__cta:hover,
-body.page-glossary.page-bjj-glossary .term-card__cta:focus-visible {
-  background: var(--glossary-accent);
-  color: #062022;
-}
-
-body.page-glossary-term.page-bjj-glossary {
-  --glossary-term-dark-panel: #151f25;
-  --glossary-term-dark-panel-soft: #102629;
-  --glossary-term-dark-text: #f4fbfb;
-  --glossary-term-dark-muted: #cfe1e1;
-  --glossary-term-dark-border: rgba(255, 255, 255, 0.16);
-  --glossary-term-accent: #8ffcff;
-}
-
-body.page-glossary-term.page-bjj-glossary .term-hero,
-body.page-glossary-term.page-bjj-glossary .glossary-card,
-body.page-glossary-term.page-bjj-glossary .term-card,
-body.page-glossary-term.page-bjj-glossary .ss-glossary-rich-sidebar-card,
-body.page-glossary-term.page-bjj-glossary .on-this-page,
-body.page-glossary-term.page-bjj-glossary section[id] {
-  border-color: var(--glossary-term-dark-border);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
-    var(--glossary-term-dark-panel);
-  color: var(--glossary-term-dark-text);
-}
-
-body.page-glossary-term.page-bjj-glossary .term-hero h1,
-body.page-glossary-term.page-bjj-glossary .glossary-card h2,
-body.page-glossary-term.page-bjj-glossary .glossary-card h3,
-body.page-glossary-term.page-bjj-glossary .glossary-card h4,
-body.page-glossary-term.page-bjj-glossary .term-card h3,
-body.page-glossary-term.page-bjj-glossary .related-term-card h3,
-body.page-glossary-term.page-bjj-glossary summary {
-  color: var(--glossary-term-dark-text);
-}
-
-body.page-glossary-term.page-bjj-glossary .term-meta,
-body.page-glossary-term.page-bjj-glossary .term-summary,
-body.page-glossary-term.page-bjj-glossary .glossary-card p,
-body.page-glossary-term.page-bjj-glossary .glossary-card li,
-body.page-glossary-term.page-bjj-glossary .term-card p,
-body.page-glossary-term.page-bjj-glossary section[id] p,
-body.page-glossary-term.page-bjj-glossary section[id] li {
-  color: var(--glossary-term-dark-muted);
-}
-
-body.page-glossary-term.page-bjj-glossary .term-tags span,
-body.page-glossary-term.page-bjj-glossary .glossary-pill,
-body.page-glossary-term.page-bjj-glossary .badge {
-  border: 1px solid rgba(0, 221, 224, 0.34);
-  background: rgba(0, 221, 224, 0.13);
-  color: var(--glossary-term-dark-text);
-}
-
-body.page-glossary-term.page-bjj-glossary .glossary-card a,
-body.page-glossary-term.page-bjj-glossary .term-card a,
-body.page-glossary-term.page-bjj-glossary section[id] a {
-  color: var(--glossary-term-accent);
-}
-
-body.page-glossary-term.page-bjj-glossary .glossary-card a:hover,
-body.page-glossary-term.page-bjj-glossary .term-card a:hover,
-body.page-glossary-term.page-bjj-glossary section[id] a:hover,
-body.page-glossary-term.page-bjj-glossary .glossary-card a:focus-visible,
-body.page-glossary-term.page-bjj-glossary .term-card a:focus-visible,
-body.page-glossary-term.page-bjj-glossary section[id] a:focus-visible {
-  color: var(--ss-surface);
-}
-
-@media (max-width: 920px) {
-  body.page-glossary.page-bjj-glossary .ss-path-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  body.page-glossary.page-bjj-glossary .glossary-next-steps {
-    width: min(100% - 22px, 1120px);
-  }
-
-  body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-start-cta,
-  body.page-glossary.page-bjj-glossary .glossary-next-steps .d-flex {
-    display: grid !important;
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-
-  body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-btn {
-    width: 100%;
-  }
-
-  body.page-glossary.page-bjj-glossary .ss-path-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Fix visibility issues for .ss-mini-link sidebar items on term pages */
-.ss-mini-link {
-  display: block;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.ss-mini-link:hover {
+body.page-glossary.page-bjj-glossary .glossary-btn-primary:focus-visible,
+body.page-glossary-term.page-bjj-glossary .glossary-btn-primary:hover,
+body.page-glossary-term.page-bjj-glossary .glossary-btn-primary:focus-visible {
+  background: #0d5434 !important;
+  border-color: #0d5434 !important;
+  color: #FFFFFF !important;
   transform: translateY(-1px);
 }
 
-.ss-mini-link strong {
-  display: block;
-  color: var(--ss-text);
-  /* Force dark text on white background */
-  font-size: 1.1rem;
-  line-height: 1.2;
-  margin-bottom: 2px;
+body.page-glossary.page-bjj-glossary .glossary-btn-secondary,
+body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(54, 43, 36, 0.22) !important;
+  color: var(--ss-text, #1F1712) !important;
 }
 
-.ss-mini-link span {
-  display: block;
-  color: var(--ss-muted);
-  /* Force muted dark text on white background */
-  font-size: 0.9rem;
-  line-height: 1.3;
+body.page-glossary.page-bjj-glossary .glossary-btn-secondary:hover,
+body.page-glossary.page-bjj-glossary .glossary-btn-secondary:focus-visible,
+body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:hover,
+body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible {
+  background: #F4F1ED !important;
+  border-color: rgba(54, 43, 36, 0.4) !important;
+  color: var(--ss-text, #1F1712) !important;
+  transform: translateY(-1px);
 }
 
-/* Bulletproof fix for glossary-btn-secondary visibility */
-body.page-glossary.page-bjj-glossary a.glossary-btn-secondary,
-.page-glossary main.glossary-page a.glossary-btn-secondary,
-.glossary-shell.glossary-next-steps a.glossary-btn-secondary,
-.glossary-next-steps .d-flex a.glossary-btn-secondary,
-.glossary-start-cta a.glossary-btn-secondary {
-  color: var(--ss-surface);
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.15);
-  display: inline-flex !important;
-  visibility: visible;
-  opacity: 1;
-}
-
-body.page-glossary.page-bjj-glossary .glossary-pill {
-  background: var(--glossary-pill-bg);
-  color: #8ffcff;
-  font-weight: 700;
-  border: 1px solid rgba(0, 221, 224, 0.42);
-}
-
-/* WCAG Contrast Fixes for Glossary Controls & Filters */
-body.page-glossary.page-bjj-glossary details.glossary-advanced-filters summary,
-.glossary-shell details.glossary-advanced-filters summary {
-  color: #8ffcff;
-  font-weight: 700;
-}
-
-body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset legend,
-.glossary-shell details.glossary-advanced-filters fieldset legend {
-  color: #f4fbfb;
-  font-weight: 700;
-}
-
-.glossary-visit-card h2 {
-  color: #f4fbfb;
-}
-
-.glossary-visit-card li,
-.glossary-visit-card p {
-  color: #b8cccc;
-}
-
-#copy-term-link {
-  color: #211d18;
-  background-color: #efe8dc;
-  border-color: rgba(33, 29, 24, 0.28);
-}
-
-.ss-term-next-step {
-  background: #091a1c;
-  color: #f4fbfb;
-  padding: 2.5rem 1.5rem;
-  border-radius: 16px;
-  margin: 2rem 0;
-}
-
-.ss-term-next-step h2,
-.ss-term-next-step p,
-.ss-term-next-step .ss-eyebrow {
-  color: #f4fbfb;
-}
-
-.ss-term-next-step .ss-link-grid a {
-  color: #8ffcff;
-}
-
-.ss-term-next-step a.btn-primary {
-  background-color: var(--ss-cyan);
-  border-color: var(--ss-cyan);
-  color: #052324;
-  font-weight: 700;
-}
-
-.ss-term-next-step a.btn-outline-primary {
-  color: var(--ss-surface);
-  border-color: var(--ss-cyan);
-  background-color: rgba(0, 221, 224, 0.15);
-  font-weight: 700;
-}
-
-/* WCAG Contrast Overrides for Glossary Flywheel & Vault Teaser */
-.glossary-flywheel-step h3,
-.glossary-vault-teaser-copy h3 {
-  color: #f4fbfb;
-}
-
-.glossary-flywheel-step p,
-.glossary-vault-teaser-copy p {
-  color: #b8cccc;
-}
-
-.glossary-flywheel-step .step-link {
-  color: #8ffcff;
-}
-
-/* ==========================================================================
-   Infil-Style Interactive Dictionary Styles
-   ========================================================================== */
-
-/* Hero Compact */
+/* 6. Compact Hero Section */
 .glossary-hero-compact {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
   gap: 32px;
   align-items: center;
   padding: 36px 32px;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(0, 221, 224, 0.12), transparent 45%),
-    linear-gradient(135deg, #0b282a 0%, #0d1e22 60%, #071314 100%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
   border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(31, 23, 18, 0.05);
   margin-bottom: 24px;
 }
 
+.glossary-eyebrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ss-green, #116A42);
+  margin: 0 0 8px;
+}
+
+.glossary-hero-copy h1 {
+  color: var(--ss-text, #1F1712);
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 6px 0 12px;
+}
+
 .glossary-lead {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: var(--glossary-dark-muted, #b8cccc);
-  margin: 12px 0 18px;
+  color: var(--ss-muted, #4F433C);
+  margin: 0 0 18px;
 }
 
 .glossary-day-one-strip {
@@ -812,7 +334,7 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--glossary-accent-text, #8ffcff);
+  color: var(--ss-muted, #4F433C);
 }
 
 .day-one-chips {
@@ -824,11 +346,11 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 .day-one-chip {
   display: inline-flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(0, 221, 224, 0.35);
-  background: rgba(0, 221, 224, 0.08);
-  color: #f4fbfb;
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
@@ -837,35 +359,35 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 
 .day-one-chip:hover,
 .day-one-chip:focus-visible {
-  background: var(--ss-cyan, #00dde0);
-  color: #062022;
-  border-color: var(--ss-cyan, #00dde0);
+  background: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
+  color: #FFFFFF;
   transform: translateY(-1px);
 }
 
 .glossary-hero-cta-card {
   padding: 24px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.14);
   text-align: left;
 }
 
 .glossary-hero-cta-card h3 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
   margin: 0 0 8px;
 }
 
 .glossary-hero-cta-card p {
   font-size: 0.92rem;
   line-height: 1.5;
-  color: var(--glossary-dark-muted, #b8cccc);
+  color: var(--ss-muted, #4F433C);
   margin: 0 0 16px;
 }
 
-/* Command Bar */
+/* 7. Sticky Command Bar */
 .glossary-app-section {
   margin-block: 20px 48px;
 }
@@ -874,13 +396,13 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   position: sticky;
   top: 72px;
   z-index: 30;
-  padding: 20px 24px;
+  padding: 18px 24px;
   border-radius: 20px;
-  background: rgba(13, 32, 34, 0.96);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 221, 224, 0.3);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  box-shadow: 0 10px 30px rgba(31, 23, 18, 0.07);
   margin-bottom: 24px;
 }
 
@@ -901,7 +423,7 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 .glossary-search-icon {
   position: absolute;
   left: 16px;
-  color: var(--glossary-accent-text, #8ffcff);
+  color: var(--ss-muted, #756b5f);
   font-size: 1.15rem;
   pointer-events: none;
 }
@@ -911,9 +433,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   height: 50px;
   padding: 10px 50px 10px 46px;
   border-radius: 14px;
-  border: 1.5px solid rgba(0, 221, 224, 0.45);
-  background: #091a1c;
-  color: #f4fbfb;
+  border: 1.5px solid rgba(54, 43, 36, 0.22);
+  background: #FFFFFF;
+  color: var(--ss-text, #1F1712);
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.2s ease;
@@ -921,9 +443,13 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 
 .glossary-search-input:focus {
   outline: none;
-  border-color: var(--ss-cyan, #00dde0);
-  box-shadow: 0 0 0 3px rgba(0, 221, 224, 0.25);
-  background: #0d2326;
+  border-color: var(--ss-green, #116A42);
+  box-shadow: 0 0 0 3px rgba(17, 106, 66, 0.2);
+  background: #FFFFFF;
+}
+
+.glossary-search-input::placeholder {
+  color: rgba(79, 67, 60, 0.6);
 }
 
 .glossary-clear-btn {
@@ -931,7 +457,7 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   right: 42px;
   background: transparent;
   border: none;
-  color: var(--glossary-dark-muted, #b8cccc);
+  color: var(--ss-muted, #4F433C);
   cursor: pointer;
   padding: 6px;
   font-size: 1.1rem;
@@ -940,7 +466,7 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 }
 
 .glossary-clear-btn:hover {
-  color: #fff;
+  color: var(--ss-text, #1F1712);
 }
 
 .glossary-kbd-hint {
@@ -948,9 +474,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   right: 14px;
   padding: 3px 8px;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--glossary-dark-muted, #b8cccc);
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.18);
+  color: var(--ss-muted, #4F433C);
   font-size: 0.75rem;
   font-family: monospace;
   pointer-events: none;
@@ -970,9 +496,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   height: 48px;
   padding: 0 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
-  color: #f4fbfb;
+  border: 1px solid rgba(54, 43, 36, 0.18);
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
@@ -982,21 +508,13 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 
 .glossary-btn-action:hover,
 .glossary-btn-action:focus-visible {
-  border-color: var(--ss-cyan, #00dde0);
-  background: rgba(0, 221, 224, 0.16);
-  color: #8ffcff;
+  border-color: var(--ss-green, #116A42);
+  background: var(--ss-green, #116A42);
+  color: #FFFFFF;
 }
 
 .glossary-theme-select {
-  height: 48px;
-  padding: 0 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: #091a1c;
-  color: #f4fbfb;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
+  display: none !important;
 }
 
 /* Category Filter Tabs */
@@ -1010,9 +528,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 .glossary-category-pill {
   padding: 7px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  color: #cfe1e1;
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -1020,16 +538,16 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 }
 
 .glossary-category-pill:hover {
-  background: rgba(0, 221, 224, 0.12);
-  color: #fff;
-  border-color: rgba(0, 221, 224, 0.35);
+  background: #ECE7E1;
+  color: var(--ss-text, #1F1712);
+  border-color: rgba(54, 43, 36, 0.3);
 }
 
 .glossary-category-pill.is-active,
 .glossary-category-pill[aria-pressed="true"] {
-  background: var(--ss-cyan, #00dde0);
-  border-color: var(--ss-cyan, #00dde0);
-  color: #062022;
+  background: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
+  color: #FFFFFF;
   font-weight: 700;
 }
 
@@ -1040,13 +558,13 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   gap: 8px;
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(54, 43, 36, 0.1);
 }
 
 .glossary-az-label {
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--glossary-dark-muted, #b8cccc);
+  color: var(--ss-muted, #4F433C);
 }
 
 .glossary-az-scroll {
@@ -1065,9 +583,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: #cfe1e1;
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
@@ -1075,15 +593,15 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 }
 
 .glossary-az-letter:hover {
-  background: rgba(0, 221, 224, 0.18);
-  border-color: var(--ss-cyan, #00dde0);
-  color: #fff;
+  background: rgba(17, 106, 66, 0.12);
+  border-color: var(--ss-green, #116A42);
+  color: var(--ss-green, #116A42);
 }
 
 .glossary-az-letter.is-active {
-  background: var(--ss-cyan, #00dde0);
-  border-color: var(--ss-cyan, #00dde0);
-  color: #062022;
+  background: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
+  color: #FFFFFF;
 }
 
 .glossary-az-letter.is-disabled {
@@ -1099,26 +617,29 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   justify-content: space-between;
   margin-top: 12px;
   font-size: 0.88rem;
-  color: var(--glossary-dark-muted, #b8cccc);
+  color: var(--ss-muted, #4F433C);
+}
+
+.glossary-count-text strong {
+  color: var(--ss-text, #1F1712);
 }
 
 .glossary-reset-btn {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(54, 43, 36, 0.2);
   border-radius: 8px;
   padding: 4px 10px;
-  color: var(--glossary-accent-text, #8ffcff);
+  color: var(--ss-green, #116A42);
   font-size: 0.8rem;
+  font-weight: 600;
   cursor: pointer;
 }
 
 .glossary-reset-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--ss-surface2, #F4F1ED);
 }
 
-/* ==========================================================================
-   Master-Detail Split Grid Layout
-   ========================================================================== */
+/* 8. Master-Detail Split Grid Layout */
 .glossary-split-layout {
   display: grid;
   grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
@@ -1129,10 +650,10 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 /* Directory Column (Left) */
 .glossary-directory-column {
   border-radius: 20px;
-  background: var(--glossary-dark-panel, #0d2022);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.12);
   overflow: hidden;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(31, 23, 18, 0.05);
   position: sticky;
   top: 240px;
   max-height: calc(100vh - 260px);
@@ -1145,8 +666,8 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--ss-surface2, #F4F1ED);
+  border-bottom: 1px solid rgba(54, 43, 36, 0.12);
 }
 
 .directory-heading {
@@ -1154,12 +675,12 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--glossary-accent-text, #8ffcff);
+  color: var(--ss-text, #1F1712);
 }
 
 .directory-count {
   font-size: 0.82rem;
-  color: var(--glossary-dark-muted, #b8cccc);
+  color: var(--ss-muted, #4F433C);
 }
 
 .glossary-directory-list {
@@ -1170,7 +691,7 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   flex-direction: column;
   gap: 6px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 221, 224, 0.3) transparent;
+  scrollbar-color: rgba(54, 43, 36, 0.2) transparent;
 }
 
 .glossary-directory-item {
@@ -1179,22 +700,23 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   padding: 12px 16px;
   border-radius: 12px;
   border: 1px solid transparent;
-  background: rgba(255, 255, 255, 0.03);
-  color: #f4fbfb;
+  background: transparent;
+  color: var(--ss-text, #1F1712);
   cursor: pointer;
   transition: all 0.15s ease;
   position: relative;
 }
 
 .glossary-directory-item:hover {
-  background: rgba(0, 221, 224, 0.08);
-  border-color: rgba(0, 221, 224, 0.25);
+  background: rgba(17, 106, 66, 0.05);
+  border-color: rgba(17, 106, 66, 0.15);
 }
 
 .glossary-directory-item.is-active {
-  background: rgba(0, 221, 224, 0.14);
-  border-color: var(--ss-cyan, #00dde0);
-  box-shadow: inset 4px 0 0 var(--ss-cyan, #00dde0);
+  background: rgba(17, 106, 66, 0.08);
+  border-color: rgba(17, 106, 66, 0.22);
+  border-left: 4px solid var(--ss-green, #116A42);
+  box-shadow: inset 4px 0 0 var(--ss-green, #116A42);
 }
 
 .dir-item-top {
@@ -1208,11 +730,11 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 .dir-item-title {
   font-size: 1rem;
   font-weight: 700;
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
 }
 
 .glossary-directory-item.is-active .dir-item-title {
-  color: #8ffcff;
+  color: var(--ss-green, #116A42);
 }
 
 .dir-item-badge {
@@ -1220,14 +742,14 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--glossary-dark-muted, #b8cccc);
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-green, #116A42);
 }
 
 .dir-item-snippet {
   font-size: 0.82rem;
-  line-height: 1.4;
-  color: var(--glossary-dark-muted, #b8cccc);
+  line-height: 1.45;
+  color: var(--ss-muted, #4F433C);
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1246,7 +768,7 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   margin-bottom: 12px;
 }
 
-/* Reader Column (Right) */
+/* 9. Reader Column (Right) */
 .glossary-reader-column {
   min-width: 0;
 }
@@ -1254,11 +776,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 .glossary-reader-card {
   padding: 36px 40px;
   border-radius: 24px;
-  background:
-    radial-gradient(circle at 90% 10%, rgba(0, 221, 224, 0.08), transparent 35%),
-    linear-gradient(180deg, #0e2427 0%, #081719 100%);
-  border: 1px solid rgba(0, 221, 224, 0.22);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  box-shadow: 0 12px 32px rgba(31, 23, 18, 0.06);
   text-align: left;
 }
 
@@ -1282,27 +802,27 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 }
 
 .reader-pill-cat {
-  background: rgba(0, 221, 224, 0.15);
-  border: 1px solid rgba(0, 221, 224, 0.4);
-  color: #8ffcff;
+  background: rgba(40, 159, 161, 0.12);
+  border: 1px solid rgba(40, 159, 161, 0.3);
+  color: #18696b;
 }
 
 .reader-pill-level {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f4fbfb;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.15);
+  color: var(--ss-text, #1F1712);
 }
 
 .reader-pill-foundational {
-  background: rgba(255, 119, 0, 0.18);
-  border: 1px solid rgba(255, 119, 0, 0.5);
-  color: #ff9a58;
+  background: rgba(184, 138, 68, 0.12);
+  border: 1px solid rgba(184, 138, 68, 0.35);
+  color: #785117;
 }
 
 .reader-pill-curriculum {
-  background: rgba(17, 106, 66, 0.25);
-  border: 1px solid rgba(17, 106, 66, 0.6);
-  color: #6ee7b7;
+  background: rgba(17, 106, 66, 0.10);
+  border: 1px solid rgba(17, 106, 66, 0.3);
+  color: #116A42;
 }
 
 .reader-title-row {
@@ -1315,10 +835,11 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 }
 
 .reader-title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
   margin: 0;
 }
 
@@ -1332,9 +853,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   height: 38px;
   padding: 0 14px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
-  color: #f4fbfb;
+  border: 1px solid rgba(54, 43, 36, 0.18);
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
@@ -1346,16 +867,16 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 }
 
 .reader-nav-btn:hover {
-  background: rgba(0, 221, 224, 0.18);
-  border-color: var(--ss-cyan, #00dde0);
-  color: #8ffcff;
+  background: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
+  color: #FFFFFF;
 }
 
 .reader-aliases {
   font-size: 0.95rem;
-  color: var(--glossary-dark-muted, #b8cccc);
+  color: var(--ss-muted, #4F433C);
   margin: 4px 0 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(54, 43, 36, 0.1);
   padding-bottom: 16px;
 }
 
@@ -1370,14 +891,14 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--glossary-accent-text, #8ffcff);
+  color: var(--ss-green, #116A42);
   margin: 0 0 10px;
 }
 
 .reader-text {
   font-size: 1.05rem;
   line-height: 1.65;
-  color: #d1e2e2;
+  color: var(--ss-text, #1F1712);
   margin: 0;
 }
 
@@ -1385,7 +906,7 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
 }
 
 /* Callout Boxes */
@@ -1412,7 +933,6 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   font-size: 1rem;
   font-weight: 700;
   margin: 0;
-  color: #f4fbfb;
 }
 
 .callout-text {
@@ -1423,31 +943,39 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 
 /* 1. Everyday Words (Beginner Translation) Box */
 .reader-translation-box {
-  background: rgba(0, 221, 224, 0.08);
-  border-left-color: var(--ss-cyan, #00dde0);
-  border-top: 1px solid rgba(0, 221, 224, 0.2);
-  border-right: 1px solid rgba(0, 221, 224, 0.2);
-  border-bottom: 1px solid rgba(0, 221, 224, 0.2);
+  background: rgba(40, 159, 161, 0.08);
+  border-left-color: #289FA1;
+  border-top: 1px solid rgba(40, 159, 161, 0.22);
+  border-right: 1px solid rgba(40, 159, 161, 0.22);
+  border-bottom: 1px solid rgba(40, 159, 161, 0.22);
+}
+
+.reader-translation-box .callout-title {
+  color: #176062;
 }
 
 .reader-translation-box .callout-text {
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
   font-weight: 500;
 }
 
 /* 2. Coach Cues Box */
 .reader-cues-box {
-  background: rgba(17, 106, 66, 0.15);
-  border-left-color: #289fa1;
-  border-top: 1px solid rgba(40, 159, 161, 0.25);
-  border-right: 1px solid rgba(40, 159, 161, 0.25);
-  border-bottom: 1px solid rgba(40, 159, 161, 0.25);
+  background: rgba(17, 106, 66, 0.07);
+  border-left-color: #116A42;
+  border-top: 1px solid rgba(17, 106, 66, 0.22);
+  border-right: 1px solid rgba(17, 106, 66, 0.22);
+  border-bottom: 1px solid rgba(17, 106, 66, 0.22);
+}
+
+.reader-cues-box .callout-title {
+  color: #116A42;
 }
 
 .coach-primary-cue {
   font-size: 1.08rem;
   font-weight: 600;
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
   margin: 0 0 10px;
 }
 
@@ -1460,27 +988,31 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 .coach-phrases-list li {
   font-size: 0.98rem;
   line-height: 1.55;
-  color: #d1e2e2;
+  color: var(--ss-text, #1F1712);
   margin-bottom: 6px;
 }
 
 /* 3. Safety Box */
 .reader-safety-box {
-  background: rgba(255, 119, 0, 0.1);
-  border-left-color: #ff9a58;
-  border-top: 1px solid rgba(255, 119, 0, 0.25);
-  border-right: 1px solid rgba(255, 119, 0, 0.25);
-  border-bottom: 1px solid rgba(255, 119, 0, 0.25);
+  background: rgba(184, 138, 68, 0.09);
+  border-left-color: #8B522E;
+  border-top: 1px solid rgba(184, 138, 68, 0.25);
+  border-right: 1px solid rgba(184, 138, 68, 0.25);
+  border-bottom: 1px solid rgba(184, 138, 68, 0.25);
+}
+
+.reader-safety-box .callout-title {
+  color: #73451e;
 }
 
 .safety-text {
   font-size: 1rem;
   line-height: 1.6;
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
   margin: 0;
 }
 
-/* Related Chips */
+/* Related Chips & Inline Autolinks */
 .reader-related-chips {
   display: flex;
   flex-wrap: wrap;
@@ -1494,9 +1026,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   align-items: center;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(0, 221, 224, 0.4);
-  background: rgba(0, 221, 224, 0.1);
-  color: #8ffcff;
+  border: 1px solid rgba(17, 106, 66, 0.25);
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-green, #116A42);
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
@@ -1506,9 +1038,9 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
 
 .reader-related-chip:hover,
 .glossary-inline-chip:hover {
-  background: var(--ss-cyan, #00dde0);
-  border-color: var(--ss-cyan, #00dde0);
-  color: #062022;
+  background: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
+  color: #FFFFFF;
   transform: translateY(-1px);
 }
 
@@ -1521,22 +1053,22 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   gap: 20px;
   padding: 24px 28px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.14);
   margin-top: 36px;
 }
 
 .reader-cta-copy h4 {
   font-size: 1.18rem;
   font-weight: 700;
-  color: #f4fbfb;
+  color: var(--ss-text, #1F1712);
   margin: 0 0 6px;
 }
 
 .reader-cta-copy p {
   font-size: 0.92rem;
   line-height: 1.5;
-  color: var(--glossary-dark-muted, #b8cccc);
+  color: var(--ss-muted, #4F433C);
   margin: 0;
 }
 
@@ -1552,13 +1084,13 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: #00dde0;
-  color: #062022;
+  background: var(--ss-ink, #211d18);
+  color: #FFFFFF;
   padding: 12px 24px;
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.92rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 25px rgba(33, 29, 24, 0.2);
   opacity: 0;
   pointer-events: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1575,7 +1107,720 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
   display: none;
 }
 
-/* Responsive adjustments */
+/* 10. Day 1 Starter Pack (Cards) */
+body.page-glossary.page-bjj-glossary .glossary-start-path {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 24px;
+  padding: clamp(20px, 3.5vw, 36px);
+  box-shadow: 0 8px 24px rgba(31, 23, 18, 0.05);
+  margin-block: 32px;
+}
+
+body.page-glossary.page-bjj-glossary .day-one-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-block: 20px;
+}
+
+body.page-glossary.page-bjj-glossary .day-one-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  color: var(--ss-text, #1F1712);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+body.page-glossary.page-bjj-glossary .day-one-card:hover {
+  background: #ECE7E1;
+  border-color: rgba(54, 43, 36, 0.28);
+  transform: translateY(-2px);
+}
+
+body.page-glossary.page-bjj-glossary .day-one-card .num {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--ss-green, #116A42);
+  margin-bottom: 6px;
+}
+
+body.page-glossary.page-bjj-glossary .day-one-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ss-text, #1F1712);
+  margin: 0 0 6px;
+}
+
+body.page-glossary.page-bjj-glossary .day-one-card p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ss-muted, #4F433C);
+  margin: 0;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-start-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(54, 43, 36, 0.1);
+}
+
+body.page-glossary.page-bjj-glossary .glossary-start-cta p {
+  color: var(--ss-text, #1F1712);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 11. Curated Buyer Paths */
+body.page-glossary.page-bjj-glossary .ss-glossary-paths {
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(20px, 3.5vw, 36px);
+  border-radius: 24px;
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  box-shadow: 0 8px 24px rgba(31, 23, 18, 0.05);
+  margin-block: 32px;
+}
+
+body.page-glossary.page-bjj-glossary .ss-paths-header {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+body.page-glossary.page-bjj-glossary .ss-paths-eyebrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ss-green, #116A42);
+  margin: 0 0 6px;
+}
+
+body.page-glossary.page-bjj-glossary .ss-paths-header h2 {
+  margin: 0 0 10px;
+  color: var(--ss-text, #1F1712);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+}
+
+body.page-glossary.page-bjj-glossary .ss-paths-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--ss-muted, #4F433C);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-card {
+  padding: 20px;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 16px;
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
+  display: flex;
+  flex-direction: column;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-card h3 {
+  margin: 0 0 8px;
+  color: var(--ss-text, #1F1712);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-card p {
+  margin: 0 0 14px;
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-link {
+  color: var(--ss-green, #116A42);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-bottom: 12px;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-link:hover {
+  text-decoration: underline;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-chips {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-chips a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: var(--ss-text, #1F1712);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+body.page-glossary.page-bjj-glossary .ss-path-chips a:hover {
+  background: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
+  color: #FFFFFF;
+}
+
+/* 12. Learning Flywheel Section */
+body.page-glossary.page-bjj-glossary .glossary-flywheel-section {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 24px;
+  padding: clamp(20px, 3.5vw, 36px);
+  box-shadow: 0 8px 24px rgba(31, 23, 18, 0.05);
+  margin-block: 32px;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-block: 24px;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-step {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 16px;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-step .step-num {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ss-green, #116A42);
+  margin-bottom: 8px;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-step h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--ss-text, #1F1712);
+  margin: 0 0 10px;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-step p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ss-muted, #4F433C);
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-step .step-asset {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ss-green, #116A42);
+  margin-top: auto;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-step .step-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ss-green, #116A42);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-flywheel-step .step-link:hover {
+  text-decoration: underline;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-vault-teaser {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 18px;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.14);
+}
+
+body.page-glossary.page-bjj-glossary .glossary-vault-teaser-copy h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ss-text, #1F1712);
+  margin: 8px 0 6px;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-vault-teaser-copy p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ss-muted, #4F433C);
+  margin: 0;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-vault-teaser-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 13. Next Steps Footer CTA */
+body.page-glossary.page-bjj-glossary .glossary-next-steps {
+  margin: 32px auto 0;
+  padding: clamp(20px, 3.5vw, 36px);
+  border-radius: 24px;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.14);
+  text-align: center;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-start-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0;
+  border-top: none;
+  padding-top: 0;
+  text-align: center;
+}
+
+body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-start-cta p {
+  color: var(--ss-text, #1F1712);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 14. Term Subpages (bjj-glossary/[slug]) */
+body.page-glossary-term.page-bjj-glossary .glossary-term {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-breadcrumbs {
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+  color: var(--ss-muted, #4F433C);
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-breadcrumbs a {
+  color: var(--ss-green, #116A42);
+  text-decoration: none;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-return {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+body.page-glossary-term.page-bjj-glossary #back-to-results {
+  color: var(--ss-green, #116A42);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+body.page-glossary-term.page-bjj-glossary #back-to-results:hover {
+  text-decoration: underline;
+}
+
+body.page-glossary-term.page-bjj-glossary .term-hero,
+body.page-glossary-term.page-bjj-glossary .glossary-card,
+body.page-glossary-term.page-bjj-glossary .term-card,
+body.page-glossary-term.page-bjj-glossary .ss-glossary-rich-sidebar-card,
+body.page-glossary-term.page-bjj-glossary .on-this-page,
+body.page-glossary-term.page-bjj-glossary section[id] {
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 18px;
+  background: var(--ss-surface, #FFFFFF);
+  color: var(--ss-text, #1F1712);
+  padding: clamp(20px, 3vw, 32px);
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(31, 23, 18, 0.04);
+}
+
+body.page-glossary-term.page-bjj-glossary .term-hero h1,
+body.page-glossary-term.page-bjj-glossary .glossary-card h2,
+body.page-glossary-term.page-bjj-glossary .glossary-card h3,
+body.page-glossary-term.page-bjj-glossary .glossary-card h4,
+body.page-glossary-term.page-bjj-glossary .term-card h3,
+body.page-glossary-term.page-bjj-glossary .related-term-card h3,
+body.page-glossary-term.page-bjj-glossary summary {
+  color: var(--ss-text, #1F1712);
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-weight: 800;
+}
+
+body.page-glossary-term.page-bjj-glossary .term-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin: 8px 0 14px;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-card h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  margin: 0 0 12px;
+}
+
+body.page-glossary-term.page-bjj-glossary .term-meta {
+  color: var(--ss-green, #116A42);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+body.page-glossary-term.page-bjj-glossary .term-summary {
+  font-size: 1.18rem;
+  line-height: 1.6;
+  color: var(--ss-text, #1F1712);
+  margin: 0 0 18px;
+}
+
+body.page-glossary-term.page-bjj-glossary .term-tags,
+body.page-glossary-term.page-bjj-glossary .chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body.page-glossary-term.page-bjj-glossary .term-pill,
+body.page-glossary-term.page-bjj-glossary .glossary-pill,
+body.page-glossary-term.page-bjj-glossary .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(54, 43, 36, 0.15);
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-card p,
+body.page-glossary-term.page-bjj-glossary .glossary-card li,
+body.page-glossary-term.page-bjj-glossary section[id] p,
+body.page-glossary-term.page-bjj-glossary section[id] li {
+  color: var(--ss-text, #1F1712);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-card a,
+body.page-glossary-term.page-bjj-glossary .term-card a,
+body.page-glossary-term.page-bjj-glossary section[id] a {
+  color: var(--ss-green, #116A42);
+  font-weight: 600;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-card a:hover,
+body.page-glossary-term.page-bjj-glossary .term-card a:hover,
+body.page-glossary-term.page-bjj-glossary section[id] a:hover {
+  color: #0d5434;
+  text-decoration: underline;
+}
+
+/* Safety cue callout on term page */
+body.page-glossary-term.page-bjj-glossary .ss-safety-cue {
+  background: rgba(184, 138, 68, 0.08) !important;
+  border-left: 4px solid #8B522E !important;
+  border-color: rgba(184, 138, 68, 0.22);
+}
+
+body.page-glossary-term.page-bjj-glossary .ss-safety-cue h2 {
+  color: #73451e !important;
+}
+
+/* Related terms grid on term page */
+body.page-glossary-term.page-bjj-glossary .glossary-term-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+body.page-glossary-term.page-bjj-glossary .related-card {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.15s ease;
+}
+
+body.page-glossary-term.page-bjj-glossary .related-card:hover {
+  background: #ECE7E1;
+  border-color: rgba(54, 43, 36, 0.25);
+  transform: translateY(-2px);
+}
+
+body.page-glossary-term.page-bjj-glossary .related-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ss-text, #1F1712);
+  margin: 0 0 6px;
+}
+
+body.page-glossary-term.page-bjj-glossary .related-card p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ss-muted, #4F433C);
+  margin: 0 0 10px;
+  flex-grow: 1;
+}
+
+body.page-glossary-term.page-bjj-glossary .related-card span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ss-green, #116A42);
+}
+
+/* Relationship map grid */
+body.page-glossary-term.page-bjj-glossary .relationship-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+body.page-glossary-term.page-bjj-glossary .relationship-grid .glossary-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+body.page-glossary-term.page-bjj-glossary .relationship-grid h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ss-text, #1F1712);
+  margin: 0 0 8px;
+}
+
+body.page-glossary-term.page-bjj-glossary .relationship-grid ul {
+  padding-left: 16px;
+  margin: 0;
+}
+
+body.page-glossary-term.page-bjj-glossary .relationship-grid li {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+/* FAQ Details/Summary on term page */
+body.page-glossary-term.page-bjj-glossary .glossary-term-faq-list details {
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: none;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-faq-list summary {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ss-text, #1F1712);
+  cursor: pointer;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-faq-list details[open] summary {
+  margin-bottom: 10px;
+}
+
+/* Term Next Step CTA block */
+.ss-term-next-step {
+  background: var(--ss-surface2, #F4F1ED) !important;
+  color: var(--ss-text, #1F1712) !important;
+  padding: clamp(24px, 4vw, 36px) clamp(20px, 3.5vw, 32px);
+  border-radius: 20px !important;
+  border: 1px solid rgba(54, 43, 36, 0.14) !important;
+  margin: 28px 0 !important;
+  box-shadow: 0 8px 24px rgba(31, 23, 18, 0.05) !important;
+}
+
+.ss-term-next-step .ss-eyebrow {
+  color: var(--ss-green, #116A42) !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px;
+}
+
+.ss-term-next-step h2 {
+  color: var(--ss-text, #1F1712) !important;
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif) !important;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem) !important;
+  font-weight: 800 !important;
+  margin: 0 0 10px !important;
+}
+
+.ss-term-next-step p {
+  color: var(--ss-muted, #4F433C) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+.ss-term-next-step .ss-link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-block: 20px;
+}
+
+.ss-term-next-step .ss-link-grid a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  border: 1px solid rgba(54, 43, 36, 0.16);
+  border-radius: 10px;
+  color: var(--ss-green, #116A42) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.ss-term-next-step .ss-link-grid a:hover {
+  background: rgba(17, 106, 66, 0.08);
+  border-color: var(--ss-green, #116A42);
+}
+
+.ss-term-next-step .ss-link-grid span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.85rem;
+}
+
+.glossary-vault-feature-box,
+.glossary-grandslam-banner {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(54, 43, 36, 0.14) !important;
+  border-radius: 16px !important;
+  padding: 20px 24px !important;
+  margin-block: 20px !important;
+}
+
+.glossary-vault-feature-box h3,
+.glossary-grandslam-banner h3 {
+  color: var(--ss-text, #1F1712) !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+}
+
+.glossary-vault-feature-box p,
+.glossary-grandslam-banner p {
+  color: var(--ss-muted, #4F433C) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Reviews section on term page */
+body.page-glossary-term.page-bjj-glossary .glossary-term-reviews h2 {
+  margin-bottom: 16px;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-review-card {
+  padding: 20px;
+  border-radius: 14px;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-review-card blockquote {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ss-text, #1F1712);
+  margin: 0 0 10px;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-review-card figcaption {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ss-green, #116A42);
+}
+
+/* Pagination row */
+body.page-glossary-term.page-bjj-glossary .glossary-term-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(54, 43, 36, 0.12);
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-pagination a {
+  color: var(--ss-green, #116A42);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.page-glossary-term.page-bjj-glossary .glossary-term-pagination a:hover {
+  text-decoration: underline;
+}
+
+/* 15. Responsive Adjustments */
 @media (max-width: 991px) {
   .glossary-split-layout {
     grid-template-columns: 1fr;
@@ -1600,6 +1845,15 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
     position: relative;
     top: auto;
     padding: 16px 18px;
+  }
+  body.page-glossary.page-bjj-glossary .ss-path-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body.page-glossary.page-bjj-glossary .glossary-flywheel-grid {
+    grid-template-columns: 1fr;
+  }
+  body.page-glossary-term.page-bjj-glossary .relationship-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1633,12 +1887,6 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
     font-size: 0.82rem;
     justify-content: center;
   }
-  .glossary-theme-select {
-    grid-column: 1 / -1;
-    width: 100%;
-    height: 40px;
-    font-size: 0.82rem;
-  }
   .glossary-filter-categories {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -1669,6 +1917,15 @@ body.page-glossary.page-bjj-glossary details.glossary-advanced-filters fieldset 
     flex-wrap: wrap;
     justify-content: flex-start;
   }
+  body.page-glossary.page-bjj-glossary .ss-path-grid {
+    grid-template-columns: 1fr;
+  }
+  body.page-glossary.page-bjj-glossary .glossary-next-steps .d-flex {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-btn {
+    width: 100%;
+  }
 }
-
-

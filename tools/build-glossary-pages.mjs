@@ -811,9 +811,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
           <button type="button" id="copy-term-link-btn" class="glossary-btn glossary-btn-action" title="Copy link to current term">
             <span class="btn-icon">&#128279;</span> Copy Link
           </button>
-          <select id="glossary-theme" class="glossary-theme-select" aria-label="Color theme">
-            <option value="auto">Theme: Auto</option>
-            <option value="dark">Theme: Dark</option>
+          <select id="glossary-theme" class="glossary-theme-select" aria-label="Color theme" hidden>
             <option value="light">Theme: Light</option>
           </select>
         </div>

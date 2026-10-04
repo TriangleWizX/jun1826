@@ -84,21 +84,16 @@
 
   function applyTheme(theme) {
     const root = document.querySelector('[data-glossary-theme-root]') || document.body;
-    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const resolved = theme === 'auto' ? (systemDark ? 'dark' : 'light') : theme;
-    root.setAttribute('data-glossary-theme', resolved);
+    root.setAttribute('data-glossary-theme', 'light');
   }
 
   function initTheme() {
+    applyTheme('light');
     const select = document.getElementById('glossary-theme');
-    const stored = localStorage.getItem(THEME_KEY) || 'auto';
-    applyTheme(stored);
     if (!select) return;
-    select.value = ['auto', 'light', 'dark'].includes(stored) ? stored : 'auto';
+    select.value = 'light';
     select.addEventListener('change', () => {
-      const value = select.value || 'auto';
-      localStorage.setItem(THEME_KEY, value);
-      applyTheme(value);
+      applyTheme('light');
     });
   }
 
