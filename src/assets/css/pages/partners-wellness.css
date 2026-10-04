@@ -696,12 +696,16 @@ body.page-partners-wellness .btn-wellness-outline:focus-visible {
 
 .toolkit-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(54, 43, 36, 0.42);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(31, 23, 18, 0.88) 0%, rgba(31, 23, 18, 0.45) 60%, transparent 100%);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 2rem;
+  padding: 2.5rem 1.25rem 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
 }
 
 .toolkit-overlay-text {
@@ -712,7 +716,8 @@ body.page-partners-wellness .btn-wellness-outline:focus-visible {
   text-align: center;
   letter-spacing: 0.06em;
   line-height: 1.35;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  margin: 0;
 }
 
 /* ==========================================================================
