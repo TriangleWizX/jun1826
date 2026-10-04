@@ -24,11 +24,11 @@ body.page-glossary.page-bjj-glossary {
   --glossary-dark-muted: #b8cccc;
   --glossary-dark-border: rgba(255, 255, 255, 0.14);
   --glossary-dark-border-strong: rgba(0, 221, 224, 0.42);
-  --glossary-light-bg: var(--ss-bg);
-  --glossary-light-panel: var(--ss-surface);
-  --glossary-light-panel-soft: var(--ss-surface2);
-  --glossary-light-text: var(--ss-text);
-  --glossary-light-muted: var(--ss-muted);
+  --glossary-light-bg: #FBFAF8;
+  --glossary-light-panel: #FFFFFF;
+  --glossary-light-panel-soft: #F4F1ED;
+  --glossary-light-text: #1F1712;
+  --glossary-light-muted: #4F433C;
   --glossary-light-border: rgba(54, 43, 36, 0.16);
   --glossary-accent: var(--ss-cyan);
   --glossary-accent-text: #8ffcff;
@@ -94,35 +94,144 @@ body.page-glossary.page-bjj-glossary .glossary-surface--light :where(p, li) {
   color: var(--glossary-light-muted);
 }
 
+body.page-glossary.page-bjj-glossary .ss-page-feed {
+  width: min(920px, calc(100% - 24px));
+  margin: 36px auto;
+}
+
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post {
-  border-color: var(--glossary-light-border);
-  background: var(--glossary-light-panel);
-  color: var(--glossary-light-text);
+  display: block;
+  background: #FFFFFF !important;
+  color: #1F1712 !important;
+  border: 1px solid rgba(54, 43, 36, 0.16) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18) !important;
+  padding: clamp(20px, 3.2vw, 32px) !important;
+  text-align: left !important;
 }
 
-body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post :where(h2, .ss-community-author) {
-  color: var(--glossary-light-text);
-}
-
-body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post :where(p, .ss-community-context) {
-  color: var(--glossary-light-muted);
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-bottom: 18px !important;
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-avatar {
-  background: var(--glossary-light-panel-soft);
-  color: var(--glossary-light-text);
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 48px !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 999px !important;
+  background: var(--ss-green, #116A42) !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.05em !important;
+  box-shadow: 0 4px 10px rgba(17, 106, 66, 0.25) !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post-meta {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-author {
+  color: #1F1712 !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.2 !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-context {
+  color: #4F433C !important;
+  font-size: 0.88rem !important;
+  line-height: 1.3 !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: rgba(17, 106, 66, 0.12) !important;
+  color: #116A42 !important;
+  border: 1px solid rgba(17, 106, 66, 0.25) !important;
+  border-radius: 999px !important;
+  padding: 4px 12px !important;
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 10px !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post-body h2 {
+  color: #1F1712 !important;
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif) !important;
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+  margin: 8px 0 12px !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post-body p {
+  color: #362B24 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 20px !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-post-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 44px !important;
+  padding: 8px 18px !important;
+  border-radius: 999px !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill.ss-primary {
+  background: var(--ss-green, #116A42) !important;
+  color: #FFFFFF !important;
+  border: 1px solid var(--ss-green, #116A42) !important;
+  box-shadow: 0 6px 16px rgba(17, 106, 66, 0.25) !important;
+}
+
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill.ss-primary:hover,
+body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill.ss-primary:focus-visible {
+  background: #0d5434 !important;
+  border-color: #0d5434 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary) {
-  border-color: var(--glossary-light-border);
-  background: var(--glossary-light-panel);
-  color: var(--glossary-light-text);
+  background: #F4F1ED !important;
+  color: #1F1712 !important;
+  border: 1px solid rgba(54, 43, 36, 0.22) !important;
 }
 
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary):hover,
 body.page-glossary.page-bjj-glossary .ss-page-feed .ss-community-pill:not(.ss-primary):focus-visible {
-  border-color: rgba(40, 159, 161, 0.45);
-  color: var(--glossary-light-text);
+  background: #ECE7E1 !important;
+  color: #1F1712 !important;
+  border-color: rgba(54, 43, 36, 0.45) !important;
+  transform: translateY(-1px) !important;
 }
 
 body.page-glossary.page-bjj-glossary .glossary-hero-grid,
