@@ -173,7 +173,7 @@ describe('Link & Route Suite', () => {
     );
 
     // Verify key retirement redirects are explicitly mapped
-    const retiredKeys = ['/elite-concierge', '/bjj_anatomy_game'];
+    const retiredKeys = ['/elite-concierge', '/bjj_anatomy_game', '/bjj-anatomy-quiz'];
     for (const key of retiredKeys) {
       assert.ok(key in redirects, `config/legacy-redirects.json must map retired route ${key}`);
     }

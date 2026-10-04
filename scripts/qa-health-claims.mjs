@@ -10,7 +10,10 @@ const linksResearch = read("src/partials/links-quote-block.html");
 const evidenceResearch = read("src/partials/evidence-quote-block.html");
 const home = read("src/index.html");
 const ski = read("src/blog/jiu-jitsu-near-windham-mountain-club-ski-families/index.html");
-const anatomy = read("src/bjj-anatomy-quiz.html");
+const anatomyPath = fs.existsSync(path.join(root, "src/bjj-anatomy-quiz.html"))
+  ? "src/bjj-anatomy-quiz.html"
+  : "_archive/bjj-anatomy-quiz.html";
+const anatomy = read(anatomyPath);
 const faq = read("src/bjj-faqs.html");
 const catskill = read("src/bjj-classes/catskill-ny/index.html");
 const teenEvidence = read("src/partials/evidence-accordion-teens.html");

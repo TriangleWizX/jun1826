@@ -41,7 +41,6 @@ const TEST_PAGES = [
   { name: 'Blog Index', relPath: 'blog/index.html' },
   { name: 'Glossary Term', relPath: 'bjj-glossary/armbar/index.html' },
   { name: 'Glossary Index', relPath: 'bjj-glossary/index.html' },
-  { name: 'BJJ Anatomy Quiz', relPath: 'bjj-anatomy-quiz.html' },
   { name: 'Athlete Cross-Training', relPath: 'athlete-cross-training/index.html' }
 ];
 
