@@ -649,6 +649,12 @@ body .ss-global-nav-wrapper .ss-brand {
   min-width: 0;
   max-width: 15rem;
   margin: 0;
+  cursor: pointer;
+}
+body .ss-global-nav-wrapper .ss-brand * { cursor: pointer; }
+body .ss-global-nav-wrapper .ss-brand:hover .ss-brand-main,
+body .ss-global-nav-wrapper .ss-brand:focus-visible .ss-brand-main {
+  color: var(--color-accent-deep) !important;
 }
 body .ss-global-nav-wrapper .ss-brand-copy { text-align: left; align-items: flex-start; }
 body .ss-global-nav-wrapper .ss-brand-mark { width: 44px; height: 44px; }

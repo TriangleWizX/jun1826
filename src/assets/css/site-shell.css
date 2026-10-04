@@ -413,6 +413,16 @@ body .ss-global-nav-wrapper .ss-site-header::after {
   font-weight: 400;
   line-height: 1;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.ss-global-nav-wrapper .ss-brand * {
+  cursor: pointer;
+}
+
+.ss-global-nav-wrapper .ss-brand:hover .ss-brand-main,
+.ss-global-nav-wrapper .ss-brand:focus-visible .ss-brand-main {
+  color: var(--color-accent-deep);
 }
 
 .ss-global-nav-wrapper .ss-brand-mark {
@@ -423,6 +433,11 @@ body .ss-global-nav-wrapper .ss-site-header::after {
   border: 0;
   border-radius: 0;
   object-fit: contain;
+  transition: transform 0.15s ease;
+}
+
+.ss-global-nav-wrapper .ss-brand:hover .ss-brand-mark {
+  transform: scale(1.04);
 }
 
 .ss-global-nav-wrapper .ss-brand-copy {
@@ -680,6 +695,20 @@ footer.ss-new-site-footer {
   align-items: center;
   gap: var(--space-sm);
   margin: 0 0 var(--space-sm);
+  text-decoration: none;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.ss-new-site-footer .ss-new-brand-row:hover .ss-new-brand-title,
+.ss-new-site-footer .ss-new-brand-row:focus-visible .ss-new-brand-title {
+  color: var(--color-accent-deep);
+}
+
+.ss-new-site-footer .ss-new-brand-row:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm, 4px);
 }
 
 .ss-new-site-footer .ss-new-brand-logo {
@@ -693,10 +722,16 @@ footer.ss-new-site-footer {
   box-shadow: none;
   color: var(--color-ink);
   object-fit: contain;
-  transition: none;
+  transition: transform 0.15s ease;
+  cursor: pointer;
+}
+
+.ss-new-site-footer .ss-new-brand-row:hover .ss-new-brand-logo {
+  transform: scale(1.04);
 }
 
 .ss-new-site-footer .ss-new-brand-title {
+  display: block;
   min-width: 0;
   color: var(--color-ink);
   font-family: var(--font-display);
@@ -706,6 +741,8 @@ footer.ss-new-site-footer {
   letter-spacing: var(--tracking-display);
   line-height: 1;
   overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: color 0.15s ease;
 }
 
 .ss-new-site-footer .ss-new-brand-desc {
@@ -2374,6 +2411,16 @@ body .ss-global-nav-wrapper .ss-brand {
   color: var(--color-ink);
   font-family: var(--font-body);
   line-height: 1;
+  cursor: pointer;
+}
+
+body .ss-global-nav-wrapper .ss-brand * {
+  cursor: pointer;
+}
+
+body .ss-global-nav-wrapper .ss-brand:hover .ss-brand-main,
+body .ss-global-nav-wrapper .ss-brand:focus-visible .ss-brand-main {
+  color: var(--color-accent-deep) !important;
 }
 
 body .ss-global-nav-wrapper .ss-brand-main {
