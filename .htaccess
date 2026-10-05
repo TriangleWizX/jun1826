@@ -147,6 +147,8 @@ RewriteRule ^hunter\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/hunter-ny [L
 RewriteRule ^jiu\-jitsu\-sandy/?$ https://senseisandy.com/sensei-jiu-jitsu [L,R=301,NE]
 RewriteRule ^kids\-bjj/?$ https://senseisandy.com/kids [L,R=301,NE]
 RewriteRule ^kids\.html/?$ https://senseisandy.com/kids [L,R=301,NE]
+RewriteRule ^local\-bjj\-tournaments\-for\-parents/?$ https://senseisandy.com/local-bjj-tournaments-for-families [L,R=301,NE]
+RewriteRule ^local\-bjj\-tournaments\-for\-parents\.html/?$ https://senseisandy.com/local-bjj-tournaments-for-families [L,R=301,NE]
 RewriteRule ^martial\-arts\-hunter\-ny/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteRule ^mountain\-pass/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^mountain\-pass\-print/?$ https://senseisandy.com/ [L,R=301,NE]

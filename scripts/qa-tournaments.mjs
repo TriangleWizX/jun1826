@@ -3,7 +3,7 @@ import path from 'node:path';
 import tournaments, { events, getPublishedEvents, validateVerifiedEvent } from '../src/_data/tournaments.js';
 
 const root = process.cwd();
-const file = path.join(root, 'dist/local-bjj-tournaments-for-parents.html');
+const file = path.join(root, 'dist/local-bjj-tournaments-for-families.html');
 if (!fs.existsSync(file)) throw new Error(`Missing ${file}; run npm run build first.`);
 
 const html = fs.readFileSync(file, 'utf8');

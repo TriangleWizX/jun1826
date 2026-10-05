@@ -1,0 +1,583 @@
+---
+layout: layouts/base.njk
+title: "Local BJJ Tournaments for Families Near Tannersville NY"
+description: "Family guide to local BJJ tournaments near Tannersville, Hunter, and the Catskills. Fun road trips, mat goals, and burgers after the matches."
+canonicalUrl: "https://senseisandy.com/local-bjj-tournaments-for-families"
+bodyClass: "page-tournament-guide"
+permalink: "/local-bjj-tournaments-for-families.html"
+---
+<style>
+/* Tournament Guide · Families Edition
+ * design-system: Sensei Sandy Core
+ * typography: Instrument Serif display, clean legible sans body
+ */
+.page-tournament-guide {
+  --tguide-measure: 46rem;
+  background: var(--color-paper, var(--ss-bg));
+  color: var(--color-ink, var(--ss-text));
+}
+
+.page-tournament-guide ::selection {
+  background: var(--color-accent, var(--ss-green));
+  color: var(--color-accent-ink, #fff);
+}
+
+.page-tournament-guide .tguide-shell {
+  width: min(100% - (2 * var(--gutter, 1rem)), var(--container-standard, 72rem));
+  margin-inline: auto;
+}
+
+.page-tournament-guide .tguide-opening {
+  padding-block: clamp(var(--space-xl, 3rem), 7vw, var(--space-3xl, 7rem));
+  border-bottom: 1px solid var(--color-rule, var(--ss-border));
+  background: var(--color-paper, var(--ss-bg));
+}
+
+.page-tournament-guide .tguide-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(16rem, 0.75fr);
+  gap: clamp(var(--space-xl, 3rem), 6vw, var(--space-3xl, 7rem));
+  align-items: end;
+}
+
+.page-tournament-guide .tguide-title {
+  max-width: 14ch;
+  margin: 0 0 var(--space-md, 1.5rem);
+  overflow-wrap: anywhere;
+  color: var(--color-ink, var(--ss-text));
+  font-family: var(--font-display, serif);
+  font-size: clamp(2.75rem, 7vw + 0.5rem, 5.5rem);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+  letter-spacing: var(--tracking-display, -0.025em);
+  line-height: var(--leading-tight, 0.96);
+}
+
+.page-tournament-guide .tguide-intro {
+  max-width: var(--tguide-measure);
+  margin: 0;
+  color: var(--color-ink-2, var(--ss-ink));
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  line-height: var(--leading-body, 1.62);
+}
+
+.page-tournament-guide .tguide-verification {
+  padding: var(--space-md, 1.5rem) 0 0;
+  border-top: 2px solid var(--color-accent, var(--ss-green));
+  color: var(--color-muted, var(--ss-muted));
+  font-size: var(--text-sm, 0.875rem);
+  line-height: 1.6;
+}
+
+.page-tournament-guide .tguide-verification strong {
+  display: block;
+  margin-bottom: var(--space-2xs, 0.5rem);
+  color: var(--color-ink, var(--ss-text));
+  font-size: var(--text-md, 1rem);
+}
+
+.page-tournament-guide .tguide-index {
+  padding-block: clamp(var(--space-xl, 3rem), 6vw, var(--space-2xl, 4.5rem));
+}
+
+.page-tournament-guide .filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs, 0.5rem);
+  justify-content: flex-start;
+  margin-bottom: var(--space-md, 1.5rem);
+}
+
+.page-tournament-guide .tournament-filter {
+  min-height: 44px;
+  padding-inline: var(--space-md, 1.5rem);
+  border-radius: var(--radius-pill, 999px);
+  white-space: nowrap;
+}
+
+.page-tournament-guide .tguide-index-meta {
+  margin: 0 0 var(--space-lg, 2rem);
+  color: var(--color-muted, var(--ss-muted));
+  font-size: var(--text-sm, 0.875rem);
+  font-variant-numeric: tabular-nums;
+}
+
+.page-tournament-guide .tournament-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md, 1.5rem);
+}
+
+@media (min-width: 768px) {
+  .page-tournament-guide .tournament-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .page-tournament-guide .tournament-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.page-tournament-guide .tournament-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-rule, var(--ss-border));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-paper-2, var(--ss-surface2));
+}
+
+.page-tournament-guide .tournament-card > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 343 / 127;
+  object-fit: cover;
+}
+
+.page-tournament-guide .tournament-card > div {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-md, 1.5rem) !important;
+}
+
+.page-tournament-guide .tournament-card .badge {
+  align-self: flex-start;
+  margin-bottom: var(--space-xs, 0.75rem);
+  background: var(--color-accent-soft, rgba(17, 106, 66, 0.08));
+  color: var(--color-accent-deep, var(--ss-green));
+}
+
+.page-tournament-guide .tournament-card h2 {
+  margin-bottom: var(--space-xs, 0.75rem);
+  overflow-wrap: anywhere;
+  color: var(--color-ink, var(--ss-text));
+  font-family: var(--font-display, serif);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+  line-height: var(--leading-heading, 1.08);
+}
+
+.page-tournament-guide .tournament-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.page-tournament-guide .tournament-action,
+.page-tournament-guide .tournament-filter {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-tournament-guide .tournament-action {
+  flex: 0 1 auto;
+  padding-inline: var(--space-md, 1.5rem);
+  border-radius: var(--radius-button, 0.5rem);
+  white-space: nowrap;
+}
+
+.page-tournament-guide .he-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.page-tournament-guide .tournament-action:focus-visible,
+.page-tournament-guide .tournament-filter:focus-visible,
+.page-tournament-guide summary:focus-visible,
+.page-tournament-guide .tguide-link:focus-visible {
+  outline: 2px solid var(--color-focus, var(--ss-ink));
+  outline-offset: 2px;
+}
+
+.page-tournament-guide .tguide-section {
+  padding-block: clamp(var(--space-xl, 3rem), 6vw, var(--space-2xl, 4.5rem));
+  border-top: 1px solid var(--color-rule, var(--ss-border));
+}
+
+.page-tournament-guide .tguide-section-heading {
+  max-width: var(--tguide-measure);
+  margin: 0 0 var(--space-lg, 2rem);
+  color: var(--color-ink, var(--ss-text));
+  font-family: var(--font-display, serif);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.page-tournament-guide .tguide-vacation-card {
+  padding: clamp(var(--space-md, 1.5rem), 3vw, var(--space-lg, 2rem));
+  border: 1px solid var(--color-rule, var(--ss-border));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-paper-2, var(--ss-surface2));
+  height: 100%;
+}
+
+.page-tournament-guide .tguide-vacation-card h3 {
+  color: var(--color-ink, var(--ss-text));
+  font-family: var(--font-display, serif);
+  font-style: normal;
+}
+
+.page-tournament-guide .tguide-prep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm, 1rem);
+}
+
+.page-tournament-guide .tguide-detail {
+  border: 1px solid var(--color-rule, var(--ss-border));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-paper-2, var(--ss-surface2));
+}
+
+.page-tournament-guide .tguide-detail summary {
+  min-height: 64px;
+  padding: var(--space-sm, 1rem) var(--space-md, 1.5rem);
+  color: var(--color-ink, var(--ss-text));
+  cursor: pointer;
+}
+
+.page-tournament-guide .tguide-detail-body {
+  padding: var(--space-sm, 1rem) var(--space-md, 1.5rem) var(--space-md, 1.5rem);
+  border-top: 1px solid var(--color-rule, var(--ss-border));
+}
+
+.page-tournament-guide .tguide-detail-body li {
+  color: var(--color-muted, var(--ss-muted));
+}
+
+.page-tournament-guide .tguide-principle {
+  max-width: var(--container-standard, 72rem);
+  margin-inline: auto;
+  padding: clamp(var(--space-lg, 2rem), 5vw, var(--space-2xl, 4.5rem));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-ink, var(--ss-ink));
+  color: var(--color-paper, #fff);
+}
+
+.page-tournament-guide .tguide-principle blockquote {
+  max-width: 26ch;
+  margin: 0 0 var(--space-sm, 1rem);
+  color: inherit;
+  font-family: var(--font-display, serif);
+  font-size: clamp(1.85rem, 4vw, 3.25rem);
+  font-style: normal;
+  font-weight: var(--display-weight, 400);
+  letter-spacing: var(--tracking-display, -0.025em);
+  line-height: var(--leading-heading, 1.12);
+}
+
+.page-tournament-guide .tguide-principle p {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--color-paper-3, rgba(255, 255, 255, 0.86));
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.page-tournament-guide .tguide-reading {
+  max-width: var(--tguide-measure);
+}
+
+.page-tournament-guide .tguide-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--color-rule, var(--ss-border));
+}
+
+.page-tournament-guide .tguide-link {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm, 1rem);
+  padding: var(--space-sm, 1rem) 0;
+  border-bottom: 1px solid var(--color-rule, var(--ss-border));
+  color: var(--color-ink, var(--ss-text));
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.page-tournament-guide .tguide-link:nth-child(odd) {
+  padding-right: var(--space-lg, 2rem);
+}
+
+.page-tournament-guide .tguide-link:nth-child(even) {
+  padding-left: var(--space-lg, 2rem);
+}
+
+.page-tournament-guide .tguide-closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-lg, 2rem);
+  align-items: center;
+  padding: clamp(var(--space-lg, 2rem), 5vw, var(--space-xl, 3rem));
+  border: 1px solid var(--color-rule, var(--ss-border));
+  border-radius: var(--radius-card, 0.75rem);
+  background: var(--color-paper-2, var(--ss-surface2));
+}
+
+.page-tournament-guide .tguide-closing h2 {
+  margin-bottom: var(--space-2xs, 0.5rem);
+  font-family: var(--font-display, serif);
+  font-style: normal;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page-tournament-guide .tournament-action:hover,
+  .page-tournament-guide .tournament-filter:hover,
+  .page-tournament-guide .tguide-link:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.page-tournament-guide .tournament-action:active,
+.page-tournament-guide .tournament-filter:active,
+.page-tournament-guide .tguide-link:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 767.98px) {
+  .page-tournament-guide .tguide-hero,
+  .page-tournament-guide .tguide-prep-grid,
+  .page-tournament-guide .tguide-links,
+  .page-tournament-guide .tguide-closing {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-tournament-guide .tguide-hero {
+    gap: var(--space-xl, 3rem);
+  }
+
+  .page-tournament-guide .tguide-link:nth-child(n) {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .page-tournament-guide .tournament-actions {
+    flex-direction: column;
+  }
+
+  .page-tournament-guide .tournament-action {
+    width: 100%;
+  }
+
+  .page-tournament-guide .tguide-title {
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
+  }
+}
+</style>
+<main class="ss-main" id="main-content" role="main">
+<nav aria-label="Breadcrumb" class="ss-breadcrumbs container">
+<a href="/">Home</a>
+<span aria-hidden="true">›</span>
+<a href="/parent-resources">Parent Resources</a>
+<span aria-hidden="true">›</span>
+<span>Local BJJ Tournaments for Families</span>
+</nav>
+<section class="tguide-opening">
+<div class="tguide-shell tguide-hero">
+<div>
+<h1 class="tguide-title">Local BJJ Tournaments for Families</h1>
+<p class="tguide-intro">
+Tournaments are a fun team road trip! Stepping into a match day is an optional testing environment. We practice with care in every class. On event day, we travel as one team. We cheer for each other. We celebrate every round.
+</p>
+</div>
+<aside class="tguide-verification">
+<strong>Talk with Coach Sandy First</strong>
+Event dates can change. Coach Sandy helps you pick the right match day before you sign up.
+</aside>
+</div>
+</section>
+<section class="tguide-index">
+<div class="tguide-shell">
+<div aria-label="Tournament filters" class="filter-bar" id="tournament-filters">
+<button type="button" class="btn btn-dark btn-sm rounded-pill px-4 py-2 tournament-filter" data-tournament-filter="all" aria-pressed="true">All upcoming</button>
+{% for option in tournaments.filterOptions %}
+<button type="button" class="btn btn-outline-dark btn-sm rounded-pill px-4 py-2 tournament-filter" data-tournament-filter="{{ option.key }}" aria-pressed="false">{{ option.label }}</button>
+{% endfor %}
+</div>
+<!-- CSS Grid Tournament Container -->
+<p class="tguide-index-meta"><span id="tournament-result-count">Showing {{ tournaments.published.length }} verified events</span> · Last checked {{ tournaments.lastCheckedLabel }}</p>
+{% include "partials/tournament-grid.html" %}
+<!-- Tournament facts are reviewed against the official event page before publication. -->
+<!-- Tournament card partial release mapping: keep canonical route in deploy payload. -->
+<!-- Published event facts last refreshed 2026-08-31. -->
+<script type="application/ld+json">
+{{ tournaments.schemaJson | safe }}
+</script>
+<script>
+document.querySelectorAll('#tournament-filters button').forEach((button) => button.addEventListener('click', () => {
+  const filter = button.dataset.tournamentFilter;
+  document.querySelectorAll('#tournament-filters button').forEach((b) => { const active = b === button; b.classList.toggle('btn-dark', active); b.classList.toggle('btn-outline-dark', !active); b.setAttribute('aria-pressed', active ? 'true' : 'false'); });
+  const cards = document.querySelectorAll('#tournament-grid-static .tournament-card');
+  let visible = 0;
+  cards.forEach((card) => { card.hidden = filter !== 'all' && card.dataset.tournamentType !== filter; if (!card.hidden) visible += 1; });
+  const count = document.getElementById('tournament-result-count');
+  if (count) count.textContent = `Showing ${visible} verified event${visible === 1 ? '' : 's'}`;
+  let empty = document.getElementById('tournament-filter-empty');
+  if (!empty) { empty = document.createElement('p'); empty.id = 'tournament-filter-empty'; empty.className = 'text-center text-muted p-4'; document.getElementById('tournament-grid-static').after(empty); }
+  empty.textContent = visible ? '' : 'Check back soon for new dates in this group. Ask Sandy before registering elsewhere.';
+  empty.hidden = visible > 0;
+}));
+</script>
+</div>
+</section>
+
+<!-- Vacation & Podium Experience Section -->
+<section class="tguide-section" id="vacation-and-podium">
+<div class="tguide-shell">
+<h2 class="tguide-section-heading">The Road Trip and the Podium Goal</h2>
+<div class="row g-4 align-items-stretch">
+  <div class="col-md-4">
+    <div class="tguide-vacation-card">
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-car-front-fill fs-4 text-success"></i>
+        <h3 class="h5 mb-0">A Fun Family Adventure</h3>
+      </div>
+      <p class="text-muted mb-0">Pack the car with great snacks and road trip tunes. We drive down the mountain together. We walk in with our team. Our gis are clean and bright. We cheer for our friends on the mats all day long.</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="tguide-vacation-card">
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-trophy-fill fs-4 text-success"></i>
+        <h3 class="h5 mb-0">Aim for the Top of the Podium</h3>
+      </div>
+      <p class="text-muted mb-0">When we step on the mat, our goal is clear. Our job is to make it to the top of the podium! We train hard in class. We give our best work in every round. We make sure we did all we could to earn that top spot.</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="tguide-vacation-card">
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-cup-straw fs-4 text-success"></i>
+        <h3 class="h5 mb-0">Burgers and Ice Cream After</h3>
+      </div>
+      <p class="text-muted mb-0">After every match, short or long, win or learn, Coach Sandy is right there with a high five and cold water. Then we leave together for big burgers and ice cream! We celebrate as one big team.</p>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="tguide-section" id="parent-registration-checklist">
+<div class="tguide-shell">
+<h2 class="tguide-section-heading">Pre-Tournament Preparation</h2>
+<div class="tguide-prep-grid">
+<!-- Checklist Accordion -->
+<details class="tguide-detail">
+<summary class="he-accordion-summary">
+<span class="fw-bold font-ui text-dark d-flex align-items-center gap-2"><i class="bi bi-check2-square text-success fs-5"></i>Family Tournament Checklist</span>
+<span class="he-accordion-icon">+</span>
+</summary>
+<div class="tguide-detail-body">
+<p class="text-muted small mb-4 px-2">Check these simple steps on the official page before you register:</p>
+<ul class="list-unstyled mb-0 px-2">
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Right age group:</strong> Events group by birth year or current age.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Right belt and rank:</strong> Check match round lengths for your division.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Realistic weight group:</strong> Check weigh-in clothes rules.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Gi and No-Gi divisions:</strong> Pick the styles you practice in class.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Weigh-in details:</strong> Check arrival times and weight rules.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Credit policy:</strong> Check if they offer credit if your plans shift.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Schedule updates:</strong> Brackets usually post two days before match day.</span></li>
+<li class="mb-0 d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i><span><strong>Travel and parking:</strong> Pick a great spot to park early.</span></li>
+</ul>
+</div>
+</details>
+<!-- What to Bring Accordion -->
+<details class="tguide-detail">
+<summary class="he-accordion-summary">
+<span class="fw-bold font-ui text-dark d-flex align-items-center gap-2"><i class="bi bi-backpack text-success fs-5"></i>What to Pack in Your Bag</span>
+<span class="he-accordion-icon">+</span>
+</summary>
+<div class="tguide-detail-body">
+<p class="text-muted small mb-4 px-2">Pack your gear bag the night before for an easy, calm morning:</p>
+<ul class="list-unstyled mb-0 px-2">
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Clean Gi and belt:</strong> Fresh, dry, and ready for action.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Slide sandals:</strong> Wear these when you step off the mat.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Water bottle:</strong> Stay cool and fresh all day.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Simple snacks:</strong> Fresh fruit, pretzels, and granola bars.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Warm team hoodie:</strong> Big gym rooms can feel cool between rounds.</span></li>
+<li class="mb-3 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Phone charger:</strong> Keep your phone charged for mat calls.</span></li>
+<li class="mb-0 d-flex align-items-start gap-2"><i class="bi bi-box-seam-fill text-primary mt-1"></i><span><strong>Books or music:</strong> Rest well between rounds.</span></li>
+</ul>
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section class="tguide-section">
+<div class="tguide-shell">
+<div class="tguide-principle">
+<blockquote>
+“Give your full heart on the mat, aim for the top of the podium, and enjoy burgers and ice cream with the team after.”
+</blockquote>
+<p>
+The best prize is sharing the trip with your family. We train together. We cheer for each other. We build real confidence for life.
+</p>
+</div>
+</div>
+</section>
+
+<section class="tguide-section" aria-labelledby="competition-test-title">
+<div class="tguide-shell tguide-reading">
+<h2 class="tguide-section-heading" id="competition-test-title">What a tournament can teach</h2>
+<p class="text-muted">A tournament is an optional testing environment. It is a fun challenge to test your skills. In our school, students advance through steady practice and showing up.</p>
+<p class="text-muted mb-0">After each match, we talk about what went well. We pick new skills to practice in class next week.</p>
+<ol class="text-muted mt-3 mb-0">
+<li>Does the student want this experience?</li>
+<li>What skills would we like to practice under pressure?</li>
+<li>Is the event match setup a great fit for the student?</li>
+<li>What would we like to learn, regardless of the result?</li>
+</ol>
+</div>
+</section>
+
+<section aria-labelledby="links-title" class="tguide-section">
+<div class="tguide-shell">
+<h2 class="tguide-section-heading" id="links-title">Helpful Links for Families</h2>
+<div class="tguide-links">
+<a class="tguide-link" href="/bjj-classes/kids-tannersville-ny"><span>Kids Jiu Jitsu in Tannersville NY</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/bjj-classes/teens-tannersville-ny"><span>Teen Jiu Jitsu in Tannersville NY</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/bjj-classes/adults-tannersville-ny"><span>Adult Jiu Jitsu in Tannersville NY</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/parent-resources"><span>Parent Resources Overview</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/free-bjj-intro-tannersville-ny"><span>Reserve a Free First Visit</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/bjj-glossary"><span>Learn Common Jiu Jitsu Terms</span><span aria-hidden="true">→</span></a>
+<a class="tguide-link" href="/schedule"><span>View Class Schedule</span><span aria-hidden="true">→</span></a>
+</div>
+</div>
+</section>
+
+<section class="tguide-section">
+<div class="tguide-shell">
+<div class="tguide-closing">
+<div>
+<h2>Plan Your First Visit</h2>
+<p class="mb-0 text-muted" data-free-intro-copy>Meet Sandy with your child. See the room and learn the rules. Plan their first class.</p>
+</div>
+<div>
+<a class="he-cta-pill he-nested-btn" href="/free-bjj-intro-tannersville-ny">
+<span>Reserve Your Free First Visit</span>
+<div class="he-cta-icon-wrapper">
+<i class="bi bi-arrow-right"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>

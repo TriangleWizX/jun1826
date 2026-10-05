@@ -6,7 +6,7 @@ import paramiko
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package')
 DEPLOYABLE_ROOTS = ('assets/', 'winter-rank-drop/', 'admin/', 'athlete-cross-training/', 'annual-track/', 'bjj-classes/', 'bjj-glossary/', 'bjj-videos/', 'blog/', 'clean/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'reviews-village/', 'scribners-staff-reset-pass/', 'social/', 'snippets/', 'sources/', 'schedule/', 'tactical-longevity/', 'videos/', 'free-bjj-intro-tannersville-ny/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/', 'free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/')
-ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scribners.html', 'scribners-jiu-jitsu.html', 'scribners-thank-you.html', 'partners-hospitality-hunter-windham.html', 'partners-wellness-pt-referrals.html', 'community-partners.html', 'elite-concierge.html', 'adult-private-coaching-intensive.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'daily-checkin.html', 'manifest-daily-checkin.json', 'sw-daily-checkin.js', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html', 'schedule.html', 'camp-clinics.html', 'summer-academy.html', 'black-belt-concierge.html', 'inclusion.html'}
+ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scribners.html', 'scribners-jiu-jitsu.html', 'scribners-thank-you.html', 'partners-hospitality-hunter-windham.html', 'partners-wellness-pt-referrals.html', 'community-partners.html', 'elite-concierge.html', 'adult-private-coaching-intensive.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'daily-checkin.html', 'manifest-daily-checkin.json', 'sw-daily-checkin.js', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'local-bjj-tournaments-for-families.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html', 'schedule.html', 'camp-clinics.html', 'summer-academy.html', 'black-belt-concierge.html', 'inclusion.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 
 def changed_outputs(commit):
@@ -99,7 +99,13 @@ def changed_outputs(commit):
                 if candidate.is_file():
                     outputs.add((candidate, 'schedule.html'))
             elif name in ('src/_data/tournaments.js', 'src/_includes/partials/tournament-grid.html'):
-                candidate = ROOT / 'dist' / 'local-bjj-tournaments-for-parents.html'
+                cand_fam = ROOT / 'dist' / 'local-bjj-tournaments-for-families.html'
+                if cand_fam.is_file():
+                    outputs.add((cand_fam, 'local-bjj-tournaments-for-families.html'))
+                cand_par = ROOT / 'dist' / 'local-bjj-tournaments-for-parents.html'
+                if cand_par.is_file():
+                    outputs.add((cand_par, 'local-bjj-tournaments-for-parents.html'))
+                continue
             elif name.startswith('src/') and name.endswith('.njk'):
                 relative = name[4:]
                 if relative.endswith('/index.njk'):

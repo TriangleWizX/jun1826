@@ -3423,12 +3423,23 @@
   {
     "path": "/local-bjj-tournaments-for-parents",
     "pageType": "core",
+    "status": "redirect",
+    "indexable": false,
+    "canonicalPath": "/local-bjj-tournaments-for-families",
+    "sitemapGroup": null,
+    "navigationGroup": null,
+    "lastSignificantUpdate": "2026-10-04",
+    "redirectTarget": "/local-bjj-tournaments-for-families"
+  },
+  {
+    "path": "/local-bjj-tournaments-for-families",
+    "pageType": "core",
     "status": "active",
     "indexable": true,
-    "canonicalPath": "/local-bjj-tournaments-for-parents.html",
+    "canonicalPath": "/local-bjj-tournaments-for-families",
     "sitemapGroup": "core",
     "navigationGroup": "core",
-    "lastSignificantUpdate": "2026-09-08",
+    "lastSignificantUpdate": "2026-10-04",
     "redirectTarget": null
   },
   {

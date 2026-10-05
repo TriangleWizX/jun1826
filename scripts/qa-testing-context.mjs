@@ -5,7 +5,7 @@ const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const fnf = read('dist/friday-night-fanatics.html');
 const parents = read('dist/parent-resources.html');
-const tournament = read('dist/local-bjj-tournaments-for-parents.html');
+const tournament = read('dist/local-bjj-tournaments-for-families.html');
 const report = read('dist/report-card.html');
 const failures = [];
 const requireAll = (label, html, phrases) => phrases.forEach((phrase) => {

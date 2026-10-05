@@ -19,6 +19,7 @@ const routes = [
   "jiu-jitsu-safety-tannersville-ny.html",
   "success-stories.html",
   "bjj-stretches.html",
+  "local-bjj-tournaments-for-families.html",
   "local-bjj-tournaments-for-parents.html",
   "bjj-tannersville-ny-directions.html",
   "after-school/index.html",
