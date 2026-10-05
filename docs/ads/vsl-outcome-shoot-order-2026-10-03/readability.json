@@ -1,0 +1,98 @@
+{
+  "method": "Flesch-Kincaid estimate; CMU pronunciations, maximum syllables for alternate pronunciations; explicit overrides; numbers 1 and 3 expanded; hyphenated words split; punctuation defines sentences.",
+  "dictionary": "/usr/share/pocketsphinx/model/en-us/cmudict-en-us.dict",
+  "overrides": {
+    "jiu": 1,
+    "jitsu": 2,
+    "tannersville": 3,
+    "mountaintop": 3,
+    "sandy": 2,
+    "bjj": 3,
+    "coached": 1,
+    "i'll": 1,
+    "you'll": 1,
+    "fifteen": 2
+  },
+  "limits": "Not certified comprehension. Names included. Short overlay labels checked manually. Message placeholders must be replaced and rechecked before use. Negative grades reflect formula behavior on short simple prose.",
+  "results": {
+    "S01": {
+      "words": 39,
+      "sentences": 6,
+      "syllables": 49,
+      "fk_grade": 1.77
+    },
+    "S02": {
+      "words": 46,
+      "sentences": 6,
+      "syllables": 46,
+      "fk_grade": -0.8
+    },
+    "S03": {
+      "words": 43,
+      "sentences": 7,
+      "syllables": 44,
+      "fk_grade": -1.12
+    },
+    "S04": {
+      "words": 45,
+      "sentences": 8,
+      "syllables": 49,
+      "fk_grade": -0.55
+    },
+    "S05": {
+      "words": 45,
+      "sentences": 6,
+      "syllables": 48,
+      "fk_grade": -0.08
+    },
+    "S06": {
+      "words": 47,
+      "sentences": 7,
+      "syllables": 52,
+      "fk_grade": 0.08
+    },
+    "S07": {
+      "words": 45,
+      "sentences": 5,
+      "syllables": 50,
+      "fk_grade": 1.03
+    },
+    "S08": {
+      "words": 46,
+      "sentences": 6,
+      "syllables": 51,
+      "fk_grade": 0.48
+    },
+    "S09": {
+      "words": 56,
+      "sentences": 7,
+      "syllables": 60,
+      "fk_grade": 0.17
+    },
+    "S10": {
+      "words": 52,
+      "sentences": 7,
+      "syllables": 57,
+      "fk_grade": 0.24
+    },
+    "master": {
+      "words": 464,
+      "sentences": 65,
+      "syllables": 506,
+      "fk_grade": 0.06
+    },
+    "social_ending": {
+      "words": 19,
+      "sentences": 3,
+      "syllables": 20,
+      "fk_grade": -0.7
+    },
+    "discovery_cut": {
+      "words": 35,
+      "sentences": 7,
+      "syllables": 40,
+      "fk_grade": -0.15
+    }
+  },
+  "all_prose_at_or_below_grade_3": true
+}
