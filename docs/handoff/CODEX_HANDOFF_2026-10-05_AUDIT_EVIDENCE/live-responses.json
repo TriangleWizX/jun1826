@@ -1,0 +1,50 @@
+[
+  {
+    "route": "/law-enforcement-bjj",
+    "status": 200,
+    "location": null,
+    "date": "Mon, 05 Oct 2026 12:28:24 GMT",
+    "body_sha256": "507155c2c78135ecc4f403c4ca2cf827b1ed14848645263475c1f24d604efc4d",
+    "marker_presence": {
+      "30-Day Training Fit Guarantee": true,
+      "Safer calls on shift": true,
+      "Safer holds in the field": true
+    }
+  },
+  {
+    "route": "/schedule",
+    "status": 200,
+    "location": null,
+    "date": "Mon, 05 Oct 2026 12:28:25 GMT",
+    "body_sha256": "98b7e0c371b6bbf94b5aff4291146357eff4c97570a04b570e94a85e1af3e562",
+    "marker_presence": {
+      "Thursday": true
+    }
+  },
+  {
+    "route": "/bjj-glossary",
+    "status": 200,
+    "location": null,
+    "date": "Mon, 05 Oct 2026 12:28:26 GMT",
+    "body_sha256": "769f557adf1c9671a20d10b7ec4042b865f9fdbf40470977d8ed24a47ae4eac8",
+    "marker_presence": {
+      "glossary-filters": true
+    }
+  },
+  {
+    "route": "/local-bjj-tournaments-for-parents",
+    "status": 301,
+    "location": "https://senseisandy.com/local-bjj-tournaments-for-families",
+    "date": "Mon, 05 Oct 2026 12:28:28 GMT",
+    "body_sha256": "e8b101a7c7f64aad528cc734513cbeb02243c0af37930dc0f3239749cff184b6",
+    "marker_presence": {}
+  },
+  {
+    "route": "/bjj_anatomy_game",
+    "status": 301,
+    "location": "https://senseisandy.com/parent-resources",
+    "date": "Mon, 05 Oct 2026 12:28:29 GMT",
+    "body_sha256": "e8b101a7c7f64aad528cc734513cbeb02243c0af37930dc0f3239749cff184b6",
+    "marker_presence": {}
+  }
+]

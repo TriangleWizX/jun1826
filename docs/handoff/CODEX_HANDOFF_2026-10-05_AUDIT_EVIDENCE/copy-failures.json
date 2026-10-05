@@ -1,0 +1,49 @@
+{
+  "method": "Flesch-Kincaid; CMU maximum pronunciation; named overrides; numbers expanded; punctuation defines sentences.",
+  "limits": "Estimate only. Short UI labels, addresses, official names and proper nouns require manual review. Candidate inventory requires contextual review; a CTA appended to unrelated editorial prose does not make the entire article an intro policy.",
+  "files_scanned": 464,
+  "measured_blocks": 532,
+  "unique_blocks": 346,
+  "failures": [
+    {
+      "file": "friday-night-fanatics.html",
+      "line": 384,
+      "text": "Four Friday classes for guests and visiting friends.",
+      "words": 8,
+      "sentences": 1,
+      "syllables": 12,
+      "grade": 5.23,
+      "unknown": [],
+      "occurrences": [
+        "friday-night-fanatics.html"
+      ]
+    },
+    {
+      "file": "nearby-towns.html",
+      "line": 114,
+      "text": "Sandy welcomes you at the door, guides your room tour, and pairs you for cooperative partner drills at your pace.",
+      "words": 20,
+      "sentences": 1,
+      "syllables": 27,
+      "grade": 8.14,
+      "unknown": [],
+      "occurrences": [
+        "nearby-towns.html"
+      ]
+    },
+    {
+      "file": "nearby-towns.html",
+      "line": 176,
+      "text": "Check travel times, road routes, and local notes for towns across the Catskills. Every route leads to our second-floor Main Street studio in Tannersville.",
+      "words": 25,
+      "sentences": 2,
+      "syllables": 37,
+      "grade": 6.75,
+      "unknown": [],
+      "occurrences": [
+        "nearby-towns.html"
+      ]
+    }
+  ],
+  "stale": []
+}

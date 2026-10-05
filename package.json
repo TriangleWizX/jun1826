@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy && node tools/materialize-ssi-fragments.mjs && node tools/fingerprint-assets.cjs && node tools/ensure-glossary-asset-alias.cjs",
+    "build": "npm run sitemaps:build && eleventy && node tools/materialize-ssi-fragments.mjs && node tools/fingerprint-assets.cjs && node tools/ensure-glossary-asset-alias.cjs",
     "clean": "node -e \"import('fs').then(fs => fs.rmSync('dist', {recursive: true, force: true}))\"",
     "validate": "npm run build && node --test scripts/qa-unified.mjs && node scripts/qa-cal-migration.mjs",
     "test": "npm run validate && npm run test:ads",
