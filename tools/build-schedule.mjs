@@ -76,7 +76,7 @@ function generateFull() {
     html += `      </div>\n`;
   }
   html += `      <div class="mt-3 small text-muted">\n`;
-    html += `        <p><strong>Format matters:</strong> Check the Gi or No-Gi label before your first class so you know what to wear.</p>\n`;
+  html += `        <p data-free-intro-copy>Ask Sandy which gear to wear for your first class. Follow the class plan he sends you.</p>\n`;
   html += `      </div>\n`;
   html += `    </div>\n`;
   
@@ -93,8 +93,8 @@ function generateFull() {
 }
 
 function generateStudioBento() {
-  const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Friday', 'Saturday'];
-  const abbreviations = { Monday: 'MON', Tuesday: 'TUE', Wednesday: 'WED', Friday: 'FRI', Saturday: 'SAT' };
+  const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const abbreviations = { Monday: 'MON', Tuesday: 'TUE', Wednesday: 'WED', Thursday: 'THU', Friday: 'FRI', Saturday: 'SAT' };
   let html = `---\nlayout: layouts/base.njk\ntitle: ""\ndescription: ""\ncanonicalUrl: ""\nbodyClass: "ss-page"\npermalink: "/_includes/schedule-studio-bento.html"\n---\n`;
   html += '<div class="bento-schedule-list">';
   for (const day of dayOrder) {

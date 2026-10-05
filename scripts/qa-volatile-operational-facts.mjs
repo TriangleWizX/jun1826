@@ -11,10 +11,12 @@ const expected = [
   ["Monday", "Youth/Teen", "5:00 PM", "No-Gi"],
   ["Tuesday", "Youth/Teen", "5:00 PM", "Gi"],
   ["Wednesday", "Youth/Teen", "5:00 PM", "No-Gi"],
+  ["Thursday", "Youth/Teen", "5:00 PM", "No-Gi"],
   ["Friday", "Youth/Teen", "5:00 PM", "Gi"],
   ["Monday", "Adult", "6:00 PM", "Gi"],
   ["Tuesday", "Adult", "6:00 PM", "Gi"],
   ["Wednesday", "Adult", "6:00 PM", "Gi"],
+  ["Thursday", "Adult", "6:00 PM", "Gi"],
   ["Friday", "Adult", "6:00 PM", "Gi"],
   ["Saturday", "Adult", "10:30 AM", "No-Gi"]
 ];

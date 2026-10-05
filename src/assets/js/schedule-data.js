@@ -15,7 +15,8 @@ window.SSBJJ_SCHEDULE = {
       "id": "weekday-youth-teen-1700",
       "days": [
         "Monday",
-        "Wednesday"
+        "Wednesday",
+        "Thursday"
       ],
       "start": "5:00 PM",
       "end": "6:00 PM",
@@ -50,7 +51,8 @@ window.SSBJJ_SCHEDULE = {
       "id": "weekday-adult-gi-1800",
       "days": [
         "Monday",
-        "Wednesday"
+        "Wednesday",
+        "Thursday"
       ],
       "start": "6:00 PM",
       "end": "7:00 PM",

@@ -21,7 +21,7 @@ if (!homepage.includes('academyFact(294') || homepage.includes('293 classes')) e
 const median = metrics.metrics['median-class-size'];
 if (!median.public || median.value !== 3 || median.sampleSize < 30 || median.quartiles?.p25 !== 2 || median.quartiles?.p75 !== 5) errors.push('median class-size metric is incomplete');
 if (!homepage.includes('academyFact(3, "median recorded students per class"') && !homepage.includes('academyFact(3, "planned classes each week"')) errors.push('homepage median class-size fact is missing');
-if (!homepage.includes('academyFact(9') || !homepage.includes('recurring classes each week') || !homepage.includes('current-service')) errors.push('homepage lacks current-service fact block');
+if (!homepage.includes('academyFact(11') || !homepage.includes('recurring classes each week') || !homepage.includes('current-service')) errors.push('homepage lacks current-service fact block');
 if (!reportCard.includes('How many times did I see it?') || !reportCard.includes('Where else did I see it?')) errors.push('report card lacks plain-language observation fields');
 if (/attendance.{0,80}(rank|promotion|capabil)/i.test(reportCard)) errors.push('report card links attendance to capability or promotion');
 if (!metrics.tracking.attendance.neverMapsTo.includes('rank') || !metrics.tracking.attendance.neverMapsTo.includes('capability')) errors.push('attendance safety boundary missing');

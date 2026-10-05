@@ -220,19 +220,21 @@ describe('Link & Route Suite', () => {
 // 3. Contract & Governance Suite
 // ==========================================
 describe('Contract & Governance Suite', () => {
-  it('canonical schedule defines 9 active group classes', async () => {
+  it('canonical schedule defines 11 active group classes', async () => {
     const scheduleData = JSON.parse(await fs.readFile(path.join(ROOT, 'src/_data/schedule.json'), 'utf8'));
     const active = scheduleData.groupClasses.filter((item) => item.active);
-    assert.equal(active.length, 9, 'Canonical schedule must have exactly 9 active recurring group classes');
+    assert.equal(active.length, 11, 'Canonical schedule must have exactly 11 active recurring group classes');
 
     const expected = [
       ['Monday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
       ['Tuesday', 'Youth/Teen', '5:00 PM', 'Gi'],
       ['Wednesday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
+      ['Thursday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
       ['Friday', 'Youth/Teen', '5:00 PM', 'Gi'],
       ['Monday', 'Adult', '6:00 PM', 'Gi'],
       ['Tuesday', 'Adult', '6:00 PM', 'Gi'],
       ['Wednesday', 'Adult', '6:00 PM', 'Gi'],
+      ['Thursday', 'Adult', '6:00 PM', 'Gi'],
       ['Friday', 'Adult', '6:00 PM', 'Gi'],
       ['Saturday', 'Adult', '10:30 AM', 'No-Gi']
     ];
@@ -258,6 +260,7 @@ describe('Contract & Governance Suite', () => {
     assert.ok(content.includes('Monday'), 'Schedule must display Monday');
     assert.ok(content.includes('Tuesday'), 'Schedule must display Tuesday');
     assert.ok(content.includes('Wednesday'), 'Schedule must display Wednesday');
+    assert.ok(content.includes('Thursday'), 'Schedule must display Thursday');
     assert.ok(content.includes('Friday'), 'Schedule must display Friday');
     assert.ok(content.includes('Saturday'), 'Schedule must display Saturday');
   });
