@@ -243,41 +243,99 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--ss-shadow-card);
-  min-height: 400px;
-  position: relative;
   display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 520px;
+}
+
+.ss-map-header {
+  padding: 1.25rem 1.5rem;
+  background: var(--ss-surface);
+  border-bottom: 1px solid var(--ss-border);
 }
 
 .ss-map-container {
   width: 100%;
   height: 100%;
-  min-height: 380px;
+  min-height: 440px;
+  flex: 1 1 auto;
   position: relative;
+  display: flex;
+  background-color: var(--ss-surface2);
 }
 
-.btn-open-maps {
+.ss-map-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 440px !important;
+  border: 0 !important;
+  display: block !important;
+  flex: 1 1 auto;
+}
+
+.ss-map-overlay-actions {
   position: absolute;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  background: var(--ss-surface);
-  color: var(--ss-ink);
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.ss-map-overlay-actions > * {
+  pointer-events: auto;
+}
+
+.btn-open-maps,
+.btn-directions-maps {
   font-size: 0.85rem;
   font-weight: 700;
-  padding: 0.65rem 1.25rem;
+  padding: 0.6rem 1.15rem;
   border-radius: 999px;
-  border: 1px solid var(--ss-border);
-  box-shadow: 0 6px 18px rgba(54, 43, 36, 0.15);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  z-index: 10;
+  box-shadow: 0 4px 14px rgba(54, 43, 36, 0.16);
   transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn-open-maps {
+  background: var(--ss-surface);
+  color: var(--ss-ink);
+  border: 1px solid var(--ss-border);
 }
 
 .btn-open-maps:hover {
   background: var(--ss-surface2);
   transform: translateY(-1px);
   color: var(--ss-ink);
+}
+
+.btn-directions-maps {
+  background: var(--ss-green);
+  color: #fff !important;
+  border: 1px solid var(--ss-green);
+}
+
+.btn-directions-maps:hover {
+  background: var(--ss-green-hover);
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
+@media (max-width: 991.98px) {
+  .ss-map-card {
+    min-height: 440px;
+  }
+  .ss-map-container,
+  .ss-map-container iframe {
+    min-height: 380px !important;
+    height: 380px !important;
+  }
 }
 
 /* ==========================================================================
