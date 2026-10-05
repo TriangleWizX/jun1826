@@ -1,131 +1,420 @@
 ---
 layout: layouts/base.njk
 title: "Sensei Sandy BJJ | Parking & Entry in Tannersville NY"
-description: "Jiu Jitsu Tannersville directions: parking, entry, and map to Sensei Sandy BJJ at 6045 Main Street in Tannersville, NY. Plan your Free First Visit arrival."
+description: "Directions, parking, and arrival steps for Sensei Sandy BJJ at 6045 Main Street in Tannersville, NY. Reserve your Free First Visit."
 canonicalUrl: "https://senseisandy.com/bjj-tannersville-ny-directions"
-bodyClass: "lane-mixed page-location page-directions page-directions-board"
+bodyClass: "page-directions page-directions-vip"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
+  - "/assets/css/contact-vip.min.css"
   - "/assets/css/pages/directions.min.css"
 permalink: "/bjj-tannersville-ny-directions.html"
 ---
-<main class="directions-board-page" id="main-content" role="main">
-  
+<main class="contact-vip-main directions-vip-page" id="main-content" role="main">
 
-  <section class="directions-info" aria-labelledby="directions-info-title">
-    <div class="container directions-info__container">
-      <div class="directions-info__card">
-        <div class="directions-section-head directions-section-head--compact">
-          <div>
-            <p class="directions-info__eyebrow">Plan Your Visit</p>
-            <h1 id="directions-info-title">Head to {{ business.address.street }}, then up to the second-floor studio.</h1>
-            <p data-free-intro-copy>Plan your visit. Wait for Sandy to confirm the time. <a href="{{ business.mapsUrl }}" target="_blank" rel="noopener">Open map</a>. <a href="/free-bjj-intro-tannersville-ny#booking-flow">Book your free visit</a>.</p>
-            <p class="directions-info__intro" data-free-intro-copy>Plan your first visit. Find where to park and which door to use. Head to the second floor. Text Sandy if your plans change.</p>
+  <!-- HERO SECTION -->
+  <section class="ss-contact-hero py-4 py-md-5">
+    <div class="container ss-container">
+      <div class="ss-hero-card">
+        <div class="ss-hero-card-image-wrap">
+          <img
+            alt="Studios on Main building at 6045 Main Street in Tannersville, home of Sensei Sandy BJJ"
+            class="ss-hero-card-image"
+            decoding="async"
+            height="1125"
+            loading="eager"
+            src="/assets/images/sensei-sandy-bjj-building-main-street.585fcc.webp"
+            width="2000"
+          />
+        </div>
+        <div class="ss-hero-card-body">
+          <span class="ss-eyebrow">Directions &amp; Parking &middot; Tannersville, NY</span>
+          <h1 class="display-5 fw-bold mb-3 mt-2">Head to 6045 Main Street. Walk up to the second-floor studio.</h1>
+          <p class="lead mb-3" style="color: var(--ss-muted);" data-free-intro-copy>
+            Park outside for free. Walk up to the second floor. Coach Sandy greets you at the door for your coached visit.
+          </p>
+          <p class="small mb-4" style="color: var(--ss-muted);" data-free-intro-copy>
+            Plan your first visit. Sandy confirms your class time. Reserve your free first visit today.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-2">
+            <a
+              id="hero-cta"
+              class="ss-btn ss-btn-primary"
+              href="/free-bjj-intro-tannersville-ny#booking-flow"
+              data-cta-target="intro"
+              data-cta-src="directions-hero"
+              data-cta-placement="hero"
+              data-cta-tier="primary"
+              data-cta-lane="mixed">
+              Reserve Free First Visit <span aria-hidden="true">&nearr;</span>
+            </a>
+            <a
+              class="ss-btn ss-btn-soft"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Sensei+Sandy+BJJ&amp;query_place_id=ChIJwU-CP5Kt3YkR8zl7MbYlL3s"
+              target="_blank"
+              rel="noopener"
+              data-cta-target="map"
+              data-cta-src="directions-hero-map"
+              data-cta-placement="hero"
+              data-cta-tier="secondary"
+              data-cta-lane="mixed">
+              Open in Google Maps <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a
+              class="ss-btn ss-btn-soft"
+              href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20directions%20or%20parking."
+              data-cta-target="text"
+              data-cta-src="directions-hero-text"
+              data-cta-placement="hero"
+              data-cta-tier="secondary"
+              data-cta-lane="mixed">
+              Text Sandy If Lost <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
-          <a
-            class="directions-inline-link"
-            href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20directions%20or%20parking."
-            data-cta-target="text"
-            data-cta-src="directions-info-header"
-            data-cta-placement="details"
-            data-cta-tier="secondary"
-            data-cta-lane="mixed">Text Sandy <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-        </div>
-
-
-        <div class="directions-info__grid">
-          <h2 class="visually-hidden">Parking, entry, and arrival details</h2>
-          <article class="directions-info__item">
-            <span class="directions-info__icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></span>
-            <h3>Address</h3>
-            <p>6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485</p>
-          </article>
-          <article class="directions-info__item">
-            <span class="directions-info__icon" aria-hidden="true"><i class="bi bi-p-square"></i></span>
-            <h3>Parking</h3>
-            <p>Use Main Street parking first, then nearby side streets if needed. Follow the arrival time in your booking confirmation; <a href="/show-up-kit">check your visit preparation</a> before leaving.</p>
-          </article>
-          <article class="directions-info__item">
-            <span class="directions-info__icon" aria-hidden="true"><i class="bi bi-building"></i></span>
-            <h3>Entry</h3>
-            <p>Look for the Studios on Main building and follow the signs upstairs to the 2nd floor training room.</p>
-          </article>
-          <article class="directions-info__item">
-            <span class="directions-info__icon" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></span>
-            <h3>If plans change</h3>
-            <p data-free-intro-copy>Text Sandy if you need to move your first visit. He will help you find a new time.</p>
-          </article>
-        </div>
-
-        <div class="directions-info__actions">
-          <a
-            class="directions-button directions-button--primary"
-            href="/free-bjj-intro-tannersville-ny#booking-flow"
-            data-cta-target="intro"
-            data-cta-src="directions-info-actions"
-            data-cta-placement="details"
-            data-cta-tier="primary"
-            data-cta-lane="mixed">Reserve Free First Visit</a>
-          <a
-            class="directions-button directions-button--outline"
-            href="https://maps.google.com/?q=6045%20Main%20Street%2C%20Tannersville%2C%20NY%2012485"
-            target="_blank"
-            rel="noopener"
-            data-cta-target="map"
-            data-cta-src="directions-info-map"
-            data-cta-placement="details"
-            data-cta-tier="secondary"
-            data-cta-lane="mixed">Open Google Maps</a>
-          <a
-            class="directions-button directions-button--outline"
-            href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20heading%20to%20the%20studio%20and%20have%20a%20quick%20question."
-            data-cta-target="text"
-            data-cta-src="directions-info-text"
-            data-cta-placement="details"
-            data-cta-tier="secondary"
-            data-cta-lane="mixed">Text Sandy If Lost</a>
         </div>
       </div>
-
-      
     </div>
   </section>
-<section class="directions-arrival-proof" aria-labelledby="directions-photo-title">
-  <div class="directions-arrival-proof__inner">
-    <p class="directions-arrival-proof__eyebrow">Arrival sequence</p>
-    <h2 id="directions-photo-title">What you will see from Main Street to the mat</h2>
-    <div class="directions-arrival-proof__grid">
-      <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
-        <img src="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-1024.webp" alt="6045 Main Street in Tannersville, home of Sensei Sandy BJJ" width="1920" height="1080" loading="lazy" decoding="async">
-        <figcaption><strong>1. Find the building.</strong> Look for Studios on Main at 6045 Main Street.</figcaption>
-      </figure>
-      <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
-        <img src="/assets/images/studio/studios-on-main-side-parking-tannersville-1024.webp" alt="Side view of the Studios on Main building in Tannersville" width="1920" height="1080" loading="lazy" decoding="async">
-        <figcaption><strong>2. Confirm the side of the building.</strong> This view helps orient you around Studios on Main.</figcaption>
-      </figure>
-      <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
-        <img src="/assets/images/studio/studios-on-main-second-floor-stairs-and-elevator-1024.webp" alt="Stairs and elevator area leading toward the second floor at Studios on Main" width="1920" height="1080" loading="lazy" decoding="async">
-        <figcaption><strong>3. Reach the second floor.</strong> This view shows the stairs and elevator area inside the building.</figcaption>
-      </figure>
-      <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
-        <img src="/assets/images/studio/studios-on-main-second-floor-hallway-1024.webp" alt="Second-floor hallway at Studios on Main" width="1920" height="1080" loading="lazy" decoding="async">
-        <figcaption><strong>4. Find the hallway.</strong> Continue along the second-floor corridor.</figcaption>
-      </figure>
-      <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
-        <img src="/assets/images/studio/sensei-sandy-bjj-second-floor-arrival-1024.webp" alt="Second-floor arrival area outside Sensei Sandy BJJ in Tannersville" width="1920" height="1080" loading="lazy" decoding="async">
-        <figcaption><strong>5. Reach the studio area.</strong> Look for the second-floor arrival area.</figcaption>
-      </figure>
-      <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
-        <img src="/assets/images/studio/sensei-sandy-bjj-studio-two-doorway-1024.webp" alt="Doorway to Studio 2 at Studios on Main" width="1920" height="1080" loading="lazy" decoding="async">
-        <figcaption><strong>6. Find Studio 2.</strong> The doorway marks the training room.</figcaption>
-      </figure>
-      <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
-        <img src="/assets/images/studio/sensei-sandy-bjj-mat-room-from-entrance-1024.webp" alt="Matted training room viewed from the entrance" width="1920" height="1080" loading="lazy" decoding="async">
-        <figcaption><strong>7. Enter the room.</strong> Sandy will guide you from here.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-</main>
 
-<!--#include virtual="/partials/reviews-village.html" -->
+  <!-- 4 ARRIVAL CARDS -->
+  <section class="ss-reach-section py-4" aria-labelledby="arrival-details-heading">
+    <div class="container ss-container">
+      <div class="text-center mb-4">
+        <span class="ss-eyebrow">Quick Arrival Facts</span>
+        <h2 id="arrival-details-heading" class="h3 mb-2 mt-1">Simple Steps Before You Arrive</h2>
+        <p class="text-muted small" data-free-intro-copy>Plan your trip to Main Street. Everything is simple and clear.</p>
+      </div>
+      <div class="ss-reach-grid ss-reach-grid--4">
+        <!-- CARD 1: ADDRESS -->
+        <article class="ss-reach-card">
+          <div class="ss-reach-icon-box">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+          </div>
+          <span class="ss-card-badge">Address</span>
+          <h3 class="h4 mt-2 mb-2">Studio Address</h3>
+          <p class="ss-reach-val mb-2">
+            6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485
+          </p>
+          <p class="text-muted small mb-4 flex-grow-1" data-free-intro-copy>
+            Look for Studios on Main. We are six minutes from Hunter.
+          </p>
+          <a
+            class="ss-btn ss-btn-soft w-100"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Sensei+Sandy+BJJ&amp;query_place_id=ChIJwU-CP5Kt3YkR8zl7MbYlL3s"
+            target="_blank"
+            rel="noopener">
+            Open in Google Maps &rarr;
+          </a>
+        </article>
+
+        <!-- CARD 2: PARKING -->
+        <article class="ss-reach-card">
+          <div class="ss-reach-icon-box">
+            <i class="bi bi-p-square-fill" aria-hidden="true"></i>
+          </div>
+          <span class="ss-card-badge">Parking</span>
+          <h3 class="h4 mt-2 mb-2">Free Parking</h3>
+          <p class="ss-reach-val mb-2">
+            Main Street &amp; Side Streets
+          </p>
+          <p class="text-muted small mb-4 flex-grow-1" data-free-intro-copy>
+            Park on Main Street right in front of the building. You can also park on the quiet side streets nearby. Parking is easy and free all day.
+          </p>
+          <a
+            class="ss-btn ss-btn-soft w-100"
+            href="/show-up-kit">
+            View Show-Up Kit &rarr;
+          </a>
+        </article>
+
+        <!-- CARD 3: ENTRY -->
+        <article class="ss-reach-card">
+          <div class="ss-reach-icon-box">
+            <i class="bi bi-door-open-fill" aria-hidden="true"></i>
+          </div>
+          <span class="ss-card-badge">Entry</span>
+          <h3 class="h4 mt-2 mb-2">Second Floor</h3>
+          <p class="ss-reach-val mb-2">
+            Front Stairs or Elevator
+          </p>
+          <p class="text-muted small mb-4 flex-grow-1" data-free-intro-copy>
+            Walk through the front door of Studios on Main. Head upstairs to the second floor. Look for Studio 2.
+          </p>
+          <a
+            class="ss-btn ss-btn-soft w-100"
+            href="#arrival-sequence">
+            See Photo Steps &rarr;
+          </a>
+        </article>
+
+        <!-- CARD 4: PLANS CHANGE -->
+        <article class="ss-reach-card">
+          <div class="ss-reach-icon-box">
+            <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+          </div>
+          <span class="ss-card-badge">Flexibility</span>
+          <h3 class="h4 mt-2 mb-2">If Plans Change</h3>
+          <p class="ss-reach-val mb-2">
+            Text Coach Sandy
+          </p>
+          <p class="text-muted small mb-4 flex-grow-1" data-free-intro-copy>
+            Arrive ten minutes early to get settled. Text Sandy if you need a new day. We help you find the best time.
+          </p>
+          <a
+            class="ss-btn ss-btn-soft w-100"
+            href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20my%20visit.">
+            Text (917) 736-8649 &rarr;
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & INTERACTIVE MAP SECTION -->
+  <section class="ss-location-section py-5" aria-labelledby="map-section-title">
+    <div class="container ss-container">
+      <div class="ss-location-grid">
+
+        <!-- LEFT: DRIVE TIMES & REGIONAL ACCESS -->
+        <div class="ss-arrival-card d-flex flex-column">
+          <span class="ss-eyebrow">Local Proximity</span>
+          <h2 id="map-section-title" class="h3 mb-3 mt-1">Easy Drive From Nearby Mountain Towns</h2>
+          <p class="text-muted mb-4" data-free-intro-copy>
+            We are on Main Street in Tannersville. The drive is quick and easy.
+          </p>
+
+          <div class="ss-arrival-steps mb-4">
+            <div class="ss-arrival-step">
+              <span class="ss-step-num"><i class="bi bi-car-front-fill" aria-hidden="true"></i></span>
+              <div>
+                <strong>Hunter</strong>
+                <p class="small text-muted mb-0" data-free-intro-copy>From Hunter: Drive six minutes.</p>
+              </div>
+            </div>
+            <div class="ss-arrival-step">
+              <span class="ss-step-num"><i class="bi bi-car-front-fill" aria-hidden="true"></i></span>
+              <div>
+                <strong>Haines Falls</strong>
+                <p class="small text-muted mb-0" data-free-intro-copy>From Haines Falls: Drive four minutes.</p>
+              </div>
+            </div>
+            <div class="ss-arrival-step">
+              <span class="ss-step-num"><i class="bi bi-car-front-fill" aria-hidden="true"></i></span>
+              <div>
+                <strong>Windham</strong>
+                <p class="small text-muted mb-0" data-free-intro-copy>From Windham: Drive fourteen minutes. It is a quick ride.</p>
+              </div>
+            </div>
+            <div class="ss-arrival-step">
+              <span class="ss-step-num"><i class="bi bi-car-front-fill" aria-hidden="true"></i></span>
+              <div>
+                <strong>Catskill</strong>
+                <p class="small text-muted mb-0" data-free-intro-copy>From Catskill: Drive twenty-four minutes. The drive is scenic.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-3 border-top">
+            <p class="small text-muted mb-3" data-free-intro-copy>
+              Text Sandy if you need help finding us. We are here to help.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a
+                class="ss-btn ss-btn-soft"
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=Sensei+Sandy+BJJ&amp;destination_place_id=ChIJwU-CP5Kt3YkR8zl7MbYlL3s&amp;travelmode=driving"
+                target="_blank"
+                rel="noopener">
+                Get Driving Directions &rarr;
+              </a>
+              <a
+                class="ss-btn ss-btn-soft"
+                href="/nearby-towns">
+                View All Nearby Towns &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: INTERACTIVE GOOGLE MAPS EMBED -->
+        <div class="ss-map-card">
+          <div class="ss-map-header">
+            <span class="ss-card-badge">Interactive Map</span>
+            <h3 class="h5 mb-1 mt-1">Sensei Sandy BJJ</h3>
+            <p class="small text-muted mb-0">6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485</p>
+          </div>
+          <div class="ss-map-container">
+            <iframe
+              allowfullscreen=""
+              height="100%"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.8872272702065!2d-74.13495!3d42.195478699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ddad923f824fc1%3A0x7b2f25b6317b39f3!2sSensei%20Sandy%20BJJ!5e0!3m2!1sen!2sus!4v1770402155501!5m2!1sen!2sus"
+              style="border: 0;"
+              title="Sensei Sandy BJJ on Google Maps"
+              width="100%"></iframe>
+            <div class="ss-map-overlay-actions">
+              <a
+                class="btn-open-maps"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Sensei+Sandy+BJJ&amp;query_place_id=ChIJwU-CP5Kt3YkR8zl7MbYlL3s"
+                rel="noopener"
+                target="_blank">
+                <i class="bi bi-geo-alt-fill me-2" aria-hidden="true"></i>Open in Google Maps
+              </a>
+              <a
+                class="btn-directions-maps"
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=Sensei+Sandy+BJJ&amp;destination_place_id=ChIJwU-CP5Kt3YkR8zl7MbYlL3s&amp;travelmode=driving"
+                rel="noopener"
+                target="_blank">
+                <i class="bi bi-cursor-fill me-2" aria-hidden="true"></i>Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ARRIVAL PHOTO SEQUENCE -->
+  <section class="directions-arrival-proof" id="arrival-sequence" aria-labelledby="directions-photo-title">
+    <div class="directions-arrival-proof__inner">
+      <span class="directions-arrival-proof__eyebrow">Arrival Sequence</span>
+      <h2 id="directions-photo-title" class="h3 mb-2 mt-1">What You Will See From Main Street to the Mat</h2>
+      <p class="text-muted small mb-4" data-free-intro-copy>See the steps from the street to the mat. Sandy greets you inside.</p>
+      
+      <div class="directions-arrival-proof__grid">
+        <!-- ROW 1: 2 WIDE CARDS -->
+        <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
+          <img
+            src="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-1024.webp"
+            alt="Studios on Main building at 6045 Main Street in Tannersville, home of Sensei Sandy BJJ"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async">
+          <figcaption data-free-intro-copy>
+            <strong>1. Find the building.</strong> Studios on Main sits right on Main Street in Tannersville.
+          </figcaption>
+        </figure>
+        <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
+          <img
+            src="/assets/images/studio/studios-on-main-side-parking-tannersville-1024.webp"
+            alt="Side view and parking area around the Studios on Main building in Tannersville"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async">
+          <figcaption data-free-intro-copy>
+            <strong>2. Park nearby.</strong> Find a spot on Main Street or the quiet side streets.
+          </figcaption>
+        </figure>
+
+        <!-- ROW 2: 3 COMPACT CARDS -->
+        <figure class="directions-arrival-proof__item">
+          <img
+            src="/assets/images/studio/studios-on-main-second-floor-stairs-and-elevator-1024.webp"
+            alt="Front stairs and elevator leading to the second floor inside Studios on Main"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async">
+          <figcaption data-free-intro-copy>
+            <strong>3. Head upstairs.</strong> Use the front stairs or the elevator to reach the second floor.
+          </figcaption>
+        </figure>
+        <figure class="directions-arrival-proof__item">
+          <img
+            src="/assets/images/studio/studios-on-main-second-floor-hallway-1024.webp"
+            alt="Bright second-floor hallway inside Studios on Main"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async">
+          <figcaption data-free-intro-copy>
+            <strong>4. Follow the hall.</strong> Walk down the bright second-floor hall toward the studio.
+          </figcaption>
+        </figure>
+        <figure class="directions-arrival-proof__item">
+          <img
+            src="/assets/images/studio/sensei-sandy-bjj-second-floor-arrival-1024.webp"
+            alt="Second floor arrival and welcoming area outside Sensei Sandy BJJ"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async">
+          <figcaption data-free-intro-copy>
+            <strong>5. Studio door.</strong> You will see the Sensei Sandy sign.
+          </figcaption>
+        </figure>
+
+        <!-- ROW 3: 2 WIDE CARDS -->
+        <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
+          <img
+            src="/assets/images/studio/sensei-sandy-bjj-studio-two-doorway-1024.webp"
+            alt="Doorway to Studio 2 at Studios on Main"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async">
+          <figcaption data-free-intro-copy>
+            <strong>6. Studio 2 door.</strong> Walk inside the room.
+          </figcaption>
+        </figure>
+        <figure class="directions-arrival-proof__item directions-arrival-proof__item--wide">
+          <img
+            src="/assets/images/studio/sensei-sandy-bjj-mat-room-from-entrance-1024.webp"
+            alt="Clean matted Brazilian Jiu-Jitsu training room viewed from the entrance"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async">
+          <figcaption data-free-intro-copy>
+            <strong>7. Step onto the mats.</strong> Take off your shoes and meet Sandy for class.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE PREVIEW SECTION -->
+  <section class="schedule-teaser py-4 my-4" style="background: var(--ss-surface2); border-radius: 16px; margin-inline: auto; max-width: 1000px; padding: 2.5rem 2rem;">
+    <div class="container text-center">
+      <span class="ss-eyebrow">Schedule Preview</span>
+      <h2 class="h3 mb-3 mt-1">Most students start after school, evenings, or Saturday morning.</h2>
+      <p style="color: var(--ss-muted); max-width: 700px; margin-inline: auto; margin-bottom: 1.5rem; line-height: 1.6;" data-free-intro-copy>
+        Kids and teens train at 5:00 PM. Adults train at 6:00 PM. Join us on the mat.<br>
+        Join us on Saturday. Class starts at 10:30 AM. It is a great way to start your day.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free First Visit</a>
+        <a class="ss-btn ss-btn-soft" href="/schedule">View Full Schedule</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA BANNER -->
+  <section class="ss-final-cta py-5 text-center" aria-labelledby="cta-bottom-title">
+    <div class="container ss-container" style="max-width: 800px;">
+      <span class="ss-eyebrow">Ready When You Are</span>
+      <h2 id="cta-bottom-title" class="display-6 fw-bold mb-3 mt-1" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink);">
+        Start calm. Train smart.
+      </h2>
+      <p class="lead mb-4" style="color: var(--ss-muted);" data-free-intro-copy>
+        Pick a day that works for you. Your first visit is coached, calm, and free.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">
+          Reserve Free First Visit <span aria-hidden="true">&nearr;</span>
+        </a>
+        <a class="ss-btn ss-btn-soft" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ">
+          Text Sandy <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+      <nav class="mt-4 pt-3 border-top small" aria-label="Breadcrumb">
+        <a href="/" class="text-muted text-decoration-none">Home</a>
+        <span class="text-muted mx-2">&rarr;</span>
+        <span class="text-muted">Directions &amp; Parking</span>
+      </nav>
+    </div>
+  </section>
+</main>
