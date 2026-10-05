@@ -15,3 +15,4 @@ Live status/body hashes and content markers for the initial audit sample are in 
 - Remote backup QA: one valid archive, zero invalid, zero cleanup candidates; no cleanup was performed.
 - Three changed public pages returned HTTP 200 with all expected copy markers. Old “safer calls”, “safer holds”, and guarantee promises were absent from the law-enforcement page main content.
 - Sitemap index and all five children returned HTTP 200. The index lists each child, `sitemap-core.xml` includes law-enforcement and Friday Night Fanatics, and `sitemap-locations.xml` includes Nearby Towns.
+- Targeted local Chrome browser check on the changed page passed at 375×667 and 1440×900: no horizontal overflow; one H1 and a canonical URL; the Free First Visit CTA was visible; all main images had alt attributes; no page errors. Bounds are stored in `release-verification.json`.

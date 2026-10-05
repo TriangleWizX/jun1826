@@ -123,5 +123,45 @@
         "nearby-towns": false
       }
     }
+  ],
+  "local_browser_checks": [
+    {
+      "viewport": "375x667",
+      "status": 200,
+      "document_width": 375,
+      "viewport_width": 375,
+      "horizontal_overflow": false,
+      "h1_count": 1,
+      "canonical": "https://senseisandy.com/law-enforcement-bjj",
+      "primary_cta": "Reserve Free First Visit",
+      "cta_visible": true,
+      "cta_bounds_px": {
+        "x": 37,
+        "y": 573,
+        "width": 265,
+        "height": 59
+      },
+      "images_without_alt": 0,
+      "page_errors": []
+    },
+    {
+      "viewport": "1440x900",
+      "status": 200,
+      "document_width": 1440,
+      "viewport_width": 1440,
+      "horizontal_overflow": false,
+      "h1_count": 1,
+      "canonical": "https://senseisandy.com/law-enforcement-bjj",
+      "primary_cta": "Reserve Free First Visit",
+      "cta_visible": true,
+      "cta_bounds_px": {
+        "x": 125,
+        "y": 465,
+        "width": 265,
+        "height": 59
+      },
+      "images_without_alt": 0,
+      "page_errors": []
+    }
   ]
 }
