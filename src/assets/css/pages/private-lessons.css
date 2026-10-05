@@ -34,8 +34,9 @@
 .page-private-lessons .ss-serif-title,
 .page-private-lessons .ss-price-card-header h3,
 .page-private-lessons .ss-testimonial-text {
-  font-family: "Instrument Serif", serif;
-  letter-spacing: -0.03em;
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 

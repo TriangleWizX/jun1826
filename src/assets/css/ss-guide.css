@@ -70,11 +70,11 @@
 .ss-guide-page h1 {
   max-width: 18ch;
   margin-bottom: 1.25rem;
-  font-family: 'Lexend', var(--ss-font-heading, sans-serif);
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
   font-size: clamp(2.4rem, 6vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
   text-wrap: balance;
   color: var(--ss-ink, #362B24);
 }
@@ -82,19 +82,21 @@
 .ss-guide-page h2 {
   margin-top: clamp(2.5rem, 6vw, 4.5rem);
   margin-bottom: 1rem;
-  font-family: 'Lexend', var(--ss-font-heading, sans-serif);
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
   font-size: clamp(1.8rem, 4vw, 2.75rem);
-  font-weight: 700;
-  line-height: 1.1;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   color: var(--ss-ink, #362B24);
 }
 
 .ss-guide-page h3 {
   margin-bottom: 0.6rem;
-  font-family: 'Lexend', var(--ss-font-heading, sans-serif);
-  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-  font-weight: 700;
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  font-weight: 400;
   line-height: 1.2;
+  letter-spacing: 0;
   color: var(--ss-ink, #362B24);
 }
 
@@ -438,26 +440,28 @@
 }
 
 .ss-btn-primary {
-  background: var(--ss-teal, #289FA1);
-  color: var(--ss-surface);
+  background: var(--ss-green, #116A42);
+  color: var(--ss-surface, #FFFFFF);
+  box-shadow: 0 2px 8px rgba(17, 106, 66, 0.2);
 }
 
 .ss-btn-primary:hover,
 .ss-btn-primary:focus-visible {
-  background: var(--ss-green, #116A42);
-  color: var(--ss-surface);
+  background: #0d5233;
+  color: var(--ss-surface, #FFFFFF);
+  transform: translateY(-1px);
 }
 
 .ss-btn-secondary {
-  background: var(--ss-surface);
+  background: var(--ss-surface, #FFFFFF);
   color: var(--ss-ink, #362B24);
-  border-color: var(--guide-border);
+  border-color: var(--guide-border, rgba(54, 43, 36, 0.14));
 }
 
 .ss-btn-secondary:hover,
 .ss-btn-secondary:focus-visible {
-  border-color: var(--ss-teal, #289FA1);
-  color: var(--ss-teal, #289FA1);
+  border-color: var(--ss-green, #116A42);
+  color: var(--ss-green, #116A42);
 }
 
 /* =========================================================

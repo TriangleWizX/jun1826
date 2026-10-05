@@ -21,7 +21,7 @@
 
 .eyebrow {
   margin: 0 0 12px;
-  color: #4F5840; /* Olive green matching buttons */
+  color: var(--ss-green, #116A42); /* Olive green matching buttons */
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -82,7 +82,7 @@
 
 /* Brand Button Styling */
 .btn-brand-olive {
-  background-color: #4F5840;
+  background-color: var(--ss-green, #116A42);
   color: var(--ss-surface);
   border: 1px solid transparent;
   padding: 0.8rem 1.6rem;
@@ -100,7 +100,7 @@
 
 .btn-brand-olive:hover,
 .btn-brand-olive:focus {
-  background-color: #3d4332;
+  background-color: #0d5233;
   transform: translateY(-1px);
   color: var(--ss-surface);
 }
@@ -179,7 +179,7 @@
 }
 
 .trust-pills li i {
-  color: #4F5840; /* Olive icon color */
+  color: var(--ss-green, #116A42); /* Olive icon color */
   font-size: 0.95rem;
 }
 
@@ -219,8 +219,8 @@
 }
 
 .faq-filter-btn.active {
-  background-color: #4F5840;
-  border-color: #4F5840;
+  background-color: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
   color: var(--ss-surface);
   box-shadow: 0 6px 16px rgba(79, 88, 64, 0.12);
 }
@@ -274,7 +274,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #4F5840;
+  background: var(--ss-green, #116A42);
   color: var(--ss-surface);
   display: inline-flex;
   align-items: center;
@@ -369,7 +369,7 @@
 
 .promise-icon {
   font-size: 2rem;
-  color: #4F5840; /* Olive green */
+  color: var(--ss-green, #116A42); /* Olive green */
   flex-shrink: 0;
   line-height: 1;
 }
@@ -670,7 +670,7 @@
 .faq-filter-btn--coach {
   background: rgba(79, 88, 64, 0.06);
   border-color: rgba(79, 88, 64, 0.2);
-  color: #4F5840;
+  color: var(--ss-green, #116A42);
 }
 
 .faq-filter-btn--coach:hover {
@@ -680,8 +680,8 @@
 
 .faq-filter-btn--coach.active,
 .faq-main .faq-filter-btn--coach.active {
-  background-color: #4F5840;
-  border-color: #4F5840;
+  background-color: var(--ss-green, #116A42);
+  border-color: var(--ss-green, #116A42);
   color: #fff;
 }
 
@@ -707,7 +707,7 @@
 
 .faq-lineage-eyebrow {
   margin: 0 0 0.75rem;
-  color: #4F5840;
+  color: var(--ss-green, #116A42);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -737,7 +737,7 @@
   align-items: flex-start;
   gap: 0.85rem;
   background: rgba(33, 29, 24, 0.03);
-  border-left: 3px solid #4F5840;
+  border-left: 3px solid var(--ss-green, #116A42);
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 1rem 1.25rem;
   margin-bottom: 2.5rem;
@@ -747,7 +747,7 @@
 }
 
 .faq-lineage-notice-icon {
-  color: #4F5840;
+  color: var(--ss-green, #116A42);
   font-size: 1.2rem;
   flex-shrink: 0;
   margin-top: 0.05rem;
@@ -859,7 +859,7 @@
 }
 
 .faq-lineage-node--you .faq-lineage-node-name {
-  color: #4F5840;
+  color: var(--ss-green, #116A42);
 }
 
 .faq-lineage-node-role {
@@ -920,7 +920,7 @@
 
 .faq-lineage-verify-icon {
   font-size: 1.2rem;
-  color: #4F5840;
+  color: var(--ss-green, #116A42);
   flex-shrink: 0;
   margin-top: 0.05rem;
 }
@@ -948,7 +948,7 @@
 }
 
 .faq-lineage-verify-val a:hover {
-  color: #4F5840;
+  color: var(--ss-green, #116A42);
   text-decoration: underline;
 }
 

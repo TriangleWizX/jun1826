@@ -300,11 +300,12 @@ body {
 ========================= */
 
 .ss-hero-content h1 {
-  font-family: var(--ss-font-display);
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
   font-size: clamp(2.5rem, 8vw, 4.5rem);
-  line-height: 1.1;
+  line-height: 1.05;
   margin-bottom: 1.5rem;
-  font-weight: 800;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 /* Warm the shared light shells used across the live site. */
