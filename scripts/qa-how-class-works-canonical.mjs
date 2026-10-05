@@ -27,7 +27,7 @@ const inbound = [
   'src/bjj-classes/kids-tannersville-ny/index.html',
   'src/bjj-classes/teens-tannersville-ny/index.html',
   'src/bjj-classes/adults-tannersville-ny/index.html',
-  'src/options-pricing.html',
+  'src/options-pricing.njk',
   'src/bio.html'
 ];
 for (const file of inbound) {

@@ -595,21 +595,40 @@ body.page-tannersville::before {
   font-size: 1rem;
 }
 
-/* Entry Scroll Animations */
+/* Entry Scroll Animations: graceful fallback */
+.reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(2rem);
-    filter: blur(4px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .reveal-on-scroll.active {
+  .reveal-on-scroll.is-revealed {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
+}
+
+.ss-time-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.15rem;
+  border-radius: 9999px;
+  background-color: var(--ss-surface, #ffffff);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  color: var(--ss-ink, #362B24);
+  font-size: 0.95rem;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(54, 43, 36, 0.04);
+}
+.ss-time-badge i {
+  color: var(--ss-green, #116A42);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+.ss-time-badge strong {
+  color: var(--ss-ink, #362B24);
+  font-weight: 700;
 }
 
 /* Global high-end visual bridge: Tannersville local page. */
