@@ -323,6 +323,10 @@ This section is an append-only correction to the October 5 session record. See [
 - The three above-grade blocks identified by `scripts/qa-free-intro-copy.py` were rewritten on Friday Night Fanatics and Nearby Towns.
 - `scripts/deploy-release.py` now includes generated sitemap index/children when a source-content change is in the reviewed commit.
 - Pre-deployment checks after these fixes: build and unified suite passed (15/15); Cal migration browser QA passed (460 pages, 73 active dependencies, with the existing Bootstrap Icons CSS warning); Ad Studio tests passed (35); schedule and volatile-fact QA passed; copy checker passed (470 HTML files, 0 grade failures, 0 stale blocks).
-- Exact release commit, dry-run payload, backup/upload evidence and post-deployment route checks: pending until the scoped release is completed.
+- Source release commit: `2557a603` (`fix(release): correct law enforcement claims and sitemap payloads`).
+- Scoped deployment dry run listed exactly nine files: `law-enforcement-bjj.html`, `friday-night-fanatics.html`, `nearby-towns.html`, `sitemap.xml`, `sitemap-core.xml`, `sitemap-programs.xml`, `sitemap-locations.xml`, `sitemap-blog.xml`, `sitemap-glossary.xml`. The unfiltered preview would have included 163 files due to the deploy mapper's glossary rule; the exact `--only` filter constrained the upload.
+- Deployment command exited 0. Follow-up remote backup QA found one valid archive, zero invalid archives, and zero cleanup candidates.
+- Post-release HTTPS checks returned 200 for all nine deployed routes. The law-enforcement page contains both corrected injury measures and no old “safer calls”, “safer holds”, or guarantee claim in its main content. The Friday and Nearby Towns pages contain the corrected copy. The sitemap index lists all five children; the core child lists law-enforcement and Friday Night Fanatics, and the locations child lists Nearby Towns.
+- This is route and content verification; it does not claim a full device/browser regression sweep or measured production uptime.
 
 *Signed and sealed for Codex handoff by Knowledge Manager & Release Coordinator.*

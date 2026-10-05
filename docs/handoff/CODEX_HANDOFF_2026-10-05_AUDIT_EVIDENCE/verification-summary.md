@@ -8,3 +8,10 @@
 - `ast.parse(scripts/deploy-release.py)`: PASS after the sitemap payload mapping change. The exact release dry run remains pending the commit.
 
 Live status/body hashes and content markers for the initial audit sample are in `live-responses.json`. It contains no response bodies or private headers.
+
+## Post-release evidence
+
+- Source payload commit `2557a603` deployed with the exact nine-file filter recorded in `release-verification.json`; deployment exited 0.
+- Remote backup QA: one valid archive, zero invalid, zero cleanup candidates; no cleanup was performed.
+- Three changed public pages returned HTTP 200 with all expected copy markers. Old “safer calls”, “safer holds”, and guarantee promises were absent from the law-enforcement page main content.
+- Sitemap index and all five children returned HTTP 200. The index lists each child, `sitemap-core.xml` includes law-enforcement and Friday Night Fanatics, and `sitemap-locations.xml` includes Nearby Towns.

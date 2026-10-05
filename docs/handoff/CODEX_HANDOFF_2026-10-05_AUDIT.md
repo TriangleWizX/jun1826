@@ -127,7 +127,7 @@ Bounded workstreams: coordinator owned isolated validation, sampled HTTPS checks
 4. Correct the handoff's paths, categories, button-conversion scope, manifest completeness, and deployment wording.
 5. Attach scoped release receipts and perform the specific remaining behavioral/visual/provenance checks before promoting unverified claims to verified.
 
-Audit deliverable only. Website sources and the original historical handoff were preserved. No commit or deployment was made. Supporting local command evidence is in `CODEX_HANDOFF_2026-10-05_AUDIT_EVIDENCE/`; full fresh-build and live response captures remain in `/tmp/tmb-handoff-audit-20261005/`.
+At the time this audit was first delivered, no commit or deployment had been made. Its source snapshot and the original historical handoff were preserved. Supporting command evidence is in `CODEX_HANDOFF_2026-10-05_AUDIT_EVIDENCE/`; original audit response captures remain in `/tmp/tmb-handoff-audit-20261005/`.
 
 ## Current remediation status
 
@@ -139,4 +139,8 @@ The user later authorized fixing, committing, and deploying the key gaps. Before
 - `npm run validate` passed after sitemap generation was integrated: unified suite 15/15; Cal migration QA 460 pages and 73 dependencies. The Cal suite still reports the existing missing Bootstrap Icons CSS warning.
 - `npm run test:ads` passed 35 tests; `npm run qa:schedule` and `npm run qa:volatile-facts` passed.
 
-Commit, reviewed dry-run payload, production backup/upload output, and post-release live checks are pending in this source snapshot. Add exact evidence once the authorized release finishes.
+The authorized source release was committed as `2557a603` and deployed with a nine-file `--only` filter: three corrected pages and six sitemap files. The unfiltered dry run was 163 files because the deploy tool's glossary-release condition also matched the deploy-script edit; the filter prevented that unrelated expansion. The deploy command exited 0. Remote backup QA found one valid archive, zero invalid archives, and zero cleanup candidates.
+
+Post-release HTTPS checks returned 200 for the three changed pages, the sitemap index, and all five child sitemaps. The law-enforcement page now contains the corrected injury wording and omits the former “safer calls”, “safer holds”, and guarantee statements from its main content. Friday Night Fanatics and Nearby Towns return their replacement text. The sitemap index lists all children; the core sitemap contains law-enforcement and Friday Night Fanatics, and the locations sitemap contains Nearby Towns. Response hashes and concise marker checks are recorded in `CODEX_HANDOFF_2026-10-05_AUDIT_EVIDENCE/release-verification.json`.
+
+The reviewed deploy payload passed route/content checks. This does not establish a full mobile/desktop browser audit or production uptime.

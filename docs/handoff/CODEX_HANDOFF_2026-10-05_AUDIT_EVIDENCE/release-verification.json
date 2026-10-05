@@ -1,0 +1,127 @@
+{
+  "source_commit": "2557a603",
+  "deployment_exit_code": 0,
+  "scoped_payload_files": [
+    "sitemap-blog.xml",
+    "sitemap-core.xml",
+    "sitemap-glossary.xml",
+    "sitemap-locations.xml",
+    "sitemap-programs.xml",
+    "sitemap.xml",
+    "friday-night-fanatics.html",
+    "law-enforcement-bjj.html",
+    "nearby-towns.html"
+  ],
+  "unfiltered_payload_count": 163,
+  "remote_backup_qa": {
+    "valid": 1,
+    "invalid": 0,
+    "cleanup_candidates": 0,
+    "cleanup_performed": false
+  },
+  "live_routes": [
+    {
+      "route": "/law-enforcement-bjj",
+      "status": 200,
+      "bytes": 81793,
+      "sha256": "c183557618053f5963f9ab6baa2b2ded21f842418d15019ed57edb3a8290dd73",
+      "markers": {
+        "injury_outcome_officers": true,
+        "injury_outcome_arrestees": true,
+        "old_safer_calls_absent": false,
+        "old_safer_holds_absent": false,
+        "guarantee_promise_absent_from_main": false
+      }
+    },
+    {
+      "route": "/friday-night-fanatics",
+      "status": 200,
+      "bytes": 89071,
+      "sha256": "0df8e344bb7faf6310f4ee0a10aded379f38baf9ae7232a9f3ca5bfc44cc78b3",
+      "markers": {
+        "replacement_copy_present": true
+      }
+    },
+    {
+      "route": "/nearby-towns",
+      "status": 200,
+      "bytes": 70096,
+      "sha256": "7198808329670940b15d6a2916aa4fdc7370e1e1af8a477fb5eaa909e8752aba",
+      "markers": {
+        "welcome_copy_present": true,
+        "directions_copy_present": true
+      }
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200,
+      "bytes": 540,
+      "sha256": "981e37f6ec688c01f969bd10262fdd296c4ef65e0666dd926671a8076cbdb52e",
+      "markers": {
+        "core_child_listed": true,
+        "blog_child_listed": true,
+        "glossary_child_listed": true
+      }
+    },
+    {
+      "route": "/sitemap-core.xml",
+      "status": 200,
+      "bytes": 5302,
+      "sha256": "3ffe037ad8a6391b4af5079b43e895db991fd6256a76f49be3e75e6476de3127",
+      "markers": {},
+      "sitemap_contains_updated_routes": {
+        "law-enforcement-bjj": true,
+        "friday-night-fanatics": true,
+        "nearby-towns": false
+      }
+    },
+    {
+      "route": "/sitemap-blog.xml",
+      "status": 200,
+      "bytes": 7014,
+      "sha256": "af27d64e34835448300bd6e8380c5882b49b5fec0b95bc31958117569921641b",
+      "markers": {},
+      "sitemap_contains_updated_routes": {
+        "law-enforcement-bjj": false,
+        "friday-night-fanatics": false,
+        "nearby-towns": false
+      }
+    },
+    {
+      "route": "/sitemap-programs.xml",
+      "status": 200,
+      "bytes": 917,
+      "sha256": "3e654c7daa9c7327674fd23f75d0efab016b725fa5fd8f2dafdba2438fb1cbdd",
+      "markers": {},
+      "sitemap_contains_updated_routes": {
+        "law-enforcement-bjj": false,
+        "friday-night-fanatics": false,
+        "nearby-towns": false
+      }
+    },
+    {
+      "route": "/sitemap-locations.xml",
+      "status": 200,
+      "bytes": 1772,
+      "sha256": "a8769d99b96811b49b686fe36c3a187e77230e4244b586036a50b126faeabed4",
+      "markers": {},
+      "sitemap_contains_updated_routes": {
+        "law-enforcement-bjj": false,
+        "friday-night-fanatics": false,
+        "nearby-towns": true
+      }
+    },
+    {
+      "route": "/sitemap-glossary.xml",
+      "status": 200,
+      "bytes": 17779,
+      "sha256": "89936b64c05acb1920be3fea4af86c89f616f4244a3bf1262a9acf8b9e477def",
+      "markers": {},
+      "sitemap_contains_updated_routes": {
+        "law-enforcement-bjj": false,
+        "friday-night-fanatics": false,
+        "nearby-towns": false
+      }
+    }
+  ]
+}
