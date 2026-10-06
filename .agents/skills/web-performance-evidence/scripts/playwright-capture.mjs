@@ -1,9 +1,15 @@
 #!/usr/bin/env node
-import { mkdir, writeFile } from 'node:fs/promises';
-const { chromium } = await import('playwright');
-const routes = process.argv.slice(2).filter(Boolean); const base = process.env.PERF_BASE_URL || 'http://127.0.0.1:8080';
-const out = process.env.PERF_OUT || 'artifacts/performance';
-if (!routes.length) throw new Error('Pass route paths');
-await mkdir(out, { recursive: true }); const executablePath = process.env.PERF_EXECUTABLE_PATH || '/snap/bin/chromium'; const browser = await chromium.launch({ headless: true, ...(executablePath ? { executablePath } : {}) }); const results = [];
-for (const route of routes) { const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 }); const url = new URL(route, base).href; await page.goto(url, { waitUntil: 'networkidle' }); const checks = { url: page.url(), title: await page.title(), cta: await page.locator('a,button').filter({ hasText: /reserve free intro|text sandy|free intro/i }).count(), form: await page.locator('form').count() }; await page.screenshot({ path: `${out}/${route.replaceAll('/', '_') || 'home'}.png`, fullPage: true }); if (!checks.title || (!checks.cta && !checks.form)) throw new Error(`Functional check failed: ${route}`); results.push({ route, ...checks }); await page.close(); }
-await writeFile(`${out}/functional.json`, JSON.stringify(results, null, 2)); await browser.close();
+import { mkdir,writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import { resolve } from 'node:path';
+import { args,required,routes,routeKey } from './common.mjs';
+const a=args(),require=createRequire(resolve(a['project-root']||process.cwd(),'package.json')),{chromium}=require('playwright');
+const out=required(a,'out'),base=required(a,'base-url');await mkdir(out,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:required(a,'chrome-path')});const results=[];
+try{for(const viewport of [{width:390,height:844},{width:1440,height:1000}]){const context=await browser.newContext({viewport,deviceScaleFactor:1});try{for(const route of routes(a.routes)){const page=await context.newPage();try{
+ const response=await page.goto(new URL(route,base).href,{waitUntil:'load',timeout:45000});await page.evaluate(()=>document.fonts.ready);const title=await page.title();if(response?.status()!==200||new URL(page.url()).pathname!==route||!title||!await page.locator('h1').first().isVisible())throw new Error(`Wrong page/status/title/heading: ${route}`);
+ const candidates=page.locator('a').filter({hasText:/reserve free intro|text sandy|free intro|book.*intro/i}),ctas=[];
+ for(let i=0;i<await candidates.count();i++){const el=candidates.nth(i);if(!await el.isVisible())continue;const href=await el.getAttribute('href');if(!href||href==='#'||/^javascript:/i.test(href))continue;const target=new URL(href,page.url());if(!['http:','https:','sms:','tel:'].includes(target.protocol))continue;ctas.push({text:(await el.innerText()).trim(),href});}
+ if(!ctas.length)throw new Error(`No visible actionable intro/text CTA: ${route}`);
+ const screenshot=`${routeKey(route)}-${viewport.width}.png`;await page.screenshot({path:`${out}/${screenshot}`,fullPage:true});results.push({route,url:page.url(),status:response.status(),title,viewport,ctas,screenshot});
+ }finally{await page.close();}}}finally{await context.close();}}await writeFile(`${out}/functional.json`,JSON.stringify({browser:browser.version(),results},null,2),{flag:'wx'});}finally{await browser.close();}

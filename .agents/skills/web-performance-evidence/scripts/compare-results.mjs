@@ -1,19 +1,11 @@
 #!/usr/bin/env node
-import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
-const metric = (r, id) => r?.audits?.[id]?.numericValue ?? null;
-async function phase(name) {
-  const dir = `artifacts/performance/${name}/lighthouse`;
-  const files = (await readdir(dir)).filter(f => f.endsWith('.json') && !/\.\d+\.json$/.test(f)).sort();
-  const entries = await Promise.all(files.map(async file => {
-    const data = JSON.parse(await readFile(`${dir}/${file}`, 'utf8'));
-    const samples = data.samples ?? [];
-    const median = id => { const values = samples.map(r => metric(r, id)).filter(Number.isFinite).sort((a,b) => a-b); return values.length ? values[Math.floor(values.length / 2)] : null; };
-    const first = samples[0]; const categoryScore = samples.map(r => r.categories?.performance?.score * 100).filter(Number.isFinite).sort((a,b) => a-b); const breakdown = first?.audits?.['lcp-breakdown-insight']?.details?.items ?? []; const lcpNode = breakdown.find(item => item.type === 'node') ?? null; const lcpPhases = breakdown.find(item => item.type === 'table')?.items ?? null; const snippetUrl = lcpNode?.snippet?.match(/(?:src|poster)=\"([^\"]+)/)?.[1] ?? null; const resources = first?.audits?.['resource-summary']?.details?.items ?? []; const resourceBytes = type => resources.find(item => item.resourceType === type)?.transferSize ?? null; const total = resources.find(item => item.resourceType === 'total'); const requests = total?.requestCount ?? null;
-    return [file.replace('.json', ''), { score: categoryScore.length ? categoryScore[Math.floor(categoryScore.length / 2)] : null, fcp: median('first-contentful-paint'), lcp: median('largest-contentful-paint'), speedIndex: median('speed-index'), tbt: median('total-blocking-time'), cls: median('cumulative-layout-shift'), ttfb: median('server-response-time'), bytes: total?.transferSize ?? median('total-byte-weight'), requests, jsBytes: resourceBytes('script'), cssBytes: resourceBytes('stylesheet'), imageBytes: resourceBytes('image'), fontBytes: resourceBytes('font'), lcpElement: lcpNode, lcpResource: snippetUrl, lcpPhases }];
-  }));
-  return Object.fromEntries(entries);
-}
-const metrics = { before: await phase('before'), after: await phase('after') };
-await mkdir('artifacts/performance/comparison', { recursive: true });
-await writeFile('artifacts/performance/comparison/metrics.json', JSON.stringify(metrics, null, 2));
-console.log(JSON.stringify(metrics, null, 2));
+import { mkdir,writeFile,stat } from 'node:fs/promises';
+import { resolve,dirname } from 'node:path';
+import { args,required,readJSON,median,routeKey,same } from './common.mjs';
+const a=args(),before=resolve(required(a,'before')),after=resolve(required(a,'after')),out=resolve(required(a,'out'));
+const b=await readJSON(`${before}/manifest.json`),c=await readJSON(`${after}/manifest.json`);
+if(b.status!=='complete'||c.status!=='complete'||b.phase!=='before'||c.phase!=='after')throw new Error('Need complete before and after runs');
+for(const key of ['routes','samples','node','chrome','lighthouse','playwright','os','requestedConfigHash','lighthouseConfig','server'])if(!same(b[key],c[key]))throw new Error(`Incompatible ${key}`);
+const ids={fcp:'first-contentful-paint',lcp:'largest-contentful-paint',speedIndex:'speed-index',tbt:'total-blocking-time',cls:'cumulative-layout-shift',ttfb:'server-response-time',bytes:'total-byte-weight'};
+async function phase(dir,m){const result={};const functional=await readJSON(`${dir}/screenshots/functional.json`);for(const route of m.routes){for(const width of [390,1440]){const check=functional.results.find(x=>x.route===route&&x.viewport.width===width);if(!check||check.status!==200||!check.ctas.length)throw new Error(`Missing functional evidence ${route} ${width}`);await stat(`${dir}/screenshots/${check.screenshot}`);}const data=await readJSON(`${dir}/lighthouse/${routeKey(route)}.json`);if(data.samples.length!==m.samples)throw new Error(`Wrong sample count ${route}`);const rows=data.samples.map((r,i)=>{if(r.runtimeError||!same(r.configSettings,m.lighthouseConfig)||r.lighthouseVersion!==m.lighthouse)throw new Error('Invalid sample');const row={sample:i+1};for(const [key,id]of Object.entries(ids)){const value=r.audits?.[id]?.numericValue;if(!Number.isFinite(value))throw new Error(`Missing ${id} ${route}`);row[key]=value;}const score=r.categories?.performance?.score;if(!Number.isFinite(score))throw new Error('Missing score');row.score=score*100;const resources=r.audits?.['resource-summary']?.details?.items||[];row.requests=resources.find(x=>x.resourceType==='total')?.requestCount;for(const [key,type]of Object.entries({jsBytes:'script',cssBytes:'stylesheet',imageBytes:'image',fontBytes:'font'}))row[key]=resources.find(x=>x.resourceType===type)?.transferSize??0;return row;});const metrics={};for(const key of Object.keys(rows[0]).filter(x=>x!=='sample')){const values=rows.map(x=>x[key]);metrics[key]={median:median(values),min:Math.min(...values),max:Math.max(...values)};}const representative=[...rows].sort((x,y)=>Math.abs(x.lcp-metrics.lcp.median)-Math.abs(y.lcp-metrics.lcp.median)||x.sample-y.sample)[0];const raw=data.samples[representative.sample-1];result[route]={metrics,samples:rows,representativeSample:representative.sample,lcpDiagnostics:{breakdown:raw.audits?.['lcp-breakdown-insight']?.details??null,legacyElement:raw.audits?.['largest-contentful-paint-element']?.details??null,discovery:raw.audits?.['lcp-discovery-insight']?.details??null},warnings:raw.runWarnings??[]};}return result;}
+const metrics={schema:1,beforeRun:before,afterRun:after,manifests:{before:b,after:c},before:await phase(before,b),after:await phase(after,c)};await mkdir(dirname(out),{recursive:true});await mkdir(out);await writeFile(`${out}/metrics.json`,JSON.stringify(metrics,null,2),{flag:'wx'});console.log(`${out}/metrics.json`);

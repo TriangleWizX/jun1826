@@ -533,8 +533,13 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
 </IfModule>
 
 <IfModule mod_headers.c>
+  # Default cache for non-fingerprinted static assets.
+  <FilesMatch "\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
+    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+  </FilesMatch>
+
   # Long cache for fingerprinted static assets.
-  <FilesMatch "\\.[0-9a-f]{6}\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
+  <FilesMatch "\\.[0-9a-f]{6}(?:[0-9a-f]{6})?\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
@@ -548,10 +553,6 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
     Header set Cache-Control "public, max-age=60, stale-while-revalidate=300"
   </Files>
 
-  # Default cache for non-fingerprinted static assets.
-  <FilesMatch "\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
-    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
-  </FilesMatch>
 </IfModule>
 
 <IfModule mod_brotli.c>

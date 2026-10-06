@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { readFile, writeFile } from 'node:fs/promises';
-const x = JSON.parse(await readFile('artifacts/performance/comparison/metrics.json', 'utf8'));
-const delta = (before, after) => Number.isFinite(before) && Number.isFinite(after) ? (after - before).toFixed(1) : '—';
-const rows = Object.keys(x.after).map(k => { const b = x.before[k], a = x.after[k]; return `| ${k} | ${a.score ?? '—'} | ${a.lcp ?? '—'} (${delta(b.lcp,a.lcp)}) | ${a.fcp ?? '—'} (${delta(b.fcp,a.fcp)}) | ${a.tbt ?? '—'} (${delta(b.tbt,a.tbt)}) | ${a.cls ?? '—'} (${delta(b.cls,a.cls)}) | ${a.bytes ?? '—'} (${delta(b.bytes,a.bytes)}) | ${a.requests ?? '—'} (${delta(b.requests,a.requests)}) |`; });
-const report = `# Performance comparison\n\nControlled local lab evidence. Positive deltas are increases for time/bytes metrics.\n\n| Route | Score | LCP | FCP | TBT | CLS | Bytes | Requests |\n|---|---:|---:|---:|---:|---:|---:|---:|\n${rows.join('\n')}\n\nRaw evidence: metrics.json, phase manifests, Lighthouse JSON, screenshots, and functional checks.`;
-await writeFile('artifacts/performance/comparison/summary.md', report); console.log(report);
+import { writeFile } from 'node:fs/promises';
+import { args,required,readJSON } from './common.mjs';
+const a=args(),x=await readJSON(required(a,'input'));let report='# Controlled local performance comparison\n\nLocal lab measurements do not establish live hosting performance or a change to the reported 5.35 seconds. Timings use milliseconds; CLS is unitless. All numeric values are sample medians, with min–max spread retained in metrics.json. Positive deltas are increases.\n\n';
+for(const route of Object.keys(x.after)){report+=`## ${route}\n\n| Metric | Before | After | Delta | After range |\n|---|---:|---:|---:|---:|\n`;for(const key of Object.keys(x.after[route].metrics)){const b=x.before[route].metrics[key],c=x.after[route].metrics[key],digits=key==='cls'?4:1,fmt=n=>n.toFixed(digits);report+=`| ${key}${['fcp','lcp','speedIndex','tbt','ttfb'].includes(key)?' (ms)':''} | ${fmt(b.median)} | ${fmt(c.median)} | ${fmt(c.median-b.median)} | ${fmt(c.min)}–${fmt(c.max)} |\n`;}report+=`\nLCP diagnostics: before sample ${x.before[route].representativeSample}; after sample ${x.after[route].representativeSample}. Full element, discovery, phase diagnostics, and warnings are preserved in metrics.json.\n\n`;}
+report+=`Before evidence: ${x.beforeRun}\n\nAfter evidence: ${x.afterRun}\n\nNo inferred missing measurements or guaranteed savings.\n`;await writeFile(required(a,'out'),report,{flag:'wx'});

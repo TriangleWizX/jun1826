@@ -238,3 +238,9 @@ html:has(body.page-home), body.page-home {
 @media (max-width: 47.99rem) {
   .page-home .ss-home-location__copy { max-width: none; }
 }
+
+/* Existing smaller photos retain the lane-card layout on phones. */
+@media (max-width: 47.99rem) {
+  .page-home .ss-home-lane-bento-card--teens .ss-double-bezel-inner::before { background-image: url("/assets/images/action3-mobile.webp"); }
+  .page-home .ss-home-lane-bento-card--adults .ss-double-bezel-inner::before { background-image: url("/assets/images/action2-mobile.webp"); }
+}

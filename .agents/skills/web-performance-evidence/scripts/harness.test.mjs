@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp,mkdir,writeFile,symlink } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { median,routes,integer } from './common.mjs';
+import { startServer } from './static-server.mjs';
+test('median rejects missing evidence and computes even samples',()=>{assert.equal(median([9,1,3,5]),4);assert.throws(()=>median([1,null]));assert.throws(()=>median([]));assert.throws(()=>integer('nan',3));assert.throws(()=>routes('/,/'));});
+test('local serving supports production paths and safe SSI',async()=>{const root=await mkdtemp(join(tmpdir(),'perf-server-'));await mkdir(join(root,'options'));await mkdir(join(root,'include'));await writeFile(join(root,'options.html'),'flat');await writeFile(join(root,'options/index.html'),'directory');await writeFile(join(root,'include/nav.html'),'<nav>Menu</nav>');await writeFile(join(root,'index.html'),'<!--#include virtual="/include/nav.html" -->');await writeFile(join(root,'pic.webp'),'image');await symlink('/etc/passwd',join(root,'escape.html'));const server=await startServer(root,0,'test-token');const base=`http://127.0.0.1:${server.address().port}`;try{assert.equal(await(await fetch(base+'/options')).text(),'directory');assert.equal(await(await fetch(base+'/options/')).text(),'directory');assert.equal(await(await fetch(base+'/')).text(),'<nav>Menu</nav>');assert.equal((await fetch(base+'/pic.webp')).headers.get('content-type'),'image/webp');assert.equal((await fetch(base+'/escape')).status,404);assert.equal((await fetch(base+'/missing')).status,404);assert.equal((await fetch(base+'/%2e%2e%2fetc/passwd')).status,400);assert.equal(await(await fetch(base+'/__perf_ready')).text(),'test-token');}finally{server.closeAllConnections();await new Promise(ok=>server.close(ok));}});
