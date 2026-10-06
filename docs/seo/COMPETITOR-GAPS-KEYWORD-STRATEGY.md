@@ -34,8 +34,6 @@ This strategy maps each query to an authoritative target page, outlines the rank
 | **sensei studio** | 20 | 84 | 0 | `/sensei-studio` | Facility / Building | Page title & meta description |
 | **new york sanda** | 50 | 88 | 28 | `/blog/what-is-sanda-sanshou` | Discipline Comparison | High-performing blog authority page |
 | **senshi judo** | 170 | 86 | 14 | `/bjj-glossary/kuzushi` | Japanese Martial Arts | Connect Judo off-balancing to BJJ |
-| **jacyntho ferro** | 40 | 77 | 0 | `/sources/clockwork-bjj-instructors` | NYC Lineage Network | Clockwork NYC lineage source verification |
-| **sardinha bjj** | 20 | 78 | 2 | `/sources/clockwork-bjj-instructors` | NYC Lineage Network | Clockwork NYC lineage source verification |
 | **sd brazilian jiu jitsu nyc** | 260 | 86 | 16 | `/sensei-jiu-jitsu` | Downstate Lineage / NYC | NYC roots & lineage documentation |
 | **gracie barra sandy** | 110 | 74 | 1 | `/sensei-jiu-jitsu` | Brand Entity Ambiguity | Clarify Sensei Sandy vs. GB Sandy (Utah) |
 | **long island bjj** | 880 | 90 | 16 | `/bjj-glossary/snap-down` | Downstate Traveler | Cross-link glossary to vacation training |
@@ -56,9 +54,9 @@ This strategy maps each query to an authoritative target page, outlines the rank
   - `src/bio.html`: Contextualized Coach Sandy Jose Nunez as a dedicated black belt *jiu jitsu sensei*.
 
 ### Pillar 2: NYC Lineage & Instructor Network
-**Keywords**: `jacyntho ferro` (#77), `sardinha bjj` (#78), `sd brazilian jiu jitsu nyc` (#86), `gracie barra sandy` (#74).
+**Keywords**: `sd brazilian jiu jitsu nyc` (#86), `gracie barra sandy` (#74).
 
-- **Root Cause**: Coach Sandy earned his black belt at Clockwork Jiu Jitsu under 4th-degree black belt Josh Griffiths in Manhattan. The official source page `/sources/clockwork-bjj-instructors` already documents Clockwork instructors and affiliates. Furthermore, searchers looking for "Gracie Barra Sandy" (a large school in Sandy, Utah) trigger Google's semantic index for "Sandy" + "BJJ" in New York.
+- **Root Cause**: Coach Sandy earned his black belt at Clockwork Jiu Jitsu under 4th-degree black belt Josh Griffiths in Manhattan. The official source page `/sources/clockwork-bjj-instructors` already documents Josh Griffiths and Clockwork lineage. Furthermore, searchers looking for "Gracie Barra Sandy" (a large school in Sandy, Utah) trigger Google's semantic index for "Sandy" + "BJJ" in New York.
 - **Strategic Response**:
   - Keep `/sources/clockwork-bjj-instructors` rigorously indexed as an official source verification document.
   - Maintain the lineage node `Josh Griffiths → Clockwork Jiu-Jitsu → Sandy Jose Nunez` in schema structured data (`SportsTeam` and `Person`).
@@ -69,7 +67,7 @@ This strategy maps each query to an authoritative target page, outlines the rank
 
 - **Root Cause**: Coach Sandy's deep understanding of combat mechanics includes comparative analyses of Chinese Sanda (Sanshou) and Japanese Judo. Sensei Sandy BJJ already maintains high-authority blog articles (`/blog/what-is-sanda-sanshou` and `/blog/sanda-vs-jiu-jitsu-for-mma`) and glossary entries (`/bjj-glossary/kuzushi`).
 - **Strategic Response**:
-  - Cross-link `/blog/what-is-sanda-sanshou` to `/sensei-jiu-jitsu` emphasizing how stand-up clinch, throws, and off-balancing translate into modern BJJ safety.
+  - Keep `/blog/what-is-sanda-sanshou` focused on objective striking vs. ground combat comparisons and beginner safety.
   - In `/bjj-glossary/kuzushi`, maintain clear educational ties explaining how Judo kuzushi principles protect joints and enable low-impact takedown defense for adult beginners.
 
 ### Pillar 4: Downstate & Weekend Visitor Capture
