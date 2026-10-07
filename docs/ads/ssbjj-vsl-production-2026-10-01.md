@@ -1,6 +1,6 @@
 # Sensei Sandy BJJ: footage-led VSL
 
-> October 2 update: use the [four-position VSL plan](vsl-four-position-2026-10-02/PLAN.md) and [current recording script](vsl-four-position-2026-10-02/SCRIPT.md). Adult same-day training is now elective after the required fifteen-minute visit, with Sandy’s confirmation. The public path is one free class plus paid continuation. This older draft remains for recording history.
+> October 5 update: use the [Sandy Jose Nunez 11-part architecture plan](vsl-sandy-framework-2026-10-05/PLAN.md) and [current recording script](vsl-sandy-framework-2026-10-05/SCRIPT.md). This directly implements founder Sandy Jose Nunez's 11-part objection-handling framework. This older draft remains for recording history.
 
 Status: script and production draft. No finished video, recording, publication, or footage permission is claimed.
 

@@ -1,0 +1,183 @@
+{
+  "method": "Flesch-Kincaid grade estimate using CMU pronunciations and explicit local overrides.",
+  "dictionary": "/usr/share/pocketsphinx/model/en-us/cmudict-en-us.dict",
+  "overrides": {
+    "jiu": 1,
+    "jitsu": 2,
+    "tannersville": 3,
+    "mountaintop": 3,
+    "sandy": 2,
+    "bjj": 3,
+    "coached": 1,
+    "i'll": 1,
+    "you'll": 1,
+    "fifteen": 2,
+    "clockwork": 2,
+    "catskills": 2,
+    "leverage": 2
+  },
+  "framework": "Eleven-stage 240-second edit allocation: 7, 6, 15, 75, 45, 40, 10, 10, 15, 10, 7 seconds. Stage S10 uses a practical next step rather than unsupported scarcity. These are edit targets, not measured take durations.",
+  "results": {
+    "S01": {
+      "words": 11,
+      "sentences": 2,
+      "syllables": 12,
+      "fk_grade": -0.57
+    },
+    "S02": {
+      "words": 9,
+      "sentences": 2,
+      "syllables": 9,
+      "fk_grade": -2.03
+    },
+    "S03": {
+      "words": 26,
+      "sentences": 5,
+      "syllables": 27,
+      "fk_grade": -1.31
+    },
+    "S04": {
+      "words": 96,
+      "sentences": 13,
+      "syllables": 112,
+      "fk_grade": 1.06
+    },
+    "S05": {
+      "words": 61,
+      "sentences": 9,
+      "syllables": 65,
+      "fk_grade": -0.37
+    },
+    "S06": {
+      "words": 79,
+      "sentences": 11,
+      "syllables": 92,
+      "fk_grade": 0.95
+    },
+    "S07": {
+      "words": 14,
+      "sentences": 3,
+      "syllables": 17,
+      "fk_grade": 0.56
+    },
+    "S08": {
+      "words": 17,
+      "sentences": 3,
+      "syllables": 19,
+      "fk_grade": -0.19
+    },
+    "S09": {
+      "words": 25,
+      "sentences": 3,
+      "syllables": 27,
+      "fk_grade": 0.4
+    },
+    "S10": {
+      "words": 18,
+      "sentences": 2,
+      "syllables": 20,
+      "fk_grade": 1.03
+    },
+    "S11": {
+      "words": 10,
+      "sentences": 2,
+      "syllables": 11,
+      "fk_grade": -0.66
+    },
+    "master": {
+      "words": 366,
+      "sentences": 55,
+      "syllables": 411,
+      "fk_grade": 0.26
+    },
+    "social_ending": {
+      "words": 8,
+      "sentences": 2,
+      "syllables": 9,
+      "fk_grade": -0.75
+    },
+    "discovery_cut": {
+      "words": 30,
+      "sentences": 7,
+      "syllables": 35,
+      "fk_grade": -0.15
+    },
+    "S01_overlay": {
+      "words": 6,
+      "sentences": 2,
+      "syllables": 6,
+      "fk_grade": -2.62
+    },
+    "S02_overlay": {
+      "words": 4,
+      "sentences": 2,
+      "syllables": 4,
+      "fk_grade": -3.01
+    },
+    "S03_overlay": {
+      "words": 8,
+      "sentences": 3,
+      "syllables": 8,
+      "fk_grade": -2.75
+    },
+    "S04_overlay": {
+      "words": 3,
+      "sentences": 1,
+      "syllables": 3,
+      "fk_grade": -2.62
+    },
+    "S05_overlay": {
+      "words": 4,
+      "sentences": 1,
+      "syllables": 4,
+      "fk_grade": -2.23
+    },
+    "S06_overlay": {
+      "words": 5,
+      "sentences": 1,
+      "syllables": 5,
+      "fk_grade": -1.84
+    },
+    "S07_overlay": {
+      "words": 6,
+      "sentences": 2,
+      "syllables": 7,
+      "fk_grade": -0.65
+    },
+    "S08_overlay": {
+      "words": 5,
+      "sentences": 1,
+      "syllables": 5,
+      "fk_grade": -1.84
+    },
+    "S09_overlay": {
+      "words": 8,
+      "sentences": 2,
+      "syllables": 8,
+      "fk_grade": -2.23
+    },
+    "S10_overlay": {
+      "words": 4,
+      "sentences": 1,
+      "syllables": 5,
+      "fk_grade": 0.72
+    },
+    "S11_overlay": {
+      "words": 4,
+      "sentences": 1,
+      "syllables": 5,
+      "fk_grade": 0.72
+    },
+    "social_overlay": {
+      "words": 5,
+      "sentences": 1,
+      "syllables": 6,
+      "fk_grade": 0.52
+    }
+  },
+  "all_prose_at_or_below_grade_3": true,
+  "zero_prohibited_tokens": true,
+  "artifacts_match_structured_copy": true,
+  "edit_allocation_seconds": 240,
+  "recorded_duration_verified": false
+}

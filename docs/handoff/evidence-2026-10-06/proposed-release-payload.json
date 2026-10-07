@@ -1,0 +1,88 @@
+{
+  "status": "proposed source-list simulation; not a committed dry-run",
+  "source_paths": [
+    "src/free-bjj-intro-tannersville-ny/index.html",
+    "src/schedule.html",
+    "src/instagram/index.html",
+    "src/partials/nav-include.html",
+    "dist/nav-include.html",
+    "scripts/deploy-release.py"
+  ],
+  "payload": [
+    {
+      "path": "sitemap-blog.xml",
+      "local_source": "dist/sitemap-blog.xml",
+      "sha256": "1782470414a81eb449e1540d1172deebe6cf32ebfcb03fcd1aacbe9f9bb9a4b0",
+      "bytes": 7543
+    },
+    {
+      "path": "sitemap-core.xml",
+      "local_source": "dist/sitemap-core.xml",
+      "sha256": "224c2d729f8718e822f564b270c31f5fbd049135832625e02fb6a2c5acbe9af9",
+      "bytes": 5283
+    },
+    {
+      "path": "sitemap-glossary.xml",
+      "local_source": "dist/sitemap-glossary.xml",
+      "sha256": "1eac5eb26d65464fce97cd54ebb4014ae5572df2ee6e20163c239cd4347924ea",
+      "bytes": 17779
+    },
+    {
+      "path": "sitemap-locations.xml",
+      "local_source": "dist/sitemap-locations.xml",
+      "sha256": "98ac0d6b1523ce7c2d7981afd06e1e90a0acfb6fa1d9e887ed3fc7154a0adde3",
+      "bytes": 1772
+    },
+    {
+      "path": "sitemap-programs.xml",
+      "local_source": "dist/sitemap-programs.xml",
+      "sha256": "ea6eabe208e70c9796ba2ed4ae4cdb6799847a0febc03ae0ddb390f9d8089915",
+      "bytes": 917
+    },
+    {
+      "path": "sitemap.xml",
+      "local_source": "dist/sitemap.xml",
+      "sha256": "981e37f6ec688c01f969bd10262fdd296c4ef65e0666dd926671a8076cbdb52e",
+      "bytes": 540
+    },
+    {
+      "path": "free-bjj-intro-tannersville-ny/index.html",
+      "local_source": "dist/free-bjj-intro-tannersville-ny/index.html",
+      "sha256": "aef4fb1e9557a6436e2e71f811f11988d3148f0bcf84382d7bb2cece7a442990",
+      "bytes": 26820
+    },
+    {
+      "path": "instagram/index.html",
+      "local_source": "dist/instagram/index.html",
+      "sha256": "2f00ca5cc10e1e8517f37dbe6df775bdb4701e5b4ed0d397c860279938bd94b7",
+      "bytes": 18818
+    },
+    {
+      "path": "nav-include.html",
+      "local_source": "dist/nav-include.html",
+      "sha256": "a20f31e39c1b445ba910f1d53206fe0895394454c10ace31a46209ca2a6f592a",
+      "bytes": 35961
+    },
+    {
+      "path": "partials/nav-include.html",
+      "local_source": "dist/partials/nav-include.html",
+      "sha256": "a20f31e39c1b445ba910f1d53206fe0895394454c10ace31a46209ca2a6f592a",
+      "bytes": 35961
+    },
+    {
+      "path": "schedule.html",
+      "local_source": "dist/schedule/index.html",
+      "sha256": "2b33ab020b62c0a3e26bd7309f95476dec600d27f8785b6e43b76c3fc15ce468",
+      "bytes": 33896
+    },
+    {
+      "path": "schedule/index.html",
+      "local_source": "dist/schedule/index.html",
+      "sha256": "2b33ab020b62c0a3e26bd7309f95476dec600d27f8785b6e43b76c3fc15ce468",
+      "bytes": 33896
+    }
+  ],
+  "unfiltered_payload_count": 166,
+  "filtered_payload_count": 12,
+  "requires_exact_only_filters": true
+}

@@ -1,0 +1,53 @@
+{
+  "verification": "read-only live response and literal marker checks; no deployment or booking submission",
+  "results": [
+    {
+      "route": "/instagram",
+      "status": 200,
+      "final_url": "https://senseisandy.com/instagram",
+      "sha256": "9eb620aaeea50260179c24ab76f70b87419044f1fe18c63bc2428fa747b77db8",
+      "markers": {
+        "?lane=kids#booking-flow": true,
+        "?lane=adult#booking-flow": true
+      }
+    },
+    {
+      "route": "/schedule",
+      "status": 200,
+      "final_url": "https://senseisandy.com/schedule",
+      "sha256": "14194f69d610dd450160ddb2226126174589fe16a44e07bf74c27e26dc0bbd8c",
+      "markers": {
+        "Youth first visit": true,
+        "Adult first visit": true
+      }
+    },
+    {
+      "route": "/schedule.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/schedule",
+      "sha256": "14194f69d610dd450160ddb2226126174589fe16a44e07bf74c27e26dc0bbd8c",
+      "markers": {
+        "Youth first visit": true,
+        "Adult first visit": true
+      }
+    },
+    {
+      "route": "/free-bjj-intro-tannersville-ny",
+      "status": 200,
+      "final_url": "https://senseisandy.com/free-bjj-intro-tannersville-ny",
+      "sha256": "f0eb27f5943d482bed60a4a1b1f09adb19f27b82e1057b5b82d26e6ef89f57be",
+      "markers": {
+        "rel=\"preload\" href=\"https://app.cal.com/embed/embed.js\"": true
+      }
+    },
+    {
+      "route": "/nav-include.html",
+      "status": 200,
+      "final_url": "https://senseisandy.com/nav-include.html",
+      "sha256": "a20f31e39c1b445ba910f1d53206fe0895394454c10ace31a46209ca2a6f592a",
+      "markers": {
+        "<span class=\"ss-nav-cta__short\">Free Intro</span>": true
+      }
+    }
+  ]
+}

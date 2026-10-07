@@ -1,0 +1,109 @@
+{
+  "status": "Revised offline script; October 6, 2026. Copy review complete subject to checker and recorded delivery. Media and publication pending.",
+  "framework": "Eleven-stage 240-second edit allocation: 7, 6, 15, 75, 45, 40, 10, 10, 15, 10, 7 seconds. Stage S10 uses a practical next step rather than unsupported scarcity. These are edit targets, not measured take durations.",
+  "blocks": [
+    {
+      "id": "S01",
+      "stage": "Audience Hook",
+      "target_seconds": 7,
+      "title": "Time for you",
+      "spoken": "Want time for you? Come learn a new skill with us.",
+      "overlay": "Time for you. Room to learn.",
+      "picture": "Sandy speaks to camera; cut to an adult arrival only with permission."
+    },
+    {
+      "id": "S02",
+      "stage": "Academy Mission",
+      "target_seconds": 6,
+      "title": "Calm coaching",
+      "spoken": "I coach you step by step. We start calm.",
+      "overlay": "Start calm. Train smart.",
+      "picture": "Sandy shows one move with a consenting adult partner."
+    },
+    {
+      "id": "S03",
+      "stage": "Coaching Proof",
+      "target_seconds": 15,
+      "title": "See how coaching works",
+      "spoken": "See how I coach. I show a move. You try it with a partner. I watch and give you a clear tip. You try the move.",
+      "overlay": "See a move. Try it. Get a tip.",
+      "picture": "Capture one connected coach cue, learner attempt, feedback, and retry. If that clip is missing, keep Sandy on camera; add proof footage after permission review."
+    },
+    {
+      "id": "S04",
+      "stage": "Objection 1: Coaching Background",
+      "target_seconds": 75,
+      "title": "Why learn with Sandy?",
+      "spoken": "I am Sandy. I earned my black belt at Clockwork Jiu Jitsu in New York City. I taught kids there. I led adult classes in Brooklyn. I coach in Tannersville. We start by talking about your goals. You can tell me what you want to learn. We see the room and talk about the rules. I help you plan your first class. We find a pace and partner that fit you. You can ask me questions as we go. You get a clear next step. Come meet me and see how we train in the Catskills.",
+      "overlay": "Meet your coach.",
+      "picture": "Use Sandy to camera and a permission-cleared lineage image. Use real coaching rather than invented biography or outcomes."
+    },
+    {
+      "id": "S05",
+      "stage": "Objection 2: Beginner Experience",
+      "target_seconds": 45,
+      "title": "How do we start?",
+      "spoken": "You start in our Beginner Lane. I show you the room. We talk through the rules. You learn with a matched partner at your pace. You can ask me to show a move. We try it one step at a time. You can pause a round. I help you find your next step. You get time to learn how class feels.",
+      "overlay": "Learn at your pace.",
+      "picture": "Show the room tour and coached adult practice with matched pace. Avoid edited demonstrations that imply physical effort is unnecessary."
+    },
+    {
+      "id": "S06",
+      "stage": "Objection 3: First-Class Fit",
+      "target_seconds": 40,
+      "title": "How does my first class work?",
+      "spoken": "We plan a first class that fits you. Adults start with a visit. You can ask to train that day. I must confirm your class before you train. You can choose a later day. Kids and teens use their own class plan. A parent or guardian stays with them. I confirm the class and what to wear. We talk about your goals and find the next step together. Wear day clothes to visit. Wear clean sports clothes to train.",
+      "overlay": "We plan your first class.",
+      "picture": "Keep Sandy on camera during the adult and youth distinction. Show adults only unless youth media permissions are documented."
+    },
+    {
+      "id": "S07",
+      "stage": "The Deliverable",
+      "target_seconds": 10,
+      "title": "What is the first step?",
+      "spoken": "Meet me for fifteen minutes. See the room. I confirm your free first class.",
+      "overlay": "Meet Sandy. Plan your free class.",
+      "picture": "Show a goal chat and room tour; do not cut straight from arrival to training as if confirmation were automatic."
+    },
+    {
+      "id": "S08",
+      "stage": "Choice and Reassurance",
+      "target_seconds": 10,
+      "title": "What happens after the visit?",
+      "spoken": "You can ask questions. You choose your next step. I can help you plan a later class.",
+      "overlay": "You choose your next step.",
+      "picture": "Sandy speaks to camera; an optional consenting adult greeting illustrates welcome rather than a guaranteed outcome."
+    },
+    {
+      "id": "S09",
+      "stage": "Price Expectations",
+      "target_seconds": 15,
+      "title": "What comes after the free class?",
+      "spoken": "Your first class is free. If you choose to keep training, I show you the paid plans. You can ask me what each plan includes.",
+      "overlay": "First class free. You choose what comes next.",
+      "picture": "Sandy explains the choice; omit prices and student counts from graphics."
+    },
+    {
+      "id": "S10",
+      "stage": "Practical Next Step",
+      "target_seconds": 10,
+      "title": "Find a time that fits",
+      "spoken": "Pick a visit time that fits your week. We can talk about your goals and plan your class.",
+      "overlay": "Plan your first visit.",
+      "picture": "Show the current booking page without personal data. Do not add spot counters or full-class graphics."
+    },
+    {
+      "id": "S11",
+      "stage": "CTA and Expectations",
+      "target_seconds": 7,
+      "title": "Reserve your first visit",
+      "spoken": "Tap the link for your free visit. Come meet me.",
+      "overlay": "Book your free visit.",
+      "picture": "Hold a readable first-visit link or button. Keep booking access visible."
+    }
+  ],
+  "supporting_copy": {
+    "social_ending": "Comment START for the link. Come meet me.",
+    "discovery_cut": "Want time for you? Come learn a new skill. I am Sandy in Tannersville. Meet me. See the room. We plan your free first class. Comment START for the link."
+  }
+}

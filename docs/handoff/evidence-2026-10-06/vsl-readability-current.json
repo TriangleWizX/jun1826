@@ -1,0 +1,108 @@
+{
+  "method": "Flesch-Kincaid grade estimate using CMU pronunciations and explicit local overrides.",
+  "dictionary": "/usr/share/pocketsphinx/model/en-us/cmudict-en-us.dict",
+  "overrides": {
+    "jiu": 1,
+    "jitsu": 2,
+    "tannersville": 3,
+    "mountaintop": 3,
+    "sandy": 2,
+    "bjj": 3,
+    "coached": 1,
+    "i'll": 1,
+    "you'll": 1,
+    "fifteen": 2,
+    "clockwork": 2,
+    "catskills": 2,
+    "leverage": 2
+  },
+  "framework": "Sandy Jose Nunez Email Architecture (Hook 7s, Mission 6s, Proof 15s, Obj 1 75s, Obj 2 45s, Obj 3 40s, Deliverable 10s, De-risked 10s, Price Expectations 15s, Urgency 10s, CTA 7s; Total: 240s / 4:00)",
+  "results": {
+    "S01": {
+      "words": 28,
+      "sentences": 3,
+      "syllables": 30,
+      "fk_grade": 0.69
+    },
+    "S02": {
+      "words": 23,
+      "sentences": 4,
+      "syllables": 29,
+      "fk_grade": 1.53
+    },
+    "S03": {
+      "words": 30,
+      "sentences": 5,
+      "syllables": 38,
+      "fk_grade": 1.7
+    },
+    "S04": {
+      "words": 104,
+      "sentences": 12,
+      "syllables": 130,
+      "fk_grade": 2.54
+    },
+    "S05": {
+      "words": 68,
+      "sentences": 12,
+      "syllables": 90,
+      "fk_grade": 2.24
+    },
+    "S06": {
+      "words": 62,
+      "sentences": 7,
+      "syllables": 71,
+      "fk_grade": 1.38
+    },
+    "S07": {
+      "words": 28,
+      "sentences": 4,
+      "syllables": 32,
+      "fk_grade": 0.63
+    },
+    "S08": {
+      "words": 26,
+      "sentences": 4,
+      "syllables": 33,
+      "fk_grade": 1.92
+    },
+    "S09": {
+      "words": 36,
+      "sentences": 5,
+      "syllables": 45,
+      "fk_grade": 1.97
+    },
+    "S10": {
+      "words": 22,
+      "sentences": 3,
+      "syllables": 29,
+      "fk_grade": 2.82
+    },
+    "S11": {
+      "words": 21,
+      "sentences": 3,
+      "syllables": 26,
+      "fk_grade": 1.75
+    },
+    "master": {
+      "words": 448,
+      "sentences": 62,
+      "syllables": 553,
+      "fk_grade": 1.79
+    },
+    "social_ending": {
+      "words": 18,
+      "sentences": 3,
+      "syllables": 22,
+      "fk_grade": 1.17
+    },
+    "discovery_cut": {
+      "words": 36,
+      "sentences": 7,
+      "syllables": 42,
+      "fk_grade": 0.18
+    }
+  },
+  "all_prose_at_or_below_grade_3": true,
+  "zero_prohibited_tokens": true
+}

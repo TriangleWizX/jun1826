@@ -1,4 +1,4 @@
-> Creative direction superseded by [the outcome-led shoot draft](../vsl-outcome-shoot-order-2026-10-03/SHOOT-ORDER.md). Retain this document as prior planning history; use the new script for recording.
+> Creative direction superseded by [the Sandy Jose Nunez 11-part architecture plan](../vsl-sandy-framework-2026-10-05/PLAN.md) and [recording script](../vsl-sandy-framework-2026-10-05/SCRIPT.md). Retain this document as prior planning history; use the new script for recording.
 
 # A clear first class, then four positions in fourteen days
 

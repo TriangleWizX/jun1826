@@ -1,3 +1,5 @@
+> Creative direction superseded by [the Sandy Jose Nunez 11-part architecture plan](../vsl-sandy-framework-2026-10-05/PLAN.md) and [recording script](../vsl-sandy-framework-2026-10-05/SCRIPT.md). Retain this document as prior planning history; use the new script for recording.
+
 # Outcome-led VSL: Sandy recording copy
 
 This draft replaces the October 2 curriculum-led VSL for recording and editing. It preserves the approved offer and four-position learning aim. S numbers are EDIT order, not shoot order. Final length depends on the actual read; budget roughly 4–5 minutes including shot holds.

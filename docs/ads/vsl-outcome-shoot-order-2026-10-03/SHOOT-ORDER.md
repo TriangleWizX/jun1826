@@ -1,3 +1,5 @@
+> Creative direction superseded by [the Sandy Jose Nunez 11-part architecture plan](../vsl-sandy-framework-2026-10-05/PLAN.md) and [recording script](../vsl-sandy-framework-2026-10-05/SCRIPT.md). Retain this document as prior planning history; use the new script for recording.
+
 # VSL shoot order: outcome-led revision
 
 Current recording draft, October 3, 2026. This supersedes the October 2 VSL creative direction; it does not change academy policy. Use SCRIPT.md for viewer order. This sheet is physical recording order.

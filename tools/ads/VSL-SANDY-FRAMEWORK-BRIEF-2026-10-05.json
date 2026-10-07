@@ -1,0 +1,171 @@
+{
+  "task": "Edit and operationalize the Sensei Sandy BJJ VSL plan and recording package based on Sandy Jose Nunez's 11-part objection-handling framework (audience hook 7s, mission 6s, proof 15s, 3 objections: why listen 75s, why different 45s, will it work for me 40s, deliverable 10s, de-risked fear 10s, price expectations 15s, urgency/scarcity 10s, cta/qualify 7s). Deliver complete PLAN.md, SCRIPT.md, SHOOT-ORDER.md, SANDY-TAKES.txt, copy.json, check-copy.py, readability.json, and REVIEW.md adhering to 3rd-grade reading level, positive beginner framing, zero prohibited words, volatile-fact compliance, and 4-rubric marketing pipeline.",
+  "definition_of_done": [
+    {
+      "id": "dod-1",
+      "criterion": "Eleven-stage master preserves the 240-second edit allocation, uses evidence-grounded copy and a practical next step in S10, and labels recorded timing as pending."
+    },
+    {
+      "id": "dod-2",
+      "criterion": "All spoken copy passes automated Flesch-Kincaid grade checking at or below Grade 3.0 and contains zero prohibited negative tokens (zero, without, no, stop, don't, won't, never)."
+    },
+    {
+      "id": "dod-3",
+      "criterion": "The offer and operational facts strictly adhere to repository authorities: 15-minute goal chat / visit in regular street clothes, free first class, coach confirmation, no hard-coded volatile prices in spoken copy, and proper comment trigger 'START'."
+    },
+    {
+      "id": "dod-4",
+      "criterion": "Comprehensive 4-rubric evaluation (Stop-Slop, Universal Analyzer-Improver, Anything-Enhancer, Empirical Reach Matrix) is documented and all repository QA tests (qa:volatile-facts, test:ads) pass cleanly."
+    }
+  ],
+  "constraints": [
+    "Offline ad studio documentation only; no public deployment bundle contamination.",
+    "Follow AGENTS.md tri-tier persona framework and full-source adoption gate.",
+    "Strict positive framing: substitute positive alternatives for all negative phrasing.",
+    "Preserve existing unrelated git status and files."
+  ],
+  "authorized_actions": [
+    "read",
+    "write",
+    "recommend"
+  ],
+  "required_capabilities": [
+    "copywriting",
+    "debugging",
+    "agents"
+  ],
+  "workstreams": [
+    {
+      "id": "vsl-script-production",
+      "task": "Draft the full 11-part Sandy Jose Nunez VSL script, shoot order, teleprompter sheet, and structured copy.json.",
+      "deliverable": "docs/ads/vsl-sandy-framework-2026-10-05/SCRIPT.md, SHOOT-ORDER.md, SANDY-TAKES.txt, copy.json",
+      "contribution": "Owns the core VSL spoken and visual copy production.",
+      "dod_ids": [
+        "dod-1"
+      ],
+      "depends_on": [],
+      "read_paths": [
+        "docs/ads/vsl-outcome-shoot-order-2026-10-03/SCRIPT.md",
+        "docs/ads/vsl-four-position-2026-10-02/PLAN.md"
+      ],
+      "write_paths": [
+        "docs/ads/vsl-sandy-framework-2026-10-05/SCRIPT.md",
+        "docs/ads/vsl-sandy-framework-2026-10-05/SHOOT-ORDER.md",
+        "docs/ads/vsl-sandy-framework-2026-10-05/SANDY-TAKES.txt",
+        "docs/ads/vsl-sandy-framework-2026-10-05/copy.json"
+      ],
+      "allowed_tools": [
+        "write_to_file",
+        "replace_file_content",
+        "view_file"
+      ],
+      "verification": [
+        "Check word count matches 240-second pacing.",
+        "Confirm all 11 stages from Sandy's email are represented."
+      ],
+      "authorized_actions": [
+        "read",
+        "write",
+        "recommend"
+      ],
+      "budget": {
+        "max_attempts": 2,
+        "tokens": 8000
+      }
+    },
+    {
+      "id": "vsl-readability-qa",
+      "task": "Build automated verification script check-copy.py, execute Flesch-Kincaid and banned-token audits, and generate readability.json.",
+      "deliverable": "docs/ads/vsl-sandy-framework-2026-10-05/check-copy.py, readability.json",
+      "contribution": "Owns quantitative readability and linguistic constraint compliance.",
+      "dod_ids": [
+        "dod-2"
+      ],
+      "depends_on": [
+        "vsl-script-production"
+      ],
+      "read_paths": [
+        "docs/ads/vsl-sandy-framework-2026-10-05/copy.json",
+        "docs/ads/vsl-outcome-shoot-order-2026-10-03/check-copy.py"
+      ],
+      "write_paths": [
+        "docs/ads/vsl-sandy-framework-2026-10-05/check-copy.py",
+        "docs/ads/vsl-sandy-framework-2026-10-05/readability.json"
+      ],
+      "allowed_tools": [
+        "write_to_file",
+        "run_command",
+        "view_file"
+      ],
+      "verification": [
+        "Execute python3 check-copy.py and verify 0 assertions fail and all grades <= 3.0."
+      ],
+      "authorized_actions": [
+        "read",
+        "write",
+        "recommend"
+      ],
+      "budget": {
+        "max_attempts": 2,
+        "tokens": 4000
+      }
+    },
+    {
+      "id": "vsl-plan-review",
+      "task": "Author the comprehensive strategic PLAN.md and REVIEW.md documentation, deprecate superseded drafts, and run full test suite.",
+      "deliverable": "docs/ads/vsl-sandy-framework-2026-10-05/PLAN.md, REVIEW.md, and updated deprecation notes.",
+      "contribution": "Owns strategic offer alignment, 4-rubric review, and system-wide verification.",
+      "dod_ids": [
+        "dod-3",
+        "dod-4"
+      ],
+      "depends_on": [
+        "vsl-script-production",
+        "vsl-readability-qa"
+      ],
+      "read_paths": [
+        "docs/ads/vsl-four-position-2026-10-02/PLAN.md",
+        "src/_data/free-intro.json"
+      ],
+      "write_paths": [
+        "docs/ads/vsl-sandy-framework-2026-10-05/PLAN.md",
+        "docs/ads/vsl-sandy-framework-2026-10-05/REVIEW.md",
+        "docs/ads/vsl-outcome-shoot-order-2026-10-03/SHOOT-ORDER.md"
+      ],
+      "allowed_tools": [
+        "write_to_file",
+        "replace_file_content",
+        "run_command"
+      ],
+      "verification": [
+        "Run npm run qa:volatile-facts and npm run test:ads.",
+        "Confirm all 4 rubrics are documented."
+      ],
+      "authorized_actions": [
+        "read",
+        "write",
+        "recommend"
+      ],
+      "budget": {
+        "max_attempts": 2,
+        "tokens": 8000
+      }
+    }
+  ],
+  "current_verification": {
+    "status": "copy_revision_complete_production_pending",
+    "copy_revision_ready": true,
+    "spoken_readability": "passed",
+    "overlay_readability": "passed",
+    "recording_ready": false,
+    "publication_ready": false,
+    "blocking_copy_findings": [],
+    "pending_production_gates": [
+      "record and measure natural delivery",
+      "permission-cleared proof footage",
+      "caption and final playback checks",
+      "publication authorization and native receipt"
+    ],
+    "evidence": "docs/ads/vsl-sandy-framework-2026-10-05/REVIEW.md"
+  }
+}

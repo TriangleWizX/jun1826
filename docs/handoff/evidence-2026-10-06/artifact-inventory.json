@@ -1,0 +1,62 @@
+{
+  "artifacts": [
+    {
+      "path": "tools/build-home-styles.mjs",
+      "exists": true
+    },
+    {
+      "path": "reports/mobile-load-time-fixes-to-implement.md",
+      "exists": true
+    },
+    {
+      "path": "reports/mobile-load-time-implementation-report.md",
+      "exists": true
+    },
+    {
+      "path": "reports/mobile-load-time-opportunities.md",
+      "exists": true
+    },
+    {
+      "path": "docs/seo/GBP-AUDIT-2026.md",
+      "exists": true
+    },
+    {
+      "path": "tools/ads/VSL-SANDY-FRAMEWORK-BRIEF-2026-10-05.json",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/PLAN.md",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/SCRIPT.md",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/SHOOT-ORDER.md",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/WALKTHROUGH.md",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/REVIEW.md",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/check-copy.py",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/SANDY-TAKES.txt",
+      "exists": true
+    },
+    {
+      "path": "docs/ads/vsl-sandy-framework-2026-10-05/copy.json",
+      "exists": true
+    }
+  ],
+  "performance_commit": "17a9510b7cd1301f44e4faf9c12edace94d04c43 perf(mobile): optimize mobile load time, consolidate css, and repair perf harness",
+  "external_cro_artifact_exists": true
+}

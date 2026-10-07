@@ -1,0 +1,66 @@
+{
+  "commit": "fd8764b4",
+  "verification": "remote SFTP file bytes compared against reviewed payload",
+  "results": [
+    {
+      "path": "sitemap-blog.xml",
+      "sha256": "1782470414a81eb449e1540d1172deebe6cf32ebfcb03fcd1aacbe9f9bb9a4b0",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "sitemap-core.xml",
+      "sha256": "224c2d729f8718e822f564b270c31f5fbd049135832625e02fb6a2c5acbe9af9",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "sitemap-glossary.xml",
+      "sha256": "1eac5eb26d65464fce97cd54ebb4014ae5572df2ee6e20163c239cd4347924ea",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "sitemap-locations.xml",
+      "sha256": "98ac0d6b1523ce7c2d7981afd06e1e90a0acfb6fa1d9e887ed3fc7154a0adde3",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "sitemap-programs.xml",
+      "sha256": "ea6eabe208e70c9796ba2ed4ae4cdb6799847a0febc03ae0ddb390f9d8089915",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "981e37f6ec688c01f969bd10262fdd296c4ef65e0666dd926671a8076cbdb52e",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "free-bjj-intro-tannersville-ny/index.html",
+      "sha256": "aef4fb1e9557a6436e2e71f811f11988d3148f0bcf84382d7bb2cece7a442990",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "instagram/index.html",
+      "sha256": "2f00ca5cc10e1e8517f37dbe6df775bdb4701e5b4ed0d397c860279938bd94b7",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "nav-include.html",
+      "sha256": "a20f31e39c1b445ba910f1d53206fe0895394454c10ace31a46209ca2a6f592a",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "partials/nav-include.html",
+      "sha256": "a20f31e39c1b445ba910f1d53206fe0895394454c10ace31a46209ca2a6f592a",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "schedule.html",
+      "sha256": "2b33ab020b62c0a3e26bd7309f95476dec600d27f8785b6e43b76c3fc15ce468",
+      "matches_reviewed_payload": true
+    },
+    {
+      "path": "schedule/index.html",
+      "sha256": "2b33ab020b62c0a3e26bd7309f95476dec600d27f8785b6e43b76c3fc15ce468",
+      "matches_reviewed_payload": true
+    }
+  ]
+}

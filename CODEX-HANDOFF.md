@@ -1,11 +1,11 @@
 # Codex Handoff: Quality Governance, Persona Architecture & Suite Telemetry
 
+> **Latest Session Handoff (October 6, 2026)**: See [`docs/handoff/CODEX_HANDOFF_2026-10-06.md`](file:///home/twizss/Documents/ssbjjweb/tmb/docs/handoff/CODEX_HANDOFF_2026-10-06.md) for full engineering, mobile performance, CRO audit/deployment, local SEO/GBP, and VSL ad studio records.  
+> **Commercial Private Lessons Scaling (October 6, 2026 - Late Session)**: Scaled commercial and transactional blog content for BJJ private lessons. Authored 4 production articles (`/blog/private-bjj-lessons-adults-catskills`, `/blog/cost-of-private-bjj-lessons-catskills`, `/blog/private-bjj-coaching-catskills-visitors`, `/blog/private-self-defense-coaching-tannersville`), integrated into `data/url-registry.json`, `src/blog/index.html` (60 guides), and `src/private-lessons.html`.  
 > **Target Audience**: AI Coding Assistants (Codex / Antigravity / Claude Code) picking up this worktree.  
-> **Repository**: `TriangleWizX/jun1826` (`https://senseisandy.com`)  
-> **Branch**: `migrate-calendly-to-cal`  
-> **Head Commit**: `0d80534` (`feat(near): compress nearby town pages and standardize conversion anchors`)  
-> **Release Status**: `rtk npm run validate` PASSING (Exit Code 0) across all primary suites  
-> **Timestamp**: 2026-09-16T00:32:00-04:00  
+> **Repository**: `TriangleWizX/tmb` (`https://senseisandy.com`)  
+> **Release Status**: `npm test` PASSING (15/15 unified tests + 35/35 ads tests) & `npm run qa:volatile-facts` PASSING (1,078 files verified)  
+> **Timestamp**: 2026-10-06T23:30:00-04:00  
 
 ---
 
