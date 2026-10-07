@@ -47,3 +47,13 @@ Final local validation: all 62 articles pass the repaired grade gate (maximum 2.
 Screenshot review found green text on green inline primary buttons. The articles now use the existing Bootstrap text-white utility. A focused browser assertion checks the computed CTA text color. The release remains 71 public files; no shared CSS or dependency changes are needed.
 
 Final responsive QA passes: 130 checks across 65 routes at 390/1440 pixels, including primary CTA text color, metadata, canonicals, overflow, local links, and page errors. Mobile and desktop screenshots were inspected. Browser reports and screenshots: /tmp/agy-browser-qa/. Official movement source returned HTTP 200. Production byte and route verification follows the scoped upload.
+
+## Production release evidence
+
+Release commit: `81bf6be74059618c40aabda9f2d80c2cc83e13cf`. The unfiltered mapper was inspected and the exact filtered dry run matched all 71 approved public paths. Upload completed with exit 0, 71 uploads, and no backup cleanup. `--reuse-existing-backup` bypassed remote backup creation/cleanup; the independently verified scoped snapshot supplies rollback evidence.
+
+Production verification passed: 71/71 SFTP files match final local bytes and 71/71 HTTP/content checks pass, including final URLs, page metadata, sitemap bytes, and corrected youth-story markers. Evidence: `/tmp/agy-upload.log`, `/tmp/agy-unfiltered-dry-run.log`, `/tmp/agy-exact-dry-run.log`, `/tmp/agy-live-verification/remote-bytes.json`, and `/tmp/agy-live-verification/http-content.json`.
+
+Rollback: restore the 71 paths from `/tmp/agy-predeploy-20261007T181216Z.tar.gz` using its manifest and verified file hashes, then repeat HTTP and byte checks. This restores pre-release bytes. `deploy-release.py --commit OLD` is not a rollback because it still uploads current dist bytes. The snapshot is scoped, not a full-site backup.
+
+Live browser checks identified two shared dependencies: `/tokens.40ed4d.css` was missing, and the navigation fallback called undefined `mobile()`. Add the existing token asset and define the mobile breakpoint helper in the navigation source. The final release adds only these two public dependency paths to the original 71. Build and focused navigation QA pass. Dependency rollback bytes and absence markers are recorded in `/tmp/agy-dependency-predeploy/`.

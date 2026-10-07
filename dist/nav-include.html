@@ -451,6 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
   (function initMobileNavFallback() {
+ const mobile = () => window.matchMedia("(max-width: 991.98px)").matches;
     const nav = document.getElementById('ssMainNav');
     const button = document.querySelector('.ss-menu-button');
     if (!nav || !button) return;
