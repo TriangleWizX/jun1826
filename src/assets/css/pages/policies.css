@@ -264,6 +264,12 @@
   transform: translateX(3px);
 }
 
+.policy-content a:focus-visible {
+  border-radius: 0.2rem;
+  outline: 3px solid var(--policy-teal);
+  outline-offset: 3px;
+}
+
 .policy-nav a::after {
   content: "→";
   font-size: 0.85rem;
@@ -402,4 +408,3 @@
     transition: none;
   }
 }
-
