@@ -2,23 +2,45 @@
   {
     "id": "bjj-ecological-dynamical-2026",
     "title": "Comparison of traditional and ecological dynamical training approaches in Brazilian Jiu-Jitsu: effects on Force Development, reactivity, and distress perception",
-    "authors": "Giardullo G, Ceruso R, Di Lascio G, Taleb M, Esposito G, and D’Elia F",
+    "authors": "Giuseppe Giardullo, Rosario Ceruso, Giuseppe Di Lascio, Manuele Taleb, Giovanni Esposito, and Francesca D’Elia",
     "year": 2026,
     "publicationDate": "2026",
     "category": "direct-bjj",
     "evidenceType": "randomized-controlled-training-study",
-    "population": { "n": 60, "ageGroup": "adult amateur and semi-professional BJJ athletes", "groups": 2 },
-    "intervention": { "description": "Ecological-dynamical training compared with a traditional approach", "durationWeeks": 8, "sessionsPerWeek": 4, "minutesPerSession": 90 },
+    "population": {
+      "n": 60,
+      "ageGroup": "amateur and semi-professional BJJ athletes ages 18–40",
+      "groups": 2
+    },
+    "intervention": {
+      "description": "Ecological-dynamical training compared with a traditional approach",
+      "durationWeeks": 8,
+      "sessionsPerWeek": 4,
+      "minutesPerSession": 90
+    },
     "tested": "Force development, response time to a light stimulus, and self-reported distress after the training period.",
     "found": "The ecological-dynamical group improved more on the measured force, light-response, and distress outcomes in this sample.",
     "notTested": "Live grappling skill, delayed retention, transfer to new situations, children, beginners, or Sensei Sandy BJJ classes. The distress questionnaire was ad hoc and had no external psychometric validation.",
-    "supports": ["A bounded report of the measured outcomes in these adult athletes"],
-    "doesNotSupport": ["Claims about children or beginners", "Claims of better live grappling skill or long-term learning", "Individual outcome guarantees", "SSBJJ-specific effectiveness"],
+    "supports": [
+      "A bounded report of the measured outcomes in these adult athletes"
+    ],
+    "doesNotSupport": [
+      "Claims about children or beginners",
+      "Claims of better live grappling skill or long-term learning",
+      "Individual outcome guarantees",
+      "SSBJJ-specific effectiveness"
+    ],
     "source": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1794709/full",
     "doi": "10.3389/fpsyg.2026.1794709",
     "detailUrl": "/sources/research/bjj-ecological-dynamical-2026/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "teaching",
+    "cardLabel": "BJJ study · 2026 · 60 adult athletes",
+    "cardTitle": "Games in BJJ",
+    "cardSummary": "After eight weeks, the game group did better on some force and light-response tests. Its distress report also changed.",
+    "cardLimit": "The study did not test live BJJ skill or how long skills last. It did not study kids, new learners, or our school.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "manninen-games-based-pe-review-2025",
@@ -28,18 +50,36 @@
     "publicationDate": "First published online 2024-04-09; journal issue 2025",
     "category": "related-sport",
     "evidenceType": "systematic-review-meta-analysis",
-    "population": { "n": 1600, "studies": 28, "ageGroup": "physical education learners across included studies" },
-    "intervention": { "description": "Games-based teaching approaches in physical education and sport" },
+    "population": {
+      "n": 1600,
+      "studies": 28,
+      "ageGroup": "physical education learners across included studies"
+    },
+    "intervention": {
+      "description": "Games-based teaching approaches in physical education and sport"
+    },
     "tested": "Outcomes included game decision-making, motor-skill tests, knowledge, and motor skill during games.",
     "found": "The review reported better game-decision and motor-skill test results, but not better knowledge or motor skill measured during games.",
     "notTested": "Brazilian Jiu-Jitsu classes or Sensei Sandy BJJ teaching. Findings do not establish one best approach for every learner or sport.",
-    "supports": ["A qualified summary of selected physical-education outcomes across the included studies"],
-    "doesNotSupport": ["BJJ-specific effectiveness", "One teaching approach winning in every setting", "Individual outcome guarantees"],
+    "supports": [
+      "A qualified summary of selected physical-education outcomes across the included studies"
+    ],
+    "doesNotSupport": [
+      "BJJ-specific effectiveness",
+      "One teaching approach winning in every setting",
+      "Individual outcome guarantees"
+    ],
     "source": "https://journals.sagepub.com/doi/full/10.1177/1356336X241245305",
     "doi": "10.1177/1356336X241245305",
     "detailUrl": "/sources/research/games-based-teaching-review/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "teaching",
+    "cardLabel": "Review of studies · other sports · 28 studies · 2024/2025",
+    "cardTitle": "Do games help people learn?",
+    "cardSummary": "A review of 28 studies with 1,600 people found gains on some game-choice and skill tests.",
+    "cardLimit": "Not every test showed a gain. These studies were not about BJJ.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "saha-pe-game-pedagogy-review-2026",
@@ -49,18 +89,35 @@
     "publicationDate": "2026",
     "category": "related-sport",
     "evidenceType": "systematic-review-narrative-synthesis",
-    "population": { "studies": 17, "ageGroup": "physical education and PETE participants in included studies" },
-    "intervention": { "description": "Game-based and comparison teaching approaches in physical education" },
+    "population": {
+      "studies": 17,
+      "ageGroup": "physical education and PETE participants in included studies"
+    },
+    "intervention": {
+      "description": "Game-based and comparison teaching approaches in physical education"
+    },
     "tested": "Motor-skill and game-performance results across quasi-experimental PE/PETE studies.",
     "found": "Seven studies reported significant motor or game-performance improvement, five reported mixed results, and five found no motor-skill advantage. Methods and outcomes varied; there was no pooled effect estimate.",
     "notTested": "BJJ classes or Sensei Sandy BJJ teaching. The varied evidence does not identify one approach that wins in all settings.",
-    "supports": ["A cautious summary of varied PE/PETE study results"],
-    "doesNotSupport": ["BJJ-specific effectiveness", "A single universally best method", "Individual outcome guarantees"],
+    "supports": [
+      "A cautious summary of varied PE/PETE study results"
+    ],
+    "doesNotSupport": [
+      "BJJ-specific effectiveness",
+      "A single universally best method",
+      "Individual outcome guarantees"
+    ],
     "source": "https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1830716/full",
     "doi": "10.3389/fspor.2026.1830716",
     "detailUrl": "/sources/research/pe-games-review-2026/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "teaching",
+    "cardLabel": "Review of studies · other sports · 17 studies · 2026",
+    "cardTitle": "Games do not always win",
+    "cardSummary": "Seven studies found clear gains, five had mixed results, and five found no better result.",
+    "cardLimit": "The studies used many games and tests. They did not study BJJ.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "roaas-loras-challenge-perspective-2026",
@@ -70,101 +127,204 @@
     "publicationDate": "2026",
     "category": "related-sport",
     "evidenceType": "expert-perspective",
-    "population": { "ageGroup": "conceptual discussion; no participant sample" },
-    "intervention": { "description": "Conceptual perspective on matching learning challenge to the learner, task, and setting" },
+    "population": {
+      "ageGroup": "conceptual discussion; no participant sample"
+    },
+    "intervention": {
+      "description": "Conceptual perspective on matching learning challenge to the learner, task, and setting"
+    },
     "tested": "No intervention was tested; this is a perspective article.",
     "found": "The authors argue that challenge should fit the learner, task, and context, and that learning can be considered through retention, transfer, adaptability, and self-regulation.",
     "notTested": "No BJJ teaching method or learner outcome. This perspective does not demonstrate that a specific SSBJJ class method works.",
-    "supports": ["Explaining an expert framework for thinking about task challenge"],
-    "doesNotSupport": ["Trial evidence", "BJJ-specific effectiveness", "Individual outcome guarantees"],
+    "supports": [
+      "Explaining an expert framework for thinking about task challenge"
+    ],
+    "doesNotSupport": [
+      "Trial evidence",
+      "BJJ-specific effectiveness",
+      "Individual outcome guarantees"
+    ],
     "source": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1886530/full",
     "doi": "10.3389/feduc.2026.1886530",
     "detailUrl": "/sources/research/challenge-point-perspective-2026/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "teaching",
+    "cardLabel": "Expert ideas · 2026 · not a trial",
+    "cardTitle": "How hard should a game be?",
+    "cardSummary": "The authors say a task should fit what a learner can do now.",
+    "cardLimit": "This paper shares ideas. It did not test a BJJ class or show that one way is best.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "bjj-school-rct",
-    "title": "School-based Brazilian Jiu-Jitsu randomized trial",
-    "year": 2023,
-    "publicationDate": "Journal record indexed 2023; DOI: 10.1080/1612197X.2022.2109184",
+    "title": "Effects of a school-based Brazilian jiu-jitsu programme on mental health and classroom behaviour of children from Abu Dhabi: a randomised trial",
+    "year": 2022,
+    "publicationDate": "First published online 2022; journal volume 21 (2023)",
     "category": "direct-bjj",
     "evidenceType": "randomized-controlled-trial",
-    "population": { "nEnrolled": 88, "nAnalyzed": 80, "ageGroup": "sixth-grade boys" },
-    "intervention": { "description": "Brazilian Jiu-Jitsu compared with regular physical education", "durationWeeks": 12, "sessionsPerWeek": 2 },
-    "tested": "Teacher-rated behavioral outcomes in a school program.",
-    "found": "The study reported differences on selected teacher-rated behavioral measures.",
+    "population": {
+      "nEnrolled": 88,
+      "nAnalyzed": 80,
+      "ageGroup": "sixth-grade boys"
+    },
+    "intervention": {
+      "description": "Brazilian Jiu-Jitsu compared with regular physical education",
+      "durationWeeks": 12,
+      "sessionsPerWeek": 2
+    },
+    "tested": "Teacher-rated behavioral outcomes in one Abu Dhabi school program.",
+    "found": "Teacher-rated emotional symptoms (p=.007), hyperactivity and inattention (p<.001), total difficulties (p=.002), and externalizing behavior (p=.001, η²=.07) differed on selected measures.",
     "notTested": "ADHD treatment, every child, or Sensei Sandy BJJ classes. Results do not promise an individual outcome.",
-    "supports": ["Selected teacher-rated behavioral outcomes in this study population"],
-    "doesNotSupport": ["ADHD treatment claims", "All children", "SSBJJ-specific effectiveness", "Individual outcome guarantees"],
+    "supports": [
+      "Selected teacher-rated behavioral outcomes in this study population"
+    ],
+    "doesNotSupport": [
+      "ADHD treatment claims",
+      "All children",
+      "SSBJJ-specific effectiveness",
+      "Individual outcome guarantees"
+    ],
     "source": "https://doi.org/10.1080/1612197X.2022.2109184",
     "doi": "10.1080/1612197X.2022.2109184",
     "detailUrl": "/sources/research/bjj-school-rct/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "authors": "Jean Carlo Benetti Bueno, Leonardo Vidal Andreato, Rodrigo Batalha Silva, and Alexandro Andrade",
+    "evidenceGroup": "outcomes",
+    "cardLabel": "BJJ study · 2022 online / 2023 issue · 88 enrolled · 80 analyzed",
+    "cardTitle": "BJJ in school",
+    "cardSummary": "In one school study, some teacher-rated behavior scores changed more after BJJ than PE.",
+    "cardLimit": "This was one school study of boys. It used teacher reports. It did not test our school or show what each child will gain.",
+    "detailedResults": "The reported values were p=.007 for emotional symptoms, p<.001 for hyperactivity/inattention, p=.002 for total difficulties, and p=.001 with η²=.07 for externalizing behavior.",
+    "moreReadingOnly": false,
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "youth-martial-arts-attention-rct",
-    "title": "Taekwondo and child development randomized trial",
-    "authors": "Ng-Knight et al.",
+    "title": "Does Taekwondo Improve Children’s Self-Regulation? If so, How? A Randomized Field Experiment",
+    "authors": "Terry Ng-Knight, Katie A. Gilligan-Lee, Jessica Massonnié, Hanna Gaspard, Debbie Gooch, Dawn Querstret, and Nicola Johnstone",
     "year": 2022,
     "publicationDate": "2022",
     "category": "adjacent-martial-art",
     "evidenceType": "randomized-controlled-trial",
-    "population": { "n": 240, "ageGroup": "children ages 7–11" },
-    "intervention": { "description": "Taekwondo compared with active physical education", "durationWeeks": 11, "totalHours": 16.5 },
+    "population": {
+      "n": 240,
+      "ageGroup": "children ages 7–11"
+    },
+    "intervention": {
+      "description": "Taekwondo compared with active physical education",
+      "durationWeeks": 11,
+      "totalHours": 16.5
+    },
     "tested": "Attention and behavior outcomes in a Taekwondo trial.",
-    "found": "The study reported selected attention and conduct outcomes; not every measured outcome improved.",
-    "notTested": "BJJ classes or Sensei Sandy BJJ teaching. Taekwondo findings are not BJJ findings.",
-    "supports": ["Cautious martial-arts context for selected attention outcomes"],
-    "doesNotSupport": ["Calling Taekwondo BJJ evidence", "Every outcome improving", "Individual guarantees"],
+    "found": "Some teacher-rated conduct and child self-regulation measures changed; the executive-attention effect was about d=.28 and conduct-problem rate ratio was .79. Not every measured outcome improved.",
+    "notTested": "BJJ classes or Sensei Sandy BJJ teaching. Taekwondo findings are not BJJ findings, and not every measured outcome improved.",
+    "supports": [
+      "Cautious martial-arts context for selected attention outcomes"
+    ],
+    "doesNotSupport": [
+      "Calling Taekwondo BJJ evidence",
+      "Every outcome improving",
+      "Individual guarantees"
+    ],
     "source": "https://doi.org/10.1037/dev0001307",
     "doi": "10.1037/dev0001307",
     "detailUrl": "/sources/research/youth-martial-arts-attention-rct/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "outcomes",
+    "cardLabel": "Other sport · Taekwondo · 2022 · 240 children",
+    "cardTitle": "Taekwondo and kids",
+    "cardSummary": "A study of 240 children ages 7 to 11 found changes in some focus and behavior scores.",
+    "cardLimit": "This was Taekwondo, not BJJ. Not all tests improved. It cannot show that BJJ has the same result.",
+    "detailedResults": "The source reports an executive-attention effect of about d=.28 and a conduct-problem incidence-rate ratio of .79.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "open-skill-youth-meta-analysis",
-    "title": "Open-skill youth meta-analysis",
-    "authors": "Hu et al.",
+    "title": "Effects of open-skill exercise on executive functions in children and adolescents: a systematic review and meta-analysis",
+    "authors": "Shunding Hu, Peng Shi, Ziyun Zhang, Xiaosu Feng, Kai Zhang, and Teng Jin",
     "year": 2024,
-    "publicationDate": "Published online 2025-02-04; volume 18 (2024)",
+    "publicationDate": "Published online February 2025; volume 18 (2024)",
     "category": "related-sport",
     "evidenceType": "systematic-review-meta-analysis",
-    "population": { "n": 1298, "ageGroup": "children and adolescents ages 5–16", "studies": 17, "randomizedStudies": 11 },
-    "intervention": { "description": "Open-skill exercise" },
+    "population": {
+      "n": 1298,
+      "ageGroup": "children and adolescents ages 5–16",
+      "studies": 17,
+      "randomizedStudies": 11
+    },
+    "intervention": {
+      "description": "Open-skill exercise"
+    },
     "tested": "Selected executive-function outcomes across open-skill exercise studies.",
     "found": "The review reported selected executive-function results in the broader open-skill exercise category.",
     "notTested": "Sensei Sandy BJJ classes, BJJ superiority to soccer, or an individual outcome guarantee.",
-    "supports": ["Changing-environment decision demands", "Selected executive-function outcomes in the broader open-skill category"],
-    "doesNotSupport": ["SSBJJ-specific effectiveness", "BJJ superiority to soccer", "Individual outcome guarantees"],
+    "supports": [
+      "Changing-environment decision demands",
+      "Selected executive-function outcomes in the broader open-skill category"
+    ],
+    "doesNotSupport": [
+      "SSBJJ-specific effectiveness",
+      "BJJ superiority to soccer",
+      "Individual outcome guarantees"
+    ],
     "source": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2024.1495371/full",
     "doi": "10.3389/fnhum.2024.1495371",
     "detailUrl": "/sources/research/open-skill-youth-meta-analysis/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "outcomes",
+    "cardLabel": "Review of studies · other sports · online 2025 / 2024 volume · 17 studies",
+    "cardTitle": "Open-skill sports and kids",
+    "cardSummary": "A review of 17 studies with 1,298 young people found changes in some thinking scores.",
+    "cardLimit": "The review covered many sports. It did not test our school or show that BJJ is better than other sports.",
+    "detailedResults": "The review included 17 studies (11 randomized) and 1,298 children and adolescents ages 5–16. It reported selected pooled executive-function results with high heterogeneity.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "bjj-adult-fitness",
-    "title": "Brazilian Jiu-Jitsu training and adult fitness study",
+    "title": "Characterization of Brazilian Jiu-Jitsu training effects on the physical fitness of men and women",
     "authors": "Leandro Lourenço-Lima, Tácito P. Souza-Junior, Alexandre R. Okuyama, Steven R. McAnulty, Alan C. Utter, Thaísa S. Monteiro, Gustavo Barquilha, José R. Bortolon, Tatiana P. Geraldo, and Sandro M. Hirabara",
     "year": 2020,
     "publicationDate": "2020",
     "category": "direct-bjj",
     "evidenceType": "small-intervention-study",
-    "population": { "n": 16, "ageGroup": "previously untrained adults", "sex": "8 men, 8 women" },
-    "intervention": { "description": "BJJ classes", "durationWeeks": 6, "sessionsPerWeek": 2, "minutesPerSession": 60 },
-    "tested": "Fitness measures before and after a six-week training period.",
+    "population": {
+      "n": 16,
+      "ageGroup": "previously untrained adults",
+      "sex": "8 men, 8 women"
+    },
+    "intervention": {
+      "description": "BJJ classes",
+      "durationWeeks": 6,
+      "sessionsPerWeek": 2,
+      "minutesPerSession": 60
+    },
+    "tested": "Body mass, body composition, aerobic and anaerobic power, strength, and flexibility before and after six weeks of training.",
     "found": "Some fitness measures changed; body mass and body composition did not.",
     "notTested": "BJJ superiority to Pilates, long-term results, or individual fitness outcomes.",
-    "supports": ["Describing regular BJJ practice as physical training"],
-    "doesNotSupport": ["BJJ superiority to Pilates", "Body-composition guarantees", "Individual fitness guarantees"],
+    "supports": [
+      "Describing regular BJJ practice as physical training"
+    ],
+    "doesNotSupport": [
+      "BJJ superiority to Pilates",
+      "Body-composition guarantees",
+      "Individual fitness guarantees"
+    ],
     "source": "https://doi.org/10.7752/jpes.2020.s5406",
     "doi": "10.7752/jpes.2020.s5406",
     "detailUrl": "/sources/research/bjj-adult-fitness/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "outcomes",
+    "cardLabel": "BJJ study · adults · 2020 · 16 people",
+    "cardTitle": "BJJ as exercise",
+    "cardSummary": "In a small study, some fitness scores changed after six weeks of BJJ classes.",
+    "cardLimit": "Only 16 adults took part. The study cannot show that BJJ beats other exercise or change each person’s fitness.",
+    "detailedResults": "The report found changes in VO₂max, time to exhaustion, lower-body strength, and several anaerobic measures. Body mass and body composition did not change.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "bjj-mma-youth-development",
@@ -174,57 +334,135 @@
     "publicationDate": "Published online 2019; journal publication 2020",
     "category": "direct-bjj-and-mma",
     "evidenceType": "longitudinal-observational-study",
-    "population": { "n": 113, "ageGroup": "ages 15–24", "bjjN": 50, "mmaN": 63, "completers": 113 },
-    "intervention": { "description": "Participants self-selected Brazilian Jiu-Jitsu or mixed martial arts; sport was not randomly assigned", "durationMonths": 5 },
+    "population": {
+      "n": 113,
+      "ageGroup": "ages 15–24",
+      "bjjN": 50,
+      "mmaN": 63,
+      "completers": 113
+    },
+    "intervention": {
+      "description": "Participants self-selected Brazilian Jiu-Jitsu or mixed martial arts; sport was not randomly assigned",
+      "durationMonths": 5
+    },
     "tested": "Self-control, prosocial behavior, and aggression before and after participation.",
     "found": "Both groups reported increased self-control and prosocial behavior. Aggression-score directions differed, and the MMA group began with higher aggression scores.",
     "notTested": "Whether sport caused the changes, every youth participant, or Sensei Sandy BJJ classes.",
-    "supports": ["Reporting group-level behavioral findings with observational limits"],
-    "doesNotSupport": ["Causal claims that either sport caused behavior changes", "Individual outcome guarantees", "Generalizing results to all youth or Sensei Sandy BJJ"],
+    "supports": [
+      "Reporting group-level behavioral findings with observational limits"
+    ],
+    "doesNotSupport": [
+      "Causal claims that either sport caused behavior changes",
+      "Individual outcome guarantees",
+      "Generalizing results to all youth or Sensei Sandy BJJ"
+    ],
     "source": "https://doi.org/10.1080/17461391.2019.1629180",
     "doi": "10.1080/17461391.2019.1629180",
     "detailUrl": "/sources/research/bjj-mma-youth-development/",
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "evidenceGroup": "outcomes",
+    "cardLabel": "BJJ and MMA study · 2020 issue · 113 people",
+    "cardTitle": "BJJ, MMA, and behavior",
+    "cardSummary": "Both groups said some self-control and social scores went up. Aggression scores changed in different ways.",
+    "cardLimit": "People chose their sport. The study cannot show that either sport caused the changes.",
+    "cardLinkText": "Read the source record"
   },
   {
     "id": "rugby-ecological-dynamics-2026",
-    "displayLabel": "Rugby ecological-dynamics review (additional reading)",
+    "displayLabel": "Ecological-dynamic and active-reflection rugby study (additional reading)",
     "year": 2026,
-    "publicationDate": "2026",
+    "publicationDate": "Published 2026-05-13",
     "category": "related-sport",
-    "evidenceType": "systematic-review",
-    "population": { "ageGroup": "rugby participants across included studies" },
-    "intervention": { "description": "Ecological-dynamics approaches in rugby" },
-    "tested": "Learning and performance outcomes in rugby research.",
-    "found": "A rugby-specific evidence summary; it is not a BJJ trial.",
-    "notTested": "Sensei Sandy BJJ classes or a direct comparison of SSBJJ teaching methods.",
-    "supports": ["Additional reading about ecological-dynamics work in rugby"],
-    "doesNotSupport": ["BJJ-specific effectiveness", "Individual outcome guarantees"],
+    "evidenceType": "controlled-training-study",
+    "population": {
+      "n": 40,
+      "groups": 2,
+      "ageGroup": "boys ages 12–14 playing U14 rugby; 20 per group"
+    },
+    "intervention": {
+      "description": "Ecological-dynamic training with active reflection compared with traditional rugby training"
+    },
+    "tested": "Coordination, fitness, attention, concentration, executive function, and workload.",
+    "found": "The ecological-dynamic group improved more on some motor, cognitive, and perception tests. The groups did not differ on physiological measures.",
+    "notTested": "Brazilian Jiu-Jitsu, Sensei Sandy BJJ classes, or the effect of live tasks without active reflection. The study tested a combined approach in a small group of boys.",
+    "supports": [
+      "A bounded report of this two-group study with young rugby players"
+    ],
+    "doesNotSupport": [
+      "BJJ-specific effectiveness",
+      "Separating the effect of games from active reflection",
+      "Individual outcome guarantees"
+    ],
     "source": "https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2026.1804050/full",
     "doi": "10.3389/fspor.2026.1804050",
     "moreReadingOnly": true,
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "title": "Systemic relationships between ecological-dynamic approach and active reflection: psycho-neuro-motor, cognitive, and physiological interactions in rugby pedagogy",
+    "authors": "Marta Rigon, Raffaele Scurati, Giampiero Merati, Damiano Formenti, Athos Trecroci, Pietro Luigi Invernizzi, and Gabriele Signorini",
+    "detailUrl": "/sources/research/rugby-ecological-dynamics-2026/",
+    "moreReadingTitle": "Rugby study (2026)",
+    "moreReadingSummary": "40 boys ages 12–14; other sport, not BJJ."
   },
   {
     "id": "ecological-dynamic-learning-review-2026",
-    "displayLabel": "Ecological-dynamic learning review (additional reading)",
+    "displayLabel": "Motor Learning in Ecological-Dynamic Approach: Systematic Review (additional reading)",
     "year": 2026,
     "publicationDate": "2026",
     "category": "related-sport",
-    "evidenceType": "narrative-review",
-    "population": { "studies": 11, "ageGroup": "mixed settings and populations in reviewed works" },
-    "intervention": { "description": "Review of ecological-dynamic learning theory and applied work" },
-    "tested": "The review discusses eleven works, mixing theory and research.",
-    "found": "It offers additional background rather than an independent BJJ teaching test.",
-    "notTested": "Sensei Sandy BJJ classes or a direct test of an SSBJJ teaching method.",
-    "supports": ["Additional conceptual reading"],
-    "doesNotSupport": ["BJJ-specific effectiveness", "Individual outcome guarantees"],
+    "evidenceType": "systematic-review",
+    "population": {
+      "studies": 11,
+      "ageGroup": "varied populations and settings in the included works"
+    },
+    "intervention": {
+      "description": "Review of ecological-dynamic motor-learning theory and applied work"
+    },
+    "tested": "The review considered 11 works, including theory and applied research.",
+    "found": "The authors discuss the approach and call for stronger tests.",
+    "notTested": "This is not a BJJ trial or a study of Sensei Sandy BJJ. Some authors also worked on the 2026 BJJ training study, so this is not an independent repeat of its results.",
+    "supports": [
+      "Additional background on ecological-dynamic motor learning"
+    ],
+    "doesNotSupport": [
+      "BJJ-specific effectiveness",
+      "A direct test of the SSBJJ teaching method",
+      "Individual outcome guarantees"
+    ],
     "source": "https://journals.kmanpub.com/index.php/Intjssh/article/view/5212",
     "moreReadingOnly": true,
     "verifiedAt": "2026-10-08",
-    "staleAfter": "2027-10-08"
+    "staleAfter": "2027-10-08",
+    "title": "Motor Learning in Ecological-Dynamic Approach: Systematic Review",
+    "authors": "Tiziana D’Isanto, Giuseppe Giardullo, Pompilio Cusano, Manuele Taleb, Luca Molinaro, and Giuseppe Di Lascio",
+    "detailUrl": "/sources/research/ecological-dynamic-learning-review-2026/",
+    "moreReadingTitle": "Motor-learning review (2026)",
+    "moreReadingSummary": "11 works; includes theory and research, not a BJJ test."
   },
-  {"id":"bjj-injury-2025","category":"direct-bjj","evidenceType":"retrospective-survey","population":{"n":881,"ageGroup":"mostly adult BJJ practitioners"},"intervention":{"description":"self-reported training and competition exposure","durationWeeks":null},"supports":["reported injury patterns in the surveyed population"],"doesNotSupport":["SSBJJ injury rate","youth injury rate","individual risk prediction","injury-prevention guarantee"],"source":"https://pubmed.ncbi.nlm.nih.gov/40092168/","verifiedAt":"2026-08-18","staleAfter":"2027-08-18"}
+  {
+    "id": "bjj-injury-2025",
+    "category": "direct-bjj",
+    "evidenceType": "retrospective-survey",
+    "population": {
+      "n": 881,
+      "ageGroup": "mostly adult BJJ practitioners"
+    },
+    "intervention": {
+      "description": "self-reported training and competition exposure",
+      "durationWeeks": null
+    },
+    "supports": [
+      "reported injury patterns in the surveyed population"
+    ],
+    "doesNotSupport": [
+      "SSBJJ injury rate",
+      "youth injury rate",
+      "individual risk prediction",
+      "injury-prevention guarantee"
+    ],
+    "source": "https://pubmed.ncbi.nlm.nih.gov/40092168/",
+    "verifiedAt": "2026-08-18",
+    "staleAfter": "2027-08-18"
+  }
 ]

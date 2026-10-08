@@ -18,13 +18,14 @@ eleventyComputed:
     <p>{{ record.authors }} · {{ record.publicationDate }}</p>
     <dl>
       <dt>Who or what was covered</dt>
-      <dd>{{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} participants{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}.</dd>
+      <dd>{{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} participants{% endif %}{% if record.population.nEnrolled %}; {{ record.population.nEnrolled }} enrolled{% endif %}{% if record.population.nAnalyzed %}; {{ record.population.nAnalyzed }} analyzed{% endif %}{% if record.population.groups %}; {{ record.population.groups }} groups{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}.</dd>
       <dt>What was studied</dt>
       <dd>{{ record.intervention.description }}{% if record.intervention.durationWeeks %}; {{ record.intervention.durationWeeks }} weeks{% endif %}{% if record.intervention.sessionsPerWeek %}; {{ record.intervention.sessionsPerWeek }} times each week{% endif %}{% if record.intervention.minutesPerSession %}; {{ record.intervention.minutesPerSession }} minutes per session{% endif %}.</dd>
       <dt>What it measured</dt>
       <dd>{{ record.tested }}</dd>
       <dt>What the source reports</dt>
       <dd>{{ record.found }}</dd>
+      {% if record.detailedResults %}<dt>Selected detailed results</dt><dd>{{ record.detailedResults }}</dd>{% endif %}
       <dt>What it does not show</dt>
       <dd>{{ record.notTested }}</dd>
       <dt>Verified</dt>

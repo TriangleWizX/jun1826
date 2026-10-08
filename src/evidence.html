@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: "BJJ Research & Training Evidence | Sensei Sandy BJJ"
-description: "See how Jiu-Jitsu uses games and partner practice, what studies found, and what each study cannot show. Read the study limits and see how class works."
+title: "BJJ Research & How We Teach | Sensei Sandy BJJ"
+description: "See why Sensei Sandy BJJ uses live games. Read studies, see how class works, and learn what research can and cannot show."
 canonicalUrl: "https://senseisandy.com/evidence"
 bodyClass: "page-evidence"
 extraCss:
@@ -11,65 +11,68 @@ permalink: "/evidence/index.html"
 <main class="ss-main" id="main-content" role="main">
   <header class="ss-section-premium py-5 mt-4">
     <div class="container ss-container">
-      <p class="ss-eyebrow">Study facts</p>
-      <h1>Jiu-Jitsu gives you live problems to solve.</h1>
-      <p class="lead-text mt-4 mb-0" style="max-width: 780px;">Your partner moves. You choose what to do next. Then you adjust. Studies can help us ask good questions. They cannot tell us what each person will gain.</p>
-      <div class="mt-4"><a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a></div>
+      <p class="ss-eyebrow">Try. Learn. Try Again.</p>
+      <h1>Why We Teach BJJ With Games</h1>
+      <p class="lead-text mt-4 mb-0" style="max-width: 780px;">In BJJ, your partner can move. You watch, think, and act. Then the game can change. At Sensei Sandy BJJ, we use safe games to help you learn. We fit each game to the person.</p>
+      <p class="mt-3 mb-0"><a href="/how-class-works">See how class works</a></p>
     </div>
   </header>
 
   <section class="ss-section-premium bg-light" aria-labelledby="teach-title">
     <div class="container ss-container">
-      <p class="ss-eyebrow">How we teach</p><h2 id="teach-title">Games help you learn by doing.</h2>
-      <p class="lead-text" style="max-width:780px">These studies look at ways to learn through play, movement, and choice. Some are about BJJ. Others are about school PE or ideas for teachers.</p>
+      <p class="ss-eyebrow">How we learn</p><h2 id="teach-title">Try a goal. Play. Make a change.</h2>
+      <p class="lead-text" style="max-width:780px">Some studies look at BJJ. Some look at other sports. They can help us plan class. They cannot tell us what each child will gain.</p>
+      <ol class="ps-4 mt-2 mb-4">
+        <li class="mb-2"><strong>Start with a goal.</strong> You may need to get free or stay on top.</li>
+        <li class="mb-2"><strong>Play a game.</strong> Your partner can move. You find a way to meet your goal.</li>
+        <li class="mb-2"><strong>Make a change.</strong> Sandy can change the start, time, or force. Then you try again.</li>
+        <li class="mb-2"><strong>See what sticks.</strong> Can you do it with a new partner, new rules, or less help?</li>
+      </ol>
+      <h2 class="h3">What does research say?</h2>
+      <p>Some studies look at BJJ. Some look at other sports. Results can help us plan class. Study results can differ.</p>
       <div class="row g-4 mt-2">
+        {% for record in evidencePageCards.evidenceTeachingCards %}
         <div class="col-md-6"><article class="db-card h-100 p-4 bg-white rounded-3 border">
-          <p class="small text-uppercase text-muted mb-2">BJJ study · 2026 · 60 adult athletes</p><h3 class="h5">Practice with live choices</h3>
-          <p>One group trained with changing tasks. Some strength, light-response, and stress scores changed more in that group.</p>
-          <p class="small mb-3"><strong>Limit:</strong> The study did not test live grappling skill or later recall. It did not test kids or new learners.</p><a href="/sources/research/bjj-ecological-dynamical-2026">Read the BJJ study</a>
+          <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p><h3 class="h5">{{ record.cardTitle }}</h3>
+          <p>{{ record.cardSummary }}</p>
+          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p><a href="{{ record.detailUrl }}">Read the source record</a>
         </article></div>
-        <div class="col-md-6"><article class="db-card h-100 p-4 bg-white rounded-3 border">
-          <p class="small text-uppercase text-muted mb-2">Review of studies · other sports · 2024 online / 2025 issue</p><h3 class="h5">Learning through games</h3>
-          <p>A review of 28 studies with 1,600 people found better game choices and some skill-test scores with game-based teaching.</p>
-          <p class="small mb-3"><strong>Limit:</strong> The results did not show better skill during games or more knowledge. These were not BJJ studies.</p><a href="/sources/research/games-based-teaching-review">Read the review</a>
-        </article></div>
-        <div class="col-md-6"><article class="db-card h-100 p-4 bg-white rounded-3 border">
-          <p class="small text-uppercase text-muted mb-2">Review of studies · school PE · 2026</p><h3 class="h5">Game teaching can have mixed results</h3>
-          <p>A review looked at 17 school PE studies. Fewer than half showed clear gains in movement skill.</p>
-          <p class="small mb-3"><strong>Limit:</strong> The studies used different methods. They do not show that one way works best for all. They did not study BJJ.</p><a href="/sources/research/pe-games-review-2026">Read the review</a>
-        </article></div>
-        <div class="col-md-6"><article class="db-card h-100 p-4 bg-white rounded-3 border">
-          <p class="small text-uppercase text-muted mb-2">Expert ideas · 2026 · not a trial</p><h3 class="h5">Set a fair challenge</h3>
-          <p>Two authors say tasks should fit the learner and the moment. They call for checks of learning over time.</p>
-          <p class="small mb-3"><strong>Limit:</strong> This is an expert view. It is not a test of a BJJ class or proof that one method works.</p><a href="/sources/research/challenge-point-perspective-2026">Read the expert view</a>
-        </article></div>
+        {% endfor %}
       </div>
     </div>
   </section>
 
   <section class="ss-section-premium" aria-labelledby="outcomes-title" data-evidence-ids="bjj-school-rct,youth-martial-arts-attention-rct,open-skill-youth-meta-analysis,bjj-adult-fitness,bjj-mma-youth-development">
-    <div class="container ss-container"><p class="ss-eyebrow">What BJJ may help</p><h2 id="outcomes-title">What these studies found</h2>
+    <div class="container ss-container"><p class="ss-eyebrow">What else do we know?</p><h2 id="outcomes-title">Movement, school, and social skills</h2>
       <div class="row g-4 mt-2">
-        <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3"><p class="small text-uppercase text-muted mb-2">BJJ study</p><h3 class="h5">BJJ and school behavior</h3><p>In one school study, some teacher-rated scores changed more after 12 weeks of BJJ than PE.</p><p class="small"><strong>Who:</strong> 88 grade-six boys joined; 80 finished.</p><p class="small mb-3"><strong>Limit:</strong> This one study cannot show that BJJ helps each child focus.</p><a href="/sources/research/bjj-school-rct">Study details</a></article></div>
-        <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3"><p class="small text-uppercase text-muted mb-2">Other sport · Taekwondo</p><h3 class="h5">Taekwondo and focus</h3><p>A study of 240 children ages 7 to 11 found changes in some focus and behavior scores.</p><p class="small mb-3"><strong>Limit:</strong> This studied Taekwondo, not BJJ. It cannot show that BJJ has the same result.</p><a href="/sources/research/youth-martial-arts-attention-rct">Study details</a></article></div>
-        <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3"><p class="small text-uppercase text-muted mb-2">Review of studies · other sports</p><h3 class="h5">Sports with changing play</h3><p>A review of 17 studies included 1,298 young people. It found changes in some thinking scores.</p><p class="small mb-3"><strong>Limit:</strong> The review covered many sports. It cannot show that BJJ or our school is best.</p><a href="/sources/research/open-skill-youth-meta-analysis">Review details</a></article></div>
-        <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3"><p class="small text-uppercase text-muted mb-2">BJJ study · adults</p><h3 class="h5">BJJ as exercise</h3><p>In a small study, some fitness scores changed after six weeks of BJJ classes.</p><p class="small">16 adults new to training took part.</p><p class="small mb-3"><strong>Limit:</strong> This small study cannot show that BJJ beats other exercise or change each person’s fitness.</p><a href="/sources/research/bjj-adult-fitness">Study details</a></article></div>
-        <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3"><p class="small text-uppercase text-muted mb-2">BJJ and MMA study</p><h3 class="h5">Self-control and kind acts</h3><p>In a five-month study, both groups said some scores went up. Aggression scores changed in different ways.</p><p class="small">113 people ages 15 to 24 finished. They chose their sport.</p><p class="small mb-3"><strong>Limit:</strong> The study cannot show that a sport caused the changes.</p><a href="/sources/research/bjj-mma-youth-development">Study details</a></article></div>
+        {% for record in evidencePageCards.evidenceOutcomeCards %}
+        <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3">
+          <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p><h3 class="h5">{{ record.cardTitle }}</h3>
+          <p>{{ record.cardSummary }}</p>
+          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p><a href="{{ record.detailUrl }}">Read the source record</a>
+        </article></div>
+        {% endfor %}
       </div>
     </div>
   </section>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="class-title"><div class="container ss-container"><p class="ss-eyebrow">In class</p><h2 id="class-title">Learn one step at a time.</h2><p>These are class examples at Sensei Sandy BJJ. The studies above did not test these exact games.</p>
-    <ol><li>Learn a safe way to move.</li><li>Try it with a partner who matches your size and skill.</li><li>Use light, coached resistance.</li><li>Try the skill in a short round.</li></ol>
-    <div class="row g-4"><div class="col-md-4"><article class="db-card h-100 p-4 bg-white rounded-3 border"><h3 class="h5">Chest to chest</h3><p class="mb-0">One partner holds balance. The other works to make space, get guard, or stand.</p></article></div><div class="col-md-4"><article class="db-card h-100 p-4 bg-white rounded-3 border"><h3 class="h5">Chest to back</h3><p class="mb-0">One partner works to escape. The other practices calm control.</p></article></div><div class="col-md-4"><article class="db-card h-100 p-4 bg-white rounded-3 border"><h3 class="h5">Guard</h3><p class="mb-0">One partner works to pass. The other keeps space, sweeps, or stands.</p></article></div></div>
+  <section class="ss-section-premium bg-light" aria-labelledby="more-reading-title"><div class="container ss-container"><p class="ss-eyebrow">More reading</p><h2 id="more-reading-title">Other research to explore</h2><ul>{% for record in evidencePageCards.evidenceMoreReading %}<li><a href="{{ record.detailUrl }}">{{ record.moreReadingTitle }}</a> ({{ record.moreReadingSummary }})</li>{% endfor %}</ul>
+    <p class="small text-muted mb-0">Sources checked October 2026. Study results are for groups. Results can vary.</p>
+  </div></section>
+
+  <section class="ss-section-premium bg-light" aria-labelledby="class-title"><div class="container ss-container"><p class="ss-eyebrow">In class</p><h2 id="class-title">What can you see in class?</h2><p>These are class examples at Sensei Sandy BJJ. The studies above did not test these exact games.</p>
+    <div class="table-responsive"><table class="table table-bordered align-middle bg-white"><caption class="visually-hidden">BJJ games, your goal, and what the coach can change</caption><thead><tr><th scope="col">Game</th><th scope="col">Your goal</th><th scope="col">What can change</th></tr></thead><tbody>
+      <tr><th scope="row">Chest to chest</th><td>Get free or stay on top</td><td>Start, time, or force</td></tr>
+      <tr><th scope="row">Chest to back</th><td>Get free or hold the back</td><td>Start, grip, or partner</td></tr>
+      <tr><th scope="row">Guard</th><td>Keep your legs in play or get past them</td><td>Space, start, or goal</td></tr>
+    </tbody></table></div>
+    <p>Then we can see if you can do it with a new partner, new rules, or less help.</p>
     <p class="mt-4"><a href="/how-class-works">See how class works</a></p>
   </div></section>
 
-  <section class="ss-section-premium" aria-labelledby="limits-title"><div class="container ss-container"><p class="ss-eyebrow">Clear limits</p><h2 id="limits-title">What studies cannot promise</h2><p>These studies cannot tell us what one student will gain. They do not test every class or every way to teach. We cannot promise a change in focus, grades, fitness, or mood.</p>
+  <section class="ss-section-premium" aria-labelledby="limits-title"><div class="container ss-container"><p class="ss-eyebrow">Clear limits</p><h2 id="limits-title">What we will not promise</h2><p>BJJ is not a cure. It will not fix how every child acts or learns. We cannot say it is better than all other sports. We can show you how we teach. You can see how class feels.</p>
     <p>Learn more about classes for <a href="/kids">kids</a>, <a href="/teens">teens</a>, and <a href="/adults">adults</a>.</p>
   </div></section>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="more-reading-title"><div class="container ss-container"><p class="ss-eyebrow">More reading</p><h2 id="more-reading-title">Other research to explore</h2><ul><li><a href="https://doi.org/10.3389/fspor.2026.1804050">A 2026 review of games in rugby</a> (other sport; not a BJJ test).</li><li><a href="https://journals.kmanpub.com/index.php/Intjssh/article/view/5212">A review of 11 works on game teaching</a> (mixes ideas and research; not a BJJ test).</li></ul>
-    <p class="small text-muted mb-0">Sources checked October 2026. Study results are for groups. Results can vary.</p>
-  </div></section>
+  <section class="ss-section-premium" aria-labelledby="visit-title"><div class="container ss-container"><p class="ss-eyebrow">Come see class</p><h2 id="visit-title">See how we train.</h2><p>See the room. Learn how we train. Find a class that fits you or your child.</p><a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Book a Free First Visit</a></div></section>
 </main>

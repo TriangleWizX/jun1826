@@ -16,6 +16,12 @@ RESEARCH_RECORD_OUTPUTS = (
     'sources/research/pe-games-review-2026/index.html',
     'sources/research/challenge-point-perspective-2026/index.html',
     'sources/research/bjj-mma-youth-development/index.html',
+    'sources/research/bjj-school-rct/index.html',
+    'sources/research/youth-martial-arts-attention-rct/index.html',
+    'sources/research/open-skill-youth-meta-analysis/index.html',
+    'sources/research/bjj-adult-fitness/index.html',
+    'sources/research/rugby-ecological-dynamics-2026/index.html',
+    'sources/research/ecological-dynamic-learning-review-2026/index.html',
 )
 
 def changed_outputs(commit):
