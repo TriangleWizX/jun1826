@@ -34,3 +34,14 @@ for(const key of ["cardTypesCopy","networkCopy","regionalCopy","availabilityCopy
 assert.match(accepted.availabilityCopy,/Stripe account country/);
 assert.match(accepted.availabilityCopy,/saved-card use/);
 console.log("Accepted services and conditional Stripe card support QA passed");
+
+const surcharge=policy.creditCardSurcharge;
+assert.equal(surcharge.maximumPercent,3);
+assert.deepEqual(surcharge.eligibleFundingTypes,["credit"]);
+assert.deepEqual(surcharge.excludedFundingTypes,["debit","prepaid"]);
+assert.equal(surcharge.processorConfigurationVerified,false);
+assert.equal(surcharge.requiresBeforePaymentDisclosure,true);
+assert.equal(surcharge.requiresItemizedReceipt,true);
+assert.match(surcharge.capBasis,/actual card acceptance cost/);
+for(const text of [page,annual]){assert.ok(text.includes(surcharge.publicCopy));assert.doesNotMatch(text,/5% processing fee/);}
+console.log("Credit surcharge QA passed: cost cap, credit-only eligibility and prepayment disclosure");
