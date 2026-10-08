@@ -33,6 +33,6 @@ eleventyComputed:
       <dt>Verified</dt>
       <dd>{{ record.verifiedAt }} · review again {{ record.staleAfter }}</dd>
     </dl>
-    <p><a href="{{ record.source }}" rel="noopener">Read the source{% if record.doi %} (DOI: {{ record.doi }}){% endif %}</a> · <a href="/evidence">Return to the evidence explanation</a></p>
+    <p><a href="{{ record.source }}" rel="noopener">Read the source{% if record.doi %} (DOI: {{ record.doi }}){% endif %}</a> · <a href="/evidence">Return to the evidence explanation</a>{% if record.contextualUrl %} · <a href="{{ record.contextualUrl }}">{{ record.contextualLinkText }}</a>{% endif %}</p>
   </div>
 </main>

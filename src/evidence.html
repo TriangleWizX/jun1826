@@ -1,41 +1,49 @@
 ---
 layout: layouts/base.njk
 title: "BJJ Research & How We Teach | Sensei Sandy BJJ"
-description: "See why Sensei Sandy BJJ uses live games. Read studies, see how class works, and learn what research can and cannot show."
+description: "See why Sensei Sandy BJJ uses live games. Read the studies, see how class works, and learn what research can and cannot show."
 canonicalUrl: "https://senseisandy.com/evidence"
 bodyClass: "page-evidence"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
 permalink: "/evidence/index.html"
 ---
-<main class="ss-main" id="main-content" role="main">
+<main class="ss-main" id="main-content">
   <header class="ss-section-premium py-5 mt-4">
     <div class="container ss-container">
       <p class="ss-eyebrow">Try. Learn. Try Again.</p>
       <h1>Why We Teach BJJ With Games</h1>
-      <p class="lead-text mt-4 mb-0" style="max-width: 780px;">In BJJ, your partner can move. You watch, think, and act. Then the game can change. At Sensei Sandy BJJ, we use safe games to help you learn. We fit each game to the person.</p>
+      <p class="lead-text mt-4 mb-0" style="max-width: 780px;">In BJJ, your partner can move. You watch, think, and act. Then the game can change. At Sensei Sandy BJJ, we use safe games to help you learn. We make the game fit you.</p>
       <p class="mt-3 mb-0"><a href="/how-class-works">See how class works</a></p>
     </div>
   </header>
 
   <section class="ss-section-premium bg-light" aria-labelledby="teach-title">
     <div class="container ss-container">
-      <p class="ss-eyebrow">How we learn</p><h2 id="teach-title">Try a goal. Play. Make a change.</h2>
-      <p class="lead-text" style="max-width:780px">Some studies look at BJJ. Some look at other sports. They can help us plan class. They cannot tell us what each child will gain.</p>
+      <p class="ss-eyebrow">How we learn</p>
+      <h2 id="teach-title">Try a goal. Play. Make a change.</h2>
+      <p class="lead-text" style="max-width: 780px;">Some studies look at BJJ. Some look at other sports. They can help us plan class. But they cannot tell us what each child will gain.</p>
       <ol class="ps-4 mt-2 mb-4">
-        <li class="mb-2"><strong>Start with a goal.</strong> You may need to get free or stay on top.</li>
-        <li class="mb-2"><strong>Play a game.</strong> Your partner can move. You find a way to meet your goal.</li>
-        <li class="mb-2"><strong>Make a change.</strong> Sandy can change the start, time, or force. Then you try again.</li>
+        <li class="mb-2"><strong>Start with a goal.</strong> You may need to get free from a hold or stay on top.</li>
+        <li class="mb-2"><strong>Play the game.</strong> Your partner can move. Find a way to meet your goal.</li>
+        <li class="mb-2"><strong>Make a change.</strong> Sandy can change the game. Then you can try again.</li>
         <li class="mb-2"><strong>See what sticks.</strong> Can you do it with a new partner, new rules, or less help?</li>
       </ol>
-      <h2 class="h3">What does research say?</h2>
-      <p>Some studies look at BJJ. Some look at other sports. Results can help us plan class. Study results can differ.</p>
-      <div class="row g-4 mt-2">
+    </div>
+  </section>
+
+  <section class="ss-section-premium" aria-labelledby="teaching-studies-title" data-evidence-ids="bjj-ecological-dynamical-2026,manninen-games-based-pe-review-2025,saha-pe-game-pedagogy-review-2026,roaas-loras-challenge-perspective-2026">
+    <div class="container ss-container">
+      <p class="ss-eyebrow">How we teach</p>
+      <h2 id="teaching-studies-title">What does research say?</h2>
+      <p>Some studies look at BJJ. Some look at other sports. Results can help us plan, but studies do not agree on every test. No study can tell us what each child will gain.</p>
+      <div class="row g-3 mt-1">
         {% for record in evidencePageCards.evidenceTeachingCards %}
         <div class="col-md-6"><article class="db-card h-100 p-4 bg-white rounded-3 border">
-          <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p><h3 class="h5">{{ record.cardTitle }}</h3>
+          <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p>
+          <h3 class="h5">{{ record.cardTitle }}</h3>
           <p>{{ record.cardSummary }}</p>
-          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p>
+          <p class="small mb-3"><strong>What we do not know:</strong> {{ record.cardLimit }}</p>
           <details class="mb-3"><summary>See study details</summary><p class="mt-2 mb-0"><strong>Sport:</strong> {{ record.sport }}. <strong>Who took part:</strong> {{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} people{% endif %}{% if record.population.nEnrolled %}; {{ record.population.nEnrolled }} enrolled{% endif %}{% if record.population.nAnalyzed %}; {{ record.population.nAnalyzed }} analyzed{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}{% if record.population.groups %}; {{ record.population.groups }} groups{% endif %}. <strong>Tested:</strong> {{ record.tested }}</p></details>
           <a href="{{ record.detailUrl }}">Read the source record</a>
         </article></div>
@@ -44,14 +52,18 @@ permalink: "/evidence/index.html"
     </div>
   </section>
 
-  <section class="ss-section-premium" aria-labelledby="outcomes-title" data-evidence-ids="bjj-school-rct,youth-martial-arts-attention-rct,open-skill-youth-meta-analysis,bjj-adult-fitness,bjj-mma-youth-development">
-    <div class="container ss-container"><p class="ss-eyebrow">What else do we know?</p><h2 id="outcomes-title">Movement, school, and social skills</h2>
-      <div class="row g-4 mt-2">
+  <section class="ss-section-premium bg-light" aria-labelledby="outcomes-title" data-evidence-ids="bjj-school-rct,youth-martial-arts-attention-rct,open-skill-youth-meta-analysis,bjj-adult-fitness,bjj-mma-youth-development">
+    <div class="container ss-container">
+      <p class="ss-eyebrow">What BJJ may help</p>
+      <h2 id="outcomes-title">Other studies</h2>
+      <p>Studies have looked at movement, focus, and how people act. Some found gains. A gain in one group does not mean each child will get the same result.</p>
+      <div class="row g-3 mt-1">
         {% for record in evidencePageCards.evidenceOutcomeCards %}
-        <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3">
-          <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p><h3 class="h5">{{ record.cardTitle }}</h3>
+        <div class="col-md-6"><article class="db-card h-100 p-4 bg-white rounded-3 border">
+          <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p>
+          <h3 class="h5">{{ record.cardTitle }}</h3>
           <p>{{ record.cardSummary }}</p>
-          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p>
+          <p class="small mb-3"><strong>What we do not know:</strong> {{ record.cardLimit }}</p>
           <details class="mb-3"><summary>See study details</summary><p class="mt-2 mb-0"><strong>Sport:</strong> {{ record.sport }}. <strong>Who took part:</strong> {{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} people{% endif %}{% if record.population.nEnrolled %}; {{ record.population.nEnrolled }} enrolled{% endif %}{% if record.population.nAnalyzed %}; {{ record.population.nAnalyzed }} analyzed{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}{% if record.population.groups %}; {{ record.population.groups }} groups{% endif %}. <strong>Tested:</strong> {{ record.tested }}</p></details>
           <a href="{{ record.detailUrl }}">Read the source record</a>
         </article></div>
@@ -60,23 +72,49 @@ permalink: "/evidence/index.html"
     </div>
   </section>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="more-reading-title"><div class="container ss-container"><p class="ss-eyebrow">More reading</p><h2 id="more-reading-title">Other research to explore</h2><ul>{% for record in evidencePageCards.evidenceMoreReading %}<li><a href="{{ record.detailUrl }}">{{ record.moreReadingTitle }}</a> ({{ record.moreReadingSummary }})</li>{% endfor %}</ul>
-    <p class="small text-muted mb-0">Sources checked October 2026. Study results are for groups. Results can vary.</p>
-  </div></section>
+  <section class="ss-section-premium bg-light" aria-labelledby="more-reading-title">
+    <div class="container ss-container">
+      <p class="ss-eyebrow">More reading</p>
+      <h2 id="more-reading-title">Other research to explore</h2>
+      <ul>{% for record in evidencePageCards.evidenceMoreReading %}<li><a href="{{ record.detailUrl }}">{{ record.moreReadingTitle }}</a> ({{ record.moreReadingSummary }})</li>{% endfor %}</ul>
+      <p class="small text-muted mb-0">Sources checked October 2026. Study results vary.</p>
+    </div>
+  </section>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="class-title"><div class="container ss-container"><p class="ss-eyebrow">In class</p><h2 id="class-title">What can you see in class?</h2><p>These are class examples at Sensei Sandy BJJ. The studies above did not test these exact games.</p>
-    <div class="table-responsive"><table class="table table-bordered align-middle bg-white"><caption class="visually-hidden">BJJ games, your goal, and what the coach can change</caption><thead><tr><th scope="col">Game</th><th scope="col">Your goal</th><th scope="col">What can change</th></tr></thead><tbody>
-      <tr><th scope="row">Chest to chest</th><td>Get free or stay on top</td><td>Start, time, or force</td></tr>
-      <tr><th scope="row">Chest to back</th><td>Get free or hold the back</td><td>Start, grip, or partner</td></tr>
-      <tr><th scope="row">Guard</th><td>Keep your legs in play or get past them</td><td>Space, start, or goal</td></tr>
-    </tbody></table></div>
-    <p>Then we can see if you can do it with a new partner, new rules, or less help.</p>
-    <p class="mt-4"><a href="/how-class-works">See how class works</a></p>
-  </div></section>
+  <section class="ss-section-premium bg-light" aria-labelledby="class-title">
+    <div class="container ss-container">
+      <p class="ss-eyebrow">In class</p>
+      <h2 id="class-title">What can you see in class?</h2>
+      <p>These are class examples at Sensei Sandy BJJ. The studies above did not test these exact games.</p>
+      <div class="table-responsive"><table class="table table-bordered align-middle bg-white">
+        <caption class="visually-hidden">BJJ games, your goal, and what can change</caption>
+        <thead><tr><th scope="col">Game</th><th scope="col">Your goal</th><th scope="col">What can change</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Chest to chest</th><td>Get free or stay on top</td><td>Start, time, or force</td></tr>
+          <tr><th scope="row">Chest to back</th><td>Get free or hold the back</td><td>Start, grip, or partner</td></tr>
+          <tr><th scope="row">Guard</th><td>Keep your legs in play or get past them</td><td>Space, start, or goal</td></tr>
+        </tbody>
+      </table></div>
+      <p>Then we see if you can do it with a new partner, new rules, or less help.</p>
+      <p class="mt-4"><a href="/how-class-works">See how class works</a></p>
+    </div>
+  </section>
 
-  <section class="ss-section-premium" aria-labelledby="limits-title"><div class="container ss-container"><p class="ss-eyebrow">Clear limits</p><h2 id="limits-title">What we will not promise</h2><p>BJJ is not a cure. It will not fix how every child acts or learns. We cannot say it is better than all other sports. We can show you how we teach. You can see how class feels.</p>
-    <p>Learn more about classes for <a href="/kids">kids</a>, <a href="/teens">teens</a>, and <a href="/adults">adults</a>.</p>
-  </div></section>
+  <section class="ss-section-premium" aria-labelledby="limits-title">
+    <div class="container ss-container">
+      <p class="ss-eyebrow">Clear limits</p>
+      <h2 id="limits-title">What we will not promise</h2>
+      <p>BJJ is not a cure. It will not fix how every child acts or learns. We cannot say it is better than all other sports. We can show you how we teach. You can see how class feels.</p>
+      <p>See our <a href="/kids">kids</a>, <a href="/teens">teens</a>, and <a href="/adults">adults</a> classes.</p>
+    </div>
+  </section>
 
-  <section class="ss-section-premium" aria-labelledby="visit-title"><div class="container ss-container"><p class="ss-eyebrow">Come see class</p><h2 id="visit-title">See how we train.</h2><p>See the room. Learn how we train. Find a class that fits you or your child.</p><a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Book a Free First Visit</a></div></section>
+  <section class="ss-section-premium bg-light" aria-labelledby="visit-title">
+    <div class="container ss-container">
+      <p class="ss-eyebrow">Come see the class</p>
+      <h2 id="visit-title">See the room. Find a class that fits.</h2>
+      <p>Learn how we train. Find a class for you or your child.</p>
+      <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Book a Free First Visit</a>
+    </div>
+  </section>
 </main>

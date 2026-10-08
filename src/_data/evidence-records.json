@@ -39,7 +39,7 @@
     "evidenceGroup": "teaching",
     "cardLabel": "BJJ study · 2026 · 60 adult athletes",
     "cardTitle": "Games in BJJ",
-    "cardSummary": "After eight weeks, the game group did better on some force and light-response tests. Its distress report also changed.",
+    "cardSummary": "After eight weeks, the game group had a bigger drop in distress scores and gains on some tests.",
     "cardLimit": "The study did not test live BJJ skill or how long skills last. It did not study kids, new learners, or our school.",
     "cardLinkText": "Read the source record"
   },
@@ -118,7 +118,7 @@
     "evidenceGroup": "teaching",
     "cardLabel": "Review of studies · other sports · 17 studies · 2026",
     "cardTitle": "Games do not always win",
-    "cardSummary": "Seven studies found clear gains, five had mixed results, and five found no better result.",
+    "cardSummary": "Seven studies found gains, five had mixed results, and five found no motor-skill edge.",
     "cardLimit": "The studies used many games and tests. They did not study BJJ.",
     "cardLinkText": "Read the source record"
   },
@@ -199,7 +199,7 @@
     "evidenceGroup": "outcomes",
     "cardLabel": "BJJ study · 2022 online / 2023 issue · 88 enrolled · 80 analyzed",
     "cardTitle": "BJJ in school",
-    "cardSummary": "In one school study, some teacher-rated behavior scores changed more after BJJ than PE.",
+    "cardSummary": "In one school study, some teacher-rated behavior scores differed between BJJ and PE groups.",
     "cardLimit": "This was one school study of boys. It used teacher reports. It did not test our school or show what each child will gain.",
     "detailedResults": "The reported values were p=.007 for emotional symptoms, p<.001 for hyperactivity/inattention, p=.002 for total difficulties, and p=.001 with η²=.07 for externalizing behavior.",
     "moreReadingOnly": false,
@@ -453,27 +453,38 @@
   },
   {
     "id": "bjj-injury-2025",
+    "title": "Injury prevalence among Brazilian Jiu-Jitsu practitioners globally: a cross-sectional study in 881 participants",
+    "authors": "Pablo Martin Stegerhoek, Boris Brajovic, Paul Kuijer, and Mirwais Mehrab",
+    "year": 2025,
+    "publicationDate": "Published 2025-03-12",
     "category": "direct-bjj",
-    "evidenceType": "retrospective-survey",
+    "sport": "Brazilian Jiu-Jitsu",
+    "evidenceType": "retrospective-cross-sectional-survey",
     "population": {
       "n": 881,
-      "ageGroup": "mostly adult BJJ practitioners"
+    "ageGroup": "BJJ practitioners; mean age 30.8 years (SD 8.6); 817 participants were male"
     },
     "intervention": {
-      "description": "self-reported training and competition exposure",
-      "durationWeeks": null
+      "description": "Retrospective survey of global BJJ practitioners who trained at least weekly, covering training, competition, and injuries in the prior 12 months"
     },
+    "tested": "Self-reported injuries. An injury meant medical care, at least one week away from training, or at least two weeks of modified training.",
+    "found": "The 881 participants reported 888 injuries. Rates were 5.5 per 1,000 training hours and 55.9 per 1,000 matches. Of the injuries, 789 (89%) happened in training; 620 of those (79%) happened during sparring. Knees accounted for 223 injuries (25%) and shoulders for 114 (13%).",
+    "notTested": "Prospective injury causes, whether prevention practices work, individual risk, youth injury rates, or injury rates at Sensei Sandy BJJ.",
     "supports": [
-      "reported injury patterns in the surveyed population"
+      "Describing self-reported injury patterns and rates in this surveyed population"
     ],
     "doesNotSupport": [
-      "SSBJJ injury rate",
-      "youth injury rate",
-      "individual risk prediction",
-      "injury-prevention guarantee"
+      "A Sensei Sandy BJJ injury rate",
+      "Youth injury rates",
+      "Individual risk prediction",
+      "An injury-prevention guarantee"
     ],
     "source": "https://pubmed.ncbi.nlm.nih.gov/40092168/",
-    "verifiedAt": "2026-08-18",
-    "staleAfter": "2027-08-18"
+    "doi": "10.1136/bmjsem-2024-002322",
+    "detailUrl": "/sources/research/bjj-injury-2025/",
+    "contextualUrl": "/how-class-works#safety",
+    "contextualLinkText": "See our safety practices",
+    "verifiedAt": "2026-10-08",
+    "staleAfter": "2027-10-08"
   }
 ]

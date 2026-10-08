@@ -22,6 +22,7 @@ RESEARCH_RECORD_OUTPUTS = (
     'sources/research/bjj-adult-fitness/index.html',
     'sources/research/rugby-ecological-dynamics-2026/index.html',
     'sources/research/ecological-dynamic-learning-review-2026/index.html',
+    'sources/research/bjj-injury-2025/index.html',
 )
 
 def changed_outputs(commit):

@@ -21,6 +21,7 @@ const outcomeIds = [
   'bjj-mma-youth-development'
 ];
 const moreIds = ['rugby-ecological-dynamics-2026', 'ecological-dynamic-learning-review-2026'];
+const injuryId = 'bjj-injury-2025';
 const cardFields = ['cardLabel', 'cardTitle', 'cardSummary', 'cardLimit'];
 const requiredFields = ['id', 'title', 'authors', 'year', 'publicationDate', 'category', 'sport', 'evidenceType', 'population', 'intervention', 'tested', 'found', 'notTested', 'source', 'detailUrl', 'verifiedAt', 'staleAfter'];
 
@@ -31,7 +32,11 @@ assert.match(sourceTemplate, /record\.found/);
 assert.match(sourceTemplate, /record\.notTested/);
 assert.match(sourceTemplate, /record\.sport/);
 assert.match(sourceTemplate, /href="\/evidence"/);
+assert.match(sourceTemplate, /record\.contextualUrl/);
 assert.match(page, /<details class="mb-3"><summary>See study details<\/summary>/);
+assert.equal((page.match(/<h1\b/g) || []).length, 1, 'evidence page must have exactly one H1');
+assert.match(page, /What can you see in class\?/);
+assert.match(page, /Book a Free First Visit/);
 
 for (const [group, ids] of [['teaching', teachingIds], ['outcomes', outcomeIds]]) {
   for (const id of ids) {
@@ -77,4 +82,24 @@ for (const record of records.filter((item) => teachingIds.includes(item.id) || o
   assert.ok(builtPage.includes(record.tested), `${record.id}: tested outcomes are missing from card details`);
 }
 
-console.log(`Evidence page record QA passed (${teachingIds.length} teaching, ${outcomeIds.length} outcome, ${moreIds.length} More reading records).`);
+const injury = byId.get(injuryId);
+assert.ok(injury, 'injury survey shared record is missing');
+for (const field of requiredFields) assert.ok(injury[field] !== undefined && injury[field] !== '', `injury survey missing ${field}`);
+assert.equal(injury.population.n, 881);
+assert.match(injury.population.ageGroup, /mean age 30\.8 years/);
+assert.equal(injury.contextualUrl, '/how-class-works#safety');
+const injuryRoute = path.join(root, 'dist', injury.detailUrl.replace(/^\//, ''), 'index.html');
+assert.ok(fs.existsSync(injuryRoute), 'injury survey built source route is missing');
+const injuryDetail = fs.readFileSync(injuryRoute, 'utf8');
+assert.ok(injuryDetail.includes(injury.source), 'injury route is missing PubMed source link');
+assert.ok(injuryDetail.includes(injury.sport), 'injury route is missing sport');
+assert.ok(injuryDetail.includes('/evidence'), 'injury route is missing return link');
+assert.ok(injuryDetail.includes(injury.contextualUrl), 'injury route is missing safety context link');
+const builtPage = fs.readFileSync(path.join(root, 'dist/evidence/index.html'), 'utf8');
+assert.equal((builtPage.match(/<h1\b/g) || []).length, 1, 'built evidence page must have exactly one H1');
+assert.match(builtPage, /In BJJ, your partner can move\./, 'built page is missing hero copy');
+assert.match(builtPage, /What can you see in class\?/, 'built page is missing class section');
+assert.match(builtPage, /Book a Free First Visit/, 'built page is missing first visit CTA');
+assert.doesNotMatch(builtPage, /\{%\s*(?:record|if|endif|for)\b/, 'built page contains unrendered Nunjucks tags');
+assert.equal((builtPage.match(/<article\b/g) || []).length, 9, 'built page must show exactly nine main study cards');
+console.log(`Evidence page record QA passed (${teachingIds.length} teaching, ${outcomeIds.length} outcome, ${moreIds.length} More reading records, 1 injury source record).`);
