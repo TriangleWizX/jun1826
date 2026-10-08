@@ -12,6 +12,126 @@
     "description": "Monthly tuition range anchored at the 3× monthly rate ($245/mo adult, $185/mo youth) down to the lowest 1× monthly rate ($95/mo adult, $75/mo youth)."
   },
   "productPolicy": {
+    "acceptedPayments": {
+      "services": [
+        "Venmo",
+        "Cash",
+        "Check",
+        "Zelle",
+        "Stripe"
+      ],
+      "publicCopy": "Pay with Venmo, cash, check, Zelle, or a card through Stripe.",
+      "cardTypesCopy": "Stripe supports credit and debit cards, plus eligible prepaid cards and gift cards linked to a supported card network.",
+      "networkCopy": "Stripe supports Visa, Mastercard, American Express, Discover, Diners Club, JCB, and China UnionPay, subject to account and regional rules.",
+      "regionalCopy": "Regional networks include Cartes Bancaires in France, Interac in Canada, and eftpos in Australia. Support can depend on the region and payment setup, including in-person payments.",
+      "availabilityCopy": "Available card brands, currencies, and saved-card use depend on the Stripe account country, your location, and the payment setup. Text Sandy to confirm your card before you pay.",
+      "cardOnFileCopy": "The monthly and annual card-on-file rules still apply when you pay another way. Text Sandy to set up your plan.",
+      "docsUrl": "https://docs.stripe.com/payments/cards"
+    },
+    "annualPayment": {
+      "cardsOnFileRequired": 2,
+      "commitmentMonths": 12,
+      "paymentOptions": [
+        "paid_in_full",
+        "12_monthly_installments"
+      ],
+      "monthlyPaymentDue": "Before each month of training",
+      "paidInFullDue": "Before the annual term starts",
+      "continuationOnly": true,
+      "publicCopy": "Keep two cards on file to use the annual rate. Pay in full before the year starts, or pay in 12 monthly installments. Both choices cover a 12-month commitment. Monthly installments are due before each month of training.",
+      "cardCollection": "Arrange card-on-file enrollment with Sandy through the payment provider; this website does not collect card details.",
+      "installmentPlans": [
+        {
+          "label": "Youth 1 class each week",
+          "priceRef": "coreCulture.frequencyLadder.youth.1.annual",
+          "annualTotal": 800,
+          "regularInstallmentCents": 6667,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 6663,
+          "regularDisplay": "$66.67",
+          "finalDisplay": "$66.63"
+        },
+        {
+          "label": "Youth 2 classes each week",
+          "priceRef": "coreCulture.frequencyLadder.youth.2.annual",
+          "annualTotal": 1600,
+          "regularInstallmentCents": 13333,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 13337,
+          "regularDisplay": "$133.33",
+          "finalDisplay": "$133.37"
+        },
+        {
+          "label": "Youth 3 classes each week",
+          "priceRef": "coreCulture.frequencyLadder.youth.3.annual",
+          "annualTotal": 1980,
+          "regularInstallmentCents": 16500,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 16500,
+          "regularDisplay": "$165.00",
+          "finalDisplay": "$165.00"
+        },
+        {
+          "label": "Adult 1 class each week",
+          "priceRef": "coreCulture.frequencyLadder.adult.1.annual",
+          "annualTotal": 1000,
+          "regularInstallmentCents": 8333,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 8337,
+          "regularDisplay": "$83.33",
+          "finalDisplay": "$83.37"
+        },
+        {
+          "label": "Adult 2 classes each week",
+          "priceRef": "coreCulture.frequencyLadder.adult.2.annual",
+          "annualTotal": 2000,
+          "regularInstallmentCents": 16667,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 16663,
+          "regularDisplay": "$166.67",
+          "finalDisplay": "$166.63"
+        },
+        {
+          "label": "Adult 3 classes each week",
+          "priceRef": "coreCulture.frequencyLadder.adult.3.annual",
+          "annualTotal": 2475,
+          "regularInstallmentCents": 20625,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 20625,
+          "regularDisplay": "$206.25",
+          "finalDisplay": "$206.25"
+        },
+        {
+          "label": "Annual Family Track: one adult and two youth",
+          "priceRef": "householdBundles.annualFamily.price",
+          "annualTotal": 5400,
+          "regularInstallmentCents": 45000,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 45000,
+          "regularDisplay": "$450.00",
+          "finalDisplay": "$450.00"
+        },
+        {
+          "label": "Community-Service Adult Annual Track",
+          "priceRef": "annualTrack.communityServiceAdult.price",
+          "annualTotal": 2250,
+          "regularInstallmentCents": 18750,
+          "regularInstallments": 11,
+          "finalInstallmentCents": 18750,
+          "regularDisplay": "$187.50",
+          "finalDisplay": "$187.50"
+        }
+      ]
+    },
+    "monthlyPayment": {
+      "cardsOnFileRequired": 1,
+      "paymentDue": "Before each month of training",
+      "rateRef": "coreCulture.frequencyLadder",
+      "billingPeriod": "month",
+      "scope": "Individual Youth and Adult monthly tuition rates",
+      "cardCollection": "Arrange card-on-file enrollment with Sandy through the payment provider; this website does not collect card details.",
+      "publicCopy": "Keep one card on file to use the monthly rate. Pay before each month of training starts."
+    },
     "firstPaidTerm": ["coreCulture.youth", "coreCulture.adult", "coreCulture.communityServiceAdult"],
     "continuationOnly": ["eliteConcierge", "annualTrack", "householdBundles.annualFamily"],
     "firstQualifyingCoreGi": "Included once with a student's first qualifying Core Culture enrollment; continuation products do not add another gi.",
