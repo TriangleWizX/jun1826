@@ -77,4 +77,50 @@ assert.match(page, /\$245 to \$75 \/ month/);
 assert.match(page, /\$165 \/ month equivalent/);
 assert.match(page, /\$206\.25 \/ month equivalent/);
 
+// Verify every household frequency against individual tuition and continuation.
+const siblings = pricing.householdBundles.firstTerm.siblings;
+assert.equal(siblings.firstTermOnly, true);
+assert.equal(siblings.termWeeks, pricing.coreCulture.termWeeks);
+assert.deepEqual(siblings.frequencies.map(f => f.classesPerWeek), [1, 2, 3]);
+assert.deepEqual(siblings.frequencies.map(f => f.pricePerYouth), [215, 425, 525]);
+const siblingSection = page.slice(page.indexOf("Other household combinations"), page.indexOf("<!-- FIRST-TERM DECISION SUPPORT"));
+for (const frequency of siblings.frequencies) {
+  const ladder = pricing.coreCulture.frequencyLadder.youth[frequency.classesPerWeek];
+  assert.equal(frequency.scheduledClassesPerPerson, frequency.classesPerWeek * 12);
+  assert.deepEqual(frequency.tiers.map(t => t.youth), [2, 3, 4]);
+  for (const tier of frequency.tiers) {
+    assert.equal(tier.price, tier.youth * frequency.pricePerYouth);
+    assert.equal(tier.matchingIndividualTotal, tier.youth * ladder["12Weeks"]);
+    assert.equal(tier.savingsAmount, tier.matchingIndividualTotal - tier.price);
+    assert.equal(tier.savingsPercent, Number((tier.savingsAmount / tier.matchingIndividualTotal * 100).toFixed(1)));
+    assert.ok(frequency.pricePerYouth < ladder["12Weeks"]);
+    assert.ok(frequency.pricePerYouth + ladder["12Weeks"] > ladder["6Months"]);
+    assert.ok(frequency.pricePerYouth + ladder["12Weeks"] * 3 > ladder.annual);
+    assert.ok(siblingSection.includes(tier.displayPrice));
+    assert.ok(siblingSection.includes(`${tier.youth} siblings`));
+  }
+  assert.equal(frequency.tiers[0].price * 2, frequency.tiers[2].price);
+}
+assert.ok(oneAdultTwoYouth.price < siblings.frequencies[2].tiers[0].price + adult12W);
+assert.match(siblingSection, /Choose one offer per child/);
+assert.match(siblingSection, /After the first term, choose from the youth plans/);
+assert.match(siblingSection, /Choose the same class plan for each child/);
+const packSection = page.slice(page.indexOf('id="visitor-training"'), page.indexOf('op-other-card--private'));
+for (const [key, id] of [["tenPack", "ten-class-pack"], ["twentyPack", "twenty-class-pack"]]) {
+  const pack = pricing.visitorAndSupport[key];
+  assert.equal(pack.ageMin, 18);
+  assert.equal(pack.eligibility, "Adults ages 18 and up");
+  assert.match(pack.audience, /^Adults/);
+  assert.equal(pack.giIncluded, false);
+  assert.equal(pack.recurringReservation, false);
+  assert.ok(packSection.includes(pack.name));
+  const offer = offers.secondary.find(o => o.id === id);
+  assert.equal(offer.name, pack.name);
+  assert.match(offer.audience, /Adults ages 18 and up/);
+  assert.equal(offer.eligibilityRef, `visitorAndSupport.${key}.eligibility`);
+}
+assert.match(packSection, /Class packs: adults ages 18 and up/);
+assert.match(packSection, /Kids and teens can choose a weekly youth plan above/);
+assert.equal(pricing.visitorAndSupport.tenPack.price, 300);
+assert.equal(pricing.visitorAndSupport.twentyPack.price, 550);
 console.log("household pricing QA passed");

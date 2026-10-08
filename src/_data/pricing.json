@@ -191,6 +191,110 @@
         "savingsAmount": 330,
         "savingsPercent": 16.7,
         "active": true
+      },
+      "siblings": {
+        "termWeeks": 12,
+        "firstTermOnly": true,
+        "eligibility": "Youth siblings ages 5–17 from one household, enrolled for the same first 12-week term and weekly class frequency. Each place belongs to one named student.",
+        "offerRule": "One offer per student. Sibling rates apply to youth-only enrollments; mixed households use a listed family offer or a quote.",
+        "uniformPolicy": "Included once with a student's first qualifying Core Culture enrollment; continuation products do not add another gi.",
+        "ageMin": 5,
+        "ageMax": 17,
+        "frequencies": [
+          {
+            "classesPerWeek": 1,
+            "scheduledClassesPerPerson": 12,
+            "pricePerYouth": 215,
+            "tiers": [
+              {
+                "youth": 2,
+                "price": 430,
+                "displayPrice": "$430",
+                "matchingIndividualTotal": 440,
+                "savingsAmount": 10,
+                "savingsPercent": 2.3
+              },
+              {
+                "youth": 3,
+                "price": 645,
+                "displayPrice": "$645",
+                "matchingIndividualTotal": 660,
+                "savingsAmount": 15,
+                "savingsPercent": 2.3
+              },
+              {
+                "youth": 4,
+                "price": 860,
+                "displayPrice": "$860",
+                "matchingIndividualTotal": 880,
+                "savingsAmount": 20,
+                "savingsPercent": 2.3
+              }
+            ]
+          },
+          {
+            "classesPerWeek": 2,
+            "scheduledClassesPerPerson": 24,
+            "pricePerYouth": 425,
+            "tiers": [
+              {
+                "youth": 2,
+                "price": 850,
+                "displayPrice": "$850",
+                "matchingIndividualTotal": 880,
+                "savingsAmount": 30,
+                "savingsPercent": 3.4
+              },
+              {
+                "youth": 3,
+                "price": 1275,
+                "displayPrice": "$1,275",
+                "matchingIndividualTotal": 1320,
+                "savingsAmount": 45,
+                "savingsPercent": 3.4
+              },
+              {
+                "youth": 4,
+                "price": 1700,
+                "displayPrice": "$1,700",
+                "matchingIndividualTotal": 1760,
+                "savingsAmount": 60,
+                "savingsPercent": 3.4
+              }
+            ]
+          },
+          {
+            "classesPerWeek": 3,
+            "scheduledClassesPerPerson": 36,
+            "pricePerYouth": 525,
+            "tiers": [
+              {
+                "youth": 2,
+                "price": 1050,
+                "displayPrice": "$1,050",
+                "matchingIndividualTotal": 1100,
+                "savingsAmount": 50,
+                "savingsPercent": 4.5
+              },
+              {
+                "youth": 3,
+                "price": 1575,
+                "displayPrice": "$1,575",
+                "matchingIndividualTotal": 1650,
+                "savingsAmount": 75,
+                "savingsPercent": 4.5
+              },
+              {
+                "youth": 4,
+                "price": 2100,
+                "displayPrice": "$2,100",
+                "matchingIndividualTotal": 2200,
+                "savingsAmount": 100,
+                "savingsPercent": 4.5
+              }
+            ]
+          }
+        ]
       }
     },
     "annualFamily": {
@@ -252,13 +356,13 @@
       "active": true
     },
     "tenPack": {
-      "name": "10-Class Pack",
+      "name": "10-Class Adult Flex Pack",
       "price": 300,
       "displayPrice": "$300",
       "term": "10 classes",
       "classCount": 10,
       "accessModel": "open_access",
-      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "audience": "Adults with seasonal, second-home, or irregular schedules",
       "classesIncluded": "10 consumable class visits",
       "validity": "6 months",
       "recurringReservation": false,
@@ -266,16 +370,18 @@
       "giIncluded": false,
       "guaranteeEligible": false,
       "bookingRule": "Request an appropriate class with available space and suitable partner fit",
-      "active": true
+      "active": true,
+      "ageMin": 18,
+      "eligibility": "Adults ages 18 and up"
     },
     "twentyPack": {
-      "name": "20-Class Pack",
+      "name": "20-Class Adult Flex Pack",
       "price": 550,
       "displayPrice": "$550",
       "term": "20 classes",
       "classCount": 20,
       "accessModel": "open_access",
-      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "audience": "Adults with seasonal, second-home, or irregular schedules",
       "classesIncluded": "20 consumable class visits",
       "validity": "12 months",
       "recurringReservation": false,
@@ -283,7 +389,9 @@
       "giIncluded": false,
       "guaranteeEligible": false,
       "bookingRule": "Request an appropriate class with available space and suitable partner fit",
-      "active": true
+      "active": true,
+      "ageMin": 18,
+      "eligibility": "Adults ages 18 and up"
     },
     "privateCoachingSingle": {
       "name": "Private Session",

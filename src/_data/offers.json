@@ -114,9 +114,9 @@
     },
     {
       "id": "ten-class-pack",
-      "name": "10-Class Pack",
+      "name": "10-Class Adult Flex Pack",
       "category": "Flexible Access",
-      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "audience": "Adults ages 18 and up with seasonal, second-home, or irregular schedules",
       "priceRef": "visitorAndSupport.tenPack",
       "displayPrice": "$300",
       "term": "6 months",
@@ -127,13 +127,14 @@
       "giIncluded": false,
       "guaranteeEligible": false,
       "active": true,
-      "public": true
+      "public": true,
+      "eligibilityRef": "visitorAndSupport.tenPack.eligibility"
     },
     {
       "id": "twenty-class-pack",
-      "name": "20-Class Pack",
+      "name": "20-Class Adult Flex Pack",
       "category": "Flexible Access",
-      "audience": "Seasonal, second-home, or irregular-schedule students",
+      "audience": "Adults ages 18 and up with seasonal, second-home, or irregular schedules",
       "priceRef": "visitorAndSupport.twentyPack",
       "displayPrice": "$550",
       "term": "12 months",
@@ -144,7 +145,8 @@
       "giIncluded": false,
       "guaranteeEligible": false,
       "active": true,
-      "public": true
+      "public": true,
+      "eligibilityRef": "visitorAndSupport.twentyPack.eligibility"
     }
   ],
   "support": [
