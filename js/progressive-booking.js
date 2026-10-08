@@ -77,8 +77,10 @@
     };
     const updateConfirmation = () => {
       const adult = ['adult-beginner', 'leo'].includes(state.profile);
+      const youth = ['child', 'teen'].includes(state.profile);
       document.querySelector('[data-adult-arrival-plan]')?.toggleAttribute('hidden', !adult);
-      document.querySelector('[data-general-arrival-plan]')?.toggleAttribute('hidden', adult);
+      document.querySelector('[data-youth-arrival-plan]')?.toggleAttribute('hidden', !youth);
+      document.querySelector('[data-general-arrival-plan]')?.toggleAttribute('hidden', adult || youth);
     };
     const calendarUrl = () => {
       const url = new URL(`${CAL_ORIGIN}/${CAL_LINK}`);
