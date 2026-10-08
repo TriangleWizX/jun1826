@@ -10,6 +10,13 @@ ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scri
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
                    'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml')
+RESEARCH_RECORD_OUTPUTS = (
+    'sources/research/bjj-ecological-dynamical-2026/index.html',
+    'sources/research/games-based-teaching-review/index.html',
+    'sources/research/pe-games-review-2026/index.html',
+    'sources/research/challenge-point-perspective-2026/index.html',
+    'sources/research/bjj-mma-youth-development/index.html',
+)
 
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
@@ -34,6 +41,18 @@ def changed_outputs(commit):
         candidate = ROOT / name
         if candidate.is_file() and (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS)):
             outputs.add((candidate, rel))
+    # One paginated Nunjucks template emits these research routes; the source
+    # template and its data files do not share the generated route paths.
+    research_record_inputs = {
+        'src/_data/evidence-records.json',
+        'src/_data/researchSourcePages.js',
+        'src/sources/research/records.njk',
+    }
+    if any(name in research_record_inputs for name in names):
+        for rel in RESEARCH_RECORD_OUTPUTS:
+            candidate = ROOT / 'dist' / rel
+            if candidate.is_file():
+                outputs.add((candidate, rel))
     if 'src/winter-rank-drop.html' in names: outputs.add((ROOT / 'dist/winter-rank-drop/index.html', 'winter-rank-drop/index.html'))
     for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
         if asset in names: outputs.add((ROOT / asset, asset))
