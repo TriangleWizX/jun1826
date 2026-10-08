@@ -5,7 +5,7 @@
     "type": "mechanism",
     "publicWording": "Your partner changes the problem while you solve it.",
     "evidenceIds": ["open-skill-youth-meta-analysis"],
-    "evidenceRole": "Related open-skill research supports the broader changing-environment mechanism; SSBJJ class structure establishes the academy practice.",
+    "evidenceRole": "Related open-skill research supports the broader changing-environment idea; local class structure shows how partners practice.",
     "allowedPages": ["home", "tannersville", "how-class-works", "kids", "teens", "adults"],
     "prohibited": ["BJJ improves executive function", "BJJ is better than soccer", "individual outcome guarantee"]
   },
@@ -13,9 +13,9 @@
     "id": "youth-attention-context",
     "claimStrength": 5,
     "type": "research-outcome",
-    "publicWording": "One randomized school study reported differences on selected teacher-rated behavioral measures after 12 weeks of BJJ.",
+    "publicWording": "One school study reported changes in selected teacher-rated behavior scores after 12 weeks of BJJ.",
     "evidenceIds": ["bjj-school-rct", "youth-martial-arts-attention-rct"],
-    "evidenceRole": "Direct BJJ and adjacent martial-art studies provide bounded context; neither predicts an individual SSBJJ outcome.",
+    "evidenceRole": "One direct BJJ study and one Taekwondo study provide bounded context; neither predicts an individual SSBJJ outcome.",
     "allowedPages": ["kids", "teens", "evidence"],
     "prohibited": ["BJJ makes kids focus", "BJJ treats ADHD", "SSBJJ improves school performance"]
   },
@@ -23,10 +23,40 @@
     "id": "adult-fitness-context",
     "claimStrength": 2,
     "type": "research-outcome",
-    "publicWording": "A small BJJ intervention study supports describing regular practice as physical training.",
+    "publicWording": "A small BJJ study found changes in some fitness scores after six weeks of training.",
     "evidenceIds": ["bjj-adult-fitness"],
-    "evidenceRole": "A small direct BJJ intervention supports describing practice as physical training, not superiority or a guarantee.",
+    "evidenceRole": "A small direct BJJ study supports a narrow group-level statement, not superiority or a personal promise.",
     "allowedPages": ["adults", "evidence"],
     "prohibited": ["BJJ is a better workout than Pilates", "guaranteed fitness outcome"]
+  },
+  {
+    "id": "live-task-practice-context",
+    "claimStrength": 2,
+    "type": "research-outcome",
+    "publicWording": "One study of adult BJJ athletes found changes in some physical and response-time scores after live-task practice.",
+    "evidenceIds": ["bjj-ecological-dynamical-2026"],
+    "evidenceRole": "The study offers narrow context for adult athletes; it did not test grappling skill, later recall, children, or beginners.",
+    "allowedPages": ["evidence"],
+    "prohibited": ["live-task practice improves BJJ skill", "results apply to children", "SSBJJ outcome guarantee"]
+  },
+  {
+    "id": "game-teaching-context",
+    "claimStrength": 2,
+    "type": "research-outcome",
+    "publicWording": "A review of PE studies found mixed results for game-based teaching.",
+    "evidenceIds": ["manninen-games-based-pe-review-2025", "saha-pe-game-pedagogy-review-2026"],
+    "evidenceRole": "Reviews of other sports and school PE provide context only; they do not test BJJ classes.",
+    "allowedPages": ["evidence"],
+    "prohibited": ["game-based teaching always works", "BJJ proved superior", "SSBJJ method proven by these reviews"]
+  },
+  {
+    "id": "bjj-mma-youth-context",
+    "claimStrength": 2,
+    "type": "research-outcome",
+    "publicWording": "A five-month study found group-level changes among people who chose BJJ or MMA.",
+    "evidenceIds": ["bjj-mma-youth-development"],
+    "evidenceRole": "This observational study reports self-control, prosocial, and aggression scores; participant choice prevents causal claims.",
+    "allowedPages": ["evidence"],
+    "prohibited": ["BJJ caused the reported changes", "MMA caused the reported changes", "individual outcome guarantees", "results apply to all youth"]
   }
 ]
