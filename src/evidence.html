@@ -35,7 +35,9 @@ permalink: "/evidence/index.html"
         <div class="col-md-6"><article class="db-card h-100 p-4 bg-white rounded-3 border">
           <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p><h3 class="h5">{{ record.cardTitle }}</h3>
           <p>{{ record.cardSummary }}</p>
-          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p><a href="{{ record.detailUrl }}">Read the source record</a>
+          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p>
+          <details class="mb-3"><summary>See study details</summary><p class="mt-2 mb-0"><strong>Sport:</strong> {{ record.sport }}. <strong>Who took part:</strong> {{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} people{% endif %}{% if record.population.nEnrolled %}; {{ record.population.nEnrolled }} enrolled{% endif %}{% if record.population.nAnalyzed %}; {{ record.population.nAnalyzed }} analyzed{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}{% if record.population.groups %}; {{ record.population.groups }} groups{% endif %}. <strong>Tested:</strong> {{ record.tested }}</p></details>
+          <a href="{{ record.detailUrl }}">Read the source record</a>
         </article></div>
         {% endfor %}
       </div>
@@ -49,7 +51,9 @@ permalink: "/evidence/index.html"
         <div class="col-md-6 col-xl-4"><article class="db-card h-100 p-4 border rounded-3">
           <p class="small text-uppercase text-muted mb-2">{{ record.cardLabel }}</p><h3 class="h5">{{ record.cardTitle }}</h3>
           <p>{{ record.cardSummary }}</p>
-          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p><a href="{{ record.detailUrl }}">Read the source record</a>
+          <p class="small mb-3"><strong>Limit:</strong> {{ record.cardLimit }}</p>
+          <details class="mb-3"><summary>See study details</summary><p class="mt-2 mb-0"><strong>Sport:</strong> {{ record.sport }}. <strong>Who took part:</strong> {{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} people{% endif %}{% if record.population.nEnrolled %}; {{ record.population.nEnrolled }} enrolled{% endif %}{% if record.population.nAnalyzed %}; {{ record.population.nAnalyzed }} analyzed{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}{% if record.population.groups %}; {{ record.population.groups }} groups{% endif %}. <strong>Tested:</strong> {{ record.tested }}</p></details>
+          <a href="{{ record.detailUrl }}">Read the source record</a>
         </article></div>
         {% endfor %}
       </div>

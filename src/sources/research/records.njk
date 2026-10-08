@@ -15,8 +15,10 @@ eleventyComputed:
   <div class="container py-5">
     <p class="text-uppercase small text-muted">{{ record.evidenceType | replace('-', ' ') }} · {{ record.category | replace('-', ' ') }}</p>
     <h1>{{ record.title }}</h1>
-    <p>{{ record.authors }} · {{ record.publicationDate }}</p>
+    {% if record.authors %}<p>{{ record.authors }} · {{ record.publicationDate }}</p>{% endif %}
     <dl>
+      <dt>Sport</dt>
+      <dd>{{ record.sport }}</dd>
       <dt>Who or what was covered</dt>
       <dd>{{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} participants{% endif %}{% if record.population.nEnrolled %}; {{ record.population.nEnrolled }} enrolled{% endif %}{% if record.population.nAnalyzed %}; {{ record.population.nAnalyzed }} analyzed{% endif %}{% if record.population.groups %}; {{ record.population.groups }} groups{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}.</dd>
       <dt>What was studied</dt>
