@@ -481,6 +481,17 @@ reports as public deployment payloads.
 
 ## Persona Studio & Auto Persona Tri-Tier Operating Standard
 
+### Swarm orchestration preference
+
+The user requires one primary agent to act as the swarm orchestrator in current
+and future workflows. The orchestrator owns scope, worktree isolation, persona
+fit review, dependencies, integration, independent verification, and final
+reporting. Assign each independent workstream to a distinct agent with a
+distinct, source-inspected Indranet persona and a separate worktree; do not let
+workers share write paths. If no suitable persona source is available, disclose
+the ordinary-specialist fallback. The orchestrator remains accountable for
+reviewing every worker result and completing the Definition of Done.
+
 All assistant and agent interactions in this repository operate under the **Persona Studio & Auto Persona Tri-Tier Model** backed by `assets/indranet-prompt-exporter/` (catalog of 800+ specialized personas, `auto_persona.py`, `persona_quick.py`, and `persona_planner.py`).
 
 ### 1. Goals (`/goal`): INSTRUCTIONS + Multi-Agent Persona Swarm
