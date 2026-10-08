@@ -1,32 +1,55 @@
 # First Visit Funnel Tracking
 
-The site measures the visitor path without sending names, email addresses, phone numbers, student names, message text, or full user-supplied URLs to analytics.
+The site measures browser behavior without sending names, email addresses,
+phone numbers, student names, message text, medical information, booking IDs,
+or raw provider objects to analytics. Operational records stay in the trusted
+private system.
 
-## Events
+## Active event contract
 
-| Event | Trigger | Notes |
+| Event | Trigger | Reporting meaning |
 | --- | --- | --- |
-| `first_visit_cta_click` | Booking-link click | Includes lane, source page, and campaign when available. |
-| `lead_form_started` | First meaningful form interaction | Fires once per form instance. |
-| `first_visit_submitted` | Valid booking-form submit attempt | Fires once per form instance; does not prove delivery or staff confirmation. |
-| `booking_confirmed` | Receipt-page arrival | Browser-observable only; direct visits and reloads are not staff confirmation. |
-| `visit_confirmed` | Sandy confirms the appointment | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `first_visit_showed` | Prospect arrives | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `first_class_attended` | First coached class completed | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `core_purchased` | 12-week program purchased | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `activated_30d` | Chosen early-attendance threshold reached | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
-| `renewed` | Student continues after the first term | A trusted operational system calls `window.SS_TRACK_FUNNEL_STAGE`. |
+| `intro_page_loaded` | Booking flow initializes | Page diagnostic; not an eligible adult session by itself. |
+| `first_visit_cta_click` | A visitor clicks a link to the booking route | First Visit intent. |
+| `lane_resolved` | Booking profile resolves | Includes direct lanes and aliases. |
+| `lane_selected` | Visitor manually changes the profile | A change diagnostic; preselected adults still count as resolved. |
+| `availability_viewed` | Cal reports `linkReady` | The provider view is ready. It is not proof of an open slot. |
+| `calendar_load_failed` | Calendar load fails | Recovery diagnostic; not a booking result. |
+| `booking_completed` | Cal `bookingSuccessfulV2` has a UID, `ACCEPTED` status, and no payment requirement | Canonical accepted browser booking. |
+| `calendly_scheduled`, `booking_complete`, `book_intro_submit` | The same accepted callback | Legacy aliases for the one accepted booking lifecycle. Keep them for downstream compatibility; never sum them. |
+| `lead_form_started`, `first_visit_submitted` | A current form instance receives input or a valid submit | Homepage lead-form branch only when that form is active. They are not calendar stages or booking proof. |
+| `visit_confirmed` | Trusted staff or operations integration calls `SS_TRACK_FUNNEL_STAGE` | Operational confirmation, not a receipt view. |
+| `first_visit_showed`, `first_class_attended`, `core_purchased`, `activated_30d`, `renewed` | Trusted operations integration calls `SS_TRACK_FUNNEL_STAGE` | Later operational stages. The hook itself is not an authenticated record. |
 
-Every funnel event carries `lane`, `source_page`, and `campaign` when available. Booking events may also carry `requested_start_period` and `preferred_day`. The homepage and dedicated booking form use the shared funnel producer; page handlers do not emit duplicate start or submit events.
+`booking_confirmed` is not an active browser event. It was formerly inferred
+from the receipt heading, which exists in hidden markup before any accepted
+booking. Historical reports must treat it as a retired diagnostic, never as a
+completion or staff-confirmation measure.
 
-## Dashboard rates
+## Booking-event gates
 
-Use distinct people or lead IDs where an existing trusted system provides them:
+Only the current Cal callback can emit `booking_completed`. Initial load,
+hidden success content, a direct page reload, `linkReady`, a forged message,
+a missing UID, `PENDING`, or `paymentRequired: true` must emit no conversion.
+Repeated accepted callbacks with the same UID yield one completion in the
+current page lifecycle. This in-memory deduplication does not establish
+cross-session or provider-side deduplication.
 
-1. `first_visit_cta_click` → `lead_form_started`
-2. `lead_form_started` → `first_visit_submitted`
-3. `first_visit_submitted` → `first_visit_showed`
-4. `first_visit_showed` → `core_purchased`
-5. `core_purchased` → `activated_30d`
+Every shared funnel event has `lane`, `source_page`, and `campaign` when
+available. Normalize names before reporting: adult and `adult-beginner` map to
+`adults`; kid, child, and youth map to `kids`; teen maps to `teens`; family
+or unknown maps to `family_unsure`. The accepted booking payload uses only
+categorical scheduler fields and `booking_reference_present: true`.
 
-Use one consistent cohort and follow-up window. Appointments whose date has not arrived are not no-shows. If only session counts exist, label rates as session-level. Missing operational data is unknown, not zero.
+## Reporting and reconciliation
+
+Use `booking_completed` as the one browser conversion. Map legacy aliases to
+that same lifecycle only for compatibility. Report browser rates in distinct
+sessions and operational rates in mature appointments or people; do not divide
+those units together.
+
+Before reporting attendance or paid starts, reconcile the private appointment,
+staff, attendance, and enrollment records under the rules in
+[adult-first-visit-reconciliation-spec.md](adult-first-visit-reconciliation-spec.md).
+Unknown joins, future appointments, and pending reschedules remain unknown;
+they are not failed visitors.

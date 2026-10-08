@@ -13,6 +13,7 @@
     const steps = [1, 2, 3].map((n) => document.getElementById(`pb-step-${n}`));
     const mount = document.getElementById('first-visit-calendar');
     const status = document.querySelector('[data-calendar-status]');
+    const choiceStatus = document.querySelector('[data-choice-status]');
     const form = document.querySelector('#pb-step-3 form');
     const requested = new URLSearchParams(window.location.search).get('lane');
     const state = { profile: null, url: null, inline: false, scheduled: new Set(), step: 1, generation: 0, timer: null, trigger: null };
@@ -53,6 +54,31 @@
     const message = (text, error = false) => {
       if (!status) return;
       status.textContent = text; status.hidden = !text; status.classList.toggle('text-danger', error);
+    };
+    const setChoiceStatus = (text) => {
+      if (!choiceStatus) return;
+      choiceStatus.textContent = text;
+      choiceStatus.hidden = !text;
+    };
+    const updateCalendarCopy = () => {
+      const context = document.querySelector('[data-calendar-context]');
+      const profiles = {
+        'adult-beginner': { selected: 'Adult 18+ selected.', context: context?.dataset.adultCalendarContext },
+        child: { selected: 'Child 5–9 selected.', context: context?.dataset.youthCalendarContext },
+        teen: { selected: 'Teen 10–17 selected.', context: context?.dataset.youthCalendarContext },
+        family: { selected: 'More than one person selected.', context: context?.dataset.familyCalendarContext },
+        leo: { selected: 'Community-service adult selected.', context: context?.dataset.adultCalendarContext },
+        'not-sure': { selected: 'Help choosing selected.', context: context?.dataset.helpCalendarContext }
+      };
+      const copy = profiles[state.profile] || { selected: 'Choose who is starting.', context: 'Pick a time to meet Sandy.' };
+      const choice = document.querySelector('[data-current-choice]');
+      if (choice) choice.textContent = copy.selected;
+      if (context) context.textContent = copy.context;
+    };
+    const updateConfirmation = () => {
+      const adult = ['adult-beginner', 'leo'].includes(state.profile);
+      document.querySelector('[data-adult-arrival-plan]')?.toggleAttribute('hidden', !adult);
+      document.querySelector('[data-general-arrival-plan]')?.toggleAttribute('hidden', adult);
     };
     const calendarUrl = () => {
       const url = new URL(`${CAL_ORIGIN}/${CAL_LINK}`);
@@ -143,7 +169,7 @@
       const fallback = document.querySelector('[data-calendar-external]');
       if (fallback) { fallback.href = state.url.toString(); fallback.hidden = false; }
       mount.replaceChildren(); mount.classList.remove('is-ready'); message('');
-      message('Loading appointment times…');
+      message('Visit times are on the way.');
       state.timer = window.setTimeout(() => {
         if (generation === state.generation && state.step === 2) failure();
       }, 15000);
@@ -182,7 +208,7 @@
                 ['submitted', 'name', 'email', 'phone'].forEach((key) => sessionStorage.removeItem(`sensei_homepage_lead_${key}`));
               }
             } catch (_) {}
-            syncFields(); show(3);
+            syncFields(); updateConfirmation(); show(3);
           } }
         ];
         state.listeners.forEach((listener) => cal('on', listener));
@@ -201,16 +227,13 @@
       const previous = state.profile;
       state.profile = profile; state.inline = false; state.url = calendarUrl(); syncFields();
       document.querySelectorAll('[data-profile]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.profile === profile)));
-      document.querySelectorAll('input[name="starting-profile"]').forEach((radio) => { radio.checked = radio.value === profile; });
-      const labels = { 'adult-beginner': 'an adult', child: 'a child', teen: 'a teen', leo: 'a community-service adult', family: 'more than one person', 'not-sure': 'help choosing' };
-      const choice = document.querySelector('[data-current-choice]'); if (choice) choice.textContent = `Starting path: ${labels[profile] || 'your first visit'}.`;
+      setChoiceStatus(''); updateCalendarCopy(); updateConfirmation();
       track('lane_resolved', { selection_method: method });
       if (method === 'manual' && previous !== profile) track('lane_selected', { previous_lane: previous || 'unknown', selected_lane: profile, selection_method: previous ? 'changed' : 'manual' });
       show(2); renderCalendar();
     };
 
     document.querySelectorAll('[data-profile]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); state.trigger = button; choose(button.dataset.profile, 'manual'); }));
-    document.querySelectorAll('input[name="starting-profile"]').forEach((radio) => radio.addEventListener('change', () => choose(radio.value, 'manual')));
     document.querySelectorAll('[data-back-to], [data-change-choice]').forEach((button) => button.addEventListener('click', (event) => { event.preventDefault(); show(1); }));
     document.querySelectorAll('[data-reveal-youth]').forEach((button) => button.addEventListener('click', () => {
       document.querySelector('[data-youth-choice]')?.removeAttribute('hidden');
@@ -270,6 +293,6 @@
     }
     track('intro_page_loaded');
     if (ALIASES[String(requested || '').toLowerCase()]) choose(ALIASES[String(requested).toLowerCase()], 'query');
-    else if (requested) message('Choose who is starting, or text Sandy for help.');
+    else if (requested) setChoiceStatus('Choose who is starting, or text Sandy for help.');
   });
 }());

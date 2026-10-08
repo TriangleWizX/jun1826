@@ -11,6 +11,10 @@
   const BOOKING_PATH = "/free-bjj-intro-tannersville-ny";
   const startedForms = new WeakSet();
   const submittedForms = new WeakSet();
+  const operationalDetailKeys = new Set([
+    "booking_reference_present",
+    "operational_record_present"
+  ]);
 
   function normalizeLane(value) {
     const raw = String(value || "").toLowerCase();
@@ -58,15 +62,20 @@
   }
 
   // Operational systems can call this after a real confirmation or lifecycle
-  // update. Optional IDs are accepted only when supplied by that system.
+  // update. The browser accepts only categorical presence flags: operational
+  // identities and provider records stay in the trusted private system.
   window.SS_TRACK_FUNNEL_STAGE = function (stage, details) {
     const allowed = new Set([
       "visit_confirmed", "first_visit_showed", "first_class_attended",
       "core_purchased", "activated_30d", "renewed"
     ]);
     if (!allowed.has(stage) || typeof window.SS_TRACK_EVENT !== "function") return;
-    const safe = details && typeof details === "object" ? { ...details } : {};
-    delete safe.name; delete safe.email; delete safe.phone;
+    const safe = {};
+    if (details && typeof details === "object" && !Array.isArray(details)) {
+      operationalDetailKeys.forEach(function (key) {
+        if (typeof details[key] === "boolean") safe[key] = details[key];
+      });
+    }
     window.SS_TRACK_EVENT(stage, context(null, safe));
   };
 
@@ -90,7 +99,10 @@
 
   
   function init() {
-    if (document.querySelector("#booking-confirmation-title")) track("booking_confirmed", null, {});
+    // Booking completion belongs to progressive-booking.js, whose Cal callback
+    // checks the provider UID, ACCEPTED status, and payment requirement. The
+    // confirmation heading exists in hidden markup before that callback, so it
+    // must not create a receipt or conversion event on page load.
     document.addEventListener("click", function (event) {
       const link = event.target.closest("a[href]");
       if (link && typeof window.SS_TRACK_EVENT === "function") {

@@ -63,6 +63,27 @@ try {
     window.Cal.ns = { 'first-visit': api };
     window.__emit = (action, data = {}) => window.__listeners.filter((entry) => entry.action === action).forEach((entry) => entry.callback({ detail: { data, type: action, namespace: 'first-visit' } }));
   });
+  await page.addScriptTag({ content: fs.readFileSync('src/assets/js/funnel-events.js', 'utf8') });
+  const completionEvents = ['calendly_scheduled', 'booking_complete', 'booking_completed', 'book_intro_submit'];
+  const completionCount = async () => page.evaluate((names) => window.__events.filter((entry) => names.includes(entry.name)).length, completionEvents);
+  assert.equal(await completionCount(), 0, 'Hidden receipt markup must not emit a booking conversion on initial or direct page load');
+  await page.evaluate(() => window.SS_TRACK_FUNNEL_STAGE('visit_confirmed', {
+    booking_reference_present: true,
+    operational_record_present: true,
+    name: 'Fixture Name',
+    email: 'fixture@example.invalid',
+    phone: '555-0100',
+    message: 'Private message',
+    medical_detail: 'Private medical detail',
+    booking_id: 'private-booking-id',
+    provider: { uid: 'private-provider-id' }
+  }));
+  const operationalEvent = await page.evaluate(() => window.__events.find((entry) => entry.name === 'visit_confirmed'));
+  assert.deepEqual(operationalEvent.payload.booking_reference_present, true);
+  assert.deepEqual(operationalEvent.payload.operational_record_present, true);
+  assert.ok(!JSON.stringify(operationalEvent).includes('Fixture Name'), 'Operational stage events must exclude contact details and raw provider data');
+  assert.ok(!JSON.stringify(operationalEvent).includes('Private message'), 'Operational stage events must exclude message text and medical detail');
+  assert.ok(!JSON.stringify(operationalEvent).includes('private-booking-id'), 'Operational stage events must exclude booking identifiers');
   await page.addScriptTag({ content: fs.readFileSync('js/progressive-booking.js', 'utf8') });
   await page.locator('[data-profile="adult-beginner"]').click();
   await page.locator('[data-retry-calendar]').waitFor();
@@ -72,6 +93,7 @@ try {
   await page.locator('#first-visit-calendar iframe').waitFor();
   await page.evaluate(() => window.__emit('linkReady'));
   assert.equal(await page.locator('[data-calendar-status]').isVisible(), false);
+  assert.equal(await completionCount(), 0, 'A ready calendar is not a booking conversion');
   const calls = await page.evaluate(() => window.__calls);
   const inline = calls.find((entry) => entry.action === 'inline').config;
   assert.equal(inline.calLink, 'senseisandy/first-visit');
@@ -88,9 +110,12 @@ try {
   assert.equal(await page.evaluate(() => window.__listeners.length), 3, 'Remount must unsubscribe old listeners');
   await page.evaluate(() => {
     window.dispatchEvent(new MessageEvent('message', { origin: 'https://cal.com.attacker.invalid', data: { type: 'CAL:bookingSuccessful', payload: { booking: { uid: 'forged' } } } }));
+    window.__emit('bookingSuccessfulV2', { status: 'ACCEPTED', paymentRequired: false });
     window.__emit('bookingSuccessfulV2', { uid: 'fixture', status: 'PENDING', paymentRequired: false });
+    window.__emit('bookingSuccessfulV2', { uid: 'fixture-payment', status: 'ACCEPTED', paymentRequired: true });
   });
   assert.equal(await page.locator('#pb-step-3').isVisible(), false, 'Pending requests must not become confirmed bookings');
+  assert.equal(await completionCount(), 0, 'Forged, missing-UID, pending, and payment-required callbacks must not emit conversions');
   await page.evaluate(() => {
     window.__emit('bookingSuccessfulV2', { uid: 'fixture', status: 'ACCEPTED', paymentRequired: false, email: 'fixture@example.invalid' });
     window.__emit('bookingSuccessfulV2', { uid: 'fixture', status: 'ACCEPTED', paymentRequired: false });
@@ -99,7 +124,7 @@ try {
   assert.equal(await page.locator('#booking-reachout-banner').isVisible(), true);
   assert.match(await page.locator('#booking-reachout-banner').innerText(), /Sandy will reach out!/);
   const events = await page.evaluate(() => window.__events);
-  for (const name of ['calendly_scheduled', 'booking_complete', 'booking_completed', 'book_intro_submit']) assert.equal(events.filter((entry) => entry.name === name).length, 1, `${name} must fire once`);
+  for (const name of completionEvents) assert.equal(events.filter((entry) => entry.name === name).length, 1, `${name} must fire once`);
   assert.ok(!JSON.stringify(events).includes('fixture'), 'Do not send booking identifiers or attendee data to analytics');
   console.log(`Cal migration QA passed: ${pages.length} generated pages, ${active.size - pages.length} active dependencies; loader recovery, Cal config, lane remount, confirmation, conversion deduplication, and reach-out banner.`);
 } finally {

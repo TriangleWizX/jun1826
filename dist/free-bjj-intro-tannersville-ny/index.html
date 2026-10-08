@@ -8,7 +8,7 @@
 <link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
 <link href="/site.webmanifest" rel="manifest"/>
 <title>Free First BJJ Visit in Tannersville | Sensei Sandy</title>
-<meta content="Come meet Sandy in Tannersville. See the room. Plan your free first class. Adults can train after the visit that day. Sandy confirms the class first." name="description"/>
+<meta content="Come meet Sandy in Tannersville. See the room. Plan your free first class. Adults can choose to train that day or later. Sandy confirms the class first." name="description"/>
 
 
 
@@ -19,11 +19,11 @@
 
 <meta content="index, follow" name="robots"/>
 <meta content="Free First BJJ Visit in Tannersville | Sensei Sandy" property="og:title"/>
-<meta content="Come meet Sandy in Tannersville. See the room. Plan your free first class. Adults can train after the visit that day. Sandy confirms the class first." property="og:description"/>
+<meta content="Come meet Sandy in Tannersville. See the room. Plan your free first class. Adults can choose to train that day or later. Sandy confirms the class first." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Free First BJJ Visit in Tannersville | Sensei Sandy" name="twitter:title"/>
-<meta content="Come meet Sandy in Tannersville. See the room. Plan your free first class. Adults can train after the visit that day. Sandy confirms the class first." name="twitter:description"/>
+<meta content="Come meet Sandy in Tannersville. See the room. Plan your free first class. Adults can choose to train that day or later. Sandy confirms the class first." name="twitter:description"/>
 <meta content="https://senseisandy.com/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.webp" name="twitter:image"/>
 <meta content="https://senseisandy.com/free-bjj-intro-tannersville-ny" name="twitter:url"/>
 <!--#include virtual="/_includes/analytics-head.html" -->
@@ -105,6 +105,7 @@
       <div class="pb-step pb-step-active" id="pb-step-1" aria-hidden="false">
         <h2 id="booking-choice-title" tabindex="-1">Who’s starting?</h2>
         <p class="pb-intro">Choose who is starting. Then see visit times.</p>
+        <p class="small text-muted" data-choice-status role="status" aria-live="polite" hidden></p>
         <div class="pb-lanes">
           <div class="pb-lane">
             <button type="button" class="pb-card-btn" data-profile="adult-beginner" aria-pressed="false" aria-describedby="adult-choice-help"><span>Adult (18+)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
@@ -136,28 +137,17 @@
       </div>
       <!-- STEP 2: Choose a Time -->
       <div class="pb-step pb-step-hidden" id="pb-step-2" hidden aria-hidden="true">
-        <button class="pb-back-btn d-inline-flex align-items-center gap-2 mb-3" data-back-to="1">
+        <button type="button" class="pb-back-btn d-inline-flex align-items-center gap-2 mb-3" data-back-to="1">
           <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Change who’s starting
         </button>
-        <h2 class="h3 mb-2">
-          Choose your time
+        <h2 class="h3 mb-2" data-calendar-heading>
+          Pick your Free First Visit time
         </h2>
-        <p class="pb-intro">Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day, after the visit. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan.</p>
-        <p class="small text-muted mb-3">Need help fitting a class into your week? <a href="/schedule">Class schedule</a> or <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">Text Sandy</a>.</p>
-        <fieldset class="pb-starting-choice" aria-describedby="starting-choice-help">
-          <legend>Who’s starting?</legend>
-          <p id="starting-choice-help" class="small text-muted">Update the starting path if you need to.</p>
-          <div class="pb-starting-choice__options">
-            <label><input type="radio" name="starting-profile" value="adult-beginner"> <span>Adult</span></label>
-            <label><input type="radio" name="starting-profile" value="child"> <span>Child 5–9</span></label>
-            <label><input type="radio" name="starting-profile" value="teen"> <span>Teen 10–17</span></label>
-            <label><input type="radio" name="starting-profile" value="family"> <span>More than one person</span></label>
-            <label><input type="radio" name="starting-profile" value="not-sure"> <span>Not sure</span></label>
-          </div>
-        </fieldset>
-        <p><a data-calendar-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open in new tab</a></p>
+        <p class="pb-intro" data-calendar-context data-adult-calendar-context="This time is for your visit. Meet Sandy for 15 minutes. Talk about your goals. Adults can choose to train that day or choose a later day. Sandy confirms the class before you train. Your first class is free." data-youth-calendar-context="This time is for a youth visit. Kids and teens meet Sandy, then try a class. A parent or guardian stays with them. Sandy confirms the class and what to wear." data-family-calendar-context="This time is for a family visit." data-help-calendar-context="This time is for a visit with Sandy.">Pick a time to meet Sandy.</p>
         <p class="fw-semibold mb-2" data-current-choice aria-live="polite"></p>
+        <p class="small text-muted mb-3">Need help with class times? <a href="/schedule">See class times</a> or <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">Text Sandy</a>.</p>
+        <p><a data-calendar-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open visit times in a new tab <span class="visually-hidden">(opens in a new tab)</span></a></p>
         <p class="small text-muted" data-calendar-status role="status" aria-live="polite" hidden></p>
         <div class="ss-bezel-shell">
           <div class="ss-bezel-core p-0 overflow-hidden">
@@ -172,24 +162,27 @@
             <div>
               <svg fill="none" height="32" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             </div>
-            <h2 id="booking-confirmation-title" class="h3 mb-3">Your first visit is booked.</h2>
-            <p id="booking-confirmation-copy" class="mb-4">Check the date and time in your booking note. Adults can ask to train after the visit that day. Sandy must confirm the class first.</p>
-            <div class="text-start mb-4 p-4 w-100">
-              <h4 class="h6 mb-2">Your first visit</h4>
-              <p class="mb-3">Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day, after the visit. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan.</p>
-              <h4 class="h6 mb-2">Day-One Preparation</h4>
-              <p class="mb-3">Learn a few class words. See our <a href="/bjj-glossary#first-class-starter-pack">seven words to start</a>. Sandy can help when you arrive.</p>
-              <h4 class="h6 mb-2">Location</h4>
-              <p class="mb-0">
-                6045 Main Street, 2nd Floor, Tannersville, NY 12485
-              </p>
+            <h2 id="booking-confirmation-title" class="h3 mb-3">Your Free First Visit is booked.</h2>
+            <p id="booking-confirmation-copy" class="mb-4">Check the date and time in your booking note.</p>
+            <div class="text-start mb-4 p-4 w-100" data-adult-arrival-plan hidden>
+              <h3 class="h6 mb-2">Your arrival plan</h3>
+              <p>For a visit, wear your day clothes. To train, wear clean sports clothes. Follow the class plan Sandy sends you. Bring water.</p>
+              <p>Meet Sandy for 15 minutes. Talk about your goals. Adults can choose to train that day or choose a later day. Sandy confirms the class before you train.</p>
+              <p>Fill out the waiver before you train.</p>
+              <h3 class="h6 mb-2">Location</h3>
+              <p>6045 Main Street, 2nd Floor, Tannersville, NY 12485</p>
+              <p class="mb-0"><a href="/bjj-tannersville-ny-directions">See how to get here</a></p>
+            </div>
+            <div class="text-start mb-4 p-4 w-100" data-general-arrival-plan hidden>
+              <h3 class="h6 mb-2">Plan your visit</h3>
+              <p>Kids and teens meet Sandy, then try a class. A parent or guardian stays with them. Sandy confirms the class and what to wear.</p>
+              <p>For youth, send the waiver first. Then Sandy can confirm the class.</p>
+              <h3 class="h6 mb-2">Location</h3>
+              <p class="mb-0">6045 Main Street, 2nd Floor, Tannersville, NY 12485</p>
             </div>
             <a class="btn btn-primary ss-btn-primary w-100 py-3 mb-3" href="/waiver">Sign waiver</a>
-            <p class="small text-muted mt-1 mb-2">
-              Adults can sign before they train. For youth, send the waiver first. Then Sandy can confirm the class.
-            </p>
             <p class="small text-muted mb-0">
-              Need help or a new time? <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">Text Sandy</a>.
+              Need a new time? <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">Text Sandy</a>.
             </p>
           </div>
         </div>
@@ -212,7 +205,7 @@
     <figcaption>See the room before you come.</figcaption>
   </figure>
   <h2 id="visit-includes-title">What your Free First Visit includes</h2>
-  <p data-free-intro-copy>Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day, after the visit. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan.</p>
+  <p data-free-intro-copy>Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day or choose a later day. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan.</p>
   <ol>
     <li><strong>Reserve your first visit.</strong> Choose the lane that fits who is starting.</li>
     <li><strong>See the room.</strong> Learn the rules and talk about your goals.</li>
@@ -266,7 +259,7 @@
 <details class="ss-faq-item" open="">
 <summary>What happens at my first visit?</summary>
 <div class="ss-faq-content">
-                Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day, after the visit. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan. For youth, a parent or guardian stays.
+                Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day or choose a later day. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan. For youth, a parent or guardian stays.
               </div>
 </details>
 <details class="ss-faq-item">
@@ -305,7 +298,7 @@
 
 <section class="container py-4" aria-labelledby="adult-first-day-options">
 <h2 id="adult-first-day-options">Adults: choose your first day</h2>
-<p>Meet Sandy for 15 minutes. Talk about your goals. Adults can choose a class after the visit that day. Sandy confirms the class before you train. You can choose a later day.</p>
+<p>Meet Sandy for 15 minutes. Talk about your goals. Adults can choose to train that day or choose a later day. Sandy confirms the class before you train.</p>
 <p>For a visit, wear your day clothes. To train, wear clean sports clothes. Follow the class plan Sandy sends you.</p>
 <h3>Live partner practice</h3>
 <p>Sparring is live practice with a partner. You can choose to try it on day one. Sandy matches the partner and pace. You can pause or end a round at any time.</p>
