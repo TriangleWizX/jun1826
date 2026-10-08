@@ -2247,9 +2247,10 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
 .adults-program-page .program-conversion-template .proof-quote-inline { max-width: 42rem; margin-top: 1.25rem; padding: 1rem 1.25rem; border-left: 3px solid var(--ss-green, #116a42); background: rgba(17, 106, 66, 0.06); }
 
 @media (max-width: 767.98px) {
-  .adults-program-page .program-conversion-template .program-hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; }
+  .adults-program-page .program-conversion-template .program-hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-top: 2rem; }
   .adults-program-page .program-conversion-template h1 { max-width: 12ch; font-size: clamp(2.7rem, 13vw, 4rem); }
   .adults-program-page .program-conversion-template .program-hero__media { order: 2; }
+  .adults-program-page .program-conversion-template .program-hero__media img { width: 100%; max-width: 100%; }
   .adults-program-page .program-conversion-template .hero-actions { display: grid; grid-template-columns: 1fr; }
   .adults-program-page .program-conversion-template .hero-actions .btn { width: 100%; }
   .adults-program-page .program-conversion-template .benefit-card-grid { grid-template-columns: 1fr 1fr; }
