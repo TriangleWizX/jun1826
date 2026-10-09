@@ -1,7 +1,7 @@
 ---
 layout: layouts/pricing.njk
 title: "BJJ Pricing in Tannersville, NY | Sensei Sandy"
-description: "See first-term jiu-jitsu pricing for kids, teens, and adults in Tannersville. Start with a Free First Visit; find visitor and continuing-student options."
+description: "See BJJ class plans in Tannersville. Start with a Free First Visit. Compare prices and terms. Ask Sandy which plan fits your week."
 canonicalUrl: "https://senseisandy.com/options-pricing"
 bodyClass: "lane-mixed page-options-pricing ss-page ss-page-pricing"
 extraCss:
@@ -16,7 +16,7 @@ permalink: "/options-pricing/index.html"
     <div class="op-hero__grid">
       <div class="op-hero__copy op-reveal is-visible">
         <p class="op-eyebrow">Options &amp; Pricing <span>Tannersville, NY</span></p>
-        <h1 id="pricing-hero-title">Find your weekly training rhythm.<br/><em>Start with a Free First Visit.</em></h1>
+        <h1 id="pricing-hero-title">Pick your class plan.<br/><em>Start with a Free First Visit.</em></h1>
         <p class="op-hero__lede">
           Meet Sandy, see the room, and choose the right starting point. Sandy confirms your visit before you arrive.
         </p>
@@ -65,8 +65,8 @@ permalink: "/options-pricing/index.html"
 <section id="annual-anchor" class="op-section op-section--paper" aria-labelledby="annual-anchor-title">
   <div class="container-xxl">
     <div class="op-section-heading op-reveal">
-      <div><h2 id="annual-anchor-title">Annual continuation pricing</h2></div>
-      <p>These rates apply after a Core Culture term and review. Frequency shown is per person each week.</p>
+      <div><h2 id="annual-anchor-title">Year plans for your next term.</h2></div>
+      <p>Finish a Core Culture term first. Then meet with Sandy to review your next plan.</p>
     </div>
     <div class="op-household-note" id="accepted-payments">
       <h3>Ways to pay</h3>
@@ -83,7 +83,7 @@ permalink: "/options-pricing/index.html"
     <p class="op-section-note">{{ pricing.productPolicy.annualPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your annual plan</a>.</p>
     <details class="op-household-note">
       <summary>See annual monthly payments</summary>
-      <p>The final payment adjusts cents so all 12 payments equal the annual total.</p>
+      <p>The last payment may change by a few cents. All 12 payments add up to your year price.</p>
       <div class="table-responsive"><table class="table table-bordered align-middle">
         <caption>Annual rates paid over a 12-month commitment</caption>
         <thead><tr><th scope="col">Plan</th><th scope="col">Annual total</th><th scope="col">First 11 payments</th><th scope="col">Final payment</th></tr></thead>
@@ -103,6 +103,7 @@ permalink: "/options-pricing/index.html"
     </div>
     <div class="op-household-note">
       <p><strong>Annual Family Track: {{ pricing.householdBundles.annualFamily.displayPrice }}</strong> for one adult and two youth, all training 3× each week. Compared with the {{ (pricing.coreCulture.frequencyLadder.adult[3].annual + pricing.coreCulture.frequencyLadder.youth[3].annual * 2) | usdGrouped }} individual total, the household saves {{ pricing.householdBundles.annualFamily.savingsAmount | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsPercent }}%). It is also {{ pricing.householdBundles.annualFamily.annualizedFirstTermFamilyTotal | usdGrouped }} for four 12-week family terms, so the annual plan saves {{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamily | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamilyPercent }}%). The annual family price averages {{ pricing.householdBundles.annualFamily.averagePricePerScheduledClass | usdGrouped }} per scheduled class across {{ pricing.householdBundles.annualFamily.scheduledClassesTotal }} household classes, if all are attended.</p>
+      <p>These plans are for students who stay on. First, finish a Core Culture term. Ask Sandy which plan fits your next step. Read the full terms for each plan.</p>
       <p class="small text-muted mb-0">Continuation only. No extra uniforms or 30-Day Training Fit Guarantee are included. Class times are reviewed for placement, capacity, and suitable partner fit.</p>
     </div>
   </div>
@@ -125,9 +126,9 @@ permalink: "/options-pricing/index.html"
     <div class="op-section-heading op-reveal">
       <div>
         <p class="op-eyebrow">Core Culture <span>12-Week First Term</span></p>
-        <h2 id="core-pricing-title">A planned training rhythm for your first term.</h2>
+        <h2 id="core-pricing-title">Choose one, two, or three classes each week.</h2>
       </div>
-        <p>Choose a weekly rhythm for your first 12-week term. Start with one, two, or three planned classes each week; Sandy confirms suitable class times under placement and capacity rules. Six-month and annual options are for students continuing after a Core Culture term. <a href="#guarantee-stack">Review first-term support and terms</a>.</p>
+        <p>Choose one, two, or three classes each week. Sandy confirms the class times and fit. Your first term lasts 12 weeks. <a href="#guarantee-stack">Review first-term support and terms</a>.</p>
     </div>
 
     <div class="op-program-grid">
@@ -137,7 +138,7 @@ permalink: "/options-pricing/index.html"
             <div>
               <p class="op-card__kicker">Kids &amp; Teens &middot; Ages 5&ndash;17 &middot; 12-Week Track</p>
               <h3>Youth Core Culture</h3>
-              <p class="op-card__outcome">A 12-week first term with coached classes, partner matching, progress tracking, a first-enrollment uniform, and the Async Practice Vault under the current offer terms.</p>
+              <p class="op-card__outcome">Train for 12 weeks with Sandy. He helps you find a partner. He checks your skills as you learn. Your first paid term comes with a uniform. Your plan has class videos too. Read the full plan terms.</p>
             </div>
             <span aria-hidden="true" class="op-card__number">01</span>
           </div>
@@ -485,7 +486,7 @@ permalink: "/options-pricing/index.html"
             <div><span>{{ pricing.visitorAndSupport.tenPack.name }}</span><strong>{{ pricing.visitorAndSupport.tenPack.displayPrice }}</strong><small>Valid {{ pricing.visitorAndSupport.tenPack.validity }} · ${{ (pricing.visitorAndSupport.tenPack.price / pricing.visitorAndSupport.tenPack.classCount) | round(2) }} per class</small></div>
             <div><span>{{ pricing.visitorAndSupport.twentyPack.name }}</span><strong>{{ pricing.visitorAndSupport.twentyPack.displayPrice }}</strong><small>Valid {{ pricing.visitorAndSupport.twentyPack.validity }} · ${{ (pricing.visitorAndSupport.twentyPack.price / pricing.visitorAndSupport.twentyPack.classCount) | round(2) }} per class</small></div>
           </div>
-          <p class="op-card__note"><strong>Class packs: adults ages {{ pricing.visitorAndSupport.tenPack.ageMin }} and up.</strong> Use the 10-pack within {{ pricing.visitorAndSupport.tenPack.validity }}, or the 20-pack within {{ pricing.visitorAndSupport.twentyPack.validity }}. Request each class by text. Sandy confirms space and partner fit. Bring your own gi. Each pack visit has class coaching and a place confirmed for that visit. Kids and teens can choose a weekly youth plan above.</p>
+          <p class="op-card__note"><strong>Class packs: adults ages {{ pricing.visitorAndSupport.tenPack.ageMin }} and up.</strong> Ask for a class before you come. Sandy checks the space and partner fit. He confirms your class first. Each pass has its own terms. See what your pass includes. Use the 10-pack within {{ pricing.visitorAndSupport.tenPack.validity }}, or the 20-pack within {{ pricing.visitorAndSupport.twentyPack.validity }}. Bring your own gi. Kids and teens can choose a weekly youth plan above.</p>
         <p class="op-card__note">Train each week? Choose a Core plan. Visit on a changing schedule? Choose a pass or an adult flex pack. Pack prices cover class visits. Core prices cover your chosen weekly plan for the term.</p>
           <p class="op-card__note" data-free-intro-copy>Here for a short stay? Ask about a class pass. New local students start with a Free First Visit. Sandy guides your class and helps you choose a partner.</p>
           <p class="op-card__note"><strong>Visiting regularly or own a second home?</strong> <a href="/catskills-home-base">See seasonal class packs and visitor options</a>.</p>

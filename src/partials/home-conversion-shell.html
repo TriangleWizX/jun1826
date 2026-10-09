@@ -641,7 +641,7 @@
     <!-- LEFT: Outcome-Oriented Hero Content -->
     <div class="ss-home-conversion__hero-copy">
       <h1 id="home-conversion-title">Start calm. Train smart.</h1>
-      <p class="ss-home-conversion__subhead" data-free-intro-copy>Meet Sandy for a free visit. See the room and learn the rules. Talk about your goals. Sandy helps you plan your first class.</p>
+      <p class="ss-home-conversion__subhead" data-free-intro-copy>Meet Sandy. See the room. Ask your questions. Plan your first class.</p>
 
       <!-- Hero Actions -->
       <div class="ss-home-conversion__actions">
@@ -655,7 +655,7 @@
 
       <!-- Risk Reversal Statements -->
       <div class="ss-hero-reassurances">
-        <span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <strong>Your first class is a coached learning experience.</strong></span>
+        <span><i class="bi bi-check-circle-fill" aria-hidden="true"></i> <strong>Sandy guides your first class.</strong></span>
 
       </div>
 
@@ -663,26 +663,26 @@
       <div class="ss-dynamic-outcome" id="hero-dynamic-outcome" role="region" aria-label="Program fit and outcome details">
         <div class="ss-dynamic-outcome__head">
           <span class="ss-dynamic-outcome__badge" data-outcome-badge>Kids · Teens · Adults</span>
-          <span class="small text-muted">First-visit outcome</span>
+          <span class="small text-muted">Your first visit</span>
         </div>
-        <h2 class="ss-dynamic-outcome__title" data-outcome-title>See the room, learn the safety flow, and choose the right next step.</h2>
+        <h2 class="ss-dynamic-outcome__title" data-outcome-title>See the room. Plan your first class.</h2>
         <ul class="ss-dynamic-outcome__proof" data-outcome-proof>
-          <li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>Room tour and safety walkthrough</span></li>
-          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Class guidance for kids, teens, and adults</span></li>
-          <li><i class="bi bi-speedometer2" aria-hidden="true"></i> <span>Partner-fit guidance within current capacity</span></li>
+          <li><i class="bi bi-shield-check" aria-hidden="true"></i> <span>See the room and learn class rules</span></li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> <span>Choose a class for you or your child</span></li>
+          <li><i class="bi bi-speedometer2" aria-hidden="true"></i> <span>Sandy checks class space and partner fit</span></li>
         </ul>
-        <p class="ss-dynamic-outcome__reversal" data-outcome-reversal data-free-intro-copy>Meet Sandy for 15 minutes. Talk about your goals. Adults can choose a class after the visit that day. Sandy confirms the class before you train. You can choose a later day.</p>
+        <p class="ss-dynamic-outcome__reversal" data-outcome-reversal data-free-intro-copy>Meet Sandy for a 15-minute visit. Talk about your goals. Adults may choose a class that day. Sandy confirms the class first. You may choose a later day.</p>
       </div>
 
       <!-- Concise Above-Fold Stats Rail -->
       <div class="ss-hero-stats" aria-label="Academy facts">
         <div class="ss-stat-item">
-          <span class="ss-stat-value">Up to 3×</span>
-          <span class="ss-stat-label">Classes / Week</span>
+          <span class="ss-stat-value">{{ pricing.coreCulture.frequenciesPerWeek[0] }}–{{ pricing.coreCulture.frequenciesPerWeek[2] }}×</span>
+          <span class="ss-stat-label">Classes each week</span>
         </div>
         <div class="ss-stat-item">
-          <span class="ss-stat-value">{{ programs.adults.term.split(" ")[0] }}</span>
-          <span class="ss-stat-label">Weeks First Term</span>
+          <span class="ss-stat-value">{{ pricing.coreCulture.termWeeks }}</span>
+          <span class="ss-stat-label">Weeks in a first term</span>
         </div>
         <div class="ss-stat-item">
           <span class="ss-stat-value">{{ programs.kids.ageRange }} · {{ programs.teens.ageRange }} · {{ programs.adults.ageRange }}</span>
@@ -701,37 +701,37 @@
       <div class="ss-home-conversion__card">
         <div class="ss-selector-header">
           <span class="ss-home-conversion__step-label">Step 1 of 2</span>
-          <h2>Who’s starting?</h2>
-          <p>Choose who wants to train. We adjust the pace and first class to fit.</p>
+          <h2>Who wants to train?</h2>
+          <p>Pick a class path. Sandy helps plan the first step.</p>
         </div>
 
         <div class="ss-home-conversion__choices" role="group" aria-label="Choose who is starting">
           <button type="button" class="ss-audience-card" data-audience-choice="child" aria-pressed="false">
             <strong>Child ({{ programs.kids.ageRange }}) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
-            <span class="ss-aud-headline">Practice trying again.</span>
-            <span class="ss-aud-support">Safe movement, partners, and small problems to solve.</span>
+            <span class="ss-aud-headline">Learn by trying.</span>
+            <span class="ss-aud-support">Move, solve a task, and work with a partner.</span>
           </button>
 
           <button type="button" class="ss-audience-card" data-audience-choice="teen" aria-pressed="false">
             <strong>Teen ({{ programs.teens.ageRange }}) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
-            <span class="ss-aud-headline">Build real skill.</span>
-            <span class="ss-aud-support">Pressure, balance, control, and decisions against resistance.</span>
+            <span class="ss-aud-headline">Learn useful skills.</span>
+            <span class="ss-aud-support">Solve tasks with a partner. Learn each step with Sandy.</span>
           </button>
 
           <button type="button" class="ss-audience-card" data-audience-choice="adult" aria-pressed="false">
             <strong>Adult ({{ programs.adults.ageRange }}) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
-            <span class="ss-aud-headline">Feel capable again.</span>
-            <span class="ss-aud-support">Start as a beginner at a calm, coach-guided pace.</span>
+            <span class="ss-aud-headline">Start with one new skill.</span>
+            <span class="ss-aud-support">Learn with a partner at a pace that fits.</span>
           </button>
 
           <button type="button" class="ss-audience-card" data-audience-choice="family" aria-pressed="false">
             <strong>Family (2+ students) <i class="bi bi-arrow-right-short" aria-hidden="true"></i></strong>
-            <span class="ss-aud-headline">Build one routine.</span>
-            <span class="ss-aud-support">Youth at 5 PM. Adults at 6 PM. Ask Sandy about household coordination.</span>
+            <span class="ss-aud-headline">Plan as a family.</span>
+            <span class="ss-aud-support">Ask Sandy about class times and family plans.</span>
           </button>
         </div>
 
-        <p class="visually-hidden" id="home-audience-status" role="status" data-free-intro-copy>Choose who is starting. Then see first-visit times.</p>
+        <p class="visually-hidden" id="home-audience-status" role="status" data-free-intro-copy>Choose who wants to train. Then see visit times.</p>
         <a class="btn btn-primary w-100" id="builder-continue-btn" href="/free-bjj-intro-tannersville-ny#booking-flow" data-analytics-event="first_visit_started" data-cta-label="See First-Visit Times" data-cta-location="builder_step1">
           <span>See first-visit times</span>
           <i class="bi bi-arrow-right" aria-hidden="true"></i>
@@ -741,7 +741,7 @@
         <figure class="ss-home-conversion__media">
           <img fetchpriority="high" decoding="async" src="/assets/images/Screenshot_20260810_071208_YouTube-1600.webp" srcset="/assets/images/Screenshot_20260810_071208_YouTube-768.webp 768w, /assets/images/Screenshot_20260810_071208_YouTube-1600.webp 1600w" sizes="(min-width: 992px) 420px, calc(100vw - 76px)" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ">
           <figcaption>
-            <span>The room you’ll visit in Tannersville</span>
+            <span>See the class room in Tannersville</span>
             <span>{{ business.address.street }}</span>
           </figcaption>
         </figure>
@@ -757,7 +757,7 @@
         </form>
 
         <noscript>
-          <p class="small text-muted mt-3 mb-0">To reserve directly, <a href="/free-bjj-intro-tannersville-ny#booking-flow">open the reservation calendar</a> or <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ%20classes%20in%20Tannersville.">Text Sandy at (917) 736-8649</a>.</p>
+          <p class="small text-muted mt-3 mb-0">Pick a time for your free visit. <a href="/free-bjj-intro-tannersville-ny#booking-flow">See visit times</a> or <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ%20classes%20in%20Tannersville.">text Sandy</a>.</p>
         </noscript>
       </div>
     </div>
@@ -766,8 +766,8 @@
     <div class="ss-home-conversion__reviews" id="home-student-reviews" aria-labelledby="home-reviews-heading">
       <div class="ss-home-reviews-card">
         <div class="ss-reviews-header">
-          <p class="ss-home-conversion__eyebrow">Student experience</p>
-          <h2 id="home-reviews-heading">What people notice about the room</h2>
+          <p class="ss-home-conversion__eyebrow">Student stories</p>
+          <h2 id="home-reviews-heading">Hear from students and parents</h2>
         </div>
 
         <div class="ss-home-reviews-list" data-reviews-list>
@@ -819,46 +819,46 @@
     child: {
       laneParam: 'kids',
       badge: 'Child {{ programs.kids.ageRange }}',
-      title: 'Help them handle hard things. Safely.',
+      title: 'Help your child learn new skills.',
       proof: [
-        'Thoughtful partner matching',
-        'Clear boundaries',
-        'Problems they can solve'
+        'A partner Sandy picks to fit',
+        'Clear steps from the coach',
+        'Tasks they can work through'
       ],
-      reversal: 'See the room and meet Sandy before committing.'
+      reversal: 'Visit the room. Meet Sandy. Plan a first class.'
     },
     teen: {
       laneParam: 'teens',
       badge: 'Teen {{ programs.teens.ageRange }}',
-      title: 'Real athletic challenge tailored for growing teens.',
+      title: 'Learn BJJ with a clear plan.',
       proof: [
-        'Decisions against resistance',
-        'Room to solve problems',
-        'Direct coaching'
+        'Solve tasks with a partner',
+        'Learn skills one step at a time',
+        'Get help from Sandy'
       ],
-      reversal: 'Try the environment before choosing a program.'
+      reversal: 'Meet Sandy and see the room before you choose a plan.'
     },
     adult: {
       laneParam: 'adults',
       badge: 'Adult {{ programs.adults.ageRange }}',
-      title: 'Start where you are. Build balance, stamina, and strength through coached practice at a pace that fits.',
+      title: 'Start with one new skill.',
       proof: [
-        'Beginner-aware rounds',
-        'Thoughtful partner selection',
-        'Controlled resistance'
+        'Learn each step with Sandy',
+        'Practice with a partner',
+        'Work at a pace that fits'
       ],
-      reversal: 'Start with a 15-minute first visit. Adults can choose to train that day. Sandy confirms the class first.'
+      reversal: 'Meet Sandy for a 15-minute visit. Talk about your goals. Adults may choose a class that day. Sandy confirms the class first.'
     },
     family: {
       laneParam: 'family',
       badge: 'Family (2+ students)',
-      title: 'One place. One routine. Something useful for everyone.',
+      title: 'Plan a class for your family.',
       proof: [
-        'Youth at 5 PM',
-        'Adults at 6 PM',
-        'One Main Street trip'
+        'Ask about each class path',
+        'See what each plan includes',
+        'Choose your next step'
       ],
-      reversal: 'Start with whoever is ready first.'
+      reversal: 'Start with one person or plan as a family.'
     }
   };
 

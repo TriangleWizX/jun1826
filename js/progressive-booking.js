@@ -153,11 +153,11 @@
     };
     const failure = () => {
       if (!mount) return;
-      message('Try the dates again or open a new tab. Text Sandy for help.', true);
+      message('Try the visit times again. Or open them in a new tab. Text Sandy for help.', true);
       if (!mount.querySelector('[data-retry-calendar]')) {
         const retry = document.createElement('button');
         retry.type = 'button'; retry.className = 'btn btn-outline-secondary';
-        retry.dataset.retryCalendar = ''; retry.textContent = 'Retry calendar';
+        retry.dataset.retryCalendar = ''; retry.textContent = 'Try again.';
         retry.addEventListener('click', () => { state.inline = false; renderCalendar(); });
         mount.appendChild(retry);
       }
@@ -171,7 +171,7 @@
       const fallback = document.querySelector('[data-calendar-external]');
       if (fallback) { fallback.href = state.url.toString(); fallback.hidden = false; }
       mount.replaceChildren(); mount.classList.remove('is-ready'); message('');
-      message('Visit times are on the way.');
+      message('Please wait. We are loading your visit times.');
       state.timer = window.setTimeout(() => {
         if (generation === state.generation && state.step === 2) failure();
       }, 15000);

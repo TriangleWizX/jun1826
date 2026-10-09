@@ -716,7 +716,7 @@ const renderFlywheelGrandSlamSection = () => `<section class="glossary-shell glo
       <p class="glossary-eyebrow">The Sensei Sandy Learning Flywheel</p>
       <h2 id="flywheel-title">From Plain-English Vocabulary to Mat Confidence</h2>
     </div>
-    <p>How our beginner glossary, video practice vault, and coached classes fit together into one seamless learning journey.</p>
+    <p>Read a word. Watch how it works. Try it in class with Sandy. Ask for help as you learn.</p>
   </div>
 
   <div class="glossary-flywheel-grid" aria-label="Three-step learning progression">
@@ -737,7 +737,7 @@ const renderFlywheelGrandSlamSection = () => `<section class="glossary-shell glo
     <article class="glossary-flywheel-step">
       <span class="step-num">Step 03</span>
       <h3>12-Week Core Culture</h3>
-      <p>Enroll in our foundational 12-week track: custom academy Gi &amp; white belt included, 36 coached classes, partner safety matching, and full Async Practice Vault access.</p>
+      <p>See the class plans and what each includes. Ask Sandy which plan fits you.</p>
       <a class="step-link" href="/options-pricing#start">Explore Grand Slam Stack &rarr;</a>
     </article>
   </div>
@@ -769,7 +769,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
       <div class="glossary-hero-copy">
         <p class="glossary-eyebrow">Sensei Sandy BJJ &middot; Plain-English Mat Dictionary</p>
         <h1 id="glossary-title">Brazilian Jiu Jitsu Terms in Plain English</h1>
-        <p class="glossary-lead">A human-first dictionary of the words, positions, and movements you will hear in class. Built for beginners, parents, and curious first-timers in Tannersville, NY.</p>
+        <p class="glossary-lead">Learn the words you hear in BJJ. BJJ is a way to grapple. You learn to move with a partner. Start with these plain guides.</p>
         <div class="glossary-day-one-strip" aria-label="Day One Essential Terms">
           <span class="day-one-label">Day 1 Essentials:</span>
           <div class="day-one-chips">
