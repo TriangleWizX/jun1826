@@ -71,34 +71,57 @@
 
   
     <style>
-  .womens-page { --womens-ink: #25352f; --womens-green: #116a42; --womens-teal: #289fa1; --womens-paper: #f7f7f2; --womens-line: rgba(37, 53, 47, .16); }
-  .womens-page .womens-hero { background: linear-gradient(135deg, #eef6ef 0%, var(--womens-paper) 64%); padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3.5rem, 8vw, 6rem); }
-  .womens-page .womens-hero-grid { align-items: end; }
-  .womens-page .womens-eyebrow { color: var(--womens-green); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-  .womens-page h1, .womens-page h2 { color: var(--womens-ink); }
-  .womens-page h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.045em; line-height: .98; max-width: 10ch; }
-  .womens-page .womens-lede { color: var(--womens-ink); font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.45; max-width: 30rem; }
-  .womens-page .womens-copy { color: #4f5e58; font-size: 1.05rem; line-height: 1.7; max-width: 42rem; }
-  .womens-page .womens-note { border-left: 3px solid var(--womens-teal); color: #4f5e58; padding-left: 1rem; }
-  .womens-page .womens-aside { background: #fff; border: 1px solid var(--womens-line); border-radius: 1.25rem; box-shadow: 0 1.5rem 3rem rgba(37, 53, 47, .08); padding: clamp(1.35rem, 4vw, 2rem); }
-  .womens-page .womens-aside dl { margin: 0; }
-  .womens-page .womens-aside dt { color: #68756f; font-size: .78rem; letter-spacing: .1em; margin-top: 1.1rem; text-transform: uppercase; }
-  .womens-page .womens-aside dt:first-child { margin-top: 0; }
-  .womens-page .womens-aside dd { color: var(--womens-ink); font-size: 1.05rem; font-weight: 650; margin: .25rem 0 0; }
-  .womens-page .womens-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+  /* Centered editorial layout; styles stay within this page. */
+  .womens-page { --womens-ink: #25352f; --womens-green: #116a42; --womens-muted: #4f5e58; --womens-paper: #f4f6f3; --womens-surface: #fff; color: var(--womens-ink); background: var(--womens-surface); text-align: center; font-family: "Lexend", sans-serif; }
+  .womens-page *, .womens-page *::before, .womens-page *::after { box-sizing: border-box; }
+  .womens-page .container { width: min(100% - 2.5rem, 1120px); margin-inline: auto; }
+  .womens-page .row { display: grid; gap: 2.5rem; margin: 0; }
+  .womens-page .row > * { width: 100%; min-width: 0; margin: 0; padding: 0; }
+  .womens-page .womens-hero { padding: clamp(2.5rem, 6vw, 5rem) 0 3rem; background: var(--womens-paper); }
+  .womens-page .womens-hero-grid { gap: 2.5rem; }
+  .womens-page .womens-eyebrow { color: var(--womens-green); font-size: .8rem; font-weight: 600; letter-spacing: .08em; margin: 0 0 1.25rem; }
+  .womens-page h1, .womens-page h2 { color: var(--womens-ink); font-family: inherit; text-wrap: balance; }
+  .womens-page h1 { font-size: clamp(2.2rem, 5.2vw, 4.5rem); font-weight: 600; letter-spacing: -.055em; line-height: 1.12; max-width: 18ch; margin: 0 auto 1.5rem; }
+  .womens-page .womens-lede { font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.65; max-width: 44ch; margin: 0 auto 1rem; }
+  .womens-page .womens-copy { color: var(--womens-muted); font-size: 1rem; line-height: 1.8; max-width: 54ch; margin: 0 auto; text-wrap: pretty; }
+  .womens-page .womens-note { color: var(--womens-muted); font-size: .85rem; line-height: 1.7; max-width: 58ch; margin: 1.5rem auto 0; }
+  .womens-page .womens-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+  .womens-page .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .9rem 1.5rem; border: 1px solid transparent; border-radius: 999px; font: inherit; font-size: .9rem; font-weight: 600; text-decoration: none; line-height: 1.4; }
+  .womens-page .btn-primary, .womens-page .btn-light { background: var(--womens-green); color: #fff; box-shadow: 0 6px 16px rgb(17 106 66 / 12%); }
+  .womens-page .btn-outline-primary { color: var(--womens-green); background: var(--womens-surface); border-color: rgb(17 106 66 / 25%); }
+  .womens-page a:focus-visible { outline: 3px solid var(--womens-green); outline-offset: 5px; }
+  .womens-page .womens-aside { background: var(--womens-surface); border: 7px solid #e8ede7; border-radius: 24px; padding: 1.5rem; box-shadow: 0 20px 48px rgb(37 53 47 / 5%); }
+  .womens-page .womens-aside dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin: 0; }
+  .womens-page .womens-aside dt { font-size: .75rem; color: var(--womens-muted); margin-bottom: .55rem; }
+  .womens-page .womens-aside dd { margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.65; }
+  .womens-page .womens-section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
   .womens-page .womens-section--tint { background: var(--womens-paper); }
-  .womens-page .womens-section h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); letter-spacing: -.03em; margin-bottom: 1rem; }
-  .womens-page .womens-details { border-top: 1px solid var(--womens-line); }
-  .womens-page .womens-detail { border-bottom: 1px solid var(--womens-line); padding: 1.25rem 0; }
-  .womens-page .womens-detail strong { color: var(--womens-ink); display: block; margin-bottom: .3rem; }
-  .womens-page .womens-detail span { color: #53615b; line-height: 1.55; }
-  .womens-page .womens-list { counter-reset: foundations; list-style: none; margin: 0; padding: 0; }
-  .womens-page .womens-list li { align-items: baseline; border-bottom: 1px solid var(--womens-line); counter-increment: foundations; display: flex; gap: 1rem; padding: .9rem 0; }
-  .womens-page .womens-list li::before { color: var(--womens-teal); content: counter(foundations, decimal-leading-zero); font-size: .8rem; font-weight: 700; }
-  .womens-page .womens-cta { background: var(--womens-green); border-radius: 1.25rem; color: #fff; padding: clamp(2rem, 5vw, 3.5rem); }
-  .womens-page .womens-cta h2, .womens-page .womens-cta p { color: #fff; }
-  .womens-page .womens-cta .btn-light { color: var(--womens-green); font-weight: 700; }
-  @media (max-width: 767.98px) { .womens-page h1 { max-width: 12ch; } .womens-page .womens-hero { padding-top: 2.5rem; } }
+  .womens-page .womens-section h2 { font-size: clamp(1.75rem, 3.4vw, 2.8rem); letter-spacing: -.04em; line-height: 1.2; margin: 0 auto 1.25rem; max-width: 24ch; }
+  .womens-page .womens-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; max-width: 920px; margin: 0 auto; }
+  .womens-page .womens-detail { padding: .5rem 1rem; }
+  .womens-page .womens-detail strong { display: block; font-size: 1.1rem; font-weight: 500; line-height: 1.5; margin-bottom: .75rem; text-wrap: balance; }
+  .womens-page .womens-detail span { display: block; color: var(--womens-muted); font-size: .95rem; line-height: 1.8; max-width: 36ch; margin-inline: auto; }
+  .womens-page .womens-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; list-style-position: inside; max-width: 700px; padding: 0; margin: 0 auto; }
+  .womens-page .womens-list li { padding: .65rem; line-height: 1.65; }
+  .womens-page .womens-list li::marker { color: var(--womens-green); }
+  .womens-page .womens-syllabus { gap: 1.25rem; }
+  .womens-page .womens-syllabus .womens-detail { background: var(--womens-paper); border: 6px solid #e8ede7; border-radius: 24px; padding: 2rem 1.25rem; }
+  .womens-page .womens-syllabus time { display: block; color: var(--womens-green); font-size: .8rem; font-weight: 600; margin-bottom: 1rem; }
+  .womens-page .womens-cta { background: var(--womens-paper); border: 7px solid #e8ede7; border-radius: 28px; padding: clamp(2rem, 5vw, 4rem); }
+  .womens-page .womens-cta p { color: var(--womens-muted); line-height: 1.8; margin: 0 auto 1.5rem; max-width: 48ch; }
+  @media (prefers-reduced-motion: no-preference) {
+    .womens-page .btn { transition: transform 240ms cubic-bezier(.16, 1, .3, 1); }
+    .womens-page .btn:hover { transform: translateY(-2px); }
+    .womens-page .btn:active { transform: scale(.98); }
+  }
+  @media (max-width: 767px) {
+    .womens-page .container { width: min(100% - 2rem, 1120px); }
+    .womens-page .womens-aside dl { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem .75rem; }
+    .womens-page .womens-details, .womens-page .womens-list { grid-template-columns: minmax(0, 1fr); }
+    .womens-page .womens-actions { gap: .65rem; }
+    .womens-page .btn { padding-inline: 1.1rem; font-size: .85rem; }
+    .womens-page .womens-syllabus .womens-detail { padding: 1.5rem 1rem; }
+  }
 </style>
 <main class="ss-main womens-page" id="main-content" role="main">
   <section class="womens-hero" aria-labelledby="womens-jiu-jitsu-title">
@@ -109,7 +132,7 @@
           <h1 id="womens-jiu-jitsu-title">A place to learn Jiu-Jitsu together.</h1>
           <p class="womens-lede">Women's Foundations is a small Jiu-Jitsu group for women of all skill levels.</p>
           <p class="womens-copy">Sandy leads the class. A woman co-lead will help new students find a good partner and feel at home on the mat.</p>
-          <div class="d-flex flex-wrap gap-2 mt-4">
+          <div class="womens-actions">
             <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="womens-foundations" data-cta-placement="hero" data-cta-src="womens-foundations-hero">Reserve a Free First Visit</a>
             <a class="btn btn-outline-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">Text Sandy</a>
           </div>
@@ -119,10 +142,10 @@
           <aside class="womens-aside" aria-label="Pilot at a glance">
             <p class="womens-eyebrow mb-3">At a glance</p>
             <dl>
-              <dt>Schedule</dt><dd>Saturday at 9 AM · one hour</dd>
-              <dt>Six sessions</dt><dd>November 7–December 19, 2026</dd>
-              <dt>Planned price</dt><dd>$149 for six classes</dd>
-              <dt>Room size</dt><dd>Up to 12 people on the mat</dd>
+              <div><dt>Schedule</dt><dd>Saturday at 9 AM · one hour</dd></div>
+              <div><dt>Six sessions</dt><dd>November 7–December 19, 2026</dd></div>
+              <div><dt>Planned price</dt><dd>$149 for six classes</dd></div>
+              <div><dt>Room size</dt><dd>Up to 12 people on the mat</dd></div>
             </dl>
           </aside>
         </div>
@@ -165,13 +188,13 @@
           <p class="womens-note small mb-0">Planned dates: November 7, 14, and 21; December 5, 12, and 19. The group rests November 28.</p>
         </div>
         <div class="col-lg-7">
-          <div class="womens-details" role="list" aria-label="Six-session proposed syllabus">
-            <div class="womens-detail" role="listitem"><strong>01 · Nov 7 — Make space and stand</strong><span>Learn frames and a safe way to get up. Returning students add light partner pressure.</span></div>
-            <div class="womens-detail" role="listitem"><strong>02 · Nov 14 — Get free from a pin</strong><span>Start under mount or side control. Work to get free or find guard.</span></div>
-            <div class="womens-detail" role="listitem"><strong>03 · Nov 21 — Keep your guard</strong><span>Use your legs and frames to keep your partner from passing.</span></div>
-            <div class="womens-detail" role="listitem"><strong>04 · Dec 5 — Turn the spot around</strong><span>Learn a sweep or stand-up from guard. Then try a second move.</span></div>
-            <div class="womens-detail" role="listitem"><strong>05 · Dec 12 — Hold the top spot</strong><span>Pass the legs and hold side control as your partner works to get free.</span></div>
-            <div class="womens-detail" role="listitem"><strong>06 · Dec 19 — Put it all together</strong><span>Link the skills in guided rounds: get free, find guard, sweep, and hold.</span></div>
+          <div class="womens-details womens-syllabus" role="list" aria-label="Six-session proposed syllabus">
+            <div class="womens-detail" role="listitem"><time datetime="2026-11-07">Nov 7</time><strong>Make space and stand</strong><span>Learn frames and a safe way to get up. Returning students add light partner pressure.</span></div>
+            <div class="womens-detail" role="listitem"><time datetime="2026-11-14">Nov 14</time><strong>Get free from a pin</strong><span>Start under mount or side control. Work to get free or find guard.</span></div>
+            <div class="womens-detail" role="listitem"><time datetime="2026-11-21">Nov 21</time><strong>Keep your guard</strong><span>Use your legs and frames to keep your partner from passing.</span></div>
+            <div class="womens-detail" role="listitem"><time datetime="2026-12-05">Dec 5</time><strong>Turn the spot around</strong><span>Learn a sweep or stand-up from guard. Then try a second move.</span></div>
+            <div class="womens-detail" role="listitem"><time datetime="2026-12-12">Dec 12</time><strong>Hold the top spot</strong><span>Pass the legs and hold side control as your partner works to get free.</span></div>
+            <div class="womens-detail" role="listitem"><time datetime="2026-12-19">Dec 19</time><strong>Put it all together</strong><span>Link the skills in guided rounds: get free, find guard, sweep, and hold.</span></div>
           </div>
         </div>
       </div>
