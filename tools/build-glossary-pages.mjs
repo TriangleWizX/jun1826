@@ -939,7 +939,7 @@ const renderTermNextStep = (term) => {
 <section class="ss-term-next-step glossary-card glossary-surface--dark" aria-labelledby="term-next-step-title">
   <div class="container">
     <p class="ss-eyebrow">Train the word</p>
-    <h2 id="term-next-step-title">Want to try ${escapeHtml(term ? term.displayTerm.toLowerCase() : 'this')} in class?</h2>
+    <h2 id="term-next-step-title">Try it in class?</h2>
     <p>
       Meet Sandy for a free visit. See the room. Learn the rules.
     </p>
@@ -987,12 +987,13 @@ const renderTermPage = (term, termMap, glossaryFiltersScript) => {
   <section id="beginner-translation" class="glossary-card glossary-term-section"><h2>In plain words</h2><p>${escapeHtml(short(term.beginnerTranslation, `Ask your coach to show ${term.term}.`))}</p></section>
   <section id="why-it-matters" class="glossary-card glossary-term-section"><h2>Why it helps</h2><p>${escapeHtml(term.whyItMatters || 'It helps you learn this move.')}</p></section>
   <section id="beginners-should-know" class="glossary-card glossary-term-section"><h2>Start here</h2><p>${escapeHtml(term.whatBeginnersShouldKnow || 'Ask your coach to show you.')}</p></section>
-  <section id="common-class-phrases" class="glossary-card glossary-term-section"><h2>Coach says</h2><ul>${phrases.map((phrase) => `<li>${escapeHtml(short(phrase, 'Ask your coach.'))}</li>`).join('') || '<li>Ask your coach.</li>'}</ul></section>
+
+  <section id="common-class-phrases" class="glossary-card glossary-term-section"><h2>Coach says</h2><p>Ask your coach to show you.</p></section>
   <section id="safety-cue" class="glossary-card glossary-term-section ss-safety-cue"><h2>Stay safe</h2><p>${escapeHtml(simpleFirstSentence(term.safetyNote, 'Move with care. Ask your coach.'))}</p></section>
   <section id="related-terms" class="glossary-card glossary-term-section"><h2>Related links</h2><h3>More terms</h3><ul>${relatedTerms.map((item) => `<li><a href="${escapeHtml(glossaryPathFor(item.slug))}">${escapeHtml(item.displayTerm)}</a></li>`).join('')}</ul><a href="/bjj-glossary">Browse all terms</a></section>
   <section class="ss-term-next-step glossary-card glossary-surface--dark"><h2>Want to try it?</h2><a href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a> <a href="/schedule">See times</a></section>
-  <section id="faq" class="glossary-card glossary-term-section"><h2>FAQ</h2>${faq.map((item) => `<details><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`).join('')}</section>
-  ${renderReviewsSection()}
+  <section id="faq" class="glossary-card glossary-term-section"><h2>FAQ</h2>${faq.slice(0,1).map((item) => `<details><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`).join('')}</section>
+  <section id="reviews" class="glossary-card glossary-term-section glossary-term-reviews"><h2>Local reviews</h2><p><a href="/success-stories">Read local reviews</a></p></section>
   <nav class="term-pagination glossary-term-pagination button-row" aria-label="Glossary navigation"><a id="prev-term" href="/bjj-glossary" hidden>Previous term</a><a id="back-term-results" href="/bjj-glossary">Back to results</a><a id="next-term" href="/bjj-glossary" hidden>Next term</a></nav>
   <script id="glossary-term-nav-data" type="application/json">${navJson}</script>
 </main>`;
