@@ -138,3 +138,11 @@ Historical note: a clean build once reported 164 pass / 127 above. Later source/
 Historical note: prior batches reported glossary checks passing, but the latest fresh-build results above supersede that status. The member plan and holiday page were previously recorded as meeting the raw rendered target. No commit or deployment has occurred; the full goal remains open.
 
 This batch remains uncommitted and undeployed. Do not treat it as completion of the 291-route goal. Preserve unrelated work and limit any eventual release to the verified rewrite allowlist.
+
+## Post-deploy verification — 2026-10-10
+
+- Rendered census after the final build: **291/291 active customer routes at FKGL <= 3.0**; no missing rendered routes.
+- Local release checks passed: glossary terms, glossary definitions, schema, Eleventy SEO, and volatile operational facts.
+- Scoped deploy commits: `85ad5860`, `137ffdae`.
+- A live HTTP probe previously returned `HTTP/2 200` for `/bjj-glossary/collar-grip`.
+- The broad live metadata/link scripts were attempted after deploy but could not complete because DNS/network resolution was unavailable in the session; they are not treated as live proof.
