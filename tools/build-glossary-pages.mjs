@@ -477,161 +477,52 @@ const renderTermSchema = (term, relatedTerms) => {
 
 const renderIndexCard = (term, termMap) => {
   const relatedThree = (term.related || []).slice(0, 3).map((slug) => termMap.get(slug)).filter(Boolean);
-  const searchBlob = normalizeSearchText([
-    term.term,
-    term.displayTerm,
-    term.summary,
-    term.coachCue,
-    ...(term.aliases || []),
-    ...(term.redirectFrom || []),
-    ...(term.faq || []).flatMap((item) => [item.q, item.a])
-  ].join(' '));
+  const searchBlob = normalizeSearchText([term.term, term.displayTerm, term.summary, ...(term.aliases || []), ...(term.redirectFrom || [])].join(' '));
 
-  const pills = [
-    term.categoryLabel,
-    term.isCommon ? 'Common' : '',
-    term.isFoundational ? 'Foundational' : ''
-  ].filter(Boolean);
+  const pills = [term.categoryLabel, term.isFoundational ? 'Start here' : ''].filter(Boolean);
 
   return `<article class="term-card ss-glossary-term-card glossary-card" data-glossary-card data-category="${escapeHtml(term.category)}" data-level="${escapeHtml(term.level)}" data-letter="${escapeHtml(alphaLetter(term.term))}" data-contexts="${escapeHtml(term.contexts.join(','))}" data-common="${term.isCommon ? '1' : '0'}" data-foundational="${term.isFoundational ? '1' : '0'}" data-search="${escapeHtml(searchBlob)}" data-slug="${escapeHtml(term.slug)}">
   <div class="glossary-card-meta term-card__meta ss-glossary-term-tag">
     ${pills.map((pill) => `<span class="glossary-pill">${escapeHtml(pill)}</span>`).join('\n')}
   </div>
   <h3 class="term-card__title ss-glossary-term-title"><a data-term-link href="${escapeHtml(glossaryPathFor(term.slug))}">${escapeHtml(term.displayTerm)}</a></h3>
-  <p class="term-card__summary ss-glossary-term-def">${escapeHtml(term.summary)}</p>
-  <div class="glossary-related" aria-label="Related terms">
-    <span>Related:</span>
-    ${relatedThree.map((related) => `<a href="${escapeHtml(glossaryPathFor(related.slug))}">${escapeHtml(related.displayTerm || related.term)}</a>`).join('\n')}
-  </div>
-  <a class="term-card__cta ss-glossary-term-cta glossary-card-cta" data-term-link href="${escapeHtml(glossaryPathFor(term.slug))}">Learn the term →</a>
+  <p class="term-card__summary ss-glossary-term-def">${escapeHtml(term.beginnerTranslation || term.summary)}</p>
+  <a class="term-card__cta ss-glossary-term-cta glossary-card-cta" data-term-link href="${escapeHtml(glossaryPathFor(term.slug))}">Read this term</a>
 </article>`;
 };
 
 const renderDirectoryItem = (term) => {
   const contexts = (term.contexts || []).join(',');
-  return `<button type="button" class="glossary-directory-item" data-slug="${escapeHtml(term.slug)}" data-category="${escapeHtml(term.category)}" data-level="${escapeHtml(term.level)}" data-letter="${escapeHtml(alphaLetter(term.term))}" data-common="${term.isCommon ? '1' : '0'}" data-foundational="${term.isFoundational ? '1' : '0'}" data-contexts="${escapeHtml(contexts)}" role="option" aria-selected="false">
-    <div class="dir-item-top">
-      <span class="dir-item-title">${escapeHtml(term.displayTerm)}</span>
-      <span class="dir-item-badge">${escapeHtml(term.categoryLabel)}</span>
-    </div>
-    <p class="dir-item-snippet">${escapeHtml(term.summary)}</p>
-  </button>`;
+  return `<button type="button" class="glossary-directory-item" role="option" data-slug="${escapeHtml(term.slug)}" data-category="${escapeHtml(term.category)}" data-level="${escapeHtml(term.level)}" data-letter="${escapeHtml(alphaLetter(term.term))}" data-common="${term.isCommon ? '1' : '0'}" data-foundational="${term.isFoundational ? '1' : '0'}" data-contexts="${escapeHtml(contexts)}" aria-selected="false"><span class="dir-item-top"><span class="dir-item-title">${escapeHtml(term.displayTerm)}.</span><span class="dir-item-badge">${escapeHtml(term.categoryLabel)}.</span></span></button>`;
 };
 
 const renderReaderCard = (term, termMap) => {
   if (!term) return '';
-  const vaultMatch = VAULT_CURRICULUM_MAP.get(term.slug);
-  const relatedList = (term.related || []).map((slug) => termMap.get(slug)).filter(Boolean);
-  const aliasesText = term.aliases && term.aliases.length ? term.aliases.join(', ') : '';
-
-  return `
-    <div class="reader-card-inner">
-      <div class="reader-header">
-        <div class="reader-badge-row">
-          <span class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel)}</span>
-          <span class="reader-pill reader-pill-level">${escapeHtml(term.levelLabel)}</span>
-          ${term.isFoundational ? '<span class="reader-pill reader-pill-foundational">🌟 Day 1 Essential</span>' : ''}
-          ${vaultMatch ? `<span class="reader-pill reader-pill-curriculum">${escapeHtml(vaultMatch.week)} · ${escapeHtml(vaultMatch.title)}</span>` : ''}
-        </div>
-        <div class="reader-title-row">
-          <h2 class="reader-title" id="reader-title">${escapeHtml(term.displayTerm)}</h2>
-          <div class="reader-nav-actions">
-            <button type="button" class="reader-nav-btn" id="reader-prev-btn" title="Previous term">← Prev</button>
-            <button type="button" class="reader-nav-btn" id="reader-next-btn" title="Next term">Next →</button>
-            <button type="button" class="reader-nav-btn reader-copy-btn" id="reader-copy-btn" title="Copy term link">🔗 Copy Link</button>
-            <a class="reader-nav-btn reader-ext-link" id="reader-standalone-link" href="${escapeHtml(glossaryPathFor(term.slug))}" title="Open standalone page">↗</a>
-          </div>
-        </div>
-        ${aliasesText ? `<p class="reader-aliases"><strong>Also known as:</strong> ${escapeHtml(aliasesText)}</p>` : ''}
-      </div>
-
-      <div class="reader-body">
-        <div class="reader-section reader-definition">
-          <h3 class="reader-section-title">Quick Definition</h3>
-          <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
-        </div>
-
-        ${term.beginnerTranslation ? `
-        <div class="reader-callout reader-translation-box">
-          <div class="callout-header">
-            <span class="callout-icon">💬</span>
-            <h3 class="callout-title">In Everyday Words</h3>
-          </div>
-          <p class="callout-text" id="reader-translation">${escapeHtml(term.beginnerTranslation)}</p>
-        </div>` : ''}
-
-        ${term.whyItMatters ? `
-        <div class="reader-section">
-          <h3 class="reader-section-title">Why It Matters on the Mat</h3>
-          <p class="reader-text" id="reader-why">${escapeHtml(term.whyItMatters)}</p>
-        </div>` : ''}
-
-        ${term.whatBeginnersShouldKnow ? `
-        <div class="reader-section">
-          <h3 class="reader-section-title">What Beginners Should Know</h3>
-          <p class="reader-text" id="reader-beginners">${escapeHtml(term.whatBeginnersShouldKnow)}</p>
-        </div>` : ''}
-
-        ${(term.coachCue || (term.commonClassPhrases && term.commonClassPhrases.length)) ? `
-        <div class="reader-callout reader-cues-box">
-          <div class="callout-header">
-            <span class="callout-icon">🥋</span>
-            <h3 class="callout-title">Coach Cues in Class</h3>
-          </div>
-          ${term.coachCue ? `<p class="coach-primary-cue" id="reader-coach-cue"><strong>Sandy’s cue:</strong> “${escapeHtml(term.coachCue.replace(/^Coach cue:\s*/i, ''))}”</p>` : ''}
-          ${term.commonClassPhrases && term.commonClassPhrases.length ? `
-          <ul class="coach-phrases-list" id="reader-phrases">
-            ${term.commonClassPhrases.map((p) => `<li>${escapeHtml(p)}</li>`).join('\n')}
-          </ul>` : ''}
-        </div>` : ''}
-
-        ${term.safetyNote ? `
-        <div class="reader-callout reader-safety-box">
-          <div class="callout-header">
-            <span class="callout-icon">🛡️</span>
-            <h3 class="callout-title">Beginner Safety Cue</h3>
-          </div>
-          <p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote.replace(/^Safety note:\s*/i, ''))}</p>
-        </div>` : ''}
-
-        ${relatedList.length ? `
-        <div class="reader-section reader-related-section">
-          <h3 class="reader-section-title">Connected Mat Vocabulary</h3>
-          <div class="reader-related-chips" id="reader-related-chips">
-            ${relatedList.map((r) => `<button type="button" class="reader-related-chip" data-slug="${escapeHtml(r.slug)}">${escapeHtml(r.displayTerm || r.term)} →</button>`).join('\n')}
-          </div>
-        </div>` : ''}
-
-        <div class="reader-cta-card">
-          <div class="reader-cta-copy">
-            <h4>Want to feel this in class?</h4>
-            <p>Every student begins with cooperative partner care and guided pacing. Sandy walks you through every movement step by step.</p>
-          </div>
-          <div class="reader-cta-actions">
-            <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free First Visit</a>
-            <a class="glossary-btn glossary-btn-secondary" href="/schedule">View Class Schedule</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
+  const related = (term.related || []).slice(0, 3).map((slug) => termMap.get(slug)).filter(Boolean);
+  return `<div class="reader-card-inner">
+  <div class="reader-header"><p class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel)}</p><h2 class="reader-title" id="reader-title">${escapeHtml(term.displayTerm)}</h2></div>
+  <div class="reader-body">
+    <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
+    ${term.beginnerTranslation ? `<p class="callout-text" id="reader-translation">${escapeHtml(term.beginnerTranslation)}</p>` : ''}
+    ${term.safetyNote ? `<p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote)}</p>` : ''}
+    ${related.length ? `<h3>More terms</h3><ul id="reader-related-chips">${related.map((item) => `<li><button type="button" data-slug="${escapeHtml(item.slug)}">${escapeHtml(item.displayTerm)}</button></li>`).join('')}</ul>` : ''}
+    <div class="reader-nav-actions"><button type="button" id="reader-prev-btn" title="Previous term">Prev</button><button type="button" id="reader-next-btn" title="Next term">Next</button><button type="button" id="reader-copy-btn">Copy link</button><a id="reader-standalone-link" href="${escapeHtml(glossaryPathFor(term.slug))}">Read this term</a></div>
+    <div class="reader-cta-actions"><a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a><a class="glossary-btn glossary-btn-secondary" href="/schedule">See times</a></div>
+  </div></div>`;
 };
 
-const renderBuyerPathsSection = () => `<section class="ss-glossary-paths glossary-surface--dark">
+const renderBuyerPathsSection = () => `<section class="ss-glossary-paths glossary-surface--dark" aria-labelledby="glossary-paths-title">
   <div class="ss-paths-inner">
     <div class="ss-paths-header">
-      <p class="ss-paths-eyebrow">Beginner BJJ Glossary</p>
-      <h2>Pick your beginner learning path.</h2>
-      <p>
-        Every family member and new student starts at their own pace. Select your path to explore essential mat vocabulary.
-      </p>
+      <p class="ss-paths-eyebrow">Start with your class</p>
+      <h2 id="glossary-paths-title">Pick a term to learn.</h2>
+      <p>Choose a short list. Open a word to read more.</p>
     </div>
 
     <div class="ss-path-grid">
       <article class="ss-path-card" data-path="parent">
-        <h3>Parents &amp; Kids (Coach-Mom Carla &amp; Independent Ian)</h3>
-        <p>Cooperative youth movement, positive room structure, and personal space confidence.</p>
-        <a class="ss-path-link" href="/bjj-glossary/bully-proof">Explore Youth Terms &rarr;</a>
+        <h3>For kids and parents</h3><p>Start with safety and class words.</p>
+        <a class="ss-path-link" href="/bjj-glossary/bully-proof">Read youth terms</a>
         <div class="ss-path-chips" aria-label="Parent glossary shortcuts">
           <a href="/bjj-glossary/bully-proof">Bully Proof</a>
           <a href="/bjj-glossary/safety">Safety First</a>
@@ -640,9 +531,8 @@ const renderBuyerPathsSection = () => `<section class="ss-glossary-paths glossar
       </article>
 
       <article class="ss-path-card" data-path="adult-beginner">
-        <h3>Adult Beginners (Beginner Ben &amp; Community Casey)</h3>
-        <p>Calm position mapping, mechanical leverage, and step-by-step cooperative drills.</p>
-        <a class="ss-path-link" href="/bjj-glossary/guard">Explore Adult Foundations &rarr;</a>
+        <h3>For new adults</h3><p>Learn words for key positions.</p>
+        <a class="ss-path-link" href="/bjj-glossary/guard">Learn guard</a>
         <div class="ss-path-chips" aria-label="Adult beginner shortcuts">
           <a href="/bjj-glossary/guard">Guard</a>
           <a href="/bjj-glossary/mount">Mount</a>
@@ -651,9 +541,8 @@ const renderBuyerPathsSection = () => `<section class="ss-glossary-paths glossar
       </article>
 
       <article class="ss-path-card" data-path="sparring-nerves">
-        <h3>Teens &amp; Control (Cross-Training Tyler)</h3>
-        <p>Dynamic movement geometry, connection control, and calm partner pacing.</p>
-        <a class="ss-path-link" href="/bjj-glossary/grip">Explore Control Terms &rarr;</a>
+        <h3>For teens</h3><p>Learn how to move with care.</p>
+        <a class="ss-path-link" href="/bjj-glossary/grip">Learn grip</a>
         <div class="ss-path-chips" aria-label="Control shortcuts">
           <a href="/bjj-glossary/grip">Grip</a>
           <a href="/bjj-glossary/frame">Frame</a>
@@ -662,9 +551,8 @@ const renderBuyerPathsSection = () => `<section class="ss-glossary-paths glossar
       </article>
 
       <article class="ss-path-card" data-path="self-defense">
-        <h3>Household &amp; Visitors (Family Frankie &amp; Weekend Wendy)</h3>
-        <p>Flexible scheduling, clear safety expectations, and cooperative training under one roof.</p>
-        <a class="ss-path-link" href="/bjj-faqs">Explore FAQs &amp; Safety &rarr;</a>
+        <h3>For all new students</h3><p>Learn the tap and class rules.</p>
+        <a class="ss-path-link" href="/bjj-faqs">Read common questions</a>
         <div class="ss-path-chips" aria-label="Safety glossary shortcuts">
           <a href="/bjj-glossary/safety">Safety</a>
           <a href="/bjj-glossary/beginner-lane">Beginner Lane</a>
@@ -757,7 +645,7 @@ const renderFlywheelGrandSlamSection = () => `<section class="glossary-shell glo
 
 const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
   const cards = terms.map((term) => renderIndexCard(term, termMap)).join('\n');
-  const directoryItems = terms.map(renderDirectoryItem).join('\n');
+  const directoryItems = terms.filter((term) => term.isFoundational).slice(0, 8).map(renderDirectoryItem).join('\n');
   const initialTerm = termMap.get('tap') || terms[0];
   const initialReaderHtml = renderReaderCard(initialTerm, termMap);
   const searchIndex = buildSearchIndex(terms);
@@ -793,8 +681,10 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
     </div>
   </section>
 
-  <!-- 2. The Infil-Style Interactive Dictionary Application -->
+  <!-- 2. Audience paths and interactive glossary -->
+  ${renderBuyerPathsSection()}
   <section class="glossary-shell glossary-app-section" id="glossary-app" aria-label="Interactive BJJ Glossary">
+    <form id="glossary-filter-form" role="search">
     <!-- Command Toolbar -->
     <div class="glossary-command-bar" id="glossary-controls">
       <div class="glossary-search-row">
@@ -805,10 +695,10 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
           <kbd class="glossary-kbd-hint" aria-hidden="true">/</kbd>
         </div>
         <div class="glossary-actions-group">
-          <button type="button" id="surprise-me-btn" class="glossary-btn glossary-btn-action" title="Surprise me with a random term">
+          <button type="button" id="surprise-me-inline" class="glossary-btn glossary-btn-action" title="Pick a random term">
             <span class="btn-icon">&#127922;</span> Random Term
           </button>
-          <button type="button" id="copy-term-link-btn" class="glossary-btn glossary-btn-action" title="Copy link to current term">
+          <button type="button" id="copy-state-link" class="glossary-btn glossary-btn-action" title="Copy link to current term">
             <span class="btn-icon">&#128279;</span> Copy Link
           </button>
           <select id="glossary-theme" class="glossary-theme-select" aria-label="Color theme" hidden>
@@ -818,7 +708,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
       </div>
 
       <!-- Category Filter Pills -->
-      <div class="glossary-filter-categories" role="tablist" aria-label="Filter by category">
+      <fieldset><legend>Filter by category</legend><div class="glossary-filter-categories" role="group" aria-label="Filter by category">
         <button class="glossary-category-pill is-active" type="button" data-filter-category="all" aria-pressed="true">All (${terms.length})</button>
         <button class="glossary-category-pill" type="button" data-filter-common="foundational" aria-pressed="false">&#127775; Day 1 Foundational</button>
         <button class="glossary-category-pill" type="button" data-filter-category="positions" aria-pressed="false">Positions</button>
@@ -827,12 +717,27 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
         <button class="glossary-category-pill" type="button" data-filter-category="basics" aria-pressed="false">Basics</button>
         <button class="glossary-category-pill" type="button" data-filter-category="gi-no-gi" aria-pressed="false">Gi / No-Gi</button>
         <button class="glossary-category-pill" type="button" data-filter-context="kids" aria-pressed="false">Youth / Bully-Proof</button>
-      </div>
-
+      </div></fieldset>
+      <fieldset><legend>Filter by level</legend>
+        <button class="glossary-category-pill" type="button" data-filter-level="all" aria-pressed="true">All levels</button>
+        <button class="glossary-category-pill" type="button" data-filter-level="beginner" aria-pressed="false">Beginner</button>
+        <button class="glossary-category-pill" type="button" data-filter-level="intermediate" aria-pressed="false">More terms</button>
+      </fieldset>
+      <fieldset><legend>Filter by class</legend>
+        <button class="glossary-category-pill" type="button" data-filter-context="kids" aria-pressed="false">Kids</button>
+        <button class="glossary-category-pill" type="button" data-filter-context="adults" aria-pressed="false">Adults</button>
+        <button class="glossary-category-pill" type="button" data-filter-context="gi" aria-pressed="false">Gi</button>
+        <button class="glossary-category-pill" type="button" data-filter-context="nogi" aria-pressed="false">No-Gi</button>
+      </fieldset>
+      <fieldset><legend>Show</legend>
+        <button class="glossary-category-pill" type="button" data-filter-common="common" aria-pressed="false">Common terms</button>
+        <button class="glossary-category-pill" type="button" data-filter-common="foundational" aria-pressed="false">First terms</button>
+      </fieldset>
       <!-- A-Z Alphabet Quick Jump -->
       <div class="glossary-az-bar" aria-label="Browse by first letter">
         <span class="glossary-az-label">A&ndash;Z:</span>
         <div class="glossary-az-scroll" id="glossary-az-rail">
+          <button type="button" id="surprise-me-az" class="glossary-az-letter" aria-label="Pick a random term">Random</button>
           ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((l) => `<button type="button" class="glossary-az-letter" data-letter-link="${l}" aria-label="Jump to letter ${l}">${l}</button>`).join('')}
         </div>
       </div>
@@ -844,7 +749,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
         </div>
         <button type="button" id="reset-filters" class="glossary-reset-btn" hidden>Reset filters</button>
       </div>
-    </div>
+    </form>
 
     <!-- Master-Detail Split Grid Layout -->
     <div class="glossary-split-layout">
@@ -935,13 +840,8 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
 
     <div class="glossary-start-cta">
       <p>Begin with these seven foundational words for your first class.</p>
-      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
+      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
     </div>
-  </section>
-
-  <!-- 4. Learning Paths -->
-  <section class="glossary-shell glossary-curated-paths">
-    ${renderBuyerPathsSection()}
   </section>
 
   <!-- 5. Learning Flywheel -->
@@ -978,7 +878,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
     <div class="glossary-start-cta">
       <p class="mb-3">Ready to see the words in class?</p>
       <div class="d-flex flex-wrap justify-content-center gap-2">
-        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
+        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
         <a class="glossary-btn glossary-btn-secondary" href="/schedule">See the class schedule</a>
         <a class="glossary-btn glossary-btn-secondary" href="/bjj-classes/adults-tannersville-ny">Adult beginner Jiu-Jitsu</a>
         <a class="glossary-btn glossary-btn-secondary" href="/bjj-classes/kids-tannersville-ny">Kids Jiu-Jitsu</a>
@@ -1039,27 +939,12 @@ const renderTermNextStep = (term) => {
 <section class="ss-term-next-step glossary-card glossary-surface--dark" aria-labelledby="term-next-step-title">
   <div class="container">
     <p class="ss-eyebrow">Train the word</p>
-    <h2 id="term-next-step-title">Want to feel ${escapeHtml(term ? term.displayTerm.toLowerCase() : 'this')} in class?</h2>
+    <h2 id="term-next-step-title">Want to try ${escapeHtml(term ? term.displayTerm.toLowerCase() : 'this')} in class?</h2>
     <p>
-      Meet Sandy for a free visit. See the room and learn the rules. Talk about your goals. Sandy helps you plan your first class.
+      Meet Sandy for a free visit. See the room. Learn the rules.
     </p>
 
     ${vaultBanner}
-
-    <div class="glossary-grandslam-banner p-3 mb-4 rounded-3 bg-white text-dark shadow-sm" aria-label="Grand Slam Tuition Offer">
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
-        <span class="glossary-pill ss-primary">Grand Slam Tuition Offer</span>
-        <span class="small fw-semibold text-muted">5.1x Value Package</span>
-      </div>
-      <h3 class="h5 fw-bold mb-2" style="color: var(--ss-ink, #362B24);">12-Week Core Culture Immersion</h3>
-      <p class="small text-muted mb-3">
-        Includes your official custom academy Gi &amp; white belt ($120&ndash;$145 value), 36 coached classes, dedicated partner safety matching, full Async Practice Vault access ($150 value), Day-One Mat Vocabulary Blueprint ($47 value), and our 30-Day Training Fit Guarantee.
-      </p>
-      <div class="d-flex flex-wrap gap-2">
-        <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Coached Free First Visit</a>
-        <a class="glossary-btn glossary-btn-secondary" href="/options-pricing#start">Compare 12-Week Tuition Tracks</a>
-      </div>
-    </div>
 
     <div class="ss-link-grid">
       <a href="/bjj-glossary">Browse Beginner Glossary</a>
@@ -1069,7 +954,7 @@ const renderTermNextStep = (term) => {
     </div>
 
     <div class="ss-inline-actions mt-3">
-      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
+      <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a>
       <a class="glossary-btn glossary-btn-secondary" href="/options-pricing">See Options &amp; Pricing</a>
     </div>
   </div>
@@ -1078,141 +963,40 @@ const renderTermNextStep = (term) => {
 };
 
 const renderReviewsSection = () => `<section id="reviews" class="glossary-card glossary-term-section glossary-term-reviews">
-    <h2>What local families say</h2>
-    <div class="glossary-term-review-grid">
-      <figure class="glossary-card glossary-term-review-card">
-        <blockquote>A calm and structured environment. My kids look forward to every class.</blockquote>
-        <figcaption>★★★★★ Jared Goodrich</figcaption>
-      </figure>
-      <figure class="glossary-card glossary-term-review-card">
-        <blockquote>Class at Sensei Sandy BJJ has become such a large part of my family’s routine.</blockquote>
-        <figcaption>★★★★★ Jessie Moriarty</figcaption>
-      </figure>
-    </div>
-  </section>`;
+  <h2>Local reviews</h2>
+  <p><a href="/success-stories">Read local reviews</a></p>
+</section>`;
 
 const renderTermPage = (term, termMap, glossaryFiltersScript) => {
   const relatedTerms = (term.related || []).map((slug) => termMap.get(slug)).filter(Boolean);
-  const bestNextTags = (term.bestNext || []).slice(0, 3).map((slug) => termMap.get(slug)).filter(Boolean).map((item) => `<span class="term-pill">${escapeHtml(item.displayTerm)}</span>`).join('\n');
-  const bestNextLinks = (term.bestNext || []).slice(0, 4).map((slug) => termMap.get(slug)).filter(Boolean);
-  const learnBeforeLinks = renderRelationshipLinks(term.relationships.learnBefore, termMap);
-  const usuallyNextLinks = renderRelationshipLinks(term.relationships.usuallyNext, termMap);
-  const confusedWithLinks = renderRelationshipLinks(term.relationships.confusedWith, termMap);
-
-  const navJson = JSON.stringify({
-    currentSlug: term.slug,
-    indexSrc: '/assets/data/glossary-search.json'
-  }).replace(/<\//g, '<\\/');
-
+  const simpleCategory = ({ movements: 'Moves', positions: 'Positions', submissions: 'Moves', basics: 'Basics', 'gi-no-gi': 'Gi and No-Gi' })[term.category] || 'BJJ';
+  const navJson = JSON.stringify({ currentSlug: term.slug, indexSrc: '/assets/data/glossary-search.json' }).replace(/<\//g, '<\\/');
+  const short = (value, fallback) => String(value || fallback).split(/(?<=[.!?])\s+/)[0].trim();
+  const phrases = (term.commonClassPhrases || []).slice(0, 2);
+  const simpleFirstSentence = (value, fallback) => {
+    const first = short(value, fallback);
+    const words = first.split(/\s+/);
+    return words.length > 12 ? `${words.slice(0, 8).join(' ')}.` : first;
+  };
+  const faq = (term.faq || []).slice(0, 2);
   const body = `<main class="glossary-term page-glossary-term glossary-page ss-main term-page-parity" id="glossary-term" role="main">
-  <nav class="breadcrumbs ss-glossary-breadcrumbs glossary-term-breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <a href="/bjj-glossary">BJJ Glossary</a>
-    <span aria-current="page">${escapeHtml(term.displayTerm)}</span>
-  </nav>
-
-  <div class="term-return glossary-term-return button-row">
-    <a id="back-to-results" href="/bjj-glossary">Back to results</a>
-    <a id="open-interactive-dictionary" class="glossary-btn glossary-btn-primary" href="/bjj-glossary?t=${escapeHtml(term.slug)}">Open in Interactive Dictionary ↗</a>
-    <button type="button" class="btn btn-sm btn-outline-secondary" id="copy-term-link">Copy term link</button>
-  </div>
-
-  <header class="term-hero glossary-hero glossary-card ss-glossary-term-hero">
-    <p class="term-meta glossary-hero__eyebrow">${escapeHtml(term.categoryLabel)} · ${escapeHtml(term.levelLabel)}</p>
-    <h1 class="glossary-hero__title">${escapeHtml(term.h1)}</h1>
-    <p class="term-summary glossary-hero__lede">${escapeHtml(term.summary)}</p>
-    <div class="term-tags chip-list">
-      <span class="term-pill">${term.level === 'beginner' ? 'Foundational concept' : 'Intermediate concept'}</span>
-      <span class="term-pill">${escapeHtml(term.categoryLabel)}</span>
-      ${term.isCommon ? '<span class="term-pill">Common</span>' : ''}
-      ${term.isFoundational ? '<span class="term-pill">Start here</span>' : ''}
-      ${bestNextTags || '<span class="term-pill">Connected glossary term</span>'}
-    </div>
-  </header>
-
-  <section id="definition" class="glossary-card glossary-term-section">
-    <h2>Quick definition</h2>
-    <p>${escapeHtml(term.summary)}</p>
-  </section>
-
-  <section id="beginner-translation" class="glossary-card glossary-term-section">
-    <h2>Beginner translation</h2>
-    <p>${escapeHtml(term.beginnerTranslation)}</p>
-  </section>
-
-  <section id="why-it-matters" class="glossary-card glossary-term-section">
-    <h2>Why it matters</h2>
-    <p>${escapeHtml(term.whyItMatters)}</p>
-  </section>
-
-  <section id="beginners-should-know" class="glossary-card glossary-term-section">
-    <h2>What beginners should know</h2>
-    <p>${escapeHtml(term.whatBeginnersShouldKnow)}</p>
-  </section>
-
-  <section id="common-class-phrases" class="glossary-card glossary-term-section">
-    <h2>Common class phrases</h2>
-    <ul class="glossary-term-check-list">${term.commonClassPhrases.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')}</ul>
-  </section>
-
-  <section id="safety-cue" class="glossary-card glossary-term-section ss-safety-cue">
-    <h2>Beginner Safety Cue</h2>
-    <p><strong>Safety cue:</strong> ${escapeHtml(term.safetyNote.replace(/^Safety note:\s*/i, ''))}</p>
-  </section>
-
-  <section id="related-terms" class="panel glossary-card glossary-term-section">
-    <h2>Related terms</h2>
-    <p>This glossary works like a connected map. After this term, these are the most useful next pages:</p>
-    <div class="related-grid ss-glossary-term-grid glossary-term-related-grid">${relatedTerms.map(t => `<a class="related-card ss-glossary-rich-related-card" href="${escapeHtml(glossaryPathFor(t.slug))}">
-      <h3>${escapeHtml(t.displayTerm)}</h3>
-      <p>${escapeHtml(t.summary)}</p>
-      <span>Read more →</span>
-    </a>`).join('\n')}</div>
-    <div class="glossary-term-best-next">
-      <h3>Best next glossary pages</h3>
-      <ul>${bestNextLinks.map((item) => `<li><a href="${escapeHtml(glossaryPathFor(item.slug))}">${escapeHtml(item.displayTerm)}</a></li>`).join('\n') || '<li><a href="/bjj-glossary">Browse all terms</a></li>'}</ul>
-      <p><a href="/bjj-glossary" id="back-to-glossary-main">Back to glossary</a></p>
-    </div>
-    <div class="glossary-term-relationship-map">
-      <h3>Relationship map</h3>
-      <div class="relationship-grid glossary-term-relationship-grid">
-        <section class="glossary-card"><h4>Learn this before</h4><ul>${learnBeforeLinks || '<li>Core fundamentals first</li>'}</ul></section>
-        <section class="glossary-card"><h4>Usually comes next</h4><ul>${usuallyNextLinks || '<li>Build from this position with control</li>'}</ul></section>
-        <section class="glossary-card"><h4>Often confused with</h4><ul>${confusedWithLinks || '<li>Nearby terms with different goals</li>'}</ul></section>
-      </div>
-    </div>
-  </section>
-
-  ${renderTermNextStep(term)}
-
-  <section id="faq" class="glossary-card glossary-term-section">
-    <h2>FAQ</h2>
-    <div class="glossary-term-faq-list">
-      ${term.faq.map((item) => `<details class="glossary-card"><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`).join('\n')}
-    </div>
-  </section>
-
+  <nav class="breadcrumbs ss-glossary-breadcrumbs glossary-term-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><a href="/bjj-glossary">BJJ Glossary</a><span aria-current="page">${escapeHtml(term.displayTerm)}</span></nav>
+  <div class="term-return glossary-term-return button-row"><a id="back-to-results" href="/bjj-glossary">Back to results</a><a id="open-interactive-dictionary" href="/bjj-glossary?t=${escapeHtml(term.slug)}">Open the glossary</a><button type="button" id="copy-term-link">Copy term link</button></div>
+  <header class="term-hero glossary-hero glossary-card ss-glossary-term-hero"><p class="term-meta">${escapeHtml(simpleCategory)} · ${escapeHtml(term.level === 'beginner' ? 'Beginner' : 'More terms')}</p><h1 class="glossary-hero__title">${escapeHtml(term.h1)}</h1></header>
+  <section id="definition" class="glossary-card glossary-term-section"><h2>Quick meaning</h2><p>${escapeHtml(short(term.summary, term.term))}</p></section>
+  <section id="beginner-translation" class="glossary-card glossary-term-section"><h2>In plain words</h2><p>${escapeHtml(short(term.beginnerTranslation, `Ask your coach to show ${term.term}.`))}</p></section>
+  <section id="why-it-matters" class="glossary-card glossary-term-section"><h2>Why it helps</h2><p>${escapeHtml(term.whyItMatters || 'It helps you learn this move.')}</p></section>
+  <section id="beginners-should-know" class="glossary-card glossary-term-section"><h2>Start here</h2><p>${escapeHtml(term.whatBeginnersShouldKnow || 'Ask your coach to show you.')}</p></section>
+  <section id="common-class-phrases" class="glossary-card glossary-term-section"><h2>Coach says</h2><ul>${phrases.map((phrase) => `<li>${escapeHtml(short(phrase, 'Ask your coach.'))}</li>`).join('') || '<li>Ask your coach.</li>'}</ul></section>
+  <section id="safety-cue" class="glossary-card glossary-term-section ss-safety-cue"><h2>Stay safe</h2><p>${escapeHtml(simpleFirstSentence(term.safetyNote, 'Move with care. Ask your coach.'))}</p></section>
+  <section id="related-terms" class="glossary-card glossary-term-section"><h2>Related links</h2><h3>More terms</h3><ul>${relatedTerms.map((item) => `<li><a href="${escapeHtml(glossaryPathFor(item.slug))}">${escapeHtml(item.displayTerm)}</a></li>`).join('')}</ul><a href="/bjj-glossary">Browse all terms</a></section>
+  <section class="ss-term-next-step glossary-card glossary-surface--dark"><h2>Want to try it?</h2><a href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a> <a href="/schedule">See times</a></section>
+  <section id="faq" class="glossary-card glossary-term-section"><h2>FAQ</h2>${faq.map((item) => `<details><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`).join('')}</section>
   ${renderReviewsSection()}
-
-  <nav class="term-pagination glossary-term-pagination button-row" aria-label="Glossary navigation">
-    <a id="prev-term" href="/bjj-glossary" hidden>Previous term</a>
-    <a id="back-term-results" href="/bjj-glossary">Back to results</a>
-    <a id="next-term" href="/bjj-glossary" hidden>Next term</a>
-  </nav>
-
+  <nav class="term-pagination glossary-term-pagination button-row" aria-label="Glossary navigation"><a id="prev-term" href="/bjj-glossary" hidden>Previous term</a><a id="back-term-results" href="/bjj-glossary">Back to results</a><a id="next-term" href="/bjj-glossary" hidden>Next term</a></nav>
   <script id="glossary-term-nav-data" type="application/json">${navJson}</script>
 </main>`;
-
-  return renderLayout({
-    title: term.seo.title,
-    description: term.seo.description,
-    canonicalUrl: canonicalUrlFor(term.slug),
-    componentBundleName: 'glossary-term',
-    bodyClass: 'page-glossary-term page-glossary-term-rich page-bjj-glossary bjj-glossary-page',
-    extraHead: renderTermSchema(term, relatedTerms),
-    body,
-    scripts: [glossaryFiltersScript]
-  });
+  return renderLayout({ title: term.seo.title, description: term.seo.description, canonicalUrl: canonicalUrlFor(term.slug), componentBundleName: 'glossary-term', bodyClass: 'page-glossary-term page-glossary-term-rich page-bjj-glossary bjj-glossary-page', extraHead: renderTermSchema(term, relatedTerms), body, scripts: [glossaryFiltersScript] });
 };
 
 const renderUpdatesPage = (terms, glossaryFiltersScript) => {
@@ -1237,14 +1021,14 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
   const priorityTerms = terms
     .filter((t) => t.isFoundational || t.level === 'beginner')
     .slice(0, 6)
-    .map((t) => `<li><a href="/bjj-glossary/${escapeHtml(t.slug)}">${escapeHtml(t.displayTerm)}</a> helps new students make sense of class language faster.</li>`)
+    .map((t) => `<li><a href="/bjj-glossary/${escapeHtml(t.slug)}">${escapeHtml(t.displayTerm)}</a></li>`)
     .join('\n');
   const updatedRows = updatedTerms.length
     ? updatedTerms.map((t) => `<li><a href="/bjj-glossary/${escapeHtml(t.slug)}">${escapeHtml(t.displayTerm)}</a> refined on ${escapeHtml(t.updatedAt)}.</li>`).join('\n')
-    : '<li>Fresh edits are folded into the next glossary build as terms are clarified.</li>';
+    : '<li>Fresh edits show up in the next glossary build.</li>';
   const newlyAddedRows = newlyAdded.length
     ? newlyAdded.map((t) => `<li><a href="/bjj-glossary/${escapeHtml(t.slug)}">${escapeHtml(t.displayTerm)}</a> added ${escapeHtml(t.createdAt)}.</li>`).join('\n')
-    : '<li>No newly added terms in the last 30 days.</li>';
+    : '<li>No new terms in the last 30 days.</li>';
 
   const body = `<main class="ss-main glossary-page" id="glossary-updates" role="main">
   <section class="ss-section">
@@ -1252,8 +1036,8 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
       <div class="glossary-card glossary-hero">
         <p class="glossary-eyebrow">Glossary maintenance</p>
         <h1>BJJ Glossary Updates</h1>
-        <p>This page explains how the Sensei Sandy BJJ glossary grows, what has changed recently, and how beginners can use it before class. The update log exists so families, first-timers, and returning students can see that the glossary is being maintained as a real teaching tool, not left as a thin index page.</p>
-        <p>Most visitors should still start at <a href="/bjj-glossary">the main glossary</a>. This page is for anyone who wants the quick state of coverage, recent additions, and the current editorial priorities behind the terms students hear on the mats.</p>
+        <p>See what changed in this glossary. Find new words and tips for class.</p>
+        <p>New to BJJ? Start with <a href="/bjj-glossary">the full glossary</a>.</p>
       </div>
     </div>
   </section>
@@ -1263,24 +1047,24 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
       <div class="glossary-card glossary-surface--light">
         <div class="glossary-section-header">
           <h2>What changed recently</h2>
-          <p>The live counts below show the glossary is actively expanding, while the term list shows where the newest coverage is landing.</p>
+          <p>These counts show what the glossary covers.</p>
         </div>
         <div class="ss-path-grid">
           <article class="glossary-card">
             <h3>Total coverage</h3>
-            <p>${terms.length} terms are currently indexed in the beginner glossary.</p>
+            <p>${terms.length} terms in the glossary.</p>
           </article>
           <article class="glossary-card">
             <h3>Beginner focus</h3>
-            <p>${beginnerCount} terms are labeled for beginners and ${foundationalCount} are marked as start-here concepts.</p>
+            <p>${beginnerCount} terms for new students. ${foundationalCount} are marked “Start here.”</p>
           </article>
           <article class="glossary-card">
             <h3>Teaching support</h3>
-            <p>${mediaCount} terms include media support and ${aliasCount} include alternate phrasing students may hear in class.</p>
+            <p>${mediaCount} terms have media. ${aliasCount} list other words you may hear.</p>
           </article>
           <article class="glossary-card">
             <h3>Common language</h3>
-            <p>${commonCount} entries are tagged as especially common vocabulary for regular class use.</p>
+            <p>${commonCount} words are common in class.</p>
           </article>
         </div>
         <div class="ss-path-grid">
@@ -1302,12 +1086,12 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
       <div class="ss-path-grid">
         <article class="glossary-card glossary-surface--light">
           <h2>How terms are chosen</h2>
-          <p>The glossary is built around terms a new student is likely to hear in class, during drilling, or while reviewing a video after class. Priority goes to words that reduce confusion fast: safety language, major positions, common movements, and simple submission names that show up early.</p>
-          <p>That means the glossary is not trying to become an encyclopedia of every niche variation. It is trying to make local beginner class language clearer, especially for adults starting on day one, parents checking whether a class feels safe, and kids or teens hearing a new term for the first time.</p>
+          <p>We add words you may hear in class or see in a video. We start with safety words, key spots, and moves you may learn first.</p>
+          <p>This is a guide to class words. It is not a list of every BJJ move. It can help adults, kids, teens, and parents learn what a word means.</p>
         </article>
         <article class="glossary-card glossary-surface--light">
           <h2>Current priorities</h2>
-          <p>The main editorial goal is still practical coverage: terms that help a student walk into class calmer, recognize the coach cue sooner, and ask a better question after the rep.</p>
+          <p>We add words that help you follow a coach and ask questions.</p>
           <ul>${priorityTerms}</ul>
         </article>
       </div>
@@ -1319,12 +1103,12 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
       <div class="ss-path-grid">
         <article class="glossary-card glossary-surface--light">
           <h2>How to use the glossary before class</h2>
-          <p>Keep it short. Pick two or three words you expect to hear, read the quick definition, and then get ready for class. A glossary should lower uncertainty before class, not turn into homework that makes the first visit feel heavier.</p>
-          <p>For brand-new adults, terms like <a href="/bjj-glossary/base">base</a>, <a href="/bjj-glossary/posture">posture</a>, <a href="/bjj-glossary/frame">frame</a>, and <a href="/bjj-glossary/tap">tap</a> usually do more good than chasing advanced technique names. For kids and teens, the useful words are often even simpler: reset, balance, stand up safely, and protect your partner.</p>
+          <p>Pick two or three words to read. Then get set for class.</p>
+          <p>Start with <a href="/bjj-glossary/base">base</a>, <a href="/bjj-glossary/posture">posture</a>, <a href="/bjj-glossary/frame">frame</a>, and <a href="/bjj-glossary/tap">tap</a>. Kids and teens can learn to reset, find their balance, stand up, and care for a partner.</p>
         </article>
         <article class="glossary-card glossary-surface--light">
           <h2>Helpful next pages</h2>
-          <p>Use the glossary together with the rest of the site so the language connects back to an actual class decision.</p>
+          <p>Use these links to learn more or plan a class.</p>
           <div class="ss-link-grid">
             <a href="/bjj-glossary">Browse the full glossary</a>
             <a href="https://www.youtube.com/@SenseiSandyBJJ">Watch the video library</a>
@@ -1343,24 +1127,24 @@ const renderUpdatesPage = (terms, glossaryFiltersScript) => {
       <div class="glossary-card glossary-surface--light">
         <div class="glossary-section-header">
           <h2>FAQ</h2>
-          <p>Short answers for the most common questions about what this update page is for and how the glossary is maintained.</p>
+            <p>Quick answers about this page and the glossary.</p>
         </div>
         <div class="glossary-term-faq-list">
           <details class="glossary-card">
-            <summary>Why publish an updates page for a glossary?</summary>
-            <p>Because the glossary changes over time. This page gives students and parents a quick way to see that coverage is improving, beginner terms are being clarified, and new class language is being introduced with clear local context.</p>
+            <summary>Why does this page list changes?</summary>
+            <p>So you can see what words we add or change.</p>
           </details>
           <details class="glossary-card">
-            <summary>Is the glossary only for complete beginners?</summary>
-            <p>No. Beginners benefit the most, but returning students, parents, and experienced grapplers visiting a new gym can all use it to match local phrasing with familiar concepts.</p>
+            <summary>Is this only for new students?</summary>
+            <p>No. Students and parents can use it to learn class words.</p>
           </details>
           <details class="glossary-card">
             <summary>How often is this page updated?</summary>
-            <p>Whenever the glossary build runs after term edits. The counts and recent-term lists are generated from the same source data as the live glossary pages.</p>
+            <p>When we change a term and build the site. The counts use the same data as the glossary.</p>
           </details>
           <details class="glossary-card">
-            <summary>What should I do if a term I heard in class is missing?</summary>
-            <p>Start with the closest related term in the glossary, then ask in class how the coach is using the word. Many terms have aliases, and some new entries are added only after the team sees repeated beginner confusion around the same phrase.</p>
+            <summary>What if a class word is missing?</summary>
+            <p>Read a close term, then ask your coach what the word means. We may add words that students ask about often.</p>
           </details>
         </div>
       </div>
