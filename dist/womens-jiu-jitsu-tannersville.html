@@ -70,60 +70,120 @@
   <div id="scrollProgress"></div>
 
   
-    <main class="ss-main" id="main-content" role="main">
-  <section class="ss-hero" aria-labelledby="womens-jiu-jitsu-title">
+    <style>
+  .womens-page { --womens-ink: #25352f; --womens-green: #116a42; --womens-teal: #289fa1; --womens-paper: #f7f7f2; --womens-line: rgba(37, 53, 47, .16); }
+  .womens-page .womens-hero { background: linear-gradient(135deg, #eef6ef 0%, var(--womens-paper) 64%); padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3.5rem, 8vw, 6rem); }
+  .womens-page .womens-hero-grid { align-items: end; }
+  .womens-page .womens-eyebrow { color: var(--womens-green); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .womens-page h1, .womens-page h2 { color: var(--womens-ink); }
+  .womens-page h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.045em; line-height: .98; max-width: 10ch; }
+  .womens-page .womens-lede { color: var(--womens-ink); font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.45; max-width: 30rem; }
+  .womens-page .womens-copy { color: #4f5e58; font-size: 1.05rem; line-height: 1.7; max-width: 42rem; }
+  .womens-page .womens-note { border-left: 3px solid var(--womens-teal); color: #4f5e58; padding-left: 1rem; }
+  .womens-page .womens-aside { background: #fff; border: 1px solid var(--womens-line); border-radius: 1.25rem; box-shadow: 0 1.5rem 3rem rgba(37, 53, 47, .08); padding: clamp(1.35rem, 4vw, 2rem); }
+  .womens-page .womens-aside dl { margin: 0; }
+  .womens-page .womens-aside dt { color: #68756f; font-size: .78rem; letter-spacing: .1em; margin-top: 1.1rem; text-transform: uppercase; }
+  .womens-page .womens-aside dt:first-child { margin-top: 0; }
+  .womens-page .womens-aside dd { color: var(--womens-ink); font-size: 1.05rem; font-weight: 650; margin: .25rem 0 0; }
+  .womens-page .womens-section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+  .womens-page .womens-section--tint { background: var(--womens-paper); }
+  .womens-page .womens-section h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); letter-spacing: -.03em; margin-bottom: 1rem; }
+  .womens-page .womens-details { border-top: 1px solid var(--womens-line); }
+  .womens-page .womens-detail { border-bottom: 1px solid var(--womens-line); padding: 1.25rem 0; }
+  .womens-page .womens-detail strong { color: var(--womens-ink); display: block; margin-bottom: .3rem; }
+  .womens-page .womens-detail span { color: #53615b; line-height: 1.55; }
+  .womens-page .womens-list { counter-reset: foundations; list-style: none; margin: 0; padding: 0; }
+  .womens-page .womens-list li { align-items: baseline; border-bottom: 1px solid var(--womens-line); counter-increment: foundations; display: flex; gap: 1rem; padding: .9rem 0; }
+  .womens-page .womens-list li::before { color: var(--womens-teal); content: counter(foundations, decimal-leading-zero); font-size: .8rem; font-weight: 700; }
+  .womens-page .womens-cta { background: var(--womens-green); border-radius: 1.25rem; color: #fff; padding: clamp(2rem, 5vw, 3.5rem); }
+  .womens-page .womens-cta h2, .womens-page .womens-cta p { color: #fff; }
+  .womens-page .womens-cta .btn-light { color: var(--womens-green); font-weight: 700; }
+  @media (max-width: 767.98px) { .womens-page h1 { max-width: 12ch; } .womens-page .womens-hero { padding-top: 2.5rem; } }
+</style>
+<main class="ss-main womens-page" id="main-content" role="main">
+  <section class="womens-hero" aria-labelledby="womens-jiu-jitsu-title">
     <div class="container">
-      <p>Tannersville, NY · Proposed Saturday pilot</p>
-      <h1 id="womens-jiu-jitsu-title">Women's Jiu-Jitsu Foundations</h1>
-      <p class="lead">Learn Jiu-Jitsu. Find your training partners. Build your skills.</p>
-      <p>This proposed six-session No-Gi group is designed for women who want a calm, coached place to learn Brazilian Jiu-Jitsu. Sandy leads instruction. A female co-lead is planned to support welcome, partner matching, and student comfort.</p>
-      <p class="d-flex flex-wrap gap-2">
-        <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="womens-foundations" data-cta-placement="hero" data-cta-src="womens-foundations-hero">Reserve Your Free First Visit</a>
-        <a class="btn btn-outline-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">Text Sandy</a>
-      </p>
-      <p class="small mb-0"><strong>Proposed, not yet launched.</strong> The Saturday 9 AM, one-hour pilot slot, $149 tuition, staffing, and enrollment policy require approval before payment or booking.</p>
-    </div>
-  </section>
-
-  <section class="ss-section" aria-labelledby="pilot-details-title">
-    <div class="container">
-      <h2 id="pilot-details-title">Pilot details</h2>
-      <div class="row g-3">
-        <div class="col-md-3"><div class="p-3 border rounded h-100"><strong>When</strong><br>Proposed Saturdays at 9 AM for one hour</div></div>
-        <div class="col-md-3"><div class="p-3 border rounded h-100"><strong>Dates</strong><br>November 7–December 19, 2026; skip November 28</div></div>
-        <div class="col-md-3"><div class="p-3 border rounded h-100"><strong>Format</strong><br>No-Gi, controlled resistance, all experience levels</div></div>
-        <div class="col-md-3"><div class="p-3 border rounded h-100"><strong>Capacity</strong><br>Up to 12 mat participants</div></div>
+      <div class="row womens-hero-grid g-5">
+        <div class="col-lg-7">
+          <p class="womens-eyebrow">Tannersville · Saturday morning pilot</p>
+          <h1 id="womens-jiu-jitsu-title">A place to learn Jiu-Jitsu together.</h1>
+          <p class="womens-lede">Women's Foundations is a small, coached No-Gi group for beginners and experienced students.</p>
+          <p class="womens-copy">Sandy leads the class. A female co-lead is planned to help new students settle in, find a good partner, and feel at home on the mat.</p>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="womens-foundations" data-cta-placement="hero" data-cta-src="womens-foundations-hero">Reserve a Free First Visit</a>
+            <a class="btn btn-outline-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question">Text Sandy</a>
+          </div>
+          <p class="womens-note small mt-4 mb-0"><strong>This is a proposed pilot.</strong> The class, price, and enrollment plan still need approval.</p>
+        </div>
+        <div class="col-lg-5">
+          <aside class="womens-aside" aria-label="Pilot at a glance">
+            <p class="womens-eyebrow mb-3">At a glance</p>
+            <dl>
+              <dt>Schedule</dt><dd>Saturday at 9 AM · one hour</dd>
+              <dt>Six sessions</dt><dd>November 7–December 19, 2026</dd>
+              <dt>Starting price</dt><dd>$149 proposed tuition</dd>
+              <dt>Room size</dt><dd>Up to 12 people on the mat</dd>
+            </dl>
+          </aside>
+        </div>
       </div>
-      <p class="mt-4">The existing Saturday Adult No-Gi class remains scheduled at 10:30 AM. This page does not change the current schedule or accept pilot tuition.</p>
     </div>
   </section>
 
-  <section class="ss-section bg-light" aria-labelledby="first-class-title">
+  <section class="womens-section" aria-labelledby="pilot-details-title">
     <div class="container">
-      <h2 id="first-class-title">What you will work on</h2>
-      <div class="row g-4">
-        <div class="col-md-6"><ol>
-          <li>Stay safe and stand up.</li>
-          <li>Escape bottom pins.</li>
-          <li>Keep guard.</li>
-        </ol></div>
-        <div class="col-md-6"><ol start="4">
-          <li>Reverse position.</li>
-          <li>Hold top position.</li>
-          <li>Link the skills.</li>
+      <div class="row g-5">
+        <div class="col-lg-5"><h2 id="pilot-details-title">A clear first step.</h2><p class="womens-copy">You do not need past training. Come meet Sandy, see the room, and ask questions before deciding if this group is right for you.</p></div>
+        <div class="col-lg-7"><div class="womens-details">
+          <div class="womens-detail"><strong>Start with a Free First Visit</strong><span>Meet Sandy, see the room, and talk through what you want from training.</span></div>
+          <div class="womens-detail"><strong>Wear comfortable sports clothes</strong><span>This is No-Gi training. You do not need to buy a uniform to try it.</span></div>
+          <div class="womens-detail"><strong>Train at a pace you can choose</strong><span>Partners are matched with care. You can pause or end a round whenever you need to.</span></div>
+          <div class="womens-detail"><strong>Saturday Adult No-Gi follows at 10:30 AM</strong><span>The existing adult class stays on the current schedule. The proposed pilot does not change it.</span></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="womens-section womens-section--tint" aria-labelledby="foundations-title">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5"><h2 id="foundations-title">Six useful problems to solve.</h2><p class="womens-copy">Each session uses short games, simple goals, and guided rounds. You learn by moving, trying, and adjusting.</p></div>
+        <div class="col-lg-7"><ol class="womens-list">
+          <li>Stay safe and stand up.</li><li>Escape a pin.</li><li>Keep your guard.</li><li>Reverse position.</li><li>Hold the top position.</li><li>Link the skills.</li>
         </ol></div>
       </div>
-      <p>Each class uses short games, clear goals, matched partners, and guided positional rounds. You can pause or stop a round. No forced full-intensity rounds, uncontrolled takedowns, neck cranks, or twisting leg submissions.</p>
     </div>
   </section>
 
-  <section class="ss-section" aria-labelledby="before-you-join-title">
+  <section class="womens-section" aria-labelledby="syllabus-title">
     <div class="container">
-      <h2 id="before-you-join-title">Before you join</h2>
-      <p>Start with a Free First Visit. Meet Sandy, see the room, and ask whether the proposed pilot fits your goals. The pilot needs a confirmed co-lead, reviewed safety and admissions procedures, enough paid reservations, and suitable training partners before it can launch.</p>
-      <p>There is no childcare provided. Photo and video are optional. Share only training needs that help with partner matching; you do not need to disclose medical or trauma history.</p>
-      <p><a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="womens-foundations" data-cta-placement="final" data-cta-src="womens-foundations-final">Reserve Your Free First Visit</a></p>
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <p class="womens-eyebrow">The proposed cohort syllabus</p>
+          <h2 id="syllabus-title">One shared problem each week.</h2>
+          <p class="womens-copy">The group builds from safety and space toward linking escapes, reversals, and control. Every class has a beginner lane and a more challenging variation for experienced students.</p>
+          <p class="womens-note small mb-0">Proposed dates: November 7, 14, and 21; December 5, 12, and 19. No class November 28.</p>
+        </div>
+        <div class="col-lg-7">
+          <div class="womens-details" role="list" aria-label="Six-session proposed syllabus">
+            <div class="womens-detail" role="listitem"><strong>01 · Nov 7 — Stay safe and stand up</strong><span>Learn space, frames, and a safe way to get back to your feet. Experienced students add a partner who blocks the stand-up.</span></div>
+            <div class="womens-detail" role="listitem"><strong>02 · Nov 14 — Escape a bottom pin</strong><span>Work from mount or side control. Beginners recover guard or get free; experienced students solve the same problem with tighter limits.</span></div>
+            <div class="womens-detail" role="listitem"><strong>03 · Nov 21 — Keep your guard</strong><span>Use your legs and frames to keep a partner from passing. Add pace and pressure only when the pair is ready.</span></div>
+            <div class="womens-detail" role="listitem"><strong>04 · Dec 5 — Reverse the position</strong><span>Find a sweep or stand-up from guard. Experienced students connect the first attempt to a second option.</span></div>
+            <div class="womens-detail" role="listitem"><strong>05 · Dec 12 — Hold the top position</strong><span>Pass the legs and settle into control while your partner works to escape.</span></div>
+            <div class="womens-detail" role="listitem"><strong>06 · Dec 19 — Link the skills</strong><span>Put the pieces together in guided rounds: escape, recover, reverse, and hold position.</span></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="womens-section" aria-labelledby="ready-title">
+    <div class="container"><div class="womens-cta">
+      <h2 id="ready-title">Want to see if it feels right?</h2>
+      <p class="mb-4">Reserve a Free First Visit. Meet Sandy, look around, and ask about the proposed Women's Foundations pilot.</p>
+      <a class="btn btn-light" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="womens-foundations" data-cta-placement="final" data-cta-src="womens-foundations-final">Reserve a Free First Visit</a>
+    </div></div>
   </section>
 </main>
 
