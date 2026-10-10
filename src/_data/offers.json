@@ -149,6 +149,36 @@
       "eligibilityRef": "visitorAndSupport.twentyPack.eligibility"
     }
   ],
+  "proposed": [
+    {
+      "id": "womens-foundations-saturday-pilot-2026",
+      "name": "Women's Foundations Saturday Pilot",
+      "category": "Proposed Pilot",
+      "audience": "Women interested in beginner-friendly Brazilian Jiu-Jitsu",
+      "term": "6 sessions",
+      "schedule": "Proposed Saturdays at 9 AM for one hour, November 7–December 19, 2026; skip November 28",
+      "format": "No-Gi, controlled resistance, beginner and experienced lanes",
+      "capacity": 12,
+      "targetNewStudents": 6,
+      "priceRef": "proposed.womensFoundationsPilot",
+      "displayPrice": "$149 proposed introductory tuition",
+      "coaching": "Sensei Sandy leads; a female co-lead is to be recruited and confirmed",
+      "cohortId": "WOMENS-SAT-2026-11",
+      "primaryCta": {
+        "label": "Reserve Your Free First Visit",
+        "url": "/free-bjj-intro-tannersville-ny#booking-flow"
+      },
+      "status": "proposed",
+      "public": false,
+      "approvalGates": [
+        "Female co-lead confirmed with paid scope",
+        "Admissions policy and applicable legal review completed",
+        "Insurance and safety procedures checked",
+        "At least 4 paid enrollments and 2 suitable experienced partners identified",
+        "Registration, waiver, attendance tracking, and preview class confirmed"
+      ]
+    }
+  ],
   "support": [
     {
       "id": "private-coaching",
