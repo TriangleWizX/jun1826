@@ -58,102 +58,126 @@
 
 
 
-
+  
 </head>
 <body class="ss-page page-white-belt-foundations">
 
   <!--#include virtual="/nav-include.html" -->
 
 
+  
 
-
-
+  
 
   <div id="scrollProgress"></div>
 
-
-    <main class="ss-main" id="main-content" role="main">
-  <header class="ss-section-premium py-5 mt-4">
+  
+    <style>
+  .wbf-page { --wbf-ink: #25352f; --wbf-green: #116a42; --wbf-muted: #4f5e58; --wbf-paper: #f4f6f3; color: var(--wbf-ink); text-align: center; font-family: "Lexend", sans-serif; }
+  .wbf-page .container { width: min(100% - 2.5rem, 1080px); margin-inline: auto; }
+  .wbf-page .row { display: block; margin: 0; }
+  .wbf-page .row > * { width: 100%; max-width: 100%; padding: 0; }
+  .wbf-page h1, .wbf-page h2, .wbf-page h3 { color: var(--wbf-ink); font-family: inherit; text-wrap: balance; }
+  .wbf-page h1 { max-width: 18ch; margin: 0 auto 1.25rem; font-size: clamp(2.3rem, 5vw, 4.5rem); font-weight: 600; letter-spacing: -.05em; line-height: 1.1; }
+  .wbf-page h2 { margin: 0 auto 1rem; font-size: clamp(1.8rem, 3.5vw, 2.8rem); letter-spacing: -.04em; }
+  .wbf-page p { color: var(--wbf-muted); line-height: 1.8; }
+  .wbf-page .wbf-hero { padding: clamp(3rem, 7vw, 6rem) 0; background: var(--wbf-paper); }
+  .wbf-page .wbf-lede { max-width: 56ch; margin: 0 auto 1.5rem; font-size: clamp(1.1rem, 2vw, 1.35rem); }
+  .wbf-page .wbf-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .75rem; }
+  .wbf-page .wbf-status { max-width: 56ch; margin: 2rem auto 0; padding: 1.5rem; background: #fff; border: 6px solid #e8ede7; border-radius: 24px; }
+  .wbf-page .wbf-status p:last-child { margin-bottom: 0; }
+  .wbf-page .wbf-section { padding: clamp(3.25rem, 7vw, 5.5rem) 0; }
+  .wbf-page .wbf-section--tint { background: var(--wbf-paper); }
+  .wbf-page .wbf-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 820px; margin: 2rem auto 0; }
+  .wbf-page .wbf-fact { padding: 1.5rem; background: #fff; border: 6px solid #e8ede7; border-radius: 22px; }
+  .wbf-page .wbf-fact:last-child { grid-column: 1 / -1; }
+  .wbf-page .wbf-fact h3 { font-size: 1.1rem; }
+  .wbf-page .wbf-fact p { margin-bottom: 0; }
+  .wbf-page .wbf-stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 900px; margin: 2rem auto; }
+  .wbf-page .wbf-stage { padding: 1.5rem; background: #fff; border: 6px solid #e8ede7; border-radius: 22px; }
+  .wbf-page .wbf-stage h3 { font-size: 1.15rem; }
+  .wbf-page .wbf-stage p { margin: .5rem 0; }
+  .wbf-page .wbf-safe-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1.5rem; max-width: 760px; margin: 1.5rem auto 0; padding: 0; list-style: none; }
+  .wbf-page .wbf-safe-list li { padding: .75rem; }
+  .wbf-page .wbf-cta { max-width: 900px; margin-inline: auto; padding: clamp(2rem, 5vw, 4rem); background: var(--wbf-paper); border: 7px solid #e8ede7; border-radius: 28px; }
+  .wbf-page a:focus-visible { outline: 3px solid var(--wbf-green); outline-offset: 5px; }
+  @media (max-width: 767px) { .wbf-page .container { width: min(100% - 2rem, 1080px); } .wbf-page .wbf-facts, .wbf-page .wbf-stages, .wbf-page .wbf-safe-list { grid-template-columns: 1fr; } .wbf-page .wbf-fact:last-child { grid-column: auto; } }
+</style>
+<main class="ss-main wbf-page" id="main-content" role="main">
+  <header class="wbf-hero">
     <div class="container ss-container">
       <div class="row align-items-center g-5">
         <div class="col-lg-8">
-          <span class="ss-eyebrow">Adult beginner path · Tannersville, NY</span>
+          <span class="ss-eyebrow">Adult beginners in Tannersville</span>
           <h1 class="mb-4">White Belt Foundations</h1>
-          <p class="lead-text mb-4">A proposed 12-week path for adults who are starting Brazilian Jiu-Jitsu. Learn the first skills in a calm, coached lane within the current adult class.</p>
-          <div class="d-flex flex-wrap gap-3">
+          <p class="wbf-lede">A planned 12-week start for adults new to Jiu-Jitsu. Learn the first skills with Sandy in the adult class.</p>
+          <div class="wbf-actions">
             <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-cta-target="intro" data-cta-lane="adult" data-cta-placement="white-belt-hero" data-cta-src="white-belt-foundations"><span>Reserve Your Free First Visit</span></a>
             <a class="btn-premium btn-premium--secondary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question"><span>Text Sandy</span></a>
           </div>
         </div>
         <div class="col-lg-4">
-          <aside class="db-card p-4" aria-label="Program status">
-            <p class="ss-eyebrow mb-2">Planning status</p>
-            <h2 class="h4">Proposed program</h2>
-            <p class="mb-0">The beginner lane is being shaped within the current adult schedule. Ask Sandy what is available now and whether this path fits your start date.</p>
+          <aside class="wbf-status" aria-label="Program status">
+            <p class="ss-eyebrow mb-2">Plan status</p>
+            <h2 class="h4">Still in the plan stage</h2>
+            <p>Ask Sandy about adult classes now. She can help you pick a good first day.</p>
           </aside>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="foundations-fit-title">
+  <section class="wbf-section wbf-section--tint" aria-labelledby="foundations-fit-title">
     <div class="container ss-container">
-      <span class="ss-eyebrow">At a glance</span>
-      <h2 id="foundations-fit-title" class="mb-4">One clear path for a new adult student.</h2>
-      <div class="row g-4">
-        <div class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h5">Adult beginners</h3><p class="mb-0">Designed for adults 18+ who want a coached start and a simple next step.</p></article></div>
-        <div class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h5">Current adult class</h3><p class="mb-0">The proposed lane uses the current Tuesday and Thursday adult Gi class at 6:00 PM. Confirm the current schedule before visiting.</p></article></div>
-        <div class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h5">Twenty-four lessons</h3><p class="mb-0">The proposal connects two coached classes each week for 12 weeks. Final dates and enrollment are not yet confirmed.</p></article></div>
+      <h2 id="foundations-fit-title">A clear way to start.</h2>
+      <div class="wbf-facts">
+        <article class="wbf-fact"><h3>For adults 18+</h3><p>Start with the basics and learn at a steady pace.</p></article>
+        <article class="wbf-fact"><h3>Part of adult class</h3><p>The plan uses Tuesday and Thursday Gi class at 6 PM. Check the current schedule first.</p></article>
+        <article class="wbf-fact"><h3>Two classes each week</h3><p>The plan runs for 12 weeks, with 24 lessons. Dates and sign-up details are still being set.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="ss-section-premium" aria-labelledby="foundations-stages-title">
+  <section class="wbf-section" aria-labelledby="foundations-stages-title">
     <div class="container ss-container">
       <span class="ss-eyebrow">The learning path</span>
-      <h2 id="foundations-stages-title" class="mb-4">Get safe. Get free. Gain control. Put it together.</h2>
-      <div class="table-responsive">
-        <table class="table align-middle">
-          <caption class="visually-hidden">Proposed White Belt Foundations curriculum</caption>
-          <thead><tr><th scope="col">Stage</th><th scope="col">Practice focus</th><th scope="col">What students work toward</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Get safe</th><td>Mat rules, tapping, falling, and safe movement</td><td>Stay balanced, make space, and get up</td></tr>
-            <tr><th scope="row">Get free</th><td>Mount, side-control, and back-control escapes</td><td>Recover guard or reach a safer position</td></tr>
-            <tr><th scope="row">Gain control</th><td>Guard, passing, side control, mount, and back control</td><td>Hold position while following a partner’s movement</td></tr>
-            <tr><th scope="row">Put it together</th><td>Standing balance, safe entries, review, and guided rounds</td><td>Choose a steady next step in regular adult class</td></tr>
-          </tbody>
-        </table>
+      <h2 id="foundations-stages-title">Four steps. One skill at a time.</h2>
+      <div class="wbf-stages">
+        <article class="wbf-stage"><h3>Get safe</h3><p>Learn the mat rules. Learn how to tap and fall.</p><p>Work to make space and stand up.</p></article>
+        <article class="wbf-stage"><h3>Get free</h3><p>Learn ways to get free from a pin.</p><p>Work to find guard or a safe spot.</p></article>
+        <article class="wbf-stage"><h3>Gain control</h3><p>Learn guard, passes, and top spots.</p><p>Work to hold a spot as your partner moves.</p></article>
+        <article class="wbf-stage"><h3>Put it together</h3><p>Review the skills in guided rounds.</p><p>Find the next step for your training.</p></article>
       </div>
-      <p class="small text-muted mb-0">This is a proposed curriculum, not a belt-promotion promise. Sandy sets the pace and confirms what is appropriate for each student.</p>
+      <p class="small text-muted mb-0">This plan does not promise a belt rank. Sandy will set the pace for each student.</p>
     </div>
   </section>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="foundations-safety-title">
+  <section class="wbf-section wbf-section--tint" aria-labelledby="foundations-safety-title">
     <div class="container ss-container">
       <div class="row g-5">
         <div class="col-lg-6">
-          <span class="ss-eyebrow">Every class</span>
-          <h2 id="foundations-safety-title" class="mb-3">Practice with clear rules.</h2>
-          <p>Classes use guided games, partner feedback, and controlled resistance. Students can tap early, pause a round, or end a round. Partners match pace, and Sandy coaches the room.</p>
+          <span class="ss-eyebrow">Each class</span>
+          <h2 id="foundations-safety-title" class="mb-3">Learn with care.</h2>
+          <p>Play skill games with a partner. Sandy helps each pair move at a good pace.</p>
         </div>
         <div class="col-lg-6">
-          <ul class="mb-0">
-            <li>Tap early and release right away.</li>
-            <li>Use controlled movement and agreed rules.</li>
-            <li>Keep resistance matched to your partner.</li>
-            <li>Ask Sandy when a position or pace feels unclear.</li>
+          <ul class="wbf-safe-list">
+            <li>Tap to end a hold. Let go at once.</li>
+            <li>Move with care and follow the class rules.</li>
+            <li>Match your partner's pace.</li>
+            <li>Ask Sandy when you need help.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ss-section-premium text-center" aria-labelledby="foundations-next-title">
-    <div class="container ss-container" style="max-width: 800px;">
+  <section class="wbf-section" aria-labelledby="foundations-next-title">
+    <div class="container ss-container wbf-cta">
       <span class="ss-eyebrow">Your first step</span>
-      <h2 id="foundations-next-title" class="mb-3">Meet Sandy before class.</h2>
-      <p class="lead-text mb-4">Start with a 15-minute Free First Visit. Talk about your goals, see the room, and plan a coach-confirmed adult class.</p>
-      <div class="d-flex flex-wrap justify-content-center gap-3">
+      <h2 id="foundations-next-title" class="mb-3">Meet Sandy first.</h2>
+      <p class="lead-text mb-4">Take 15 minutes to meet Sandy, see the room, and plan your first adult class.</p>
+      <div class="wbf-actions">
         <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-cta-target="intro" data-cta-lane="adult" data-cta-placement="white-belt-final" data-cta-src="white-belt-foundations"><span>Reserve Your Free First Visit</span></a>
         <a class="btn-premium btn-premium--secondary" href="/schedule"><span>See current schedule</span></a>
       </div>
@@ -162,9 +186,9 @@
   </section>
 </main>
 
+  
 
-
-
+  
     <footer class="ss-new-site-footer">
   <div class="ss-new-footer-shell">
     <div class="ss-new-footer-inner">
@@ -269,10 +293,10 @@
   });
 </script>
 
-
+  
 
 <script src="/js/link-utils.min.js" defer></script>
 <script src="/js/analytics-events.min.js" defer></script>
-
+  
 </body>
 </html>
