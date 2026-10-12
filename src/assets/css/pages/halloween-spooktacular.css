@@ -1,0 +1,339 @@
+/* Halloween Spooktacular - Sensei Sandy BJJ */
+
+.hs-page {
+  background-color: var(--ss-bg, #FBFAF8);
+  color: var(--ss-text, #1F1712);
+  font-family: var(--sans-font, system-ui, -apple-system, sans-serif);
+}
+
+.hs-hero {
+  padding: 3.5rem 1rem 2.5rem;
+  background: linear-gradient(180deg, #F4F1ED 0%, #FBFAF8 100%);
+  border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.1));
+}
+
+.hs-hero-container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hs-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.hs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  background: #FFFFFF;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--ss-green, #116A42);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.hs-badge--orange {
+  color: #B45309;
+  border-color: rgba(180, 83, 9, 0.25);
+  background: #FFFBEB;
+}
+
+.hs-title {
+  font-family: 'Lexend', var(--sans-font, system-ui, sans-serif);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 1rem;
+}
+
+.hs-title-accent {
+  color: var(--ss-green, #116A42);
+}
+
+.hs-subtitle {
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  color: var(--ss-muted, #4F433C);
+  max-width: 720px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.55;
+}
+
+.hs-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 14px;
+  margin: 0 auto 2rem;
+  max-width: 780px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.hs-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ss-ink, #362B24);
+}
+
+.hs-meta-item i {
+  color: var(--ss-green, #116A42);
+  font-size: 1.15rem;
+}
+
+.hs-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hs-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background-color: var(--ss-green, #116A42);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  min-height: 48px;
+}
+
+.hs-btn-primary:hover {
+  background-color: #0d5434;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.hs-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background-color: #FFFFFF;
+  color: var(--ss-ink, #362B24);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.2));
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+  min-height: 48px;
+}
+
+.hs-btn-secondary:hover {
+  background-color: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-ink, #362B24);
+}
+
+/* Section styling */
+.hs-section {
+  padding: 3.5rem 1rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.hs-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.hs-eyebrow {
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ss-green, #116A42);
+  margin-bottom: 0.5rem;
+}
+
+.hs-section-title {
+  font-family: 'Lexend', var(--sans-font, system-ui, sans-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.75rem;
+}
+
+.hs-section-intro {
+  font-size: 1.05rem;
+  color: var(--ss-muted, #4F433C);
+  line-height: 1.6;
+}
+
+/* Bento card grid */
+.hs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.hs-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+  border-radius: 18px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hs-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.hs-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(17, 106, 66, 0.1);
+  color: var(--ss-green, #116A42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.hs-card-icon--orange {
+  background: rgba(217, 119, 6, 0.12);
+  color: #D97706;
+}
+
+.hs-card-icon--teal {
+  background: rgba(40, 159, 161, 0.12);
+  color: var(--ss-teal, #289FA1);
+}
+
+.hs-card-title {
+  font-family: 'Lexend', var(--sans-font, system-ui, sans-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.65rem;
+}
+
+.hs-card-body {
+  font-size: 0.95rem;
+  color: var(--ss-muted, #4F433C);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Callout highlight banner */
+.hs-callout {
+  background: linear-gradient(135deg, #116A42 0%, #1e4a36 100%);
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 2.25rem;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.hs-callout-content {
+  max-width: 580px;
+}
+
+.hs-callout-title {
+  font-family: 'Lexend', var(--sans-font, system-ui, sans-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.hs-callout-desc {
+  font-size: 0.975rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.hs-callout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.65rem;
+  background: #FFFFFF;
+  color: var(--ss-green, #116A42);
+  font-weight: 700;
+  font-size: 0.975rem;
+  border-radius: 999px;
+  text-decoration: none;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.hs-callout-btn:hover {
+  background: #F4F1ED;
+  color: #0d5434;
+}
+
+/* Location and logistics */
+.hs-logistics {
+  background: var(--ss-surface2, #F4F1ED);
+  border-radius: 20px;
+  padding: 2.25rem;
+  margin-top: 2rem;
+}
+
+.hs-logistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.hs-logistics-item h4 {
+  font-family: 'Lexend', var(--sans-font, system-ui, sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.45rem;
+}
+
+.hs-logistics-item p {
+  font-size: 0.925rem;
+  color: var(--ss-muted, #4F433C);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .hs-hero {
+    padding: 2.5rem 1rem 1.75rem;
+  }
+  .hs-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.25rem;
+  }
+  .hs-callout {
+    padding: 1.75rem 1.25rem;
+  }
+}

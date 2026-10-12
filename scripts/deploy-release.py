@@ -10,6 +10,7 @@ ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scri
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 ROOT_FILES.add('womens-jiu-jitsu-tannersville.html')
 ROOT_FILES.add('pricing-module-fragment.html')
+ROOT_FILES.add('halloween-spooktacular.html')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
                    'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml')
 RESEARCH_RECORD_OUTPUTS = (
