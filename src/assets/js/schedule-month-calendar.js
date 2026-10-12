@@ -10,7 +10,6 @@
   const datedClasses = JSON.parse(root.dataset.datedClasses || '[]');
   const closures = JSON.parse(root.dataset.closures || '[]');
   const weekNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  const weekShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   const monthFmt = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'America/New_York' });
   const dateFmt = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/New_York' });
   const today = new Date(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()) + 'T12:00:00');
@@ -68,54 +67,81 @@
     daysRoot.replaceChildren();
     const first = new Date(viewMonth.getFullYear(), viewMonth.getMonth(), 1);
     const count = new Date(viewMonth.getFullYear(), viewMonth.getMonth() + 1, 0).getDate();
-    for (let pad = 0; pad < dayIndex(first); pad += 1) {
-      const empty = document.createElement('span');
-      empty.className = 'ss-month-empty';
-      empty.setAttribute('aria-hidden', 'true');
-      daysRoot.append(empty);
-    }
-    for (let number = 1; number <= count; number += 1) {
-      const date = new Date(viewMonth.getFullYear(), viewMonth.getMonth(), number, 12);
-      const button = document.createElement('button');
-      const slots = getSlots(weekNames[dayIndex(date)], date);
-      button.type = 'button';
-      button.className = 'ss-month-date';
-      button.dataset.calendarDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(number).padStart(2, '0')}`;
-      button.setAttribute('role', 'gridcell');
-      button.setAttribute('aria-label', `${dateFmt.format(date)}${slots.length ? `, ${slots.length} classes` : ', no group classes listed'}`);
-      button.setAttribute('aria-pressed', 'false');
-      if (date.toDateString() === today.toDateString()) button.classList.add('is-today');
-      if (slots.length) button.classList.add('has-classes');
-      const numberLabel = document.createElement('span');
-      numberLabel.className = 'ss-date-number';
-      numberLabel.textContent = String(number);
-      button.append(numberLabel);
-      if (slots.length) {
-        const indicators = document.createElement('span');
-        indicators.className = 'ss-date-indicators';
-        indicators.setAttribute('aria-hidden', 'true');
-        slots.forEach((slot) => {
-          const dot = document.createElement('i');
-          dot.className = /Women's Foundations/.test(slot.name) ? 'is-women' : /White Belt Foundations/.test(slot.name) ? 'is-foundations' : /^Youth/.test(slot.name) ? 'is-youth' : 'is-adult';
-          indicators.append(dot);
+    const rowCount = Math.ceil((dayIndex(first) + count) / 7);
+    let number = 1;
+    for (let rowIndex = 0; rowIndex < rowCount; rowIndex += 1) {
+      const row = document.createElement('div');
+      row.className = 'ss-month-row';
+      row.setAttribute('role', 'row');
+      for (let column = 0; column < 7; column += 1) {
+        const cellIndex = rowIndex * 7 + column;
+        const dayNumber = cellIndex - dayIndex(first) + 1;
+        if (dayNumber < 1 || dayNumber > count) {
+          const empty = document.createElement('span');
+          empty.className = 'ss-month-empty';
+          empty.setAttribute('role', 'gridcell');
+          empty.setAttribute('aria-hidden', 'true');
+          row.append(empty);
+          continue;
+        }
+        number = dayNumber;
+        const date = new Date(viewMonth.getFullYear(), viewMonth.getMonth(), number, 12);
+        const button = document.createElement('button');
+        const slots = getSlots(weekNames[dayIndex(date)], date);
+        button.type = 'button';
+        button.className = 'ss-month-date';
+        button.dataset.calendarDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(number).padStart(2, '0')}`;
+        button.setAttribute('role', 'gridcell');
+        button.setAttribute('aria-label', `${dateFmt.format(date)}${slots.length ? `, ${slots.length} classes` : ', no group classes listed'}`);
+        button.setAttribute('aria-pressed', 'false');
+        button.tabIndex = -1;
+        if (date.toDateString() === today.toDateString()) button.classList.add('is-today');
+        if (slots.length) button.classList.add('has-classes');
+        const numberLabel = document.createElement('span');
+        numberLabel.className = 'ss-date-number';
+        numberLabel.textContent = String(number);
+        button.append(numberLabel);
+        if (slots.length) {
+          const indicators = document.createElement('span');
+          indicators.className = 'ss-date-indicators';
+          indicators.setAttribute('aria-hidden', 'true');
+          slots.forEach((slot) => {
+            const dot = document.createElement('i');
+            dot.className = /Women's Foundations/.test(slot.name) ? 'is-women' : /White Belt Foundations/.test(slot.name) ? 'is-foundations' : /^Youth/.test(slot.name) ? 'is-youth' : 'is-adult';
+            indicators.append(dot);
+          });
+          button.append(indicators);
+        }
+        button.addEventListener('click', () => selectDate(date, button));
+        button.addEventListener('keydown', (event) => {
+          const moves = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7, Home: -date.getDate() + 1, End: count - date.getDate() };
+          if (event.key === 'PageUp' || event.key === 'PageDown') {
+            event.preventDefault();
+            viewMonth = new Date(viewMonth.getFullYear(), viewMonth.getMonth() + (event.key === 'PageDown' ? 1 : -1), 1);
+            render();
+            root.querySelector('[data-calendar-date][tabindex="0"]')?.focus();
+            return;
+          }
+          if (!(event.key in moves)) return;
+          event.preventDefault();
+          const nextDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + moves[event.key], 12);
+          if (nextDate.getMonth() !== viewMonth.getMonth()) viewMonth = new Date(nextDate.getFullYear(), nextDate.getMonth(), 1);
+          render();
+          root.querySelector(`[data-calendar-date="${nextDate.getFullYear()}-${String(nextDate.getMonth() + 1).padStart(2, '0')}-${String(nextDate.getDate()).padStart(2, '0')}"]`)?.focus();
         });
-        button.append(indicators);
+        row.append(button);
       }
-      button.addEventListener('click', () => selectDate(date, button));
-      daysRoot.append(button);
-    }
-    const finalCount = daysRoot.children.length;
-    while (finalCount % 7 !== 0) {
-      const empty = document.createElement('span');
-      empty.className = 'ss-month-empty';
-      empty.setAttribute('aria-hidden', 'true');
-      daysRoot.append(empty);
+      daysRoot.append(row);
     }
     const target = viewMonth.getMonth() === today.getMonth() && viewMonth.getFullYear() === today.getFullYear()
       ? today
       : new Date(viewMonth.getFullYear(), viewMonth.getMonth(), 1, 12);
     const chosen = daysRoot.querySelector(`[data-calendar-date="${target.getFullYear()}-${String(target.getMonth() + 1).padStart(2, '0')}-${String(target.getDate()).padStart(2, '0')}"]`);
-    if (chosen) selectDate(target, chosen);
+    if (chosen) {
+      daysRoot.querySelectorAll('[data-calendar-date]').forEach((button) => { button.tabIndex = -1; });
+      chosen.tabIndex = 0;
+      selectDate(target, chosen);
+    }
   };
 
   root.querySelector('[data-calendar-prev]').addEventListener('click', () => {

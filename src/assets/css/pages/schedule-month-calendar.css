@@ -4,7 +4,8 @@
 .page-schedule .ss-month-controls button{min-width:44px;min-height:44px;padding:.45rem .7rem;border:1px solid var(--ss-border);border-radius:999px;background:var(--ss-bg);color:var(--ss-text);font:inherit;cursor:pointer}
 .page-schedule .ss-month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.25rem}
 .page-schedule .ss-month-weekday{padding:.4rem .1rem;text-align:center;color:var(--ss-muted);font-size:.72rem;font-weight:700}
-.page-schedule .ss-month-days{display:contents}
+.page-schedule .ss-month-days{display:grid;gap:.25rem}
+.page-schedule .ss-month-row{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.25rem}
 .page-schedule .ss-month-empty{min-height:3.1rem}
 .page-schedule .ss-month-date{display:flex;min-width:0;min-height:3.1rem;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;padding:.2rem;border:1px solid transparent;border-radius:.65rem;background:transparent;color:var(--ss-text);font:600 .9rem/1.1 var(--font-body);cursor:pointer}
 .page-schedule .ss-month-date:hover,.page-schedule .ss-month-date[aria-pressed=true]{border-color:var(--ss-green);background:rgba(17,106,66,.08)}
@@ -23,4 +24,6 @@
 .page-schedule .ss-selected-class small{grid-column:2;color:var(--ss-muted)}
 .page-schedule .ss-weekly-fallback>h3{margin:0 0 .65rem;font-size:1rem}
 .page-schedule [data-month-calendar]+.ss-weekly-fallback{margin-top:1.25rem}
+.page-schedule .ss-month-static{display:grid;gap:.25rem;margin:.75rem 0;padding:.8rem 1rem;border-left:3px solid var(--ss-brown);background:var(--ss-surface2);font-size:.88rem}
+.page-schedule .ss-month-static small{color:var(--ss-muted)}
 @media(max-width:420px){.page-schedule .ss-month-calendar{padding:.65rem}.page-schedule .ss-month-grid{gap:.1rem}.page-schedule .ss-month-date{min-height:2.6rem;font-size:.82rem}.page-schedule .ss-month-empty{min-height:2.6rem}.page-schedule .ss-month-controls button{padding:.4rem}.page-schedule .ss-month-controls button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}}
