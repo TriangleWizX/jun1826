@@ -102,3 +102,53 @@
   background: var(--color-accent-strong);
   color: var(--color-accent-ink);
 }
+
+/* Keep the weekly schedule scannable on desktop and as simple day cards on phones. */
+.page-schedule .ss-calendar-bezel-inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.page-schedule .ss-cal-day {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--ss-border);
+  border-radius: 12px;
+  background: var(--ss-surface);
+  overflow-wrap: anywhere;
+}
+
+.page-schedule .ss-cal-day-header {
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: .5rem;
+}
+
+.page-schedule .ss-cal-day-badge {
+  max-width: 100%;
+  line-height: 1.3;
+}
+
+.page-schedule .ss-cal-slot {
+  grid-template-columns: 1fr;
+  gap: .25rem;
+}
+
+.page-schedule .ss-month-static {
+  gap: .5rem 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+@media (max-width: 70rem) {
+  .page-schedule .ss-calendar-bezel-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .page-schedule .ss-calendar-bezel-inner {
+    grid-template-columns: 1fr;
+  }
+}
