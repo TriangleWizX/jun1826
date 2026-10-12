@@ -14,6 +14,7 @@
   const dateFmt = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/New_York' });
   const today = new Date(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()) + 'T12:00:00');
   let viewMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  let focusDate = today;
 
   const dayIndex = (date) => (date.getDay() + 6) % 7;
   const getSlots = (day, date = null) => {
@@ -62,7 +63,7 @@
     });
   };
 
-  const render = () => {
+  const render = (focusDate = null) => {
     monthLabel.textContent = monthFmt.format(viewMonth);
     daysRoot.replaceChildren();
     const first = new Date(viewMonth.getFullYear(), viewMonth.getMonth(), 1);
@@ -114,10 +115,13 @@
         }
         button.addEventListener('click', () => selectDate(date, button));
         button.addEventListener('keydown', (event) => {
-          const moves = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7, Home: -date.getDate() + 1, End: count - date.getDate() };
+          const weekStartOffset = -dayIndex(date);
+          const weekEndOffset = 6 - dayIndex(date);
+          const moves = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7, Home: Math.max(1 - date.getDate(), weekStartOffset), End: Math.min(count - date.getDate(), weekEndOffset) };
           if (event.key === 'PageUp' || event.key === 'PageDown') {
             event.preventDefault();
             viewMonth = new Date(viewMonth.getFullYear(), viewMonth.getMonth() + (event.key === 'PageDown' ? 1 : -1), 1);
+            focusDate = new Date(viewMonth.getFullYear(), viewMonth.getMonth(), Math.min(date.getDate(), new Date(viewMonth.getFullYear(), viewMonth.getMonth() + 1, 0).getDate()), 12);
             render();
             root.querySelector('[data-calendar-date][tabindex="0"]')?.focus();
             return;
@@ -126,6 +130,7 @@
           event.preventDefault();
           const nextDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + moves[event.key], 12);
           if (nextDate.getMonth() !== viewMonth.getMonth()) viewMonth = new Date(nextDate.getFullYear(), nextDate.getMonth(), 1);
+          focusDate = nextDate;
           render();
           root.querySelector(`[data-calendar-date="${nextDate.getFullYear()}-${String(nextDate.getMonth() + 1).padStart(2, '0')}-${String(nextDate.getDate()).padStart(2, '0')}"]`)?.focus();
         });
@@ -133,23 +138,28 @@
       }
       daysRoot.append(row);
     }
-    const target = viewMonth.getMonth() === today.getMonth() && viewMonth.getFullYear() === today.getFullYear()
-      ? today
+    const target = focusDate.getMonth() === viewMonth.getMonth() && focusDate.getFullYear() === viewMonth.getFullYear()
+      ? focusDate
       : new Date(viewMonth.getFullYear(), viewMonth.getMonth(), 1, 12);
     const chosen = daysRoot.querySelector(`[data-calendar-date="${target.getFullYear()}-${String(target.getMonth() + 1).padStart(2, '0')}-${String(target.getDate()).padStart(2, '0')}"]`);
     if (chosen) {
       daysRoot.querySelectorAll('[data-calendar-date]').forEach((button) => { button.tabIndex = -1; });
       chosen.tabIndex = 0;
+      focusDate = target;
       selectDate(target, chosen);
     }
   };
 
   root.querySelector('[data-calendar-prev]').addEventListener('click', () => {
+    const day = focusDate.getDate();
     viewMonth = new Date(viewMonth.getFullYear(), viewMonth.getMonth() - 1, 1);
+    focusDate = new Date(viewMonth.getFullYear(), viewMonth.getMonth(), Math.min(day, new Date(viewMonth.getFullYear(), viewMonth.getMonth() + 1, 0).getDate()), 12);
     render();
   });
   root.querySelector('[data-calendar-next]').addEventListener('click', () => {
+    const day = focusDate.getDate();
     viewMonth = new Date(viewMonth.getFullYear(), viewMonth.getMonth() + 1, 1);
+    focusDate = new Date(viewMonth.getFullYear(), viewMonth.getMonth(), Math.min(day, new Date(viewMonth.getFullYear(), viewMonth.getMonth() + 1, 0).getDate()), 12);
     render();
   });
   render();
