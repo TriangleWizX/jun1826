@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sensei Sandy BJJ//Womens Foundations Pilot//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:womens-foundations-2026-11-07@senseisandy.com
+DTSTAMP:20261012T120000Z
+SUMMARY:Sensei Sandy BJJ - Women's Foundations (Women Only)
+DTSTART;TZID=America/New_York:20261107T090000
+DTEND;TZID=America/New_York:20261107T100000
+RRULE:FREQ=WEEKLY;COUNT=3;BYDAY=SA
+LOCATION:Sensei Sandy BJJ\, 6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485
+DESCRIPTION:Women's Foundations pilot class. Six planned dates across November and December 2026.
+END:VEVENT
+BEGIN:VEVENT
+UID:womens-foundations-2026-12-05@senseisandy.com
+DTSTAMP:20261012T120000Z
+SUMMARY:Sensei Sandy BJJ - Women's Foundations (Women Only)
+DTSTART;TZID=America/New_York:20261205T090000
+DTEND;TZID=America/New_York:20261205T100000
+RRULE:FREQ=WEEKLY;COUNT=3;BYDAY=SA
+LOCATION:Sensei Sandy BJJ\, 6045 Main Street\, 2nd Floor Studio\, Tannersville\, NY 12485
+DESCRIPTION:Women's Foundations pilot class. November 28 is skipped.
+END:VEVENT
+END:VCALENDAR

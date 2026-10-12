@@ -92,6 +92,16 @@ def changed_outputs(commit):
     manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
 
     for name in names:
+        if name.startswith('src/assets/calendar/') and name.endswith('.ics'):
+            asset_rel = name[4:]
+            candidate = ROOT / 'dist' / asset_rel
+            if candidate.is_file():
+                outputs.add((candidate, asset_rel))
+        if name in ('src/assets/css/pages/schedule-month-calendar.css', 'src/assets/js/schedule-month-calendar.js'):
+            asset_rel = name[4:]
+            candidate = ROOT / 'dist' / asset_rel
+            if candidate.is_file():
+                outputs.add((candidate, asset_rel))
         if name.startswith('api/'):
             candidate = ROOT / name
             if candidate.is_file():
@@ -134,6 +144,7 @@ def changed_outputs(commit):
             elif name == 'src/schedule.html':
                 candidate = ROOT / 'dist' / 'schedule' / 'index.html'
                 if candidate.is_file():
+                    outputs.add((candidate, 'schedule/index.html'))
                     outputs.add((candidate, 'schedule.html'))
             elif name in ('src/options-pricing.html', 'src/options-pricing.njk'):
                 html_c = ROOT / 'dist' / 'options-pricing.html'
@@ -324,6 +335,19 @@ def main():
     if args.only:
         allowed = set(args.only)
         files = [item for item in files if item[1] in allowed]
+        if not files and args.commit == 'HEAD':
+            staged = subprocess.check_output(['git', 'diff', '--cached', '--name-only'], cwd=ROOT, text=True).splitlines()
+            if 'src/schedule.html' in staged:
+                candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+                if candidate.is_file() and 'schedule/index.html' in allowed:
+                    files.append((candidate, 'schedule/index.html'))
+            for name in staged:
+                if name.startswith('src/assets/calendar/') and name.endswith('.ics') or name in ('src/assets/css/pages/schedule-month-calendar.css', 'src/assets/js/schedule-month-calendar.js'):
+                    rel = name[4:]
+                    candidate = ROOT / 'dist' / rel
+                    if candidate.is_file() and rel in allowed:
+                        files.append((candidate, rel))
+            files = sorted(set(files), key=lambda item: (1 if item[1].endswith('.html') else 0, item[1]))
     print(f'payload_files={len(files)} commit={args.commit}')
     for _, rel in files: print(rel)
     if args.dry_run: return

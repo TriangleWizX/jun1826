@@ -27,6 +27,11 @@ for (const [day, audience, time, format] of expected) {
   if (match && !match.id) fail(`canonical class is missing an id: ${day} ${audience}`);
 }
 if (canonical.privateCoaching?.slots?.some((slot) => slot.time !== "By request")) fail("private coaching contains a recurring time");
+const foundationsClasses = active.filter((item) => item.publicLabel === "White Belt Foundations");
+if (foundationsClasses.length !== 2 || foundationsClasses.some((item) => !["Tuesday", "Thursday"].includes(item.day) || item.time !== "6:00 PM")) fail("White Belt Foundations must be listed only Tuesday and Thursday at 6 PM.");
+const womensDates = canonical.datedClasses || [];
+if (womensDates.length !== 6 || womensDates.some((item) => item.time !== "9:00 AM" || item.audience !== "Women" || item.ages !== "18+")) fail("Women’s Foundations must list six approved Saturday sessions at 9 AM for adults.");
+if (womensDates.some((item) => item.date === "2026-11-28")) fail("Women’s Foundations must skip November 28.");
 
 const scheduleJs = read("data/schedule.js");
 if (!scheduleJs.includes('scheduling: "by_request"') || !scheduleJs.includes("publicRecurringSlots: []")) fail("data/schedule.js does not model private coaching as request-based");
