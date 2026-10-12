@@ -1,0 +1,203 @@
+{
+  "version": 3,
+  "generatedAt": "2026-08-19",
+  "pilot": {
+    "status": "pilot",
+    "timezone": "America/New_York",
+    "placementStartDate": "2026-09-08",
+    "effectiveDate": "2026-09-14",
+    "measurementStartDate": "2026-09-14",
+    "measurementEndDate": "2026-10-23",
+    "reviewDate": "2026-10-26",
+    "verifiedDate": "2026-08-19",
+    "capacity": 12
+  },
+  "bookingUrls": {
+    "youth": "/free-bjj-intro-tannersville-ny",
+    "adults": "/free-bjj-intro-tannersville-ny",
+    "private": "/private-lessons"
+  },
+  "laneOrder": [
+    "youth",
+    "adults"
+  ],
+  "lanes": {
+    "youth": {
+      "label": "Youth Class, Kids + Teens",
+      "age": "Ages: Kids + Teens",
+      "time": "5:00 PM"
+    },
+    "adults": {
+      "label": "Adult Class",
+      "age": "Ages 18+",
+      "time": "6:00 PM"
+    }
+  },
+  "slots": [
+    {
+      "id": "monday-youth-teen-nogi-mon",
+      "day": "mon",
+      "startTime": "5:00",
+      "endTime": "6:00",
+      "program": "youth",
+      "ageLane": "youth",
+      "giNoGi": "no-gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Youth/Teen",
+      "note": ""
+    },
+    {
+      "id": "monday-adult-gi-mon",
+      "day": "mon",
+      "startTime": "6:00",
+      "endTime": "7:00",
+      "program": "adults",
+      "ageLane": "adults",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Adult",
+      "note": ""
+    },
+    {
+      "id": "tuesday-youth-teen-gi-tue",
+      "day": "tue",
+      "startTime": "5:00",
+      "endTime": "6:00",
+      "program": "youth",
+      "ageLane": "youth",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Youth/Teen",
+      "note": ""
+    },
+    {
+      "id": "tuesday-adult-gi-tue",
+      "day": "tue",
+      "startTime": "6:00",
+      "endTime": "7:00",
+      "program": "adults",
+      "ageLane": "adults",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Adult",
+      "note": ""
+    },
+    {
+      "id": "wednesday-youth-teen-nogi-wed",
+      "day": "wed",
+      "startTime": "5:00",
+      "endTime": "6:00",
+      "program": "youth",
+      "ageLane": "youth",
+      "giNoGi": "no-gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Youth/Teen",
+      "note": ""
+    },
+    {
+      "id": "wednesday-adult-gi-wed",
+      "day": "wed",
+      "startTime": "6:00",
+      "endTime": "7:00",
+      "program": "adults",
+      "ageLane": "adults",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Adult",
+      "note": ""
+    },
+    {
+      "id": "thursday-youth-teen-gi-thu",
+      "day": "thu",
+      "startTime": "5:00",
+      "endTime": "6:00",
+      "program": "youth",
+      "ageLane": "youth",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Youth/Teen",
+      "note": ""
+    },
+    {
+      "id": "thursday-adult-gi-thu",
+      "day": "thu",
+      "startTime": "6:00",
+      "endTime": "7:00",
+      "program": "adults",
+      "ageLane": "adults",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Adult",
+      "note": ""
+    },
+    {
+      "id": "friday-youth-teen-gi-lab-fri",
+      "day": "fri",
+      "startTime": "5:00",
+      "endTime": "6:00",
+      "program": "youth",
+      "ageLane": "youth",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Friday Gi Lab",
+      "note": ""
+    },
+    {
+      "id": "friday-adult-gi-fri",
+      "day": "fri",
+      "startTime": "6:00",
+      "endTime": "7:00",
+      "program": "adults",
+      "ageLane": "adults",
+      "giNoGi": "gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Adult",
+      "note": ""
+    },
+    {
+      "id": "saturday-adult-nogi-sat",
+      "day": "sat",
+      "startTime": "10:30",
+      "endTime": "11:30",
+      "program": "adults",
+      "ageLane": "adults",
+      "giNoGi": "no-gi",
+      "active": true,
+      "visitorEligible": true,
+      "bookingUrl": "/free-bjj-intro-tannersville-ny",
+      "type": "group",
+      "displayLabel": "Adult",
+      "note": "Youth and teens require Sandy's approval."
+    }
+  ]
+}

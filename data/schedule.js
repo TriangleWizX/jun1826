@@ -13,7 +13,7 @@ export const schedule = {
   groupClasses: [
     {
       id: "weekday-youth-teen-nogi-1700",
-      days: ["Monday", "Wednesday", "Thursday"],
+      days: ["Monday", "Wednesday"],
       start: "5:00 PM",
       end: "6:00 PM",
       audience: "Youth + Teen",
@@ -22,7 +22,7 @@ export const schedule = {
     },
     {
       id: "tuesday-youth-teen-gi-1700",
-      days: ["Tuesday"],
+      days: ["Tuesday", "Thursday"],
       start: "5:00 PM",
       end: "6:00 PM",
       audience: "Youth + Teen",

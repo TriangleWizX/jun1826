@@ -16,7 +16,7 @@ function checkCanonicalSchedule() {
     ['Tuesday', 'Adult', '6:00 PM', 'Gi'],
     ['Wednesday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
     ['Wednesday', 'Adult', '6:00 PM', 'Gi'],
-    ['Thursday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
+    ['Thursday', 'Youth/Teen', '5:00 PM', 'Gi'],
     ['Thursday', 'Adult', '6:00 PM', 'Gi'],
     ['Friday', 'Youth/Teen', '5:00 PM', 'Gi'],
     ['Friday', 'Adult', '6:00 PM', 'Gi'],
@@ -37,7 +37,7 @@ function checkCanonicalSchedule() {
   if (datedWomen.some((item) => item.date === '2026-11-28')) return ['Women’s Foundations must skip November 28.'];
   const youth = activeGroupClasses.filter((entry) => entry.audience === 'Youth/Teen');
   const adults = activeGroupClasses.filter((entry) => entry.audience === 'Adult');
-  if (youth.length !== 5 || youth.filter((entry) => entry.format === 'No-Gi').length !== 3 || youth.filter((entry) => entry.format === 'Gi').length !== 2) return ['Youth schedule ratio must be three No-Gi and two Gi.'];
+  if (youth.length !== 5 || youth.filter((entry) => entry.format === 'No-Gi').length !== 2 || youth.filter((entry) => entry.format === 'Gi').length !== 3) return ['Youth schedule ratio must be two No-Gi and three Gi.'];
   if (adults.length !== 6 || adults.filter((entry) => entry.format === 'No-Gi').length !== 1 || adults.filter((entry) => entry.format === 'Gi').length !== 5) return ['Adult schedule must have five weekday Gi classes and one Saturday No-Gi class.'];
   if (data.pilot?.capacity !== 12 || data.groupClasses.find((entry) => entry.id === 'friday-youth-teen-gi-lab')?.publicLabel !== 'Friday Gi Lab') return ['Pilot capacity or Friday Gi Lab label is incorrect.'];
 
