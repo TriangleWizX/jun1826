@@ -9,6 +9,7 @@ DEPLOYABLE_ROOTS = ('_includes/', 'assets/', 'winter-rank-drop/', 'admin/', 'ath
 ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scribners.html', 'scribners-jiu-jitsu.html', 'scribners-thank-you.html', 'partners-hospitality-hunter-windham.html', 'partners-wellness-pt-referrals.html', 'community-partners.html', 'elite-concierge.html', 'adult-private-coaching-intensive.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'daily-checkin.html', 'manifest-daily-checkin.json', 'sw-daily-checkin.js', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'local-bjj-tournaments-for-families.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html', 'schedule.html', 'camp-clinics.html', 'summer-academy.html', 'black-belt-concierge.html', 'inclusion.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 ROOT_FILES.add('womens-jiu-jitsu-tannersville.html')
+ROOT_FILES.add('pricing-module-fragment.html')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
                    'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml')
 RESEARCH_RECORD_OUTPUTS = (
@@ -118,6 +119,10 @@ def changed_outputs(commit):
                     candidate_min_fp = ROOT / 'dist' / fingerprinted_min
                     if candidate_min_fp.is_file() and (fingerprinted_min in ROOT_FILES or fingerprinted_min.startswith(DEPLOYABLE_ROOTS)):
                         outputs.add((candidate_min_fp, fingerprinted_min))
+            continue
+        if name == 'src/partials/pricing-module-fragment.html':
+            candidate = ROOT / 'dist' / 'pricing-module-fragment.html'
+            if candidate.is_file(): outputs.add((candidate, 'pricing-module-fragment.html'))
             continue
         if name.startswith('src/'):
             if name == 'src/evidence.html':
