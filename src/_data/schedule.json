@@ -20,7 +20,17 @@
     {"date":"2026-12-12","time":"9:00 AM","audience":"Women","ages":"18+","format":"No-Gi","label":"Women's Foundations","kind":"pilot"},
     {"date":"2026-12-19","time":"9:00 AM","audience":"Women","ages":"18+","format":"No-Gi","label":"Women's Foundations","kind":"pilot"}
   ],
-  "closures": [{"date": "2026-11-26", "label": "Thanksgiving Day"}, {"date": "2026-12-25", "label": "Christmas Day"}, {"date": "2027-01-01", "label": "New Year's Day"}],
+  "closures": [
+    {
+      "date": "2026-11-10",
+      "dateLabel": "Tuesday, November 10, 2026",
+      "label": "Celebrate Sensei Tom",
+      "note": "Join us to celebrate Sensei Tom at 6:30 PM. He will get his 4th degree black belt. Josh Griffiths of Clockwork BJJ will award it. Meet us at Iron Guard Dojo, 65 Main St., Pine Bush, NY 12566. Youths are welcome at the 5:00 PM class there."
+    },
+    {"date": "2026-11-26", "label": "Thanksgiving Day"},
+    {"date": "2026-12-25", "label": "Christmas Day"},
+    {"date": "2027-01-01", "label": "New Year's Day"}
+  ],
   "modifiedClasses": [],
   "weatherStatus": {"status": "open", "levels": ["OPEN", "OPEN / USE DISCRETION", "MODIFIED", "CLOSED"], "decisionWindows": ["3–4 hours before class", "2 hours before class", "90 minutes before class"]},
   "attendanceContext": {"fields": ["schoolStatus", "localEvent", "weather", "academyStatus"], "schoolStatusValues": ["Regular", "Break", "Holiday"], "academyStatusValues": ["Normal", "Special", "Modified"]},

@@ -48,6 +48,14 @@ permalink: "/schedule/"
 <section class="ss-selected-day" aria-live="polite" aria-label="Classes on selected date" data-calendar-selected><h4 data-calendar-selected-title>Pick a day to see its classes</h4><div data-calendar-selected-list><p>Each week: kids and teens at 5 PM. Adults at 6 PM. Tuesday and Thursday at 6 PM are White Belt Foundations. Saturday adult No-Gi starts at 10:30 AM.</p></div></section>
 </div>
 <div class="ss-month-static" aria-label="Approved Women's Foundations dates"><strong>Women's Foundations · 9 AM</strong><span>Nov 7, 14, 21 · Dec 5, 12, 19</span><small>Women only · No-Gi · November 28 is skipped.</small></div>
+{% for closure in schedule.closures %}
+{% if closure.note %}
+<aside class="ss-selected-class is-special" aria-label="Class closure and invitation">
+<strong>Our classes are closed on <time datetime="{{ closure.date }}">{{ closure.dateLabel or closure.date }}</time>.</strong>
+<p>{{ closure.note }}</p>
+</aside>
+{% endif %}
+{% endfor %}
 <details class="ss-weekly-fallback" aria-label="Weekly class schedule" open><summary>Weekly class times</summary>
 <div class="ss-calendar-bezel-outer">
 <div class="ss-calendar-bezel-inner">
@@ -158,7 +166,7 @@ permalink: "/schedule/"
 </div><div style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;"><a href="/private-lessons" style="color: var(--ss-text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--ss-border);">Looking for Private Coaching?</a> <span aria-hidden="true">·</span> <a href="/bjj-tannersville-ny-directions" style="color: var(--ss-text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--ss-border);">Directions and parking</a></div>
 </details>
 </div>
-<script src="/assets/js/schedule-month-calendar.js?v=20261012" defer></script>
+<script src="/assets/js/schedule-month-calendar.js?v=20261012-tom" defer></script>
 </section>
 <section class="ss-section ss-reveal" style="background: var(--ss-bg); padding-top: 0; padding-bottom: 2rem;">
 <div class="container ss-shell" style="max-width: 800px; margin: 0 auto;">

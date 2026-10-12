@@ -25,7 +25,7 @@
   const classes = (date) => {
     const key = iso(date);
     const closed = schedule.closures.find((item) => item.date === key);
-    if (closed) return [{ label: `${closed.label} · Closed`, time: '' }];
+    if (closed) return [{ ...closed, label: `${closed.label} · Closed`, time: '' }];
     const special = schedule.specialEvents.filter((item) => item.date === key);
     if (special.length) return special.map((item) => ({ ...item, time: item.time || 'Text Sandy for time' }));
     const regular = key >= schedule.season.effectiveDate ? schedule.groupClasses.filter((item) => item.active && item.dayOrder === date.getUTCDay()) : [];
