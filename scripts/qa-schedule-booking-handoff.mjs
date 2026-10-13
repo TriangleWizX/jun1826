@@ -22,23 +22,47 @@ try {
   await schedulePage.setContent(scheduleHtml.replace(/<script\b[\s\S]*?<\/script>/gi, '').replace(/<link\b[^>]*>/gi, ''));
   await schedulePage.addStyleTag({ content: calendarCss });
   await schedulePage.addScriptTag({ content: calendarScript });
-  let targetButton = schedulePage.locator(`[data-calendar-date="${targetDate}"]`);
-  for (let monthShift = 0; !(await targetButton.count()) && monthShift < 2; monthShift++) {
-    await schedulePage.locator('[data-calendar-next]').click();
-    targetButton = schedulePage.locator(`[data-calendar-date="${targetDate}"]`);
+  const scheduleData = JSON.parse(await schedulePage.locator('[data-month-calendar]').getAttribute('data-schedule'));
+  const findDateButton = async (date) => {
+    let button = schedulePage.locator(`[data-calendar-date="${date}"]`);
+    for (let monthShift = 0; !(await button.count()) && monthShift < 2; monthShift++) {
+      await schedulePage.locator('[data-calendar-next]').click();
+      button = schedulePage.locator(`[data-calendar-date="${date}"]`);
+    }
+    return button;
+  };
+  let youthLink;
+  let adultLink;
+  for (let offset = 1; offset <= 35; offset++) {
+    const date = new Date(target);
+    date.setUTCDate(target.getUTCDate() + offset - 1);
+    const dateKey = date.toISOString().slice(0, 10);
+    const button = await findDateButton(dateKey);
+    assert.equal(await button.count(), 1, `Calendar must render ${dateKey}`);
+    const closed = scheduleData.closures.some((item) => item.date === dateKey);
+    const special = scheduleData.specialEvents.filter((item) => item.date === dateKey);
+    const entries = closed ? [] : special.length ? special : [
+      ...(dateKey >= scheduleData.season.effectiveDate ? scheduleData.groupClasses.filter((item) => item.active && item.dayOrder === date.getUTCDay()) : []),
+      ...scheduleData.datedClasses.filter((item) => item.date === dateKey)
+    ];
+    const expected = entries.filter((item) => ['Adult', 'Women', 'Youth/Teen'].includes(item.audience) && item.time);
+    const linksOnDay = await schedulePage.locator(`td:has([data-calendar-date="${dateKey}"]) .ss-date-class-link`).evaluateAll((elements) => elements.map((element) => ({ href: element.href, height: element.getBoundingClientRect().height })));
+    assert.equal(linksOnDay.length, expected.length, `Each bookable class on ${dateKey} must have its own link`);
+    for (const link of linksOnDay) {
+      const url = new URL(link.href, 'https://senseisandy.com');
+      assert.equal(url.searchParams.get('class_date'), dateKey);
+      assert.ok(url.searchParams.get('class_time'));
+      assert.ok(url.searchParams.get('class'));
+      assert.ok(['adult', 'youth'].includes(url.searchParams.get('lane')));
+    }
+    if (dateKey === targetDate) {
+      youthLink = new URL(linksOnDay.find((link) => new URL(link.href, 'https://senseisandy.com').searchParams.get('lane') === 'youth').href, 'https://senseisandy.com');
+      adultLink = new URL(linksOnDay.find((link) => new URL(link.href, 'https://senseisandy.com').searchParams.get('lane') === 'adult').href, 'https://senseisandy.com');
+      await button.click();
+    }
   }
-  await targetButton.click();
-  const classLinks = schedulePage.locator(`td:has([data-calendar-date="${targetDate}"]) .ss-date-class-link`);
-  assert.equal(await classLinks.count(), 2, 'Each regular class on the selected date must be directly clickable');
-  const links = await classLinks.evaluateAll((elements) => elements.map((element) => ({ href: element.href, height: element.getBoundingClientRect().height })));
-  const youthLink = new URL(links.find((link) => new URL(link.href, 'https://senseisandy.com').searchParams.get('lane') === 'youth').href, 'https://senseisandy.com');
-  const adultLink = new URL(links.find((link) => new URL(link.href, 'https://senseisandy.com').searchParams.get('lane') === 'adult').href, 'https://senseisandy.com');
-  for (const url of [youthLink, adultLink]) {
-    assert.equal(url.searchParams.get('class_date'), targetDate);
-    assert.ok(url.searchParams.get('class_time'));
-    assert.ok(url.searchParams.get('class'));
-  }
-  assert.ok(links.every((link) => link.height >= 40), 'Mobile class links must have practical tap targets');
+  assert.ok(youthLink && adultLink, 'Upcoming youth and adult classes must have separate links');
+  assert.ok((await schedulePage.locator('.ss-date-class-link').evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().height))).every((height) => height >= 40), 'Mobile class links must have practical tap targets');
 
   const bookingPage = await browser.newPage();
   await bookingPage.route('**/*', (route) => {
