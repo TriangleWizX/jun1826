@@ -82,17 +82,10 @@ const NOINDEX_ROUTES = new Set([
   '/scribners-thank-you',
   '/scribners-staff-reset-pass',
   '/report-card',
-  '/student-hub',
-  '/sources/kodokan-etiquette'
+  '/student-hub'
 ]);
 
-const TIER_C_TOWNS = new Set([
-  'acra-ny', 'ashland-ny', 'boiceville-ny', 'coxsackie-ny', 'durham-ny',
-  'elka-park-ny', 'gilboa-ny', 'grand-gorge-ny', 'greenville-ny', 'lanesville-ny',
-  'leeds-ny', 'lexington-ny', 'maplecrest-ny', 'olive-ny', 'prattsville-ny',
-  'purling-ny', 'round-top-ny', 'roxbury-ny', 'saugerties-ny', 'schoharie-ny',
-  'shandaken-ny', 'shokan-ny', 'stamford-ny', 'phoenicia-ny'
-]);
+const TIER_C_TOWNS = new Set([]);
 
 const parseMetaDirectives = (html, name) => {
   const directives = [];

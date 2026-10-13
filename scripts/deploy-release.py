@@ -67,9 +67,19 @@ def changed_outputs(commit):
     for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
         if asset in names: outputs.add((ROOT / asset, asset))
     if 'data/url-registry.json' in names:
-        candidate = ROOT / 'dist' / 'sources' / 'kodokan-etiquette' / 'index.html'
-        if candidate.is_file():
-            outputs.add((candidate, 'sources/kodokan-etiquette/index.html'))
+        for candidate in (ROOT / 'dist' / 'bjj-classes').rglob('*.html'):
+            if candidate.is_file():
+                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+        for candidate in (ROOT / 'dist' / 'sources').rglob('*.html'):
+            if candidate.is_file():
+                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+        for candidate in (ROOT / 'dist' / 'members').rglob('*.html'):
+            if candidate.is_file():
+                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+        for rf in ('waiver.html', 'scribners-thank-you.html'):
+            candidate = ROOT / 'dist' / rf
+            if candidate.is_file():
+                outputs.add((candidate, rf))
     if 'tools/build-home-styles.mjs' in names:
         candidate = ROOT / 'dist' / 'index.html'
         if candidate.is_file():

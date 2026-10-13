@@ -6,9 +6,10 @@ const DIST = path.join(ROOT, 'dist');
 const publicRoutes = [
   '/', '/bjj-classes', '/black-belt-concierge', '/community-partners',
   '/show-up-kit', '/summer-academy', '/blog/gi-vs-no-gi-bjj-cheat-code',
-  '/blog/bioginastica-movement-no-gi', '/blog/kinetic-chess-onteora-park'
+  '/blog/bioginastica-movement-no-gi', '/blog/kinetic-chess-onteora-park',
+  '/sources/kodokan-etiquette'
 ];
-const privateRoutes = ['/report-card', '/student-hub', '/sources/kodokan-etiquette'];
+const privateRoutes = ['/report-card', '/student-hub'];
 const glossaryRoutes = ['/bjj-glossary', '/bjj-glossary/armbar', '/bjj-glossary/back-control', '/bjj-glossary/butterfly-guard', '/bjj-glossary/bridge'];
 
 const fileFor = (route) => {
