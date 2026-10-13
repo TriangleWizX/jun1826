@@ -50,3 +50,93 @@
  .ss-selected-day{margin-top:1rem;padding-top:1rem}
  .page-schedule .ss-editorial-left{margin-bottom:1.5rem}
 }
+
+/* Use a date-first monthly board with compact class markers, as in the reference schedule. */
+.page-schedule .ss-month-calendar {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(.65rem, 1.5vw, 1.25rem);
+  border-radius: 12px;
+  box-shadow: 0 .75rem 2rem rgba(54, 43, 36, .08);
+}
+
+.page-schedule .ss-month-controls {
+  padding: .9rem 1rem;
+  border-radius: 8px;
+  background: var(--ss-ink);
+  color: var(--ss-surface);
+}
+
+.page-schedule .ss-calendar-eyebrow { color: rgba(255, 255, 255, .72); }
+.page-schedule .ss-month-controls h2 { color: var(--ss-surface); }
+
+.page-schedule .ss-month-nav button {
+  border-radius: 4px;
+  background: var(--ss-surface);
+  font-weight: 700;
+}
+
+.page-schedule .ss-month-nav button:hover {
+  border-color: var(--ss-green);
+  background: var(--ss-green);
+  color: #fff;
+}
+
+.page-schedule .ss-month-grid { border-collapse: separate; border-spacing: 0; }
+
+.page-schedule .ss-month-grid th {
+  padding: .55rem .25rem;
+  border: 1px solid var(--ss-border);
+  background: var(--ss-surface2);
+  color: var(--ss-ink);
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.page-schedule .ss-month-grid td {
+  border: 1px solid var(--ss-border);
+  background: var(--ss-surface);
+}
+
+.page-schedule .ss-month-date {
+  min-height: 9rem;
+  padding: .45rem;
+  gap: .35rem;
+}
+
+.page-schedule .ss-month-date:hover { background: var(--ss-surface2); }
+
+.page-schedule .ss-date-number {
+  border-radius: 50%;
+  background: var(--ss-surface2);
+}
+
+.page-schedule .ss-month-date[aria-pressed="true"] {
+  background: #e7efea;
+  box-shadow: inset 0 0 0 2px var(--ss-green);
+}
+
+.page-schedule .ss-date-class {
+  padding: .35rem;
+  border-radius: 3px;
+  font-size: .7rem;
+  line-height: 1.25;
+}
+
+.page-schedule .ss-date-class strong { font-size: .68rem; }
+.page-schedule .ss-date-count { font-weight: 800; }
+
+.page-schedule .ss-selected-day {
+  border-top: 2px solid var(--ss-green);
+}
+
+.page-schedule .ss-selected-class {
+  border-radius: 4px;
+}
+
+@media (max-width: 700px) {
+  .page-schedule .ss-month-controls { padding: .75rem; }
+  .page-schedule .ss-month-nav button span { display: none; }
+  .page-schedule .ss-month-date { min-height: 3.5rem; }
+}

@@ -7,6 +7,7 @@ bodyClass: "lane-mixed page-schedule"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/schedule.css"
+  - "/assets/css/pages/schedule-month-calendar.css"
 permalink: "/schedule/"
 ---
 <!-- The calendar is the source for current group class days, times, audiences, and formats. -->
@@ -39,6 +40,13 @@ permalink: "/schedule/"
 <div class="ss-editorial-right ss-anim-fade-up ss-anim-delay-1">
 <div class="ss-schedule-utility-row"><span>Need to change your plan? <a href="sms:+19177368649">Text Sandy</a></span><span>New here? <a href="/free-bjj-intro-tannersville-ny#booking-flow">Plan a free first visit</a></span></div>
 
+<div class="ss-month-calendar" data-month-calendar data-schedule="{{ schedule | dump | escape }}" hidden>
+<div class="ss-month-controls" aria-label="Calendar controls"><div><p class="ss-calendar-eyebrow">Your month on the mat</p><h2 id="calendar-month" data-calendar-month aria-live="polite">Class calendar</h2></div><div class="ss-month-nav"><button type="button" data-calendar-prev aria-label="Previous month">← <span>Previous</span></button><button type="button" data-calendar-today>This month</button><button type="button" data-calendar-next aria-label="Next month"><span>Next</span> →</button></div></div>
+<p class="ss-calendar-help">All times are New York time. Pick a date for class details.</p>
+<table class="ss-month-grid" aria-labelledby="calendar-month"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody data-calendar-days></tbody></table>
+<p class="ss-month-legend"><span><i class="ss-legend-youth"></i> Kids and teens</span><span><i class="ss-legend-adult"></i> Adult class</span><span><i class="ss-legend-foundations"></i> White Belt Foundations</span><span><i class="ss-legend-women"></i> Women's Foundations · dated pilot</span></p>
+<section class="ss-selected-day" aria-live="polite" aria-label="Classes on selected date" data-calendar-selected><h4 data-calendar-selected-title>Pick a day to see its classes</h4><div data-calendar-selected-list><p>Each week: kids and teens at 5 PM. Adults at 6 PM. Tuesday and Thursday at 6 PM are White Belt Foundations. Saturday adult No-Gi starts at 10:30 AM.</p></div></section>
+</div>
 <div class="ss-month-static" aria-label="Approved Women's Foundations dates"><strong>Women's Foundations · 9 AM</strong><span>Nov 7, 14, 21 · Dec 5, 12, 19</span><small>Women only · No-Gi · November 28 is skipped.</small></div>
 {% for closure in schedule.closures %}
 {% if closure.note %}
@@ -48,8 +56,7 @@ permalink: "/schedule/"
 </aside>
 {% endif %}
 {% endfor %}
-<section class="ss-weekly-fallback" aria-label="Weekly class schedule">
-<h2 class="visually-hidden">Weekly class times</h2>
+<details class="ss-weekly-fallback" aria-label="Weekly class schedule" open><summary>Weekly class times</summary>
 <div class="ss-calendar-bezel-outer">
 <div class="ss-calendar-bezel-inner">
 <!-- Monday -->
@@ -157,8 +164,9 @@ permalink: "/schedule/"
 </div>
 </div>
 </div><div style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;"><a href="/private-lessons" style="color: var(--ss-text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--ss-border);">Looking for Private Coaching?</a> <span aria-hidden="true">·</span> <a href="/bjj-tannersville-ny-directions" style="color: var(--ss-text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--ss-border);">Directions and parking</a></div>
-</section>
+</details>
 </div>
+<script src="/assets/js/schedule-month-calendar.js?v=20261012-tom" defer></script>
 </section>
 <section class="ss-section ss-reveal" style="background: var(--ss-bg); padding-top: 0; padding-bottom: 2rem;">
 <div class="container ss-shell" style="max-width: 800px; margin: 0 auto;">
