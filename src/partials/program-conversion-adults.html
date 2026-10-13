@@ -1,152 +1,169 @@
 <section class="program-conversion-template" aria-labelledby="adults-conversion-title">
-<div class="program-hero"><div class="program-hero__content"><p class="eyebrow">ADULTS 18+ &middot; TANNERSVILLE, NY.</p><h1 id="adults-conversion-title">Adult BJJ in Tannersville.</h1><p class="lead">Start with a free visit. Meet Sandy for 15 minutes. See the room. Talk about your goals. Your first class is free.</p><p class="mb-3">You can choose to train that day or pick a later day. Sandy must confirm the class first.</p><div class="hero-actions"><a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page">{{ freeIntro.primaryCtaLabel }}</a><a class="btn btn-outline-primary" href="/schedule">See class times</a><a class="btn btn-outline-secondary" href="{{ contact.smsHref }}">Text Sandy</a></div><nav class="program-hero__quick-links" aria-label="Adult class times">{% for slot in schedule.groupClasses %}{% if slot.active and slot.audience == 'Adult' %}<a class="program-hero__chip" href="/schedule">{{ slot.day }} {{ slot.time }} {{ slot.format }}</a>{% endif %}{% endfor %}<a class="program-hero__chip" href="/options-pricing">See plans and terms</a></nav></div><div class="program-hero__media"><img loading="lazy" src="/assets/images/community-320.6d7bac.webp" width="543" height="380" alt="Adults training Jiu-Jitsu in Tannersville NY"></div></div>
-<div class="benefit-chips" aria-label="Adult class facts"><span>Free First Visit.</span><span>Class confirmed by Sandy.</span><span>First class is free.</span><span>12-week plans.</span></div>
+  <div class="program-hero">
+    <div class="program-hero__content">
+      <p class="eyebrow">ADULTS {{ programs.adults.ageRange }} &middot; TANNERSVILLE, NY.</p>
+      <h1 id="adults-conversion-title">Start BJJ in Tannersville.</h1>
+      <p class="lead">Start with a Free First Visit. Meet Sandy, see the room, and talk about your goals.</p>
+      <p class="mb-3">After the visit, you choose if you want to train that day or pick a later day. Sandy confirms the class first.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page">{{ freeIntro.primaryCtaLabel }}</a>
+        <a class="btn btn-outline-primary" href="/schedule">See class times</a>
+        <a class="btn btn-outline-secondary" href="{{ contact.smsHref }}">Text Sandy</a>
+      </div>
+      <nav class="program-hero__quick-links" aria-label="Adult class times">
+        {% for slot in schedule.groupClasses %}
+          {% if slot.active and slot.audience == 'Adult' %}
+            <a class="program-hero__chip" href="/schedule">{{ slot.day }} {{ slot.time }} {{ slot.format }}</a>
+          {% endif %}
+        {% endfor %}
+        <a class="program-hero__chip" href="/options-pricing">See plans and terms</a>
+      </nav>
+    </div>
+    <div class="program-hero__media">
+      <img loading="lazy" src="/assets/images/community-320.6d7bac.webp" width="543" height="380" alt="Adults training Jiu-Jitsu in Tannersville, NY">
+    </div>
+  </div>
 
-<!-- 12-WEEK ADULT CORE CULTURE OFFER -->
-<section class="program-overview-section py-5"><div class="container">
-  <div class="section-kicker">Adult Core Culture &middot; {{ pricing.coreCulture.termWeeks }}-Week First Term.</div>
-  <h2>Choose a class plan that fits your week.</h2>
-  <p class="lead mb-4" style="max-width: 46rem;">Your first class is free. If you choose to keep training, pick a plan.</p>
+  <div class="benefit-chips" aria-label="Adult class facts">
+    <span>{{ freeIntro.goalMappingDurationMinutes }}-minute visit.</span>
+    <span>Training is your choice.</span>
+    <span>Sandy confirms the class.</span>
+    <span>See current class times.</span>
+  </div>
 
-  <div class="row g-4">
-    <div class="col-lg-7">
-      <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
-        <div class="d-flex justify-content-between align-items-baseline mb-3">
-          <h3 class="h5 font-weight-bold mb-0" style="color: var(--ss-ink, #362B24);">What the first term includes.</h3>
+  <section class="program-overview-section py-4 bg-light" aria-labelledby="adult-proof-title">
+    <div class="container">
+      <div class="section-kicker">A student shares their view.</div>
+      <h2 id="adult-proof-title">Read what a student said.</h2>
+      <blockquote class="proof-quote-inline h-100 m-0">
+        <p class="mb-2">&ldquo;As a smaller grappler, I felt safe and welcomed.&rdquo;</p>
+        <cite>&mdash; Kelly Chan</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="program-overview-section py-5" aria-labelledby="adult-plans-title">
+    <div class="container">
+      <div class="section-kicker">Adult Core Culture &middot; {{ pricing.coreCulture.termWeeks }}-week first term.</div>
+      <h2 id="adult-plans-title">Choose a class plan for your week.</h2>
+      <p class="lead mb-4" style="max-width: 46rem;">Your first class is free. If you choose to keep training, pick a plan.</p>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="p-4 border rounded-4 bg-white h-100 shadow-sm">
+            <h3 class="h5 font-weight-bold mb-3" style="color: var(--ss-ink, #362B24);">How plans work.</h3>
+            <p class="mb-3">Choose one, two, or three planned classes each week. Each first term lasts {{ pricing.coreCulture.termWeeks }} weeks.</p>
+            <p class="mb-0">See the full <a href="/options-pricing">plan details and terms</a> before you decide.</p>
+          </div>
         </div>
-        <p class="small text-muted mb-3">Choose one, two, or three classes each week. Sandy can help you choose at your Free First Visit.</p>
-        <ul class="list-unstyled mb-0" style="font-size: 0.92rem; line-height: 2;">
-          <li class="border-bottom pb-1 mb-1">Classes each week match the plan you choose.</li>
-          <li class="border-bottom pb-1 mb-1">Saturday Adult No-Gi inclusion.</li>
-          <li class="border-bottom pb-1 mb-1">New uniform for first-time students.</li>
-          <li class="border-bottom pb-1 mb-1">Video vault access under current term rules.</li>
-          <li>Term review at week 12.</li>
-        </ul>
+        <div class="col-lg-5">
+          <div class="p-4 border rounded-4 bg-light h-100 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge rounded-pill bg-dark text-white mb-2 px-3 py-1">Adult plans.</span>
+              <h3 class="h4 font-weight-bold mb-2" style="color: var(--ss-ink, #362B24);">Weekly class plans.</h3>
+              <ul class="text-muted ps-3 mb-3" style="font-size: 0.92rem; line-height: 1.7;">
+                {% for frequency, plan in pricing.coreCulture.frequencyLadder.adult %}
+                  <li>{{ frequency }} class{% if frequency != '1' %}es{% endif %} each week: {{ plan['12Weeks'] | usd }} for {{ pricing.coreCulture.termWeeks }} weeks.</li>
+                {% endfor %}
+              </ul>
+              <p class="small text-muted mb-4">See what each plan includes and read the current <a href="/guarantee-terms">guarantee terms</a>.</p>
+            </div>
+            <div>
+              <a class="btn btn-primary w-100 mb-2" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page-stack">{{ freeIntro.primaryCtaLabel }}</a>
+              <a class="btn btn-link w-100 mb-2" href="/options-pricing">See plans and terms</a>
+              <p class="small text-muted text-center mb-0">{{ freeIntro.publicCopy.clothing }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-lg-5">
-      <div class="p-4 border rounded-4 bg-light h-100 d-flex flex-column justify-content-between">
-        <div>
-          <span class="badge rounded-pill bg-dark text-white mb-2 px-3 py-1">Adult plans.</span>
-          <h3 class="h4 font-weight-bold mb-2" style="color: var(--ss-ink, #362B24);">Pick your weekly class plan.</h3>
-          <ul class="text-muted ps-3 mb-3" style="font-size: 0.92rem; line-height: 1.7;">
-            {% for frequency, plan in pricing.coreCulture.frequencyLadder.adult %}
-            <li>{{ frequency }} class{% if frequency != '1' %}es{% endif %} each week: {{ plan['12Weeks'] | usd }} for {{ pricing.coreCulture.termWeeks }} weeks.</li>
-            {% endfor %}
-          </ul>
-          <p class="small text-muted mb-4">See the full plans and terms before you decide.</p>
+  </section>
+
+  <section class="program-overview-section py-5 bg-light" aria-labelledby="adult-practice-title">
+    <div class="container">
+      <div class="section-kicker">Coached practice.</div>
+      <h2 id="adult-practice-title">Learn one step at a time.</h2>
+      <p class="lead mb-4" style="max-width: 44rem;">Sandy sets a task. You try a move with a partner. He guides the pace and can help as you learn.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <article class="p-4 h-100 border rounded-4 bg-white">
+            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">First class.</span>
+            <h3 class="h5 font-weight-bold">Learn how to move.</h3>
+            <p class="mb-0 text-muted">Learn safe movement, good posture, and a clear first drill with coach guidance.</p>
+          </article>
         </div>
-        <div>
-          <a class="btn btn-primary w-100 mb-2" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page-stack">{{ freeIntro.primaryCtaLabel }}</a>
-          <a class="btn btn-link w-100 mb-2" href="/options-pricing">See plans and terms</a>
-          <blockquote class="proof-quote-inline mt-3 mb-3">
-            <p class="mb-1">&ldquo;As a smaller grappler, I felt safe and welcomed.&rdquo;</p>
-            <cite>Kelly Chan</cite>
-          </blockquote>
-          <p class="small text-muted text-center mb-0">For a visit, wear day clothes. To train, wear clean gym clothes. Follow the class plan Sandy sends you.</p>
+        <div class="col-md-4">
+          <article class="p-4 h-100 border rounded-4 bg-white">
+            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">As practice continues.</span>
+            <h3 class="h5 font-weight-bold">Try a move with a partner.</h3>
+            <p class="mb-0 text-muted">Sandy sets a task. Your partner moves as you try. Sandy guides the pace.</p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="p-4 h-100 border rounded-4 bg-white">
+            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Your next step.</span>
+            <h3 class="h5 font-weight-bold">Ask for help.</h3>
+            <p class="mb-0 text-muted">Ask Sandy what you learned and what to work on next.</p>
+          </article>
         </div>
       </div>
     </div>
-  </div>
-</div></section>
+  </section>
 
-<!-- 14-DAY TIMELINE TO CONFIDENCE -->
-<section class="program-overview-section py-5 bg-light"><div class="container">
-  <div class="section-kicker">Coached Practice.</div>
-  <h2>Build skill at your own pace.</h2>
-  <p class="lead mb-4" style="max-width: 44rem;">Start where you are today. Build skill through coached practice at your own pace.</p>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">First class.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Learn how to move.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Learn safe movement, good posture, and a clear first drill with coach guidance.</p>
-      </article>
+  <section class="program-overview-section py-5" aria-labelledby="adult-first-visit-title">
+    <div class="container">
+      <div class="section-kicker">Your first visit.</div>
+      <h2 id="adult-first-visit-title">Meet Sandy before class.</h2>
+      <p class="lead" style="max-width: 44rem;">{{ freeIntro.publicCopy.adultTraining }}</p>
+      <div class="row g-4 mt-3">
+        <div class="col-md-4">
+          <article class="p-4 h-100 border rounded-4 bg-white">
+            <span class="badge rounded-pill mb-2 px-3 py-1">Step 1.</span>
+            <h3 class="h5 font-weight-bold">Talk about your goals.</h3>
+            <p class="mb-0 text-muted">Meet Sandy, see the room, and ask your questions.</p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="p-4 h-100 border rounded-4 bg-white">
+            <span class="badge rounded-pill mb-2 px-3 py-1">Step 2.</span>
+            <h3 class="h5 font-weight-bold">Choose a class time.</h3>
+            <p class="mb-0 text-muted">See the <a href="/schedule">current schedule</a>. Sandy confirms the class before you train.</p>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="p-4 h-100 border rounded-4 bg-white">
+            <span class="badge rounded-pill mb-2 px-3 py-1">Step 3.</span>
+            <h3 class="h5 font-weight-bold">Try a coached first class.</h3>
+            <p class="mb-0 text-muted">{{ freeIntro.publicCopy.firstClass }} {{ freeIntro.publicCopy.sparring }}</p>
+          </article>
+        </div>
+      </div>
     </div>
-    <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">As practice continues.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Try each move with a partner.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Sandy sets a task. Your partner moves as you try. Sandy guides the pace.</p>
-      </article>
-    </div>
-    <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Progress feedback.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Notice Your Next Step.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;" data-free-intro-copy>Ask Sandy how he shares class feedback. You can ask at your Free First Visit.</p>
-      </article>
-    </div>
-  </div>
-</div></section>
+  </section>
 
-<!-- FIRST-TERM DECISION SUPPORT -->
-<section class="program-overview-section py-5 bg-white"><div class="container">
-  <div class="section-kicker">A clear first-term path.</div>
-  <h2>Know what supports you from the start.</h2>
-  <p class="lead mb-4" style="max-width: 44rem;" data-free-intro-copy>Meet Sandy and learn the rules. Ask about class plans and paid terms. Choose what fits your schedule.</p>
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-3">
-      <article class="p-4 h-100 border rounded-4 bg-light">
-        <h3 class="h6 font-weight-bold text-success mb-2">1. Free First Visit.</h3>
-        <p class="small text-muted mb-0">Meet Sandy. See the room. Learn the rules. Talk about your goals and class times.</p>
-      </article>
+  <section class="program-overview-section py-5 bg-light" aria-labelledby="adult-community-title">
+    <div class="container">
+      <div class="section-kicker">Community service plan.</div>
+      <h2 id="adult-community-title">Ask about the community service rate.</h2>
+      <p>First {{ pricing.coreCulture.termWeeks }} weeks: {{ pricing.coreCulture.communityServiceAdult.displayPrice }}.</p>
+      <p>{{ pricing.coreCulture.communityServiceAdult.eligibility }} One uniform comes with a first qualifying enrollment. This rate is for the regular adult program.</p>
+      <a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=community-service" data-analytics-event="community_service_clicked" data-avatar="adult">{{ freeIntro.primaryCtaLabel }}</a>
     </div>
-    <div class="col-md-6 col-lg-3">
-      <article class="p-4 h-100 border rounded-4 bg-light">
-        <h3 class="h6 font-weight-bold text-success mb-2">2. Training Fit Guarantee.</h3>
-        <p class="small text-muted mb-0">First-term adult programs include our 30-Day Training Fit Guarantee (<a href="/guarantee-terms">terms</a>).</p>
-      </article>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <article class="p-4 h-100 border rounded-4 bg-light">
-        <h3 class="h6 font-weight-bold text-success mb-2">3. Gear for your first paid term.</h3>
-        <p class="small text-muted mb-0">Your first paid term comes with a uniform.</p>
-      </article>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <article class="p-4 h-100 border rounded-4 bg-light">
-        <h3 class="h6 font-weight-bold text-success mb-2">4. Partner Guidance.</h3>
-        <p class="small text-muted mb-0">Sandy matches partners by size and experience.</p>
-      </article>
-    </div>
-  </div>
-</div></section>
+  </section>
 
-<section class="program-overview-section py-5 bg-light"><div class="container">
-  <div class="section-kicker">First visit walkthrough.</div>
-  <h2>How adult beginners start.</h2>
-  <p class="lead" style="max-width: 44rem;">{{ freeIntro.publicCopy.adultTraining }} Live partner practice is your choice too.</p>
-  <div class="row g-4 mt-3">
-    <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1" style="background: rgba(17, 106, 66, 0.1); color: var(--ss-green, #116A42); font-weight: 700;">Step 1.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">15-Minute Visit &amp; Tour.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;" data-free-intro-copy>For a visit, wear day clothes. To train, wear clean gym clothes. Follow the class plan Sandy sends you.</p>
-      </article>
+  <section class="program-overview-section py-5" aria-labelledby="adult-family-title">
+    <div class="container">
+      <div class="section-kicker">For parents.</div>
+      <h2 id="adult-family-title">Try a class for yourself.</h2>
+      <p>Does your child train here? Meet Sandy, share your goals, and see which class fits your week.</p>
+      <a class="btn btn-outline-primary" href="/schedule">See the Adult Schedule</a>
     </div>
-    <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1" style="background: rgba(17, 106, 66, 0.1); color: var(--ss-green, #116A42); font-weight: 700;">Step 2.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Find your class.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Sandy helps you choose a class. Talk about your goals and pace.</p>
-      </article>
+  </section>
+
+  <section class="program-overview-section py-5 bg-light text-center" aria-labelledby="adult-final-cta-title">
+    <div class="container">
+      <h2 id="adult-final-cta-title">Start with a calm, coached first visit.</h2>
+      <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page-bottom">{{ freeIntro.primaryCtaLabel }}</a>
+      <p class="small mt-3"><a href="/how-class-works">How class works</a> &middot; <a href="/jiu-jitsu-safety-tannersville-ny">Class safety</a> &middot; <a href="/options-pricing">Plans and prices</a></p>
     </div>
-    <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1" style="background: rgba(17, 106, 66, 0.1); color: var(--ss-green, #116A42); font-weight: 700;">Step 3.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Coached First Class.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;" data-free-intro-copy>{{ freeIntro.publicCopy.adultTraining }}</p>
-      </article>
-    </div>
-  </div>
-</div></section>
-
-<section class="program-overview-section py-5"><div class="container"><div class="section-kicker">What you learn.</div><h2>Skills for class.</h2><div class="benefit-card-grid"><article class="benefit-card"><h3>Escape.</h3><p>Use balance and skill.</p></article><article class="benefit-card"><h3>Control.</h3><p>Learn calm partner work.</p></article><article class="benefit-card"><h3>Adapt.</h3><p>Try simple goals.</p></article><article class="benefit-card"><h3>Ask questions.</h3><p>Get help as you learn.</p></article></div><p><a href="/how-class-works">See how class works.</a></p></div></section>
-
-<section class="program-overview-section py-5 bg-light"><div class="container"><div class="section-kicker">Community-Service Pricing.</div><h2>First 12 weeks: {{ pricing.coreCulture.communityServiceAdult.displayPrice }}</h2><p>{{ pricing.coreCulture.communityServiceAdult.eligibility }} qualify. First qualifying enrollment includes one uniform. You train in the regular adult program.</p><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=community-service" data-analytics-event="community_service_clicked" data-avatar="adult">Reserve Your Free First Visit</a></div></section>
-
-<section class="program-overview-section py-5 bg-white"><div class="container"><div class="section-kicker">For parents.</div><h2>A class for you.</h2><p>Does your child train here? You can try a class too. Meet Sandy and share your goals. Pick a class that fits your week.</p><a class="btn btn-outline-primary" href="/schedule">See the Adult Schedule</a></div></section>
-
-<section class="program-overview-section py-5 bg-light text-center"><div class="container"><h2>Start with a calm, coached first visit.</h2><a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page-bottom">{{ freeIntro.primaryCtaLabel }}</a></div></section>
+  </section>
 </section>

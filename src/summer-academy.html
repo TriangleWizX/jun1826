@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
-title: "Kids Summer Jiu-Jitsu in Tannersville NY | 2026 Academy"
-description: "Six weeks of beginner-friendly summer jiu-jitsu for children ages 6-12 in Tannersville. Twelve coached mornings with movement, teamwork, and parent ori..."
+title: "Kids Summer Academy | Sensei Sandy BJJ Tannersville"
+description: "See the 2026 kids Summer Academy plan, safety steps, and parent notes. The cohort has ended. Text Sandy about future programs."
 canonicalUrl: "https://senseisandy.com/summer-academy"
 bodyClass: "page-programs ss-page"
 extraCss:
@@ -9,708 +9,143 @@ extraCss:
   - "/assets/css/pages/summer-academy.css"
 permalink: "/summer-academy.html"
 ---
-<div class="academy-announcement">
-  2026 Summer Academy · July 14–August 20 ·
-  {% if temporalPrograms.summerAcademy.programState == "IN_PROGRESS" %}
-    Current cohort in progress; new enrollment is closed.
-  {% elseif temporalPrograms.summerAcademy.programState == "ENDED" %}
-    The 2026 cohort is complete.
-  {% else %}
-    Enrollment status: {{ temporalPrograms.summerAcademy.enrollmentState | lower }}.
-  {% endif %}
+
+<div class="academy-announcement" role="status">
+  The 2026 Summer Academy has ended. Text Sandy for news about future programs.
 </div>
-
 <main class="kids-page" id="main-content" role="main">
-
   <section aria-labelledby="kids-hero-title" class="kids-hero">
     <div class="container">
       <div class="kids-hero-grid">
-        <div class="kids-hero-copy reveal-on-scroll">
-          <p class="kids-kicker">2026 KIDS SUMMER PROGRAM IN TANNERSVILLE</p>
-          <h1 id="kids-hero-title">A Small-Group Summer Jiu-Jitsu Academy for Mountaintop Kids</h1>
-          <p class="kids-lede">
-      Six weeks of coached summer mornings where children ages 6-12 build confidence, coordination, self-control, and friendships through real, beginner-friendly no-gi Brazilian Jiu-Jitsu.
-          </p>
-
-          <div aria-label="Kids intro actions" class="kids-hero-actions">
-            {% if temporalPrograms.summerAcademy.enrollmentOpen %}
-              <a class="kids-btn kids-btn--primary" href="/free-bjj-intro-tannersville-ny">
-                Reserve a Spot — $99 Deposit <span class="kids-btn-icon-wrapper"><i aria-hidden="true" class="bi bi-arrow-right"></i></span>
-              </a>
-            {% else %}
-              <a class="kids-btn kids-btn--primary" href="sms:+19177368649?body=Hi%20Sandy%21%20I%27d%20like%20to%20ask%20about%20future%20summer%20programs.">
-                Text Sandy About Future Summer Programs <span class="kids-btn-icon-wrapper"><i aria-hidden="true" class="bi bi-arrow-right"></i></span>
-              </a>
-            {% endif %}
-            <a class="kids-btn kids-btn--ghost" href="#academy-video">
-              <i aria-hidden="true" class="bi bi-play-circle"></i>
-              Watch What a Morning Looks Like
-            </a>
-          </div>
-
-          {% if temporalPrograms.summerAcademy.enrollmentOpen %}
-            <div class="mt-3 mb-2">
-              <h3 class="h5 mb-1" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Founding 12 Tuition: $499</h3>
-              <p class="small mb-0">Reserve a place with a <strong>$99 deposit</strong>.</p>
-            </div>
-          {% elseif temporalPrograms.summerAcademy.programState == "IN_PROGRESS" %}
-            <div class="alert alert-info mt-3 mb-2 py-2 px-3 small" role="status">
-              <strong>Current 2026 Summer Academy is underway.</strong><br>
-              Enrollment closed July 7. This page keeps the program logistics for participating families.
-            </div>
-          {% else %}
-            <div class="alert alert-secondary mt-3 mb-2 py-2 px-3 small" role="status">
-              <strong>2026 Summer Academy is complete.</strong><br>
-              The cohort ran July 14–August 20, 2026. Text Sandy about future summer programs.
-            </div>
-          {% endif %}
-
-          <div class="summer-hero-chips mt-3 d-flex flex-wrap gap-2">
-            <span class="summer-chip">July 14–August 20</span>
-            <span class="summer-chip">Tuesdays &amp; Thursdays · 9:00–11:30 AM</span>
-            <span class="summer-chip">12 Children Maximum</span>
-            <span class="summer-chip">No-Gi Required · Beginners Welcome</span>
+        <div class="kids-hero-copy">
+          <p class="kids-kicker">A 2026 program archive</p>
+          <h1 id="kids-hero-title">Kids Summer Academy in Tannersville</h1>
+          <p class="kids-lede">A six-week, no-gi BJJ program for kids ages 6 to 12.</p>
+          <p>Future dates and prices are not set.</p>
+          <div aria-label="Summer Academy next steps" class="kids-hero-actions">
+            <a class="kids-btn kids-btn--primary" href="{{ contact.smsHref }}">Text Sandy About Future Programs</a>
+            <a class="kids-btn kids-btn--ghost" href="#program-plan">See the 2026 plan</a>
           </div>
         </div>
-        <div class="kids-hero-media reveal-on-scroll">
+        <div class="kids-hero-media">
           <picture>
-            <source media="(max-width: 767px)" srcset="/assets/images/herogigroup-768.webp" width="768" height="768"/>
-            <source srcset="/assets/images/herogigroup-1600.webp" width="1600" height="1600"/>
-            <img alt="Real mixed group of children engaged in a coached partner activity" class="kids-hero-image" decoding="async" height="3024" loading="eager" src="/assets/images/herogigroup.b5e9f0.webp" width="3024"/>
+            <source media="(max-width: 767px)" srcset="/assets/images/herogigroup-768.webp" width="768" height="768">
+            <source srcset="/assets/images/herogigroup-1600.webp" width="1600" height="1600">
+            <img alt="Children taking part in a coached BJJ class" class="kids-hero-image" decoding="async" fetchpriority="high" height="3024" src="/assets/images/herogigroup.b5e9f0.webp" width="3024">
           </picture>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-5 bg-white">
+  <section class="py-5 bg-white" id="program-plan" aria-labelledby="facts-title">
     <div class="container">
-      <h2 class="h3 mb-4" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Summer Academy at a Glance</h2>
-      <div class="table-responsive summer-facts">
-        <table class="table table-bordered">
-          <tbody>
-            <tr><th>Ages</th><td>6–12</td></tr>
-            <tr><th>Dates</th><td>July 14–August 20, 2026</td></tr>
-            <tr><th>Schedule</th><td>Tuesdays and Thursdays</td></tr>
-            <tr><th>Time</th><td>9:00–11:30 AM</td></tr>
-            <tr><th>Sessions</th><td>12</td></tr>
-            <tr><th>Total Time</th><td>30 hours</td></tr>
-            <tr><th>Group Size</th><td>12 children maximum</td></tr>
-            <tr><th>Experience</th><td>No experience required</td></tr>
-            <tr><th>Location</th><td><a href="/bjj-tannersville-ny-directions">6045 Main Street, Tannersville</a></td></tr>
-            <tr><th>Tuition</th><td>2026 founding tuition was $499</td></tr>
-            <tr><th>Enrollment</th><td>Closed July 7, 2026</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <h2 id="facts-title">The 2026 plan</h2>
+      <p>This plan was for 2026. Future programs may differ.</p>
+      <ul class="summer-facts">
+        <li><strong>Dates:</strong> July 14 to August 20, 2026.</li>
+        <li><strong>Class days:</strong> Tuesday and Thursday.</li>
+        <li><strong>Class time:</strong> 9:00 to 11:30 a.m.</li>
+        <li><strong>Age group:</strong> Ages 6 to 12.</li>
+        <li><strong>Group size:</strong> Up to {{ temporalPrograms.summerAcademy.capacity }} kids.</li>
+        <li><strong>Training:</strong> No-gi BJJ. Beginners were welcome.</li>
+      </ul>
+      <p>Twelve sessions. Two and a half hours each. Thirty hours total.</p>
+      <p>It was a class program. It was not all-day care.</p>
     </div>
   </section>
 
-  <section id="academy-video" class="py-5" style="background-color: var(--ss-surface2);">
-    <div class="container text-center">
-      <h2 class="mb-4" style="font-family: 'Lexend', sans-serif; font-weight: 700;">See What a Summer Academy Morning Feels Like</h2>
-      <div class="border rounded-3 p-5 mb-4 mx-auto bg-white" style="max-width: 800px;">
-        <p class="lead mb-0">A program video is not currently published. The written schedule and program details below are the current reference.</p>
-      </div>
-      <p class="lead fst-italic">Real children, real coaching and a small group in the Tannersville studio.</p>
-      
-      <div class="text-start mx-auto mt-4" style="max-width: 800px;">
-        <details>
-          <summary class="fw-bold" style="cursor: pointer;">View Video Transcript</summary>
-          <div class="p-3 bg-white border mt-2">
-            <p><strong>0–8 seconds:</strong> Exterior, stairs and studio entrance.</p>
-            <p><strong>8–20 seconds:</strong> Children arriving and beginning a movement game.</p>
-            <p><strong>20–35 seconds:</strong> Sandy demonstrating one simple skill.</p>
-            <p><strong>35–50 seconds:</strong> Children completing a supervised partner challenge.</p>
-            <p><strong>50–65 seconds:</strong> Snack/reset area, progress passports and a team huddle.</p>
-            <p><strong>65–80 seconds:</strong> Sandy: "This is a small summer group where children learn real jiu-jitsu, practice working with others and leave each morning proud of what they accomplished."</p>
-            <p><strong>Final screen:</strong> Dates, ages, program details and page URL.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-5 bg-white">
+  <section class="py-5 bg-light" aria-labelledby="fit-title">
     <div class="container">
-      <h2 class="text-center mb-4" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Give Them Two Active Mornings to Look Forward to Each Week</h2>
-      <p class="lead text-center mx-auto mb-5" style="max-width: 800px;">The Summer Academy gives children a reliable rhythm while keeping weekdays calm and flexible. They move, solve problems, work with partners, and learn skills that build patience and body control.</p>
-      
-      <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
-        <div class="col">
-          <div class="p-4 border rounded bg-light h-100">
-            <h3 class="h4" style="font-family: 'Lexend', sans-serif;">Confidence</h3>
-            <p>Children experience manageable challenges and practice continuing when an answer is not immediate.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded bg-light h-100">
-            <h3 class="h4" style="font-family: 'Lexend', sans-serif;">Coordination</h3>
-            <p>Movement games, safe falling and partner activities develop balance, timing and body awareness.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded bg-light h-100">
-            <h3 class="h4" style="font-family: 'Lexend', sans-serif;">Self-Control</h3>
-            <p>Children learn to manage their pace, listen for reset signals and protect their training partners.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded bg-light h-100">
-            <h3 class="h4" style="font-family: 'Lexend', sans-serif;">Friendship</h3>
-            <p>A small recurring group gives children time to become comfortable, cooperate and feel known.</p>
-          </div>
-        </div>
-      </div>
-      <p class="text-center lead fst-italic">Our goal is to help each child become more capable, calm and confident through purposeful play and skill-based jiu-jitsu.</p>
+      <h2 id="fit-title">Who could take part?</h2>
+      <ul>
+        <li>Kids ages 6 to 12.</li>
+        <li>New BJJ students were welcome.</li>
+        <li>Kids could try games and partner drills.</li>
+        <li>Parents could watch from the seating area.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="py-5" style="background-color: var(--ss-ink); color: #fff;">
-    <div class="container text-center mx-auto" style="max-width: 800px;">
-      {% if temporalPrograms.summerAcademy.enrollmentOpen %}
-      <h2 class="mb-3" style="font-family: 'Lexend', sans-serif; font-weight: 700; color: var(--ss-green);">One Complete Six-Week Experience</h2>
-      {% else %}
-      <h2 class="mb-3" style="font-family: 'Lexend', sans-serif; font-weight: 700; color: var(--ss-green);">2026 Summer Academy Program Details</h2>
-      {% endif %}
-      <h3 class="h4 mb-4" style="color: var(--ss-cyan);">Mountaintop Kids Jiu-Jitsu Summer Academy</h3>
-      
-      <div class="p-4 border rounded mb-4 text-start mx-auto" style="max-width: 600px; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2) !important;">
-        {% if temporalPrograms.summerAcademy.enrollmentOpen %}<p class="h3 mb-2" style="font-family: 'Lexend', sans-serif;">$499 Founding 12 Tuition</p>{% else %}<p class="h3 mb-2" style="font-family: 'Lexend', sans-serif;">2026 tuition was $499</p>{% endif %}
-          <p class="lead mb-2" style="color: #fff;"><strong>Six weeks · 12 mornings · 30 total hours</strong></p>
-          {% if temporalPrograms.summerAcademy.enrollmentOpen %}
-            <p class="mb-3" style="color: #fff;">Launch tuition is <strong>$499</strong> for the first four approved families.</p>
-            <p class="mb-3" style="color: #fff;"><del>$599 standard tuition</del></p>
-            <p class="lead mb-3" style="color: #fff;">After approval, reserve a place with a private <strong>$99 deposit</strong> link held for 24 hours.</p>
-            <p class="small mb-4" style="color: rgba(255, 255, 255, 0.9);">Payment plans are available after approval at a higher total tuition rate.</p>
-          {% else %}
-            <p class="mb-4" style="color: #fff;">Enrollment closed July 7, 2026. These details are retained for participating families and historical reference.</p>
-          {% endif %}
-        
-        <h4 class="h5 border-bottom pb-2 mb-3">Included</h4>
-        <div class="row row-cols-1 g-2">
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>12 coached 2½-hour sessions</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>30 total program hours</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Beginner-friendly Brazilian Jiu-Jitsu</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Movement and coordination games</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Skill-based partner resistance</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Safe falling and body-awareness practice</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Verbal boundary-setting exercises</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Team challenges</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Youth leadership opportunities</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Summer Progress Passport</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Academy T-shirt</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Parent orientation</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Final family showcase</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Written progress review</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Loaner gi access</div>
-          <div class="col"><i class="bi bi-check2 text-success me-2"></i>Two regular youth-class make-up credits</div>
-        </div>
-      </div>
-      
-      {% if temporalPrograms.summerAcademy.enrollmentOpen %}
-        <a class="btn btn-primary btn-lg mb-4" href="/free-bjj-intro-tannersville-ny">Reserve One of 12 Places</a>
-        <p class="small" style="color: var(--ss-ink);">Siblings receive 10% off standard tuition. The sibling discount cannot be combined with the $499 launch tuition.</p>
-        <p class="small text-muted mt-3">Interested in a shorter option? Join the availability list. Shorter blocks may open only if space remains after full-program enrollment, and they do not include full-program completion benefits.</p>
-      {% else %}
-        <a class="btn btn-primary btn-lg mb-4" href="sms:+19177368649?body=Hi%20Sandy%21%20I%27d%20like%20to%20ask%20about%20future%20summer%20programs.">Text Sandy About Future Summer Programs</a>
-      {% endif %}
-    </div>
-  </section>
-
-  <section class="py-5 bg-white">
+  <section class="py-5 bg-light" aria-labelledby="morning-title">
     <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Is This a Good Fit for My Child?</h2>
-      
-      <div class="row g-5">
-        <div class="col-md-6">
-          <div class="p-4 border rounded h-100">
-            <h3 class="h5 mb-4" style="font-family: 'Lexend', sans-serif;">The Summer Academy may fit a child who:</h3>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Needs a constructive summer routine</li>
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Enjoys learning through movement and games</li>
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Would benefit from a smaller group</li>
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Wants to try martial arts in a cooperative, supportive environment</li>
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Needs practice with focus or confidence</li>
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Likes solving physical problems</li>
-              <li class="mb-0"><i class="bi bi-check-circle-fill text-success me-2"></i>Has never trained jiu-jitsu</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="p-4 border rounded bg-light h-100">
-            <h3 class="h5 mb-4" style="font-family: 'Lexend', sans-serif;">Parents should know:</h3>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-3"><i class="bi bi-info-circle-fill text-primary me-2"></i>Activities include supervised physical contact.</li>
-              <li class="mb-3"><i class="bi bi-info-circle-fill text-primary me-2"></i>Children must follow reset signals and partner-safety instructions.</li>
-              <li class="mb-3"><i class="bi bi-info-circle-fill text-primary me-2"></i>The program is not all-day childcare.</li>
-              <li class="mb-3"><i class="bi bi-info-circle-fill text-primary me-2"></i>The academy uses games, but each game has a teaching objective.</li>
-              <li class="mb-0"><i class="bi bi-info-circle-fill text-primary me-2"></i>Accommodations should be discussed before enrollment.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="text-center mt-5">
-        <a class="btn btn-outline-secondary btn-lg fw-bold" href="sms:+19177368649?body=Hi%20Sandy%21%20I%27m%20interested%20in%20booking%20a%2015%20minute%20call%20to%20map%20my%20BJJ%20Goals%20at%20Sensei%20Sandy%20Brazilian%20Jiu%20Jitsu%21%20Can%20you%20help%20me%20confirm%20the%20best%20time%3F">Text Sandy About My Child</a>
-      </div>
+      <h2 id="morning-title">How a morning was set up</h2>
+      <ol>
+        <li><strong>9:00:</strong> Arrive and get set.</li>
+        <li><strong>9:10:</strong> Play a movement game.</li>
+        <li><strong>9:30:</strong> Learn BJJ.</li>
+        <li><strong>10:05:</strong> Take a snack break.</li>
+        <li><strong>10:20:</strong> Try a partner game with skill-based resistance.</li>
+        <li><strong>10:55:</strong> Work as a team.</li>
+        <li><strong>11:20:</strong> Cool down and add to the Progress Passport.</li>
+        <li><strong>11:30:</strong> Meet the adult set for pickup.</li>
+      </ol>
+      <p>Parents could watch from the seating area.</p>
     </div>
   </section>
 
-  <section class="py-5" style="background-color: var(--ss-surface2);">
+  <section class="py-5 bg-white" aria-labelledby="weeks-title">
     <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Lexend', sans-serif; font-weight: 700;">A Clear Rhythm for Every Morning</h2>
-      
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="timeline ps-4 border-start border-3 border-primary position-relative" style="margin-left: 20px;">
-            <div class="mb-4 position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">9:00 — Arrival and Readiness</h3>
-              <p class="text-muted">Belongings, water, bathroom and a brief emotional check-in.</p>
-            </div>
-            <div class="mb-4 position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">9:10 — Movement Game</h3>
-              <p class="text-muted">Running, crawling, balancing, reacting and coordinating.</p>
-            </div>
-            <div class="mb-4 position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">9:30 — Jiu-Jitsu Class</h3>
-              <p class="text-muted">One clear problem and one or two practical solutions.</p>
-            </div>
-            <div class="mb-4 position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">10:05 — Snack and Reset</h3>
-              <p class="text-muted">A supervised break for water, food and regrouping.</p>
-            </div>
-            <div class="mb-4 position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">10:20 — Partner Resistance Games</h3>
-              <p class="text-muted">Short rounds with a specific goal, clear limits and active coaching.</p>
-            </div>
-            <div class="mb-4 position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">10:55 — Team Challenge</h3>
-              <p class="text-muted">Communication, leadership or structured problem-solving.</p>
-            </div>
-            <div class="mb-4 position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">11:20 — Cooldown and Progress Passport</h3>
-              <p class="text-muted">Children reflect on what they practiced and record progress.</p>
-            </div>
-            <div class="position-relative">
-              <div class="position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -32px; top: 6px;"></div>
-              <h3 class="h5 fw-bold mb-1">11:30 — Authorized Pickup</h3>
-            </div>
-          </div>
-          <p class="lead fst-italic text-center mt-5">Children spend more time moving and solving problems than listening to long explanations.</p>
-        </div>
-      </div>
+      <h2 id="weeks-title">Six week themes</h2>
+      <p>These were the 2026 themes. A future program may change.</p>
+      <ul>
+        <li>Week 1: Ready body and class rules.</li>
+        <li>Week 2: Balance and takedowns.</li>
+        <li>Week 3: Escapes and clear boundaries.</li>
+        <li>Week 4: Guard and problem solving.</li>
+        <li>Week 5: Top control and team roles.</li>
+        <li>Week 6: Safe work around submissions.</li>
+      </ul>
+      <p>Kids practiced movement, safe falls, partner choices, and team tasks.</p>
+      <p>They could use words to set a boundary or ask for help.</p>
+      <p>Skills were taught at a pace that fit the child and the task.</p>
     </div>
   </section>
 
-  <section class="py-5 bg-white">
+  <section class="py-5 bg-light" aria-labelledby="included-title">
     <div class="container">
-      <h2 class="text-center mb-3" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Six Weeks of Real, Age-Appropriate Jiu-Jitsu</h2>
-      <p class="text-center lead mx-auto mb-5" style="max-width: 800px;">This is not a collection of unrelated activities. Each week builds on the movement, safety and partner habits introduced before it.</p>
-      
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="p-4 border rounded h-100 border-start border-4 border-primary">
-            <h3 class="h5" style="font-family: 'Lexend', sans-serif;">Week 1 — Ready Body</h3>
-            <p class="mb-0">Safe falling, mat movement, personal space and partner habits.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded h-100 border-start border-4 border-primary">
-            <h3 class="h5" style="font-family: 'Lexend', sans-serif;">Week 2 — Balance and Takedowns</h3>
-            <p class="mb-0">Stance, posture, push-pull balance and controlled takedown games.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded h-100 border-start border-4 border-primary">
-            <h3 class="h5" style="font-family: 'Lexend', sans-serif;">Week 3 — Escapes and Boundaries</h3>
-            <p class="mb-0">Creating space, standing safely, speaking clearly and finding help.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded h-100 border-start border-4 border-primary">
-            <h3 class="h5" style="font-family: 'Lexend', sans-serif;">Week 4 — Guard and Problem-Solving</h3>
-            <p class="mb-0">Frames, distance, sweeping games and staying calm while stuck.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded h-100 border-start border-4 border-primary">
-            <h3 class="h5" style="font-family: 'Lexend', sans-serif;">Week 5 — Top Control and Leadership</h3>
-            <p class="mb-0">Safe pressure, positional control, partner coaching and leadership.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-4 border rounded h-100 border-start border-4 border-primary">
-            <h3 class="h5" style="font-family: 'Lexend', sans-serif;">Week 6 — Submission Safety and Challenge Week</h3>
-            <p class="mb-0">Tapping early, releasing immediately, team challenges and the family showcase.</p>
-          </div>
-        </div>
-      </div>
+      <h2 id="included-title">What the full program included</h2>
+      <ul>
+        <li>Parent orientation.</li>
+        <li>Coached BJJ sessions and movement games.</li>
+        <li>Safe-fall practice and partner games.</li>
+        <li>Team challenges and youth leadership tasks.</li>
+        <li>A Summer Progress Passport.</li>
+        <li>A shirt for kids who finished the full program.</li>
+        <li>A family showcase and written progress review.</li>
+        <li>Loaner gi access.</li>
+        <li>Two make-up credits for regular youth classes.</li>
+      </ul>
+      <p>The program was led by Sensei Sandy and an assistant coach.</p>
     </div>
   </section>
 
-  <section class="py-5" style="background-color: var(--ss-surface2);">
+  <section class="py-5 bg-white" aria-labelledby="parent-title">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="mb-4 text-center" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Real Jiu-Jitsu, Built for Catskills Families</h2>
-          <p>Mountaintop families do not always need another five-day program. They often want a focused summer routine that keeps weekdays calm and balanced.</p>
-          <p>The Summer Academy provides two substantial mornings of movement, instruction and social connection while leaving room for family time, outdoor activities, travel and the rest of summer.</p>
-          <p class="mb-4">This is also more than a general recreation session. Children follow a real Brazilian Jiu-Jitsu curriculum, work with consistent partners and build skills across the full six weeks.</p>
-          
-          <h3 class="h5 mt-5 text-center">Designed for families traveling from:</h3>
-          <ul class="list-inline text-center">
-            <li class="list-inline-item me-3 mb-2"><a href="/">Tannersville</a></li>
-            <li class="list-inline-item me-3 mb-2"><a href="/partners-hospitality-hunter-windham">Hunter</a></li>
-            <li class="list-inline-item me-3 mb-2"><a href="/">Haines Falls</a></li>
-            <li class="list-inline-item me-3 mb-2"><a href="/">Elka Park</a></li>
-            <li class="list-inline-item me-3 mb-2"><a href="/">East Jewett</a></li>
-            <li class="list-inline-item me-3 mb-2"><a href="/partners-hospitality-hunter-windham">Windham</a></li>
-            <li class="list-inline-item me-3 mb-2"><a href="/">Palenville</a></li>
-            <li class="list-inline-item me-3 mb-2"><a href="/">Prattsville</a></li>
-          </ul>
-          
-          <p class="lead text-center fw-bold text-primary mt-4">A serious learning experience with personal coach attention in a small-group setting.</p>
-        </div>
+      <h2 id="parent-title">Parent questions</h2>
+      <div class="accordion" id="summerFaq">
+        <div class="accordion-item"><h3 class="accordion-header" id="q-experience"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-experience" aria-expanded="false" aria-controls="a-experience">Did kids need BJJ experience?</button></h3><div id="a-experience" class="accordion-collapse collapse" aria-labelledby="q-experience" data-bs-parent="#summerFaq"><div class="accordion-body">No. The 2026 group welcomed new students.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-clothes"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-clothes" aria-expanded="false" aria-controls="a-clothes">What did kids wear?</button></h3><div id="a-clothes" class="accordion-collapse collapse" aria-labelledby="q-clothes" data-bs-parent="#summerFaq"><div class="accordion-body">Kids wore a T-shirt and athletic shorts or leggings with a smooth waist. The program supplied training gear. Bring a labeled water bottle.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-safety"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-safety" aria-expanded="false" aria-controls="a-safety">How did the team guide safe class play?</button></h3><div id="a-safety" class="accordion-collapse collapse" aria-labelledby="q-safety" data-bs-parent="#summerFaq"><div class="accordion-body">Coaches set clear rules and reset signals on day one. They worked with each child and parent. Kids practiced safe falls, partner control, and clear words.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-watch"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-watch" aria-expanded="false" aria-controls="a-watch">Could parents watch?</button></h3><div id="a-watch" class="accordion-collapse collapse" aria-labelledby="q-watch" data-bs-parent="#summerFaq"><div class="accordion-body">Yes. Parents could watch from the seating area.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-food"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-food" aria-expanded="false" aria-controls="a-food">What could kids bring for snack?</button></h3><div id="a-food" class="accordion-collapse collapse" aria-labelledby="q-food" data-bs-parent="#summerFaq"><div class="accordion-body">Sandy did not provide food. Families packed a snack. Use one serving. Add a name label. Bring a water bottle. Add a name label. Juice was a choice. Avoid nut-heavy snacks. Kids share surfaces.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-pickup"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-pickup" aria-expanded="false" aria-controls="a-pickup">How did pickup work?</button></h3><div id="a-pickup" class="accordion-collapse collapse" aria-labelledby="q-pickup" data-bs-parent="#summerFaq"><div class="accordion-body">Sandy shared approved-pickup details after approval. Families got health and emergency forms. They got a parent handbook.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-makeup"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-makeup" aria-expanded="false" aria-controls="a-makeup">What were the make-up credit rules?</button></h3><div id="a-makeup" class="accordion-collapse collapse" aria-labelledby="q-makeup" data-bs-parent="#summerFaq"><div class="accordion-body">Full-program families got two credits for missed Academy sessions. Each was for a regular youth class. Credits did not replace Academy classes. Sandy had to book each one. Class space had to be open. Credits expired thirty days after the last Academy class. They had no cash value. They could not be transferred.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-fit"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-fit" aria-expanded="false" aria-controls="a-fit">How did the Two-Session Fit Promise work?</button></h3><div id="a-fit" class="accordion-collapse collapse" aria-labelledby="q-fit" data-bs-parent="#summerFaq"><div class="accordion-body">Families could try the first two classes. Want a review? Tell Sandy by the end of class two. This had to be before class three. Sandy would review unused tuition under the written Fit Promise terms. Families got those terms after approval. These terms were for 2026.</div></div></div>
+        <div class="accordion-item"><h3 class="accordion-header" id="q-enrollment"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a-enrollment" aria-expanded="false" aria-controls="a-enrollment">Can families enroll now?</button></h3><div id="a-enrollment" class="accordion-collapse collapse" aria-labelledby="q-enrollment" data-bs-parent="#summerFaq"><div class="accordion-body">No. The 2026 group is complete. Future dates, prices, and rules are not set. Text Sandy for news.</div></div></div>
       </div>
     </div>
   </section>
 
-  <section class="py-5 bg-white">
+  <section class="py-5 bg-white text-center" aria-labelledby="next-title">
     <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Your Child Will Be Known Here</h2>
-      
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-10">
-          <div class="row align-items-center">
-            <div class="col-md-5 mb-4 mb-md-0 text-center">
-              <img loading="lazy" alt="Sensei Sandy" class="rounded-circle img-fluid border border-4 border-light shadow-sm" height="1024" src="/assets/images/sensei-sandy.6e2ade.webp" width="1024" style="max-width: 250px;">
-            </div>
-            <div class="col-md-7">
-              <p class="lead">Sensei Sandy is a Brazilian Jiu-Jitsu black belt with more than a decade of teaching experience. He uses clear instructions, carefully selected partners and structured resistance activities so children learn genuine skills with calm, coach-guided pacing.</p>
-              <p>The Summer Academy is capped at 12 children and staffed by Sandy plus an assistant.</p>
-              <a href="/bio" class="fw-bold">Read Sandy's full background <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center text-center">
-        <div class="col">
-          <div class="p-3">
-            <i class="bi bi-patch-check-fill fs-1 text-primary mb-2"></i>
-            <h4 class="h6 fw-bold">Qualified Instruction</h4>
-            <p class="small text-muted">Black Belt Brazilian Jiu-Jitsu coaching</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-3">
-            <i class="bi bi-people-fill fs-1 text-primary mb-2"></i>
-            <h4 class="h6 fw-bold">Small-Group Supervision</h4>
-            <p class="small text-muted">Capped at 12 kids for careful attention</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-3">
-            <i class="bi bi-shield-check fs-1 text-primary mb-2"></i>
-            <h4 class="h6 fw-bold">Clear Safety Standards</h4>
-            <p class="small text-muted">Deliberate partner matching and behavior rules</p>
-          </div>
-        </div>
+      <h2 id="next-title">Ask about future programs</h2>
+      <p>Text Sandy for updates. Or see the regular kids class.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a class="btn btn-primary" href="{{ contact.smsHref }}">Text Sandy</a>
+        <a class="btn btn-outline-primary" href="/bjj-classes/kids-tannersville-ny">See Kids BJJ</a>
+        <a class="btn btn-outline-secondary" href="/schedule">See the current schedule</a>
       </div>
     </div>
   </section>
-
-  <section class="py-5" style="background-color: var(--ss-surface2);">
-    <div class="container text-center mx-auto" style="max-width: 700px;">
-      <h2 class="mb-4" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Give Your Child Two Mornings to Settle In</h2>
-      <p class="lead mb-4">A new room, activity and group can take time to feel familiar. Let your child attend the first two Summer Academy sessions.</p>
-      <p class="mb-4">If the program is not the right fit, notify Sandy after the second session and before the third session. Sandy will review the unused tuition portion along with the written Fit Promise terms shared after approval.</p>
-      <p class="small mb-0 text-muted">The academy Fit Promise is handled directly through the approval packet and is not part of the main-program guarantee page.</p>
-    </div>
-  </section>
-
-  <section class="py-5 bg-white">
-    <div class="container">
-      <h2 class="text-center mb-5" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Everything Parents Need Before the First Morning</h2>
-      
-      <div class="row">
-        <div class="col-lg-6 mb-4">
-          <div class="card h-100 border-0 bg-light p-4">
-            <h3 class="h5 border-bottom pb-3 mb-3" style="font-family: 'Lexend', sans-serif;">Logistics</h3>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-2"><strong>Dates:</strong> July 14–August 20, 2026 (Tuesdays and Thursdays)</li>
-              <li class="mb-2"><strong>Times:</strong> 9:00 AM – 11:30 AM</li>
-              <li class="mb-2"><strong>Address:</strong> 6045 Main Street, Tannersville, NY</li>
-              <li class="mb-2"><strong>Orientation Date:</strong> Details sent upon registration</li>
-              <li class="mb-0"><strong>Parent Observation:</strong> Parents are welcome to watch a session and meet the instructor.</li>
-            </ul>
-            <div class="mt-4">
-              <a href="/bjj-tannersville-ny-directions" class="btn btn-outline-primary w-100 fw-bold">See Parking and Studio Entrance</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-          <div class="card h-100 border-0 bg-light p-4">
-            <h3 class="h5 border-bottom pb-3 mb-3" style="font-family: 'Lexend', sans-serif;">Requirements</h3>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-2"><strong>Clothing:</strong> Athletic wear is fine; no gi purchase required.</li>
-              <li class="mb-2"><strong>Water:</strong> Bring a refillable water bottle reminder.</li>
-              <li class="mb-2"><strong>Snacks:</strong> Healthy, nut-free snacks allowed during reset periods.</li>
-              <li class="mb-2"><strong>Pickup:</strong> Authorized pickup procedures strictly enforced.</li>
-              <li class="mb-0"><strong>Illness:</strong> Please stay home if your child is sick. Make-up credits apply.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-5" style="background-color: var(--ss-surface2);">
-    <div class="container mx-auto" style="max-width: 800px;">
-      <h2 class="text-center mb-5" style="font-family: 'Lexend', sans-serif; font-weight: 700;">Parent FAQ</h2>
-      
-      <div class="accordion" id="faqAccordion">
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              Does my child need experience?
-            </button>
-          </h3>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              No experience is required. The academy is completely beginner-friendly and designed specifically for children who have never trained jiu-jitsu.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Is this a camp or childcare program?
-            </button>
-          </h3>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              No, this is not all-day childcare. It is a structured learning experience focusing on a real jiu-jitsu curriculum in a focused 2.5-hour window.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Does my child need a uniform?
-            </button>
-          </h3>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Regular athletic clothes work well. Children wear a T-shirt, athletic shorts or leggings with smooth waistbands, and bring a labeled water bottle. The Academy T-shirt is presented to children who complete the full six-week program.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Can parents watch?
-            </button>
-          </h3>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Yes. Parents are welcome to observe from the seating area at any time.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingFive">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              What should my child bring?
-            </button>
-          </h3>
-          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              A labeled water bottle and comfortable athletic clothes. All training equipment is provided.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingSix">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-              What is the student-to-coach ratio?
-            </button>
-          </h3>
-          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              The program is capped at 12 students and staffed by Sensei Sandy and an assistant coach.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingSeven">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-              Can my child try a class first?
-            </button>
-          </h3>
-          <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Yes. Families can attend a Free First Visit visit before enrolling in the Summer Academy.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingEight">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-              How are behavior expectations handled?
-            </button>
-          </h3>
-          <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Safety is paramount. Clear boundaries and reset signals are established on day one. Supportive guidance is coordinated directly with the child and parents to maintain a safe environment for everyone.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingNine">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-              What if my child misses a morning?
-            </button>
-          </h3>
-          <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Full-program families receive two regular youth-class make-up credits for missed academy sessions only. These credits do not replace academy curriculum, must be scheduled with Sandy, depend on class space, expire 30 days after the final academy session, and have no cash value or transfer option.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingTen">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-              What snacks are allowed?
-            </button>
-          </h3>
-          <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Please pack a simple labeled snack and water bottle. We do not provide snack, and apple juice is not required; if you send it, choose a labeled single-serving container. Please avoid nut-heavy foods if your child may be around shared surfaces.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingEleven">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-              What happened after 2026 enrollment closed?
-            </button>
-          </h3>
-          <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Enrollment for the 2026 cohort closed July 7. Participating families received the parent handbook, orientation details, health and emergency forms, and authorized-pickup information after approval.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingTwelve">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
-              What should future families do?
-            </button>
-          </h3>
-          <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Text Sandy about future summer programs. Future dates and tuition are not published until they are decided.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingThirteen">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
-              How does the Two-Session Fit Promise work?
-            </button>
-          </h3>
-          <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Let your child attend the first two academy sessions. If the program is not the right fit, notify Sandy after session two and before session three to review the unused tuition portion and the written Fit Promise terms shared after approval.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingFourteen">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
-              Can children attend only three weeks?
-            </button>
-          </h3>
-          <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              The 2026 cohort is complete. Future program formats and availability will be announced only after they are decided.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingFifteen">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
-              Is there a sibling discount?
-            </button>
-          </h3>
-          <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              The 2026 launch tuition was a cohort-specific offer and is not a current enrollment price. Text Sandy about future program details.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="headingSixteen">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
-              What happens if the minimum enrollment is not reached?
-            </button>
-          </h3>
-          <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              The 2026 cohort's enrollment confirmation deadline was July 7, 2026. Future program minimums and policies will be confirmed with future families.
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <section class="py-5" style="background-color: var(--ss-ink); color: #fff;">
-    <div class="container text-center mx-auto" style="max-width: 800px;">
-      <h2 class="mb-4" style="font-family: 'Lexend', sans-serif; font-weight: 700; color: var(--ss-cyan);">Twelve Active Mornings. One Small Group. Skills They Can Keep.</h2>
-      <p class="lead mb-4" style="color: rgba(255, 255, 255, 0.96);">Give your child a summer routine built around movement, confidence, teamwork and real Brazilian Jiu-Jitsu.</p>
-      
-      <div class="mb-5 fw-bold fs-5">
-        July 14–August 20<br>
-        Ages 6–12<br>
-        12 places maximum
-      </div>
-      
-      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-        {% if temporalPrograms.summerAcademy.enrollmentOpen %}
-          <a class="btn btn-primary btn-lg" href="/free-bjj-intro-tannersville-ny">Reserve a Spot — $99 Deposit</a>
-        {% else %}
-          <a class="btn btn-primary btn-lg" href="sms:+19177368649?body=Hi%20Sandy%21%20I%27d%20like%20to%20ask%20about%20future%20summer%20programs.">Text Sandy About Future Summer Programs</a>
-        {% endif %}
-        <a class="btn btn-outline-light btn-lg" href="sms:+19177368649?body=Hi%20Sandy%21%20I%27m%20interested%20in%20booking%20a%2015%20minute%20call%20to%20map%20my%20BJJ%20Goals%20at%20Sensei%20Sandy%20Brazilian%20Jiu%20Jitsu%21%20Can%20you%20help%20me%20confirm%20the%20best%20time%3F">Text Sandy</a>
-      </div>
-    </div>
-  </section>
-
 </main>

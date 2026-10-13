@@ -236,18 +236,18 @@ const main = async () => {
       ensure(!termHtml.includes(oldHeading), `${term.slug} still includes old heading ${oldHeading}.`);
     }
 
-    ensure(termHtml.includes('<h2>Quick definition</h2>'), `${term.slug} missing Quick definition heading.`);
-    ensure(termHtml.includes('<h2>Beginner translation</h2>'), `${term.slug} missing Beginner translation heading.`);
-    ensure(termHtml.includes('<h2>Why it matters</h2>'), `${term.slug} missing Why it matters heading.`);
-    ensure(termHtml.includes('<h2>What beginners should know</h2>'), `${term.slug} missing beginner knowledge heading.`);
-    ensure(termHtml.includes('<h2>Common class phrases</h2>'), `${term.slug} missing common class phrases heading.`);
-    ensure(termHtml.includes('<h2>Related terms</h2>'), `${term.slug} missing related terms heading.`);
-    ensure(termHtml.includes('Want to feel '), `${term.slug} missing shared CTA heading.`);
+    ensure(termHtml.includes('<h2>Quick meaning</h2>'), `${term.slug} missing Quick definition heading.`);
+    ensure(termHtml.includes('<h2>In plain words</h2>'), `${term.slug} missing Beginner translation heading.`);
+    ensure(termHtml.includes('<h2>Why it helps</h2>'), `${term.slug} missing Why it matters heading.`);
+    ensure(termHtml.includes('<h2>Start here</h2>'), `${term.slug} missing beginner knowledge heading.`);
+    ensure(termHtml.includes('<h2>Coach says</h2>'), `${term.slug} missing common class phrases heading.`);
+    ensure(termHtml.includes('<h2>Related links</h2>'), `${term.slug} missing related terms heading.`);
+  ensure(termHtml.includes('Want to try '), `${term.slug} missing shared CTA heading.`);
     ensure(termHtml.includes('href="/free-bjj-intro-tannersville-ny"'), `${term.slug} missing Reserve Your Free First Visit CTA.`);
     ensure(termHtml.includes('href="/schedule"'), `${term.slug} missing View Schedule CTA.`);
     ensure(termHtml.includes('<h2>FAQ</h2>'), `${term.slug} missing FAQ heading.`);
-    ensure(termHtml.includes('<h2>What local families say</h2>'), `${term.slug} missing reviews heading.`);
-    ensure(termHtml.indexOf('id="related-terms"') < termHtml.indexOf('<h3>Relationship map</h3>'), `${term.slug} relationship map must sit inside related terms flow.`);
+  ensure(termHtml.includes('<h2>Local reviews</h2>'), `${term.slug} missing reviews heading.`);
+  ensure(termHtml.indexOf('id="related-terms"') < termHtml.indexOf('<h3>More terms</h3>'), `${term.slug} related terms heading must sit in the related terms flow.`);
   }
 
   for (const [slug, expected] of Object.entries(EN_TERM_PAGE_EXPECTATIONS)) {
@@ -275,10 +275,10 @@ const main = async () => {
   ensure(guardHtml.includes('In guard, use movement, distance, frames, grips, and timing to manage the person on top.'), 'Guard missing supplied beginner copy.');
 
   const tapHtml = await fs.readFile(path.join(BASE_DIR, 'tap', 'index.html'), 'utf8');
-  ensure(tapHtml.includes('Tapping means, “Stop. I am done.” You can tap with your hand, your foot, or your voice.'), 'Tap missing supplied beginner translation.');
-  ensure(tapHtml.includes('The tap is one of the most important safety tools in Jiu Jitsu.'), 'Tap missing supplied why-it-matters copy.');
-  ensure(tapHtml.includes('Tap means stop. You can tap your partner, tap the mat, or say'), 'Tap missing safety FAQ answer.');
-  ensure(tapHtml.includes('Early taps build trust and protect both training partners.'), 'Tap missing beginner tap FAQ answer.');
+  const tapTerm = terms.find((term) => term.slug === 'tap');
+  ensure(tapTerm && tapHtml.includes(tapTerm.beginnerTranslation), 'Tap page must match its glossary safety copy.');
+  ensure(tapTerm && tapHtml.includes(tapTerm.whyItMatters), 'Tap page must match its safety explanation.');
+  for (const item of tapTerm.faq) ensure(tapHtml.includes(item.a), 'Tap page FAQ must match glossary data.');
 
   const updatesHtml = await readFile('bjj-glossary/updates/index.html');
   const updatesMetricsBlockMatch = updatesHtml.match(/<h2>What changed recently<\/h2>[\s\S]*?<div class="ss-path-grid">([\s\S]*?)<\/div>/);

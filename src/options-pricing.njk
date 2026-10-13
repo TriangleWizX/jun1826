@@ -18,7 +18,7 @@ permalink: "/options-pricing/index.html"
         <p class="op-eyebrow">Options &amp; Pricing <span>Tannersville, NY</span></p>
         <h1 id="pricing-hero-title">Pick your class plan.<br/><em>Start with a Free First Visit.</em></h1>
         <p class="op-hero__lede">
-          Meet Sandy, see the room, and choose the right starting point. Sandy confirms your visit before you arrive.
+          Meet Sandy. See the room. Pick a place to start. Sandy will confirm your visit.
         </p>
         <div class="op-actions">
           <a class="op-button op-button--primary" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="options-pricing-hero" data-cta-target="intro" data-cta-tier="primary" data-goal-mapping="" href="/free-bjj-intro-tannersville-ny#booking-flow">
@@ -30,7 +30,7 @@ permalink: "/options-pricing/index.html"
             <span aria-hidden="true" class="op-button__icon">&nearr;</span>
           </a>
         </div>
-        <p class="op-hero__lede" data-free-intro-copy>Meet Sandy for a free visit. See the room and learn the rules. Talk about your goals. Sandy helps you plan your first class. You choose if you join a paid plan. Six-month and year plans are for students who keep training.</p>
+        <p class="op-hero__lede" data-free-intro-copy>Meet Sandy. See the room. Learn the rules. Share your goals. Plan your first class. Then choose if you want a paid plan. Six-month and year plans are for current students.</p>
         <p class="small text-muted mt-3 mb-0">
           <a href="#start">Compare first-term options</a> · <a href="/schedule">View the schedule</a> · <a href="{{ business.contact.smsHref }}">Ask Sandy a pricing question</a>.
         </p>
@@ -51,13 +51,13 @@ permalink: "/options-pricing/index.html"
 
 <section class="op-price-anchors" aria-label="Price context">
   <div class="container-xxl">
-    <p class="op-eyebrow">Price range: $245 to $75 / month (Adult $245–$95 / mo · Youth $185–$75 / mo, anchored from 3× monthly pricing down to 1× weekly) &middot; A clear place to begin</p>
+    <p class="op-eyebrow">Monthly and year plans</p>
     <div class="op-price-anchors__grid">
-      <p><strong>Free First Visit: $0</strong><span>Meet Sandy, see the room, and ask questions.</span></p>
-      <p><strong>Youth: {{ pricing.coreCulture.frequencyLadder.youth[3].monthly | usdGrouped }} / month</strong><span>Three planned classes each week.</span></p>
-      <p><strong>Adult: {{ pricing.coreCulture.frequencyLadder.adult[3].monthly | usdGrouped }} / month</strong><span>Three planned classes each week.</span></p>
-      <p><strong>Youth: {{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }} / year</strong><span>Three planned classes each week ($165 / month equivalent; continuation after a Core Culture term).</span></p>
-      <p><strong>Adult: {{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }} / year</strong><span>Three planned classes each week ($206.25 / month equivalent; continuation after a Core Culture term).</span></p>
+      <p><strong>Free First Visit</strong><span>Meet Sandy, see the room, and ask questions.</span></p>
+      <p><strong>Youth, 3 classes each week: {{ pricing.coreCulture.frequencyLadder.youth[3].monthly | usdGrouped }}</strong><span>Paid each month.</span></p>
+      <p><strong>Adult, 3 classes each week: {{ pricing.coreCulture.frequencyLadder.adult[3].monthly | usdGrouped }}</strong><span>Paid each month.</span></p>
+      <p><strong>Youth year plan: {{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }}</strong><span>About {{ pricing.annualTrack.monthlyEquivalents.youth[2] | usdGrouped }} each month. After a Core Culture term.</span></p>
+      <p><strong>Adult year plan: {{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }}</strong><span>About {{ pricing.annualTrack.monthlyEquivalents.adult[2] | usdGrouped }} each month. After a Core Culture term.</span></p>
     </div>
   </div>
 </section>
@@ -66,7 +66,7 @@ permalink: "/options-pricing/index.html"
   <div class="container-xxl">
     <div class="op-section-heading op-reveal">
       <div><h2 id="annual-anchor-title">Year plans for your next term.</h2></div>
-      <p>Finish a Core Culture term first. Then meet with Sandy to review your next plan.</p>
+      <p>Finish a Core Culture term first. Then meet with Sandy to pick a plan.</p>
     </div>
     <div class="op-household-note" id="accepted-payments">
       <h3>Ways to pay</h3>
@@ -83,9 +83,9 @@ permalink: "/options-pricing/index.html"
     <p class="op-section-note">{{ pricing.productPolicy.annualPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your annual plan</a>.</p>
     <details class="op-household-note">
       <summary>See annual monthly payments</summary>
-      <p>The last payment may change by a few cents. All 12 payments add up to your year price.</p>
+          <p>The last payment may differ by a few cents. All 12 payments add up to the year price.</p>
       <div class="table-responsive"><table class="table table-bordered align-middle">
-        <caption>Annual rates paid over a 12-month commitment</caption>
+        <caption>Pay these year prices over 12 months</caption>
         <thead><tr><th scope="col">Plan</th><th scope="col">Annual total</th><th scope="col">First 11 payments</th><th scope="col">Final payment</th></tr></thead>
         <tbody>{% for plan in pricing.productPolicy.annualPayment.installmentPlans %}<tr><th scope="row">{{ plan.label }}</th><td>{{ plan.annualTotal | usdGrouped }}</td><td>{{ plan.regularDisplay }} each month</td><td>{{ plan.finalDisplay }}</td></tr>{% endfor %}</tbody>
       </table></div>
@@ -102,9 +102,14 @@ permalink: "/options-pricing/index.html"
       </table>
     </div>
     <div class="op-household-note">
-      <p><strong>Annual Family Track: {{ pricing.householdBundles.annualFamily.displayPrice }}</strong> for one adult and two youth, all training 3× each week. Compared with the {{ (pricing.coreCulture.frequencyLadder.adult[3].annual + pricing.coreCulture.frequencyLadder.youth[3].annual * 2) | usdGrouped }} individual total, the household saves {{ pricing.householdBundles.annualFamily.savingsAmount | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsPercent }}%). It is also {{ pricing.householdBundles.annualFamily.annualizedFirstTermFamilyTotal | usdGrouped }} for four 12-week family terms, so the annual plan saves {{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamily | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamilyPercent }}%). The annual family price averages {{ pricing.householdBundles.annualFamily.averagePricePerScheduledClass | usdGrouped }} per scheduled class across {{ pricing.householdBundles.annualFamily.scheduledClassesTotal }} household classes, if all are attended.</p>
-      <p>These plans are for students who stay on. First, finish a Core Culture term. Ask Sandy which plan fits your next step. Read the full terms for each plan.</p>
-      <p class="small text-muted mb-0">Continuation only. No extra uniforms or 30-Day Training Fit Guarantee are included. Class times are reviewed for placement, capacity, and suitable partner fit.</p>
+      <p><strong>Annual Family Track: {{ pricing.householdBundles.annualFamily.displayPrice }}.</strong> One adult and two youth can train 3× each week.</p>
+      <ul>
+        <li>The same plans cost {{ (pricing.coreCulture.frequencyLadder.adult[3].annual + pricing.coreCulture.frequencyLadder.youth[3].annual * 2) | usdGrouped }} on their own. Save {{ pricing.householdBundles.annualFamily.savingsAmount | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsPercent }}%).</li>
+        <li>Four 12-week family terms cost {{ pricing.householdBundles.annualFamily.annualizedFirstTermFamilyTotal | usdGrouped }}. Save {{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamily | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamilyPercent }}%).</li>
+        <li>There are {{ pricing.householdBundles.annualFamily.scheduledClassesTotal }} class spots. If all are used, each costs {{ pricing.householdBundles.annualFamily.averagePricePerScheduledClass | usdGrouped }}.</li>
+      </ul>
+      <p>Finish a Core Culture term first. Then ask Sandy about this plan.</p>
+      <p class="small text-muted mb-0">This is a continuation plan. It adds no uniform or 30-Day Training Fit Guarantee. Class times depend on space and partner fit.</p>
     </div>
   </div>
 </section>
@@ -138,7 +143,7 @@ permalink: "/options-pricing/index.html"
             <div>
               <p class="op-card__kicker">Kids &amp; Teens &middot; Ages 5&ndash;17 &middot; 12-Week Track</p>
               <h3>Youth Core Culture</h3>
-              <p class="op-card__outcome">Train for 12 weeks with Sandy. He helps you find a partner. He checks your skills as you learn. Your first paid term comes with a uniform. Your plan has class videos too. Read the full plan terms.</p>
+              <p class="op-card__outcome">Train for 12 weeks with Sandy. He helps you find a partner and checks your progress. Your first term includes a uniform and the Async Practice Vault. Read the plan terms.</p>
             </div>
             <span aria-hidden="true" class="op-card__number">01</span>
           </div>
@@ -151,8 +156,7 @@ permalink: "/options-pricing/index.html"
 
           <p class="op-card__note">{{ pricing.productPolicy.monthlyPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your plan</a>.</p>
           <p class="op-table-label">First term: monthly or 12 weeks <span>Continuing students: six-month or annual</span></p>
-          <div class="table-responsive"><table class="table table-bordered align-middle"><caption class="visually-hidden">Youth membership prices by weekly frequency and term</caption><thead><tr><th scope="col">Weekly classes</th><th scope="col">Monthly</th><th scope="col">12 weeks <span class="op-table-col-note">First term</span></th><th scope="col">6 months* <span class="op-table-col-note">Continuation</span></th><th scope="col">Annual* <span class="op-table-col-note">Continuation</span></th></tr></thead><tbody><tr><th scope="row">1× / week</th><td>$75<small class="d-block text-muted">$18.75 / scheduled class</small></td><td>$220<small class="d-block text-muted">$18.33 / class</small></td><td>$425<small class="d-block text-muted">$17.71 / class</small></td><td>$800<small class="d-block text-muted">$16.67 / class</small></td></tr><tr><th scope="row">2× / week</th><td>$150<small class="d-block text-muted">$18.75 / scheduled class</small></td><td>$440<small class="d-block text-muted">$18.33 / class</small></td><td>$825<small class="d-block text-muted">$17.19 / class</small></td><td>$1,600<small class="d-block text-muted">$16.67 / class</small></td></tr><tr><th scope="row">3× / week</th><td>$185<small class="d-block text-muted">$15.42 / scheduled class</small></td><td>$550<small class="d-block text-muted">$15.28 / class</small></td><td>$1,050<small class="d-block text-muted">$14.58 / class</small></td><td>$1,980<small class="d-block text-muted">$13.75 / class</small></td></tr></tbody></table></div>
-          <p class="op-card__note">Per-class figures are shown in the table and assume every scheduled class is attended; actual cost per attended class depends on attendance. *Six-month and annual prices are continuation options after a Core Culture term.</p>
+          <div class="table-responsive"><table class="table table-bordered align-middle"><caption class="visually-hidden">Youth plan prices by weekly classes and term</caption><thead><tr><th scope="col">Classes each week</th><th scope="col">Monthly</th><th scope="col">First 12 weeks</th><th scope="col">Six months*</th><th scope="col">Year*</th></tr></thead><tbody><tr><th scope="row">1 class each week</th><td>{{ pricing.coreCulture.frequencyLadder.youth[1].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[1]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[1]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[1].annual | usdGrouped }}</td></tr><tr><th scope="row">2 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.youth[2].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[2]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[2]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[2].annual | usdGrouped }}</td></tr><tr><th scope="row">3 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.youth[3].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[3]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[3]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }}</td></tr></tbody></table></div>
 
           <div class="op-grand-slam-stack">
             <p class="op-stack-title"><strong>What the first term includes:</strong></p>
@@ -166,9 +170,9 @@ permalink: "/options-pricing/index.html"
           </div>
 
           <ul class="op-check-list">
-            <li>Choose 1, 2, or 3 planned visits each week; class times are confirmed under capacity and partner-fit rules</li>
+            <li>Plan 1, 2, or 3 classes each week. Sandy confirms class times, space, and partner fit</li>
             <li>Parent-friendly open-seat rescheduling by text when space is open</li>
-            <li>Eligible first-term Youth offers include the 30-Day Training Fit Guarantee after at least four classes in the first 30 days (<a href="/guarantee-terms">terms</a>)</li>
+            <li>Eligible first-term Youth offers include the 30-Day Training Fit Guarantee. Take at least 4 classes in the first 30 days. <a href="/guarantee-terms">Read the terms</a>.</li>
           </ul>
               <p class="op-card__note">See family and sibling plans below. For other home setups, text Sandy for a quote. Read the <a href="/parent-resources">Parent Guide</a>.</p>
           <div class="op-card__actions">
@@ -190,7 +194,7 @@ permalink: "/options-pricing/index.html"
             <div>
               <p class="op-card__kicker">Adults &middot; Ages 18+ &middot; 12-Week Track</p>
               <h3>Adult Core Culture</h3>
-              <p class="op-card__outcome">A 12-week first term with coached classes, partner guidance, Saturday Adult No-Gi inclusion, a first-enrollment uniform, and the Async Practice Vault under the current offer terms.</p>
+              <p class="op-card__outcome">Train for 12 weeks with coach help and a matched partner. Saturday Adult No-Gi, a first uniform, and the Async Practice Vault are included under the plan terms.</p>
             </div>
             <span aria-hidden="true" class="op-card__number">02</span>
           </div>
@@ -203,8 +207,7 @@ permalink: "/options-pricing/index.html"
 
           <p class="op-card__note">{{ pricing.productPolicy.monthlyPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your plan</a>.</p>
           <p class="op-table-label">First term: monthly or 12 weeks <span>Continuing students: six-month or annual</span></p>
-          <div class="table-responsive"><table class="table table-bordered align-middle"><caption class="visually-hidden">Adult membership prices by weekly frequency and term</caption><thead><tr><th scope="col">Weekly classes</th><th scope="col">Monthly</th><th scope="col">12 weeks <span class="op-table-col-note">First term</span></th><th scope="col">6 months* <span class="op-table-col-note">Continuation</span></th><th scope="col">Annual* <span class="op-table-col-note">Continuation</span></th></tr></thead><tbody><tr><th scope="row">1× / week</th><td>$95<small class="d-block text-muted">$23.75 / scheduled class</small></td><td>$275<small class="d-block text-muted">$22.92 / class</small></td><td>$525<small class="d-block text-muted">$21.88 / class</small></td><td>$1,000<small class="d-block text-muted">$20.83 / class</small></td></tr><tr><th scope="row">2× / week</th><td>$185<small class="d-block text-muted">$23.13 / scheduled class</small></td><td>$550<small class="d-block text-muted">$22.92 / class</small></td><td>$1,050<small class="d-block text-muted">$21.88 / class</small></td><td>$2,000<small class="d-block text-muted">$20.83 / class</small></td></tr><tr><th scope="row">3× / week</th><td>$245<small class="d-block text-muted">$20.42 / scheduled class</small></td><td>$715<small class="d-block text-muted">$19.86 / class</small></td><td>$1,300<small class="d-block text-muted">$18.06 / class</small></td><td>$2,475<small class="d-block text-muted">$17.19 / class</small></td></tr></tbody></table></div>
-          <p class="op-card__note">Per-class figures assume attendance at every scheduled class. Actual cost per attended class depends on attendance. *Six-month and annual prices are continuation options after a Core Culture term.</p>
+          <div class="table-responsive"><table class="table table-bordered align-middle"><caption class="visually-hidden">Adult plan prices by weekly classes and term</caption><thead><tr><th scope="col">Classes each week</th><th scope="col">Monthly</th><th scope="col">First 12 weeks</th><th scope="col">Six months*</th><th scope="col">Year*</th></tr></thead><tbody><tr><th scope="row">1 class each week</th><td>{{ pricing.coreCulture.frequencyLadder.adult[1].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1].annual | usdGrouped }}</td></tr><tr><th scope="row">2 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.adult[2].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2].annual | usdGrouped }}</td></tr><tr><th scope="row">3 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.adult[3].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }}</td></tr></tbody></table></div>
 
           <div class="op-grand-slam-stack">
             <p class="op-stack-title"><strong>What the first term includes:</strong></p>
@@ -212,17 +215,16 @@ permalink: "/options-pricing/index.html"
               <li><span>Choose 1, 2, or 3 appropriate group classes each week</span> <strong>By tier</strong></li>
               <li><span>Recurring class times reserved under placement and capacity rules</span> <strong>Included</strong></li>
               <li><span>Saturday Adult No-Gi</span> <strong>Included</strong></li>
-              <li><span>First-enrollment uniform</span> <strong>Included</strong></li>
               <li><span>Async Practice Vault under current terms</span> <strong>Included</strong></li>
             </ul>
           </div>
 
           <ul class="op-check-list">
-            <li>Choose 1, 2, or 3 planned visits each week; class times are confirmed under capacity and partner-fit rules</li>
+            <li>Plan 1, 2, or 3 classes each week. Sandy confirms class times, space, and partner fit</li>
             <li>Direct text rescheduling with Sandy when work or travel changes your week</li>
-            <li>Eligible first-term Adult offers include the 30-Day Training Fit Guarantee after at least four classes in the first 30 days (<a href="/guarantee-terms">terms</a>)</li>
+            <li>Eligible first-term Adult offers include the 30-Day Training Fit Guarantee. Take at least 4 classes in the first 30 days. <a href="/guarantee-terms">Read the terms</a>.</li>
           </ul>
-          <p class="op-card__note">You do not need to get in shape before starting. Changing facilities and gear storage available at the studio.</p>
+          <p class="op-card__note">You do not need to get in shape before starting. Changing facilities and gear storage available at the studio. Need help? Text Sandy. Ask what fits.</p>
           <div class="op-card__actions">
             <a class="op-button op-button--primary" data-cta-lane="adults" data-cta-placement="pricing_card" data-cta-src="options-pricing-adult" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny?lane=adults#booking-flow">
               <span>Reserve for an Adult</span>
@@ -253,7 +255,7 @@ permalink: "/options-pricing/index.html"
             <strong>{{ pricing.coreCulture.communityServiceAdult.displayPrice }}</strong>
             <small>/ {{ pricing.coreCulture.termWeeks }}-week term</small>
           </div>
-          <p class="op-card__note">That averages ${{ (pricing.coreCulture.communityServiceAdult.price / (pricing.coreCulture.termWeeks / 4)) | round(2) }} per 4-week period. If you attend all {{ pricing.coreCulture.scheduledClassesPerTerm }} scheduled classes, it works out to about ${{ (pricing.coreCulture.communityServiceAdult.price / pricing.coreCulture.scheduledClassesPerTerm) | round(2) }} per class; your actual rate depends on attendance.</p>
+          <p class="op-card__note">That is ${{ (pricing.coreCulture.communityServiceAdult.price / (pricing.coreCulture.termWeeks / 4)) | round(2) }} per 4 weeks. If you attend all {{ pricing.coreCulture.scheduledClassesPerTerm }} classes, each is about ${{ (pricing.coreCulture.communityServiceAdult.price / pricing.coreCulture.scheduledClassesPerTerm) | round(2) }}. Your rate depends on attendance.</p>
           <ul class="op-community-card__benefits">
             <li>Train up to {{ pricing.coreCulture.plannedClassesPerWeek }} times each week with regular class times reserved</li>
             <li>First qualifying uniform and belt included</li>
@@ -276,47 +278,22 @@ permalink: "/options-pricing/index.html"
       </article>
     </div>
 
-    <!-- 14-DAY IMMEDIATE WIN TIMELINE -->
     <section id="timeline-wins" aria-labelledby="timeline-title" class="op-timeline-section op-reveal mt-5">
       <div class="op-shell p-4">
-        <p class="op-eyebrow">Progress Feedback</p>
-        <h3 id="timeline-title" class="h2 mb-3">Ask how progress feedback works</h3>
-        <p class="text-muted mb-4" data-free-intro-copy>Sandy watches you learn and helps with the next step. Ask about feedback at your free first visit.</p>
-        
-        <div class="op-timeline-grid">
-          <div class="op-timeline-card">
-            <div class="op-timeline-day">1</div>
-            <h4>Notice</h4>
-            <p>Sandy observes what is becoming reliable in live training.</p>
-          </div>
-          <div class="op-timeline-card">
-            <div class="op-timeline-day">2</div>
-            <h4>Coach</h4>
-            <p>You receive one useful problem and guided practice for the next step.</p>
-          </div>
-          <div class="op-timeline-card">
-            <div class="op-timeline-day">3</div>
-            <h4>Review</h4>
-            <p>Progress feedback helps you and your family understand what comes next.</p>
-          </div>
-        </div>
+        <p class="op-eyebrow">How Sandy coaches</p>
+        <h3 id="timeline-title" class="h2 mb-3">See. Coach. Review.</h3>
+        <p class="text-muted mb-4" data-free-intro-copy>Sandy sees what you can do. He picks a next skill. You review your progress together.</p>
       </div>
     </section>
 
     <section aria-labelledby="progress-value-title" class="op-progress-note op-reveal mt-5">
       <div class="op-progress-note__copy">
-        <p class="op-eyebrow">Coaching Methodology</p>
-        <h2 id="progress-value-title">Progress you can understand.</h2>
-        <p>Progress feedback means Sandy watches what is becoming reliable in live training, identifies the next useful problem, and gives students and families clear feedback along the way. Want to see what that feedback looks like? <a href="/report-card">Preview the Progress Report Card</a>.</p>
-        <p class="op-progress-note__term">One class can show where you are starting. Consistent training gives Sandy enough repeated situations to see what is changing and what needs a different challenge. That is why training is organized as a 12-week first term rather than a collection of unrelated drop-ins.</p>
-        <details class="mt-3"><summary class="fw-semibold">Why a training term instead of random drop-ins?</summary><p class="small text-muted mt-2 mb-0">Skill studies generally use repeated practice over weeks, not isolated sessions. The 12-week track gives Sandy repeated opportunities to observe the same student across changing partners and problems. The 12-week term is an academy coaching structure, not a claim that research has established 12 weeks as the universally optimal BJJ dose.</p></details>
+        <p class="op-eyebrow">Progress notes</p>
+        <h2 id="progress-value-title">See what you can do.</h2>
+        <p>Sandy picks a next skill with you. <a href="/report-card">See a sample report</a>.</p>
+        <p class="op-progress-note__term">Studies look at practice over time. They do not prove one term fits all BJJ students. Our first term lasts 12 weeks for coaching and review.</p>
         <a class="op-text-link" href="/how-class-works">See how class works <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <ol class="op-progress-note__steps">
-        <li><strong>Notice</strong><span>What is working?</span></li>
-        <li><strong>Coach</strong><span>What problem comes next?</span></li>
-        <li><strong>Review</strong><span>What has changed?</span></li>
-      </ol>
     </section>
 
     <div class="op-inline-cta op-reveal">
@@ -333,10 +310,10 @@ permalink: "/options-pricing/index.html"
         <p class="op-eyebrow">Train Together</p>
         <h2 id="household-pricing-title">Simple, clear plans for the whole household.</h2>
       </div>
-      <p>These home plans cover {{ pricing.householdBundles.firstTerm.termWeeks }} weeks. Each student gets a gi with their first Core term. Each student gets coaching and a progress review.</p>
+      <p>These plans last {{ pricing.householdBundles.firstTerm.termWeeks }} weeks. Each student gets a gi with their first term, coaching, and a progress review.</p>
     </div>
 
-    <p class="op-household-note op-reveal">The comparisons below use current individual 12-week rates for the same household and frequency. Savings are shown only when the household amount is below the individual total; class placement, room capacity, and suitable partner fit still apply.</p>
+    <p class="op-household-note op-reveal">Prices compare each family plan with the same plans bought one by one. Class space and partner fit still apply.</p>
 
     <div class="op-household-grid">
       <details class="op-household-card op-household-card--family op-reveal">
@@ -349,7 +326,7 @@ permalink: "/options-pricing/index.html"
           <span aria-hidden="true" class="op-details-icon">+</span>
         </summary>
         <div class="op-household-card__body">
-          <p>For one adult and two youth training {{ pricing.householdBundles.firstTerm.frequencyPerPersonPerWeek }}× per person each week. Academy uniforms are included for all three participants with first enrollment.</p>
+          <p>For one adult and two youth. Each can train {{ pricing.householdBundles.firstTerm.frequencyPerPersonPerWeek }} times a week. Each gets a first uniform.</p>
           <dl class="op-rate-list">
             <div><dt>Matching individual total</dt><dd><strong>{{ pricing.householdBundles.firstTerm.oneAdultTwoYouth.matchingIndividualTotal | usdGrouped }}</strong></dd></div>
             <div><dt>Household savings</dt><dd><strong>{{ pricing.householdBundles.firstTerm.oneAdultTwoYouth.savingsAmount | usd }} ({{ pricing.householdBundles.firstTerm.oneAdultTwoYouth.savingsPercent }}%)</strong></dd></div>
@@ -367,7 +344,7 @@ permalink: "/options-pricing/index.html"
           <span aria-hidden="true" class="op-details-icon">+</span>
         </summary>
         <div class="op-household-card__body">
-          <p>For two adults and one youth training {{ pricing.householdBundles.firstTerm.frequencyPerPersonPerWeek }}× per person each week. Academy uniforms are included for all three participants with first enrollment.</p>
+          <p>For two adults and one youth. Each can train {{ pricing.householdBundles.firstTerm.frequencyPerPersonPerWeek }} times a week. Each gets a first uniform.</p>
           <dl class="op-rate-list">
             <div><dt>Matching individual total</dt><dd><strong>{{ pricing.householdBundles.firstTerm.twoAdultsOneYouth.matchingIndividualTotal | usdGrouped }}</strong></dd></div>
             <div><dt>Household savings</dt><dd><strong>{{ pricing.householdBundles.firstTerm.twoAdultsOneYouth.savingsAmount | usd }} ({{ pricing.householdBundles.firstTerm.twoAdultsOneYouth.savingsPercent }}%)</strong></dd></div>
@@ -380,7 +357,7 @@ permalink: "/options-pricing/index.html"
           <p><strong>Other household combinations</strong></p>
           {% set siblings = pricing.householdBundles.firstTerm.siblings %}
         <h3>Sibling plans: {{ siblings.termWeeks }} weeks</h3>
-        <p>For kids and teens ages {{ siblings.ageMin }}–{{ siblings.ageMax }}. Siblings from one home start their first term together. Choose the same class plan for each child.</p>
+        <p>For ages {{ siblings.ageMin }} to {{ siblings.ageMax }}. Siblings in one home start together. Each child picks the same plan.</p>
         {% for frequency in siblings.frequencies %}
         <h4>{{ frequency.classesPerWeek }} class{% if frequency.classesPerWeek > 1 %}es{% endif %} each week per child</h4>
         <dl class="op-rate-list">
@@ -389,8 +366,8 @@ permalink: "/options-pricing/index.html"
           {% endfor %}
         </dl>
         {% endfor %}
-        <p>Each place is for one child. Each child gets a gi with their first Core term. Choose one offer per child.</p>
-        <p>For an adult and kids, choose a family plan above. For mixed class plans or other home setups, text Sandy for a quote. After the first term, choose from the youth plans.</p>
+        <p>Each place is for one child. Each child gets a first gi. Choose one offer per child.</p>
+        <p>For adults and kids, pick a family plan above. Text Sandy for other home plans.</p>
         <a class="op-text-link" href="{{ business.contact.smsHref }}">Request a household quote by text <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
@@ -416,21 +393,7 @@ permalink: "/options-pricing/index.html"
       </div>
       <div class="op-guarantee-card">
         <h4>2. 30-Day Training Fit Guarantee</h4>
-        <p>Eligible first-term Youth and Adult offers include the guarantee after at least four classes in the first 30 days (<a href="/guarantee-terms">terms</a>).</p>
-      </div>
-      <div class="op-guarantee-card">
-        <h4>3. Included first-term items</h4>
-        <p>The first qualifying Core Culture enrollment includes one uniform under the current offer terms.</p>
-      </div>
-      <div class="op-guarantee-card">
-        <h4>4. Partner guidance</h4>
-        <p>Students receive appropriate coaching, safety management, and partner guidance while in class. Placement considers age, size, experience, and partner fit.</p>
-      </div>
-    </div>
-
-    <div class="op-shell op-reveal mt-5">
-      <div class="op-assurance-card">
-        <p class="op-eyebrow">30-Day Training Fit Guarantee</p>
+        <p>Eligible Youth and Adult first terms include the 30-Day Training Fit Guarantee. Take at least 4 classes in the first 30 days. <a href="/guarantee-terms">Read the terms</a>.</p>
         <h3 class="h2 mb-3">Give the first term a fair start.</h3>
         <p>Attend at least four classes during the first 30 days. The complete request process, extension terms, and exclusions are listed on the guarantee terms page.</p>
         <div class="op-assurance-facts" aria-label="Guarantee requirements">
@@ -440,7 +403,7 @@ permalink: "/options-pricing/index.html"
         </div>
         <details class="op-terms">
           <summary>View exclusions and complete terms</summary>
-          <p>Community-service pricing, annual plans, renewals, visitor options, class packs, private classes, merchandise, and optional add-ons are excluded.</p>
+          <p>These are outside the guarantee: service rates; year plans and renewals; visitor options and class packs; private classes, merchandise, and add-ons.</p>
           <a href="/guarantee-terms">Read the complete guarantee terms <span aria-hidden="true">&rarr;</span></a>
         </details>
       </div>
@@ -469,7 +432,7 @@ permalink: "/options-pricing/index.html"
       <p data-free-intro-copy>New local students start with a Free First Visit. Ask Sandy which paid plan fits your needs.</p>
     </div>
 
-    <p class="op-section-note">Class packs provide flexibility. The {{ pricing.coreCulture.termWeeks }}-week track adds up to {{ pricing.coreCulture.plannedClassesPerWeek }} classes each week and ongoing progress feedback. The up-to-{{ pricing.coreCulture.scheduledClassesPerTerm }} figure describes scheduled opportunities over the term, not class credits a student must consume.</p>
+    <p class="op-section-note">Core Culture lasts {{ pricing.coreCulture.termWeeks }} weeks. Plan for {{ pricing.coreCulture.plannedClassesPerWeek }} classes each week. Up to {{ pricing.coreCulture.scheduledClassesPerTerm }} classes may be set. They are class times, not credits.</p>
     <div class="op-other-grid">
       <article id="visitor-training" class="op-shell op-other-card op-other-card--visitor op-reveal">
         <div class="op-card">
@@ -486,11 +449,11 @@ permalink: "/options-pricing/index.html"
             <div><span>{{ pricing.visitorAndSupport.tenPack.name }}</span><strong>{{ pricing.visitorAndSupport.tenPack.displayPrice }}</strong><small>Valid {{ pricing.visitorAndSupport.tenPack.validity }} · ${{ (pricing.visitorAndSupport.tenPack.price / pricing.visitorAndSupport.tenPack.classCount) | round(2) }} per class</small></div>
             <div><span>{{ pricing.visitorAndSupport.twentyPack.name }}</span><strong>{{ pricing.visitorAndSupport.twentyPack.displayPrice }}</strong><small>Valid {{ pricing.visitorAndSupport.twentyPack.validity }} · ${{ (pricing.visitorAndSupport.twentyPack.price / pricing.visitorAndSupport.twentyPack.classCount) | round(2) }} per class</small></div>
           </div>
-          <p class="op-card__note"><strong>Class packs: adults ages {{ pricing.visitorAndSupport.tenPack.ageMin }} and up.</strong> Ask for a class before you come. Sandy checks the space and partner fit. He confirms your class first. Each pass has its own terms. See what your pass includes. Use the 10-pack within {{ pricing.visitorAndSupport.tenPack.validity }}, or the 20-pack within {{ pricing.visitorAndSupport.twentyPack.validity }}. Bring your own gi. Kids and teens can choose a weekly youth plan above.</p>
-        <p class="op-card__note">Train each week? Choose a Core plan. Visit on a changing schedule? Choose a pass or an adult flex pack. Pack prices cover class visits. Core prices cover your chosen weekly plan for the term.</p>
-          <p class="op-card__note" data-free-intro-copy>Here for a short stay? Ask about a class pass. New local students start with a Free First Visit. Sandy guides your class and helps you choose a partner.</p>
-          <p class="op-card__note"><strong>Visiting regularly or own a second home?</strong> <a href="/catskills-home-base">See seasonal class packs and visitor options</a>.</p>
-          <a class="op-text-link" href="/catskills-home-base">See the Catskills visitor guide <span aria-hidden="true">&rarr;</span></a>
+          <p class="op-card__note"><strong>Adult packs: ages {{ pricing.visitorAndSupport.tenPack.ageMin }} and up.</strong> Ask Sandy to book first. He checks space and partner fit. The 10-pack lasts {{ pricing.visitorAndSupport.tenPack.validity }}. The 20-pack lasts {{ pricing.visitorAndSupport.twentyPack.validity }}. Bring your gi. Kids and teens can pick a youth plan.</p>
+        <p class="op-card__note">Train each week? Pick a Core plan. Visit on changing dates? Pick a pass or adult pack. Core plans set a weekly path. Packs pay for class visits.</p>
+          <p class="op-card__note" data-free-intro-copy>New local students start with a Free First Visit.</p>
+          <p class="op-card__note"><strong>Have a second home here?</strong> <a href="/catskills-home-base">See local visit plans</a>.</p>
+          <a class="op-text-link" href="/catskills-home-base">See the Catskills guide <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
 
@@ -499,11 +462,11 @@ permalink: "/options-pricing/index.html"
           <p class="op-card__kicker">One-on-One</p>
           <h3>Private Coaching</h3>
           <p class="op-private-price"><strong>{{ pricing.visitorAndSupport.privateCoachingSingle.displayPrice }}</strong><span>/ session</span></p>
-          <p>For nervous first-timers, returning adults, visitors, or students working on one specific problem.</p>
+          <p>For new students, returning adults, visitors, or one skill you want to learn.</p>
           <ul class="op-check-list op-check-list--light">
             <li>All ages</li>
-            <li>Scheduled by request</li>
-            <li>Focused, private onboarding</li>
+          <li>Book by request</li>
+          <li>One-on-one coaching</li>
           </ul>
           <a class="op-button op-button--paper" data-ss-cta-type="private_lesson" href="/private-lessons">
             <span>Ask About Private Coaching</span>
@@ -515,21 +478,21 @@ permalink: "/options-pricing/index.html"
  <article id="continue" class="op-after-first op-reveal">
         <div class="op-after-first__heading">
           <p class="op-card__kicker">After Your First Term</p>
-          <h3>Longer-term options are a later decision.</h3>
-          <p>At term’s end, review what’s working with Sandy and choose whether to continue, pause, or finish.</p>
+          <h3>Pick your next plan later.</h3>
+          <p>At term’s end, talk with Sandy. You can train on, pause, or finish.</p>
         </div>
         <div class="op-after-first__option">
           <span>Adult Private Coaching Intensive</span>
           <strong>{{ pricing.adultPrivateCoachingIntensive.displayPrice }}</strong>
           <small>/ 12 weeks</small>
-          <p class="op-after-first__copy">For adults continuing after Core Culture: six scheduled 60-minute private sessions, alongside current adult group-training limits. Application and schedule review required; no automatic guarantee.</p>
-          <a data-ss-cta-type="private_coaching_intensive" href="/adult-private-coaching-intensive.html">Review Intensive <span aria-hidden="true">&rarr;</span></a>
+          <p class="op-after-first__copy">For adults who finish Core Culture. Includes {{ pricing.adultPrivateCoachingIntensive.privateSessions }} private sessions. Each lasts {{ pricing.adultPrivateCoachingIntensive.privateSessionDurationMinutes }} minutes. Apply and review the schedule. No automatic 30-Day Training Fit Guarantee.</p>
+          <a data-ss-cta-type="private_coaching_intensive" href="/adult-private-coaching-intensive">Review Intensive <span aria-hidden="true">&rarr;</span></a>
         </div>
         <div id="annual-track" class="op-after-first__option op-after-first__option--accent">
           <span>Annual Track</span>
-          <strong>Youth {{ pricing.coreCulture.frequencyLadder.youth[3].annual | usd }} ($165/mo) <span aria-hidden="true">·</span> Adult {{ pricing.coreCulture.frequencyLadder.adult[3].annual | usd }} ($206.25/mo)</strong>
+          <strong>Youth {{ pricing.coreCulture.frequencyLadder.youth[3].annual | usd }} ({{ pricing.annualTrack.monthlyEquivalents.youth[2] | usd }}/mo) <span aria-hidden="true">·</span> Adult {{ pricing.coreCulture.frequencyLadder.adult[3].annual | usd }} ({{ pricing.annualTrack.monthlyEquivalents.adult[2] | usd }}/mo)</strong>
           <small>Annual continuation · Community-service adult {{ pricing.annualTrack.communityServiceAdult.displayPrice }}</small>
-          <p class="op-after-first__copy">For students continuing after Core Culture. Schedule and progress are reviewed each 12-week cycle; no extra uniform or 30-Day Training Fit Guarantee.</p>
+          <p class="op-after-first__copy">For students who finish Core Culture. Review the plan each 12-week cycle. It adds no uniform or 30-Day Training Fit Guarantee.</p>
           <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20interested%20in%20Annual%20Track%20Savings.">Text Sandy <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>

@@ -3,13 +3,20 @@
 > **Target Audience**: AI Coding Assistants (Codex / Antigravity / Claude Code) maintaining persona routing, prompt exports, and MCP tooling.  
 > **Repository Location**: `assets/indranet-prompt-exporter/`  
 > **Python Path Requirement**: Always prefix commands with `PYTHONPATH=. python3 assets/indranet-prompt-exporter/...` or `rtk proxy python3 ...`.  
-> **Timestamp**: 2026-09-16  
+> **Checked against repository sources**: 2026-10-12
 
 ---
 
 ## 1. Executive Summary & Core Purpose
 
 The **Indranet Prompt Exporter & Persona Router** suite in `assets/indranet-prompt-exporter/` manages the local catalog of exported Indranet persona prompts, automatic task-to-persona routing, offline workstream planning, and Playwright browser prompt harvesting routines.
+
+### Where Codex and AGY load repo guidance
+
+- **Codex skills** are repository-local under `.agents/skills/<skill-name>/SKILL.md`. Select the relevant skill for the task; these folders are not marketplace plugins and should not be copied into a user-level plugin installation.
+- **Repo instructions** live in the root `AGENTS.md`. They define the shared workflow and scope boundaries; they do not install a global Codex hook.
+- **AGY persona routing** uses the checked-in instruction and catalog sources through `assets/indranet-prompt-exporter/mcp/lib/persona_quick.py` or `auto_persona.py`. Run the selector for the current task instead of relying on a static persona mapping.
+- Standalone prompt profiles indexed by the router are distinct from Indranet app entries. An app UUID is not a router persona UUID; use the ready standalone prompt profile and its source path shown by `auto_persona.py --audit`.
 
 ### Key Operational Rules
 1. **Never Commit Credentials / Browser Profiles**: `browser_user_data/` and exported private prompt tokens are strictly `.gitignore`d or protected from public release. Never commit OAuth tokens, cookies, or credentials.
@@ -101,16 +108,17 @@ assets/indranet-prompt-exporter/
 
 ---
 
-## 5. Primary Persona Mapping Reference
+## 5. Example Standalone Persona Profiles
 
-| Domain / Task Type | Best Matched Persona | Persona UUID | Key Capability / Skillchain |
+These are examples, not automatic assignments. Use the selector to assess task fit and readiness each time. UUIDs identify standalone prompt profiles used by the router, not Indranet app IDs. `Dennis Stratton Project Management` currently reports `needs_attachment`, so it is omitted from the ready examples until its required attachment is available.
+
+| Domain / Task Type | Example Persona Profile | Prompt UUID | Key Capability |
 | :--- | :--- | :--- | :--- |
-| Project Management / Governance | **Dennis Stratton** | `2847c3fe-8128-45fa-91c5-ab3dfba20684` | Decision governance, socio-technical alignment, risk transparency |
 | Creative Enhancements / Tone | **Anything-Enhancer** | `4a702064-50b8-4fbb-875c-2f3600c8d6dc` | `[EN]` command, creative depth, sensory appeal, narrative resonance |
 | Critical Evaluation & Optimization | **Universal Analyzer-Improver** | `65808004-23a5-42ae-babe-1dbe85bfd1cf` | `[STEP]` evaluation, `[cnsd]` synthesis, `[IMP]` iterative enhancement |
-| SEO & Local Search | **Solon** | `solon-seo-uuid` | Meta tags, schema, local geo-intent, search ranking strategy |
-| Python Engineering & Refactoring | **Pythia** | `pythia-python-uuid` | Clean code, type safety, modular architecture, unit testing |
-| Debugging & Error Remediation | **Orko** | `orko-debug-uuid` | Empirical log inspection, root cause tracing, non-superficial fixes |
+| SEO & Local Search | **Solon SEO Sage** | `2d52210b-edae-48f2-b5a5-095e3dd4c523` | SEO strategy, technical SEO, and local search |
+| Python Engineering & Refactoring | **Pythia - Python made manifest** | `a95a4efd-7741-4f01-a6e1-44c05de2cb64` | Python problem solving, debugging, and software development |
+| Debugging & Error Remediation | **Debugger-Analyzer - Orko Debugulator** | `d4f92b03-1a52-49e1-8ffa-c7f2ce8cabfa` | Code analysis, debugging, and remediation |
 
 ---
 

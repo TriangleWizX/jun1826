@@ -1,7 +1,7 @@
 ---
 layout: layouts/free-intro.njk
 title: "Free First BJJ Visit in Tannersville | Sensei Sandy"
-description: "Come meet Sandy in Tannersville. See the room. Plan your free first class. Adults can choose to train that day or later. Sandy confirms the class first."
+description: "Book a free 15-minute visit with Sandy in Tannersville. See the room, talk about your goals, and plan a first class. Adults may train that day or later after Sandy confirms the class."
 canonicalUrl: "https://senseisandy.com/free-bjj-intro-tannersville-ny"
 bodyClass: "ss-clockwork page-book-intro"
 extraCss:
@@ -21,9 +21,9 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
     <div class="editorial-left">
       <h1 id="book-intro-title">Start calm. Train smart.</h1>
       <p id="book-intro-subtitle">Meet Sandy. See the room and plan your first class.</p>
-      <p id="first-visit-lane-note">Choose who is starting. Find the right first visit.</p>
+      <p id="first-visit-lane-note">Choose a path for you, your child, or your family.</p>
       <div class="d-flex flex-wrap gap-3 my-3">
-        <a class="btn btn-primary fw-bold" href="#booking-flow">See first-visit times</a>
+        <a class="btn btn-primary fw-bold" href="#booking-flow">Book your free visit</a>
         <a class="btn btn-outline-dark fw-bold" href="{{ contact.smsHref }}">Text Sandy</a>
       </div>
     </div>
@@ -34,34 +34,34 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
       <!-- STEP 1: Select Profile -->
       <div class="pb-step pb-step-active" id="pb-step-1" aria-hidden="false">
         <h2 id="booking-choice-title" tabindex="-1">Who’s starting?</h2>
-        <p class="pb-intro">Choose who is starting. Then see visit times.</p>
+        <p class="pb-intro">Choose who is starting. Then pick a visit time.</p>
         <p class="small text-muted" data-choice-status role="status" aria-live="polite" hidden></p>
         <div class="pb-lanes">
           <div class="pb-lane">
             <button type="button" class="pb-card-btn" data-profile="adult-beginner" aria-pressed="false" aria-describedby="adult-choice-help"><span>Adult (18+)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
-            <p id="adult-choice-help">New here? Trained here before?</p>
+            <p id="adult-choice-help">New to class or coming back?</p>
           </div>
           <div class="pb-lane">
             <button type="button" class="pb-card-btn" data-profile="child" aria-pressed="false" aria-describedby="child-choice-help"><span>Child (5–9)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
-            <p id="child-choice-help">Move, play, and learn the rules.</p>
+            <p id="child-choice-help">Meet Sandy and learn the class rules.</p>
           </div>
           <div class="pb-lane">
             <button type="button" class="pb-card-btn" data-profile="teen" aria-pressed="false" aria-describedby="teen-choice-help"><span>Teen (10–17)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
-            <p id="teen-choice-help">Learn skills with a matched partner.</p>
+            <p id="teen-choice-help">Meet Sandy and learn with a class partner.</p>
           </div>
           <div class="pb-lane">
             <button type="button" class="pb-card-btn" data-profile="family" aria-pressed="false" aria-describedby="family-choice-help"><span>Family (2+ students)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
-            <p id="family-choice-help">Start with those you know.</p>
+            <p id="family-choice-help">Plan a first visit for your family.</p>
           </div>
         </div>
         <div class="pb-help">
-          <button type="button" class="pb-back-btn" data-profile="not-sure">Help me choose</button>
+          <button type="button" class="pb-back-btn" data-profile="not-sure">Help me choose a path</button>
           <a href="{{ contact.smsHref }}">Text Sandy</a>
         </div>
         <details class="pb-community">
           <summary>Community-service rates</summary>
-          <p>Do you teach, give care, or serve? Check who can use this plan.</p>
-          <button type="button" class="pb-back-btn" data-profile="leo">Choose this path</button>
+          <p>Ask Sandy if you may qualify for a service rate.</p>
+          <button type="button" class="pb-back-btn" data-profile="leo">Ask about this rate</button>
         </details>
         <noscript><p>Pick a day to meet Sandy. <a href="https://cal.com/senseisandy/first-visit">See dates</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p></noscript>
       </div>
@@ -71,10 +71,8 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
           <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Change who’s starting
         </button>
-        <h2 class="h3 mb-2" data-calendar-heading>
-          Pick your Free First Visit time
-        </h2>
-        <p class="pb-intro" data-calendar-context data-adult-calendar-context="This time is for your visit. {{ freeIntro.publicCopy.adultTraining }}{% if freeIntro.firstClassFree %} Your first class is free.{% endif %}" data-youth-calendar-context="This time is for a youth visit. {{ freeIntro.publicCopy.youth }}" data-family-calendar-context="This time is for a family visit." data-help-calendar-context="This time is for a visit with Sandy.">Pick a time to meet Sandy.</p>
+        <h2 class="h3 mb-2" data-calendar-heading>Pick a time to meet Sandy</h2>
+        <p class="pb-intro" data-calendar-context data-adult-calendar-context="This is your 15-minute visit with Sandy. {{ freeIntro.publicCopy.adultTraining }}{% if freeIntro.firstClassFree %} Your first class is free.{% endif %}" data-youth-calendar-context="This is a visit for a child or teen. {{ freeIntro.publicCopy.youth }}" data-family-calendar-context="This visit is for your family. Sandy will help plan the next step." data-help-calendar-context="This is a 15-minute visit with Sandy. Talk about your goals and plan a first class.">Pick a time to meet Sandy.</p>
         <p class="fw-semibold mb-2" data-current-choice aria-live="polite"></p>
         <p class="small text-muted mb-3">Need help with class times? <a href="/schedule">See class times</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p>
         <p><a data-calendar-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open visit times in a new tab <span class="visually-hidden">(opens in a new tab)</span></a></p>
@@ -98,7 +96,7 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
               <h3 class="h6 mb-2">Your arrival plan</h3>
               <p>{{ freeIntro.publicCopy.clothing }} Bring water.</p>
               <p>{{ freeIntro.publicCopy.adultTraining }}</p>
-              <p>Fill out the waiver before you train.</p>
+              <p>Complete the waiver before you train.</p>
               <h3 class="h6 mb-2">Location</h3>
               <p>{{ contact.addressLine1 }}, {{ contact.cityStateZip }}</p>
               <p class="mb-0"><a href="/bjj-tannersville-ny-directions">See how to get here</a></p>
@@ -106,14 +104,14 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
             <div class="text-start mb-4 p-4 w-100" data-general-arrival-plan hidden>
               <h3 class="h6 mb-2">Plan your visit</h3>
               <p>{{ freeIntro.publicCopy.youth }}</p>
-              <p>For youth, send the waiver first. Then Sandy can confirm the class.</p>
+              <p>For a child or teen, send the waiver first. Sandy will confirm the class.</p>
               <h3 class="h6 mb-2">Location</h3>
               <p class="mb-0">{{ contact.addressLine1 }}, {{ contact.cityStateZip }}</p>
             </div>
             <div class="text-start mb-4 p-4 w-100" data-youth-arrival-plan hidden>
               <h3 class="h6 mb-2">Your child’s visit and class</h3>
               <p>{{ freeIntro.publicCopy.youth }}</p>
-              <p>Plan for 60 to 75 minutes. Come 20 minutes before class. Bring clean sports clothes or the gear Sandy names. A parent or guardian stays with your child. Send the waiver first. Sandy then confirms the class.</p>
+              <p>A parent or guardian stays with your child. Send the waiver first. Sandy will confirm the class and what to wear.</p>
               <p>{{ visitPreparation.youthCombinedIntro.waiver }}</p>
               <h3 class="h6 mb-2">Location</h3>
               <p class="mb-0">{{ contact.addressLine1 }}, {{ contact.cityStateZip }}</p>
@@ -140,18 +138,18 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
 <section class="ss-visit-proof" aria-labelledby="visit-includes-title">
   <figure>
     <img alt="Clean matted training room and viewing area at Sensei Sandy BJJ in Tannersville" decoding="async" height="577" loading="lazy" src="/assets/images/studio/sensei-sandy-bjj-mat-space-and-viewing-area-1024.webp" width="1024">
-    <figcaption>See the room before you come.</figcaption>
+  <figcaption>See the room where your first class takes place.</figcaption>
   </figure>
-  <h2 id="visit-includes-title">What your Free First Visit includes</h2>
+  <h2 id="visit-includes-title">Your first visit, step by step</h2>
   <p data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
   <ol>
-    <li><strong>Reserve your first visit.</strong> Choose the lane that fits who is starting.</li>
-    <li><strong>See the room.</strong> Learn the rules and talk about your goals.</li>
-    <li><strong>Choose the next step.</strong> Sandy helps you choose a class and pace.</li>
+    <li><strong>Book a visit.</strong> Choose a path for who is starting.</li>
+    <li><strong>Meet Sandy.</strong> See the room, learn the rules, and talk about your goals.</li>
+    <li><strong>Plan your class.</strong> Sandy confirms the class and helps you choose a pace.</li>
   </ol>
-  <p data-free-intro-copy>Sandy guides your first class at your pace.</p>
+  <p data-free-intro-copy>{{ freeIntro.publicCopy.firstClass }}</p>
   <div class="card p-3 my-4 bg-light border-0 rounded-3 text-start">
-    <p class="fw-bold mb-1">When you choose to keep training:</p>
+    <p class="fw-bold mb-1">If you choose to keep training:</p>
     <p class="mb-2 text-muted small">{{ freeIntro.publicCopy.afterClass }} Read the <a href="/guarantee-terms">full guarantee terms</a> for each paid plan.</p>
     <a href="/options-pricing" class="small fw-semibold text-decoration-none">See what's included&nbsp;<span aria-hidden="true">&rarr;</span></a>
   </div>
@@ -166,18 +164,18 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
 <div>
 
 <h2 class="h3 mb-2" id="location-parking-title">
-                  Location and parking
+                  Find us and park
                 </h2>
 <p class="mb-0" translate="no">
 <strong>{{ contact.addressLine1 }}, {{ contact.cityStateZip }}</strong>
 </p>
 </div>
 <ul class="ss-location-list mb-0">
-<li>Park on Main Street. Look for Studios on Main.</li>
+<li>Park on Main Street by Studios on Main.</li>
 <li>
-                  You can check nearby lots and side streets too.
+                  Nearby lots and side streets may also have parking.
                 </li>
-<li>Kids and teens come early for class. Plan to be here 20 minutes before it starts. Adults use the time Sandy gives them.</li>
+<li>Check the <a href="/schedule">class schedule</a> when planning your visit.</li>
 </ul>
 </div>
 </div>
@@ -186,36 +184,36 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
 <!-- REVIEWS VILLAGE MOVED TO SCHEDULING INTERFACE -->
 <!-- DYNAMIC EVIDENCE MOUNT (QA REQ) -->
 <div data-ss-evidence-mount=""></div>
-<p class="small text-muted text-center">See why we teach this way. <a href="/evidence">Read the research.</a></p>
+<p class="small text-muted text-center">Want to learn why we teach this way? <a href="/evidence">Read the research.</a></p>
 <!-- FAQ ACCORDION SECTION -->
 <section aria-labelledby="booking-faq-title" class="ss-faq-section">
 <div class="container">
 <h2 class="text-center" id="booking-faq-title">
-            Your questions
+            First visit questions
           </h2>
 <div class="ss-faq-accordion">
 <details class="ss-faq-item" open="">
-<summary>What happens at my first visit?</summary>
+<summary>What happens at the visit?</summary>
 <div class="ss-faq-content">
-                {{ freeIntro.publicCopy.overview }} For youth, a parent or guardian stays.
+                {{ freeIntro.publicCopy.overview }} A parent or guardian stays with a child or teen.
               </div>
 </details>
 <details class="ss-faq-item">
-<summary>What should I wear?</summary>
+<summary>What do I wear?</summary>
 <div class="ss-faq-content">
-                {{ freeIntro.publicCopy.clothing }} Kids and teens follow Sandy’s class and gear plan.
+                {{ freeIntro.publicCopy.clothing }} For kids and teens, follow the class plan Sandy sends.
               </div>
 </details>
 <details class="ss-faq-item">
-<summary>Do I need to be fit?</summary>
+<summary>Do I need to be in shape?</summary>
 <div class="ss-faq-content">
-                Start at your own pace. Sandy helps with each step. You can ask for a break.
+                Start at your own pace. Tell Sandy if you need a break.
               </div>
 </details>
 <details class="ss-faq-item">
-<summary>Can I reschedule?</summary>
+<summary>Need to change your visit?</summary>
 <div class="ss-faq-content">
-                Text Sandy to ask for a new time. Youth get one free change. Sandy reviews a second missed visit.
+                Text Sandy to ask about another time.
               </div>
 </details>
 </div>
@@ -235,14 +233,14 @@ headExtra: '<link rel="preload" href="https://app.cal.com/embed/embed.js" as="sc
 
 
 <section class="container py-4" aria-labelledby="adult-first-day-options">
-<h2 id="adult-first-day-options">Adults: choose your first day</h2>
+<h2 id="adult-first-day-options">Adults: choose how to start</h2>
 <p>{{ freeIntro.publicCopy.adultTraining }}</p>
 <p>{{ freeIntro.publicCopy.clothing }}</p>
-<h3>Live partner practice</h3>
+<h3>Partner practice</h3>
 <p>{{ freeIntro.publicCopy.sparring }}</p>
 <h3>{{ freeIntro.adultFirstDay.challenge.name }}</h3>
 <p>{{ freeIntro.publicCopy.challenge }}</p>
-<p>Sandy confirms each class and the plan first. Fill out your waiver before you train.</p>
+<p>Sandy confirms your class first. Complete your waiver before you train.</p>
 </section>
 </main>
 <!-- MOBILE STICKY ACTIONS BAR -->

@@ -1,7 +1,7 @@
 ---
 layout: layouts/location.njk
 title: "Brazilian Jiu-Jitsu in Tannersville, NY | Sensei Sandy BJJ"
-description: "Beginner Brazilian Jiu-Jitsu in Tannersville, NY. Friendly classes for kids, teens, and adults right on Main Street. Book your Free First Visit."
+description: "Visit Sensei Sandy BJJ in Tannersville. Meet the coach, see the studio, and plan a first class for kids, teens, or adults. Check current class times and directions."
 canonicalUrl: "https://senseisandy.com/bjj-classes/tannersville-ny"
 bodyClass: "lane-mixed page-tannersville"
 extraCss:
@@ -16,16 +16,16 @@ permalink: "/bjj-classes/tannersville-ny/index.html"
 <div class="row align-items-center g-5">
 <div class="col-lg-7">
 <span class="ss-eyebrow"><i class="bi bi-geo-alt me-1"></i> BJJ Classes in Tannersville, NY.</span>
-<h1 class="mb-4">Brazilian Jiu-Jitsu in Tannersville, NY.</h1>
+<h1 class="mb-4">Your first BJJ visit in Tannersville.</h1>
 <p class="lead-text mb-4">
-  Train right on Main Street. We coach kids, teens, and adults in a calm second-floor studio. Every class has small groups and personal coaching.
+  Find the studio, meet Sandy, and see how a first class works. Kids, teens, and adults can start with a Free First Visit.
 </p>
 <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-4">
 <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro">
-<span>Reserve Free First Visit</span>
+<span>{{ freeIntro.primaryCtaLabel }}</span>
 <span class="btn-icon-circle"><i class="bi bi-arrow-right"></i></span>
 </a>
-<a class="btn-premium btn-premium--secondary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20classes%20in%20Tannersville.">
+<a class="btn-premium btn-premium--secondary" href="{{ contact.smsHref }}">
 <span>Text Sandy</span>
 <span class="btn-icon-circle"><i class="bi bi-chat-text"></i></span>
 </a>
@@ -37,22 +37,9 @@ permalink: "/bjj-classes/tannersville-ny/index.html"
 <div class="col-lg-5">
 <div class="db-card">
 <div class="db-card-inner text-start">
-<h3 class="mb-2">Best first class in Tannersville.</h3>
-<p class="text-muted small mb-4">Pick the time that fits your day.</p>
-<div class="d-flex flex-column gap-3 mb-2">
-  <div class="ss-time-badge">
-    <i class="bi bi-clock"></i>
-    <span><strong>Youth &amp; Teens:</strong> 5:00 PM weekdays.</span>
-  </div>
-  <div class="ss-time-badge">
-    <i class="bi bi-clock"></i>
-    <span><strong>Adults:</strong> 6:00 PM weekdays.</span>
-  </div>
-  <div class="ss-time-badge">
-    <i class="bi bi-clock"></i>
-    <span><strong>Adult No-Gi:</strong> Saturday 10:30 AM.</span>
-  </div>
-</div>
+<h3 class="mb-2">Plan your first visit.</h3>
+<p class="text-muted small mb-4" data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
+<a class="btn btn-outline-primary" href="/schedule">See the current schedule</a>
 </div>
 </div>
 </div>
@@ -64,25 +51,21 @@ permalink: "/bjj-classes/tannersville-ny/index.html"
 <div class="container ss-container">
 <div class="row align-items-center g-5">
 <div class="col-lg-6">
-<span class="ss-eyebrow">For HTC families.</span>
-<h2 class="mb-3">An after-school anchor.</h2>
+<span class="ss-eyebrow">Your first visit.</span>
+<h2 class="mb-3">Meet Sandy before class.</h2>
 <p class="lead-text mb-4">
-  The 5:00 PM youth class gives kids a healthy after-school habit. The studio is an easy walk from Main Street. You can drop off your child and enjoy coffee nearby.
+  See the room, learn the safety steps, and talk about your goals. A parent or guardian stays with a child or teen.
 </p>
-<span class="ss-eyebrow mt-4 d-block">For mountaintop adults.</span>
-<h2 class="mb-3">A steady routine.</h2>
-<p class="lead-text mb-0">
-  Work on the mountain? Train right in town. Adult classes meet at 6:00 PM on weekdays. Saturday morning meets at 10:30 AM. Build fitness and skill close to home.
-</p>
+<a href="/free-bjj-intro-tannersville-ny">See the Free First Visit steps</a>
 </div>
 <div class="col-lg-6">
 <div class="db-card p-4 bg-white rounded-4 shadow-sm border border-slate-200">
-    <h3 class="h4 mb-2"><i class="bi bi-p-square text-success me-2"></i>Parking on Main Street.</h3>
-    <p class="small text-muted mb-0">Park on Main Street right out front. You can also use side streets. Arrive 5 to 10 minutes early. Look for Studios on Main. Walk up to the second floor.</p>
+    <h3 class="h4 mb-2"><i class="bi bi-p-square text-success me-2"></i>Directions and parking.</h3>
+    <p class="small text-muted mb-0">See current entry and parking details on the <a href="/bjj-tannersville-ny-directions">directions page</a>.</p>
 </div>
 <div class="db-card p-4 bg-white rounded-4 shadow-sm border border-slate-200 mt-4">
-    <h3 class="h4 mb-2"><i class="bi bi-people text-success me-2"></i>Small class size.</h3>
-    <p class="small text-muted mb-0">Small groups help you learn fast. Sandy watches every round and keeps the room calm. You always get personal coaching.</p>
+    <h3 class="h4 mb-2"><i class="bi bi-people text-success me-2"></i>Class details.</h3>
+    <p class="small text-muted mb-0">Explore the <a href="/bjj-classes">kids, teen, and adult class pages</a> to see how each group gets started.</p>
 </div>
 <figure class="mt-4 mb-0">
 <img alt="6045 Main Street in Tannersville, home of Sensei Sandy BJJ" class="w-100 rounded-4 shadow-sm" decoding="async" height="1080" loading="lazy" src="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-1024.webp" width="1920">
@@ -172,7 +155,7 @@ permalink: "/bjj-classes/tannersville-ny/index.html"
 </tbody>
 </table>
 </div>
-<p class="small text-muted mt-3 mb-0">Youth classes meet at 5:00 PM on weekdays. Adult classes meet at 6:00 PM on weekdays. Saturday Adult No-Gi meets at 10:30 AM. See the <a href="/schedule">current schedule</a>.</p>
+<p class="small text-muted mt-3 mb-0">Class days and times can change. Check the <a href="/schedule">current schedule</a> before you visit.</p>
 <p class="small text-muted mb-0">Local programs include the <a href="https://students.arbitersports.com/programs/hunter-tannersville-fall-athletics-2026" rel="noopener">HTC fall soccer team</a>, <a href="https://www.huntermtn.com/plan-your-trip/ski-and-ride-lessons/category/development-programs.aspx" rel="noopener">Hunter Mountain ski lessons</a>, <a href="https://www.catskillmtn.org/programs-for-youth/" rel="noopener">Catskill Mountain Foundation youth programs</a>, and <a href="https://hunterfoundation.org/venue/studios-on-main/" rel="noopener">Studios on Main</a>.</p>
 <div class="recreation-grid mt-4">
 <div class="recreation-item"><h3 class="recreation-title">Kids.</h3><p class="recreation-desc">Listen, reset, and solve puzzles with a partner.</p></div>
@@ -226,10 +209,10 @@ View the current schedule <i class="bi bi-arrow-right ms-2"></i>
 <p class="lead-text mx-auto text-center mb-5" data-free-intro-copy>Start with a 15-minute Free First Visit. Talk with Sandy about your goals. Adults can choose to train that day, after the visit. Sandy must confirm the class first. Your first class is free. Kids and teens use their own class plan.</p>
 <div class="d-flex flex-wrap justify-content-center gap-3">
 <a class="btn-premium btn-premium--primary" data-cta-lane="mixed" data-cta-placement="final" data-cta-src="tannersville-final-cta" data-cta-target="intro" data-cta-tier="primary" href="/free-bjj-intro-tannersville-ny#booking-flow">
-<span>Reserve Free First Visit</span>
+<span>{{ freeIntro.primaryCtaLabel }}</span>
 <span class="btn-icon-circle"><i class="bi bi-arrow-right"></i></span>
 </a>
-<a class="btn-premium btn-premium--secondary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20classes%20in%20Tannersville.">
+<a class="btn-premium btn-premium--secondary" href="{{ contact.smsHref }}">
 <span>Text Sandy</span>
 <span class="btn-icon-circle"><i class="bi bi-chat-text"></i></span>
 </a>

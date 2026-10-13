@@ -37,64 +37,24 @@ const CORE_FILE_EXPECTATIONS = {
     sameAs: []
   }
 };
-const NEAR_EXPECTED_QUESTIONS = [
-  'Can I start Brazilian Jiu-Jitsu as a complete beginner?',
-  'Is this striking or grappling?',
-  'Can I start with private lessons first?'
-];
 const NEAR_EXPECTED_QUESTIONS_BY_PATH = {
-  'near/haines-falls-ny/index.html': [
-    'Is this actually close enough for a tired after-school child?',
-    'My child already does camps and mountain activities. Is this too much?',
-    'Will the first class feel supervised and controlled?'
-  ],
-  'near/hunter-ny/index.html': [
-    'Is this close enough to stay easy on school nights?',
-    'Will my child get thrown into hard rounds right away?',
-    'Can this still work during ski season and busy weekends?'
-  ],
-  'near/windham-ny/index.html': [
-    'Where can beginners find martial arts classes near Windham, NY?',
-    'Can martial arts near Windham fit a real school-night routine?',
-    'What is the best first class for beginners coming from Windham?',
-    'Do I need experience before trying a martial arts class near Windham?',
-    'Is Brazilian Jiu-Jitsu a martial art?',
-    'What age groups can start from Windham?',
-    'What does a realistic school-night start look like from Windham?',
-    'Is this page also for families in Hensonville, Maplecrest, East Windham, and Brooksburg?',
-    'Is Sensei Sandy BJJ close enough to Windham Mountain Club to be practical?',
-    'What should I wear to a first martial arts class if I am coming from Windham?',
-    'Do I need a gi or uniform to start?',
-    'Can I start with No-Gi if that feels easier?',
-    'What if I am nervous about the first class?',
-    'Do beginners from Windham have to compete?'
-  ],
-  'near/palenville-ny/index.html': [
-    'Is this close enough to stay easy on school nights?',
-    'Will my child get thrown into hard rounds right away?',
-    'Can this still work when the week gets busy?'
-  ],
-  'near/cairo-ny/index.html': [
-    'Is this realistic from Cairo on school nights?',
-    'Will my child get thrown into hard rounds right away?',
-    'Can siblings or different ages make one trip work?'
-  ],
-  'near/catskill-ny/index.html': [
-    'Is this close enough to stay easy on school nights?',
-    'Will my child get thrown into hard rounds right away?',
-    'Can this still work when the week gets busy?'
-  ]
+  "near/haines-falls-ny/index.html": ["What happens on my first visit?", "Which class should I try?", "How do I plan the trip from Haines Falls?"],
+  "near/hunter-ny/index.html": ["What happens on my first visit?", "Which class should I try?", "How do I plan the trip from Hunter?"],
+  "near/windham-ny/index.html": ["What happens on my first visit?", "Which class should I try?", "How do I plan the trip from Windham?"],
+  "near/palenville-ny/index.html": ["What happens on my first visit?", "Which class should I try?", "How do I plan the trip from Palenville?"],
+  "near/cairo-ny/index.html": ["What happens on my first visit?", "Which class should I try?", "How do I plan the trip from Cairo?"],
+  "near/catskill-ny/index.html": ["What happens on my first visit?", "Which class should I try?", "How do I plan the trip from Catskill?"]
 };
 const TARGET_SCHEMA_FILES = [
-  'sensei-jiu-jitsu.html',
-  'blog/catskills-gym-alternative-jiu-jitsu/index.html'
+  'dist/sensei-jiu-jitsu.html',
+  'dist/blog/catskills-gym-alternative-jiu-jitsu/index.html'
 ];
-const TARGET_BLOG_PATH = 'blog/catskills-gym-alternative-jiu-jitsu/index.html';
-const SCHEDULE_PATH = 'schedule.html';
+const TARGET_BLOG_PATH = 'dist/blog/catskills-gym-alternative-jiu-jitsu/index.html';
+const SCHEDULE_PATH = 'dist/schedule/index.html';
 const EAST_JEWETT_PATH = 'near/east-jewett-ny/index.html';
 const CANONICAL_LOCALBUSINESS_ID = 'https://senseisandy.com/#business';
 const SERVICE_PROVIDER_REQUIRED_FILES = [
-  'free-bjj-intro-tannersville-ny/index.html'
+  'dist/free-bjj-intro-tannersville-ny/index.html'
 ];
 const STRICT_URL_FIELDS = new Set(['url', '@id', 'item', 'image', 'logo']);
 const DISALLOWED_TYPES = new Set(['MartialArtsSchool']);
@@ -204,13 +164,22 @@ const resolveSsiIncludes = async (html, relPath, seen = new Set()) => {
       : path.posix.join(path.posix.dirname(relPath), includeTarget);
     const includeRelPath = path.posix.normalize(normalized);
 
-    const candidates = [
+    const candidates = [];
+    const sourcePaths = [
       includeRelPath,
-      `${includeRelPath}.html`,
-      `${includeRelPath}.shtml`,
-      path.posix.join(includeRelPath, 'index.html'),
-      path.posix.join(includeRelPath, 'index.shtml')
+      path.posix.join('dist', includeRelPath),
+      path.posix.join('src', includeRelPath),
+      path.posix.join('src', 'partials', includeRelPath.replace(/^partials\//, ''))
     ];
+    for (const sourcePath of sourcePaths) {
+      candidates.push(
+        sourcePath,
+        `${sourcePath}.html`,
+        `${sourcePath}.shtml`,
+        path.posix.join(sourcePath, 'index.html'),
+        path.posix.join(sourcePath, 'index.shtml')
+      );
+    }
 
     let includeHtml = null;
     let resolvedRelPath = null;
@@ -242,15 +211,16 @@ const resolveUrlToFile = async (urlString) => {
   const candidates = [];
 
   if (pathname === '/') {
+    candidates.push(path.join('dist', 'index.html'));
     candidates.push('index.html');
   } else {
+    candidates.push(path.join('dist', `${slug}.html`));
+    candidates.push(path.join('dist', slug, 'index.html'));
     candidates.push(`${slug}.html`);
     candidates.push(path.join(slug, 'index.html'));
     if (slug.endsWith('.html')) candidates.push(slug);
     candidates.push(path.join('src', `${slug}.html`));
     candidates.push(path.join('src', slug, 'index.html'));
-    candidates.push(path.join('dist', `${slug}.html`));
-    candidates.push(path.join('dist', slug, 'index.html'));
   }
 
   for (const candidate of candidates) {
@@ -350,7 +320,7 @@ const validateCoreLocalBusiness = async () => {
 };
 
 const validateBookIntroRoot = async () => {
-  const relPath = 'free-bjj-intro-tannersville-ny/index.html';
+  const relPath = 'dist/free-bjj-intro-tannersville-ny/index.html';
   const objects = await readSchemaObjects(relPath);
   const faqCount = objects.filter((obj) => hasType(obj, 'FAQPage')).length;
   ensure(faqCount === 0, `${relPath}: root book intro must not include FAQPage schema.`);

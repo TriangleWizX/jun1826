@@ -14,9 +14,9 @@ for (const value of required) {
   if (!page.includes(value)) throw new Error(`missing canonical content: ${value}`);
 }
 for (const [term, definition] of [
-  ['ADAPT', 'Teaching fits the learner.'],
-  ['TEST', 'Learning survives safe resistance.'],
-  ['EXPRESS', 'Skill becomes personal.']
+  ['Learn at your pace.', 'Sandy sets a task that fits you.'],
+  ['Try it with a partner.', 'Your partner moves as you try.'],
+  ['Learn the rules.', 'Sandy guides the pace and the rules.']
 ]) {
   if (!doctrine.includes(term) || !doctrine.includes(definition)) {
     throw new Error(`canonical doctrine mismatch: ${term}`);

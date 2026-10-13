@@ -14,11 +14,14 @@
 .ss-month-grid th{text-align:center;padding:.8rem 0;font-size:.8rem;color:var(--ss-muted)}
 .ss-month-grid td{border:1px solid var(--ss-border);padding:0;vertical-align:top;background:var(--ss-bg)}
 .ss-month-grid .ss-month-empty{background:var(--ss-surface2)}
-.ss-month-date{display:flex;flex-direction:column;gap:.4rem;width:100%;min-height:190px;padding:.6rem;border:0;background:transparent;text-align:left;color:var(--ss-text);font:inherit;cursor:pointer}
-.ss-month-date[aria-pressed=true]{background:#e7efea;box-shadow:inset 0 0 0 2px var(--ss-green)}
+.ss-month-day{display:flex;flex-direction:column;gap:.3rem;min-height:190px;padding:.45rem}
+.ss-month-date{display:flex;align-items:center;gap:.4rem;width:fit-content;min-height:34px;padding:.15rem;border:0;border-radius:50%;background:transparent;text-align:left;color:var(--ss-text);font:inherit;cursor:pointer}
+.ss-month-date[aria-pressed=true]{background:#e7efea;box-shadow:0 0 0 2px var(--ss-green)}
 .ss-date-number{display:grid;place-items:center;width:28px;height:28px;font-weight:700;font-size:.9rem}
 .ss-month-date[aria-current=date] .ss-date-number{background:var(--ss-green);color:#fff;border-radius:50%}
 .ss-date-class{display:flex;flex-direction:column;gap:.2rem;width:100%;padding:.5rem;border-left:3px solid var(--class-color);background:var(--class-bg);font-size:.78rem;line-height:1.35;overflow-wrap:anywhere;border-radius:3px;color:#1f1712}
+.ss-date-class-link{text-decoration:none}
+.ss-date-class-link:hover{text-decoration:underline;text-underline-offset:2px}
 .is-youth{--class-color:#116a42;--class-bg:#e4eee6}
 .is-adult{--class-color:#306061;--class-bg:#e6eeee}
 .is-foundations{--class-color:#8b522e;--class-bg:#f4e9dc}
@@ -35,18 +38,123 @@
 .ss-selected-class{display:flex;flex-direction:column;gap:.4rem;padding:1rem;border-left:3px solid var(--class-color);background:var(--class-bg)}
 .ss-selected-class a{color:var(--ss-green);text-underline-offset:3px;min-height:44px;display:flex;align-items:center}
 .ss-month-static{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;padding:1.25rem;margin:1.25rem 0;background:#f0e8f2;border-radius:8px;text-align:center}
+.ss-month-static-dates{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem}
+.ss-month-static-dates button{min-width:44px;min-height:44px;padding:.4rem .65rem;border:1px solid #735578;border-radius:4px;background:#fff;color:#362b24;font:inherit;font-weight:700;cursor:pointer}
+.ss-month-static-dates button:hover{background:#735578;color:#fff}
 .ss-month-static small{flex-basis:100%}
 .ss-weekly-fallback summary{padding:1rem;cursor:pointer;font-weight:600;min-height:44px}
 .ss-schedule-utility-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.9rem}
-.ss-month-calendar button:focus-visible,.ss-weekly-fallback summary:focus-visible{outline:3px solid var(--ss-green);outline-offset:2px}
+.ss-month-calendar :is(button,a):focus-visible,.ss-weekly-fallback summary:focus-visible{outline:3px solid var(--ss-green);outline-offset:2px}
 @media(max-width:700px){
- .ss-month-date{min-height:64px;align-items:center;padding:.25rem;gap:.1rem}
- .ss-date-class{display:none}
- .ss-date-count{display:block;font-size:.65rem;line-height:1;background:var(--ss-green);color:#fff;border-radius:10px;padding:.15rem .4rem}
+ .ss-month-day{min-height:0;padding:.2rem;gap:.2rem}
+ .ss-month-date{min-height:34px;padding:0}
+ .ss-date-class{gap:.08rem;min-height:42px;justify-content:center;padding:.2rem .25rem;border-left-width:2px;font-size:.62rem;line-height:1.12}
+ .ss-date-class strong{font-size:.62rem}
+ .ss-date-count{display:none}
  .ss-month-grid th{font-size:.7rem}
  .ss-month-nav{width:100%;justify-content:space-between}
  .ss-month-nav button{font-size:.8rem;padding:.4rem .6rem}
  .ss-month-legend{display:none}
  .ss-selected-day{margin-top:1rem;padding-top:1rem}
  .page-schedule .ss-editorial-left{margin-bottom:1.5rem}
+}
+
+/* Use a date-first monthly board with compact class markers, as in the reference schedule. */
+.page-schedule .ss-month-calendar {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(.65rem, 1.5vw, 1.25rem);
+  border-radius: 12px;
+  box-shadow: 0 .75rem 2rem rgba(54, 43, 36, .08);
+}
+
+.page-schedule .ss-month-controls {
+  padding: .9rem 1rem;
+  border-radius: 8px;
+  background: var(--ss-ink);
+  color: var(--ss-surface);
+}
+
+.page-schedule .ss-calendar-eyebrow { color: rgba(255, 255, 255, .72); }
+.page-schedule .ss-month-controls h2 { color: var(--ss-surface); }
+
+.page-schedule .ss-month-nav button {
+  border-radius: 4px;
+  background: var(--ss-surface);
+  font-weight: 700;
+}
+
+.page-schedule .ss-month-nav button:hover {
+  border-color: var(--ss-green);
+  background: var(--ss-green);
+  color: #fff;
+}
+
+.page-schedule .ss-month-grid { border-collapse: separate; border-spacing: 0; }
+
+.page-schedule .ss-month-grid th {
+  padding: .55rem .25rem;
+  border: 1px solid var(--ss-border);
+  background: var(--ss-surface2);
+  color: var(--ss-ink);
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.page-schedule .ss-month-grid td {
+  border: 1px solid var(--ss-border);
+  background: var(--ss-surface);
+}
+
+.page-schedule .ss-month-date {
+  min-height: 9rem;
+  padding: .45rem;
+  gap: .35rem;
+}
+
+.page-schedule .ss-month-date:hover { background: var(--ss-surface2); }
+
+.page-schedule .ss-date-number {
+  border-radius: 50%;
+  background: var(--ss-surface2);
+}
+
+.page-schedule .ss-month-date[aria-pressed="true"] {
+  background: #e7efea;
+  box-shadow: inset 0 0 0 2px var(--ss-green);
+}
+
+.page-schedule .ss-date-class {
+  padding: .35rem;
+  border-radius: 3px;
+  font-size: .7rem;
+  line-height: 1.25;
+}
+
+.page-schedule .ss-date-class strong { font-size: .68rem; }
+.page-schedule .ss-date-count { font-weight: 800; }
+
+.page-schedule .ss-selected-day {
+  border-top: 2px solid var(--ss-green);
+}
+
+.page-schedule .ss-selected-class {
+  border-radius: 4px;
+}
+
+.page-schedule .ss-selected-class .ss-class-booking-link {
+  width: fit-content;
+  min-height: 44px;
+  padding: .45rem .7rem;
+  border: 1px solid var(--ss-green);
+  border-radius: 4px;
+  background: var(--ss-surface);
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .page-schedule .ss-month-controls { padding: .75rem; }
+  .page-schedule .ss-month-nav button span { display: none; }
+  .page-schedule .ss-month-date { min-height: 3.5rem; }
 }

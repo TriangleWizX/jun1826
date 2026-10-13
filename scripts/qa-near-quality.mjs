@@ -3,7 +3,6 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const CONFIG_PATH = path.join(ROOT, 'near', 'town-config.json');
-const CUSTOM_NEAR_SLUGS = new Set(['windham-ny']);
 
 const errors = [];
 
@@ -47,19 +46,28 @@ const validateLocalLinkContract = (relPath, html, ownSlug) => {
   assert(hasInternalLink(html, '/directions') || hasInternalLink(html, '/bjj-tannersville-ny-directions'), `${relPath}: missing internal link to /directions.`);
 };
 
-const validateCustomWindhamPage = (relPath, html) => {
-  assert(/<title>Brazilian Jiu-Jitsu Near Windham NY \| Sensei Sandy BJJ<\/title>/i.test(html), `${relPath}: incorrect custom title.`);
-  assert(/meta\s+[^>]*name="description"\s+[^>]*content="Beginner-friendly Brazilian Jiu-Jitsu near Windham NY for kids, teens, adults, and families\. Train minutes away in Tannersville with a Free First Visit\."/i.test(html) || /meta\s+[^>]*content="Beginner-friendly Brazilian Jiu-Jitsu near Windham NY for kids, teens, adults, and families\. Train minutes away in Tannersville with a Free First Visit\."\s+[^>]*name="description"/i.test(html), `${relPath}: incorrect custom meta description.`);
-  assert(/link\s+[^>]*rel="canonical"\s+[^>]*href="https:\/\/senseisandy\.com\/near\/windham-ny"/i.test(html) || /link\s+[^>]*href="https:\/\/senseisandy\.com\/near\/windham-ny"\s+[^>]*rel="canonical"/i.test(html), `${relPath}: incorrect custom canonical.`);
-  assert(/https:\/\/senseisandy\.com\/near\/windham-ny#webpage/i.test(html), `${relPath}: missing WebPage schema id.`);
-  assert(/https:\/\/senseisandy\.com\/near\/windham-ny#faq/i.test(html), `${relPath}: missing FAQ schema id.`);
-  assert(/<!--#include virtual="\/_includes\/local-business-schema\.jsonld\.html" -->/i.test(html), `${relPath}: missing shared LocalBusiness schema include.`);
-  assert(countMatches(html, /href="\/book-free-intro"/gi) >= 2 || countMatches(html, /href="\/free-bjj-intro-tannersville-ny/gi) >= 2, `${relPath}: expected at least 2 Windham intro CTAs.`);
-  assert(/\/assets\/images\/413\/673065954-1200\.b8604c\.webp/i.test(html), `${relPath}: missing approved replacement studio image asset.`);
-  validateLocalLinkContract(relPath, html, 'windham-ny');
+const validateNearPage = (relPath, html, town) => {
+  const canonical = `https://senseisandy.com/near/${town.slug}`;
+  assert(new RegExp(`<title>BJJ near ${escapeRegExp(town.town)}, NY \\| Sensei Sandy<\\/title>`, 'i').test(html), `${relPath}: incorrect title.`);
+  assert(html.includes(`<link href="${canonical}" rel="canonical"`) || html.includes(`<link rel="canonical" href="${canonical}"`), `${relPath}: incorrect canonical.`);
+  assert(html.includes(`${canonical}#webpage`), `${relPath}: missing WebPage schema id.`);
+  assert(html.includes(`${canonical}#faq`), `${relPath}: missing FAQ schema id.`);
+  assert(countMatches(html, /"@type": "FAQPage"/gi) === 1, `${relPath}: expected one current FAQ schema block.`);
+  assert(countMatches(html, /<h1\b/gi) === 1, `${relPath}: expected one H1.`);
+  assert(new RegExp(`<h1[^>]*>Try BJJ near ${escapeRegExp(town.town)}, NY<\\/h1>`, 'i').test(html), `${relPath}: missing town-specific first-class headline.`);
+  assert(/Plan your first visit/i.test(html), `${relPath}: missing first-visit steps.`);
+  assert(/Find the studio from/i.test(html), `${relPath}: missing local route section.`);
+  assert(/google\.com\/maps\/dir\/\?api=1/i.test(html), `${relPath}: missing map link from the town.`);
+  assert(/Questions about your first class/i.test(html), `${relPath}: missing first-class questions.`);
+  assert(/A local fact/i.test(html) && /Read the source/i.test(html), `${relPath}: missing sourced local fact.`);
+  assert(countMatches(html, /href="\/free-bjj-intro-tannersville-ny#booking-flow"/gi) >= 2, `${relPath}: expected hero and final Free Intro CTAs.`);
+  assert(!/\b\d{1,2}:\d{2}\s*(?:AM|PM)?\b|straight-line distance|drive minutes|capped at \d+/i.test(html), `${relPath}: contains a fixed time, inferred distance, or unsupported cap.`);
+  assert(countMatches(html, new RegExp(escapeRegExp(town.town), 'gi')) >= 4, `${relPath}: weak town-specific copy density.`);
+  assert(hasInternalLink(html, '/schedule'), `${relPath}: missing current schedule link.`);
+  assert(hasInternalLink(html, '/options-pricing'), `${relPath}: missing current plans link.`);
+  assert(hasInternalLink(html, '/contact'), `${relPath}: missing contact link.`);
+  validateLocalLinkContract(relPath, html, town.slug);
 };
-
-const validateCustomWindhamMountainClubPage = async () => {};
 
 const run = async () => {
   const towns = await readJson(CONFIG_PATH);
@@ -71,46 +79,9 @@ const run = async () => {
     const fullPath = path.join(ROOT, relPath);
     const html = await fs.readFile(fullPath, 'utf8');
 
-    if (CUSTOM_NEAR_SLUGS.has(String(town.slug || '').trim())) {
-      validateCustomWindhamPage(relPath, html);
-      continue;
-    }
-
-    const townLabel = `${town.town}, NY`;
-    const townNamePattern = new RegExp(escapeRegExp(town.town), 'gi');
-
-    assert(!/\[(Town|slug|X|Road|Angle|HeroSubhead|LandmarkLine|LandmarkActivity)\]/.test(html), `${relPath}: unresolved template token found.`);
-    assert(/Why families from/i.test(html), `${relPath}: missing town-choice section.`);
-    assert(/What the trip (actually )?looks like from/i.test(html), `${relPath}: missing trip framing section.`);
-    assert(/Questions parents from/i.test(html), `${relPath}: missing objection section.`);
-    assert(/Local proof|Practical details/i.test(html), `${relPath}: missing local proof or practical details section.`);
-    assert(/Best fit for/i.test(html), `${relPath}: missing best-fit section.`);
-    assert(/Local facts \(sources\)/i.test(html), `${relPath}: missing local-facts accordion.`);
-    assert(/Next step from|Ready to See/i.test(html), `${relPath}: missing quiet CTA section.`);
-    assert(!/Fast next step|Quick answers|Ready to start/i.test(html), `${relPath}: legacy repeated CTA ladder still present.`);
-
-    assert(/straight-line distance/i.test(html), `${relPath}: missing straight-line distance label.`);
-    assert(/computed from 2020 u\.s\. census gazetteer representative coordinates/i.test(html), `${relPath}: missing Gazetteer method disclosure.`);
-    assert(html.toLowerCase().includes(String(town.main_route || '').toLowerCase()), `${relPath}: missing town-specific route text.`);
-    assert(countMatches(html, townNamePattern) >= 4, `${relPath}: weak town-specific copy density.`);
-    const sourceLinkCount = countMatches(html, /rel="noopener noreferrer">Verified source<\/a>/gi);
-    assert(sourceLinkCount >= 3, `${relPath}: expected at least 3 verified source links, found ${sourceLinkCount}.`);
-
-    assert(/google\.com\/maps\/dir\/\?api=1/i.test(html), `${relPath}: missing directions/map link.`);
-    const introCtaCount = countMatches(html, /href="\/book-free-intro"/gi) + countMatches(html, /href="\/free-bjj-intro-tannersville-ny/gi);
-    assert(introCtaCount >= 2, `${relPath}: expected at least 2 intro CTA links, found ${introCtaCount}.`);
-    assert(/<section class="near-hero[\s\S]*?href="(\/book-free-intro|\/free-bjj-intro-tannersville-ny)/i.test(html), `${relPath}: hero section missing intro CTA.`);
-    assert(/(Next step from|Ready to See)[\s\S]*?href="(\/book-free-intro|\/free-bjj-intro-tannersville-ny)/i.test(html), `${relPath}: quiet CTA section missing intro CTA.`);
-
-    assert(hasInternalLink(html, '/schedule'), `${relPath}: missing internal link to /schedule.`);
-    assert(hasInternalLink(html, '/options-pricing'), `${relPath}: missing internal link to /options-pricing.`);
-    assert(hasInternalLink(html, '/contact'), `${relPath}: missing internal link to /contact.`);
-    validateLocalLinkContract(relPath, html, town.slug);
-
-    assert(html.includes(townLabel), `${relPath}: schema/content missing town-specific area label (${townLabel}).`);
+    assert(!/\[(Town|slug|X|Road|Angle|HeroSubhead|LandmarkLine|LandmarkActivity|MapsUrl|SmsHref|LocalFact)\]/.test(html), `${relPath}: unresolved template token found.`);
+    validateNearPage(relPath, html, town);
   }
-
-  await validateCustomWindhamMountainClubPage();
 
   if (errors.length) {
     for (const error of errors) {

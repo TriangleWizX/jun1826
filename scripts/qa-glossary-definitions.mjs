@@ -38,10 +38,12 @@ for (const term of terms) {
   assert.equal(structured.length, 1, `${term.slug}: missing/duplicate structured question`);
   assert.equal(structured[0].acceptedAnswer.text, term.summary, `${term.slug}: schema definition drift`);
   assert.ok(record.searchText.includes(normalized(term.summary)), `${term.slug}: search lacks definition`);
-  const tag = [...hub.matchAll(/<article\b[^>]*data-glossary-card\b[^>]*>/g)]
-    .find((match) => match[0].includes(`data-slug="${term.slug}"`));
-  assert.ok(tag, `${term.slug}: missing hub card`);
-  assert.equal(decode(tag[0].match(/data-search="([^"]*)"/)[1]), record.searchText, `${term.slug}: hub/search disagreement`);
+  const embeddedMatch = hub.match(/<script id="glossary-data" type="application\/json">([\s\S]*?)<\/script>/);
+  assert.ok(embeddedMatch, 'Glossary hub is missing its term search data');
+  const embedded = JSON.parse(embeddedMatch[1]);
+  const embeddedRecord = embedded.find((item) => item.slug === term.slug);
+  assert.ok(embeddedRecord, `${term.slug}: missing embedded search record`);
+  assert.equal(embeddedRecord.searchText, record.searchText, `${term.slug}: embedded search data differs from the shared index`);
   definitions += 1;
 }
 assert.ok(definitions >= 71, `Expected at least 71 summary-backed definition FAQs, found ${definitions}`);

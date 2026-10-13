@@ -72,7 +72,8 @@ const EXCLUDED_FILES = new Set([
   'lane-picker.html',
   'my-promise-full.html',
   'my-promise-short.html',
-  'safety-promise.html'
+  'safety-promise.html',
+  'template.html'
 ]);
 
 const NOINDEX_ROUTES = new Set([
@@ -90,7 +91,7 @@ const TIER_C_TOWNS = new Set([
   'elka-park-ny', 'gilboa-ny', 'grand-gorge-ny', 'greenville-ny', 'lanesville-ny',
   'leeds-ny', 'lexington-ny', 'maplecrest-ny', 'olive-ny', 'prattsville-ny',
   'purling-ny', 'round-top-ny', 'roxbury-ny', 'saugerties-ny', 'schoharie-ny',
-  'shandaken-ny', 'shokan-ny', 'stamford-ny'
+  'shandaken-ny', 'shokan-ny', 'stamford-ny', 'phoenicia-ny'
 ]);
 
 const parseMetaDirectives = (html, name) => {

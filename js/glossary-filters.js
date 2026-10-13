@@ -206,15 +206,18 @@
     // DOM Elements
     const searchInput = root.querySelector('#glossary-q');
     const clearBtn = root.querySelector('#glossary-search-clear');
-    const surpriseBtn = root.querySelector('#surprise-me-btn');
-    const copyLinkBtn = root.querySelector('#copy-term-link-btn');
+    const surpriseButtons = Array.from(root.querySelectorAll('#surprise-me-inline, #surprise-me-az'));
+    const copyLinkBtn = root.querySelector('#copy-state-link');
+    const filterForm = root.querySelector('#glossary-filter-form');
     const resetBtn = root.querySelector('#reset-filters');
     const emptyResetBtn = root.querySelector('#empty-reset-btn');
     const categoryButtons = Array.from(root.querySelectorAll('[data-filter-category]'));
+    const levelButtons = Array.from(root.querySelectorAll('[data-filter-level]'));
     const commonButtons = Array.from(root.querySelectorAll('[data-filter-common]'));
     const contextButtons = Array.from(root.querySelectorAll('[data-filter-context]'));
     const letterLinks = Array.from(root.querySelectorAll('[data-letter-link]'));
-    const directoryItems = Array.from(root.querySelectorAll('.glossary-directory-item'));
+    const directoryList = root.querySelector('#glossary-directory');
+    let directoryItems = Array.from(root.querySelectorAll('.glossary-directory-item'));
     const resultCountEl = root.querySelector('#result-count');
     const directoryCountEl = root.querySelector('#directory-count');
     const emptyEl = root.querySelector('#glossary-empty');
@@ -236,128 +239,37 @@
       currentSelectedSlug = slug;
       state.t = slug;
       setGlossaryState(state);
-
-      // Update directory item active states
-      directoryItems.forEach((btn) => {
-        const isActive = btn.dataset.slug === slug;
-        btn.classList.toggle('is-active', isActive);
-        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        if (isActive) {
-          const list = btn.closest('.glossary-directory-list');
-          if (list) {
-            const relTop = btn.offsetTop - list.offsetTop;
-            if (relTop < list.scrollTop || relTop > list.scrollTop + list.clientHeight - btn.clientHeight) {
-              list.scrollTop = Math.max(0, relTop - 20);
-            }
-          }
-        }
+      directoryItems.forEach((item) => {
+        const active = item.dataset.slug === slug;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-selected', active ? 'true' : 'false');
       });
 
-      // Compute Previous / Next terms based on visible terms
-      const currentIndex = visibleTerms.findIndex((t) => t.slug === slug);
-      const prevTerm = currentIndex > 0 ? visibleTerms[currentIndex - 1] : null;
-      const nextTerm = currentIndex >= 0 && currentIndex < visibleTerms.length - 1 ? visibleTerms[currentIndex + 1] : null;
-
-      const relatedList = (term.related || []).map((rSlug) => termMap.get(rSlug)).filter(Boolean);
-      const aliasesText = term.aliases && term.aliases.length ? term.aliases.join(', ') : '';
+      const index = visibleTerms.findIndex((item) => item.slug === slug);
+      const previous = index > 0 ? visibleTerms[index - 1] : null;
+      const next = index >= 0 && index < visibleTerms.length - 1 ? visibleTerms[index + 1] : null;
+      const related = (term.related || []).slice(0, 3).map((key) => termMap.get(key)).filter(Boolean);
 
       readerCard.innerHTML = `
         <div class="reader-card-inner">
-          <div class="reader-header">
-            <div class="reader-badge-row">
-              <span class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel || term.category)}</span>
-              <span class="reader-pill reader-pill-level">${escapeHtml(term.levelLabel || term.level)}</span>
-              ${term.isFoundational ? '<span class="reader-pill reader-pill-foundational">🌟 Day 1 Essential</span>' : ''}
-              ${term.curriculum ? `<span class="reader-pill reader-pill-curriculum">${escapeHtml(term.curriculum.week)} · ${escapeHtml(term.curriculum.title)}</span>` : ''}
-            </div>
-            <div class="reader-title-row">
-              <h2 class="reader-title" id="reader-title">${escapeHtml(term.term)}</h2>
-              <div class="reader-nav-actions">
-                ${prevTerm ? `<button type="button" class="reader-nav-btn" id="reader-prev-btn" data-slug="${escapeHtml(prevTerm.slug)}" title="Previous: ${escapeHtml(prevTerm.term)}">← Prev</button>` : ''}
-                ${nextTerm ? `<button type="button" class="reader-nav-btn" id="reader-next-btn" data-slug="${escapeHtml(nextTerm.slug)}" title="Next: ${escapeHtml(nextTerm.term)}">Next →</button>` : ''}
-                <button type="button" class="reader-nav-btn reader-copy-btn" id="reader-copy-btn" title="Copy link to ${escapeHtml(term.term)}">🔗 Copy Link</button>
-                <a class="reader-nav-btn reader-ext-link" id="reader-standalone-link" href="/bjj-glossary/${escapeHtml(term.slug)}" title="Open standalone page">↗</a>
-              </div>
-            </div>
-            ${aliasesText ? `<p class="reader-aliases"><strong>Also known as:</strong> ${escapeHtml(aliasesText)}</p>` : ''}
-          </div>
-
+          <div class="reader-header"><p class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel || term.category)}</p><h2 class="reader-title" id="reader-title">${escapeHtml(term.displayTerm || term.term)}</h2></div>
           <div class="reader-body">
-            <div class="reader-section reader-definition">
-              <h3 class="reader-section-title">Quick Definition</h3>
-              <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
+            <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
+            ${term.beginnerTranslation ? `<p class="callout-text" id="reader-translation">${escapeHtml(term.beginnerTranslation)}</p>` : ''}
+            ${term.safetyNote ? `<p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote)}</p>` : ''}
+            ${related.length ? `<h3>More terms</h3><ul id="reader-related-chips">${related.map((item) => `<li><button type="button" data-slug="${escapeHtml(item.slug)}">${escapeHtml(item.displayTerm || item.term)}</button></li>`).join('')}</ul>` : ''}
+            <div class="reader-nav-actions">
+              ${previous ? `<button type="button" id="reader-prev-btn" data-slug="${escapeHtml(previous.slug)}">Prev</button>` : ''}
+              ${next ? `<button type="button" id="reader-next-btn" data-slug="${escapeHtml(next.slug)}">Next</button>` : ''}
+              <button type="button" id="reader-copy-btn">Copy link</button>
+              <a id="reader-standalone-link" href="/bjj-glossary/${escapeHtml(term.slug)}">Read this term</a>
             </div>
-
-            ${term.beginnerTranslation ? `
-            <div class="reader-callout reader-translation-box">
-              <div class="callout-header">
-                <span class="callout-icon">💬</span>
-                <h3 class="callout-title">In Everyday Words</h3>
-              </div>
-              <p class="callout-text" id="reader-translation">${autolinkText(term.beginnerTranslation, term.slug)}</p>
-            </div>` : ''}
-
-            ${term.whyItMatters ? `
-            <div class="reader-section">
-              <h3 class="reader-section-title">Why It Matters on the Mat</h3>
-              <p class="reader-text" id="reader-why">${autolinkText(term.whyItMatters, term.slug)}</p>
-            </div>` : ''}
-
-            ${term.whatBeginnersShouldKnow ? `
-            <div class="reader-section">
-              <h3 class="reader-section-title">What Beginners Should Know</h3>
-              <p class="reader-text" id="reader-beginners">${autolinkText(term.whatBeginnersShouldKnow, term.slug)}</p>
-            </div>` : ''}
-
-            ${(term.coachCue || (term.commonClassPhrases && term.commonClassPhrases.length)) ? `
-            <div class="reader-callout reader-cues-box">
-              <div class="callout-header">
-                <span class="callout-icon">🥋</span>
-                <h3 class="callout-title">Coach Cues in Class</h3>
-              </div>
-              ${term.coachCue ? `<p class="coach-primary-cue" id="reader-coach-cue"><strong>Sandy’s cue:</strong> “${escapeHtml(term.coachCue.replace(/^Coach cue:\s*/i, ''))}”</p>` : ''}
-              ${term.commonClassPhrases && term.commonClassPhrases.length ? `
-              <ul class="coach-phrases-list" id="reader-phrases">
-                ${term.commonClassPhrases.map((p) => `<li>${escapeHtml(p)}</li>`).join('\n')}
-              </ul>` : ''}
-            </div>` : ''}
-
-            ${term.safetyNote ? `
-            <div class="reader-callout reader-safety-box">
-              <div class="callout-header">
-                <span class="callout-icon">🛡️</span>
-                <h3 class="callout-title">Beginner Safety Cue</h3>
-              </div>
-              <p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote.replace(/^Safety note:\s*/i, ''))}</p>
-            </div>` : ''}
-
-            ${relatedList.length ? `
-            <div class="reader-section reader-related-section">
-              <h3 class="reader-section-title">Connected Mat Vocabulary</h3>
-              <div class="reader-related-chips" id="reader-related-chips">
-                ${relatedList.map((r) => `<button type="button" class="reader-related-chip" data-slug="${escapeHtml(r.slug)}">${escapeHtml(r.displayTerm || r.term)} →</button>`).join('\n')}
-              </div>
-            </div>` : ''}
-
-            <div class="reader-cta-card">
-              <div class="reader-cta-copy">
-                <h4>Want to feel this in class?</h4>
-                <p>Every student begins with cooperative partner care and guided pacing. Sandy walks you through every movement step by step.</p>
-              </div>
-              <div class="reader-cta-actions">
-                <a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free First Visit</a>
-                <a class="glossary-btn glossary-btn-secondary" href="/schedule">View Class Schedule</a>
-              </div>
-            </div>
+            <div class="reader-cta-actions"><a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a><a class="glossary-btn glossary-btn-secondary" href="/schedule">See times</a></div>
           </div>
-        </div>
-      `;
+        </div>`;
 
       if (shouldScrollMobile && window.innerWidth < 992) {
-        const readerEl = root.querySelector('#glossary-reader');
-        if (readerEl) {
-          readerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        root.querySelector('#glossary-reader')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
 
@@ -377,11 +289,22 @@
       return false;
     }
 
+    function renderDirectoryItem(term) {
+      return `<button type="button" class="glossary-directory-item" role="option" data-slug="${escapeHtml(term.slug)}" data-category="${escapeHtml(term.category)}" data-level="${escapeHtml(term.level)}" data-letter="${escapeHtml(term.letter)}" data-common="${term.common ? '1' : '0'}" data-foundational="${term.foundational ? '1' : '0'}" data-contexts="${escapeHtml((term.contexts || []).join(','))}" aria-selected="${term.slug === currentSelectedSlug ? 'true' : 'false'}"><span class="dir-item-top"><span class="dir-item-title">${escapeHtml(term.term)}.</span><span class="dir-item-badge">${escapeHtml(term.categoryLabel)}.</span></span></button>`;
+    }
+
     function syncControls() {
       if (searchInput) {
         searchInput.value = state.q || '';
         if (clearBtn) clearBtn.hidden = !state.q;
       }
+
+      levelButtons.forEach((btn) => {
+        const level = btn.dataset.filterLevel || 'all';
+        const active = level === state.level;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
 
       categoryButtons.forEach((btn) => {
         const cat = btn.dataset.filterCategory || 'all';
@@ -404,7 +327,7 @@
         btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
 
-      const hasActiveFilters = Boolean(state.q || state.cat !== 'all' || state.common !== 'all' || state.context !== 'all' || state.l);
+      const hasActiveFilters = Boolean(state.q || state.cat !== 'all' || state.level !== 'all' || state.common !== 'all' || state.context !== 'all' || state.l);
       if (resetBtn) resetBtn.hidden = !hasActiveFilters;
     }
 
@@ -419,12 +342,14 @@
         }
       });
 
-      // Update directory item visibility
+      // Show a short starter list by default. Search and filters reveal matches.
+      const isDefaultView = !state.q && state.cat === 'all' && state.level === 'all'
+        && state.context === 'all' && state.common === 'all' && !state.l;
+      const starterTerms = terms.filter((term) => term.foundational);
+      const listedTerms = (isDefaultView && starterTerms.length ? starterTerms : visibleTerms).slice(0, 8);
+      if (directoryList) directoryList.innerHTML = listedTerms.map(renderDirectoryItem).join('');
+      directoryItems = Array.from(root.querySelectorAll('.glossary-directory-item'));
       const visibleSlugSet = new Set(visibleTerms.map((t) => t.slug));
-      directoryItems.forEach((btn) => {
-        const isVis = visibleSlugSet.has(btn.dataset.slug);
-        btn.hidden = !isVis;
-      });
 
       // Update counts
       const count = visibleTerms.length;
@@ -464,6 +389,9 @@
       renderActiveReader(slug, shouldScrollMobile !== false);
     }
 
+    // Keep live search on this page instead of submitting the form.
+    if (filterForm) filterForm.addEventListener('submit', (event) => event.preventDefault());
+
     // Event Listeners: Search
     if (searchInput) {
       searchInput.addEventListener('input', () => {
@@ -483,6 +411,13 @@
     }
 
     // Event Listeners: Filters
+    levelButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const level = btn.dataset.filterLevel || 'all';
+        commit({ level });
+      });
+    });
+
     categoryButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
         const cat = btn.dataset.filterCategory || 'all';
@@ -519,12 +454,13 @@
       });
     });
 
-    // Event Listeners: Directory items
-    directoryItems.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        selectTerm(btn.dataset.slug, true);
+    // Event delegation keeps the short result list interactive after search.
+    if (directoryList) {
+      directoryList.addEventListener('click', (event) => {
+        const button = event.target.closest('.glossary-directory-item');
+        if (button && directoryList.contains(button)) selectTerm(button.dataset.slug, true);
       });
-    });
+    }
 
     // Event Listeners: Day 1 Hero Chips
     quickTermChips.forEach((chip) => {
@@ -559,7 +495,7 @@
     }
 
     // Top action buttons: Surprise Me & Copy Link
-    if (surpriseBtn) {
+    surpriseButtons.forEach((surpriseBtn) => {
       surpriseBtn.addEventListener('click', () => {
         const pool = visibleTerms.length ? visibleTerms : terms;
         const picked = pool[Math.floor(Math.random() * pool.length)];
@@ -568,7 +504,7 @@
           showToast(`Surprise: ${picked.term}!`);
         }
       });
-    }
+    });
 
     if (copyLinkBtn) {
       copyLinkBtn.addEventListener('click', () => {

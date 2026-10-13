@@ -5,6 +5,10 @@ description: Guides contextual persona routing, full-source review, host adoptio
 
 Use this skill for `/plan` requests and for creating, refining, decomposing, or execution-planning a goal. Do not create a goal merely because this skill applies to an ordinary task.
 
+## Repository skill and persona layers
+
+For this repository, task-specific Codex skills are loaded from `.agents/skills/<skill-name>/SKILL.md`; read the matching skill when its description fits the work. Persona selection is a separate layer backed by `assets/indranet-prompt-exporter/exports/` and the local selector scripts. Do not treat an Indranet app entry, an installed marketplace plugin, or a skill folder as a standalone persona profile. Use the selector's ready standalone prompt candidate, inspect its source, and disclose a specialist fallback when the catalog has no suitable candidate.
+
 ## Workflow Execution Steps
 
 **Pre-work gate:** Interpret short prompts using the active conversation. Routing

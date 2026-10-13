@@ -31,7 +31,7 @@
         "Display applicable card-inclusive prices and final totals before payment",
         "Itemize the surcharge on receipts"
       ],
-      "publicCopy": "Eligible credit-card payments may carry a processing fee of up to 3%, capped at our actual card acceptance cost. The fee and final total are shown before payment. Debit and prepaid cards are excluded.",
+      "publicCopy": "A fee may apply to credit card payments when law and card rules allow. The fee is capped at 3% or our actual card cost, whichever is lower. You will see the fee and full price before you pay. Debit and prepaid cards are not charged this fee.",
       "sourceUrl": "https://usa.visa.com/content/dam/VCOM/global/support-legal/documents/merchant-surcharging-qa-for-web.pdf"
     },
     "acceptedPayments": {
@@ -43,11 +43,11 @@
         "Stripe"
       ],
       "publicCopy": "Pay with Venmo, cash, check, Zelle, or a card through Stripe.",
-      "cardTypesCopy": "Stripe supports credit and debit cards, plus eligible prepaid cards and gift cards linked to a supported card network.",
+      "cardTypesCopy": "Stripe supports credit and debit cards, plus eligible prepaid and gift cards linked to a supported card network.",
       "networkCopy": "Stripe supports Visa, Mastercard, American Express, Discover, Diners Club, JCB, and China UnionPay, subject to account and regional rules.",
-      "regionalCopy": "Regional networks include Cartes Bancaires in France, Interac in Canada, and eftpos in Australia. Support can depend on the region and payment setup, including in-person payments.",
-      "availabilityCopy": "Available card brands, currencies, and saved-card use depend on the Stripe account country, your location, and the payment setup. Text Sandy to confirm your card before you pay.",
-      "cardOnFileCopy": "The monthly and annual card-on-file rules still apply when you pay another way. Text Sandy to set up your plan.",
+      "regionalCopy": "Regional networks include Cartes Bancaires in France, Interac in Canada, and eftpos in Australia. Support can depend on your region and payment setup, including in-person payments.",
+      "availabilityCopy": "Card brands, currencies, and saved-card use depend on the Stripe account country, your location, and payment setup. Text Sandy to check your card before you pay.",
+      "cardOnFileCopy": "Monthly and annual card-on-file rules apply even if you pay another way. Text Sandy to set up your plan.",
       "docsUrl": "https://docs.stripe.com/payments/cards"
     },
     "annualPayment": {
@@ -60,8 +60,8 @@
       "monthlyPaymentDue": "Before each month of training",
       "paidInFullDue": "Before the annual term starts",
       "continuationOnly": true,
-      "publicCopy": "Keep two cards on file for a year plan. You agree to a full year. Pay in full before the year starts. Or split the cost into 12 monthly payments. Each is due before that month of class.",
-      "cardCollection": "Arrange card-on-file enrollment with Sandy through the payment provider; this website does not collect card details.",
+      "publicCopy": "Keep two cards on file for a year plan. You agree to a full year. Pay in full before the year starts, or split the cost into 12 monthly payments. Each payment is due before that month’s class.",
+      "cardCollection": "Set up card-on-file with Sandy through the payment provider. The site does not collect card details.",
       "installmentPlans": [
         {
           "label": "Youth 1 class each week",
@@ -151,8 +151,8 @@
       "rateRef": "coreCulture.frequencyLadder",
       "billingPeriod": "month",
       "scope": "Individual Youth and Adult monthly tuition rates",
-      "cardCollection": "Arrange card-on-file enrollment with Sandy through the payment provider; this website does not collect card details.",
-      "publicCopy": "Keep one card on file to use the monthly rate. Pay before each month of training starts."
+      "cardCollection": "Set up card-on-file with Sandy through the payment provider. The site does not collect card details.",
+      "publicCopy": "Keep one card on file to use the monthly rate. Pay before your training month starts."
     },
     "firstPaidTerm": ["coreCulture.youth", "coreCulture.adult", "coreCulture.communityServiceAdult"],
     "continuationOnly": ["eliteConcierge", "annualTrack", "householdBundles.annualFamily"],

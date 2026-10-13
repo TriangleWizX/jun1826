@@ -17,7 +17,7 @@ const ALL_TOWN_SLUGS = [
   'elka-park-ny', 'gilboa-ny', 'grand-gorge-ny', 'greenville-ny', 'lanesville-ny',
   'leeds-ny', 'lexington-ny', 'maplecrest-ny', 'olive-ny', 'prattsville-ny',
   'purling-ny', 'round-top-ny', 'roxbury-ny', 'saugerties-ny', 'schoharie-ny',
-  'shandaken-ny', 'shokan-ny', 'stamford-ny'
+  'shandaken-ny', 'shokan-ny', 'stamford-ny', 'phoenicia-ny'
 ];
 
 export const main = async () => {

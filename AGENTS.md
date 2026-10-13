@@ -469,9 +469,12 @@ The restored Codex workflow assets are part of this repository's working
 process and should be included when the task calls for persona selection,
 planning, swarm audits, or Ad Studio work:
 
+- Task-specific Codex skills are repository-local in `.agents/skills/<skill-name>/SKILL.md`; read and apply the relevant skill when its description matches the requested work.
+- These `.agents/skills` files are not marketplace plugins and do not install or update user-level Codex plugins.
 - Persona selector: `assets/indranet-prompt-exporter/mcp/lib/auto_persona.py`
 - Fast persona helper & plan formatter: `assets/indranet-prompt-exporter/mcp/lib/persona_quick.py`
 - Persona skill: `assets/indranet-prompt-exporter/skills/plan-persona/SKILL.md`
+- Catalog audits list both app entries and standalone prompt profiles; use ready standalone prompt UUIDs and source paths for persona adoption.
 - Ad Studio handoff and tooling: `tools/ads/CODEX-HANDOFF-ADS.md` and `tools/ads/`
 
 Run the persona selector for `/plan` and goal work, preserve its selected

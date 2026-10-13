@@ -8,10 +8,10 @@ const LEGACY_REDIRECTS_PATH = path.join(ROOT, 'config', 'legacy-redirects.json')
 const FAST_FACTS_PATH = path.join(ROOT, 'data', 'near-fast-facts.json');
 const DECISION_CONTENT_PATH = path.join(ROOT, 'data', 'near-decision-content.json');
 const PROVENANCE_PATH = path.join(ROOT, 'data', 'location-provenance.json');
+const CONTACT_PATH = path.join(ROOT, 'src', '_data', 'contact.json');
 const OUTPUT_ROOT = path.join(ROOT, 'near');
 const SRC_TEMPLATE_PATH = path.join(ROOT, 'src', 'near', 'template.html');
 const SRC_OUTPUT_ROOT = path.join(ROOT, 'src', 'near');
-const CUSTOM_NEAR_SLUGS = new Set(['windham-ny']);
 
 const readJson = async (filePath) => JSON.parse(await fs.readFile(filePath, 'utf8'));
 
@@ -44,23 +44,13 @@ const escapeHtml = (value = '') =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-const STRAIGHT_LINE_MILES = Object.freeze({
-  'hunter-ny': '2.2',
-  'windham-ny': '9.6',
-  'haines-falls-ny': '1.7',
-  'cairo-ny': '11.7',
-  'catskill-ny': '13.5',
-  'palenville-ny': '8.5'
-});
-
-const NEAR_FACTS_MAP = Object.freeze({
-  'hunter-ny': ['hunter_town'],
-  'haines-falls-ny': ['haines_falls'],
-  'east-jewett-ny': ['elka_park', 'onteora_park', 'east_jewett', 'jewett_town'],
-  'windham-ny': ['windham_town'],
-  'palenville-ny': ['palenville'],
-  'cairo-ny': ['cairo_town'],
-  'catskill-ny': ['catskill_town']
+const NEAR_LOCAL_FACTS = Object.freeze({
+  'hunter-ny': { entity: 'hunter_town', index: 2, text: 'Hunter Mountain has 67 trails.' },
+  'haines-falls-ny': { entity: 'haines_falls', index: 3, text: 'Kaaterskill Falls drops 260 feet.' },
+  'windham-ny': { entity: 'windham_town', index: 2, text: 'Windham Mountain has 54 trails.' },
+  'palenville-ny': { entity: 'palenville', index: 0, text: '2024 estimate: 870 people.' },
+  'cairo-ny': { entity: 'cairo_town', index: 1, text: 'Cairo had 6,641 people in a 2024 estimate.' },
+  'catskill-ny': { entity: 'catskill_town', index: 1, text: 'Catskill had 11,195 people in a 2024 estimate.' }
 });
 
 const buildTownPath = (townByName, label, legacyNearRedirects) => {
@@ -214,98 +204,45 @@ const renderObjections = (objections = []) =>
     )
     .join('\n');
 
-const renderProofItems = (items = []) =>
-  items
-    .map(
-      (item) =>
-        `<details class="mb-3">\n <summary class="fw-bold h5 mb-2" style="cursor: pointer;">${escapeHtml(item.title)}</summary>\n <p class="mb-0 pb-2">${escapeHtml(item.text)}</p>\n</details>`
-    )
-    .join('\n');
-
-const renderLocalFacts = (factsEntities = []) => {
-  if (!factsEntities.length) {
-    return '<p class="mb-0">No local facts published for this page yet.</p>';
-  }
-
-  return factsEntities
-    .map((entity) => {
-      const facts = Array.isArray(entity.facts) ? entity.facts : [];
-      const factItems = facts
-        .map(
-          (fact) =>
-            `<li class="mb-3">\n <p class="mb-1">&ldquo;${escapeHtml(fact.quote)}&rdquo;</p>\n <p class="small text-muted mb-0"><strong>Source:</strong> ${escapeHtml(fact.source_name)}. <a href="${escapeHtml(fact.source_url)}" target="_blank" rel="noopener noreferrer">Verified source</a></p>\n</li>`
-        )
-        .join('\n');
-
-      return `<article class="mb-4">\n <h3 class="h5 mb-2">${escapeHtml(entity.title)}</h3>\n <ul class="list-unstyled mb-0">\n${factItems}\n </ul>\n</article>`;
-    })
-    .join('\n');
+const renderLocalFact = (slug, factsById) => {
+  const selection = NEAR_LOCAL_FACTS[slug];
+  const fact = selection && factsById[selection.entity]?.facts?.[selection.index];
+  if (!selection || !fact) throw new Error(`Missing sourced local fact for ${slug}`);
+  return `<p>${escapeHtml(selection.text)} <a href="${escapeHtml(fact.source_url)}" rel="noopener noreferrer" target="_blank">Read the source</a>.</p>`;
 };
 
 const defaultDecisionCopy = (town) => ({
-  hero_headline: `Brazilian Jiu-Jitsu for ${town.town} families who want structured beginner progress without chaotic class culture`,
-  hero_subhead: town.route_verified === false
-    ? `A calm, coach-led room in Tannersville. Check the drive from ${town.town} before choosing a recurring class rhythm.`
-    : `A practical route from ${town.town} to a calm, coach-led room in Tannersville.`,
-  hero_for_line: `Built for families and adults who want skill-based training with clear first-class support.`,
-  travel_one_liner: town.route_verified === false
-    ? `Town-specific travel guidance is still being verified. Check directions from your actual starting point and text Sandy if you want help deciding whether the drive fits.`
-    : `Most families use ${town.main_route} and treat this as a planned weekly anchor.`,
-  why_choose: [
-    town.route_verified === false
-      ? `Plan a Free First Visit. Check the route from ${town.town}. Ask Sandy which class fits your week.`
-      : `The route from ${town.town} is familiar, which makes weeknight planning easier.`,
-    'Classes run in clear lanes with coached pacing for true beginners.',
-    'Meet Sandy. See the room. Plan your first class.'
-  ],
-  trip_story: town.route_verified === false
-    ? `Check the route from ${town.town}. Start with a Free First Visit. Ask which class fits your week.`
-    : `For ${town.town} families, this is usually a planned trip rather than a last-minute stop. The payoff is predictable instruction and a calmer room experience.`,
-  first_cadence: town.recommendations_verified === false
-    ? 'Check the current schedule and text Sandy if you want help deciding whether a youth, teen, adult, or Saturday option fits the drive.'
-    : 'Start with the Youth Class or the Adult Class once a week, keep Wednesday No-Gi as the flexible second option, and ask Sandy about private coaching if a one-to-one start fits better.',
+  hero_headline: `Try BJJ near ${town.town}, NY`,
+  hero_subhead: 'Visit the studio in Tannersville. Meet Sandy and ask about a first class.',
+  hero_for_line: `For adults and parents of kids or teens from ${town.town}.`,
+  primary_cta_label: 'Reserve Free Intro',
   objections: [
     {
-      question: `Is this realistic from ${town.town} on school nights?`,
-      answer: 'Most families start with one fixed weekday lane and keep the timing consistent.'
+      question: 'What happens on my first visit?',
+      answer: 'Meet Sandy. See the room. Talk about a class that fits.'
     },
     {
-      question: 'Will beginners be overwhelmed on day one?',
-      answer: 'Sandy guides your first class at your pace. He helps you learn each step.'
+      question: 'Which class should I try?',
+      answer: 'See the current schedule. Text Sandy if you want help.'
     },
     {
-      question: 'Can we test fit before committing long term?',
-      answer: 'Start with a Free First Visit. See the room. Ask Sandy which class fits your week.'
+      question: 'Can my child or teen start?',
+      answer: 'Read the kids or teen page, then ask Sandy what fits.'
     }
   ],
-  proof_items: [
-    {
-      title: 'Civic proof',
-      text: `${town.town} is served by a documented town/school footprint that supports family routine planning.`
-    },
-    {
-      title: 'Landmark proof',
-      text: 'Local landmarks and seasonal patterns shape schedules, which is why this page focuses on reliable indoor structure.'
-    },
-    {
-      title: 'Routine proof',
-      text: 'Private lessons at Morning, Youth Class at 5:00 PM, Adult Class at 6:00 PM, Wednesday No-Gi, and the Saturday No-Gi block gives families a predictable weekly flow.'
-    }
-  ],
-  best_fit: 'Best for families and adult beginners who value coaching quality, clear structure, and low-pressure onboarding.',
-  primary_cta_label: 'Reserve Your Free First Visit',
-  quiet_cta_line: `Start with a Free First Visit. See the room. Ask Sandy which class fits your week.`
+  quiet_cta_line: 'Meet Sandy, see the room, and ask about your first class.'
 });
 
 const generate = async () => {
-  const [template, srcTemplate, towns, legacyRedirectConfig, factsById, decisionBySlug, provenance] = await Promise.all([
+  const [template, srcTemplate, towns, legacyRedirectConfig, factsById, decisionBySlug, provenance, contact] = await Promise.all([
     fs.readFile(TEMPLATE_PATH, 'utf8'),
     fs.readFile(SRC_TEMPLATE_PATH, 'utf8'),
     readJson(CONFIG_PATH),
     readJson(LEGACY_REDIRECTS_PATH),
     readJson(FAST_FACTS_PATH),
     readJson(DECISION_CONTENT_PATH),
-    readJson(PROVENANCE_PATH)
+    readJson(PROVENANCE_PATH),
+    readJson(CONTACT_PATH)
   ]);
 
   const legacyRedirects = legacyRedirectConfig && typeof legacyRedirectConfig.redirects === 'object'
@@ -316,9 +253,7 @@ const generate = async () => {
   );
 
   const townByName = new Map(towns.map((town) => [town.town, town]));
-  const liveTowns = towns.filter(
-    (town) => normalizeStatus(town.status) === 'live' && !CUSTOM_NEAR_SLUGS.has(String(town.slug || '').trim())
-  );
+  const liveTowns = towns.filter((town) => normalizeStatus(town.status) === 'live');
   const liveSlugs = new Set(liveTowns.map((town) => town.slug));
   const aliasSlugs = new Set(
     [
@@ -333,7 +268,7 @@ const generate = async () => {
 
   let removedAliasDirs = 0;
   for (const slug of aliasSlugs) {
-    if (liveSlugs.has(slug) || CUSTOM_NEAR_SLUGS.has(slug)) continue;
+    if (liveSlugs.has(slug)) continue;
     const aliasDir = path.join(OUTPUT_ROOT, slug);
     await fs.rm(aliasDir, { recursive: true, force: true });
     const srcAliasDir = path.join(SRC_OUTPUT_ROOT, slug);
@@ -355,9 +290,6 @@ const generate = async () => {
         }
       : { ...town, route_verified: true, recommendations_verified: true };
     const canonicalUrl = buildCanonicalUrl(town.slug);
-    const fallbackMiles = Math.max(1, Math.round((Number(safeTown.drive_minutes) || 10) * 0.45 * 10) / 10);
-    const straightLineMiles = STRAIGHT_LINE_MILES[town.slug] || String(fallbackMiles);
-    const factsEntities = (NEAR_FACTS_MAP[town.slug] || []).map((id) => factsById[id]).filter(Boolean);
 
     const decision = {
       ...defaultDecisionCopy(safeTown),
@@ -367,8 +299,6 @@ const generate = async () => {
     const replacements = {
       '[Town]': town.town,
       '[slug]': town.slug,
-      '[Road]': town.main_route || '',
-      '[DistanceMiles]': straightLineMiles,
       '[MetaTitle]': decision.meta_title || `Brazilian Jiu-Jitsu Near ${town.town}, NY | Sensei Sandy`,
       '[MetaDescription]':
         decision.meta_description ||
@@ -376,15 +306,11 @@ const generate = async () => {
       '[HeroHeadline]': decision.hero_headline,
       '[HeroSubhead]': decision.hero_subhead,
       '[HeroForLine]': decision.hero_for_line,
-      '[TravelOneLiner]': decision.travel_one_liner,
       '[PrimaryCtaLabel]': decision.primary_cta_label,
-      '[ChooseBullets]': renderBulletList(decision.why_choose),
-      '[TripStory]': decision.trip_story,
-      '[FirstCadence]': decision.first_cadence,
+      '[SmsHref]': escapeHtml(contact.smsHref),
+      '[MapsUrl]': escapeHtml(`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(`${town.town}, NY`)}&destination=${encodeURIComponent('6045 Main Street, Tannersville, NY 12485')}&travelmode=driving`),
       '[ObjectionItems]': renderObjections(decision.objections),
-      '[ProofItems]': renderProofItems(decision.proof_items),
-      '[BestFit]': decision.best_fit,
-      '[LocalFactsItems]': renderLocalFacts(factsEntities),
+      '[LocalFact]': renderLocalFact(town.slug, factsById),
       '[LocalLinkModule]': renderLocalLinkModule({
         town,
         towns,
@@ -401,13 +327,14 @@ const generate = async () => {
       )
     };
 
-    const html = replaceAll(template, replacements);
+    const srcHtml = replaceAll(srcTemplate, replacements).replace(/[\t ]+$/gm, '');
+    const srcBody = srcHtml.replace(/^---[\s\S]*?---\s*/, '');
+    const html = replaceAll(template, { ...replacements, '[MainContent]': srcBody }).replace(/[\t ]+$/gm, '');
     const outputDir = path.join(OUTPUT_ROOT, town.slug);
     const outputPath = path.join(outputDir, 'index.html');
     await fs.mkdir(outputDir, { recursive: true });
     await fs.writeFile(outputPath, html);
 
-    const srcHtml = replaceAll(srcTemplate, replacements);
     const srcOutputDir = path.join(SRC_OUTPUT_ROOT, town.slug);
     const srcOutputPath = path.join(srcOutputDir, 'index.html');
     await fs.mkdir(srcOutputDir, { recursive: true });

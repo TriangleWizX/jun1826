@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Contact Sensei Sandy BJJ | Tannersville NY"
-description: "Text, call, or email Sandy in Tannersville. Ask about BJJ for kids, teens, and adults. Get help with class times and your first visit."
+description: "Contact Sensei Sandy BJJ in Tannersville. Ask about kids, teen, or adult classes, the schedule, or your first visit."
 canonicalUrl: "https://senseisandy.com/contact"
 bodyClass: "page-contact"
 extraCss:
@@ -19,19 +19,19 @@ permalink: "/contact.html"
           <img alt="Families training together at Sensei Sandy BJJ" class="ss-hero-card-image" decoding="async" height="455" loading="eager" src="/assets/images/famfriday-320.d45604.webp" width="320"/>
         </div>
         <div class="ss-hero-card-body">
-          <span class="ss-eyebrow">Questions for Sandy · Tannersville, NY</span>
-          <h1 class="display-5 fw-bold mb-3 mt-2">We are here to help you start.</h1>
-          <p class="lead mb-4" style="color: var(--ss-muted);">Ask about classes for kids, teens, or adults. Text Sandy with your questions. He can help you choose a class.</p>
+          <span class="ss-eyebrow">Questions about your first class? · Tannersville, NY</span>
+          <h1 class="display-5 fw-bold mb-3 mt-2">Ask Sandy about your first class.</h1>
+          <p class="lead mb-4" style="color: var(--ss-muted);">Ask about a class, the schedule, or your first visit. Sandy can help you plan the next step.</p>
           <div class="d-flex flex-wrap gap-3 mb-3">
             <a id="hero-cta" class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny">
-              Reserve Free First Visit <span aria-hidden="true">↗</span>
+              {{ freeIntro.primaryCtaLabel }} <span aria-hidden="true">↗</span>
             </a>
-            <a class="ss-btn ss-btn-soft" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ">
+            <a class="ss-btn ss-btn-soft" href="{{ contact.smsHref }}">
               Text Sandy <span aria-hidden="true">→</span>
             </a>
           </div>
           <p class="small text-muted mb-0">
-            Text Sandy with your questions. He can help you choose a class.
+            Text Sandy with a question about class, schedule, or your first visit.
           </p>
         </div>
       </div>
@@ -43,8 +43,8 @@ permalink: "/contact.html"
     <div class="container ss-container">
       <div class="text-center mb-4">
         <span class="ss-eyebrow">Direct Contact</span>
-        <h2 id="reach-title" class="h3 mb-1 mt-1">Choose the easiest way to reach us</h2>
-        <p class="text-muted small">Text Sandy with your questions. He can help you choose a class.</p>
+        <h2 id="reach-title" class="h3 mb-1 mt-1">Choose how to reach Sandy.</h2>
+        <p class="text-muted small">Text Sandy with a question about class, schedule, or your first visit.</p>
       </div>
 
       <div class="ss-reach-grid">
@@ -54,15 +54,15 @@ permalink: "/contact.html"
           <div class="ss-reach-icon-box">
             <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
           </div>
-          <span class="ss-card-badge">Fastest Reply</span>
+          <span class="ss-card-badge">Text or call</span>
           <h3 class="h4 mt-2 mb-2">Text or Call</h3>
           <p class="ss-reach-val mb-2">
-            <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ">(917) 736-8649</a>
+            <a href="{{ contact.smsHref }}">{{ contact.phoneDisplay }}</a>
           </p>
           <p class="text-muted small mb-4 flex-grow-1">
-            Text Sandy with your questions. He can help you choose a class.
+            Text Sandy with a question about class, schedule, or your first visit.
           </p>
-          <a class="ss-btn ss-btn-primary w-100" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ">
+          <a class="ss-btn ss-btn-primary w-100" href="{{ contact.smsHref }}">
             Text Sandy Now →
           </a>
         </article>
@@ -75,14 +75,14 @@ permalink: "/contact.html"
           <span class="ss-card-badge">Main Street</span>
           <h3 class="h4 mt-2 mb-2">Visit the Studio</h3>
           <p class="ss-reach-val mb-2">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=6045%20Main%20Street%20Tannersville%20NY%2012485" target="_blank" rel="noopener">
-              6045 Main Street<br>Tannersville, NY 12485
+            <a href="/bjj-tannersville-ny-directions" target="_blank" rel="noopener">
+              {{ contact.addressLine1 }}<br>{{ contact.cityStateZip }}
             </a>
           </p>
           <p class="text-muted small mb-4 flex-grow-1">
-            Right on Main Street in Tannersville. Just six minutes from Hunter Mountain.
+            Find the studio in Tannersville. See the current route and entry details.
           </p>
-          <a class="ss-btn ss-btn-soft w-100" href="https://www.google.com/maps/search/?api=1&amp;query=6045%20Main%20Street%20Tannersville%20NY%2012485" target="_blank" rel="noopener">
+          <a class="ss-btn ss-btn-soft w-100" href="/bjj-tannersville-ny-directions" target="_blank" rel="noopener">
             Open in Google Maps →
           </a>
         </article>
@@ -95,16 +95,19 @@ permalink: "/contact.html"
           <span class="ss-card-badge">Email</span>
           <h3 class="h4 mt-2 mb-2">Send an Email</h3>
           <p class="ss-reach-val mb-2">
-            <a href="mailto:sandy@senseisandy.com">sandy@senseisandy.com</a>
+            <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
           </p>
           <p class="text-muted small mb-4 flex-grow-1">
-            Prefer email? Send us a note. We reply within a few hours.
+            Prefer email? Send Sandy a note.
           </p>
-          <a class="ss-btn ss-btn-soft w-100" href="mailto:sandy@senseisandy.com">
+          <a class="ss-btn ss-btn-soft w-100" href="mailto:{{ contact.email }}">
             Send an Email →
           </a>
         </article>
 
+      </div>
+      <div class="text-center mt-3">
+        <p class="text-muted small mb-0">Visiting from social media? Start at our <a href="/instagram">Instagram Start Here</a> page.</p>
       </div>
     </div>
   </section>
@@ -120,8 +123,8 @@ permalink: "/contact.html"
           <h2 id="location-title" class="h3 mb-3 mt-1">Finding the Studio on Main Street</h2>
           
           <figure class="mb-4">
-            <img alt="Studios on Main building at 6045 Main Street in Tannersville, home of Sensei Sandy BJJ" class="w-100 rounded-4 border" height="1125" loading="eager" src="/assets/images/sensei-sandy-bjj-building-main-street.585fcc.webp" style="aspect-ratio: 16/9; object-fit: cover; border-color: var(--ss-border) !important;" width="2000" decoding="async">
-            <figcaption class="small mt-2 mb-0 text-muted">Studios on Main at 6045 Main Street in Tannersville.</figcaption>
+            <img alt="Studios on Main building in Tannersville, home of Sensei Sandy BJJ" class="w-100 rounded-4 border" height="1125" loading="eager" src="/assets/images/sensei-sandy-bjj-building-main-street.585fcc.webp" style="aspect-ratio: 16/9; object-fit: cover; border-color: var(--ss-border) !important;" width="2000" decoding="async">
+            <figcaption class="small mt-2 mb-0 text-muted">Studios on Main at {{ contact.addressLine1 }}, {{ contact.cityStateZip }}.</figcaption>
           </figure>
 
           <h3 class="h5 mb-3">Simple Steps for Your Visit</h3>
@@ -130,21 +133,21 @@ permalink: "/contact.html"
               <span class="ss-step-num">1</span>
               <div>
                 <strong>Park for free outside</strong>
-                <p class="small text-muted mb-0">Park right on Main Street or in the town lot nearby.</p>
+                <p class="small text-muted mb-0">See the directions page for current parking details.</p>
               </div>
             </div>
             <div class="ss-arrival-step">
               <span class="ss-step-num">2</span>
               <div>
                 <strong>Walk upstairs</strong>
-                <p class="small text-muted mb-0">Walk up the indoor stairs to the clean second floor.</p>
+                <p class="small text-muted mb-0">The studio is on the second floor. See directions for entry details.</p>
               </div>
             </div>
             <div class="ss-arrival-step">
               <span class="ss-step-num">3</span>
               <div>
                 <strong>Step inside the room</strong>
-                <p class="small text-muted mb-0">Coach Sandy greets you and shows you the mats.</p>
+                <p class="small text-muted mb-0">Meet Sandy and see the room.</p>
               </div>
             </div>
           </div>
@@ -155,7 +158,7 @@ permalink: "/contact.html"
           <div class="ss-map-header">
             <span class="ss-card-badge">Interactive Map</span>
             <h3 class="h5 mb-1 mt-1">Sensei Sandy BJJ</h3>
-            <p class="small text-muted mb-0">6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485</p>
+            <p class="small text-muted mb-0">{{ contact.addressLine1 }}, {{ contact.cityStateZip }}</p>
           </div>
           <div class="ss-map-container">
             <iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.8872272702065!2d-74.13495!3d42.195478699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ddad923f824fc1%3A0x7b2f25b6317b39f3!2sSensei%20Sandy%20BJJ!5e0!3m2!1sen!2sus!4v1770402155501!5m2!1sen!2sus" style="border: 0;" title="Sensei Sandy BJJ on Google Maps" width="100%"></iframe>
@@ -178,12 +181,12 @@ permalink: "/contact.html"
   <section class="schedule-teaser py-4 my-4" style="background: var(--ss-surface2); border-radius: 16px; margin-inline: auto; max-width: 1000px; padding: 2.5rem 2rem;">
     <div class="container text-center">
       <span class="ss-eyebrow">Schedule Preview</span>
-      <h2 class="h3 mb-3 mt-1">Find a class time that fits.</h2>
+      <h2 class="h3 mb-3 mt-1">See current class times.</h2>
       <p style="color: var(--ss-muted); max-width: 700px; margin-inline: auto; margin-bottom: 1.5rem; line-height: 1.6;">
-        See class times for kids, teens, and adults. Text Sandy for help with your first visit.
+        Check the current schedule. Text Sandy if you have a question.
       </p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit</a>
+        <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny">{{ freeIntro.primaryCtaLabel }}</a>
         <a class="ss-btn ss-btn-soft" href="/schedule">View Full Schedule</a>
       </div>
     </div>
@@ -195,7 +198,7 @@ permalink: "/contact.html"
       <div class="text-center mb-4">
         <span class="ss-eyebrow">Common Questions</span>
         <h2 id="faq-title" class="h3 mb-2 mt-1">Quick Answers for Beginners</h2>
-        <p class="text-muted small">Simple facts before you visit the studio.</p>
+        <p class="text-muted small">Plan your first visit with these answers.</p>
       </div>
 
       <div class="accordion ss-accordion" id="contactFaqAccordion">
@@ -208,7 +211,7 @@ permalink: "/contact.html"
           </h3>
           <div id="collapseParking" class="accordion-collapse collapse" aria-labelledby="headingParking" data-bs-parent="#contactFaqAccordion">
             <div class="accordion-body ss-accordion-body">
-              Park right on Main Street in front of the studio. You can also use free village lots nearby.
+              See the <a href="/bjj-tannersville-ny-directions">directions page</a> for current parking and entry details.
             </div>
           </div>
         </div>
@@ -221,7 +224,7 @@ permalink: "/contact.html"
           </h3>
           <div id="collapseWear" class="accordion-collapse collapse" aria-labelledby="headingWear" data-bs-parent="#contactFaqAccordion">
             <div class="accordion-body ss-accordion-body">
-              Wear soft gym clothes like a shirt and sweatpants or shorts. Bring a water bottle to stay fresh.
+              {{ freeIntro.publicCopy.clothing }}
             </div>
           </div>
         </div>
@@ -234,7 +237,7 @@ permalink: "/contact.html"
           </h3>
           <div id="collapseExpect" class="accordion-collapse collapse" aria-labelledby="headingExpect" data-bs-parent="#contactFaqAccordion">
             <div class="accordion-body ss-accordion-body">
-              Coach Sandy welcomes you and walks you through the clean mats. You learn basic moves at your own pace.
+              {{ freeIntro.publicCopy.overview }}
             </div>
           </div>
         </div>
@@ -247,7 +250,7 @@ permalink: "/contact.html"
           </h3>
           <div id="collapseParents" class="accordion-collapse collapse" aria-labelledby="headingParents" data-bs-parent="#contactFaqAccordion">
             <div class="accordion-body ss-accordion-body">
-              Yes. Parents are always welcome to sit, watch, and cheer from the bench area.
+              A parent or guardian stays with a child or teen during the youth class.
             </div>
           </div>
         </div>
@@ -255,9 +258,9 @@ permalink: "/contact.html"
       </div>
 
       <div class="text-center mt-4">
-        <p class="small text-muted mb-2">Have any other questions?</p>
-        <a class="ss-btn ss-btn-soft" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ">
-          Text Sandy at (917) 736-8649 →
+        <p class="small text-muted mb-2">Still have a question?</p>
+        <a class="ss-btn ss-btn-soft" href="{{ contact.smsHref }}">
+          Text Sandy at {{ contact.phoneDisplay }} →
         </a>
       </div>
     </div>
@@ -270,8 +273,8 @@ permalink: "/contact.html"
       <h2 class="display-6 fw-bold mb-3 mt-1">Start calm. Train smart.</h2>
       <p class="lead mb-4" style="color: var(--ss-muted); max-width: 600px; margin-inline: auto;">Tour the room, ask questions, and choose your first small class.</p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Your Free First Visit ↗</a>
-        <a class="ss-btn ss-btn-soft" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ">Text Sandy →</a>
+        <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny">{{ freeIntro.primaryCtaLabel }} ↗</a>
+        <a class="ss-btn ss-btn-soft" href="{{ contact.smsHref }}">Text Sandy →</a>
       </div>
     </div>
   </section>

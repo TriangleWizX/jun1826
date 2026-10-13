@@ -86,6 +86,8 @@ RewriteRule ^bjj\-glossary/safe\-training/?$ https://senseisandy.com/bjj-glossar
 RewriteRule ^bjj\-glossary/straight\-arm\-lock/?$ https://senseisandy.com/bjj-glossary/armbar [L,R=301,NE]
 RewriteRule ^bjj\-glossary/upa/?$ https://senseisandy.com/bjj-glossary/upa-escape [L,R=301,NE]
 RewriteRule ^bjj\-videos/?$ https://senseisandy.com/ [L,R=301,NE]
+RewriteRule ^black\-belt\-concierge/?$ https://senseisandy.com/adult-private-coaching-intensive [L,R=301,NE]
+RewriteRule ^black\-belt\-concierge\.html/?$ https://senseisandy.com/adult-private-coaching-intensive [L,R=301,NE]
 RewriteRule ^blackbelttrack/?$ https://senseisandy.com/black-belt-track [L,R=301,NE]
 RewriteRule ^blog/beginner\-friendly\-bjj\-tannersville\-evidence/?$ https://senseisandy.com/blog/beginner-friendly-bjj-tannersville [L,R=301,NE]
 RewriteRule ^blog/beginner\-friendly\-bjj\-tannersville\-links/?$ https://senseisandy.com/blog/beginner-friendly-bjj-tannersville [L,R=301,NE]
@@ -101,10 +103,11 @@ RewriteRule ^blog/onteora\-park\-summer\-activities/?$ https://senseisandy.com/b
 RewriteRule ^blog/onteora\-park\-summer\-activities\-catskills/?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
 RewriteRule ^blog/onteora\-park\-summer\-activities\-tannersville\-athletics/?$ https://senseisandy.com/blog/kinetic-chess-onteora-park [L,R=301,NE]
 RewriteRule ^blog/sensei\-sandy\-open\-mat/?$ https://senseisandy.com/bjj-glossary/open-mat [L,R=301,NE]
-RewriteRule ^cairo\-jiu\-jitsu/?$ https://senseisandy.com/near/cairo-ny [L,R=301,NE]
-RewriteRule ^cairo\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/cairo-ny [L,R=301,NE]
-RewriteRule ^catskill\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
-RewriteRule ^catskill\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/catskill-ny [L,R=301,NE]
+RewriteRule ^brazilian\-jiu\-jitsu\-hunter\-ny/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
+RewriteRule ^cairo\-jiu\-jitsu/?$ https://senseisandy.com/bjj-classes/cairo-ny [L,R=301,NE]
+RewriteRule ^cairo\-ny\-jiu\-jitsu/?$ https://senseisandy.com/bjj-classes/cairo-ny [L,R=301,NE]
+RewriteRule ^catskill\-jiu\-jitsu/?$ https://senseisandy.com/bjj-classes/catskill-ny [L,R=301,NE]
+RewriteRule ^catskill\-ny\-jiu\-jitsu/?$ https://senseisandy.com/bjj-classes/catskill-ny [L,R=301,NE]
 RewriteRule ^checkout/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
 RewriteRule ^christmas\-in\-july\-bjj\-tannersville/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^classes/?$ https://senseisandy.com/programs [L,R=301,NE]
@@ -119,7 +122,8 @@ RewriteRule ^core\-promise\-full/?$ https://senseisandy.com/how-class-works [L,R
 RewriteRule ^core\-promise\-short/?$ https://senseisandy.com/how-class-works [L,R=301,NE]
 RewriteRule ^curriculum/?$ https://senseisandy.com/programs [L,R=301,NE]
 RewriteRule ^deer\-mountain\-inn/?$ https://senseisandy.com/partners-hospitality-hunter-windham [L,R=301,NE]
-RewriteRule ^elite\-concierge/?$ https://senseisandy.com/black-belt-concierge [L,R=301,NE]
+RewriteRule ^elite\-concierge/?$ https://senseisandy.com/adult-private-coaching-intensive [L,R=301,NE]
+RewriteRule ^elite\-concierge\.html/?$ https://senseisandy.com/adult-private-coaching-intensive [L,R=301,NE]
 RewriteRule ^fall\-practice\-reset/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE]
 RewriteRule ^faq/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
@@ -142,8 +146,8 @@ RewriteRule ^glossary/turtle/?$ https://senseisandy.com/bjj-glossary/turtle [L,R
 RewriteRule ^glossary/wrist\-control/?$ https://senseisandy.com/bjj-glossary/wrist-control [L,R=301,NE]
 RewriteRule ^how\-it\-works/?$ https://senseisandy.com/ [L,R=301,NE]
 RewriteRule ^how\-to\-start/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
-RewriteRule ^hunter\-jiu\-jitsu/?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
-RewriteRule ^hunter\-ny\-jiu\-jitsu/?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteRule ^hunter\-jiu\-jitsu/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
+RewriteRule ^hunter\-ny\-jiu\-jitsu/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteRule ^jiu\-jitsu\-sandy/?$ https://senseisandy.com/sensei-jiu-jitsu [L,R=301,NE]
 RewriteRule ^kids\-bjj/?$ https://senseisandy.com/kids [L,R=301,NE]
 RewriteRule ^kids\.html/?$ https://senseisandy.com/kids [L,R=301,NE]
@@ -155,19 +159,26 @@ RewriteRule ^mountain\-pass\-print/?$ https://senseisandy.com/ [L,R=301,NE]
 RewriteRule ^mountain\-pass\-print\.html/?$ https://senseisandy.com/ [L,R=301,NE]
 RewriteRule ^my\-promise\-full/?$ https://senseisandy.com/how-class-works [L,R=301,NE]
 RewriteRule ^my\-promise\-short/?$ https://senseisandy.com/how-class-works [L,R=301,NE]
+RewriteRule ^near/cairo\-ny/?$ https://senseisandy.com/bjj-classes/cairo-ny [L,R=301,NE]
+RewriteRule ^near/catskill\-ny/?$ https://senseisandy.com/bjj-classes/catskill-ny [L,R=301,NE]
 RewriteRule ^near/elka\-park\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
-RewriteRule ^near/esopus\-creek\-phoenicia/?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
-RewriteRule ^near/haines\-falls/?$ https://senseisandy.com/near/haines-falls-ny [L,R=301,NE]
-RewriteRule ^near/hunter\-mountain/?$ https://senseisandy.com/near/hunter-ny [L,R=301,NE]
+RewriteRule ^near/esopus\-creek\-phoenicia/?$ https://senseisandy.com/bjj-classes/phoenicia-ny [L,R=301,NE]
+RewriteRule ^near/haines\-falls/?$ https://senseisandy.com/bjj-classes/haines-falls-ny [L,R=301,NE]
+RewriteRule ^near/haines\-falls\-ny/?$ https://senseisandy.com/bjj-classes/haines-falls-ny [L,R=301,NE]
+RewriteRule ^near/hunter\-mountain/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
+RewriteRule ^near/hunter\-ny/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteRule ^near/jewett\-east\-jewett\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
 RewriteRule ^near/jewett\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
-RewriteRule ^near/kaaterskill\-falls/?$ https://senseisandy.com/near/palenville-ny [L,R=301,NE]
-RewriteRule ^near/lanesville\-ny/?$ https://senseisandy.com/near/phoenicia-ny [L,R=301,NE]
-RewriteRule ^near/lexington\-ny/?$ https://senseisandy.com/near/windham-ny [L,R=301,NE]
+RewriteRule ^near/kaaterskill\-falls/?$ https://senseisandy.com/bjj-classes/palenville-ny [L,R=301,NE]
+RewriteRule ^near/lanesville\-ny/?$ https://senseisandy.com/bjj-classes/lanesville-ny [L,R=301,NE]
+RewriteRule ^near/lexington\-ny/?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
 RewriteRule ^near/onteora\-park\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/palenville\-ny/?$ https://senseisandy.com/bjj-classes/palenville-ny [L,R=301,NE]
+RewriteRule ^near/phoenicia\-ny/?$ https://senseisandy.com/bjj-classes/phoenicia-ny [L,R=301,NE]
 RewriteRule ^near/saugerties\-ny/?$ https://senseisandy.com/near/woodstock-ny [L,R=301,NE]
-RewriteRule ^near/tannersville\-ny/?$ https://senseisandy.com/programs [L,R=301,NE]
+RewriteRule ^near/tannersville\-ny/?$ https://senseisandy.com/bjj-classes/tannersville-ny [L,R=301,NE]
 RewriteRule ^near/windham\-mountain/?$ https://senseisandy.com/near/windham-mountain-club [L,R=301,NE]
+RewriteRule ^near/windham\-ny/?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
 RewriteRule ^nervous\-first\-timers/?$ https://senseisandy.com/how-class-works [L,R=301,NE]
 RewriteRule ^openingpress/?$ https://senseisandy.com/archive/openingpress [L,R=301,NE]
 RewriteRule ^options/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
@@ -354,7 +365,6 @@ RewriteRule ^calendar/private-4pm\.ics$ /assets/calendar/private-lessons-4pm.ics
 RewriteRule ^calendar/youth-5pm\.ics$ /assets/calendar/youth-class-5pm.ics [L,NC]
 RewriteRule ^calendar/adult-6pm\.ics$ /assets/calendar/adult-class-6pm.ics [L,NC]
 RewriteRule ^calendar/saturday\.ics$ /assets/calendar/saturday-block.ics [L,NC]
-RewriteRule ^assets/calendar/(?:adults-lane|kids-lane|saturday-block|teens-lane)\.ics$ - [L,NC]
 
 # Utility backend API routes.
 RewriteRule ^api/?$ /api/index.php [L,QSA]
@@ -533,13 +543,8 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
 </IfModule>
 
 <IfModule mod_headers.c>
-  # Default cache for non-fingerprinted static assets.
-  <FilesMatch "\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
-    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
-  </FilesMatch>
-
   # Long cache for fingerprinted static assets.
-  <FilesMatch "\\.[0-9a-f]{6}(?:[0-9a-f]{6})?\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
+  <FilesMatch "\\.[0-9a-f]{6}\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
@@ -553,6 +558,10 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
     Header set Cache-Control "public, max-age=60, stale-while-revalidate=300"
   </Files>
 
+  # Default cache for non-fingerprinted static assets.
+  <FilesMatch "\\.(?:css|js|png|jpe?g|gif|webp|svg|avif|ico|woff2?|ttf|mp4|webm)$">
+    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+  </FilesMatch>
 </IfModule>
 
 <IfModule mod_brotli.c>

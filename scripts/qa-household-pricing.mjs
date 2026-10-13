@@ -44,16 +44,16 @@ assert.ok(pricing.productPolicy.continuationOnly.includes("householdBundles.annu
 assert.ok(pricing.productPolicy.guaranteeExcluded.includes("householdBundles.annualFamily"));
 assert.equal(offers.qualified.find((offer) => offer.id === "annual-family-track")?.priceRef, "householdBundles.annualFamily");
 assert.match(page, /Annual Family Track: \$5,400/);
-assert.match(page, /Youth: \$185 \/ month/);
-assert.match(page, /Adult: \$245 \/ month/);
-assert.match(page, /Youth: \$1,980 \/ year/);
-assert.match(page, /Adult: \$2,475 \/ year/);
+assert.match(page, /Youth, 3 classes each week: \$185/);
+assert.match(page, /Adult, 3 classes each week: \$245/);
+assert.match(page, /Youth year plan: \$1,980/);
+assert.match(page, /Adult year plan: \$2,475/);
 const annualTable = page.slice(page.indexOf("Annual continuation prices"), page.indexOf("</table>", page.indexOf("Annual continuation prices")));
 assert.ok(annualTable.indexOf("3×") < annualTable.indexOf("2×") && annualTable.indexOf("2×") < annualTable.indexOf("1×"), "annual frequency table should descend from the high anchor");
-assert.match(page, /Free First Visit: \$0/);
-assert.match(page, /\$6,435 individual total/);
+assert.match(page, /Free First Visit/); assert.match(page, /href=\"\/free-bjj-intro-tannersville-ny/);
+assert.match(page, /The same plans cost \$6,435 on their own/);
 assert.match(page, /\$1,035/);
-assert.match(page, /\$12\.50 per scheduled class/);
+assert.match(page, /each costs \$12\.50/);
 assert.doesNotMatch(page, /\$3,300/);
 
 // Global price range anchored at 3x monthly pricing down to lowest 1x monthly
@@ -70,12 +70,12 @@ assert.equal(youth3xMonthly, 185);
 assert.equal(youth1xMonthly, 75);
 assert.equal(adult1xMonthly, 95);
 
-assert.match(homePage, /\$245 to \$75 \/ month/);
+assert.match(homePage, /href="\/options-pricing/);
 assert.match(annualPage, /\$245 to \$95 \/ month/);
 assert.match(annualPage, /\$185 to \$75 \/ month/);
-assert.match(page, /\$245 to \$75 \/ month/);
-assert.match(page, /\$165 \/ month equivalent/);
-assert.match(page, /\$206\.25 \/ month equivalent/);
+assert.ok(page.includes("$245") && page.includes("$75"), "pricing page includes canonical adult and youth monthly rates");
+assert.match(page, /\$165 each month/);
+assert.match(page, /\$206\.25 each month/);
 
 // Verify every household frequency against individual tuition and continuation.
 const siblings = pricing.householdBundles.firstTerm.siblings;
@@ -103,8 +103,8 @@ for (const frequency of siblings.frequencies) {
 }
 assert.ok(oneAdultTwoYouth.price < siblings.frequencies[2].tiers[0].price + adult12W);
 assert.match(siblingSection, /Choose one offer per child/);
-assert.match(siblingSection, /After the first term, choose from the youth plans/);
-assert.match(siblingSection, /Choose the same class plan for each child/);
+assert.match(siblingSection, /Each child gets a first gi\. Choose one offer per child\./);
+assert.match(siblingSection, /Each child picks the same plan/);
 const packSection = page.slice(page.indexOf('id="visitor-training"'), page.indexOf('op-other-card--private'));
 for (const [key, id] of [["tenPack", "ten-class-pack"], ["twentyPack", "twenty-class-pack"]]) {
   const pack = pricing.visitorAndSupport[key];
@@ -119,8 +119,8 @@ for (const [key, id] of [["tenPack", "ten-class-pack"], ["twentyPack", "twenty-c
   assert.match(offer.audience, /Adults ages 18 and up/);
   assert.equal(offer.eligibilityRef, `visitorAndSupport.${key}.eligibility`);
 }
-assert.match(packSection, /Class packs: adults ages 18 and up/);
-assert.match(packSection, /Kids and teens can choose a weekly youth plan above/);
+assert.match(packSection, /Adult packs: ages 18 and up/);
+assert.match(packSection, /Kids and teens can pick a youth plan/);
 assert.equal(pricing.visitorAndSupport.tenPack.price, 300);
 assert.equal(pricing.visitorAndSupport.twentyPack.price, 550);
 console.log("household pricing QA passed");

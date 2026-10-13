@@ -87,7 +87,12 @@
   {
     "url": "https://senseisandy.com/black-belt-concierge/",
     "action": "redirect_301",
-    "target": "/adult-private-coaching-intensive.html"
+    "target": "/adult-private-coaching-intensive"
+  },
+  {
+    "url": "https://senseisandy.com/adult-private-coaching-intensive/",
+    "action": "keep",
+    "target": ""
   },
   {
     "url": "https://senseisandy.com/options-pricing/",
@@ -411,33 +416,33 @@
   },
   {
     "url": "https://senseisandy.com/near/hunter-ny/",
-    "action": "keep",
-    "target": ""
+    "action": "redirect_301",
+    "target": "/bjj-classes/hunter-ny"
   },
   {
     "url": "https://senseisandy.com/near/haines-falls-ny/",
-    "action": "keep",
-    "target": ""
+    "action": "redirect_301",
+    "target": "/bjj-classes/haines-falls-ny"
   },
   {
     "url": "https://senseisandy.com/near/cairo-ny/",
-    "action": "keep",
-    "target": ""
+    "action": "redirect_301",
+    "target": "/bjj-classes/cairo-ny"
   },
   {
     "url": "https://senseisandy.com/near/windham-ny/",
-    "action": "keep",
-    "target": ""
+    "action": "redirect_301",
+    "target": "/bjj-classes/windham-ny"
   },
   {
     "url": "https://senseisandy.com/near/catskill-ny/",
-    "action": "keep",
-    "target": ""
+    "action": "redirect_301",
+    "target": "/bjj-classes/catskill-ny"
   },
   {
     "url": "https://senseisandy.com/near/palenville-ny/",
-    "action": "keep",
-    "target": ""
+    "action": "redirect_301",
+    "target": "/bjj-classes/palenville-ny"
   },
   {
     "url": "https://senseisandy.com/frames/",
@@ -2323,5 +2328,10 @@
     "url": "https://senseisandy.com/updates/",
     "action": "keep",
     "target": ""
+  },
+  {
+    "url": "https://senseisandy.com/brazilian-jiu-jitsu-hunter-ny/",
+    "action": "redirect_301",
+    "target": "/bjj-classes/hunter-ny"
   }
 ]
