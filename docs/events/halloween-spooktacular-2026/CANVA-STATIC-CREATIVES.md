@@ -98,7 +98,7 @@ This document follows the mandatory Canva workflow established in [tools/ads/CAN
 - **Body**:
   ```
   Join the SPTO costume parade and haunted cars.
-  Stop into Sensei Sandy BJJ on the 2nd Floor.
+  Visit Sensei Sandy BJJ on the 2nd Floor.
   Hot cider, coffee, crafts, and friendly Sasquatch photos!
   ```
 - **Call to Action**:

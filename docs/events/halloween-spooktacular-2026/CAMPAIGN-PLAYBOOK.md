@@ -38,7 +38,7 @@
 
 ### Positive Reassurance & 3rd-Grade Reading Level Rule
 - **Reading Level**: Short 1–2 syllable words, 6–8 word average sentences, simple vocabulary accessible to all elementary families.
-- **Strict Term Ban**: The word "zero" and negative words ("without", "no injuries", "stop", "don't", "never") are banned. Framed entirely in affirmative positive outcomes: "Safe trick or treating", "Warm, calm room", "Cooperative community fun", "Friendly smiles from day one".
+- **Strict Term Ban**: Unconstructive terminology and negative phrasing are strictly excluded from public customer copy. Framed entirely in affirmative positive outcomes: "Safe trick or treating", "Warm, calm room", "Cooperative community fun", "Friendly smiles from day one".
 
 ---
 
@@ -53,13 +53,13 @@
 ### Avatar: Ben (Cautious Dad, Windham/Haines Falls)
 - **Job-to-be-Done**: Wants safe, respectful local activities where his family feels comfortable and can see positive community role models.
 - **Headline**: Safe trick or treating and hot coffee in Tannersville.
-- **Body**: Bring the whole family to Main Street on October 31 from 5 to 8 PM. Walk the SPTO haunted cars and see the costume parade. Stop upstairs at Studios on Main to meet Sasquatch. Kids love the hot cider. Parents can relax with fresh coffee. Take a peek at our clean training room while you are here.
+- **Body**: Bring the whole family to Main Street on October 31 from 5 to 8 PM. Walk the SPTO haunted cars and see the costume parade. Head upstairs to Studios on Main to meet Sasquatch. Kids love the hot cider. Parents can relax with fresh coffee. Take a peek at our clean training room while you are here.
 - **Call to Action**: Comment START for event directions.
 
 ### Avatar: Wendy (Local Teacher / SPTO Ally, Tannersville)
 - **Job-to-be-Done**: Rallying school families for a memorable village tradition that supports the SPTO and local kids.
 - **Headline**: The SPTO Halloween Spooktacular is back on Main Street.
-- **Body**: Come see the creative haunted cars, costume parade, and pie eating contest! Stop into Sensei Sandy BJJ on the second floor of 6045 Main Street. Kids can meet Sasquatch and make crafts. Parents can enjoy hot coffee and spiced cider. Free community fun for every family.
+- **Body**: Come see the creative haunted cars, costume parade, and pie eating contest! Visit Sensei Sandy BJJ on the second floor of 6045 Main Street. Kids can meet Sasquatch and make crafts. Parents can enjoy hot coffee and spiced cider. Free community fun for every family.
 - **Call to Action**: Comment START to get the details.
 
 ---
@@ -82,7 +82,7 @@ AT SENSEI SANDY BJJ (6045 Main St, 2nd Floor):
 • Meet Sasquatch & take family photos!
 • Free hot Sasquatch cider for kids
 • Fresh hot coffee for parents & neighbors
-• Tour the clean studio & warm up inside
+• Tour the clean studio & get your First-Visit Plan
 
 Free community admission for all Catskills families.
 Questions? Text Sandy: (917) 736-8649
@@ -93,9 +93,9 @@ Visit: senseisandy.com/halloween-spooktacular
 ```
 Hey Tannersville, Hunter, and Mountain Top families! 🎃
 
-Looking for a fun, warm stop during the Village Halloween Spooktacular?
+Looking for a fun, warm visit during the Village Halloween Spooktacular?
 
-The SPTO’s annual Trick or Truck runs this Saturday, October 31, from 5:00 PM to 8:00 PM along Main Street. Along with the haunted cars, costume parade, pie eating contest, and Jack o'lanterns, Sensei Sandy BJJ is hosting a hospitality stop at Studios on Main (6045 Main Street, 2nd Floor).
+The SPTO’s annual Trick or Truck runs this Saturday, October 31, from 5:00 PM to 8:00 PM along Main Street. Along with the haunted cars, costume parade, pie eating contest, and Jack o'lanterns, Sensei Sandy BJJ is hosting a hospitality station at Studios on Main (6045 Main Street, 2nd Floor).
 
 Bring the kids upstairs to:
 👣 Meet Sasquatch in person and snap fun costume photos
@@ -109,5 +109,14 @@ Comment START below or visit senseisandy.com/halloween-spooktacular for details 
 
 ### C. SMS Broadcast Message to Student Roster & Free Intro Inquiries
 ```
-Happy Halloween from Sensei Sandy! 🎃 Join us this Saturday, Oct 31, from 5-8 PM on Main Street for the SPTO Trick or Truck. Stop by our 2nd floor studio to meet Sasquatch, snap photos, and enjoy hot Sasquatch cider & fresh coffee. Bring friends and family! Details: senseisandy.com/halloween-spooktacular
+Happy Halloween from Sensei Sandy! 🎃 Join us this Saturday, Oct 31, from 5-8 PM on Main Street for the SPTO Trick or Truck. Visit our 2nd floor studio to meet Sasquatch, snap photos, and enjoy hot Sasquatch cider & fresh coffee. Bring friends and family! Details: senseisandy.com/halloween-spooktacular
 ```
+
+---
+
+## 5. Operations, Activation Brief & Gatekeeper Cross-References
+The live campaign is linked directly with the on-site operational protocols and decision gates:
+- **Activation Brief & Run of Show**: [`docs/activation/halloween-sasquatch-first-visit-activation-brief.md`](../activation/halloween-sasquatch-first-visit-activation-brief.md) (Detailed minute-by-minute timeline, staff greeting scripts, door signs, take-home cards, and youth photo privacy rules).
+- **Owner Decision & Sign-Off Sheet**: [`docs/activation/halloween-sasquatch-owner-decision-sheet-2026.md`](../activation/halloween-sasquatch-owner-decision-sheet-2026.md) (Pre-event decision gates, owner authorization, 25-person capacity cap, costume hygiene, and weather contingency).
+- **Refreshment Pricing & Supply Model**: [`docs/activation/halloween-sasquatch-refreshment-pricing-2026.md`](../activation/halloween-sasquatch-refreshment-pricing-2026.md) (Grounded in Tops Friendly Markets Store #725 unit costs, Mayer Bros cider, Tops coffee, packaged gummies, and strict alcohol prohibition).
+- **Historical Session Audit**: [`docs/codex-session-audit-2026-09-22.md`](../codex-session-audit-2026-09-22.md) (Tracking progression from September 22 proposal to October 12 production release).

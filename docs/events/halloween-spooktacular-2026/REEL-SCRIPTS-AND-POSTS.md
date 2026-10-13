@@ -62,7 +62,7 @@ Main Street comes alive this Saturday for the Halloween Spooktacular! 🎃
 
 The SPTO Trick or Truck brings safe trick-or-treating, haunted cars, a costume parade, a pie eating contest, and crafts to Tannersville.
 
-Sensei Sandy BJJ is hosting a warm hospitality stop right upstairs at Studios on Main (6045 Main Street, 2nd Floor).
+Sensei Sandy BJJ is hosting a warm hospitality station right upstairs at Studios on Main (6045 Main Street, 2nd Floor).
 
 Bring your family by between 5:00 PM and 8:00 PM to:
 👣 Meet our friendly mountain Sasquatch for photos
@@ -106,7 +106,7 @@ Planning your Saturday evening in the Catskills? 🍂
 
 Swipe through for your guide to the Tannersville Halloween Spooktacular and SPTO Trick or Truck this Saturday, October 31, from 5 to 8 PM.
 
-Stop into Sensei Sandy BJJ on the 2nd Floor of Studios on Main for warm Sasquatch cider, fresh coffee, and photos with Sasquatch.
+Visit Sensei Sandy BJJ on the 2nd Floor of Studios on Main for warm Sasquatch cider, fresh coffee, and photos with Sasquatch.
 
 Comment START for the full guide and directions!
 
