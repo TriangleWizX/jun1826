@@ -126,6 +126,17 @@
   root.querySelector('[data-calendar-prev]').addEventListener('click', () => shiftMonth(-1));
   root.querySelector('[data-calendar-next]').addEventListener('click', () => shiftMonth(1));
   root.querySelector('[data-calendar-today]').addEventListener('click', () => { selected = today; month = civil(today.getUTCFullYear(), today.getUTCMonth(), 1); render(); });
+  root.parentElement.querySelectorAll('[data-calendar-jump]').forEach((button) => {
+    const date = new Date(`${button.dataset.calendarJump}T12:00:00Z`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(button.dataset.calendarJump) || Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== button.dataset.calendarJump) return;
+    button.textContent = format(date, { month: 'short', day: 'numeric' });
+    button.addEventListener('click', () => {
+      selected = date;
+      month = civil(date.getUTCFullYear(), date.getUTCMonth(), 1);
+      render();
+      days.querySelector(`[data-calendar-date="${iso(date)}"]`)?.focus();
+    });
+  });
   render();
   root.hidden = false;
   document.querySelector('.ss-weekly-fallback').open = false;

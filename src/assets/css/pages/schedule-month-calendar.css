@@ -38,6 +38,9 @@
 .ss-selected-class{display:flex;flex-direction:column;gap:.4rem;padding:1rem;border-left:3px solid var(--class-color);background:var(--class-bg)}
 .ss-selected-class a{color:var(--ss-green);text-underline-offset:3px;min-height:44px;display:flex;align-items:center}
 .ss-month-static{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;padding:1.25rem;margin:1.25rem 0;background:#f0e8f2;border-radius:8px;text-align:center}
+.ss-month-static-dates{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem}
+.ss-month-static-dates button{min-width:44px;min-height:44px;padding:.4rem .65rem;border:1px solid #735578;border-radius:4px;background:#fff;color:#362b24;font:inherit;font-weight:700;cursor:pointer}
+.ss-month-static-dates button:hover{background:#735578;color:#fff}
 .ss-month-static small{flex-basis:100%}
 .ss-weekly-fallback summary{padding:1rem;cursor:pointer;font-weight:600;min-height:44px}
 .ss-schedule-utility-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.9rem}

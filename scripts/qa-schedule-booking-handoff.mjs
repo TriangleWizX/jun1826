@@ -63,6 +63,19 @@ try {
   }
   assert.ok(youthLink && adultLink, 'Upcoming youth and adult classes must have separate links');
   assert.ok((await schedulePage.locator('.ss-date-class-link').evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().height))).every((height) => height >= 40), 'Mobile class links must have practical tap targets');
+  const womenClasses = scheduleData.datedClasses.filter((item) => item.audience === 'Women');
+  assert.equal(await schedulePage.locator('[data-calendar-jump]').count(), womenClasses.length, 'Every approved Women’s Foundations date must have a calendar shortcut');
+  const nextWomenClass = womenClasses.find((item) => item.date >= targetDate);
+  if (nextWomenClass) {
+    const jump = schedulePage.locator(`[data-calendar-jump="${nextWomenClass.date}"]`);
+    assert.equal(await jump.innerText(), new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' }).format(new Date(`${nextWomenClass.date}T12:00:00Z`)));
+    await jump.click();
+    assert.match(await schedulePage.locator('[data-calendar-selected-title]').innerText(), /Saturday/);
+    assert.match(await schedulePage.locator('[data-calendar-selected-list]').innerText(), /Women's Foundations/);
+    const womenBooking = new URL(await schedulePage.locator('.ss-selected-class.is-women .ss-class-booking-link').getAttribute('href'), 'https://senseisandy.com');
+    assert.equal(womenBooking.searchParams.get('class_date'), nextWomenClass.date);
+    assert.equal(womenBooking.searchParams.get('lane'), 'adult');
+  }
 
   const bookingPage = await browser.newPage();
   await bookingPage.route('**/*', (route) => {
