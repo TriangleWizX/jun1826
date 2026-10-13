@@ -13,6 +13,7 @@
     "qa:evidence-funnel": "node scripts/qa-evidence-funnel.mjs",
     "qa:evidence-page": "node scripts/qa-evidence-page-records.mjs",
     "qa:cal-migration": "node scripts/qa-cal-migration.mjs",
+    "qa:schedule-booking": "node scripts/qa-schedule-booking-handoff.mjs",
     "qa:volatile-facts": "node scripts/qa-volatile-operational-facts.mjs",
     "qa:schedule": "node scripts/qa-schedule.mjs",
     "redirects:sync": "node tools/sync-htaccess-legacy-redirects.mjs --write",

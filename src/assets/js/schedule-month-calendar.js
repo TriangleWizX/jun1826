@@ -11,6 +11,9 @@
   const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(new Date());
   const part = (type) => Number(parts.find((p) => p.type === type).value);
   const today = civil(part('year'), part('month') - 1, part('day'));
+  const localClock = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+  const localPart = (type) => Number(localClock.find((entry) => entry.type === type).value);
+  const currentMinutes = localPart('hour') * 60 + localPart('minute');
   const format = (date, options) => new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'UTC' }).format(date);
   let selected = today;
   let month = civil(today.getUTCFullYear(), today.getUTCMonth(), 1);
@@ -22,6 +25,18 @@
   };
   const name = (item) => item.label || item.publicLabel || `${item.audience === 'Youth/Teen' ? 'Kids and teens' : item.audience} ${item.format}`;
   const kind = (item) => item.audience === 'Women' ? 'women' : item.publicLabel === 'White Belt Foundations' ? 'foundations' : item.audience === 'Youth/Teen' ? 'youth' : item.audience ? 'adult' : 'special';
+  const isUpcoming = (slot, date) => {
+    const match = String(slot.time || '').match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+    if (!match) return false;
+    const classMinutes = (+match[1] % 12 + (match[3].toUpperCase() === 'PM' ? 12 : 0)) * 60 + +match[2];
+    return iso(date) > iso(today) || (iso(date) === iso(today) && classMinutes > currentMinutes);
+  };
+  const bookingHref = (slot, date) => {
+    const lane = slot.audience === 'Women' || slot.audience === 'Adult' ? 'adult' : slot.audience === 'Youth/Teen' ? 'youth' : '';
+    if (!lane || !isUpcoming(slot, date)) return '';
+    const params = new URLSearchParams({ lane, class: name(slot), class_date: iso(date), class_time: slot.time || '' });
+    return `/free-bjj-intro-tannersville-ny?${params.toString()}#booking-flow`;
+  };
   const classes = (date) => {
     const key = iso(date);
     const closed = schedule.closures.find((item) => item.date === key);
@@ -46,6 +61,8 @@
       if (slot.ages) card.append(make('small', '', `Ages ${slot.ages} · ${slot.format}`));
       if (slot.note) card.append(make('small', '', slot.note));
       if (slot.programUrl) { const link = make('a', '', 'View class plan'); link.href = slot.programUrl; card.append(link); }
+      const href = bookingHref(slot, date);
+      if (href) { const link = make('a', 'ss-class-booking-link', 'Plan a free visit for this class'); link.href = href; card.append(link); }
       list.append(card);
     }
     days.querySelectorAll('[data-calendar-date]').forEach((button) => {
@@ -72,18 +89,25 @@
       if (number < 1 || number > count) { cell.className = 'ss-month-empty'; continue; }
       const date = civil(month.getUTCFullYear(), month.getUTCMonth(), number);
       const slots = classes(date);
+      const content = make('div', 'ss-month-day');
       const button = make('button', 'ss-month-date');
       button.type = 'button';
       button.dataset.calendarDate = iso(date);
       button.setAttribute('aria-label', `${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}. ${slots.map((item) => `${item.time} ${name(item)}`).join('. ') || 'Rest day'}`);
       if (iso(date) === iso(today)) button.setAttribute('aria-current', 'date');
       button.append(make('span', 'ss-date-number', number));
+      content.append(button);
       for (const slot of slots) {
-        const card = make('span', `ss-date-class is-${kind(slot)}`);
+        const href = bookingHref(slot, date);
+        const card = make(href ? 'a' : 'span', `ss-date-class is-${kind(slot)}${href ? ' ss-date-class-link' : ''}`);
+        if (href) {
+          card.href = href;
+          card.setAttribute('aria-label', `Plan a free visit for ${name(slot)} on ${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}${slot.time ? ` at ${slot.time}` : ''}`);
+        }
         card.append(make('strong', '', slot.time), make('span', '', name(slot)));
-        button.append(card);
+        content.append(card);
       }
-      if (slots.length) button.append(make('span', 'ss-date-count', slots.length));
+      if (slots.length) content.append(make('span', 'ss-date-count', slots.length));
       button.addEventListener('click', () => select(date));
       button.addEventListener('keydown', (event) => {
         if (event.key === 'PageUp' || event.key === 'PageDown') { event.preventDefault(); shiftMonth(event.key === 'PageUp' ? -1 : 1, true); return; }
@@ -94,7 +118,7 @@
         month = civil(selected.getUTCFullYear(), selected.getUTCMonth(), 1);
         render(true);
       });
-      cell.append(button);
+      cell.append(content);
     }
     select(selected);
     if (focus) days.querySelector('[tabindex="0"]').focus();

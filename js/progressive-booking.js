@@ -16,6 +16,10 @@
     const choiceStatus = document.querySelector('[data-choice-status]');
     const form = document.querySelector('#pb-step-3 form');
     const requested = new URLSearchParams(window.location.search).get('lane');
+    const query = new URLSearchParams(window.location.search);
+    const requestedClass = (query.get('class') || '').slice(0, 100);
+    const requestedDate = query.get('class_date') || '';
+    const requestedTime = (query.get('class_time') || '').slice(0, 30);
     const state = { profile: null, url: null, inline: false, scheduled: new Set(), step: 1, generation: 0, timer: null, trigger: null };
     const focus = (element) => {
       if (!element) return;
@@ -73,7 +77,19 @@
       const copy = profiles[state.profile] || { selected: 'Choose who is starting.', context: 'Pick a time to meet Sandy.' };
       const choice = document.querySelector('[data-current-choice]');
       if (choice) choice.textContent = copy.selected;
-      if (context) context.textContent = copy.context;
+      if (context) {
+        context.textContent = copy.context;
+        if (requestedClass && requestedDate) {
+          const date = new Date(`${requestedDate}T12:00:00Z`);
+          const validDate = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) && !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === requestedDate;
+          if (validDate) {
+            const details = document.createElement('span');
+            details.className = 'requested-class-context';
+            details.textContent = ` Requested class: ${requestedClass}, ${new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'long', month: 'long', day: 'numeric' }).format(date)}${requestedTime ? ` at ${requestedTime}` : ''}. Sandy will confirm class availability.`;
+            context.append(details);
+          }
+        }
+      }
     };
     const updateConfirmation = () => {
       const adult = ['adult-beginner', 'leo'].includes(state.profile);
@@ -88,6 +104,13 @@
       CAMPAIGNS.forEach((key) => { const value = page.get(key); if (value && /^[a-z0-9._-]{1,80}$/i.test(value)) url.searchParams.set(key, value); });
       url.searchParams.set('utm_source', url.searchParams.get('utm_source') || 'onsite-booking');
       url.searchParams.set('audience_lane', state.profile || 'unknown');
+      if (requestedClass && requestedDate) {
+        const classDate = new Date(`${requestedDate}T12:00:00Z`);
+        if (/^\d{4}-\d{2}-\d{2}$/.test(requestedDate) && !Number.isNaN(classDate.getTime()) && classDate.toISOString().slice(0, 10) === requestedDate) {
+          const dateLabel = new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }).format(classDate);
+          url.searchParams.set('notes', `Requested class: ${requestedClass} on ${dateLabel}${requestedTime ? ` at ${requestedTime}` : ''}. Please offer the closest available Free Intro time before this class.`);
+        }
+      }
       return url;
     };
     const syncFields = () => {
@@ -295,6 +318,11 @@
     }
     track('intro_page_loaded');
     if (ALIASES[String(requested || '').toLowerCase()]) choose(ALIASES[String(requested).toLowerCase()], 'query');
-    else if (requested) setChoiceStatus('Choose who is starting, or text Sandy for help.');
+    else if (requested === 'youth') {
+      const date = new Date(`${requestedDate}T12:00:00Z`);
+      const validDate = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) && !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === requestedDate;
+      const dateLabel = validDate ? new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'long', month: 'long', day: 'numeric' }).format(date) : '';
+      setChoiceStatus(`Choose Child or Teen for ${requestedClass || 'this class'}${dateLabel ? ` on ${dateLabel}` : ''}${requestedTime ? ` at ${requestedTime}` : ''}.`);
+    } else if (requested) setChoiceStatus('Choose who is starting, or text Sandy for help.');
   });
 }());

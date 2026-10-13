@@ -14,11 +14,14 @@
 .ss-month-grid th{text-align:center;padding:.8rem 0;font-size:.8rem;color:var(--ss-muted)}
 .ss-month-grid td{border:1px solid var(--ss-border);padding:0;vertical-align:top;background:var(--ss-bg)}
 .ss-month-grid .ss-month-empty{background:var(--ss-surface2)}
-.ss-month-date{display:flex;flex-direction:column;gap:.4rem;width:100%;min-height:190px;padding:.6rem;border:0;background:transparent;text-align:left;color:var(--ss-text);font:inherit;cursor:pointer}
-.ss-month-date[aria-pressed=true]{background:#e7efea;box-shadow:inset 0 0 0 2px var(--ss-green)}
+.ss-month-day{display:flex;flex-direction:column;gap:.3rem;min-height:190px;padding:.45rem}
+.ss-month-date{display:flex;align-items:center;gap:.4rem;width:fit-content;min-height:34px;padding:.15rem;border:0;border-radius:50%;background:transparent;text-align:left;color:var(--ss-text);font:inherit;cursor:pointer}
+.ss-month-date[aria-pressed=true]{background:#e7efea;box-shadow:0 0 0 2px var(--ss-green)}
 .ss-date-number{display:grid;place-items:center;width:28px;height:28px;font-weight:700;font-size:.9rem}
 .ss-month-date[aria-current=date] .ss-date-number{background:var(--ss-green);color:#fff;border-radius:50%}
 .ss-date-class{display:flex;flex-direction:column;gap:.2rem;width:100%;padding:.5rem;border-left:3px solid var(--class-color);background:var(--class-bg);font-size:.78rem;line-height:1.35;overflow-wrap:anywhere;border-radius:3px;color:#1f1712}
+.ss-date-class-link{text-decoration:none}
+.ss-date-class-link:hover{text-decoration:underline;text-underline-offset:2px}
 .is-youth{--class-color:#116a42;--class-bg:#e4eee6}
 .is-adult{--class-color:#306061;--class-bg:#e6eeee}
 .is-foundations{--class-color:#8b522e;--class-bg:#f4e9dc}
@@ -38,11 +41,13 @@
 .ss-month-static small{flex-basis:100%}
 .ss-weekly-fallback summary{padding:1rem;cursor:pointer;font-weight:600;min-height:44px}
 .ss-schedule-utility-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.9rem}
-.ss-month-calendar button:focus-visible,.ss-weekly-fallback summary:focus-visible{outline:3px solid var(--ss-green);outline-offset:2px}
+.ss-month-calendar :is(button,a):focus-visible,.ss-weekly-fallback summary:focus-visible{outline:3px solid var(--ss-green);outline-offset:2px}
 @media(max-width:700px){
- .ss-month-date{min-height:64px;align-items:center;padding:.25rem;gap:.1rem}
- .ss-date-class{display:none}
- .ss-date-count{display:block;font-size:.65rem;line-height:1;background:var(--ss-green);color:#fff;border-radius:10px;padding:.15rem .4rem}
+ .ss-month-day{min-height:0;padding:.2rem;gap:.2rem}
+ .ss-month-date{min-height:34px;padding:0}
+ .ss-date-class{gap:.08rem;min-height:42px;justify-content:center;padding:.2rem .25rem;border-left-width:2px;font-size:.62rem;line-height:1.12}
+ .ss-date-class strong{font-size:.62rem}
+ .ss-date-count{display:none}
  .ss-month-grid th{font-size:.7rem}
  .ss-month-nav{width:100%;justify-content:space-between}
  .ss-month-nav button{font-size:.8rem;padding:.4rem .6rem}
@@ -133,6 +138,16 @@
 
 .page-schedule .ss-selected-class {
   border-radius: 4px;
+}
+
+.page-schedule .ss-selected-class .ss-class-booking-link {
+  width: fit-content;
+  min-height: 44px;
+  padding: .45rem .7rem;
+  border: 1px solid var(--ss-green);
+  border-radius: 4px;
+  background: var(--ss-surface);
+  font-weight: 700;
 }
 
 @media (max-width: 700px) {
