@@ -42,6 +42,21 @@
   white-space: nowrap;
 }
 
+@media (max-width: 767.98px) {
+  .page-home [aria-labelledby="ss-home-double-win-title"] .ss-btn,
+  .page-home [aria-labelledby="ss-home-double-win-title"] .ss-btn span[aria-hidden="true"] {
+    white-space: normal;
+  }
+
+  .page-home [aria-labelledby="ss-home-double-win-title"] .ss-btn {
+    max-width: 100%;
+  }
+
+  .page-home [aria-labelledby="ss-home-pricing-title"] > .container > .d-flex {
+    flex-wrap: wrap;
+  }
+}
+
 /* Community bar: 3 classes each week for 12 weeks */
 .page-home [aria-labelledby="ss-home-community-title"] {
   text-align: left;
@@ -77,9 +92,42 @@ html:has(body.page-home), body.page-home {
   background: var(--home-paper);
   color: var(--home-ink);
 }
+
+@media (max-width: 359.98px) {
+  body.page-home {
+    width: calc(100% - 16px);
+    box-sizing: border-box;
+  }
+
+  .page-home #final-cta-title + p + .goal-mapping-cta__button {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
  
 .page-home .ss-main { overflow-x: clip; }
 .page-home img.img-fluid { max-width: 100%; height: auto; }
+
+/* Keep the homepage footer sized to the visual viewport under intrinsic content. */
+@media (max-width: 47.99rem) {
+  body.page-home footer.ss-new-site-footer {
+    width: calc(100vw - 2rem);
+    padding: 1.5rem 1.25rem 1rem;
+  }
+
+  body.page-home footer.ss-new-site-footer .ss-new-footer-top,
+  body.page-home footer.ss-new-site-footer .ss-new-footer-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.page-home footer.ss-new-site-footer .ss-new-footer-top {
+    gap: 1.5rem;
+  }
+
+  body.page-home footer.ss-new-site-footer .ss-new-footer-nav {
+    gap: 1rem;
+  }
+}
 .page-home .ss-home-section { padding-block: clamp(4.5rem, 9vw, 8.5rem); }
 .page-home .container { width: min(calc(100% - var(--space-lg) - var(--space-lg)), 74rem); margin-inline: auto; }
 .page-home h1, .page-home h2, .page-home h3 { font-family: var(--home-serif); font-style: normal; font-weight: 400; color: var(--home-ink); }

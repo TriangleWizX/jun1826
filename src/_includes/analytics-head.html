@@ -13,9 +13,51 @@ permalink: "/_includes/analytics-head.html"
   gtag('js', new Date());
   gtag('config', 'G-03GTSG5ECF');
   if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-    var s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-03GTSG5ECF';
-    s.async = true;
-    document.head.appendChild(s);
+    // Keep the queue ready before paint, then request gtag.js after a real FCP.
+    var gtagUrl = 'https://www.googletagmanager.com/gtag/js?id=G-03GTSG5ECF';
+    var loaderState = window.__ssGa4GtagLoaderState || (window.__ssGa4GtagLoaderState = {});
+
+    if (!loaderState.observing && !loaderState.requested) {
+      loaderState.observing = true;
+
+      var loadGtag = function () {
+        if (loaderState.requested) return;
+        loaderState.requested = true;
+
+        var existingScript = Array.prototype.some.call(document.scripts, function (script) {
+          return script.src === gtagUrl;
+        });
+        if (existingScript) return;
+
+        var s = document.createElement('script');
+        s.src = gtagUrl;
+        s.async = true;
+        document.head.appendChild(s);
+      };
+
+      try {
+        var supportsPaint = typeof PerformanceObserver === 'function'
+          && Array.isArray(PerformanceObserver.supportedEntryTypes)
+          && PerformanceObserver.supportedEntryTypes.indexOf('paint') !== -1;
+
+        if (!supportsPaint) {
+          loadGtag();
+        } else {
+          var paintObserver = new PerformanceObserver(function (list) {
+            var entries = list.getEntries();
+            for (var i = 0; i < entries.length; i++) {
+              if (entries[i].name === 'first-contentful-paint') {
+                paintObserver.disconnect();
+                loadGtag();
+                break;
+              }
+            }
+          });
+          paintObserver.observe({ type: 'paint', buffered: true });
+        }
+      } catch (_) {
+        loadGtag();
+      }
+    }
   }
 </script>

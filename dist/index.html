@@ -48,8 +48,9 @@
 
 
 <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-serif/instrument-serif-latin-regular.9b8dd1.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="/assets/css/pages/home-delivery.bec133a54c52.css">
+<link rel="stylesheet" href="/assets/css/pages/home-delivery.ed40beec3802.css">
 
 
 
@@ -819,7 +820,7 @@
 
         <!-- Studio Preview -->
         <figure class="ss-home-conversion__media">
-          <img fetchpriority="high" decoding="async" src="/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp" srcset="/assets/images/Screenshot_20260810_071208_YouTube-768.webp 768w, /assets/images/Screenshot_20260810_071208_YouTube-1600.webp 1600w" sizes="(min-width: 992px) 420px, calc(100vw - 76px)" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ">
+          <img loading="lazy" decoding="async" src="/assets/images/Screenshot_20260810_071208_YouTube-1600.8358de.webp" srcset="/assets/images/Screenshot_20260810_071208_YouTube-768.webp 768w, /assets/images/Screenshot_20260810_071208_YouTube-1600.webp 1600w" sizes="(min-width: 992px) 420px, calc(100vw - 76px)" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ">
           <figcaption>
             <span>See the class room in Tannersville</span>
             <span>6045 Main Street</span>
@@ -1158,6 +1159,9 @@
           }, { threshold: 0.05 });
           footerObserver.observe(footer);
         }
+      } else {
+        // Let initial DOM and style changes settle before measuring the hero.
+        requestAnimationFrame(updateSticky);
       }
 
       const menuButton = document.querySelector('.ss-menu-button');
@@ -1166,7 +1170,6 @@
       document.addEventListener('focusout', () => requestAnimationFrame(updateSticky));
       window.addEventListener('resize', updateSticky, { passive: true });
       window.addEventListener('scroll', updateSticky, { passive: true });
-      updateSticky();
     }
   };
 
@@ -1372,8 +1375,8 @@
 </section>
 <div class="w-100">
 <section aria-labelledby="final-cta-title" class="container py-5 text-center">
-<div class="rounded-4 border p-5" style="background:var(--ss-green, #116A42); color: white;">
-<h2 class="h2 mb-3 fw-bold" id="final-cta-title" style="font-family:'Instrument Serif', Georgia, serif; font-size: 2.5rem;">Plan your first class.</h2>
+<div class="rounded-4 border p-3 p-md-5" style="background:var(--ss-green, #116A42); color: white;">
+<h2 class="h2 mb-3 fw-bold" id="final-cta-title" style="font-family:'Instrument Serif', Georgia, serif; font-size: clamp(1.75rem, 8vw, 2.5rem);">Plan your first class.</h2>
 <p class="mb-4 lead" style="color: rgba(255,255,255,0.85);">Meet Sandy. See the room. Pick your next step.</p>
 <a aria-label="Reserve Your Free First Visit" class="ss-btn group bg-white text-dark goal-mapping-cta__button" data-analytics-event="home_intro_click" data-cta-label="Reserve Your Free First Visit" data-cta-location="final" data-source="homepage-final" href="#home-first-visit-builder">
             Reserve Your Free First Visit

@@ -26,7 +26,98 @@
 <!--#include virtual="/_includes/analytics-head.html" -->
 {% include "components/structured-data.njk" %}
 <link rel="preload" href="/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-serif/instrument-serif-latin-regular.9b8dd1.woff2" as="font" type="font/woff2" crossorigin>
+{% if criticalCss != "free-intro" -%}
 <link rel="preload" href="/tokens.css" as="style">
+{%- endif %}
+{% if criticalCss == "free-intro" %}
+<style>@media screen and (max-width: 767px) {
+{% include "critical/free-intro.njk" %}
+}</style>
+<template id="ss-progressive-stylesheets">
+  <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.css" data-w21-stylesheet>
+  <link rel="stylesheet" href="/assets/css/fonts.min.css" data-w21-stylesheet data-w21-desktop-only>
+  <link rel="stylesheet" href="/assets/css/site-shell.min.css" data-w21-stylesheet>
+{% if extraCss %}
+{% for cssFile in extraCss %}
+  <link rel="stylesheet" href="{{ cssFile }}" data-w21-stylesheet>
+{% endfor %}
+{% endif %}
+</template>
+<script>
+(() => {
+  const template = document.getElementById("ss-progressive-stylesheets");
+  if (!template) return;
+
+  let observer = null;
+  const media = window.matchMedia ? window.matchMedia("(max-width: 767px)") : null;
+  const mobile = media ? media.matches : false;
+  const events = ["pointerdown", "keydown", "focusin", "scroll", "click"];
+  const appended = new Set();
+  function appendAvailableStylesheets(renderBlocking, desktop) {
+    for (const source of template.content.querySelectorAll("link[data-w21-stylesheet]")) {
+      if (source.hasAttribute("data-w21-desktop-only") && !desktop) continue;
+      const href = source.getAttribute("href");
+      if (appended.has(href)) continue;
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      if (renderBlocking) link.setAttribute("blocking", "render");
+      document.head.append(link);
+      appended.add(href);
+    }
+  }
+  function cleanup() {
+    if (observer) observer.disconnect();
+    for (const eventName of events) window.removeEventListener(eventName, loadNow, true);
+  }
+  function attachStylesheets(renderBlocking) {
+    const desktop = window.matchMedia ? !window.matchMedia("(max-width: 767px)").matches : true;
+    cleanup();
+    appendAvailableStylesheets(renderBlocking || desktop, desktop);
+  }
+  function loadNow() { attachStylesheets(false); }
+  window.addEventListener("resize", () => {
+    if (window.matchMedia && !window.matchMedia("(max-width: 767px)").matches) {
+      attachStylesheets(true);
+    }
+  }, true);
+
+  if (!mobile) {
+    attachStylesheets(true);
+    return;
+  }
+
+  const paintSupported = window.PerformanceObserver &&
+    Array.isArray(PerformanceObserver.supportedEntryTypes) &&
+    PerformanceObserver.supportedEntryTypes.includes("paint");
+  if (!paintSupported) {
+    attachStylesheets(false);
+    return;
+  }
+
+  for (const eventName of events) window.addEventListener(eventName, loadNow, true);
+  try {
+    observer = new PerformanceObserver((list) => {
+      if (list.getEntries().some((entry) => entry.name === "first-contentful-paint")) {
+        attachStylesheets(false);
+      }
+    });
+    observer.observe({ type: "paint", buffered: true });
+  } catch {
+    attachStylesheets(false);
+  }
+})();
+</script>
+<noscript><link rel="stylesheet" href="/assets/css/bootstrap-icons-local.css"></noscript>
+<noscript><link rel="stylesheet" href="/assets/css/fonts.min.css"></noscript>
+<noscript><link rel="stylesheet" href="/assets/css/site-shell.min.css"></noscript>
+{% if extraCss %}
+  {%- for cssFile in extraCss %}
+<noscript><link rel="stylesheet" href="{{ cssFile }}"></noscript>
+  {%- endfor %}
+{% endif %}
+{% else -%}
 <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.4f51bc.css">
 <link rel="stylesheet" href="/assets/css/fonts.min.css">
 <link rel="stylesheet" href="/assets/css/site-shell.min.css">
@@ -41,3 +132,4 @@
 {% if bodyClass and "page-bjj-glossary" in bodyClass %}
   <link rel="stylesheet" href="/assets/css/bjj-glossary.css">
 {% endif %}
+{%- endif %}

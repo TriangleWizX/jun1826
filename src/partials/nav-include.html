@@ -29,7 +29,7 @@
       <div class="container">
         <!-- Brand: always left -->
         <a class="navbar-brand ss-brand" href="/" aria-label="Sensei Sandy BJJ homepage">
-<img loading="lazy" class="ss-brand-mark" src="/assets/img/brand/sensei-sandy-bjj-logo-256.35dfb6.png" alt="Sensei Sandy BJJ" width="44" height="44" decoding="async">
+<img loading="lazy" class="ss-brand-mark" src="/assets/img/brand/sensei-sandy-bjj-logo-96.c54730.png" srcset="/assets/img/brand/sensei-sandy-bjj-logo-64.6f668c.png 64w, /assets/img/brand/sensei-sandy-bjj-logo-96.c54730.png 96w, /assets/img/brand/sensei-sandy-bjj-logo-128.6c12d5.png 128w" sizes="44px" alt="Sensei Sandy BJJ" width="44" height="44" decoding="async">
           <span class="ss-brand-copy">
             <span class="ss-brand-main">Sensei Sandy BJJ</span>
             <span class="ss-brand-sub">BJJ for kids, teens, and adults.</span>
@@ -110,15 +110,12 @@
   </header>
 </div>
 
-<!-- Preload & load Bootstrap early so pages with footer-only includes get the file downloaded earlier -->
-<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  crossorigin="anonymous" fetchpriority="low">
-
+<!-- Load the shared navigation bundle locally, with a remote fallback for load failures. -->
 <script>
   (function ensureBootstrapBundle() {
-    const primarySrc = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+    const primarySrc = '/assets/js/bootstrap.bundle.5.3.3.js';
     const fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
-    const bootstrapScriptSelector = 'script[src*="bootstrap.bundle.min.js"]';
+    const bootstrapScriptSelector = 'script[src*="bootstrap.bundle.min.js"], script[src*="bootstrap.bundle.5.3.3.js"]';
 
     const hasDropdown = () => Boolean(window.bootstrap && window.bootstrap.Dropdown);
 
@@ -161,10 +158,73 @@
       }
     };
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', ensureDropdown, { once: true });
-    } else {
+    const paintDeferredRoutes = new Set([
+      '/',
+      '/free-bjj-intro-tannersville-ny',
+      '/schedule',
+      '/bjj-classes/kids-tannersville-ny',
+      '/bjj-classes/teens-tannersville-ny',
+      '/bjj-classes/adults-tannersville-ny',
+      '/options-pricing'
+    ]);
+    const routePath = window.location.pathname
+      .replace(/\/index\.html?$/i, '')
+      .replace(/\.html?$/i, '')
+      .replace(/\/+$/, '') || '/';
+
+    if (!paintDeferredRoutes.has(routePath)) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ensureDropdown, { once: true });
+      } else {
+        ensureDropdown();
+      }
+      return;
+    }
+
+    const interactionEvents = ['pointerdown', 'keydown', 'focusin', 'scroll', 'click'];
+    let paintObserver = null;
+    let started = false;
+
+    const cleanupPaintWait = () => {
+      if (paintObserver) paintObserver.disconnect();
+      interactionEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, startForInteraction, true);
+      });
+    };
+
+    const startBundle = () => {
+      if (started) return;
+      started = true;
+      cleanupPaintWait();
       ensureDropdown();
+    };
+
+    function startForInteraction() {
+      startBundle();
+    }
+
+    const paintObserverSupported = window.PerformanceObserver &&
+      Array.isArray(PerformanceObserver.supportedEntryTypes) &&
+      PerformanceObserver.supportedEntryTypes.includes('paint');
+
+    if (!paintObserverSupported) {
+      ensureDropdown();
+      return;
+    }
+
+    interactionEvents.forEach((eventName) => {
+      window.addEventListener(eventName, startForInteraction, true);
+    });
+
+    try {
+      paintObserver = new PerformanceObserver((list) => {
+        if (list.getEntries().some((entry) => entry.name === 'first-contentful-paint')) {
+          startBundle();
+        }
+      });
+      paintObserver.observe({ type: 'paint', buffered: true });
+    } catch (error) {
+      startBundle();
     }
   })();
 </script>
@@ -197,10 +257,24 @@
       });
     };
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setup, { once: true });
-    } else {
+    const immediateFallbackRoutes = new Set([
+      '/',
+      '/free-bjj-intro-tannersville-ny',
+      '/schedule',
+      '/bjj-classes/kids-tannersville-ny',
+      '/bjj-classes/teens-tannersville-ny',
+      '/bjj-classes/adults-tannersville-ny',
+      '/options-pricing'
+    ]);
+    const fallbackPath = window.location.pathname
+      .replace(/\/index\.html?$/i, '')
+      .replace(/\.html?$/i, '')
+      .replace(/\/+$/, '') || '/';
+
+    if (immediateFallbackRoutes.has(fallbackPath) || document.readyState !== 'loading') {
       setup();
+    } else {
+      document.addEventListener('DOMContentLoaded', setup, { once: true });
     }
   })();
 </script>

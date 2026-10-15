@@ -739,7 +739,7 @@
 
         <!-- Studio Preview -->
         <figure class="ss-home-conversion__media">
-          <img fetchpriority="high" decoding="async" src="/assets/images/Screenshot_20260810_071208_YouTube-1600.webp" srcset="/assets/images/Screenshot_20260810_071208_YouTube-768.webp 768w, /assets/images/Screenshot_20260810_071208_YouTube-1600.webp 1600w" sizes="(min-width: 992px) 420px, calc(100vw - 76px)" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ">
+          <img loading="lazy" decoding="async" src="/assets/images/Screenshot_20260810_071208_YouTube-1600.webp" srcset="/assets/images/Screenshot_20260810_071208_YouTube-768.webp 768w, /assets/images/Screenshot_20260810_071208_YouTube-1600.webp 1600w" sizes="(min-width: 992px) 420px, calc(100vw - 76px)" width="1600" height="720" alt="Students practicing a coached jiu-jitsu partner drill at Sensei Sandy BJJ">
           <figcaption>
             <span>See the class room in Tannersville</span>
             <span>{{ business.address.street }}</span>
@@ -1078,6 +1078,9 @@
           }, { threshold: 0.05 });
           footerObserver.observe(footer);
         }
+      } else {
+        // Let initial DOM and style changes settle before measuring the hero.
+        requestAnimationFrame(updateSticky);
       }
 
       const menuButton = document.querySelector('.ss-menu-button');
@@ -1086,7 +1089,6 @@
       document.addEventListener('focusout', () => requestAnimationFrame(updateSticky));
       window.addEventListener('resize', updateSticky, { passive: true });
       window.addEventListener('scroll', updateSticky, { passive: true });
-      updateSticky();
     }
   };
 

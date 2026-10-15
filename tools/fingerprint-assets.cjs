@@ -313,7 +313,15 @@ const maskText = (value) => value.replace(/[^\r\n]/g, ' ');
 const maskInactiveHtml = (html) => {
   let masked = html.replace(/<!--[\s\S]*?(?:-->|$)/g, (match) => maskText(match));
   masked = masked.replace(/<noscript\b[^>]*>[\s\S]*?(?:<\/noscript\s*>|$)/gi, (match) => maskText(match));
-  masked = masked.replace(/<template\b[^>]*>[\s\S]*?(?:<\/template\s*>|$)/gi, (match) => maskText(match));
+  masked = masked.replace(/<template\b[^>]*>[\s\S]*?(?:<\/template\s*>|$)/gi, (match) => {
+    const chars = Array.from(maskText(match));
+    for (const link of match.matchAll(/<link\b[^>]*data-w21-stylesheet[^>]*>/gi)) {
+      for (let index = 0; index < link[0].length; index += 1) {
+        chars[link.index + index] = link[0][index];
+      }
+    }
+    return chars.join("");
+  });
   // A script element's src attribute is active, but href/src-shaped strings in
   // its body are not markup. Preserve only the opening tag for discovery.
   masked = masked.replace(
