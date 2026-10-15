@@ -4,7 +4,7 @@ Internal notes, outside the scored/public article copy.
 
 ## Implementation update
 
-The user subsequently requested implementation. Four new pages and four refreshed pages now use this interview material; see [implementation-report.md](implementation-report.md). Earlier draft-only scope statements below describe the drafting stage. The full OptiMax v1.0.0 prompt was recovered and read during implementation, closing the compressed-source limitation recorded below. The current implementation avoids unresolved package-inclusion claims and preserves advance coach approval for youth joining adult class. Local QA and the final independent reviews found no material blockers. No commit, deployment, or external-link verification has occurred.
+The user subsequently requested implementation and release. Four new pages and four refreshed pages now use this interview material; see [implementation-report.md](implementation-report.md) and [deployment-receipt.md](deployment-receipt.md). Earlier draft-only scope statements below describe the drafting stage. The full OptiMax v1.0.0 prompt was recovered and read during implementation, closing the compressed-source limitation recorded below. The release avoids unresolved package-inclusion claims and preserves advance coach approval for youth joining adult class. Local QA, final independent reviews, and post-release checks found no material blockers.
 
 ## Primary source
 

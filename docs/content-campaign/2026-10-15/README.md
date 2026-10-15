@@ -1,6 +1,6 @@
 # Blog drafts from Sandy's interview
 
-Eight complete blog drafts, written in Sandy's first-person voice from his interview. Website implementation is complete locally: four new pages and four refreshed pages. Nothing has been committed or deployed. See the [implementation report](implementation-report.md) and [rendered QA results](implementation-qa.json) for current status. The draft measurements below remain historical draft evidence.
+Eight complete blog drafts, written in Sandy's first-person voice from his interview. Four new pages and four refreshed pages were released on October 15, 2026. See the [implementation report](implementation-report.md), [rendered QA results](implementation-qa.json), and [deployment receipt](deployment-receipt.md). The draft measurements below remain historical draft evidence.
 
 ## Read the blogs
 

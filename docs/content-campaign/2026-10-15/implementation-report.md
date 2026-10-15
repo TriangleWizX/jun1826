@@ -1,6 +1,6 @@
 # Blog implementation report
 
-Eight interview-based articles are implemented locally: four new pages and four refreshed pages. All eight rendered article bodies meet the requested Grade 3 maximum and exceed 2,000 visible characters. No commit or deployment was requested or performed.
+Eight interview-based articles were implemented and released: four new pages and four refreshed pages. All eight rendered article bodies meet the requested Grade 3 maximum and exceed 2,000 visible characters. The [deployment receipt](deployment-receipt.md) records the release commit, exact payload, upload evidence, and live checks.
 
 ## Pages and reading checks
 
@@ -57,4 +57,4 @@ Copywriting, Stop-Slop, and copy-readability-audit skills informed the work. The
 
 ## Release boundary
 
-Local implementation and validation are complete. A future release should use the explicit page/index/sitemap payload and preserve unrelated work. Rollback should restore only this campaign's source, registry entries, blog cards, and corresponding generated pages; it should not reset the full worktree.
+Release commit `a8d1be562811e4da7bcd5a3c72dc1d7c8a4f519a` was deployed with the explicit ten-file page/index/sitemap payload. Rollback should restore only those ten remote files from the verified predeploy backup; it should not reset the full worktree.
