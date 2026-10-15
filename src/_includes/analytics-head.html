@@ -35,20 +35,33 @@ permalink: "/_includes/analytics-head.html"
         document.head.appendChild(s);
       };
 
+      // Defer loading to first user interaction or idle callback after FCP
+      var scheduleLoad = function () {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function () { setTimeout(loadGtag, 1500); }, { timeout: 3500 });
+        } else {
+          setTimeout(loadGtag, 2500);
+        }
+      };
+
+      ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach(function (ev) {
+        window.addEventListener(ev, loadGtag, { once: true, passive: true });
+      });
+
       try {
         var supportsPaint = typeof PerformanceObserver === 'function'
           && Array.isArray(PerformanceObserver.supportedEntryTypes)
           && PerformanceObserver.supportedEntryTypes.indexOf('paint') !== -1;
 
         if (!supportsPaint) {
-          loadGtag();
+          scheduleLoad();
         } else {
           var paintObserver = new PerformanceObserver(function (list) {
             var entries = list.getEntries();
             for (var i = 0; i < entries.length; i++) {
               if (entries[i].name === 'first-contentful-paint') {
                 paintObserver.disconnect();
-                loadGtag();
+                scheduleLoad();
                 break;
               }
             }
@@ -56,7 +69,7 @@ permalink: "/_includes/analytics-head.html"
           paintObserver.observe({ type: 'paint', buffered: true });
         }
       } catch (_) {
-        loadGtag();
+        scheduleLoad();
       }
     }
   }
