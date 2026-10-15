@@ -145,6 +145,15 @@ def changed_outputs(commit):
             candidate = ROOT / 'dist' / 'pricing-module-fragment.html'
             if candidate.is_file(): outputs.add((candidate, 'pricing-module-fragment.html'))
             continue
+        if name == 'src/partials/footer-include.html':
+            candidate = ROOT / 'dist' / 'footer-include.html'
+            if candidate.is_file(): outputs.add((candidate, 'footer-include.html'))
+        if name == 'src/partials/nav-include.html':
+            candidate = ROOT / 'dist' / 'nav-include.html'
+            if candidate.is_file(): outputs.add((candidate, 'nav-include.html'))
+        if name == 'src/partials/cta-footer.html':
+            candidate = ROOT / 'dist' / 'cta-footer.html'
+            if candidate.is_file(): outputs.add((candidate, 'cta-footer.html'))
         if name.startswith('src/'):
             if name == 'src/evidence.html':
                 candidate = ROOT / 'dist' / 'evidence' / 'index.html'
