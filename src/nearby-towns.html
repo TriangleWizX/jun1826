@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Nearby BJJ Classes | Tannersville, Hunter, Windham"
-description: "Find BJJ classes near Tannersville, Hunter, Windham, Haines Falls, and Catskills towns. Pick a class and plan a Free Intro."
+description: "Find Brazilian Jiu-Jitsu classes near Tannersville, Hunter, Windham, Haines Falls, and Catskills towns. Plan your Free First Visit."
 canonicalUrl: "https://senseisandy.com/nearby-towns"
 bodyClass: "ss-page ss-page-bjj-classes ss-page-nearby-towns"
 extraCss:
@@ -18,51 +18,119 @@ permalink: "/nearby-towns.html"
 <main id="main-content" role="main">
   <section class="ss-near-hero he-section" aria-labelledby="near-title">
     <div class="container">
-      <p class="he-eyebrow">Catskills BJJ</p>
-      <h1 id="near-title">Find a class near Tannersville</h1>
-      <p class="lead">Live in a nearby town? Pick a class. Then plan your first visit.</p>
-      <p>Need help? Text Sandy. We can help.</p>
+      <p class="he-eyebrow">Catskills BJJ Community</p>
+      <h1 id="near-title">Find a Coached BJJ Class Near Tannersville</h1>
+      <p class="lead">Families across the mountaintop travel to Studios on Main in Tannersville for calm, beginner-friendly jiu-jitsu training.</p>
+      <p>Whether you live in Hunter, Windham, Haines Falls, or down the mountain in Palenville or Catskill, our doors are open for your first visit.</p>
       <div class="ss-near-hero__actions">
         <a class="he-btn-wrapper" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a>
-        <a class="he-btn-wrapper" href="sms:+19177368649">Text Sandy</a>
+        <a class="he-btn-wrapper" href="{{ contact.smsHref }}">Text Sandy</a>
       </div>
-      <p><a href="/schedule">See class times</a> · <a href="/bjj-tannersville-ny-directions">Get directions</a></p>
+      <p class="mt-3"><a href="/schedule">See class times</a> · <a href="/bjj-tannersville-ny-directions">Get directions</a></p>
     </div>
   </section>
 
   <section class="ss-near-section he-section" aria-labelledby="class-title">
     <div class="container">
-      <h2 id="class-title">Pick your class</h2>
-      <p>Kids, teens, and adults can read about each class.</p>
-      <ul>
-        <li><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
-        <li><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
-        <li><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></li>
-      </ul>
+      <h2 id="class-title">Pick Your Training Lane</h2>
+      <p>We offer dedicated programs structured for specific age groups and fitness backgrounds:</p>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4">
+          <div class="p-3 bg-light rounded h-100">
+            <h3><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></h3>
+            <p>Ages {{ programs.kids.ageRange }}. Structured movement games that build balance, coordination, body awareness, and respectful listening habits.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 bg-light rounded h-100">
+            <h3><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></h3>
+            <p>Ages {{ programs.teens.ageRange }}. Grounded, safe martial arts instruction focused on de-escalation, posture control, and physical resilience.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 bg-light rounded h-100">
+            <h3><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></h3>
+            <p>Coached beginner fundamentals, gi and no-gi technique, and cooperative partner sparring suited for busy adults and working parents.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="ss-near-section he-section" aria-labelledby="town-title">
     <div class="container">
-      <h2 id="town-title">Find your town</h2>
-      <p>See local class details for towns near the Catskills studio. Living or training across the mountaintop? Read our guide on <a href="/rural-bjj-catskills">rural BJJ in the Catskills</a>.</p>
-      <ul>
-        <li><a href="/bjj-classes/tannersville-ny">Tannersville</a></li>
-        <li><a href="/bjj-classes/hunter-ny">Hunter</a></li>
-        <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></li>
-        <li><a href="/bjj-classes/windham-ny">Windham</a></li>
-        <li><a href="/bjj-classes/palenville-ny">Palenville</a></li>
-        <li><a href="/bjj-classes/cairo-ny">Cairo</a></li>
-        <li><a href="/bjj-classes/catskill-ny">Catskill</a></li>
-      </ul>
+      <h2 id="town-title">Explore Class Details by Town</h2>
+      <p>Learn more about travel times and community routines from your neighborhood:</p>
+      <div class="row g-3 mt-2">
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/bjj-classes/tannersville-ny">Tannersville</a></h4>
+            <p class="small text-muted mb-0">Our home studio on Main Street.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/bjj-classes/hunter-ny">Hunter</a></h4>
+            <p class="small text-muted mb-0">5 minutes along Route 23A.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></h4>
+            <p class="small text-muted mb-0">3 minutes east toward the falls.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/bjj-classes/windham-ny">Windham</a></h4>
+            <p class="small text-muted mb-0">12 minutes via Route 296.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/bjj-classes/palenville-ny">Palenville</a></h4>
+            <p class="small text-muted mb-0">Convenient drive up Kaaterskill Clove.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/bjj-classes/cairo-ny">Cairo</a></h4>
+            <p class="small text-muted mb-0">Scenic mountaintop commute.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/bjj-classes/catskill-ny">Catskill</a></h4>
+            <p class="small text-muted mb-0">Direct route via NY-23A West.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-3 border rounded text-center">
+            <h4><a href="/rural-bjj-catskills">Rural Catskills</a></h4>
+            <p class="small text-muted mb-0">Our guide to mountain training culture.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="ss-near-section he-section" aria-labelledby="next-title">
+  <section class="ss-near-section he-section bg-light" aria-labelledby="faq-title">
     <div class="container">
-      <h2 id="next-title">Plan your first visit</h2>
-      <p>Check the <a href="/schedule">class times</a> and <a href="/bjj-tannersville-ny-directions">directions</a>. Then book a Free Intro.</p>
-      <a class="he-btn-wrapper" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a>
+      <h2 id="faq-title">Visiting From Neighboring Towns</h2>
+      <details class="p-3 bg-white rounded mb-2">
+        <summary class="fw-semibold">Is there parking at the studio?</summary>
+        <p class="mt-2 mb-0">Yes. Convenient street parking is available along Main Street, with dedicated public parking lots directly behind Studios on Main.</p>
+      </details>
+      <details class="p-3 bg-white rounded mb-2">
+        <summary class="fw-semibold">Can families train on the same evening?</summary>
+        <p class="mt-2 mb-0">Yes. Youth classes run in the late afternoon, followed immediately by adult sessions, making it easy for parents and children to share the trip.</p>
+      </details>
+      <div class="mt-4 p-4 bg-white rounded text-center">
+        <h3>Reserve Your Free First Visit</h3>
+        <p>Come meet Sensei Sandy, take a tour of our clean studio, and experience beginner-friendly jiu-jitsu.</p>
+        <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a>
+        <a class="btn btn-outline-primary" href="{{ contact.smsHref }}">Text Sandy</a>
+      </div>
     </div>
   </section>
 </main>

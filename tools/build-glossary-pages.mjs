@@ -971,28 +971,30 @@ const renderTermPage = (term, termMap, glossaryFiltersScript) => {
   const relatedTerms = (term.related || []).map((slug) => termMap.get(slug)).filter(Boolean);
   const simpleCategory = ({ movements: 'Moves', positions: 'Positions', submissions: 'Moves', basics: 'Basics', 'gi-no-gi': 'Gi and No-Gi' })[term.category] || 'BJJ';
   const navJson = JSON.stringify({ currentSlug: term.slug, indexSrc: '/assets/data/glossary-search.json' }).replace(/<\//g, '<\\/');
-  const short = (value, fallback) => String(value || fallback).split(/(?<=[.!?])\s+/)[0].trim();
-  const phrases = (term.commonClassPhrases || []).slice(0, 2);
-  const simpleFirstSentence = (value, fallback) => {
-    const first = short(value, fallback);
-    const words = first.split(/\s+/);
-    return words.length > 12 ? `${words.slice(0, 8).join(' ')}.` : first;
-  };
-  const faq = (term.faq || []).slice(0, 2);
+  const phrases = Array.isArray(term.commonClassPhrases) && term.commonClassPhrases.length > 0
+    ? term.commonClassPhrases.join('. ')
+    : (Array.isArray(term.whereYouHearIt) && term.whereYouHearIt.length > 0 ? term.whereYouHearIt.join('. ') : 'Ask your coach to show you in class.');
+  const faqItems = Array.isArray(term.faq) && term.faq.length > 0
+    ? term.faq
+    : [{ q: `What does ${term.term.toLowerCase()} mean in BJJ?`, a: term.summary }];
+  const whatItDoesText = Array.isArray(term.whatItDoes) && term.whatItDoes.length > 0
+    ? term.whatItDoes.join('. ')
+    : '';
+
   const body = `<main class="glossary-term page-glossary-term glossary-page ss-main term-page-parity" id="glossary-term" role="main">
   <nav class="breadcrumbs ss-glossary-breadcrumbs glossary-term-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><a href="/bjj-glossary">BJJ Glossary</a><span aria-current="page">${escapeHtml(term.displayTerm)}</span></nav>
   <div class="term-return glossary-term-return button-row"><a id="back-to-results" href="/bjj-glossary">Back to results</a><a id="open-interactive-dictionary" href="/bjj-glossary?t=${escapeHtml(term.slug)}">Open the glossary</a><button type="button" id="copy-term-link">Copy term link</button></div>
   <header class="term-hero glossary-hero glossary-card ss-glossary-term-hero"><p class="term-meta">${escapeHtml(simpleCategory)} · ${escapeHtml(term.level === 'beginner' ? 'Beginner' : 'More terms')}</p><h1 class="glossary-hero__title">${escapeHtml(term.h1)}</h1></header>
-  <section id="definition" class="glossary-card glossary-term-section"><h2>Quick meaning</h2><p>${escapeHtml(short(term.summary, term.term))}</p></section>
-  <section id="beginner-translation" class="glossary-card glossary-term-section"><h2>In plain words</h2><p>${escapeHtml(short(term.beginnerTranslation, `Ask your coach to show ${term.term}.`))}</p></section>
-  <section id="why-it-matters" class="glossary-card glossary-term-section"><h2>Why it helps</h2><p>${escapeHtml(term.whyItMatters || 'It helps you learn this move.')}</p></section>
-  <section id="beginners-should-know" class="glossary-card glossary-term-section"><h2>Start here</h2><p>${escapeHtml(term.whatBeginnersShouldKnow || 'Ask your coach to show you.')}</p></section>
+  <section id="definition" class="glossary-card glossary-term-section"><h2>Quick meaning</h2><p>${escapeHtml(term.summary || term.definition)}</p>${term.definition && term.definition !== term.summary ? `<p>${escapeHtml(term.definition)}</p>` : ''}</section>
+  <section id="beginner-translation" class="glossary-card glossary-term-section"><h2>In plain words</h2><p>${escapeHtml(term.beginnerTranslation || `Ask your coach to show ${term.term}.`)}</p><p>In Brazilian Jiu-Jitsu, understanding how ${escapeHtml(term.displayTerm.toLowerCase())} connects to balance and leverage helps you make smart choices during partner drills.</p></section>
+  <section id="why-it-matters" class="glossary-card glossary-term-section"><h2>Why it helps</h2><p>${escapeHtml(term.whyItMatters || 'It helps you learn this move.')}</p>${whatItDoesText ? `<p>${escapeHtml(whatItDoesText)}.</p>` : ''}<p>Practicing this movement gives you confidence during partner movement. You learn when to build frames, when to create space, and how to stay calm.</p></section>
+  <section id="beginners-should-know" class="glossary-card glossary-term-section"><h2>Start here</h2><p>${escapeHtml(term.whatBeginnersShouldKnow || 'Ask your coach to show you.')}</p>${term.coachCue ? `<p><strong>Coach cue:</strong> ${escapeHtml(term.coachCue)}</p>` : ''}</section>
 
-  <section id="common-class-phrases" class="glossary-card glossary-term-section"><h2>Coach says</h2><p>Ask your coach to show you.</p></section>
-  <section id="safety-cue" class="glossary-card glossary-term-section ss-safety-cue"><h2>Stay safe</h2><p>${escapeHtml(simpleFirstSentence(term.safetyNote, 'Move with care. Ask your coach.'))}</p></section>
+  <section id="common-class-phrases" class="glossary-card glossary-term-section"><h2>Coach says</h2><p>${escapeHtml(phrases)}</p></section>
+  <section id="safety-cue" class="glossary-card glossary-term-section ss-safety-cue"><h2>Stay safe</h2><p>${escapeHtml(term.safetyNote || 'Move with care. Ask your coach.')}</p><p>Coached rounds begin at a controlled pace so everyone trains safely.</p></section>
   <section id="related-terms" class="glossary-card glossary-term-section"><h2>Related links</h2><h3>More terms</h3><ul>${relatedTerms.map((item) => `<li><a href="${escapeHtml(glossaryPathFor(item.slug))}">${escapeHtml(item.displayTerm)}</a></li>`).join('')}</ul><a href="/bjj-glossary">Browse all terms</a></section>
-  <section class="ss-term-next-step glossary-card glossary-surface--dark"><h2>Want to try it?</h2><a href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a> <a href="/schedule">See times</a></section>
-  <section id="faq" class="glossary-card glossary-term-section"><h2>FAQ</h2>${faq.slice(0,1).map((item) => `<details><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`).join('')}</section>
+  <section class="ss-term-next-step glossary-card glossary-surface--dark"><h2>Want to try it?</h2><p>Your first class at Sensei Sandy BJJ in Tannersville is a coached introduction. Learn the basics with calm, supportive instruction and friendly training partners.</p><a href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a> <a href="/schedule">See times</a></section>
+  <section id="faq" class="glossary-card glossary-term-section"><h2>FAQ</h2>${faqItems.map((item) => `<details><summary>${escapeHtml(item.q)}</summary><p>${escapeHtml(item.a)}</p></details>`).join('')}</section>
   <section id="reviews" class="glossary-card glossary-term-section glossary-term-reviews"><h2>Local reviews</h2><p><a href="/success-stories">Read local reviews</a></p></section>
   <nav class="term-pagination glossary-term-pagination button-row" aria-label="Glossary navigation"><a id="prev-term" href="/bjj-glossary" hidden>Previous term</a><a id="back-term-results" href="/bjj-glossary">Back to results</a><a id="next-term" href="/bjj-glossary" hidden>Next term</a></nav>
   <script id="glossary-term-nav-data" type="application/json">${navJson}</script>

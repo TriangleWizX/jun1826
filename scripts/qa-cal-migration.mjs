@@ -39,7 +39,19 @@ assert.ok(html.includes('Sandy will reach out!'), 'Must include Sandy will reach
 assert.ok(html.includes('sensei-sandy.webp'), 'Must include optimized sensei-sandy image');
 assert.doesNotMatch(html, /data-cal-link=/, 'The inline mount must not also act as a Cal popup trigger');
 
-const executablePath = process.env.CHROME_PATH || (fs.existsSync(chromium.executablePath()) ? chromium.executablePath() : '/usr/bin/google-chrome');
+const findPlaywrightChrome = () => {
+  const cacheDir = path.join(process.env.HOME || '', '.cache', 'ms-playwright');
+  if (fs.existsSync(cacheDir)) {
+    for (const entry of fs.readdirSync(cacheDir)) {
+      if (entry.startsWith('chromium-')) {
+        const candidate = path.join(cacheDir, entry, 'chrome-linux64', 'chrome');
+        if (fs.existsSync(candidate)) return candidate;
+      }
+    }
+  }
+  return '/usr/bin/google-chrome';
+};
+const executablePath = process.env.CHROME_PATH || (fs.existsSync(chromium.executablePath()) ? chromium.executablePath() : findPlaywrightChrome());
 const browser = await chromium.launch({ executablePath, headless: true, args: ['--no-sandbox', '--disable-crash-reporter', '--disable-dev-shm-usage'] });
 try {
   const page = await browser.newPage();

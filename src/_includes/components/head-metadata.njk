@@ -6,6 +6,9 @@
 <link href="/site.webmanifest" rel="manifest"/>
 <title>{{ title | default("Sensei Sandy Jiu-Jitsu | Sandy Jiu Jitsu Tannersville NY") }}</title>
 <meta content="{{ description | default("Sensei Sandy Jiu-Jitsu (Sandy Jiu Jitsu) offers calm, beginner-friendly Brazilian Jiu-Jitsu in Tannersville, NY. Free First Visit for kids, teens, and adults.") | metaDescription }}" name="description"/>
+{% if keywords -%}
+<meta content="{{ keywords }}" name="keywords"/>
+{%- endif %}
 {% set canonical = canonicalUrl or page.url %}
 {% set safeCanonical = canonical if canonical.startsWith("/") else "/" ~ canonical %}
 {% set canonicalHref = canonical if canonical.startsWith("http") else "https://senseisandy.com" ~ safeCanonical %}

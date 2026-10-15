@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Winter Training Plan | Member Invitation | Sensei Sandy BJJ"
-description: "Member-only winter training plan and annual track invitation for Sensei Sandy BJJ students."
+description: "Member winter training plan and annual track invitation for Sensei Sandy BJJ students in Tannersville, NY."
 canonicalUrl: "https://senseisandy.com/members/winter-training-plan"
 robots: "index, follow"
 bodyClass: "page-winter-plan"
@@ -10,11 +10,80 @@ extraCss:
 permalink: "/members/winter-training-plan/index.html"
 ---
 <main class="page-winter-plan" id="main-content" role="main">
-<section class="member-hero" aria-labelledby="winter-title"><div class="container-xxl py-4"><p>For current members</p><h1 id="winter-title">Annual class plans</h1><p>See annual plans. Text Sandy with questions.</p><a class="btn btn-light" href="{{ contact.smsHref }}">Text Sandy</a> <a class="btn btn-outline-light" href="/options-pricing#start">See full terms</a></div></section>
-<section class="py-5" aria-labelledby="plan-title"><div class="container-xxl"><h2 id="plan-title">Annual Track options</h2><p>Each plan is {{ pricing.annualTrack.termMonths }} months. See the pricing page for full terms.</p><div class="row g-4">
-<article class="col-md-4"><div class="member-card h-100"><h3>Youth Annual Track</h3><p class="display-6">{{ pricing.annualTrack.youth.displayPrice }}</p><p>For 12 months.</p><a href="/options-pricing#start">See Youth Track terms</a></div></article>
-<article class="col-md-4"><div class="member-card h-100"><h3>Adult Annual Track</h3><p class="display-6">{{ pricing.annualTrack.adult.displayPrice }}</p><p>For 12 months.</p><a href="/options-pricing#start">See Adult Track terms</a></div></article>
-<article class="col-md-4"><div class="member-card h-100"><h3>Community-Service Adult Track</h3><p class="display-6">{{ pricing.annualTrack.communityServiceAdult.displayPrice }}</p><p>See who can use this plan on the pricing page.</p><a href="/options-pricing#start">See plan terms</a></div></article>
-</div></div></section>
-<section class="py-4 bg-light"><div class="container-xxl"><h2>Need help?</h2><p><a href="/schedule">View the class schedule</a>.</p></div></section>
+  <section class="member-hero" aria-labelledby="winter-title">
+    <div class="container-xxl py-4">
+      <p class="small text-uppercase text-light mb-1">For current members</p>
+      <h1 id="winter-title">Catskills Winter Training Plan &amp; Annual Tracks</h1>
+      <p class="lead text-light">Stay active, consistent, and connected all winter long at Studios on Main in Tannersville.</p>
+      <a class="btn btn-light" href="{{ contact.smsHref }}">Text Sandy</a>
+      <a class="btn btn-outline-light" href="/options-pricing#start">See full terms</a>
+    </div>
+  </section>
+
+  <section class="py-5" aria-labelledby="winter-consistency-title">
+    <div class="container-xxl">
+      <h2 id="winter-consistency-title">Maintaining Mat Momentum Through Winter</h2>
+      <p>Winter in the Catskills brings snowy mountain beauty, but it can also make staying physically active more challenging. Regular jiu-jitsu training gives kids, teens, and adults a warm, cheerful, and welcoming indoor routine throughout the coldest months.</p>
+      <p>Training two to three times each week preserves mobility, builds joint stability, and keeps your balance sharp. When spring arrives, consistent students find their cardio and movement intuition already in peak shape.</p>
+    </div>
+  </section>
+
+  <section class="py-5 bg-light" aria-labelledby="plan-title">
+    <div class="container-xxl">
+      <h2 id="plan-title">Annual Track Options</h2>
+      <p>Each annual track plan covers {{ pricing.annualTrack.termMonths }} months of continuous training. Visit our pricing page for complete details.</p>
+      <div class="row g-4 mt-2">
+        <article class="col-md-4">
+          <div class="card h-100 p-4 border shadow-sm">
+            <h3>Youth Annual Track</h3>
+            <p class="display-6 fw-bold text-primary">{{ pricing.annualTrack.youth.displayPrice }}</p>
+            <p>Full year of structured kids or teens classes, belt progression, and family community.</p>
+            <a class="btn btn-outline-primary mt-auto" href="/options-pricing#start">See Youth Track terms</a>
+          </div>
+        </article>
+        <article class="col-md-4">
+          <div class="card h-100 p-4 border shadow-sm">
+            <h3>Adult Annual Track</h3>
+            <p class="display-6 fw-bold text-primary">{{ pricing.annualTrack.adult.displayPrice }}</p>
+            <p>Unlimited access to adult group classes, weekend no-gi sessions, and open mats.</p>
+            <a class="btn btn-outline-primary mt-auto" href="/options-pricing#start">See Adult Track terms</a>
+          </div>
+        </article>
+        <article class="col-md-4">
+          <div class="card h-100 p-4 border shadow-sm">
+            <h3>Community-Service Adult Track</h3>
+            <p class="display-6 fw-bold text-primary">{{ pricing.annualTrack.communityServiceAdult.displayPrice }}</p>
+            <p>Dedicated rate for first responders, teachers, and active local community service staff.</p>
+            <a class="btn btn-outline-primary mt-auto" href="/options-pricing#start">See plan terms</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" aria-labelledby="winter-tips-title">
+    <div class="container-xxl">
+      <h2 id="winter-tips-title">Winter Mat Care &amp; Prep Tips</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-3 bg-light rounded h-100">
+            <h3>Warm Up Your Muscles</h3>
+            <p>Arrive a few minutes early to change into your uniform and let your joints adjust to the heated room before drilling begins.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 bg-light rounded h-100">
+            <h3>Hydration in Cold Weather</h3>
+            <p>Indoor heating can dry out the body. Drink plenty of water throughout the day so your muscles stay supple during rolls.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 p-4 bg-light rounded text-center">
+        <h3>Questions About Your Winter Schedule?</h3>
+        <p>Text Sandy directly with any schedule questions, travel updates, or plan adjustments.</p>
+        <a class="btn btn-primary" href="{{ contact.smsHref }}">Text Sandy</a>
+        <a class="btn btn-outline-primary" href="/schedule">View Class Schedule</a>
+      </div>
+    </div>
+  </section>
 </main>
