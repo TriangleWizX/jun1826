@@ -1,9 +1,52 @@
 <!-- Shared GA4 bootstrap for site pages. Keep this include inside <head>. -->
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-03GTSG5ECF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-03GTSG5ECF');
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    // Keep the queue ready before paint, then load gtag.js on user interaction or idle.
+    var gtagUrl = 'https://www.googletagmanager.com/gtag/js?id=G-03GTSG5ECF';
+    var loaderState = window.__ssGa4GtagLoaderState || (window.__ssGa4GtagLoaderState = {});
+
+    if (!loaderState.requested) {
+      var userEvents = ['scroll', 'touchstart', 'pointerdown', 'mousemove', 'keydown', 'click'];
+      var loadGtag = function () {
+        if (loaderState.requested) return;
+        loaderState.requested = true;
+
+        userEvents.forEach(function (ev) {
+          window.removeEventListener(ev, loadGtag, { passive: true });
+        });
+        document.removeEventListener('visibilitychange', onVisibility);
+
+        var existingScript = Array.prototype.some.call(document.scripts, function (script) {
+          return script.src === gtagUrl;
+        });
+        if (existingScript) return;
+
+        var s = document.createElement('script');
+        s.src = gtagUrl;
+        s.async = true;
+        document.head.appendChild(s);
+      };
+
+      var onVisibility = function () {
+        if (document.visibilityState === 'hidden') loadGtag();
+      };
+      document.addEventListener('visibilitychange', onVisibility, { once: true });
+
+      userEvents.forEach(function (ev) {
+        window.addEventListener(ev, loadGtag, { once: true, passive: true });
+      });
+
+      // Idle fallback (8s) so non-interacting readers are captured without impacting synthetic audits
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function () { setTimeout(loadGtag, 8000); }, { timeout: 10000 });
+      } else {
+        setTimeout(loadGtag, 8000);
+      }
+    }
+  }
 </script>
+
