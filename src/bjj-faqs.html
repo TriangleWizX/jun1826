@@ -1,71 +1,193 @@
 ---
 layout: layouts/base.njk
-title: "BJJ First Class FAQs | Sensei Sandy BJJ"
-description: "Get clear answers about your first BJJ class in Tannersville. Learn what to wear, how to book, where to find the schedule, and how kids, teens, and adults start."
+title: "BJJ FAQs: Safety, Kids Ages, Fitness & First Class | Sensei Sandy BJJ"
+description: "Clear answers to common questions about Brazilian Jiu-Jitsu in Tannersville, NY. Learn about beginner safety, kids starting age, fitness requirements, and class expectations."
 canonicalUrl: "https://senseisandy.com/bjj-faqs"
-bodyClass: "page-faq"
+bodyClass: "page-faq faq-main"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/faqs.css"
 permalink: "/bjj-faqs.html"
 ---
-<main class="ss-main" id="main-content" role="main">
-  <header class="ss-section-premium py-5 mt-4">
-    <div class="container ss-container">
-      <span class="ss-eyebrow">BJJ questions · Tannersville, NY</span>
-      <h1 class="mb-4">What should I know before my first BJJ class?</h1>
-      <p class="lead-text mb-4">Find clear answers about the first visit, class, safety, schedule, and plans. Start with a Free First Visit to meet Sandy and see the room.</p>
-      <div class="d-flex flex-wrap gap-3">
-        <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="bjj-faqs-hero" data-cta-tier="primary"><span>{{ freeIntro.primaryCtaLabel }}</span></a>
-        <a class="btn-premium btn-premium--secondary" href="{{ contact.smsHref }}"><span>Text Sandy</span></a>
+<main class="ss-main faq-main" id="main-content" role="main">
+  <!-- 1. HERO SECTION -->
+  <header class="faq-hero section-pad">
+    <div class="container">
+      <div class="faq-hero__grid">
+        <div class="faq-hero__left">
+          <p class="eyebrow">Answer Engine Optimization · Tannersville, NY</p>
+          <h1>Frequently Asked Questions About Brazilian Jiu-Jitsu</h1>
+          <p class="lead">
+            Find clear, conversational answers about beginner safety, kids and teen classes, adult training, what to expect on day one, and our mountaintop studio.
+          </p>
+          <div class="faq-hero__actions">
+            <a class="btn-brand-olive" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="bjj-faqs-hero" data-cta-tier="primary">
+              <span>{{ freeIntro.primaryCtaLabel }}</span>
+            </a>
+            <a class="btn-brand-outline" href="{{ contact.smsHref }}" data-cta-target="sms">
+              <span>Text Sandy</span>
+            </a>
+          </div>
+          <nav class="d-flex flex-wrap gap-3 mt-4" aria-label="Quick site links">
+            <a class="btn-link-pill small" href="/schedule">Current schedule</a>
+            <a class="btn-link-pill small" href="/options-pricing">Plans and prices</a>
+            <a class="btn-link-pill small" href="/jiu-jitsu-safety-tannersville-ny">Class safety</a>
+            <a class="btn-link-pill small" href="/bjj-tannersville-ny-directions">Directions &amp; parking</a>
+          </nav>
+        </div>
+        <div class="faq-hero__right">
+          <figure class="faq-hero__image-wrap mb-0">
+            <img src="/assets/images/studio/sensei-sandy-bjj-clean-training-mats-1024.webp"
+                 alt="Clean, spacious matted training area at Sensei Sandy BJJ in Tannersville, NY"
+                 width="1024" height="768" fetchpriority="high" decoding="async">
+          </figure>
+        </div>
       </div>
-      <nav class="d-flex flex-wrap gap-3 mt-4" aria-label="More first class information"><a href="/schedule">Current schedule</a><a href="/options-pricing">Plans and prices</a><a href="/jiu-jitsu-safety-tannersville-ny">Class safety</a></nav>
+
+      <!-- Trust Bar -->
+      <div class="trust-pills-container">
+        <ul class="trust-pills" aria-label="Academy standards">
+          <li><i class="bi bi-star-fill text-warning" aria-hidden="true"></i> 5.0 Google Rating</li>
+          <li><i class="bi bi-people-fill" aria-hidden="true"></i> Max 12 Students Per Class</li>
+          <li><i class="bi bi-shield-check" aria-hidden="true"></i> Beginner Lane Pacing</li>
+          <li><i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Open-Seat Rescheduling by Text</li>
+        </ul>
+      </div>
     </div>
   </header>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="faq-first-visit">
-    <div class="container ss-container" style="max-width: 900px;">
-      <span class="ss-eyebrow">Your first visit</span>
-      <h2 id="faq-first-visit">How do I start?</h2>
-      <p class="lead-text" data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
-      <p>{{ freeIntro.publicCopy.clothing }}</p>
-      <a href="/free-bjj-intro-tannersville-ny#booking-flow">See the visit steps and book a time.</a>
+  <!-- 2. CORE QUESTIONS ACCORDION SECTION -->
+  <section class="faq-accordion-section section-pad" aria-labelledby="core-faq-heading">
+    <div class="container" style="max-width: 960px;">
+      <div class="text-center mb-5">
+        <span class="section-eyebrow">Clear, Direct Answers</span>
+        <h2 id="core-faq-heading" class="h2 mb-3">Questions People Ask Before Starting BJJ</h2>
+        <p class="lead mx-auto text-muted" style="max-width: 680px;">
+          Direct answers designed for first-time students, parents, and returning adults. Each answer begins with a quick summary block followed by practical details.
+        </p>
+      </div>
+
+      <div class="d-flex flex-column gap-3">
+        {% for item in faqs %}
+        <details class="faq-item" id="{{ item.id }}"{% if loop.index <= 3 %} open{% endif %}>
+          <summary>
+            <span class="faq-icon-toggle" aria-hidden="true"></span>
+            <span class="faq-question-text">{{ item.question }}</span>
+          </summary>
+          <div class="faq-answer-content">
+            <p class="direct-answer fw-semibold text-dark mb-2">{{ item.summary }}</p>
+            <p class="text-muted mb-3">{{ item.answer }}</p>
+            {% if item.ctaUrl %}
+            <div>
+              <a class="btn-link-pill small" href="{{ item.ctaUrl }}">{{ item.ctaLabel }} <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            {% endif %}
+          </div>
+        </details>
+        {% endfor %}
+      </div>
     </div>
   </section>
 
-  <section class="ss-section-premium" aria-labelledby="faq-answers-title">
-    <div class="container ss-container" style="max-width: 900px;">
-      <span class="ss-eyebrow">First class answers</span>
-      <h2 id="faq-answers-title" class="mb-4">Common questions</h2>
-      <details class="mb-3"><summary>Can beginners start here?</summary><p>Yes. Meet Sandy, see the room, and learn the first steps. Each class begins with coached basics.</p></details>
-      <details class="mb-3"><summary>What happens in a first class?</summary><p>{{ freeIntro.publicCopy.firstClass }} {{ freeIntro.publicCopy.sparring }}</p><a href="/how-class-works">See how class works.</a></details>
-      <details class="mb-3"><summary>What should I wear?</summary><p>{{ freeIntro.publicCopy.clothing }}</p><a href="/show-up-kit">See the Show-Up Kit.</a></details>
-      <details class="mb-3"><summary>Where can I check class times?</summary><p>See the <a href="/schedule">current schedule</a>. Times can change, so check it before your visit.</p></details>
-      <details class="mb-3"><summary>What ages can join?</summary><p>Kids are {{ programs.kids.ageRange }}. Teens are {{ programs.teens.ageRange }}. Adults are {{ programs.adults.ageRange }}. See the <a href="/bjj-classes">class pages</a> to choose a group.</p></details>
-      <details class="mb-3"><summary>Can a parent watch?</summary><p>A parent or guardian stays with a child or teen during the youth class. Ask Sandy about the room when you book.</p></details>
-      <details class="mb-3"><summary>What does a first visit cost?</summary><p>The Free First Visit is free. See <a href="/options-pricing">current plan prices and terms</a> before you choose a paid plan.</p></details>
-      <details class="mb-3"><summary>Can adults try live partner practice?</summary><p>{{ freeIntro.publicCopy.sparring }}</p></details>
-      <details class="mb-3"><summary>Where is the studio?</summary><p>{{ contact.addressLine1 }}, {{ contact.cityStateZip }}. Use the <a href="/bjj-tannersville-ny-directions">directions page</a> for parking and entry details.</p></details>
-      <details class="mb-3"><summary>How can I ask another question?</summary><p>Text or call Sandy at <a href="{{ contact.phoneHref }}">{{ contact.phoneDisplay }}</a>.</p></details>
+  <!-- 3. OUR BEGINNER PROMISE -->
+  <section class="section-pad bg-white border-top border-bottom" aria-labelledby="faq-promise-title">
+    <div class="container">
+      <div class="text-center mb-4">
+        <span class="section-eyebrow">The Sensei Sandy Standard</span>
+        <h2 id="faq-promise-title" class="h3">How We Protect the Beginner Experience</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Every class operates under four clear safeguards to ensure calm, progressive martial arts learning.</p>
+      </div>
+      <div class="promise-grid">
+        <article class="promise-card">
+          <div class="promise-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
+          <div class="promise-content">
+            <h3>Safety Walkthrough</h3>
+            <p>Every student learns tapping and reset rules before participating in partner drills.</p>
+          </div>
+        </article>
+        <article class="promise-card">
+          <div class="promise-icon"><i class="bi bi-people" aria-hidden="true"></i></div>
+          <div class="promise-content">
+            <h3>Cooperative Partners</h3>
+            <p>Beginners are paired with experienced, calm practitioners who emphasize controlled technique.</p>
+          </div>
+        </article>
+        <article class="promise-card">
+          <div class="promise-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></div>
+          <div class="promise-content">
+            <h3>Beginner Lane Pacing</h3>
+            <p>Resistance is calibrated gradually. You focus on positions and escapes at a manageable pace.</p>
+          </div>
+        </article>
+        <article class="promise-card">
+          <div class="promise-icon"><i class="bi bi-chat-text" aria-hidden="true"></i></div>
+          <div class="promise-content">
+            <h3>Text Coordination</h3>
+            <p>Need to adjust a session? Reschedule your class easily by sending Sandy a direct text message.</p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="faq-local-title">
-    <div class="container ss-container">
-      <span class="ss-eyebrow">Catskills and Mountaintop</span>
-      <h2 id="faq-local-title" class="mb-3">Find a class near your town.</h2>
-      <p class="lead-text">The studio is in Tannersville. See routes and class details for <a href="/bjj-classes/hunter-ny">Hunter</a>, <a href="/bjj-classes/windham-ny">Windham</a>, and <a href="/bjj-classes/haines-falls-ny">Haines Falls</a>.</p>
+  <!-- 4. LOCAL DESTINATION PROOF -->
+  <section class="section-pad bg-light" aria-labelledby="faq-location-title">
+    <div class="container" style="max-width: 900px;">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="section-eyebrow">Mountaintop &amp; Catskills</span>
+          <h2 id="faq-location-title" class="h3 mb-3">Serving Tannersville, Hunter, Windham &amp; Beyond</h2>
+          <p class="text-muted mb-3">
+            Our academy is centrally located on Main Street in Tannersville, just minutes from Hunter Mountain and a short scenic drive from Windham, Haines Falls, Phoenicia, and Catskill.
+          </p>
+          <ul class="list-unstyled d-flex flex-column gap-2 text-muted small mb-4">
+            <li><i class="bi bi-geo-alt-fill text-success me-2" aria-hidden="true"></i> <strong>Hunter, NY:</strong> ~4 miles (approx. 7 minutes via NY-23A E)</li>
+            <li><i class="bi bi-geo-alt-fill text-success me-2" aria-hidden="true"></i> <strong>Windham, NY:</strong> ~13 miles (approx. 18 minutes via NY-296 S)</li>
+            <li><i class="bi bi-geo-alt-fill text-success me-2" aria-hidden="true"></i> <strong>Haines Falls, NY:</strong> ~2 miles (approx. 4 minutes via NY-23A W)</li>
+          </ul>
+          <a class="btn-brand-outline" href="/bjj-tannersville-ny-directions">View Directions &amp; Parking</a>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-4 rounded-4 border bg-white shadow-sm">
+            <h3 class="h5 mb-2">Studio Address</h3>
+            <p class="text-muted small mb-3">
+              {{ business.address.street }}, {{ business.address.studio }}<br>
+              {{ business.address.city }}, {{ business.address.state }} {{ business.address.postalCode }}
+            </p>
+            <h3 class="h5 mb-2">Contact Sandy</h3>
+            <p class="text-muted small mb-3">
+              Call or Text: <a class="fw-semibold text-dark" href="{{ contact.phoneHref }}">{{ contact.phoneDisplay }}</a><br>
+              Email: <a class="text-muted" href="mailto:{{ business.contact.email }}">{{ business.contact.email }}</a>
+            </p>
+            <a class="btn-brand-olive w-100 text-center" href="{{ contact.smsHref }}">Text Sandy a Question</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!--#include virtual="/partials/reviews-village.html" -->
 
-  <section class="ss-section-premium text-center" aria-labelledby="faq-final-title">
-    <div class="container ss-container">
-      <span class="ss-eyebrow">Your next step</span>
-      <h2 id="faq-final-title" class="mb-3">Meet Sandy and see the room.</h2>
-      <p class="lead-text mx-auto mb-4" style="max-width: 48rem;" data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
-      <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="final" data-cta-src="bjj-faqs-final" data-cta-tier="primary"><span>{{ freeIntro.primaryCtaLabel }}</span></a>
+  <!-- 5. FINAL CALL TO ACTION -->
+  <section class="faq-final-cta section-pad" aria-labelledby="faq-final-title">
+    <div class="container">
+      <div class="faq-final-cta__card">
+        <div class="cta-content">
+          <span class="section-eyebrow">Start Calm · Train Smart</span>
+          <h2 id="faq-final-title" class="mb-3">Ready to Experience Your First Class?</h2>
+          <p class="lead mx-auto mb-4" data-free-intro-copy>
+            {{ freeIntro.publicCopy.overview }}
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="btn-brand-olive" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="final" data-cta-src="bjj-faqs-final" data-cta-tier="primary">
+              <span>{{ freeIntro.primaryCtaLabel }}</span>
+            </a>
+            <a class="btn-brand-outline" href="{{ contact.smsHref }}">
+              <span>Text Sandy</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>

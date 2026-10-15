@@ -15,24 +15,32 @@ eleventyComputed:
 <main class="ss-main" id="main-content">
   <div class="container py-5">
     <p class="text-uppercase small text-muted">{{ record.evidenceType | replace('-', ' ') }} · {{ record.category | replace('-', ' ') }}</p>
-    <h1>{{ record.title }}</h1>
-    {% if record.authors %}<p>{{ record.authors }} · {{ record.publicationDate }}</p>{% endif %}
+    <h1>{{ record.displayTitle or record.title }}</h1>
+    {% if record.displaySubtitle %}<p class="lead text-muted">{{ record.displaySubtitle }}</p>{% endif %}
+    {% if record.authors %}<p class="text-muted small">{{ record.authors }} · {{ record.publicationDate }}</p>{% endif %}
+    {% if record.humanGuide %}
+    <section class="my-4 p-4 rounded bg-light border" aria-label="Plain language guide for families">
+      {{ record.humanGuide | safe }}
+    </section>
+    {% endif %}
+    {% if record.humanGuide %}<h2 class="h5 mt-4 mb-3">Study Summary &amp; Academic Scope</h2>{% endif %}
     <dl>
-      <dt>Sport</dt>
-      <dd>{{ record.sport }}</dd>
-      <dt>Who or what was covered</dt>
+      {% if record.displayTitle %}<dt>Original Paper Title.</dt><dd>{{ record.title }}.</dd>{% endif %}
+      <dt>Sport.</dt>
+      <dd>{{ record.sport }}.</dd>
+      <dt>Who or what was covered.</dt>
       <dd>{{ record.population.ageGroup }}{% if record.population.n %}; {{ record.population.n }} participants{% endif %}{% if record.population.nEnrolled %}; {{ record.population.nEnrolled }} enrolled{% endif %}{% if record.population.nAnalyzed %}; {{ record.population.nAnalyzed }} analyzed{% endif %}{% if record.population.groups %}; {{ record.population.groups }} groups{% endif %}{% if record.population.studies %}; {{ record.population.studies }} studies{% endif %}.</dd>
-      <dt>What was studied</dt>
+      <dt>What was studied.</dt>
       <dd>{{ record.intervention.description }}{% if record.intervention.durationWeeks %}; {{ record.intervention.durationWeeks }} weeks{% endif %}{% if record.intervention.sessionsPerWeek %}; {{ record.intervention.sessionsPerWeek }} times each week{% endif %}{% if record.intervention.minutesPerSession %}; {{ record.intervention.minutesPerSession }} minutes per session{% endif %}.</dd>
-      <dt>What it measured</dt>
-      <dd>{{ record.tested }}</dd>
-      <dt>What the source reports</dt>
-      <dd>{{ record.found }}</dd>
-      {% if record.detailedResults %}<dt>Selected detailed results</dt><dd>{{ record.detailedResults }}</dd>{% endif %}
-      <dt>What it does not show</dt>
-      <dd>{{ record.notTested }}</dd>
-      <dt>Verified</dt>
-      <dd>{{ record.verifiedAt }} · review again {{ record.staleAfter }}</dd>
+      <dt>What it measured.</dt>
+      <dd>{{ record.tested }}.</dd>
+      <dt>What the source reports.</dt>
+      <dd>{{ record.found }}.</dd>
+      {% if record.detailedResults %}<dt>Selected detailed results.</dt><dd>{{ record.detailedResults }}.</dd>{% endif %}
+      <dt>What it does not show.</dt>
+      <dd>{{ record.notTested }}.</dd>
+      <dt>Verified.</dt>
+      <dd>{{ record.verifiedAt }} · review again {{ record.staleAfter }}.</dd>
     </dl>
     <p><a href="{{ record.source }}" rel="noopener">Read the source{% if record.doi %} (DOI: {{ record.doi }}){% endif %}</a> · <a href="/evidence">Return to the evidence explanation</a>{% if record.contextualUrl %} · <a href="{{ record.contextualUrl }}">{{ record.contextualLinkText }}</a>{% endif %}</p>
   </div>
