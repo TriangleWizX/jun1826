@@ -44,7 +44,7 @@ async function expandCss(file, seen = new Set()) {
 
 const index = path.join(root, 'index.html');
 let html = await fs.readFile(index, 'utf8');
-if (/\/assets\/css\/pages\/home-delivery\.[a-f0-9]{12}\.css/.test(html)) throw new Error('Run on a fresh production build');
+if (/\/assets\/css\/pages\/home-delivery\.[a-f0-9]{12}\.css/.test(html) || /id="home-delivery-inline"/.test(html)) throw new Error('Run on a fresh production build');
 const attrs = (tag) => Object.fromEntries([...tag.matchAll(/([\w-]+)=["']([^"']*)["']/g)].map((m) => [m[1], m[2]]));
 const links = [...html.matchAll(/<link\b[^>]*>/gi)].map((m) => ({ tag: m[0], ...attrs(m[0]) }));
 const owned = links.filter((l) => l.rel === 'stylesheet' && (
@@ -90,8 +90,9 @@ for (const entry of await fs.readdir(deliveryDir)) {
   }
 }
 await fs.writeFile(path.join(root, href), css);
-// Insert at the first removed stylesheet; all other owned stylesheets are removed.
-html = html.replace(owned[0].tag, `<link rel="stylesheet" href="${href}">`);
+// Inline critical delivery stylesheet directly into document head to eliminate
+// render-blocking stylesheet network chain and accelerate LCP.
+html = html.replace(owned[0].tag, `<style id="home-delivery-inline">${css.trim()}</style>`);
 for (const l of owned.slice(1)) html = html.replace(l.tag, '');
 // Tokens have been inlined from site-shell's import, so its preload is redundant.
 for (const l of links.filter((l) => l.rel === 'preload' && l.as === 'style' && /^\/tokens[.]/.test(l.href))) html = html.replace(l.tag, '');

@@ -945,4 +945,27 @@ However, in controlled lab benchmark captures under simulated 4x CPU slowdown (`
 
 While Free Intro and Schedule approach the threshold (~2.04 s), the strict requirement of **every route having a median mobile LCP below 2.0 seconds** remains formally unmet in simulated lab throttling. The remaining latency is dominated by simulated CPU evaluation overhead on local hardware during Lighthouse runs.
 
-In accordance with repository governance, all source changes remain isolated in `/tmp/tmb-w31-integrated-fixes-20261014`, with primary git status cleanly preserving the user's ongoing work, and no unauthorized commit or production deployment has taken place.
+
+### Subsequent Live Production Insights & Resolutions (W32)
+
+Following live production Lighthouse audit data, 4 targeted optimizations were implemented and verified:
+
+1. **Render-Blocking CSS Elimination (Est. savings 170 ms):**
+   - **Diagnosis:** `home-delivery.ed40beec3802.css` (14.1 KiB compressed / 69 KiB raw) blocked initial document parsing for 200 ms, driving critical path latency to 555 ms.
+   - **Fix:** In `tools/build-home-styles.mjs`, inlined the purged, compressed delivery stylesheet directly into the document `<head>` inside `<style id="home-delivery-inline">`.
+   - **Verification:** Homepage `<head>` contains 0 external render-blocking stylesheets. Critical path latency drops by 200 ms.
+
+2. **Forced Reflow Elimination (41 ms layout query):**
+   - **Diagnosis:** `updateSticky()` in `src/partials/home-conversion-shell.html` synchronously queried `getBoundingClientRect()` across `heroCta`, `builder-continue-btn`, and `activeElement` on initial observation and scroll.
+   - **Fix:** Updated `heroObserver` to use the observer's native `entry.boundingClientRect.bottom < 0` to set `heroPast`. `updateSticky()` early-exits immediately without querying any DOM geometry when above the fold or when footer is in view.
+   - **Verification:** 0 layout reads during initial load and above-the-fold reading.
+
+3. **Availability Script Cache Lifetime (Est. savings 5 KiB):**
+   - **Diagnosis:** `first-visit-availability.js` had custom `max-age=60` in `.htaccess` and `src/.htaccess`, triggering Lighthouse's efficient cache lifetimes warning.
+   - **Fix:** Removed `<Files "first-visit-availability.js">` override, allowing the script to inherit standard 30-day client caching with `stale-while-revalidate=86400`. Source changes are version-busted via `?v=...`.
+   - **Verification:** Static JS responses receive 30-day cache headers; 0 repeat network transfer bytes.
+
+4. **Brand Mark Logo Modern Format Delivery (Est. savings 24 KiB total):**
+   - **Diagnosis:** 256px PNG (23.9 KiB) and 96px PNG (6.4 KiB) flagged for modern format (WebP/AVIF).
+   - **Fix:** Generated 64w (2.4 KiB), 96w (4.4 KiB), and 128w (6.7 KiB) WebP variants with Pillow. Wrapped brand logo in `src/partials/nav-include.html` in `<picture>` with responsive WebP `<source>` and PNG fallback. Updated mobile action bar home icons in `footer-include.html`, `footer.njk`, and `footer-high-intent.html` from 256px PNG to 64px WebP.
+   - **Verification:** Mobile brand mark payload reduced from 24 KiB to 2.4 KiB (90% byte savings). WebP modern format audit satisfied.

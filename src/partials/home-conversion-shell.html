@@ -1051,36 +1051,56 @@
     const footer = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer');
 
     if (stickyBar && heroCta) {
+      let heroPast = false;
       let footerIn = false;
 
       const updateSticky = () => {
-        const rect = heroCta.getBoundingClientRect();
-        const pastHero = rect.bottom < 0;
+        if (!heroPast || footerIn) {
+          stickyBar.classList.remove('is-visible');
+          return;
+        }
         const menuOpen = document.querySelector('.ss-menu-button')?.getAttribute('aria-expanded') === 'true';
-        const continuation = document.getElementById('builder-continue-btn')?.getBoundingClientRect();
-        const choosingTime = continuation && continuation.top < innerHeight && continuation.bottom > 0;
+        if (menuOpen) {
+          stickyBar.classList.remove('is-visible');
+          return;
+        }
+        const continuation = document.getElementById('builder-continue-btn');
+        const continuationRect = continuation ? continuation.getBoundingClientRect() : null;
+        const choosingTime = continuationRect && continuationRect.top < innerHeight && continuationRect.bottom > 0;
+        if (choosingTime) {
+          stickyBar.classList.remove('is-visible');
+          return;
+        }
         const focused = document.activeElement;
         const focusRect = focused && focused !== document.body && !stickyBar.contains(focused) ? focused.getBoundingClientRect() : null;
         const coversFocus = focusRect && focusRect.bottom > innerHeight - 100;
-        stickyBar.classList.toggle('is-visible', pastHero && !footerIn && !menuOpen && !choosingTime && !coversFocus);
+        stickyBar.classList.toggle('is-visible', !coversFocus);
       };
 
       if ('IntersectionObserver' in window) {
-        const heroObserver = new IntersectionObserver(() => {
+        const heroObserver = new IntersectionObserver((entries) => {
+          if (entries && entries[0]) {
+            heroPast = entries[0].boundingClientRect.bottom < 0;
+          }
           updateSticky();
         }, { threshold: [0, 0.1, 1.0] });
         heroObserver.observe(heroCta);
 
         if (footer) {
           const footerObserver = new IntersectionObserver((entries) => {
-            footerIn = entries[0].isIntersecting;
+            if (entries && entries[0]) {
+              footerIn = entries[0].isIntersecting;
+            }
             updateSticky();
           }, { threshold: 0.05 });
           footerObserver.observe(footer);
         }
       } else {
-        // Let initial DOM and style changes settle before measuring the hero.
-        requestAnimationFrame(updateSticky);
+        const checkFallback = () => {
+          heroPast = heroCta.getBoundingClientRect().bottom < 0;
+          updateSticky();
+        };
+        requestAnimationFrame(checkFallback);
       }
 
       const menuButton = document.querySelector('.ss-menu-button');

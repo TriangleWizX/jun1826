@@ -575,11 +575,6 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
     Header always set Cache-Control "public, max-age=300, s-maxage=300"
   </FilesMatch>
 
-  # Dynamic availability script - short cache to prevent stale mobile execution.
-  <Files "first-visit-availability.js">
-    Header set Cache-Control "public, max-age=60, stale-while-revalidate=300"
-    Header always set Cache-Control "public, max-age=60, stale-while-revalidate=300"
-  </Files>
 
   # Long cache for fingerprinted static assets (1 year immutable).
   # Matches 6-character, 12-character, or up to 16-character content hashes.
