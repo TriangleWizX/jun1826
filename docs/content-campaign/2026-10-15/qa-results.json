@@ -1,0 +1,94 @@
+{
+  "scope": "Full visible blog bodies in standalone HTML reading previews; not full site or live output",
+  "checker": "node tools/readability-check.mjs <preview> --json --max-grade 3",
+  "articles": [
+    {
+      "draft": "docs/content-campaign/2026-10-15/01-kids-bjj-training-partners.md",
+      "sha256": "b75de6660cea6977439bdb03cc7fe5ff318413221403f006c25f521b14bb378a",
+      "grade": 1.9573656957928804,
+      "words": 412,
+      "characters": 2138,
+      "banned": [],
+      "internal_links": 3,
+      "h1_count": 1,
+      "exit_code": 0
+    },
+    {
+      "draft": "docs/content-campaign/2026-10-15/02-what-kids-learn-in-bjj.md",
+      "sha256": "cd2929394cd8cce4662c05b74b1c814ce6dfcde347b78f37c32e4d0b5271e91a",
+      "grade": 2.277086018492575,
+      "words": 415,
+      "characters": 2113,
+      "banned": [],
+      "internal_links": 3,
+      "h1_count": 1,
+      "exit_code": 0
+    },
+    {
+      "draft": "docs/content-campaign/2026-10-15/03-teen-self-defense-practice.md",
+      "sha256": "293fa5e986987600d12ed7cd6494d89d89183bf81084335fbaa72f8263a9ce74",
+      "grade": 2.430657534246574,
+      "words": 438,
+      "characters": 2332,
+      "banned": [],
+      "internal_links": 4,
+      "h1_count": 1,
+      "exit_code": 0
+    },
+    {
+      "draft": "docs/content-campaign/2026-10-15/04-family-bjj-training.md",
+      "sha256": "18f04753c26334d57bd3ad6046b99c759866ad33d12328bd7aa27cf25dde78a1",
+      "grade": 2.943352793994997,
+      "words": 436,
+      "characters": 2315,
+      "banned": [],
+      "internal_links": 6,
+      "h1_count": 1,
+      "exit_code": 0
+    },
+    {
+      "draft": "docs/content-campaign/2026-10-15/05-bjj-for-older-beginners.md",
+      "sha256": "608cd88bb3478c647764022be6ab64e50041aa64e9eb0318cdbe669dac4a941b",
+      "grade": 1.6680883251833762,
+      "words": 409,
+      "characters": 2091,
+      "banned": [],
+      "internal_links": 3,
+      "h1_count": 1,
+      "exit_code": 0
+    },
+    {
+      "draft": "docs/content-campaign/2026-10-15/06-private-bjj-coaching.md",
+      "sha256": "3b33b754fcb03cb811107a24225543f030e3a2f61cc420c9de97af944f493e47",
+      "grade": 2.681043851763061,
+      "words": 426,
+      "characters": 2229,
+      "banned": [],
+      "internal_links": 3,
+      "h1_count": 1,
+      "exit_code": 0
+    },
+    {
+      "draft": "docs/content-campaign/2026-10-15/07-how-sandy-teaches-bjj.md",
+      "sha256": "0fe3e3c50d654dd546cd08b03cae61ba2ef922d77ea85d37e9ef322907ef8040",
+      "grade": 2.78426354679803,
+      "words": 406,
+      "characters": 2074,
+      "banned": [],
+      "internal_links": 3,
+      "h1_count": 1,
+      "exit_code": 0
+    },
+    {
+      "draft": "docs/content-campaign/2026-10-15/08-bjj-on-the-mountain.md",
+      "sha256": "98566a23ac1fa96e2447edb6475ef17062f71d2bed64b138e903b12ce294ed5d",
+      "grade": 2.7989831029185908,
+      "words": 434,
+      "characters": 2230,
+      "banned": [],
+      "internal_links": 4,
+      "h1_count": 1,
+      "exit_code": 0
+    }
+  ]
+}
