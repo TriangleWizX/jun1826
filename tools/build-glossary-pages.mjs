@@ -475,20 +475,9 @@ const renderTermSchema = (term, relatedTerms) => {
   return `<script type="application/ld+json">\n${JSON.stringify(graph, null, 2)}\n</script>`;
 };
 
-const renderIndexCard = (term, termMap) => {
-  const relatedThree = (term.related || []).slice(0, 3).map((slug) => termMap.get(slug)).filter(Boolean);
+const renderIndexCard = (term) => {
   const searchBlob = normalizeSearchText([term.term, term.displayTerm, term.summary, ...(term.aliases || []), ...(term.redirectFrom || [])].join(' '));
-
-  const pills = [term.categoryLabel, term.isFoundational ? 'Start here' : ''].filter(Boolean);
-
-  return `<article class="term-card ss-glossary-term-card glossary-card" data-glossary-card data-category="${escapeHtml(term.category)}" data-level="${escapeHtml(term.level)}" data-letter="${escapeHtml(alphaLetter(term.term))}" data-contexts="${escapeHtml(term.contexts.join(','))}" data-common="${term.isCommon ? '1' : '0'}" data-foundational="${term.isFoundational ? '1' : '0'}" data-search="${escapeHtml(searchBlob)}" data-slug="${escapeHtml(term.slug)}">
-  <div class="glossary-card-meta term-card__meta ss-glossary-term-tag">
-    ${pills.map((pill) => `<span class="glossary-pill">${escapeHtml(pill)}</span>`).join('\n')}
-  </div>
-  <h3 class="term-card__title ss-glossary-term-title"><a data-term-link href="${escapeHtml(glossaryPathFor(term.slug))}">${escapeHtml(term.displayTerm)}</a></h3>
-  <p class="term-card__summary ss-glossary-term-def">${escapeHtml(term.beginnerTranslation || term.summary)}</p>
-  <a class="term-card__cta ss-glossary-term-cta glossary-card-cta" data-term-link href="${escapeHtml(glossaryPathFor(term.slug))}">Read this term</a>
-</article>`;
+  return `<article class="term-card ss-glossary-term-card" data-glossary-card data-slug="${escapeHtml(term.slug)}" data-search="${escapeHtml(searchBlob)}"><a href="${escapeHtml(glossaryPathFor(term.slug))}">${escapeHtml(term.displayTerm)}</a> &mdash; ${escapeHtml(term.beginnerTranslation || term.summary)}</article>`;
 };
 
 const renderDirectoryItem = (term) => {
@@ -499,16 +488,13 @@ const renderDirectoryItem = (term) => {
 const renderReaderCard = (term, termMap) => {
   if (!term) return '';
   const related = (term.related || []).slice(0, 3).map((slug) => termMap.get(slug)).filter(Boolean);
-  return `<div class="reader-card-inner">
-  <div class="reader-header"><p class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel)}</p><h2 class="reader-title" id="reader-title">${escapeHtml(term.displayTerm)}</h2></div>
-  <div class="reader-body">
-    <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
-    ${term.beginnerTranslation ? `<p class="callout-text" id="reader-translation">${escapeHtml(term.beginnerTranslation)}</p>` : ''}
-    ${term.safetyNote ? `<p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote)}</p>` : ''}
-    ${related.length ? `<h3>More terms</h3><ul id="reader-related-chips">${related.map((item) => `<li><button type="button" data-slug="${escapeHtml(item.slug)}">${escapeHtml(item.displayTerm)}</button></li>`).join('')}</ul>` : ''}
-    <div class="reader-nav-actions"><button type="button" id="reader-prev-btn" title="Previous term">Prev</button><button type="button" id="reader-next-btn" title="Next term">Next</button><button type="button" id="reader-copy-btn">Copy link</button><a id="reader-standalone-link" href="${escapeHtml(glossaryPathFor(term.slug))}">Read this term</a></div>
-    <div class="reader-cta-actions"><a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a><a class="glossary-btn glossary-btn-secondary" href="/schedule">See times</a></div>
-  </div></div>`;
+  return `<div class="reader-header"><p class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel)}</p><h2 class="reader-title" id="reader-title">${escapeHtml(term.displayTerm)}</h2></div>
+<p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
+${term.beginnerTranslation ? `<p class="callout-text" id="reader-translation">${escapeHtml(term.beginnerTranslation)}</p>` : ''}
+${term.safetyNote ? `<p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote)}</p>` : ''}
+${related.length ? `<h3>More terms</h3><ul id="reader-related-chips">${related.map((item) => `<li><button type="button" data-slug="${escapeHtml(item.slug)}">${escapeHtml(item.displayTerm)}</button></li>`).join('')}</ul>` : ''}
+<div class="reader-nav-actions"><button type="button" id="reader-prev-btn" title="Previous term">Prev</button><button type="button" id="reader-next-btn" title="Next term">Next</button><button type="button" id="reader-copy-btn">Copy link</button><a id="reader-standalone-link" href="${escapeHtml(glossaryPathFor(term.slug))}">Read this term</a></div>
+<div class="reader-cta-actions"><a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a><a class="glossary-btn glossary-btn-secondary" href="/schedule">See times</a></div>`;
 };
 
 const renderBuyerPathsSection = () => `<section class="ss-glossary-paths glossary-surface--dark" aria-labelledby="glossary-paths-title">
@@ -644,7 +630,21 @@ const renderFlywheelGrandSlamSection = () => `<section class="glossary-shell glo
 </section>`;
 
 const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
-  const cards = terms.map((term) => renderIndexCard(term, termMap)).join('\n');
+  const termsByLetter = new Map();
+  for (const term of terms) {
+    const letter = alphaLetter(term.term);
+    if (!termsByLetter.has(letter)) termsByLetter.set(letter, []);
+    termsByLetter.get(letter).push(term);
+  }
+  const fallbackGroups = Array.from(termsByLetter.entries())
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([letter, groupTerms]) => `
+      <section class="ss-glossary-letter-group" aria-label="Terms beginning with ${letter}">
+        <h3>${letter}</h3>
+        <div class="ss-glossary-letter-terms">
+          ${groupTerms.map(renderIndexCard).join('\n')}
+        </div>
+      </section>`).join('\n');
   const directoryItems = terms.filter((term) => term.isFoundational).slice(0, 8).map(renderDirectoryItem).join('\n');
   const initialTerm = termMap.get('tap') || terms[0];
   const initialReaderHtml = renderReaderCard(initialTerm, termMap);
@@ -771,16 +771,14 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
       </aside>
 
       <!-- Right Column: Active Term Reader Showcase -->
-      <section class="glossary-reader-column" id="glossary-reader" aria-live="polite" aria-label="Term Details">
-        <article class="glossary-reader-card" id="glossary-active-card">
-          ${initialReaderHtml}
-        </article>
-      </section>
+      <article class="glossary-reader-column glossary-reader-card" id="glossary-active-card" aria-live="polite" aria-label="Term Details">
+        ${initialReaderHtml}
+      </article>
     </div>
 
     <!-- Full Semantic Fallback Stream for SEO & Crawlers (Hidden when JS is enabled) -->
     <div class="glossary-fallback-stream" id="glossary-fallback-stream" aria-hidden="true">
-      <div class="ss-glossary-term-grid glossary-grid">${cards}</div>
+      <div class="ss-glossary-fallback-groups">${fallbackGroups}</div>
     </div>
   </section>
 

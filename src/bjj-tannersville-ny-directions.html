@@ -9,6 +9,8 @@ extraCss:
   - "/assets/css/contact-vip.min.css"
   - "/assets/css/pages/directions.min.css"
 permalink: "/bjj-tannersville-ny-directions.html"
+headExtra: |
+  <link rel="preload" as="image" href="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-768.webp" imagesrcset="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-480.webp 480w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-768.webp 768w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-1024.webp 1024w" imagesizes="(max-width: 767px) 100vw, 460px" fetchpriority="high">
 ---
 <main class="contact-vip-main directions-vip-page" id="main-content" role="main">
 
@@ -17,15 +19,22 @@ permalink: "/bjj-tannersville-ny-directions.html"
     <div class="container ss-container">
       <div class="ss-hero-card">
         <div class="ss-hero-card-image-wrap">
-          <img
-            alt="Studios on Main building at 6045 Main Street in Tannersville, home of Sensei Sandy BJJ"
-            class="ss-hero-card-image"
-            decoding="async"
-            height="1125"
-            loading="eager"
-            src="/assets/images/sensei-sandy-bjj-building-main-street.585fcc.webp"
-            width="2000"
-          />
+          <picture>
+            <source type="image/avif" srcset="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-480.avif 480w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-768.avif 768w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-1024.avif 1024w" sizes="(max-width: 767px) 100vw, 460px">
+            <source type="image/webp" srcset="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-480.webp 480w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-768.webp 768w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-1024.webp 1024w" sizes="(max-width: 767px) 100vw, 460px">
+            <img
+              alt="Studios on Main building at 6045 Main Street in Tannersville, home of Sensei Sandy BJJ"
+              class="ss-hero-card-image"
+              decoding="async"
+              fetchpriority="high"
+              height="576"
+              loading="eager"
+              src="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-768.webp"
+              srcset="/assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-480.webp 480w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-768.webp 768w, /assets/images/studio/sensei-sandy-bjj-6045-main-street-tannersville-1024.webp 1024w"
+              sizes="(max-width: 767px) 100vw, 460px"
+              width="1024"
+            />
+          </picture>
         </div>
         <div class="ss-hero-card-body">
           <span class="ss-eyebrow">Directions &amp; Parking &middot; Tannersville, NY</span>
@@ -235,23 +244,26 @@ permalink: "/bjj-tannersville-ny-directions.html"
           </div>
         </div>
 
-        <!-- RIGHT: INTERACTIVE GOOGLE MAPS EMBED -->
+        <!-- RIGHT: INTERACTIVE GOOGLE MAPS EMBED WITH PERFORMANCE FACADE -->
         <div class="ss-map-card">
           <div class="ss-map-header">
             <span class="ss-card-badge">Interactive Map</span>
             <h3 class="h5 mb-1 mt-1">Sensei Sandy BJJ</h3>
             <p class="small text-muted mb-0">6045 Main Street, 2nd Floor Studio, Tannersville, NY 12485</p>
           </div>
-          <div class="ss-map-container">
-            <iframe
-              allowfullscreen=""
-              height="100%"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.8872272702065!2d-74.13495!3d42.195478699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ddad923f824fc1%3A0x7b2f25b6317b39f3!2sSensei%20Sandy%20BJJ!5e0!3m2!1sen!2sus!4v1770402155501!5m2!1sen!2sus"
-              style="border: 0;"
-              title="Sensei Sandy BJJ on Google Maps"
-              width="100%"></iframe>
+          <div class="ss-map-container" id="directions-map-container" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.8872272702065!2d-74.13495!3d42.195478699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ddad923f824fc1%3A0x7b2f25b6317b39f3!2sSensei%20Sandy%20BJJ!5e0!3m2!1sen!2sus!4v1770402155501!5m2!1sen!2sus">
+            <div class="ss-map-facade" id="ss-map-facade" role="region" aria-label="Map preview">
+              <div class="ss-map-facade-content">
+                <div class="ss-map-facade-pin" aria-hidden="true">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div class="ss-map-facade-title">Sensei Sandy BJJ</div>
+                <p class="ss-map-facade-sub" data-free-intro-copy>6045 Main Street, 2nd Floor, Tannersville, NY</p>
+                <button type="button" class="btn-load-map" id="btn-load-map" aria-label="Load interactive Google Map">
+                  <i class="bi bi-map me-2" aria-hidden="true"></i>Load Interactive Map
+                </button>
+              </div>
+            </div>
             <div class="ss-map-overlay-actions">
               <a
                 class="btn-open-maps"
@@ -273,6 +285,34 @@ permalink: "/bjj-tannersville-ny-directions.html"
 
       </div>
     </div>
+    <script>
+      (function () {
+        const container = document.getElementById('directions-map-container');
+        if (!container) return;
+        function loadInteractiveMap() {
+          const src = container.getAttribute('data-map-src');
+          if (!src || container.querySelector('iframe')) return;
+          const iframe = document.createElement('iframe');
+          iframe.src = src;
+          iframe.width = '100%';
+          iframe.height = '100%';
+          iframe.style.border = '0';
+          iframe.title = 'Sensei Sandy BJJ on Google Maps';
+          iframe.allowFullscreen = true;
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          const facade = document.getElementById('ss-map-facade');
+          if (facade) facade.remove();
+          container.insertBefore(iframe, container.firstChild);
+        }
+        const trigger = document.getElementById('btn-load-map');
+        if (trigger) trigger.addEventListener('click', loadInteractiveMap);
+        const facadeEl = document.getElementById('ss-map-facade');
+        if (facadeEl) facadeEl.addEventListener('click', function (e) {
+          if (e.target.closest('.ss-map-overlay-actions')) return;
+          loadInteractiveMap();
+        });
+      })();
+    </script>
   </section>
 
   <!-- ARRIVAL PHOTO SEQUENCE -->

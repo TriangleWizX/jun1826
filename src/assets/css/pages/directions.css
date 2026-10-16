@@ -1545,3 +1545,86 @@ body.page-directions.page-directions-board .directions-phone__cta {
   }
 }
 
+/* Google Maps Performance Facade */
+.ss-map-container {
+  position: relative;
+}
+
+.ss-map-facade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ss-surface2, #F4F1ED);
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.7) 0%, rgba(244, 241, 237, 0.95) 100%),
+    linear-gradient(rgba(54, 43, 36, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 43, 36, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  text-align: center;
+  padding: 1.5rem;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.ss-map-facade-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 340px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 1.5rem 1.75rem;
+  border-radius: 16px;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+  box-shadow: 0 4px 20px rgba(54, 43, 36, 0.08);
+}
+
+.ss-map-facade-pin {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: var(--ss-green, #116A42);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.25);
+  margin-bottom: 0.25rem;
+}
+
+.ss-map-facade-title {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ss-ink, #362B24);
+}
+
+.ss-map-facade-sub {
+  font-size: 0.85rem;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 0.75rem;
+}
+
+.btn-load-map {
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  background: var(--ss-green, #116A42);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 10px rgba(17, 106, 66, 0.2);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-load-map:hover {
+  background: var(--ss-green-hover, #0d5333);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.3);
+}
+

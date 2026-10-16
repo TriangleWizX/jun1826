@@ -101,6 +101,33 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('schedule-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-glossary-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'bjj-glossary' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'bjj-glossary/index.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('glossary-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-directions-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'bjj-tannersville-ny-directions.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'bjj-tannersville-ny-directions.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('directions-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-tannersville-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'bjj-classes' / 'tannersville-ny' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'bjj-classes/tannersville-ny/index.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('tannersville-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names

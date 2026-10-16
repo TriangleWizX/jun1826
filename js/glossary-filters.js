@@ -251,25 +251,21 @@
       const related = (term.related || []).slice(0, 3).map((key) => termMap.get(key)).filter(Boolean);
 
       readerCard.innerHTML = `
-        <div class="reader-card-inner">
-          <div class="reader-header"><p class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel || term.category)}</p><h2 class="reader-title" id="reader-title">${escapeHtml(term.displayTerm || term.term)}</h2></div>
-          <div class="reader-body">
-            <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
-            ${term.beginnerTranslation ? `<p class="callout-text" id="reader-translation">${escapeHtml(term.beginnerTranslation)}</p>` : ''}
-            ${term.safetyNote ? `<p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote)}</p>` : ''}
-            ${related.length ? `<h3>More terms</h3><ul id="reader-related-chips">${related.map((item) => `<li><button type="button" data-slug="${escapeHtml(item.slug)}">${escapeHtml(item.displayTerm || item.term)}</button></li>`).join('')}</ul>` : ''}
-            <div class="reader-nav-actions">
-              ${previous ? `<button type="button" id="reader-prev-btn" data-slug="${escapeHtml(previous.slug)}">Prev</button>` : ''}
-              ${next ? `<button type="button" id="reader-next-btn" data-slug="${escapeHtml(next.slug)}">Next</button>` : ''}
-              <button type="button" id="reader-copy-btn">Copy link</button>
-              <a id="reader-standalone-link" href="/bjj-glossary/${escapeHtml(term.slug)}">Read this term</a>
-            </div>
-            <div class="reader-cta-actions"><a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a><a class="glossary-btn glossary-btn-secondary" href="/schedule">See times</a></div>
-          </div>
-        </div>`;
+        <div class="reader-header"><p class="reader-pill reader-pill-cat">${escapeHtml(term.categoryLabel || term.category)}</p><h2 class="reader-title" id="reader-title">${escapeHtml(term.displayTerm || term.term)}</h2></div>
+        <p class="reader-text reader-text-lead" id="reader-summary">${escapeHtml(term.summary)}</p>
+        ${term.beginnerTranslation ? `<p class="callout-text" id="reader-translation">${escapeHtml(term.beginnerTranslation)}</p>` : ''}
+        ${term.safetyNote ? `<p class="safety-text" id="reader-safety">${escapeHtml(term.safetyNote)}</p>` : ''}
+        ${related.length ? `<h3>More terms</h3><ul id="reader-related-chips">${related.map((item) => `<li><button type="button" data-slug="${escapeHtml(item.slug)}">${escapeHtml(item.displayTerm || item.term)}</button></li>`).join('')}</ul>` : ''}
+        <div class="reader-nav-actions">
+          ${previous ? `<button type="button" id="reader-prev-btn" data-slug="${escapeHtml(previous.slug)}">Prev</button>` : ''}
+          ${next ? `<button type="button" id="reader-next-btn" data-slug="${escapeHtml(next.slug)}">Next</button>` : ''}
+          <button type="button" id="reader-copy-btn">Copy link</button>
+          <a id="reader-standalone-link" href="/bjj-glossary/${escapeHtml(term.slug)}">Read this term</a>
+        </div>
+        <div class="reader-cta-actions"><a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a><a class="glossary-btn glossary-btn-secondary" href="/schedule">See times</a></div>`;
 
       if (shouldScrollMobile && window.innerWidth < 992) {
-        root.querySelector('#glossary-reader')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        (root.querySelector('#glossary-reader') || readerCard)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
 
