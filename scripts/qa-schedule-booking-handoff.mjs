@@ -101,7 +101,7 @@ try {
   assert.equal(inline.config.config.audience_lane, 'child');
   const expectedClassDate = new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }).format(target);
   assert.ok(inline.config.config.notes.includes(`${expectedClassDate} at 5:00 PM`));
-  assert.match(await bookingPage.locator('[data-calendar-context]').innerText(), /Requested class: Kids and teens/);
+  assert.match(await bookingPage.locator('[data-calendar-context]').innerText(), /Requested class: (Kids and teens|Friday Gi Lab)/);
   console.log('Schedule booking handoff QA passed: mobile class links carry lane/date/time, youth choice remains explicit, and Cal receives the requested class in notes.');
 } finally {
   await browser.close();

@@ -15,10 +15,10 @@
 .ss-month-grid td{border:1px solid var(--ss-border);padding:0;vertical-align:top;background:var(--ss-bg)}
 .ss-month-grid .ss-month-empty{background:var(--ss-surface2)}
 .ss-month-day{display:flex;flex-direction:column;gap:.3rem;min-height:190px;padding:.45rem}
-.ss-month-date{display:flex;align-items:center;gap:.4rem;width:fit-content;min-height:34px;padding:.15rem;border:0;border-radius:50%;background:transparent;text-align:left;color:var(--ss-text);font:inherit;cursor:pointer}
+.ss-month-date{display:grid;place-items:center;width:28px;height:28px;min-height:28px;padding:0;border:0;border-radius:50%;background:transparent;text-align:center;color:var(--ss-text);font:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
 .ss-month-date[aria-pressed=true]{background:#e7efea;box-shadow:0 0 0 2px var(--ss-green)}
-.ss-date-number{display:grid;place-items:center;width:28px;height:28px;font-weight:700;font-size:.9rem}
-.ss-month-date[aria-current=date] .ss-date-number{background:var(--ss-green);color:#fff;border-radius:50%}
+.ss-month-date[aria-current=date]{background:var(--ss-green);color:#fff;border-radius:50%}
+.ss-date-number{display:contents;font:inherit}
 .ss-date-class{display:flex;flex-direction:column;gap:.2rem;width:100%;padding:.5rem;border-left:3px solid var(--class-color);background:var(--class-bg);font-size:.78rem;line-height:1.35;overflow-wrap:anywhere;border-radius:3px;color:#1f1712}
 .ss-date-class-link{text-decoration:none}
 .ss-date-class-link:hover{text-decoration:underline;text-underline-offset:2px}

@@ -91,6 +91,16 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('home-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-schedule-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'schedule/index.html'))
+            outputs.add((candidate, 'schedule.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('schedule-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names

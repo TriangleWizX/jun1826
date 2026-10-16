@@ -52,9 +52,9 @@
   const select = (date) => {
     selected = date;
     root.querySelector('[data-calendar-selected-title]').textContent = format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-    list.replaceChildren();
     const slots = classes(date);
-    if (!slots.length) list.append(make('p', '', 'Rest day. Pick a class date above.'));
+    const cardFragment = document.createDocumentFragment();
+    if (!slots.length) cardFragment.append(make('p', '', 'Rest day. Pick a class date above.'));
     for (const slot of slots) {
       const card = make('article', `ss-selected-class is-${kind(slot)}`);
       card.append(make('strong', '', slot.time), make('span', '', name(slot)));
@@ -63,8 +63,9 @@
       if (slot.programUrl) { const link = make('a', '', 'View class plan'); link.href = slot.programUrl; card.append(link); }
       const href = bookingHref(slot, date);
       if (href) { const link = make('a', 'ss-class-booking-link', 'Plan a free visit for this class'); link.href = href; card.append(link); }
-      list.append(card);
+      cardFragment.append(card);
     }
+    list.replaceChildren(cardFragment);
     days.querySelectorAll('[data-calendar-date]').forEach((button) => {
       const active = button.dataset.calendarDate === iso(date);
       button.setAttribute('aria-pressed', String(active));
@@ -78,24 +79,27 @@
   };
   const render = (focus = false) => {
     title.textContent = format(month, { month: 'long', year: 'numeric' });
-    days.replaceChildren();
+    const fragment = document.createDocumentFragment();
+    let currentRow = null;
     const count = civil(month.getUTCFullYear(), month.getUTCMonth() + 1, 0).getUTCDate();
     const offset = month.getUTCDay();
     for (let index = 0; index < Math.ceil((offset + count) / 7) * 7; index++) {
-      if (index % 7 === 0) days.append(document.createElement('tr'));
+      if (index % 7 === 0) {
+        currentRow = document.createElement('tr');
+        fragment.append(currentRow);
+      }
       const cell = document.createElement('td');
-      days.lastChild.append(cell);
+      if (currentRow) currentRow.append(cell);
       const number = index - offset + 1;
       if (number < 1 || number > count) { cell.className = 'ss-month-empty'; continue; }
       const date = civil(month.getUTCFullYear(), month.getUTCMonth(), number);
       const slots = classes(date);
       const content = make('div', 'ss-month-day');
-      const button = make('button', 'ss-month-date');
+      const button = make('button', 'ss-month-date', String(number));
       button.type = 'button';
       button.dataset.calendarDate = iso(date);
       button.setAttribute('aria-label', `${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}. ${slots.map((item) => `${item.time} ${name(item)}`).join('. ') || 'Rest day'}`);
       if (iso(date) === iso(today)) button.setAttribute('aria-current', 'date');
-      button.append(make('span', 'ss-date-number', number));
       content.append(button);
       for (const slot of slots) {
         const href = bookingHref(slot, date);
@@ -107,7 +111,6 @@
         card.append(make('strong', '', slot.time), make('span', '', name(slot)));
         content.append(card);
       }
-      if (slots.length) content.append(make('span', 'ss-date-count', slots.length));
       button.addEventListener('click', () => select(date));
       button.addEventListener('keydown', (event) => {
         if (event.key === 'PageUp' || event.key === 'PageDown') { event.preventDefault(); shiftMonth(event.key === 'PageUp' ? -1 : 1, true); return; }
@@ -120,8 +123,9 @@
       });
       cell.append(content);
     }
+    days.replaceChildren(fragment);
     select(selected);
-    if (focus) days.querySelector('[tabindex="0"]').focus();
+    if (focus) days.querySelector('[tabindex="0"]')?.focus();
   };
   root.querySelector('[data-calendar-prev]').addEventListener('click', () => shiftMonth(-1));
   root.querySelector('[data-calendar-next]').addEventListener('click', () => shiftMonth(1));
@@ -137,7 +141,15 @@
       days.querySelector(`[data-calendar-date="${iso(date)}"]`)?.focus();
     });
   });
-  render();
-  root.hidden = false;
-  document.querySelector('.ss-weekly-fallback').open = false;
+  const mount = () => {
+    render();
+    root.hidden = false;
+    const fallback = document.querySelector('.ss-weekly-fallback');
+    if (fallback) fallback.open = false;
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(mount), { once: true });
+  } else {
+    requestAnimationFrame(mount);
+  }
 })();
