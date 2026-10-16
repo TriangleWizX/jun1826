@@ -249,14 +249,27 @@ def changed_outputs(commit):
         rel = candidate.relative_to(ROOT / 'dist').as_posix()
         if rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS):
             if candidate.is_file(): outputs.add((candidate, rel))
+    brand_release = any(
+        name.startswith('src/assets/img/brand/') or
+        name in ('src/partials/nav-include.html', 'src/partials/footer-include.html',
+                 'src/_includes/components/footer.njk', 'src/_includes/footer-high-intent.html')
+        for name in names
+    )
+    if brand_release:
+        brand_dir = ROOT / 'dist' / 'assets' / 'img' / 'brand'
+        if brand_dir.is_dir():
+            for brand_cand in brand_dir.rglob('*'):
+                if brand_cand.is_file():
+                    outputs.add((brand_cand, brand_cand.relative_to(ROOT / 'dist').as_posix()))
     if fingerprint_release or sitewide_release:
         for candidate in (ROOT / 'dist').rglob('*'):
             if not candidate.is_file(): continue
             rel = candidate.relative_to(ROOT / 'dist').as_posix()
             is_js = rel.startswith('js/') or rel.startswith('assets/js/')
             is_css = rel.startswith('assets/css/')
+            is_brand = rel.startswith('assets/img/brand/')
             is_site_html = rel.endswith('.html') and (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS))
-            if is_site_html or is_js or is_css or rel == 'assets/data/asset-hash-manifest.json':
+            if is_site_html or is_js or is_css or is_brand or rel == 'assets/data/asset-hash-manifest.json':
                 outputs.add((candidate, rel))
     if glossary_release:
         for candidate in (ROOT / 'dist' / 'bjj-glossary').rglob('*'):
