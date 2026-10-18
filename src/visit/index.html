@@ -9,7 +9,6 @@ extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/faqs.css"
 ---
-<!-- Strategic Proposal Requiring Owner Authorization: do not deploy until copy approved -->
 
 <style>
   .page-visit { color: var(--ss-ink); font-family: var(--ss-body-font, "Lexend", sans-serif); }
@@ -95,7 +94,31 @@ extraCss:
     <div class="container ss-container">
       <div class="visit-content">
         <h2 id="drop-in-heading" class="h2 fw-bold mb-3">Drop in, or stay the week</h2>
-        <p class="fs-5 mb-0">Visiting for the weekend? Book a Day Pass for one class. Here for the week? Book a Vacation Week Pass and train across your trip. See every option on <a href="/options-pricing">/options-pricing</a>.</p>
+        <div class="visit-card p-4 mb-4">
+          <p class="ss-eyebrow text-uppercase fw-bold text-success mb-2">Winter Visitor Special · {{ pricing.visitorAndSupport.skiSeasonVisitorPass.season }}</p>
+          <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-2 mb-2">
+            <h3 class="h3 fw-bold mb-0">{{ pricing.visitorAndSupport.skiSeasonVisitorPass.name }}</h3>
+            <span class="fs-3 fw-bold text-primary">{{ pricing.visitorAndSupport.skiSeasonVisitorPass.displayPrice }}</span>
+          </div>
+          <p class="fs-5 mb-3">{{ pricing.visitorAndSupport.skiSeasonVisitorPass.classesIncluded }} in {{ pricing.visitorAndSupport.skiSeasonVisitorPass.validity }}. Perfect for ski trips to Hunter Mountain and Windham Mountain Club.</p>
+          <ul class="list-unstyled mb-3 d-grid gap-2">
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i>
+              <span>Loaner gi reserved in your name when you book</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i>
+              <span>Welcome text from Sandy when you book</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success" aria-hidden="true"></i>
+              <span>Coached partner training in a calm room</span>
+            </li>
+          </ul>
+          <p class="small text-muted mb-3">Advance request required. Available space and suitable partner fit required. Gi deposit: {{ pricing.optionalAddOns.loanerGi.deposit }}.</p>
+          <a class="btn btn-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27d%20like%20to%20book%20a%20Ski%20Season%20Visitor%20Pass%21">Text Sandy to Book: +1 (917) 736-8649</a>
+        </div>
+        <p class="fs-5 mb-0">Visiting for a single class? Book a Day Pass ({{ pricing.visitorAndSupport.dayPass.displayPrice }}). Staying all season? Review our flex packs on <a href="/options-pricing">/options-pricing</a>.</p>
       </div>
     </div>
   </section>
@@ -160,6 +183,15 @@ extraCss:
             </summary>
             <div class="faq-answer-content">
               <p class="mb-0">Yes. Borrow a gi for your visit at no charge. We hold a deposit until it is returned. We wash every gi after use. Ask us about sizes when you text to book.</p>
+            </div>
+          </details>
+          <details class="faq-item" data-ss-accordion-category="visit">
+            <summary>
+              <span class="faq-icon-toggle" aria-hidden="true"></span>
+              <span class="faq-question-text">What is the Ski Season Visitor Pass?</span>
+            </summary>
+            <div class="faq-answer-content">
+              <p class="mb-0">The Ski Season Visitor Pass gives you {{ pricing.visitorAndSupport.skiSeasonVisitorPass.classesIncluded }} in {{ pricing.visitorAndSupport.skiSeasonVisitorPass.validity }} for {{ pricing.visitorAndSupport.skiSeasonVisitorPass.displayPrice }}. It runs {{ pricing.visitorAndSupport.skiSeasonVisitorPass.season }}. It includes a reserved loaner gi and a welcome text from Sandy when you book.</p>
             </div>
           </details>
         </div>

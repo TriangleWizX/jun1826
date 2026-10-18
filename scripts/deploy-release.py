@@ -285,6 +285,7 @@ def changed_outputs(commit):
             'options-pricing.html',
             'members/winter-training-plan/index.html',
             'pricing.md',
+            'visit/index.html',
         ):
             cand_path = ROOT / 'dist' / cand_rel
             if cand_path.is_file():

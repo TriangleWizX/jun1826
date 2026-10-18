@@ -97,6 +97,24 @@
       "public": true
     },
     {
+      "id": "ski-season-visitor-pass",
+      "name": "Ski Season Visitor Pass",
+      "category": "Visitor",
+      "audience": "Ski-season visitors to the Catskills",
+      "priceRef": "visitorAndSupport.skiSeasonVisitorPass",
+      "displayPrice": "$99",
+      "accessModel": "open_access",
+      "classesIncluded": "Up to 3 appropriate classes in 7 consecutive days",
+      "season": "November 21, 2026 through March 2027",
+      "recurringReservation": false,
+      "longitudinalProgressFeedback": false,
+      "giIncluded": true,
+      "welcomeText": true,
+      "guaranteeEligible": false,
+      "active": true,
+      "public": true
+    },
+    {
       "id": "vacation-week",
       "name": "Vacation Week Pass",
       "category": "Visitor",

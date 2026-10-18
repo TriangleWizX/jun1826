@@ -1325,6 +1325,12 @@ body.page-options-pricing .op-pass-grid > div {
   background: rgba(247, 242, 234, 0.55);
 }
 
+body.page-options-pricing .op-pass-grid > div.op-pass-featured {
+  grid-column: 1 / -1;
+  background: rgba(40, 159, 161, 0.08);
+  border-color: rgba(40, 159, 161, 0.28);
+}
+
 body.page-options-pricing .op-pass-grid span,
 body.page-options-pricing .op-pass-grid strong,
 body.page-options-pricing .op-pass-grid small {

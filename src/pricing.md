@@ -26,6 +26,7 @@ Elite Concierge is a separate adult service at $1,050 per 12-week term and is no
 
 ## Visitors
 
+* **Ski Season Visitor Pass:** $99 for up to three classes in seven consecutive days from first use (November 21, 2026 through March 2027; loaner gi reserved, welcome text from Sandy)
 * **Day Pass:** $35
 * **Vacation Week:** $99 for up to three classes in seven days
 * **10-Class Pack:** $300, valid for six months
