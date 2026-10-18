@@ -66,6 +66,53 @@
   text-decoration: underline;
 }
 
+.visitor-banner {
+  background: var(--ig-pine-soft, #e2ede7);
+  border-color: rgba(17, 106, 66, 0.28);
+  color: var(--ig-ink);
+  font-weight: 550;
+}
+
+.visitor-banner strong {
+  color: var(--ig-pine);
+}
+
+.visitor-banner .banner-link {
+  font-weight: 700;
+  color: var(--ig-pine);
+  white-space: nowrap;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.visitor-banner .banner-link:hover,
+.visitor-banner .banner-link:focus-visible {
+  color: #0d5334;
+}
+
+.decision-card--visitor {
+  border-color: rgba(17, 106, 66, 0.35);
+  background: #f7faf8;
+}
+
+.decision-card--visitor .badge-visitor {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--ig-pine);
+  background: var(--ig-pine-soft, #e2ede7);
+  border: 1px solid rgba(17, 106, 66, 0.25);
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+}
+
 .hero,
 .section-card,
 .location-card,
