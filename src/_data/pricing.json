@@ -551,6 +551,18 @@
     }
   },
   "optionalAddOns": {
+    "loanerGi": {
+      "name": "Loaner Gi",
+      "price": 0,
+      "priceModel": "Free loan",
+      "displayPrice": "Free loan",
+      "deposit": "$80 (held until return)",
+      "depositAmount": 80,
+      "term": "Per visit",
+      "terms": "Washed after every use. Sizes subject to availability.",
+      "eligibility": "Visitors and trial students",
+      "active": true
+    },
     "laundryAndStorage": {
       "name": "Gear Laundry & Storage Add-On",
       "price": 195,

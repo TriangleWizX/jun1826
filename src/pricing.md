@@ -30,6 +30,7 @@ Elite Concierge is a separate adult service at $1,050 per 12-week term and is no
 * **Vacation Week:** $99 for up to three classes in seven days
 * **10-Class Pack:** $300, valid for six months
 * **20-Class Pack:** $550, valid for 12 months
+* **Loaner Gi:** Free loan with $80 deposit (held until return)
 
 Capacity rules apply to every option; no plan overrides the 12-student class cap.
 
