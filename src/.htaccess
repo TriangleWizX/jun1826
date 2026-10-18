@@ -519,6 +519,14 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/assets/images/$1.$2 -f
 RewriteRule ^assets/images/(.+)\.[0-9a-f]{6}\.(png|jpe?g|webp|gif|svg|avif)$ /assets/images/$1.$2 [L,NC]
 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/assets/img/$1.$2 -f
+RewriteRule ^assets/img/(.+)\.[0-9a-f]{6}\.(png|jpe?g|webp|gif|svg|avif)$ /assets/img/$1.$2 [L,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/assets/img/lineage/$1.$2 -f
+RewriteRule ^assets/img/lineage/(.+)\.[0-9a-f]{6}\.(png|jpe?g|webp|gif|svg|avif)$ /assets/img/lineage/$1.$2 [L,NC]
+
 
 # Add explicit noindex headers for template/redirect pages.
 SetEnvIf Request_URI "^/near/template(?:\.html)?$" NOINDEX=1

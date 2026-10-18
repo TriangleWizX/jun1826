@@ -24,8 +24,8 @@ All business details, schedules, pricing tiers, offer hierarchies, campaign prom
   * Core Culture Youth: $550 / 12 weeks
   * Core Culture Adult: $715 / 12 weeks
   * Core Culture Community Service Adult: $600 / 12 weeks
-  * Annual Track Youth: $2,100 / 12 months
-  * Annual Track Adult: $2,650 / 12 months
+  * Annual Track Youth: $1,980 / 12 months
+  * Annual Track Adult: $2,475 / 12 months
   * Annual Track Community Service Adult: $2,250 / 12 months
   * Day Pass: $35 | Vacation Week: $99 | Private Session: $195
 * **Consumers**: `/options-pricing`, program pages, private coaching pages.

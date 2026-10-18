@@ -18,8 +18,8 @@ Core Culture includes a 30-day fit guarantee: attend at least four classes in th
 
 Annual renewal is reviewed after the first term:
 
-* **Youth:** $2,100
-* **Adult:** $2,650
+* **Youth:** $1,980
+* **Adult:** $2,475
 * **Community-Service Adult:** $2,250
 
 Elite Concierge is a separate adult service at $1,050 per 12-week term and is not the normal first-term choice.

@@ -133,7 +133,7 @@ Keep the existing service limits and guarantee exclusion. Do not expand it into 
 
 ### Tier 4 — Longer-term continuation
 
-**Annual Track — $2,650 adult paid in full**
+**Annual Track — $2,475 adult paid in full**
 
 Job: continue four 12-week cycles after review and approval. It is not an automatic upgrade and does not add another gi.
 
@@ -176,7 +176,7 @@ That establishes a comparison price, not a valid product or value claim.
 
 Known current price references include:
 
-- Adult Annual Track: $2,650;
+- Adult Annual Track: $2,475;
 - Private Coaching: $195 single session;
 - pricing-data six-pack: $1,050, but public packaging remains to confirm;
 - Gear Laundry & Storage Add-On: $195 / 12 weeks for eligible adults; and

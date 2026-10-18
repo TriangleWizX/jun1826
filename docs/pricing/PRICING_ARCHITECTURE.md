@@ -12,8 +12,8 @@ All public pricing references derive dynamically from structured data files:
   - Adult: $715 / 12 wks
   - Community Service Adult: $600 / 12 wks
 - **Annual Track (12 Months)**:
-  - Youth: $2,100 / yr
-  - Adult: $2,650 / yr
+  - Youth: $1,980 / yr
+  - Adult: $2,475 / yr
   - Community Service Adult: $2,250 / yr
 - **Visitor Options**:
   - Day Pass: $35

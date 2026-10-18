@@ -68,8 +68,8 @@ Core Culture leads the local sales path. Private Coaching, Elite Concierge, and 
 | Youth Core Culture                   |                $550 |            12 weeks | Three classes per week |
 | Adult Core Culture                   |                $715 |            12 weeks | Three classes per week |
 | Community-Service Adult Core Culture |                $600 |            12 weeks | Three classes per week |
-| Youth Annual Track                   | $2,100 paid in full | Four 12-week cycles | Three classes per week |
-| Adult Annual Track                   | $2,650 paid in full | Four 12-week cycles | Three classes per week |
+| Youth Annual Track                   | $1,980 paid in full | Four 12-week cycles | Three classes per week |
+| Adult Annual Track                   | $2,475 paid in full | Four 12-week cycles | Three classes per week |
 | Community-Service Annual Track       | $2,250 paid in full | Four 12-week cycles | Three classes per week |
 | Elite Concierge                      |              $1,050 |            12 weeks | Three classes per week |
 | Private Coaching                     |                $195 |         One session | By appointment         |

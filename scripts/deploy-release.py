@@ -264,6 +264,31 @@ def changed_outputs(commit):
             for brand_cand in brand_dir.rglob('*'):
                 if brand_cand.is_file():
                     outputs.add((brand_cand, brand_cand.relative_to(ROOT / 'dist').as_posix()))
+    lineage_release = any(
+        name.startswith('src/assets/img/lineage/') or
+        name == 'src/blog/bjj-sensei/index.html'
+        for name in names
+    )
+    if lineage_release:
+        lineage_dir = ROOT / 'dist' / 'assets' / 'img' / 'lineage'
+        if lineage_dir.is_dir():
+            for lineage_cand in lineage_dir.rglob('*'):
+                if lineage_cand.is_file():
+                    outputs.add((lineage_cand, lineage_cand.relative_to(ROOT / 'dist').as_posix()))
+    pricing_release = any(
+        name in ('src/_data/pricing.json', 'src/options-pricing.njk', 'src/pricing.md')
+        for name in names
+    )
+    if pricing_release:
+        for cand_rel in (
+            'options-pricing/index.html',
+            'options-pricing.html',
+            'members/winter-training-plan/index.html',
+            'pricing.md',
+        ):
+            cand_path = ROOT / 'dist' / cand_rel
+            if cand_path.is_file():
+                outputs.add((cand_path, cand_rel))
     if fingerprint_release or sitewide_release:
         for candidate in (ROOT / 'dist').rglob('*'):
             if not candidate.is_file(): continue
