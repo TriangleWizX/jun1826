@@ -3,56 +3,541 @@ layout: layouts/base.njk
 title: "Local BJJ Tournaments for Families Near Tannersville NY"
 description: "Family guide to local BJJ tournaments near Tannersville, Hunter, and the Catskills. Fun road trips, mat goals, and team support."
 canonicalUrl: "https://senseisandy.com/local-bjj-tournaments-for-families"
-bodyClass: "page-tournament-guide"
+bodyClass: "page-tournament-guide ss-page ss-page-tournament"
+extraCss:
+  - "/assets/css/pages/source-record.css"
 permalink: "/local-bjj-tournaments-for-families.html"
 ---
-<main class="ss-main page-tournament-guide" id="main-content" role="main">
-  <section class="ss-section">
+
+<style>
+  /* Double-Bezel Card System (.sr-outer-shell > .sr-card) */
+  .sr-outer-shell {
+    background: var(--ss-surface2, #F4F1ED);
+    border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+    border-radius: 1.25rem;
+    padding: 0.35rem;
+    box-shadow: 0 2px 10px rgba(54, 43, 36, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .sr-outer-shell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(54, 43, 36, 0.08);
+    border-color: rgba(17, 106, 66, 0.3);
+  }
+  .sr-card {
+    background: var(--ss-surface, #FFFFFF);
+    border: 1px solid rgba(54, 43, 36, 0.08);
+    border-radius: 0.95rem;
+    padding: 1.5rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+  }
+  .sr-card-badge-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+  .sr-card-title {
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-size: 1.4rem;
+    line-height: 1.25;
+    color: var(--ss-ink, #362B24);
+    margin-top: 0;
+    margin-bottom: 0.65rem;
+    font-weight: 500;
+  }
+  .sr-card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ss-muted, #4F433C);
+    margin-bottom: 0;
+  }
+  .sr-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(17, 106, 66, 0.08);
+    color: var(--ss-green, #116A42);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .sr-venue-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(40, 159, 161, 0.09);
+    color: var(--ss-slate, #306061);
+    border: 1px solid rgba(40, 159, 161, 0.2);
+    font-size: 0.775rem;
+    font-weight: 600;
+    margin-bottom: 0.85rem;
+  }
+  .sr-section-title {
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+    color: var(--ss-ink, #362B24);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .sr-section-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ss-muted, #4F433C);
+    max-width: 720px;
+    margin-bottom: 2rem;
+  }
+  .sr-tradition-box {
+    background: linear-gradient(135deg, rgba(17, 106, 66, 0.04) 0%, rgba(40, 159, 161, 0.06) 100%), var(--ss-surface, #FFFFFF);
+  }
+  .sr-faq-item {
+    margin-bottom: 0;
+  }
+  .sr-faq-item details {
+    cursor: pointer;
+  }
+  .sr-faq-summary {
+    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--ss-ink, #362B24);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .sr-faq-summary::-webkit-details-marker {
+    display: none;
+  }
+  .sr-faq-icon {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ss-green, #116A42);
+    transition: transform 0.2s ease;
+    line-height: 1;
+  }
+  details[open] .sr-faq-icon {
+    transform: rotate(45deg);
+  }
+  .sr-faq-answer {
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(54, 43, 36, 0.08);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--ss-muted, #4F433C);
+    margin-bottom: 0;
+  }
+</style>
+
+<main class="ss-main ss-source-record-main" id="main-content">
+  <!-- Hero Section -->
+  <header class="py-4 py-md-5">
     <div class="container ss-container">
-      <nav aria-label="Breadcrumb">
-        <a href="/">Home</a> / <span aria-current="page">Local BJJ Tournaments for Families</span>
+      <!-- Breadcrumbs -->
+      <nav class="ss-record-breadcrumbs mb-3" aria-label="Breadcrumb">
+        <ol class="ss-breadcrumbs-list">
+          <li><a href="/"><i class="bi bi-house-door me-1" aria-hidden="true"></i>Home</a></li>
+          <li class="separator" aria-hidden="true">/</li>
+          <li aria-current="page">Local BJJ Tournaments for Families</li>
+        </ol>
       </nav>
-      <p class="text-uppercase small text-muted mt-3">Family Guides &amp; Mat Goals</p>
-      <h1>Local BJJ Tournaments for Families</h1>
-      <p class="lead">Competition is an optional adventure. We treat tournaments as team road trips focused on courage, fun, and learning.</p>
 
-      <h2>A Healthy View of Competition</h2>
-      <p>Entering a tournament is always a personal choice for each student and family. On our team, tournaments are celebrations of effort. We celebrate stepping onto the mat, trying your techniques with unfamiliar partners, and traveling together as a Catskills team.</p>
+      <!-- Eyebrow & Badges -->
+      <div class="ss-record-badges mb-3">
+        <span class="ss-badge ss-badge-type"><i class="bi bi-compass me-1" aria-hidden="true"></i>Family Guides &amp; Team Mat Trips</span>
+        <span class="ss-badge ss-badge-category">Catskills Community</span>
+        <span class="ss-badge ss-badge-domain">Youth &amp; Adult</span>
+      </div>
 
-      <h2>How We Prepare in Class</h2>
-      <p>When students choose to compete, Coach Sandy guides them through practice rounds at the studio. Kids and teens learn the scoring rules, how to listen to their coach from the edge of the mat, and how to reset with a calm breath between matches.</p>
+      <!-- Hero Header -->
+      <div class="ss-record-hero">
+        <h1 class="ss-record-title">Local BJJ Tournaments for Families</h1>
+        <p class="ss-record-subtitle">Competition is an optional family adventure. We treat local tournaments as team road trips focused on courage, fun, and personal learning rather than podium pressure.</p>
+      </div>
 
-      <h2>Planning Your Family Tournament Day</h2>
-      <p>Regional youth and adult tournaments take place throughout the Hudson Valley and Capital Region, including Albany, Kingston, and Newburgh. Here are simple tips to keep the day smooth and fun:</p>
-      <ul>
-        <li><strong>Pack Simple Essentials:</strong> Bring two clean uniforms, plenty of water, healthy fruit, and comfortable team slip-on sandals.</li>
-        <li><strong>Arrive Early:</strong> Give your child plenty of time to check in, walk around the venue, and warm up with teammates.</li>
-        <li><strong>Focus on One Skill:</strong> Pick one move to practice during the day, such as securing a strong guard or hitting a smooth sweep single.</li>
-      </ul>
+      <!-- Quick Action Buttons -->
+      <div class="ss-record-quick-actions">
+        <a class="ss-action-pill ss-action-pill-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">
+          <i class="bi bi-calendar3" aria-hidden="true"></i>Reserve Free Intro
+        </a>
+        <a class="ss-action-pill ss-action-pill-outline" href="{{ contact.smsHref }}">
+          <i class="bi bi-chat-dots" aria-hidden="true"></i>Text Sandy
+        </a>
+        <a class="ss-action-pill ss-action-pill-outline" href="/schedule">
+          <i class="bi bi-clock" aria-hidden="true"></i>View Schedule
+        </a>
+      </div>
 
-      <h2>The Post-Match Celebration</h2>
-      <p>Whatever happens on the scoreboard, every tournament finishes with smiles. Our team tradition is gathering for burgers and ice cream on the drive home. We talk about what went well, share laughs, and return to Monday class with fresh curiosity.</p>
+      <!-- Metadata Bar -->
+      <section class="ss-record-meta-bar" aria-label="Tournament guide summary details">
+        <div class="ss-meta-item">
+          <span class="ss-meta-label">Team Approach</span>
+          <span class="ss-meta-val">Optional Family Adventure</span>
+        </div>
+        <div class="ss-meta-item">
+          <span class="ss-meta-label">Regional Radius</span>
+          <span class="ss-meta-val">40 to 60 Minutes</span>
+        </div>
+        <div class="ss-meta-item">
+          <span class="ss-meta-label">Coaching Style</span>
+          <span class="ss-meta-val">Calm Matside Guidance</span>
+        </div>
+        <div class="ss-meta-item">
+          <span class="ss-meta-label">Team Tradition</span>
+          <span class="ss-meta-val">Kaaterskill Clove Ice Cream</span>
+        </div>
+      </section>
+    </div>
+  </header>
 
-      <h2>Frequently Asked Questions for Parents</h2>
-      <details class="p-3 bg-light rounded mb-2">
-        <summary class="fw-semibold">Are students required to compete?</summary>
-        <p class="mt-2 mb-0">Every student trains for their own goals, whether that means physical fitness, calm self-defense, or simply enjoying active time with friends. Competition is strictly optional.</p>
-      </details>
-      <details class="p-3 bg-light rounded mb-2">
-        <summary class="fw-semibold">How are youth divisions organized?</summary>
-        <p class="mt-2 mb-0">Youth brackets are carefully matched by exact age, weight, and belt rank so children compete alongside peers with similar experience.</p>
-      </details>
-      <details class="p-3 bg-light rounded mb-2">
-        <summary class="fw-semibold">Will a coach be matside with my child?</summary>
-        <p class="mt-2 mb-0">Yes. Coach Sandy or an assistant coach stands right at the edge of the mat to guide your child with calm, supportive advice throughout their match.</p>
-      </details>
+  <!-- Healthy View of Competition -->
+  <section class="py-4 py-md-5" aria-labelledby="healthy-view-title">
+    <div class="container ss-container">
+      <div class="mb-4">
+        <div class="ss-badge ss-badge-type mb-2"><i class="bi bi-heart me-1" aria-hidden="true"></i>Mat Philosophy</div>
+        <h2 id="healthy-view-title" class="sr-section-title">A Healthy View of Competition</h2>
+        <p class="sr-section-desc">We keep tournament days relaxed and supportive. Entering an event is a personal choice that belongs to each student and family.</p>
+      </div>
 
-      <div class="mt-4 p-4 bg-light rounded text-center">
-        <h3>Begin Your Family Jiu-Jitsu Journey</h3>
-        <p>Your first class at Sensei Sandy BJJ in Tannersville is a calm, coached intro. See our studio, meet Sandy, and start learning together.</p>
-        <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a>
-        <a class="btn btn-outline-primary" href="/schedule">View Schedule</a>
-        <a class="btn btn-outline-primary" href="{{ contact.smsHref }}">Text Sandy</a>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-person-check" aria-hidden="true"></i>
+              </div>
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Personal Pace</span>
+              </div>
+              <h3 class="sr-card-title">Always an Individual Choice</h3>
+              <p class="sr-card-text">Stepping onto the tournament mat is always an individual choice. Students decide when they feel excited to test their skills. Many students train happily for recreation, balance, and cooperative health.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+              </div>
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Courage &amp; Poise</span>
+              </div>
+              <h3 class="sr-card-title">Courage with New Partners</h3>
+              <p class="sr-card-text">Effort, courage, and trying techniques with unfamiliar partners are celebrated. Moving with a new peer teaches adaptable balance, spatial awareness, and calm composure under gentle pressure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i>
+              </div>
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Equal Support</span>
+              </div>
+              <h3 class="sr-card-title">Equal High-Fives for All</h3>
+              <p class="sr-card-text">Wins and lessons receive the exact same warm high-fives and coach encouragement. Every round delivers clear feedback, fresh confidence, and shared team smiles on the ride home.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Tournament Venues -->
+  <section class="py-4 py-md-5" aria-labelledby="venues-title">
+    <div class="container ss-container">
+      <div class="mb-4">
+        <div class="ss-badge ss-badge-type mb-2"><i class="bi bi-geo-alt me-1" aria-hidden="true"></i>Catskills Road Trips</div>
+        <h2 id="venues-title" class="sr-section-title">Regional Tournament Venues</h2>
+        <p class="sr-section-desc">Our academy in Tannersville sits within easy driving distance of regular regional invitationals. Families carpool together from Hunter, Windham, and Haines Falls.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-venue-tag">
+                <i class="bi bi-car-front me-1" aria-hidden="true"></i>55 mins north via I-87
+              </div>
+              <h3 class="sr-card-title">Albany &amp; Capital Region</h3>
+              <p class="sr-card-text">Large arena youth and adult open events. High-ceiling athletic complexes host multiple competition rings, elevated parent seating, and steady bracket organization throughout the day.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-venue-tag">
+                <i class="bi bi-car-front me-1" aria-hidden="true"></i>40 mins south via Route 212 / 32
+              </div>
+              <h3 class="sr-card-title">Kingston &amp; Mid-Hudson Valley</h3>
+              <p class="sr-card-text">Friendly regional invitationals. A quick mountain drive down Route 212 brings families to community-centered events with cooperative round-robin brackets for young beginners.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-venue-tag">
+                <i class="bi bi-car-front me-1" aria-hidden="true"></i>60 mins south via I-87
+              </div>
+              <h3 class="sr-card-title">Newburgh &amp; Lower Hudson Valley</h3>
+              <p class="sr-card-text">Semi-annual Hudson Valley championships. Vibrant gatherings bringing together academies from across Upstate New York for full days of spirited, respectful martial arts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Family Tournament Day Checklist -->
+  <section class="py-4 py-md-5" aria-labelledby="checklist-title">
+    <div class="container ss-container">
+      <div class="mb-4">
+        <div class="ss-badge ss-badge-type mb-2"><i class="bi bi-bag-check me-1" aria-hidden="true"></i>Mat Day Prep</div>
+        <h2 id="checklist-title" class="sr-section-title">Family Tournament Day Checklist</h2>
+        <p class="sr-section-desc">A calm game day starts with thoughtful gear packing. Here are four essentials every Catskills family packs for smooth tournament travel.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-award" aria-hidden="true"></i>
+              </div>
+              <span class="ss-badge ss-badge-domain mb-2">Checklist 01</span>
+              <h3 class="sr-card-title fs-5">Two Clean Gis</h3>
+              <p class="sr-card-text">Pack two clean gis, or a gi plus no-gi rashguards if entering both divisions. A backup uniform keeps your child fresh and comfortable across multiple rounds.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-check2-circle" aria-hidden="true"></i>
+              </div>
+              <span class="ss-badge ss-badge-domain mb-2">Checklist 02</span>
+              <h3 class="sr-card-title fs-5">Team Slip-on Sandals</h3>
+              <p class="sr-card-text">Clean footwear when stepping off the mats. Slip-on shoes maintain clean feet in common walkways and restrooms before walking back onto the competition surface.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-cup-straw" aria-hidden="true"></i>
+              </div>
+              <span class="ss-badge ss-badge-domain mb-2">Checklist 03</span>
+              <h3 class="sr-card-title fs-5">Fresh Fruit &amp; Water</h3>
+              <p class="sr-card-text">Hydration and easily digestible snacks between matches. Cold water, crisp apple slices, and bananas provide gentle energy during bracket intervals.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-bullseye" aria-hidden="true"></i>
+              </div>
+              <span class="ss-badge ss-badge-domain mb-2">Checklist 04</span>
+              <h3 class="sr-card-title fs-5">One Focused Skill</h3>
+              <p class="sr-card-text">Pick one move or position to focus on for the day (e.g. guard retention or sweep single). Concentrating on a single technical task keeps the student calm and centered.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matside Coaching & Etiquette -->
+  <section class="py-4 py-md-5" aria-labelledby="coaching-title">
+    <div class="container ss-container">
+      <div class="mb-4">
+        <div class="ss-badge ss-badge-type mb-2"><i class="bi bi-people me-1" aria-hidden="true"></i>Coaching &amp; Respect</div>
+        <h2 id="coaching-title" class="sr-section-title">Matside Coaching &amp; Etiquette</h2>
+        <p class="sr-section-desc">Respect for the referee, opponent, and mat culture shapes every step of the day. Students learn to handle new challenges with grace.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-megaphone" aria-hidden="true"></i>
+              </div>
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Coach Guidance</span>
+              </div>
+              <h3 class="sr-card-title">Dedicated Matside Coach</h3>
+              <p class="sr-card-text">Coach Sandy or an assistant coach stands right at the edge of the mat to guide your child with calm, supportive advice throughout their match. Clear reminders help kids stay composed and breathe.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+              </div>
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Safety Culture</span>
+              </div>
+              <h3 class="sr-card-title">Tapping Early as Honor</h3>
+              <p class="sr-card-text">Tapping early is honored as the foundation of sportsmanship and personal safety. Tapping communicates respect between athletes and allows students to reset and learn with total peace of mind.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="sr-outer-shell">
+            <div class="sr-card">
+              <div class="sr-card-icon">
+                <i class="bi bi-handshake" aria-hidden="true"></i>
+              </div>
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Mutual Respect</span>
+              </div>
+              <h3 class="sr-card-title">Handshakes Before &amp; After</h3>
+              <p class="sr-card-text">Handshake with referee and opponent before and after each match. We thank our opponents for testing our balance and helping us grow as martial artists.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Post-Match Celebration -->
+  <section class="py-4 py-md-5" aria-labelledby="celebration-title">
+    <div class="container ss-container">
+      <div class="sr-outer-shell">
+        <div class="sr-card sr-tradition-box p-4 p-md-5">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <div class="ss-badge ss-badge-type mb-2"><i class="bi bi-compass me-1" aria-hidden="true"></i>Catskills Team Tradition</div>
+              <h2 id="celebration-title" class="sr-section-title">The Post-Match Celebration</h2>
+              <p class="sr-card-text mb-3">The team tradition: gathering for burgers and ice cream on the scenic drive home through Kaaterskill Clove.</p>
+              <p class="sr-card-text mb-0">Regardless of points on the scoreboard, every tournament concludes with shared smiles and laughs. Families sit together, discuss favorite escapes, cheer for teammates, and return home to the mountaintop ready for regular class.</p>
+            </div>
+            <div class="col-lg-4 text-center">
+              <div class="p-3 rounded-4 bg-white border d-inline-block shadow-sm">
+                <i class="bi bi-cup-straw text-success display-4 mb-2 d-block" aria-hidden="true"></i>
+                <span class="fw-bold text-dark d-block">Kaaterskill Clove Stops</span>
+                <span class="small text-muted">Burgers, Ice Cream &amp; Team Stories</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parent FAQ -->
+  <section class="py-4 py-md-5" aria-labelledby="faq-title">
+    <div class="container ss-container">
+      <div class="mb-4 text-center">
+        <div class="ss-badge ss-badge-type mb-2"><i class="bi bi-question-circle me-1" aria-hidden="true"></i>Parent Inquiries</div>
+        <h2 id="faq-title" class="sr-section-title">Frequently Asked Questions for Parents</h2>
+        <p class="sr-section-desc mx-auto">Clear answers about tournament participation, child safety, and mat etiquette.</p>
+      </div>
+
+      <div class="mx-auto" style="max-width: 820px;">
+        <!-- FAQ 1 -->
+        <div class="sr-outer-shell mb-3">
+          <div class="sr-card p-3 p-md-4">
+            <details class="sr-faq-item">
+              <summary class="sr-faq-summary">
+                <span>Are students required to compete?</span>
+                <span class="sr-faq-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="sr-faq-answer">
+                <p class="mb-0"><strong>Strictly optional.</strong> Every student trains for individual goals, such as personal fitness, quiet self-defense, or joyful physical play with friends. Families decide whether competition fits their schedule and interests.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="sr-outer-shell mb-3">
+          <div class="sr-card p-3 p-md-4">
+            <details class="sr-faq-item">
+              <summary class="sr-faq-summary">
+                <span>How are youth divisions organized?</span>
+                <span class="sr-faq-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="sr-faq-answer">
+                <p class="mb-0">Youth brackets are organized by exact age, weight, and belt rank. This thoughtful grouping ensures children test their skills against peers of similar size and mat experience.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="sr-outer-shell mb-3">
+          <div class="sr-card p-3 p-md-4">
+            <details class="sr-faq-item">
+              <summary class="sr-faq-summary">
+                <span>Will a coach be matside with my child?</span>
+                <span class="sr-faq-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="sr-faq-answer">
+                <p class="mb-0">Yes. Coach Sandy or an assistant coach stands right at the edge of the mat to guide your child with calm, supportive advice throughout their match.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion Bridge -->
+  <section class="py-4 py-md-5 mb-4" aria-labelledby="bridge-title">
+    <div class="container ss-container">
+      <div class="sr-outer-shell">
+        <div class="sr-card ss-record-bridge-card">
+          <div class="ss-badge ss-badge-type mb-3"><i class="bi bi-door-open me-1" aria-hidden="true"></i>Beginner Friendly Studio</div>
+          <h2 id="bridge-title">Begin Your Family Jiu-Jitsu Journey</h2>
+          <p>Your first class at Sensei Sandy BJJ in Tannersville is a calm, coached intro. Tour our studio, meet Coach Sandy, and learn together in a welcoming environment.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="ss-action-pill ss-action-pill-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">
+              <i class="bi bi-calendar-check" aria-hidden="true"></i>Reserve Free Intro
+            </a>
+            <a class="ss-action-pill ss-action-pill-outline" href="{{ contact.smsHref }}">
+              <i class="bi bi-chat-dots" aria-hidden="true"></i>Text Sandy
+            </a>
+            <a class="ss-action-pill ss-action-pill-outline" href="/schedule">
+              <i class="bi bi-clock" aria-hidden="true"></i>View Schedule
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

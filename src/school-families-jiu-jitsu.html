@@ -30,6 +30,228 @@
 <link rel="stylesheet" href="/assets/css/bootstrap-icons-local.css">
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/css/site-shell.min.css">
+<link rel="stylesheet" href="/assets/css/high-end-near.css">
+<style>
+/* Scoped elevations for School Families Jiu-Jitsu page */
+.family-pillars {
+  background-color: var(--ss-bg, #FBFAF8);
+  border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+}
+.pillar-card {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+.pillar-card .he-outer-shell {
+  height: 100%;
+  transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.25s ease;
+}
+.pillar-card:hover .he-outer-shell {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(54, 43, 36, 0.08);
+}
+.pillar-card .he-inner-core {
+  background-color: var(--ss-surface, #FFFFFF);
+  transition: background-color 0.2s ease;
+}
+.pillar-card:hover .he-inner-core {
+  background-color: #FFFFFF;
+}
+.pillar-card .arrow-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-green, #116A42);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+.pillar-card:hover .arrow-circle {
+  transform: translateX(3px);
+  background: var(--ss-green, #116A42);
+  color: #FFFFFF;
+}
+
+/* Three-step timeline */
+.timeline-card .he-outer-shell {
+  height: 100%;
+  transition: transform 0.25s ease;
+}
+.timeline-card:hover .he-outer-shell {
+  transform: translateY(-2px);
+}
+.step-num-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ss-green, #116A42);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body, "Lexend", sans-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.28);
+}
+.badge-step-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ss-muted, #4F433C);
+  background: var(--ss-surface2, #F4F1ED);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+}
+
+/* Martial Arts Comparison Matrix */
+.comparison-matrix-table-wrap {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  background: var(--ss-surface, #FFFFFF);
+  box-shadow: 0 4px 20px rgba(54, 43, 36, 0.04);
+}
+.comparison-matrix-table {
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.comparison-matrix-table th {
+  padding: 1.15rem 1.25rem;
+  font-family: var(--font-body, "Lexend", sans-serif);
+  font-size: 0.92rem;
+  border-bottom: 2px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+}
+.matrix-th-feature {
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-ink, #362B24);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.matrix-th-bjj {
+  background: rgba(17, 106, 66, 0.1);
+  color: var(--ss-green, #116A42);
+  border-top: 3px solid var(--ss-green, #116A42);
+  border-left: 1px solid rgba(17, 106, 66, 0.18);
+  border-right: 1px solid rgba(17, 106, 66, 0.18);
+}
+.matrix-th-striking {
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-muted, #4F433C);
+}
+.matrix-tag-bjj {
+  background: var(--ss-green, #116A42);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+.comparison-matrix-table td {
+  padding: 1.15rem 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.1));
+}
+.comparison-matrix-table tr:last-child td {
+  border-bottom: none;
+}
+.matrix-feature-name {
+  background: rgba(244, 241, 237, 0.5);
+  font-weight: 600;
+  color: var(--ss-ink, #362B24);
+}
+.matrix-cell-bjj {
+  background: rgba(17, 106, 66, 0.03);
+  border-left: 1px solid rgba(17, 106, 66, 0.15);
+  border-right: 1px solid rgba(17, 106, 66, 0.15);
+}
+.matrix-cell-striking {
+  background: #FFFFFF;
+}
+
+/* Mobile Comparison Cards */
+.mobile-comparison-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 14px rgba(54, 43, 36, 0.04);
+}
+.mobile-feature-header {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.mobile-bjj-block {
+  background: rgba(17, 106, 66, 0.06);
+  border: 1px solid rgba(17, 106, 66, 0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+.mobile-striking-block {
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.1));
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* FAQ Accordion Active States & Styling */
+.ss-faq-accordion .accordion-item {
+  border-radius: 1.25rem !important;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)) !important;
+  margin-bottom: 0.85rem !important;
+  overflow: hidden !important;
+  background: var(--ss-surface, #FFFFFF) !important;
+  box-shadow: 0 2px 8px rgba(54, 43, 36, 0.03) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.ss-faq-accordion .accordion-item:hover {
+  border-color: rgba(17, 106, 66, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(54, 43, 36, 0.06) !important;
+}
+.ss-faq-accordion .accordion-button {
+  background: var(--ss-surface, #FFFFFF) !important;
+  color: var(--ss-ink, #362B24) !important;
+  font-family: var(--font-body, "Lexend", system-ui, sans-serif) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 1.25rem 1.5rem !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.ss-faq-accordion .accordion-button:not(.collapsed) {
+  background: rgba(17, 106, 66, 0.07) !important;
+  color: var(--ss-green, #116A42) !important;
+  border-bottom: 1px solid rgba(17, 106, 66, 0.12) !important;
+}
+.ss-faq-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 3px rgba(17, 106, 66, 0.15) !important;
+}
+.ss-faq-accordion .accordion-body {
+  padding: 1.25rem 1.5rem 1.5rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: var(--ss-muted, #4F433C) !important;
+  background: var(--ss-surface, #FFFFFF) !important;
+}
+</style>
 </head>
 <body class="page-partner page-near page-partners-schools">
 
@@ -428,25 +650,52 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- THREE-PILLAR FAMILY VALUE GRID -->
-<section class="family-pillars py-5 bg-white border-bottom">
+<section class="family-pillars py-5">
   <div class="container">
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="p-4 rounded-4 bg-light border border-light-subtle h-100">
-          <h3 class="fs-5 fw-bold text-ss-ink mb-2">Kids Martial Arts (Ages 6–11)</h3>
-          <p class="text-muted mb-0">Young learners build focus, body awareness, and physical courage through guided movement games and safe partner holds.</p>
+        <div class="he-outer-shell pillar-card-shell h-100">
+          <a href="/bjj-classes/kids-tannersville-ny" class="he-inner-core d-flex flex-column h-100 text-decoration-none">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge-step-label">Ages 6–11</span>
+              <span class="arrow-circle" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            </div>
+            <h3 class="fs-5 fw-bold text-ss-ink mb-2">Kids Martial Arts (Ages 6–11)</h3>
+            <p class="text-muted mb-4 flex-grow-1">Young learners build focus, body awareness, and physical courage through guided movement games and safe partner holds.</p>
+            <span class="small fw-bold text-success d-inline-flex align-items-center gap-1">
+              Explore Kids Program <i class="bi bi-chevron-right small" aria-hidden="true"></i>
+            </span>
+          </a>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="p-4 rounded-4 bg-light border border-light-subtle h-100">
-          <h3 class="fs-5 fw-bold text-ss-ink mb-2">Teen Self-Defense (Ages 10–17)</h3>
-          <p class="text-muted mb-0">Teens build athletic poise, healthy boundaries, and calm problem-solving in an encouraging room with matched training partners.</p>
+        <div class="he-outer-shell pillar-card-shell h-100">
+          <a href="/bjj-classes/teens-tannersville-ny" class="he-inner-core d-flex flex-column h-100 text-decoration-none">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge-step-label">Ages 10–17</span>
+              <span class="arrow-circle" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            </div>
+            <h3 class="fs-5 fw-bold text-ss-ink mb-2">Teen Self-Defense (Ages 10–17)</h3>
+            <p class="text-muted mb-4 flex-grow-1">Teens build athletic poise, healthy boundaries, and calm problem-solving in an encouraging room with matched training partners.</p>
+            <span class="small fw-bold text-success d-inline-flex align-items-center gap-1">
+              Explore Teen Program <i class="bi bi-chevron-right small" aria-hidden="true"></i>
+            </span>
+          </a>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="p-4 rounded-4 bg-light border border-light-subtle h-100">
-          <h3 class="fs-5 fw-bold text-ss-ink mb-2">Adult Beginner Lane (Ages 18+)</h3>
-          <p class="text-muted mb-0">Parents and adults learn practical grappling self-defense at their own pace. Pure leverage, calm breathing, and supportive coaching.</p>
+        <div class="he-outer-shell pillar-card-shell h-100">
+          <a href="/bjj-classes/adults-tannersville-ny" class="he-inner-core d-flex flex-column h-100 text-decoration-none">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge-step-label">Ages 18+</span>
+              <span class="arrow-circle" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            </div>
+            <h3 class="fs-5 fw-bold text-ss-ink mb-2">Adult Beginner Lane (Ages 18+)</h3>
+            <p class="text-muted mb-4 flex-grow-1">Parents and adults learn practical martial arts at their own pace. Pure mechanical leverage, calm breathing, and supportive coaching.</p>
+            <span class="small fw-bold text-success d-inline-flex align-items-center gap-1">
+              Explore Adult Program <i class="bi bi-chevron-right small" aria-hidden="true"></i>
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -495,66 +744,246 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <!-- Timeline / Steps -->
-<div class="ss-timeline-section">
-<div class="ss-timeline-grid">
-<div class="ss-timeline-step">
-<div class="ss-timeline-step__number">1</div>
-<h4>Reserve your Free First Visit</h4>
-<p>Pick a time that works for your family. It's quick and easy.</p>
-</div>
-<div class="ss-timeline-step">
-<div class="ss-timeline-step__number">2</div>
-<h4>Get a calm walkthrough</h4>
-<p>Tour the academy, learn our safety approach, and meet the team.</p>
-</div>
-<div class="ss-timeline-step">
-<div class="ss-timeline-step__number">3</div>
-<h4>Leave with a next step</h4>
-<p>We'll help you choose the right class and a plan that fits your schedule.</p>
-</div>
-</div>
+<div class="ss-timeline-section mb-5">
+  <div class="d-flex align-items-center gap-2 mb-3">
+    <span class="he-eyebrow mb-0" style="background: rgba(17, 106, 66, 0.1); color: var(--ss-green, #116A42); font-weight: 700; letter-spacing: 0.14em;">How It Works</span>
+  </div>
+  <h2 class="ss-sub-section-title serif-display mb-4">Three Simple Steps to Begin</h2>
+  <div class="row g-3 ss-timeline-cards">
+    <div class="col-md-4">
+      <div class="timeline-card h-100">
+        <div class="he-outer-shell h-100">
+          <div class="he-inner-core h-100 d-flex flex-column p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="step-num-badge">1</span>
+              <span class="badge-step-label">Step 1</span>
+            </div>
+            <h4 class="fs-5 fw-bold text-ss-ink mb-2">Reserve your Free First Visit</h4>
+            <p class="text-muted mb-0 small lh-base">Pick a time that works for your family. It is quick, calm, and easy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="timeline-card h-100">
+        <div class="he-outer-shell h-100">
+          <div class="he-inner-core h-100 d-flex flex-column p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="step-num-badge">2</span>
+              <span class="badge-step-label">Step 2</span>
+            </div>
+            <h4 class="fs-5 fw-bold text-ss-ink mb-2">Get a calm walkthrough</h4>
+            <p class="text-muted mb-0 small lh-base">Tour the academy, see how our safe beginner pacing works, and meet the team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="timeline-card h-100">
+        <div class="he-outer-shell h-100">
+          <div class="he-inner-core h-100 d-flex flex-column p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="step-num-badge">3</span>
+              <span class="badge-step-label">Step 3</span>
+            </div>
+            <h4 class="fs-5 fw-bold text-ss-ink mb-2">Leave with a next step</h4>
+            <p class="text-muted mb-0 small lh-base">We will help you choose the right class and a schedule that fits your routine.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Shared reviews-village section -->
 <!--#include virtual="/partials/reviews-village.html" -->
 <!-- Educational Martial Arts Comparison Component -->
-<section class="martial-arts-comparison py-5 bg-light rounded-4 mb-5" id="martial-arts-comparison">
-  <div class="container">
-    <p class="he-eyebrow text-ss-green fw-bold text-uppercase">Comparing Family Martial Arts</p>
-    <h2 class="display-6 fw-bold mb-3">Brazilian Jiu-Jitsu vs. Karate &amp; Taekwondo for Mountaintop Families</h2>
-    <p class="lead text-muted mb-4">Many parents in Tannersville, Hunter, and Windham search for 'karate' or 'taekwondo' when looking for martial arts classes for their children. Here is how Brazilian Jiu-Jitsu differs:</p>
-    
-    <div class="table-responsive">
-      <table class="table table-bordered bg-white shadow-sm align-middle">
-        <thead class="table-light">
-          <tr>
-            <th scope="col" style="width: 25%;">Training Feature</th>
-            <th scope="col" style="width: 37.5%;" class="text-success fw-bold">Brazilian Jiu-Jitsu (Sensei Sandy BJJ)</th>
-            <th scope="col" style="width: 37.5%;">Traditional Striking Arts (Karate / Taekwondo)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Core Movement</strong></td>
-            <td><strong>Grappling &amp; Ground Control:</strong> Leverages body weight, balance, and holds to control an opponent safely.</td>
-            <td><strong>Striking &amp; Kicking:</strong> Focuses on punches, kicks, and choreographed forms (katas).</td>
-          </tr>
-          <tr>
-            <td><strong>Partner Safety</strong></td>
-            <td><strong>Pure Leverage:</strong> Movement is trained cooperatively with controlled holds and early tapping.</td>
-            <td><strong>Impact Sparring:</strong> May involve high-speed kicks or accidental contact to the face and body.</td>
-          </tr>
-          <tr>
-            <td><strong>Realistic Control</strong></td>
-            <td><strong>Positional Dominance:</strong> Students learn to hold a partner still on the ground until help arrives.</td>
-            <td><strong>Distance Striking:</strong> Requires open space to kick; less effective if pushed to the ground.</td>
-          </tr>
-          <tr>
-            <td><strong>Class Pacing</strong></td>
-            <td><strong>Cooperative Learning:</strong> Small groups capped at 12 students with tailored partner pairing.</td>
-            <td><strong>Large Group Drills:</strong> Often taught in large classes with synchronized punching lines.</td>
-          </tr>
-        </tbody>
-      </table>
+<section class="martial-arts-comparison mb-5" id="martial-arts-comparison">
+  <div class="he-outer-shell">
+    <div class="he-inner-core" style="background: var(--ss-bg, #FBFAF8); padding: clamp(1.75rem, 4vw, 3rem);">
+      <p class="he-eyebrow mb-2" style="background: rgba(17, 106, 66, 0.1); color: var(--ss-green, #116A42); font-weight: 700; letter-spacing: 0.14em;">Comparing Family Martial Arts</p>
+      <h2 class="serif-display mb-3" style="font-size: clamp(2rem, 3.8vw, 2.85rem); color: var(--ss-ink, #362B24); line-height: 1.12;">Brazilian Jiu-Jitsu vs. Karate &amp; Taekwondo for Mountaintop Families</h2>
+      <p class="lead text-muted mb-4" style="max-width: 44rem; font-size: 1.05rem; line-height: 1.6;">Many parents in Tannersville, Hunter, and Windham search for karate or taekwondo when looking for martial arts classes for their children. Here is how Brazilian Jiu-Jitsu helps your family:</p>
+      
+      <!-- Desktop Comparative Matrix (Tablet and Desktop) -->
+      <div class="d-none d-md-block">
+        <div class="comparison-matrix-table-wrap">
+          <table class="table comparison-matrix-table mb-0 align-middle" aria-label="Martial Arts Comparison Table">
+            <thead>
+              <tr>
+                <th scope="col" class="matrix-th-feature" style="width: 24%;">Training Focus</th>
+                <th scope="col" class="matrix-th-bjj" style="width: 38%;">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="matrix-tag-bjj">Sensei Sandy BJJ</span>
+                    <span class="fw-bold">Brazilian Jiu-Jitsu</span>
+                  </div>
+                </th>
+                <th scope="col" class="matrix-th-striking" style="width: 38%;">
+                  <span class="fw-bold text-muted">Traditional Striking Arts (Karate / Taekwondo)</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="matrix-feature-name">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-arrows-move text-success" aria-hidden="true"></i>
+                    <strong>Core Movement</strong>
+                  </div>
+                </td>
+                <td class="matrix-cell-bjj">
+                  <strong class="text-ss-ink d-block mb-1">Grappling &amp; Ground Balance</strong>
+                  <span class="text-muted">Students learn to use body weight, mechanical leverage, and gentle holds to stay in control on the mats.</span>
+                </td>
+                <td class="matrix-cell-striking">
+                  <strong class="text-ss-ink d-block mb-1">Punches &amp; High Kicks</strong>
+                  <span class="text-muted">Focuses on kicking and punching motions in open space and practicing solo forms (katas).</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-check text-success" aria-hidden="true"></i>
+                    <strong>Partner Safety</strong>
+                  </div>
+                </td>
+                <td class="matrix-cell-bjj">
+                  <strong class="text-ss-ink d-block mb-1">Pure Leverage &amp; Early Tapping</strong>
+                  <span class="text-muted">Movement is trained cooperatively with controlled holds, slow pacing, and immediate tap resets.</span>
+                </td>
+                <td class="matrix-cell-striking">
+                  <strong class="text-ss-ink d-block mb-1">Reaction Speed &amp; Impact</strong>
+                  <span class="text-muted">Movement relies on quick reflex blocks and timed pad striking.</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person-check text-success" aria-hidden="true"></i>
+                    <strong>Realistic Control</strong>
+                  </div>
+                </td>
+                <td class="matrix-cell-bjj">
+                  <strong class="text-ss-ink d-block mb-1">Gentle Ground Control</strong>
+                  <span class="text-muted">Students learn to hold a partner still on the ground while staying calm until help arrives.</span>
+                </td>
+                <td class="matrix-cell-striking">
+                  <strong class="text-ss-ink d-block mb-1">Distance &amp; Space</strong>
+                  <span class="text-muted">Requires open room to kick and step back on the feet.</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="matrix-feature-name">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-people text-success" aria-hidden="true"></i>
+                    <strong>Class Pacing</strong>
+                  </div>
+                </td>
+                <td class="matrix-cell-bjj">
+                  <strong class="text-ss-ink d-block mb-1">Small-Group Care (Max 12)</strong>
+                  <span class="text-muted">Classes are capped at 12 students with tailored partner pairing and close coaching from Sandy.</span>
+                </td>
+                <td class="matrix-cell-striking">
+                  <strong class="text-ss-ink d-block mb-1">Large Group Formations</strong>
+                  <span class="text-muted">Often taught in larger lines with synchronized group counts.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Mobile Responsive Comparative Cards (Phone View) -->
+      <div class="d-block d-md-none">
+        <div class="d-flex flex-column gap-3">
+          <!-- Feature 1 -->
+          <div class="mobile-comparison-card">
+            <div class="mobile-feature-header">
+              <i class="bi bi-arrows-move text-success" aria-hidden="true"></i>
+              <span>Core Movement</span>
+            </div>
+            <div class="mobile-bjj-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="matrix-tag-bjj">Sensei Sandy BJJ</span>
+                <strong class="text-success small">Grappling &amp; Ground Balance</strong>
+              </div>
+              <p class="text-muted small mb-0">Students learn to use body weight, mechanical leverage, and gentle holds to stay in control on the mats.</p>
+            </div>
+            <div class="mobile-striking-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="badge-step-label">Karate / Taekwondo</span>
+                <strong class="text-ss-ink small">Punches &amp; High Kicks</strong>
+              </div>
+              <p class="text-muted small mb-0">Focuses on kicking and punching motions in open space and practicing solo forms.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="mobile-comparison-card">
+            <div class="mobile-feature-header">
+              <i class="bi bi-shield-check text-success" aria-hidden="true"></i>
+              <span>Partner Safety</span>
+            </div>
+            <div class="mobile-bjj-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="matrix-tag-bjj">Sensei Sandy BJJ</span>
+                <strong class="text-success small">Pure Leverage &amp; Early Tapping</strong>
+              </div>
+              <p class="text-muted small mb-0">Movement is trained cooperatively with controlled holds, slow pacing, and immediate tap resets.</p>
+            </div>
+            <div class="mobile-striking-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="badge-step-label">Karate / Taekwondo</span>
+                <strong class="text-ss-ink small">Reaction Speed &amp; Impact</strong>
+              </div>
+              <p class="text-muted small mb-0">Movement relies on quick reflex blocks and timed pad striking.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="mobile-comparison-card">
+            <div class="mobile-feature-header">
+              <i class="bi bi-person-check text-success" aria-hidden="true"></i>
+              <span>Realistic Control</span>
+            </div>
+            <div class="mobile-bjj-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="matrix-tag-bjj">Sensei Sandy BJJ</span>
+                <strong class="text-success small">Gentle Ground Control</strong>
+              </div>
+              <p class="text-muted small mb-0">Students learn to hold a partner still on the ground while staying calm until help arrives.</p>
+            </div>
+            <div class="mobile-striking-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="badge-step-label">Karate / Taekwondo</span>
+                <strong class="text-ss-ink small">Distance &amp; Space</strong>
+              </div>
+              <p class="text-muted small mb-0">Requires open room to kick and step back on the feet.</p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="mobile-comparison-card">
+            <div class="mobile-feature-header">
+              <i class="bi bi-people text-success" aria-hidden="true"></i>
+              <span>Class Pacing</span>
+            </div>
+            <div class="mobile-bjj-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="matrix-tag-bjj">Sensei Sandy BJJ</span>
+                <strong class="text-success small">Small-Group Care (Max 12)</strong>
+              </div>
+              <p class="text-muted small mb-0">Classes are capped at 12 students with tailored partner pairing and close coaching from Sandy.</p>
+            </div>
+            <div class="mobile-striking-block">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <span class="badge-step-label">Karate / Taekwondo</span>
+                <strong class="text-ss-ink small">Large Group Formations</strong>
+              </div>
+              <p class="text-muted small mb-0">Often taught in larger lines with synchronized group counts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -577,7 +1006,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </h3>
 <div aria-labelledby="headingOne" class="accordion-collapse collapse show" data-bs-parent="#schoolFaqAccordion" id="collapseOne">
 <div class="accordion-body">
-                      You do not need special gear to start to start. Comfortable athletic clothes like a T-shirt and shorts/sweatpants work perfectly for the Free First Visit, and we will explain options after if they decide to continue.
+                      Wear simple, comfortable athletic clothes like a T-shirt and sweatpants for your Free First Visit. We provide everything else for your first coached session.
                     </div>
 </div>
 </div>
@@ -589,7 +1018,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </h3>
 <div aria-labelledby="headingTwo" class="accordion-collapse collapse" data-bs-parent="#schoolFaqAccordion" id="collapseTwo">
 <div class="accordion-body">
-                      Yes, safety is our absolute priority. We teach grappling-only skills (grappling-only training) using our structured Beginner Lane pacing and close, supportive coaching. Every student is taught how tapping works on day one.
+                      Yes. Safety guides every class. Students learn calm movement in our structured Beginner Lane. Friendly coaches guide every partner drill, and students practice gentle tapping from their very first day.
                     </div>
 </div>
 </div>
@@ -601,7 +1030,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </h3>
 <div aria-labelledby="headingThree" class="accordion-collapse collapse" data-bs-parent="#schoolFaqAccordion" id="collapseThree">
 <div class="accordion-body">
-                      Absolutely. We encourage parents to stay, watch the walkthrough, and see how the room and team feel. We have comfortable seating for families right by the mat area.
+                      Absolutely. Parents are warmly invited to stay, watch the walkthrough, and see how welcoming the room feels. We have comfortable seating for families right by the mat area.
                     </div>
 </div>
 </div>
