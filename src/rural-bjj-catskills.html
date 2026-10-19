@@ -3,102 +3,597 @@ layout: layouts/base.njk
 title: "Rural BJJ in the Catskills | Sensei Sandy BJJ"
 description: "Brazilian Jiu-Jitsu in Tannersville, NY for kids, teens, adults, and Catskills visitors. Enjoy small, calm, and beginner-friendly classes from day one."
 canonicalUrl: "https://senseisandy.com/rural-bjj-catskills"
-bodyClass: "ss-page ss-page-rural-bjj"
+bodyClass: "ss-page ss-page-rural-bjj ss-page-nearby-towns"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
+  - "/assets/css/high-end-near.css"
 permalink: "/rural-bjj-catskills.html"
 ---
+<style>
+/* Scoped styles for Rural BJJ Catskills page */
+.rural-hero {
+  padding: clamp(3rem, 7vw, 6rem) 0 clamp(2.5rem, 5vw, 4.5rem);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(40, 159, 161, 0.1), transparent 28rem),
+    linear-gradient(180deg, var(--ss-bg, #FBFAF8) 0%, var(--ss-surface2, #F4F1ED) 100%);
+  border-bottom: 1px solid rgba(54, 43, 36, 0.1);
+}
+.rural-hero-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.65rem, 6.5vw, 4.75rem);
+  line-height: 1.04;
+  color: var(--ss-ink, #362B24);
+  letter-spacing: -0.015em;
+  margin-top: 0.65rem;
+  margin-bottom: 1.15rem;
+}
+.rural-hero-lead {
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  max-width: 44rem;
+  margin-bottom: 1.25rem;
+}
+.rural-hero-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  max-width: 44rem;
+  margin-bottom: 1.75rem;
+}
+.rural-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+.he-btn-wrapper--secondary {
+  background-color: transparent !important;
+  border: 1px solid var(--ss-ink, #362B24) !important;
+  color: var(--ss-ink, #362B24) !important;
+}
+.he-btn-wrapper--secondary:hover {
+  background-color: rgba(54, 43, 36, 0.05) !important;
+  color: var(--ss-ink, #362B24) !important;
+}
+.he-btn-wrapper--secondary .he-btn-icon-circle {
+  background-color: rgba(54, 43, 36, 0.08) !important;
+  color: var(--ss-ink, #362B24) !important;
+}
+
+/* Sections */
+.rural-section {
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+}
+.rural-section--alt {
+  background-color: var(--ss-surface2, #F4F1ED);
+}
+.rural-section-header {
+  max-width: 48rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.rural-section-header h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.06;
+  color: var(--ss-ink, #362B24);
+  letter-spacing: -0.015em;
+  margin-top: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+.rural-section-header p {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 0;
+}
+
+/* Story Panel */
+.rural-story-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 2rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  box-shadow: 0 1rem 3rem rgba(54, 43, 36, 0.04);
+}
+.rural-story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+@media (max-width: 767.98px) {
+  .rural-story-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+.rural-story-col p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 1rem;
+}
+.rural-story-col p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lanes (Double-Bezel Bento) */
+.rural-lanes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (max-width: 991.98px) {
+  .rural-lanes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+.rural-lane-card {
+  height: 100%;
+}
+.rural-lane-card .he-inner-core {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  text-decoration: none;
+}
+.rural-lane-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+.rural-lane-tag--kids { color: var(--ss-teal, #289FA1); }
+.rural-lane-tag--teens { color: var(--ss-green, #116A42); }
+.rural-lane-tag--adults { color: var(--ss-brown, #8B522E); }
+.rural-lane-card h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.85rem, 2.5vw, 2.25rem);
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.5rem;
+}
+.rural-lane-card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 1.25rem;
+}
+.rural-lane-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.rural-lane-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ss-ink, #362B24);
+}
+.rural-lane-points li i {
+  color: var(--ss-green, #116A42);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.rural-lane-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-ink, #362B24);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  margin-top: auto;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.rural-lane-btn:hover {
+  background: var(--ss-green, #116A42);
+  color: #fff;
+  border-color: var(--ss-green, #116A42);
+}
+
+/* Neighboring Towns Corridor Grid */
+.rural-corridor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+@media (max-width: 991.98px) {
+  .rural-corridor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575.98px) {
+  .rural-corridor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.rural-corridor-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  color: var(--ss-ink, #362B24) !important;
+  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.rural-corridor-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ss-green, #116A42);
+  box-shadow: 0 10px 24px rgba(17, 106, 66, 0.09);
+}
+.rural-corridor-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.rural-corridor-name {
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: var(--ss-ink, #362B24);
+}
+.rural-corridor-time {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--ss-green, #116A42);
+  background: rgba(17, 106, 66, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.rural-corridor-route {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ss-teal, #289FA1);
+  margin-bottom: 0.65rem;
+}
+.rural-corridor-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+.rural-corridor-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ss-green, #116A42);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto;
+}
+
+/* FAQ Accordion */
+.rural-faq-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 50rem;
+}
+.rural-faq-item {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(54, 43, 36, 0.02);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.rural-faq-item[open] {
+  border-color: rgba(17, 106, 66, 0.3);
+  box-shadow: 0 6px 20px rgba(17, 106, 66, 0.06);
+}
+.rural-faq-summary {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.rural-faq-summary::-webkit-details-marker {
+  display: none;
+}
+.rural-faq-summary::after {
+  content: "+";
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--ss-green, #116A42);
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+.rural-faq-item[open] .rural-faq-summary::after {
+  content: "–";
+}
+.rural-faq-answer {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(54, 43, 36, 0.08);
+}
+
+/* Final Conversion Bridge */
+.rural-final-card {
+  border-radius: 2rem;
+  background: linear-gradient(135deg, rgba(17, 106, 66, 0.08) 0%, rgba(40, 159, 161, 0.08) 100%), var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(17, 106, 66, 0.25);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.75rem, 4vw, 3.5rem);
+  box-shadow: 0 1.5rem 4rem rgba(17, 106, 66, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .rural-final-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.rural-final-card h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  color: var(--ss-ink, #362B24);
+  letter-spacing: -0.015em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.rural-final-card p {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  margin: 0;
+  max-width: 42rem;
+}
+</style>
+
 <main class="ss-page ss-page-rural-bjj" id="main-content" role="main">
-  <section class="ss-hero" aria-labelledby="rural-title">
+  <!-- 1. Hero Section -->
+  <section class="rural-hero" aria-labelledby="rural-title">
     <div class="container">
-      <p class="small text-uppercase text-muted">Catskills Mountain Community · Tannersville, NY</p>
-      <h1 id="rural-title">Rural Brazilian Jiu-Jitsu in the Catskills</h1>
-      <p class="lead">Training martial arts in a rural mountain town creates a warm, connected, and supportive learning culture.</p>
-      <p>At Sensei Sandy BJJ, students of all ages gather under one roof on Main Street in Tannersville to build quiet confidence, mechanical leverage, and lasting friendships.</p>
-      <p>
-        <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping="">Reserve Free Intro</a>
-        <a class="btn btn-outline-primary" href="{{ contact.smsHref }}">Text Sandy</a>
+      <span class="he-eyebrow"><i class="bi bi-geo-alt me-1"></i> Catskills Mountain Community &middot; Tannersville, NY</span>
+      <h1 id="rural-title" class="rural-hero-title">Rural Brazilian Jiu-Jitsu in the Catskills</h1>
+      <p class="rural-hero-lead">Training martial arts in a mountain town brings people together under one roof. Build quiet confidence, mechanical leverage, and lasting friendships in a calm setting.</p>
+      <p class="rural-hero-desc">At Sensei Sandy BJJ, students of all ages gather on Main Street in Tannersville. Small groups and cooperative partners create a welcoming path for every beginner.</p>
+      <div class="rural-hero-actions">
+        <a class="he-btn-wrapper" href="/free-bjj-intro-tannersville-ny#booking-flow">
+          <span>Reserve Free Intro</span>
+          <span aria-hidden="true" class="he-btn-icon-circle"><i class="bi bi-arrow-right-short"></i></span>
+        </a>
+        <a class="he-btn-wrapper he-btn-wrapper--secondary" href="{{ contact.smsHref }}">
+          <span>Text Sandy</span>
+          <span aria-hidden="true" class="he-btn-icon-circle"><i class="bi bi-chat-text"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. The Rural Mat Experience -->
+  <section class="rural-section" aria-labelledby="mountain-culture-title">
+    <div class="container">
+      <div class="rural-section-header">
+        <span class="he-eyebrow">Mountaintop Culture</span>
+        <h2 id="mountain-culture-title">The Rural Mat Experience</h2>
+        <p>A quiet room where neighbors train together with mutual respect, direct coaching, and cooperative pacing.</p>
+      </div>
+
+      <div class="rural-story-card">
+        <div class="rural-story-grid">
+          <div class="rural-story-col">
+            <p>Small mountain towns create close connections. Big city gyms can feel crowded and rushed. Our mountaintop studio offers a warm space with comfortable group sizes. Every student receives direct coaching and attention from Sensei Sandy.</p>
+            <p>Training happens on premium sanitized mats with second-floor mountain views. We focus on mechanical leverage, gentle joint locks, and cooperative partner drills.</p>
+          </div>
+          <div class="rural-story-col">
+            <p>Local carpenters, shop owners, healthcare workers, teachers, weekend cabin visitors, and whole families share the mats under one roof. Training together builds mutual respect and lasting bonds.</p>
+            <p>This creates a calm, ego-free room where personal progress and safety guide every practice. You learn at your own pace alongside supportive partners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Three Training Lanes Bento Grid -->
+  <section class="rural-section rural-section--alt" aria-labelledby="choose-title">
+    <div class="container">
+      <div class="rural-section-header">
+        <span class="he-eyebrow">Three Training Lanes</span>
+        <h2 id="choose-title">Programs for Every Generation</h2>
+        <p>Whether introducing your child to their first sport or returning to fitness as an adult, we provide a dedicated lane for your goals:</p>
+      </div>
+
+      <div class="rural-lanes-grid">
+        <!-- Kids BJJ -->
+        <div class="he-outer-shell rural-lane-card">
+          <div class="he-inner-core">
+            <span class="rural-lane-tag rural-lane-tag--kids"><i class="bi bi-stars"></i> Ages 5–12 &middot; Youth Movement</span>
+            <h3>Kids BJJ</h3>
+            <p>Active physical play that channels energy into coordination, balance, and cooperative peer interaction.</p>
+            <ul class="rural-lane-points">
+              <li><i class="bi bi-check2-circle"></i> Positional control and body awareness</li>
+              <li><i class="bi bi-check2-circle"></i> Positive partner habits and quiet confidence</li>
+              <li><i class="bi bi-check2-circle"></i> Parents stay and watch from viewing seats</li>
+            </ul>
+            <a class="rural-lane-btn" href="/bjj-classes/kids-tannersville-ny">
+              <span>Explore Kids Classes</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Teens BJJ -->
+        <div class="he-outer-shell rural-lane-card">
+          <div class="he-inner-core">
+            <span class="rural-lane-tag rural-lane-tag--teens"><i class="bi bi-shield-check"></i> Ages 13–17 &middot; Leverage &amp; Posture</span>
+            <h3>Teens BJJ</h3>
+            <p>Practical self-defense, calm composure under pressure, and athletic foundation for young adults.</p>
+            <ul class="rural-lane-points">
+              <li><i class="bi bi-check2-circle"></i> Mechanical leverage over physical size</li>
+              <li><i class="bi bi-check2-circle"></i> Conflict de-escalation and focus</li>
+              <li><i class="bi bi-check2-circle"></i> Safe partner drills with teammates</li>
+            </ul>
+            <a class="rural-lane-btn" href="/bjj-classes/teens-tannersville-ny">
+              <span>Explore Teens Classes</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Adults BJJ -->
+        <div class="he-outer-shell rural-lane-card">
+          <div class="he-inner-core">
+            <span class="rural-lane-tag rural-lane-tag--adults"><i class="bi bi-person-check"></i> Ages 18+ &middot; Beginner Lane</span>
+            <h3>Adults BJJ</h3>
+            <p>Step-by-step foundation instruction focused on joint health, mechanical efficiency, and sustainable movement.</p>
+            <ul class="rural-lane-points">
+              <li><i class="bi bi-check2-circle"></i> Dedicated White Belt beginner lane</li>
+              <li><i class="bi bi-check2-circle"></i> Cooperative pacing with respectful partners</li>
+              <li><i class="bi bi-check2-circle"></i> Evening gi practice and weekend morning no-gi</li>
+            </ul>
+            <a class="rural-lane-btn" href="/bjj-classes/adults-tannersville-ny">
+              <span>Explore Adult Classes</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4 text-center">Review our <a href="/schedule" class="fw-semibold text-success">weekly schedule</a> and explore our <a href="/options-pricing" class="fw-semibold text-success">membership plans</a>.</p>
+    </div>
+  </section>
+
+  <!-- 4. Neighboring Towns Travel Corridors -->
+  <section class="rural-section" aria-labelledby="near-title">
+    <div class="container">
+      <div class="rural-section-header">
+        <span class="he-eyebrow">Catskills Travel Corridors</span>
+        <h2 id="near-title">Convenient to Neighboring Towns</h2>
+        <p>Our studio sits centrally on Main Street in Tannersville, connecting students throughout the mountaintop and valley communities:</p>
+      </div>
+
+      <div class="rural-corridor-grid">
+        <!-- Hunter 5m -->
+        <a class="rural-corridor-card" href="/bjj-classes/hunter-ny">
+          <div class="rural-corridor-top">
+            <span class="rural-corridor-name">Hunter</span>
+            <span class="rural-corridor-time">5 min</span>
+          </div>
+          <div class="rural-corridor-route">NY-23A West</div>
+          <p class="rural-corridor-desc">Five minutes west along Route 23A. Quick access for mountain residents and seasonal skiers.</p>
+          <span class="rural-corridor-link">View Hunter Classes <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <!-- Haines Falls 3m -->
+        <a class="rural-corridor-card" href="/bjj-classes/haines-falls-ny">
+          <div class="rural-corridor-top">
+            <span class="rural-corridor-name">Haines Falls</span>
+            <span class="rural-corridor-time">3 min</span>
+          </div>
+          <div class="rural-corridor-route">NY-23A East</div>
+          <p class="rural-corridor-desc">Three minutes east toward North-South Lake and Twilight Park. Easy neighborhood drive.</p>
+          <span class="rural-corridor-link">View Haines Falls Classes <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <!-- Windham 12m -->
+        <a class="rural-corridor-card" href="/bjj-classes/windham-ny">
+          <div class="rural-corridor-top">
+            <span class="rural-corridor-name">Windham</span>
+            <span class="rural-corridor-time">12 min</span>
+          </div>
+          <div class="rural-corridor-route">Route 296 North</div>
+          <p class="rural-corridor-desc">Twelve minutes north on Route 296 past Batavia Kill. Direct connection for families and weekend visitors.</p>
+          <span class="rural-corridor-link">View Windham Classes <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <!-- Palenville & Cairo 15-20m -->
+        <a class="rural-corridor-card" href="/bjj-classes/palenville-ny">
+          <div class="rural-corridor-top">
+            <span class="rural-corridor-name">Palenville &amp; Cairo</span>
+            <span class="rural-corridor-time">15–20 min</span>
+          </div>
+          <div class="rural-corridor-route">NY-23A &amp; Route 32</div>
+          <p class="rural-corridor-desc">Scenic drive up Kaaterskill Clove connecting valley communities including Catskill, Palenville, and Cairo.</p>
+          <span class="rural-corridor-link">View Valley Classes <i class="bi bi-arrow-right"></i></span>
+        </a>
+      </div>
+
+      <p class="mt-4 text-center">
+        <a class="btn btn-outline-success rounded-pill fw-semibold" href="/bjj-tannersville-ny-directions">Get turn-by-turn directions and parking info <i class="bi bi-arrow-right"></i></a>
       </p>
     </div>
   </section>
 
-  <section class="ss-section" aria-labelledby="mountain-culture-title">
+  <!-- 5. Styled FAQ Accordion -->
+  <section class="rural-section rural-section--alt" aria-labelledby="faq-title">
     <div class="container">
-      <h2 id="mountain-culture-title">The Rural Mat Experience</h2>
-      <p>In large metropolitan gyms, classes can feel crowded and impersonal. Training in the Catskills offers a refreshing alternative. Class sizes are intentionally kept comfortable so every student receives direct coaching, feedback, and encouragement from Sensei Sandy.</p>
-      <p>Our students include local tradespeople, business owners, healthcare workers, teachers, weekend cabin visitors, and whole families training together. This diverse blend creates a respectful, ego-free room where safety and personal progress come first.</p>
+      <div class="rural-section-header">
+        <span class="he-eyebrow">First-Visit Guide</span>
+        <h2 id="faq-title">First Visit Questions</h2>
+        <p>Starting martial arts should feel welcoming and clear. Here are answers to common questions for new visitors:</p>
+      </div>
+
+      <div class="rural-faq-list">
+        <details class="rural-faq-item">
+          <summary class="rural-faq-summary">Do I need prior martial arts experience?</summary>
+          <p class="rural-faq-answer">Beginners start with guided fundamentals. Every first class is a calm, coached introduction designed for complete beginners. Sandy guides each step so you learn at a comfortable pace alongside cooperative partners.</p>
+        </details>
+
+        <details class="rural-faq-item">
+          <summary class="rural-faq-summary">Can parents watch youth classes?</summary>
+          <p class="rural-faq-answer">Yes. Parents and family members are always welcome to relax in our viewing area and watch class from the sidelines.</p>
+        </details>
+
+        <details class="rural-faq-item">
+          <summary class="rural-faq-summary">What should I wear for my first class?</summary>
+          <p class="rural-faq-answer">Wear clean, comfortable athletic clothing such as a t-shirt and track pants or shorts. Clean loaner gis and gear are ready for you at the studio.</p>
+        </details>
+      </div>
     </div>
   </section>
 
-  <section class="ss-section bg-light" aria-labelledby="choose-title">
+  <!-- 6. Conversion Bridge -->
+  <section class="rural-section" aria-labelledby="cta-title">
     <div class="container">
-      <h2 id="choose-title">Programs for Every Generation</h2>
-      <p>Whether you are introducing your child to their first sport or returning to fitness as an adult, we have a lane for you:</p>
-      <div class="row g-4 mt-2">
-        <div class="col-md-4">
-          <div class="p-3 bg-white rounded shadow-sm h-100">
-            <h3>Kids BJJ</h3>
-            <p>Active physical play that channels energy into coordination, balance, and cooperative peer interaction.</p>
-            <a href="/bjj-classes/kids-tannersville-ny">Explore Kids Classes</a>
-          </div>
+      <div class="rural-final-card">
+        <div>
+          <span class="he-eyebrow">Mountaintop Martial Arts</span>
+          <h2 id="cta-title">Plan Your First Visit</h2>
+          <p>Check the schedule, reserve your Free Intro, and experience the warmth of our Catskills mat family.</p>
         </div>
-        <div class="col-md-4">
-          <div class="p-3 bg-white rounded shadow-sm h-100">
-            <h3>Teens BJJ</h3>
-            <p>Practical self-defense, emotional calm under pressure, and athletic foundation for young adults.</p>
-            <a href="/bjj-classes/teens-tannersville-ny">Explore Teens Classes</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-3 bg-white rounded shadow-sm h-100">
-            <h3>Adults BJJ</h3>
-            <p>Step-by-step beginner instruction focused on joint health, mechanical efficiency, and sustainable movement.</p>
-            <a href="/bjj-classes/adults-tannersville-ny">Explore Adult Classes</a>
-          </div>
+        <div class="rural-hero-actions">
+          <a class="he-btn-wrapper" href="/free-bjj-intro-tannersville-ny#booking-flow">
+            <span>Reserve Free Intro</span>
+            <span aria-hidden="true" class="he-btn-icon-circle"><i class="bi bi-arrow-right-short"></i></span>
+          </a>
+          <a class="he-btn-wrapper he-btn-wrapper--secondary" href="{{ contact.smsHref }}">
+            <span>Text Sandy</span>
+            <span aria-hidden="true" class="he-btn-icon-circle"><i class="bi bi-chat-text"></i></span>
+          </a>
         </div>
       </div>
-      <p class="mt-4">Review our <a href="/schedule">weekly schedule</a> and explore our <a href="/options-pricing">membership plans</a>.</p>
-    </div>
-  </section>
-
-  <section class="ss-section" aria-labelledby="near-title">
-    <div class="container">
-      <h2 id="near-title">Convenient to Neighboring Towns</h2>
-      <p>Our studio is centrally located in Tannersville, making training accessible across Greene County and the Great Northern Catskills:</p>
-      <ul>
-        <li><a href="/bjj-classes/hunter-ny">Hunter</a> · Just five minutes west on NY-23A.</li>
-        <li><a href="/bjj-classes/windham-ny">Windham</a> · A scenic twelve-minute drive down Route 296.</li>
-        <li><a href="/bjj-classes/haines-falls-ny">Haines Falls</a> · Three minutes east toward North-South Lake.</li>
-        <li><a href="/bjj-classes/palenville-ny">Palenville</a>, <a href="/bjj-classes/cairo-ny">Cairo</a>, and <a href="/bjj-classes/catskill-ny">Catskill</a> · Accessible commuter routes up the mountain.</li>
-      </ul>
-      <p><a href="/bjj-tannersville-ny-directions">Get turn-by-turn directions to the studio</a>.</p>
-    </div>
-  </section>
-
-  <section class="ss-section ss-faq bg-light" aria-labelledby="faq-title">
-    <div class="container">
-      <h2 id="faq-title">First Visit Questions</h2>
-      <details class="p-3 bg-white rounded mb-2">
-        <summary class="fw-semibold">Do I need prior martial arts experience?</summary>
-        <p class="mt-2 mb-0">No experience is required. Your first class is a coached introduction designed specifically for complete beginners.</p>
-      </details>
-      <details class="p-3 bg-white rounded mb-2">
-        <summary class="fw-semibold">Can parents watch youth classes?</summary>
-        <p class="mt-2 mb-0">Yes. Parents are always welcome to sit comfortably in our viewing area and watch their children train.</p>
-      </details>
-      <details class="p-3 bg-white rounded mb-2">
-        <summary class="fw-semibold">What should I wear for my first class?</summary>
-        <p class="mt-2 mb-0">Wear clean, comfortable athletic clothing such as a t-shirt and sweatpants or shorts. We provide everything else you need.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="ss-section">
-    <div class="container text-center">
-      <h2>Plan Your First Visit</h2>
-      <p>Check the schedule, reserve your Free Intro, and experience the warmth of our Catskills mat family.</p>
-      <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-goal-mapping="">Reserve Free Intro</a>
-      <a class="btn btn-outline-primary" href="{{ contact.smsHref }}">Text Sandy</a>
     </div>
   </section>
 </main>

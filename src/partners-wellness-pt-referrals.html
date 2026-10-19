@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Wellness & PT Referrals | Sensei Sandy BJJ Catskills"
-description: "Wellness and PT referral lane for private coaching. Movement, confidence, and skill with safety-first pacing. Train with beginner-friendly coaching."
+description: "Clinical-grade provider referral portal. Structured, low-impact Brazilian Jiu-Jitsu fundamentals in Tannersville, NY. Safe, joint-sparing movement for your patients."
 canonicalUrl: "https://senseisandy.com/partners-wellness-pt-referrals"
 bodyClass: "partner-page page-partners-wellness"
 extraCss:
@@ -9,10 +9,292 @@ extraCss:
 permalink: "/partners-wellness-pt-referrals.html"
 ---
 <main class="partner-page page-partners-wellness" id="main-content" role="main">
-<nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/community-partners">Community Partners</a> / <span aria-current="page">Wellness referrals</span></nav>
-<section class="partner-hero" aria-labelledby="partner-title"><p class="eyebrow">For local wellness and PT teams</p><h1 id="partner-title">Share a BJJ class with your client</h1><p>Sensei Sandy BJJ offers coached classes in Tannersville. Share the class page or ask for a referral kit.</p><p><a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve a Free Intro</a> <a class="btn btn-outline-primary" href="{{ contact.smsHref }}">Text for the QR kit</a></p></section>
-<section aria-labelledby="steps-title"><h2 id="steps-title">How to refer</h2><ol><li>Share the Free Intro link or QR code.</li><li>Your client can ask Sandy questions by text.</li><li>They can check the <a href="/schedule">class schedule</a> and choose a next step.</li></ol><p><a href="/assets/images/partners/partners-qr-code.webp"><img src="/assets/images/partners/partners-qr-code.webp" alt="QR code for the Sensei Sandy BJJ Free Intro" loading="lazy" width="444" height="444"></a></p></section>
-<section aria-labelledby="class-title"><h2 id="class-title">What to share</h2><p>The first visit is a coached class. The coach explains the room and the class plan.</p><ul><li><a href="/bjj-classes/adults-tannersville-ny">Adult classes</a></li><li><a href="/bjj-classes/kids-tannersville-ny">Kids classes</a></li><li><a href="/bjj-classes/teens-tannersville-ny">Teen classes</a></li></ul><p>Class times can change. Please use the <a href="/schedule">current schedule</a>.</p></section>
-<section aria-labelledby="scope-title"><h2 id="scope-title">About this referral</h2><p>BJJ is a sport and a form of exercise. A class is not physical therapy or medical care. Providers and clients make their own care choices.</p><p>Your client can contact Sandy directly with questions.</p></section>
-<section aria-labelledby="contact-title"><h2 id="contact-title">Ask for the partner kit</h2><p>Text Sandy to get a QR code or ask a question.</p><p><a href="{{ contact.smsHref }}">Text Sandy</a> · <a href="/bjj-tannersville-ny-directions">Get directions</a> · <a href="/community-partners">See community partners</a></p></section>
+  <!-- Breadcrumbs -->
+  <nav aria-label="Breadcrumb" class="container py-2 py-md-3 small fw-semibold">
+    <a href="/">Home</a>
+    <span aria-hidden="true">›</span>
+    <a href="/community-partners">Community Partners</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Wellness &amp; PT Referrals</span>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="wellness-hero-section" aria-labelledby="partner-title">
+    <div class="container">
+      <div class="wellness-hero-grid">
+        <div class="wellness-hero-left">
+          <p class="section-eyebrow">For Healthcare Providers &amp; Physical Therapists</p>
+          <h1 class="hero-serif-title" id="partner-title">Share Coached Movement With Your PT Clients</h1>
+          <p class="lead">Sensei Sandy BJJ provides structured, low-impact Brazilian Jiu-Jitsu fundamentals in Tannersville. We work cooperatively with local physical therapists, physicians, and athletic trainers to support safe, joint-sparing movement.</p>
+          <div class="wellness-hero-ctas">
+            <a class="btn-wellness-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20am%20a%20healthcare%20provider%20and%20would%20like%20a%20Provider%20QR%20Kit."><i aria-hidden="true" class="bi bi-qr-code"></i> Request Provider QR Kit</a>
+            <a class="btn-wellness-outline" href="/schedule"><i aria-hidden="true" class="bi bi-calendar3"></i> Explore Class Lanes</a>
+          </div>
+        </div>
+        <div class="wellness-hero-right">
+          <div class="wellness-hero-img-container">
+            <img src="/assets/images/partners/partners-wellness-hero.webp" alt="Sensei Sandy coaching fundamentals in Tannersville" class="wellness-hero-img" width="1200" height="676" loading="eager" decoding="async">
+            <div class="wellness-floating-cards" aria-hidden="true">
+              <div class="wellness-float-card">
+                <div class="wellness-float-icon-wrapper"><i class="bi bi-shield-check"></i></div>
+                <p class="wellness-float-text">Joint-Sparing Pacing</p>
+              </div>
+              <div class="wellness-float-card">
+                <div class="wellness-float-icon-wrapper"><i class="bi bi-person-check"></i></div>
+                <p class="wellness-float-text">Movement Intake Review</p>
+              </div>
+              <div class="wellness-float-card">
+                <div class="wellness-float-icon-wrapper"><i class="bi bi-activity"></i></div>
+                <p class="wellness-float-text">Controlled Loading</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Sub-Hero Referral Kit Ribbon -->
+    <div class="referral-kit-bar">
+      <div class="referral-kit-grid">
+        <img src="/assets/images/partners/partners-qr-code.webp" alt="QR code for client referral to Sensei Sandy BJJ" class="referral-kit-qr" width="72" height="72" loading="lazy">
+        <div class="referral-kit-text">
+          <h4>Free Introductory Session QR Cards</h4>
+          <p>Place cards in your clinic waiting area or front desk. Clients scan directly to text Sandy and book a movement consult.</p>
+        </div>
+        <div class="referral-kit-divider" aria-hidden="true"></div>
+        <div class="referral-kit-training">
+          <div class="referral-kit-training-icon"><i class="bi bi-hospital"></i></div>
+          <div class="referral-kit-training-text">
+            <h4>Direct Provider Communication</h4>
+            <p>Text Sandy directly about mobility goals, movement notes, or questions about your client.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clinical Scope & Safety Guidelines -->
+    <section aria-labelledby="scope-title">
+      <p class="section-title-caps" id="scope-title">Clinical Scope &amp; Safety Guidelines</p>
+      <div class="experience-grid">
+        <article class="experience-card">
+          <div class="experience-icon-circle"><i class="bi bi-shield-check"></i></div>
+          <h4>Joint-Sparing Mechanics</h4>
+          <p>Techniques emphasize mechanical leverage, neutral spine posture, and smooth floor transitions that protect joints and connective tissue.</p>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon-circle"><i class="bi bi-diagram-3"></i></div>
+          <h4>Kinetic Chain Loading</h4>
+          <p>Coached ground engagement gently integrates core stabilization, pelvic stability, and full-body rotational mobility at a gradual pace.</p>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon-circle"><i class="bi bi-speedometer2"></i></div>
+          <h4>Controlled Movement Pacing</h4>
+          <p>Beginners practice slow, predictable movements with attentive partners. All drills maintain steady control and cooperative pacing.</p>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon-circle"><i class="bi bi-hand-thumbs-up"></i></div>
+          <h4>Tap-Early Culture</h4>
+          <p>Students learn early physical and verbal signaling habits from day one. Every partner respects comfortable boundaries and mutual care.</p>
+        </article>
+      </div>
+
+      <!-- Scope Disclaimer Box -->
+      <div class="p-3 p-md-4 rounded-4 mb-5" style="background-color: var(--ss-surface2, #F4F1ED); border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));">
+        <div class="d-flex align-items-start gap-3">
+          <div class="mt-1 text-teal fs-4"><i class="bi bi-info-circle"></i></div>
+          <div>
+            <h3 class="h6 fw-bold mb-1 text-ink">Scope of Practice Disclaimer</h3>
+            <p class="small text-muted mb-0">Brazilian Jiu-Jitsu is functional movement and exercise, not physical therapy or medical rehabilitation. Healthcare providers and clients make their own health decisions. We welcome collaborative movement guidelines from licensed providers to support your client's active lifestyle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Step Provider Referral Workflow -->
+    <section class="timeline-section" aria-labelledby="steps-title">
+      <p class="section-title-caps" id="steps-title">3-Step Provider Referral Workflow</p>
+      <div class="timeline-card">
+        <div class="timeline-flow mb-4">
+          <div class="timeline-step">
+            <div class="timeline-number">1</div>
+            <p class="timeline-text">Share QR Card</p>
+          </div>
+          <div class="timeline-arrow" aria-hidden="true"></div>
+          <div class="timeline-step">
+            <div class="timeline-number">2</div>
+            <p class="timeline-text">15-Min Consult</p>
+          </div>
+          <div class="timeline-arrow" aria-hidden="true"></div>
+          <div class="timeline-step-final">
+            <div class="timeline-icon-final"><i class="bi bi-check-lg"></i></div>
+            <p class="timeline-text">Tailored Class Plan</p>
+          </div>
+        </div>
+        <div class="row g-4 pt-3 border-top" style="border-color: var(--ss-border, rgba(54, 43, 36, 0.14)) !important;">
+          <div class="col-md-4">
+            <h3 class="h6 fw-bold text-ink mb-1">Step 1: Share Provider QR Card</h3>
+            <p class="small text-muted mb-0">Share the Provider QR Card with your patient during their clinic visit or discharge review.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h6 fw-bold text-ink mb-1">Step 2: Free 15-Minute Consult</h3>
+            <p class="small text-muted mb-0">Patient schedules a free 15-minute consultation to review movement limitations with Sandy.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h6 fw-bold text-ink mb-1">Step 3: Tailored Class Progression</h3>
+            <p class="small text-muted mb-0">Sandy structures a tailored introductory progression with calm partners and joint-friendly fundamentals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training Lanes for Clients (Adults, Youth, Teens) -->
+    <section class="menu-section" aria-labelledby="lanes-title">
+      <p class="section-title-caps" id="lanes-title">Training Lanes for Clients</p>
+      <div class="menu-grid">
+        <article class="menu-card">
+          <div class="menu-card-img-wrapper">
+            <img src="/assets/images/partners/partners-menu-intro.webp" alt="Adult BJJ fundamentals student in class" class="menu-card-img" width="124" height="145" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title"><i class="bi bi-person"></i> Adults Lane</h3>
+            <p class="menu-card-text">Cooperative ground mobility, core stability, and positional leverage for adult fitness and longevity.</p>
+            <a href="/bjj-classes/adults-tannersville-ny" class="menu-card-btn">Explore Adults Lane &rarr;</a>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-img-wrapper">
+            <img src="/assets/images/partners/partners-menu-family.webp" alt="Youth BJJ student practicing agility" class="menu-card-img" width="124" height="145" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title"><i class="bi bi-people"></i> Youth Lane</h3>
+            <p class="menu-card-text">Agility, balance games, tumbling fundamentals, and respectful partner habits for growing bodies.</p>
+            <a href="/bjj-classes/kids-tannersville-ny" class="menu-card-btn">Explore Youth Lane &rarr;</a>
+          </div>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-img-wrapper">
+            <img src="/assets/images/partners/partners-menu-private.webp" alt="Teen BJJ student training with coach" class="menu-card-img" width="124" height="145" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title"><i class="bi bi-lightning-charge"></i> Teens Lane</h3>
+            <p class="menu-card-text">Athletic coordination, postural awareness, upright confidence, and self-defense fundamentals.</p>
+            <a href="/bjj-classes/teens-tannersville-ny" class="menu-card-btn">Explore Teens Lane &rarr;</a>
+          </div>
+        </article>
+      </div>
+      <p class="small text-muted text-center mt-3 mb-0">Class times are updated regularly on our public schedule. Please view the <a href="/schedule">current class schedule</a>.</p>
+    </section>
+
+    <!-- Provider Toolkit -->
+    <section class="toolkit-section" aria-labelledby="toolkit-title">
+      <p class="section-title-caps" id="toolkit-title">Provider Clinical Toolkit</p>
+      <div class="toolkit-grid">
+        <div class="toolkit-left">
+          <h2 class="toolkit-left-title">Quick Copy Tools for Provider Notes</h2>
+          <div class="toolkit-items">
+            <article class="toolkit-card">
+              <div class="toolkit-card-header">
+                <i class="bi bi-clipboard2-pulse toolkit-card-icon"></i>
+                <h3 class="toolkit-card-title">Patient Chart / Discharge Note</h3>
+              </div>
+              <p class="toolkit-card-content">Patient cleared for low-impact functional exercise. Recommended Sensei Sandy BJJ Beginner Lane in Tannersville for coached joint-friendly mobility and fundamental ground movement.</p>
+            </article>
+            <article class="toolkit-card">
+              <div class="toolkit-card-header">
+                <i class="bi bi-chat-left-text toolkit-card-icon"></i>
+                <h3 class="toolkit-card-title">Referral Text for Patients</h3>
+              </div>
+              <p class="toolkit-card-content">Sensei Sandy BJJ in Tannersville offers coached beginner martial arts classes. Text Sandy at (917) 736-8649 or visit senseisandy.com to schedule a free 15-minute movement consult.</p>
+            </article>
+          </div>
+        </div>
+        <div class="toolkit-right">
+          <div class="toolkit-img-container">
+            <img src="/assets/images/approved/sensei-sandy-studio-waiting-area-1200.webp" alt="Sensei Sandy studio waiting area and clean training room in Tannersville" class="toolkit-img" width="1200" height="676" loading="lazy">
+            <div class="toolkit-overlay">
+              <p class="toolkit-overlay-text">Joint-Friendly Movement in the Catskills</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Provider FAQ Accordion -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <p class="section-title-caps" id="faq-title">Provider FAQ</p>
+      <div class="faq-accordion">
+        <details class="faq-card">
+          <summary>How do you accommodate past injuries or movement limitations?</summary>
+          <div class="faq-body">
+            Every new student begins with a 15-minute consult. Sandy reviews notes on joint comfort, range of motion, and past rehabilitation. Drills are modified so students work strictly within comfortable movement arcs.
+          </div>
+        </details>
+        <details class="faq-card">
+          <summary>How is pacing controlled for patients returning to physical activity?</summary>
+          <div class="faq-body">
+            Beginner classes emphasize structured positional drills rather than high-intensity sparring. Students partner with experienced, calm teammates who match their pace and practice mutual care.
+          </div>
+        </details>
+        <details class="faq-card">
+          <summary>Can physical therapists communicate directly with Coach Sandy?</summary>
+          <div class="faq-body">
+            Yes. Healthcare providers and physical therapists are welcome to text Sandy directly at (917) 736-8649 or share written movement precautions. We welcome your recommendations.
+          </div>
+        </details>
+        <details class="faq-card">
+          <summary>Is martial arts experience needed for my patient to start?</summary>
+          <div class="faq-body">
+            Martial arts experience is optional. Most adult students start as complete beginners looking for enjoyable, joint-friendly ways to stay active and mobile.
+          </div>
+        </details>
+        <details class="faq-card">
+          <summary>How does the Free Intro consultation work?</summary>
+          <div class="faq-body">
+            The first visit includes a tour of our studio, a discussion of personal movement goals, and a gentle, one-on-one introduction to fundamental balance and mobility.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Conversion Bridge for Providers -->
+    <section class="footer-cta-card" aria-labelledby="bridge-title">
+      <div class="footer-cta-grid">
+        <img src="/assets/images/partners/partners-footer-bonsai.webp" alt="Sensei Sandy studio details" class="footer-cta-left-img" width="200" height="90" loading="lazy">
+        <div class="footer-cta-center">
+          <h2 id="bridge-title">Request Provider Materials or Tour the Studio</h2>
+          <p>We are glad to provide printed QR cards for your office or welcome you for a quick walkthrough of our clean Mountaintop facility.</p>
+        </div>
+        <div class="footer-cta-right">
+          <a class="btn-wellness-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20please%20send%20referral%20cards%20to%20our%20practice."><i class="bi bi-box-seam"></i> Request Cards</a>
+          <a class="btn-wellness-outline" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20would%20like%20to%20visit%20the%20studio."><i class="bi bi-geo-alt"></i> Schedule Studio Visit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-Footer Studio Details & Map Row -->
+    <aside class="sub-footer-details" aria-label="Studio Details">
+      <div class="sub-footer-grid">
+        <div class="sub-footer-item">
+          <i class="bi bi-geo-alt"></i>
+          <span>6045 Main Street, 2nd Floor, Tannersville, NY 12485</span>
+        </div>
+        <div class="sub-footer-item">
+          <i class="bi bi-telephone"></i>
+          <a href="tel:+19177368649">+1 (917) 736-8649</a>
+        </div>
+        <div class="sub-footer-item">
+          <i class="bi bi-chat-dots"></i>
+          <a href="sms:+19177368649">Text Sandy Directly</a>
+        </div>
+        <div class="sub-footer-map-col">
+          <img src="/assets/images/partners/partners-map-placeholder.webp" alt="Map to Sensei Sandy BJJ in Tannersville" class="sub-footer-map-img" width="200" height="80" loading="lazy">
+          <a href="/bjj-tannersville-ny-directions" class="sub-footer-map-overlay" aria-label="View directions to the studio">
+            <span class="sub-footer-map-btn"><i class="bi bi-map"></i> View Map</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
 </main>

@@ -8,7 +8,7 @@
 <link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
 <link href="/site.webmanifest" rel="manifest"/>
 <title>Training Sources &amp; Research | Sensei Sandy BJJ</title>
-<meta content="Browse public health guidance, BJJ studies, lineage notes, and local research used in Sensei Sandy BJJ learning guides. Learn the basics and how the term..." name="description"/>
+<meta content="Browse peer-reviewed sports science, youth development studies, local community records, and technical lineage behind Sensei Sandy BJJ." name="description"/>
 <meta content="training sources, research, bjj citations, lineage, health guidance, sensei sandy" name="keywords"/>
 
 
@@ -20,11 +20,11 @@
 
 <meta content="index, follow" name="robots"/>
 <meta content="Training Sources &amp; Research | Sensei Sandy BJJ" property="og:title"/>
-<meta content="Browse public health guidance, BJJ studies, lineage notes, and local research used in Sensei Sandy BJJ learning guides." property="og:description"/>
+<meta content="Browse peer-reviewed sports science, youth development studies, local community records, and technical lineage behind Sensei Sandy BJJ." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Training Sources &amp; Research | Sensei Sandy BJJ" name="twitter:title"/>
-<meta content="Browse public health guidance, BJJ studies, lineage notes, and local research used in Sensei Sandy BJJ learning guides." name="twitter:description"/>
+<meta content="Browse peer-reviewed sports science, youth development studies, local community records, and technical lineage behind Sensei Sandy BJJ." name="twitter:description"/>
 <meta content="https://senseisandy.com/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.webp" name="twitter:image"/>
 <meta content="https://senseisandy.com/sources" name="twitter:url"/>
 <!--#include virtual="/_includes/analytics-head.html" -->
@@ -137,7 +137,7 @@
 <link rel="stylesheet" href="/assets/css/fonts.min.0f0655.css">
 <link rel="stylesheet" href="/assets/css/site-shell.min.7f177f.css">
 
-    <link rel="stylesheet" href="/assets/css/routes/site-18ac9c2704ce.min.css">
+    <link rel="stylesheet" href="/assets/css/pages/source-record.d113af.css">
 
 
 
@@ -156,101 +156,781 @@
   <div id="scrollProgress"></div>
 
   
-    <main id="main-content" role="main">
-  <div class="py-5 bg-light border-bottom">
-    <div class="container-xxl">
-      <nav aria-label="Breadcrumb">
-        <ol class="breadcrumb mb-2">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Training Sources</li>
-        </ol>
-      </nav>
-      <h1 class="display-4 fw-bold mb-3">Training Sources</h1>
-      <p class="lead text-muted mb-0">Check the sources used in our class guides. Read about health, BJJ, and coach history.</p>
-    </div>
-  </div>
+    <main class="ss-main ss-sources-directory" id="main-content" role="main">
+  <style>
+    .ss-sources-directory {
+      background-color: var(--ss-bg, #FBFAF8);
+      color: var(--ss-text, #1F1712);
+      min-height: 80vh;
+      font-family: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-  <section class="py-5" aria-labelledby="source-list-title">
-    <div class="container-xxl">
-      <h2 id="source-list-title" class="h3 fw-bold mb-4">Read a source</h2>
+    .ss-sources-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 5rem;
+    }
+
+    @media (min-width: 768px) {
+      .ss-sources-container {
+        padding: 3.5rem 2rem 6rem;
+      }
+    }
+
+    /* Hero Section */
+    .ss-sources-hero {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+      padding-bottom: 2.5rem;
+    }
+
+    .ss-sources-title {
+      font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+      font-size: clamp(2.35rem, 5vw, 3.85rem);
+      line-height: 1.1;
+      color: var(--ss-ink, #362B24);
+      letter-spacing: -0.02em;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .ss-sources-lead {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.65;
+      color: var(--ss-muted, #4F433C);
+      max-width: 820px;
+      margin-bottom: 0;
+    }
+
+    /* Pillar Sections */
+    .ss-pillar-section {
+      margin-bottom: 4rem;
+    }
+
+    .ss-pillar-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .ss-pillar-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ss-green, #116A42);
+      margin-bottom: 0.35rem;
+    }
+
+    .ss-pillar-title {
+      font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+      font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+      color: var(--ss-ink, #362B24);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .ss-pillar-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--ss-muted, #4F433C);
+      max-width: 760px;
+      margin-bottom: 0;
+    }
+
+    /* Double-Bezel Card System (.sr-outer-shell > .sr-card) */
+    .sr-outer-shell {
+      background: var(--ss-surface2, #F4F1ED);
+      border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+      border-radius: 1.25rem;
+      padding: 0.35rem;
+      box-shadow: 0 2px 10px rgba(54, 43, 36, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sr-outer-shell:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(54, 43, 36, 0.08);
+      border-color: rgba(17, 106, 66, 0.3);
+    }
+
+    .sr-card {
+      background: var(--ss-surface, #FFFFFF);
+      border: 1px solid rgba(54, 43, 36, 0.08);
+      border-radius: 0.95rem;
+      padding: 1.35rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 100%;
+    }
+
+    .sr-card-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .sr-card-title {
+      font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+      font-size: 1.3rem;
+      line-height: 1.25;
+      color: var(--ss-ink, #362B24);
+      margin-top: 0;
+      margin-bottom: 0.65rem;
+      font-weight: 400;
+    }
+
+    .sr-card-text {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--ss-muted, #4F433C);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .sr-card-footer {
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(54, 43, 36, 0.07);
+    }
+
+    .sr-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ss-slate, #306061);
+      text-decoration: none;
+      transition: color 0.15s ease, gap 0.15s ease;
+    }
+
+    .sr-card-link:hover {
+      color: var(--ss-green, #116A42);
+      gap: 0.55rem;
+      text-decoration: none;
+    }
+
+    .sr-card-link .sr-arrow {
+      display: inline-block;
+      transition: transform 0.15s ease;
+    }
+
+    .sr-card-link:hover .sr-arrow {
+      transform: translateX(2px);
+    }
+
+    /* Responsible Evidence Usage Notice */
+    .ss-evidence-notice {
+      background: var(--ss-surface2, #F4F1ED);
+      border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.16));
+      border-left: 4px solid var(--ss-green, #116A42);
+      border-radius: 0.95rem;
+      padding: 1.5rem 1.75rem;
+      margin-top: 4rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .ss-evidence-notice-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ss-green, #116A42);
+      margin-bottom: 0.35rem;
+    }
+
+    .ss-evidence-notice-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--ss-ink, #362B24);
+      margin-bottom: 0;
+    }
+
+    /* Conversion Bridge */
+    .ss-sources-bridge {
+      background: radial-gradient(circle at 10% 20%, rgba(40, 159, 161, 0.08), transparent 50%),
+                  radial-gradient(circle at 90% 80%, rgba(17, 106, 66, 0.06), transparent 50%),
+                  var(--ss-surface, #FFFFFF);
+      border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.16));
+      border-radius: 1.5rem;
+      padding: clamp(2rem, 5vw, 3.25rem);
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(54, 43, 36, 0.05);
+      margin-top: 3.5rem;
+    }
+
+    .ss-sources-bridge h2 {
+      font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+      font-size: clamp(2rem, 4vw, 2.65rem);
+      color: var(--ss-ink, #362B24);
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+
+    .ss-sources-bridge p {
+      color: var(--ss-muted, #4F433C);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      max-width: 36rem;
+      margin: 0 auto 1.75rem;
+    }
+
+    .ss-sources-bridge-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.85rem;
+    }
+  </style>
+
+  <div class="ss-sources-container">
+    <!-- Breadcrumbs -->
+    <nav class="ss-record-breadcrumbs" aria-label="Breadcrumb">
+      <ol class="ss-breadcrumbs-list">
+        <li><a href="/"><i class="bi bi-house-door me-1" aria-hidden="true"></i>Home</a></li>
+        <li class="separator" aria-hidden="true">/</li>
+        <li aria-current="page">Training Sources</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="ss-sources-hero">
+      <div class="ss-record-badges">
+        <span class="ss-badge ss-badge-type">Evidence-Based Martial Arts</span>
+      </div>
+      <h1 class="ss-sources-title">Training Sources &amp; Research</h1>
+      <p class="ss-sources-lead">
+        We ground our coaching in peer-reviewed motor learning research, youth sports safety studies, dojo lineage, and local community partnerships.
+      </p>
+    </header>
+
+    <!-- Pillar 1: Peer-Reviewed Movement Science & Sports Medicine (12 Records) -->
+    <section class="ss-pillar-section" aria-labelledby="pillar-1-heading">
+      <div class="ss-pillar-header">
+        <div class="ss-pillar-eyebrow">Pillar 1</div>
+        <h2 id="pillar-1-heading" class="ss-pillar-title">Peer-Reviewed Movement Science &amp; Sports Medicine</h2>
+        <p class="ss-pillar-desc">
+          Published clinical trials, systematic reviews, and biomechanical investigations supporting safe skill development, motor learning, and youth sports longevity.
+        </p>
+      </div>
+
       <div class="row g-4">
-        <article class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title fw-bold">Research</h3>
-              <p class="card-text text-muted flex-grow-1">Read BJJ studies, injury surveys, and facts about the Catskills.</p>
-              <div class="d-flex flex-wrap gap-2 mt-2">
-                <a href="/sources/research/bjj-school-rct" class="btn btn-outline-primary btn-sm fw-semibold">Browse research</a>
-                <a href="/sources/research/bjj-injury-2025" class="btn btn-outline-primary btn-sm fw-semibold">Injury survey</a>
+        <!-- 1. Games-Based Teaching & Motor Learning Review -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Academic Research</span>
               </div>
-            </div>
+              <h3 class="sr-card-title">Games-Based Teaching &amp; Motor Learning Review</h3>
+              <p class="sr-card-text">
+                Systematic review showing how small learning games build motor skill, agile footwork, and fast decision-making.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/games-based-teaching-review" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
           </div>
-        </article>
-        <article class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title fw-bold">CDC guide</h3>
-              <p class="card-text text-muted flex-grow-1">Read public guidance on movement and health.</p>
-              <a href="/sources/cdc-physical-activity" class="btn btn-outline-primary btn-sm fw-semibold mt-2">Read the CDC source</a>
-            </div>
-          </div>
-        </article>
-        <article class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title fw-bold">Marietta study</h3>
-              <p class="card-text text-muted flex-grow-1">Read the report on BJJ training for police.</p>
-              <a href="/sources/marietta-police-bjj" class="btn btn-outline-primary btn-sm fw-semibold mt-2">Read the study</a>
-            </div>
-          </div>
-        </article>
-        <article class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title fw-bold">Gracie history</h3>
-              <p class="card-text text-muted flex-grow-1">Learn about the roots of this training style.</p>
-              <a href="/sources/gracie-academy" class="btn btn-outline-primary btn-sm fw-semibold mt-2">Read the history</a>
-            </div>
-          </div>
-        </article>
-        <article class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title fw-bold">Coach history</h3>
-              <p class="card-text text-muted flex-grow-1">Read the reported path of Sandy’s BJJ training.</p>
-              <a href="/sources/kenny-florian" class="btn btn-outline-primary btn-sm fw-semibold mt-2">Read the profile</a>
-            </div>
-          </div>
-        </article>
-        <article class="col-md-6 col-lg-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title fw-bold">Clockwork Jiu Jitsu</h3>
-              <p class="card-text text-muted flex-grow-1">Read about Josh Griffiths and the Clockwork lineage behind our training.</p>
-              <a href="/sources/clockwork-bjj-instructors" class="btn btn-outline-primary btn-sm fw-semibold mt-2">Read instructor source</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <section class="py-4" aria-labelledby="source-notes-title">
-    <div class="container-xxl">
-      <div class="p-4 rounded bg-light border">
-        <h2 id="source-notes-title" class="h4 fw-bold mb-3">Read with care</h2>
-        <p class="text-muted mb-0">A study shows what happened in one group and setting. It does not promise the same result for each student.</p>
-      </div>
-    </div>
-  </section>
+        <!-- 2. BJJ School Randomized Controlled Trial -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Academic Research</span>
+              </div>
+              <h3 class="sr-card-title">BJJ School Randomized Controlled Trial</h3>
+              <p class="sr-card-text">
+                Randomized trial measuring how school Brazilian Jiu-Jitsu builds attention, emotional calm, and teamwork in class.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/bjj-school-rct" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
 
-  <section class="text-center py-5" aria-labelledby="sources-next-step-title">
-    <div class="container-xxl">
-      <h2 id="sources-next-step-title" class="h3 fw-bold mb-3">Want to see how class works?</h2>
-      <p class="text-muted mb-4"><a href="/how-class-works">Read the class steps</a> or ask Sandy in person.</p>
-      <a href="/free-bjj-intro-tannersville-ny" class="btn btn-success btn-lg px-4 py-2 fw-bold">Reserve Free Intro</a>
-    </div>
-  </section>
+        <!-- 3. BJJ Injury Survey & Prevention (2025) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Sports Medicine</span>
+              </div>
+              <h3 class="sr-card-title">BJJ Injury Survey &amp; Prevention (2025)</h3>
+              <p class="sr-card-text">
+                Global survey of 881 practitioners showing how early taps and coach supervision protect student longevity on the mats.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/bjj-injury-2025" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 4. Deliberate Practice & Expertise Development -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Academic Research</span>
+              </div>
+              <h3 class="sr-card-title">Deliberate Practice &amp; Expertise Development</h3>
+              <p class="sr-card-text">
+                Motor learning paper showing how purposeful repetitions with immediate coach feedback accelerate student skill.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/deliberate-practice-expertise" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 5. Pediatric BJJ Injury Prevention Review -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Sports Medicine</span>
+              </div>
+              <h3 class="sr-card-title">Pediatric BJJ Injury Prevention Review</h3>
+              <p class="sr-card-text">
+                Clinical sports medicine review outlining padded mats, controlled partner drills, and safe age-based progressions for kids.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/pediatric-bjj-injury-review" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 6. Greene County Child Health & Physical Activity (2024) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Academic Research</span>
+              </div>
+              <h3 class="sr-card-title">Greene County Child Health &amp; Physical Activity (2024)</h3>
+              <p class="sr-card-text">
+                Regional health survey showing the positive value of year-round athletic spaces for Mountaintop youth.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/greene-county-child-health-2024" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 7. Youth Sports Overuse & Injury Prevention -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Sports Medicine</span>
+              </div>
+              <h3 class="sr-card-title">Youth Sports Overuse &amp; Injury Prevention</h3>
+              <p class="sr-card-text">
+                Pediatric health review encouraging varied athletic play, healthy recovery, and multi-sport agility for growing bodies.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/youth-sports-injury-prevention" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 8. Combat Sports Post-Concussion Care Protocols -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Sports Medicine</span>
+              </div>
+              <h3 class="sr-card-title">Combat Sports Post-Concussion Care Protocols</h3>
+              <p class="sr-card-text">
+                Sports medicine safety guidelines for head health, gradual return to play, and alert mat supervision.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/combat-sports-post-concussion-care" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 9. Exercise, Cognition & Neuroplasticity Review -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Academic Research</span>
+              </div>
+              <h3 class="sr-card-title">Exercise, Cognition &amp; Neuroplasticity Review</h3>
+              <p class="sr-card-text">
+                Neuroscience review showing how complex ground movement stimulates memory, balance, and lifelong brain health.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/exercise-cognition-neuroplasticity-review" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 10. Combat Sports Injury Epidemiology -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Sports Medicine</span>
+              </div>
+              <h3 class="sr-card-title">Combat Sports Injury Epidemiology</h3>
+              <p class="sr-card-text">
+                Epidemiological study highlighting how gentle mat culture and structured sparring guidelines maintain student health.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/combat-sports-injury-epidemiology-review" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 11. BJJ Injury Rates & Risk Factors Review -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Sports Medicine</span>
+              </div>
+              <h3 class="sr-card-title">BJJ Injury Rates &amp; Risk Factors Review</h3>
+              <p class="sr-card-text">
+                Sports medicine paper reviewing joint protection methods, controlled rolling speeds, and smart physical recovery.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/bjj-injury-rates-review" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 12. Greene County Community Health Assessment -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Academic Research</span>
+              </div>
+              <h3 class="sr-card-title">Greene County Community Health Assessment</h3>
+              <p class="sr-card-text">
+                Community health evaluation documenting local recreation access, outdoor fitness habits, and youth activity needs.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/research/greene-county-community-health-2022-2024" class="sr-card-link">
+                  Read research summary <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 2: Local Community & Youth Sports Verification (4 Records) -->
+    <section class="ss-pillar-section" aria-labelledby="pillar-2-heading">
+      <div class="ss-pillar-header">
+        <div class="ss-pillar-eyebrow">Pillar 2</div>
+        <h2 id="pillar-2-heading" class="ss-pillar-title">Local Community &amp; Youth Sports Verification</h2>
+        <p class="ss-pillar-desc">
+          Verified partnerships, athletic coordination, and facility safety standards across Tannersville, Hunter, and the Great Northern Catskills.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. HTC Youth Soccer Co-Training -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-domain">Local Community Record</span>
+              </div>
+              <h3 class="sr-card-title">HTC Youth Soccer Co-Training</h3>
+              <p class="sr-card-text">
+                Season schedule coordination and athletic cross-training for Hunter-Tannersville youth soccer players in the Catskills.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/local/htc-soccer-2026" class="sr-card-link">
+                  Read local record <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 2. Catskills Youth Theater Physicality -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-domain">Local Community Record</span>
+              </div>
+              <h3 class="sr-card-title">Catskills Youth Theater Physicality</h3>
+              <p class="sr-card-text">
+                Body awareness, upright posture, and spatial coordination reference supporting young stage actors in Tannersville.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/local/catskills-youth-theater-2026" class="sr-card-link">
+                  Read local record <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 3. Hunter Mountain Winter Athletes -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-domain">Local Community Record</span>
+              </div>
+              <h3 class="sr-card-title">Hunter Mountain Winter Athletes</h3>
+              <p class="sr-card-text">
+                Balance, core stability, and fall safety cross-training for alpine ski and snowboard athletes two miles up the road.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/local/hunter-mountain-2026-27" class="sr-card-link">
+                  Read local record <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 4. Studios on Main Facility & Flooring -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-domain">Local Community Record</span>
+              </div>
+              <h3 class="sr-card-title">Studios on Main Facility &amp; Flooring</h3>
+              <p class="sr-card-text">
+                Cushioned subfloor system, fresh mountain air flow, and clean training space at 6045 Main Street in Tannersville.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/local/studios-main-pilates" class="sr-card-link">
+                  Read local record <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 3: Technical Lineage & Heritage (4 Records) -->
+    <section class="ss-pillar-section" aria-labelledby="pillar-3-heading">
+      <div class="ss-pillar-header">
+        <div class="ss-pillar-eyebrow">Pillar 3</div>
+        <h2 id="pillar-3-heading" class="ss-pillar-title">Technical Lineage &amp; Heritage</h2>
+        <p class="ss-pillar-desc">
+          Documenting the authentic technical family tree, black belt credentials, and ethical foundations underpinning Sensei Sandy BJJ.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Clockwork Jiu Jitsu & Josh Griffiths -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Technical Lineage</span>
+              </div>
+              <h3 class="sr-card-title">Clockwork Jiu Jitsu &amp; Josh Griffiths</h3>
+              <p class="sr-card-text">
+                Sandy's decade of direct training under fourth-degree black belt Josh Griffiths at Clockwork Jiu Jitsu in New York City.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/clockwork-bjj-instructors" class="sr-card-link">
+                  Read lineage profile <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 2. Kenny Florian & Roberto Maia Lineage -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Technical Lineage</span>
+              </div>
+              <h3 class="sr-card-title">Kenny Florian &amp; Roberto Maia Lineage</h3>
+              <p class="sr-card-text">
+                Technical lineage tracing through UFC veteran Kenny Florian and Boston BJJ founder Roberto Maia to Carlos Gracie Jr.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/kenny-florian" class="sr-card-link">
+                  Read lineage profile <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 3. Gracie Academy Foundations -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Curriculum Heritage</span>
+              </div>
+              <h3 class="sr-card-title">Gracie Academy Foundations</h3>
+              <p class="sr-card-text">
+                Foundational curriculum principles based on distance management, balance levers, and mechanical leverage for all body sizes.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/gracie-academy" class="sr-card-link">
+                  Read curriculum source <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 4. Marietta Police De-Escalation Study -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Field Research</span>
+              </div>
+              <h3 class="sr-card-title">Marietta Police De-Escalation Study</h3>
+              <p class="sr-card-text">
+                Department report documenting how gentle ground control techniques improve safety during physical encounters.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/marietta-police-bjj" class="sr-card-link">
+                  Read study review <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 4: Public Health & Movement Guidance (2 Records) -->
+    <section class="ss-pillar-section" aria-labelledby="pillar-4-heading">
+      <div class="ss-pillar-header">
+        <div class="ss-pillar-eyebrow">Pillar 4</div>
+        <h2 id="pillar-4-heading" class="ss-pillar-title">Public Health &amp; Movement Guidance</h2>
+        <p class="ss-pillar-desc">
+          Authoritative physical activity recommendations and classical martial arts philosophy shaping healthy student habits.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. CDC Adult & Youth Physical Activity Guidelines -->
+        <div class="col-12 col-md-6">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-type">Public Health Benchmark</span>
+              </div>
+              <h3 class="sr-card-title">CDC Adult &amp; Youth Physical Activity Guidelines</h3>
+              <p class="sr-card-text">
+                Official public health targets for weekly aerobic movement, functional muscle strength, and lifelong joint mobility.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/cdc-physical-activity" class="sr-card-link">
+                  Read CDC guidance <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 2. Kodokan Judo Principles: Mutual Benefit & Maximum Efficiency -->
+        <div class="col-12 col-md-6">
+          <div class="sr-outer-shell">
+            <article class="sr-card">
+              <div class="sr-card-badge-wrap">
+                <span class="ss-badge ss-badge-category">Philosophical Heritage</span>
+              </div>
+              <h3 class="sr-card-title">Kodokan Judo Principles: Mutual Benefit &amp; Maximum Efficiency</h3>
+              <p class="sr-card-text">
+                Dr. Jigoro Kano's core maxims of Seiryoku Zen'yo (maximum efficiency) and Jita Kyoei (mutual benefit) guiding our room culture.
+              </p>
+              <div class="sr-card-footer mt-auto">
+                <a href="/sources/kodokan-etiquette" class="sr-card-link">
+                  Read Kodokan principles <span class="sr-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Responsible Evidence Usage Notice -->
+    <section class="ss-evidence-notice" aria-label="Responsible Evidence Usage Notice">
+      <div class="ss-evidence-notice-title">Responsible Evidence Usage</div>
+      <p class="ss-evidence-notice-text">
+        <strong>How We Use Evidence:</strong> Studies examine specific populations and environments. They inform our safety standards and teaching progression, but individual athletic development is always coached at a personal pace.
+      </p>
+    </section>
+
+    <!-- 8. Conversion Bridge -->
+    <section class="ss-sources-bridge" aria-labelledby="bridge-title">
+      <h2 id="bridge-title">Experience Coached Learning in Person</h2>
+      <p>
+        Curious how we put evidence-based teaching into practice on the mat? Start with a calm, friendly introductory session.
+      </p>
+      <div class="ss-sources-bridge-actions">
+        <a href="/free-bjj-intro-tannersville-ny#booking-flow" class="ss-action-pill ss-action-pill-primary">
+          Reserve Free Intro
+        </a>
+        <a href="/how-class-works" class="ss-action-pill ss-action-pill-outline">
+          See How Class Works
+        </a>
+      </div>
+      <p class="small text-muted mt-3 mb-0">
+        Questions first? Text Sandy directly at <a href="tel:+19177368649" class="text-decoration-underline text-muted">+1 (917) 736-8649</a>.
+      </p>
+    </section>
+  </div>
 </main>
 
   

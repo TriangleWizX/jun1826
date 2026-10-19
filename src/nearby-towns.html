@@ -3,12 +3,112 @@ layout: layouts/base.njk
 title: "Nearby BJJ Classes | Tannersville, Hunter, Windham"
 description: "Find Brazilian Jiu-Jitsu classes near Tannersville, Hunter, Windham, Haines Falls, and Catskills towns. Plan your Free First Visit."
 canonicalUrl: "https://senseisandy.com/nearby-towns"
-bodyClass: "ss-page ss-page-bjj-classes ss-page-nearby-towns"
+bodyClass: "ss-page ss-page-bjj-classes ss-page-nearby-towns page-near"
 extraCss:
   - "/assets/css/high-end-near.css"
   - "/assets/css/pages/near.css"
 permalink: "/nearby-towns.html"
 ---
+<style>
+/* Scoped styles for nearby towns directory bento and interactive FAQs */
+.nearby-faq-details {
+  border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  padding: 1.35rem 0;
+}
+.nearby-faq-details:first-of-type {
+  padding-top: 0.5rem;
+}
+.nearby-faq-details:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0.5rem;
+}
+.nearby-faq-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-body, "Lexend", system-ui, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--nearby-ink, #362B24);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.nearby-faq-summary::-webkit-details-marker {
+  display: none;
+}
+.nearby-faq-summary::marker {
+  display: none;
+}
+.nearby-faq-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-green, #116A42);
+  font-size: 1.15rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1), background-color 0.25s ease, color 0.25s ease;
+}
+.nearby-faq-details[open] .nearby-faq-toggle {
+  transform: rotate(45deg);
+  background: var(--ss-green, #116A42);
+  color: #ffffff;
+}
+.nearby-faq-content {
+  padding-top: 0.85rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+}
+.ss-corridor-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+}
+.ss-corridor-header:first-of-type {
+  margin-top: 2rem;
+}
+.ss-corridor-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.15rem);
+  line-height: 1.1;
+  color: var(--nearby-ink, #362B24);
+  margin: 0;
+}
+.ss-corridor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.09);
+  color: var(--ss-green, #116A42);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ss-nearby-town-card strong span {
+  font-size: 0.82rem;
+  color: var(--ss-muted, #4F433C);
+  font-weight: 500;
+  margin-top: 0.2rem;
+  display: block;
+}
+</style>
+
 <nav class="container py-3 small fw-semibold" aria-label="Breadcrumb">
   <a href="/">Home</a>
   <span aria-hidden="true">›</span>
@@ -16,162 +116,465 @@ permalink: "/nearby-towns.html"
 </nav>
 
 <main id="main-content" role="main">
-  <section class="ss-near-hero he-section" aria-labelledby="near-title">
-    <div class="container">
-      <p class="he-eyebrow">Catskills BJJ Community</p>
-      <h1 id="near-title">Find a Coached BJJ Class Near Tannersville</h1>
-      <p class="lead">Families across the mountaintop travel to Studios on Main in Tannersville for calm, beginner-friendly jiu-jitsu training.</p>
-      <p>Whether you live in Hunter, Windham, Haines Falls, or down the mountain in Palenville or Catskill, our doors are open for your first visit.</p>
-      <div class="ss-near-hero__actions">
-        <a class="he-btn-wrapper" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a>
-        <a class="he-btn-wrapper" href="{{ contact.smsHref }}">Text Sandy</a>
+  <!-- 1. Hero Section -->
+  <section class="ss-near-hero ss-nearby-hero he-section" aria-labelledby="near-title">
+    <div class="container he-reveal">
+      <div class="he-split-left">
+        <span class="he-eyebrow"><i class="bi bi-geo-alt me-1"></i> Catskills Mountain Community</span>
+        <h1 id="near-title">Find a Coached BJJ Class Near Tannersville</h1>
+        <p class="lead">Families across the mountaintop travel to Studios on Main in Tannersville for calm, beginner-friendly jiu-jitsu training.</p>
+        <p class="text-muted" style="max-width: 44rem; font-size: 1.05rem; line-height: 1.6;">Whether you live in Hunter, Windham, Haines Falls, or down the mountain in Palenville or Catskill, our doors are open for your first coached visit.</p>
+        <div class="ss-near-hero__actions">
+          <a class="he-btn-wrapper" href="/free-bjj-intro-tannersville-ny#booking-flow">
+            <span>Reserve Free Intro</span>
+            <span aria-hidden="true" class="he-btn-icon-circle"><i class="bi bi-arrow-right-short"></i></span>
+          </a>
+          <a class="he-btn-wrapper he-btn-wrapper--secondary" style="background: transparent; border: 1px solid var(--ss-ink); color: var(--ss-ink);" href="{{ contact.smsHref }}">
+            <span>Text Sandy</span>
+            <span aria-hidden="true" class="he-btn-icon-circle" style="background: rgba(54, 43, 36, 0.08); color: var(--ss-ink);"><i class="bi bi-chat-text"></i></span>
+          </a>
+        </div>
+        <nav class="program-hero__quick-links mt-3" aria-label="Class and directions quick links">
+          <a class="program-hero__chip" href="/schedule"><i class="bi bi-calendar3 me-1"></i> Class Schedule</a>
+          <a class="program-hero__chip" href="/bjj-tannersville-ny-directions"><i class="bi bi-compass me-1"></i> Directions &amp; Parking</a>
+          <a class="program-hero__chip" href="/bjj-classes"><i class="bi bi-collection me-1"></i> Full Town Directory</a>
+        </nav>
       </div>
-      <p class="mt-3"><a href="/schedule">See class times</a> · <a href="/bjj-tannersville-ny-directions">Get directions</a></p>
     </div>
   </section>
 
-  <section class="ss-near-section he-section" aria-labelledby="class-title">
-    <div class="container">
-      <h2 id="class-title">Pick Your Training Lane</h2>
-      <p>We offer dedicated programs structured for specific age groups and fitness backgrounds:</p>
+  <!-- 2. Training Lanes Section (Double-Bezel Cards) -->
+  <section class="ss-near-section ss-nearby-lanes he-section" aria-labelledby="lanes-title">
+    <div class="container he-reveal">
+      <div class="ss-section-heading">
+        <span class="he-eyebrow">Training Lanes</span>
+        <h2 id="lanes-title">Pick Your Training Lane</h2>
+        <p class="lead">Dedicated programs structured for specific age groups and fitness backgrounds. Every class begins with cooperative pacing from day one.</p>
+      </div>
       <div class="row g-4 mt-2">
+        <!-- Kids BJJ -->
         <div class="col-md-4">
-          <div class="p-3 bg-light rounded h-100">
-            <h3><a href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></h3>
-            <p>Ages {{ programs.kids.ageRange }}. Structured movement games that build balance, coordination, body awareness, and respectful listening habits.</p>
+          <div class="he-outer-shell ss-nearby-lane-shell ss-nearby-lane-shell--kids h-100">
+            <a class="he-inner-core ss-nearby-lane-card" href="/bjj-classes/kids-tannersville-ny">
+              <span class="he-eyebrow mb-2">Ages {{ programs.kids.ageRange }}</span>
+              <strong class="h4 mb-2">Kids BJJ</strong>
+              <p>Structured movement games that build balance, coordination, body awareness, and respectful listening habits in a fun, positive space.</p>
+              <span class="mt-3 text-success fw-bold small d-inline-flex align-items-center">Explore Kids Classes <i class="bi bi-arrow-right ms-1"></i></span>
+            </a>
           </div>
         </div>
+        <!-- Teens BJJ -->
         <div class="col-md-4">
-          <div class="p-3 bg-light rounded h-100">
-            <h3><a href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></h3>
-            <p>Ages {{ programs.teens.ageRange }}. Grounded, safe martial arts instruction focused on de-escalation, posture control, and physical resilience.</p>
+          <div class="he-outer-shell ss-nearby-lane-shell ss-nearby-lane-shell--teens h-100">
+            <a class="he-inner-core ss-nearby-lane-card" href="/bjj-classes/teens-tannersville-ny">
+              <span class="he-eyebrow mb-2">Ages {{ programs.teens.ageRange }}</span>
+              <strong class="h4 mb-2">Teens BJJ</strong>
+              <p>Grounded, safe martial arts instruction focused on de-escalation, posture control, and genuine physical resilience with positive partner teamwork.</p>
+              <span class="mt-3 text-success fw-bold small d-inline-flex align-items-center">Explore Teens Classes <i class="bi bi-arrow-right ms-1"></i></span>
+            </a>
           </div>
         </div>
+        <!-- Adult BJJ -->
         <div class="col-md-4">
-          <div class="p-3 bg-light rounded h-100">
-            <h3><a href="/bjj-classes/adults-tannersville-ny">Adult BJJ</a></h3>
-            <p>Coached beginner fundamentals, gi and no-gi technique, and cooperative partner sparring suited for busy adults and working parents.</p>
+          <div class="he-outer-shell ss-nearby-lane-shell ss-nearby-lane-shell--adults h-100">
+            <a class="he-inner-core ss-nearby-lane-card" href="/bjj-classes/adults-tannersville-ny">
+              <span class="he-eyebrow mb-2">Adults &amp; Parents</span>
+              <strong class="h4 mb-2">Adult BJJ</strong>
+              <p>Beginner fundamentals, gi and no-gi technique, and cooperative partner sparring suited for busy adults and working parents.</p>
+              <span class="mt-3 text-success fw-bold small d-inline-flex align-items-center">Explore Adult Classes <i class="bi bi-arrow-right ms-1"></i></span>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ss-near-section he-section" aria-labelledby="town-title">
-    <div class="container">
-      <h2 id="town-title">Explore Class Details by Town</h2>
-      <p>Learn more about travel times and community routines from your neighborhood:</p>
-      <div class="row g-3 mt-2">
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/bjj-classes/tannersville-ny">Tannersville</a></h4>
-            <p class="small text-muted mb-0">Our home studio on Main Street.</p>
-          </div>
+  <!-- 3. Comprehensive 4-Corridor Regional Travel Bento Grid -->
+  <section class="ss-near-section ss-nearby-towns-list he-section" aria-labelledby="corridors-title">
+    <div class="container he-reveal">
+      <div class="ss-section-heading">
+        <span class="he-eyebrow">Regional Travel Guide</span>
+        <h2 id="corridors-title">Explore 32 Catskills Towns by Corridor</h2>
+        <p class="lead">Our mountaintop studio welcomes students across Greene, Ulster, Delaware, and Schoharie counties. Select your town below for local drive times, scenic routes, and class schedules:</p>
+      </div>
+
+      <!-- Corridor 1: Mountaintop Core (0–10 mins drive) -->
+      <div class="ss-corridor-header">
+        <div>
+          <h3 class="ss-corridor-title">Corridor 1: Mountaintop Core</h3>
+          <p class="text-muted small mb-0">The immediate mountaintop surrounding our second-floor studio on Main Street.</p>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/bjj-classes/hunter-ny">Hunter</a></h4>
-            <p class="small text-muted mb-0">5 minutes along Route 23A.</p>
-          </div>
+        <span class="ss-corridor-badge"><i class="bi bi-geo-alt"></i> 0–10 mins drive</span>
+      </div>
+      <div class="ss-nearby-town-grid">
+        <!-- Tannersville -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/tannersville-ny">
+            <span class="he-eyebrow">Home Studio &middot; 0 mins</span>
+            <strong>Tannersville <span>Home studio on Main Street</span></strong>
+            <p>Our home studio on Main Street in downtown Tannersville. Second-floor sunlit mats with easy village parking.</p>
+          </a>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/bjj-classes/haines-falls-ny">Haines Falls</a></h4>
-            <p class="small text-muted mb-0">3 minutes east toward the falls.</p>
-          </div>
+        <!-- Hunter -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/hunter-ny">
+            <span class="he-eyebrow">5 mins &middot; Route 23A West</span>
+            <strong>Hunter <span>5 mins via Route 23A West</span></strong>
+            <p>A quick 5-minute drive east on Route 23A directly into the village. Ideal for local families and mountain staff.</p>
+          </a>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/bjj-classes/windham-ny">Windham</a></h4>
-            <p class="small text-muted mb-0">12 minutes via Route 296.</p>
-          </div>
+        <!-- Haines Falls -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/haines-falls-ny">
+            <span class="he-eyebrow">3 mins &middot; Route 23A East</span>
+            <strong>Haines Falls <span>3 mins via Route 23A East</span></strong>
+            <p>Just 3 minutes west along Route 23A toward North-South Lake. The closest neighborhood to our studio.</p>
+          </a>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/bjj-classes/palenville-ny">Palenville</a></h4>
-            <p class="small text-muted mb-0">Convenient drive up Kaaterskill Clove.</p>
-          </div>
+        <!-- Elka Park -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/elka-park-ny">
+            <span class="he-eyebrow">8 mins &middot; Platte Clove Rd</span>
+            <strong>Elka Park <span>8 mins via Platte Clove Rd</span></strong>
+            <p>An 8-minute scenic drive through the valley via Platte Clove Road and Route 23A right to Main Street.</p>
+          </a>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/bjj-classes/cairo-ny">Cairo</a></h4>
-            <p class="small text-muted mb-0">Scenic mountaintop commute.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/bjj-classes/catskill-ny">Catskill</a></h4>
-            <p class="small text-muted mb-0">Direct route via NY-23A West.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="p-3 border rounded text-center">
-            <h4><a href="/rural-bjj-catskills">Rural Catskills</a></h4>
-            <p class="small text-muted mb-0">Our guide to mountain training culture.</p>
-          </div>
+        <!-- Lanesville -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/lanesville-ny">
+            <span class="he-eyebrow">10 mins &middot; Route 214</span>
+            <strong>Lanesville <span>10 mins via Route 214</span></strong>
+            <p>10 minutes north along Route 214 through Stony Clove directly into downtown Tannersville.</p>
+          </a>
         </div>
       </div>
 
-      <div class="mt-4 p-4 bg-light rounded border">
-        <h3 class="h5 fw-bold mb-3">All Catskills Towns We Welcome</h3>
-        <p class="small text-muted mb-3">Find class details, driving times, and parking notes for every community across the mountaintop, Greene County, Ulster County, Delaware County, and Schoharie County:</p>
-        <div class="d-flex flex-wrap gap-2">
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/tannersville-ny">Tannersville</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/hunter-ny">Hunter</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/haines-falls-ny">Haines Falls</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/elka-park-ny">Elka Park</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/lanesville-ny">Lanesville</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/windham-ny">Windham</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/maplecrest-ny">Maplecrest</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/lexington-ny">Lexington</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/ashland-ny">Ashland</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/prattsville-ny">Prattsville</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/palenville-ny">Palenville</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/cairo-ny">Cairo</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/round-top-ny">Round Top</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/purling-ny">Purling</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/catskill-ny">Catskill</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/leeds-ny">Leeds</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/acra-ny">Acra</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/durham-ny">Durham</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/greenville-ny">Greenville</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/coxsackie-ny">Coxsackie</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/phoenicia-ny">Phoenicia</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/shandaken-ny">Shandaken</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/boiceville-ny">Boiceville</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/shokan-ny">Shokan</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/olive-ny">Olive</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/woodstock-ny">Woodstock</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/saugerties-ny">Saugerties</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/grand-gorge-ny">Grand Gorge</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/roxbury-ny">Roxbury</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/gilboa-ny">Gilboa</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/stamford-ny">Stamford</a>
-          <a class="btn btn-sm btn-outline-secondary" href="/bjj-classes/schoharie-ny">Schoharie</a>
+      <!-- Corridor 2: Route 296 & Route 23 Northern Corridor (10–20 mins drive) -->
+      <div class="ss-corridor-header">
+        <div>
+          <h3 class="ss-corridor-title">Corridor 2: Route 296 &amp; Route 23 Northern Corridor</h3>
+          <p class="text-muted small mb-0">Northern mountaintop towns connecting across the Batavia Kill valley.</p>
         </div>
-        <div class="mt-3">
-          <a class="btn btn-link text-decoration-none p-0 fw-semibold" href="/bjj-classes">Open full town directory with travel times &rarr;</a>
+        <span class="ss-corridor-badge"><i class="bi bi-geo-alt"></i> 10–20 mins drive</span>
+      </div>
+      <div class="ss-nearby-town-grid">
+        <!-- Windham -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/windham-ny">
+            <span class="he-eyebrow">12 mins &middot; Route 296</span>
+            <strong>Windham <span>12 mins via Route 296</span></strong>
+            <p>12 minutes south along scenic Route 296 connecting directly to Route 23A East. Easy family evening commute.</p>
+          </a>
+        </div>
+        <!-- Maplecrest -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/maplecrest-ny">
+            <span class="he-eyebrow">14 mins &middot; Route 296 / CR 40</span>
+            <strong>Maplecrest <span>14 mins via Route 296 / CR 40</span></strong>
+            <p>14 minutes through the Batavia Kill valley via County Route 40 and Route 296 straight to Tannersville.</p>
+          </a>
+        </div>
+        <!-- Ashland -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/ashland-ny">
+            <span class="he-eyebrow">18 mins &middot; Route 23 West</span>
+            <strong>Ashland <span>18 mins via Route 23 West</span></strong>
+            <p>18 minutes east via Route 23 and Route 296 South right to our downtown studio doors.</p>
+          </a>
+        </div>
+        <!-- Lexington -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/lexington-ny">
+            <span class="he-eyebrow">15 mins &middot; Route 42 / 23A</span>
+            <strong>Lexington <span>15 mins via Route 42 / 23A</span></strong>
+            <p>15 minutes east along Route 23A through Hunter into Tannersville. Direct mountaintop highway drive.</p>
+          </a>
+        </div>
+        <!-- Prattsville -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/prattsville-ny">
+            <span class="he-eyebrow">22 mins &middot; Route 23 West</span>
+            <strong>Prattsville <span>22 mins via Route 23 West</span></strong>
+            <p>22 minutes east via Route 23 and Route 23A across the mountaintop into our welcoming training space.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Corridor 3: Route 23A Valley Corridor & Greene County (15–30 mins drive) -->
+      <div class="ss-corridor-header">
+        <div>
+          <h3 class="ss-corridor-title">Corridor 3: Route 23A Valley Corridor &amp; Greene County</h3>
+          <p class="text-muted small mb-0">Valley communities traveling up scenic Kaaterskill Clove along Route 23A.</p>
+        </div>
+        <span class="ss-corridor-badge"><i class="bi bi-geo-alt"></i> 15–35 mins drive</span>
+      </div>
+      <div class="ss-nearby-town-grid">
+        <!-- Palenville -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/palenville-ny">
+            <span class="he-eyebrow">12 mins &middot; Kaaterskill Clove</span>
+            <strong>Palenville <span>12 mins down Kaaterskill Clove</span></strong>
+            <p>12 minutes up the scenic mountain pass on Route 23A West. The gateway community to the mountaintop.</p>
+          </a>
+        </div>
+        <!-- Cairo -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/cairo-ny">
+            <span class="he-eyebrow">20 mins &middot; Route 23A East</span>
+            <strong>Cairo <span>20 mins via Route 23A East</span></strong>
+            <p>20 minutes up the mountain via Route 23 and Route 23A. A straightforward trip for evening training.</p>
+          </a>
+        </div>
+        <!-- Round Top -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/round-top-ny">
+            <span class="he-eyebrow">22 mins &middot; Route 32</span>
+            <strong>Round Top <span>22 mins via Route 32</span></strong>
+            <p>22 minutes via Route 32 and Route 23A up the clove into downtown Tannersville.</p>
+          </a>
+        </div>
+        <!-- Purling -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/purling-ny">
+            <span class="he-eyebrow">24 mins &middot; CR 24</span>
+            <strong>Purling <span>24 mins via CR 24</span></strong>
+            <p>24 minutes through Cairo and up Route 23A to our second-floor studio on Main Street.</p>
+          </a>
+        </div>
+        <!-- Catskill -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/catskill-ny">
+            <span class="he-eyebrow">28 mins &middot; Route 23A West</span>
+            <strong>Catskill <span>28 mins via Route 23A West</span></strong>
+            <p>28 minutes direct along Route 23A West from the Hudson River up into fresh mountain air.</p>
+          </a>
+        </div>
+        <!-- Leeds -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/leeds-ny">
+            <span class="he-eyebrow">25 mins &middot; Route 23B</span>
+            <strong>Leeds <span>25 mins via Route 23B</span></strong>
+            <p>25 minutes via Route 23B and Route 23A West into the mountaintop village center.</p>
+          </a>
+        </div>
+        <!-- Acra -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/acra-ny">
+            <span class="he-eyebrow">22 mins &middot; Route 23</span>
+            <strong>Acra <span>22 mins via Route 23</span></strong>
+            <p>22 minutes via Route 23 to Route 296 South into Tannersville. Simple commute for local families.</p>
+          </a>
+        </div>
+        <!-- Durham -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/durham-ny">
+            <span class="he-eyebrow">26 mins &middot; Route 145</span>
+            <strong>Durham <span>26 mins via Route 145</span></strong>
+            <p>26 minutes south via Route 145 and Route 23 to Route 296 or Route 23A.</p>
+          </a>
+        </div>
+        <!-- Greenville -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/greenville-ny">
+            <span class="he-eyebrow">30 mins &middot; Route 32</span>
+            <strong>Greenville <span>30 mins via Route 32</span></strong>
+            <p>30 minutes south via Route 32 to Route 23A West up the clove into Tannersville.</p>
+          </a>
+        </div>
+        <!-- Coxsackie -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/coxsackie-ny">
+            <span class="he-eyebrow">35 mins &middot; I-87 / 23A</span>
+            <strong>Coxsackie <span>35 mins via I-87 / 23A</span></strong>
+            <p>35 minutes via I-87 South or Route 9W to Route 23A West into our mountaintop sanctuary.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Corridor 4: Route 214 / 28 Ulster & Western Hubs (15–35 mins drive) -->
+      <div class="ss-corridor-header">
+        <div>
+          <h3 class="ss-corridor-title">Corridor 4: Route 214 / 28 Ulster &amp; Western Hubs</h3>
+          <p class="text-muted small mb-0">Ulster County and Western Catskills communities connecting via Route 214 and Route 28.</p>
+        </div>
+        <span class="ss-corridor-badge"><i class="bi bi-geo-alt"></i> 15–45 mins drive</span>
+      </div>
+      <div class="ss-nearby-town-grid">
+        <!-- Phoenicia -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/phoenicia-ny">
+            <span class="he-eyebrow">15 mins &middot; Route 214</span>
+            <strong>Phoenicia <span>15 mins south via Route 214</span></strong>
+            <p>15 minutes north through Stony Clove Notch along Route 214 directly to Main Street in Tannersville.</p>
+          </a>
+        </div>
+        <!-- Shandaken -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/shandaken-ny">
+            <span class="he-eyebrow">20 mins &middot; Route 28</span>
+            <strong>Shandaken <span>20 mins via Route 28</span></strong>
+            <p>20 minutes east on Route 28 to Phoenicia, then north up Route 214 to our studio.</p>
+          </a>
+        </div>
+        <!-- Boiceville -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/boiceville-ny">
+            <span class="he-eyebrow">25 mins &middot; Route 28 East</span>
+            <strong>Boiceville <span>25 mins via Route 28 East</span></strong>
+            <p>25 minutes west via Route 28 to Route 214 North through the scenic clove into Tannersville.</p>
+          </a>
+        </div>
+        <!-- Shokan -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/shokan-ny">
+            <span class="he-eyebrow">28 mins &middot; Route 28 East</span>
+            <strong>Shokan <span>28 mins via Route 28 East</span></strong>
+            <p>28 minutes along the Ashokan Reservoir via Route 28 and Route 214 North to our mats.</p>
+          </a>
+        </div>
+        <!-- Olive -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/olive-ny">
+            <span class="he-eyebrow">30 mins &middot; Route 28A</span>
+            <strong>Olive <span>30 mins via Route 28A</span></strong>
+            <p>30 minutes northwest via Route 28A and Route 214 North into downtown Tannersville.</p>
+          </a>
+        </div>
+        <!-- Woodstock -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/woodstock-ny">
+            <span class="he-eyebrow">30 mins &middot; Route 212</span>
+            <strong>Woodstock <span>30 mins via Route 212</span></strong>
+            <p>30 minutes via Route 212 to Route 214 or Route 23A. A popular route for artists and families.</p>
+          </a>
+        </div>
+        <!-- Saugerties -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/saugerties-ny">
+            <span class="he-eyebrow">30 mins &middot; Route 212 / 32</span>
+            <strong>Saugerties <span>30 mins via Route 212 / 32</span></strong>
+            <p>30 minutes west via Route 212 or Route 32 to Route 23A West into Tannersville.</p>
+          </a>
+        </div>
+        <!-- Grand Gorge -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/grand-gorge-ny">
+            <span class="he-eyebrow">25 mins &middot; Route 23 West</span>
+            <strong>Grand Gorge <span>25 mins via Route 23 West</span></strong>
+            <p>25 minutes east along Route 23 to Route 23A into downtown Tannersville.</p>
+          </a>
+        </div>
+        <!-- Roxbury -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/roxbury-ny">
+            <span class="he-eyebrow">28 mins &middot; Route 30</span>
+            <strong>Roxbury <span>28 mins via Route 30</span></strong>
+            <p>28 minutes via Route 30 to Route 23A East directly to Studios on Main.</p>
+          </a>
+        </div>
+        <!-- Gilboa -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/gilboa-ny">
+            <span class="he-eyebrow">30 mins &middot; Route 30 North</span>
+            <strong>Gilboa <span>30 mins via Route 30 North</span></strong>
+            <p>30 minutes via Route 30 and Route 23/23A East across the mountaintop ridge.</p>
+          </a>
+        </div>
+        <!-- Stamford -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/stamford-ny">
+            <span class="he-eyebrow">35 mins &middot; Route 23</span>
+            <strong>Stamford <span>35 mins via Route 23</span></strong>
+            <p>35 minutes east via Route 23 to Route 296 and Route 23A into Tannersville.</p>
+          </a>
+        </div>
+        <!-- Schoharie -->
+        <div class="he-outer-shell ss-nearby-town-shell">
+          <a class="he-inner-core ss-nearby-town-card" href="/bjj-classes/schoharie-ny">
+            <span class="he-eyebrow">45 mins &middot; Route 30</span>
+            <strong>Schoharie <span>45 mins via Route 30</span></strong>
+            <p>45 minutes south via Route 30 to Route 23A East to our welcoming mountaintop studio.</p>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ss-near-section he-section bg-light" aria-labelledby="faq-title">
-    <div class="container">
-      <h2 id="faq-title">Visiting From Neighboring Towns</h2>
-      <details class="p-3 bg-white rounded mb-2">
-        <summary class="fw-semibold">Is there parking at the studio?</summary>
-        <p class="mt-2 mb-0">Yes. Convenient street parking is available along Main Street, with dedicated public parking lots directly behind Studios on Main.</p>
-      </details>
-      <details class="p-3 bg-white rounded mb-2">
-        <summary class="fw-semibold">Can families train on the same evening?</summary>
-        <p class="mt-2 mb-0">Yes. Youth classes run in the late afternoon, followed immediately by adult sessions, making it easy for parents and children to share the trip.</p>
-      </details>
-      <div class="mt-4 p-4 bg-white rounded text-center">
-        <h3>Reserve Your Free First Visit</h3>
-        <p>Come meet Sensei Sandy, take a tour of our clean studio, and experience beginner-friendly jiu-jitsu.</p>
-        <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Free Intro</a>
-        <a class="btn btn-outline-primary" href="{{ contact.smsHref }}">Text Sandy</a>
+  <!-- 4. Visiting from Neighboring Towns FAQ (Double-Bezel Card with Styled Details) -->
+  <section class="ss-near-section he-section" aria-labelledby="faq-title">
+    <div class="container he-reveal">
+      <div class="ss-section-heading">
+        <span class="he-eyebrow">Travel &amp; Planning</span>
+        <h2 id="faq-title">Visiting From Neighboring Towns</h2>
+        <p class="lead">Helpful details on parking, family class schedules, and mountain road conditions for your trip to Tannersville.</p>
+      </div>
+
+      <div class="he-outer-shell mt-3">
+        <div class="he-inner-core p-4 p-md-5">
+          <!-- FAQ 1: Parking -->
+          <details class="nearby-faq-details">
+            <summary class="nearby-faq-summary">
+              <span>Where should I park when visiting Studios on Main in Tannersville?</span>
+              <span class="nearby-faq-toggle" aria-hidden="true">
+                <i class="bi bi-plus-lg"></i>
+              </span>
+            </summary>
+            <div class="nearby-faq-content">
+              <p class="mb-0">Free street parking is available along Main Street directly in front of the studio entrance. In addition, a dedicated free municipal parking lot is located directly behind Studios on Main, with an easy 30-second walkway straight to our front entrance.</p>
+            </div>
+          </details>
+
+          <!-- FAQ 2: Family Evening Scheduling -->
+          <details class="nearby-faq-details">
+            <summary class="nearby-faq-summary">
+              <span>Can parents and children train on the same evening?</span>
+              <span class="nearby-faq-toggle" aria-hidden="true">
+                <i class="bi bi-plus-lg"></i>
+              </span>
+            </summary>
+            <div class="nearby-faq-content">
+              <p class="mb-0">Yes. Our schedule is designed with mountain families in mind. Youth classes (Kids and Teens) run in the late afternoon from 5:00 PM, followed directly by adult fundamental sessions at 6:00 PM. Parents can relax in our comfortable seating area during youth class, or join the mats right afterward.</p>
+            </div>
+          </details>
+
+          <!-- FAQ 3: Winter Weather/Roads -->
+          <details class="nearby-faq-details">
+            <summary class="nearby-faq-summary">
+              <span>What happens if mountain weather or winter road conditions change?</span>
+              <span class="nearby-faq-toggle" aria-hidden="true">
+                <i class="bi bi-plus-lg"></i>
+              </span>
+            </summary>
+            <div class="nearby-faq-content">
+              <p class="mb-0">Catskills mountain weather can shift quickly. If winter road conditions, snow, or travel advisories affect your drive, simply text Sandy at +1 (917) 736-8649. We make it completely stress-free to reschedule your visit to any upcoming session that fits your family.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Conversion Bridge (Double-Bezel Card) -->
+  <section class="ss-near-section ss-nearby-final he-section" aria-labelledby="cta-heading">
+    <div class="container he-reveal">
+      <div class="he-outer-shell ss-nearby-final-shell">
+        <div class="he-inner-core ss-nearby-final-card">
+          <div class="ss-nearby-final-content">
+            <span class="he-eyebrow">Start Calm &middot; Train Smart</span>
+            <h2 id="cta-heading">Reserve Your Free Intro Class</h2>
+            <p>Your first class is a coached learning experience with cooperative partner pacing. Whether you drive from Hunter, Windham, Tannersville, or up from the valley, our doors are open for your first visit.</p>
+          </div>
+          <div class="ss-nearby-final-actions">
+            <a class="he-btn-wrapper m-0" href="/free-bjj-intro-tannersville-ny#booking-flow">
+              <span>Reserve Free Intro</span>
+              <span aria-hidden="true" class="he-btn-icon-circle"><i class="bi bi-arrow-right-short"></i></span>
+            </a>
+            <a class="he-btn-wrapper m-0" style="background: transparent; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff;" href="{{ contact.smsHref }}">
+              <span>Text Sandy</span>
+              <span aria-hidden="true" class="he-btn-icon-circle" style="background: rgba(255, 255, 255, 0.2); color: #ffffff;"><i class="bi bi-chat-text"></i></span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
