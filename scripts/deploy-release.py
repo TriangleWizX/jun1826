@@ -5,7 +5,7 @@ import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package')
-DEPLOYABLE_ROOTS = ('_includes/', 'assets/', 'winter-rank-drop/', 'admin/', 'athlete-cross-training/', 'annual-track/', 'bjj-classes/', 'bjj-glossary/', 'bjj-videos/', 'blog/', 'clean/', 'members/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'reviews-village/', 'research/', 'scribners-staff-reset-pass/', 'social/', 'instagram/', 'snippets/', 'sources/', 'schedule/', 'tactical-longevity/', 'videos/', 'free-bjj-intro-tannersville-ny/', 'white-belt-foundations/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/', 'free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/', 'school-families-jiu-jitsu/', 'visit/', 'after-school/')
+DEPLOYABLE_ROOTS = ('_includes/', 'assets/', 'winter-rank-drop/', 'admin/', 'athlete-cross-training/', 'annual-track/', 'bjj-classes/', 'bjj-glossary/', 'bjj-videos/', 'blog/', 'clean/', 'members/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'reviews-village/', 'research/', 'scribners-staff-reset-pass/', 'social/', 'instagram/', 'snippets/', 'sources/', 'schedule/', 'tactical-longevity/', 'videos/', 'free-bjj-intro-tannersville-ny/', 'white-belt-foundations/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/', 'free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/', 'school-families-jiu-jitsu/', 'visit/', 'after-school/', 'deer-mountain-inn/', 'phoenicia-diner/')
 ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scribners.html', 'scribners-jiu-jitsu.html', 'scribners-thank-you.html', 'partners-hospitality-hunter-windham.html', 'partners-wellness-pt-referrals.html', 'community-partners.html', 'elite-concierge.html', 'adult-private-coaching-intensive.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'daily-checkin.html', 'manifest-daily-checkin.json', 'sw-daily-checkin.js', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'local-bjj-tournaments-for-families.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html', 'schedule.html', 'camp-clinics.html', 'summer-academy.html', 'black-belt-concierge.html', 'inclusion.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
 ROOT_FILES.add('womens-jiu-jitsu-tannersville.html')
@@ -14,6 +14,8 @@ ROOT_FILES.add('halloween-spooktacular.html')
 ROOT_FILES.add('llms.txt')
 ROOT_FILES.add('pricing.md')
 ROOT_FILES.add('school-families-jiu-jitsu.html')
+ROOT_FILES.add('deer-mountain-inn.html')
+ROOT_FILES.add('phoenicia-diner.html')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
                    'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml')
 RESEARCH_RECORD_OUTPUTS = (
@@ -270,6 +272,22 @@ def changed_outputs(commit):
                 candidate = ROOT / 'dist' / 'school-families-jiu-jitsu' / 'index.html'
             elif name == 'src/after-school.html':
                 candidate = ROOT / 'dist' / 'after-school' / 'index.html'
+            elif name == 'src/deer-mountain-inn.html':
+                html_c = ROOT / 'dist' / 'deer-mountain-inn.html'
+                dir_c = ROOT / 'dist' / 'deer-mountain-inn' / 'index.html'
+                if html_c.is_file():
+                    outputs.add((html_c, 'deer-mountain-inn.html'))
+                if dir_c.is_file():
+                    outputs.add((dir_c, 'deer-mountain-inn/index.html'))
+                continue
+            elif name == 'src/phoenicia-diner.html':
+                html_c = ROOT / 'dist' / 'phoenicia-diner.html'
+                dir_c = ROOT / 'dist' / 'phoenicia-diner' / 'index.html'
+                if html_c.is_file():
+                    outputs.add((html_c, 'phoenicia-diner.html'))
+                if dir_c.is_file():
+                    outputs.add((dir_c, 'phoenicia-diner/index.html'))
+                continue
             elif name == 'src/blog/beginner-friendly-bjj-tannersville-links/index.html':
                 candidate = ROOT / 'dist' / 'blog' / 'beginner-friendly-bjj-tannersville' / 'index.html'
             elif name == 'src/_includes/schedule-master.html':
