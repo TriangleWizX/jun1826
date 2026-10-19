@@ -82,16 +82,26 @@ jobs:
 
       - name: Deploy changed files
         run: |
+          deploy_commit() {
+            local sha="$1"
+            echo "--- checking deployable changes for $sha"
+            if python3 scripts/deploy-release.py --commit "$sha" --dry-run | grep -q 'payload_files=0'; then
+              echo "Nothing to deploy for $sha (no deployable generated outputs changed)."
+              return 0
+            fi
+            echo "--- deploying $sha"
+            python3 scripts/deploy-release.py --commit "$sha"
+          }
+
           if [ "${{ github.event_name }}" = "push" ]; then
             BEFORE="${{ github.event.before }}"
-            if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
-              python3 scripts/deploy-release.py --commit HEAD
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              deploy_commit HEAD
             else
               for sha in $(git rev-list --reverse "$BEFORE"..HEAD); do
-                echo "--- deploying $sha"
-                python3 scripts/deploy-release.py --commit "$sha"
+                deploy_commit "$sha"
               done
             fi
           else
-            python3 scripts/deploy-release.py --commit HEAD
+            deploy_commit HEAD
           fi
