@@ -8,87 +8,336 @@ permalink: "/programs.html"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/tannersville.css"
+  - "/assets/css/high-end-near.css"
 ---
 <main class="ss-main" id="main-content" role="main">
-  <header class="ss-section-premium py-5 mt-4">
+  <!-- HERO SECTION -->
+  <header class="py-4 py-lg-5">
     <div class="container ss-container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-7">
-          <span class="ss-eyebrow">BJJ programs · Tannersville, NY</span>
-          <h1 class="mb-4">Choose a class for you or your family.</h1>
-          <p class="lead-text mb-4">Explore kids, teen, and adult classes. Start with a Free First Visit to meet Sandy, see the room, and plan a first class.</p>
-          <div class="d-flex flex-wrap gap-3 mb-4">
-            <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="programs-hero" data-cta-tier="primary"><span>{{ freeIntro.primaryCtaLabel }}</span></a>
-            <a class="btn-premium btn-premium--secondary" href="{{ contact.smsHref }}"><span>Text Sandy</span></a>
-          </div>
-          <nav class="d-flex flex-wrap gap-3" aria-label="Plan your visit"><a href="/schedule">Current schedule</a><a href="/options-pricing">Plans and prices</a><a href="/bjj-tannersville-ny-directions">Directions</a></nav>
-        </div>
-        <div class="col-lg-5">
-          <div class="db-card p-4">
-            <h2 class="h4">Start with a visit.</h2>
-            <p data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
-            <p class="mb-0">Kids and teens follow their class plan. Adults choose whether to train after the visit.</p>
+      <div class="he-outer-shell p-2 rounded-4 mb-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+        <div class="he-inner-core p-4 p-lg-5 rounded-4 bg-white">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-3" style="background-color: var(--ss-green, #116A42); font-size: 0.825rem; letter-spacing: 0.05em; text-transform: uppercase;">
+                <i class="bi bi-shield-check me-1" aria-hidden="true"></i> BJJ Programs &middot; Tannersville, NY
+              </span>
+              <h1 class="display-5 fw-bold mb-3" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+                Choose a class for you or your family.
+              </h1>
+              <p class="lead mb-4" style="color: var(--ss-muted, #4F433C); line-height: 1.6;">
+                Explore kids, teen, and adult classes. Start with a Free First Visit to meet Sandy, see the room, and plan a first class.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a class="btn btn-lg text-white rounded-pill px-4 fw-bold shadow-sm" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="hero" data-cta-src="programs-hero" data-cta-tier="primary" style="background-color: var(--ss-green, #116A42);">
+                  <span>{{ freeIntro.primaryCtaLabel }}</span> <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-lg btn-outline-dark rounded-pill px-4 fw-bold" href="{{ contact.smsHref }}">
+                  <i class="bi bi-chat-text me-1" aria-hidden="true"></i> <span>Text Sandy</span>
+                </a>
+              </div>
+              <nav class="d-flex flex-wrap gap-2 gap-sm-3 small" aria-label="Plan your visit">
+                <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/schedule" style="background-color: var(--ss-surface2, #F4F1ED);">
+                  <i class="bi bi-calendar3 me-1 text-success" aria-hidden="true"></i> Current schedule
+                </a>
+                <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/options-pricing" style="background-color: var(--ss-surface2, #F4F1ED);">
+                  <i class="bi bi-tag me-1 text-success" aria-hidden="true"></i> Plans and prices
+                </a>
+                <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/bjj-tannersville-ny-directions" style="background-color: var(--ss-surface2, #F4F1ED);">
+                  <i class="bi bi-geo-alt me-1 text-success" aria-hidden="true"></i> Directions &amp; parking
+                </a>
+              </nav>
+            </div>
+            <div class="col-lg-5">
+              <div class="p-4 rounded-4 border" style="background-color: var(--ss-surface2, #F4F1ED); border-color: var(--ss-border, rgba(54,43,36,0.14)) !important;">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-green, #116A42);">Free First Visit</span>
+                  <span class="small text-muted fw-semibold">Coached Orientation</span>
+                </div>
+                <h2 class="h4 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Start with a room tour.</h2>
+                <p class="small text-muted mb-3" data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
+                <p class="small text-muted mb-0">Kids and teens follow their class plan. Adults choose whether to train after the visit.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="program-options-title">
+  <!-- PROGRAM AUDIENCE SELECTION BENTO -->
+  <section class="py-4 py-lg-5" style="background-color: var(--ss-surface2, #F4F1ED);" aria-labelledby="program-options-title">
     <div class="container ss-container">
-      <span class="ss-eyebrow">Find your class</span>
-      <h2 id="program-options-title" class="mb-3">Who is starting?</h2>
-      <p class="lead-text mb-4">Each page explains the first steps for that group. Check the schedule before you plan a visit.</p>
+      <div class="text-center mb-5">
+        <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-2" style="background: var(--ss-slate, #306061); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+          Find Your Class
+        </span>
+        <h2 id="program-options-title" class="display-6 fw-bold" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+          Who is starting on the mats?
+        </h2>
+        <p class="lead mx-auto text-muted" style="max-width: 640px;">
+          Each age group has a dedicated curriculum, calibrated partner pairing, and clear safety steps.
+        </p>
+      </div>
+
       <div class="row g-4">
-        <div class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h4">Kids · {{ programs.kids.ageRange }}</h3><p>Parents can see how a child meets Sandy, learns class rules, and tries a coached activity.</p><p><a href="/bjj-classes/kids-tannersville-ny">Explore the kids class</a></p><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow" data-cta-target="intro" data-cta-lane="kids" data-cta-placement="program-card" data-cta-src="programs-kids">{{ freeIntro.primaryCtaLabel }}</a></article></div>
-        <div class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h4">Teens · {{ programs.teens.ageRange }}</h3><p>Teens and parents can learn what to expect, ask questions, and plan a coached first class.</p><p><a href="/bjj-classes/teens-tannersville-ny">Explore the teen class</a></p><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow" data-cta-target="intro" data-cta-lane="teens" data-cta-placement="program-card" data-cta-src="programs-teens">{{ freeIntro.primaryCtaLabel }}</a></article></div>
-        <div class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h4">Adults · {{ programs.adults.ageRange }}</h3><p>Meet Sandy, talk about your goals, and choose whether to train that day or later.</p><p><a href="/bjj-classes/adults-tannersville-ny">Explore the adult class</a></p><a class="btn btn-outline-primary" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-cta-target="intro" data-cta-lane="adult" data-cta-placement="program-card" data-cta-src="programs-adults">{{ freeIntro.primaryCtaLabel }}</a></article></div>
+        <!-- Kids Program -->
+        <div class="col-md-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill px-3 py-1 text-white fw-bold" style="background: var(--ss-green, #116A42);">
+                  <i class="bi bi-emoji-smile me-1" aria-hidden="true"></i> Kids
+                </span>
+                <span class="small fw-bold text-muted">{{ programs.kids.ageRange }}</span>
+              </div>
+              <h3 class="h4 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+                Youth Foundations
+              </h3>
+              <p class="text-muted small mb-3">
+                Parents can see how a child meets Sandy, learns class rules, and tries a coached activity. Focus on balance, listening, and cooperative partner games.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Coached movement games</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Friendly, supportive partner pairing</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Parents stay and watch throughout</li>
+              </ul>
+              <div class="pt-3 border-top mt-auto">
+                <a class="btn text-white w-100 rounded-pill fw-bold mb-2 py-2" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow" data-cta-target="intro" data-cta-lane="kids" data-cta-placement="program-card" data-cta-src="programs-kids" style="background: var(--ss-green, #116A42);">
+                  {{ freeIntro.primaryCtaLabel }}
+                </a>
+                <a class="d-block text-center small fw-semibold text-decoration-underline" href="/bjj-classes/kids-tannersville-ny" style="color: var(--ss-slate, #306061);">
+                  Explore the kids class &rarr;
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Teens Program -->
+        <div class="col-md-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill px-3 py-1 text-white fw-bold" style="background: var(--ss-slate, #306061);">
+                  <i class="bi bi-lightning-charge me-1" aria-hidden="true"></i> Teens
+                </span>
+                <span class="small fw-bold text-muted">{{ programs.teens.ageRange }}</span>
+              </div>
+              <h3 class="h4 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+                Teen Confidence &amp; Skill
+              </h3>
+              <p class="text-muted small mb-3">
+                Teens and parents can learn what to expect, ask questions, and plan a coached first class. Build calm poise, core athletic resilience, and self-defense leverage.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Real leverage and escape mechanics</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> De-escalation &amp; quiet confidence</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Supportive peer culture</li>
+              </ul>
+              <div class="pt-3 border-top mt-auto">
+                <a class="btn text-white w-100 rounded-pill fw-bold mb-2 py-2" href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow" data-cta-target="intro" data-cta-lane="teens" data-cta-placement="program-card" data-cta-src="programs-teens" style="background: var(--ss-slate, #306061);">
+                  {{ freeIntro.primaryCtaLabel }}
+                </a>
+                <a class="d-block text-center small fw-semibold text-decoration-underline" href="/bjj-classes/teens-tannersville-ny" style="color: var(--ss-slate, #306061);">
+                  Explore the teen class &rarr;
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Adults Program -->
+        <div class="col-md-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill px-3 py-1 text-white fw-bold" style="background: var(--ss-brown, #8B522E);">
+                  <i class="bi bi-person-check me-1" aria-hidden="true"></i> Adults
+                </span>
+                <span class="small fw-bold text-muted">{{ programs.adults.ageRange }}</span>
+              </div>
+              <h3 class="h4 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+                Adult Foundations &amp; Flow
+              </h3>
+              <p class="text-muted small mb-3">
+                Meet Sandy, talk about your goals, and choose whether to train that day or later. Cooperative pacing, thoughtful mechanical leverage, and safe joint-friendly movement.
+              </p>
+              <ul class="list-unstyled small text-muted mb-4 flex-grow-1">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Beginner lane pacing from day one</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Mobility, core strength &amp; stamina</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i> Respectful room with zero pressure</li>
+              </ul>
+              <div class="pt-3 border-top mt-auto">
+                <a class="btn text-white w-100 rounded-pill fw-bold mb-2 py-2" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-cta-target="intro" data-cta-lane="adult" data-cta-placement="program-card" data-cta-src="programs-adults" style="background: var(--ss-brown, #8B522E);">
+                  {{ freeIntro.primaryCtaLabel }}
+                </a>
+                <a class="d-block text-center small fw-semibold text-decoration-underline" href="/bjj-classes/adults-tannersville-ny" style="color: var(--ss-slate, #306061);">
+                  Explore the adult class &rarr;
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="ss-section-premium" aria-labelledby="program-steps-title">
+  <!-- 3-STEP FIRST VISIT PROGRESSION -->
+  <section class="py-4 py-lg-5" aria-labelledby="program-steps-title">
     <div class="container ss-container">
-      <span class="ss-eyebrow">Your first visit</span>
-      <h2 id="program-steps-title" class="mb-3">See the room and plan a first class.</h2>
-      <p class="lead-text mb-4" data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
-      <ol class="row g-4 list-unstyled">
-        <li class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h5">1. Pick a visit time.</h3><p>Choose who is starting on the Free First Visit page.</p></article></li>
-        <li class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h5">2. Meet Sandy.</h3><p>See the room, learn the rules, and talk about your goals.</p></article></li>
-        <li class="col-md-4"><article class="db-card h-100 p-4"><h3 class="h5">3. Plan your class.</h3><p>Sandy confirms the class and helps you choose the next step.</p></article></li>
-      </ol>
-      <p>{{ freeIntro.publicCopy.clothing }}</p>
-      <p class="mb-0">A parent or guardian stays with a child or teen during the youth class.</p>
+      <div class="text-center mb-5">
+        <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-2" style="background: var(--ss-green, #116A42); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+          Your First Visit
+        </span>
+        <h2 id="program-steps-title" class="display-6 fw-bold" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+          See the room and plan a first class.
+        </h2>
+        <p class="lead mx-auto text-muted" style="max-width: 640px;" data-free-intro-copy>
+          {{ freeIntro.publicCopy.overview }}
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white">
+              <div class="badge rounded-circle text-white fw-bold mb-3 d-inline-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem; background: var(--ss-green, #116A42); font-size: 1.1rem;">
+                1
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Pick a visit time.</h3>
+              <p class="text-muted small mb-0">Choose who is starting on the Free First Visit page. Pick a day that matches your family schedule.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white">
+              <div class="badge rounded-circle text-white fw-bold mb-3 d-inline-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem; background: var(--ss-slate, #306061); font-size: 1.1rem;">
+                2
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Meet Sandy.</h3>
+              <p class="text-muted small mb-0">See the clean studio mats, learn tapping and reset rules, and talk with Sandy about your personal goals.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white">
+              <div class="badge rounded-circle text-white fw-bold mb-3 d-inline-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem; background: var(--ss-brown, #8B522E); font-size: 1.1rem;">
+                3
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Plan your class.</h3>
+              <p class="text-muted small mb-0">Sandy confirms the class time and helps you choose the next step. Wear comfortable athletic clothes.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-light border rounded-4 p-3 mt-4 text-center" style="background: var(--ss-surface2, #F4F1ED); border-color: var(--ss-border, rgba(54,43,36,0.14)) !important;">
+        <p class="mb-0 small text-muted">
+          {{ freeIntro.publicCopy.clothing }} &bull; A parent or guardian stays with a child or teen during the youth class.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="ss-section-premium bg-light" aria-labelledby="program-questions-title">
-    <div class="container ss-container" style="max-width: 800px;">
-      <span class="ss-eyebrow">Before you start</span>
-      <h2 id="program-questions-title" class="mb-4">Common questions</h2>
-      <details class="mb-3"><summary>Can beginners start here?</summary><p>Yes. Start with a Free First Visit. Meet Sandy, see the room, and plan a first class.</p></details>
-      <details class="mb-3"><summary>Where can I see class times?</summary><p>See the <a href="/schedule">current schedule</a>. Times can change, so check it before you visit.</p></details>
-      <details class="mb-3"><summary>What does a first visit cost?</summary><p>The Free First Visit is free. See <a href="/options-pricing">current plan prices and terms</a> before you choose a paid plan.</p></details>
-      <details class="mb-3"><summary>Can a parent stay?</summary><p>A parent or guardian stays with a child or teen during the youth class. Parents can ask questions at the visit.</p></details>
+  <!-- FAQ SECTION -->
+  <section class="py-4 py-lg-5" style="background-color: var(--ss-surface2, #F4F1ED);" aria-labelledby="program-questions-title">
+    <div class="container ss-container" style="max-width: 820px;">
+      <div class="text-center mb-4">
+        <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-2" style="background: var(--ss-slate, #306061); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+          Before You Start
+        </span>
+        <h2 id="program-questions-title" class="display-6 fw-bold" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+          Common Questions About Programs
+        </h2>
+      </div>
+
+      <div class="accordion d-flex flex-column gap-3" id="programFaqAccordion">
+        <div class="accordion-item border rounded-4 overflow-hidden shadow-sm">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color: var(--ss-ink, #362B24); background: #fff;">
+              Can complete beginners start here?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#programFaqAccordion">
+            <div class="accordion-body text-muted small">
+              Yes. Every class is designed for new practitioners. Start with a Free First Visit to meet Sandy, tour the mats, and plan a comfortable first class.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border rounded-4 overflow-hidden shadow-sm">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: var(--ss-ink, #362B24); background: #fff;">
+              Where can I see class times?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#programFaqAccordion">
+            <div class="accordion-body text-muted small">
+              Check the <a href="/schedule" class="text-decoration-underline fw-semibold" style="color: var(--ss-green, #116A42);">current schedule</a>. Regular training runs Monday, Tuesday, Wednesday, Friday evening, and Saturday morning.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border rounded-4 overflow-hidden shadow-sm">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: var(--ss-ink, #362B24); background: #fff;">
+              What does a first visit cost?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#programFaqAccordion">
+            <div class="accordion-body text-muted small">
+              The Free First Visit is completely free. Review our <a href="/options-pricing" class="text-decoration-underline fw-semibold" style="color: var(--ss-green, #116A42);">membership options and pricing</a> anytime before deciding on enrollment.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border rounded-4 overflow-hidden shadow-sm">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="color: var(--ss-ink, #362B24); background: #fff;">
+              Can a parent stay and watch class?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#programFaqAccordion">
+            <div class="accordion-body text-muted small">
+              Yes. A parent or guardian stays with a child or teen during youth training. Parents can ask questions and observe their child's progress from the seating area.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!--#include virtual="/partials/reviews-village.html" -->
-
-  <section class="ss-section-premium text-center" aria-labelledby="programs-final-title">
+  <!-- FINAL CTA SECTION -->
+  <section class="py-5 text-center" aria-labelledby="programs-final-title">
     <div class="container ss-container">
-      <span class="ss-eyebrow">Your next step</span>
-      <h2 id="programs-final-title" class="mb-3">Meet Sandy and see the room.</h2>
-      <p class="lead-text mx-auto mb-4" style="max-width: 48rem;" data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
-      <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="final" data-cta-src="programs-final" data-cta-tier="primary"><span>{{ freeIntro.primaryCtaLabel }}</span></a>
-        <a class="btn-premium btn-premium--secondary" href="{{ contact.smsHref }}"><span>Text Sandy</span></a>
+      <div class="he-outer-shell p-2 rounded-4 mx-auto" style="max-width: 860px; background-color: var(--ss-border, rgba(54,43,36,0.14));">
+        <div class="he-inner-core p-4 p-lg-5 rounded-4 bg-white text-center">
+          <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-3" style="background: var(--ss-green, #116A42); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+            Your Next Step
+          </span>
+          <h2 id="programs-final-title" class="display-6 fw-bold mb-3" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+            Meet Sandy and see the room.
+          </h2>
+          <p class="lead mx-auto mb-4 text-muted" style="max-width: 600px;" data-free-intro-copy>
+            {{ freeIntro.publicCopy.overview }}
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="btn btn-lg text-white rounded-pill px-4 fw-bold shadow-sm" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="intro" data-cta-lane="mixed" data-cta-placement="final" data-cta-src="programs-final" data-cta-tier="primary" style="background-color: var(--ss-green, #116A42);">
+              <span>{{ freeIntro.primaryCtaLabel }}</span> <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-lg btn-outline-dark rounded-pill px-4 fw-bold" href="{{ contact.smsHref }}">
+              <i class="bi bi-chat-text me-1" aria-hidden="true"></i> <span>Text Sandy</span>
+            </a>
+          </div>
+          <p class="small text-muted mt-3 mb-0">
+            6045 Main Street, 2nd Floor, Tannersville, NY &bull; Text Sandy: +1 (917) 736-8649
+          </p>
+        </div>
       </div>
     </div>
   </section>
 </main>
-
-<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/voice-faq-accordion.2b6c27.js"></script>
-<script defer="" src="/assets/js/ss-evidence-registry.0f4e50.js"></script>
-<script defer="" src="/assets/js/ss-evidence-accordion.daa894.js"></script>

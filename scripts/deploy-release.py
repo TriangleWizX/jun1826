@@ -16,6 +16,7 @@ ROOT_FILES.add('pricing.md')
 ROOT_FILES.add('school-families-jiu-jitsu.html')
 ROOT_FILES.add('deer-mountain-inn.html')
 ROOT_FILES.add('phoenicia-diner.html')
+ROOT_FILES.add('class-rules.html')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
                    'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml')
 RESEARCH_RECORD_OUTPUTS = (

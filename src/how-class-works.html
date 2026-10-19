@@ -3,286 +3,333 @@ layout: layouts/base.njk
 title: "How a BJJ Class Works in Tannersville, NY"
 description: "See the 45-minute class structure at Sensei Sandy BJJ in Tannersville. Learn how movement games, partner matching, and coached resistance work."
 canonicalUrl: "https://senseisandy.com/how-class-works"
-bodyClass: "page-how-class-works"
+bodyClass: "page-how-class-works ss-page"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
-  - "/assets/css/ss-guide.css"
+  - "/assets/css/high-end-near.css"
 permalink: "/how-class-works.html"
 ---
-<main class="ss-guide-page ss-how-class-works" id="main-content" role="main">
-  <header class="guide-hero">
-    <p class="guide-eyebrow">BJJ Class Structure &middot; Tannersville, NY.</p>
-    <h1>How Class Works</h1>
-    <p class="guide-intro">Class has 45 minutes of coached training in a 60-minute visit.</p>
-    <div class="hero-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
-      <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">
-        <i class="bi bi-calendar3 me-2" aria-hidden="true"></i>{{ freeIntro.primaryCtaLabel }}
-      </a>
-      <a class="ss-btn ss-btn-secondary" href="{{ contact.smsHref }}">
-        <i class="bi bi-chat-left-text me-2" aria-hidden="true"></i>Text Sandy
-      </a>
+<main class="ss-main" id="main-content" role="main">
+  <!-- HERO SECTION -->
+  <header class="py-4 py-lg-5">
+    <div class="container ss-container">
+      <div class="he-outer-shell p-2 rounded-4 mb-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+        <div class="he-inner-core p-4 p-lg-5 rounded-4 bg-white">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-3" style="background-color: var(--ss-green, #116A42); font-size: 0.825rem; letter-spacing: 0.05em; text-transform: uppercase;">
+                <i class="bi bi-clock-history me-1" aria-hidden="true"></i> Class Structure &middot; Tannersville, NY
+              </span>
+              <h1 class="display-5 fw-bold mb-3" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+                How a BJJ Class Works
+              </h1>
+              <p class="lead mb-4" style="color: var(--ss-muted, #4F433C); line-height: 1.6;">
+                Each visit is a 60-minute experience with about 45 minutes of calm, coach-led training. Learn how movement games, partner matching, and progressive resistance build real skill step by step.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a class="btn btn-lg text-white rounded-pill px-4 fw-bold shadow-sm" href="/free-bjj-intro-tannersville-ny#booking-flow" style="background-color: var(--ss-green, #116A42);">
+                  <span>{{ freeIntro.primaryCtaLabel }}</span> <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-lg btn-outline-dark rounded-pill px-4 fw-bold" href="{{ contact.smsHref }}">
+                  <i class="bi bi-chat-text me-1" aria-hidden="true"></i> <span>Text Sandy</span>
+                </a>
+              </div>
+              <nav class="d-flex flex-wrap gap-2 gap-sm-3 small" aria-label="Quick links">
+                <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/schedule" style="background-color: var(--ss-surface2, #F4F1ED);">
+                  <i class="bi bi-calendar3 me-1 text-success" aria-hidden="true"></i> Class Times
+                </a>
+                <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/options-pricing" style="background-color: var(--ss-surface2, #F4F1ED);">
+                  <i class="bi bi-tag me-1 text-success" aria-hidden="true"></i> Plans &amp; Prices
+                </a>
+                <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/bjj-tannersville-ny-directions" style="background-color: var(--ss-surface2, #F4F1ED);">
+                  <i class="bi bi-geo-alt me-1 text-success" aria-hidden="true"></i> Map &amp; Parking
+                </a>
+              </nav>
+            </div>
+            <div class="col-lg-5">
+              <div class="p-4 rounded-4 border" style="background-color: var(--ss-surface2, #F4F1ED); border-color: var(--ss-border, rgba(54,43,36,0.14)) !important;">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-slate, #306061);">Class Blueprint</span>
+                  <span class="small text-muted fw-semibold">45 Min on the Mats</span>
+                </div>
+                <h2 class="h4 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">A class at a glance</h2>
+                <p class="small text-muted mb-3" data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
+                <ol class="small text-muted ps-3 mb-0">
+                  <li class="mb-1">Warm up and pair with a friendly partner</li>
+                  <li class="mb-1">Chest-to-chest positional connection game</li>
+                  <li class="mb-1">Chest-to-back control and escape game</li>
+                  <li class="mb-1">Neutral guard retention game</li>
+                  <li class="mb-1">Short, calibrated resistance rounds</li>
+                  <li class="mb-0">Group review, student reflection, and mat reset</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="small text-muted mt-3 mb-0">
-      <a href="/schedule">Class Times</a> &middot; <a href="/options-pricing">Prices</a> &middot; <a href="/bjj-tannersville-ny-directions">Map and Parking</a>
-    </p>
   </header>
 
-  <section class="container py-4" aria-labelledby="class-at-a-glance-title" style="padding-inline: 0;">
-    <h2 id="class-at-a-glance-title">A class at a glance</h2>
-    <p><strong>60 minutes. About 45 minutes training.</strong></p>
-    <p class="small text-muted mb-3">{{ freeIntro.publicCopy.overview }}</p>
-    <ol>
-      <li>Warm up and find a partner.</li>
-      <li>Chest-to-chest game.</li>
-      <li>Chest-to-back game.</li>
-      <li>Guard game.</li>
-      <li>Short live rounds.</li>
-      <li>Review.</li>
-    </ol>
-    <p class="mb-0">Sandy can change the partner, task, or pace as needed.</p>
-  </section>
+  <!-- 7 CLASS STEPS TIMELINE BENTO -->
+  <section class="py-4 py-lg-5" id="class-timeline-section" style="background-color: var(--ss-surface2, #F4F1ED);">
+    <div class="container ss-container">
+      <div class="text-center mb-5">
+        <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-2" style="background: var(--ss-green, #116A42); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+          Timeline &middot; Step by Step
+        </span>
+        <h2 class="display-6 fw-bold" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+          How the 45 Minutes Unfold
+        </h2>
+        <p class="lead mx-auto text-muted" style="max-width: 640px;">
+          Sandy coordinates every partner pairing, task constraint, and resistance pace to ensure learning is smooth and supportive.
+        </p>
+      </div>
 
-  <blockquote class="class-window-note">
-    A 45-minute coached class inside a 60-minute reserved window.
-  </blockquote>
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-green, #116A42);">03 min</span>
+                <span class="small fw-semibold text-muted">Step 1</span>
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Arrival &amp; Partner Match</h3>
+              <p class="small text-muted mb-0 flex-grow-1">Students arrive, change into clean gear, and step onto the mat. Sandy thoughtfully pairs students by age, size, and experience level.</p>
+            </article>
+          </div>
+        </div>
 
-  <nav class="guide-nav" aria-label="On this page">
-    <p class="guide-nav__label">On this page</p>
-    <ul>
-      <li><a href="#class-breakdown">Class times</a></li>
-      <li><a href="#class-timeline-section">Class steps</a></li>
-      <li><a href="#beginner-lane">Beginner class</a></li>
-      <li><a href="#guided-practice">Coach-led practice</a></li>
-      <li><a href="#what-parents-expect">What Parents Can Expect</a></li>
-      <li><a href="#what-students-review">What Students Review</a></li>
-      <li><a href="#open-skill">Why each round is new</a></li>
-    </ul>
-  </nav>
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-slate, #306061);">05 min</span>
+                <span class="small fw-semibold text-muted">Step 2</span>
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Useful Movement</h3>
+              <p class="small text-muted mb-0 flex-grow-1">Students explore 2 to 3 essential mat movements. Practice bridges, hip escapes, and safe technical stand-ups with personal coaching.</p>
+            </article>
+          </div>
+        </div>
 
-  <section id="open-skill">
-    <h2>Why each round is new</h2>
-    <p>In Jiu-Jitsu, your partner moves and changes the pace. You cannot plan each move in advance. Studies on sports with changing tasks report mental benefits for youth. Read the studies and their limits in our evidence guide.</p>
-    <p class="mb-0"><a href="/evidence">Read our evidence guide and its limits.</a></p>
-  </section>
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-brown, #8B522E);">06 min</span>
+                <span class="small fw-semibold text-muted">Step 3</span>
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Chest-to-Chest Connection</h3>
+              <p class="small text-muted mb-0 flex-grow-1">A focused mini-game. The bottom student works to recover guard or stand up. The top student focuses on base, balance, and gentle control.</p>
+            </article>
+          </div>
+        </div>
 
-  <section id="class-breakdown">
-    <h2>Class times</h2>
-    <p>Each visit has a 60-minute time slot. About 45 minutes are coach-led training. The extra time lets you enter, ask questions, change, and pack up.</p>
-    <div class="table-scroll" tabindex="0" aria-label="Class breakdown table">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Class step</th>
-            <th scope="col">Time.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Arrival and partner match.</td>
-            <td>3 minutes</td>
-          </tr>
-          <tr>
-            <td>Useful movement.</td>
-            <td>5 minutes</td>
-          </tr>
-          <tr>
-            <td>Chest-to-chest game.</td>
-            <td>6 minutes</td>
-          </tr>
-          <tr>
-            <td>Chest-to-back game.</td>
-            <td>6 minutes</td>
-          </tr>
-          <tr>
-            <td>Neutral guard game.</td>
-            <td>6 minutes</td>
-          </tr>
-          <tr>
-            <td>Resistance rounds.</td>
-            <td>15 minutes</td>
-          </tr>
-          <tr>
-            <td>Review and room reset.</td>
-            <td>4 minutes</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th scope="row">Total coach-led time</th>
-            <td>45 minutes</td>
-          </tr>
-        </tfoot>
-      </table>
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-brown, #8B522E);">06 min</span>
+                <span class="small fw-semibold text-muted">Step 4</span>
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Chest-to-Back Control</h3>
+              <p class="small text-muted mb-0 flex-grow-1">Learn back control mechanics. One student practices safe turns to recover facing position; the other maintains calm, seatbelt control.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-slate, #306061);">06 min</span>
+                <span class="small fw-semibold text-muted">Step 5</span>
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Neutral Guard Game</h3>
+              <p class="small text-muted mb-0 flex-grow-1">Learn distance management with your legs. One player works to pass guard while the other maintains space, sweeps, or gets up.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <article class="he-inner-core h-100 p-4 rounded-4 bg-white d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill text-white fw-bold px-3 py-1" style="background: var(--ss-green, #116A42);">15 min</span>
+                <span class="small fw-semibold text-muted">Step 6</span>
+              </div>
+              <h3 class="h5 fw-bold mb-2" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Calibrated Resistance Rounds</h3>
+              <p class="small text-muted mb-0 flex-grow-1">Short, live rounds linking the day's skills. Partners work together at a safe, cooperative pace with frequent pauses and resets.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7 Review Banner -->
+      <div class="he-outer-shell p-2 rounded-4 mt-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+        <article class="he-inner-core p-4 rounded-4 bg-white d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+          <div class="d-flex align-items-center gap-3">
+            <span class="badge rounded-pill text-white fw-bold px-3 py-2" style="background: var(--ss-slate, #306061); font-size: 0.9rem;">04 min</span>
+            <div>
+              <h3 class="h5 fw-bold mb-1" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">Review, Reflection &amp; Mat Reset</h3>
+              <p class="small text-muted mb-0">Students review what worked, thank their partners, celebrate progress, and tidy the mats together.</p>
+            </div>
+          </div>
+          <a class="btn btn-sm text-white rounded-pill px-4 fw-bold flex-shrink-0" href="/free-bjj-intro-tannersville-ny#booking-flow" style="background: var(--ss-green, #116A42);">
+            Try a Class &rarr;
+          </a>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section id="beginner-four-part-map">
-    <h2>A four-part map for new students</h2>
-    <ul class="policy-list">
-      <li><strong>Standing:</strong> Stay balanced. Find an advantage.</li>
-      <li><strong>Top:</strong> Stay on top. Improve control.</li>
-      <li><strong>Bottom:</strong> Stay safe. Recover your legs or get up.</li>
-      <li><strong>Back:</strong> Protect your neck and control the back.</li>
-    </ul>
-  </section>
+  <!-- 4-PART MAT MAP & COACHING PRINCIPLES -->
+  <section class="py-4 py-lg-5">
+    <div class="container ss-container">
+      <div class="text-center mb-5">
+        <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-2" style="background: var(--ss-slate, #306061); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+          The Four-Part Mat Map
+        </span>
+        <h2 class="display-6 fw-bold" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+          Clear Positions Every Beginner Understands
+        </h2>
+        <p class="lead mx-auto text-muted" style="max-width: 640px;">
+          Rather than memorizing dozens of complex steps, students learn where they are on the mat and what their clear job is.
+        </p>
+      </div>
 
-  <section id="coaching-basics">
-    <h2>How Sandy coaches new students</h2>
-    <p>Sandy keeps each round clear and safe.</p>
-    <ul class="policy-list">
-      <li><strong>Position:</strong> Start from a clear place.</li>
-      <li><strong>Problem:</strong> Know what your partner is defending.</li>
-      <li><strong>Key idea:</strong> Learn what must happen.</li>
-      <li><strong>Options:</strong> Try one useful choice.</li>
-      <li><strong>Resistance:</strong> Work with a partner at a safe pace.</li>
-      <li><strong>Change:</strong> Try a new task if the first move fails.</li>
-    </ul>
-    <p class="mb-0"><strong>Teach the idea. Coach the person.</strong></p>
-  </section>
-
-  <section id="class-timeline-section">
-    <h2>Class steps</h2>
-    <div class="class-timeline">
-      <article class="timeline-card">
-        <span class="timeline-card__time">03 min</span>
-        <div class="timeline-card__content">
-          <h3>Arrival and Partner Match.</h3>
-          <p>Students come in and settle. Sandy pairs them by age, size, and skill.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border h-100" style="background: var(--ss-surface2, #F4F1ED);">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge rounded-circle text-white fw-bold d-inline-flex align-items-center justify-content-center" style="width: 1.75rem; height: 1.75rem; background: var(--ss-green, #116A42);">1</span>
+              <h3 class="h5 fw-bold mb-0 text-dark">Standing</h3>
+            </div>
+            <p class="small text-muted mb-0">Maintain good posture and balance. Guide the movement safely down to the mat.</p>
+          </div>
         </div>
-      </article>
 
-      <article class="timeline-card">
-        <span class="timeline-card__time">05 min</span>
-        <div class="timeline-card__content">
-          <h3>Useful Movement.</h3>
-          <p>Students try 2 to 3 basic moves. They bridge, step over, and turn with care.</p>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border h-100" style="background: var(--ss-surface2, #F4F1ED);">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge rounded-circle text-white fw-bold d-inline-flex align-items-center justify-content-center" style="width: 1.75rem; height: 1.75rem; background: var(--ss-slate, #306061);">2</span>
+              <h3 class="h5 fw-bold mb-0 text-dark">Top Position</h3>
+            </div>
+            <p class="small text-muted mb-0">Establish steady base, use body weight smoothly, and improve positional control.</p>
+          </div>
         </div>
-      </article>
 
-      <article class="timeline-card">
-        <span class="timeline-card__time">06 min</span>
-        <div class="timeline-card__content">
-          <h3>Chest-to-Chest Connection.</h3>
-          <p>The student on bottom tries to get guard or stand. The student on top works to stay balanced and in control.</p>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border h-100" style="background: var(--ss-surface2, #F4F1ED);">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge rounded-circle text-white fw-bold d-inline-flex align-items-center justify-content-center" style="width: 1.75rem; height: 1.75rem; background: var(--ss-brown, #8B522E);">3</span>
+              <h3 class="h5 fw-bold mb-0 text-dark">Bottom Guard</h3>
+            </div>
+            <p class="small text-muted mb-0">Use your legs as a shield. Create frames, protect your head, and safely stand back up.</p>
+          </div>
         </div>
-      </article>
 
-      <article class="timeline-card">
-        <span class="timeline-card__time">06 min</span>
-        <div class="timeline-card__content">
-          <h3>Chest-to-Back Control.</h3>
-          <p>One student tries to get free. The other uses gentle control from behind.</p>
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border h-100" style="background: var(--ss-surface2, #F4F1ED);">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge rounded-circle text-white fw-bold d-inline-flex align-items-center justify-content-center" style="width: 1.75rem; height: 1.75rem; background: var(--ss-green, #116A42);">4</span>
+              <h3 class="h5 fw-bold mb-0 text-dark">Back Safety</h3>
+            </div>
+            <p class="small text-muted mb-0">Protect your neck, maintain awareness, and turn safely back to face your partner.</p>
+          </div>
         </div>
-      </article>
-
-      <article class="timeline-card">
-        <span class="timeline-card__time">06 min</span>
-        <div class="timeline-card__content">
-          <h3>Neutral Guard Game.</h3>
-          <p>One student tries to pass the guard. The other keeps space, sweeps, or stands.</p>
-        </div>
-      </article>
-
-      <article class="timeline-card">
-        <span class="timeline-card__time">15 min</span>
-        <div class="timeline-card__content">
-          <h3>Resistance Rounds.</h3>
-          <p>Short games link each skill. Sandy keeps the pace calm and safe.</p>
-        </div>
-      </article>
-
-      <article class="timeline-card">
-        <span class="timeline-card__time">04 min</span>
-        <div class="timeline-card__content">
-          <h3>Review and Room Reset.</h3>
-          <p>Students review ways to get free. All thank their partners and tidy the mats.</p>
-        </div>
-      </article>
+      </div>
     </div>
   </section>
 
-  <section id="partner-makes-lesson-real">
-    <h2>Your partner helps you learn</h2>
-    <p>Each student has a clear job. A partner gives you a real task. Both care for each other. You try a choice, take a break, and try again.</p>
+  <!-- BEGINNER LANE SAFEGUARDS & PARENT REASSURANCE -->
+  <section class="py-4 py-lg-5" style="background-color: var(--ss-surface2, #F4F1ED);">
+    <div class="container ss-container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <div class="he-inner-core h-100 p-4 p-lg-5 rounded-4 bg-white">
+              <span class="badge rounded-pill px-3 py-1 text-white fw-bold mb-3" style="background: var(--ss-green, #116A42);">Safety Safeguards</span>
+              <h2 class="h3 fw-bold mb-3" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">The Beginner Lane Experience</h2>
+              <p class="small text-muted mb-3">
+                First-time students start with calibrated partner pairing, one safety rule, one useful movement, and guided practice.
+              </p>
+              <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-3">
+                <li><i class="bi bi-shield-check text-success me-2"></i> Hand-selected experienced partners for all beginners</li>
+                <li><i class="bi bi-shield-check text-success me-2"></i> Immediate tapping and reset protocols practiced first</li>
+                <li><i class="bi bi-shield-check text-success me-2"></i> Grounded in published sports medicine and safety research</li>
+              </ul>
+              <p class="small text-muted mb-0">
+                Read how research informs our training structure in our <a href="/sources/research/bjj-injury-2025" class="text-decoration-underline fw-semibold" style="color: var(--ss-green, #116A42);">2025 BJJ Injury &amp; Safety Review</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="he-outer-shell h-100 p-2 rounded-4" style="background-color: var(--ss-border, rgba(54,43,36,0.14));">
+            <div class="he-inner-core h-100 p-4 p-lg-5 rounded-4 bg-white">
+              <span class="badge rounded-pill px-3 py-1 text-white fw-bold mb-3" style="background: var(--ss-slate, #306061);">Parent Reassurance</span>
+              <h2 class="h3 fw-bold mb-3" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">What Parents Can Expect</h2>
+              <p class="small text-muted mb-3">
+                Parents are welcome to sit, watch, and enjoy youth classes. Sandy coordinates partner matching, drill pace, and room safety throughout.
+              </p>
+              <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-3">
+                <li><i class="bi bi-eye text-success me-2"></i> Open matside seating for parents and guardians</li>
+                <li><i class="bi bi-clipboard-check text-success me-2"></i> Transparent milestones on our <a href="/report-card" class="text-decoration-underline fw-semibold" style="color: var(--ss-slate, #306061);">Student Progress Report</a></li>
+                <li><i class="bi bi-chat-dots text-success me-2"></i> Open-seat text rescheduling anytime your family plans shift</li>
+              </ul>
+              <p class="small text-muted mb-0">
+                Kids learn to think, balance, and cooperate with peers under calm, structured mentorship.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="beginner-lane">
-    <h2 id="rules">New student class and rules</h2>
-    <p id="safety">A first-day student starts with one clear task, one useful movement, and guided practice.</p>
-    <p>The Beginner class gives them:</p>
-    <ul class="policy-list">
-      <li>One selected partner.</li>
-      <li>One safety rule.</li>
-      <li>One useful movement.</li>
-      <li>One scoring target.</li>
-    </ul>
-    <p>New students learn to tap, let go, guard the neck, bridge, and move with care. We review published training research (such as the <a href="/sources/research/bjj-injury-2025">2025 global BJJ injury study</a>) to guide our room structure and partner safety rules.</p>
-    <p>Students join the group on day one. Sandy keeps each task simple.</p>
+  <!-- AUDIENCE SPECIFIC ROUTING & FINAL CTA -->
+  <section class="py-5 text-center">
+    <div class="container ss-container">
+      <div class="he-outer-shell p-2 rounded-4 mx-auto" style="max-width: 860px; background-color: var(--ss-border, rgba(54,43,36,0.14));">
+        <div class="he-inner-core p-4 p-lg-5 rounded-4 bg-white text-center">
+          <span class="badge rounded-pill px-3 py-2 text-white fw-bold mb-3" style="background: var(--ss-green, #116A42); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+            Next Steps
+          </span>
+          <h2 class="display-6 fw-bold mb-3" style="font-family: 'Instrument Serif', Georgia, serif; color: var(--ss-ink, #362B24);">
+            See a class before you choose.
+          </h2>
+          <p class="lead mx-auto mb-4 text-muted" style="max-width: 600px;" data-free-intro-copy>
+            {{ freeIntro.publicCopy.overview }}
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+            <a class="btn btn-lg text-white rounded-pill px-4 fw-bold shadow-sm" href="/free-bjj-intro-tannersville-ny#booking-flow" style="background-color: var(--ss-green, #116A42);">
+              <span>{{ freeIntro.primaryCtaLabel }}</span> <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-lg btn-outline-dark rounded-pill px-4 fw-bold" href="{{ contact.smsHref }}">
+              <i class="bi bi-chat-text me-1" aria-hidden="true"></i> <span>Text Sandy</span>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap justify-content-center gap-2 small">
+            <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/bjj-classes/kids-tannersville-ny" style="background: var(--ss-surface2, #F4F1ED);">
+              Kids Classes &rarr;
+            </a>
+            <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/bjj-classes/teens-tannersville-ny" style="background: var(--ss-surface2, #F4F1ED);">
+              Teen Classes &rarr;
+            </a>
+            <a class="badge rounded-pill text-decoration-none px-3 py-2 text-dark border" href="/bjj-classes/adults-tannersville-ny" style="background: var(--ss-surface2, #F4F1ED);">
+              Adult Classes &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <section id="guided-practice">
-    <h2>Short demos. More practice.</h2>
-    <p>Each demo has these steps:</p>
-    <ol class="rule-steps">
-      <li>See the starting position.</li>
-      <li>Hear each student’s job.</li>
-      <li>Watch one useful action.</li>
-      <li>Learn how to score.</li>
-      <li>Begin the round.</li>
-    </ol>
-    <p>Most demos last less than 45 seconds.</p>
-    <p>Sandy gives tips as students work. He stops the group if many pairs need the same tip.</p>
-  </section>
-
-  <section id="more-skill-more-choices">
-   <h2>More Skill Means More Choices</h2>
-   <p>New students start with a clear task and steady help. As you learn each position, Sandy can add another choice.</p>
-   <p>Learn the task, pick a move, and adjust as your partner moves. Sandy sets the pairs and pace.</p>
- </section>
-
- <section id="what-parents-expect">
-   <h2>What Parents Can Expect</h2>
-   <p>Parents may watch youth classes. Sandy guides partner matches, practice pace, and room safety.</p>
-   <p>After class, Sandy can share notes on effort, listening, and partner care. See the <a href="/report-card">Progress Report Card</a>.</p>
-   <p>Kids move, think, and work with a partner as a coach guides them.</p>
- </section>
-
- <section id="why-we-teach-this-way">
-   <h2>Why We Teach This Way</h2>
-   <p>Students learn by doing. Each task has a clear goal. Sandy adds safe resistance as they are ready and helps them change their moves.</p>
- </section>
-
- <section id="what-students-review">
-   <h2>What Students Review</h2>
-   <p>At the end of class, students think about a question:</p>
-   <ul class="policy-list">
-     <li>Which movement helped you escape?</li>
-     <li>How did you hold the position?</li>
-     <li>Which space did you need to protect?</li>
-     <li>What will you try in the next class?</li>
-   </ul>
-   <p>Students thank their partners, get their gear, and help tidy the mat.</p>
- </section>
-
- <section class="guide-cta-section" aria-labelledby="class-next-step-title">
-   <h2 id="class-next-step-title">See a class before you choose</h2>
-   <p data-free-intro-copy>{{ freeIntro.publicCopy.overview }}</p>
-   <div class="guide-cta-actions">
-     <a class="ss-btn ss-btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">{{ freeIntro.primaryCtaLabel }}</a>
-     <a class="ss-btn ss-btn-secondary" href="/bjj-classes/kids-tannersville-ny">View Kids Classes</a>
-     <a class="ss-btn ss-btn-secondary" href="/bjj-classes/teens-tannersville-ny">View Teen Classes</a>
-     <a class="ss-btn ss-btn-secondary" href="/bjj-classes/adults-tannersville-ny">View Adult Classes</a>
-   </div>
- </section>
-
- <section class="container py-4" aria-labelledby="adult-first-day-options">
-   <h2 id="adult-first-day-options">Adults: pick your first day</h2>
-   <p>{{ freeIntro.publicCopy.adultTraining }}</p>
-   <p>{{ freeIntro.publicCopy.clothing }}</p>
-   <h3>Live Partner Practice</h3>
-   <p>{{ freeIntro.publicCopy.sparring }}</p>
-   <h3>{{ freeIntro.adultFirstDay.challenge.name }}</h3>
-   <p>{{ freeIntro.publicCopy.challenge }}</p>
-   <p>Sandy confirms the class and plan before training. Complete the waiver before you train.</p>
- </section>
 </main>
