@@ -193,7 +193,7 @@ extraCss:
               <span class="faq-question-text">What is the Ski Season Visitor Pass?</span>
             </summary>
             <div class="faq-answer-content">
-              <p class="mb-0">The Ski Season Visitor Pass gives you {{ pricing.visitorAndSupport.skiSeasonVisitorPass.classesIncluded }} in {{ pricing.visitorAndSupport.skiSeasonVisitorPass.validity }} for {{ pricing.visitorAndSupport.skiSeasonVisitorPass.displayPrice }}. It runs {{ pricing.visitorAndSupport.skiSeasonVisitorPass.season }}. It includes a reserved loaner gi and a welcome text from Sandy when you book.</p>
+              <p class="mb-0">The Ski Season Visitor Pass gives you {{ pricing.visitorAndSupport.skiSeasonVisitorPass.classesIncluded | replace("Up to", "up to") }} in {{ pricing.visitorAndSupport.skiSeasonVisitorPass.validity }} for {{ pricing.visitorAndSupport.skiSeasonVisitorPass.displayPrice }}. It runs {{ pricing.visitorAndSupport.skiSeasonVisitorPass.season }}. It includes a reserved loaner gi and a welcome text from Sandy when you book.</p>
             </div>
           </details>
         </div>
