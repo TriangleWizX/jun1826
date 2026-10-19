@@ -47,7 +47,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install --no-fund --no-audit
-          pip install paramiko
+          pip install paramiko pillow
 
       - name: QA gates
         run: |
