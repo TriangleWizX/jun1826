@@ -1,0 +1,97 @@
+# Deploy to Namecheap production on every push to main.
+#
+# ONE-TIME SETUP (on the laptop, ~10 minutes):
+#   1. Repo Settings > Secrets and variables > Actions > New repository secret:
+#        SFTP_HOST      - e.g. senseisandy.com (Namecheap server hostname)
+#        SFTP_PORT      - e.g. 21098 (Namecheap cPanel default; defaults to 21098 if omitted)
+#        SFTP_USER      - cPanel / SFTP username
+#        SFTP_PASSWORD  - cPanel / SFTP password
+#        SFTP_PATH      - /home/<user>/public_html (optional; defaults to /home/<SFTP_USER>/public_html)
+#   2. Save this file as .github/workflows/deploy.yml, commit, push to main.
+#
+# AFTER THAT: every push to main builds the site, runs the QA gates, and
+# uploads only the changed generated files with scripts/deploy-release.py
+# (the same script used for manual deploys). No laptop required.
+
+name: Deploy to production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          npm install --no-fund --no-audit
+          pip install paramiko
+
+      - name: QA gates
+        run: |
+          npm run qa:volatile-facts
+          npm run test:ads
+          npm run validate
+
+      - name: Write SFTP config from secrets
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_PATH: ${{ secrets.SFTP_PATH }}
+        run: |
+          mkdir -p .vscode
+          python3 - <<'EOF'
+          import json, os
+          username = os.environ["SFTP_USER"]
+          port = int(os.environ.get("SFTP_PORT") or "21098")
+          remote_path = os.environ.get("SFTP_PATH") or f"/home/{username}/public_html"
+          cfg = {
+              "host": os.environ["SFTP_HOST"],
+              "port": port,
+              "username": username,
+              "password": os.environ["SFTP_PASSWORD"],
+              "remotePath": remote_path,
+          }
+          with open(".vscode/sftp.json", "w") as f:
+              json.dump(cfg, f, indent=2)
+          EOF
+
+      - name: Deploy changed files
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            BEFORE="${{ github.event.before }}"
+            if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              python3 scripts/deploy-release.py --commit HEAD
+            else
+              for sha in $(git rev-list --reverse "$BEFORE"..HEAD); do
+                echo "--- deploying $sha"
+                python3 scripts/deploy-release.py --commit "$sha"
+              done
+            fi
+          else
+            python3 scripts/deploy-release.py --commit HEAD
+          fi

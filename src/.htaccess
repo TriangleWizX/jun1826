@@ -3,7 +3,6 @@ AcceptPathInfo Off
 RewriteEngine On
 RewriteRule ^free-youth-bjj-intro-tannersville-ny/?$ /free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny [R=301,L,NE]
 RewriteBase /
-RewriteRule ^hyphen-weekend/?$ /hyphen-weekend.html [R=301,L,NE]
 
 # Research pages are authored as top-level source files but published at their
 # clean, indexable URLs.
@@ -51,7 +50,7 @@ RewriteRule ^videos/Semi-Private\ Youth\ class\ -teens-Jmr7M3E5CoM/?$ https://se
 # collapse to the clean canonical page so stale query state does not surface in
 # the SSI-expanded booking shell.
 RewriteCond %{QUERY_STRING} (^|&)(day=(monday|tuesday|wednesday|friday|saturday)|lane=mixed|source_page=schedule)(&|$) [NC]
-RewriteRule ^book-free-intro(?:/index\.html|\.html|/)?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [R=302,L,NE,QSD]
+RewriteRule ^book-free-intro(?:/index\.html|\.html|/)?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [R=301,L,NE,QSD]
 
 # BEGIN AUTO_LEGACY_REDIRECTS
 # Managed by: npm run redirects:sync
@@ -162,23 +161,23 @@ RewriteRule ^my\-promise\-full/?$ https://senseisandy.com/how-class-works [L,R=3
 RewriteRule ^my\-promise\-short/?$ https://senseisandy.com/how-class-works [L,R=301,NE]
 RewriteRule ^near/cairo\-ny/?$ https://senseisandy.com/bjj-classes/cairo-ny [L,R=301,NE]
 RewriteRule ^near/catskill\-ny/?$ https://senseisandy.com/bjj-classes/catskill-ny [L,R=301,NE]
-RewriteRule ^near/elka\-park\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/elka\-park\-ny/?$ https://senseisandy.com/bjj-classes/elka-park-ny [L,R=301,NE]
 RewriteRule ^near/esopus\-creek\-phoenicia/?$ https://senseisandy.com/bjj-classes/phoenicia-ny [L,R=301,NE]
 RewriteRule ^near/haines\-falls/?$ https://senseisandy.com/bjj-classes/haines-falls-ny [L,R=301,NE]
 RewriteRule ^near/haines\-falls\-ny/?$ https://senseisandy.com/bjj-classes/haines-falls-ny [L,R=301,NE]
 RewriteRule ^near/hunter\-mountain/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteRule ^near/hunter\-ny/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
-RewriteRule ^near/jewett\-east\-jewett\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
-RewriteRule ^near/jewett\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/jewett\-east\-jewett\-ny/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
+RewriteRule ^near/jewett\-ny/?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteRule ^near/kaaterskill\-falls/?$ https://senseisandy.com/bjj-classes/palenville-ny [L,R=301,NE]
 RewriteRule ^near/lanesville\-ny/?$ https://senseisandy.com/bjj-classes/lanesville-ny [L,R=301,NE]
 RewriteRule ^near/lexington\-ny/?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
-RewriteRule ^near/onteora\-park\-ny/?$ https://senseisandy.com/near/east-jewett-ny [L,R=301,NE]
+RewriteRule ^near/onteora\-park\-ny/?$ https://senseisandy.com/bjj-classes/tannersville-ny [L,R=301,NE]
 RewriteRule ^near/palenville\-ny/?$ https://senseisandy.com/bjj-classes/palenville-ny [L,R=301,NE]
 RewriteRule ^near/phoenicia\-ny/?$ https://senseisandy.com/bjj-classes/phoenicia-ny [L,R=301,NE]
-RewriteRule ^near/saugerties\-ny/?$ https://senseisandy.com/near/woodstock-ny [L,R=301,NE]
+RewriteRule ^near/saugerties\-ny/?$ https://senseisandy.com/bjj-classes/saugerties-ny [L,R=301,NE]
 RewriteRule ^near/tannersville\-ny/?$ https://senseisandy.com/bjj-classes/tannersville-ny [L,R=301,NE]
-RewriteRule ^near/windham\-mountain/?$ https://senseisandy.com/near/windham-mountain-club [L,R=301,NE]
+RewriteRule ^near/windham\-mountain/?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
 RewriteRule ^near/windham\-ny/?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
 RewriteRule ^nervous\-first\-timers/?$ https://senseisandy.com/how-class-works [L,R=301,NE]
 RewriteRule ^openingpress/?$ https://senseisandy.com/archive/openingpress [L,R=301,NE]
@@ -352,10 +351,10 @@ RewriteCond %{THE_REQUEST} \s/+contact\.html[\s?] [NC]
 RewriteRule ^contact(?:\.html)?/?$ https://senseisandy.com/contact [L,R=301,NE,NC]
 RewriteRule ^book-free-intro(?:/index\.html|\.html|/)?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE,NC]
 RewriteRule ^directions(?:/index\.html|\.html|/)?$ /bjj-tannersville-ny-directions.html [L,NC]
-RewriteRule ^book-free-intro/kids(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny/ [L,R=301,NE,NC]
-RewriteRule ^book-free-intro/teens(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/teens-tannersville-ny/ [L,R=301,NE,NC]
-RewriteRule ^book-free-intro/adults(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE,NC]
-RewriteRule ^adults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/kids(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/teens(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/teens-tannersville-ny [L,R=301,NE,NC]
+RewriteRule ^book-free-intro/adults(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE,NC]
+RewriteRule ^adults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE,NC]
 RewriteRule ^options(?:\.html)?/?$ https://senseisandy.com/options-pricing [L,R=301,NE,NC]
 RewriteRule ^tannersville-bjj-video-library(?:\.html)?/?$ https://senseisandy.com/ [L,R=301,NE,NC]
 RewriteRule ^partners-schools-parents(?:\.html)?/?$ https://senseisandy.com/school-families-jiu-jitsu [L,R=301,NE,NC]
@@ -371,9 +370,9 @@ RewriteRule ^api/?$ /api/index.php [L,QSA]
 RewriteRule ^api/(.*)$ /api/index.php?path=$1 [L,QSA]
 
 # Canonicalize legacy booking slugs that missed the lane slash.
-RewriteRule ^book-free-introkids(?:\.html)?/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny/ [L,R=301,NE,NC]
-RewriteRule ^book-free-introteens(?:\.html)?/?$ https://senseisandy.com/bjj-classes/teens-tannersville-ny/ [L,R=301,NE,NC]
-RewriteRule ^book-free-introadults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE,NC]
+RewriteRule ^book-free-introkids(?:\.html)?/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE,NC]
+RewriteRule ^book-free-introteens(?:\.html)?/?$ https://senseisandy.com/bjj-classes/teens-tannersville-ny [L,R=301,NE,NC]
+RewriteRule ^book-free-introadults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE,NC]
 
 # Tracked schedule booking URLs are intentionally collapsed to the clean booking page.
 # This prevents SSI query-state errors from appearing before the booking CTA.
@@ -437,7 +436,7 @@ RewriteRule ^ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE
 
 # Redirect legacy slugs to new keyworded URLs (single hop, includes .html + trailing slash).
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^adult(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE]
+RewriteRule ^adult(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^classes(?:\.html)?/?$ https://senseisandy.com/programs [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
@@ -464,41 +463,41 @@ RewriteRule ^blog/onteora-park-summer-activities/index\.html?$ https://senseisan
 # --- Near legacy aliases ---
 # Consolidate scaled near-town pages into canonical hubs/pages.
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/?$ https://senseisandy.com/bjj-classes/ [L,R=301,NE]
+RewriteRule ^near/?$ https://senseisandy.com/bjj-classes [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
 RewriteRule ^near/([a-zA-Z0-9-]+-ny)(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/$1 [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^cairo-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/cairo-ny/ [L,R=301,NE]
+RewriteRule ^cairo-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/cairo-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^catskill-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/catskill-ny/ [L,R=301,NE]
+RewriteRule ^catskill-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/catskill-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^hunter-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny/ [L,R=301,NE]
+RewriteRule ^hunter-ny-jiu-jitsu(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/tannersville-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/tannersville-ny/ [L,R=301,NE]
+RewriteRule ^near/tannersville-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/tannersville-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/hunter-mountain(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny/ [L,R=301,NE]
+RewriteRule ^near/hunter-mountain(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/windham-mountain(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/windham-ny/ [L,R=301,NE]
+RewriteRule ^near/windham-mountain(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/esopus-creek-phoenicia(?:/index\.html|/)?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
+RewriteRule ^near/esopus-creek-phoenicia(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/phoenicia-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/kaaterskill-falls(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/palenville-ny/ [L,R=301,NE]
+RewriteRule ^near/kaaterskill-falls(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/palenville-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
+RewriteRule ^near/jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/jewett-east-jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
+RewriteRule ^near/jewett-east-jewett-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/hunter-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/elka-park-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
+RewriteRule ^near/elka-park-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/elka-park-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/onteora-park-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/east-jewett-ny/ [L,R=301,NE]
+RewriteRule ^near/onteora-park-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/tannersville-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/lanesville-ny(?:/index\.html|/)?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
+RewriteRule ^near/lanesville-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/lanesville-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/lexington-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/windham-ny/ [L,R=301,NE]
+RewriteRule ^near/lexington-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/windham-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^near/saugerties-ny(?:/index\.html|/)?$ https://senseisandy.com/nearby-towns [L,R=301,NE]
+RewriteRule ^near/saugerties-ny(?:/index\.html|/)?$ https://senseisandy.com/bjj-classes/saugerties-ny [L,R=301,NE]
 RewriteCond %{IS_SUBREQ} !=true
-RewriteRule ^checkout(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny/ [L,R=301,NE]
+RewriteRule ^checkout(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE]
 
 
 # --- Static assets / security headers / caching ---
