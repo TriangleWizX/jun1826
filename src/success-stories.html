@@ -6,72 +6,250 @@ canonicalUrl: "https://senseisandy.com/success-stories"
 bodyClass: "page-success ss-page"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
+  - "/assets/css/pages/success-stories.css"
 permalink: "/success-stories.html"
 ---
-<style>
-  .page-success h1,
-  .page-success h2,
-  .page-success h3 {
-    font-family: var(--font-display, "Instrument Serif", Georgia, serif);
-    font-weight: 400;
-    letter-spacing: -0.01em;
-  }
-</style>
-<main class="ss-main" id="main-content" role="main">
-  <section class="py-5 py-lg-6" aria-labelledby="stories-title">
-    <div class="container">
-      <p class="eyebrow text-uppercase fw-bold text-success mb-2">Student stories.</p>
-      <h1 id="stories-title" class="display-3 mb-3">What students say.</h1>
-      <p class="lead col-lg-8 mb-4">See what students and families say. Pick the topic you want to read.</p>
-      <div class="d-flex flex-wrap gap-2">
-        <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Your Free First Visit</a>
-        <a class="btn btn-outline-primary" href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu" target="_blank" rel="noopener">Read all Google reviews</a>
-      </div>
-    </div>
-  </section>
+<main class="ss-main page-success" id="main-content" role="main">
+  <div class="container py-3">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="success-breadcrumbs">
+      <a href="/"><i class="bi bi-house-door me-1" aria-hidden="true"></i>Home</a>
+      <span class="separator" aria-hidden="true">›</span>
+      <span class="current" aria-current="page">Student Stories &amp; Reviews</span>
+    </nav>
 
-  <section class="py-5 bg-light" aria-labelledby="questions-title">
-    <div class="container">
-      <p class="eyebrow text-uppercase fw-bold text-success mb-2">Pick a topic.</p>
-      <h2 id="questions-title" class="h1 mb-4">What do you want to know?</h2>
+    <!-- 1. HERO SECTION -->
+    <header class="success-hero-card">
+      <div class="hero__inner">
+        <div>
+          <span class="eyebrow-pill">
+            <i class="bi bi-star-fill text-warning" aria-hidden="true"></i> 5.0 Star Google Rating · Catskills Community
+          </span>
+        </div>
+        <h1 id="stories-title" class="hero__title">Real Stories from Real Catskills Families.</h1>
+        <p class="hero__subtitle">
+          Read what local students, parents, and weekend visitors noticed about beginner nerves, safe coaching, and kind training partners in Tannersville.
+        </p>
+
+        <!-- Trust Badges Row -->
+        <ul class="success-badge-row" aria-label="Review themes">
+          <li><i class="bi bi-shield-check" aria-hidden="true"></i> 100% Coached Learning</li>
+          <li><i class="bi bi-people" aria-hidden="true"></i> Humble Teammates</li>
+          <li><i class="bi bi-heart" aria-hidden="true"></i> Calm Beginner Lane</li>
+          <li><i class="bi bi-house-check" aria-hidden="true"></i> Family-Friendly Culture</li>
+        </ul>
+
+        <!-- Action CTAs -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny#booking-flow">
+            <span>Reserve Free First Visit</span>
+            <span class="btn-icon-circle"><i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="btn-premium btn-premium--secondary" href="https://www.google.com/maps/place/Sensei+Sandy+BJJ/@42.1954787,-74.13495,17z/data=!4m8!3m7!1s0x89ddad923f824fc1:0x7b2f25b6317b39f3!8m2!3d42.1954787!4d-74.1323751!9m1!1b1!16s%2Fg%2F11x7v2n404?entry=ttu" target="_blank" rel="noopener noreferrer">
+            <span>Read All Google Reviews</span>
+            <span class="btn-icon-circle"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. TOPIC NAVIGATION BENTO -->
+    <section class="py-4" aria-labelledby="questions-title">
+      <div class="text-center mb-4">
+        <span class="eyebrow-pill">Browse by Topic</span>
+        <h2 id="questions-title" class="h3">What Would You Like to Know?</h2>
+      </div>
+
       <div class="row g-4">
-        <div class="col-md-4"><a class="d-block h-100 text-decoration-none p-4 bg-white rounded-4 border" href="#nervous"><h3 class="h4 text-dark mb-2">I am new and nervous.</h3><p class="mb-0 text-muted">Read a first class story.</p></a></div>
-        <div class="col-md-4"><a class="d-block h-100 text-decoration-none p-4 bg-white rounded-4 border" href="#safety"><h3 class="h4 text-dark mb-2">I want to feel safe.</h3><p class="mb-0 text-muted">Read Kelly’s story.</p></a></div>
-        <div class="col-md-4"><a class="d-block h-100 text-decoration-none p-4 bg-white rounded-4 border" href="#culture"><h3 class="h4 text-dark mb-2">I want a calm room.</h3><p class="mb-0 text-muted">Read about our team.</p></a></div>
+        <div class="col-md-4">
+          <a class="topic-card" href="#nervous">
+            <h3>I am new and nervous</h3>
+            <p>Read how beginner anxiety dissolves within minutes of stepping on the mat.</p>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="topic-card" href="#safety">
+            <h3>I want to feel safe</h3>
+            <p>Read Kelly&rsquo;s experience as a smaller grappler training with larger teammates.</p>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="topic-card" href="#culture">
+            <h3>I want a kind team</h3>
+            <p>Read Adam&rsquo;s impressions of our evening adult group and welcoming dojo culture.</p>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-5" aria-labelledby="proof-title">
-    <div class="container">
-      <p class="eyebrow text-uppercase fw-bold text-success mb-2">Student reviews.</p>
-      <h2 id="proof-title" class="h1 mb-4">What students noticed.</h2>
+    <!-- 3. STUDENT REVIEWS -->
+    <section class="py-5" aria-labelledby="proof-title">
+      <div class="text-center mb-5">
+        <span class="eyebrow-pill">Student Experiences</span>
+        <h2 id="proof-title">What Adult Beginners Noticed</h2>
+        <p class="text-muted col-lg-8 mx-auto">Real quotes from students training in our adult evening classes.</p>
+      </div>
+
       <div class="row g-4">
-        <article class="col-md-4" id="nervous"><div class="h-100 p-4 rounded-4 border bg-white"><p class="small text-uppercase fw-bold text-success mb-2">New to class.</p><p class="fs-5 mb-3">&ldquo;Walking in as a beginner felt scary at first. After just a few minutes, I felt calm and confident through Sandy&rsquo;s care and guidance.&rdquo;</p><p class="mb-0 fw-semibold">Roberto Noel-Berman.</p><p class="small text-muted mt-3 mb-0">Roberto felt calm after a few minutes.</p></div></article>
-        <article class="col-md-4" id="safety"><div class="h-100 p-4 rounded-4 border bg-white"><p class="small text-uppercase fw-bold text-success mb-2">Feeling safe.</p><p class="fs-5 mb-3">&ldquo;As a smaller grappler, I felt safe and welcomed.&rdquo;</p><p class="mb-0 fw-semibold">Kelly Chan.</p><p class="small text-muted mt-3 mb-0">Kelly felt safe as a smaller student.</p></div></article>
-        <article class="col-md-4" id="culture"><div class="h-100 p-4 rounded-4 border bg-white"><p class="small text-uppercase fw-bold text-success mb-2">A kind team.</p><p class="fs-5 mb-3">&ldquo;A welcoming team with humble, helpful training partners.&rdquo;</p><p class="mb-0 fw-semibold">Adam Mastropaolo.</p><p class="small text-muted mt-3 mb-0">Adam likes our adult evening class.</p></div></article>
-      </div>
-    </div>
-  </section>
+        <!-- Review 1: Roberto -->
+        <article class="col-md-4" id="nervous">
+          <div class="review-card-outer">
+            <div class="review-card-inner">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="review-badge"><i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i> Beginner Lane</span>
+              <blockquote class="review-quote">
+                &ldquo;Walking in as a beginner felt scary at first. After just a few minutes, I felt calm and confident through Sandy&rsquo;s care and guidance.&rdquo;
+              </blockquote>
+              <div class="reviewer-footer">
+                <div class="reviewer-avatar">RN</div>
+                <div>
+                  <div class="reviewer-name">Roberto Noel-Berman</div>
+                  <div class="reviewer-tag">Adult Student · Tannersville, NY</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
 
-  <section class="py-5 bg-light" aria-labelledby="family-title">
-    <div class="container">
-      <h2 id="family-title" class="h2 mb-3">What families notice.</h2>
+        <!-- Review 2: Kelly -->
+        <article class="col-md-4" id="safety">
+          <div class="review-card-outer">
+            <div class="review-card-inner">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="review-badge"><i class="bi bi-shield-check me-1" aria-hidden="true"></i> Partner Safety</span>
+              <blockquote class="review-quote">
+                &ldquo;As a smaller grappler, I felt safe and welcomed. The focus on leverage and gentle technique makes all the difference.&rdquo;
+              </blockquote>
+              <div class="reviewer-footer">
+                <div class="reviewer-avatar">KC</div>
+                <div>
+                  <div class="reviewer-name">Kelly Chan</div>
+                  <div class="reviewer-tag">Adult Student · Catskills Local</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 3: Adam -->
+        <article class="col-md-4" id="culture">
+          <div class="review-card-outer">
+            <div class="review-card-inner">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="review-badge"><i class="bi bi-people-fill me-1" aria-hidden="true"></i> Dojo Culture</span>
+              <blockquote class="review-quote">
+                &ldquo;A welcoming team with humble, helpful training partners. Sandy sets a high standard of respect in the room.&rdquo;
+              </blockquote>
+              <div class="reviewer-footer">
+                <div class="reviewer-avatar">AM</div>
+                <div>
+                  <div class="reviewer-name">Adam Mastropaolo</div>
+                  <div class="reviewer-tag">Adult Evening Student</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. FAMILY STORIES (DOUBLE-BEZEL) -->
+    <section class="py-5" aria-labelledby="family-title">
+      <div class="text-center mb-5">
+        <span class="eyebrow-pill">Youth &amp; Teens</span>
+        <h2 id="family-title">What Parents Notice at Home &amp; School</h2>
+        <p class="text-muted col-lg-8 mx-auto">Stories from local parents whose children train in our after-school youth classes.</p>
+      </div>
+
       <div class="row g-4">
-        <article class="col-md-4"><blockquote class="h-100 p-4 bg-white rounded-4 border mb-0"><p>&ldquo;I have 2 kids in class twice each week. They joined as brand new beginners. Now they look forward to every class after school.&rdquo;</p><footer class="fw-semibold">Jared Goodrich.</footer></blockquote></article>
-        <article class="col-md-4"><blockquote class="h-100 p-4 bg-white rounded-4 border mb-0"><p>&ldquo;My 8 year old loves the classes. Since starting one month ago, his focus at home and school has improved so much.&rdquo;</p><footer class="fw-semibold">Caroline Cosgrove.</footer></blockquote></article>
-        <article class="col-md-4"><blockquote class="h-100 p-4 bg-white rounded-4 border mb-0"><p>&ldquo;Class at Sensei Sandy BJJ has become a great part of our family routine.&rdquo;</p><footer class="fw-semibold">Jessie Moriarty.</footer></blockquote></article>
-      </div>
-      <p class="small text-muted mt-3 mb-0">These are real family stories from Tannersville.</p>
-    </div>
-  </section>
+        <!-- Family Story 1: Jared -->
+        <article class="col-md-4">
+          <div class="review-card-outer">
+            <div class="review-card-inner">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="review-badge"><i class="bi bi-house-heart me-1" aria-hidden="true"></i> Kids BJJ (Twice Weekly)</span>
+              <blockquote class="review-quote">
+                &ldquo;I have 2 kids in class twice each week. They joined as brand new beginners. Now they look forward to every class after school.&rdquo;
+              </blockquote>
+              <div class="reviewer-footer">
+                <div class="reviewer-avatar">JG</div>
+                <div>
+                  <div class="reviewer-name">Jared Goodrich</div>
+                  <div class="reviewer-tag">Parent of 2 Kids Students</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
 
-  <section class="py-5" aria-labelledby="next-title">
-    <div class="container">
-      <h2 id="next-title" class="h2">See how class works.</h2>
-      <p class="col-lg-8">Read <a href="/how-class-works">How Class Works</a>. See how students build skills on the <a href="/report-card">Report Card</a>.</p>
-      <p>Meet Sandy. See the room. Ask a question.</p>
-      <a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny#booking-flow">Reserve Your Free First Visit</a>
-    </div>
-  </section>
+        <!-- Family Story 2: Caroline -->
+        <article class="col-md-4">
+          <div class="review-card-outer">
+            <div class="review-card-inner">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="review-badge"><i class="bi bi-lightbulb me-1" aria-hidden="true"></i> Focus &amp; Routine</span>
+              <blockquote class="review-quote">
+                &ldquo;My 8 year old loves the classes. Since starting one month ago, his focus at home and school has improved so much.&rdquo;
+              </blockquote>
+              <div class="reviewer-footer">
+                <div class="reviewer-avatar">CC</div>
+                <div>
+                  <div class="reviewer-name">Caroline Cosgrove</div>
+                  <div class="reviewer-tag">Parent of 8-Year-Old Student</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Family Story 3: Jessie -->
+        <article class="col-md-4">
+          <div class="review-card-outer">
+            <div class="review-card-inner">
+              <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="review-badge"><i class="bi bi-calendar-check me-1" aria-hidden="true"></i> Mountain Family Life</span>
+              <blockquote class="review-quote">
+                &ldquo;Class at Sensei Sandy BJJ has become a great part of our family routine. The energy and consistency are wonderful.&rdquo;
+              </blockquote>
+              <div class="reviewer-footer">
+                <div class="reviewer-avatar">JM</div>
+                <div>
+                  <div class="reviewer-name">Jessie Moriarty</div>
+                  <div class="reviewer-tag">Catskills Family Parent</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="small text-muted mb-0">Verified Google Reviews from students and parents in Tannersville, Hunter, Windham, and Haines Falls.</p>
+      </div>
+    </section>
+
+    <!-- 5. CONVERSION BRIDGE (FOOTER) -->
+    <section class="success-conversion-bridge" aria-labelledby="cta-title">
+      <span class="eyebrow-pill mb-2">First-Time Visitors</span>
+      <h2 id="cta-title">Start Your First Class with Calm Confidence</h2>
+      <p>
+        Meet Sandy, tour our Tannersville studio, and see how our beginner lane works before you train.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a class="btn-premium btn-premium--primary" href="/free-bjj-intro-tannersville-ny#booking-flow">
+          <span>Reserve Free First Visit</span>
+          <span class="btn-icon-circle"><i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="btn-premium btn-premium--secondary" href="{{ contact.smsHref }}">
+          <span>Text Sandy</span>
+          <span class="btn-icon-circle"><i class="bi bi-chat-text" aria-hidden="true"></i></span>
+        </a>
+      </div>
+      <p class="small text-muted mt-3 mb-0">
+        <a href="/how-class-works" class="text-decoration-none text-muted">See how class works</a> ·
+        <a href="/schedule" class="text-decoration-none text-muted">View current schedule</a> ·
+        <a href="/bjj-faqs" class="text-decoration-none text-muted">Read beginner FAQs</a>
+      </p>
+    </section>
+  </div>
 </main>

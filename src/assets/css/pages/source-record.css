@@ -1,0 +1,260 @@
+/* Source Record & Verification Page Styles · Sensei Sandy BJJ */
+
+.ss-source-record-main {
+  background-color: var(--ss-bg, #FBFAF8);
+  color: var(--ss-text, #1F1712);
+  min-height: 80vh;
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.ss-record-container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
+
+@media (min-width: 768px) {
+  .ss-record-container {
+    padding: 3.5rem 2rem 6rem;
+  }
+}
+
+/* Breadcrumbs */
+.ss-record-breadcrumbs {
+  margin-bottom: 2rem;
+}
+.ss-breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--color-muted, #756B5F);
+}
+.ss-breadcrumbs-list a {
+  color: var(--ss-slate, #306061);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+.ss-breadcrumbs-list a:hover {
+  color: var(--ss-green, #116A42);
+  text-decoration: underline;
+}
+.ss-breadcrumbs-list .separator {
+  color: rgba(54, 43, 36, 0.35);
+  user-select: none;
+}
+.ss-breadcrumbs-list [aria-current="page"] {
+  color: var(--ss-ink, #362B24);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: min(300px, 60vw);
+}
+
+/* Badges */
+.ss-record-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.ss-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ss-badge-type {
+  background: rgba(17, 106, 66, 0.09);
+  color: var(--ss-green, #116A42);
+  border: 1px solid rgba(17, 106, 66, 0.22);
+}
+.ss-badge-category {
+  background: rgba(40, 159, 161, 0.09);
+  color: var(--ss-slate, #306061);
+  border: 1px solid rgba(40, 159, 161, 0.22);
+}
+.ss-badge-domain {
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-text, #1F1712);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+}
+
+/* Header Hero */
+.ss-record-hero {
+  margin-bottom: 2rem;
+}
+.ss-record-title {
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-size: clamp(2.25rem, 5vw, 3.4rem);
+  line-height: 1.12;
+  color: var(--ss-ink, #362B24);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+  font-weight: 400;
+}
+.ss-record-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 1.5rem;
+  max-width: 760px;
+}
+
+/* Meta Bar */
+.ss-record-meta-bar {
+  background-color: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  box-shadow: 0 2px 10px rgba(54, 43, 36, 0.03);
+  margin-bottom: 2rem;
+}
+.ss-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ss-meta-label {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted, #756B5F);
+}
+.ss-meta-val {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--ss-ink, #362B24);
+  font-weight: 500;
+}
+
+/* Quick Action Buttons */
+.ss-record-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+.ss-action-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  line-height: 1.3;
+}
+.ss-action-pill-primary {
+  background-color: var(--ss-green, #116A42);
+  color: #FFFFFF !important;
+  border: 1px solid var(--ss-green, #116A42);
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.25);
+}
+.ss-action-pill-primary:hover {
+  background-color: #0d5233;
+  transform: translateY(-1px);
+}
+.ss-action-pill-outline {
+  background-color: var(--ss-surface, #FFFFFF);
+  color: var(--ss-ink, #362B24);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.2));
+}
+.ss-action-pill-outline:hover {
+  background-color: var(--ss-surface2, #F4F1ED);
+  border-color: rgba(54, 43, 36, 0.35);
+}
+
+/* Double-Bezel Card System */
+.ss-he-outer {
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  padding: 0.45rem;
+  box-shadow: 0 4px 20px rgba(54, 43, 36, 0.04);
+  margin-bottom: 2rem;
+}
+.ss-he-inner {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.08);
+  border-radius: 1.15rem;
+  padding: 1.75rem clamp(1.25rem, 3vw, 2.25rem);
+}
+.ss-he-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.ss-he-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ss-green, #116A42);
+}
+.ss-he-title {
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-size: 1.85rem;
+  color: var(--ss-ink, #362B24);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+.ss-he-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 0;
+}
+
+/* Academy Connection Bridge */
+.ss-record-bridge-card {
+  position: relative;
+  background: radial-gradient(circle at 10% 20%, rgba(40, 159, 161, 0.08), transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(17, 106, 66, 0.06), transparent 50%),
+              var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.16));
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(54, 43, 36, 0.05);
+  margin-top: 3.5rem;
+}
+.ss-record-bridge-card h2 {
+  font-family: var(--font-display, "Instrument Serif", Georgia, serif);
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  color: var(--ss-ink, #362B24);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+.ss-record-bridge-card p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 36rem;
+  margin: 0 auto 1.5rem;
+}

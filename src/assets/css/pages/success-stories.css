@@ -1,0 +1,252 @@
+/* Success Stories & Reviews · Sensei Sandy BJJ · High-End Editorial Design */
+
+body.page-success {
+  background-color: var(--ss-bg, #FBFAF8);
+  color: var(--ss-ink, #362B24);
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+body.page-success h1,
+body.page-success h2,
+body.page-success h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  color: var(--ss-ink, #362B24);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+/* Breadcrumbs */
+body.page-success .success-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ss-muted, #4F433C);
+  padding: 1.25rem 0 0.5rem;
+}
+body.page-success .success-breadcrumbs a {
+  color: var(--ss-muted, #4F433C);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+body.page-success .success-breadcrumbs a:hover {
+  color: var(--ss-green, #116A42);
+}
+body.page-success .success-breadcrumbs .separator {
+  color: rgba(54, 43, 36, 0.35);
+}
+body.page-success .success-breadcrumbs .current {
+  color: var(--ss-green, #116A42);
+}
+
+/* Hero Section */
+body.page-success .success-hero-card {
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at 90% 10%, rgba(40, 159, 161, 0.08), transparent 45%),
+              radial-gradient(circle at 10% 90%, rgba(17, 106, 66, 0.06), transparent 45%),
+              var(--ss-surface, #FFFFFF);
+  box-shadow: 0 0.5rem 2.5rem rgba(54, 43, 36, 0.05);
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+body.page-success .hero__inner {
+  max-width: 52rem;
+  margin-inline: auto;
+}
+body.page-success .hero__title {
+  font-size: clamp(2.35rem, 5.5vw, 3.85rem);
+  margin: 1rem auto 1.25rem;
+  text-wrap: balance;
+}
+body.page-success .hero__subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--ss-muted, #4F433C);
+  max-width: 44rem;
+  margin-inline: auto;
+  line-height: 1.65;
+}
+
+/* Eyebrow Pill */
+body.page-success .eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  color: var(--ss-green, #116A42);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* Badges List */
+body.page-success .success-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.75rem 0;
+  padding: 0;
+  list-style: none;
+}
+body.page-success .success-badge-row li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+  border-radius: 999px;
+  color: var(--ss-ink, #362B24);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+body.page-success .success-badge-row li i {
+  color: var(--ss-green, #116A42);
+}
+
+/* Topic Navigation Pills */
+body.page-success .topic-card {
+  display: block;
+  text-decoration: none;
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(54, 43, 36, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+body.page-success .topic-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ss-green, #116A42);
+  box-shadow: 0 8px 24px rgba(54, 43, 36, 0.08);
+}
+body.page-success .topic-card h3 {
+  font-size: 1.45rem;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.4rem;
+}
+body.page-success .topic-card p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* Review Cards */
+body.page-success .review-card-outer {
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  background-color: var(--ss-surface2, #F4F1ED);
+  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  padding: 0.35rem;
+}
+body.page-success .review-card-outer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(54, 43, 36, 0.08);
+}
+body.page-success .review-card-inner {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  height: 100%;
+  border: 1px solid rgba(54, 43, 36, 0.1);
+  border-radius: 1rem;
+  background-color: var(--ss-surface, #FFFFFF);
+  display: flex;
+  flex-direction: column;
+}
+body.page-success .review-stars {
+  color: #E5A823;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+body.page-success .review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-green, #116A42);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  width: fit-content;
+}
+body.page-success .review-quote {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+body.page-success .reviewer-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.1));
+}
+body.page-success .reviewer-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-green, #116A42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+}
+body.page-success .reviewer-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ss-ink, #362B24);
+  line-height: 1.2;
+}
+body.page-success .reviewer-tag {
+  font-size: 0.8rem;
+  color: var(--ss-muted, #4F433C);
+}
+
+/* Conversion Bridge */
+body.page-success .success-conversion-bridge {
+  position: relative;
+  background: radial-gradient(circle at 10% 20%, rgba(40, 159, 161, 0.1), transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(17, 106, 66, 0.08), transparent 50%),
+              var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.16));
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(54, 43, 36, 0.06);
+  margin-top: 3.5rem;
+  margin-bottom: 4rem;
+}
+body.page-success .success-conversion-bridge h2 {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  margin-bottom: 0.75rem;
+}
+body.page-success .success-conversion-bridge p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 1.05rem;
+  max-width: 38rem;
+  margin: 0 auto 1.75rem;
+}

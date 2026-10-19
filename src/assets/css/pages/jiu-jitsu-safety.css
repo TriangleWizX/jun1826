@@ -1,85 +1,125 @@
-/* Hallmark · page refinement: Safety Promise · calm editorial utility */
-body.page-jiu-jitsu-safety,
-body:has(.hero-video-section) {
-  background: var(--ss-bg, #fbfaf8);
+/* Sensei Sandy BJJ · Safety Promise & Class Rules · High-End Editorial Design */
+
+body.page-jiu-jitsu-safety {
+  background-color: var(--ss-bg, #FBFAF8);
+  color: var(--ss-ink, #362B24);
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
 }
 
-body:has(.hero-video-section) .ss-main { overflow: clip; }
-body:has(.hero-video-section) .container,
-body:has(.hero-video-section) .ss-container { margin-inline: auto; }
+body.page-jiu-jitsu-safety h1,
+body.page-jiu-jitsu-safety h2,
+body.page-jiu-jitsu-safety h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  color: var(--ss-ink, #362B24);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
 
-body:has(.hero-video-section) .hero-video-section {
+/* Breadcrumb */
+body.page-jiu-jitsu-safety .safety-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ss-muted, #4F433C);
+  padding: 1.25rem 0 0.5rem;
+}
+body.page-jiu-jitsu-safety .safety-breadcrumbs a {
+  color: var(--ss-muted, #4F433C);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+body.page-jiu-jitsu-safety .safety-breadcrumbs a:hover {
+  color: var(--ss-green, #116A42);
+}
+body.page-jiu-jitsu-safety .safety-breadcrumbs .separator {
+  color: rgba(54, 43, 36, 0.35);
+}
+body.page-jiu-jitsu-safety .safety-breadcrumbs .current {
+  color: var(--ss-green, #116A42);
+}
+
+/* Hero Content Card */
+body.page-jiu-jitsu-safety .hero-content-card {
   position: relative;
-  min-height: clamp(34rem, 72vh, 48rem);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  padding-block: clamp(5rem, 12vw, 9rem);
-  background: var(--ss-ink, #362b24);
-  color: #fff;
-  isolation: isolate;
-}
-
-body:has(.hero-video-section) .video-wrapper,
-body:has(.hero-video-section) .hero-bg-video,
-body:has(.hero-video-section) .hero-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body:has(.hero-video-section) .video-wrapper { z-index: -2; }
-body:has(.hero-video-section) .hero-bg-video { display: block; object-fit: cover; object-position: center; }
-body:has(.hero-video-section) .hero-overlay { background: linear-gradient(90deg, rgba(17, 52, 39, .9), rgba(17, 52, 39, .54)); z-index: 1; }
-
-body:has(.hero-video-section) .hero-content-container {
-  position: relative;
-  z-index: 2;
-  width: min(100% - 2rem, 76rem);
+  background: radial-gradient(circle at 90% 10%, rgba(40, 159, 161, 0.08), transparent 50%),
+              radial-gradient(circle at 10% 90%, rgba(17, 106, 66, 0.06), transparent 50%),
+              var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  box-shadow: 0 0.5rem 2.5rem rgba(54, 43, 36, 0.05);
+  margin-bottom: 3rem;
   text-align: center;
 }
 
-body:has(.hero-video-section) .hero__inner { max-width: 52rem; margin-inline: auto; }
-body:has(.hero-video-section) .hero__title { max-width: 16ch; margin: .75rem auto 1rem; text-wrap: balance; }
-body:has(.hero-video-section) .hero__subtitle { max-width: 42rem; margin-inline: auto; color: rgba(255, 255, 255, .86); font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.65; }
-body:has(.hero-video-section) .hero__badges { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin: 1.5rem 0; padding: 0; list-style: none; }
-body:has(.hero-video-section) .hero__badges li { padding: .5rem .8rem; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: rgba(255,255,255,.9); font-size: .8rem; }
-
-body:has(.hero-video-section) section:not(.hero-video-section) > .container { width: min(100% - 2rem, 76rem); }
-body:has(.hero-video-section) section:not(.hero-video-section) > .container > .text-center { max-width: 42rem; margin-inline: auto; }
-body:has(.hero-video-section) .premium-card-outer { height: 100%; padding: .35rem; border: 1px solid var(--ss-border, rgba(54,43,36,.14)); border-radius: 1.25rem; background: var(--ss-surface2, #f4f1ed); }
-body:has(.hero-video-section) .premium-card-inner { height: 100%; padding: 1.5rem; border: 1px solid rgba(54,43,36,.1); border-radius: 1rem; background: var(--ss-surface, #fff); text-align: center; }
-body:has(.hero-video-section) .premium-card-inner p { max-width: 36ch; margin-inline: auto; }
-body:has(.hero-video-section) .method-card-number { color: var(--ss-green, #116a42); font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
-body:has(.hero-video-section) figure img { display: block; max-width: 100%; height: auto; }
-body:has(.hero-video-section) .hero__inner a { text-decoration: none; }
-
-@media (max-width: 47.99rem) {
-  body:has(.hero-video-section) .hero-video-section {
-    min-height: auto;
-    padding-block: clamp(2.5rem, 6vw, 4rem);
-  }
-  body:has(.hero-video-section) .hero-content-container { width: min(100% - 1.25rem, 76rem); }
-  body:has(.hero-video-section) .hero__title {
-    font-size: clamp(1.75rem, 5vw, 2.35rem);
-    margin: 0.5rem auto 0.75rem;
-  }
-  body:has(.hero-video-section) .hero__subtitle {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-  body:has(.hero-video-section) .hero__badges {
-    margin: 0.85rem 0;
-    gap: 0.4rem;
-  }
-  body:has(.hero-video-section) .hero__badges li {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.75rem;
-    flex: 1 1 calc(50% - 0.4rem);
-  }
+body.page-jiu-jitsu-safety .hero__inner {
+  max-width: 52rem;
+  margin-inline: auto;
 }
 
+body.page-jiu-jitsu-safety .hero__title {
+  font-size: clamp(2.35rem, 5.5vw, 3.85rem);
+  margin: 1rem auto 1.25rem;
+  text-wrap: balance;
+}
+
+body.page-jiu-jitsu-safety .hero__subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--ss-muted, #4F433C);
+  max-width: 44rem;
+  margin-inline: auto;
+  line-height: 1.65;
+}
+
+/* Eyebrow Pill */
+body.page-jiu-jitsu-safety .eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  color: var(--ss-green, #116A42);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* Badges List */
+body.page-jiu-jitsu-safety .safety-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.75rem 0;
+  padding: 0;
+  list-style: none;
+}
+body.page-jiu-jitsu-safety .safety-badge-row li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--ss-surface2, #F4F1ED);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+  border-radius: 999px;
+  color: var(--ss-ink, #362B24);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+body.page-jiu-jitsu-safety .safety-badge-row li i {
+  color: var(--ss-green, #116A42);
+}
+
+/* Buttons */
 .btn-premium {
   display: inline-flex;
   align-items: center;
@@ -92,7 +132,7 @@ body:has(.hero-video-section) .hero__inner a { text-decoration: none; }
   line-height: 1;
   text-decoration: none;
   min-height: 48px;
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid transparent;
   cursor: pointer;
 }
@@ -101,18 +141,23 @@ body:has(.hero-video-section) .hero__inner a { text-decoration: none; }
 }
 .btn-premium-primary, .btn-premium--primary {
   background-color: var(--ss-green, #116a42);
-  color: var(--ss-surface);
+  color: #FFFFFF !important;
   border-color: var(--ss-green, #116a42);
   box-shadow: 0 8px 20px -4px rgba(17, 106, 66, 0.35);
 }
 .btn-premium-primary:hover, .btn-premium--primary:hover {
   background-color: #0d5233;
   border-color: #0d5233;
+  box-shadow: 0 10px 24px -4px rgba(17, 106, 66, 0.45);
 }
 .btn-premium-secondary, .btn-premium--secondary {
   background-color: var(--ss-surface, #ffffff);
   color: var(--ss-ink, #362b24);
   border-color: var(--ss-border, rgba(54, 43, 36, 0.18));
+}
+.btn-premium-secondary:hover, .btn-premium--secondary:hover {
+  background-color: var(--ss-surface2, #f4f1ed);
+  border-color: rgba(54, 43, 36, 0.3);
 }
 .btn-premium .btn-icon-circle {
   display: inline-flex;
@@ -128,22 +173,283 @@ body:has(.hero-video-section) .hero__inner a { text-decoration: none; }
 .btn-premium-primary .btn-icon-circle,
 .btn-premium--primary .btn-icon-circle {
   background: rgba(255, 255, 255, 0.2);
-  color: var(--ss-surface);
+  color: #FFFFFF;
 }
-.hero-video-section .btn-premium-secondary,
-.hero-video-section .btn-premium--secondary {
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--ss-surface);
-  border-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(8px);
+
+/* Section Containers & Headers */
+body.page-jiu-jitsu-safety .safety-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
-.hero-video-section .btn-premium-secondary:hover,
-.hero-video-section .btn-premium--secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
+body.page-jiu-jitsu-safety .safety-section-header {
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
 }
-.hero-video-section .btn-premium-secondary .btn-icon-circle,
-.hero-video-section .btn-premium--secondary .btn-icon-circle {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--ss-surface);
+body.page-jiu-jitsu-safety .safety-section-header h2 {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  margin-bottom: 0.75rem;
+}
+body.page-jiu-jitsu-safety .safety-section-header p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+/* Double-Bezel Cards (High-End Aesthetic) */
+body.page-jiu-jitsu-safety .premium-card-outer {
+  height: 100%;
+  padding: 0.35rem;
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  background: var(--ss-surface2, #F4F1ED);
+  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+body.page-jiu-jitsu-safety .premium-card-outer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(54, 43, 36, 0.08);
+}
+body.page-jiu-jitsu-safety .premium-card-inner {
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(54, 43, 36, 0.1);
+  border-radius: 1rem;
+  background: var(--ss-surface, #FFFFFF);
+  display: flex;
+  flex-direction: column;
+}
+body.page-jiu-jitsu-safety .method-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background-color: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-green, #116A42);
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+body.page-jiu-jitsu-safety .premium-card-inner h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+body.page-jiu-jitsu-safety .premium-card-inner p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Safety Rule Cards */
+body.page-jiu-jitsu-safety .safety-rule-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(54, 43, 36, 0.03);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+body.page-jiu-jitsu-safety .safety-rule-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: var(--ss-surface2, #F4F1ED);
+  color: var(--ss-green, #116A42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+body.page-jiu-jitsu-safety .safety-rule-body h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+body.page-jiu-jitsu-safety .safety-rule-body p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* Callout Box */
+body.page-jiu-jitsu-safety .safety-callout-box {
+  background: rgba(17, 106, 66, 0.04);
+  border-left: 4px solid var(--ss-green, #116A42);
+  border-radius: 0 1rem 1rem 0;
+  padding: 1.25rem 1.5rem;
+  margin-top: 2rem;
+}
+body.page-jiu-jitsu-safety .safety-callout-box p {
+  margin-bottom: 0;
+  color: var(--ss-ink, #362B24);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Cleanliness Checklist Grid */
+body.page-jiu-jitsu-safety .clean-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+body.page-jiu-jitsu-safety .clean-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+  border-radius: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ss-ink, #362B24);
+}
+body.page-jiu-jitsu-safety .clean-checklist li i {
+  color: var(--ss-green, #116A42);
+  font-size: 1.15rem;
+}
+
+/* Accordion FAQ */
+body.page-jiu-jitsu-safety .safety-faq-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(54, 43, 36, 0.03);
+  transition: border-color 0.15s ease;
+}
+body.page-jiu-jitsu-safety .safety-faq-card:hover {
+  border-color: rgba(17, 106, 66, 0.35);
+}
+body.page-jiu-jitsu-safety .safety-faq-card summary {
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ss-ink, #362B24);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+}
+body.page-jiu-jitsu-safety .safety-faq-card summary::-webkit-details-marker {
+  display: none;
+}
+body.page-jiu-jitsu-safety .safety-faq-card summary::after {
+  content: "↓";
+  font-size: 1.2rem;
+  color: var(--ss-green, #116A42);
+  transition: transform 0.2s ease;
+}
+body.page-jiu-jitsu-safety .safety-faq-card[open] summary::after {
+  transform: rotate(180deg);
+}
+body.page-jiu-jitsu-safety .safety-faq-content {
+  padding: 0 1.5rem 1.25rem;
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Program Lane Cards */
+body.page-jiu-jitsu-safety .lane-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.04);
+}
+body.page-jiu-jitsu-safety .lane-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(54, 43, 36, 0.08);
+}
+body.page-jiu-jitsu-safety .lane-card h3 {
+  font-size: 1.65rem;
+  margin-bottom: 0.5rem;
+}
+body.page-jiu-jitsu-safety .lane-card p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Conversion Bridge (Footer) */
+body.page-jiu-jitsu-safety .safety-conversion-bridge {
+  position: relative;
+  background: radial-gradient(circle at 10% 20%, rgba(40, 159, 161, 0.1), transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(17, 106, 66, 0.08), transparent 50%),
+              var(--ss-surface, #FFFFFF);
+  border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.16));
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(54, 43, 36, 0.06);
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+body.page-jiu-jitsu-safety .safety-conversion-bridge h2 {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  margin-bottom: 0.75rem;
+}
+body.page-jiu-jitsu-safety .safety-conversion-bridge p {
+  color: var(--ss-muted, #4F433C);
+  font-size: 1.05rem;
+  max-width: 38rem;
+  margin: 0 auto 1.75rem;
+}
+
+/* Mobile Sticky Bar */
+body.page-jiu-jitsu-safety .ss-mobile-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  background: rgba(251, 250, 248, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
+  box-shadow: 0 -4px 20px rgba(54, 43, 36, 0.08);
+}
+body.page-jiu-jitsu-safety .ss-mobile-sticky a {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+}
+@media (max-width: 767.98px) {
+  body.page-jiu-jitsu-safety {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}
+@media (min-width: 768px) {
+  body.page-jiu-jitsu-safety .ss-mobile-sticky {
+    display: none !important;
+  }
 }
