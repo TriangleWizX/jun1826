@@ -40,13 +40,13 @@ permalink: "/schedule/"
 <div class="ss-editorial-right ss-anim-fade-up ss-anim-delay-1">
 <div class="ss-schedule-utility-row"><span>Need to change your plan? <a href="sms:+19177368649">Text Sandy</a></span><span>New here? <a href="/free-bjj-intro-tannersville-ny#booking-flow">Plan a free first visit</a></span></div>
 
-<div class="ss-month-calendar" data-month-calendar data-schedule="{{ schedule | dump | escape }}" hidden>
+<noscript><style>.ss-month-calendar{display:none!important}</style></noscript>
+<div class="ss-month-calendar" data-month-calendar data-schedule="{{ schedule | dump | escape }}">
 <div class="ss-month-controls" aria-label="Calendar controls"><div><p class="ss-calendar-eyebrow">Your month on the mat</p><h2 id="calendar-month" data-calendar-month aria-live="polite">Class calendar</h2></div><div class="ss-month-nav"><button type="button" data-calendar-prev aria-label="Previous month">← <span>Previous</span></button><button type="button" data-calendar-today>This month</button><button type="button" data-calendar-next aria-label="Next month"><span>Next</span> →</button></div></div>
 <p class="ss-calendar-help">All times are New York time. Pick a date for class details.</p>
 <table class="ss-month-grid" aria-labelledby="calendar-month"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody data-calendar-days></tbody></table>
 <p class="ss-month-legend"><span><i class="ss-legend-youth"></i> Kids and teens</span><span><i class="ss-legend-adult"></i> Adult class</span><span><i class="ss-legend-foundations"></i> White Belt Foundations</span><span><i class="ss-legend-women"></i> Women's Foundations · dated pilot</span></p>
-<section class="ss-selected-day" aria-live="polite" aria-label="Classes on selected date" data-calendar-selected><h4 data-calendar-selected-title>Pick a day to see its classes</h4><div data-calendar-selected-list><p>Each week: kids and teens at 5 PM. Adults at 6 PM. Tuesday and Thursday at 6 PM are White Belt Foundations. Saturday adult No-Gi starts at 10:30 AM.</p></div></section>
-</div>
+<section class="ss-selected-day" aria-live="polite" aria-label="Classes on selected date" data-calendar-selected><h3 data-calendar-selected-title>Pick a day to see its classes</h3><div data-calendar-selected-list><p>Each week: kids and teens at 5 PM. Adults at 6 PM. Tuesday and Thursday at 6 PM are White Belt Foundations. Saturday adult No-Gi starts at 10:30 AM.</p></div></section>
 <div class="ss-month-static" aria-label="Women's Foundations class dates"><strong>Women's Foundations · 9 AM · No-Gi · Ages 18+</strong><div class="ss-month-static-dates">
 {% for class in schedule.datedClasses %}
 {% if class.audience == "Women" %}<button type="button" data-calendar-jump="{{ class.date }}">{{ class.date }}</button>{% endif %}
@@ -60,7 +60,18 @@ permalink: "/schedule/"
 </aside>
 {% endif %}
 {% endfor %}
-<details class="ss-weekly-fallback" aria-label="Weekly class schedule" open><summary>Weekly class times</summary>
+</div>
+<details class="ss-weekly-fallback" aria-label="Weekly class schedule"><summary>Weekly class times</summary>
+<noscript>
+{% for closure in schedule.closures %}
+{% if closure.note %}
+<aside class="ss-selected-class is-special my-3" aria-label="Class closure and invitation">
+<strong>Our classes are closed on <time datetime="{{ closure.date }}">{{ closure.dateLabel or closure.date }}</time>.</strong>
+<p>{{ closure.note }}</p>
+</aside>
+{% endif %}
+{% endfor %}
+</noscript>
 <div class="ss-calendar-bezel-outer">
 <div class="ss-calendar-bezel-inner">
 <!-- Monday -->
@@ -179,7 +190,7 @@ permalink: "/schedule/"
 <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-accent); margin: 0;">Private Coaching by Request</h3>
 <p style="font-size: 0.9rem; color: var(--ss-muted); text-align: center; margin: 0;">Private coaching is one-on-one. It is booked by request, not as a drop-in class.</p>
 </div>
-<p class="text-center text-muted mb-0">Ask Sandy about your goals and a time that works. <a href="/private-lessons">Learn about private lessons</a> or <a href="sms:+19177368649">text Sandy</a>.</p>
+<p class="text-center text-muted mb-0">Ask Sandy about your goals and a time that works. <a href="/private-lessons">Learn about private lessons</a> or <a href="sms:+19177368649">Text Sandy</a>.</p>
 </div>
 </div>
 </section>
@@ -232,7 +243,11 @@ permalink: "/schedule/"
 <h2 id="location">Visit the studio in Tannersville</h2>
 <p>See the location and parking details before you come.</p>
 <figure class="my-3 p-2 rounded-4 border" style="background:var(--color-paper);border-color:var(--color-rule)!important;">
-<img alt="Studios on Main building in Tannersville, home of Sensei Sandy BJJ" class="w-100 rounded-3" height="4608" loading="lazy" src="/assets/images/sensei-sandy-bjj-building-main-street.585fcc.webp" style="aspect-ratio:16/9;object-fit:cover;" width="8192"/ decoding="async">
+<picture>
+  <source type="image/avif" srcset="/assets/images/sensei-sandy-bjj-building-main-street-384.avif 384w, /assets/images/sensei-sandy-bjj-building-main-street-480.avif 480w, /assets/images/sensei-sandy-bjj-building-main-street-768.avif 768w, /assets/images/sensei-sandy-bjj-building-main-street-1024.avif 1024w" sizes="(min-width: 992px) 600px, calc(100vw - 2rem)">
+  <source type="image/webp" srcset="/assets/images/sensei-sandy-bjj-building-main-street-384.webp 384w, /assets/images/sensei-sandy-bjj-building-main-street-480.webp 480w, /assets/images/sensei-sandy-bjj-building-main-street-768.webp 768w, /assets/images/sensei-sandy-bjj-building-main-street-1024.webp 1024w" sizes="(min-width: 992px) 600px, calc(100vw - 2rem)">
+  <img alt="Studios on Main building in Tannersville, home of Sensei Sandy BJJ" class="w-100 rounded-3" height="576" loading="lazy" src="/assets/images/sensei-sandy-bjj-building-main-street-768.webp" width="1024" decoding="async" style="aspect-ratio:16/9;object-fit:cover;">
+</picture>
 <figcaption class="small mt-2 mb-0 text-muted">Find the studio entrance and parking details on the directions page.</figcaption>
 </figure>
 <ul class="ss-check-list">
@@ -258,7 +273,7 @@ permalink: "/schedule/"
 <aside class="ss-contact-card">
 <h3>Questions about your visit?</h3>
 <p data-free-intro-copy>Text Sandy with your question. He can help you plan a first visit.</p>
-<a href="sms:+19177368649?&amp;body=Hi%20Sandy%2C%20I%27m%20interested%20in%20a%20Free%20First%20Visit.">Text Sandy</a>
+<a href="sms:+19177368649?&amp;body=Hi%20Sandy%2C%20I%27m%20interested%20in%20a%20Free%20First%20Visit.">Text Sandy about a visit</a>
 </aside>
 </div>
 </div>

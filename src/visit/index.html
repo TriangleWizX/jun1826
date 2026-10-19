@@ -11,9 +11,10 @@ extraCss:
 ---
 
 <style>
-  .page-visit { color: var(--ss-ink); font-family: var(--ss-body-font, "Lexend", sans-serif); }
+  .page-visit { color: var(--ss-ink); font-family: var(--font-body, "Lexend", sans-serif); }
   .visit-content { max-width: 760px; margin-inline: auto; }
   .visit-hero-card { background: #fff; border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)); border-radius: 22px; box-shadow: 0 16px 44px rgba(31, 23, 18, 0.08); overflow: hidden; }
+  .visit-hero-card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
   .visit-step-badge { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--ss-teal, #289fa1); color: #fff; font-weight: 700; flex-shrink: 0; font-size: 1rem; }
   .visit-card { background: #fff; border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)); border-radius: 16px; box-shadow: 0 8px 24px rgba(54, 43, 36, 0.05); }
 </style>
@@ -38,8 +39,9 @@ extraCss:
         <div class="col-lg-5">
           <div class="visit-hero-card">
             <picture>
-              <source type="image/webp" srcset="/assets/images/studio/sensei-sandy-bjj-clean-training-mats-480.webp 480w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-768.webp 768w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-1024.webp 1024w" sizes="(max-width: 768px) 100vw, 420px">
-              <img loading="lazy" class="img-fluid w-100" src="/assets/images/studio/sensei-sandy-bjj-clean-training-mats-1024.webp" alt="Clean matted training room at Sensei Sandy BJJ in Tannersville" width="1024" height="683" decoding="async">
+              <source type="image/avif" srcset="/assets/images/studio/sensei-sandy-bjj-clean-training-mats-384.avif 384w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-480.avif 480w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-768.avif 768w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-1024.avif 1024w" sizes="(max-width: 576px) calc(100vw - 32px), (max-width: 991px) calc(100vw - 48px), 420px">
+              <source type="image/webp" srcset="/assets/images/studio/sensei-sandy-bjj-clean-training-mats-384.webp 384w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-480.webp 480w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-768.webp 768w, /assets/images/studio/sensei-sandy-bjj-clean-training-mats-1024.webp 1024w" sizes="(max-width: 576px) calc(100vw - 32px), (max-width: 991px) calc(100vw - 48px), 420px">
+              <img loading="lazy" class="img-fluid w-100" src="/assets/images/studio/sensei-sandy-bjj-clean-training-mats-768.webp" alt="Clean matted training room at Sensei Sandy BJJ in Tannersville" width="1024" height="577" decoding="async">
             </picture>
             <div class="p-3 bg-white">
               <p class="small text-muted mb-0">6045 Main Street, 2nd Floor Studio, Tannersville, NY</p>

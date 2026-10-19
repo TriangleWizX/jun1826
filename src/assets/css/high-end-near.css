@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
 /* High-End Visual Design overrides for Woodstock Near Page */
 :root {
   --he-bezier: cubic-bezier(0.32, 0.72, 0, 1);
@@ -17,6 +15,20 @@
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .he-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+.ss-near-hero .he-reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
 }
 
 /* Macro-Whitespace */
@@ -106,7 +118,7 @@
 }
 /* BJJ classes directory hub */
 .ss-page-bjj-classes {
-  --bs-body-font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --bs-body-font-family: var(--font-body, "Lexend", system-ui, sans-serif);
   font-family: var(--bs-body-font-family);
   background:
     radial-gradient(circle at 18% 12%, rgba(40, 159, 161, 0.12), transparent 28rem),
@@ -851,7 +863,7 @@ body.ss-page-nearby-towns h1 {
 }
 
 .ss-page-nearby-towns .ss-nearby-lane-card strong {
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-family: var(--font-body, "Lexend", system-ui, -apple-system, sans-serif) !important;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.35;
@@ -880,7 +892,7 @@ body.ss-page-nearby-towns h1 {
 }
 
 .ss-page-nearby-towns .ss-town-group-heading h3 {
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-family: var(--font-body, "Lexend", system-ui, -apple-system, sans-serif) !important;
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--nearby-ink);
@@ -933,7 +945,7 @@ body.ss-page-nearby-towns h1 {
 }
 
 .ss-page-nearby-towns .ss-nearby-town-card strong {
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-family: var(--font-body, "Lexend", system-ui, -apple-system, sans-serif) !important;
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.25;
@@ -1076,7 +1088,7 @@ body.ss-page-nearby-towns h1 {
 }
 
 .ss-page-nearby-towns .ss-location-box h3 {
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-family: var(--font-body, "Lexend", system-ui, -apple-system, sans-serif) !important;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--nearby-ink);
@@ -1148,7 +1160,7 @@ body.ss-page-nearby-towns h1 {
 }
 
 .ss-page-nearby-towns .ss-faq-card h3 {
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  font-family: var(--font-body, "Lexend", system-ui, -apple-system, sans-serif) !important;
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--nearby-ink);

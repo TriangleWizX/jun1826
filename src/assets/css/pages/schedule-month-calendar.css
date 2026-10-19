@@ -10,14 +10,15 @@
 .ss-month-nav{display:flex;gap:.4rem;flex-wrap:wrap}
 .ss-month-nav button{min-height:44px;padding:.5rem .8rem;border:1px solid var(--ss-border);border-radius:6px;background:var(--ss-bg);color:var(--ss-ink);font:inherit}
 .ss-calendar-help{font-size:.9rem;color:var(--ss-muted)}
-.ss-month-grid{width:100%;table-layout:fixed;border-collapse:collapse}
+.ss-month-grid{width:100%;table-layout:fixed;border-collapse:collapse;min-height:500px}
 .ss-month-grid th{text-align:center;padding:.8rem 0;font-size:.8rem;color:var(--ss-muted)}
 .ss-month-grid td{border:1px solid var(--ss-border);padding:0;vertical-align:top;background:var(--ss-bg)}
 .ss-month-grid .ss-month-empty{background:var(--ss-surface2)}
 .ss-month-day{display:flex;flex-direction:column;gap:.3rem;min-height:190px;padding:.45rem}
 .ss-month-date{display:grid;place-items:center;width:28px;height:28px;min-height:28px;padding:0;border:0;border-radius:50%;background:transparent;text-align:center;color:var(--ss-text);font:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
-.ss-month-date[aria-pressed=true]{background:#e7efea;box-shadow:0 0 0 2px var(--ss-green)}
+.ss-month-date[aria-pressed=true]{background:#e7efea;color:var(--ss-ink);box-shadow:0 0 0 2px var(--ss-green)}
 .ss-month-date[aria-current=date]{background:var(--ss-green);color:#fff;border-radius:50%}
+.ss-month-date[aria-current=date][aria-pressed=true]{background:var(--ss-green);color:#fff;box-shadow:inset 0 0 0 2px #fff, 0 0 0 2px var(--ss-green)}
 .ss-date-number{display:contents;font:inherit}
 .ss-date-class{display:flex;flex-direction:column;gap:.2rem;width:100%;padding:.5rem;border-left:3px solid var(--class-color);background:var(--class-bg);font-size:.78rem;line-height:1.35;overflow-wrap:anywhere;border-radius:3px;color:#1f1712}
 .ss-date-class-link{text-decoration:none}
@@ -33,9 +34,10 @@
 .ss-month-legend i{width:10px;height:10px;border-radius:50%;background:#306061}
 .ss-month-legend .ss-legend-youth{background:#116a42}.ss-month-legend .ss-legend-foundations{background:#8b522e}.ss-month-legend .ss-legend-women{background:#735578}
 .ss-selected-day{border-top:1px solid var(--ss-border);padding-top:1.5rem;margin-top:1.5rem}
-.ss-selected-day h4{font-size:1.25rem;margin-bottom:1rem}
+.ss-selected-day :is(h3, h4){font-size:1.25rem;margin-bottom:1rem}
 [data-calendar-selected-list]{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
-.ss-selected-class{display:flex;flex-direction:column;gap:.4rem;padding:1rem;border-left:3px solid var(--class-color);background:var(--class-bg)}
+.ss-selected-class{display:flex;flex-direction:column;gap:.4rem;padding:1rem;border-left:3px solid var(--class-color);background:var(--class-bg);color:#1f1712}
+.ss-selected-class :is(p, strong, span){color:#1f1712}
 .ss-selected-class a{color:var(--ss-green);text-underline-offset:3px;min-height:44px;display:flex;align-items:center}
 .ss-month-static{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;padding:1.25rem;margin:1.25rem 0;background:#f0e8f2;border-radius:8px;text-align:center}
 .ss-month-static-dates{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem}
@@ -46,6 +48,7 @@
 .ss-schedule-utility-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.9rem}
 .ss-month-calendar :is(button,a):focus-visible,.ss-weekly-fallback summary:focus-visible{outline:3px solid var(--ss-green);outline-offset:2px}
 @media(max-width:700px){
+ .ss-month-grid{min-height:360px}
  .ss-month-day{min-height:0;padding:.2rem;gap:.2rem}
  .ss-month-date{min-height:34px;padding:0}
  .ss-date-class{gap:.08rem;min-height:42px;justify-content:center;padding:.2rem .25rem;border-left-width:2px;font-size:.62rem;line-height:1.12}
@@ -122,7 +125,19 @@
 
 .page-schedule .ss-month-date[aria-pressed="true"] {
   background: #e7efea;
+  color: var(--ss-ink);
   box-shadow: inset 0 0 0 2px var(--ss-green);
+}
+
+.page-schedule .ss-month-date[aria-current="date"] {
+  background: var(--ss-green);
+  color: #fff;
+}
+
+.page-schedule .ss-month-date[aria-current="date"][aria-pressed="true"] {
+  background: var(--ss-green);
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 2px var(--ss-green);
 }
 
 .page-schedule .ss-date-class {

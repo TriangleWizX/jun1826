@@ -106,7 +106,7 @@
         const card = make(href ? 'a' : 'span', `ss-date-class is-${kind(slot)}${href ? ' ss-date-class-link' : ''}`);
         if (href) {
           card.href = href;
-          card.setAttribute('aria-label', `Plan a free visit for ${name(slot)} on ${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}${slot.time ? ` at ${slot.time}` : ''}`);
+          card.title = `Plan a free visit for ${name(slot)} on ${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}`;
         }
         card.append(make('strong', '', slot.time), make('span', '', name(slot)));
         content.append(card);
@@ -143,13 +143,10 @@
   });
   const mount = () => {
     render();
-    root.hidden = false;
-    const fallback = document.querySelector('.ss-weekly-fallback');
-    if (fallback) fallback.open = false;
   };
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(mount), { once: true });
+    document.addEventListener('DOMContentLoaded', mount, { once: true });
   } else {
-    requestAnimationFrame(mount);
+    mount();
   }
 })();

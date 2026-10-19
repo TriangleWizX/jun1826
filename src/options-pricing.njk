@@ -7,6 +7,8 @@ bodyClass: "lane-mixed page-options-pricing ss-page ss-page-pricing"
 extraCss:
   - "/assets/css/routes/site-18ac9c2704ce.min.css"
   - "/assets/css/pages/options-pricing-highend.css"
+headExtra: |
+  <link rel="preload" as="image" href="/assets/images/sensei-sandy-480.84ec0e.webp" type="image/webp" fetchpriority="high" imagesrcset="/assets/images/sensei-sandy-320.69259c.webp 320w, /assets/images/sensei-sandy-480.84ec0e.webp 480w, /assets/images/sensei-sandy-960.b3dc91.webp 960w" imagesizes="(max-width: 767px) 100vw, 50vw">
 permalink: "/options-pricing/index.html"
 ---
 <main class="op-main" id="main" role="main" tabindex="-1">
@@ -38,7 +40,7 @@ permalink: "/options-pricing/index.html"
 
       <div class="op-shell op-hero__shell op-reveal is-visible">
         <div class="op-hero__media">
-          <img loading="lazy" alt="Sensei Sandy smiling inside the Tannersville BJJ studio" decoding="async" fetchpriority="high" height="1000" src="/assets/images/sensei-sandy-960.b3dc91.webp" srcset="/assets/images/sensei-sandy-320.69259c.webp 320w, /assets/images/sensei-sandy-480.84ec0e.webp 480w, /assets/images/sensei-sandy-960.b3dc91.webp 960w" sizes="(max-width: 767px) 100vw, 50vw" width="800"/>
+          <img loading="eager" alt="Sensei Sandy smiling inside the Tannersville BJJ studio" decoding="async" fetchpriority="high" height="1000" src="/assets/images/sensei-sandy-960.b3dc91.webp" srcset="/assets/images/sensei-sandy-320.69259c.webp 320w, /assets/images/sensei-sandy-480.84ec0e.webp 480w, /assets/images/sensei-sandy-960.b3dc91.webp 960w" sizes="(max-width: 767px) 100vw, 50vw" width="800"/>
           <div class="op-hero__caption">
             <span aria-hidden="true" class="op-sequence">01</span>
             <p>{{ freeIntro.publicCopy.overview }}</p>
@@ -154,7 +156,7 @@ permalink: "/options-pricing/index.html"
             <span class="op-badge op-badge--perk">Partner Matching &amp; Progress Tracking</span>
           </div>
 
-          <p class="op-card__note">{{ pricing.productPolicy.monthlyPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your plan</a>.</p>
+          <p class="op-card__note">{{ pricing.productPolicy.monthlyPayment.publicCopy }} <a href="{{ business.contact.smsHref }}" aria-label="Text Sandy to set up your plan (youth)">Text Sandy to set up your plan</a>.</p>
           <p class="op-table-label">First term: monthly or 12 weeks <span>Continuing students: six-month or annual</span></p>
           <div class="table-responsive"><table class="table table-bordered align-middle"><caption class="visually-hidden">Youth plan prices by weekly classes and term</caption><thead><tr><th scope="col">Classes each week</th><th scope="col">Monthly</th><th scope="col">First 12 weeks</th><th scope="col">Six months*</th><th scope="col">Year*</th></tr></thead><tbody><tr><th scope="row">1 class each week</th><td>{{ pricing.coreCulture.frequencyLadder.youth[1].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[1]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[1]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[1].annual | usdGrouped }}</td></tr><tr><th scope="row">2 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.youth[2].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[2]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[2]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[2].annual | usdGrouped }}</td></tr><tr><th scope="row">3 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.youth[3].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[3]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[3]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }}</td></tr></tbody></table></div>
 
@@ -205,7 +207,7 @@ permalink: "/options-pricing/index.html"
             <span class="op-badge op-badge--perk">Saturday Adult No-Gi Included</span>
           </div>
 
-          <p class="op-card__note">{{ pricing.productPolicy.monthlyPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your plan</a>.</p>
+          <p class="op-card__note">{{ pricing.productPolicy.monthlyPayment.publicCopy }} <a href="{{ business.contact.smsHref }}" aria-label="Text Sandy to set up your plan (adult)">Text Sandy to set up your plan</a>.</p>
           <p class="op-table-label">First term: monthly or 12 weeks <span>Continuing students: six-month or annual</span></p>
           <div class="table-responsive"><table class="table table-bordered align-middle"><caption class="visually-hidden">Adult plan prices by weekly classes and term</caption><thead><tr><th scope="col">Classes each week</th><th scope="col">Monthly</th><th scope="col">First 12 weeks</th><th scope="col">Six months*</th><th scope="col">Year*</th></tr></thead><tbody><tr><th scope="row">1 class each week</th><td>{{ pricing.coreCulture.frequencyLadder.adult[1].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1].annual | usdGrouped }}</td></tr><tr><th scope="row">2 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.adult[2].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2].annual | usdGrouped }}</td></tr><tr><th scope="row">3 classes each week</th><td>{{ pricing.coreCulture.frequencyLadder.adult[3].monthly | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3]['12Weeks'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3]['6Months'] | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }}</td></tr></tbody></table></div>
 
@@ -230,7 +232,7 @@ permalink: "/options-pricing/index.html"
               <span>Reserve for an Adult</span>
               <span aria-hidden="true" class="op-button__icon">&rarr;</span>
             </a>
-            <a class="op-button op-button--quiet" data-cta-lane="adults" data-cta-placement="pricing_card" data-cta-src="options-pricing-adult" data-cta-target="sms" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20the%20Adult%20Beginner%20Track.">
+            <a class="op-button op-button--quiet" data-cta-lane="adults" data-cta-placement="pricing_card" data-cta-src="options-pricing-adult" data-cta-target="sms" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20the%20Adult%20Beginner%20Track." aria-label="Text Sandy about the Adult Beginner Track">
               <span>Text Sandy</span>
               <span aria-hidden="true" class="op-button__icon">&rarr;</span>
             </a>
@@ -269,7 +271,7 @@ permalink: "/options-pricing/index.html"
               <span>Reserve Community Intro</span>
               <span aria-hidden="true" class="op-button__icon">&rarr;</span>
             </a>
-            <a class="op-button op-button--quiet" data-cta-lane="community-service" data-cta-placement="pricing_card" data-cta-src="options-pricing-community" data-cta-target="sms" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20a%20first%20responder%2Fteacher%20asking%20about%20the%20community%20rate.">
+            <a class="op-button op-button--quiet" data-cta-lane="community-service" data-cta-placement="pricing_card" data-cta-src="options-pricing-community" data-cta-target="sms" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20a%20first%20responder%2Fteacher%20asking%20about%20the%20community%20rate." aria-label="Text Sandy about the community-service rate">
               <span>Text Sandy</span>
               <span aria-hidden="true" class="op-button__icon">&rarr;</span>
             </a>
@@ -388,13 +390,13 @@ permalink: "/options-pricing/index.html"
 
     <div class="op-guarantee-grid op-reveal">
       <div class="op-guarantee-card">
-        <h4>1. Free First Visit</h4>
+        <h3 class="h4">1. Free First Visit</h3>
         <p>Meet Sandy, see the room, review safety, and talk through your goals and schedule.</p>
       </div>
       <div class="op-guarantee-card">
-        <h4>2. 30-Day Training Fit Guarantee</h4>
+        <h3 class="h4">2. 30-Day Training Fit Guarantee</h3>
         <p>Eligible Youth and Adult first terms include the 30-Day Training Fit Guarantee. Take at least 4 classes in the first 30 days. <a href="/guarantee-terms">Read the terms</a>.</p>
-        <h3 class="h2 mb-3">Give the first term a fair start.</h3>
+        <h4 class="h2 mb-3">Give the first term a fair start.</h4>
         <p>Attend at least four classes during the first 30 days. The complete request process, extension terms, and exclusions are listed on the guarantee terms page.</p>
         <div class="op-assurance-facts" aria-label="Guarantee requirements">
           <div><strong>4 classes</strong><span>Minimum attendance</span></div>
@@ -495,7 +497,7 @@ permalink: "/options-pricing/index.html"
           <strong>Youth {{ pricing.coreCulture.frequencyLadder.youth[3].annual | usd }} ({{ pricing.annualTrack.monthlyEquivalents.youth[2] | usd }}/mo) <span aria-hidden="true">·</span> Adult {{ pricing.coreCulture.frequencyLadder.adult[3].annual | usd }} ({{ pricing.annualTrack.monthlyEquivalents.adult[2] | usd }}/mo)</strong>
           <small>Annual continuation · Community-service adult {{ pricing.annualTrack.communityServiceAdult.displayPrice }}</small>
           <p class="op-after-first__copy">For students who finish Core Culture. Review the plan each 12-week cycle. It adds no uniform or 30-Day Training Fit Guarantee.</p>
-          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20interested%20in%20Annual%20Track%20Savings.">Text Sandy <span aria-hidden="true">&rarr;</span></a>
+          <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20interested%20in%20Annual%20Track%20Savings." aria-label="Text Sandy about annual track savings">Text Sandy <span aria-hidden="true">&rarr;</span></a>
         </div>
       </article>
     </div>
@@ -577,7 +579,7 @@ permalink: "/options-pricing/index.html"
         </article>
       </div>
     </div>
-    <p class="op-section-note">Ask Sandy about the laundry option that fits your pass or program. <a href="{{ business.contact.smsHref }}">Text Sandy</a>.</p>
+    <p class="op-section-note">Ask Sandy about the laundry option that fits your pass or program. <a href="{{ business.contact.smsHref }}" aria-label="Text Sandy about laundry options">Text Sandy</a>.</p>
   </div>
 </section>
 

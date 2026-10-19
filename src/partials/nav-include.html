@@ -31,7 +31,7 @@
         <a class="navbar-brand ss-brand" href="/" aria-label="Sensei Sandy BJJ homepage">
           <picture class="ss-brand-mark-picture" style="display:contents">
             <source type="image/webp" srcset="/assets/img/brand/sensei-sandy-bjj-logo-64.40d9db.webp 64w, /assets/img/brand/sensei-sandy-bjj-logo-96.f24bf2.webp 96w, /assets/img/brand/sensei-sandy-bjj-logo-128.976e70.webp 128w" sizes="44px">
-            <img loading="lazy" class="ss-brand-mark" src="/assets/img/brand/sensei-sandy-bjj-logo-96.c54730.png" srcset="/assets/img/brand/sensei-sandy-bjj-logo-64.6f668c.png 64w, /assets/img/brand/sensei-sandy-bjj-logo-96.c54730.png 96w, /assets/img/brand/sensei-sandy-bjj-logo-128.6c12d5.png 128w" sizes="44px" alt="Sensei Sandy BJJ" width="44" height="44" decoding="async">
+            <img loading="lazy" class="ss-brand-mark" src="/assets/img/brand/sensei-sandy-bjj-logo-96.c54730.png" srcset="/assets/img/brand/sensei-sandy-bjj-logo-64.6f668c.png 64w, /assets/img/brand/sensei-sandy-bjj-logo-96.c54730.png 96w, /assets/img/brand/sensei-sandy-bjj-logo-128.6c12d5.png 128w" sizes="44px" alt="" width="44" height="44" decoding="async">
           </picture>
           <span class="ss-brand-copy">
             <span class="ss-brand-main">Sensei Sandy BJJ</span>
@@ -129,7 +129,7 @@
       const script = document.createElement('script');
       script.src = src;
       script.crossOrigin = 'anonymous';
-      script.async = false;
+      script.async = true;
       script.fetchPriority = 'low';
       script.dataset.ssBootstrapLoader = src;
       script.addEventListener('load', () => {
@@ -219,15 +219,10 @@
       window.addEventListener(eventName, startForInteraction, true);
     });
 
-    try {
-      paintObserver = new PerformanceObserver((list) => {
-        if (list.getEntries().some((entry) => entry.name === 'first-contentful-paint')) {
-          startBundle();
-        }
-      });
-      paintObserver.observe({ type: 'paint', buffered: true });
-    } catch (error) {
-      startBundle();
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(startBundle, { timeout: 4000 });
+    } else {
+      setTimeout(startBundle, 3000);
     }
   })();
 </script>

@@ -129,6 +129,54 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('tannersville-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-visit-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'visit' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'visit/index.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('visit-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-instagram-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'instagram' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'instagram/index.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('instagram-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-free-intro-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'free-bjj-intro-tannersville-ny' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'free-bjj-intro-tannersville-ny/index.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('free-intro-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-options-pricing-styles.mjs' in names:
+        html_c = ROOT / 'dist' / 'options-pricing.html'
+        dir_c = ROOT / 'dist' / 'options-pricing' / 'index.html'
+        if html_c.is_file():
+            outputs.add((html_c, 'options-pricing.html'))
+        if dir_c.is_file():
+            outputs.add((dir_c, 'options-pricing/index.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('options-pricing-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-bjj-classes-styles.mjs' in names:
+        candidate = ROOT / 'dist' / 'bjj-classes' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'bjj-classes/index.html'))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('bjj-classes-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names

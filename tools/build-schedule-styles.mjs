@@ -79,7 +79,6 @@ const results = await new PurgeCSS().purge({
     /^is-/,
     /^lane-/,
     /^page-/,
-    /^bi-/,
     /^nav-/,
     /^navbar-/,
     /^dropdown/,
