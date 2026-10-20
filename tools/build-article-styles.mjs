@@ -114,6 +114,33 @@ for (const page of blogPages) {
 
 const cssParts = await Promise.all(uniqueOwnedHrefs.map(async (href) => expandCss(await localFile(href))));
 
+// Inventory all .bi icon classes actually used on blog article pages and includes
+const KNOWN_ARTICLE_ICONS = new Set([
+  'bi',
+  'bi-arrow-right',
+  'bi-arrow-right-short',
+  'bi-arrow-up-right',
+  'bi-chat-dots',
+  'bi-chat-text',
+  'bi-check-circle-fill',
+  'bi-clock',
+  'bi-clock-history',
+  'bi-envelope',
+  'bi-geo-alt',
+  'bi-info-circle',
+  'bi-lightbulb-fill',
+  'bi-people',
+  'bi-shield-check',
+  'bi-shield-lock-fill',
+  'bi-speedometer2',
+  'bi-telephone'
+]);
+
+const cleanHtmlForIcons = expandedAllHtml.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+for (const m of cleanHtmlForIcons.matchAll(/\bclass=["'][^"']*?\b(bi-[a-zA-Z0-9_-]+)\b/g)) {
+  KNOWN_ARTICLE_ICONS.add(m[1]);
+}
+
 const results = await new PurgeCSS().purge({
   content: [{ raw: expandedAllHtml, extension: 'html' }, ...scriptContent],
   css: [{ raw: cssParts.join('\n') }],
@@ -128,7 +155,7 @@ const results = await new PurgeCSS().purge({
     /^hero__/,
     /^video-/,
     /^btn-/,
-    /^bi-/,
+    ...KNOWN_ARTICLE_ICONS,
     /^nav-/,
     /^navbar-/,
     /^dropdown/,
@@ -166,6 +193,12 @@ const results = await new PurgeCSS().purge({
 
 if (results.length !== 1 || !results[0].css) throw new Error('Missing article CSS result');
 let css = sass.compileString(results[0].css, { style: 'compressed', syntax: 'css', charset: false }).css + '\n';
+
+// Strip any unreferenced .bi-* icon rules to guarantee bootstrap-icons is strictly subsetted
+css = css.replace(/\.bi-[a-zA-Z0-9_-]+(?:::[a-z]+)?\s*\{[^}]*\}/g, (match) => {
+  const m = match.match(/\.(bi-[a-zA-Z0-9_-]+)/);
+  return (m && KNOWN_ARTICLE_ICONS.has(m[1])) ? match : '';
+});
 
 // Prune unreferenced CSS variable declarations to reduce unused CSS payload safely
 const varRegex = /var\(\s*(--[a-zA-Z0-9_-]+)/g;
