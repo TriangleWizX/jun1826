@@ -278,6 +278,14 @@ def changed_outputs(commit):
                 if dir_c.is_file():
                     outputs.add((dir_c, 'options-pricing/index.html'))
                 continue
+            elif name == 'src/about.html':
+                html_c = ROOT / 'dist' / 'about.html'
+                dir_c = ROOT / 'dist' / 'about' / 'index.html'
+                if html_c.is_file():
+                    outputs.add((html_c, 'about.html'))
+                if dir_c.is_file():
+                    outputs.add((dir_c, 'about/index.html'))
+                continue
             elif name == 'src/fall-practice-reset.html':
                 candidate = ROOT / 'dist' / 'fall-practice-reset' / 'index.html'
             elif name == 'src/hyphen-weekend.html':
