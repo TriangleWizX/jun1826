@@ -181,6 +181,17 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('bjj-classes-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+    if 'tools/build-article-styles.mjs' in names:
+        blog_dir = ROOT / 'dist' / 'blog'
+        if blog_dir.is_dir():
+            for blog_cand in blog_dir.rglob('index.html'):
+                if blog_cand.is_file():
+                    outputs.add((blog_cand, blog_cand.relative_to(ROOT / 'dist').as_posix()))
+        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        if pages_css_dir.is_dir():
+            for css_cand in pages_css_dir.glob('article-delivery.*.css'):
+                if css_cand.is_file():
+                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names
