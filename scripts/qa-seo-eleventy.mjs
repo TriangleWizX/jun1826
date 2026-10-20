@@ -4,7 +4,7 @@ import path from 'node:path';
 const root = path.join(process.cwd(), 'dist');
 const errors = [];
 let checked = 0;
-const childSitemaps = ['sitemap-core.xml', 'sitemap-programs.xml', 'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml'];
+const childSitemaps = ['sitemap-core.xml', 'sitemap-programs.xml', 'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml', 'sitemap-research.xml'];
 const primaryFiles = new Set(['index.html', 'free-bjj-intro-tannersville-ny/index.html', 'options-pricing/index.html', 'schedule/index.html', 'bjj-classes/kids-tannersville-ny/index.html', 'bjj-classes/teens-tannersville-ny/index.html', 'bjj-classes/adults-tannersville-ny/index.html', 'bjj-classes/tannersville-ny/index.html', 'bjj-classes/hunter-ny/index.html', 'bjj-classes/windham-ny/index.html', 'bjj-classes/haines-falls-ny/index.html']);
 
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');

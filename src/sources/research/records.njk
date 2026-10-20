@@ -8,7 +8,7 @@ permalink: "{{ record.detailUrl }}/index.html"
 eleventyComputed:
   title: "{{ record.seoTitle or record.title }} | Source Record"
   keywords: "{{ record.keywords or 'bjj, research, martial arts, source record' }}"
-  description: "Source record for {{ record.title }}. It summarizes what the study or article reports and what it cannot show about Sensei Sandy BJJ."
+  description: "Source record for {{ record.title }}. It shares the study findings and sets the source scope."
   canonicalUrl: "https://senseisandy.com{{ record.detailUrl }}"
   robots: "index, follow"
 ---
@@ -581,6 +581,36 @@ eleventyComputed:
     {% endif %}
 
     <!-- Academic Methodology & Scope -->
+    {% if record.positiveResearchPage %}
+    <script type="application/ld+json">{{ {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": record.title,
+      "author": record.authors,
+      "datePublished": record.publicationDate,
+      "url": "https://senseisandy.com" + record.detailUrl,
+      "sameAs": record.source,
+      "identifier": record.doi,
+      "isPartOf": {"@type": "CreativeWorkSeries", "name": "Sensei Sandy BJJ Research Source Records", "url": "https://senseisandy.com/sources"}
+    } | json | safe }}</script>
+    <section class="ss-academic-scope" aria-labelledby="academic-scope-title">
+      <div class="ss-scope-header"><div>
+        <span class="ss-eyebrow-scope">Source record</span>
+        <h2 id="academic-scope-title" class="ss-scope-title">Study Summary &amp; Academic Scope</h2>
+      </div></div>
+      <div class="ss-scope-grid">
+        <div class="ss-scope-card ss-card-full"><div class="ss-scope-card-label">Source and method</div>
+          <p class="ss-scope-card-body">{{ record.evidenceType | replace('-', ' ') | capitalize }}. {{ record.intervention.description }}. The source covers {{ record.population.ageGroup }}.</p>
+        </div>
+        <div class="ss-scope-card ss-card-found ss-card-full"><div class="ss-scope-card-label">What the source reports</div>
+          <p class="ss-scope-card-body">{{ record.found }}</p>
+        </div>
+        <div class="ss-scope-card ss-card-full"><div class="ss-scope-card-label">Scope of this source</div>
+          <p class="ss-scope-card-body">{{ record.notTested }}</p>
+        </div>
+      </div>
+    </section>
+    {% else %}
     <section class="ss-academic-scope" aria-labelledby="academic-scope-title">
       <div class="ss-scope-header">
         <div>
@@ -663,6 +693,7 @@ eleventyComputed:
         </div>
       </div>
     </section>
+    {% endif %}
 
     <!-- Source Links & Citations Bar -->
     <div class="ss-citation-row">

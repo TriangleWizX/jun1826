@@ -20,7 +20,7 @@ ROOT_FILES.add('class-rules.html')
 ROOT_FILES.add('parents-guide-kids-bjj.html')
 ROOT_FILES.add('about.html')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
-                   'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml')
+ 'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml', 'sitemap-research.xml')
 RESEARCH_RECORD_OUTPUTS = (
     'sources/research/bjj-ecological-dynamical-2026/index.html',
     'sources/research/games-based-teaching-review/index.html',
@@ -34,6 +34,15 @@ RESEARCH_RECORD_OUTPUTS = (
     'sources/research/rugby-ecological-dynamics-2026/index.html',
     'sources/research/ecological-dynamic-learning-review-2026/index.html',
     'sources/research/bjj-injury-2025/index.html',
+ 'sources/research/bjj-injury-rates-review/index.html',
+ 'sources/research/combat-sports-injury-epidemiology-review/index.html',
+ 'sources/research/combat-sports-post-concussion-care/index.html',
+ 'sources/research/deliberate-practice-expertise/index.html',
+ 'sources/research/exercise-cognition-neuroplasticity-review/index.html',
+ 'sources/research/greene-county-child-health-2024/index.html',
+ 'sources/research/greene-county-community-health-2022-2024/index.html',
+ 'sources/research/pediatric-bjj-injury-review/index.html',
+ 'sources/research/youth-sports-injury-prevention/index.html',
 )
 
 def changed_outputs(commit):

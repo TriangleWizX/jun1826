@@ -22,6 +22,7 @@ const outcomeIds = [
 ];
 const moreIds = ['rugby-ecological-dynamics-2026', 'ecological-dynamic-learning-review-2026'];
 const injuryId = 'bjj-injury-2025';
+const researchIds = ['bjj-injury-rates-review', 'combat-sports-injury-epidemiology-review', 'combat-sports-post-concussion-care', 'deliberate-practice-expertise', 'exercise-cognition-neuroplasticity-review', 'greene-county-child-health-2024', 'greene-county-community-health-2022-2024', 'pediatric-bjj-injury-review', 'youth-sports-injury-prevention'];
 const cardFields = ['cardLabel', 'cardTitle', 'cardSummary', 'cardLimit'];
 const requiredFields = ['id', 'title', 'authors', 'year', 'publicationDate', 'category', 'sport', 'evidenceType', 'population', 'intervention', 'tested', 'found', 'notTested', 'source', 'detailUrl', 'verifiedAt', 'staleAfter'];
 
@@ -102,4 +103,19 @@ assert.match(builtPage, /What can you see in class\?/, 'built page is missing cl
 assert.match(builtPage, /Book a Free First Visit/, 'built page is missing first visit CTA');
 assert.doesNotMatch(builtPage, /\{%\s*(?:record|if|endif|for)\b/, 'built page contains unrendered Nunjucks tags');
 assert.equal((builtPage.match(/<article\b/g) || []).length, 9, 'built page must show exactly nine main study cards');
-console.log(`Evidence page record QA passed (${teachingIds.length} teaching, ${outcomeIds.length} outcome, ${moreIds.length} More reading records, 1 injury source record).`);
+for (const id of researchIds) {
+  const record = byId.get(id);
+  assert.ok(record?.positiveResearchPage, `${id}: positive research page record is missing`);
+  assert.match(record.source, /^https:\/\//, `${id}: source link must use HTTPS`);
+  const route = path.join(root, 'dist', record.detailUrl.replace(/^\//, ''), 'index.html');
+  assert.ok(fs.existsSync(route), `${id}: rendered route is missing`);
+  const html = fs.readFileSync(route, 'utf8');
+  assert.equal((html.match(/<h1\b/g) || []).length, 1, `${id}: route must have one H1`);
+  assert.match(html, /Study Summary &amp; Academic Scope/);
+  const schemas = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
+    .map((match) => JSON.parse(match[1]));
+  assert.ok(schemas.some((schema) => JSON.stringify(schema).includes('ScholarlyArticle') && JSON.stringify(schema).includes(record.source)), `${id}: source-linked ScholarlyArticle JSON-LD is missing`);
+  assert.ok(html.includes(record.source), `${id}: source link is missing`);
+  assert.match(html, /Source Record<\/title>/);
+}
+console.log(`Evidence page record QA passed (${teachingIds.length} teaching, ${outcomeIds.length} outcome, ${moreIds.length} More reading, 1 legacy injury, ${researchIds.length} new research records).`);

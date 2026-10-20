@@ -65,6 +65,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/sitemap-locations.xml": "sitemap-locations.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap-blog.xml": "sitemap-blog.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap-glossary.xml": "sitemap-glossary.xml" });
+  eleventyConfig.addPassthroughCopy({ "src/sitemap-research.xml": "sitemap-research.xml" });
   eleventyConfig.addPassthroughCopy({ "src/sitemap.xml": "sitemap.xml" });
 
   // Editorial articles historically carried a duplicated acquisition rail.

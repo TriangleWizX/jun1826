@@ -205,7 +205,8 @@ describe('Link & Route Suite', () => {
       'sitemap-programs.xml',
       'sitemap-locations.xml',
       'sitemap-blog.xml',
-      'sitemap-glossary.xml'
+      'sitemap-glossary.xml',
+      'sitemap-research.xml'
     ];
     for (const sm of sitemaps) {
       const smPath = path.join(DIST, sm);

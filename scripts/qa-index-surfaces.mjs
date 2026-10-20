@@ -8,7 +8,7 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const readDist = (file) => fs.readFileSync(path.join(dist, file), 'utf8');
 const routePolicy = JSON.parse(read('config/route-policy.json'));
 const redirects = JSON.parse(read('config/legacy-redirects.json')).redirects;
-const sitemapFiles = ['sitemap.xml', 'pages-sitemap.xml', 'blog-sitemap.xml', 'sitemap-blog.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'sitemap-locations.xml', 'sitemap-glossary.xml']
+const sitemapFiles = ['sitemap.xml', 'pages-sitemap.xml', 'blog-sitemap.xml', 'sitemap-blog.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'sitemap-locations.xml', 'sitemap-glossary.xml', 'sitemap-research.xml']
   .map((file) => path.join(dist, file)).filter(fs.existsSync);
 const sitemap = sitemapFiles.map((file) => fs.readFileSync(file, 'utf8')).join('\n');
 const allHtml = [];

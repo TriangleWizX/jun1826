@@ -44,7 +44,7 @@ for (const route of [...publicRoutes, ...privateRoutes, ...glossaryRoutes]) {
 const gi = read('/blog/gi-vs-no-gi-bjj-cheat-code');
 if (count(gi, /<meta[^>]+name=["']description["'][^>]*>/gi) !== 1 || !meta(gi, 'description')) errors.push('gi-vs-no-gi article: unique description missing');
 
-const sitemapFiles = ['sitemap-core.xml', 'sitemap-programs.xml', 'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml'];
+const sitemapFiles = ['sitemap-core.xml', 'sitemap-programs.xml', 'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml', 'sitemap-research.xml'];
 const sitemap = sitemapFiles.map((name) => fs.readFileSync(path.join(DIST, name), 'utf8')).join('\n');
 for (const route of privateRoutes) if (sitemap.includes(`https://senseisandy.com${route}`)) errors.push(`${route}: private route appears in sitemap`);
 for (const route of publicRoutes) if (!sitemap.includes(`https://senseisandy.com${route === '/' ? '/' : route}`)) errors.push(`${route}: public route missing from sitemap`);

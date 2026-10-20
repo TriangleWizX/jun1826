@@ -12,6 +12,7 @@ const PROGRAMS_SITEMAP = path.join(ROOT, 'sitemap-programs.xml');
 const LOCATIONS_SITEMAP = path.join(ROOT, 'sitemap-locations.xml');
 const BLOG_SITEMAP = path.join(ROOT, 'sitemap-blog.xml');
 const GLOSSARY_SITEMAP = path.join(ROOT, 'sitemap-glossary.xml');
+const RESEARCH_SITEMAP = path.join(ROOT, 'sitemap-research.xml');
 const SRC_SITEMAP_DIR = path.join(ROOT, 'src');
 const normalizePath = (value) => String(value || '/').replace(/\/$/, '') || '/';
 
@@ -67,6 +68,7 @@ export const main = async () => {
   const locationUrls = new Set();
   const blogUrls = new Set();
   const glossaryUrls = new Set();
+  const researchUrls = new Set();
 
   for (const entry of registry) {
     if (!entry.indexable || entry.status !== 'active' || entry.redirectTarget ||
@@ -91,6 +93,8 @@ export const main = async () => {
       blogUrls.add(fullUrl);
     } else if (entry.sitemapGroup === 'glossary') {
       glossaryUrls.add(fullUrl);
+    } else if (entry.sitemapGroup === 'research') {
+      researchUrls.add(fullUrl);
     }
   }
 
@@ -99,31 +103,35 @@ export const main = async () => {
   await fs.writeFile(LOCATIONS_SITEMAP, buildXml(locationUrls), 'utf8');
   await fs.writeFile(BLOG_SITEMAP, buildXml(blogUrls), 'utf8');
   await fs.writeFile(GLOSSARY_SITEMAP, buildXml(glossaryUrls), 'utf8');
+  await fs.writeFile(RESEARCH_SITEMAP, buildXml(researchUrls), 'utf8');
   await fs.writeFile(path.join(ROOT, 'blog-sitemap.xml'), buildXml(blogUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-core.xml'), buildXml(coreUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-programs.xml'), buildXml(programUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-locations.xml'), buildXml(locationUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-blog.xml'), buildXml(blogUrls), 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-glossary.xml'), buildXml(glossaryUrls), 'utf8');
+  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-research.xml'), buildXml(researchUrls), 'utf8');
 
   const childSitemaps = [
     `${SITE}/sitemap-core.xml`,
     `${SITE}/sitemap-programs.xml`,
     `${SITE}/sitemap-locations.xml`,
     `${SITE}/sitemap-blog.xml`,
-    `${SITE}/sitemap-glossary.xml`
+    `${SITE}/sitemap-glossary.xml`,
+    `${SITE}/sitemap-research.xml`
   ];
 
   const indexXml = buildIndexXml(childSitemaps);
   await fs.writeFile(MASTER_SITEMAP, indexXml, 'utf8');
   await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap.xml'), indexXml, 'utf8');
 
-  console.log(`DEV-201 complete: Generated sitemap.xml index and 5 child sitemaps:`);
+  console.log(`DEV-201 complete: Generated sitemap.xml index and 6 child sitemaps:`);
   console.log(` - sitemap-core.xml (${coreUrls.size} URLs)`);
   console.log(` - sitemap-programs.xml (${programUrls.size} URLs)`);
   console.log(` - sitemap-locations.xml (${locationUrls.size} URLs)`);
   console.log(` - sitemap-blog.xml (${blogUrls.size} URLs)`);
   console.log(` - sitemap-glossary.xml (${glossaryUrls.size} URLs)`);
+  console.log(` - sitemap-research.xml (${researchUrls.size} URLs)`);
 };
 
 if (process.argv[1] && process.argv[1].endsWith('build-all-sitemaps.mjs')) {
