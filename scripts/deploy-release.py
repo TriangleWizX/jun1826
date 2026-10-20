@@ -80,6 +80,10 @@ def changed_outputs(commit):
             candidate = ROOT / 'dist' / rel
             if candidate.is_file():
                 outputs.add((candidate, rel))
+    if 'src/_data/faqs.json' in names:
+        candidate = ROOT / 'dist' / 'bjj-faqs.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'bjj-faqs.html'))
     if 'src/winter-rank-drop.html' in names: outputs.add((ROOT / 'dist/winter-rank-drop/index.html', 'winter-rank-drop/index.html'))
     for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
         if asset in names: outputs.add((ROOT / asset, asset))
