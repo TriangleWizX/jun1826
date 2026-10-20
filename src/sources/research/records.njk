@@ -12,6 +12,29 @@ eleventyComputed:
   canonicalUrl: "https://senseisandy.com{{ record.detailUrl }}"
   robots: "index, follow"
 ---
+{% if record.id == "bjj-school-rct" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://senseisandy.com/sources/research/bjj-school-rct#webpage",
+  "url": "https://senseisandy.com/sources/research/bjj-school-rct",
+  "name": "School-Based BJJ Trial on Behavior | Source Record",
+  "citation": {
+    "@type": "ScholarlyArticle",
+    "@id": {{ ("https://doi.org/" ~ record.doi) | json | safe }},
+    "headline": {{ record.title | json | safe }},
+    "author": [
+      {% for author in record.schemaAuthors %}
+      { "@type": "Person", "name": {{ author | json | safe }} }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ],
+    "datePublished": {{ record.year | string | json | safe }},
+    "url": {{ record.source | json | safe }}
+  }
+}
+</script>
+{% endif %}
 <main class="ss-main ss-source-record-main" id="main-content">
   <style>
     .ss-source-record-main {
