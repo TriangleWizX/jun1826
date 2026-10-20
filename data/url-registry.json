@@ -3531,6 +3531,28 @@
     "redirectTarget": "/bully-proof-jiu-jitsu-tannersville-ny"
   },
   {
+    "path": "/bio",
+    "pageType": "core",
+    "status": "active",
+    "indexable": true,
+    "canonicalPath": "/bio",
+    "sitemapGroup": "core",
+    "navigationGroup": "core",
+    "lastSignificantUpdate": "2026-10-20",
+    "redirectTarget": null
+  },
+  {
+    "path": "/about",
+    "pageType": "archive",
+    "status": "redirect",
+    "indexable": false,
+    "canonicalPath": "/bio",
+    "sitemapGroup": null,
+    "navigationGroup": null,
+    "lastSignificantUpdate": "2026-10-20",
+    "redirectTarget": "/bio"
+  },
+  {
     "path": "/bios",
     "pageType": "archive",
     "status": "redirect",
