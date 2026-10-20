@@ -71,6 +71,17 @@ html = html.replace(/<style\b(?![^>]*\bid=["']instagram-delivery-inline["'])[^>]
   return '';
 });
 
+const usedIcons = new Set(['bi']);
+const cleanExpanded = expanded.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+for (const m of cleanExpanded.matchAll(/\bclass=["'][^"']*?\b(bi-[a-zA-Z0-9_-]+)\b/g)) {
+  usedIcons.add(m[1]);
+}
+for (const s of scriptContent) {
+  for (const m of s.raw.matchAll(/\b(bi-[a-zA-Z0-9_-]+)\b/g)) {
+    usedIcons.add(m[1]);
+  }
+}
+
 const cssParts = [
   ...await Promise.all(owned.map(async (l) => expandCss(await localFile(l.href)))),
   ...inlineStyles
@@ -80,6 +91,7 @@ const results = await new PurgeCSS().purge({
   css: [{ raw: cssParts.join('\n') }],
   safelist: [
     ...RUNTIME_SAFELIST,
+    ...usedIcons,
     /:where/,
     /^ss-/,
     /^ig-/,
@@ -98,7 +110,6 @@ const results = await new PurgeCSS().purge({
     /^reassure-/,
     /^sticky-/,
     /^btn-/,
-    /^bi-/,
     /^nav-/,
     /^navbar-/,
     /^dropdown/,

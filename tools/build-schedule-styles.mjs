@@ -144,6 +144,9 @@ try {
     for (const l of flatOwned.slice(1)) flatHtml = flatHtml.replace(l.tag, '');
     for (const l of flatLinks.filter((l) => l.rel === 'preload' && l.as === 'style' && /^\/tokens[.]/.test(l.href))) flatHtml = flatHtml.replace(l.tag, '');
     await fs.writeFile(scheduleFlat, flatHtml);
+  } else if (/id="schedule-delivery-inline"/.test(flatHtml)) {
+    flatHtml = flatHtml.replace(/<style id="schedule-delivery-inline">[\s\S]*?<\/style>/, `<style id="schedule-delivery-inline">${css.trim()}</style>`);
+    await fs.writeFile(scheduleFlat, flatHtml);
   }
 } catch (_) {}
 

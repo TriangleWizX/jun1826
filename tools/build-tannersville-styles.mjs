@@ -67,12 +67,24 @@ for (const match of expanded.matchAll(/<script\b[^>]*\bsrc=["'](\/[^"']+)["'][^>
   } catch (_) {}
 }
 
+const usedIcons = new Set(['bi']);
+const cleanExpanded = expanded.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+for (const m of cleanExpanded.matchAll(/\bclass=["'][^"']*?\b(bi-[a-zA-Z0-9_-]+)\b/g)) {
+  usedIcons.add(m[1]);
+}
+for (const s of scriptContent) {
+  for (const m of s.raw.matchAll(/\b(bi-[a-zA-Z0-9_-]+)\b/g)) {
+    usedIcons.add(m[1]);
+  }
+}
+
 const cssParts = await Promise.all(owned.map(async (l) => expandCss(await localFile(l.href))));
 const results = await new PurgeCSS().purge({
   content: [{ raw: expanded, extension: 'html' }, ...scriptContent],
   css: [{ raw: cssParts.join('\n') }],
   safelist: [
     ...RUNTIME_SAFELIST,
+    ...usedIcons,
     /^ss-/,
     /^page-tannersville/,
     /^db-card/,
@@ -81,7 +93,6 @@ const results = await new PurgeCSS().purge({
     /^btn-/,
     /^bento-/,
     /^schedule-/,
-    /^bi-/,
     /^nav-/,
     /^navbar-/,
     /^dropdown/,
