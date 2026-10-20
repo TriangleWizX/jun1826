@@ -580,6 +580,10 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
     Header always set Cache-Control "public, max-age=300, s-maxage=300"
   </FilesMatch>
 
+  <IfModule LiteSpeed>
+    CacheLookup public on
+  </IfModule>
+
 
   # Long cache for fingerprinted static assets (1 year immutable).
   # Matches 6-character, 12-character, or up to 16-character content hashes.
