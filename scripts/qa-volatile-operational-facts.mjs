@@ -54,7 +54,13 @@ if (fs.existsSync(path.join(root, "dist"))) walk(path.join(root, "dist"));
 for (const file of files) {
   if (allowHistorical.has(file)) continue;
   const body = read(file);
-  for (const rule of banned) if (rule.test(body)) fail(`${file}: contains banned volatile fact or legacy term ${rule}`);
+  // The approved bootcamp entries are the sole source allowed to carry these
+  // early-morning times. Mask only those exact JSON fields before the global scan.
+  const scanBody = file === "src/_data/schedule.json"
+    ? body.replace(/("id": "(?:tuesday|thursday)-alley-bootcamp"[\s\S]*?"active": true)/g, (entry) =>
+        entry.replace(/"(?:time|endTime)": "(?:6:30 AM|7:10 AM)"/g, '"time": "BOOTCAMP_TIME"'))
+    : body;
+  for (const rule of banned) if (rule.test(scanBody)) fail(`${file}: contains banned volatile fact or legacy term ${rule}`);
 }
 
 for (const file of [

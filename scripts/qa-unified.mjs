@@ -221,10 +221,34 @@ describe('Link & Route Suite', () => {
 // 3. Contract & Governance Suite
 // ==========================================
 describe('Contract & Governance Suite', () => {
-  it('canonical schedule defines 11 active group classes', async () => {
+  it('canonical schedule defines 11 BJJ classes and validates approved bootcamp entries', async () => {
     const scheduleData = JSON.parse(await fs.readFile(path.join(ROOT, 'src/_data/schedule.json'), 'utf8'));
     const active = scheduleData.groupClasses.filter((item) => item.active);
-    assert.equal(active.length, 11, 'Canonical schedule must have exactly 11 active recurring group classes');
+    const bjjClasses = active.filter((item) => item.format !== 'Bootcamp');
+    const bootcamps = active.filter((item) => item.format === 'Bootcamp');
+    assert.equal(bjjClasses.length, 11, 'Canonical schedule must have exactly 11 active recurring BJJ classes');
+    assert.ok([0, 2].includes(bootcamps.length), 'Canonical schedule may contain zero or exactly two bootcamp entries');
+    if (bootcamps.length) {
+      const expectedBootcamps = [
+        ['tuesday-alley-bootcamp', 'Tuesday', 'Strength'],
+        ['thursday-alley-bootcamp', 'Thursday', 'Engine']
+      ];
+      for (const [id, day, focus] of expectedBootcamps) {
+        const item = bootcamps.find((entry) => entry.id === id);
+        assert.ok(item, `Missing approved bootcamp entry: ${id}`);
+        assert.equal(item.day, day);
+        assert.equal(item.time, '6:30 AM');
+        assert.equal(item.time24, '06:30');
+        assert.equal(item.endTime, '7:10 AM');
+        assert.equal(item.endTime24, '07:10');
+        assert.equal(item.publicLabel, 'Alley Bootcamp');
+        assert.equal(item.focus, focus);
+        assert.equal(item.location, 'Alley beside the studio');
+        assert.equal(item.weatherBackup, 'Studio');
+        assert.equal(item.coach, 'Sandy');
+        assert.equal(item.capacity, 8);
+      }
+    }
 
     const expected = [
       ['Monday', 'Youth/Teen', '5:00 PM', 'No-Gi'],
@@ -273,6 +297,7 @@ describe('Contract & Governance Suite', () => {
       /free goal mapping/i,
       /30-day confidence guarantee/i,
       /6:30\s*AM/i,
+      /7:10\s*AM/i,
       /10:00\s*AM Private/i
     ];
     const allowHistorical = new Set(['holiday-schedule/index.html', 'holiday-schedule.html']);
@@ -280,7 +305,12 @@ describe('Contract & Governance Suite', () => {
 
     for (const [relPath, page] of pageCache.entries()) {
       if (allowHistorical.has(relPath)) continue;
-      for (const rule of banned) {
+      const rules = banned.filter((rule) => {
+        if (relPath === 'schedule/index.html' && /6:30|7:10/.test(rule.source)) return false;
+        if (relPath === 'bjj-classes/adults-tannersville-ny/index.html' && /6:30/.test(rule.source)) return false;
+        return true;
+      });
+      for (const rule of rules) {
         if (rule.test(page.content)) {
           violations.push(`${relPath}: matched banned phrase ${rule}`);
         }
