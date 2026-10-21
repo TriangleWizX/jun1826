@@ -306,7 +306,10 @@ describe('Contract & Governance Suite', () => {
     for (const [relPath, page] of pageCache.entries()) {
       if (allowHistorical.has(relPath)) continue;
       const content = relPath === 'alley-bootcamp/index.html'
-        ? page.content.replace('Tue + Thu, 6:30 AM', '')
+        ? page.content
+          .replace('Tue + Thu, 6:30 AM', '')
+          .replace('Tuesday 6:30 AM Bootcamp', '')
+          .replace('Thursday 6:30 AM Bootcamp', '')
         : page.content;
       const rules = banned.filter((rule) => {
         if (relPath === 'schedule/index.html' && /6:30|7:10/.test(rule.source)) return false;
