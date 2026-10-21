@@ -4646,11 +4646,11 @@
     "pageType": "archive",
     "status": "redirect",
     "indexable": false,
-    "canonicalPath": "/school-families-jiu-jitsu",
+    "canonicalPath": "/family-jiu-jitsu",
     "sitemapGroup": null,
     "navigationGroup": null,
     "lastSignificantUpdate": "2026-10-13",
-    "redirectTarget": "/school-families-jiu-jitsu"
+    "redirectTarget": "/family-jiu-jitsu"
   },
   {
     "path": "/phoenicia-diner",
@@ -4786,14 +4786,14 @@
   },
   {
     "path": "/school-families-jiu-jitsu",
-    "pageType": "core",
-    "status": "active",
-    "indexable": true,
-    "canonicalPath": "/school-families-jiu-jitsu",
-    "sitemapGroup": "core",
-    "navigationGroup": "core",
+    "pageType": "archive",
+    "status": "redirect",
+    "indexable": false,
+    "canonicalPath": "/family-jiu-jitsu",
+    "sitemapGroup": null,
+    "navigationGroup": null,
     "lastSignificantUpdate": "2026-10-20",
-    "redirectTarget": null
+    "redirectTarget": "/family-jiu-jitsu"
   },
   {
     "path": "/scribners-staff-reset-pass",
@@ -7334,6 +7334,28 @@
     "sitemapGroup": "programs",
     "navigationGroup": "program",
     "lastSignificantUpdate": "2026-10-20",
+    "redirectTarget": null
+  },
+  {
+    "path": "/family-jiu-jitsu-tannersville",
+    "pageType": "archive",
+    "status": "redirect",
+    "indexable": false,
+    "canonicalPath": "/family-jiu-jitsu",
+    "sitemapGroup": null,
+    "navigationGroup": null,
+    "lastSignificantUpdate": "2026-10-21",
+    "redirectTarget": "/family-jiu-jitsu"
+  },
+  {
+    "path": "/family-jiu-jitsu",
+    "pageType": "core",
+    "status": "active",
+    "indexable": true,
+    "canonicalPath": "/family-jiu-jitsu",
+    "sitemapGroup": "core",
+    "navigationGroup": "core",
+    "lastSignificantUpdate": "2026-10-21",
     "redirectTarget": null
   }
 ]

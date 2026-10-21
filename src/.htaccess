@@ -124,6 +124,7 @@ RewriteRule ^curriculum/?$ https://senseisandy.com/programs [L,R=301,NE]
 RewriteRule ^elite\-concierge/?$ https://senseisandy.com/adult-private-coaching-intensive [L,R=301,NE]
 RewriteRule ^elite\-concierge\.html/?$ https://senseisandy.com/adult-private-coaching-intensive [L,R=301,NE]
 RewriteRule ^fall\-practice\-reset/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE]
+RewriteRule ^family\-jiu\-jitsu\-tannersville/?$ https://senseisandy.com/family-jiu-jitsu [L,R=301,NE]
 RewriteRule ^faq/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
 RewriteRule ^faqs/?$ https://senseisandy.com/bjj-faqs [L,R=301,NE]
@@ -182,7 +183,7 @@ RewriteRule ^near/windham\-ny/?$ https://senseisandy.com/bjj-classes/windham-ny 
 RewriteRule ^nervous\-first\-timers/?$ https://senseisandy.com/how-class-works [L,R=301,NE]
 RewriteRule ^openingpress/?$ https://senseisandy.com/archive/openingpress [L,R=301,NE]
 RewriteRule ^options/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
-RewriteRule ^partners\-schools\-parents/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE]
+RewriteRule ^partners\-schools\-parents/?$ https://senseisandy.com/family-jiu-jitsu [L,R=301,NE]
 RewriteRule ^pricing/?$ https://senseisandy.com/options-pricing [L,R=301,NE]
 RewriteRule ^privates/?$ https://senseisandy.com/private-lessons [L,R=301,NE]
 RewriteRule ^raffle\-donation/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
@@ -194,6 +195,7 @@ RewriteRule ^samurai\-break/?$ https://senseisandy.com/parent-resources [L,R=301
 RewriteRule ^samuraibreak/?$ https://senseisandy.com/parent-resources [L,R=301,NE]
 RewriteRule ^schedule\.html/?$ https://senseisandy.com/schedule [L,R=301,NE]
 RewriteRule ^schedules/?$ https://senseisandy.com/schedule [L,R=301,NE]
+RewriteRule ^school\-families\-jiu\-jitsu/?$ https://senseisandy.com/family-jiu-jitsu [L,R=301,NE]
 RewriteRule ^scribners\-staff\-reset\-pass/?$ https://senseisandy.com/scribners [L,R=301,NE]
 RewriteRule ^start\-here/?$ https://senseisandy.com/free-bjj-intro-tannersville-ny [L,R=301,NE]
 RewriteRule ^stretches/?$ https://senseisandy.com/bjj-stretches [L,R=301,NE]
@@ -356,7 +358,7 @@ RewriteRule ^book-free-intro/adults(?:/index\.html|/)?$ https://senseisandy.com/
 RewriteRule ^adults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE,NC]
 RewriteRule ^options(?:\.html)?/?$ https://senseisandy.com/options-pricing [L,R=301,NE,NC]
 RewriteRule ^tannersville-bjj-video-library(?:\.html)?/?$ https://senseisandy.com/ [L,R=301,NE,NC]
-RewriteRule ^partners-schools-parents(?:\.html)?/?$ https://senseisandy.com/school-families-jiu-jitsu [L,R=301,NE,NC]
+RewriteRule ^partners-schools-parents(?:\.html)?/?$ https://senseisandy.com/family-jiu-jitsu [L,R=301,NE,NC]
 
 # Serve calendar feed files directly and skip rewrite chains.
 RewriteRule ^calendar/private-4pm\.ics$ /assets/calendar/private-lessons-4pm.ics [L,NC]
@@ -579,6 +581,10 @@ Redirect 301 /blog/confidence-protocol /free-bjj-intro-tannersville-ny
     Header set Cache-Control "public, max-age=300, s-maxage=300"
     Header always set Cache-Control "public, max-age=300, s-maxage=300"
   </FilesMatch>
+
+  <IfModule LiteSpeed>
+    CacheLookup public on
+  </IfModule>
 
 
   # Long cache for fingerprinted static assets (1 year immutable).
