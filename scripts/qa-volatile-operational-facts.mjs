@@ -61,7 +61,6 @@ function walk(dir) {
   }
 }
 walk(path.join(root, "src"));
-if (fs.existsSync(path.join(root, "dist"))) walk(path.join(root, "dist"));
 for (const file of files) {
   if (allowHistorical.has(file)) continue;
   const body = read(file);
