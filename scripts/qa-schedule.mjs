@@ -28,7 +28,8 @@ function checkCanonicalSchedule() {
       return [`Canonical schedule mismatch: ${day} ${audience} ${time} ${format}`];
     }
   }
-  if (activeGroupClasses.length !== 11) return ['Canonical schedule must contain exactly eleven recurring classes.'];
+  const EXPECTED_RECURRING_CLASSES = 13; // 11 BJJ classes + 2 Alley Bootcamp sessions (owner-approved Oct 20, 2026)
+  if (activeGroupClasses.length !== EXPECTED_RECURRING_CLASSES) return ['Canonical schedule must contain exactly eleven recurring classes.'];
   const foundations = activeGroupClasses.filter((entry) => entry.publicLabel === 'White Belt Foundations');
   if (foundations.length !== 2 || foundations.some((entry) => !['Tuesday', 'Thursday'].includes(entry.day) || entry.time !== '6:00 PM' || entry.programUrl !== '/white-belt-foundations/')) return ['White Belt Foundations must label only the Tuesday and Thursday 6 PM adult classes.'];
   const datedWomen = data.datedClasses || [];
@@ -36,7 +37,9 @@ function checkCanonicalSchedule() {
   if (JSON.stringify(datedWomen.map((item) => item.date)) !== JSON.stringify(womenDates) || datedWomen.some((item) => item.time !== '9:00 AM' || item.audience !== 'Women' || item.ages !== '18+' || item.format !== 'No-Gi')) return ['Women’s Foundations must list its six approved 9 AM pilot dates and eligibility.'];
   if (datedWomen.some((item) => item.date === '2026-11-28')) return ['Women’s Foundations must skip November 28.'];
   const youth = activeGroupClasses.filter((entry) => entry.audience === 'Youth/Teen');
-  const adults = activeGroupClasses.filter((entry) => entry.audience === 'Adult');
+  // BJJ classes only: Alley Bootcamp entries (format 'Bootcamp') are a separate
+  // program — counted in the 13-entry recurring total, not in the adult class structure.
+  const adults = activeGroupClasses.filter((entry) => entry.audience === 'Adult' && ['Gi', 'No-Gi'].includes(entry.format));
   if (youth.length !== 5 || youth.filter((entry) => entry.format === 'No-Gi').length !== 2 || youth.filter((entry) => entry.format === 'Gi').length !== 3) return ['Youth schedule ratio must be two No-Gi and three Gi.'];
   if (adults.length !== 6 || adults.filter((entry) => entry.format === 'No-Gi').length !== 1 || adults.filter((entry) => entry.format === 'Gi').length !== 5) return ['Adult schedule must have five weekday Gi classes and one Saturday No-Gi class.'];
   if (data.pilot?.capacity !== 12 || data.groupClasses.find((entry) => entry.id === 'friday-youth-teen-gi-lab')?.publicLabel !== 'Friday Gi Lab') return ['Pilot capacity or Friday Gi Lab label is incorrect.'];
