@@ -461,6 +461,26 @@ permalink: "/options-pricing/index.html"
         </div>
       </article>
 
+      <article id="alley-bootcamp-pricing" class="op-shell op-other-card op-other-card--visitor op-reveal">
+        <div class="op-card">
+          <div class="op-card__header">
+            <div>
+              <p class="op-card__kicker">Flexible Fitness Training</p>
+              <h3>Alley Bootcamp</h3>
+            </div>
+          </div>
+          <p>Tuesday and Thursday mornings at the alley beside the studio. Eight spots. Coach-led strength and engine work. <a href="/schedule">See the schedule</a></p>
+          <div class="op-pass-grid">
+            <div><span>Drop-in</span><strong>{{ pricing.visitorAndSupport.alleyBootcampDropIn.displayPrice }}</strong><small>{{ pricing.visitorAndSupport.alleyBootcampDropIn.term }}</small></div>
+            <div><span>4-Session Pass</span><strong>{{ pricing.visitorAndSupport.alleyBootcampFourSessionPass.displayPrice }}</strong><small>${{ (pricing.visitorAndSupport.alleyBootcampFourSessionPass.price / pricing.visitorAndSupport.alleyBootcampFourSessionPass.classCount) | round(2) }} per session</small></div>
+            <div><span>8-Session Pass</span><strong>{{ pricing.visitorAndSupport.alleyBootcampEightSessionPass.displayPrice }}</strong><small>${{ (pricing.visitorAndSupport.alleyBootcampEightSessionPass.price / pricing.visitorAndSupport.alleyBootcampEightSessionPass.classCount) | round(2) }} per session</small></div>
+            <div><span>Member Session</span><strong>{{ pricing.visitorAndSupport.alleyBootcampMemberSession.displayPrice }}</strong><small>With {{ pricing.visitorAndSupport.alleyBootcampMemberSession.eligibility | lower }}</small></div>
+            <div><span>Adult Annual Members</span><strong>{{ pricing.visitorAndSupport.alleyBootcampAdultAnnualIncluded.displayPrice }}</strong><small>Included with your plan</small></div>
+          </div>
+          <a class="op-text-link" href="/alley-bootcamp">How bootcamp works <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+
       <article class="op-shell op-other-card op-other-card--private op-reveal op-delay-1">
         <div class="op-card op-card--ink">
           <p class="op-card__kicker">One-on-One</p>
