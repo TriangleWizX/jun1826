@@ -1,20 +1,21 @@
 ---
 layout: layouts/base.njk
 title: "Alley Bootcamp in Tannersville, NY | Sensei Sandy BJJ"
-description: "Tuesday and Thursday morning bootcamp in Tannersville, NY. Small-group strength training with kettlebells on the alley steps beside Sensei Sandy BJJ. Eight spots. Coach-led."
+description: "Join adult Alley Bootcamp in Tannersville on Tuesday or Thursday morning. Coach-led strength and engine work, with eight spots and an indoor weather backup."
 canonicalUrl: "https://senseisandy.com/alley-bootcamp"
 bodyClass: "page-alley-bootcamp"
 permalink: "/alley-bootcamp/index.html"
 ---
 {% set bootcampSessions = [schedule.groupClasses[8], schedule.groupClasses[9]] %}
 {% set bootcampPrices = pricing.visitorAndSupport %}
-{% set smsHref = 'sms:+19177368649?body=Hi%20Sandy%2C%20save%20me%20a%20spot%20at%20Alley%20Bootcamp' %}
+{% set smsHref = 'sms:+19177368649?body=Hi%20Sandy%2C%20is%20there%20space%20at%20Alley%20Bootcamp%3F' %}
 {% set questions = [
-  {"question":"What should I bring?","answer":"Bring water and a warm layer for the first few minutes. Every bell, bag, and block is here at the studio."},
-  {"question":"I am new to strength training. Can I join?","answer":"Yes. Each station has an easy start and a strong pick, and Sandy sets each move to fit you. Start where you are."},
+  {"question":"Who can join?","answer":"Alley Bootcamp is for adults, ages 18 and up. You can choose a drop-in or a pass. Text Sandy if you are unsure which one fits."},
+  {"question":"What should I bring?","answer":"Bring water and wear clothes and shoes you can move in. A warm layer can help on cool mornings. The training gear is here."},
+  {"question":"I am new to strength training. Can I join?","answer":"Yes. Sandy shows each move and offers easier and harder ways to do it. Pick the pace that feels right for you."},
   {"question":"What if the weather turns wet?","answer":"We move the session into the studio and train there. Your spot stays yours."},
-  {"question":"Where do we meet?","answer":"Meet at the parking lot end of the alley beside 6045 Main Street. Sandy greets the group there."},
-  {"question":"How do I save a spot?","answer":"Text Sandy. The group caps at 8, and your text holds your place."}
+  {"question":"Where do we meet?","answer":"Meet at the parking lot end of the alley beside 6045 Main Street in Tannersville. Sandy will greet you there."},
+  {"question":"How do I check for a spot?","answer":"Text Sandy to ask if space is open and how to pay. The group has room for up to 8 people."}
 ] %}
 <main id="main-content" class="page-alley-bootcamp">
   <section class="py-5" style="background:linear-gradient(145deg,#fbfaf8,#f4f1ed);">
@@ -22,9 +23,10 @@ permalink: "/alley-bootcamp/index.html"
       <div class="row align-items-center g-4 g-lg-5">
         <div class="col-lg-6">
           <p class="text-uppercase fw-bold small" style="letter-spacing:.14em;color:var(--ss-green,#116A42);">Tannersville, NY · Coach-led</p>
-          <h1 class="display-2" style="font-family:'Instrument Serif',Georgia,serif;color:var(--ss-ink,#362B24);">Four Landings Alley Bootcamp</h1>
-          <p class="lead">Strength on Tuesdays, engine work on Thursdays, in the fresh Catskills air. Four landings, 19 steps, kettlebells, and a coach who sees every rep.</p>
-          <a class="btn btn-primary btn-lg rounded-pill" href="{{ smsHref }}">Text to Save Your Spot</a>
+          <h1 class="display-2" style="font-family:'Instrument Serif',Georgia,serif;color:var(--ss-ink,#362B24);">Morning strength in the Catskills</h1>
+          <p class="lead">Join adults for coach-led training on the alley steps beside Sensei Sandy BJJ. Tuesday is strength. Thursday is engine work. Each class lasts 40 minutes.</p>
+          <p>Adults 18+ · Up to 8 people · Rain plan: train inside</p>
+          <a class="btn btn-primary btn-lg rounded-pill" href="{{ smsHref }}">Text Sandy to Ask About a Spot</a>
         </div>
         <div class="col-lg-6">
           <figure class="p-2 p-md-3 rounded-5 bg-white shadow-sm mb-0">
@@ -36,9 +38,10 @@ permalink: "/alley-bootcamp/index.html"
         </div>
       </div>
       <ul class="list-unstyled d-flex flex-wrap gap-2 mt-4 mb-0" aria-label="Bootcamp facts">
-        <li class="badge rounded-pill text-bg-light border p-3">Tue + Thu, {{ bootcampSessions[0].time }}</li>
+        <li class="badge rounded-pill text-bg-light border p-3">Tuesday {{ bootcampSessions[0].time }} Bootcamp · 40 min</li>
+        <li class="badge rounded-pill text-bg-light border p-3">Thursday {{ bootcampSessions[1].time }} Bootcamp · 40 min</li>
         <li class="badge rounded-pill text-bg-light border p-3">40 minutes</li>
-        <li class="badge rounded-pill text-bg-light border p-3">{{ bootcampSessions[0].capacity }} spots</li>
+        <li class="badge rounded-pill text-bg-light border p-3">Up to {{ bootcampSessions[0].capacity }} people</li>
         <li class="badge rounded-pill text-bg-light border p-3">6045 Main Street, Tannersville</li>
       </ul>
     </div>
@@ -48,10 +51,10 @@ permalink: "/alley-bootcamp/index.html"
     <div class="container">
       <h2 id="session-flow-title" class="display-5 mb-4" style="font-family:'Instrument Serif',Georgia,serif;">How a session flows</h2>
       <div class="row g-3">
-        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Warm up</h3><p class="mb-0">Easy moves and stretches at the middle landing.</p></div></article></div>
-        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Four stations</h3><p class="mb-0">Blocks, balance ball, kettlebells, and the bag, one per landing.</p></div></article></div>
-        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Top of Main Street</h3><p class="mb-0">Climb all 19 steps, lift at the top, walk back down.</p></div></article></div>
-        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Cool down</h3><p class="mb-0">Foam roller, stretches, and slow breaths to end the session.</p></div></article></div>
+        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Warm up</h3><p class="mb-0">Start with easy moves and stretches at the middle landing.</p></div></article></div>
+        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Try four stations</h3><p class="mb-0">Use blocks, a balance ball, kettlebells, and a Bulgarian bag.</p></div></article></div>
+        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Move on the steps</h3><p class="mb-0">Walk up 19 steps, do a set at the top, then walk back down.</p></div></article></div>
+        <div class="col-md-6 col-lg-3"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h4">Cool down</h3><p class="mb-0">Finish with a foam roller, stretches, and slow breaths.</p></div></article></div>
       </div>
     </div>
   </section>
@@ -76,8 +79,8 @@ permalink: "/alley-bootcamp/index.html"
       <div class="row g-3">
         <div class="col-md-6 col-lg"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h5">Adult annual plan members</h3><p class="fs-4 mb-0">{{ bootcampPrices.alleyBootcampAdultAnnualIncluded.displayPrice }}</p><p class="mb-0">Included with your plan</p></div></article></div>
         <div class="col-md-6 col-lg"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h5">Members</h3><p class="fs-4 mb-0">{{ bootcampPrices.alleyBootcampMemberSession.displayPrice }}</p><p class="mb-0">Per session</p></div></article></div>
-        <div class="col-md-6 col-lg"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h5">4-session pass</h3><p class="fs-4 mb-0">{{ bootcampPrices.alleyBootcampFourSessionPass.displayPrice }}</p><p class="mb-0">Any Tuesday or Thursday</p></div></article></div>
-        <div class="col-md-6 col-lg"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h5">8-session pass</h3><p class="fs-4 mb-0">{{ bootcampPrices.alleyBootcampEightSessionPass.displayPrice }}</p><p class="mb-0">The twice-a-week pick</p></div></article></div>
+        <div class="col-md-6 col-lg"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h5">4-session pass</h3><p class="fs-4 mb-0">{{ bootcampPrices.alleyBootcampFourSessionPass.displayPrice }}</p><p class="mb-0">$20 per session</p></div></article></div>
+        <div class="col-md-6 col-lg"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h5">8-session pass</h3><p class="fs-4 mb-0">{{ bootcampPrices.alleyBootcampEightSessionPass.displayPrice }}</p><p class="mb-0">$18 per session</p></div></article></div>
         <div class="col-md-6 col-lg"><article class="ss-double-bezel h-100"><div class="ss-double-bezel-inner p-4 h-100"><h3 class="h5">Drop-in</h3><p class="fs-4 mb-0">{{ bootcampPrices.alleyBootcampDropIn.displayPrice }}</p><p class="mb-0">One session</p></div></article></div>
       </div>
       <a class="d-inline-block mt-4" href="/options-pricing">See all plans</a>
@@ -89,7 +92,7 @@ permalink: "/alley-bootcamp/index.html"
       <h2 id="bootcamp-faq-title" class="display-5 mb-4" style="font-family:'Instrument Serif',Georgia,serif;">Questions about Alley Bootcamp</h2>
       <div class="d-flex flex-column gap-3">
         {% for item in questions %}
-        <details class="faq-item"><summary><span class="faq-question-text">{{ item.question }}</span></summary><div class="faq-answer-content"><p class="mb-0">{{ item.answer }}{% if loop.index == 5 %} <a href="{{ smsHref }}">Text Sandy</a>{% endif %}</p></div></details>
+        <details class="faq-item"><summary><span class="faq-question-text">{{ item.question }}</span></summary><div class="faq-answer-content"><p class="mb-0">{{ item.answer }}{% if loop.index == 6 %} <a href="{{ smsHref }}">Text Sandy</a>{% endif %}</p></div></details>
         {% endfor %}
       </div>
     </div>
@@ -100,7 +103,7 @@ permalink: "/alley-bootcamp/index.html"
     <article class="ss-double-bezel">
       <div class="ss-double-bezel-inner p-4 p-md-5 d-md-flex align-items-center justify-content-between gap-4">
         <p class="lead mb-md-0">Coached by Sandy, first-degree BJJ black belt and head instructor at Sensei Sandy BJJ. <a href="/about">Meet Sandy</a></p>
-        <a class="btn btn-outline-primary rounded-pill" href="{{ smsHref }}">Text to Save Your Spot</a>
+        <a class="btn btn-outline-primary rounded-pill" href="{{ smsHref }}">Text Sandy to Ask About a Spot</a>
       </div>
     </article>
   </div>
@@ -109,7 +112,7 @@ permalink: "/alley-bootcamp/index.html"
 <section class="text-center py-5" aria-labelledby="bootcamp-final-cta-title">
   <div class="container">
     <h2 id="bootcamp-final-cta-title" class="display-5" style="font-family:'Instrument Serif',Georgia,serif;">Start calm. Train smart.</h2>
-    <a class="btn btn-primary btn-lg rounded-pill" href="{{ smsHref }}">Text to Save Your Spot</a>
+    <a class="btn btn-primary btn-lg rounded-pill" href="{{ smsHref }}">Text Sandy to Ask About a Spot</a>
     <p class="mt-3 mb-0">New to academy? <a href="/visit">Start with Free First Visit</a></p>
   </div>
 </section>
