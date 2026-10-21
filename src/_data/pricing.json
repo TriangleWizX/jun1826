@@ -463,6 +463,49 @@
     }
   },
   "visitorAndSupport": {
+    "alleyBootcampDropIn": {
+      "name": "Alley Bootcamp Drop-in",
+      "price": 25,
+      "displayPrice": "$25",
+      "term": "1 session",
+      "classCount": 1,
+      "active": true
+    },
+    "alleyBootcampMemberSession": {
+      "name": "Alley Bootcamp Member Session",
+      "price": 15,
+      "displayPrice": "$15",
+      "term": "1 session",
+      "classCount": 1,
+      "eligibility": "Any active plan",
+      "active": true
+    },
+    "alleyBootcampFourSessionPass": {
+      "name": "Alley Bootcamp 4-Session Pass",
+      "price": 80,
+      "displayPrice": "$80",
+      "term": "4 sessions",
+      "classCount": 4,
+      "active": true
+    },
+    "alleyBootcampEightSessionPass": {
+      "name": "Alley Bootcamp 8-Session Pass",
+      "price": 144,
+      "displayPrice": "$144",
+      "term": "8 sessions",
+      "classCount": 8,
+      "active": true
+    },
+    "alleyBootcampAdultAnnualIncluded": {
+      "name": "Alley Bootcamp Adult Annual Access",
+      "price": 0,
+      "displayPrice": "Included",
+      "term": "1 session",
+      "classCount": 1,
+      "included": true,
+      "eligibility": "Adult annual-plan members",
+      "active": true
+    },
     "dayPass": {
       "name": "Single Day Pass",
       "price": 35,
