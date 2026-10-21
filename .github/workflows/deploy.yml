@@ -54,6 +54,7 @@ jobs:
           npm run qa:volatile-facts
           npm run test:ads
           npm run validate
+          npm run qa:schedule
 
       - name: Write SFTP config from secrets
         env:
