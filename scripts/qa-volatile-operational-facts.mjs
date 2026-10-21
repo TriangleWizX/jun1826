@@ -27,6 +27,17 @@ for (const [day, audience, time, format] of expected) {
   if (match && !match.id) fail(`canonical class is missing an id: ${day} ${audience}`);
 }
 if (canonical.privateCoaching?.slots?.some((slot) => slot.time !== "By request")) fail("private coaching contains a recurring time");
+const bootcampExpected = [
+  ["tuesday-alley-bootcamp", "Tuesday", "Strength"],
+  ["thursday-alley-bootcamp", "Thursday", "Engine"]
+];
+for (const [id, day, focus] of bootcampExpected) {
+  const entry = canonical.groupClasses.find((item) => item.id === id);
+  if (!entry || entry.day !== day || entry.time !== "6:30 AM" || entry.endTime !== "7:10 AM" ||
+      entry.capacity !== 8 || entry.focus !== focus || !entry.active) {
+    fail(`canonical bootcamp schedule mismatch: ${id}`);
+  }
+}
 const foundationsClasses = active.filter((item) => item.publicLabel === "White Belt Foundations");
 if (foundationsClasses.length !== 2 || foundationsClasses.some((item) => !["Tuesday", "Thursday"].includes(item.day) || item.time !== "6:00 PM")) fail("White Belt Foundations must be listed only Tuesday and Thursday at 6 PM.");
 const womensDates = canonical.datedClasses || [];
@@ -59,7 +70,11 @@ for (const file of files) {
   const scanBody = file === "src/_data/schedule.json"
     ? body.replace(/("id": "(?:tuesday|thursday)-alley-bootcamp"[\s\S]*?"active": true)/g, (entry) =>
         entry.replace(/"(?:time|endTime)": "(?:6:30 AM|7:10 AM)"/g, '"time": "BOOTCAMP_TIME"'))
-    : body;
+    : body
+      // These exact rendered labels are permitted only after the canonical rows above pass.
+      .replaceAll("Tue + Thu, 6:30 AM", "BOOTCAMP_TIME")
+      .replaceAll("Tuesday 6:30 AM Bootcamp", "BOOTCAMP_TIME")
+      .replaceAll("Thursday 6:30 AM Bootcamp", "BOOTCAMP_TIME");
   for (const rule of banned) if (rule.test(scanBody)) fail(`${file}: contains banned volatile fact or legacy term ${rule}`);
 }
 
