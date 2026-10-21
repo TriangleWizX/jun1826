@@ -70,7 +70,10 @@ for (const file of files) {
   const scanBody = file === "src/_data/schedule.json"
     ? body.replace(/("id": "(?:tuesday|thursday)-alley-bootcamp"[\s\S]*?"active": true)/g, (entry) =>
         entry.replace(/"(?:time|endTime)": "(?:6:30 AM|7:10 AM)"/g, '"time": "BOOTCAMP_TIME"'))
-    : body
+    : file === "dist/schedule/index.html"
+      ? body.replace(/&quot;id&quot;:&quot;(?:tuesday|thursday)-alley-bootcamp&quot;,[^}]*?&quot;active&quot;:true/g, (entry) =>
+          entry.replace(/&quot;(?:time|endTime)&quot;:&quot;(?:6:30 AM|7:10 AM)&quot;/g, "&quot;time&quot;:&quot;BOOTCAMP_TIME&quot;"))
+      : body
       // These exact rendered labels are permitted only after the canonical rows above pass.
       .replaceAll("Tue + Thu, 6:30 AM", "BOOTCAMP_TIME")
       .replaceAll("Tuesday 6:30 AM Bootcamp", "BOOTCAMP_TIME")
