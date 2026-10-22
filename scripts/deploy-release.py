@@ -267,6 +267,10 @@ def changed_outputs(commit):
             candidate = ROOT / 'dist' / 'pricing-module-fragment.html'
             if candidate.is_file(): outputs.add((candidate, 'pricing-module-fragment.html'))
             continue
+        if name == 'src/partials/home-conversion-shell.html':
+            candidate = ROOT / 'dist' / 'index.html'
+            if candidate.is_file(): outputs.add((candidate, 'index.html'))
+            continue
         if name == 'src/partials/footer-include.html':
             candidate = ROOT / 'dist' / 'footer-include.html'
             if candidate.is_file(): outputs.add((candidate, 'footer-include.html'))
