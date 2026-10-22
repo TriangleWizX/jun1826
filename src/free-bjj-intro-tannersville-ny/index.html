@@ -28,34 +28,34 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
     </div>
 
     <!-- RIGHT: Interactive Booking Flow -->
-    <form id="onsite-booking-form" hidden aria-hidden="true"></form>
     <div class="editorial-right ss-progressive-booking" id="booking-flow" aria-label="Reserve Free First Visit">
       <!-- STEP 1: Select Profile -->
       <div class="pb-step pb-step-active" id="pb-step-1" aria-hidden="false">
         <h2 id="booking-choice-title" tabindex="-1">Who’s starting?</h2>
         <p class="pb-intro">Choose who is starting. Then pick a visit time.</p>
+        <p class="small" data-booking-promise>Pick a visit time here. Sandy gets your booking right away and reaches out by text before your visit.</p>
         <p class="small text-muted" data-choice-status role="status" aria-live="polite" hidden></p>
         <div class="pb-lanes">
           <div class="pb-lane">
-            <button type="button" class="pb-card-btn" data-profile="adult-beginner" aria-pressed="false" aria-describedby="adult-choice-help"><span>Adult (18+)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" class="pb-card-btn" data-profile="adult-beginner" data-sms-body="{{ freeIntro.bookingSmsBodies['adult-beginner'] }}" data-cal-answer="{{ freeIntro.bookingLaneAnswers['adult-beginner'] }}" aria-pressed="false" aria-describedby="adult-choice-help"><span>Adult (18+)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
             <p id="adult-choice-help">New to class or coming back?</p>
           </div>
           <div class="pb-lane">
-            <button type="button" class="pb-card-btn" data-profile="child" aria-pressed="false" aria-describedby="child-choice-help"><span>Child (5–9)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" class="pb-card-btn" data-profile="child" data-sms-body="{{ freeIntro.bookingSmsBodies.child }}" data-cal-answer="{{ freeIntro.bookingLaneAnswers.child }}" aria-pressed="false" aria-describedby="child-choice-help"><span>Child (5–9)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
             <p id="child-choice-help">Meet Sandy and learn the class rules.</p>
           </div>
           <div class="pb-lane">
-            <button type="button" class="pb-card-btn" data-profile="teen" aria-pressed="false" aria-describedby="teen-choice-help"><span>Teen (10–17)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" class="pb-card-btn" data-profile="teen" data-sms-body="{{ freeIntro.bookingSmsBodies.teen }}" data-cal-answer="{{ freeIntro.bookingLaneAnswers.teen }}" aria-pressed="false" aria-describedby="teen-choice-help"><span>Teen (10–17)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
             <p id="teen-choice-help">Meet Sandy and learn with a class partner.</p>
           </div>
           <div class="pb-lane">
-            <button type="button" class="pb-card-btn" data-profile="family" aria-pressed="false" aria-describedby="family-choice-help"><span>Family (2+ students)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" class="pb-card-btn" data-profile="family" data-sms-body="{{ freeIntro.bookingSmsBodies.family }}" data-cal-answer="{{ freeIntro.bookingLaneAnswers.family }}" aria-pressed="false" aria-describedby="family-choice-help"><span>Family (2+ students)</span><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
             <p id="family-choice-help">Plan a first visit for your family.</p>
           </div>
         </div>
         <div class="pb-help">
-          <button type="button" class="pb-back-btn" data-profile="not-sure">Help me choose a path</button>
-          <a href="{{ contact.smsHref }}">Text Sandy</a>
+          <button type="button" class="pb-back-btn" data-profile="not-sure" data-sms-body="{{ freeIntro.bookingSmsBodies['not-sure'] }}" data-cal-answer="{{ freeIntro.bookingLaneAnswers['not-sure'] }}">Help me choose a path</button>
+          <a data-booking-sms href="{{ contact.smsHref }}">Text Sandy</a>
         </div>
         <details class="pb-community">
           <summary>Community-service rates</summary>
@@ -73,9 +73,14 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
         <h2 class="h3 mb-2" data-calendar-heading>Pick a time to meet Sandy</h2>
         <p class="pb-intro" data-calendar-context data-adult-calendar-context="This is your 15-minute visit with Sandy. {{ freeIntro.publicCopy.adultTraining }}{% if freeIntro.firstClassFree %} Your first class is free.{% endif %}" data-youth-calendar-context="This is a visit for a child or teen. {{ freeIntro.publicCopy.youth }}" data-family-calendar-context="This visit is for your family. Sandy will help plan the next step." data-help-calendar-context="This is a 15-minute visit with Sandy. Talk about your goals and plan a first class.">Pick a time to meet Sandy.</p>
         <p class="fw-semibold mb-2" data-current-choice aria-live="polite"></p>
-        <p class="small text-muted mb-3">Need help with class times? <a href="/schedule">See class times</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p>
+        <p class="small text-muted mb-3">Pick a time to meet Sandy. Sandy gets your booking right away and reaches out by text before your visit. Need help with class times? <a href="/schedule">See class times</a> or <a data-booking-sms href="{{ contact.smsHref }}">Text Sandy</a>.</p>
         <p><a data-calendar-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open visit times in a new tab <span class="visually-hidden">(opens in a new tab)</span></a></p>
         <p class="small text-muted" data-calendar-status role="status" aria-live="polite" hidden></p>
+        <div class="d-flex flex-wrap gap-2" data-calendar-fallback hidden>
+          <a class="btn btn-outline-dark" data-calendar-fallback-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open visit times in a new tab</a>
+          <a class="btn btn-outline-dark" data-booking-sms href="{{ contact.smsHref }}">Text Sandy</a>
+          <a class="btn btn-outline-dark" href="#visit-request-form">Send a visit request instead</a>
+        </div>
         <div class="ss-bezel-shell">
           <div class="ss-bezel-core p-0 overflow-hidden">
             <div id="first-visit-calendar" aria-label="First Visit appointment calendar"></div>
@@ -117,7 +122,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
             </div>
             <a class="btn btn-primary ss-btn-primary w-100 py-3 mb-3" href="/waiver">Sign waiver</a>
             <p class="small text-muted mb-0">
-              Need a new time? <a href="{{ contact.smsHref }}">Text Sandy</a>.
+              Need a new time? <a data-booking-sms href="{{ contact.smsHref }}">Text Sandy</a>.
             </p>
           </div>
         </div>
@@ -133,6 +138,21 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
         </div>
       </div>
     </div>
+    <section class="ss-visit-request" id="visit-request-form" aria-labelledby="visit-request-title">
+      <h2 id="visit-request-title">Send a visit request instead</h2>
+      <p>Rather send a note? Tell Sandy who is starting and a day that fits. He will text you back.</p>
+      <form data-visit-request action="{{ contact.formspreeEndpoint }}" method="post">
+        <input type="hidden" name="source" value="free-intro-form">
+        <div class="mb-3"><label for="visit-request-name">Your name (parent or guardian for a child or teen)</label><input class="form-control" id="visit-request-name" name="name" autocomplete="name" required></div>
+        <div class="mb-3"><label for="visit-request-mobile">Mobile for Sandy's reply text</label><input class="form-control" id="visit-request-mobile" name="mobile" type="tel" autocomplete="tel" required></div>
+        <div class="mb-3"><label for="visit-request-lane">Who is starting?</label><select class="form-select" id="visit-request-lane" name="who_is_starting" required><option value="">Choose one</option><option>Adult 18+</option><option>Child 5-9</option><option>Teen 10-17</option><option>Family</option><option>Help me choose</option></select></div>
+        <div class="mb-3"><label for="visit-request-day">A day that fits (optional)</label><input class="form-control" id="visit-request-day" name="day_that_fits" type="text"></div>
+        <div class="mb-3"><label for="visit-request-note">Anything Sandy should know (optional)</label><input class="form-control" id="visit-request-note" name="note" type="text" maxlength="240"></div>
+        <button class="btn btn-primary" type="submit">Send visit request</button>
+      </form>
+      <p data-visit-request-success role="status" aria-live="polite" hidden><strong>Sandy will reach out!</strong> Sandy replies by text to the number you gave.</p>
+      <p data-visit-request-error role="alert" hidden>We could not send your note. <a data-booking-sms href="{{ contact.smsHref }}">Text Sandy instead</a>.</p>
+    </section>
 <!-- One proof surface, after the choice in mobile reading order. -->
 <section class="ss-visit-proof" aria-labelledby="visit-includes-title">
   <figure>

@@ -76,5 +76,19 @@
     "afterClass": "Your first class is free. You choose if you keep training. Sandy will show you the paid plans. Each next class uses the plan you choose.",
     "youth": "Kids and teens meet Sandy, then try a class. A parent or guardian stays with them. Sandy confirms the class and what to wear.",
     "firstClass": "Sandy guides your first class at your pace."
+  },
+  "bookingSmsBodies": {
+    "adult-beginner": "Hi Sandy, I'd like to book a free first visit for myself (adult).",
+    "child": "Hi Sandy, I'd like to book a free first visit for my child (ages 5-9).",
+    "teen": "Hi Sandy, I'd like to book a free first visit for my teen (ages 10-17).",
+    "family": "Hi Sandy, I'd like to book a free first visit for my family.",
+    "not-sure": "Hi Sandy, I'd like help picking a free first visit."
+  },
+  "bookingLaneAnswers": {
+    "adult-beginner": "Adult",
+    "child": "Child 5–9",
+    "teen": "Teen 10–17",
+    "family": "More than one person",
+    "not-sure": "Not sure"
   }
 }

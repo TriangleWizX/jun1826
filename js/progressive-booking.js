@@ -59,6 +59,17 @@
       if (!status) return;
       status.textContent = text; status.hidden = !text; status.classList.toggle('text-danger', error);
     };
+    const syncBookingSms = (profile) => {
+      const choice = document.querySelector(`[data-profile="${profile}"][data-sms-body]`);
+      const body = choice?.dataset.smsBody || document.querySelector('[data-profile="not-sure"][data-sms-body]')?.dataset.smsBody;
+      if (!body) return;
+      const links = [...flow.querySelectorAll('[data-booking-sms]'), ...document.querySelectorAll('[data-visit-request-error] [data-booking-sms]')];
+      links.forEach((link) => {
+        const url = new URL(link.href);
+        url.searchParams.set('body', body);
+        link.href = url.toString();
+      });
+    };
     const setChoiceStatus = (text) => {
       if (!choiceStatus) return;
       choiceStatus.textContent = text;
@@ -104,6 +115,9 @@
       CAMPAIGNS.forEach((key) => { const value = page.get(key); if (value && /^[a-z0-9._-]{1,80}$/i.test(value)) url.searchParams.set(key, value); });
       url.searchParams.set('utm_source', url.searchParams.get('utm_source') || 'onsite-booking');
       url.searchParams.set('audience_lane', state.profile || 'unknown');
+      const bookingLane = document.querySelector(`[data-profile="${state.profile}"][data-cal-answer]`)
+        || (state.profile === 'leo' ? document.querySelector('[data-profile="adult-beginner"][data-cal-answer]') : null);
+      if (bookingLane?.dataset.calAnswer) url.searchParams.set('student_type', bookingLane.dataset.calAnswer);
       if (requestedClass && requestedDate) {
         const classDate = new Date(`${requestedDate}T12:00:00Z`);
         if (/^\d{4}-\d{2}-\d{2}$/.test(requestedDate) && !Number.isNaN(classDate.getTime()) && classDate.toISOString().slice(0, 10) === requestedDate) {
@@ -184,6 +198,10 @@
         retry.addEventListener('click', () => { state.inline = false; renderCalendar(); });
         mount.appendChild(retry);
       }
+      const fallback = document.querySelector('[data-calendar-fallback]');
+      if (fallback) fallback.hidden = false;
+      const fallbackExternal = document.querySelector('[data-calendar-fallback-external]');
+      if (fallbackExternal && state.url) fallbackExternal.href = state.url.toString();
       track('calendar_load_failed');
     };
     const renderCalendar = () => {
@@ -197,7 +215,7 @@
       message('Please wait. We are loading your visit times.');
       state.timer = window.setTimeout(() => {
         if (generation === state.generation && state.step === 2) failure();
-      }, 15000);
+      }, 8000);
       loadCalApi().then((cal) => {
         if (generation !== state.generation || state.step !== 2) return;
         // Unsubscribe before remounting so retries and lane changes count once.
@@ -208,6 +226,8 @@
             if (!current()) return;
             window.clearTimeout(state.timer); message('');
             mount.classList.add('is-ready');
+            const fallback = document.querySelector('[data-calendar-fallback]');
+            if (fallback) fallback.hidden = true;
             mount.querySelector('[data-retry-calendar]')?.remove();
             track('availability_viewed', { scheduler_provider: 'cal', scheduler_event: 'linkReady' });
           } },
@@ -251,6 +271,7 @@
     const choose = (profile, method) => {
       const previous = state.profile;
       state.profile = profile; state.inline = false; state.url = calendarUrl(); syncFields();
+      syncBookingSms(profile);
       document.querySelectorAll('[data-profile]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.profile === profile)));
       setChoiceStatus(''); updateCalendarCopy(); updateConfirmation();
       track('lane_resolved', { selection_method: method });
@@ -303,6 +324,28 @@
       } catch (_) {}
       track('details_submit_attempt');
     });
+    const visitRequestForm = document.querySelector('[data-visit-request]');
+    visitRequestForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const success = document.querySelector('[data-visit-request-success]');
+      const error = document.querySelector('[data-visit-request-error]');
+      if (error) error.hidden = true;
+      const submit = visitRequestForm.querySelector('[type="submit"]');
+      if (submit) submit.disabled = true;
+      try {
+        const response = await fetch(visitRequestForm.action, {
+          method: 'POST',
+          body: new FormData(visitRequestForm),
+          headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('Visit request was not accepted');
+        visitRequestForm.hidden = true;
+        if (success) success.hidden = false;
+      } catch (_) {
+        if (error) error.hidden = false;
+        if (submit) submit.disabled = false;
+      }
+    });
     const stickyBar = document.querySelector('.ss-mobile-sticky-cta');
     let flowIntersecting = true;
     const updateSticky = () => {
@@ -316,6 +359,7 @@
       }, { threshold: 0.1 });
       observer.observe(flow);
     }
+    syncBookingSms('not-sure');
     track('intro_page_loaded');
     if (ALIASES[String(requested || '').toLowerCase()]) choose(ALIASES[String(requested).toLowerCase()], 'query');
     else if (requested === 'youth') {

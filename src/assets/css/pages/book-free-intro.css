@@ -278,6 +278,7 @@
   }
   .page-book-intro:not(.ss-booking-flow-active) .editorial-right { grid-column: 2; grid-row: 1 / span 2; }
   .page-book-intro:not(.ss-booking-flow-active) .ss-visit-proof { grid-column: 1; grid-row: 2; }
+  .page-book-intro:not(.ss-booking-flow-active) .ss-visit-request { grid-column: 1 / -1; grid-row: 3; }
   .page-book-intro .ss-progressive-booking { padding: var(--space-2xs); }
   .page-book-intro .pb-step { padding: var(--space-md); }
 }
@@ -303,3 +304,7 @@
 @media (prefers-reduced-motion: reduce) {
   .page-book-intro .pb-card-btn { transition: none; }
 }
+.page-book-intro .ss-visit-request { grid-column: 1 / -1; max-width: 46rem; padding: var(--space-md); border: 1px solid var(--color-rule-2); border-radius: var(--radius-card); background: var(--color-paper-2); }
+.page-book-intro .ss-visit-request label { display: block; margin-bottom: var(--space-2xs); font-weight: 600; }
+.page-book-intro .ss-visit-request input, .page-book-intro .ss-visit-request select { min-height: 44px; }
+.page-book-intro [data-calendar-fallback] { margin-top: var(--space-sm); }
