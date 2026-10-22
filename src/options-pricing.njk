@@ -64,58 +64,6 @@ permalink: "/options-pricing/index.html"
   </div>
 </section>
 
-<section id="annual-anchor" class="op-section op-section--paper" aria-labelledby="annual-anchor-title">
-  <div class="container-xxl">
-    <div class="op-section-heading op-reveal">
-      <div><h2 id="annual-anchor-title">Year plans for your next term.</h2></div>
-      <p>Finish a Core Culture term first. Then meet with Sandy to pick a plan.</p>
-    </div>
-    <div class="op-household-note" id="accepted-payments">
-      <h3>Ways to pay</h3>
-      <p>{{ pricing.productPolicy.acceptedPayments.publicCopy }}</p>
-      <p>{{ pricing.productPolicy.creditCardSurcharge.publicCopy }}</p>
-      <p>{{ pricing.productPolicy.acceptedPayments.cardOnFileCopy }}</p>
-      <details><summary>Cards supported through Stripe</summary>
-        <p>{{ pricing.productPolicy.acceptedPayments.cardTypesCopy }}</p>
-        <p>{{ pricing.productPolicy.acceptedPayments.networkCopy }}</p>
-        <p>{{ pricing.productPolicy.acceptedPayments.regionalCopy }}</p>
-        <p>{{ pricing.productPolicy.acceptedPayments.availabilityCopy }} <a href="{{ pricing.productPolicy.acceptedPayments.docsUrl }}">Stripe card support details</a>.</p>
-      </details>
-    </div>
-    <p class="op-section-note">{{ pricing.productPolicy.annualPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your annual plan</a>.</p>
-    <details class="op-household-note">
-      <summary>See annual monthly payments</summary>
-          <p>The last payment may differ by a few cents. All 12 payments add up to the year price.</p>
-      <div class="table-responsive"><table class="table table-bordered align-middle">
-        <caption>Pay these year prices over 12 months</caption>
-        <thead><tr><th scope="col">Plan</th><th scope="col">Annual total</th><th scope="col">First 11 payments</th><th scope="col">Final payment</th></tr></thead>
-        <tbody>{% for plan in pricing.productPolicy.annualPayment.installmentPlans %}<tr><th scope="row">{{ plan.label }}</th><td>{{ plan.annualTotal | usdGrouped }}</td><td>{{ plan.regularDisplay }} each month</td><td>{{ plan.finalDisplay }}</td></tr>{% endfor %}</tbody>
-      </table></div>
-    </details>
-    <div class="table-responsive">
-      <table class="table table-bordered align-middle">
-        <caption class="visually-hidden">Annual continuation prices by weekly training frequency</caption>
-        <thead><tr><th scope="col">Weekly classes per person</th><th scope="col">Youth</th><th scope="col">Adult</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">3×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }}</td></tr>
-          <tr><th scope="row">2×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[2].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2].annual | usdGrouped }}</td></tr>
-          <tr><th scope="row">1×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[1].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1].annual | usdGrouped }}</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="op-household-note">
-      <p><strong>Annual Family Track: {{ pricing.householdBundles.annualFamily.displayPrice }}.</strong> One adult and two youth can train 3× each week.</p>
-      <ul>
-        <li>The same plans cost {{ (pricing.coreCulture.frequencyLadder.adult[3].annual + pricing.coreCulture.frequencyLadder.youth[3].annual * 2) | usdGrouped }} on their own. Save {{ pricing.householdBundles.annualFamily.savingsAmount | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsPercent }}%).</li>
-        <li>Four 12-week family terms cost {{ pricing.householdBundles.annualFamily.annualizedFirstTermFamilyTotal | usdGrouped }}. Save {{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamily | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamilyPercent }}%).</li>
-        <li>There are {{ pricing.householdBundles.annualFamily.scheduledClassesTotal }} class spots. If all are used, each costs {{ pricing.householdBundles.annualFamily.averagePricePerScheduledClass | usdGrouped }}.</li>
-      </ul>
-      <p>Finish a Core Culture term first. Then ask Sandy about this plan.</p>
-      <p class="small text-muted mb-0">This is a continuation plan. It adds no uniform or 30-Day Training Fit Guarantee. Class times depend on space and partner fit.</p>
-    </div>
-  </div>
-</section>
-
 <nav class="container-xxl py-4" aria-label="Pricing path">
   <div class="op-shell p-4">
     <p class="op-eyebrow mb-2">Choose your path</p>
@@ -189,7 +137,7 @@ permalink: "/options-pricing/index.html"
           </div>
         </div>
       </article>
- 
+
       <article class="op-shell op-program op-program--adult op-reveal op-delay-1">
         <div class="op-card op-card--tint">
           <div class="op-card__header">
@@ -239,7 +187,7 @@ permalink: "/options-pricing/index.html"
           </div>
         </div>
       </article>
- 
+
       <article class="op-shell op-program op-program--community op-reveal">
         <div class="op-card op-community-card">
           <div>
@@ -421,6 +369,59 @@ permalink: "/options-pricing/index.html"
         <a href="/success-stories">Read student stories <span aria-hidden="true">&nearr;</span></a>
       </aside>
     </div>
+  </div>
+</section>
+
+<section id="annual-anchor" class="op-section op-section--paper" aria-labelledby="annual-anchor-title">
+  <div class="container-xxl">
+    <div class="op-section-heading op-reveal">
+      <div><h2 id="annual-anchor-title">Year plans for your next term.</h2></div>
+      <p>Finish a Core Culture term first. Then meet with Sandy to pick a plan.</p>
+    </div>
+
+    <p class="op-section-note">{{ pricing.productPolicy.annualPayment.publicCopy }} <a href="{{ business.contact.smsHref }}">Text Sandy to set up your annual plan</a>.</p>
+    <details class="op-household-note">
+      <summary>See annual monthly payments</summary>
+          <p>The last payment may differ by a few cents. All 12 payments add up to the year price.</p>
+      <div class="table-responsive"><table class="table table-bordered align-middle">
+        <caption>Pay these year prices over 12 months</caption>
+        <thead><tr><th scope="col">Plan</th><th scope="col">Annual total</th><th scope="col">First 11 payments</th><th scope="col">Final payment</th></tr></thead>
+        <tbody>{% for plan in pricing.productPolicy.annualPayment.installmentPlans %}<tr><th scope="row">{{ plan.label }}</th><td>{{ plan.annualTotal | usdGrouped }}</td><td>{{ plan.regularDisplay }} each month</td><td>{{ plan.finalDisplay }}</td></tr>{% endfor %}</tbody>
+      </table></div>
+    </details>
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <caption class="visually-hidden">Annual continuation prices by weekly training frequency</caption>
+        <thead><tr><th scope="col">Weekly classes per person</th><th scope="col">Youth</th><th scope="col">Adult</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">3×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[3].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[3].annual | usdGrouped }}</td></tr>
+          <tr><th scope="row">2×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[2].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[2].annual | usdGrouped }}</td></tr>
+          <tr><th scope="row">1×</th><td>{{ pricing.coreCulture.frequencyLadder.youth[1].annual | usdGrouped }}</td><td>{{ pricing.coreCulture.frequencyLadder.adult[1].annual | usdGrouped }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="op-household-note">
+      <p><strong>Annual Family Track: {{ pricing.householdBundles.annualFamily.displayPrice }}.</strong> One adult and two youth can train 3× each week.</p>
+      <ul>
+        <li>The same plans cost {{ (pricing.coreCulture.frequencyLadder.adult[3].annual + pricing.coreCulture.frequencyLadder.youth[3].annual * 2) | usdGrouped }} on their own. Save {{ pricing.householdBundles.annualFamily.savingsAmount | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsPercent }}%).</li>
+        <li>Four 12-week family terms cost {{ pricing.householdBundles.annualFamily.annualizedFirstTermFamilyTotal | usdGrouped }}. Save {{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamily | usdGrouped }} ({{ pricing.householdBundles.annualFamily.savingsVsAnnualizedFirstTermFamilyPercent }}%).</li>
+        <li>There are {{ pricing.householdBundles.annualFamily.scheduledClassesTotal }} class spots. If all are used, each costs {{ pricing.householdBundles.annualFamily.averagePricePerScheduledClass | usdGrouped }}.</li>
+      </ul>
+      <p>Finish a Core Culture term first. Then ask Sandy about this plan.</p>
+      <p class="small text-muted mb-0">This is a continuation plan. It adds no uniform or 30-Day Training Fit Guarantee. Class times depend on space and partner fit.</p>
+    </div>
+<details class="op-household-note" id="accepted-payments">
+      <summary>How payments work</summary>
+      <p>{{ pricing.productPolicy.acceptedPayments.publicCopy }}</p>
+      <p>{{ pricing.productPolicy.creditCardSurcharge.publicCopy }}</p>
+      <p>{{ pricing.productPolicy.acceptedPayments.cardOnFileCopy }}</p>
+
+        <p>{{ pricing.productPolicy.acceptedPayments.cardTypesCopy }}</p>
+        <p>{{ pricing.productPolicy.acceptedPayments.networkCopy }}</p>
+        <p>{{ pricing.productPolicy.acceptedPayments.regionalCopy }}</p>
+        <p>{{ pricing.productPolicy.acceptedPayments.availabilityCopy }} <a href="{{ pricing.productPolicy.acceptedPayments.docsUrl }}">Stripe card support details</a>.</p>
+
+    </details>
   </div>
 </section>
 
