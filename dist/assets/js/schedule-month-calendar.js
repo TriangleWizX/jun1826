@@ -23,8 +23,8 @@
     if (text !== undefined) element.textContent = text;
     return element;
   };
-  const name = (item) => item.label || item.publicLabel || `${item.audience === 'Youth/Teen' ? 'Kids and teens' : item.audience} ${item.format}`;
-  const kind = (item) => item.audience === 'Women' ? 'women' : item.publicLabel === 'White Belt Foundations' ? 'foundations' : item.audience === 'Youth/Teen' ? 'youth' : item.audience ? 'adult' : 'special';
+  const name = (item) => item.label || item.publicLabel || (item.format === 'Bootcamp' ? 'Alley Bootcamp' : `${item.audience === 'Youth/Teen' ? 'Kids and teens' : item.audience} ${item.format}`);
+  const kind = (item) => item.format === 'Bootcamp' ? 'bootcamp' : item.audience === 'Women' ? 'women' : item.publicLabel === 'White Belt Foundations' ? 'foundations' : item.audience === 'Youth/Teen' ? 'youth' : item.audience ? 'adult' : 'special';
   const isUpcoming = (slot, date) => {
     const match = String(slot.time || '').match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
     if (!match) return false;
@@ -57,7 +57,8 @@
     if (!slots.length) cardFragment.append(make('p', '', 'Rest day. Pick a class date above.'));
     for (const slot of slots) {
       const card = make('article', `ss-selected-class is-${kind(slot)}`);
-      card.append(make('strong', '', slot.time), make('span', '', name(slot)));
+      card.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), make('span', '', name(slot)));
+      if (slot.focus) card.append(make('small', '', slot.focus));
       if (slot.ages) card.append(make('small', '', `Ages ${slot.ages} · ${slot.format}`));
       if (slot.note) card.append(make('small', '', slot.note));
       if (slot.programUrl) { const link = make('a', '', 'View class plan'); link.href = slot.programUrl; card.append(link); }
@@ -108,7 +109,7 @@
           card.href = href;
           card.title = `Plan a free visit for ${name(slot)} on ${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}`;
         }
-        card.append(make('strong', '', slot.time), make('span', '', name(slot)));
+        card.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), make('span', '', name(slot)));
         content.append(card);
       }
       button.addEventListener('click', () => select(date));
