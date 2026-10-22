@@ -1,0 +1,27 @@
+{
+  "openDate": "2026-11-16",
+  "closeDate": "2026-11-23",
+  "closedDate": "2026-11-24",
+  "pickup": "December 7–21, 2026",
+  "youthSizes": "Youth XS–L",
+  "adultSizes": "Adult XS–3XL",
+  "youthColors": ["white", "grey", "yellow", "orange", "green"],
+  "adultColors": ["white", "blue", "purple", "brown", "black"],
+  "optionalColor": "pink",
+  "backPrintChoices": ["STAY SPICY", "Plain back"],
+  "items": [
+    {"name": "Stay Spicy Hoodie", "price": 70, "colors": "Black", "backPrint": true, "images": [
+      {"src": "/assets/images/winter-armor-2027-hoodie-front.webp", "width": 486, "height": 1052, "alt": "Close-up of the black academy hoodie front, with chest crest, pocket, and Tannersville Est. 2026 hem print.", "label": "Hoodie front"},
+      {"src": "/assets/images/winter-armor-2027-hoodie-back.webp", "width": 1200, "height": 554, "alt": "Close-up of the black academy hoodie back with STAY SPICY and Sensei Sandy BJJ print.", "label": "STAY SPICY back shown"}
+    ]},
+    {"name": "Academy Tee", "price": 35, "colors": "Black", "backPrint": true, "images": [
+      {"src": "/assets/images/winter-armor-2027-shirt-hoodie-combo.webp", "width": 258, "height": 162, "alt": "Black academy shirt front beside the hoodie back with STAY SPICY print.", "label": "Tee front and hoodie back"}
+    ]},
+    {"name": "Rashguard", "price": 65, "colors": "Rank colors"},
+    {"name": "Shorts", "price": 60, "colors": "Rank colors"}
+  ],
+  "kits": [
+    {"name": "No-Gi Armor Kit", "parts": "Rashguard + shorts", "price": 115, "image": {"src": "/assets/images/winter-armor-2027-white-no-gi.webp", "width": 1200, "height": 847, "alt": "White academy rashguard and shorts laid flat, with the Sensei Sandy crest and SPICY print.", "caption": "Shown in white."}},
+    {"name": "Stay Spicy Kit", "parts": "Hoodie + tee", "price": 89, "image": {"src": "/assets/images/winter-armor-2027-shirt-hoodie-combo.webp", "width": 258, "height": 162, "alt": "Black academy shirt front beside the hoodie back with STAY SPICY print.", "caption": "Shown with STAY SPICY back print."}}
+  ]
+}

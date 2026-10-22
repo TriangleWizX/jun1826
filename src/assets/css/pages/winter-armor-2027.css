@@ -1,0 +1,202 @@
+.page-winter-armor {
+  margin: 0;
+  background: #10232d;
+}
+
+.wa-page {
+  --wa-night: #10232d;
+  --wa-ink: #18313d;
+  --wa-ice: #eaf1f3;
+  --wa-paper: #f9faf9;
+  --wa-red: #aa332d;
+  color: #f6f5f1;
+  background: var(--wa-night);
+  font: 400 1rem/1.6 "Lexend", system-ui, sans-serif;
+}
+
+.wa-page [hidden] { display: none; }
+.wa-page p { color: inherit; }
+.wa-page h1, .wa-page h2, .wa-page h3 { color: inherit; }
+.wa-page a { color: inherit; }
+.wa-page a:focus-visible, .wa-page button:focus-visible, .wa-page input:focus-visible {
+  outline: 3px solid #e9a869;
+  outline-offset: 3px;
+}
+
+.wa-banner {
+  padding: .8rem 1.25rem;
+  color: #fff;
+  background: var(--wa-red);
+  text-align: center;
+  font-weight: 700;
+}
+
+.wa-hero {
+  width: min(100% - 2.5rem, 70rem);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.wa-kicker, .wa-eyebrow {
+  margin: 0 0 .75rem;
+  font-size: .77rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.wa-kicker { color: #d4bbb1 !important; }
+.wa-hero h1 {
+  max-width: 10ch;
+  margin: 0 0 1rem;
+  font: 400 clamp(2.8rem, 6vw, 5.5rem)/.98 "Instrument Serif", Georgia, serif;
+}
+.wa-lead { max-width: 22ch; font-size: clamp(1.2rem, 2.5vw, 1.8rem); line-height: 1.35; }
+.wa-hero-copy > p:not(.wa-kicker) { max-width: 34rem; }
+.wa-state { font-weight: 700; }
+.wa-hero-media { margin: 0; }
+.wa-hero-media img { display: block; width: 100%; height: auto; }
+
+.wa-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .75rem 1.15rem;
+  border: 2px solid var(--wa-red);
+  border-radius: .3rem;
+  color: #fff !important;
+  background: var(--wa-red);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.wa-button:hover { background: #8d2925; border-color: #8d2925; }
+
+.wa-section {
+  padding: clamp(2.75rem, 5vw, 4.5rem) max(1.25rem, calc((100vw - 70rem) / 2));
+}
+.wa-section-head { max-width: 40rem; margin-bottom: 1.75rem; }
+.wa-section-head p:last-child { margin: .5rem 0 0; }
+.wa-section h2 {
+  margin: 0;
+  font: 400 clamp(2rem, 4vw, 3rem)/1.1 "Instrument Serif", Georgia, serif;
+}
+.wa-section h3 { font-size: 1.25rem; line-height: 1.25; }
+.wa-section--kits { color: var(--wa-ink); background: var(--wa-ice); }
+.wa-section--items { color: var(--wa-ink); background: var(--wa-paper); }
+.wa-section--steps { color: #f6f5f1; background: #193541; }
+.wa-section--order { color: #fff; background: var(--wa-red); }
+.wa-section--faq { color: var(--wa-ink); background: var(--wa-ice); }
+.wa-section--kits .wa-eyebrow, .wa-section--items .wa-eyebrow, .wa-section--faq .wa-eyebrow { color: #8d2925; }
+.wa-section--steps .wa-eyebrow { color: #e9b9a9; }
+
+.wa-grid { display: grid; gap: 1rem; }
+.wa-card {
+  min-width: 0;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  border: 1px solid #cbd7d9;
+  border-radius: .45rem;
+  color: var(--wa-ink);
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(16 35 45 / .05);
+}
+.wa-card h3 { margin: 0 0 .35rem; }
+.wa-card p { margin: .3rem 0 0; }
+.wa-card .wa-price {
+  margin: .65rem 0;
+  color: #8d2925;
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+.wa-fit { font-size: .88rem; }
+.wa-card-media { margin: 0 0 1rem; }
+.wa-card-media img { display: block; max-width: 100%; height: auto; object-fit: contain; }
+.wa-card--kit .wa-card-media {
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem;
+  background: #eef2f1;
+}
+.wa-card--kit .wa-card-media img { width: 100%; max-height: 225px; }
+.wa-card--kit:nth-child(2) .wa-card-media img { width: min(100%, 258px); }
+.wa-card-media figcaption { margin-top: .4rem; font-size: .8rem; color: #455c65; }
+.wa-card-media--pair {
+  min-height: 220px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .7rem;
+  align-items: center;
+}
+.wa-card-media--pair img { width: 100%; height: 210px; background: #e8edec; }
+.wa-card-media--single { min-height: 220px; display: grid; place-items: center; background: #e8edec; }
+.wa-card-media--single img { width: min(100%, 258px); }
+.wa-item-heading { display: flex; align-items: baseline; justify-content: space-between; gap: .8rem; }
+.wa-item-heading .wa-price { margin: 0; white-space: nowrap; }
+.wa-choice { font-weight: 700; }
+
+.wa-help-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.wa-help-grid > div { padding: 1.25rem; border-left: 4px solid var(--wa-red); background: var(--wa-ice); }
+.wa-help-grid h3 { margin: 0 0 .6rem; }
+.wa-help-grid p { margin: .25rem 0; }
+.wa-help-grid a { color: #80231f; text-decoration-thickness: 2px; text-underline-offset: .2em; }
+
+.wa-steps { max-width: 46rem; margin: 0; padding: 0; list-style: none; counter-reset: wa-step; }
+.wa-steps li {
+  counter-increment: wa-step;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: .8rem;
+  align-items: start;
+  padding: .75rem 0;
+  border-bottom: 1px solid rgb(255 255 255 / .22);
+}
+.wa-steps li::before {
+  content: counter(wa-step);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: #193541;
+  background: #eaf1f3;
+  font-weight: 800;
+}
+.wa-section--steps > p { max-width: 46rem; margin-top: 1.25rem; }
+.wa-section--order > p { max-width: 42rem; }
+.wa-section--order .wa-button { color: #74221e !important; background: #fff; border-color: #fff; }
+.wa-section--order .wa-button:hover { background: #f3e9e4; }
+.wa-form { display: grid; gap: .6rem; max-width: 26rem; }
+.wa-form label { font-weight: 700; }
+.wa-form input { width: 100%; min-height: 46px; padding: .65rem; border: 1px solid #7e3430; border-radius: .25rem; color: #18313d; background: #fff; }
+.wa-form button { justify-self: start; margin-top: .5rem; }
+.wa-faq { display: grid; gap: 1rem 2rem; }
+.wa-faq h3 { margin: 0 0 .3rem; }
+.wa-faq p { margin: 0; }
+
+@media (min-width: 760px) {
+  .wa-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); }
+  .wa-grid--kits, .wa-grid--items, .wa-help-grid, .wa-faq { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 420px) {
+  .wa-item-heading { display: block; }
+  .wa-card-media--pair img { height: 180px; }
+}
+
+.wa-product-photo { min-width: 0; margin: 0; }
+.wa-product-photo img { margin-inline: auto; }
+.wa-product-photo figcaption { margin-top: .4rem; text-align: center; }
+
+@media (max-width: 550px) {
+  .wa-card-media--pair { grid-template-columns: 1fr; }
+  .wa-card-media--pair .wa-product-photo:first-child img { height: 210px; }
+  .wa-card-media--pair .wa-product-photo:last-child img { height: auto; max-height: 170px; }
+}

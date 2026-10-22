@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+title: "Spring Armor Drop | Past Academy Gear Run | Sensei Sandy BJJ"
+description: "See gear from the closed Spring Armor Drop. Join the next drop list or see Winter Armor 2027 while its order window is open."
+canonicalUrl: "https://senseisandy.com/spring-armor-drop"
+robots: "noindex, follow"
+bodyClass: "page-spring-armor-drop"
+extraCss:
+  - "/assets/css/pages/spring-armor-drop.css"
+permalink: "/spring-armor-drop.html"
+---
+<main class="spring-proof ss-main" id="main-content">
+  <div class="spring-proof__status" role="status">
+    <div class="spring-proof__inner" data-spring-list-message>The Spring Armor Drop closed. Join the list for the next drop.</div>
+    <div class="spring-proof__inner" data-spring-live-message hidden>The Spring Armor Drop is closed. The new drop is live: <a href="/winter-armor-2027">Winter Armor 2027</a>.</div>
+  </div>
+
+  <section class="spring-proof__hero spring-proof__inner" aria-labelledby="spring-proof-title">
+    <p class="spring-proof__eyebrow">Past academy gear run</p>
+    <h1 id="spring-proof-title">Spring Armor Drop</h1>
+    <p>The spring drop ran 7 days and printed only what was prepaid.</p>
+    <p>Printed in Kingston. Picked up at the studio.</p>
+    <a class="spring-proof__button" href="#next-drop" data-spring-list-cta>Join the Next Drop List</a>
+    <a class="spring-proof__button" href="/winter-armor-2027" data-spring-live-cta hidden>See Winter Armor 2027</a>
+  </section>
+
+  <section class="spring-proof__gear spring-proof__inner" aria-labelledby="spring-gear-title">
+    <p class="spring-proof__eyebrow">What the last drop offered</p>
+    <h2 id="spring-gear-title">Spring gear</h2>
+    <ul class="spring-proof__list">
+      <li>Rashguard and shorts</li>
+      <li>Hoodie and academy tee</li>
+      <li>Hat and string bag</li>
+      <li>No-Gi Armor Kit and Street Culture Kit</li>
+    </ul>
+    <h3>Spring 2026 in photos</h3>
+    <div class="spring-proof__photos">
+      <figure><img src="/assets/images/spring-armor-2026-team-tops.webp" alt="Group wearing black academy tops." width="72" height="84" loading="lazy" decoding="async"><figcaption>Team tops</figcaption></figure>
+      <figure><img src="/assets/images/spring-armor-2026-academy-hoodies.webp" alt="Two people wearing black academy hoodies." width="48" height="48" loading="lazy" decoding="async"><figcaption>Academy hoodies</figcaption></figure>
+      <figure><img src="/assets/images/spring-armor-2026-team-gear.webp" alt="People wearing black academy gear together." width="48" height="48" loading="lazy" decoding="async"><figcaption>Gear with the team</figcaption></figure>
+      <figure><img src="/assets/images/spring-armor-2026-mat-gear.webp" alt="Person in black and blue training gear seated on the mats." width="52" height="84" loading="lazy" decoding="async"><figcaption>Gear on the mats</figcaption></figure>
+    </div>
+    <p>These items are from the closed spring run. See the live drop for this season’s gear and order details.</p>
+  </section>
+
+  <section class="spring-proof__next spring-proof__inner" id="next-drop" aria-labelledby="next-drop-title">
+    <div data-spring-list>
+      <h2 id="next-drop-title">Join the Next Drop List</h2>
+      <p>Get a text when the next academy gear run opens.</p>
+      <form action="https://formspree.io/f/myzpdvay" method="POST" class="spring-proof__form">
+        <input type="hidden" name="form_name" value="Spring Armor Drop Next Drop List">
+        <input type="hidden" name="drop_mode" value="next_drop_list">
+        <input type="hidden" name="_subject" value="Spring Armor Drop Next Drop List">
+        <label for="spring-next-name">Name <input id="spring-next-name" name="name" autocomplete="name" required maxlength="120"></label>
+        <label for="spring-next-phone">Phone <input id="spring-next-phone" name="phone" type="tel" autocomplete="tel" required maxlength="32"></label>
+        <label for="spring-next-email">Email <input id="spring-next-email" name="email" type="email" autocomplete="email" maxlength="160"></label>
+        <button type="submit" class="spring-proof__button">Join the Next Drop List</button>
+      </form>
+    </div>
+    <div data-spring-live hidden>
+      <h2>Winter Armor 2027 is open</h2>
+      <p>See this season’s gear and order by Monday, November 23.</p>
+      <a class="spring-proof__button" href="/winter-armor-2027">See Winter Armor 2027</a>
+    </div>
+  </section>
+</main>
+<script>
+(() => {
+  // Match the published order window in New York, regardless of the visitor's time zone.
+  const date = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const live = date >= '2026-11-16' && date <= '2026-11-23';
+  if (!live) return;
+  document.querySelectorAll('[data-spring-list], [data-spring-list-cta], [data-spring-list-message]').forEach((node) => { node.hidden = true; });
+  document.querySelectorAll('[data-spring-live], [data-spring-live-cta], [data-spring-live-message]').forEach((node) => { node.hidden = false; });
+})();
+</script>

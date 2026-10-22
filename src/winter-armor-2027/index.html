@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+title: "Winter Armor 2027 | Sensei Sandy BJJ"
+description: "Winter Armor 2027 academy gear in Tannersville. See the kits, sizes, colors, order dates, and studio pickup plan."
+canonicalUrl: "https://senseisandy.com/winter-armor-2027"
+bodyClass: "page-winter-armor"
+extraCss:
+  - "/assets/css/pages/winter-armor-2027.css"
+permalink: "/winter-armor-2027/index.html"
+---
+<main id="main-content" class="wa-page" data-open="{{ winterArmor.openDate }}" data-closed="{{ winterArmor.closedDate }}">
+  <div class="wa-banner" role="status">Winter Armor 2027. Order window closes Monday, November 23.</div>
+  <section class="wa-hero" aria-labelledby="wa-title">
+    <div class="wa-hero-copy">
+    <p class="wa-kicker">Sensei Sandy BJJ · Tannersville, NY</p>
+    <h1 id="wa-title">Winter Armor 2027.</h1>
+    <p class="wa-lead">Built for the mats. Warm for the mountain.</p>
+    <p>Academy gear printed in Kingston, NY. Pick up at the studio in December.</p>
+    <p class="wa-state" data-before>Orders open Monday, November 16.</p>
+    <p class="wa-state" data-live hidden>Order by Monday, November 23.</p>
+    <p class="wa-state" data-after hidden>This drop has closed. Join the next drop list.</p>
+    <a class="wa-button" href="#wa-order" data-order-link hidden>Build My Pre-Order</a>
+    <a class="wa-button" href="#wa-list" data-list-link hidden>Join Next Drop List</a>
+    </div>
+    <figure class="wa-hero-media">
+      <picture>
+        <source type="image/webp" srcset="/assets/images/winter-armor-2027-poster.webp">
+        <img src="/assets/images/winter-armor-2027-poster.png" alt="Winter Armor 2027 poster showing rank-color no-gi sets and front and back views of the Stay Spicy hoodie and academy tee." width="1728" height="2304" decoding="async" fetchpriority="high">
+      </picture>
+    </figure>
+  </section>
+
+  <section class="wa-section wa-section--kits" aria-labelledby="wa-kits">
+    <div class="wa-section-head"><p class="wa-eyebrow">Start here</p><h2 id="wa-kits">Pick a kit</h2><p>One set for the mats. One set for days out.</p></div>
+    <div class="wa-grid wa-grid--kits">{% for kit in winterArmor.kits %}<article class="wa-card wa-card--kit">
+      {% if kit.image %}<figure class="wa-card-media"><img src="{{ kit.image.src }}" alt="{{ kit.image.alt }}" width="{{ kit.image.width }}" height="{{ kit.image.height }}" loading="lazy" decoding="async"><figcaption>{{ kit.image.caption }}</figcaption></figure>{% endif %}
+      <div class="wa-card-copy"><h3>{{ kit.name }}</h3><p>{{ kit.parts }}</p><p class="wa-price">${{ kit.price }}</p><p class="wa-fit">{{ winterArmor.youthSizes }} · {{ winterArmor.adultSizes }}</p></div>
+    </article>{% endfor %}</div>
+  </section>
+  <section class="wa-section wa-section--items" aria-labelledby="wa-items">
+    <div class="wa-section-head"><p class="wa-eyebrow">Make it yours</p><h2 id="wa-items">Shop each piece</h2><p>Pick one piece or build a full set.</p></div>
+    <div class="wa-grid wa-grid--items">{% for item in winterArmor.items %}<article class="wa-card wa-card--item">
+      {% if item.images %}<div class="wa-card-media {% if item.images.length > 1 %}wa-card-media--pair{% else %}wa-card-media--single{% endif %}">{% for photo in item.images %}<figure class="wa-product-photo"><img src="{{ photo.src }}" alt="{{ photo.alt }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy" decoding="async"><figcaption>{{ photo.label }}</figcaption></figure>{% endfor %}</div>{% endif %}
+      <div class="wa-card-copy"><div class="wa-item-heading"><h3>{{ item.name }}</h3><p class="wa-price">${{ item.price }}</p></div><p>{{ item.colors }} · {{ winterArmor.youthSizes }} · {{ winterArmor.adultSizes }}</p>
+      {% if item.backPrint %}<p class="wa-choice">Back print: {{ winterArmor.backPrintChoices | join(' or ') }}.</p>{% endif %}</div>
+    </article>{% endfor %}</div>
+    <div class="wa-help-grid"><div><h3>Pick your rank color</h3><p>Youth: {{ winterArmor.youthColors | join(', ') }}.</p><p>Adults: {{ winterArmor.adultColors | join(', ') }}.</p><p>Pink is an extra color choice apart from rank.</p></div><div><h3>Get the fit right</h3><p>Both the hoodie and tee share the same front and back style. Pick STAY SPICY or a plain back.</p><p>Need help with size? <a href="sms:+19177368649?body=Hi%20Sandy%2C%20can%20you%20help%20me%20pick%20a%20Winter%20Armor%20size%3F">Text Sandy before you order.</a></p></div></div>
+  </section>
+  <section class="wa-section wa-section--steps" aria-labelledby="wa-steps"><div class="wa-section-head"><p class="wa-eyebrow">Your next step</p><h2 id="wa-steps">How to order</h2><p>A short text starts your order.</p></div>
+    <ol class="wa-steps"><li>Pick your item or kit.</li><li>Pick a size, color, amount, and back print for a hoodie or tee.</li><li>Text Sandy your list and prepay by November 23.</li><li>Paid orders go to print. Your sizes lock when you pay.</li><li>Pick up at the studio December 7–21, 2026.</li></ol>
+    <p>We print only paid orders. Pickup is about two to four weeks after the drop closes.</p>
+  </section>
+  <section class="wa-section wa-section--order wa-order" id="wa-order" aria-labelledby="wa-order-title" hidden><h2 id="wa-order-title">Build My Pre-Order</h2>
+    <p>Text Sandy your item, size, color, amount, and back print choice for a hoodie or tee. Sandy will help you finish your order.</p>
+    <a class="wa-button" href="sms:+19177368649?body=Hi%20Sandy%2C%20my%20Winter%20Armor%20pre-order%3A%0AItem%3A%20%0ASize%3A%20%0AColor%3A%20%0AQuantity%3A%20%0ABack%20print%20(STAY%20SPICY%20or%20plain)%3A%20" data-order-link hidden>Text My Pre-Order</a>
+    <p>Order window closes Monday, November 23. Pick up at the studio December 7–21.</p>
+  </section>
+  <section class="wa-section wa-section--order" id="wa-list" aria-labelledby="wa-list-title"><h2 id="wa-list-title">Join Next Drop List</h2>
+    <p>Sandy will text you when the next academy gear run opens.</p>
+    <form action="https://formspree.io/f/myzpdvay" method="POST" class="wa-form">
+      <input type="hidden" name="form_name" value="winter_armor_next_drop">
+      <input type="hidden" name="drop_mode" value="closed">
+      <label for="wa-name">Your name</label><input id="wa-name" name="name" autocomplete="name" required>
+      <label for="wa-phone">Your phone</label><input id="wa-phone" name="phone" type="tel" autocomplete="tel" required>
+      <button class="wa-button" type="submit">Join the List</button>
+    </form>
+  </section>
+  <section class="wa-section wa-section--faq" aria-labelledby="wa-faq"><div class="wa-section-head"><p class="wa-eyebrow">Good to know</p><h2 id="wa-faq">Your questions</h2></div>
+    <div class="wa-faq"><h3>When can I order?</h3><p>November 16–23, 2026.</p><h3>When can I pick up?</h3><p>At the studio December 7–21, 2026.</p><h3>Where is it made?</h3><p>Our Kingston, NY print shop makes this gear.</p><h3>How do I pick a size?</h3><p>Text Sandy before you pay. Your size locks when you pay.</p><h3>Can I get a rank color?</h3><p>Yes. Youth and adult rank colors are listed above. Pink is an extra choice.</p><h3>How do I pay?</h3><p>Text Sandy your list. Sandy will tell you how to prepay by November 23.</p></div>
+  </section>
+</main>
+<script defer src="/assets/js/winter-armor-2027.js"></script>
