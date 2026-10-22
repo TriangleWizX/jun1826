@@ -213,6 +213,7 @@ def changed_outputs(commit):
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names
+    schema_release = 'src/_includes/components/structured-data.njk' in names
     sitewide_release = ('eleventy.config.js' in names or
                         'footer-include.html' in names or
                         'src/_includes/layouts/base.njk' in names or
@@ -411,6 +412,16 @@ def changed_outputs(commit):
             is_site_html = rel.endswith('.html') and (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS))
             if is_site_html or is_js or is_css or is_brand or rel == 'assets/data/asset-hash-manifest.json':
                 outputs.add((candidate, rel))
+    if schema_release:
+        for candidate in (ROOT / 'dist').rglob('*.html'):
+            if not candidate.is_file():
+                continue
+            rel = candidate.relative_to(ROOT / 'dist').as_posix()
+            if not (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS)):
+                continue
+            if 'reviewCount' in candidate.read_text(encoding='utf-8', errors='ignore'):
+                outputs.add((candidate, rel))
+
     if glossary_release:
         for candidate in (ROOT / 'dist' / 'bjj-glossary').rglob('*'):
             if candidate.is_file():

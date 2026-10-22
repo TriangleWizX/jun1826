@@ -13,6 +13,15 @@ const LOCATIONS_SITEMAP = path.join(ROOT, 'sitemap-locations.xml');
 const BLOG_SITEMAP = path.join(ROOT, 'sitemap-blog.xml');
 const GLOSSARY_SITEMAP = path.join(ROOT, 'sitemap-glossary.xml');
 const RESEARCH_SITEMAP = path.join(ROOT, 'sitemap-research.xml');
+const DIST_DIR = path.join(ROOT, 'dist');
+const PREVIOUS_SITEMAPS = [
+  'sitemap-core.xml',
+  'sitemap-programs.xml',
+  'sitemap-locations.xml',
+  'sitemap-blog.xml',
+  'sitemap-glossary.xml',
+  'sitemap-research.xml'
+];
 const SRC_SITEMAP_DIR = path.join(ROOT, 'src');
 const normalizePath = (value) => String(value || '/').replace(/\/$/, '') || '/';
 
@@ -24,13 +33,36 @@ const escapeXml = (value) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
 
-const buildXml = (urls) => {
+const readPreviousLastmods = async () => {
+  const lastmods = new Map();
+  for (const sitemap of PREVIOUS_SITEMAPS) {
+    let xml;
+    try {
+      xml = await fs.readFile(path.join(DIST_DIR, sitemap), 'utf8');
+    } catch {
+      continue;
+    }
+
+    const blocks = xml.match(/<url\b[^>]*>[\s\S]*?<\/url>/gi) || [];
+    for (const block of blocks) {
+      const loc = block.match(/<loc>\s*([^<]+)\s*<\/loc>/i)?.[1]?.trim();
+      const lastmod = block.match(/<lastmod>\s*(\d{4}-\d{2}-\d{2})\s*<\/lastmod>/i)?.[1];
+      if (loc && lastmod) lastmods.set(loc, lastmod);
+    }
+  }
+  return lastmods;
+};
+
+const buildXml = (urls, priorLastmods, registryByUrl) => {
   const sorted = [...urls].sort((a, b) => a.localeCompare(b));
   const rows = sorted.map((u) => {
+    const priorLastmod = priorLastmods.get(u);
+    const significantUpdate = registryByUrl.get(u)?.lastSignificantUpdate || '';
+    const lastmod = !priorLastmod || significantUpdate > priorLastmod ? TODAY : priorLastmod;
     return [
       '  <url>',
       `    <loc>${escapeXml(u)}</loc>`,
-      `    <lastmod>${TODAY}</lastmod>`,
+      `    <lastmod>${lastmod}</lastmod>`,
       '  </url>'
     ].join('\n');
   });
@@ -62,6 +94,8 @@ const buildIndexXml = (sitemapUrls) => {
 
 export const main = async () => {
   const registry = JSON.parse(await fs.readFile(URL_REGISTRY_PATH, 'utf8'));
+  const priorLastmods = await readPreviousLastmods();
+  const registryByUrl = new Map();
 
   const coreUrls = new Set();
   const programUrls = new Set();
@@ -82,6 +116,7 @@ export const main = async () => {
     }
 
     const fullUrl = entry.path === '/' ? `${SITE}/` : `${SITE}${entry.path}`;
+    registryByUrl.set(fullUrl, entry);
 
     if (entry.sitemapGroup === 'core') {
       coreUrls.add(fullUrl);
@@ -98,19 +133,20 @@ export const main = async () => {
     }
   }
 
-  await fs.writeFile(CORE_SITEMAP, buildXml(coreUrls), 'utf8');
-  await fs.writeFile(PROGRAMS_SITEMAP, buildXml(programUrls), 'utf8');
-  await fs.writeFile(LOCATIONS_SITEMAP, buildXml(locationUrls), 'utf8');
-  await fs.writeFile(BLOG_SITEMAP, buildXml(blogUrls), 'utf8');
-  await fs.writeFile(GLOSSARY_SITEMAP, buildXml(glossaryUrls), 'utf8');
-  await fs.writeFile(RESEARCH_SITEMAP, buildXml(researchUrls), 'utf8');
-  await fs.writeFile(path.join(ROOT, 'blog-sitemap.xml'), buildXml(blogUrls), 'utf8');
-  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-core.xml'), buildXml(coreUrls), 'utf8');
-  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-programs.xml'), buildXml(programUrls), 'utf8');
-  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-locations.xml'), buildXml(locationUrls), 'utf8');
-  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-blog.xml'), buildXml(blogUrls), 'utf8');
-  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-glossary.xml'), buildXml(glossaryUrls), 'utf8');
-  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-research.xml'), buildXml(researchUrls), 'utf8');
+  const xmlFor = (urls) => buildXml(urls, priorLastmods, registryByUrl);
+  await fs.writeFile(CORE_SITEMAP, xmlFor(coreUrls), 'utf8');
+  await fs.writeFile(PROGRAMS_SITEMAP, xmlFor(programUrls), 'utf8');
+  await fs.writeFile(LOCATIONS_SITEMAP, xmlFor(locationUrls), 'utf8');
+  await fs.writeFile(BLOG_SITEMAP, xmlFor(blogUrls), 'utf8');
+  await fs.writeFile(GLOSSARY_SITEMAP, xmlFor(glossaryUrls), 'utf8');
+  await fs.writeFile(RESEARCH_SITEMAP, xmlFor(researchUrls), 'utf8');
+  await fs.writeFile(path.join(ROOT, 'blog-sitemap.xml'), xmlFor(blogUrls), 'utf8');
+  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-core.xml'), xmlFor(coreUrls), 'utf8');
+  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-programs.xml'), xmlFor(programUrls), 'utf8');
+  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-locations.xml'), xmlFor(locationUrls), 'utf8');
+  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-blog.xml'), xmlFor(blogUrls), 'utf8');
+  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-glossary.xml'), xmlFor(glossaryUrls), 'utf8');
+  await fs.writeFile(path.join(SRC_SITEMAP_DIR, 'sitemap-research.xml'), xmlFor(researchUrls), 'utf8');
 
   const childSitemaps = [
     `${SITE}/sitemap-core.xml`,
