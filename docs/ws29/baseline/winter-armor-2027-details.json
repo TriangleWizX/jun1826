@@ -1,0 +1,273 @@
+{
+  "route": "/winter-armor-2027",
+  "textBelow16": [
+    {
+      "tag": "P",
+      "id": "",
+      "classes": "wa-kicker",
+      "text": "Sensei Sandy BJJ · Tannersville, NY",
+      "font": 12.32,
+      "width": 320,
+      "height": 19.6875,
+      "x": 20,
+      "y": 339.96875,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "classes": "wa-eyebrow",
+      "text": "Start here",
+      "font": 12.32,
+      "width": 320,
+      "height": 19.6875,
+      "x": 20,
+      "y": 1201.09375,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "FIGCAPTION",
+      "id": "",
+      "classes": "",
+      "text": "Shown in white.",
+      "font": 12.8,
+      "width": 96.09375,
+      "height": 20.46875,
+      "x": 131.953125,
+      "y": 1604.328125,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "classes": "wa-fit",
+      "text": "Youth XS–L · Adult XS–3XL",
+      "font": 14.08,
+      "width": 282.8125,
+      "height": 22.515625,
+      "x": 38.59375,
+      "y": 1787.59375,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "FIGCAPTION",
+      "id": "",
+      "classes": "",
+      "text": "Shown with STAY SPICY back print.",
+      "font": 12.8,
+      "width": 218.078125,
+      "height": 20.46875,
+      "x": 70.953125,
+      "y": 2081.84375,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "classes": "wa-fit",
+      "text": "Youth XS–L · Adult XS–3XL",
+      "font": 14.08,
+      "width": 282.8125,
+      "height": 22.515625,
+      "x": 38.59375,
+      "y": 2277.140625,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "classes": "wa-eyebrow",
+      "text": "Make it yours",
+      "font": 12.32,
+      "width": 320,
+      "height": 19.6875,
+      "x": 20,
+      "y": 2406.25,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "FIGCAPTION",
+      "id": "",
+      "classes": "",
+      "text": "Hoodie front",
+      "font": 12.8,
+      "width": 282.8125,
+      "height": 20.46875,
+      "x": 38.59375,
+      "y": 2769.703125,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "FIGCAPTION",
+      "id": "",
+      "classes": "",
+      "text": "STAY SPICY back shown",
+      "font": 12.8,
+      "width": 282.8125,
+      "height": 20.46875,
+      "x": 38.59375,
+      "y": 2938.3125,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "FIGCAPTION",
+      "id": "",
+      "classes": "",
+      "text": "Tee front and hoodie back",
+      "font": 12.8,
+      "width": 258,
+      "height": 20.46875,
+      "x": 51,
+      "y": 3360.578125,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "classes": "wa-eyebrow",
+      "text": "Your next step",
+      "font": 12.32,
+      "width": 320,
+      "height": 19.6875,
+      "x": 20,
+      "y": 4501.5,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "P",
+      "id": "",
+      "classes": "wa-eyebrow",
+      "text": "Good to know",
+      "font": 12.32,
+      "width": 320,
+      "height": 19.6875,
+      "x": 20,
+      "y": 5192.5,
+      "position": "static",
+      "href": null
+    }
+  ],
+  "inputs": [],
+  "actions": [
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "classes": "navbar-toggler ss-menu-button",
+      "text": "Menu",
+      "font": 16,
+      "width": 44,
+      "height": 44,
+      "x": 32,
+      "y": 133.59375,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "classes": "ss-nav-cta ss-nav-cta--persistent",
+      "text": "Free Intro",
+      "font": 16,
+      "width": 240,
+      "height": 44,
+      "x": 88,
+      "y": 133.59375,
+      "position": "relative",
+      "href": "/free-bjj-intro-tannersville-ny#booking-flow"
+    }
+  ],
+  "fixed": [
+    {
+      "tag": "NAV",
+      "id": "",
+      "classes": "ss-mobile-actionbar is-observed is-visible",
+      "text": "Text Sandy\nHome",
+      "font": 16,
+      "width": 360,
+      "height": 76,
+      "x": 0,
+      "y": 824,
+      "position": "fixed",
+      "href": null
+    }
+  ],
+  "menu": {
+    "expanded": "true",
+    "height": 193,
+    "scrollHeight": 192,
+    "links": [
+      {
+        "text": "Classes",
+        "height": 44,
+        "width": 296,
+        "current": null
+      },
+      {
+        "text": "Your first class",
+        "height": 44,
+        "width": 296,
+        "current": null
+      },
+      {
+        "text": "Pricing",
+        "height": 44,
+        "width": 296,
+        "current": null
+      },
+      {
+        "text": "Parent Hub",
+        "height": 44,
+        "width": 296,
+        "current": null
+      }
+    ]
+  },
+  "widthSweep": [
+    {
+      "requestedWidth": 361,
+      "width": 361,
+      "scrollWidth": 361
+    },
+    {
+      "requestedWidth": 560,
+      "width": 560,
+      "scrollWidth": 560
+    },
+    {
+      "requestedWidth": 640,
+      "width": 640,
+      "scrollWidth": 640
+    },
+    {
+      "requestedWidth": 767,
+      "width": 767,
+      "scrollWidth": 767
+    },
+    {
+      "requestedWidth": 768,
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "requestedWidth": 992,
+      "width": 992,
+      "scrollWidth": 992
+    },
+    {
+      "requestedWidth": 1280,
+      "width": 1280,
+      "scrollWidth": 1280
+    }
+  ]
+}

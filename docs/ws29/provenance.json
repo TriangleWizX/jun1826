@@ -1,0 +1,5080 @@
+{
+  "recordedAt": "2026-10-23T19:59:06.041324+00:00",
+  "sourceRoot": "/tmp/ws29-inventory",
+  "head": "3c16e8c044efcb0875813f452d10703bc95242ae",
+  "build": "npm run build: passed in isolated worktree; see fresh-build.log",
+  "scope": "Fresh isolated output; SSI-expanded local capture, external requests blocked; not production verification.",
+  "files": [
+    {
+      "path": "dist/parent-resources.html",
+      "sha256": "af3a3b07045a2d203a7e9df8e479c9acde6e94f8b0aee670752a34478445c2e7",
+      "bytes": 50779
+    },
+    {
+      "path": "dist/inclusion.html",
+      "sha256": "244495b94ec303f2e2491052bda485fbd86f28ff6f56ee6caf0fab4ad7387361",
+      "bytes": 19932
+    },
+    {
+      "path": "dist/cta-decision.html",
+      "sha256": "c25d142ed9c2bd4cd194bdca34129404997d804bf1131cf09ee6eec5ec34e405",
+      "bytes": 13665
+    },
+    {
+      "path": "dist/tokens.css",
+      "sha256": "58cabd04bf01b7d568c52564bb78fac7d0f17fbae9ea3516caef6cbfb12de563",
+      "bytes": 1459
+    },
+    {
+      "path": "dist/jiu-jitsu-safety-tannersville-ny.html",
+      "sha256": "37f723ac2d16aae164a912d8bbbc59aa995b5af5d711b6920f299bdfb2ba6044",
+      "bytes": 28116
+    },
+    {
+      "path": "dist/camp-clinics.html",
+      "sha256": "1963087576bd977bf74117f8ada34e55afcf7777b8e658c3dc0708236421bdb1",
+      "bytes": 33890
+    },
+    {
+      "path": "dist/programs.html",
+      "sha256": "2bd49e30c234c501a116bf6eb1972d3cc33d116769c8039f2ff01bd6537706b6",
+      "bytes": 38308
+    },
+    {
+      "path": "dist/weekly-audit.html",
+      "sha256": "cb43adc70078b5935c0f769fcc4d010311eaec707deb93a5135da08c97b7550f",
+      "bytes": 32114
+    },
+    {
+      "path": "dist/cta-hero.html",
+      "sha256": "218ed4c92a81f771259a2a3f2dcf08d387d9587e8d46031ef8c63194d00766f7",
+      "bytes": 14189
+    },
+    {
+      "path": "dist/success-stories.html",
+      "sha256": "ca336b4f985172341e3652db784c2913fc07d158518592e8dae8a34c25f7e92b",
+      "bytes": 24965
+    },
+    {
+      "path": "dist/deer-mountain-inn.html",
+      "sha256": "d3d9fde9ecc1881a7331522236a33818c166bbcab9f281e834871cde6b08bb8a",
+      "bytes": 39789
+    },
+    {
+      "path": "dist/report-card.html",
+      "sha256": "c89fefa8b368d81ef14f2f5b1d755f1c071d60c985e2b2e3c6ccd5ea850c131d",
+      "bytes": 81603
+    },
+    {
+      "path": "dist/friday-night-fanatics.html",
+      "sha256": "502264d083848a1411f1bfa4aa6666dd629a5c9063c0aa6ad4403ece43914507",
+      "bytes": 53635
+    },
+    {
+      "path": "dist/tokens.40ed4d.css",
+      "sha256": "58cabd04bf01b7d568c52564bb78fac7d0f17fbae9ea3516caef6cbfb12de563",
+      "bytes": 1459
+    },
+    {
+      "path": "dist/summer-academy.html",
+      "sha256": "788202b72c6a878b9f3a39e315bc600961b16ce3dd03d30422e0db5162fe3396",
+      "bytes": 24379
+    },
+    {
+      "path": "dist/black-belt-concierge.html",
+      "sha256": "6f11b4a952ce17cc09fb17ea28a921eaa585f22f834ab20fd43b5a656c0f631c",
+      "bytes": 13377
+    },
+    {
+      "path": "dist/sensei-jiu-jitsu.html",
+      "sha256": "f88f8ab199b3929f57bd174a31bc39140e8b9f10cbbf04432277fd3e8c89ca8e",
+      "bytes": 16096
+    },
+    {
+      "path": "dist/after-booking-promise.html",
+      "sha256": "76497c54ca24690c760a757d943728ee11e4ac89f3e651068f169f3c524f5768",
+      "bytes": 15157
+    },
+    {
+      "path": "dist/bring-a-friend.html",
+      "sha256": "2c1faf61f6a44bb5e9c44d11bd6523c3edd73d3105dd96a78c243c47e7d836cb",
+      "bytes": 25878
+    },
+    {
+      "path": "dist/404.html",
+      "sha256": "76c5a345478be1abf884b9c263bec1725f23edd03703eee1cf7a092dccdc9838",
+      "bytes": 17701
+    },
+    {
+      "path": "dist/private-lessons.html",
+      "sha256": "ab8c6e7e267826ef82b7372e1a6084a77cd3fff26d0d56bb50082698a519ab50",
+      "bytes": 23814
+    },
+    {
+      "path": "dist/halloween-spooktacular.html",
+      "sha256": "57f1dc3f34485f760119993989d2a7e534434fb186cf5ecd9258576bb64d6ba5",
+      "bytes": 23862
+    },
+    {
+      "path": "dist/footer-include-no-proof.html",
+      "sha256": "d88ee639d224b37f5f037709af6f5b28b3034e8930ad26a914d803e29f7cdd79",
+      "bytes": 19779
+    },
+    {
+      "path": "dist/bully-proof-jiu-jitsu-tannersville-ny.html",
+      "sha256": "aff0d0adc9eac9e60e3851a27f7557431301e08465b8378276a8e261c1d957d5",
+      "bytes": 25783
+    },
+    {
+      "path": "dist/catskills-home-base.html",
+      "sha256": "396a8fccb6277bf98ba6c96191081ee200db87a0a861e5655b1ad3f1f442542c",
+      "bytes": 15946
+    },
+    {
+      "path": "dist/class-rules.html",
+      "sha256": "ac3d4b0a64c6d320a9cc4df35377d0e2bea11577254080f2624b4c575b75f648",
+      "bytes": 33964
+    },
+    {
+      "path": "dist/pricing-module-fragment.html",
+      "sha256": "783b0611bbc0569341de55e42d212e2a1eeb4dfad625a67fb0fa735ae1ae89db",
+      "bytes": 15663
+    },
+    {
+      "path": "dist/footer-include.html",
+      "sha256": "42c3adce06e39d77c92b250449dce17eceb95ab66f31af9c0363ebe7167ac0d4",
+      "bytes": 7922
+    },
+    {
+      "path": "dist/options-pricing.html",
+      "sha256": "c839a163b39694c3b5b8a5306b0a5c33039bbd2b56a0efbd704a822d1d7efa01",
+      "bytes": 13039
+    },
+    {
+      "path": "dist/bjj-stretches.html",
+      "sha256": "e8cab100570f7f7316c14d2e81bd4bcd31ff8ce76323d489c02391912cca62c2",
+      "bytes": 46392
+    },
+    {
+      "path": "dist/sensei-studio.html",
+      "sha256": "d7f1be2a1917eaedb3fe772217983884322a0f96133e679c3da78934d0c6f170",
+      "bytes": 41359
+    },
+    {
+      "path": "dist/scribners.html",
+      "sha256": "95a2ff37d54f159b994cd2c49676c80e5eaac85d6f4c9c3aad59bb85cff6cf1b",
+      "bytes": 39719
+    },
+    {
+      "path": "dist/cta-row.html",
+      "sha256": "3833c58885962b9a148f472ae87a6986e62a42d1a38ae7bf68fd3827a73aec64",
+      "bytes": 14083
+    },
+    {
+      "path": "dist/birthday-parties.html",
+      "sha256": "c022e84fc063d30fc99b9310de9cc54cc3edfabbf72b55867c2cc03d325db5f5",
+      "bytes": 45792
+    },
+    {
+      "path": "dist/partners-hospitality-hunter-windham.html",
+      "sha256": "35ceb63fc0454a31aa54f04c81f79270b80fa41775776dc4d35cda05aeccd6f2",
+      "bytes": 35643
+    },
+    {
+      "path": "dist/site-shell.html",
+      "sha256": "2c9ca9692f5e75d5a32be6e225b85ee915832b7050c31081c4ef6355acafe8b5",
+      "bytes": 26351
+    },
+    {
+      "path": "dist/pricing-module.html",
+      "sha256": "c78584f82cba67ebf856a95b18284e488018c7c759bf69a9242995b6ba41ce8a",
+      "bytes": 13102
+    },
+    {
+      "path": "dist/cta-primary.html",
+      "sha256": "82807324d35cfd969fa27f19666b9123f3360c27f5f8a5bb029f81513cae0b49",
+      "bytes": 13199
+    },
+    {
+      "path": "dist/spring-armor-drop.html",
+      "sha256": "570d141c7ba31b113abffc8caa56871bb72e68e8dc4af375daa0be139977bcf3",
+      "bytes": 17918
+    },
+    {
+      "path": "dist/bjj-faqs.html",
+      "sha256": "05ca0247b91efc124b436b51c4531556eee768136a1d32bc17a5e01312ef1a00",
+      "bytes": 48970
+    },
+    {
+      "path": "dist/cta-header.html",
+      "sha256": "22e2c434f80a9d37c42dba958ae2604351a7484070d88d0e0361eb4c049c7989",
+      "bytes": 14117
+    },
+    {
+      "path": "dist/rural-bjj-catskills.html",
+      "sha256": "0ab7d6dfd886339227012d7c1ebe411b9028e2581dac65ddac2595b9fc0d675e",
+      "bytes": 34686
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "c14f6995c25bc707d04ddc6cff5e26dab622d65785f173d98a57cb1d5d512e96",
+      "bytes": 145871
+    },
+    {
+      "path": "dist/student-hub.html",
+      "sha256": "d33d4354a8c04da4350765f9da234eb8ce5701e081991fc3b2b992890ece32d1",
+      "bytes": 37330
+    },
+    {
+      "path": "dist/holiday-schedule.html",
+      "sha256": "096c987d350df80139a34a3e4ea935256943aa7733685a5bf85c077684633456",
+      "bytes": 15484
+    },
+    {
+      "path": "dist/cta-footer.html",
+      "sha256": "8a37938d1efc7754f4be77ecdbaf52c1152860386803136be6e9bf8c4e106c73",
+      "bytes": 1272
+    },
+    {
+      "path": "dist/footer-partner.html",
+      "sha256": "43e405f028404eb25b1efa6f7f76f47ea6eac51fccced74f65ca715e808dc704",
+      "bytes": 15874
+    },
+    {
+      "path": "dist/partners-wellness-pt-referrals.html",
+      "sha256": "fee50d4c339967ba19c261b19cbb265bfd74753a194eb696c3850e90456496fa",
+      "bytes": 30250
+    },
+    {
+      "path": "dist/local-bjj-tournaments-for-parents.html",
+      "sha256": "4b75de6e3afc22287f45da57a0190c7dc445e5c0af1111cce8a029bf43755385",
+      "bytes": 13320
+    },
+    {
+      "path": "dist/sw-daily-checkin.js",
+      "sha256": "0cc0ed771b193fb8055e9028a838bc5bff5d69462c6f2527be69b2cc6a827b81",
+      "bytes": 1862
+    },
+    {
+      "path": "dist/daily-checkin.html",
+      "sha256": "adc403731601b26e3c6b068c331a75558705a033528fd6a72ab8f54d04ab263d",
+      "bytes": 40084
+    },
+    {
+      "path": "dist/nearby-towns.html",
+      "sha256": "bc4761ca4df7a176099646ae8f142d700054fda03d10d7784e7f571e0fe61ae2",
+      "bytes": 42632
+    },
+    {
+      "path": "dist/local-bjj-tournaments-for-families.html",
+      "sha256": "585699004b73df3df49eae4300f08b52eaca097bf896076e7da37f9e4e0930d3",
+      "bytes": 36438
+    },
+    {
+      "path": "dist/community-partners.html",
+      "sha256": "46e9bf523dda3dc4eb2bfaff229fae48b08e504c1ab3b919b9cb841d1feec85a",
+      "bytes": 22981
+    },
+    {
+      "path": "dist/scribners-jiu-jitsu.html",
+      "sha256": "21a45b81ba9c9c139ae3d930d7866cdc0d82c5ca5a17702586d7de95177de394",
+      "bytes": 28632
+    },
+    {
+      "path": "dist/lane-picker.html",
+      "sha256": "16fb6c4e4729dac4e25ddca385d5622fc220af759d2f5d60636e3331dd39dacf",
+      "bytes": 15500
+    },
+    {
+      "path": "dist/waiver.html",
+      "sha256": "f9bfc4af8c77a7bb3fcc489e7157a5f0340fa14a6c04571c737ed07cd113e1db",
+      "bytes": 24439
+    },
+    {
+      "path": "dist/nav-include.html",
+      "sha256": "5d50fd2f6e159b7b5535d3142b3f9f4d95413182243d4195b72d6bfc2a420782",
+      "bytes": 38583
+    },
+    {
+      "path": "dist/guarantee-terms.html",
+      "sha256": "cddb638bd7c69453c79c9195b800be71b561d6aa96df420cbddb382b21a1cdd6",
+      "bytes": 18704
+    },
+    {
+      "path": "dist/bio.html",
+      "sha256": "526c925757f6aaa5465507523aec4b50760a2d0f8f374ef6f55d5b2d3e2f9731",
+      "bytes": 31363
+    },
+    {
+      "path": "dist/adult-private-coaching-intensive.html",
+      "sha256": "a8868cd3d1374e009275e336b203f0b4eefc2cd8a39f8f9d57ed7940748c60a0",
+      "bytes": 22706
+    },
+    {
+      "path": "dist/schedule.html",
+      "sha256": "f2c8db944bac794c0dd793cdad2819e8d37d1b290f4e7cf8d1e1e1ab70104823",
+      "bytes": 110003
+    },
+    {
+      "path": "dist/phoenicia-diner.html",
+      "sha256": "e6ad3ab78a60898d252faf49109d2f50bdc1d98127df9b2aeb2372465c66875d",
+      "bytes": 40073
+    },
+    {
+      "path": "dist/contact.html",
+      "sha256": "dcf9cf475bec361f65f652f2e3b73d707ee32250c7022dcc0a496b4e9fb5e446",
+      "bytes": 27468
+    },
+    {
+      "path": "dist/scribners-thank-you.html",
+      "sha256": "909614c814ef7bf6c6e47d3d8d896fa6cad53fffefe233a48f9b85be5dc32c07",
+      "bytes": 18326
+    },
+    {
+      "path": "dist/show-up-kit.html",
+      "sha256": "129eb6760e7f75ecc3d9a3a2664961e6c1ae8a7070b6e5dd335b91f1eefce208",
+      "bytes": 32709
+    },
+    {
+      "path": "dist/womens-jiu-jitsu-tannersville.html",
+      "sha256": "1a640633e7ae2f0a29819a1be7ed476e4abb5168a979d37546456e62cf5be1ec",
+      "bytes": 26420
+    },
+    {
+      "path": "dist/how-class-works.html",
+      "sha256": "5d84f41b6f195de8dd020608aa44d16dbe37f13cfc745a4f95308b39d847ed74",
+      "bytes": 35601
+    },
+    {
+      "path": "dist/bjj-tannersville-ny-directions.html",
+      "sha256": "14c774b4222b26eab53add594b95e59f45e3f7092af95a46e663aad24513eed6",
+      "bytes": 130269
+    },
+    {
+      "path": "dist/law-enforcement-bjj.html",
+      "sha256": "c4e5848bcf1634317d31441e5f1b0684807e0b4362e3de0958876434ede9b82a",
+      "bytes": 56521
+    },
+    {
+      "path": "dist/winter-rank-drop/index.html",
+      "sha256": "adc7b0b80fe4d25e8de1d6f96233b74f1b3cc70c317bd2ab14a8781db1e4e13a",
+      "bytes": 6552
+    },
+    {
+      "path": "dist/frames/index.html",
+      "sha256": "91d805fd0824794784b9f15b0fa70bcd98a799adbcbc19f185cd581892988a88",
+      "bytes": 20012
+    },
+    {
+      "path": "dist/front-headlock-series/index.html",
+      "sha256": "3f599f70b696ce0aabb909558efb27a712ddb936a1fd77074eaa3ebec1087a3d",
+      "bytes": 14904
+    },
+    {
+      "path": "dist/schedule/index.html",
+      "sha256": "609d0e430402fa0d3695ab543d2ef20fc8ccb5b92e24b4365d68e4a98b2ff184",
+      "bytes": 118263
+    },
+    {
+      "path": "dist/scribners-staff-reset-pass/index.html",
+      "sha256": "0aeaf99a470c86a756671e2974b9a41f87639e8ba023035774e262f626d297c7",
+      "bytes": 27343
+    },
+    {
+      "path": "dist/drilling/index.html",
+      "sha256": "e0b8c2988a50063a312b6fb2534eb16d7168f6d29af48ec0f7da6a9b9d2c56b5",
+      "bytes": 19809
+    },
+    {
+      "path": "dist/bjj-glossary/index.html",
+      "sha256": "802c3b186a95a7a2edbbb6613ee30062cab98f7275e52acd3e2b348fa09b1d57",
+      "bytes": 477715
+    },
+    {
+      "path": "dist/practice-vault/index.html",
+      "sha256": "71a5b370f7fca422d90e50ac5529e91a33639da495531284b39843c9adf75219",
+      "bytes": 24049
+    },
+    {
+      "path": "dist/roll/index.html",
+      "sha256": "fd746f52ac404089f69ee219d081a849be4f9f608e35b21a0a7c3d386de84f5d",
+      "bytes": 19679
+    },
+    {
+      "path": "dist/tactical-longevity/index.html",
+      "sha256": "e2b85d8f9971880a4181facea4d6014eee60fad5bfbd8f9ca631a1ef346a0909",
+      "bytes": 48494
+    },
+    {
+      "path": "dist/everyday-jiu-jitsu-training/index.html",
+      "sha256": "88fefb3ebead525dc8cbd65270bdf5d56dc02e0a87c992dfe07dad7c3bd54404",
+      "bytes": 22997
+    },
+    {
+      "path": "dist/athlete-cross-training/index.html",
+      "sha256": "e02986b0543d634adbe926bc0fd06d450b31e19d184cd8c54ed4b29722ecd800",
+      "bytes": 30375
+    },
+    {
+      "path": "dist/choke/index.html",
+      "sha256": "bae56cae4b24e247809e16c07971b42e8e58d033debb92bb9da06f3979ee191d",
+      "bytes": 18266
+    },
+    {
+      "path": "dist/alley-bootcamp/index.html",
+      "sha256": "3a45450b838b774451ce04469e841fb5f036ada922cc82d3aa86517265f2b41c",
+      "bytes": 23064
+    },
+    {
+      "path": "dist/nervous-first-timers/index.html",
+      "sha256": "ba1212f85876a2cfd65badc8caac55dce85b4c5c9bf7d3310087785070ee4e27",
+      "bytes": 28589
+    },
+    {
+      "path": "dist/winter-armor-2027/index.html",
+      "sha256": "9d5ea22fc6976df7371fb91954632eb75ca60ba2a3ddbfcb58f1f4345dda0660",
+      "bytes": 21522
+    },
+    {
+      "path": "dist/annual-track/index.html",
+      "sha256": "cd7b03310b76231b755e189b9b2d4a11dc07b10f3dd925988776ca011fb0a5d8",
+      "bytes": 32561
+    },
+    {
+      "path": "dist/position/index.html",
+      "sha256": "5d983402bfa4eb85be963357075f726353deac79007f46d43a032eb6c2d9e0b3",
+      "bytes": 19869
+    },
+    {
+      "path": "dist/core-culture-parent-guide/index.html",
+      "sha256": "2b0b94b78f98dd40fddcc986aa17399bec844d43433cc5b75cfd433b78e07a42",
+      "bytes": 42840
+    },
+    {
+      "path": "dist/blog/index.html",
+      "sha256": "01227add50107b600c539ec77b8c39f4f457d362b91e8d69c53e9536d115c14a",
+      "bytes": 203287
+    },
+    {
+      "path": "dist/sensei-bully/index.html",
+      "sha256": "a70e15c8e9b0ab961cb18c4a5738d836c386288944f9a4f56b93225773a6b7c7",
+      "bytes": 35848
+    },
+    {
+      "path": "dist/snap-down-defense/index.html",
+      "sha256": "21c7ebc225b2022619ed1fa7847396649068d417ea8312fa27d821bcefb19937",
+      "bytes": 14876
+    },
+    {
+      "path": "dist/_includes/schedule-summary.html",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "dist/_includes/lineage.html",
+      "sha256": "46ef4c0aeee0a700577d984897ad00a17523e0c2ea17c715ea0053ea1e36793e",
+      "bytes": 9628
+    },
+    {
+      "path": "dist/_includes/footer-high-intent.html",
+      "sha256": "78c0db193e1a343a7546ae3db70ca75fda7ba04e89069489b2da2568fe00cd8e",
+      "bytes": 10325
+    },
+    {
+      "path": "dist/_includes/schedule-compact.html",
+      "sha256": "878d6c6cdb426ba5840896dec685ae7de797d253d2c3591b673ceb8aa3d196b5",
+      "bytes": 1385
+    },
+    {
+      "path": "dist/_includes/site-shell.html",
+      "sha256": "fb5bd1232f2b2c5111a6401de064d76e42d859c8a72c2271de6d793aeacfdc8f",
+      "bytes": 14500
+    },
+    {
+      "path": "dist/_includes/schedule-full.html",
+      "sha256": "5d5790e9514483d6a5719d8c49d790ac00c4cbc6dacb842754df7a0f59815ade",
+      "bytes": 2999
+    },
+    {
+      "path": "dist/_includes/schedule-studio-current.html",
+      "sha256": "aecde4f3a1c93fb83794607d00830024eae56af5cc96ab7ecd2264ca7ed84428",
+      "bytes": 945
+    },
+    {
+      "path": "dist/_includes/schedule-master.html",
+      "sha256": "7960b19500ac2092bae41e75b800f5fcb1c69e069a9e24e8134e6c53a152702d",
+      "bytes": 4477
+    },
+    {
+      "path": "dist/_includes/schedule-studio-bento.html",
+      "sha256": "b0d1915eef847ccc30e0a76f189f2114d6071ca657f8bb0b8f87be37aceb1b3a",
+      "bytes": 1170
+    },
+    {
+      "path": "dist/_includes/analytics-head.html",
+      "sha256": "8602d77946c2139f5aa88768c196de86ea604cb622f70660306224d0428fe0df",
+      "bytes": 2050
+    },
+    {
+      "path": "dist/_includes/local-business-schema.jsonld.html",
+      "sha256": "f47e3d298da81acf8c025b5e3c81ebc88f56c7f1928dbfa7eea73e5508acb4f6",
+      "bytes": 2986
+    },
+    {
+      "path": "dist/_drafts/mountain-pass-print.html",
+      "sha256": "506128701e53cb879a202a67738e3e92bc736373fd7d5fd44c975d89cc5f4169",
+      "bytes": 16824
+    },
+    {
+      "path": "dist/pricing/index.html",
+      "sha256": "569ab00ead1b947417476fa6f3e37d54ac22e27dc0a229fa5c60eaae1a1692b6",
+      "bytes": 2526
+    },
+    {
+      "path": "dist/reviews-village/index.html",
+      "sha256": "9578a5290f3b3d722ec12ac1421281bf3415079fd2ddc1041905aaab88ea6e09",
+      "bytes": 36849
+    },
+    {
+      "path": "dist/front-headlock-escape/index.html",
+      "sha256": "bb320a6e58bceb6259790032d6e2cf799645e59daab53c908993153bf5b1d222",
+      "bytes": 14916
+    },
+    {
+      "path": "dist/options-pricing/index.html",
+      "sha256": "02299b6943d5fce3764194ac456a509766fa041eae2e3a40c45eaf454e92c559",
+      "bytes": 138250
+    },
+    {
+      "path": "dist/samurai-break/index.html",
+      "sha256": "c287f0dddea7871d28fe9a7526f6da50c465ce35e3fdd6189e8c5a28bc98672a",
+      "bytes": 30731
+    },
+    {
+      "path": "dist/confidence-protocol/index.html",
+      "sha256": "b5dafe6f46115635b9c26cb73ee5125fb6b7bb2112856b584442b7ab33ad9ad2",
+      "bytes": 13341
+    },
+    {
+      "path": "dist/parents-guide-kids-bjj/index.html",
+      "sha256": "39230ddfc2ba5527440bfb3c5b460bc5de4c63d07413b2db341738b31bdc6bf9",
+      "bytes": 31035
+    },
+    {
+      "path": "dist/sweep-single/index.html",
+      "sha256": "4a47e76961a16791f9cf0fa54fda657b14a6e07351d466c8b8265052d416f212",
+      "bytes": 19921
+    },
+    {
+      "path": "dist/videos/index.html",
+      "sha256": "df3604d0c394b16951dbc02ad7cb4805d6d450614147fdf90d9f0fb9a738b0e4",
+      "bytes": 24939
+    },
+    {
+      "path": "dist/snippets/webp-picture.html",
+      "sha256": "1126d8293049f00a90f117175bbc2768ea4d9e02a4ddf7dcbdfd84f04d2ce199",
+      "bytes": 14685
+    },
+    {
+      "path": "dist/after-school/index.html",
+      "sha256": "ee05faa55fdec7e2391b3a59c7cb2304f8691f437b3de7d4e49ac11c86408118",
+      "bytes": 41629
+    },
+    {
+      "path": "dist/open-mat/index.html",
+      "sha256": "58e6c1ec5e0068ab2339c4c3fc0e6d32df98a7d4435490e272f9c30f202eb13a",
+      "bytes": 19771
+    },
+    {
+      "path": "dist/js/youth-intro-admin.33052c.js",
+      "sha256": "930f67ef2a83f06d31a1ad9e2f6ca1504cb2d4c8ddc129acb81ad2e1a4868240",
+      "bytes": 6125
+    },
+    {
+      "path": "dist/js/youth-intro-form.8c09f0.js",
+      "sha256": "d66f352ace8b9d4991d81b76fc654573041a588ac62df6a29ef4dab0c139e338",
+      "bytes": 10574
+    },
+    {
+      "path": "dist/js/analytics-events.js",
+      "sha256": "7b2176b8fb25662be1a1a626e57921069154b2b233db99c4dacbc9ce32678a7e",
+      "bytes": 25364
+    },
+    {
+      "path": "dist/js/youth-intro-admin.js",
+      "sha256": "930f67ef2a83f06d31a1ad9e2f6ca1504cb2d4c8ddc129acb81ad2e1a4868240",
+      "bytes": 6125
+    },
+    {
+      "path": "dist/js/glossary-filters.min.js",
+      "sha256": "7c6caff52853411b933411df99a76bb850771a1070fbe5a7823a992faa7d70ab",
+      "bytes": 27032
+    },
+    {
+      "path": "dist/js/analytics-events.828fef.js",
+      "sha256": "34cf06fbf0df5c93c076ffbe44e727884a4d5adf5e864fbcd1d07690b0638231",
+      "bytes": 22978
+    },
+    {
+      "path": "dist/js/site-config.js",
+      "sha256": "233cedecf3152e4456a96ccdd6a3fa7f157cbbeee1eaf0f241a1724f3aa32fc7",
+      "bytes": 25937
+    },
+    {
+      "path": "dist/js/weekly-audit.js",
+      "sha256": "ec9f4861947ce85f939c4e0f2721e0255692b67bb22e6647e4fad4877200a78a",
+      "bytes": 7994
+    },
+    {
+      "path": "dist/js/book-free-intro-bridge.js",
+      "sha256": "fff15cf46916efb9bd8eca64963b037d0988bf182decb264cb29a64527693a7d",
+      "bytes": 1420
+    },
+    {
+      "path": "dist/js/proof-carousel.js",
+      "sha256": "94bdd07a8ac4395115eedc560de25e993acaccf6ca7258bf8f7d4deb6ef7c69d",
+      "bytes": 1883
+    },
+    {
+      "path": "dist/js/calendly-intent.js",
+      "sha256": "0812e4cc2e95bddaabce693b65b64a29212d388a4d4b92114f3271970c1e7f09",
+      "bytes": 139
+    },
+    {
+      "path": "dist/js/site-ux.js",
+      "sha256": "504ba6c108bce2da69ca2becdabeb77c8dba90e02f341ef893b4ba30c465421e",
+      "bytes": 25841
+    },
+    {
+      "path": "dist/js/analytics-events.min.js",
+      "sha256": "37d6ba8bec90afe715a95b7ee4e70617db640fb2dafa52f32848e8f9b0f7f282",
+      "bytes": 13553
+    },
+    {
+      "path": "dist/js/progressive-booking.js",
+      "sha256": "d03232cfc4343c2c75117dd62402d8189a75de23f37aa14fff44cca5be2f0766",
+      "bytes": 20918
+    },
+    {
+      "path": "dist/js/daily-checkin.js",
+      "sha256": "e4e5e96c0618432c94cee1514675a75dcb5b2be5bf29af76eeabccd1c498c0b6",
+      "bytes": 23344
+    },
+    {
+      "path": "dist/js/content-config.js",
+      "sha256": "7f9a2f4b0da52156b5ec97eaabbc2f8a97b936967b7d58aaf0e6adec2ad34892",
+      "bytes": 15299
+    },
+    {
+      "path": "dist/js/decision-config.js",
+      "sha256": "4702e4af37e4b483821d619332eac9882a1d3efcfaf1e9370e7a2fef3db7d69e",
+      "bytes": 777
+    },
+    {
+      "path": "dist/js/link-utils.min.js",
+      "sha256": "cfdcc1fc7dc5713ee39222391216552a229c31345b0bc64925a5f2624d4480e5",
+      "bytes": 5452
+    },
+    {
+      "path": "dist/js/link-utils.js",
+      "sha256": "9e6f765ee17799405d7018d273705713607f209d412e20425c67f2cdaafc1755",
+      "bytes": 10708
+    },
+    {
+      "path": "dist/js/site-config.e63977.js",
+      "sha256": "0f11e96913671a53c86d14e0d8fce1ce91fd065cd8da14ed88278bb9c643cbf0",
+      "bytes": 26261
+    },
+    {
+      "path": "dist/js/videos-hub-filters.js",
+      "sha256": "f1e89f0ea74311cd5fa08af9e6ff5225a2c6464a20d081f1862cf08596c71105",
+      "bytes": 2667
+    },
+    {
+      "path": "dist/js/youth-intro-form.js",
+      "sha256": "392f07dd4008567447b79a9955b99df1ac395d27e6b7b0a13bdd04fe9a595b3a",
+      "bytes": 11398
+    },
+    {
+      "path": "dist/js/progressive-booking.min.js",
+      "sha256": "1d6b1a6611d0a514a3fec6c3305a201ea7b0389e1acfa12dbb75fe65da75d1cc",
+      "bytes": 8908
+    },
+    {
+      "path": "dist/js/videos-hub-filters.4b8913.js",
+      "sha256": "f1e89f0ea74311cd5fa08af9e6ff5225a2c6464a20d081f1862cf08596c71105",
+      "bytes": 2667
+    },
+    {
+      "path": "dist/js/glossary-filters.js",
+      "sha256": "4c7f92d4e71e14042b75d3c88a34998158a963d6611a7179795bcd59de961bea",
+      "bytes": 25618
+    },
+    {
+      "path": "dist/js/script.68b857.js",
+      "sha256": "8e7fd489cc08c21cfc91c17f5461ef663a5b76483684aeb8121effcadbf04207",
+      "bytes": 4133
+    },
+    {
+      "path": "dist/js/progressive-booking.51ee16.js",
+      "sha256": "d8a74d2b1c9b1d7d273e421a947ec67d78a67e24889c5ea313940a39566a9756",
+      "bytes": 7703
+    },
+    {
+      "path": "dist/js/book-free-intro-bridge.min.js",
+      "sha256": "770a26a13cf496128203fcfc131514815621b2bee0fb078428fb9f8ce1c33528",
+      "bytes": 824
+    },
+    {
+      "path": "dist/js/book-free-intro-bridge.15e842.js",
+      "sha256": "fff15cf46916efb9bd8eca64963b037d0988bf182decb264cb29a64527693a7d",
+      "bytes": 1420
+    },
+    {
+      "path": "dist/js/glossary-filters.73c583.js",
+      "sha256": "50b49dfd223ca5e805628fb3f2ebbbae300e67c4961be4ba92f275377a5e0175",
+      "bytes": 22780
+    },
+    {
+      "path": "dist/js/glossary-filters.min.82cb36.js",
+      "sha256": "50b49dfd223ca5e805628fb3f2ebbbae300e67c4961be4ba92f275377a5e0175",
+      "bytes": 22780
+    },
+    {
+      "path": "dist/js/voice-faq-accordion.js",
+      "sha256": "d31dc226e676591aa2eb8680eaf9551a32883739fbc7f92f0fd05c74b3b839f7",
+      "bytes": 970
+    },
+    {
+      "path": "dist/js/site-ux.bdc4aa.js",
+      "sha256": "504ba6c108bce2da69ca2becdabeb77c8dba90e02f341ef893b4ba30c465421e",
+      "bytes": 25841
+    },
+    {
+      "path": "dist/js/cta-config.js",
+      "sha256": "27d21caf5068774858b307e702bc881cfb2c7da2e4d60af55a40b1ed3011991e",
+      "bytes": 9556
+    },
+    {
+      "path": "dist/js/script.js",
+      "sha256": "8e7fd489cc08c21cfc91c17f5461ef663a5b76483684aeb8121effcadbf04207",
+      "bytes": 4133
+    },
+    {
+      "path": "dist/js/first-visit-availability.js",
+      "sha256": "84207d1f0c281a4bd648d87a2842876ad3fcaf867189508ddd339379d7ede81b",
+      "bytes": 11541
+    },
+    {
+      "path": "dist/js/voice-faq-accordion.2b6c27.js",
+      "sha256": "d31dc226e676591aa2eb8680eaf9551a32883739fbc7f92f0fd05c74b3b839f7",
+      "bytes": 970
+    },
+    {
+      "path": "dist/js/calendly-intent.fca0f4.js",
+      "sha256": "1d548243f9866cd9027d24f2ec1d4e38822931f1258b7959598c9d814d469420",
+      "bytes": 9726
+    },
+    {
+      "path": "dist/js/lane-picker.js",
+      "sha256": "03e03f74a1ce5588d7d2f4c1399a91367ce8c00212b6446233250ce7cf655d8c",
+      "bytes": 10776
+    },
+    {
+      "path": "dist/research/marietta-police-bjj-case-summary.html",
+      "sha256": "49df35639cda3cfc72339b0c82466b9e66cad4a865431e00e425bc9338b75f62",
+      "bytes": 17789
+    },
+    {
+      "path": "dist/research/law-enforcement-bjj-evidence.html",
+      "sha256": "bd1ac507615aa9d81495b34bb98ec7139f3848dbdfdab33b054d217fe74a7e18",
+      "bytes": 19549
+    },
+    {
+      "path": "dist/visit/index.html",
+      "sha256": "6504b708cda448088ac5c1b1fb43d80efd73f1628f045ff5df10920dc6644139",
+      "bytes": 107040
+    },
+    {
+      "path": "dist/instagram/index.html",
+      "sha256": "55f01eb17b16c2aa2b35b886bd71b01b7bbcf0652a2970e8b5b4f4728ebc0a2f",
+      "bytes": 64707
+    },
+    {
+      "path": "dist/bjj-classes/index.html",
+      "sha256": "12aee97a394d115fbf322dd0c151b57a03060e4cfcbfa2a278cbf73e9eea5cf8",
+      "bytes": 116200
+    },
+    {
+      "path": "dist/hyphen-weekend/index.html",
+      "sha256": "5d382f859cc7570d6fdb1d682ca7b04b47d55ad70d1ad41392d34b9eef98587d",
+      "bytes": 17354
+    },
+    {
+      "path": "dist/free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/index.html",
+      "sha256": "4e006a9631fc0b477677bdf11aea2cffc3aade88e2032009ef85a5089cab59bb",
+      "bytes": 26448
+    },
+    {
+      "path": "dist/sources/index.html",
+      "sha256": "bb43932e55963341d6709593e766e7701595b9150b5762727f14f636a4757bc2",
+      "bytes": 41822
+    },
+    {
+      "path": "dist/bottom-position/index.html",
+      "sha256": "848cc53bf02d8a66dab4258ad11e35458b8857e771bd3c08389a4d11bc57bdae",
+      "bytes": 19783
+    },
+    {
+      "path": "dist/admin/youth-intro.html",
+      "sha256": "f6a341dd5bf9e58751379cd9e5fb75a9d2c6b813ae991ed4631c19e646b2d98d",
+      "bytes": 14883
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/index.html",
+      "sha256": "0eb7476c99077b043edef618b77c526fdad3e6ffcb1ceee6bcd36ff104a995b1",
+      "bytes": 81065
+    },
+    {
+      "path": "dist/evidence/index.html",
+      "sha256": "caef0d86adad43b0fb6c9d5e86c1fc3ea6bb7138a12d4a9463f6b0a7be6b69eb",
+      "bytes": 50588
+    },
+    {
+      "path": "dist/white-belt-foundations/index.html",
+      "sha256": "2b3e267a118be8ad994d7c92413c7e39a426a75d27d2b83297b722c0ced7f881",
+      "bytes": 32733
+    },
+    {
+      "path": "dist/family-jiu-jitsu/index.html",
+      "sha256": "7197065887b0ae3b8764fb6ee178c8827e029fdae5fd6e0478cf875a86bcda2f",
+      "bytes": 58166
+    },
+    {
+      "path": "dist/clean/index.html",
+      "sha256": "0b552b39e650a6a2d8d11a88f6d1053bf898d0554912411ed5721439004f6986",
+      "bytes": 24979
+    },
+    {
+      "path": "dist/partials/booking-router.html",
+      "sha256": "f3e9fa8b6e0908d6ac8926828e85ff56ba23c020bb35bc08b49a5e74b2cf9ed7",
+      "bytes": 2285
+    },
+    {
+      "path": "dist/partials/safety-promise-fragment.html",
+      "sha256": "fcb8cf82bd78dfedc9b27af89ed1ab63686ac1a67ec9191edbcb2a1252a2d2d1",
+      "bytes": 194
+    },
+    {
+      "path": "dist/partials/nearby-areas-links.html",
+      "sha256": "e2cccb1b5baf01b54cbdb6e3442a0c7206e871225f02ef49e05cdb3ba7d0f5cf",
+      "bytes": 857
+    },
+    {
+      "path": "dist/partials/evidence-accordion-leo.html",
+      "sha256": "66a394da572a3ba24cd9c51b35e4ff06323a181351b16261722cfc4ee9aeabd1",
+      "bytes": 4564
+    },
+    {
+      "path": "dist/partials/first-class-expectations.html",
+      "sha256": "96906df060f028e91d1ca452b161238a2f8eec81e294b74174392a416bb1ee4d",
+      "bytes": 1759
+    },
+    {
+      "path": "dist/partials/video-featured-adults.html",
+      "sha256": "4852c8c7f1e2fd8500fd613733a2ce8fe4afd5a07c03c140b53815fd71006584",
+      "bytes": 25
+    },
+    {
+      "path": "dist/partials/voice-faq-home.html",
+      "sha256": "0be34d7d3ef4cddc22276cb5b910e11f4c74fa081a4f9359eeb66849cf59cc1c",
+      "bytes": 1249
+    },
+    {
+      "path": "dist/partials/trust-signals.html",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "dist/partials/cta-decision.html",
+      "sha256": "bdc7b98ffd76fb485f9e622dad03cba527ce21cec177d1340a363321b154d773",
+      "bytes": 731
+    },
+    {
+      "path": "dist/partials/core-promise-short.html",
+      "sha256": "60ce6a0d24cc49b56a6927e134923704dfe3723e6103c2af3f32b5f500735dc6",
+      "bytes": 25041
+    },
+    {
+      "path": "dist/partials/voice-faq-private.html",
+      "sha256": "5e8812e0782eee8a489e5cbd14af913e5420115bdb9a7018a3d645aec9180535",
+      "bytes": 1561
+    },
+    {
+      "path": "dist/partials/cta-hero.html",
+      "sha256": "aef074be5a9ca7a8e50386551c42fce99c7ac5b146db243dd8692880e8e50ccb",
+      "bytes": 1267
+    },
+    {
+      "path": "dist/partials/priority-internal-links.html",
+      "sha256": "f7bf30c2010f5a171d45c7e0978711d54885ce32040229dfacc2306c5a2cc2f1",
+      "bytes": 1575
+    },
+    {
+      "path": "dist/partials/location-and-reviews.html",
+      "sha256": "9f6cd3a432877e7b848331a361a3ad5c91edfaa2f1e1dd98da0437698a723751",
+      "bytes": 1787
+    },
+    {
+      "path": "dist/partials/safety-promise.html",
+      "sha256": "947938115c01de3f2f1fa16d368a11c6b0cd65584efe088f59400cbdfecc3b8e",
+      "bytes": 11252
+    },
+    {
+      "path": "dist/partials/blog-related-posts.html",
+      "sha256": "e22e60ef235602ee738e97cac60838bb787c9cb848b5d1df041e7730d4f3a967",
+      "bytes": 350
+    },
+    {
+      "path": "dist/partials/local-destination-proof.html",
+      "sha256": "b1c9d91123403979cc27bf2d4defb43b2562473747337df51ba994174460fedc",
+      "bytes": 669
+    },
+    {
+      "path": "dist/partials/schedule-consistency.html",
+      "sha256": "a7925c7bfff92d26941c35728a07ae1fb1510f2bf3fc6418f5502213c4dc0c99",
+      "bytes": 2637
+    },
+    {
+      "path": "dist/partials/voice-faq-teens.html",
+      "sha256": "2ac6b7ff7dd490066536669650b5ab24b0f139c0719f3074d7115b9b55360571",
+      "bytes": 2136
+    },
+    {
+      "path": "dist/partials/video-featured-teens.html",
+      "sha256": "4852c8c7f1e2fd8500fd613733a2ce8fe4afd5a07c03c140b53815fd71006584",
+      "bytes": 25
+    },
+    {
+      "path": "dist/partials/blog-topic-cluster-links.html",
+      "sha256": "b6724d809afc5c37017d4b2c2882233972bb5dd2268201eb049dc7a64cea6311",
+      "bytes": 451
+    },
+    {
+      "path": "dist/partials/video-featured-kids.html",
+      "sha256": "4852c8c7f1e2fd8500fd613733a2ce8fe4afd5a07c03c140b53815fd71006584",
+      "bytes": 25
+    },
+    {
+      "path": "dist/partials/fact-shield-core.html",
+      "sha256": "78e66cca2664bf584ccb47eddfd676cca804f35fa6d43edb9243eea003cd17b5",
+      "bytes": 3405
+    },
+    {
+      "path": "dist/partials/home-seasonal-promo.html",
+      "sha256": "33601cb53b66c5989340bc398bb1d0a2c5c71db1b18b5ed9daee275a8d2f957d",
+      "bytes": 4341
+    },
+    {
+      "path": "dist/partials/teaching-doctrine.html",
+      "sha256": "73e9545653ef052c877335d63a660862ac87a7f3456fe67c6ec33b1697546ecf",
+      "bytes": 752
+    },
+    {
+      "path": "dist/partials/home-conversion-shell.html",
+      "sha256": "8100a5137e400eb6922c5a6177acbbe02a4f4b0fd5bd90b4f5d5c998df306b73",
+      "bytes": 23931
+    },
+    {
+      "path": "dist/partials/evidence-accordion-adults.html",
+      "sha256": "db79749e844e22b7077f34b00e9c6c92b2529aff0c567e55994cacb880d07749",
+      "bytes": 4611
+    },
+    {
+      "path": "dist/partials/next-step-funnel.html",
+      "sha256": "c2ac640d603d2d03e893b0ef8d06c6158455fa58cc45c75d26a382e1f094a04a",
+      "bytes": 1163
+    },
+    {
+      "path": "dist/partials/my-promise-full.html",
+      "sha256": "0d1d1258468ef392c7935715cf01459645f3e0aa722886bf2b16c66f453fd1b9",
+      "bytes": 11526
+    },
+    {
+      "path": "dist/partials/pricing-module-fragment.html",
+      "sha256": "8e4bcecf30de9270a27ce0da91e2a92526d8865f75c4845989e3833f4743bbe5",
+      "bytes": 2696
+    },
+    {
+      "path": "dist/partials/footer-include.html",
+      "sha256": "42c3adce06e39d77c92b250449dce17eceb95ab66f31af9c0363ebe7167ac0d4",
+      "bytes": 7922
+    },
+    {
+      "path": "dist/partials/cta-row.html",
+      "sha256": "2ef9a191622327e63c400a06558bd4b6b046efa15493b8d39cea59b85a70381f",
+      "bytes": 1164
+    },
+    {
+      "path": "dist/partials/evidence-accordion-kids.html",
+      "sha256": "8f69b5836ec00cbc76df145087c31f63a4f257be8d4839c4ab3e5582710decbe",
+      "bytes": 4807
+    },
+    {
+      "path": "dist/partials/popular-paths.html",
+      "sha256": "7e2b55f258741b71e5bcbee03da5e2fc40ec3f1162114664100ac7f8c46aca74",
+      "bytes": 1358
+    },
+    {
+      "path": "dist/partials/core-promise-full.html",
+      "sha256": "a6b1a22b38604688057094a35875ed3922798ce444f84b2b6b7b20646bff32f3",
+      "bytes": 24991
+    },
+    {
+      "path": "dist/partials/evidence-accordion-teens.html",
+      "sha256": "0a00380f27a54528b21b5237ddbd87ff4a7b0bf40c9c81b545ec3051b93ae232",
+      "bytes": 4702
+    },
+    {
+      "path": "dist/partials/reviews-village.html",
+      "sha256": "42c04d5b29748ed7f323601aeab1e18ad3eba216c8ce241e9b3973eba81001e6",
+      "bytes": 11820
+    },
+    {
+      "path": "dist/partials/why-beginners-book-here.html",
+      "sha256": "08fa0b35946a4c1f15f17d7488561f7623b274cb9df1dcbd98a92dc974ae5a48",
+      "bytes": 520
+    },
+    {
+      "path": "dist/partials/pricing-module.html",
+      "sha256": "eaba47cf189af724806b7b053e30bafb66af83146f4eecb0de929a60e849ef05",
+      "bytes": 234
+    },
+    {
+      "path": "dist/partials/my-promise-short.html",
+      "sha256": "eee076bdd4d195129510b12355bd02bde8baad15ed887f3b3cc588c276fd3f9f",
+      "bytes": 24957
+    },
+    {
+      "path": "dist/partials/cta-primary.html",
+      "sha256": "b4200f120442b4320fd6dd74ddb3d021241af8479fa64eca9848fad8daf5b714",
+      "bytes": 268
+    },
+    {
+      "path": "dist/partials/simple-cta.html",
+      "sha256": "8d2e91fb03435dbaa645aeb8f2e7a8f16240266674f7cfac8fd6b72db059eba8",
+      "bytes": 916
+    },
+    {
+      "path": "dist/partials/cta-header.html",
+      "sha256": "7abc6aaa308cc53587688b6b67656f30c18f2d387f920c57f9f301766acfe124",
+      "bytes": 1189
+    },
+    {
+      "path": "dist/partials/proof-strip.html",
+      "sha256": "63375fe5203adf5f134cca9e964526eb7e0c1afac7a0f3a8cf2101c3a21738b2",
+      "bytes": 379
+    },
+    {
+      "path": "dist/partials/video-featured-programs.html",
+      "sha256": "4852c8c7f1e2fd8500fd613733a2ce8fe4afd5a07c03c140b53815fd71006584",
+      "bytes": 25
+    },
+    {
+      "path": "dist/partials/conversion-rail.html",
+      "sha256": "983deb986b1e60f175ef2b3cec9d94c4785a22d4cfc51cf32b6634ddfab85a7a",
+      "bytes": 2232
+    },
+    {
+      "path": "dist/partials/cta-footer.html",
+      "sha256": "8a37938d1efc7754f4be77ecdbaf52c1152860386803136be6e9bf8c4e106c73",
+      "bytes": 1272
+    },
+    {
+      "path": "dist/partials/program-conversion-teens.html",
+      "sha256": "b2846c4f2b573a68beee53482bcbc9fcea9a14a241e08720d8262a88702fa6a4",
+      "bytes": 14079
+    },
+    {
+      "path": "dist/partials/problem-state-intro.html",
+      "sha256": "dd2ee46599c43515b2f9b946236586040e5eb00ce3cdb4e5ea3384b8d7c5a6be",
+      "bytes": 582
+    },
+    {
+      "path": "dist/partials/proof-carousel.html",
+      "sha256": "baa9b24572e7ee3c157c35cf788a4a40ce158acd44ad8b27e8258c247957ed59",
+      "bytes": 2618
+    },
+    {
+      "path": "dist/partials/voice-faq-kids.html",
+      "sha256": "d402c7010aee2934c4f46b30de896dea4eb92fdcd6b10b8d9cfcbb9652647ce9",
+      "bytes": 1288
+    },
+    {
+      "path": "dist/partials/evidence-quote-block.html",
+      "sha256": "334c252ddbd951f1040d1c28533684b944e32277634aee98d16c0bbb08c263b8",
+      "bytes": 2038
+    },
+    {
+      "path": "dist/partials/voice-faq-schedule.html",
+      "sha256": "5479aeaaeac41c6c87688d9713585b364e1e345223b6f3d81ce091e2d854db4f",
+      "bytes": 1416
+    },
+    {
+      "path": "dist/partials/acquisition-editorial-rail.html",
+      "sha256": "8f21f4f17a177e3c18f47aaa607bdfe6f244fe7f9d849427607bf3fd0dd433f3",
+      "bytes": 1271
+    },
+    {
+      "path": "dist/partials/video-featured-show-up-kit.html",
+      "sha256": "4852c8c7f1e2fd8500fd613733a2ce8fe4afd5a07c03c140b53815fd71006584",
+      "bytes": 25
+    },
+    {
+      "path": "dist/partials/program-conversion-adults.html",
+      "sha256": "c409e3db85c16daa151be0952bee6770d756ba8129a225864ea192baa0fab144",
+      "bytes": 10051
+    },
+    {
+      "path": "dist/partials/nav-include.html",
+      "sha256": "5d50fd2f6e159b7b5535d3142b3f9f4d95413182243d4195b72d6bfc2a420782",
+      "bytes": 38583
+    },
+    {
+      "path": "dist/partials/voice-faq-local.html",
+      "sha256": "593a19099b28d3cf5c14132104d5aae4dcba4ba8b9b6159ab15e2948687447d1",
+      "bytes": 1166
+    },
+    {
+      "path": "dist/partials/cta-footer-fragment.html",
+      "sha256": "fe68e3ce9cc1f0ac2996768e8377c4409dfa49b721d268f784cbed5d086eebff",
+      "bytes": 1255
+    },
+    {
+      "path": "dist/partials/video-featured-schedule.html",
+      "sha256": "4852c8c7f1e2fd8500fd613733a2ce8fe4afd5a07c03c140b53815fd71006584",
+      "bytes": 25
+    },
+    {
+      "path": "dist/partials/program-conversion-kids.html",
+      "sha256": "565cb15674e3e9fd5bb1e899b68df9838e4a8cc9508446f9134b9038b410bbaf",
+      "bytes": 14103
+    },
+    {
+      "path": "dist/partials/faq-component.html",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "dist/partials/links-quote-block.html",
+      "sha256": "d7728ab695c5e3df21ee1ab610a212c232a5f0a01ab131431b3f47b2d73f1233",
+      "bytes": 2026
+    },
+    {
+      "path": "dist/partials/current-schedule.html",
+      "sha256": "a446ea69d3a4b4805e78ec445c54102f5b053f560247f09e96772c7140e10111",
+      "bytes": 268
+    },
+    {
+      "path": "dist/partials/blog-start-training-links.html",
+      "sha256": "5f57e22221a30ea7f8abc266cfd74e742b8b43b65f7cced3f4a3b2f50bf04177",
+      "bytes": 613
+    },
+    {
+      "path": "dist/partials/evidence-accordion-hub.html",
+      "sha256": "e7832add8891dbebfee30c9e528c8609500e8b7794c0ba52cabf15d257f6092e",
+      "bytes": 3557
+    },
+    {
+      "path": "dist/partials/video-featured-home.html",
+      "sha256": "4852c8c7f1e2fd8500fd613733a2ce8fe4afd5a07c03c140b53815fd71006584",
+      "bytes": 25
+    },
+    {
+      "path": "dist/about/index.html",
+      "sha256": "63e054c358c9bf3fdeba4b8adf38c228954f32ba868b928b50776220f4ef9e1a",
+      "bytes": 13292
+    },
+    {
+      "path": "dist/bjj-videos/index.html",
+      "sha256": "3c74703613244b537537198be7ffca2a5fd4c60b7bfb201088fa34d39b9a1c14",
+      "bytes": 24967
+    },
+    {
+      "path": "dist/updates/index.html",
+      "sha256": "18b2b7ee7e6f8acd12907b098e4122c67411299872bb5ccf1b14637af01f84f5",
+      "bytes": 20253
+    },
+    {
+      "path": "dist/near/hunter-ny/index.html",
+      "sha256": "720f3b83c4ad543d24276a3f0fbc7d07ae615f94ef3906d7804646969138d599",
+      "bytes": 23598
+    },
+    {
+      "path": "dist/near/haines-falls-ny/index.html",
+      "sha256": "71c00c7c0c2a09e0a39ae7176c94eecf601b9c1d6bfc6d38b2768ec49b4ff6d4",
+      "bytes": 21209
+    },
+    {
+      "path": "dist/near/cairo-ny/index.html",
+      "sha256": "51be2050a66e3e553eb31beb3fecb0d2465de2f0f578e5b388ca39225e0da25a",
+      "bytes": 21038
+    },
+    {
+      "path": "dist/near/windham-ny/index.html",
+      "sha256": "07e7af7aa1a5d9198a410ff50320b8f568f039d59694ce2615cc84465b6ed35f",
+      "bytes": 23491
+    },
+    {
+      "path": "dist/near/catskill-ny/index.html",
+      "sha256": "88d011452d2f4dedcca68edf79332c104b06c9ba31c57b4ba4275dd430021e79",
+      "bytes": 21146
+    },
+    {
+      "path": "dist/near/palenville-ny/index.html",
+      "sha256": "2cfd9c17477ae59ab5e51c0d70371aa8ed5538021bcc1d1b33920026eaafcc5a",
+      "bytes": 21071
+    },
+    {
+      "path": "dist/bjj-glossary/kimura/index.html",
+      "sha256": "8ff0d2661ea7f58d77d3a090e53f626fdbdd5c554292c8118dba001b4384f6da",
+      "bytes": 20423
+    },
+    {
+      "path": "dist/bjj-glossary/pressure/index.html",
+      "sha256": "e6c58e0cdf2ee4bbe92f88d7f38b1751c86e3e1a50dc3fd531efc263b9a8ad95",
+      "bytes": 19476
+    },
+    {
+      "path": "dist/bjj-glossary/butterfly-guard/index.html",
+      "sha256": "32fe7688b8cace02d7fb99920346971c182da8d4cd51d8936c786664c60e1f36",
+      "bytes": 20445
+    },
+    {
+      "path": "dist/bjj-glossary/double-leg/index.html",
+      "sha256": "2c93a3672451d364873ee66c9bd9265fc81c718404ccb044a9a6a676530b3f28",
+      "bytes": 19452
+    },
+    {
+      "path": "dist/bjj-glossary/posture-recovery/index.html",
+      "sha256": "3a57c72f03d8c97fd861b05e72143ca2ad768bd757e5e43cac2cb3ef98860bb3",
+      "bytes": 19553
+    },
+    {
+      "path": "dist/bjj-glossary/sprawl/index.html",
+      "sha256": "2fa407529b14e188203cb80f84e3398d22170b480f8cac7eb877771021ab59a6",
+      "bytes": 20659
+    },
+    {
+      "path": "dist/bjj-glossary/frames/index.html",
+      "sha256": "ee8800ce9a7249051fdf0bf6cae9c08c224356541c924a378131b66f4a4e7fc0",
+      "bytes": 19234
+    },
+    {
+      "path": "dist/bjj-glossary/whizzer-defense/index.html",
+      "sha256": "42441add28b9b8e5b157e47a6ff7be45d0a8b918db0066e80a5081db0e18832d",
+      "bytes": 19877
+    },
+    {
+      "path": "dist/bjj-glossary/no-gi/index.html",
+      "sha256": "cfd1e67d9378c0afe84454a3c6450dfd664b65af99179bd213d4bf7d45d3caf8",
+      "bytes": 19809
+    },
+    {
+      "path": "dist/bjj-glossary/go-behind-defense/index.html",
+      "sha256": "90ba420acd23f0b040c312efd2113936f0bfed3cd141e917e4992439dd0baf9b",
+      "bytes": 19715
+    },
+    {
+      "path": "dist/bjj-glossary/body-lock-pass/index.html",
+      "sha256": "d347f510fb97cee391fdf3aed17d76561844c267721fc225d175b9d5810e0311",
+      "bytes": 19550
+    },
+    {
+      "path": "dist/bjj-glossary/outside-trip/index.html",
+      "sha256": "0415dc15cd1b33e9b463537f22e4f287a3568965a474cd82c258450ce227f045",
+      "bytes": 20103
+    },
+    {
+      "path": "dist/bjj-glossary/single-leg/index.html",
+      "sha256": "10b17202e1aa764f1ba3fb3e7c668a1bc96ff121a135c50d2849aad2a9aaad23",
+      "bytes": 20491
+    },
+    {
+      "path": "dist/bjj-glossary/posture/index.html",
+      "sha256": "5cd054ee54e302d59613e3510f2600e7933e063048e60b548dabd24ad58bb4fd",
+      "bytes": 19254
+    },
+    {
+      "path": "dist/bjj-glossary/crossface-pressure/index.html",
+      "sha256": "3ef540c374b587f56dbaf8b2e73fd1ef9342efe6208134d832713f4d2b9b4040",
+      "bytes": 19616
+    },
+    {
+      "path": "dist/bjj-glossary/leg-entanglement/index.html",
+      "sha256": "4428a939dd9f954a0309164a2235b95cf3f7c87bfc63b784f4304353e76a7f4c",
+      "bytes": 19747
+    },
+    {
+      "path": "dist/bjj-glossary/open-guard/index.html",
+      "sha256": "6862d66747ad7018ee12728af830a2856bc87a09694b41d6ca12e8d9d232a9bc",
+      "bytes": 19649
+    },
+    {
+      "path": "dist/bjj-glossary/double-leg-defense/index.html",
+      "sha256": "86330a840e3ddfdddc3845a7b229add1f093372499c3aba1c7815fdcf4e0416e",
+      "bytes": 20017
+    },
+    {
+      "path": "dist/bjj-glossary/front-headlock-series/index.html",
+      "sha256": "9c5992661c7cd5856ac36b264262f25e28689f44c5cbb0fecd95c832d43bdb46",
+      "bytes": 16980
+    },
+    {
+      "path": "dist/bjj-glossary/ankle-lock/index.html",
+      "sha256": "cf6b689fa432f834bab5a4172f227a8e313423d242f45083ca3d0cda6a254130",
+      "bytes": 20159
+    },
+    {
+      "path": "dist/bjj-glossary/guard-pass/index.html",
+      "sha256": "f93128d776c3713ae28ace04ea51ca6860182770ce5eab662f4b74a47c8fb2bc",
+      "bytes": 20632
+    },
+    {
+      "path": "dist/bjj-glossary/posture-break/index.html",
+      "sha256": "7dd3099bdd8f055221d3657d18a0b8485be021f95bbe7f424a6686c747ae8490",
+      "bytes": 19682
+    },
+    {
+      "path": "dist/bjj-glossary/body-lock/index.html",
+      "sha256": "8f60c2ede864cd4e80c7d978817935af2f75a13983f5e19e1c926f476ab335e0",
+      "bytes": 19345
+    },
+    {
+      "path": "dist/bjj-glossary/guard-pull/index.html",
+      "sha256": "8626aa00f3fb413003b38d6dd5f6eafded50d70d26730fae0b57687bc8aec419",
+      "bytes": 20386
+    },
+    {
+      "path": "dist/bjj-glossary/crossface/index.html",
+      "sha256": "25392d664ee25e1b645658ab23aedddfb98cc47ec91b064c20d75a4627c9391e",
+      "bytes": 20191
+    },
+    {
+      "path": "dist/bjj-glossary/drilling/index.html",
+      "sha256": "fcb50cd6d18d29bbce5f0997832bfb65e421c2bfdcc6bce5f5f014f5bc3977b8",
+      "bytes": 16306
+    },
+    {
+      "path": "dist/bjj-glossary/guard-retention/index.html",
+      "sha256": "e8c19ecc63d32e206db38746549a41cffb5ccbdc8538352415a660fa966f0afa",
+      "bytes": 19870
+    },
+    {
+      "path": "dist/bjj-glossary/armbar/index.html",
+      "sha256": "a9e3e65f2bb702b58a0a2845747a0b6e48da87910389e5f55871abae75f306cf",
+      "bytes": 19845
+    },
+    {
+      "path": "dist/bjj-glossary/bully-proof/index.html",
+      "sha256": "3aabc6b5ca7bd947a29ef78bd4843bdeade067c7853504eb609e514ed276c5d2",
+      "bytes": 19708
+    },
+    {
+      "path": "dist/bjj-glossary/roll/index.html",
+      "sha256": "146944e86dfbfb4c93b1e189fb9cb9b9fa5195766e31320b8f1cea6e4f6f56c4",
+      "bytes": 16620
+    },
+    {
+      "path": "dist/bjj-glossary/closed-guard-break/index.html",
+      "sha256": "68c7d40d3246248af81049bc892d3a73651a2ebee6ddc88b6afa5e611402bda0",
+      "bytes": 20523
+    },
+    {
+      "path": "dist/bjj-glossary/top-ride/index.html",
+      "sha256": "9d80922db3c45fee0b0b977293ebcfc4ebfeec1f8526027dff918cad91f5072c",
+      "bytes": 20230
+    },
+    {
+      "path": "dist/bjj-glossary/collar-tie/index.html",
+      "sha256": "e1ab287f6b2f7c74ef804e5dc909cb789e0932a07128e32caf002f9fd364d318",
+      "bytes": 20118
+    },
+    {
+      "path": "dist/bjj-glossary/seatbelt/index.html",
+      "sha256": "3cfd0ff7aec89df1bf94c666d6298c0d4e0c7e41de3b82e526ac0776397019d3",
+      "bytes": 19708
+    },
+    {
+      "path": "dist/bjj-glossary/head-line/index.html",
+      "sha256": "d9ec1f246ddb71d5f02deb01c5294ce331d5b80cc8343cb789b0705e001a7166",
+      "bytes": 19931
+    },
+    {
+      "path": "dist/bjj-glossary/wrist-control/index.html",
+      "sha256": "ce6ef98ebd50118e2006fdef4827697b38c6473e39f83f7dd2a6256f0496f3ed",
+      "bytes": 20610
+    },
+    {
+      "path": "dist/bjj-glossary/shoulder-pressure/index.html",
+      "sha256": "6b33c970a39423f35ee4dfa92c5f51e811729b57feab8eb8ec9822ac7f1844c4",
+      "bytes": 19939
+    },
+    {
+      "path": "dist/bjj-glossary/closed-guard/index.html",
+      "sha256": "814775dfe1468716f9141f5744ffe063d44609f52c890c7131f46ae9142e9525",
+      "bytes": 20194
+    },
+    {
+      "path": "dist/bjj-glossary/heavy-hips/index.html",
+      "sha256": "bebf4c525e6f6969d9f4b67a0a18bba931d9745d214b2a3a5ac760a159dbf513",
+      "bytes": 19707
+    },
+    {
+      "path": "dist/bjj-glossary/seated-guard/index.html",
+      "sha256": "5c1cfaaed56c12b5852b918f1f85e1d5181c32d028e5aec7ee91b8318e082726",
+      "bytes": 20337
+    },
+    {
+      "path": "dist/bjj-glossary/takedown-defense/index.html",
+      "sha256": "5417a912ca2e928894823d39d6b21128fd488eb6c518e0349e74697ba280998a",
+      "bytes": 19873
+    },
+    {
+      "path": "dist/bjj-glossary/choke/index.html",
+      "sha256": "4c35ae11c0f88174433c2f41c05e71c5310d00ffbb2ece4b14e32e37db354640",
+      "bytes": 18232
+    },
+    {
+      "path": "dist/bjj-glossary/granby-roll/index.html",
+      "sha256": "818e13d86217cf674346c8cccee70b9e7ff0d4736370a78a459cc0599b1ab248",
+      "bytes": 19643
+    },
+    {
+      "path": "dist/bjj-glossary/z-guard/index.html",
+      "sha256": "0ba0b1fda540dfde2e9a524d57568badb374c751393c111bfe59a8e8c1185bb2",
+      "bytes": 20282
+    },
+    {
+      "path": "dist/bjj-glossary/level-change/index.html",
+      "sha256": "f2ccb8074b8643e50510b56c1085b13c42d521b5e66674308fd5bb6e2488b6e9",
+      "bytes": 19827
+    },
+    {
+      "path": "dist/bjj-glossary/pin/index.html",
+      "sha256": "46de7b5357fd0173d7a68d158df3737c5703b26d4f0532ebdce309c60dc27e85",
+      "bytes": 21358
+    },
+    {
+      "path": "dist/bjj-glossary/top-position/index.html",
+      "sha256": "d47f237359e9ea75da197e31ef146266b3e86d0034f03758b4452ed59e458117",
+      "bytes": 19997
+    },
+    {
+      "path": "dist/bjj-glossary/torreando-defense/index.html",
+      "sha256": "692ce47a5e9d2cf5b20f888077186f85c8183bf5316cd34203dab7d690ddba4b",
+      "bytes": 19896
+    },
+    {
+      "path": "dist/bjj-glossary/neutral-position/index.html",
+      "sha256": "615a34dd47b9bc3ea41dfb2e5e9ca5c882759254ac56fd3b64111e1d9953d5aa",
+      "bytes": 19576
+    },
+    {
+      "path": "dist/bjj-glossary/side-control/index.html",
+      "sha256": "074142db98d093290911282aa8bdff2b8e22c8effe4d0273c3f3b1a7b5f3f7d8",
+      "bytes": 19637
+    },
+    {
+      "path": "dist/bjj-glossary/seatbelt-escape/index.html",
+      "sha256": "fa7a6464fd2459f84cb5cc91b084b701c18d9c4b83e69432707a107ff1af2f5e",
+      "bytes": 20266
+    },
+    {
+      "path": "dist/bjj-glossary/torreando/index.html",
+      "sha256": "0a562e5d2a8852ca3c93892ed66d2cff74f363a28aea1e79f4a791ce7b3b97e0",
+      "bytes": 19682
+    },
+    {
+      "path": "dist/bjj-glossary/de-la-riva/index.html",
+      "sha256": "2c776fd0f6ec3f397260899cd67d36e49e98e1449a354670e1dbff38bc2c7cf9",
+      "bytes": 20276
+    },
+    {
+      "path": "dist/bjj-glossary/sprawl-defense/index.html",
+      "sha256": "16e0945258bde20ff7b708c8935d564f3ce540933014dc6d2eef6a507f653c58",
+      "bytes": 19759
+    },
+    {
+      "path": "dist/bjj-glossary/position/index.html",
+      "sha256": "d03abea8e2741d18c9e8b0a92e47d252d4cc78390dedacb56eb180efb1003b7b",
+      "bytes": 19117
+    },
+    {
+      "path": "dist/bjj-glossary/frame-recovery/index.html",
+      "sha256": "1b29009dd4a4144677617262b17d5b4bad7adf2afc82986af4d37f652e01b7ec",
+      "bytes": 20740
+    },
+    {
+      "path": "dist/bjj-glossary/pummel/index.html",
+      "sha256": "60edd3d9add8e35ae07a97df2cbaf4511ea0d488a534fb774b2a571569f3a6c8",
+      "bytes": 20611
+    },
+    {
+      "path": "dist/bjj-glossary/back-control/index.html",
+      "sha256": "ef6103349d4a4a2eb92eefce9752307ab10f17e2a788f713a9ff187f5525b2e1",
+      "bytes": 19632
+    },
+    {
+      "path": "dist/bjj-glossary/hip-heist/index.html",
+      "sha256": "cb2007b117f4900df64b600c9da2e6a02b4b2551100d81e69b86157109c1beb4",
+      "bytes": 20435
+    },
+    {
+      "path": "dist/bjj-glossary/inside-trip/index.html",
+      "sha256": "4fbdacee5ea5900bde700d7112305fc95626670227903815c72e7c19402ce932",
+      "bytes": 19793
+    },
+    {
+      "path": "dist/bjj-glossary/sleeve-grip/index.html",
+      "sha256": "e94abfd47833cfa1e3d80d15f48e1555e5cb30385be02420e59b686f4cebbed0",
+      "bytes": 20946
+    },
+    {
+      "path": "dist/bjj-glossary/tap/index.html",
+      "sha256": "75b0c5b9dc40f5c0e192705fbe6525f0ec68267ffcffcc3aa79ddc0853b38259",
+      "bytes": 20312
+    },
+    {
+      "path": "dist/bjj-glossary/hip-escape/index.html",
+      "sha256": "5c0360ecc32eade117c8ce055325799597595922489c3bf850ad048194ea6acb",
+      "bytes": 19082
+    },
+    {
+      "path": "dist/bjj-glossary/submission/index.html",
+      "sha256": "2747cb45c28ea2edac3c095c5b2aed3145fe1d9a08f2c94295732dfe06f57599",
+      "bytes": 19771
+    },
+    {
+      "path": "dist/bjj-glossary/snap-down-defense/index.html",
+      "sha256": "80881ff06ef5b8fbdb2de83f895077b904fd7339bae64cc37959ea4a71400ef6",
+      "bytes": 14491
+    },
+    {
+      "path": "dist/bjj-glossary/knee-line/index.html",
+      "sha256": "005e452dd81c28ca91f7dcf972c8ca9592510099e13287636d6126883c312174",
+      "bytes": 19642
+    },
+    {
+      "path": "dist/bjj-glossary/x-guard/index.html",
+      "sha256": "af881e580e8a5e17e6c89c72fe37c1854b2390ac2d4908d4a1789d258cd290ae",
+      "bytes": 19156
+    },
+    {
+      "path": "dist/bjj-glossary/gi/index.html",
+      "sha256": "a2cbdce4d12cfa64d51e9c177cd087b296d9a3351a4412d9df13e8ad1000f872",
+      "bytes": 19971
+    },
+    {
+      "path": "dist/bjj-glossary/knee-shield/index.html",
+      "sha256": "fdcdfe2431cd7c61ad97fcdb21aee991c1cd4f53e18c035ff2c9ac771a0b8888",
+      "bytes": 20879
+    },
+    {
+      "path": "dist/bjj-glossary/front-headlock-escape/index.html",
+      "sha256": "b2f1080819698cfd71037d8c437d764ab0a7e22de0338391835034c16caf0a66",
+      "bytes": 14436
+    },
+    {
+      "path": "dist/bjj-glossary/clinch/index.html",
+      "sha256": "36c7ab39d5e79ca2cc581d817355b5367d7e68c2d60df9aaf8a5e8765ed5ee20",
+      "bytes": 19442
+    },
+    {
+      "path": "dist/bjj-glossary/sickle-sweep/index.html",
+      "sha256": "056864a4c6c7e905cf868724ad60b6a79e9192eb0a305200826063d07b73143b",
+      "bytes": 20658
+    },
+    {
+      "path": "dist/bjj-glossary/transition/index.html",
+      "sha256": "b3db2b9032ec8a3e944522542cb873c915d7fbddc3c56fcfb866be893e333f0a",
+      "bytes": 19449
+    },
+    {
+      "path": "dist/bjj-glossary/beginner-lane/index.html",
+      "sha256": "4a6bbf6591401b310b0206e0e97e3bfb799138fc84503f2633ab1d3e7e7f2f7d",
+      "bytes": 20086
+    },
+    {
+      "path": "dist/bjj-glossary/north-south/index.html",
+      "sha256": "6485f61c4667ee66cef7713099b418b9be6c2162997422a927a517cee2f99d63",
+      "bytes": 19585
+    },
+    {
+      "path": "dist/bjj-glossary/back-take/index.html",
+      "sha256": "2e729edca2e3f9f87ceb19d1dcf82f35b93f3b9a09c9ab10f862095f1cc0b168",
+      "bytes": 20312
+    },
+    {
+      "path": "dist/bjj-glossary/tripod-sweep/index.html",
+      "sha256": "ea225d791dac0c584909513c88d14996a95622b15dfc94f2fa6f69376ae87a8d",
+      "bytes": 20758
+    },
+    {
+      "path": "dist/bjj-glossary/hooks/index.html",
+      "sha256": "116277cc42f10ec4b23513924857c74fb8a654af40bad323f0d9ff5f7691dce2",
+      "bytes": 20554
+    },
+    {
+      "path": "dist/bjj-glossary/how-to-tap/index.html",
+      "sha256": "a1cf59e973b4d17589735f54a3fb4ac5da9aaefdcc2cfbf6883343f010d3e66a",
+      "bytes": 22311
+    },
+    {
+      "path": "dist/bjj-glossary/technical-stand-up/index.html",
+      "sha256": "4fcf4c6b138d19d14786c85d17796153d2c27f93991b38b742560f0c32819c98",
+      "bytes": 19727
+    },
+    {
+      "path": "dist/bjj-glossary/windshield-wiper/index.html",
+      "sha256": "6b21667ff39685a03f77d2ff42a24b0b1312315b22f2f961a432259c62c2d6eb",
+      "bytes": 20153
+    },
+    {
+      "path": "dist/bjj-glossary/triangle/index.html",
+      "sha256": "a05171c5fd4aa87b79c29c19784d9da8839c70cea635d31990cf4ae27f9660ed",
+      "bytes": 19958
+    },
+    {
+      "path": "dist/bjj-glossary/sweep-single/index.html",
+      "sha256": "e083d79adc2c5fb4bd33e5ca13208dedcb4382b5b01d8ae7c0539e33f2963c3c",
+      "bytes": 17036
+    },
+    {
+      "path": "dist/bjj-glossary/flower-sweep/index.html",
+      "sha256": "e83a635c8d1ab45c0e9901775b37852400da31c4c7555ac6cfadf0f797e15da0",
+      "bytes": 20469
+    },
+    {
+      "path": "dist/bjj-glossary/re-guard/index.html",
+      "sha256": "37be6e4fc3e9e016e0a13663a24a82fb6694bef8b6a9682bd9a7eb8cd06b5bcd",
+      "bytes": 19868
+    },
+    {
+      "path": "dist/bjj-glossary/chest-to-chest/index.html",
+      "sha256": "0a3cc232ca41563b83c443673db4381e92f57a00c53ab524d4d9214f27b440ba",
+      "bytes": 19877
+    },
+    {
+      "path": "dist/bjj-glossary/reverse-de-la-riva/index.html",
+      "sha256": "e05da94ebe324eb28b9262da28794af6be71c7e35946e3cc658f494e421a2b7c",
+      "bytes": 19856
+    },
+    {
+      "path": "dist/bjj-glossary/overhook/index.html",
+      "sha256": "38f3f5df2bec0cc8741983993344a87fad192879052c7f035a4f67239301261d",
+      "bytes": 19883
+    },
+    {
+      "path": "dist/bjj-glossary/guard-recovery/index.html",
+      "sha256": "f163b8a1f09073efa3787b7e1d5509a4ba8b6ba9eb9ccdd4a0d63009f73e8c5f",
+      "bytes": 19514
+    },
+    {
+      "path": "dist/bjj-glossary/penetration-step/index.html",
+      "sha256": "0ede4780bf9608e84adf6dd6df8aea5891fe4baefb871c2c77e5aa0c4bb768ff",
+      "bytes": 20035
+    },
+    {
+      "path": "dist/bjj-glossary/rear-naked-choke/index.html",
+      "sha256": "3eb26b98a88b6fb0e74bc70b1d3ec36ae9ed2a6c91e6a0090dafe15df7d51201",
+      "bytes": 21325
+    },
+    {
+      "path": "dist/bjj-glossary/takedown/index.html",
+      "sha256": "7c2afde9d6391cf7505f9d4c8d9332bef78c2d0e1220d8053436a81b6d3ff525",
+      "bytes": 20660
+    },
+    {
+      "path": "dist/bjj-glossary/front-headlock/index.html",
+      "sha256": "6c0a9b891212e43fcfd66728d04631eee5b6a2cb664b4d01b37826d7c15e86ee",
+      "bytes": 20512
+    },
+    {
+      "path": "dist/bjj-glossary/open-mat/index.html",
+      "sha256": "658f15e8e70104214a8a82013accd8867f2220d3c8604f8f38b8b92bdf546d43",
+      "bytes": 17995
+    },
+    {
+      "path": "dist/bjj-glossary/shrimp/index.html",
+      "sha256": "d361f70f59232133b175bc54c3ca5a8282dc84c4a7f8c2d252856ef5b0e765d6",
+      "bytes": 19680
+    },
+    {
+      "path": "dist/bjj-glossary/single-leg-defense/index.html",
+      "sha256": "3c67ec11dbdc8c94325dbaa3046f84e522934f835b3ff95ebad7c4c79a84859d",
+      "bytes": 19891
+    },
+    {
+      "path": "dist/bjj-glossary/lapel-grip/index.html",
+      "sha256": "da9cb29671f6e849fa669f9a5e4acfbdb45bd1b9c7b62b3eb8916f06ac44398c",
+      "bytes": 19681
+    },
+    {
+      "path": "dist/bjj-glossary/cross-collar-choke/index.html",
+      "sha256": "cdc83e53abd815c294f475123b1737a71bfcad1d563ab236d14b70ef16062e32",
+      "bytes": 20421
+    },
+    {
+      "path": "dist/bjj-glossary/inside-tie/index.html",
+      "sha256": "b65c74e93769d395ea953ed47efdeb058cfa48c4e545eba4c49f8108e9876388",
+      "bytes": 19772
+    },
+    {
+      "path": "dist/bjj-glossary/head-position/index.html",
+      "sha256": "6080c79e678bad8dec2c5efc7f33085ea6ff94a02f49ba93935832cfba91c7f3",
+      "bytes": 19845
+    },
+    {
+      "path": "dist/bjj-glossary/elbow-knee-escape/index.html",
+      "sha256": "42604d06bb6d33f57d11864b7864661a6360953c704a168ad3ad47f191988be2",
+      "bytes": 20740
+    },
+    {
+      "path": "dist/bjj-glossary/grip/index.html",
+      "sha256": "b8ca02b83e3409f007dbcce88e1f351c9f662e2dee8033fb16413e8f9bb5879b",
+      "bytes": 19941
+    },
+    {
+      "path": "dist/bjj-glossary/quarter-guard/index.html",
+      "sha256": "f1ec7e002a1b6f04524e76754a64b8ce1a1c2f569254983e34d15df6e6c6a384",
+      "bytes": 20162
+    },
+    {
+      "path": "dist/bjj-glossary/pin-escape/index.html",
+      "sha256": "eb27875af9bb6e098453457255c6c15045e23ac50e12b813562e4acac9618ac2",
+      "bytes": 19732
+    },
+    {
+      "path": "dist/bjj-glossary/long-step/index.html",
+      "sha256": "11d95fc1f7c6d608318a9fc07ebf0daecff935ec51858b93edbdb8dd7729e0b7",
+      "bytes": 20385
+    },
+    {
+      "path": "dist/bjj-glossary/position-over-submission/index.html",
+      "sha256": "211ca2e67a6e7be0323fc3bc6c9c7c40765e219815f82fbf5df587975b3ecc8f",
+      "bytes": 22797
+    },
+    {
+      "path": "dist/bjj-glossary/chest-to-back/index.html",
+      "sha256": "4e0d6f89e69af2927b054c0bd8afa5e62660fc203e7c3436f4455edbb4b972db",
+      "bytes": 20178
+    },
+    {
+      "path": "dist/bjj-glossary/base/index.html",
+      "sha256": "9f9b8b78d69cbd797707e9393c67800953d9bf7964f68b863a6a5f01652ae7f3",
+      "bytes": 19614
+    },
+    {
+      "path": "dist/bjj-glossary/bridge/index.html",
+      "sha256": "0f0f779f19e42de7819db447939b0e3a0c8a1350a7d01ea093d5919b2c4024d5",
+      "bytes": 20127
+    },
+    {
+      "path": "dist/bjj-glossary/re-shot/index.html",
+      "sha256": "4fbf2599328ed95f40afbf6b97e8c39e276d97af02af3c43fd957b22605852ea",
+      "bytes": 19581
+    },
+    {
+      "path": "dist/bjj-glossary/snap-down/index.html",
+      "sha256": "d386f819859b72e3cca6b8113d0b95ed5442e107839317829ea933a50d6c949e",
+      "bytes": 19801
+    },
+    {
+      "path": "dist/bjj-glossary/waiter-sweep/index.html",
+      "sha256": "96ed52889fb4ac10e07fff01409be2a4344412c67b574ff9cafc988bc8a6fb95",
+      "bytes": 19244
+    },
+    {
+      "path": "dist/bjj-glossary/dominant-position/index.html",
+      "sha256": "b3961e821658f2911b1a6e35341e74142310bca21b087bba2b13140e0aeb2d5e",
+      "bytes": 19675
+    },
+    {
+      "path": "dist/bjj-glossary/frame/index.html",
+      "sha256": "763b0d2b0d0860452765f5a38ba77229dc094d5f1011aa486d45358a08ef6776",
+      "bytes": 19733
+    },
+    {
+      "path": "dist/bjj-glossary/whizzer/index.html",
+      "sha256": "06045329481ea391ebe54e2f8dc251f9251e8d46c56ed455d2a5ad5a3279d3c9",
+      "bytes": 19826
+    },
+    {
+      "path": "dist/bjj-glossary/hand-fighting/index.html",
+      "sha256": "2eed868ae48874996a58b5e4bf19117598c831755920d1db3928ffc65973a873",
+      "bytes": 19737
+    },
+    {
+      "path": "dist/bjj-glossary/upa-escape/index.html",
+      "sha256": "ee923db464f91cab2af925a6c4f7bd81398b64f835a0458fce877c26d9038dc2",
+      "bytes": 20347
+    },
+    {
+      "path": "dist/bjj-glossary/scissor-sweep/index.html",
+      "sha256": "aaa6fa4b3934767fa1ba845da63bdc24a0abc4f8ff31c3b7a307fb4ebcba40ab",
+      "bytes": 20595
+    },
+    {
+      "path": "dist/bjj-glossary/arm-drag/index.html",
+      "sha256": "f5fbc4becf29e4b2ac0ca3407e4a8e13ed80bc91ffbb8394825ca143cd6e6c5a",
+      "bytes": 20210
+    },
+    {
+      "path": "dist/bjj-glossary/knee-cut/index.html",
+      "sha256": "f8cb6fa71e7403aa727f922e5d7b890a071adffef3f56804c0e308667d23ca64",
+      "bytes": 20439
+    },
+    {
+      "path": "dist/bjj-glossary/jiu-jitsu/index.html",
+      "sha256": "5921a302ade54c108322131b0c9b34015e6d4fee0464e044a3e33ca48b399d97",
+      "bytes": 19667
+    },
+    {
+      "path": "dist/bjj-glossary/turtle/index.html",
+      "sha256": "24d5a4636dabb759315b2379e3936747f6ffc31bdac14833e51c0e8816952208",
+      "bytes": 19675
+    },
+    {
+      "path": "dist/bjj-glossary/knee-slide/index.html",
+      "sha256": "1dbeaaa39b4cab4d7c8886413b8e324ead83cc37519958a9169a4dea0fad4b33",
+      "bytes": 20520
+    },
+    {
+      "path": "dist/bjj-glossary/control/index.html",
+      "sha256": "da2bd9a4a83dd44ffc04d9d82f237794f51f9b8fc4b52972e5143c2fca8d52e7",
+      "bytes": 19160
+    },
+    {
+      "path": "dist/bjj-glossary/butterfly-hook/index.html",
+      "sha256": "1159c237b8080262c2773cc636372e62fb42311e04adad8853f12001922dd050",
+      "bytes": 19788
+    },
+    {
+      "path": "dist/bjj-glossary/guillotine/index.html",
+      "sha256": "734d5e0da4888b908dff74b90ac9a981eb451ef95ad43b84b8938c6bd48c7121",
+      "bytes": 19584
+    },
+    {
+      "path": "dist/bjj-glossary/wrestle-up/index.html",
+      "sha256": "39107945040a0c2c0f85d031a2e2291f96618258dc5823b843e105307fc67302",
+      "bytes": 19891
+    },
+    {
+      "path": "dist/bjj-glossary/scramble/index.html",
+      "sha256": "a17dae434c346cd0424cf259f6fd7f336edeb6621df9df0ab576c0ab779be880",
+      "bytes": 19929
+    },
+    {
+      "path": "dist/bjj-glossary/bottom-position/index.html",
+      "sha256": "3f1c12f1691719cea06a5a61da0433ca07c5139f359a8ecfe56cbc28386b91b6",
+      "bytes": 16377
+    },
+    {
+      "path": "dist/bjj-glossary/off-balance/index.html",
+      "sha256": "11c54c1731ce2461349b3233a132fa0f13530ac34e90cf3b6f7d61dddf48a9d6",
+      "bytes": 20120
+    },
+    {
+      "path": "dist/bjj-glossary/ankle-pick/index.html",
+      "sha256": "6806e8996134428b1022ebaba23b6d9ae6365aa1ac140608044acc6b33472e8f",
+      "bytes": 20060
+    },
+    {
+      "path": "dist/bjj-glossary/crossface-defense/index.html",
+      "sha256": "eb5ad059cb58ea862424bdded841c04c9629a1221b3ec2ab864c2bfc05a56863",
+      "bytes": 20475
+    },
+    {
+      "path": "dist/bjj-glossary/guard/index.html",
+      "sha256": "e5ab1828fb566e6f49e547205782581f1eada1c88a4559e0ed3bcc4e713462db",
+      "bytes": 20700
+    },
+    {
+      "path": "dist/bjj-glossary/mount/index.html",
+      "sha256": "334eb7788d2b2b7b0998f549f1ce67423b8bc0cd032304faf37cfd7c9cd85660",
+      "bytes": 19781
+    },
+    {
+      "path": "dist/bjj-glossary/k-guard/index.html",
+      "sha256": "edf2d4d314223d7b67f95eac2d3dc4ea4dea691ed3be46cc66b0f178d943ac1a",
+      "bytes": 19883
+    },
+    {
+      "path": "dist/bjj-glossary/inversion/index.html",
+      "sha256": "7908df23c3adf6d65aa6f2f945cf2205fcb6039c6836e1974b7d35612bf0ce97",
+      "bytes": 20268
+    },
+    {
+      "path": "dist/bjj-glossary/grip-fighting/index.html",
+      "sha256": "e6b039dbfe07ca26af8bb7dc822cb6aa04fe38118210fd10e6929b8ad1551ed0",
+      "bytes": 19234
+    },
+    {
+      "path": "dist/bjj-glossary/half-guard/index.html",
+      "sha256": "e2e66dfac50e5c6ab83379c251643f3775f566996961875d83559e8d85529752",
+      "bytes": 20245
+    },
+    {
+      "path": "dist/bjj-glossary/mat-return/index.html",
+      "sha256": "d7189b65fe757d8d27e86433b945f7db97022f03f0328c515ce6cecbf52c8a76",
+      "bytes": 19349
+    },
+    {
+      "path": "dist/bjj-glossary/collar-grip/index.html",
+      "sha256": "790d146a322c427fbbd618426fc92f73d61f3a880625ff64e00ad9d7d7fa9a5e",
+      "bytes": 19147
+    },
+    {
+      "path": "dist/bjj-glossary/back-defense/index.html",
+      "sha256": "acef759752c1fc43a261cecaf50e0293ddc6165cb2059bbd17c022b7a248ec83",
+      "bytes": 19731
+    },
+    {
+      "path": "dist/bjj-glossary/escape/index.html",
+      "sha256": "e1e5698c6b16653e0be4418a72baae6095e6c4efa2aeb85609ce9b720f61f2a4",
+      "bytes": 19313
+    },
+    {
+      "path": "dist/bjj-glossary/spin-behind/index.html",
+      "sha256": "e08bccbc62ec95e4a0052a5258ce2a092e8e8332043cd0f4846df5f228697ad2",
+      "bytes": 19345
+    },
+    {
+      "path": "dist/bjj-glossary/leg-drag/index.html",
+      "sha256": "225eb925359d68209d1f25811caacf909ebab49c79f0cd3c4d4d9c93dd65ccbc",
+      "bytes": 20563
+    },
+    {
+      "path": "dist/bjj-glossary/go-behind/index.html",
+      "sha256": "c02029d442d2039ef95bdae3e87da2c77bf3f13f2c53c8a8b88fe293c6d5d0d8",
+      "bytes": 20063
+    },
+    {
+      "path": "dist/bjj-glossary/safety/index.html",
+      "sha256": "ada0efc1cd5a530df883ac329c020388e9c447a38a09eea108171e0a15f9bdab",
+      "bytes": 19416
+    },
+    {
+      "path": "dist/bjj-glossary/backstep-pass/index.html",
+      "sha256": "a97d70b73424048b34adfcd91ed688dad29f2c03d21c02d7282c6feffd6d52e5",
+      "bytes": 20644
+    },
+    {
+      "path": "dist/bjj-glossary/sweep/index.html",
+      "sha256": "e0900969bbae18295d33a80302d4b95a752a9ba2a9885d33df1bce7c001b7459",
+      "bytes": 19532
+    },
+    {
+      "path": "dist/bjj-glossary/butterfly-sweep/index.html",
+      "sha256": "b9a821784e108d87ef73f3383d6058a35d22f2d75cbb4bb60edb90cccf89d6c7",
+      "bytes": 20752
+    },
+    {
+      "path": "dist/bjj-glossary/mount-transition/index.html",
+      "sha256": "e4b00c3b1e81fdf0b2e9a6e73d1fa45d749abe85724a067da765c9c06e41c83c",
+      "bytes": 20154
+    },
+    {
+      "path": "dist/bjj-glossary/open-guard-pass/index.html",
+      "sha256": "7c9b8741249dcc6f3c87c66c0d1773cfc48cece9cde3ae6a3967f718c6ea358f",
+      "bytes": 19237
+    },
+    {
+      "path": "dist/bjj-glossary/updates/index.html",
+      "sha256": "a376bfe57c73dc49c2d859a7055bcc1ed04bdd48072304e7afb894e24dc6777a",
+      "bytes": 18968
+    },
+    {
+      "path": "dist/bjj-glossary/underhook/index.html",
+      "sha256": "2a2614a749fff940e1660f6c1c95cdc82f028696d8265e2c5b8c14214a91c33e",
+      "bytes": 19733
+    },
+    {
+      "path": "dist/bjj-glossary/inside-position/index.html",
+      "sha256": "96cdc4299bfae28fd50536eca1898866950b4ca9c89f6a2005ce4dee92ebe0ce",
+      "bytes": 19595
+    },
+    {
+      "path": "dist/bjj-glossary/shot-entry/index.html",
+      "sha256": "5c56668537ed49d7d3a43e1cb3ae123a0fc36439c2d0e0bfc9a47ccb92e139fa",
+      "bytes": 19320
+    },
+    {
+      "path": "dist/athlete-cross-training/evidence/index.html",
+      "sha256": "1f894d7f51e160002156af9af74f1dedb0b6c5acd16a9a2651b00852ad785bb5",
+      "bytes": 15812
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-windham-ny/index.html",
+      "sha256": "b5b0b5fe8c58b2d3697928cc3d9c14ac5ba0f20fd3a92e836eac8d6c0dbca71a",
+      "bytes": 130800
+    },
+    {
+      "path": "dist/blog/hunter-elementary-tuesday-drop-off-bjj/index.html",
+      "sha256": "1b2fc53587093e35495c9fd07fc8963b23aad0996a3771dad44b033d1b5c2db2",
+      "bytes": 131074
+    },
+    {
+      "path": "dist/blog/gain-points-system/index.html",
+      "sha256": "0d9023f32c0ec21fe3cad71207abf2f23501534177b6f18dfce41e6832b2c336",
+      "bytes": 128115
+    },
+    {
+      "path": "dist/blog/basic-jiu-jitsu-terms/index.html",
+      "sha256": "c784301074ce26c24a276727c7d8b313dcf138f201451dc89d40effe500f3b4e",
+      "bytes": 124958
+    },
+    {
+      "path": "dist/blog/how-sandy-teaches-bjj/index.html",
+      "sha256": "62d23d411eadc011f72753123808087a5639f40967846be1bfb8f307c00486c4",
+      "bytes": 124987
+    },
+    {
+      "path": "dist/blog/teen-boundary-setting-conflict-deescalation/index.html",
+      "sha256": "336e916de3202debabce32ae6b19bf581ac41767952f2c578b52d54088e1346f",
+      "bytes": 131163
+    },
+    {
+      "path": "dist/blog/growth-over-gold-bjj-mindset/index.html",
+      "sha256": "26ab69725ff44b59570d50d9f1efdd5a56b4ca0ea175b7f3f9374356d4ef29dc",
+      "bytes": 128974
+    },
+    {
+      "path": "dist/blog/catskills-gym-alternative-jiu-jitsu/index.html",
+      "sha256": "1b12cad59a7cec6c40bd4691246ae60260c44b11904e6d7dba7d51e7930cd86b",
+      "bytes": 131087
+    },
+    {
+      "path": "dist/blog/safe-bjj-mma-training-tannersville/index.html",
+      "sha256": "df615ae796a4dbc620eb3cc94ab8a611f3f767d4e046966f27a69901b7196686",
+      "bytes": 130732
+    },
+    {
+      "path": "dist/blog/kids-teens-bjj-belts-ranks-stripes-promotions/index.html",
+      "sha256": "74f66a79227184c1fc8ee5ee85cc32bb60bc83b523201e413dab05195ed56835",
+      "bytes": 135863
+    },
+    {
+      "path": "dist/blog/private-self-defense-coaching-tannersville/index.html",
+      "sha256": "8af146bdebd2306e24f4a70dc38734cb68c7ab7ad24b9339194838f389c21d2b",
+      "bytes": 128232
+    },
+    {
+      "path": "dist/blog/what-is-sanda-sanshou/index.html",
+      "sha256": "af5804a65bbdce0e6ad953f57dd8fe0abc81cb6fcee195a602817ac13aa1dd5c",
+      "bytes": 129875
+    },
+    {
+      "path": "dist/blog/adult-brazilian-jiu-jitsu-near-me-tannersville/index.html",
+      "sha256": "439898656eecf549c28be62a2b9354cdaa7067af44dd96232f31b9c5038f366f",
+      "bytes": 126113
+    },
+    {
+      "path": "dist/blog/bjj-schedule-windham-ny/index.html",
+      "sha256": "677e5fbccc77cb69029345c9c34d92134f81996a7b86460161c94c16210f8fa2",
+      "bytes": 124244
+    },
+    {
+      "path": "dist/blog/desk-worker-bjj-guide-mobility-core-calm/index.html",
+      "sha256": "9636a5b843a1a730aa0c89ce52792f5eba2470b60150468326610d75c61e0f26",
+      "bytes": 132067
+    },
+    {
+      "path": "dist/blog/takedown-defense/index.html",
+      "sha256": "fab93eb43403b68cbfd338a27d2564ca8223538add0cd73c86341b335a16dc4b",
+      "bytes": 130459
+    },
+    {
+      "path": "dist/blog/beginners-guide-bjj-human-chess/index.html",
+      "sha256": "7d5752957f1923fb1948f53f2eb705510aaf61ab93952258a800943589e57aa3",
+      "bytes": 129899
+    },
+    {
+      "path": "dist/blog/cost-of-private-bjj-lessons-catskills/index.html",
+      "sha256": "8a64cdfe6bea50c6b8df31ce12622d6b399b0089dc3c8bc9fda8bb4fd2ccfc06",
+      "bytes": 128257
+    },
+    {
+      "path": "dist/blog/kids-jiu-jitsu-windham-ny/index.html",
+      "sha256": "5179cc2db6ffec760e7c8091ec25a301119d72a3ab6a4995b794e3ee830a7bd4",
+      "bytes": 131886
+    },
+    {
+      "path": "dist/blog/exactly-what-happens-first-bjj-class-minute-by-minute/index.html",
+      "sha256": "6123a846fe66ecdb342d69688c77b2349ab2019f4b75eeabb566c48547576525",
+      "bytes": 130902
+    },
+    {
+      "path": "dist/blog/kinetic-chess-onteora-park/index.html",
+      "sha256": "42e367ff993ef2e8fc960332887e3c2da3f802a9f5ef5b31ef02f2bb20e016e7",
+      "bytes": 129964
+    },
+    {
+      "path": "dist/blog/bjj-sensei/index.html",
+      "sha256": "21f04d857224166e97bb6ad31cd4317f135d7745fb70c03fcb00580d549bbd0b",
+      "bytes": 158014
+    },
+    {
+      "path": "dist/blog/safe-martial-arts-beginners-catskills/index.html",
+      "sha256": "5dfad085da1028a081dba80870a98fddc227099047a4ce5c42b8e56510dc5a78",
+      "bytes": 125574
+    },
+    {
+      "path": "dist/blog/bjj-on-the-mountain/index.html",
+      "sha256": "9207b79386f1587f912c3eac65d77776cbeb2a3d206ce88936b46030590e2dce",
+      "bytes": 125185
+    },
+    {
+      "path": "dist/blog/bjj-black-belt-degree-time/index.html",
+      "sha256": "4dbf904178fc87234d8c88ff2be8d0a4f44a5c3815842d16d744462a85bd6b71",
+      "bytes": 133412
+    },
+    {
+      "path": "dist/blog/seated-guard-basics/index.html",
+      "sha256": "aed6a7fd1a067a9641c6dc4ef19da4a4c50bd42c309ed5259ad5bbd3a3d85dba",
+      "bytes": 130383
+    },
+    {
+      "path": "dist/blog/sanda-vs-jiu-jitsu/index.html",
+      "sha256": "234f6060b927a9b6f46d052c47da0541751d8ee3d5b60122ec59bf35ead247df",
+      "bytes": 137617
+    },
+    {
+      "path": "dist/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu/index.html",
+      "sha256": "1732c38119a600d4101efc817668dcae15ad06a77e3735b55b4d5b20774773e1",
+      "bytes": 128909
+    },
+    {
+      "path": "dist/blog/kids-bjj-training-partners/index.html",
+      "sha256": "9ba0a997551f869b3bb26840f27d667b4f18f9d14d0e6e4c22f30c43f2a8bf54",
+      "bytes": 125159
+    },
+    {
+      "path": "dist/blog/can-you-beat-sensei-without-a-black-belt/index.html",
+      "sha256": "3c0f6a60b0e73cd1335872b90db42ef589839862fd890955528680fd27ee4426",
+      "bytes": 131278
+    },
+    {
+      "path": "dist/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu/index.html",
+      "sha256": "12939be139cfa4eb7aee6d10a371ec7718a89064ba8a00f606ea3d730ad881bb",
+      "bytes": 128431
+    },
+    {
+      "path": "dist/blog/beginner-friendly-bjj-tannersville/index.html",
+      "sha256": "135dd3a19cd7b9e5870f06fa674d11a5e3456f7a95e7973541253fdd680bc713",
+      "bytes": 127918
+    },
+    {
+      "path": "dist/blog/wrestle-ups-scramble/index.html",
+      "sha256": "27f49b2845c8037443647fac18c403f3a56b4958b6b86ffbdc9114b6845bad1f",
+      "bytes": 133739
+    },
+    {
+      "path": "dist/blog/things-to-do-near-hunter-ny-private-bjj-coaching/index.html",
+      "sha256": "9d5e46465ebe22df8e2af2bf21ce1d47959d7fcdb7394f5fdfcf926a7b93a50a",
+      "bytes": 132425
+    },
+    {
+      "path": "dist/blog/cairo-ny-bjj-specialist/index.html",
+      "sha256": "f59a90fecd024c20009d5786b5b1db848e504b391b26f0aba30a1fa703523058",
+      "bytes": 134980
+    },
+    {
+      "path": "dist/blog/confidence-protocol/index.html",
+      "sha256": "358064497e1474c3aef27591ef251bf47ba7d2e37d89c0702053e0def91692ae",
+      "bytes": 122200
+    },
+    {
+      "path": "dist/blog/sensei-mma-bjj/index.html",
+      "sha256": "5a494ad703c9d0e17166a37e1eb1d22c3c4c530a451cfec26b6c448e2578eb03",
+      "bytes": 131598
+    },
+    {
+      "path": "dist/blog/bioginastica-movement-no-gi/index.html",
+      "sha256": "b6f9341ac5f8a30b894bc7b4c2f28d262278246a21df70a7b8d25e4162981352",
+      "bytes": 128619
+    },
+    {
+      "path": "dist/blog/busy-parent-guide-to-family-martial-arts/index.html",
+      "sha256": "bad851fe8f2283722ba8beefb022f21fdfbbbd5acd25eb5b011dbb708102faee",
+      "bytes": 130032
+    },
+    {
+      "path": "dist/blog/no-gi-windham-ny/index.html",
+      "sha256": "96f36a8f0638bb3b8192b4f2e8b60c7bec16cae0b849d4c95b433039cfa003a8",
+      "bytes": 129803
+    },
+    {
+      "path": "dist/blog/private-bjj-coaching-catskills-visitors/index.html",
+      "sha256": "d2e3e138c266b3e840c9b72c4d1e976946a88fd8a15ea88e6dd7cee08b6f09c3",
+      "bytes": 128077
+    },
+    {
+      "path": "dist/blog/why-high-school-athletes-train-bjj-tannersville/index.html",
+      "sha256": "8fe59306a4162e1e41e605a96dc6627f52f5024df98435f74d42be23b4f1e235",
+      "bytes": 131365
+    },
+    {
+      "path": "dist/blog/sanda-vs-jiu-jitsu-for-mma/index.html",
+      "sha256": "c785efd0f9a80b0868e543509bee971deb9902e2c54394f116631f822fa98875",
+      "bytes": 130372
+    },
+    {
+      "path": "dist/blog/schedule-sensei-reset-protocol/index.html",
+      "sha256": "24f9ebd742a46006e946b47f24775e08098774baf2bbbe891130562df02dccfd",
+      "bytes": 132745
+    },
+    {
+      "path": "dist/blog/family-martial-arts-catskills/index.html",
+      "sha256": "c2b62664f7d89def730d64d61dc32003a41073fec0a9e0c6bc756f88a9fe23f2",
+      "bytes": 125478
+    },
+    {
+      "path": "dist/blog/safe-self-defense-kids-positional-control/index.html",
+      "sha256": "af533a869a0226e008b260d7d7b49b4f81d7f6d679e62d3cee49bd1056b28ee6",
+      "bytes": 128251
+    },
+    {
+      "path": "dist/blog/schedule-sensei-weekly-template/index.html",
+      "sha256": "531475824be8c489119e49c6e05614c422bbf87979281a4930d8a3836820e0e3",
+      "bytes": 139033
+    },
+    {
+      "path": "dist/blog/tannersville-bjj-tuesday/index.html",
+      "sha256": "648a97a96e8baea87756fd9a1415b34a2234190d3d0c2adac0bcb2be301a4aa6",
+      "bytes": 135582
+    },
+    {
+      "path": "dist/blog/gi-vs-no-gi-bjj-cheat-code/index.html",
+      "sha256": "d18e5364659d6b66b70cae6dd2fe47b082ba5ac0d7303bfeef8538af38ae2986",
+      "bytes": 140389
+    },
+    {
+      "path": "dist/blog/how-to-fall-safely-bjj-breakfalls/index.html",
+      "sha256": "b529286f5f53e8db0734101848237c24260bb37e05b96ea30dd509e10d664bb1",
+      "bytes": 131404
+    },
+    {
+      "path": "dist/blog/gi-bjj-windham-ny/index.html",
+      "sha256": "58e931a265583898520650a557b130cb8996b37bfbd604b2d36651eee7c2bd5e",
+      "bytes": 130402
+    },
+    {
+      "path": "dist/blog/teen-confidence-deescalation-jiu-jitsu/index.html",
+      "sha256": "732fd1446226b99a7c25570b025409889cd89874d7279ad534e5c2abf61a7d05",
+      "bytes": 125660
+    },
+    {
+      "path": "dist/blog/bjj-promotions-how-often/index.html",
+      "sha256": "8a2e4fbda660c30d3e86fa20ca24f0e147e29495fa8f0bd8a4994a9c459bbf54",
+      "bytes": 134241
+    },
+    {
+      "path": "dist/blog/family-friendly-bjj-near-tannersville/index.html",
+      "sha256": "d7bb259f103bd7f3e0a6115198f4dfb2f0be43c82bad0e27aaf6d864bc77185b",
+      "bytes": 130614
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-for-teenagers-catskills/index.html",
+      "sha256": "a95d563451b1ce01b81c41a2c6112d3c642e6cf59efcfc306b3bf7673dacd3ee",
+      "bytes": 126268
+    },
+    {
+      "path": "dist/blog/bully-proof-jiu-jitsu-stories-catskills/index.html",
+      "sha256": "748ee9f36b15d3ff2e9873576f6f6169b1a2d1b54ff3f1aeb65be5d2124a2ec5",
+      "bytes": 128946
+    },
+    {
+      "path": "dist/blog/bjj-vs-karate-for-kids-catskills/index.html",
+      "sha256": "7064c7da5b9cebb3be1c1ec92a92569a4e61fb776dec691e9f0af7f2fa9f3901",
+      "bytes": 125893
+    },
+    {
+      "path": "dist/blog/bjj-belts-stripes-promotions/index.html",
+      "sha256": "c571466a592ba686026ff616fdb643e50fd01df26ed3ca4b6d2724f3b88a13af",
+      "bytes": 130736
+    },
+    {
+      "path": "dist/blog/neck-cranks-bjj-longevity-guide/index.html",
+      "sha256": "635bc0f004ea742d3e3641531190e7b6a763a8362b71fa3aebc73bd440331d7e",
+      "bytes": 130245
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-near-windham-mountain-club-ski-families/index.html",
+      "sha256": "f2df0bdf96bee3337b4fbecd0ef38d8d6180b3ae248f2cc793caa7b2747c5286",
+      "bytes": 128335
+    },
+    {
+      "path": "dist/blog/water-before-training-how-much-when/index.html",
+      "sha256": "2b124bb8a7b546b58625de04f9724068e029349d564acefc669693f3754a7171",
+      "bytes": 132673
+    },
+    {
+      "path": "dist/blog/what-kids-learn-in-bjj/index.html",
+      "sha256": "032bf03467026b1b3bb22056529dacb8a3b274be19f4c0d9ea3bd1920a38818c",
+      "bytes": 125144
+    },
+    {
+      "path": "dist/blog/schedule-sensei/index.html",
+      "sha256": "daa294e81bb9c068d839876efd8c87f4d9853a51b2f1a19f2d26674688198155",
+      "bytes": 133984
+    },
+    {
+      "path": "dist/blog/private-jiu-jitsu-lessons-windham-ny/index.html",
+      "sha256": "ed50ab951e445fb44f806ca9bda86c7e85a9e25f7bf94299063d86f91ffe479a",
+      "bytes": 130495
+    },
+    {
+      "path": "dist/blog/kids-martial-arts-haines-falls/index.html",
+      "sha256": "0af555fa666719bedf452fe22f4769e72164b7efce80e33f175624fa516ee584",
+      "bytes": 132220
+    },
+    {
+      "path": "dist/blog/sensei-rules/index.html",
+      "sha256": "5f1e702da815c432dc422b7c62aa503f7468960309f7ecaf29d8e4fd64cbcb9e",
+      "bytes": 133434
+    },
+    {
+      "path": "dist/blog/snow-day-protocol-bjj-home-dojo/index.html",
+      "sha256": "1b932349d6f3f021716bd912d53b73e0e64c80a7387280a7422733ced204c14c",
+      "bytes": 131716
+    },
+    {
+      "path": "dist/blog/what-does-sensei-mean-in-bjj/index.html",
+      "sha256": "028bdb3a36eb2ab3d58a22fef91c48068a3b4217b821a2cec40c84be2f6cb628",
+      "bytes": 130433
+    },
+    {
+      "path": "dist/blog/after-school-jiu-jitsu/index.html",
+      "sha256": "7fe3d1c9ccd99e61fcbcc8d1e29b406a0942329a0306b5a184d483333cf68bdb",
+      "bytes": 127630
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-near-windham-mountain-club/index.html",
+      "sha256": "3e13f9cde91e756637d4e8d84267a4428551c6deb75cf78e75c53f2175ce792f",
+      "bytes": 131905
+    },
+    {
+      "path": "dist/blog/private-bjj-lessons-kids-tannersville/index.html",
+      "sha256": "c9336399171033fbbf5e72ce1015afc175483e054511d22b77da588cb097c33a",
+      "bytes": 134356
+    },
+    {
+      "path": "dist/blog/after-school-jiu-jitsu-calm-routine-catskills/index.html",
+      "sha256": "8610da11ae970a196c6359428cdacbfa7e220e86435bf2e1f7da8b4a1301147a",
+      "bytes": 127871
+    },
+    {
+      "path": "dist/blog/teen-jiu-jitsu-hunter-ny/index.html",
+      "sha256": "4f7f85fbadacc69cefba4b06db66b9ea30c2a6f3e0aeb33d8ac804017f5289ec",
+      "bytes": 130240
+    },
+    {
+      "path": "dist/blog/bjj-36-techniques/index.html",
+      "sha256": "1f99f16b3b33f7f8c0c43eebffd0cb047f528b6579f9324d8aeeee1ba6cf9540",
+      "bytes": 131480
+    },
+    {
+      "path": "dist/blog/bully-proof-martial-arts-tannersville/index.html",
+      "sha256": "4806f5d825e7b07c46c27415e67f05751f41aee500f05eb1c1dcc505a4bcc33c",
+      "bytes": 129896
+    },
+    {
+      "path": "dist/blog/spring-fling-is-here/index.html",
+      "sha256": "e4b7d4e8c4b3308c11482fcfacc3fa1ce9f338cc96cc7b7d9c1c79dacbc6274f",
+      "bytes": 129263
+    },
+    {
+      "path": "dist/blog/starting-bjj-over-30-over-40-catskills/index.html",
+      "sha256": "02ce38840fb4b2bc7d4cfabcbe5cd6cb1f03f95cf23a9490ca150ddf56995ba9",
+      "bytes": 132409
+    },
+    {
+      "path": "dist/blog/bjj-beginners-over-40-catskills/index.html",
+      "sha256": "ef21bfe5540f7f3146439fd00faa8806f2023e804956586fcb7f7f66f90d6900",
+      "bytes": 125103
+    },
+    {
+      "path": "dist/blog/bjj-vs-taekwondo-family-martial-arts/index.html",
+      "sha256": "31050c82c59dc54fe067ecf47a1cf56d4b575b3d60d980606c83c168d15ee5b0",
+      "bytes": 125706
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-near-hunter-mountain/index.html",
+      "sha256": "2ca6a963f10c235a35365746df65bab22f356968ffa7e02c1c00fc52cbea1759",
+      "bytes": 130231
+    },
+    {
+      "path": "dist/blog/bio-switch-nervous-system/index.html",
+      "sha256": "82d813faff961fe8bed1fc60c8787d10644a2485f059908ba0b25ba500db8f5f",
+      "bytes": 129040
+    },
+    {
+      "path": "dist/blog/private-bjj-lessons-adults-catskills/index.html",
+      "sha256": "a1970db255850924f5489663ac80a8c7a61120557888985932429d9bddbd8620",
+      "bytes": 125240
+    },
+    {
+      "path": "dist/blog/tags/youth/index.html",
+      "sha256": "98cc278de979cd731d500cce9122b0e2b8702cdb1162e03e250aef4adfced43e",
+      "bytes": 132031
+    },
+    {
+      "path": "dist/blog/tags/adult-bjj/index.html",
+      "sha256": "0fd3cea97d23fd12742441b359c6b87f1b08dd0d477a926c53bbec327c31faec",
+      "bytes": 132492
+    },
+    {
+      "path": "dist/blog/tags/starting-jiu-jitsu/index.html",
+      "sha256": "21a6c3ad932f110a39265731770c6c2f5bb26b12ff6b81fe8f7691b75dcd2ea4",
+      "bytes": 132648
+    },
+    {
+      "path": "dist/members/winter-training-plan/index.html",
+      "sha256": "ec3f2c92b1ed92df6e4d3110e862c9ea7f79a25f16d68c22e357e6a2e2916edc",
+      "bytes": 17419
+    },
+    {
+      "path": "dist/members/holiday-routine/index.html",
+      "sha256": "745e9258474acb1455ca772fbdbd35902f0777eee5b4fad07ec71676c73bffab",
+      "bytes": 15270
+    },
+    {
+      "path": "dist/bjj-classes/acra-ny/index.html",
+      "sha256": "d459c2573558833f32978b7ea70afa21399498605557573a4e8534fd29a6c10e",
+      "bytes": 21751
+    },
+    {
+      "path": "dist/bjj-classes/gilboa-ny/index.html",
+      "sha256": "8f4f4a2d2be0e16b6fd7e650b393bde2c63f9ef8bf45f90b8abd37825fd4856c",
+      "bytes": 31690
+    },
+    {
+      "path": "dist/bjj-classes/round-top-ny/index.html",
+      "sha256": "a99862f7cfa7b39d8b79469aabd08e93275084d768107fa0f11596e931c7098c",
+      "bytes": 31665
+    },
+    {
+      "path": "dist/bjj-classes/adults-tannersville-ny/index.html",
+      "sha256": "bb03e328a48162be417028be55e54360b2b96ac94e75c248d0f8c04f86f0661c",
+      "bytes": 27876
+    },
+    {
+      "path": "dist/bjj-classes/hunter-ny/index.html",
+      "sha256": "253e7081f05aa572a289d3477087cf10f6ba4173592446cf8494493a6e8e2b85",
+      "bytes": 26589
+    },
+    {
+      "path": "dist/bjj-classes/greenville-ny/index.html",
+      "sha256": "b68a09d4dea4d9fff1aa75567d7acb43aef066cbb8d240e71f4ea9ffbd6d8c68",
+      "bytes": 31780
+    },
+    {
+      "path": "dist/bjj-classes/grand-gorge-ny/index.html",
+      "sha256": "aba6c48c57b5e9c61af98f0def6f3a7e7c4398acee67ad4f3f4f74c9cf7a1fcf",
+      "bytes": 31748
+    },
+    {
+      "path": "dist/bjj-classes/phoenicia-ny/index.html",
+      "sha256": "3804dc74be591b113b0390ca24c3380509a6ea2ce52c08eb69076c74fe3edf44",
+      "bytes": 32068
+    },
+    {
+      "path": "dist/bjj-classes/stamford-ny/index.html",
+      "sha256": "eaa410d6af7c771c20b01737cfd76491410faf1e229c51f99252b1cbd84da08a",
+      "bytes": 31700
+    },
+    {
+      "path": "dist/bjj-classes/durham-ny/index.html",
+      "sha256": "5e24c41af29fa1565ef64ea974d31bf8aae92e98b0bb15127ac602503847a424",
+      "bytes": 31706
+    },
+    {
+      "path": "dist/bjj-classes/maplecrest-ny/index.html",
+      "sha256": "b52b901d896cfb1c83d08400c83cb7d809e37e149b34a06796a942ede7383bbc",
+      "bytes": 32053
+    },
+    {
+      "path": "dist/bjj-classes/haines-falls-ny/index.html",
+      "sha256": "f76e61b5158c8b82cdff9af40dc70f5fc40fdc46769ef60d2a57b08aa5e97220",
+      "bytes": 21884
+    },
+    {
+      "path": "dist/bjj-classes/boiceville-ny/index.html",
+      "sha256": "f337f6c14ec83eeeb39d845429fa0168c3b5fc336291ecac1012d483d38607ca",
+      "bytes": 31774
+    },
+    {
+      "path": "dist/bjj-classes/shandaken-ny/index.html",
+      "sha256": "e80b2924d11def100a14195c3ec382a13c4a264fd5cd99a6939502479773be47",
+      "bytes": 32172
+    },
+    {
+      "path": "dist/bjj-classes/cairo-ny/index.html",
+      "sha256": "1692a2bd66ee1062803d480318d5daf69e9960187c40718bcdf2c2efb11af71d",
+      "bytes": 21737
+    },
+    {
+      "path": "dist/bjj-classes/elka-park-ny/index.html",
+      "sha256": "3fabcfb8fcbe9293a8f85085b26e69a53aaa551fe88ca1a7774ddad25939c3eb",
+      "bytes": 31658
+    },
+    {
+      "path": "dist/bjj-classes/schoharie-ny/index.html",
+      "sha256": "55d9fdd10de99b085568aef2c479fb076d57cdaa253f9ba91c99cad01dff3537",
+      "bytes": 31802
+    },
+    {
+      "path": "dist/bjj-classes/teens-tannersville-ny/index.html",
+      "sha256": "9f57b97a6250bf26121bc4b35fbd699ed3cb8041d34c03775cd6610412cd5a82",
+      "bytes": 29981
+    },
+    {
+      "path": "dist/bjj-classes/beginner-lane/index.html",
+      "sha256": "32f3d9e2bd8881da7962b2c9d365bb774e08f5be53547f3a44d15ebb19c933c2",
+      "bytes": 32889
+    },
+    {
+      "path": "dist/bjj-classes/tannersville-ny/index.html",
+      "sha256": "de194eb91f7c03d0b1ea6d529812928eb61621c65f8e22a442c882d2ada9b2a2",
+      "bytes": 99227
+    },
+    {
+      "path": "dist/bjj-classes/leeds-ny/index.html",
+      "sha256": "c1bd5b0e2c1dc2b10fb76fecc371587323ec4bef5dedf8caaaca1f8f34bc019c",
+      "bytes": 32007
+    },
+    {
+      "path": "dist/bjj-classes/kids-tannersville-ny/index.html",
+      "sha256": "8bb7286fa3024737d9f83db5959631c95b584727244f49ff24cb897b6f4eb66c",
+      "bytes": 28165
+    },
+    {
+      "path": "dist/bjj-classes/family-martial-arts-catskills/index.html",
+      "sha256": "7f460c299684eabc69f024660d662444fb67a5876bb71fdc9e7239277070b1c1",
+      "bytes": 40983
+    },
+    {
+      "path": "dist/bjj-classes/woodstock-ny/index.html",
+      "sha256": "2f7f851e1a4a3dac2efaa8ed689b0bdd2bc98d0f111e46cf9d15b51696c58059",
+      "bytes": 22055
+    },
+    {
+      "path": "dist/bjj-classes/saugerties-ny/index.html",
+      "sha256": "fc3c5bf7dbeeda719125c4b14d06db05704455c24bcb898e8f1215188d142813",
+      "bytes": 31883
+    },
+    {
+      "path": "dist/bjj-classes/windham-ny/index.html",
+      "sha256": "c387573ed1df21c275912a30ae5734d6b9252d3a0e06e537a9ee68b057a2c045",
+      "bytes": 26531
+    },
+    {
+      "path": "dist/bjj-classes/purling-ny/index.html",
+      "sha256": "153ba23b36fa7d1a1b98ddeeeadaa555b15c136c09c968efe4c98ba2234fc5d1",
+      "bytes": 31574
+    },
+    {
+      "path": "dist/bjj-classes/ashland-ny/index.html",
+      "sha256": "2225588606572ebf44702262b17cf0ffab0803343d39ce40d53f82f213743a8f",
+      "bytes": 31617
+    },
+    {
+      "path": "dist/bjj-classes/coxsackie-ny/index.html",
+      "sha256": "027b88afdbd8f0c0bf9b947d09d2b1f963fe01f578078865b76e76d2882225dd",
+      "bytes": 31753
+    },
+    {
+      "path": "dist/bjj-classes/prattsville-ny/index.html",
+      "sha256": "cdb4be8bde64fbd90ac8f1a2511d5aa34579e4487c2c5f7829bede50db17f5e4",
+      "bytes": 31988
+    },
+    {
+      "path": "dist/bjj-classes/lanesville-ny/index.html",
+      "sha256": "c51d49bb5341a0843815e8fae2a5c27d8e539359d6c9b62115135efce88fe28c",
+      "bytes": 31990
+    },
+    {
+      "path": "dist/bjj-classes/lexington-ny/index.html",
+      "sha256": "0bd7e44ebeac34e24ee9c91cc9156ba6810193e2c00c3d50d22591553d14b7db",
+      "bytes": 31630
+    },
+    {
+      "path": "dist/bjj-classes/catskill-ny/index.html",
+      "sha256": "ecaa2df9765c33bb056e465544171eaf9c9e189e8f9fe72f89dff4a5b85a9b26",
+      "bytes": 21815
+    },
+    {
+      "path": "dist/bjj-classes/shokan-ny/index.html",
+      "sha256": "c7534a1f6232b2fda175d51464b0e771d0121058ad37e810e20301ade7f64afc",
+      "bytes": 32072
+    },
+    {
+      "path": "dist/bjj-classes/olive-ny/index.html",
+      "sha256": "2e4c5737c9cd4b38fd928c77f2941882f2fa8a9f2eddc6508ae2b8993e77fb72",
+      "bytes": 31732
+    },
+    {
+      "path": "dist/bjj-classes/palenville-ny/index.html",
+      "sha256": "b55d7c7e63887f9e990e6eb547f25886c39d44f53f7592150d27ead3b6185f73",
+      "bytes": 21867
+    },
+    {
+      "path": "dist/bjj-classes/roxbury-ny/index.html",
+      "sha256": "f94b8e6f8c8bd49dfe17da4e28330ec230f315e1c0506340cc3b3690e9ea2689",
+      "bytes": 31746
+    },
+    {
+      "path": "dist/assets/js/bootstrap.bundle.5.3.3.js",
+      "sha256": "0833b2e9c3a26c258476c46266e6877fc75218625162e0460be9a3a098a61c6c",
+      "bytes": 80721
+    },
+    {
+      "path": "dist/assets/js/class-focus-weeks.js",
+      "sha256": "844a1176b001032374e21619acae2b28b679e3a43ec8e0ac7ab3cc2953ef5825",
+      "bytes": 5523
+    },
+    {
+      "path": "dist/assets/js/analytics-events.js",
+      "sha256": "9a584a95e2fcc2bb1e00c26b934869b80d9635db1233fcb219be69124bb97aa7",
+      "bytes": 5556
+    },
+    {
+      "path": "dist/assets/js/winter-armor-2027.js",
+      "sha256": "fc85ebd309f95f53b62bc3d90010e322ddd25530452f72b21ad358b33a11868f",
+      "bytes": 973
+    },
+    {
+      "path": "dist/assets/js/winter-rank-drop.js",
+      "sha256": "feb260de7f0372aa36258550506aaa6e3072e12d70481ad0e91a64274da4399d",
+      "bytes": 6839
+    },
+    {
+      "path": "dist/assets/js/schedule-month-calendar.js",
+      "sha256": "b6afe5ab0ab25752e922e1e297eeaf0daf1ff9bc9a3b2abba68e4f8f88d4f582",
+      "bytes": 9499
+    },
+    {
+      "path": "dist/assets/js/funnel-events.js",
+      "sha256": "8bcf2cb6658cca0024b9534234e3805871072d1ebb4bdc024a01468767a3c319",
+      "bytes": 5935
+    },
+    {
+      "path": "dist/assets/js/schedule-data.js",
+      "sha256": "5512129cc0e6ebb420912fb6163ed3c6e16af3a5df3def8fef06a6188638940a",
+      "bytes": 2139
+    },
+    {
+      "path": "dist/assets/js/ss-evidence-registry.js",
+      "sha256": "b88396bc9dca261a739a3371630273978c9cf06990dd647c1e5d1c11bb3b6ad5",
+      "bytes": 11622
+    },
+    {
+      "path": "dist/assets/js/hyphen-pricing.js",
+      "sha256": "bad058280135cca865632df5c3dbcca5cc17a793dc8624cdacd7245c1c845fb3",
+      "bytes": 1016
+    },
+    {
+      "path": "dist/assets/js/ss-accordion-section.js",
+      "sha256": "1a20bc3cc064146358c2606e5a7dcfeab72462713e1a84bdefedf200d23286cd",
+      "bytes": 4147
+    },
+    {
+      "path": "dist/assets/js/ss-evidence-accordion.js",
+      "sha256": "1d022fd109141a9086ad31a58beebbe8b51c8622214a43a4ee08515337ab1ca5",
+      "bytes": 5218
+    },
+    {
+      "path": "dist/assets/js/hyphen-weekend.js",
+      "sha256": "2cc4dec0a11b6210b887334a6e6ad2cb595ebf4bb4eb1ad885938ee71c75d612",
+      "bytes": 36523
+    },
+    {
+      "path": "dist/assets/js/student-hub-class-focus.js",
+      "sha256": "e667b7f4115af0d57024a0ae4f1e471f48493a32f0e6651618dc5047c1260808",
+      "bytes": 9188
+    },
+    {
+      "path": "dist/assets/js/goal-mapping.js",
+      "sha256": "0812e4cc2e95bddaabce693b65b64a29212d388a4d4b92114f3271970c1e7f09",
+      "bytes": 139
+    },
+    {
+      "path": "dist/assets/js/attribution.js",
+      "sha256": "d8a7e27c799dbf0cab90d9d3afa729a8576ebec020a59e1bb208af293aa3c99f",
+      "bytes": 3517
+    },
+    {
+      "path": "dist/assets/css/cro.min.css",
+      "sha256": "6e62593b405c23431e1e8461c9c4cf493730524e98c1a67820db512fe7ea1097",
+      "bytes": 10161
+    },
+    {
+      "path": "dist/assets/css/kids.min.css",
+      "sha256": "9d770fb45f0c02a7cbbe4444598816cbc0dc1a3cc76712b6f4d57f1c4685eca0",
+      "bytes": 128
+    },
+    {
+      "path": "dist/assets/css/fonts.min.css",
+      "sha256": "bbba5403dd99e28cb27c2f675c7818be5963a18279897592d7fb3070ef56292f",
+      "bytes": 755
+    },
+    {
+      "path": "dist/assets/css/bootstrap-site.min.css",
+      "sha256": "e61a14aa01d3a77b7103758b2e2f9d426f2d38608afb1c05dc84053acbce024b",
+      "bytes": 212378
+    },
+    {
+      "path": "dist/assets/css/components.min.css",
+      "sha256": "1104a28c0bdfa51dab4b99bbcd5f1e2bf29984a5e2b99a900d1c3ed60a20d0e1",
+      "bytes": 322345
+    },
+    {
+      "path": "dist/assets/css/ss-global.css",
+      "sha256": "8c0ea24e326b4ff4b009aa862e44d8e6164ba5f9e6e11bf442aef559a31e049c",
+      "bytes": 8264
+    },
+    {
+      "path": "dist/assets/css/schedule-consistency.min.css",
+      "sha256": "0908aedc3f12296367c7d84b9481210eac645f5bff689d37f2bdb2d8dc3b8b30",
+      "bytes": 2509
+    },
+    {
+      "path": "dist/assets/css/bootstrap-icons-local.css",
+      "sha256": "d749fbf58f65a1586a6f73efd299a46ac0990d26d95b45ac6d3f7880c2c0b4e7",
+      "bytes": 13422
+    },
+    {
+      "path": "dist/assets/css/site-shell.min.7f177f.css",
+      "sha256": "35ba53d00ccf2cf62e703681bceb20fa0af2c6c6d252529e4f072741675bf150",
+      "bytes": 41491
+    },
+    {
+      "path": "dist/assets/css/bootstrap-icons-local.6444e2.css",
+      "sha256": "d749fbf58f65a1586a6f73efd299a46ac0990d26d95b45ac6d3f7880c2c0b4e7",
+      "bytes": 13422
+    },
+    {
+      "path": "dist/assets/css/faqs.css",
+      "sha256": "167e4437143dcc809d1206484c57fa7fc4f4f45a00773c6bd9e332022f69551c",
+      "bytes": 22581
+    },
+    {
+      "path": "dist/assets/css/components.css",
+      "sha256": "a8cfa738fac9f6a0a069aa828ab9611757fbef715f22deb248084e64c453b43d",
+      "bytes": 356453
+    },
+    {
+      "path": "dist/assets/css/fonts.min.5ee9a4.css",
+      "sha256": "68bf0445fb523bfe0b835a338e5af2aa2e056209198269cfd4ef2775c4f2719d",
+      "bytes": 769
+    },
+    {
+      "path": "dist/assets/css/schedule.css",
+      "sha256": "63fe9a7589d11bbafa240c0e2af740c0c3f5d363e08fcce97b57fc239d1783c8",
+      "bytes": 47269
+    },
+    {
+      "path": "dist/assets/css/goal-mapping.css",
+      "sha256": "040cb6c48cb3ffaec878808f5c3ce9c63ebcf6b0b6605229a5e353f2af51af41",
+      "bytes": 637
+    },
+    {
+      "path": "dist/assets/css/ss-clockwork.min.css",
+      "sha256": "e51519768844389b9be65898adbd104d0963b9b8ed2e2dd4f0dfaad0b1a65eed",
+      "bytes": 5536
+    },
+    {
+      "path": "dist/assets/css/site-shell.min.css",
+      "sha256": "7d97354925207313560500cdbad17f454f803d4d7b0e0e91da8de1fffaed5a9e",
+      "bytes": 41489
+    },
+    {
+      "path": "dist/assets/css/school-families-cro.css",
+      "sha256": "ce4e23d57287cdec262bf8b8cadcb73b3fd6d4e7a9c2bb457b6f1ae631133101",
+      "bytes": 16897
+    },
+    {
+      "path": "dist/assets/css/deer-mountain-inn.css",
+      "sha256": "35c1aae25cf0cdacccaa0ebca3a77f9df382b21832f9415b156d4cc43d96e9a8",
+      "bytes": 16306
+    },
+    {
+      "path": "dist/assets/css/kids.css",
+      "sha256": "9690cc555080fa77770bc161a79f009d61f7f981bc74665a13f080b3e0118337",
+      "bytes": 125
+    },
+    {
+      "path": "dist/assets/css/global.min.css",
+      "sha256": "449ff213f5720db1a08b18150582269bf4605148bd5e811756c90bc134aaa76d",
+      "bytes": 22430
+    },
+    {
+      "path": "dist/assets/css/high-end-near.css",
+      "sha256": "6c0acd4c8a9c0b3320e65bba447bef8f7bd2471f379dad53e32c1f6723d45530",
+      "bytes": 33510
+    },
+    {
+      "path": "dist/assets/css/ss-global.min.css",
+      "sha256": "a43f8b150904303cc9b7717f39c893a83dadc89a39881a3fd47f9c32955af789",
+      "bytes": 9141
+    },
+    {
+      "path": "dist/assets/css/evidence.min.css",
+      "sha256": "09f5fe9b994d32a67cdecd393f24f7c3d065ad5d1821cc64ff85429321d366bf",
+      "bytes": 5417
+    },
+    {
+      "path": "dist/assets/css/partner-pages.min.845212.css",
+      "sha256": "3410b682b3e906be97b4eeee58f658680e2ef088440f598c01b233a7ae02a1b3",
+      "bytes": 17574
+    },
+    {
+      "path": "dist/assets/css/adults.min.css",
+      "sha256": "8a7ea89f8f87d8aea04455dd7699b1047456fbfbae5a399ea3428d4d1253ba87",
+      "bytes": 2219
+    },
+    {
+      "path": "dist/assets/css/ss-clockwork.css",
+      "sha256": "a36449ed7d9897d72c961d0e164a0bc89b644aca3ac9d01538d55a1f75822a83",
+      "bytes": 4786
+    },
+    {
+      "path": "dist/assets/css/global.css",
+      "sha256": "f36c145cffb15fe11deaf4de212be2905641c47a20b316f65f6a004bcf43acd6",
+      "bytes": 25833
+    },
+    {
+      "path": "dist/assets/css/cro-unification.css",
+      "sha256": "536db2a15f8de6e8509e67ffda5cc64656a8cf9765475c9b33116a06f5958e06",
+      "bytes": 13515
+    },
+    {
+      "path": "dist/assets/css/base.min.css",
+      "sha256": "95025361ec33e126ac1ffeeda0de1c6988d5e9db0357dffdae8e443819954b69",
+      "bytes": 81229
+    },
+    {
+      "path": "dist/assets/css/bootstrap-site.css",
+      "sha256": "27646ad21c72c5d07ed00ef7e7b7cff32296fed1c607b4f6b2761f8d8e5b85b2",
+      "bytes": 233541
+    },
+    {
+      "path": "dist/assets/css/near.min.css",
+      "sha256": "4dafc3744ad000b5e0e5497e3902b5b24d3e5850a95d2c2764653ab7de98378e",
+      "bytes": 96
+    },
+    {
+      "path": "dist/assets/css/contact-premium.css",
+      "sha256": "4d689e1b312bee4c5754cdee5a27a7ebde7029a43b8cd238b82581abda4e59ef",
+      "bytes": 13390
+    },
+    {
+      "path": "dist/assets/css/contact-vip.min.9a468e.css",
+      "sha256": "1bc1cde905c96d6f199bfbce0874717c38bda74985783a9be4755ad5bcd6c60c",
+      "bytes": 7473
+    },
+    {
+      "path": "dist/assets/css/teens.min.css",
+      "sha256": "7b3bf553e111cbe360e6badb7b7542e32aa2d8cc3e7b7ead71c6019c60afc65e",
+      "bytes": 132
+    },
+    {
+      "path": "dist/assets/css/contact-vip.min.css",
+      "sha256": "1bc1cde905c96d6f199bfbce0874717c38bda74985783a9be4755ad5bcd6c60c",
+      "bytes": 7473
+    },
+    {
+      "path": "dist/assets/css/high-end-near.a0b13b.css",
+      "sha256": "6c0acd4c8a9c0b3320e65bba447bef8f7bd2471f379dad53e32c1f6723d45530",
+      "bytes": 33510
+    },
+    {
+      "path": "dist/assets/css/cro-unification.min.css",
+      "sha256": "9a38a8b86935187b5ceeddd9b76ffb9ddd024343089a362c8ccd2cb86ef1e729",
+      "bytes": 14084
+    },
+    {
+      "path": "dist/assets/css/scribners.css",
+      "sha256": "0bfe7b3c16c1c90e7f9284e77e400fe99a94037a7983db35cf053ea421e07ae2",
+      "bytes": 15082
+    },
+    {
+      "path": "dist/assets/css/phoenicia-diner.css",
+      "sha256": "2fb8547b5fafd6cb22b594a98e97cff7bc5161f848afc722c3aa33a0695da1d5",
+      "bytes": 16000
+    },
+    {
+      "path": "dist/assets/css/blog-cro.css",
+      "sha256": "1ee67ea60ab57449fc32c63b59be0f3a5d8a495ebd58617460147784b108f993",
+      "bytes": 21736
+    },
+    {
+      "path": "dist/assets/css/schedule.min.css",
+      "sha256": "8070a491256575189ba8e8d8c053a4e50be1d03db0a5112ac33fabb5246e0da1",
+      "bytes": 50354
+    },
+    {
+      "path": "dist/assets/css/blog-cro.min.css",
+      "sha256": "105acd9e2ed054e34a3accf649c0706e264d63277565d17f883fc07b122a2e1f",
+      "bytes": 18924
+    },
+    {
+      "path": "dist/assets/css/_deprecated.css",
+      "sha256": "862a0ce262dbad102eb1754d2942ffa021b2184a709d35dc0cde209deb092bb9",
+      "bytes": 164
+    },
+    {
+      "path": "dist/assets/css/ss-premium.css",
+      "sha256": "b956429e9af0355b06881a53bcfb31186e7f52730a0e9a0c4f529212690516ba",
+      "bytes": 4458
+    },
+    {
+      "path": "dist/assets/css/partner-pages.css",
+      "sha256": "ddc955901908ccff58636c8dfd82bb16bfd75e73971589d80b006c96027599dd",
+      "bytes": 19234
+    },
+    {
+      "path": "dist/assets/css/faqs.87510f.css",
+      "sha256": "167e4437143dcc809d1206484c57fa7fc4f4f45a00773c6bd9e332022f69551c",
+      "bytes": 22581
+    },
+    {
+      "path": "dist/assets/css/site.css",
+      "sha256": "03142c78c728037d9701673cf515ae5a29a798bf71379c651c20f11e4bdcb08b",
+      "bytes": 113
+    },
+    {
+      "path": "dist/assets/css/evidence.css",
+      "sha256": "3fc199b379d4ab33c23bc5d9d174ec8e173f5fe9470897fcef63c6bb1bb5d764",
+      "bytes": 6131
+    },
+    {
+      "path": "dist/assets/css/blog.css",
+      "sha256": "9d258774f5a52d7bd123bb44e0f12a1a1a79b1ddc2f4a7ad3afc02d496f7f862",
+      "bytes": 38428
+    },
+    {
+      "path": "dist/assets/css/site-shell.css",
+      "sha256": "b424d565c58cb3bacb2060c5c69cc99bafd073fd7080b68a3ecf6cfa1ef7f3f6",
+      "bytes": 69274
+    },
+    {
+      "path": "dist/assets/css/fonts.4bdca6.css",
+      "sha256": "876587f885f47228516e6a38b5330de866cabbfd942fc476b2c87b75dfaa3075",
+      "bytes": 1056
+    },
+    {
+      "path": "dist/assets/css/near-cro.css",
+      "sha256": "b533c665ea3b19fa5933b4b33f2b56c260c9fd6baa5092c525061061822888a1",
+      "bytes": 18401
+    },
+    {
+      "path": "dist/assets/css/near.css",
+      "sha256": "c6a19b90cc20ba61adc39c30c0e14b3b55df43d8401ecf60ed8773938baa2c31",
+      "bytes": 93
+    },
+    {
+      "path": "dist/assets/css/contact-vip.css",
+      "sha256": "2d0d4f02f4a142610fb55f1ef554a7f0cf66b6a4267e8a49e65f911dd4fb548d",
+      "bytes": 9325
+    },
+    {
+      "path": "dist/assets/css/bjj-glossary.60aa37.css",
+      "sha256": "f3138ff7f1a0a21c762bf59b703104cf6a6656bc65c01b194ce3f197c6c6999c",
+      "bytes": 48095
+    },
+    {
+      "path": "dist/assets/css/styles.css",
+      "sha256": "390f21390e624c499c9e0a308427c0123a610a6588317646e89b670315aaf622",
+      "bytes": 69124
+    },
+    {
+      "path": "dist/assets/css/global.min.ad2905.css",
+      "sha256": "449ff213f5720db1a08b18150582269bf4605148bd5e811756c90bc134aaa76d",
+      "bytes": 22430
+    },
+    {
+      "path": "dist/assets/css/ss.min.css",
+      "sha256": "30d41e518acdef06c632b33ffedb5c3bca5c7ff637cfa77fbd6c2b8e6d505882",
+      "bytes": 204755
+    },
+    {
+      "path": "dist/assets/css/contact-premium.min.css",
+      "sha256": "c8081a6c14bb993a301d3a14459c91bc9aad726bc8b828cf17b51bad82b22550",
+      "bytes": 5391
+    },
+    {
+      "path": "dist/assets/css/blog.982fd6.css",
+      "sha256": "9d258774f5a52d7bd123bb44e0f12a1a1a79b1ddc2f4a7ad3afc02d496f7f862",
+      "bytes": 38428
+    },
+    {
+      "path": "dist/assets/css/ss-guide.css",
+      "sha256": "159ffa8dbf0b77a046bcfd8b0d49d4d333d7793adfe4cdea2756f7123353ea31",
+      "bytes": 12900
+    },
+    {
+      "path": "dist/assets/css/fonts.css",
+      "sha256": "46237d9d60a791754bbeeebf9203daa98b2ffae8eee6dde45f25bc916bd3ef30",
+      "bytes": 1032
+    },
+    {
+      "path": "dist/assets/css/hyphen-weekend.css",
+      "sha256": "abd4afb9dd114b2189b42236b4725858052890831335c9e5772bfea3b1ae5b96",
+      "bytes": 19447
+    },
+    {
+      "path": "dist/assets/css/partner-pages.min.css",
+      "sha256": "3410b682b3e906be97b4eeee58f658680e2ef088440f598c01b233a7ae02a1b3",
+      "bytes": 17574
+    },
+    {
+      "path": "dist/assets/css/high-end-blog.css",
+      "sha256": "1b211b58bfca3899f0426a677fe254e4ffb816ef68a81b74b258de3dc7f9015a",
+      "bytes": 2855
+    },
+    {
+      "path": "dist/assets/css/teens.css",
+      "sha256": "c309da28c18278aae65f61c02554eebd36ba8d8bcc54a17091f918001f9c44a6",
+      "bytes": 129
+    },
+    {
+      "path": "dist/assets/css/styles.min.css",
+      "sha256": "66b7fec6a2c0ff7069ad7caf5bbbec85e989ab9eaa0b618987677b44a917993f",
+      "bytes": 58498
+    },
+    {
+      "path": "dist/assets/css/videos.min.css",
+      "sha256": "afdb6f4f422e056267bd93f074fcf40479736530bb73e3867682b6fcc84032aa",
+      "bytes": 15256
+    },
+    {
+      "path": "dist/assets/css/videos.css",
+      "sha256": "4f326681b4ed4d1c5b6c084da45cb1a34d687f015053a666e2ec450f6b2277ec",
+      "bytes": 25554
+    },
+    {
+      "path": "dist/assets/css/hyphen-weekend.a236a6.css",
+      "sha256": "e29b48c565ba867b52a1722c9c1d81755feafb5a53c0ceaf9eeaa69d78e9492d",
+      "bytes": 19482
+    },
+    {
+      "path": "dist/assets/css/faqs.min.css",
+      "sha256": "51364d793828527ad95f26f2101e5e7721faf9b7b6ae8d08340d8f639ad5e75d",
+      "bytes": 5578
+    },
+    {
+      "path": "dist/assets/css/ss.css",
+      "sha256": "d4fc6220322de59b404607be2a78ed80aed6bbf0d28345981196c4bd7426113d",
+      "bytes": 225371
+    },
+    {
+      "path": "dist/assets/css/bjj-glossary.min.css",
+      "sha256": "aec4a0ad29faed4b2cca17370a687d92d6d806700421dd215e52454bfe59e54e",
+      "bytes": 43966
+    },
+    {
+      "path": "dist/assets/css/bjj-glossary.css",
+      "sha256": "f3138ff7f1a0a21c762bf59b703104cf6a6656bc65c01b194ce3f197c6c6999c",
+      "bytes": 48095
+    },
+    {
+      "path": "dist/assets/css/near-cro.min.css",
+      "sha256": "022fa305532f28bbd316979dfa1ad9fb9e11b634c096ad2722913feb2e763f37",
+      "bytes": 16766
+    },
+    {
+      "path": "dist/assets/css/tactical-longevity.css",
+      "sha256": "724ab342e6fad24ce402f2a7fefa72d050574bdc49648a0934d9a13253c4745b",
+      "bytes": 6935
+    },
+    {
+      "path": "dist/assets/css/school-families-cro.min.css",
+      "sha256": "6a911c1bf63a05b39b474b36b76a52b84dc0d6d81dcab7c6e6de3b263aa6deae",
+      "bytes": 15152
+    },
+    {
+      "path": "dist/assets/css/schedule-consistency.css",
+      "sha256": "88d63464976b1cf392a9d017fa359e794c573ba45d54ad1117f9dc76c04523c2",
+      "bytes": 2677
+    },
+    {
+      "path": "dist/assets/css/summer-confidence.css",
+      "sha256": "6bb2cd9f4545787958d6d709284cdd1d40c4cfa05d687994dc57f1b5b092d505",
+      "bytes": 13480
+    },
+    {
+      "path": "dist/assets/css/global-fix.css",
+      "sha256": "387e09263ddbb816fe7ee55f19b92e73e36826bbce49ca46cba62c5cc20906a9",
+      "bytes": 24450
+    },
+    {
+      "path": "dist/assets/css/cro.css",
+      "sha256": "41ea303890a6eaf517d0c7da3b9632881595e6f4257444cffe43cbf731e6bd12",
+      "bytes": 9331
+    },
+    {
+      "path": "dist/assets/css/blog.min.css",
+      "sha256": "e11073b7d97f4e8911875fafb0d1e5d7f6d52e684c0f558ea9c3327d45eca4a0",
+      "bytes": 34525
+    },
+    {
+      "path": "dist/assets/css/base.css",
+      "sha256": "38d6b9f833e6b0d778a5caec54f940662ebfa44dd99c05939543ea00fcb231ba",
+      "bytes": 97269
+    },
+    {
+      "path": "dist/assets/css/adults.css",
+      "sha256": "6546480ff1f9e20d8d24c5625dbf0eb1ca6f097216f01d56abfbe48d4dacb0b7",
+      "bytes": 2167
+    },
+    {
+      "path": "dist/assets/css/global-fix.min.css",
+      "sha256": "426b439d1d808ee8f92345355f05556ee80e9532a0fc721a023216cce1df98da",
+      "bytes": 16047
+    },
+    {
+      "path": "dist/assets/sensei-sandy-goal-mapping-implementation/sensei-sandy-goal-mapping/goal-mapping.css",
+      "sha256": "040cb6c48cb3ffaec878808f5c3ce9c63ebcf6b0b6605229a5e353f2af51af41",
+      "bytes": 637
+    },
+    {
+      "path": "dist/assets/sensei-sandy-goal-mapping-implementation/sensei-sandy-goal-mapping/cta-snippets.html",
+      "sha256": "decb5818dee40a9da0b3ae28d6f245043ee7337badcb4a9a180bb58400bb2035",
+      "bytes": 2651
+    },
+    {
+      "path": "dist/assets/sensei-sandy-goal-mapping-implementation/sensei-sandy-goal-mapping/goal-mapping.js",
+      "sha256": "0812e4cc2e95bddaabce693b65b64a29212d388a4d4b92114f3271970c1e7f09",
+      "bytes": 139
+    },
+    {
+      "path": "dist/assets/sensei-sandy-goal-mapping-implementation/sensei-sandy-goal-mapping/migration-checklist/index.html",
+      "sha256": "5786a02451a1bec1bc2b0614cb4bf34f16f8f11c3a84eb2fd58754414360db79",
+      "bytes": 5710
+    },
+    {
+      "path": "dist/assets/sensei-sandy-goal-mapping-implementation/sensei-sandy-goal-mapping/calendly-setup/index.html",
+      "sha256": "f255f1930c498419ac072d63f458e036fcbfa175bc939ae1860dca63b993b026",
+      "bytes": 3886
+    },
+    {
+      "path": "dist/assets/fonts/lexend/lexend-latin-variable.2077a5.woff2",
+      "sha256": "b7e7538f59bff1812841d7627f8e49e70fe86438f9f7b397a028c0d05301c874",
+      "bytes": 39680
+    },
+    {
+      "path": "dist/assets/fonts/lexend/lexend-latin-variable.woff2",
+      "sha256": "b7e7538f59bff1812841d7627f8e49e70fe86438f9f7b397a028c0d05301c874",
+      "bytes": 39680
+    },
+    {
+      "path": "dist/assets/fonts/PROVENANCE/index.html",
+      "sha256": "6e08142adb9c271c48dc6aaff85bcdc1aa6a8c09cf9379e29b71a1d36e3b7eb0",
+      "bytes": 3909
+    },
+    {
+      "path": "dist/assets/fonts/instrument-serif/instrument-serif-latin-regular.9b8dd1.woff2",
+      "sha256": "5eb09b5ac0e28b67c2f041c8ba6d244604ca0c0980d65912ab2d47fed84ddc31",
+      "bytes": 21032
+    },
+    {
+      "path": "dist/assets/fonts/instrument-serif/instrument-serif-latin-regular.woff2",
+      "sha256": "5eb09b5ac0e28b67c2f041c8ba6d244604ca0c0980d65912ab2d47fed84ddc31",
+      "bytes": 21032
+    },
+    {
+      "path": "dist/assets/css/routes/site-1d0842eaa685.css",
+      "sha256": "a11cf9ce6e0ee7b61a14616aec7c85b99b5cc9f93c2e42c00256dba9ace181a3",
+      "bytes": 43291
+    },
+    {
+      "path": "dist/assets/css/routes/site-ec19421ea4b3.min.css",
+      "sha256": "6503abd99f608689b5216a562a1e120fa4dff7f6922b39fa0ec54569bc099e52",
+      "bytes": 37797
+    },
+    {
+      "path": "dist/assets/css/routes/site-1d0842eaa685.min.css",
+      "sha256": "df2b140b69449e4f99839c1ad13270ba4b6693ece9ce6e993577004d3fda51ea",
+      "bytes": 38408
+    },
+    {
+      "path": "dist/assets/css/routes/site-18ac9c2704ce.css",
+      "sha256": "4e6603ba847c836c37bda68e10f4605008787ecf9a23198c9b19568e8409f7ab",
+      "bytes": 68407
+    },
+    {
+      "path": "dist/assets/css/routes/site-18ac9c2704ce.min.css",
+      "sha256": "5bbf55070bc10a001a3e57374245f6ad1d4292b82a8caa856be7b5b34b3f588f",
+      "bytes": 60939
+    },
+    {
+      "path": "dist/assets/css/routes/site-ec19421ea4b3.css",
+      "sha256": "9b591bfb65c5140a9fc59eb324dba53206f200372f2e259bb7e092e10a031ed4",
+      "bytes": 42539
+    },
+    {
+      "path": "dist/assets/css/bundles/components-student-hub.min.css",
+      "sha256": "47fae6f6f77b5a3b948cdc0617a0ecff3be69480f6433214d9f540c577515e1e",
+      "bytes": 207075
+    },
+    {
+      "path": "dist/assets/css/bundles/components-glossary-hub.css",
+      "sha256": "f949172a6e0e80859c8e65da6518a9ccc2524d75a20fcbbd7165c4c5135544f8",
+      "bytes": 192
+    },
+    {
+      "path": "dist/assets/css/bundles/components-student-hub.css",
+      "sha256": "514e6fa5b91d8f747212a60c5bf8e8fd3564d44eb9cf35e91cdcb9ecc9dd9e0c",
+      "bytes": 235893
+    },
+    {
+      "path": "dist/assets/css/bundles/components-home.min.css",
+      "sha256": "2410d69dad213726d41ca2c37114c88fe37e711993fefe539db023a0de9e7980",
+      "bytes": 230246
+    },
+    {
+      "path": "dist/assets/css/bundles/components-law-enforcement.css",
+      "sha256": "46c4bc6aca7f136cac9f4cde0a711a35ffa99df2853b0adb566e21e099597d02",
+      "bytes": 245252
+    },
+    {
+      "path": "dist/assets/css/bundles/components-videos.css",
+      "sha256": "09e9ccbeeff6f695f9335c71f542396b65e2393c31d3045297c0c83d3e1f2d1c",
+      "bytes": 236893
+    },
+    {
+      "path": "dist/assets/css/bundles/components-glossary-term.css",
+      "sha256": "8997893239ae81da38d40edee01bd3f36eb52f3389421cbf050fbbe901e6d3ab",
+      "bytes": 198
+    },
+    {
+      "path": "dist/assets/css/bundles/components-schedule.css",
+      "sha256": "95b6be748134ea43c0ca26d0b5ebb5225cafc82d2d0f579932765383fa466e1b",
+      "bytes": 242746
+    },
+    {
+      "path": "dist/assets/css/bundles/components-programs.css",
+      "sha256": "0cd1f7e7df0dd245781f7dff0fa0d779ac717bd2f991c9549e1274939c2c5ff0",
+      "bytes": 245873
+    },
+    {
+      "path": "dist/assets/css/bundles/components-videos.min.css",
+      "sha256": "fbcf5b709988ded1607612cfd8cbcf9d94a39dbeaceeef9985605c220f183f18",
+      "bytes": 208078
+    },
+    {
+      "path": "dist/assets/css/bundles/components-glossary-term.min.css",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "dist/assets/css/bundles/components-programs.min.css",
+      "sha256": "a5e0119fa4a82c85015c0cf6e42a2bceb5b8836550ec14daf9fd897c46074f08",
+      "bytes": 216822
+    },
+    {
+      "path": "dist/assets/css/bundles/components-near.css",
+      "sha256": "d307456ca75ab0277f86845e42ea62ae074c132c837f48814652652821a4cdb2",
+      "bytes": 237037
+    },
+    {
+      "path": "dist/assets/css/bundles/components-contact.css",
+      "sha256": "1bbfe17f7d08ee3ca4a84368a5ba4cfeb0519e7c6c711701071e0fa2d4ac47c1",
+      "bytes": 240386
+    },
+    {
+      "path": "dist/assets/css/bundles/components-contact.min.css",
+      "sha256": "e9e34a57c0601fbd95306ccfd938d04e537e9b28467cbb7b1a9c32d7dde13030",
+      "bytes": 211406
+    },
+    {
+      "path": "dist/assets/css/bundles/components-home.css",
+      "sha256": "dc774837b9a7ee917e30d693848fa874fe22ffabd0c617d3cfb507e63004e1da",
+      "bytes": 260433
+    },
+    {
+      "path": "dist/assets/css/bundles/components-booking.css",
+      "sha256": "cd9e3e0ab35e631637cdda20897add6368f3c306225e54f7e2bc5fc9ab52c3af",
+      "bytes": 241490
+    },
+    {
+      "path": "dist/assets/css/bundles/components-pricing.css",
+      "sha256": "576d2f4af41faf0556f7655e7fd05d5cb960ccb7b41812511c573b99ba80640d",
+      "bytes": 236532
+    },
+    {
+      "path": "dist/assets/css/bundles/components-core.min.css",
+      "sha256": "83a170b136ca7781acec00fc8e6a80cea01bb16781fa3955b1271d92cb419c1e",
+      "bytes": 207020
+    },
+    {
+      "path": "dist/assets/css/bundles/components-schedule.min.css",
+      "sha256": "625e6b60e612b9f5acf54cd99f92c28b58ffa58affdde6149cb60d5fad6820b5",
+      "bytes": 213515
+    },
+    {
+      "path": "dist/assets/css/bundles/components-glossary-hub.min.css",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "dist/assets/css/bundles/components-booking.min.css",
+      "sha256": "62e4a942020cf79f36cf1104128957965e71d29b0f28e5a041ee7ceec90f1900",
+      "bytes": 212459
+    },
+    {
+      "path": "dist/assets/css/bundles/components-law-enforcement.min.css",
+      "sha256": "203ceba58396a2dc175b0f73a79a8c7d58824d567c7220e9b66d29b49a89d6ff",
+      "bytes": 215870
+    },
+    {
+      "path": "dist/assets/css/bundles/components-near.min.css",
+      "sha256": "1343e8a5b077b12009250dc4af128ed693facdfafb29c465fd15ebf0c9eea3d7",
+      "bytes": 208212
+    },
+    {
+      "path": "dist/assets/css/bundles/components-pricing.min.css",
+      "sha256": "b1fe01ed712d7586ba7eeea7438030d0fb8fd170f7e34c09937c6922d64bee91",
+      "bytes": 207667
+    },
+    {
+      "path": "dist/assets/css/bundles/components-core.css",
+      "sha256": "436838be6b5a2dca4389ea75540c3794880c12d10eced8434d3bfc4168318e1f",
+      "bytes": 235795
+    },
+    {
+      "path": "dist/assets/css/pages/friday-night-fanatics.29c51e.css",
+      "sha256": "6cbc88aab25f693e65668c7600659b6642a806e51e5b2a371c2ae6ce6d26859f",
+      "bytes": 13166
+    },
+    {
+      "path": "dist/assets/css/pages/pricing.min.css",
+      "sha256": "07ee239d8edf56f2a0a609de1a0a1712f9565e6ec51cefd47d0b749fdab79c3f",
+      "bytes": 21736
+    },
+    {
+      "path": "dist/assets/css/pages/spring-armor-drop.156726.css",
+      "sha256": "5d3d2777c62ce4a4eab74a2fe9d49960fcf8f49db906351efee9e35f05f74575",
+      "bytes": 2201
+    },
+    {
+      "path": "dist/assets/css/pages/kids.min.css",
+      "sha256": "9566937d9a2f1fee1ed9a4e6c54b2dda93fc4b181b9621c359dae5bb9b240a96",
+      "bytes": 65276
+    },
+    {
+      "path": "dist/assets/css/pages/success-stories.css",
+      "sha256": "03106e117c2d616e840e37b37a33fc944a51d33d599811de7673038f6fee73c8",
+      "bytes": 6870
+    },
+    {
+      "path": "dist/assets/css/pages/jiu-jitsu-safety.ec4f4e.css",
+      "sha256": "f63d182e8bcfefeedaa45fb769a63c3619d9ba51f6cfc6fcda00296a85249905",
+      "bytes": 12594
+    },
+    {
+      "path": "dist/assets/css/pages/directions.min.css",
+      "sha256": "371f6a862fd849dc5ee0a0588de390c84b52b4c7c0b72ab70c784dafe6586155",
+      "bytes": 31940
+    },
+    {
+      "path": "dist/assets/css/pages/summer-academy.css",
+      "sha256": "1c2ba86e76db1ef4d324e493241101ad8800efcf3d95b80527542bd8f8dcf686",
+      "bytes": 4541
+    },
+    {
+      "path": "dist/assets/css/pages/kids.eee0fb.css",
+      "sha256": "d1bfad7b1ee57853edfe2107b62a53250bd82787fac6db2b3875fe494c72fc37",
+      "bytes": 70359
+    },
+    {
+      "path": "dist/assets/css/pages/directions-delivery.0557bdb0035b.css",
+      "sha256": "0557bdb0035bb686136714633b3df5171802671242a66d8a5f8e127fe5619285",
+      "bytes": 95228
+    },
+    {
+      "path": "dist/assets/css/pages/directions.min.e5dddf.css",
+      "sha256": "371f6a862fd849dc5ee0a0588de390c84b52b4c7c0b72ab70c784dafe6586155",
+      "bytes": 31940
+    },
+    {
+      "path": "dist/assets/css/pages/law-enforcement.min.b4f6aa.css",
+      "sha256": "6f01ff8682dcc9508bf65ab0910ffc84cb38085d3572ef97a609db4bfe2c1bf8",
+      "bytes": 7683
+    },
+    {
+      "path": "dist/assets/css/pages/partners-wellness.css",
+      "sha256": "96500922532ce41516c511246d2166cb73c8380f585813632170f1d86032e529",
+      "bytes": 24865
+    },
+    {
+      "path": "dist/assets/css/pages/home.min.a6304a.css",
+      "sha256": "3e9dbf0f9b31aef0bbd4dc3e37fd528daddb924d8a797c7b94fa043a4b216a5d",
+      "bytes": 35516
+    },
+    {
+      "path": "dist/assets/css/pages/winter-armor-2027.3f3262.css",
+      "sha256": "83f8f4c5cc1cbe63f3f5024e16232f20d0bb8a417cacd0106e8a6a87f43a3259",
+      "bytes": 6651
+    },
+    {
+      "path": "dist/assets/css/pages/glossary.css",
+      "sha256": "137461467bfac4fd9e50002e701b64bdb753e6c31a6327bd1ec719653a3a592b",
+      "bytes": 9149
+    },
+    {
+      "path": "dist/assets/css/pages/halloween-spooktacular.css",
+      "sha256": "bffd4cb4b172c50ee60ff028fed79cf17c296ac14ad7d27504e603b9dccfd046",
+      "bytes": 6871
+    },
+    {
+      "path": "dist/assets/css/pages/back-to-school.css",
+      "sha256": "1179b0e502e26ffd2714bd4791f7f232ed536bf327052df5e64a628f492a7c61",
+      "bytes": 2226
+    },
+    {
+      "path": "dist/assets/css/pages/free-intro-delivery.259a12a4c909.css",
+      "sha256": "259a12a4c9094cd6ac0432048a25db7bf4312165c3949c06bb128a1dc611cb18",
+      "bytes": 46293
+    },
+    {
+      "path": "dist/assets/css/pages/tannersville.min.css",
+      "sha256": "37c148ae99d5be0f9ed7ff91c20f246be1fc13b6a7e6e4d5e74151d2fe401f18",
+      "bytes": 13243
+    },
+    {
+      "path": "dist/assets/css/pages/schedule.css",
+      "sha256": "d9b68b6746b5b90feda45bcce1cb6264c6222b8c75fa2cf78d2c65328c14bd13",
+      "bytes": 9078
+    },
+    {
+      "path": "dist/assets/css/pages/schedule.3f12ea.css",
+      "sha256": "d83173b79e8b975a728afeabbbb52f81f0bc703553a446a3ebfb89f6b846d636",
+      "bytes": 9943
+    },
+    {
+      "path": "dist/assets/css/pages/spring-armor-drop.css",
+      "sha256": "5d3d2777c62ce4a4eab74a2fe9d49960fcf8f49db906351efee9e35f05f74575",
+      "bytes": 2201
+    },
+    {
+      "path": "dist/assets/css/pages/guarantee-terms.css",
+      "sha256": "aa8e9f847e4d977894dc0281dfdfcc48c039dd09dd9a58e123bc7450bd08d4f9",
+      "bytes": 8423
+    },
+    {
+      "path": "dist/assets/css/pages/everyday-jiu-jitsu.7603fb.css",
+      "sha256": "5a794399387975faf0bcb76853c511036ee48521be9b889b2edc4f3692c38aa7",
+      "bytes": 5253
+    },
+    {
+      "path": "dist/assets/css/pages/partners.css",
+      "sha256": "199a4c17bb09da88dbe410a69f95b9e4b2d3cd49e659cacf9c4405d9cfa09caf",
+      "bytes": 10115
+    },
+    {
+      "path": "dist/assets/css/pages/law-enforcement.min.css",
+      "sha256": "6f01ff8682dcc9508bf65ab0910ffc84cb38085d3572ef97a609db4bfe2c1bf8",
+      "bytes": 7683
+    },
+    {
+      "path": "dist/assets/css/pages/bjj-stretches.min.css",
+      "sha256": "4ea54911b06c5f77edb91e286469e4555533bd98fe64c720e868b22dd4494c6d",
+      "bytes": 6376
+    },
+    {
+      "path": "dist/assets/css/pages/contact.css",
+      "sha256": "0625e5a5ec2c0505f6800bb33025d8115c5c55623320b3ed5a40c996b86521df",
+      "bytes": 84
+    },
+    {
+      "path": "dist/assets/css/pages/birthday-parties.css",
+      "sha256": "68d4ac5287ac855f20257ed4d46f2e285d5c9dbf1bba6f0631ecc1a04f87cb52",
+      "bytes": 14408
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-highend.be601c.css",
+      "sha256": "ef07410973fd9690d4f5a1f94f7b1e66cc18f70db5d83bba078d267df9f51349",
+      "bytes": 53796
+    },
+    {
+      "path": "dist/assets/css/pages/policies.css",
+      "sha256": "39ff365eee43038dcfcbf32d9c3da187d1343c90bef6e788c94755ee3babffb6",
+      "bytes": 9371
+    },
+    {
+      "path": "dist/assets/css/pages/bjj-stretches.css",
+      "sha256": "9feefbb74821527fe25a29461b8f41b658bd184af964af6ebdca39a7648a941b",
+      "bytes": 6941
+    },
+    {
+      "path": "dist/assets/css/pages/evidence.275c97.css",
+      "sha256": "7cecd34ac830ed94d6ba36d7442b6c135041347635165fc271c81e436185930c",
+      "bytes": 13589
+    },
+    {
+      "path": "dist/assets/css/pages/kids.css",
+      "sha256": "d1bfad7b1ee57853edfe2107b62a53250bd82787fac6db2b3875fe494c72fc37",
+      "bytes": 70359
+    },
+    {
+      "path": "dist/assets/css/pages/summer-academy.c0efa0.css",
+      "sha256": "1c2ba86e76db1ef4d324e493241101ad8800efcf3d95b80527542bd8f8dcf686",
+      "bytes": 4541
+    },
+    {
+      "path": "dist/assets/css/pages/partners-wellness.7b9342.css",
+      "sha256": "96500922532ce41516c511246d2166cb73c8380f585813632170f1d86032e529",
+      "bytes": 24865
+    },
+    {
+      "path": "dist/assets/css/pages/near.0668cf.css",
+      "sha256": "dca1c01a51a6795d48e4d36887ff53699079bb7851686e1f3c1626e593ae1743",
+      "bytes": 11729
+    },
+    {
+      "path": "dist/assets/css/pages/black-belt-concierge.css",
+      "sha256": "e27fb72ad19fd9af30a77ea44795c35ee2ee2822ffa9cceabe7fa008a87bf92a",
+      "bytes": 39631
+    },
+    {
+      "path": "dist/assets/css/pages/alley-bootcamp.css",
+      "sha256": "21c4d2d6a15715fe6f9133621a78c7f4b79c11e888c0cbdf052db4bdaca0bf4d",
+      "bytes": 12442
+    },
+    {
+      "path": "dist/assets/css/pages/guarantee-terms.min.css",
+      "sha256": "1b80741a033402c3d89c8ad8cd9396e1a8701a3c59ecbd78b957a0d54bcc977a",
+      "bytes": 7593
+    },
+    {
+      "path": "dist/assets/css/pages/shiney-ticket.d0acd0.css",
+      "sha256": "ba0d3473f3662713597a58bcda442a7d0cb74462cabb140524552e1c397efa6d",
+      "bytes": 7044
+    },
+    {
+      "path": "dist/assets/css/pages/bio.min.5774c0.css",
+      "sha256": "284f32413a16ab653df03ad5bd8f6a7687af2af578e44ceb82046485e7b082e5",
+      "bytes": 16180
+    },
+    {
+      "path": "dist/assets/css/pages/adults.min.css",
+      "sha256": "52352bcc9be32e2bd261ac09b11c0c4e114b12de5d76ed4a25ff9f8c970dc339",
+      "bytes": 63421
+    },
+    {
+      "path": "dist/assets/css/pages/bio.css",
+      "sha256": "e0ada277724c5822330537bba6c89d6515d04e3bcf6672e7cba4b9d165972dcd",
+      "bytes": 28844
+    },
+    {
+      "path": "dist/assets/css/pages/core-culture-parent-guide.css",
+      "sha256": "bba7db1f5d3dfbc5cf358b2431db7353320c7eff4085346af3ce835b240f6ff2",
+      "bytes": 1817
+    },
+    {
+      "path": "dist/assets/css/pages/sensei-jiu-jitsu.min.9af938.css",
+      "sha256": "91bfd27325089e974c21edafd8536e144b320ec9053f1f753cae160bf2bdfaed",
+      "bytes": 5659
+    },
+    {
+      "path": "dist/assets/css/pages/winter-armor-2027.css",
+      "sha256": "83f8f4c5cc1cbe63f3f5024e16232f20d0bb8a417cacd0106e8a6a87f43a3259",
+      "bytes": 6651
+    },
+    {
+      "path": "dist/assets/css/pages/tannersville.ca829c.css",
+      "sha256": "c2c83d40a569b58699f924d20abbb81f1eeededaa33a98918dd8ae381774bf80",
+      "bytes": 15011
+    },
+    {
+      "path": "dist/assets/css/pages/near.min.css",
+      "sha256": "613acaaeeb35c1e2b8d27e06c08f555b9ddfb18c0e7b8bee2540875366e79482",
+      "bytes": 10837
+    },
+    {
+      "path": "dist/assets/css/pages/parent-resources.min.cc693e.css",
+      "sha256": "e0d81f4a29ef49795b0fce3d832e83937e24790e88abf7f4528e1ff5496f2fff",
+      "bytes": 7903
+    },
+    {
+      "path": "dist/assets/css/pages/book-free-intro.min.559c10.css",
+      "sha256": "e909e3dde42f90db274e80d2b5f9b2c756ded4a98af856b1c3c850989cefdb93",
+      "bytes": 12451
+    },
+    {
+      "path": "dist/assets/css/pages/teens.min.css",
+      "sha256": "d67704a86892784bee69e8a22ddb8062b5ffa2cf9d286043a901c1a6b6ca32dc",
+      "bytes": 59929
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-month-calendar.d14fb2.css",
+      "sha256": "5eb17b124582ea24dd320f8cf2c4cb2db38b66c2d00bee74fc87b8d414bfafad",
+      "bytes": 7289
+    },
+    {
+      "path": "dist/assets/css/pages/home.min.css",
+      "sha256": "48963a64ff239e9bab79a4fa04799e0c7fe36d7b94162515764cec824f9957ca",
+      "bytes": 35481
+    },
+    {
+      "path": "dist/assets/css/pages/sensei-studio.min.css",
+      "sha256": "8484cdb5bc3f2354e6398c272ada2a12410d7faf362cdce60977df4549254e8b",
+      "bytes": 9022
+    },
+    {
+      "path": "dist/assets/css/pages/guarantee-terms.min.3fabd1.css",
+      "sha256": "1b80741a033402c3d89c8ad8cd9396e1a8701a3c59ecbd78b957a0d54bcc977a",
+      "bytes": 7593
+    },
+    {
+      "path": "dist/assets/css/pages/bully-proof.css",
+      "sha256": "ba85efaba7b1dba128902a1deeef637ff59d032f0f8b8e5de3c484722eb59859",
+      "bytes": 10153
+    },
+    {
+      "path": "dist/assets/css/pages/instagram-delivery.f487c6820c6e.css",
+      "sha256": "f487c6820c6e2e77f54c160f20ff2ac59d08bcf466a1cf4ab93f42b1c3a21ed7",
+      "bytes": 42875
+    },
+    {
+      "path": "dist/assets/css/pages/source-record.css",
+      "sha256": "836a20afbf6e905c479efeb8942eab467594c89182bb7f7fbfd7bf3179656b51",
+      "bytes": 6233
+    },
+    {
+      "path": "dist/assets/css/pages/partners-hospitality-hunter-windham.css",
+      "sha256": "d2527533c5e9f9f673ddd61e8450ab8cda52125cfcfadd62ff2e70bbfa0852b1",
+      "bytes": 26107
+    },
+    {
+      "path": "dist/assets/css/pages/schedule.min.css",
+      "sha256": "9944914d3e4df5a2417df9b7bda53482df263ddc6ccaa1a3a910a1ec4b5ba731",
+      "bytes": 8417
+    },
+    {
+      "path": "dist/assets/css/pages/friday-night-fanatics.css",
+      "sha256": "6cbc88aab25f693e65668c7600659b6642a806e51e5b2a371c2ae6ce6d26859f",
+      "bytes": 13166
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-month-calendar.7a797e.css",
+      "sha256": "b77d5c7f8a8088e4c6b3a615fd44ef270cdc11f6eea93ec33ee787111df9e484",
+      "bytes": 8204
+    },
+    {
+      "path": "dist/assets/css/pages/book-free-intro.css",
+      "sha256": "4ef1b40832e3105691a99af7bb58a84ed3e85d0a943e9cca27484b1a95f3f7b0",
+      "bytes": 13427
+    },
+    {
+      "path": "dist/assets/css/pages/winter-rank-drop.0fa519.css",
+      "sha256": "2ab5ee250241a57395153b3b832398a09fa5400ff1ca0be936d651fabc36683d",
+      "bytes": 6869
+    },
+    {
+      "path": "dist/assets/css/pages/partners-hospitality-hunter-windham.67e898.css",
+      "sha256": "572e491bdde3e44908d6251a98cc5772e831fc6a32982bb76485f59f119ba2b8",
+      "bytes": 26116
+    },
+    {
+      "path": "dist/assets/css/pages/home.css",
+      "sha256": "792877586e1e6ba9c72826b8afbcae6eecbdb5be497209e1a17a6b03ab03b633",
+      "bytes": 39567
+    },
+    {
+      "path": "dist/assets/css/pages/success-stories.3a0270.css",
+      "sha256": "03106e117c2d616e840e37b37a33fc944a51d33d599811de7673038f6fee73c8",
+      "bytes": 6870
+    },
+    {
+      "path": "dist/assets/css/pages/pricing.css",
+      "sha256": "522ec3174168162991cf9d68b003f8d653bfa688116f0ccbc68c259026848a55",
+      "bytes": 24381
+    },
+    {
+      "path": "dist/assets/css/pages/winter-rank-drop.css",
+      "sha256": "2ab5ee250241a57395153b3b832398a09fa5400ff1ca0be936d651fabc36683d",
+      "bytes": 6869
+    },
+    {
+      "path": "dist/assets/css/pages/athlete-cross-training.c1d318.css",
+      "sha256": "4e67cafd8dc3d28addf39862590a77acc909fd34cacffdcfd38a64bd1cdcba91",
+      "bytes": 2800
+    },
+    {
+      "path": "dist/assets/css/pages/everyday-jiu-jitsu.css",
+      "sha256": "5a794399387975faf0bcb76853c511036ee48521be9b889b2edc4f3692c38aa7",
+      "bytes": 5253
+    },
+    {
+      "path": "dist/assets/css/pages/bio.min.css",
+      "sha256": "79e7a9d0963681936a37841e412970d83bcad53f26beb9f0c65f1ae2bdd2c138",
+      "bytes": 16159
+    },
+    {
+      "path": "dist/assets/css/pages/student-hub.min.css",
+      "sha256": "d3ab5760db9e4916b228f1dd6b48380166824e318fc586aff11ccc17773d2591",
+      "bytes": 18420
+    },
+    {
+      "path": "dist/assets/css/pages/sensei-studio.css",
+      "sha256": "b1e0d246631284ff814d4651b28c4d519ddccc9fface3a47af542ec1f98685c0",
+      "bytes": 9658
+    },
+    {
+      "path": "dist/assets/css/pages/law-enforcement.css",
+      "sha256": "08a3154fe2172112d33d12ed4c353e5e1c293fea3a11126c64e2ca20be85a0ec",
+      "bytes": 8803
+    },
+    {
+      "path": "dist/assets/css/pages/evidence.css",
+      "sha256": "7cecd34ac830ed94d6ba36d7442b6c135041347635165fc271c81e436185930c",
+      "bytes": 13589
+    },
+    {
+      "path": "dist/assets/css/pages/camp-clinics.css",
+      "sha256": "aa355d64888abd29023ce9d1e1178766bdcdf566bd34bf6b9ea3da004a53918c",
+      "bytes": 6690
+    },
+    {
+      "path": "dist/assets/css/pages/halloween-spooktacular.24e00b.css",
+      "sha256": "bffd4cb4b172c50ee60ff028fed79cf17c296ac14ad7d27504e603b9dccfd046",
+      "bytes": 6871
+    },
+    {
+      "path": "dist/assets/css/pages/home-delivery.c1276729a1c5.css",
+      "sha256": "c1276729a1c50d43b4a3db0d4c6ec871ed86fe0763056fd57e39542557765bf2",
+      "bytes": 84586
+    },
+    {
+      "path": "dist/assets/css/pages/sensei-jiu-jitsu.css",
+      "sha256": "b19b993356099c4b73b4a861d750237ae8c806983d0bc7b60ea46e8ac1fb8694",
+      "bytes": 6093
+    },
+    {
+      "path": "dist/assets/css/pages/near.css",
+      "sha256": "dca1c01a51a6795d48e4d36887ff53699079bb7851686e1f3c1626e593ae1743",
+      "bytes": 11729
+    },
+    {
+      "path": "dist/assets/css/pages/glossary.min.css",
+      "sha256": "79f6eb9e9ca8b63ddf9d93f9a44c54756c9037f776e87a2457f03c8882b1f882",
+      "bytes": 9082
+    },
+    {
+      "path": "dist/assets/css/pages/alley-bootcamp.d66582.css",
+      "sha256": "21c4d2d6a15715fe6f9133621a78c7f4b79c11e888c0cbdf052db4bdaca0bf4d",
+      "bytes": 12442
+    },
+    {
+      "path": "dist/assets/css/pages/tannersville.css",
+      "sha256": "c2c83d40a569b58699f924d20abbb81f1eeededaa33a98918dd8ae381774bf80",
+      "bytes": 15011
+    },
+    {
+      "path": "dist/assets/css/pages/show-up-kit.min.cb62ca.css",
+      "sha256": "a63940b5e1f5c71f44c6d7382fa391e31517d8aeaa8bf24f9179ec63728d1245",
+      "bytes": 10465
+    },
+    {
+      "path": "dist/assets/css/pages/instagram.css",
+      "sha256": "40862c435ad832bc91ac8c042d3ab100587fc0bea130f7de3ee010f09d17fcf5",
+      "bytes": 9814
+    },
+    {
+      "path": "dist/assets/css/pages/student-hub-premium.css",
+      "sha256": "a030de0bd8628e5304d55f745ba286203a58d0db991dabc348eb9c2c48ffb7d8",
+      "bytes": 33180
+    },
+    {
+      "path": "dist/assets/css/pages/tannersville-delivery.ec0fcbbfd054.css",
+      "sha256": "ec0fcbbfd054e52d9190487676369d5e7e833352193dc9316060aebb4cc22120",
+      "bytes": 72083
+    },
+    {
+      "path": "dist/assets/css/pages/sensei-jiu-jitsu.min.css",
+      "sha256": "91bfd27325089e974c21edafd8536e144b320ec9053f1f753cae160bf2bdfaed",
+      "bytes": 5659
+    },
+    {
+      "path": "dist/assets/css/pages/catskills-home-base.css",
+      "sha256": "237ba3ba4b236d8cc028ee37b28f39cd0d4f80cf2e70eb3d5a86955e0f2b9b66",
+      "bytes": 9691
+    },
+    {
+      "path": "dist/assets/css/pages/visit-delivery.f15bc9443a49.css",
+      "sha256": "f15bc9443a49d1ee7dbbe243d798857fc1a21433edef0b171ea405b4dc75f1e0",
+      "bytes": 82192
+    },
+    {
+      "path": "dist/assets/css/pages/schedule.648ff6.css",
+      "sha256": "d9b68b6746b5b90feda45bcce1cb6264c6222b8c75fa2cf78d2c65328c14bd13",
+      "bytes": 9078
+    },
+    {
+      "path": "dist/assets/css/pages/bjj-stretches.min.5c3602.css",
+      "sha256": "4ea54911b06c5f77edb91e286469e4555533bd98fe64c720e868b22dd4494c6d",
+      "bytes": 6376
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-highend.css",
+      "sha256": "ef07410973fd9690d4f5a1f94f7b1e66cc18f70db5d83bba078d267df9f51349",
+      "bytes": 53796
+    },
+    {
+      "path": "dist/assets/css/pages/holiday-schedule.min.css",
+      "sha256": "74cb37d02c98e02f263f6f36d06bbdc2f30b3e09ae13ef6ffde4227615e32bfb",
+      "bytes": 10889
+    },
+    {
+      "path": "dist/assets/css/pages/partners-hospitality-hunter-windham.min.css",
+      "sha256": "9d0bc9e4416e34f5e82f9347044bc8e924f1e7c44a9f4621b9e365c8bdcc36ba",
+      "bytes": 21608
+    },
+    {
+      "path": "dist/assets/css/pages/student-hub-premium.66115b.css",
+      "sha256": "a030de0bd8628e5304d55f745ba286203a58d0db991dabc348eb9c2c48ffb7d8",
+      "bytes": 33180
+    },
+    {
+      "path": "dist/assets/css/pages/home.min.139fb2.css",
+      "sha256": "bf6839ceb8ec12bcc718758481bfe73fda9d6479e357b93f8ff4aae96695b0bf",
+      "bytes": 17080
+    },
+    {
+      "path": "dist/assets/css/pages/directions.css",
+      "sha256": "bb90fd10d660036bf5326717be1b5832596bd5740b566a2fb4163e5f005875a4",
+      "bytes": 34598
+    },
+    {
+      "path": "dist/assets/css/pages/home.min.0117a0.css",
+      "sha256": "911d01bb09f2c679456953d5cbc673c7dd76b26c127bf1d06dea07242aa3c668",
+      "bytes": 16717
+    },
+    {
+      "path": "dist/assets/css/pages/glossary-delivery.71273a93f6ab.css",
+      "sha256": "71273a93f6ab04ccd3aba43f3100f7911ff584724050c8bc92056f6fda2305a1",
+      "bytes": 72433
+    },
+    {
+      "path": "dist/assets/css/pages/source-record.d113af.css",
+      "sha256": "836a20afbf6e905c479efeb8942eab467594c89182bb7f7fbfd7bf3179656b51",
+      "bytes": 6233
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-month-calendar.1f6ad4.css",
+      "sha256": "24937c057bb63ca791a9907006e9f3d48d33d4f8e398a12f9e12877cf42e5713",
+      "bytes": 6748
+    },
+    {
+      "path": "dist/assets/css/pages/birthday-parties.f4f65b.css",
+      "sha256": "68d4ac5287ac855f20257ed4d46f2e285d5c9dbf1bba6f0631ecc1a04f87cb52",
+      "bytes": 14408
+    },
+    {
+      "path": "dist/assets/css/pages/jiu-jitsu-safety.css",
+      "sha256": "f63d182e8bcfefeedaa45fb769a63c3619d9ba51f6cfc6fcda00296a85249905",
+      "bytes": 12594
+    },
+    {
+      "path": "dist/assets/css/pages/home.min.00f174.css",
+      "sha256": "912c3b89a36e7ee781586ad2eb0630181d7c71337b3168320ef472ae1baa2c35",
+      "bytes": 19177
+    },
+    {
+      "path": "dist/assets/css/pages/shiney-ticket.css",
+      "sha256": "ba0d3473f3662713597a58bcda442a7d0cb74462cabb140524552e1c397efa6d",
+      "bytes": 7044
+    },
+    {
+      "path": "dist/assets/css/pages/adults.120d80.css",
+      "sha256": "06338ff538cac81a3a1e7e658620d1826c159799cdaa3f3c72081e5761214a7c",
+      "bytes": 66995
+    },
+    {
+      "path": "dist/assets/css/pages/bully-proof.min.css",
+      "sha256": "b9b6f9eb331d866ccc1114996f727261baa9848c9604829584621cdd6fa6bbab",
+      "bytes": 8338
+    },
+    {
+      "path": "dist/assets/css/pages/home.min.9b631c.css",
+      "sha256": "97d0703db1191c6d25464b1fac11beda1fbd56243f3f41e828497030471cec48",
+      "bytes": 18123
+    },
+    {
+      "path": "dist/assets/css/pages/policies.2b9e10.css",
+      "sha256": "39ff365eee43038dcfcbf32d9c3da187d1343c90bef6e788c94755ee3babffb6",
+      "bytes": 9371
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-delivery.2a9836ab5023.css",
+      "sha256": "2a9836ab5023362623378c2b0b2c0d76d1d8d468c0719a4c56574611ef8ef5b2",
+      "bytes": 73818
+    },
+    {
+      "path": "dist/assets/css/pages/bully-proof.min.b127c7.css",
+      "sha256": "b9b6f9eb331d866ccc1114996f727261baa9848c9604829584621cdd6fa6bbab",
+      "bytes": 8338
+    },
+    {
+      "path": "dist/assets/css/pages/sensei-studio.min.27c529.css",
+      "sha256": "8484cdb5bc3f2354e6398c272ada2a12410d7faf362cdce60977df4549254e8b",
+      "bytes": 9022
+    },
+    {
+      "path": "dist/assets/css/pages/teens.css",
+      "sha256": "0d5ea13d74890a7dc6373120b61aeee451734fed0957d4430ba79553c047082c",
+      "bytes": 64779
+    },
+    {
+      "path": "dist/assets/css/pages/book-free-intro.min.css",
+      "sha256": "e909e3dde42f90db274e80d2b5f9b2c756ded4a98af856b1c3c850989cefdb93",
+      "bytes": 12451
+    },
+    {
+      "path": "dist/assets/css/pages/private-lessons.css",
+      "sha256": "2e5e8d4bfde90e7f40aa3f1f9bb7e96b043ceb28b655dcdecd33111e81aabd55",
+      "bytes": 20144
+    },
+    {
+      "path": "dist/assets/css/pages/private-lessons.3a284e.css",
+      "sha256": "2e5e8d4bfde90e7f40aa3f1f9bb7e96b043ceb28b655dcdecd33111e81aabd55",
+      "bytes": 20144
+    },
+    {
+      "path": "dist/assets/css/pages/holiday-schedule.min.6146d6.css",
+      "sha256": "74cb37d02c98e02f263f6f36d06bbdc2f30b3e09ae13ef6ffde4227615e32bfb",
+      "bytes": 10889
+    },
+    {
+      "path": "dist/assets/css/pages/parent-resources.min.css",
+      "sha256": "e0d81f4a29ef49795b0fce3d832e83937e24790e88abf7f4528e1ff5496f2fff",
+      "bytes": 7903
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-month-calendar.bac4fa.css",
+      "sha256": "b1ff9ec9c2151baeae3c691a1923734c1eac884c8016de0ffaab2393f8577657",
+      "bytes": 7641
+    },
+    {
+      "path": "dist/assets/css/pages/holiday-schedule.css",
+      "sha256": "a3d8fd1cf250032b6fc88e0b19166cb401e30473de42bccdfe9e651423d1fac9",
+      "bytes": 11708
+    },
+    {
+      "path": "dist/assets/css/pages/tannersville.min.1acefb.css",
+      "sha256": "37c148ae99d5be0f9ed7ff91c20f246be1fc13b6a7e6e4d5e74151d2fe401f18",
+      "bytes": 13243
+    },
+    {
+      "path": "dist/assets/css/pages/partners.052b7f.css",
+      "sha256": "199a4c17bb09da88dbe410a69f95b9e4b2d3cd49e659cacf9c4405d9cfa09caf",
+      "bytes": 10115
+    },
+    {
+      "path": "dist/assets/css/pages/student-hub.css",
+      "sha256": "50a41d6f879f42dfdcbeec699a89a06c40720a4245e78144c17ce3c6146c52c5",
+      "bytes": 23492
+    },
+    {
+      "path": "dist/assets/css/pages/instagram.16116d.css",
+      "sha256": "40862c435ad832bc91ac8c042d3ab100587fc0bea130f7de3ee010f09d17fcf5",
+      "bytes": 9814
+    },
+    {
+      "path": "dist/assets/css/pages/athlete-cross-training.css",
+      "sha256": "4e67cafd8dc3d28addf39862590a77acc909fd34cacffdcfd38a64bd1cdcba91",
+      "bytes": 2800
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-month-calendar.css",
+      "sha256": "b77d5c7f8a8088e4c6b3a615fd44ef270cdc11f6eea93ec33ee787111df9e484",
+      "bytes": 8204
+    },
+    {
+      "path": "dist/assets/css/pages/bjj-classes-delivery.b2e018254a05.css",
+      "sha256": "b2e018254a0559a605f0c38bc4252d11bbee56e6f6bb5545fa050c97a93256e7",
+      "bytes": 70316
+    },
+    {
+      "path": "dist/assets/css/pages/private-lessons.min.css",
+      "sha256": "a8911a4a5a9cbf99d3298b2810a3d9a6cbb78945d9a490816c3a94d50f2f5e5c",
+      "bytes": 18871
+    },
+    {
+      "path": "dist/assets/css/pages/show-up-kit.min.css",
+      "sha256": "a63940b5e1f5c71f44c6d7382fa391e31517d8aeaa8bf24f9179ec63728d1245",
+      "bytes": 10465
+    },
+    {
+      "path": "dist/assets/css/pages/teens.3c35f0.css",
+      "sha256": "0d5ea13d74890a7dc6373120b61aeee451734fed0957d4430ba79553c047082c",
+      "bytes": 64779
+    },
+    {
+      "path": "dist/assets/css/pages/parent-resources.css",
+      "sha256": "5c5b78251ab267a60675087b3790b639b227b76567ee30d516a3a98227907a43",
+      "bytes": 8736
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-delivery.8dcdcb489044.css",
+      "sha256": "8dcdcb489044b09b03310b73fa1eead0b527e7c160a30383e9b105e933d7292f",
+      "bytes": 83123
+    },
+    {
+      "path": "dist/assets/css/pages/show-up-kit.css",
+      "sha256": "4eb7040d49b7748729e8fd5d6f1dc254718e98477968f859c5d0c640a96c888e",
+      "bytes": 10828
+    },
+    {
+      "path": "dist/assets/css/pages/article-delivery.5679b9078a4f.css",
+      "sha256": "5679b9078a4f0d402ce7a60fa0a7361448284a9bc8a832be0b484aed3ee50599",
+      "bytes": 107936
+    },
+    {
+      "path": "dist/assets/css/pages/adults.css",
+      "sha256": "06338ff538cac81a3a1e7e658620d1826c159799cdaa3f3c72081e5761214a7c",
+      "bytes": 66995
+    },
+    {
+      "path": "dist/sources/clockwork-bjj-instructors/index.html",
+      "sha256": "c34241466256befcfb5e08e23604cb547f3416f7172491ec962d1e8c7eeebcfd",
+      "bytes": 16317
+    },
+    {
+      "path": "dist/sources/cdc-physical-activity/index.html",
+      "sha256": "a531c8bd1574c275f0544680181a928b841d62c1f9eed0adc758d9ed54ae2ad0",
+      "bytes": 16785
+    },
+    {
+      "path": "dist/sources/marietta-police-bjj/index.html",
+      "sha256": "e9e4c8f74bd047a55448b4634882b52e0fa9a5a409146bc93b313267492247d4",
+      "bytes": 17934
+    },
+    {
+      "path": "dist/sources/kenny-florian/index.html",
+      "sha256": "6e268e4bb560b0e1e1e04f56facd3da83829323e868a17004eb0d983a0eeb39e",
+      "bytes": 16778
+    },
+    {
+      "path": "dist/sources/gracie-academy/index.html",
+      "sha256": "ce6b1ca5d6e2488fb6e7d82777a277e14690571d46b42828cb524dd7772deb91",
+      "bytes": 16579
+    },
+    {
+      "path": "dist/sources/kodokan-etiquette/index.html",
+      "sha256": "cef22cd6512e0891249e64da382ff7165492d112a1bac43efc2165f01418453f",
+      "bytes": 16768
+    },
+    {
+      "path": "dist/sources/research/ecological-dynamic-learning-review-2026/index.html",
+      "sha256": "774f9d7ee1918cb061c82b1cdf91e4dc8d62a996638f1b03ae337af879f6e466",
+      "bytes": 33586
+    },
+    {
+      "path": "dist/sources/research/combat-sports-injury-epidemiology-review/index.html",
+      "sha256": "77b6e1aabf5996242ad69104db1bfb8c976985d3e4e3e970beb2ca9a16aa848b",
+      "bytes": 32608
+    },
+    {
+      "path": "dist/sources/research/youth-sports-injury-prevention/index.html",
+      "sha256": "d6d4d17358303e1c829a86f46f4a65fac875a9f9bf3160e083b48580d8c29457",
+      "bytes": 32597
+    },
+    {
+      "path": "dist/sources/research/combat-sports-post-concussion-care/index.html",
+      "sha256": "ad51e8bd19f1f8a272ce13fbc5ec4f463bf19893d119eb0d3d1dfcc782a69e56",
+      "bytes": 32652
+    },
+    {
+      "path": "dist/sources/research/bjj-ecological-dynamical-2026/index.html",
+      "sha256": "b551662de433af623d7988e503afaa7ea4c98b33133ae796425f1c85bf0b8569",
+      "bytes": 34265
+    },
+    {
+      "path": "dist/sources/research/games-based-teaching-review/index.html",
+      "sha256": "c09d5c5b8c6f76beecef6863a992c0e3a1a5983344ac810b309b51713b900868",
+      "bytes": 37775
+    },
+    {
+      "path": "dist/sources/research/pe-games-review-2026/index.html",
+      "sha256": "7005e1b6d36bd0920585a318e92b72d6bc45335a6f75f7b59849966b3d9191b5",
+      "bytes": 34137
+    },
+    {
+      "path": "dist/sources/research/youth-martial-arts-attention-rct/index.html",
+      "sha256": "23896e181723672ef75002842efc18e357b397bdbd61b14584989a40357f6a18",
+      "bytes": 34012
+    },
+    {
+      "path": "dist/sources/research/exercise-cognition-neuroplasticity-review/index.html",
+      "sha256": "9a92520e4101f72bfcaf55c03ec21384d2eb28ea4cd821030b73da8c9f4cab37",
+      "bytes": 32644
+    },
+    {
+      "path": "dist/sources/research/rugby-ecological-dynamics-2026/index.html",
+      "sha256": "1beb1de064a26a7bd80cefae2f0785d2e9766b89b0019806acbfe792b34d26f4",
+      "bytes": 34223
+    },
+    {
+      "path": "dist/sources/research/bjj-mma-youth-development/index.html",
+      "sha256": "5b5813eee2522e625dd2e496cba9d1323aeac50a8952c872cb2e35e7e24beb36",
+      "bytes": 33855
+    },
+    {
+      "path": "dist/sources/research/bjj-adult-fitness/index.html",
+      "sha256": "763511c9b77d96160ea3e8009042cfcbf49dca756bbbe7a144a63ea9fa0dcc22",
+      "bytes": 34072
+    },
+    {
+      "path": "dist/sources/research/greene-county-child-health-2024/index.html",
+      "sha256": "79886258dab0d2374f8c26a5e140ed65e146ea234f11813320b620b926a4c38d",
+      "bytes": 32391
+    },
+    {
+      "path": "dist/sources/research/bjj-injury-2025/index.html",
+      "sha256": "3cb4523218243937b80af95fcd94a57805a3a26bf28f09bd536652e9a3c73084",
+      "bytes": 34381
+    },
+    {
+      "path": "dist/sources/research/greene-county-community-health-2022-2024/index.html",
+      "sha256": "e18f4114de56667b2ba426a30aeb07831d9b158ee6b0e6eb761c752eff5a4a0d",
+      "bytes": 32529
+    },
+    {
+      "path": "dist/sources/research/pediatric-bjj-injury-review/index.html",
+      "sha256": "f4d9dc09eb991ca938771c088706845061a117bb99b59c93e26818c49bb25755",
+      "bytes": 32908
+    },
+    {
+      "path": "dist/sources/research/bjj-injury-rates-review/index.html",
+      "sha256": "e35ddcfcfd852c8ad25673d084142d6a0c77953cfbb8a9f30e54ef805ff9f0fc",
+      "bytes": 32663
+    },
+    {
+      "path": "dist/sources/research/deliberate-practice-expertise/index.html",
+      "sha256": "79b9e21adec8708f42512d88b4e0d6056023d03d36448b6ad93240a3e09fbdb9",
+      "bytes": 32429
+    },
+    {
+      "path": "dist/sources/research/open-skill-youth-meta-analysis/index.html",
+      "sha256": "30119e2508ea5de1be490b7921d11ee5bc76eed288df342aa1b1d1809ebba9b4",
+      "bytes": 34190
+    },
+    {
+      "path": "dist/sources/research/challenge-point-perspective-2026/index.html",
+      "sha256": "16eea9d32dfc1c71735965d5e21bdc58d9561f62f4524941034b06bc44c2ba67",
+      "bytes": 33892
+    },
+    {
+      "path": "dist/sources/research/bjj-school-rct/index.html",
+      "sha256": "1a8df75995853c4ef4121bb7fe13884fec07206bba16668bcd1bbbd8aca45a9a",
+      "bytes": 35323
+    },
+    {
+      "path": "dist/sources/local/htc-soccer-2026/index.html",
+      "sha256": "3a95c2c6b35c3ab016c4eb8484a99d6b9064aeb0160cf98c48f195b85f9ee1c2",
+      "bytes": 17401
+    },
+    {
+      "path": "dist/sources/local/catskills-youth-theater-2026/index.html",
+      "sha256": "72c5b33608dc224c3bbe2ae769abdc11d82210345a78baf41c3a28bdbadb232f",
+      "bytes": 17792
+    },
+    {
+      "path": "dist/sources/local/hunter-mountain-2026-27/index.html",
+      "sha256": "eeefdcc456875caf5ef6031e06fdba722e442825f791d7da12dee47d616ff21c",
+      "bytes": 18258
+    },
+    {
+      "path": "dist/sources/local/studios-main-pilates/index.html",
+      "sha256": "b43bb01c43fa066d6642ddee8f568c9cefcd99873a051a56a07c56035525d241",
+      "bytes": 16560
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/teens/index.html",
+      "sha256": "f8e9b75e0f497bc4bff929cd8c637904e72c7985c8c6a8d48e542d3b991a5744",
+      "bytes": 13241
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/confirmation/index.html",
+      "sha256": "89f1ff5f1b1927f0ea17d95938f678185b94b010ea88724a9178b1d38e6d1fb6",
+      "bytes": 15577
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/kids/index.html",
+      "sha256": "a5e7c192cae533b7385f69091f60a28536040bd80d26a44bb537286767b2f48f",
+      "bytes": 13205
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/adults/index.html",
+      "sha256": "7697d33436e307c0642ff955b8e43419bb648f2a48995d32f622c9c36923af8f",
+      "bytes": 13227
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-360-top.png",
+      "sha256": "627c2ab7f769f2e3772458ec6d54ddf2aa86e5c4eceb155257f6f1ae52cfb026",
+      "bytes": 90023
+    },
+    {
+      "path": "baseline/bjj-faqs-360-top.png",
+      "sha256": "cfb0321cb635d68ebd1e6db0b72806f1bd919211ed0d54824a4e2e39b894138a",
+      "bytes": 64014
+    },
+    {
+      "path": "baseline/visit-390.json",
+      "sha256": "debfb557a323b6f031c6a1cad430b2987c79db853a2cf15a3d40a8786dc95043",
+      "bytes": 8360
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-390.json",
+      "sha256": "f24b7329324f98abda069af29b3e2ce1a17b7c1798b8e4f38922135bf5f00e45",
+      "bytes": 10718
+    },
+    {
+      "path": "baseline/options-pricing-390.json",
+      "sha256": "3a43659d37e71d72c2ede5b903d6baa8c0453c1311d3dcc0ae05e0fc12e171ca",
+      "bytes": 106574
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-360-menu.png",
+      "sha256": "b5b5caf6ef77222a3af8418cfceb0ce088263ae28df635bdb284f67386d40ee1",
+      "bytes": 101922
+    },
+    {
+      "path": "baseline/visit-360-menu.png",
+      "sha256": "5cc4a8ad47461c31676a21a68722ff80a300133f0cd46c03d30d15432e493b83",
+      "bytes": 68138
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-details.json",
+      "sha256": "df45054a447acf71cbeeb98b4dbb82cbffbde94df29e34a7c2f2ac98c4a5ab01",
+      "bytes": 14715
+    },
+    {
+      "path": "baseline/bjj-faqs-360-menu.png",
+      "sha256": "e81eb1c4eb4265e47326b9bb88d8ca7797e704922bb5d5f7b60626cf53acca24",
+      "bytes": 64326
+    },
+    {
+      "path": "baseline/bjj-faqs-1280-top.png",
+      "sha256": "6c8f9842c4cb8777c7a4cf53facace1141e0a24be2120e69dcb9f4066225b45b",
+      "bytes": 332412
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-360.png",
+      "sha256": "82f0f623ea40dfd4df03052fa6c4e29d07c26c0b20822012c4ec6ab3fcc4fe8c",
+      "bytes": 252682
+    },
+    {
+      "path": "baseline/programs-360.png",
+      "sha256": "c96425f4cfeba6357c3d68932cd9034ae3b40bd34c373f5d1e22773f8d33eb5a",
+      "bytes": 470131
+    },
+    {
+      "path": "baseline/schedule-430.png",
+      "sha256": "d14978d34e9c1edaa385332cc543a345cba21953376c7a82ac438d2989fed8b4",
+      "bytes": 491457
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-430.png",
+      "sha256": "bb48e31462a566145f915b9a3611bc0969f12e52960e10a0ef6703faeb4ab4e4",
+      "bytes": 549312
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-1280-top.png",
+      "sha256": "da6b4e7ba1155d903a03a1219660cb587153cdc1abf87009f9bf3efb4a10a036",
+      "bytes": 725327
+    },
+    {
+      "path": "baseline/home-390.png",
+      "sha256": "1082989b8c5f5473a377d49105858197c0faf23cc9d953d64995e053e013dc7b",
+      "bytes": 874128
+    },
+    {
+      "path": "baseline/bjj-faqs-390.json",
+      "sha256": "c1318d6dd86ac2dc1543b3e8f9cdf6442bb2b834979ff226f7e7685a34ba9bdc",
+      "bytes": 20008
+    },
+    {
+      "path": "baseline/alley-bootcamp-390.json",
+      "sha256": "b048aa4d06b767a61da7dd5e5f4edb9ee0adb30ccf9af54505743629b9493cf2",
+      "bytes": 13616
+    },
+    {
+      "path": "baseline/options-pricing-1280-top.png",
+      "sha256": "2c3ccc252fff1b12f89a2142e2e4fc10c3568a1c0b055fabfd1740957441cd0d",
+      "bytes": 473068
+    },
+    {
+      "path": "baseline/home-360-top.png",
+      "sha256": "b13541c0201e7e1b720b26524143f6e1094bfc45ee2b201f951dd2374b310b36",
+      "bytes": 72134
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-details.json",
+      "sha256": "834b0481f48202f205d974d4252ae5b998bd010a2f05db447e4c0a0e53c625ef",
+      "bytes": 22053
+    },
+    {
+      "path": "baseline/schedule-360-top.png",
+      "sha256": "01bd0b637c8300ccf7ffa922147326cff7c5014be9b6904a67823bc15debf7da",
+      "bytes": 65048
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-360.json",
+      "sha256": "e276f824cfa4a8a5da670c803fa008c6b150aaa03d4531bf1911a8ba5d8e5c93",
+      "bytes": 18589
+    },
+    {
+      "path": "baseline/programs-details.json",
+      "sha256": "6566a5759b2dcca20aa4cc202750b33bac0257314cf34d6bd0252d8bf5d3d4f7",
+      "bytes": 20393
+    },
+    {
+      "path": "baseline/visit-1280.json",
+      "sha256": "e5cea68586d4e5b082ce8705abaabe66518d410c417af7c1a6d8bd3f4f14a2af",
+      "bytes": 9231
+    },
+    {
+      "path": "baseline/visit-390.png",
+      "sha256": "91dd3323ac2f040df78748af125482ef9d6f4988885a3d53f6805c6ada8d331e",
+      "bytes": 496714
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-360.json",
+      "sha256": "8e13a12ab9f52ea495e55df7dc14908d9327d74df661a5f86743087474e3e545",
+      "bytes": 10708
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-360-menu.png",
+      "sha256": "8261a0ddf7a856f733c760513601fcb301d000eab4113bb72dd8a16bc6c323a2",
+      "bytes": 61897
+    },
+    {
+      "path": "baseline/winter-armor-2027-360-menu.png",
+      "sha256": "5b0372ef9bab8670f9fc34bef3b76fe5c446311905df2e73fd1e86ae45830190",
+      "bytes": 62936
+    },
+    {
+      "path": "baseline/bjj-faqs-1280.json",
+      "sha256": "1074386dea378595d5690ebe0f5632ba7c9164002be31d5652edcba1ada7721b",
+      "bytes": 20286
+    },
+    {
+      "path": "baseline/visit-430.png",
+      "sha256": "d63c78697d6a0f8a8ca6cde315e4537f7e952e45d7e97fc7c5b720d6d87aa7fe",
+      "bytes": 503970
+    },
+    {
+      "path": "baseline/alley-bootcamp-1280-top.png",
+      "sha256": "fd06ec2ec3b5046124a39ceec96ed71b23387342ebf0d5607832f75ff05e5645",
+      "bytes": 465529
+    },
+    {
+      "path": "baseline/home-430.png",
+      "sha256": "0ab643bca7f03a4f8ff83e549a69a975bc9933115889a2ceee3ea463d09859d2",
+      "bytes": 913509
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-360.json",
+      "sha256": "2f55ecfeb464e0bf45736e1a3a7630a49d65d1f8446c1135f620a469b48ce93b",
+      "bytes": 18508
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-390.png",
+      "sha256": "863e84376803eef236931e9da3e2b33f872d33e1cdcfbb3c5652e756f65bac77",
+      "bytes": 261312
+    },
+    {
+      "path": "baseline/options-pricing-360-top.png",
+      "sha256": "b5c79d8cec75c7ef1a2879b120432d13a4f16239270e2a2ef54879cc3cbc29b9",
+      "bytes": 97818
+    },
+    {
+      "path": "baseline/visit-details.json",
+      "sha256": "93633229d415acbadd8f7d0836e651ad8bea85f24fd191bb07834b3b2d15b2c1",
+      "bytes": 9840
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-1280.json",
+      "sha256": "3dee27f5ba49c6256392dc342d8c3f3abacb8fc0fbaa288eb105e0fae523c8f0",
+      "bytes": 11684
+    },
+    {
+      "path": "baseline/home-1280.png",
+      "sha256": "14a3bb3c5f7614010826d5836e5b73920ca0fadf6925ed31f303780d00dce1e3",
+      "bytes": 1334896
+    },
+    {
+      "path": "baseline/programs-360-top.png",
+      "sha256": "b1eafe080555bb2a82460cd6d598408bbaa194a3ca90aa0e2157169a694c884e",
+      "bytes": 69189
+    },
+    {
+      "path": "baseline/options-pricing-details.json",
+      "sha256": "61b422bfde165353f0451d6ebbbb68cf427ab30fa72d4c6c20e0756a01d6b321",
+      "bytes": 97646
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-360-menu.png",
+      "sha256": "4e94b61163f76020d2ae2249bec1ef56cbc353b71677ddaa0fb4e3bac8055f35",
+      "bytes": 106761
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-details.json",
+      "sha256": "869a2f83c1f16c4a1912f8723fcc6b51527a403e82d81f75b3d7db115a84be09",
+      "bytes": 3761
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-1280.png",
+      "sha256": "d0faabeac41e39865752feba6b4ad3579ab79acbe9561a8acd9c45b286b9270d",
+      "bytes": 880306
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-360.json",
+      "sha256": "c81d0802a50608a4f9e7c5d4dc49df479d8f463c454d1fb5a8c07127f28d64cf",
+      "bytes": 8893
+    },
+    {
+      "path": "baseline/visit-360.png",
+      "sha256": "71a2b2a6b9456fc782db7687976aa034da33f95a2981e87ee78e56c6008f5ca6",
+      "bytes": 463158
+    },
+    {
+      "path": "baseline/home-430.json",
+      "sha256": "6796fc7f66e08ce140528780b7e8f666080eaf18b1cb39b8d0e29c122f80d876",
+      "bytes": 19745
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-details.json",
+      "sha256": "707bca2577f7082d0c31c7c4339f681f9baa5fba203863c2bff8395d7a030ead",
+      "bytes": 17402
+    },
+    {
+      "path": "baseline/winter-armor-2027-360.png",
+      "sha256": "2b6c6d507563075f4b4fedc277a796d3bd9daa95acf86882983c84fecb9d0378",
+      "bytes": 512131
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-1280.png",
+      "sha256": "cd874fbd9696ee2bc592faa1525df7d6d05de62b804a7da2b4d9be4d14260028",
+      "bytes": 1098628
+    },
+    {
+      "path": "baseline/programs-360.json",
+      "sha256": "86a1295b24e9174d30a02c2be4dfab865e8e4e4c560090a590617dbb715aa334",
+      "bytes": 15910
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-1280.json",
+      "sha256": "0d0d3d0a3e2a3ad3296e5f8488eff9f844edc9af566d39ec7269707e85a0a23c",
+      "bytes": 19501
+    },
+    {
+      "path": "baseline/winter-armor-2027-1280.json",
+      "sha256": "504d480dfac1b636153af0c24f867a60df9487209e475989f065b55761b2c9d5",
+      "bytes": 9832
+    },
+    {
+      "path": "baseline/alley-bootcamp-430.json",
+      "sha256": "a3494a42b708efb2d0889a0216010b55ded0955ff1ee928dc1d4b95d10016b84",
+      "bytes": 13620
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-1280.json",
+      "sha256": "6dbfb43235b30972fbaba54e520a382bac7e4ea7b5459389267fb379a73d96d5",
+      "bytes": 14017
+    },
+    {
+      "path": "baseline/home-360.json",
+      "sha256": "cedddf5d9c52e8a7bfdac9cf5b44fb4eabd21cf6820b01bb2d1fffa6c8f65d5d",
+      "bytes": 19796
+    },
+    {
+      "path": "baseline/visit-430.json",
+      "sha256": "4f1735463b58c930b5924cf620d31df8553b9802282bdc7145cfa482a9ed96a2",
+      "bytes": 8868
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-360-menu.png",
+      "sha256": "af78d35e3404becc12edfda0e444aab3d8af3c710135e261f6db73ae4965f333",
+      "bytes": 53125
+    },
+    {
+      "path": "baseline/schedule-1280-top.png",
+      "sha256": "e702f2e9353599f165c0fd3a5d4f446a526c7954ca59544dd16d50a77f113448",
+      "bytes": 109667
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-390.png",
+      "sha256": "a5c2a5edf7fd1c3940863be2cc872af61f181e3fe16127e8e90001fef950a6fe",
+      "bytes": 622906
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-360-top.png",
+      "sha256": "8a09fcb5548f256cbad7cab7231592e1a3329c2e23f3e6094d079ed06757f9a9",
+      "bytes": 56634
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-1280.png",
+      "sha256": "439a691852c34379bce3480f6009b67fb10f4fc2349474d770ff85735e9fcac4",
+      "bytes": 706188
+    },
+    {
+      "path": "baseline/alley-bootcamp-details.json",
+      "sha256": "cf2e952a892871c3309916488a89a83dd565f41e23959b39c37c3538f63aa405",
+      "bytes": 13392
+    },
+    {
+      "path": "baseline/winter-armor-2027-430.json",
+      "sha256": "f41cbeaa8ee509c16c48b203e0772bb9c40ea3ca3ece99cec278f8554b986c80",
+      "bytes": 9212
+    },
+    {
+      "path": "baseline/schedule-390.json",
+      "sha256": "83a690a191176f697db3b9e394adcfb075c4e2902627c3b6fcaa36c9f98fe912",
+      "bytes": 22863
+    },
+    {
+      "path": "baseline/schedule-430.json",
+      "sha256": "302431f6b7bd258461e09410a70c0cc498f2dfbdc0801b7ec903292964c40228",
+      "bytes": 23111
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-1280-top.png",
+      "sha256": "95321ace335ae5bdf20c96c3daa3b6e6c5f907e30aa980b0d7310ab1b6e98315",
+      "bytes": 446022
+    },
+    {
+      "path": "baseline/schedule-1280.png",
+      "sha256": "521c9ca055d31739ff11686731ad433ec382b85f03b12bdfe13e5213e084f028",
+      "bytes": 580093
+    },
+    {
+      "path": "baseline/options-pricing-430.json",
+      "sha256": "5042865d3973bc7de048e8c27c8045d492767896d4373021305b5562791c54f4",
+      "bytes": 106881
+    },
+    {
+      "path": "baseline/winter-armor-2027-390.png",
+      "sha256": "d431e6b4acec6e445476ee2c781f04aa7516ae02da590bfa6a1aaeb6a5793638",
+      "bytes": 530326
+    },
+    {
+      "path": "baseline/visit-1280-top.png",
+      "sha256": "8c95787fc8de744a6fb37f4176e28033483a5635847d532604863cc3f46e6a20",
+      "bytes": 266869
+    },
+    {
+      "path": "baseline/options-pricing-1280.png",
+      "sha256": "e58ed744edc45c723a49a133739abfda0e5197e888bfa20b12cf89ee4815d7e2",
+      "bytes": 5485824
+    },
+    {
+      "path": "baseline/options-pricing-360.json",
+      "sha256": "766007e255527c7187f6a47cc66ee53af7c49f1a5a19a9eaa9425f7b15fd4c3f",
+      "bytes": 106674
+    },
+    {
+      "path": "baseline/programs-430.json",
+      "sha256": "1f4270ef5b25e5ae4d6d4833ad5c86083fef190d3b4d4477a6878569656962fa",
+      "bytes": 15602
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-430.png",
+      "sha256": "1ca1962e7c99f986cda7cd004180b68b3104e77e8b723450d8761f61c203d854",
+      "bytes": 898344
+    },
+    {
+      "path": "baseline/options-pricing-430.png",
+      "sha256": "a063f365551ddc5cc09d60540e5e58f97ef1db6fdbceb3de2433c812c277d574",
+      "bytes": 4381660
+    },
+    {
+      "path": "baseline/alley-bootcamp-1280.json",
+      "sha256": "33bbfd5492da05f00230e9b4e5a3aa0f185c60884aab0b92062bbe1285bb1a15",
+      "bytes": 12114
+    },
+    {
+      "path": "baseline/options-pricing-360-menu.png",
+      "sha256": "292e3e323ae53932c4213e46fc5feda14df4250b1d39b67c991ffb4ecbcc9621",
+      "bytes": 65112
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-430.png",
+      "sha256": "fdfc5a300a2067e2e11f613bb5ec85d9c51028ca60ec6b7f7a4fb0ea13a0da44",
+      "bytes": 922479
+    },
+    {
+      "path": "baseline/programs-1280.json",
+      "sha256": "e9b3e03a2b6ebb1451148f263c43f705a97b10ddf392e8e69844f572636c0f8e",
+      "bytes": 15918
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-390.json",
+      "sha256": "6dc69bcbd6667dee65eff5747690350958676b59829bedaac063108a0dbb27f9",
+      "bytes": 14720
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-details.json",
+      "sha256": "bf8a1c80a9d999e090d3baf4999f6e9b3c8f093f21b8b517d434b90603798295",
+      "bytes": 5688
+    },
+    {
+      "path": "baseline/programs-1280-top.png",
+      "sha256": "b6d0f8c5752b500cc8bdbdc351c5a5cf709befb8fcc13915c5bd22b320b35aaf",
+      "bytes": 138161
+    },
+    {
+      "path": "baseline/alley-bootcamp-360-top.png",
+      "sha256": "d9ed7306b32c5da4440c5dd8e28c7e05fe6641357d079bbcdf9111c52328753b",
+      "bytes": 186580
+    },
+    {
+      "path": "baseline/visit-360.json",
+      "sha256": "855beb0424bb91ef5cb96588d26a4c3813f56f3dde5634b41c5f6d693c5c8faf",
+      "bytes": 8577
+    },
+    {
+      "path": "baseline/programs-390.json",
+      "sha256": "d49efa7b89c858c4b935ea3b5daa79ae7cf817eb479a5603ac2891239c148285",
+      "bytes": 15610
+    },
+    {
+      "path": "baseline/alley-bootcamp-430.png",
+      "sha256": "d16f3d8154d0a5f3833c76a975652904e5c8c195afeffb196b5fd77ce458ac88",
+      "bytes": 509440
+    },
+    {
+      "path": "baseline/home-360.png",
+      "sha256": "f9c66226721624ca378b3f3b7dcad4526ca91e7696b884ce6009f282c36b86a9",
+      "bytes": 866131
+    },
+    {
+      "path": "baseline/programs-390.png",
+      "sha256": "d7b6b6daace52fd8af18ecd6b5db835dfe54858e9254a1e25411ba3486861b86",
+      "bytes": 474223
+    },
+    {
+      "path": "baseline/options-pricing-360.png",
+      "sha256": "c15ae2edd86344162084bf142dfe4377c94a00479672e022260093c8bd028e68",
+      "bytes": 4332565
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-390.json",
+      "sha256": "db5a41ef6c23eec7b6576ac3e7cdc8881380a473299453a113d07642767c27ec",
+      "bytes": 18268
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-1280.png",
+      "sha256": "cecfa685c90e635e2135d8d6bc943699adf5dc1c3bd091bd92db75a3a542ec4d",
+      "bytes": 340676
+    },
+    {
+      "path": "baseline/winter-armor-2027-1280.png",
+      "sha256": "5ecbbbdbd1c3573a5beb87d8dfdc84f7fbf654481d293cb2fd2d463fc80afa1d",
+      "bytes": 835067
+    },
+    {
+      "path": "baseline/winter-armor-2027-1280-top.png",
+      "sha256": "589925cb0d64c722ad0b4afbbf8d58a95d654d91ddca13ffe036f3291d061a3a",
+      "bytes": 349126
+    },
+    {
+      "path": "baseline/alley-bootcamp-360.json",
+      "sha256": "df6fc5e6de7230a4fe929ef360b37427c4204406ed8f70d109a2da33967ad777",
+      "bytes": 13305
+    },
+    {
+      "path": "baseline/schedule-1280.json",
+      "sha256": "992a222af745e849e707bdee7865810861839f3f3f33a6f940c86e4dfe0f7ada",
+      "bytes": 29534
+    },
+    {
+      "path": "baseline/alley-bootcamp-1280.png",
+      "sha256": "20f1fe2b05130aa0ec18eabed08db25bb7cc06469d5f2ba2d5c03bbe13de7b6b",
+      "bytes": 770183
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-390.png",
+      "sha256": "43e2fab649825106e3577c5bd015a9cd5fa6f49e912aca382df1dc4028d1f101",
+      "bytes": 886863
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-1280-top.png",
+      "sha256": "f0bb6553a69b40e8ea866f29b62093ae5fb2210909ce42690a3499d19ba6732b",
+      "bytes": 102716
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-360.png",
+      "sha256": "22b2a5896009b9dfbe1cda9a925da129d45c00e5f3135af90adcbc7de0ecc276",
+      "bytes": 494389
+    },
+    {
+      "path": "baseline/winter-armor-2027-details.json",
+      "sha256": "329a020d2bb5ecb7aa154707e0547b980cf100d7f373a8b71a36492b301ebecc",
+      "bytes": 5436
+    },
+    {
+      "path": "baseline/schedule-360-menu.png",
+      "sha256": "52c2c40b945fd0babe04ab60cd251e3d1d0f926e997d302d1b013efcd408766a",
+      "bytes": 57369
+    },
+    {
+      "path": "baseline/bjj-faqs-360.json",
+      "sha256": "8abfd8a456b6b40588ea4c3f6c30fa3dc5895e56b4e509ca137ed2164de6e0f2",
+      "bytes": 19983
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-1280-top.png",
+      "sha256": "dfd407c08b7fb4d97630f8dd0c165f71b7727d4c7b5bba6c28e4cbac37fc76bc",
+      "bytes": 203090
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-360-top.png",
+      "sha256": "e33ea098717d3c85d9e728bebae269bc5b5322c7b51a00f88814a379b529bca8",
+      "bytes": 144743
+    },
+    {
+      "path": "baseline/alley-bootcamp-360-menu.png",
+      "sha256": "8897c0d9b61903bf88fcb7d691e5c0a8adb20a206354c78977a712da90cdf05e",
+      "bytes": 127110
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-360.png",
+      "sha256": "b1a7663f022fe398f65f22b81808332f88ae5834dcb9f75b8b96c16688110568",
+      "bytes": 861422
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-390.png",
+      "sha256": "072b48343230077c38cf7cd3eb55ceeed9b8071a692a874b3834509c48cf239e",
+      "bytes": 870221
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-360.png",
+      "sha256": "aa665fb34e96010e4c459e8cf21fd4dc3f8469622f5fa0cb073862a661b32fbf",
+      "bytes": 949982
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-details.json",
+      "sha256": "a0daff8342afa9d50f473c49b3be8c8c1738780aa769a87a2ca0d4525eb3a518",
+      "bytes": 21316
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-360-menu.png",
+      "sha256": "36389f81c98af6d0f74b86cfc730a07ffb0329fbbc0dbba668db824b54d8e784",
+      "bytes": 55640
+    },
+    {
+      "path": "baseline/programs-430.png",
+      "sha256": "3c803f3fa6dde971c7204b55d2946112d6ab54d1a0cdcbfac652c9cd693e04aa",
+      "bytes": 464311
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-390.png",
+      "sha256": "5b9135d9e09c2b5c33ecff585a25e733d8127299c3a16bcc89eeea6880802352",
+      "bytes": 951538
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-430.png",
+      "sha256": "7f4eb1599147f5d8cb1c8f005114abdf3742d4779d82028c50f3ccdf73f0a421",
+      "bytes": 1004518
+    },
+    {
+      "path": "baseline/bjj-faqs-1280.png",
+      "sha256": "215519b818af27de85d177cf4b5e5a631b6ac2424fcede1233e9aca85680324b",
+      "bytes": 994915
+    },
+    {
+      "path": "baseline/schedule-390.png",
+      "sha256": "9dc756ffcd2d0f39d347f08e09e9b62f251b87b0f83b21e0d44a51d32c2b11d5",
+      "bytes": 476319
+    },
+    {
+      "path": "baseline/home-360-menu.png",
+      "sha256": "f9e852952d92e39dc4fa5e69d0f16a5c28fbf35a8194c161b61ee5d30d914052",
+      "bytes": 59462
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-430.json",
+      "sha256": "7398ddbf9251b3e0e7f771134b23629c23356a706f2047610b88ff3c327797a5",
+      "bytes": 13380
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-390.json",
+      "sha256": "a87e1dac53117ed02394dbd2778949f246c92b9d9135b76066455d2a0bf2bc05",
+      "bytes": 13403
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-360-top.png",
+      "sha256": "5950d8886da469538a1ede1a375ddb67a76fc6ef59e17d2697b94cddb061eb65",
+      "bytes": 118856
+    },
+    {
+      "path": "baseline/options-pricing-1280.json",
+      "sha256": "73d18210840427acd7673490cd1b22c80f69621724739dd7279057a912ae3a95",
+      "bytes": 87660
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-360.json",
+      "sha256": "167be22766a26c9e8221ae02da2adcc70ffde27b725ac5e8778fbcb5add2d650",
+      "bytes": 13140
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-430.json",
+      "sha256": "146e5f5333828f6810a71c9e659f62725456c751ab7916c7b36747d69edd03c4",
+      "bytes": 15076
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-430.png",
+      "sha256": "86c32a8b09b179ece4c366216666d171310d5e6b277afff59edb6b36e5709251",
+      "bytes": 630583
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-430.png",
+      "sha256": "423efec69bbf2f8f3c070b6b6258213f5e1803433abc277bec894a2812672de3",
+      "bytes": 269805
+    },
+    {
+      "path": "baseline/winter-armor-2027-360.json",
+      "sha256": "a304677347966638fcae6c9444761d72a84bb7bec535f5640b4dc2c337078f7a",
+      "bytes": 9213
+    },
+    {
+      "path": "baseline/summary.json",
+      "sha256": "09fe07005f750d8a46e1701493520e6ac4fc23fe3b10664d68c3a088ce27e434",
+      "bytes": 1305263
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-360-top.png",
+      "sha256": "369922ae007c8f6c96d5516cda28b77f3f41c7246fbce39837a07ec3e2228f48",
+      "bytes": 61133
+    },
+    {
+      "path": "baseline/home-390.json",
+      "sha256": "0fcc6f1c24f2f4842a6d619bbfafbe81105cffe3df1246c45955f2d8f2729fe7",
+      "bytes": 19450
+    },
+    {
+      "path": "baseline/alley-bootcamp-360.png",
+      "sha256": "1e3ed60cdfcc1a31ca5c550d39c0d2333050598f9757202a7f740d72138cd8f8",
+      "bytes": 452056
+    },
+    {
+      "path": "baseline/bjj-faqs-430.png",
+      "sha256": "30c9692bff83e07394c6f5022568ea64d69c6cb6e0bacf918ade221c02b5417d",
+      "bytes": 725571
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-1280.json",
+      "sha256": "540fb8e7ea402ebdcbf70a07530f0b3402083f8ebff2792ac96069560594a9f1",
+      "bytes": 13953
+    },
+    {
+      "path": "baseline/bjj-faqs-430.json",
+      "sha256": "b5230ab2f5eb24a9223454244609f99773c7d01ec87d8aa13cf8fbb620310e8d",
+      "bytes": 19984
+    },
+    {
+      "path": "baseline/schedule-details.json",
+      "sha256": "d8298a17916e9b02fdbd59db28a644ff5187faf3cf3f343ede1e9ea7acee6886",
+      "bytes": 61924
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-390.png",
+      "sha256": "7c741cbce382f1b8974c097f45561a0f0c177445acc2dcd2b249fab17fd34f77",
+      "bytes": 506927
+    },
+    {
+      "path": "baseline/winter-armor-2027-360-top.png",
+      "sha256": "ad8fd712b29c30eb100343e476f6fa7ca48bb56187637a4d4663abb644ef6a67",
+      "bytes": 53342
+    },
+    {
+      "path": "baseline/bjj-faqs-details.json",
+      "sha256": "5c3a906509932b57de7e97e306ae9226421fa336d9bdf90e912116120499fa45",
+      "bytes": 43910
+    },
+    {
+      "path": "baseline/schedule-360.json",
+      "sha256": "0caa68b8c36551a8e07d70c83d2aea3427c6a52bdf2cbfd7431aec36452f2f4d",
+      "bytes": 26065
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-1280.png",
+      "sha256": "ee73d5385e6573d44839c13ca7057d15b7d2c7791e54417f44f1dc31493a7a2a",
+      "bytes": 1850388
+    },
+    {
+      "path": "baseline/winter-armor-2027-390.json",
+      "sha256": "6461995e4c0f05057d56eec6c7f7c6dedaf32dd5be6785dbee8ed845b76c864c",
+      "bytes": 9220
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-430.json",
+      "sha256": "8a60e362cbbd657a4ef5999f838904439f1363214c736eaca0f265a64330d41e",
+      "bytes": 18754
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-1280.png",
+      "sha256": "3b79784b52b81774a3b7a747c8f9ae76e13c102053a4b828f0ec9db7fd7af8c1",
+      "bytes": 1743751
+    },
+    {
+      "path": "baseline/visit-1280.png",
+      "sha256": "3eb7353fc60b956bc123950b4971b798d43522a0e2390c01921d3366cc7341ac",
+      "bytes": 661006
+    },
+    {
+      "path": "baseline/visit-360-top.png",
+      "sha256": "098c14fb1ce4b1093a5cf18e7eaf50846c6669644cc893190a1dac18a261f5a9",
+      "bytes": 67902
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-430.json",
+      "sha256": "ebf337609a4dfca0c2d299c669c51ccfc299ab0af788f56a8a92328bb7278daa",
+      "bytes": 19119
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-360-menu.png",
+      "sha256": "3923c2069d335b8793eef37a0c616c5bc7d333e2b5be59e9497d7fa50e2459e7",
+      "bytes": 121222
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-1280.json",
+      "sha256": "70a7618a432eb426e9f0fca56bd6019ce0034dc14ee77f2a9781b62acd968534",
+      "bytes": 19711
+    },
+    {
+      "path": "baseline/programs-1280.png",
+      "sha256": "c74d1155e5021450b05b669a71f6190d2cfd37cbbf5983b453ce2420662be04d",
+      "bytes": 553939
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-1280.json",
+      "sha256": "22009868d749ddf450c51e260cf67afb74d1c744b2958782df907ac549e02c46",
+      "bytes": 9226
+    },
+    {
+      "path": "baseline/winter-armor-2027-430.png",
+      "sha256": "d8731b1652805e03179f6a32e619c12658ac91ce03f0e31257e8d1e80ee67de5",
+      "bytes": 626189
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-360.png",
+      "sha256": "695ca987ca347bfaaacea7c6ef10e4c0bd949d8745d1c143da5e15e695e89b7c",
+      "bytes": 619919
+    },
+    {
+      "path": "baseline/schedule-360.png",
+      "sha256": "2a7761a663935caf48c134c7fddb78bf6cadab50ed674d24f6661820e1f9cf28",
+      "bytes": 477310
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-390.json",
+      "sha256": "8c87c63dc780e737663f4a9fc2ecf108e5623bca966ddc44126ad24843942482",
+      "bytes": 8899
+    },
+    {
+      "path": "baseline/alley-bootcamp-390.png",
+      "sha256": "c4f1f6b9b2983a621e32084945303e3ede9ef256c39eeffb588abf6cc98cfce7",
+      "bytes": 478846
+    },
+    {
+      "path": "baseline/home-1280-top.png",
+      "sha256": "cf0a376512cf100e81d5abc832ed54a384e866162d088eb8569d720bead1d864",
+      "bytes": 287480
+    },
+    {
+      "path": "baseline/bjj-classes--teens-tannersville-ny-390.json",
+      "sha256": "9fa767ae258737897d6b98263d7c9a6c9abb13c318e7dde0545279a6035d4951",
+      "bytes": 18815
+    },
+    {
+      "path": "baseline/programs-360-menu.png",
+      "sha256": "749dec752f56a35cf392d1839c9afd55483d14fc3c685ac9a68c0564490aa90e",
+      "bytes": 64121
+    },
+    {
+      "path": "baseline/options-pricing-390.png",
+      "sha256": "de70b88a9c8791901da558b46b3a06e8a146db5b633058726660cb935449de51",
+      "bytes": 4373013
+    },
+    {
+      "path": "baseline/home-1280.json",
+      "sha256": "bace89e2c483993ce3f9d4ccef45cd44565d94cc7038298e833982523ea93877",
+      "bytes": 19492
+    },
+    {
+      "path": "baseline/bjj-faqs-390.png",
+      "sha256": "23b48abee203c86e56b2bf2450d170a7e57b06368a419783b355ccea00bd05bb",
+      "bytes": 741961
+    },
+    {
+      "path": "baseline/bjj-glossary--arm-drag-430.json",
+      "sha256": "ee58769a67a9b7f242a85b7718467d38f61d7d118557e9f01be4908caa5f5ff7",
+      "bytes": 8890
+    },
+    {
+      "path": "baseline/home-details.json",
+      "sha256": "5f2a4aba7f477e23d8252aac870b4031329b48655367f160e7516eee72d0d82b",
+      "bytes": 37110
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-1280-top.png",
+      "sha256": "21ec232526a2a32ca9eaf13c40a6905fdbeabecddf48f067f7d69c396c092326",
+      "bytes": 308883
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-360-top.png",
+      "sha256": "4fd96e9ac83d15ec08f58405026f6eecd5a730c240e4ac1c7321a022e55ef714",
+      "bytes": 125703
+    },
+    {
+      "path": "baseline/free-bjj-intro-tannersville-ny-430.json",
+      "sha256": "39fc331a2ab5948b4f84b821367d8893a63ad66eeb1e91ebafcf2d8b8bc80b55",
+      "bytes": 10726
+    },
+    {
+      "path": "baseline/bjj-classes--adults-tannersville-ny-360.png",
+      "sha256": "7869fb60b6d3014c6ea3de5aa7997ee2b131ee0e0e34df738dbbdc61828e0c88",
+      "bytes": 859962
+    },
+    {
+      "path": "baseline/blog--after-school-jiu-jitsu-360.json",
+      "sha256": "2bc18671506f21e435368c05dc5094ce3b0cee818372007f882b3fcec525ca4d",
+      "bytes": 15950
+    },
+    {
+      "path": "baseline/bjj-faqs-360.png",
+      "sha256": "cb7f889b299a4ac989012ab20762fd16f14f26a056fa80d3877a7ee4cc63ebc5",
+      "bytes": 740444
+    },
+    {
+      "path": "baseline/bjj-classes--kids-tannersville-ny-1280-top.png",
+      "sha256": "4b60a5ab247ea7de941bd1ee08225b7b9261caeb3c0a7f5a2c818512ee9b9a38",
+      "bytes": 805539
+    }
+  ],
+  "isolatedGitStatus": [
+    " M src/assets/data/asset-hash-manifest.json",
+    "?? node_modules"
+  ]
+}

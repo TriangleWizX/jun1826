@@ -1,0 +1,195 @@
+{
+  "route": "/bjj-glossary/arm-drag",
+  "textBelow16": [
+    {
+      "tag": "A",
+      "id": "",
+      "classes": "",
+      "text": "Home",
+      "font": 14.08,
+      "width": 40.59375,
+      "height": 18,
+      "x": 24,
+      "y": 233.1875,
+      "position": "static",
+      "href": "/"
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "classes": "",
+      "text": "BJJ Glossary",
+      "font": 14.08,
+      "width": 89.640625,
+      "height": 18,
+      "x": 64.59375,
+      "y": 233.1875,
+      "position": "static",
+      "href": "/bjj-glossary"
+    },
+    {
+      "tag": "SPAN",
+      "id": "",
+      "classes": "",
+      "text": "Arm Drag",
+      "font": 14.08,
+      "width": 66.390625,
+      "height": 18,
+      "x": 154.234375,
+      "y": 233.1875,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "A",
+      "id": "back-to-results",
+      "classes": "",
+      "text": "Back to results",
+      "font": 14.72,
+      "width": 111.484375,
+      "height": 23.84375,
+      "x": 24,
+      "y": 271.015625,
+      "position": "static",
+      "href": "/bjj-glossary"
+    },
+    {
+      "tag": "BUTTON",
+      "id": "copy-term-link",
+      "classes": "",
+      "text": "Copy term link",
+      "font": 13.3333,
+      "width": 101.1875,
+      "height": 21,
+      "x": 24,
+      "y": 305.890625,
+      "position": "static",
+      "href": null
+    }
+  ],
+  "inputs": [],
+  "actions": [
+    {
+      "tag": "BUTTON",
+      "id": "",
+      "classes": "navbar-toggler ss-menu-button",
+      "text": "Menu",
+      "font": 16,
+      "width": 44,
+      "height": 44,
+      "x": 40,
+      "y": 141.59375,
+      "position": "static",
+      "href": null
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "classes": "ss-nav-cta ss-nav-cta--persistent",
+      "text": "Free Intro",
+      "font": 16,
+      "width": 224,
+      "height": 44,
+      "x": 96,
+      "y": 141.59375,
+      "position": "relative",
+      "href": "/free-bjj-intro-tannersville-ny#booking-flow"
+    },
+    {
+      "tag": "BUTTON",
+      "id": "copy-term-link",
+      "classes": "",
+      "text": "Copy term link",
+      "font": 13.3333,
+      "width": 101.1875,
+      "height": 21,
+      "x": 24,
+      "y": 305.890625,
+      "position": "static",
+      "href": null
+    }
+  ],
+  "fixed": [
+    {
+      "tag": "NAV",
+      "id": "",
+      "classes": "ss-mobile-actionbar is-observed is-visible",
+      "text": "Text Sandy\nHome",
+      "font": 16,
+      "width": 360,
+      "height": 76,
+      "x": 0,
+      "y": 824,
+      "position": "fixed",
+      "href": null
+    }
+  ],
+  "menu": {
+    "expanded": "true",
+    "height": 193,
+    "scrollHeight": 192,
+    "links": [
+      {
+        "text": "Classes",
+        "height": 44,
+        "width": 280,
+        "current": null
+      },
+      {
+        "text": "Your first class",
+        "height": 44,
+        "width": 280,
+        "current": null
+      },
+      {
+        "text": "Pricing",
+        "height": 44,
+        "width": 280,
+        "current": null
+      },
+      {
+        "text": "Parent Hub",
+        "height": 44,
+        "width": 280,
+        "current": null
+      }
+    ]
+  },
+  "widthSweep": [
+    {
+      "requestedWidth": 361,
+      "width": 361,
+      "scrollWidth": 361
+    },
+    {
+      "requestedWidth": 560,
+      "width": 560,
+      "scrollWidth": 560
+    },
+    {
+      "requestedWidth": 640,
+      "width": 640,
+      "scrollWidth": 640
+    },
+    {
+      "requestedWidth": 767,
+      "width": 767,
+      "scrollWidth": 767
+    },
+    {
+      "requestedWidth": 768,
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "requestedWidth": 992,
+      "width": 992,
+      "scrollWidth": 992
+    },
+    {
+      "requestedWidth": 1280,
+      "width": 1280,
+      "scrollWidth": 1280
+    }
+  ]
+}
