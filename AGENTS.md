@@ -294,6 +294,13 @@ Hardcoded secrets
 Breaking existing URLs
 Testing and Validation
 
+Use an isolated headless browser as the primary path for public-page browser
+verification. Run `rtk proxy node tools/browser-proof.mjs <url> <output-directory>`
+for mobile and desktop evidence; see `docs/BROWSER-VERIFICATION.md`. Use the
+interactive Chrome harness only when the task requires the user's existing
+signed-in session. Request required elevated approval for external network
+checks and browser socket restrictions before running them.
+
 After changes, run the most relevant available checks.
 
 If the repo has scripts, prefer those:
