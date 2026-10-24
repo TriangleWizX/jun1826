@@ -20,6 +20,7 @@ ROOT_FILES.add('class-rules.html')
 ROOT_FILES.add('parents-guide-kids-bjj.html')
 ROOT_FILES.add('about.html')
 ROOT_FILES.add('spring-armor-drop.html')
+ROOT_FILES.add('giveaway-rules.html')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
  'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml', 'sitemap-research.xml')
 RESEARCH_RECORD_OUTPUTS = (
