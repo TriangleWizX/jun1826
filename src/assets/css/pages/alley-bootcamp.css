@@ -260,6 +260,135 @@
   line-height: 1.6;
 }
 
+/* Smarter Choice Comparison Grid */
+.page-alley-bootcamp .ab-compare {
+  background: var(--ab-paper-deep);
+  border-bottom: 1px solid var(--ab-rule);
+}
+
+.page-alley-bootcamp .ab-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.page-alley-bootcamp .ab-compare-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.3rem 1.2rem 1.4rem;
+  border: 1px solid var(--ab-rule);
+  border-radius: 1.2rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.4rem rgba(54, 43, 36, 0.04);
+}
+
+.page-alley-bootcamp .ab-compare-tag {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 0.8rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: #e5efe8;
+  color: var(--ab-green);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.page-alley-bootcamp .ab-compare-card h3 {
+  margin: 0 0 0.55rem;
+  color: var(--ab-ink);
+  font-family: "Lexend", Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.page-alley-bootcamp .ab-compare-benefit {
+  margin: 0 0 1rem;
+  color: var(--ab-ink);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.page-alley-bootcamp .ab-compare-alt {
+  margin: 0;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--ab-rule);
+  color: var(--ab-muted);
+  line-height: 1.45;
+}
+
+.page-alley-bootcamp .ab-compare-alt small {
+  display: block;
+  font-size: 0.82rem;
+}
+
+/* 4-Week Transformation Offer Stack */
+.page-alley-bootcamp .ab-stack {
+  background: #fff;
+  border-bottom: 1px solid var(--ab-rule);
+}
+
+.page-alley-bootcamp .ab-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.page-alley-bootcamp .ab-stack-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.15rem;
+  border: 1px solid var(--ab-rule);
+  border-radius: 1.15rem;
+  background: #fbfaf8;
+  box-shadow: 0 0.35rem 1rem rgba(54, 43, 36, 0.035);
+}
+
+.page-alley-bootcamp .ab-stack-item--highlight {
+  border-color: var(--ab-green);
+  background: #edf6f0;
+}
+
+.page-alley-bootcamp .ab-stack-icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #e5efe8;
+  color: var(--ab-green);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.page-alley-bootcamp .ab-stack-item--highlight .ab-stack-icon {
+  background: var(--ab-green);
+  color: #fff;
+}
+
+.page-alley-bootcamp .ab-stack-body h3 {
+  margin: 0 0 0.35rem;
+  color: var(--ab-ink);
+  font-family: "Lexend", Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.page-alley-bootcamp .ab-stack-body p {
+  margin: 0;
+  color: var(--ab-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .page-alley-bootcamp .ab-flow-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -455,6 +584,8 @@
   .page-alley-bootcamp .ab-facts li:nth-child(3) { border-left: 0; border-top: 1px solid var(--ab-rule); }
   .page-alley-bootcamp .ab-facts li:nth-child(4) { border-top: 1px solid var(--ab-rule); }
   .page-alley-bootcamp .ab-scale-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-alley-bootcamp .ab-compare-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-alley-bootcamp .ab-stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .page-alley-bootcamp .ab-guarantee-box { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .page-alley-bootcamp .ab-guarantee-box .ab-cta { width: 100%; text-align: center; }
   .page-alley-bootcamp .ab-price-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -474,6 +605,10 @@
   .page-alley-bootcamp .ab-facts small { font-size: 0.75rem; }
   .page-alley-bootcamp .ab-scale-grid { grid-template-columns: 1fr; gap: 0.85rem; }
   .page-alley-bootcamp .ab-scale-step { padding: 1.1rem 1rem; }
+  .page-alley-bootcamp .ab-compare-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+  .page-alley-bootcamp .ab-compare-card { padding: 1.1rem 1rem; }
+  .page-alley-bootcamp .ab-stack-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .page-alley-bootcamp .ab-stack-item { padding: 1rem 0.9rem; }
   .page-alley-bootcamp .ab-guarantee-box { padding: 1.25rem 1.1rem; }
   .page-alley-bootcamp .ab-guarantee-headline { font-size: 1.75rem; }
   .page-alley-bootcamp .ab-flow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
