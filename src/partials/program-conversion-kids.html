@@ -1,5 +1,52 @@
 <section class="program-conversion-template" aria-labelledby="kids-conversion-title">
-<div class="program-hero"><div class="program-hero__content"><p class="eyebrow">Kids BJJ classes near Hunter, NY &middot; Tannersville, NY.</p><h1 id="kids-conversion-title">A calm first class for your child.</h1><p class="lead" data-free-intro-copy>Your child meets Sandy and sees the room. Then they try a class with his help. A parent or guardian stays on site. Sandy confirms the class and what to wear.</p><div class="hero-actions"><a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow" data-goal-mapping="" data-tracking-src="kids-program-page">{{ freeIntro.primaryCtaLabel }}</a><a class="btn btn-outline-primary" href="/schedule">See Kids Schedule</a><a class="btn btn-outline-secondary" href="{{ contact.smsHref }}">Text Sandy</a></div><nav class="program-hero__quick-links" aria-label="Kids class links"><a class="program-hero__chip" href="/schedule">Current kids schedule</a><a class="program-hero__chip" href="/how-class-works">How class works</a><a class="program-hero__chip" href="/options-pricing">Plans and prices</a><a class="program-hero__chip" href="/bjj-faqs">Kids BJJ FAQs</a></nav></div><div class="program-hero__media"><img src="/assets/images/herogigroup-768.webp" width="768" height="768" alt="Kids Jiu-Jitsu class in Tannersville with Sensei Sandy" fetchpriority="high"></div></div>
+<div class="program-hero"><div class="program-hero__content"><p class="eyebrow">Kids BJJ classes near Hunter, NY &middot; Tannersville, NY.</p><h1 id="kids-conversion-title">A calm first class for your child.</h1>
+<div class="prog-guarantee-seal" aria-label="30-Day Training Fit Guarantee">
+  <div class="prog-guarantee-seal__badge">
+    <svg class="prog-guarantee-seal__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+    <div class="prog-guarantee-seal__text">
+      <span class="prog-guarantee-seal__kicker">Parent Peace Of Mind</span>
+      <span class="prog-guarantee-seal__title">30-Day Training Fit Guarantee &middot; Parents Welcome Matside</span>
+    </div>
+  </div>
+</div>
+<p class="lead" data-free-intro-copy>Your child meets Sandy and sees the room. Then they try a class with his help. A parent or guardian stays on site. Sandy confirms the class and what to wear.</p><div class="hero-actions"><a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow" data-goal-mapping="" data-tracking-src="kids-program-page">{{ freeIntro.primaryCtaLabel }}</a><a class="btn btn-outline-primary" href="/schedule">See Kids Schedule</a><a class="btn btn-outline-secondary" href="{{ contact.smsHref }}">Text Sandy</a></div><nav class="program-hero__quick-links" aria-label="Kids class links"><a class="program-hero__chip" href="/schedule">Current kids schedule</a><a class="program-hero__chip" href="/how-class-works">How class works</a><a class="program-hero__chip" href="/options-pricing">Plans and prices</a><a class="program-hero__chip" href="/bjj-faqs">Kids BJJ FAQs</a></nav></div><div class="program-hero__media"><img src="/assets/images/herogigroup-768.webp" width="768" height="768" alt="Kids Jiu-Jitsu class in Tannersville with Sensei Sandy" fetchpriority="high"></div></div>
+
+<!-- 3 Pillars of Youth Growth Reassurance Strip -->
+<div class="prog-reassurance-wrap py-4" aria-label="Youth growth pillars">
+  <div class="container">
+    <div class="prog-reassurance-grid">
+      <div class="prog-reassurance-item">
+        <div class="prog-reassurance-icon"><i class="bi bi-eye"></i></div>
+        <div>
+          <strong>Calm Focus.</strong>
+          <p>Kids learn to listen well.</p>
+        </div>
+      </div>
+      <div class="prog-reassurance-item">
+        <div class="prog-reassurance-icon"><i class="bi bi-shield-heart"></i></div>
+        <div>
+          <strong>Safe Control.</strong>
+          <p>Hold downs and safe escapes.</p>
+        </div>
+      </div>
+      <div class="prog-reassurance-item">
+        <div class="prog-reassurance-icon"><i class="bi bi-hand-thumbs-up"></i></div>
+        <div>
+          <strong>Good Habits.</strong>
+          <p>Manners carry over to school.</p>
+        </div>
+      </div>
+      <div class="prog-reassurance-item">
+        <div class="prog-reassurance-icon"><i class="bi bi-chat-text"></i></div>
+        <div>
+          <strong>Easy Reschedule.</strong>
+          <p>Text Sandy to change a day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="benefit-chips" aria-label="Kids class facts"><span>Kids ages {{ programs.kids.ageRange }}.</span><span>Parents stay on-site.</span><span>Coach-guided partner work.</span><span>See first-term options.</span></div>
 
 <section class="program-overview-section py-4 bg-light"><div class="container">
@@ -55,12 +102,17 @@
           <span class="badge rounded-pill bg-dark text-white mb-2 px-3 py-1">{{ pricing.coreCulture.termWeeks }}-week tuition.</span>
         <div class="display-6 font-weight-bold mb-1" style="color: var(--ss-ink, #362B24);">{{ pricing.coreCulture.frequencyLadder.youth[1]['12Weeks'] | usd }}–{{ pricing.coreCulture.frequencyLadder.youth[3]['12Weeks'] | usd }}</div>
           <p class="text-muted small mb-3">Your price depends on classes each week.</p>
-          <ul class="text-muted ps-3 mb-4" style="font-size: 0.92rem; line-height: 1.7;">
+          <ul class="text-muted ps-3 mb-3" style="font-size: 0.92rem; line-height: 1.7;">
             <li>1, 2, or 3 planned classes each week.</li>
             <li>First-enrollment uniform included.</li>
             <li>Reschedule by text.</li>
             <li><a href="/guarantee-terms">Read the current guarantee terms.</a></li>
           </ul>
+          <div class="prog-bonus-card mb-3">
+            <span class="badge rounded-pill bg-success text-white mb-1 px-2 py-1" style="font-size: 0.72rem;">Welcome Kit Included</span>
+            <p class="small mb-1 fw-bold text-dark">Uniform &amp; White Belt Included</p>
+            <p class="small text-muted mb-0">New gi, white belt, and sticker chart included.</p>
+          </div>
         </div>
         <div>
           <a class="btn btn-primary w-100 mb-2" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow" data-goal-mapping="" data-tracking-src="kids-program-page-stack">Reserve Your Free First Visit</a>
@@ -73,29 +125,29 @@
 
 <!-- 14-DAY TIMELINE TO CONFIDENCE -->
 <section class="program-overview-section py-5 bg-light"><div class="container">
-  <div class="section-kicker">Early Practice Wins.</div>
+  <div class="section-kicker">Early Practice Wins &middot; 14-Day Timeline.</div>
   <h2>Learn through coached practice.</h2>
-  <p class="lead mb-4" style="max-width: 44rem;">During the first term, kids practice safe movement and solve tasks with help.</p>
+  <p class="lead mb-4" style="max-width: 44rem;">Kids build coordination and confidence early. Sandy guides every game so students feel supported.</p>
   <div class="row g-4">
     <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">First class.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Safe falling &amp; posture.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Your child learns safe falling, calm resets, and good balance with coach guidance.</p>
+      <article class="p-4 h-100 border rounded-4 bg-white shadow-sm prog-timeline-card">
+        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Day 1</span>
+        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Room Tour.</h3>
+        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Meet Coach Sandy and learn safe resets.</p>
       </article>
     </div>
     <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">As practice continues.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Body control &amp; partner skills.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Coached games help kids build balance, listening, and good partner habits.</p>
+      <article class="p-4 h-100 border rounded-4 bg-white shadow-sm prog-timeline-card">
+        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Day 7</span>
+        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Fun Games.</h3>
+        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Play balance games with a friendly partner.</p>
       </article>
     </div>
     <div class="col-md-4">
-      <article class="p-4 h-100 border rounded-4 bg-white">
-        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Term review.</span>
-        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Celebrate real progress.</h3>
-        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Ask Sandy what your child has learned and talk about next steps.</p>
+      <article class="p-4 h-100 border rounded-4 bg-white shadow-sm prog-timeline-card">
+        <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Day 14</span>
+        <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Skill Stripe.</h3>
+        <p class="mb-0 text-muted" style="font-size: 0.95rem; line-height: 1.5;">Earn your first sticker. Feel proud and strong.</p>
       </article>
     </div>
   </div>
@@ -179,4 +231,29 @@
 </div></section>
 
 <section class="program-overview-section py-5 bg-light text-center"><div class="container"><h2>Start with a calm, coached first visit.</h2><a class="btn btn-primary" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow" data-goal-mapping="" data-tracking-src="kids-program-page-bottom">Reserve Your Free First Visit</a><p class="small text-muted mt-3 mb-0">Have questions about kids classes, safety, or gear? <a href="/bjj-faqs">Read our BJJ FAQs</a>.</p></div></section>
+
+  <!-- Sticky Mobile Action Bar for Parents -->
+  <div class="prog-sticky-cta" id="kids-sticky-cta" aria-label="Quick mobile action">
+    <div class="prog-sticky-cta__meta">
+      <span class="prog-sticky-cta__badge">Parents Stay On-Site</span>
+      <span class="prog-sticky-cta__note">Ages {{ programs.kids.ageRange }} &middot; Free First Visit</span>
+    </div>
+    <a class="btn btn-primary prog-sticky-cta__btn" href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow" data-goal-mapping="" data-tracking-src="kids-program-page-sticky">
+      <span>Reserve for a Child</span>
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+  <script>
+    (function() {
+      var bar = document.getElementById('kids-sticky-cta');
+      if (!bar) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 350) {
+          bar.classList.add('is-visible');
+        } else {
+          bar.classList.remove('is-visible');
+        }
+      }, { passive: true });
+    })();
+  </script>
 </section>

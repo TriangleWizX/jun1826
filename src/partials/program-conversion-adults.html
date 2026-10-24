@@ -3,6 +3,15 @@
     <div class="program-hero__content">
       <p class="eyebrow">ADULTS {{ programs.adults.ageRange }} &middot; TANNERSVILLE, NY.</p>
       <h1 id="adults-conversion-title">Start BJJ in Tannersville.</h1>
+      <div class="prog-guarantee-seal" aria-label="30-Day Training Fit Guarantee">
+        <div class="prog-guarantee-seal__badge">
+          <svg class="prog-guarantee-seal__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          <div class="prog-guarantee-seal__text">
+            <span class="prog-guarantee-seal__kicker">Training Fit Guarantee</span>
+            <span class="prog-guarantee-seal__title">30-Day Training Fit Guarantee &middot; Safe and Coached</span>
+          </div>
+        </div>
+      </div>
       <p class="lead">Start with a Free First Visit. Meet Sandy, see the room, and talk about your goals.</p>
       <p class="mb-3">After the visit, you choose if you want to train that day or pick a later day. Sandy confirms the class first.</p>
       <div class="hero-actions">
@@ -21,6 +30,42 @@
     </div>
     <div class="program-hero__media">
       <img loading="lazy" src="/assets/images/community-320.6d7bac.webp" width="543" height="380" alt="Adults training Jiu-Jitsu in Tannersville, NY">
+    </div>
+  </div>
+
+  <!-- "Over 30 & Starting Out" Beginner Lane Reassurance Strip -->
+  <div class="prog-reassurance-wrap py-4" aria-label="Adult beginner lane reassurance">
+    <div class="container">
+      <div class="prog-reassurance-grid">
+        <div class="prog-reassurance-item">
+          <div class="prog-reassurance-icon"><i class="bi bi-shield-check"></i></div>
+          <div>
+            <strong>Beginner Lane.</strong>
+            <p>Start at your own pace.</p>
+          </div>
+        </div>
+        <div class="prog-reassurance-item">
+          <div class="prog-reassurance-icon"><i class="bi bi-people"></i></div>
+          <div>
+            <strong>Matched Partners.</strong>
+            <p>Train with a safe partner.</p>
+          </div>
+        </div>
+        <div class="prog-reassurance-item">
+          <div class="prog-reassurance-icon"><i class="bi bi-person-badge"></i></div>
+          <div>
+            <strong>Small Groups.</strong>
+            <p>Classes have up to 12 students.</p>
+          </div>
+        </div>
+        <div class="prog-reassurance-item">
+          <div class="prog-reassurance-icon"><i class="bi bi-lightning-charge"></i></div>
+          <div>
+            <strong>Easy Movement.</strong>
+            <p>Use skill and leverage to move.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -65,7 +110,12 @@
                   <li>{{ frequency }} class{% if frequency != '1' %}es{% endif %} each week: {{ plan['12Weeks'] | usd }} for {{ pricing.coreCulture.termWeeks }} weeks.</li>
                 {% endfor %}
               </ul>
-              <p class="small text-muted mb-4">See what each plan includes and read the current <a href="/guarantee-terms">guarantee terms</a>.</p>
+              <div class="prog-bonus-card mb-3">
+                <span class="badge rounded-pill bg-success text-white mb-1 px-2 py-1" style="font-size: 0.72rem;">Bonus Included</span>
+                <p class="small mb-1 fw-bold text-dark">Saturday Class Included</p>
+                <p class="small text-muted mb-0">Join our Saturday morning class for more practice.</p>
+              </div>
+              <p class="small text-muted mb-4">See what each plan includes and read the current <a href="/guarantee-terms">guarantee terms</a>. First term includes our 30-Day Training Fit Guarantee.</p>
             </div>
             <div>
               <a class="btn btn-primary w-100 mb-2" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page-stack">{{ freeIntro.primaryCtaLabel }}</a>
@@ -80,29 +130,29 @@
 
   <section class="program-overview-section py-5 bg-light" aria-labelledby="adult-practice-title">
     <div class="container">
-      <div class="section-kicker">Coached practice.</div>
-      <h2 id="adult-practice-title">Learn one step at a time.</h2>
-      <p class="lead mb-4" style="max-width: 44rem;">Sandy sets a task. You try a move with a partner. He guides the pace and can help as you learn.</p>
+      <div class="section-kicker">Early Practice Wins &middot; 14-Day Timeline.</div>
+      <h2 id="adult-practice-title">Your first two weeks on the mats.</h2>
+      <p class="lead mb-4" style="max-width: 44rem;">Beginners gain skill from day one. Sandy guides every step so you feel calm and capable.</p>
       <div class="row g-4">
         <div class="col-md-4">
-          <article class="p-4 h-100 border rounded-4 bg-white">
-            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">First class.</span>
-            <h3 class="h5 font-weight-bold">Learn how to move.</h3>
-            <p class="mb-0 text-muted">Learn safe movement, good posture, and a clear first drill with coach guidance.</p>
+          <article class="p-4 h-100 border rounded-4 bg-white shadow-sm prog-timeline-card">
+            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Day 1</span>
+            <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Room Tour &amp; First Move.</h3>
+            <p class="mb-0 text-muted">See the room. Learn your first safe escape.</p>
           </article>
         </div>
         <div class="col-md-4">
-          <article class="p-4 h-100 border rounded-4 bg-white">
-            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">As practice continues.</span>
-            <h3 class="h5 font-weight-bold">Try a move with a partner.</h3>
-            <p class="mb-0 text-muted">Sandy sets a task. Your partner moves as you try. Sandy guides the pace.</p>
+          <article class="p-4 h-100 border rounded-4 bg-white shadow-sm prog-timeline-card">
+            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Day 7</span>
+            <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">Calm Moves.</h3>
+            <p class="mb-0 text-muted">Learn how leverage beats size. Relax and move.</p>
           </article>
         </div>
         <div class="col-md-4">
-          <article class="p-4 h-100 border rounded-4 bg-white">
-            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Your next step.</span>
-            <h3 class="h5 font-weight-bold">Ask for help.</h3>
-            <p class="mb-0 text-muted">Ask Sandy what you learned and what to work on next.</p>
+          <article class="p-4 h-100 border rounded-4 bg-white shadow-sm prog-timeline-card">
+            <span class="badge rounded-pill mb-2 px-3 py-1 bg-dark text-white">Day 14</span>
+            <h3 class="h5 font-weight-bold" style="color: var(--ss-ink, #362B24);">First Stripe.</h3>
+            <p class="mb-0 text-muted">Earn your first stripe. Feel strong and calm.</p>
           </article>
         </div>
       </div>
@@ -166,4 +216,29 @@
       <p class="small mt-3"><a href="/how-class-works">How class works</a> &middot; <a href="/jiu-jitsu-safety-tannersville-ny">Class safety</a> &middot; <a href="/options-pricing">Plans and prices</a></p>
     </div>
   </section>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="prog-sticky-cta" id="adults-sticky-cta" aria-label="Quick mobile action">
+    <div class="prog-sticky-cta__meta">
+      <span class="prog-sticky-cta__badge">Small Groups</span>
+      <span class="prog-sticky-cta__note">Capped at 12 &middot; Beginner Lane</span>
+    </div>
+    <a class="btn btn-primary prog-sticky-cta__btn" href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow" data-goal-mapping="" data-tracking-src="adults-program-page-sticky">
+      <span>Reserve Free First Visit</span>
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+  <script>
+    (function() {
+      var bar = document.getElementById('adults-sticky-cta');
+      if (!bar) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 350) {
+          bar.classList.add('is-visible');
+        } else {
+          bar.classList.remove('is-visible');
+        }
+      }, { passive: true });
+    })();
+  </script>
 </section>

@@ -2615,3 +2615,189 @@ body.page-programs[data-audience="teens"] :where(.teens-eyebrow, .eyebrow, .ss-e
   }
 }
 
+/* ==========================================================================
+   Program Conversion Enhancements (Hormozi Grand Slam Offer Architecture)
+   ========================================================================== */
+
+.prog-guarantee-seal {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.prog-guarantee-seal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.15rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid var(--ss-green, #116a42);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.12);
+}
+.prog-guarantee-seal__icon {
+  color: var(--ss-green, #116a42);
+  flex-shrink: 0;
+}
+.prog-guarantee-seal__text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.prog-guarantee-seal__kicker {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 750;
+  color: var(--ss-green, #116a42);
+  line-height: 1.2;
+}
+.prog-guarantee-seal__title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--ss-ink, #362b24);
+  line-height: 1.25;
+}
+
+.prog-reassurance-wrap {
+  background: var(--ss-surface2, #f4f1ed);
+  border-top: 1px solid rgba(54, 43, 36, 0.08);
+  border-bottom: 1px solid rgba(54, 43, 36, 0.08);
+}
+.prog-reassurance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.prog-reassurance-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  background: #ffffff;
+  border: 1px solid rgba(54, 43, 36, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(54, 43, 36, 0.04);
+}
+.prog-reassurance-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(17, 106, 66, 0.1);
+  color: var(--ss-green, #116a42);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+.prog-reassurance-item strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: var(--ss-ink, #362b24);
+  margin-bottom: 0.2rem;
+}
+.prog-reassurance-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ss-muted, #4f433c);
+  line-height: 1.4;
+}
+
+.prog-timeline-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.prog-timeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(54, 43, 36, 0.08) !important;
+}
+
+.prog-bonus-card {
+  background: linear-gradient(135deg, rgba(17, 106, 66, 0.04), rgba(40, 159, 161, 0.06));
+  border: 1.5px solid rgba(17, 106, 66, 0.2);
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+}
+
+.prog-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
+  background: rgba(251, 250, 248, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(54, 43, 36, 0.14);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(100%);
+  transition: transform 0.25s ease-out;
+}
+.prog-sticky-cta.is-visible {
+  transform: translateY(0);
+}
+.prog-sticky-cta__meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.prog-sticky-cta__badge {
+  font-size: 0.7rem;
+  font-weight: 750;
+  color: var(--ss-green, #116a42);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.prog-sticky-cta__note {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ss-ink, #362b24);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.prog-sticky-cta__btn {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 750;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  .prog-reassurance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .prog-sticky-cta {
+    display: flex;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .prog-guarantee-seal__badge {
+    width: 100%;
+    justify-content: center;
+    border-radius: 0.75rem;
+  }
+  .prog-reassurance-grid {
+    grid-template-columns: 1fr;
+  }
+  .prog-sticky-cta__meta {
+    display: none;
+  }
+  .prog-sticky-cta .prog-sticky-cta__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
