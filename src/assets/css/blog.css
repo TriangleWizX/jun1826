@@ -1851,4 +1851,16 @@ body {
   background: var(--ss-surface2);
   color: var(--ss-green);
 }
-
+/* WS-29: the article wrapper sits outside main, so constrain it here. */
+@media (width < 768px) {
+ .page-blog .ss-article-container {
+  box-sizing: border-box; inline-size: 100%; max-inline-size: 100%; min-inline-size: 0;
+  padding-inline: 1rem;
+ }
+ .page-blog .ss-article-shell, .page-blog .ss-article-main {
+  box-sizing: border-box; inline-size: 100%; max-inline-size: 100%; min-inline-size: 0;
+ }
+ .page-blog .ss-article-shell { padding: clamp(1rem, 4vw, 1.5rem); }
+ .page-blog .ss-article-main :is(img, iframe, video, table) { max-inline-size: 100%; }
+ .page-blog .ss-article-main :is(p, li, td, th) { overflow-wrap: anywhere; }
+}

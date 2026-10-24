@@ -2157,3 +2157,12 @@ body.page-options-pricing .op-card__actions .op-button__icon {
   }
 }
 /* Grand Slam Offer styles synchronized */
+/* WS-29: keep the pricing hero actions inside the phone viewport. */
+@media (width < 768px) {
+ body.page-options-pricing .op-hero__grid { grid-template-columns: minmax(0, 1fr); }
+ body.page-options-pricing .op-hero__copy,
+ body.page-options-pricing .op-hero__shell,
+ body.page-options-pricing .op-actions { min-inline-size: 0; max-inline-size: 100%; }
+ body.page-options-pricing .op-actions { align-items: stretch; flex-direction: column; }
+ body.page-options-pricing .op-button { box-sizing: border-box; inline-size: 100%; min-inline-size: 0; }
+}

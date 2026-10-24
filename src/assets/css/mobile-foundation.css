@@ -1,0 +1,97 @@
+/* Shared phone rules. Page-specific layout fixes stay in their route sheets. */
+/* Keep new shared layout boundaries on the approved 640/768/992/1100px spine. */
+@media (width < 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body[class] {
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-inline-size: 0;
+    margin: 0;
+  }
+
+  body[class] main {
+    box-sizing: border-box;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  body[class] main :where(*, *::before, *::after) {
+    box-sizing: border-box;
+    min-inline-size: 0;
+  }
+
+  body[class] main :where(img, video, iframe, svg) {
+    max-inline-size: 100%;
+  }
+
+  body[class] main :where(p, li, dt, dd, blockquote, td, th) {
+    font-size: max(16px, 1em) !important;
+    overflow-wrap: anywhere;
+  }
+
+  body[class] main :where(small, .small, figcaption, .form-text, .text-muted,
+    .ss-eyebrow, .op-eyebrow, .ss-date-class, .ss-calendar-help,
+    .ss-month-legend) {
+    font-size: max(14px, 1em) !important;
+    overflow-wrap: anywhere;
+  }
+
+  body[class] :where(small, .small, figcaption, .form-text, .text-muted,
+    .ss-eyebrow, .op-eyebrow, .ss-date-class, .ss-calendar-help,
+    .ss-month-legend) {
+    font-size: max(14px, 1em) !important;
+    overflow-wrap: anywhere;
+  }
+
+  body[class] main :where(p:not(.op-eyebrow):not(.ss-eyebrow), li, dt, dd,
+    blockquote, td, th) {
+    font-size: max(16px, 1em) !important;
+  }
+
+  body[class] main h1 {
+    font-size: clamp(2rem, 7.4vw, 3rem) !important;
+    line-height: 1.08;
+  }
+
+  body[class] main h2 {
+    font-size: clamp(1.625rem, 6vw, 2.4rem) !important;
+    line-height: 1.12;
+  }
+
+  body[class] main h3 {
+    font-size: clamp(1.3rem, 4.8vw, 1.85rem) !important;
+    line-height: 1.2;
+  }
+
+  body[class] main :where(input, select, textarea) {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+    min-block-size: 44px;
+    font-size: 16px !important;
+  }
+
+  body[class] main :where(a.btn, a.ss-btn, a.ss-action-primary, a.op-button,
+    a[data-cta-target], .btn-primary, .pb-card-btn, button.ss-nav-cta) {
+    box-sizing: border-box;
+    min-block-size: 44px;
+  }
+
+  body[class] main :where(table) {
+    max-inline-size: 100%;
+  }
+}
+
+@media (width <= 640px) {
+  body[class] :where(.container, .container-fluid, .container-sm, .container-md,
+    .container-lg, .container-xl, .container-xxl) {
+    box-sizing: border-box;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    padding-inline: 1rem;
+  }
+}

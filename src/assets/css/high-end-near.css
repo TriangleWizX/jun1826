@@ -1373,3 +1373,10 @@ body.ss-page-nearby-towns h1 {
     transition: none;
   }
 }
+/* WS-29: let the programs eyebrow badge wrap inside its hero card. */
+@media (width < 768px) {
+ body.page-programs .badge {
+  box-sizing: border-box; display: inline-block; max-inline-size: 100%;
+  white-space: normal; overflow-wrap: anywhere; font-size: 14px !important;
+ }
+}
