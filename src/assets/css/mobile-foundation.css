@@ -68,17 +68,41 @@
     line-height: 1.2;
   }
 
-  body[class] main :where(input, select, textarea) {
+  body[class] main :where(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="hidden"]), select, textarea) {
     box-sizing: border-box;
+    inline-size: 100%;
     max-inline-size: 100%;
     min-block-size: 44px;
     font-size: 16px !important;
   }
 
-  body[class] main :where(a.btn, a.ss-btn, a.ss-action-primary, a.op-button,
-    a[data-cta-target], .btn-primary, .pb-card-btn, button.ss-nav-cta) {
+  /* Full-width action buttons on visit and free-intro funnel pages */
+  body.page-visit .visit-hero-actions a.btn,
+  body.page-visit .visit-card a.btn,
+  body.page-visit a.btn[href^="sms:"] {
     box-sizing: border-box;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    text-align: center;
+  }
+
+  body[class] main :where(a.btn, a.ss-btn, a.ss-action-primary, a.op-button,
+    a[data-cta-target], .btn-primary, .pb-card-btn, button.ss-nav-cta,
+    #copy-term-link, #copy-state-link) {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+    white-space: normal;
     min-block-size: 44px;
+    min-height: 44px;
+  }
+
+  body[class] :where(.ss-double-bezel, .ss-double-bezel-inner) {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+  }
+
+  body[class] :where(.ss-double-bezel-inner.p-4, .ss-double-bezel-inner.p-md-5) {
+    padding: 1.25rem 1rem !important;
   }
 
   body[class] main :where(table) {

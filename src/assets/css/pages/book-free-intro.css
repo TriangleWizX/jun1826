@@ -298,6 +298,8 @@
     border-top: 1px solid var(--color-rule);
   }
   .page-book-intro .ss-mobile-sticky-cta a { width: 100%; }
+  .page-book-intro .editorial-left .d-flex.flex-wrap.gap-3 a.btn,
+  .page-book-intro [data-calendar-fallback] a.btn { width: 100%; box-sizing: border-box; }
   .page-book-intro { padding-bottom: var(--space-2xl); }
   .page-book-intro.ss-booking-flow-active :is(.ss-mobile-sticky-cta, .ss-mobile-actionbar) { display: none !important; }
 }
@@ -306,5 +308,6 @@
 }
 .page-book-intro .ss-visit-request { grid-column: 1 / -1; max-width: 46rem; padding: var(--space-md); border: 1px solid var(--color-rule-2); border-radius: var(--radius-card); background: var(--color-paper-2); }
 .page-book-intro .ss-visit-request label { display: block; margin-bottom: var(--space-2xs); font-weight: 600; }
-.page-book-intro .ss-visit-request input, .page-book-intro .ss-visit-request select { min-height: 44px; }
+.page-book-intro .ss-visit-request input, .page-book-intro .ss-visit-request select { width: 100%; min-height: 44px; box-sizing: border-box; }
+.page-book-intro .ss-visit-request button[type="submit"] { width: 100%; min-height: 44px; box-sizing: border-box; }
 .page-book-intro [data-calendar-fallback] { margin-top: var(--space-sm); }
