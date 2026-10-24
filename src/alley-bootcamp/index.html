@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: "Alley Bootcamp in Tannersville, NY | Sensei Sandy BJJ"
-description: "Join adult Alley Bootcamp in Tannersville on Tuesday or Thursday morning. Coach-led strength and engine work, with eight spots and an indoor weather backup."
+description: "Join adult Alley Bootcamp in Tannersville on Tuesday or Thursday morning. Coach-led strength, gym scale weight loss goal guarantee, eight spots, and indoor weather backup."
 canonicalUrl: "https://senseisandy.com/alley-bootcamp"
 bodyClass: "page-alley-bootcamp"
 extraCss:
@@ -10,14 +10,16 @@ permalink: "/alley-bootcamp/index.html"
 ---
 {% set bootcampSessions = [schedule.groupClasses[8], schedule.groupClasses[9]] %}
 {% set bootcampPrices = pricing.visitorAndSupport %}
-{% set smsHref = 'sms:+19177368649?body=Hi%20Sandy%2C%20is%20there%20space%20at%20Alley%20Bootcamp%3F' %}
+{% set smsHref = 'sms:+19177368649?body=Hi%20Sandy%2C%20tell%20me%20about%20the%20bootcamp%20weight%20loss%20guarantee%21' %}
 {% set questions = [
-  {"question":"Who can join?","answer":"Alley Bootcamp is for adults, ages 18 and up. You can choose a drop-in or a pass. Text Sandy if you are unsure which one fits."},
-  {"question":"What should I bring?","answer":"Bring water and wear clothes and shoes you can move in. A warm layer can help on cool mornings. The training gear is here."},
-  {"question":"I am new to strength training. Can I join?","answer":"Yes. Sandy shows each move and offers easier and harder ways to do it. Pick the pace that feels right for you."},
-  {"question":"What if the weather turns wet?","answer":"We move the session into the studio and train there. Your spot stays yours."},
+  {"question":"Who can join?","answer":"Alley Bootcamp is for adults, ages 18 and up. You can choose a single drop-in or a pass. Text Sandy to find your fit."},
+  {"question":"What should I bring?","answer":"Bring water and wear clothes and shoes you can move in. A warm layer helps on cool mountain mornings. All training gear is at the studio."},
+  {"question":"I am new to strength training. Can I join?","answer":"Yes. Sandy shows each move and offers simple steps for every fitness level. You choose the pace that feels good for you."},
+  {"question":"How does the gym scale tracking work?","answer":"Sandy keeps a private scale right at the gym. You step on the scale on day one to set a clear personal goal. You weigh in once a week before class. Sandy tracks your progress and gives you helpful tips."},
+  {"question":"What is the weight loss goal guarantee?","answer":"Our 8-session pass includes a clear goal guarantee. Complete your 8 classes, step on our gym scale each week, and follow our plate guide. Reach your target weight, or Sandy coaches you for free until you do. You may also apply your full pass fee toward any academy membership."},
+  {"question":"What if the weather turns wet?","answer":"We move the session into the studio and train there. Your spot stays safe and warm."},
   {"question":"Where do we meet?","answer":"Meet at the parking lot end of the alley beside 6045 Main Street in Tannersville. Sandy will greet you there."},
-  {"question":"How do I check for a spot?","answer":"Text Sandy to ask if space is open and how to pay. The group has room for up to 8 people."}
+  {"question":"How do I check for a spot?","answer":"Text Sandy to reserve your spot. Each class holds up to 8 adults for close coaching."}
 ] %}
 <main id="main-content" class="page-alley-bootcamp">
   <section class="ab-hero">
@@ -26,7 +28,7 @@ permalink: "/alley-bootcamp/index.html"
         <div class="col-lg-6 ab-hero__copy">
           <p class="ab-kicker">Tannersville, NY <span aria-hidden="true">·</span> Adults 18+</p>
           <h1 class="ab-display">Morning strength in the Catskills</h1>
-          <p class="ab-lead">Train on the alley steps beside Sensei Sandy BJJ. Tuesday for strength. Thursday for engine work.</p>
+          <p class="ab-lead">Train on the alley steps beside Sensei Sandy BJJ. Tuesday for strength. Thursday for engine work. Track progress on our gym scale with our weight loss goal guarantee.</p>
           <a class="btn btn-primary btn-lg ab-cta" href="{{ smsHref }}">Text Sandy</a>
         </div>
         <div class="col-lg-6 ab-hero__media">
@@ -44,6 +46,48 @@ permalink: "/alley-bootcamp/index.html"
         <li><span>Meet at</span><strong>6045 Main Street</strong><small>Tannersville, NY</small></li>
         <li><span>Group size</span><strong>Up to {{ bootcampSessions[0].capacity }}</strong><small>Adults 18+</small></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="ab-section ab-guarantee" aria-labelledby="scale-guarantee-title">
+    <div class="container">
+      <div class="ab-section-head">
+        <p class="ab-section-label">Scale-Verified Results</p>
+        <h2 id="scale-guarantee-title" class="ab-section-title">Reach your weight loss goal on our gym scale</h2>
+        <p class="ab-section-sub">We back your effort. Step on our scale on day one, complete your sessions, and reach your target. Or Sandy coaches you for free until you do.</p>
+      </div>
+
+      <div class="ab-scale-grid">
+        <article class="ab-scale-step">
+          <span class="ab-step-badge">1</span>
+          <h3>Private weigh-in</h3>
+          <p>Step on Sandy's scale on day one. Set a clear, personal goal together.</p>
+        </article>
+        <article class="ab-scale-step">
+          <span class="ab-step-badge">2</span>
+          <h3>Coached sessions</h3>
+          <p>Attend your 8 morning classes. Follow simple whole-food plate guidelines.</p>
+        </article>
+        <article class="ab-scale-step">
+          <span class="ab-step-badge">3</span>
+          <h3>Weekly check-ins</h3>
+          <p>Weigh in each week at the gym. Track real progress with coach feedback.</p>
+        </article>
+        <article class="ab-scale-step">
+          <span class="ab-step-badge">4</span>
+          <h3>Goal guarantee</h3>
+          <p>Reach your target weight, or train for free with Sandy until you do.</p>
+        </article>
+      </div>
+
+      <div class="ab-guarantee-box">
+        <div class="ab-guarantee-box__content">
+          <p class="ab-guarantee-badge">The Hormozi Goal Guarantee</p>
+          <h3 class="ab-guarantee-headline">All the risk is on us</h3>
+          <p class="ab-guarantee-text">When you join with our 8-session pass, we guarantee your results. Complete your 8 classes, weigh in weekly on our gym scale, and follow our plate guide. Reach your goal weight, or Sandy coaches you for free until you do. You can also apply your entire pass fee toward any academy membership.</p>
+        </div>
+        <a class="btn btn-primary btn-lg ab-cta" href="{{ smsHref }}">Claim Your Goal Spot</a>
+      </div>
     </div>
   </section>
 
@@ -72,9 +116,9 @@ permalink: "/alley-bootcamp/index.html"
         <p><strong>Small group.</strong> Sandy sees each rep and sets each move to fit you.</p>
         <p><strong>Same coach.</strong> Sandy leads every session each week.</p>
         <p><strong>Real steps.</strong> Four landings and 19 steps beside the studio.</p>
+        <p><strong>Gym scale tracking.</strong> Private weigh-ins keep your weight loss on track.</p>
         <p><strong>Ready for the hills.</strong> Steps and carries build the legs you use at Hunter and Windham.</p>
         <p><strong>Gear is here.</strong> Kettlebells, a Bulgarian bag, a balance ball, and blocks wait at the studio.</p>
-        <p><strong>Fits your BJJ week.</strong> Morning strength beside evening classes.</p>
       </div>
     </div>
   </section>
@@ -89,7 +133,12 @@ permalink: "/alley-bootcamp/index.html"
         <article class="ab-price"><h3>Drop-in</h3><p class="ab-price-amount">{{ bootcampPrices.alleyBootcampDropIn.displayPrice }}</p><p>One session</p></article>
         <article class="ab-price"><h3>Member session</h3><p class="ab-price-amount">{{ bootcampPrices.alleyBootcampMemberSession.displayPrice }}</p><p>Per session</p></article>
         <article class="ab-price"><h3>4-session pass</h3><p class="ab-price-amount">{{ bootcampPrices.alleyBootcampFourSessionPass.displayPrice }}</p><p>$20 per session</p></article>
-        <article class="ab-price"><h3>8-session pass</h3><p class="ab-price-amount">{{ bootcampPrices.alleyBootcampEightSessionPass.displayPrice }}</p><p>$18 per session</p></article>
+        <article class="ab-price ab-price--featured">
+          <span class="ab-price-pill">Goal Guarantee</span>
+          <h3>8-session pass</h3>
+          <p class="ab-price-amount">{{ bootcampPrices.alleyBootcampEightSessionPass.displayPrice }}</p>
+          <p>$18 per session · Scale-Verified</p>
+        </article>
         <article class="ab-price ab-price--included"><h3>Adult annual plan</h3><p class="ab-price-amount">{{ bootcampPrices.alleyBootcampAdultAnnualIncluded.displayPrice }}</p><p>Included with your plan</p></article>
       </div>
       <a class="ab-price-link" href="/options-pricing">See all plans <span aria-hidden="true">→</span></a>
@@ -104,32 +153,32 @@ permalink: "/alley-bootcamp/index.html"
       </div>
       <div class="ab-faq-list">
         {% for item in questions %}
-        <details class="faq-item"><summary><span class="faq-question-text">{{ item.question }}</span></summary><div class="faq-answer-content"><p class="mb-0">{{ item.answer }}{% if loop.index == 6 %} <a href="{{ smsHref }}">Text Sandy</a>{% endif %}</p></div></details>
+        <details class="faq-item"><summary><span class="faq-question-text">{{ item.question }}</span></summary><div class="faq-answer-content"><p class="mb-0">{{ item.answer }}{% if loop.index == 8 %} <a href="{{ smsHref }}">Text Sandy</a>{% endif %}</p></div></details>
         {% endfor %}
       </div>
     </div>
   </section>
 
   <section class="ab-coach" aria-label="Meet the coach">
-  <div class="container">
-    <article class="ab-coach__panel">
-      <div class="ab-coach__copy">
-        <p class="ab-section-label">Your coach</p>
-        <p class="ab-coach__bio">Sandy leads each class. He is a first-degree BJJ black belt and head instructor at Sensei Sandy BJJ. <a href="/about">Meet Sandy</a></p>
-      </div>
-      <a class="btn btn-outline-primary ab-cta ab-cta--light" href="{{ smsHref }}">Text Sandy</a>
-    </article>
-  </div>
-</section>
+    <div class="container">
+      <article class="ab-coach__panel">
+        <div class="ab-coach__copy">
+          <p class="ab-section-label">Your coach</p>
+          <p class="ab-coach__bio">Sandy leads each class. He is a first-degree BJJ black belt and head instructor at Sensei Sandy BJJ. <a href="/about">Meet Sandy</a></p>
+        </div>
+        <a class="btn btn-outline-primary ab-cta ab-cta--light" href="{{ smsHref }}">Text Sandy</a>
+      </article>
+    </div>
+  </section>
 
-<section class="ab-final-cta" aria-labelledby="bootcamp-final-cta-title">
-  <div class="container">
-    <p class="ab-section-label">Start when you are ready</p>
-    <h2 id="bootcamp-final-cta-title" class="ab-final-cta__title">Start calm. Train smart.</h2>
-    <a class="btn btn-primary btn-lg ab-cta" href="{{ smsHref }}">Text Sandy</a>
-    <p class="ab-final-cta__note">New to the academy? <a href="/visit">Start with Free First Visit</a></p>
-  </div>
-</section>
+  <section class="ab-final-cta" aria-labelledby="bootcamp-final-cta-title">
+    <div class="container">
+      <p class="ab-section-label">Start when you are ready</p>
+      <h2 id="bootcamp-final-cta-title" class="ab-final-cta__title">Start calm. Train smart.</h2>
+      <a class="btn btn-primary btn-lg ab-cta" href="{{ smsHref }}">Text Sandy</a>
+      <p class="ab-final-cta__note">New to the academy? <a href="/visit">Start with Free First Visit</a></p>
+    </div>
+  </section>
 </main>
 <script type="application/ld+json">
 {

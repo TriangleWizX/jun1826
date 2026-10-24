@@ -168,6 +168,97 @@
 .page-alley-bootcamp .ab-section-head { max-width: 43rem; margin-bottom: 1.7rem; }
 .page-alley-bootcamp .ab-section-label { margin-bottom: 0.55rem; }
 .page-alley-bootcamp .ab-section-title { max-width: 18ch; font-size: clamp(2rem, 3.6vw, 3.25rem); }
+.page-alley-bootcamp .ab-section-sub { max-width: 48ch; margin: 0.85rem 0 0; color: var(--ab-muted); font-size: clamp(1rem, 1.25vw, 1.1rem); line-height: 1.6; }
+
+.page-alley-bootcamp .ab-guarantee { background: #ffffff; border-bottom: 1px solid var(--ab-rule); }
+.page-alley-bootcamp .ab-scale-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.page-alley-bootcamp .ab-scale-step {
+  position: relative;
+  min-width: 0;
+  padding: 1.3rem 1.2rem 1.4rem;
+  border: 1px solid var(--ab-rule);
+  border-radius: 1.2rem;
+  background: #fbfaf8;
+  box-shadow: 0 0.55rem 1.5rem rgba(54, 43, 36, 0.04);
+}
+
+.page-alley-bootcamp .ab-step-badge {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #e5efe8;
+  color: var(--ab-green);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.page-alley-bootcamp .ab-scale-step h3 {
+  margin: 0 0 0.55rem;
+  color: var(--ab-ink);
+  font-family: "Lexend", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.page-alley-bootcamp .ab-scale-step p {
+  margin: 0;
+  color: var(--ab-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.page-alley-bootcamp .ab-guarantee-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  border: 1.5px solid rgba(17, 106, 66, 0.35);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #edf6f0 0%, #f7fbf8 100%);
+  box-shadow: 0 0.75rem 2.2rem rgba(17, 106, 66, 0.08);
+}
+
+.page-alley-bootcamp .ab-guarantee-box__content { max-width: 46rem; }
+.page-alley-bootcamp .ab-guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0.6rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--ab-green);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-alley-bootcamp .ab-guarantee-headline {
+  margin: 0 0 0.65rem;
+  color: var(--ab-ink);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.page-alley-bootcamp .ab-guarantee-text {
+  margin: 0;
+  color: var(--ab-muted);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.6;
+}
 
 .page-alley-bootcamp .ab-flow-grid {
   display: grid;
@@ -252,6 +343,25 @@
 .page-alley-bootcamp .ab-price .ab-price-amount { margin-bottom: 0.35rem; color: var(--ab-green); font-family: "Instrument Serif", Georgia, serif; font-size: 2.35rem; line-height: 1; }
 .page-alley-bootcamp .ab-price p:last-child { font-size: 0.82rem; }
 .page-alley-bootcamp .ab-price--included { background: #edf3ee; border-color: rgba(17, 106, 66, 0.22); }
+.page-alley-bootcamp .ab-price--featured {
+  position: relative;
+  border-color: var(--ab-green);
+  background: #fdfdfc;
+  box-shadow: 0 0.6rem 1.8rem rgba(17, 106, 66, 0.12);
+}
+
+.page-alley-bootcamp .ab-price-pill {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #e5efe8;
+  color: var(--ab-green);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 
 .page-alley-bootcamp .ab-price-link {
   display: inline-flex;
@@ -344,6 +454,9 @@
   .page-alley-bootcamp .ab-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .page-alley-bootcamp .ab-facts li:nth-child(3) { border-left: 0; border-top: 1px solid var(--ab-rule); }
   .page-alley-bootcamp .ab-facts li:nth-child(4) { border-top: 1px solid var(--ab-rule); }
+  .page-alley-bootcamp .ab-scale-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-alley-bootcamp .ab-guarantee-box { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .page-alley-bootcamp .ab-guarantee-box .ab-cta { width: 100%; text-align: center; }
   .page-alley-bootcamp .ab-price-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .page-alley-bootcamp .ab-reason-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -359,6 +472,10 @@
   .page-alley-bootcamp .ab-facts li { padding: 0.85rem 0.75rem; }
   .page-alley-bootcamp .ab-facts strong { font-size: 0.92rem; }
   .page-alley-bootcamp .ab-facts small { font-size: 0.75rem; }
+  .page-alley-bootcamp .ab-scale-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+  .page-alley-bootcamp .ab-scale-step { padding: 1.1rem 1rem; }
+  .page-alley-bootcamp .ab-guarantee-box { padding: 1.25rem 1.1rem; }
+  .page-alley-bootcamp .ab-guarantee-headline { font-size: 1.75rem; }
   .page-alley-bootcamp .ab-flow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
   .page-alley-bootcamp .ab-step { padding: 1rem 0.9rem; }
   .page-alley-bootcamp .ab-step h3 { font-size: 0.94rem; }
