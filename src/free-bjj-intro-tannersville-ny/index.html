@@ -28,7 +28,47 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
     </div>
 
     <!-- RIGHT: Interactive Booking Flow -->
-    <div class="editorial-right ss-progressive-booking" id="booking-flow" aria-label="Reserve Free First Visit">
+    <div class="editorial-right">
+      <!-- WHAT YOU GET FIRST (WS-31) -->
+      <section class="ss-first-offer-card" aria-labelledby="first-offer-title">
+        <h2 id="first-offer-title">What you get first</h2>
+        <div class="ss-offer-group">
+          <p class="ss-offer-group-label">First, free:</p>
+          <ul class="ss-offer-checklist list-unstyled">
+            <li class="ss-offer-item">
+              <i class="bi bi-check2 text-success" aria-hidden="true"></i>
+              <span>Your first visit is free.</span>
+            </li>
+            <li class="ss-offer-item">
+              <i class="bi bi-check2 text-success" aria-hidden="true"></i>
+              <span>Your first class is free too — for adults, kids, and teens.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="ss-offer-group">
+          <p class="ss-offer-group-label">When you join:</p>
+          <ul class="ss-offer-checklist list-unstyled">
+            <li class="ss-offer-item">
+              <i class="bi bi-check2 text-success" aria-hidden="true"></i>
+              <span>Sandy teaches every class.</span>
+            </li>
+            <li class="ss-offer-item">
+              <i class="bi bi-check2 text-success" aria-hidden="true"></i>
+              <span>Every class caps at {{ business.classCap }} students.</span>
+            </li>
+            <li class="ss-offer-item">
+              <i class="bi bi-check2 text-success" aria-hidden="true"></i>
+              <span>Your first term includes a first gi.</span>
+            </li>
+            <li class="ss-offer-item">
+              <i class="bi bi-check2 text-success" aria-hidden="true"></i>
+              <span>30-day fit guarantee on eligible first terms, after 4 classes in 30 days.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="ss-progressive-booking" id="booking-flow" aria-label="Reserve Free First Visit">
       <!-- STEP 1: Select Profile -->
       <div class="pb-step pb-step-active" id="pb-step-1" aria-hidden="false">
         <h2 id="booking-choice-title" tabindex="-1">Who’s starting?</h2>
@@ -137,6 +177,7 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
           </div>
         </div>
       </div>
+    </div>
     </div>
     <section class="ss-visit-request" id="visit-request-form" aria-labelledby="visit-request-title">
       <h2 id="visit-request-title">Send a visit request instead</h2>
