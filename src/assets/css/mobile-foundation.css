@@ -95,3 +95,45 @@
     padding-inline: 1rem;
   }
 }
+
+/* WS-29: one shared phone action bar on the five first-visit funnel routes. */
+.ss-mobile-actionbar .ss-action-reserve {
+  display: none !important;
+}
+
+@media (width < 768px) {
+  body[data-ws29-funnel] {
+    padding-block-end: calc(88px + env(safe-area-inset-bottom));
+  }
+
+  body[data-ws29-funnel] :is(.ss-mobile-sticky-cta,
+    .mobile-sticky-cta, .ss-mobile-sticky-action) {
+    display: none !important;
+  }
+
+  body[data-ws29-funnel] .ss-mobile-actionbar {
+    display: flex !important;
+    gap: 8px;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  }
+
+  body[data-ws29-funnel] .ss-mobile-actionbar .ss-action-home {
+    display: none !important;
+  }
+
+  body[data-ws29-funnel] .ss-mobile-actionbar .ss-action-reserve {
+    display: inline-flex !important;
+    border-color: var(--color-accent, #116a42);
+    background: var(--color-paper, #fff);
+    color: var(--color-accent-deep, #116a42);
+  }
+
+  body[data-ws29-funnel] .ss-mobile-actionbar a {
+    min-height: 48px;
+    font-size: 14px;
+  }
+
+  body:has(.ss-site-header.nav-open) .ss-mobile-actionbar {
+    display: none !important;
+  }
+}

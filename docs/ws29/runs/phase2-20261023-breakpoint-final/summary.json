@@ -1,0 +1,576 @@
+{
+  "records": [
+    {
+      "route": "/",
+      "width": 767,
+      "status": 200,
+      "initial": {
+        "bodyClass": "lane-mixed page-home ss-page ss-page-home ss-has-community-bg ss-has-hub-preview page-home-mobile-layer",
+        "scrollWidth": 767,
+        "viewport": "width=device-width, initial-scale=1",
+        "headerHeight": 94,
+        "brand": {
+          "text": "Sensei Sandy BJJ BJJ for kids, teens, and adults.",
+          "href": "/",
+          "visible": true,
+          "width": 129.71875,
+          "height": 44,
+          "x": 46.015625,
+          "y": 18
+        },
+        "headerText": {
+          "text": "Text Sandy",
+          "href": "sms:+19177368649",
+          "visible": true,
+          "width": 97.296875,
+          "height": 44,
+          "x": 573.6875,
+          "y": 18
+        },
+        "menuButton": {
+          "text": "Menu",
+          "href": null,
+          "visible": true,
+          "width": 44,
+          "height": 44,
+          "x": 676.984375,
+          "y": 18
+        },
+        "reviewStrip": {
+          "text": "★★★★★ \"As a smaller grappler, I felt safe and welcomed.\" Kelly Chan · Google rev",
+          "href": null,
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "headerBooking": {
+          "text": "Reserve Your Free First Visit Free Intro",
+          "href": "/free-bjj-intro-tannersville-ny#booking-flow",
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "menuOpen": false,
+        "menuLinks": [],
+        "current": [],
+        "dropdownToggleVisible": false,
+        "dropdownLinksVisible": 0,
+        "dropdownStyles": [
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "height": 0,
+            "parentDisplay": "list-item"
+          },
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "height": 0,
+            "parentDisplay": "list-item"
+          }
+        ],
+        "bar": {
+          "text": "Text Sandy Home Reserve Free Intro",
+          "href": null,
+          "visible": true,
+          "width": 767,
+          "height": 65,
+          "x": 0,
+          "y": 835
+        },
+        "barStyle": {
+          "className": "ss-mobile-actionbar is-observed is-visible",
+          "display": "flex",
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        "barLinks": [
+          {
+            "text": "Text Sandy",
+            "href": "sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question",
+            "visible": true,
+            "width": 367.5,
+            "height": 48,
+            "x": 12,
+            "y": 844
+          },
+          {
+            "text": "Reserve Free Intro",
+            "href": "/free-bjj-intro-tannersville-ny#booking-flow",
+            "visible": true,
+            "width": 367.5,
+            "height": 48,
+            "x": 387.5,
+            "y": 844
+          }
+        ],
+        "duplicateBarsVisible": 0,
+        "footerVisible": true,
+        "submitVisible": false
+      },
+      "menu": {
+        "bodyClass": "lane-mixed page-home ss-page ss-page-home ss-has-community-bg ss-has-hub-preview page-home-mobile-layer",
+        "scrollWidth": 767,
+        "viewport": "width=device-width, initial-scale=1",
+        "headerHeight": 1002.9375,
+        "brand": {
+          "text": "Sensei Sandy BJJ BJJ for kids, teens, and adults.",
+          "href": "/",
+          "visible": true,
+          "width": 129.71875,
+          "height": 44,
+          "x": 46.015625,
+          "y": 18
+        },
+        "headerText": {
+          "text": "Text Sandy",
+          "href": "sms:+19177368649",
+          "visible": true,
+          "width": 97.296875,
+          "height": 44,
+          "x": 573.6875,
+          "y": 18
+        },
+        "menuButton": {
+          "text": "Menu",
+          "href": null,
+          "visible": true,
+          "width": 44,
+          "height": 44,
+          "x": 676.984375,
+          "y": 18
+        },
+        "reviewStrip": {
+          "text": "★★★★★ \"As a smaller grappler, I felt safe and welcomed.\" Kelly Chan · Google rev",
+          "href": null,
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "headerBooking": {
+          "text": "Reserve Your Free First Visit Free Intro",
+          "href": "/free-bjj-intro-tannersville-ny#booking-flow",
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "menuOpen": true,
+        "menuLinks": [
+          {
+            "text": "Home",
+            "href": "/",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 77
+          },
+          {
+            "text": "Free Intro",
+            "href": "/free-bjj-intro-tannersville-ny",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 121
+          },
+          {
+            "text": "Schedule",
+            "href": "/schedule",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 165
+          },
+          {
+            "text": "Pricing",
+            "href": "/options-pricing",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 209
+          },
+          {
+            "text": "Programs",
+            "href": "/programs",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 253
+          },
+          {
+            "text": "Visit",
+            "href": "/visit",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 297
+          },
+          {
+            "text": "Kids BJJ",
+            "href": "/bjj-classes/kids-tannersville-ny",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 385
+          },
+          {
+            "text": "Teens BJJ",
+            "href": "/bjj-classes/teens-tannersville-ny",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 434.59375
+          },
+          {
+            "text": "Adult BJJ",
+            "href": "/bjj-classes/adults-tannersville-ny",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 484.1875
+          },
+          {
+            "text": "Private Coaching",
+            "href": "/private-lessons",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 533.78125
+          },
+          {
+            "text": "How Class Works",
+            "href": "/how-class-works",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 627.375
+          },
+          {
+            "text": "Coach Bio",
+            "href": "/bio",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 676.96875
+          },
+          {
+            "text": "Studio Tour",
+            "href": "/sensei-studio",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 726.5625
+          },
+          {
+            "text": "Safety Walkthrough",
+            "href": "/jiu-jitsu-safety-tannersville-ny",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 776.15625
+          },
+          {
+            "text": "Success Stories",
+            "href": "/success-stories",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 825.75
+          },
+          {
+            "text": "Visitor Training",
+            "href": "/options-pricing#visitor-training",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 875.34375
+          },
+          {
+            "text": "Parent Hub",
+            "href": "/parent-resources",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 924.9375
+          }
+        ],
+        "current": [
+          {
+            "text": "Home",
+            "href": "/",
+            "visible": true,
+            "width": 674.96875,
+            "height": 44,
+            "x": 46.015625,
+            "y": 77
+          }
+        ],
+        "dropdownToggleVisible": false,
+        "dropdownLinksVisible": 10,
+        "dropdownStyles": [
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "height": 192.78125,
+            "parentDisplay": "list-item"
+          },
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "height": 291.96875,
+            "parentDisplay": "list-item"
+          }
+        ],
+        "bar": {
+          "text": "Text Sandy Home Reserve Free Intro",
+          "href": null,
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "barStyle": {
+          "className": "ss-mobile-actionbar is-observed is-visible",
+          "display": "none",
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        "barLinks": [],
+        "duplicateBarsVisible": 0,
+        "footerVisible": true,
+        "submitVisible": false
+      },
+      "footer": {
+        "bodyClass": "lane-mixed page-home ss-page ss-page-home ss-has-community-bg ss-has-hub-preview page-home-mobile-layer",
+        "scrollWidth": 767,
+        "viewport": "width=device-width, initial-scale=1",
+        "headerHeight": 94,
+        "brand": {
+          "text": "Sensei Sandy BJJ BJJ for kids, teens, and adults.",
+          "href": "/",
+          "visible": true,
+          "width": 129.71875,
+          "height": 44,
+          "x": 46.015625,
+          "y": -9899
+        },
+        "headerText": {
+          "text": "Text Sandy",
+          "href": "sms:+19177368649",
+          "visible": true,
+          "width": 97.296875,
+          "height": 44,
+          "x": 573.6875,
+          "y": -9899
+        },
+        "menuButton": {
+          "text": "Menu",
+          "href": null,
+          "visible": true,
+          "width": 44,
+          "height": 44,
+          "x": 676.984375,
+          "y": -9899
+        },
+        "reviewStrip": {
+          "text": "★★★★★ \"As a smaller grappler, I felt safe and welcomed.\" Kelly Chan · Google rev",
+          "href": null,
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "headerBooking": {
+          "text": "Reserve Your Free First Visit Free Intro",
+          "href": "/free-bjj-intro-tannersville-ny#booking-flow",
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "menuOpen": false,
+        "menuLinks": [],
+        "current": [],
+        "dropdownToggleVisible": false,
+        "dropdownLinksVisible": 0,
+        "dropdownStyles": [
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "height": 0,
+            "parentDisplay": "list-item"
+          },
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "height": 0,
+            "parentDisplay": "list-item"
+          }
+        ],
+        "bar": {
+          "text": "Text Sandy Home Reserve Free Intro",
+          "href": null,
+          "visible": false,
+          "width": 767,
+          "height": 65,
+          "x": 0,
+          "y": 900
+        },
+        "barStyle": {
+          "className": "ss-mobile-actionbar is-observed",
+          "display": "flex",
+          "opacity": "0",
+          "visibility": "hidden"
+        },
+        "barLinks": [],
+        "duplicateBarsVisible": 0,
+        "footerVisible": true,
+        "submitVisible": false
+      },
+      "form": null,
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "initial": {
+        "bodyClass": "lane-mixed page-home ss-page ss-page-home ss-has-community-bg ss-has-hub-preview page-home-mobile-layer",
+        "scrollWidth": 768,
+        "viewport": "width=device-width, initial-scale=1",
+        "headerHeight": 223.1875,
+        "brand": {
+          "text": "Sensei Sandy BJJ BJJ for kids, teens, and adults.",
+          "href": "/",
+          "visible": true,
+          "width": 212.4375,
+          "height": 44,
+          "x": 54.0625,
+          "y": 29.59375
+        },
+        "headerText": {
+          "text": "Text Sandy",
+          "href": "sms:+19177368649",
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "menuButton": {
+          "text": "Menu",
+          "href": null,
+          "visible": true,
+          "width": 44,
+          "height": 44,
+          "x": 54.0625,
+          "y": 141.59375
+        },
+        "reviewStrip": {
+          "text": "★★★★★ \"As a smaller grappler, I felt safe and welcomed.\" Kelly Chan · Google rev",
+          "href": null,
+          "visible": true,
+          "width": 659.875,
+          "height": 44,
+          "x": 54.0625,
+          "y": 81.59375
+        },
+        "headerBooking": {
+          "text": "Reserve Your Free First Visit Free Intro",
+          "href": "/free-bjj-intro-tannersville-ny#booking-flow",
+          "visible": true,
+          "width": 603.875,
+          "height": 44,
+          "x": 110.0625,
+          "y": 141.59375
+        },
+        "menuOpen": false,
+        "menuLinks": [],
+        "current": [],
+        "dropdownToggleVisible": false,
+        "dropdownLinksVisible": 0,
+        "dropdownStyles": [
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "hidden",
+            "opacity": "0",
+            "height": 0,
+            "parentDisplay": "list-item"
+          },
+          {
+            "className": "dropdown-menu",
+            "display": "block",
+            "visibility": "hidden",
+            "opacity": "0",
+            "height": 0,
+            "parentDisplay": "list-item"
+          }
+        ],
+        "bar": {
+          "text": "Text Sandy Home Reserve Free Intro",
+          "href": null,
+          "visible": false,
+          "width": 0,
+          "height": 0,
+          "x": 0,
+          "y": 0
+        },
+        "barStyle": {
+          "className": "ss-mobile-actionbar is-observed is-visible",
+          "display": "none",
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        "barLinks": [],
+        "duplicateBarsVisible": 0,
+        "footerVisible": true,
+        "submitVisible": false
+      },
+      "menu": null,
+      "footer": null,
+      "form": null,
+      "errors": []
+    }
+  ],
+  "failures": []
+}

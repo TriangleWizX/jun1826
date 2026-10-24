@@ -39,6 +39,8 @@
           </span>
         </a>
 
+        <a class="ss-mobile-header-text" href="sms:+19177368649" data-analytics-event="text_sandy_clicked">Text Sandy</a>
+
         <!-- Hamburger: always visible on all viewports, immediately after brand -->
         <button class="navbar-toggler ss-menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#ssMainNav"
           aria-controls="ssMainNav" aria-expanded="false" aria-label="Open menu">
@@ -74,10 +76,17 @@
         <!-- Collapsible nav — always starts collapsed, hamburger opens it at all widths -->
         <div id="ssMainNav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item ss-mobile-only-link"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item ss-mobile-only-link"><a class="nav-link" href="/free-bjj-intro-tannersville-ny">Free Intro</a></li>
+            <li class="nav-item ss-mobile-only-link"><a class="nav-link" href="/schedule">Schedule</a></li>
+            <li class="nav-item ss-mobile-only-link"><a class="nav-link" href="/options-pricing">Pricing</a></li>
+            <li class="nav-item ss-mobile-only-link"><a class="nav-link" href="/programs">Programs</a></li>
+            <li class="nav-item ss-mobile-only-link"><a class="nav-link" href="/visit">Visit</a></li>
             <li class="nav-item dropdown">
               <button class="nav-link dropdown-toggle" type="button" id="programsDropdownToggle" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false" aria-controls="programsDropdownMenu">
                 Classes
               </button>
+              <span class="ss-mobile-menu-heading">Classes</span>
               <ul class="dropdown-menu" id="programsDropdownMenu" aria-labelledby="programsDropdownToggle">
                 <li><a class="dropdown-item" href="/bjj-classes/kids-tannersville-ny">Kids BJJ</a></li>
                 <li><a class="dropdown-item" href="/bjj-classes/teens-tannersville-ny">Teens BJJ</a></li>
@@ -90,6 +99,7 @@
               <button class="nav-link dropdown-toggle" type="button" id="experienceDropdownToggle" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false" aria-controls="experienceDropdownMenu">
                 Your first class
               </button>
+              <span class="ss-mobile-menu-heading">Your first class</span>
               <ul class="dropdown-menu" id="experienceDropdownMenu" aria-labelledby="experienceDropdownToggle">
                 <li><a class="dropdown-item" href="/how-class-works">How Class Works</a></li>
                 <li><a class="dropdown-item" href="/bio">Coach Bio</a></li>
@@ -100,7 +110,7 @@
               </ul>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item ss-desktop-pricing-link">
               <a class="nav-link" href="/options-pricing">Pricing</a>
             </li>
 
@@ -113,6 +123,14 @@
     </nav>
   </header>
 </div>
+
+<script>
+  (function markFirstVisitFunnel() {
+    const route = window.location.pathname.replace(/\/index\.html?$/i, '').replace(/\.html?$/i, '').replace(/\/+$/, '') || '/';
+    const funnelRoutes = new Set(['/', '/visit', '/free-bjj-intro-tannersville-ny', '/options-pricing', '/programs']);
+    if (funnelRoutes.has(route)) document.body.setAttribute('data-ws29-funnel', '');
+  })();
+</script>
 
 <!-- Load the shared navigation bundle locally, with a remote fallback for load failures. -->
 <script>
@@ -463,7 +481,9 @@
   const currentPath = window.location.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
   const allLinks = document.querySelectorAll('#ssMainNav a.nav-link, #ssMainNav a.dropdown-item');
   allLinks.forEach(link => {
-    let linkPath = new URL(link.href, window.location.origin).pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
+    const linkUrl = new URL(link.href, window.location.origin);
+    if (linkUrl.hash) return;
+    const linkPath = linkUrl.pathname.replace(/\.html?$/, "").replace(/\/$/, "") || "/";
     if (linkPath === currentPath) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
@@ -822,6 +842,92 @@ body .ss-global-nav-wrapper #ssMainNav .nav-link { min-height: 44px; }
 @media (min-width: 1200px) {
   .ss-nav-cta__full { display: inline; }
   .ss-nav-cta__short { display: none; }
+}
+
+.ss-mobile-header-text,
+.ss-mobile-menu-heading,
+.ss-mobile-only-link { display: none !important; }
+
+/* WS-29 phone shell: one masthead row and a direct-link menu. */
+@media (width < 768px) {
+  body .ss-global-nav-wrapper .ss-navbar > .container {
+    grid-template-columns: minmax(0, 1fr) auto auto !important;
+    grid-template-areas: "brand text toggle" "menu menu menu" !important;
+    gap: .375rem !important;
+    padding-block: .375rem !important;
+  }
+  body .ss-global-nav-wrapper .ss-brand {
+    max-width: none;
+    min-height: 44px;
+    gap: .35rem;
+  }
+  body .ss-global-nav-wrapper .ss-brand-mark { width: 36px; height: 36px; }
+  body .ss-global-nav-wrapper .ss-brand-main {
+    font-size: clamp(.875rem, 3.8vw, 1rem) !important;
+    line-height: 1.1;
+    white-space: normal;
+  }
+  body .ss-global-nav-wrapper .ss-nav-actions { display: none !important; }
+  body .ss-global-nav-wrapper .ss-mobile-header-text {
+    grid-area: text;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: .35rem .5rem;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-button);
+    color: var(--color-accent-deep);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  body .ss-global-nav-wrapper .ss-menu-button { justify-self: end; }
+  body .ss-global-nav-wrapper #ssMainNav .ss-mobile-only-link { display: block !important; }
+  body .ss-global-nav-wrapper #ssMainNav .ss-desktop-pricing-link,
+  body .ss-global-nav-wrapper #ssMainNav .dropdown-toggle { display: none !important; }
+  body .ss-global-nav-wrapper #ssMainNav .ss-mobile-menu-heading {
+    display: flex !important;
+    align-items: center;
+    min-height: 44px;
+    padding: .625rem .75rem;
+    border-inline-start: 3px solid transparent;
+    color: var(--color-ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  body .ss-global-nav-wrapper #ssMainNav .dropdown:has(.dropdown-item.active) .ss-mobile-menu-heading {
+    border-inline-start-color: var(--color-accent);
+    background: var(--color-accent-soft, rgba(17, 106, 66, .12));
+    color: var(--color-accent-deep);
+  }
+  body .ss-global-nav-wrapper #ssMainNav .dropdown-menu,
+  body .ss-global-nav-wrapper #ssMainNav.show .dropdown-menu:not(.show) {
+    display: block !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--color-paper-2);
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  body .ss-global-nav-wrapper #ssMainNav .nav-link,
+  body .ss-global-nav-wrapper #ssMainNav .dropdown-item {
+    width: 100%;
+    min-height: 44px;
+    padding: .625rem .75rem;
+    border-radius: 0;
+    white-space: normal;
+  }
+  body .ss-global-nav-wrapper #ssMainNav .dropdown-item { padding-inline-start: 1.25rem; }
+  body .ss-global-nav-wrapper #ssMainNav .nav-link.active,
+  body .ss-global-nav-wrapper #ssMainNav .dropdown-item.active {
+    background: var(--color-accent-soft, rgba(17, 106, 66, .12));
+    box-shadow: inset 3px 0 0 var(--color-accent, #116a42);
+    color: var(--color-accent-deep);
+  }
 }
 
 /* =========================================================

@@ -117,12 +117,14 @@
 <nav class="ss-mobile-actionbar" aria-label="Quick actions">
   <a class="ss-action-primary" href="sms:+19177368649" aria-label="Questions about starting? Text Sandy (917) 736 - 8649" data-cta-target="text" data-cta-placement="sticky_mobile">Text Sandy</a>
   <a class="ss-action-home" href="/" aria-label="Home" data-cta-target="home" data-cta-placement="sticky_mobile"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/brand/sensei-sandy-bjj-logo-64.40d9db.webp"><img loading="lazy" src="/assets/img/brand/sensei-sandy-bjj-logo-64.6f668c.png" alt="" width="28" height="28" decoding="async" /></picture> <span class="visually-hidden">Home</span></a>
+  <a class="ss-action-reserve" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="book" data-cta-placement="sticky_mobile" data-analytics-event="reserve_intro_clicked">Reserve Free Intro</a>
 </nav>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     // Show the mobile action bar only after the primary hero action leaves view.
     (function initStickyVisibility() {
+      const isFunnel = document.body.hasAttribute('data-ws29-funnel');
       const heroCta = document.querySelector([
         '.home-hero .primary-cta',
         '.hero-card .btn-white-secondary',
@@ -143,13 +145,14 @@
         return;
       }
 
-      let heroOut = !heroCta;
+      let heroOut = isFunnel || !heroCta;
       let footerIn = false;
+      let formIn = false;
       const updateVisibility = function () {
-        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn && !formIn);
       };
 
-      if (heroCta) {
+      if (heroCta && !isFunnel) {
         const heroObserver = new IntersectionObserver(function (entries) {
           heroOut = !entries[0].isIntersecting;
           updateVisibility();
@@ -161,8 +164,23 @@
         const footerObserver = new IntersectionObserver(function (entries) {
           footerIn = entries[0].isIntersecting;
           updateVisibility();
-        }, { threshold: 0.05 });
+        }, isFunnel ? { rootMargin: `0px 0px ${Math.ceil(stickyCta.getBoundingClientRect().height)}px 0px`, threshold: 0 } : { threshold: 0.05 });
         footerObserver.observe(footerCta);
+      }
+
+      if (isFunnel) {
+        const visibleSubmits = new Set();
+        const submitObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) visibleSubmits.add(entry.target);
+            else visibleSubmits.delete(entry.target);
+          });
+          formIn = visibleSubmits.size > 0;
+          updateVisibility();
+        }, { rootMargin: `0px 0px ${Math.ceil(stickyCta.getBoundingClientRect().height)}px 0px`, threshold: 0 });
+        document.querySelectorAll('main form button[type="submit"], main form input[type="submit"]').forEach(function (button) {
+          submitObserver.observe(button);
+        });
       }
 
       updateVisibility();
