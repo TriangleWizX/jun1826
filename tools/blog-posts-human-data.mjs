@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-// 52 indexed blog posts with 3rd-grade reading level titles, categories, and descriptions.
+// 53 indexed blog posts with 3rd-grade reading level titles, categories, and descriptions.
 // Rules:
 // 1. Avg sentence length: 5-8 words.
 // 2. Simple 1-2 syllable words.
@@ -188,6 +188,15 @@ export const BLOG_POSTS_HUMAN = [
     desc: "Learn to tuck your chin and slap the mat. These safe rolling habits protect your joints everywhere.",
     readTime: "4 min read",
     url: "/blog/how-to-fall-safely-bjj-breakfalls"
+  },
+  {
+    slug: "how-to-pick-a-bjj-school-in-the-catskills",
+    category: "first-class",
+    categoryLabel: "First Class",
+    title: "How to Pick a BJJ School in the Catskills",
+    desc: "Five clear things to look for when choosing a martial arts school. Compare coaching, class size, and beginner care.",
+    readTime: "4 min read",
+    url: "/blog/how-to-pick-a-bjj-school-in-the-catskills"
   },
   {
     slug: "hunter-elementary-tuesday-drop-off-bjj",
