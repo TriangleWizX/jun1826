@@ -273,6 +273,15 @@ def changed_outputs(commit):
             candidate = ROOT / 'dist' / 'index.html'
             if candidate.is_file(): outputs.add((candidate, 'index.html'))
             continue
+        if name == 'src/partials/program-conversion-adults.html':
+            cand = ROOT / 'dist' / 'bjj-classes' / 'adults-tannersville-ny' / 'index.html'
+            if cand.is_file(): outputs.add((cand, 'bjj-classes/adults-tannersville-ny/index.html'))
+        if name == 'src/partials/program-conversion-kids.html':
+            cand = ROOT / 'dist' / 'bjj-classes' / 'kids-tannersville-ny' / 'index.html'
+            if cand.is_file(): outputs.add((cand, 'bjj-classes/kids-tannersville-ny/index.html'))
+        if name == 'src/partials/program-conversion-teens.html':
+            cand = ROOT / 'dist' / 'bjj-classes' / 'teens-tannersville-ny' / 'index.html'
+            if cand.is_file(): outputs.add((cand, 'bjj-classes/teens-tannersville-ny/index.html'))
         if name == 'src/partials/footer-include.html':
             candidate = ROOT / 'dist' / 'footer-include.html'
             if candidate.is_file(): outputs.add((candidate, 'footer-include.html'))
