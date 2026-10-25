@@ -831,3 +831,292 @@
   .page-alley-bootcamp .ab-cta { transition: none; }
   .page-alley-bootcamp .ab-cta:hover { transform: none; }
 }
+
+/* ==========================================================================
+   Studio Scale Guarantee Components
+   ========================================================================== */
+
+/* Fix 5: Cohort Scarcity Banner */
+.page-alley-bootcamp .ab-cohort-banner {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0.45rem 0.85rem;
+  margin-bottom: 0.85rem;
+  background: rgba(17, 106, 66, 0.08);
+  border: 1px solid rgba(17, 106, 66, 0.22);
+  border-radius: 999px;
+  font-size: 0.84rem;
+}
+.page-alley-bootcamp .ab-cohort-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  background: var(--ab-green);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+.page-alley-bootcamp .ab-cohort-text {
+  margin: 0;
+  color: var(--ab-ink);
+  line-height: 1.35;
+}
+
+/* Fix 1: Visual Guarantee Trust Seal */
+.page-alley-bootcamp .ab-guarantee-seal {
+  display: inline-flex;
+  margin-bottom: 1.25rem;
+}
+.page-alley-bootcamp .ab-guarantee-seal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.15rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid var(--ab-green);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.12);
+}
+.page-alley-bootcamp .ab-guarantee-seal__icon {
+  color: var(--ab-green);
+  flex-shrink: 0;
+}
+.page-alley-bootcamp .ab-guarantee-seal__text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.page-alley-bootcamp .ab-guarantee-seal__kicker {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 750;
+  color: var(--ab-green);
+  line-height: 1.2;
+}
+.page-alley-bootcamp .ab-guarantee-seal__title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--ab-ink);
+  line-height: 1.25;
+}
+
+/* Fix 9: Video Walkthrough Card */
+.page-alley-bootcamp .ab-video-preview {
+  padding-block: 1rem 2.5rem;
+}
+.page-alley-bootcamp .ab-video-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  background: var(--ab-paper-deep);
+  border: 1px solid var(--ab-rule);
+  border-radius: 1.5rem;
+}
+.page-alley-bootcamp .ab-video-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.45rem, 2.5vw, 1.95rem);
+  color: var(--ab-ink);
+  line-height: 1.15;
+}
+.page-alley-bootcamp .ab-video-desc {
+  margin: 0 0 1.2rem;
+  color: var(--ab-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.page-alley-bootcamp .ab-video-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(54, 43, 36, 0.12);
+}
+.page-alley-bootcamp .ab-video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(17, 106, 66, 0.92);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding-left: 3px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+/* Fix 2: Interactive Track Switcher */
+.page-alley-bootcamp .ab-track-switcher {
+  margin-top: 1.75rem;
+}
+.page-alley-bootcamp .ab-track-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.page-alley-bootcamp .ab-track-nav {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+.page-alley-bootcamp .ab-track-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 1rem;
+  background: var(--ab-paper-deep);
+  border: 1.5px solid var(--ab-rule);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  min-height: 48px;
+}
+.page-alley-bootcamp .ab-track-tab__day {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--ab-ink);
+}
+.page-alley-bootcamp .ab-track-tab__focus {
+  font-size: 0.78rem;
+  color: var(--ab-muted);
+}
+.page-alley-bootcamp #tab-tuesday:checked ~ .ab-track-nav .ab-track-tab--tuesday,
+.page-alley-bootcamp #tab-thursday:checked ~ .ab-track-nav .ab-track-tab--thursday {
+  background: var(--ab-green);
+  border-color: var(--ab-green);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.24);
+}
+.page-alley-bootcamp #tab-tuesday:checked ~ .ab-track-nav .ab-track-tab--tuesday .ab-track-tab__day,
+.page-alley-bootcamp #tab-tuesday:checked ~ .ab-track-nav .ab-track-tab--tuesday .ab-track-tab__focus,
+.page-alley-bootcamp #tab-thursday:checked ~ .ab-track-nav .ab-track-tab--thursday .ab-track-tab__day,
+.page-alley-bootcamp #tab-thursday:checked ~ .ab-track-nav .ab-track-tab--thursday .ab-track-tab__focus {
+  color: #fff;
+}
+.page-alley-bootcamp .ab-track-panel {
+  display: none;
+}
+.page-alley-bootcamp #tab-tuesday:checked ~ .ab-track-panels .ab-track-panel--tuesday {
+  display: block;
+}
+.page-alley-bootcamp #tab-thursday:checked ~ .ab-track-panels .ab-track-panel--thursday {
+  display: block;
+}
+
+/* Fix 4: Tiered Pricing Enhancements */
+.page-alley-bootcamp .ab-price--popular {
+  border-color: var(--ab-green);
+  background: #f7faf7;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(17, 106, 66, 0.12);
+}
+.page-alley-bootcamp .ab-price-popular-tag {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ab-green);
+  color: #fff;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Fix 8: Partner Referral Banner */
+.page-alley-bootcamp .ab-partner-banner {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(40, 159, 161, 0.08);
+  border: 1px solid rgba(40, 159, 161, 0.25);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.page-alley-bootcamp .ab-partner-banner p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ab-ink);
+}
+
+/* Fix 3: Sticky Mobile CTA Action Bar */
+.page-alley-bootcamp .ab-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background: rgba(251, 250, 248, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--ab-rule);
+  padding: 0.65rem 1.25rem calc(0.65rem + env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 18px rgba(54, 43, 36, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transform: translateY(115%);
+  transition: transform 0.28s ease-out;
+}
+.page-alley-bootcamp .ab-sticky-cta.is-visible {
+  transform: translateY(0);
+}
+.page-alley-bootcamp .ab-sticky-cta__meta {
+  display: flex;
+  flex-direction: column;
+}
+.page-alley-bootcamp .ab-sticky-cta__badge {
+  font-size: 0.7rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  color: var(--ab-green);
+  letter-spacing: 0.06em;
+}
+.page-alley-bootcamp .ab-sticky-cta__note {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ab-ink);
+}
+.page-alley-bootcamp .ab-sticky-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 48px;
+  padding: 0.55rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 750;
+}
+
+@media (max-width: 991.98px) {
+  .page-alley-bootcamp .ab-video-card { grid-template-columns: 1fr; }
+  .page-alley-bootcamp .ab-partner-banner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 575.98px) {
+  .page-alley-bootcamp .ab-cohort-banner { border-radius: 0.75rem; }
+  .page-alley-bootcamp .ab-guarantee-seal__badge { width: 100%; justify-content: center; border-radius: 0.75rem; }
+  .page-alley-bootcamp .ab-track-nav { flex-direction: column; }
+  .page-alley-bootcamp .ab-track-tab { width: 100%; }
+  .page-alley-bootcamp .ab-sticky-cta__meta { display: none; }
+  .page-alley-bootcamp .ab-sticky-cta .ab-sticky-cta__btn { width: 100%; justify-content: center; }
+}
