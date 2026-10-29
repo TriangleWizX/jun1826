@@ -8,6 +8,11 @@ SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vs
 DEPLOYABLE_ROOTS = ('_includes/', 'assets/', 'winter-rank-drop/', 'winter-armor-2027/', 'admin/', 'athlete-cross-training/', 'annual-track/', 'alley-bootcamp/', 'bjj-classes/', 'bjj-glossary/', 'bjj-videos/', 'blog/', 'clean/', 'members/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'reviews-village/', 'research/', 'scribners-staff-reset-pass/', 'social/', 'instagram/', 'snippets/', 'sources/', 'schedule/', 'tactical-longevity/', 'videos/', 'free-bjj-intro-tannersville-ny/', 'white-belt-foundations/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/', 'free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/', 'school-families-jiu-jitsu/', 'visit/', 'after-school/', 'deer-mountain-inn/', 'phoenicia-diner/', 'parents-guide-kids-bjj/', 'about/', 'what-is-a-jiu-jitsu-sensei/', 'jiu-jitsu-terms/', 'bjj-butterfly-guard/')
 ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scribners.html', 'scribners-jiu-jitsu.html', 'scribners-thank-you.html', 'partners-hospitality-hunter-windham.html', 'partners-wellness-pt-referrals.html', 'community-partners.html', 'elite-concierge.html', 'adult-private-coaching-intensive.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'daily-checkin.html', 'manifest-daily-checkin.json', 'sw-daily-checkin.js', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'local-bjj-tournaments-for-families.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html', 'schedule.html', 'camp-clinics.html', 'summer-academy.html', 'black-belt-concierge.html', 'inclusion.html'}
 BACKUP_NAME = re.compile(r'^senseisandy-predeploy-[0-9TZ-]+\.tar\.gz$')
+REQUIRED_BACKUP_MEMBERS = {
+    './.htaccess', './index.html', './robots.txt', './sitemap.xml',
+    './free-bjj-intro-tannersville-ny/index.html', './options-pricing/index.html',
+    './schedule/index.html', './instagram/index.html',
+}
 ROOT_FILES.add('womens-jiu-jitsu-tannersville.html')
 ROOT_FILES.add('pricing-module-fragment.html')
 ROOT_FILES.add('halloween-spooktacular.html')
@@ -514,10 +519,14 @@ def cleanup_remote_backups(client, cfg, cleanup=False, stale_seconds=86400):
     invalid = []
     for item in inventory:
         try:
-            remote_run(client, f"gzip -t {shlex.quote(item['path'])} && tar -tzf {shlex.quote(item['path'])} >/dev/null")
+            members = set(remote_run(client, f"gzip -t {shlex.quote(item['path'])} && tar -tzf {shlex.quote(item['path'])}").splitlines())
+            missing = REQUIRED_BACKUP_MEMBERS - members
+            if missing:
+                raise RuntimeError(f"backup missing required files: {', '.join(sorted(missing))}")
         except RuntimeError:
             invalid.append(item)
-    home = sorted((x for x in inventory if x['location'] == 'home'), key=lambda x: x['mtime'], reverse=True)
+    invalid_paths = {item['path'] for item in invalid}
+    home = sorted((x for x in inventory if x['location'] == 'home' and x['path'] not in invalid_paths), key=lambda x: x['mtime'], reverse=True)
     remove = []
     for item in invalid:
         remove.append((item, 'invalid-archive'))
@@ -547,11 +556,27 @@ def backup_remote(client, cfg):
     archive_cmd = f"rm -f {shlex.quote(temp)} && trap 'rm -f {shlex.quote(temp)}' EXIT && timeout --signal=TERM --kill-after=30s 900s tar --exclude=./.venv -I 'gzip -1' -cf {shlex.quote(temp)} -C {shlex.quote(remote)} . && gzip -t {shlex.quote(temp)} && tar -tzf {shlex.quote(temp)} >/dev/null && mv -f {shlex.quote(temp)} {shlex.quote(backup)}"
     remote_run(client, archive_cmd, timeout=1200)
     archive_listing = remote_run(client, f"tar -tzf {shlex.quote(backup)}")
-    required = {'./.htaccess', './index.html', './robots.txt', './sitemap.xml'}
     present = set(archive_listing.splitlines())
-    missing = sorted(required - present)
+    missing = sorted(REQUIRED_BACKUP_MEMBERS - present)
     if missing: raise RuntimeError(f'backup missing required files: {", ".join(missing)}')
     print(f'backup_verified={backup} files={len(archive_listing.splitlines())}', flush=True)
+    return backup
+
+def newest_verified_home_backup(inventory, removal_candidates):
+    removed_paths = {item['path'] for item, _ in removal_candidates}
+    candidates = [item for item in inventory
+                  if item['location'] == 'home' and item['path'] not in removed_paths]
+    return max(candidates, key=lambda item: item['mtime']) if candidates else None
+
+def prepare_deploy_backup(client, cfg, reuse_existing=False):
+    if not reuse_existing:
+        return backup_remote(client, cfg)
+    inventory, removal_candidates = cleanup_remote_backups(client, cfg, cleanup=False)
+    selected = newest_verified_home_backup(inventory, removal_candidates)
+    if selected is None:
+        raise RuntimeError('No currently verified account-level backup exists for --reuse-existing-backup.')
+    print(f"backup_reused={selected['path']} mtime={selected['mtime']} bytes={selected['size']}", flush=True)
+    return selected['path']
 
 def verify_local_backup(path):
     backup = pathlib.Path(path).expanduser().resolve()
@@ -566,7 +591,8 @@ def verify_local_backup(path):
     print(f'local_backup_verified={backup} bytes={backup.stat().st_size}', flush=True)
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--reuse-existing-backup', action='store_true'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); parser.add_argument('--only', action='append', default=[], help='limit upload to these exact deploy-relative paths; repeatable'); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--reuse-existing-backup', action='store_true', help='reuse the newest verified account-level archive instead of creating a fresh snapshot'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); parser.add_argument('--only', action='append', default=[], help='limit upload to these exact deploy-relative paths; repeatable'); args = parser.parse_args()
+    if args.local_backup and args.reuse_existing_backup: parser.error('--local-backup and --reuse-existing-backup cannot be combined')
     cfg = json.loads((ROOT / args.config).read_text())
     if args.qa_backups:
         client = connect(cfg)
@@ -600,9 +626,6 @@ def main():
     if args.local_backup:
         verify_local_backup(args.local_backup)
         backup_done = True
-    elif args.reuse_existing_backup:
-        backup_done = True
-        print('backup_reuse_requested=true', flush=True)
     try:
         for local, rel in files:
             for attempt in range(1, args.retries + 1):
@@ -610,13 +633,7 @@ def main():
                     if client is None or not client.get_transport() or not client.get_transport().is_active():
                         client = connect(cfg)
                         if not backup_done:
-                            inventory, removed = cleanup_remote_backups(client, cfg, cleanup=True)
-                            removed_paths = {item['path'] for item, _ in removed}
-                            valid = [item for item in inventory if item['path'] not in removed_paths]
-                            if valid:
-                                print(f"backup_reused={max(valid, key=lambda item: item['mtime'])['path']}", flush=True)
-                            else:
-                                backup_remote(client, cfg)
+                            prepare_deploy_backup(client, cfg, reuse_existing=args.reuse_existing_backup)
                             backup_done = True
                     print(f'upload {rel} attempt={attempt}', flush=True); print(f'remote_bytes={upload_one(client, cfg, local, rel)}', flush=True); break
                 except Exception as error:
