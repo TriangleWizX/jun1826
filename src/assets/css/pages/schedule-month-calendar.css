@@ -100,6 +100,7 @@
   border: 1px solid var(--ss-border);
   background: var(--ss-surface2);
   color: var(--ss-ink);
+  font-size: .875rem;
   font-weight: 800;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -111,9 +112,12 @@
 }
 
 .page-schedule .ss-month-date {
-  min-height: 9rem;
-  padding: .45rem;
-  gap: .35rem;
+ width: 44px;
+ min-width: 44px;
+ height: 44px;
+ min-height: 44px;
+ padding: 0;
+ gap: 0;
 }
 
 .page-schedule .ss-month-date:hover { background: var(--ss-surface2); }
@@ -143,11 +147,11 @@
 .page-schedule .ss-date-class {
   padding: .35rem;
   border-radius: 3px;
-  font-size: .7rem;
+  font-size: .875rem;
   line-height: 1.25;
 }
 
-.page-schedule .ss-date-class strong { font-size: .68rem; }
+.page-schedule .ss-date-class strong { font-size: inherit; }
 .page-schedule .ss-date-count { font-weight: 800; }
 
 .page-schedule .ss-selected-day {
@@ -263,3 +267,4 @@
     outline-offset: -3px;
   }
 }
+.ss-month-controls :is(button, a):focus-visible { outline-color: var(--ss-surface); }
