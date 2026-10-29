@@ -40,6 +40,15 @@ The main worktree has a broadly dirty `dist/` tree, including the Free Intro rou
 
 The broad shared action-bar work remains excluded. Commit only the reviewed B source, minified pair, evidence report, and generated Free Intro route. Then verify the live route separately from local build evidence. Lighthouse/PageSpeed remain excluded by user instruction.
 
+## Release and live evidence
+
+- Commit: `59f0c062` (`fix(ui): improve Free Intro visit request form layout`), five files: Free Intro page source, page CSS and minified CSS, generated Free Intro route, and this report.
+- Deploy helper dry-run selected exactly `free-bjj-intro-tannersville-ny/index.html`. Upload completed with `remote_bytes=89957`.
+- The helper validated the remote predeploy archive and rotated one older verified archive (1,124,055,555 bytes). The predeploy archive remains available for rollback.
+- After deployment, the saved dirty main-tree route was restored with the original SHA-256 `4c411840f22e0adda95e5f85f503eac25467a3f6c58fca94fe61c1979b7df55f` verified byte-for-byte.
+- Live route returned HTTP 200 and includes the B layout and validation selectors. Isolated live browser proof passed at 390px and desktop width: no overflow and no page errors. Screenshot and JSON evidence: `evidence/2026-10-29/free-intro-form-layout-live/`.
+- No form was submitted. Lighthouse/PageSpeed and keyboard acceptance were not run.
+
 ## Temporary workspace record
 
 - Owner: coordinator; workstream: `FREE-INTRO-FORM-LAYOUT-B`.
