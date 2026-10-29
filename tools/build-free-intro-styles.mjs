@@ -115,6 +115,7 @@ const results = await new PurgeCSS().purge({
     'active',
     'open',
     'is-visible',
+    'is-footer-visible',
     'is-observed',
     'is-ready',
     'hidden',

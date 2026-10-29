@@ -69,20 +69,55 @@
       ].join(', '));
       const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
       const stickyCta = document.querySelector('.ss-mobile-actionbar');
+      const pageStickyCta = document.querySelector('.page-book-intro .ss-mobile-sticky-cta');
 
       if (!stickyCta) return;
       stickyCta.classList.add("is-observed");
-      if (!("IntersectionObserver" in window)) {
-        stickyCta.classList.add("is-visible");
-        return;
-      }
-
       let heroOut = isFunnel || !heroCta;
       let footerIn = false;
       let formIn = false;
+      const pageStickyClearance = function () {
+        if (!pageStickyCta) return 0;
+        const wasVisible = pageStickyCta.classList.contains("is-visible");
+        const wasFooterVisible = pageStickyCta.classList.contains("is-footer-visible");
+        pageStickyCta.classList.remove("is-footer-visible");
+        pageStickyCta.classList.add("is-visible");
+        const height = pageStickyCta.getBoundingClientRect().height;
+        if (!wasVisible) pageStickyCta.classList.remove("is-visible");
+        if (wasFooterVisible) pageStickyCta.classList.add("is-footer-visible");
+        return Math.ceil(height);
+      };
+      const syncPageStickyFooterVisibility = function () {
+        if (!pageStickyCta) return;
+        let pageFooterIn = footerIn;
+        if (!("IntersectionObserver" in window) && footerCta) {
+          const footerRect = footerCta.getBoundingClientRect();
+          pageFooterIn = footerRect.top < window.innerHeight + pageStickyClearance() && footerRect.bottom > 0;
+        }
+        const isMobile = window.matchMedia("(max-width: 767.98px)").matches;
+        pageStickyCta.classList.toggle("is-footer-visible", pageFooterIn && isMobile);
+        if (!("IntersectionObserver" in window)) {
+          pageStickyCta.classList.toggle("is-visible", isMobile && heroOut && !pageFooterIn);
+        }
+      };
       const updateVisibility = function () {
         stickyCta.classList.toggle("is-visible", heroOut && !footerIn && !formIn);
+        if (pageStickyCta) {
+          const isMobile = window.matchMedia("(max-width: 767.98px)").matches;
+          pageStickyCta.classList.toggle("is-visible", isMobile && heroOut && !footerIn && !formIn);
+        }
+        syncPageStickyFooterVisibility();
       };
+
+      if (!("IntersectionObserver" in window)) {
+        stickyCta.classList.add("is-visible");
+        syncPageStickyFooterVisibility();
+        if (pageStickyCta) {
+          window.addEventListener("scroll", syncPageStickyFooterVisibility, { passive: true });
+          window.addEventListener("resize", syncPageStickyFooterVisibility, { passive: true });
+        }
+        return;
+      }
 
       if (heroCta && !isFunnel) {
         const heroObserver = new IntersectionObserver(function (entries) {
@@ -92,13 +127,35 @@
         heroObserver.observe(heroCta);
       }
 
-      if (footerCta) {
-        const footerObserver = new IntersectionObserver(function (entries) {
+      let footerObserver = null;
+      const observeFooter = function () {
+        if (!footerCta) return;
+        if (footerObserver) footerObserver.disconnect();
+        footerIn = false;
+        const footerClearance = Math.ceil(Math.max(
+          stickyCta.getBoundingClientRect().height,
+          pageStickyClearance()
+        ));
+        const options = isFunnel || pageStickyCta
+          ? { rootMargin: `0px 0px ${footerClearance}px 0px`, threshold: 0 }
+          : { threshold: 0.05 };
+        footerObserver = new IntersectionObserver(function (entries) {
           footerIn = entries[0].isIntersecting;
           updateVisibility();
-        }, isFunnel ? { rootMargin: `0px 0px ${Math.ceil(stickyCta.getBoundingClientRect().height)}px 0px`, threshold: 0 } : { threshold: 0.05 });
+        }, options);
         footerObserver.observe(footerCta);
-      }
+      };
+      observeFooter();
+
+      let mobileFooterMode = window.matchMedia("(max-width: 767.98px)").matches;
+      window.addEventListener("resize", function () {
+        const nextMobileFooterMode = window.matchMedia("(max-width: 767.98px)").matches;
+        if (pageStickyCta && nextMobileFooterMode !== mobileFooterMode) {
+          mobileFooterMode = nextMobileFooterMode;
+          observeFooter();
+          updateVisibility();
+        }
+      }, { passive: true });
 
       if (isFunnel) {
         const visibleSubmits = new Set();
