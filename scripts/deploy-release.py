@@ -55,6 +55,14 @@ RESEARCH_RECORD_OUTPUTS = (
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    # Law Enforcement page links to the fingerprinted route-owned stylesheet.
+    if any(name in names for name in (
+        'src/assets/css/pages/law-enforcement.css',
+        'src/assets/css/pages/law-enforcement.min.css',
+    )):
+        candidate = ROOT / 'dist' / 'law-enforcement-bjj.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'law-enforcement-bjj.html'))
     # The normal build regenerates the sitemap index and children from source
     # pages and the URL registry. Include their generated dist copies in every
     # source-content release so production cannot retain stale lastmod data.

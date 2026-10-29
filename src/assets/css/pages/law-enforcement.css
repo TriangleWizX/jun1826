@@ -360,10 +360,16 @@ body.page-law-enforcement {
 
 /* Lead-Capture Form */
 .tactical-form .form-label {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--ss-ink);
   margin-bottom: 0.35rem;
+}
+
+@media (max-width: 767.98px) {
+  .tactical-form .form-label {
+    font-size: 0.875rem;
+  }
 }
 
 .tactical-form .form-control,
