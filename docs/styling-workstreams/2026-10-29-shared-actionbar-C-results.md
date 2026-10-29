@@ -39,6 +39,12 @@ The exact deploy-relative path allowlist is [shared-actionbar-C-paths.txt](evide
 - `git diff --check -- src/_includes/components/footer.njk` passed.
 - Static `scripts/qa-sticky-overlap.mjs` alone does not assert the live hide/restore transitions; the browser state checks above cover those transitions.
 
-## Release and closeout gates
+## Production release and alias closeout
 
-Deployment, live HTTP/content/browser proof, restoration hashes for the pre-existing dirty `dist/`, and temporary-workspace cleanup are pending. Preserve all unrelated dirty work. Do not run Lighthouse/PageSpeed or the owner-reserved keyboard acceptance check.
+Commit `cd1258153fb53a06262650ae3a68744341eb2d74` was deployed with the exact 400-path allowlist in [shared-actionbar-C-paths.txt](evidence/2026-10-29/shared-actionbar-C-paths.txt). The first post-deploy verification matched 398 of the 400 paths. The remaining two clean routes were still returning the older Deer Mountain Inn and Phoenicia Diner directory pages, while the updated root `.html` outputs were present.
+
+The old remote directory indexes did not exist in the current generated tree. Their raw remote paths were updated individually: `deer-mountain-inn/index.html` and `phoenicia-diner/index.html`. The patch changed only the existing action-bar script block. Byte comparisons confirmed all bytes outside that block were identical before and after for both pages. A verified pre-deploy backup was created before either upload. Remote SHA-256 readback matched the exact two patched files.
+
+Fresh live checks now return the current C root output for both clean URLs. Their response hashes match the candidate `deer-mountain-inn.html` and `phoenicia-diner.html` outputs. Isolated browser proof at mobile and desktop widths returned HTTP 200 for both routes, with no horizontal overflow or page errors. Alias hashes, current live response hashes, JSON and screenshots are preserved in [the final live evidence folder](evidence/2026-10-29/shared-actionbar-C-final-live/), alongside the [alias proof table](evidence/2026-10-29/shared-actionbar-C-alias-live-proof.tsv), [raw alias patch manifest](evidence/2026-10-29/shared-actionbar-C-alias-patch-manifest.tsv), and [initial 400-path response manifest](evidence/2026-10-29/shared-actionbar-C-initial-live-verify.tsv).
+
+The shared action-bar release is complete. Lighthouse/PageSpeed, site-wide contrast work, and owner-reserved keyboard acceptance remain excluded. All unrelated dirty source and generated output was preserved.

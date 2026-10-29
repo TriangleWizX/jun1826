@@ -93,3 +93,9 @@ The owner has reserved site-wide contrast compliance review for their own PageSp
 | Workstream | Owner/persona | Workspace | Purpose and base | Created | Peak measured | Closeout | Evidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `FREE-INTRO-FORM-LAYOUT-B` | Coordinator; ordinary frontend/release fallback (selector did not yield a suitable role) | `/tmp/free-intro-b-20261029/` (removed); isolated browser profile `/tmp/free-intro-b-chrome-profile/` (removed) | Clean `HEAD` plus only B form/layout edits; exact Free Intro route build and responsive proof; shared `node_modules` symlink, no copied dependency tree | 2026-10-29 | 1.6 GiB build tree; browser profile removed after process stop | Closed after commit `59f0c062`, one-route deploy, live 390px/desktop proof, dirty route SHA restoration, browser/server shutdown, and exact temp-path removal | `2026-10-29-free-intro-form-layout.md`; `evidence/2026-10-29/free-intro-form-layout-live/` |
+
+## Closed workstream — shared action-bar C build
+
+| Workstream | Owner | Exact path | Purpose / base | Created | Peak measured | Status and retained evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| `ACTIONBAR-C-BUILD-1` | Coordinator | `/tmp/shared-actionbar-C-20261029/` (removed) | Clean source/build and isolated C route artifacts; base `817f5da` plus the reviewed `footer.njk` change | 2026-10-29 | 1.6 GiB; reused installed dependencies | Complete; no process held files in the workspace before removal. Preserved the deploy allowlist, live manifests, alias hashes, and final browser proof under `docs/styling-workstreams/evidence/2026-10-29/`. Exact workspace removed after evidence review; approximately 1.6 GiB recovered. |
