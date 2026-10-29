@@ -56,6 +56,24 @@ RESEARCH_RECORD_OUTPUTS = (
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    # Friday Night Fanatics directly loads its route-owned fingerprinted CSS.
+    if 'src/assets/css/pages/friday-night-fanatics.css' in names:
+        page = ROOT / 'dist' / 'friday-night-fanatics.html'
+        if not page.is_file():
+            raise ValueError('Friday Night Fanatics release requires a fresh route build')
+        page_text = page.read_text(encoding='utf-8')
+        fingerprints = re.findall(
+            r'''href=["']/?(assets/css/pages/friday-night-fanatics\.[a-f0-9]+\.css)["']''',
+            page_text,
+        )
+        if len(fingerprints) != 1:
+            raise ValueError('Friday Night Fanatics must reference exactly one fingerprinted stylesheet')
+        css_rel = fingerprints[0]
+        css_path = ROOT / 'dist' / css_rel
+        if not css_path.is_file():
+            raise ValueError(f'Missing Friday Night Fanatics stylesheet: {css_rel}')
+        outputs.add((page, 'friday-night-fanatics.html'))
+        outputs.add((css_path, css_rel))
     # The partner footer fragment is included by SSI and deployed as its own root file.
     if 'src/footer-partner.html' in names:
         candidate = ROOT / 'dist' / 'footer-partner.html'
