@@ -26,6 +26,7 @@ ROOT_FILES.add('parents-guide-kids-bjj.html')
 ROOT_FILES.add('about.html')
 ROOT_FILES.add('spring-armor-drop.html')
 ROOT_FILES.add('giveaway-rules.html')
+ROOT_FILES.add('footer-partner.html')
 SITEMAP_OUTPUTS = ('sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml',
  'sitemap-locations.xml', 'sitemap-blog.xml', 'sitemap-glossary.xml', 'sitemap-research.xml')
 RESEARCH_RECORD_OUTPUTS = (
@@ -55,6 +56,33 @@ RESEARCH_RECORD_OUTPUTS = (
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    # The partner footer fragment is included by SSI and deployed as its own root file.
+    if 'src/footer-partner.html' in names:
+        candidate = ROOT / 'dist' / 'footer-partner.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'footer-partner.html'))
+
+    # Catskills Home Base owns a route CSS bundle; deploy the fingerprint referenced by its HTML.
+    if any(name in names for name in (
+        'src/catskills-home-base.html',
+        'src/assets/css/pages/catskills-home-base-touch.css',
+    )):
+        page = ROOT / 'dist' / 'catskills-home-base.html'
+        if page.is_file():
+            outputs.add((page, 'catskills-home-base.html'))
+            page_text = page.read_text(encoding='utf-8')
+            fingerprints = re.findall(
+                r'''href=["']/?(assets/css/pages/catskills-home-base-touch\.[a-f0-9]+\.css)["']''',
+                page_text,
+            )
+            if len(fingerprints) != 1:
+                raise ValueError('Catskills Home Base must reference exactly one fingerprinted touch stylesheet')
+            css_rel = fingerprints[0]
+            css_path = ROOT / 'dist' / css_rel
+            if not css_path.is_file():
+                raise ValueError(f'Missing Catskills Home Base stylesheet: {css_rel}')
+            outputs.add((css_path, css_rel))
+
     # Law Enforcement page links to the fingerprinted route-owned stylesheet.
     if any(name in names for name in (
         'src/assets/css/pages/law-enforcement.css',
@@ -101,7 +129,7 @@ def changed_outputs(commit):
             outputs.add((candidate, 'bjj-faqs.html'))
     if 'src/winter-rank-drop.html' in names: outputs.add((ROOT / 'dist/winter-rank-drop/index.html', 'winter-rank-drop/index.html'))
     if 'src/family-jiu-jitsu.html' in names:
-        candidate = ROOT / 'dist' / 'family-jiu-jitsu-tannersville' / 'index.html'
+        candidate = ROOT / 'dist' / 'family-jiu-jitsu' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'family-jiu-jitsu/index.html'))
     for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
