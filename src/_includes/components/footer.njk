@@ -70,12 +70,8 @@
       const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
       const stickyCta = document.querySelector('.ss-mobile-actionbar');
       const pageStickyCta = document.querySelector('.page-book-intro .ss-mobile-sticky-cta');
+      const actionTargetSelector = 'a[href], button, input:not([type="hidden"]), select, textarea, summary, label, [role="button"], [role="link"], [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [role="tab"], [role="checkbox"], [role="radio"], [role="switch"], [tabindex]:not([tabindex^="-"]), [contenteditable="true"]';
 
-      if (!stickyCta) return;
-      stickyCta.classList.add("is-observed");
-      let heroOut = isFunnel || !heroCta;
-      let footerIn = false;
-      let formIn = false;
       const pageStickyClearance = function () {
         if (!pageStickyCta) return 0;
         const wasVisible = pageStickyCta.classList.contains("is-visible");
@@ -87,45 +83,63 @@
         if (wasFooterVisible) pageStickyCta.classList.add("is-footer-visible");
         return Math.ceil(height);
       };
+
+      if (!stickyCta) return;
+      stickyCta.classList.add("is-observed");
+      let actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+      let heroOut = isFunnel || !heroCta;
+      let footerIn = false;
+      let formIn = false;
       const syncPageStickyFooterVisibility = function () {
         if (!pageStickyCta) return;
         let pageFooterIn = footerIn;
         if (!("IntersectionObserver" in window) && footerCta) {
           const footerRect = footerCta.getBoundingClientRect();
-          pageFooterIn = footerRect.top < window.innerHeight + pageStickyClearance() && footerRect.bottom > 0;
+          const clearance = pageStickyClearance();
+          pageFooterIn = footerRect.top < window.innerHeight + clearance && footerRect.bottom > 0;
         }
         const isMobile = window.matchMedia("(max-width: 767.98px)").matches;
         pageStickyCta.classList.toggle("is-footer-visible", pageFooterIn && isMobile);
         if (!("IntersectionObserver" in window)) {
-          pageStickyCta.classList.toggle("is-visible", isMobile && heroOut && !pageFooterIn);
+          pageStickyCta.classList.toggle("is-visible", isMobile && !pageFooterIn);
         }
       };
       const updateVisibility = function () {
-        stickyCta.classList.toggle("is-visible", heroOut && !footerIn && !formIn);
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn && !formIn && !pageActionOverlapsBar());
         if (pageStickyCta) {
           const isMobile = window.matchMedia("(max-width: 767.98px)").matches;
           pageStickyCta.classList.toggle("is-visible", isMobile && heroOut && !footerIn && !formIn);
         }
         syncPageStickyFooterVisibility();
       };
-
-      if (!("IntersectionObserver" in window)) {
-        stickyCta.classList.add("is-visible");
-        syncPageStickyFooterVisibility();
-        if (pageStickyCta) {
-          window.addEventListener("scroll", syncPageStickyFooterVisibility, { passive: true });
-          window.addEventListener("resize", syncPageStickyFooterVisibility, { passive: true });
+      const pageActionOverlapsBar = function () {
+        if (!stickyCta.offsetHeight) return false;
+        const barRect = stickyCta.getBoundingClientRect();
+        const barTop = window.innerHeight - stickyCta.offsetHeight;
+        for (const target of actionTargets) {
+          if (stickyCta.contains(target) || target.closest('[hidden], [inert]')) continue;
+          if (target.matches(':disabled') || target.getAttribute('aria-disabled') === 'true') continue;
+          if (target.tagName === 'LABEL' && (!target.control || target.control.matches(':disabled, [aria-disabled="true"]'))) continue;
+          if (target.closest('.visually-hidden, .sr-only')) continue;
+          const bounds = target.getBoundingClientRect();
+          if (bounds.right <= barRect.left || bounds.left >= barRect.right ||
+              bounds.bottom <= barTop || bounds.top >= window.innerHeight) continue;
+          let hidden = false;
+          for (let node = target; node && node !== document.body; node = node.parentElement) {
+            const style = window.getComputedStyle(node);
+            if (style.display === 'none' || style.visibility === 'hidden' || style.pointerEvents === 'none' || style.opacity === '0') {
+              hidden = true;
+              break;
+            }
+          }
+          if (hidden) continue;
+          for (const fragment of target.getClientRects()) {
+            if (fragment.right > barRect.left && fragment.left < barRect.right &&
+                fragment.bottom > barTop && fragment.top < window.innerHeight) return true;
+          }
         }
-        return;
-      }
-
-      if (heroCta && !isFunnel) {
-        const heroObserver = new IntersectionObserver(function (entries) {
-          heroOut = !entries[0].isIntersecting;
-          updateVisibility();
-        }, { threshold: 0.1 });
-        heroObserver.observe(heroCta);
-      }
+        return false;
+      };
 
       let footerObserver = null;
       const observeFooter = function () {
@@ -136,17 +150,89 @@
           stickyCta.getBoundingClientRect().height,
           pageStickyClearance()
         ));
-        const options = isFunnel || pageStickyCta
+        const footerObserverOptions = isFunnel || pageStickyCta
           ? { rootMargin: `0px 0px ${footerClearance}px 0px`, threshold: 0 }
           : { threshold: 0.05 };
         footerObserver = new IntersectionObserver(function (entries) {
           footerIn = entries[0].isIntersecting;
           updateVisibility();
-        }, options);
+        }, footerObserverOptions);
         footerObserver.observe(footerCta);
       };
-      observeFooter();
 
+      if (!("IntersectionObserver" in window)) {
+        let fallbackVisibilityFrame = 0;
+        const updateFallbackVisibility = function () {
+          stickyCta.classList.toggle("is-visible", !pageActionOverlapsBar());
+          syncPageStickyFooterVisibility();
+        };
+        const scheduleFallbackVisibility = function () {
+          if (fallbackVisibilityFrame) return;
+          fallbackVisibilityFrame = window.requestAnimationFrame(function () {
+            fallbackVisibilityFrame = 0;
+            updateFallbackVisibility();
+          });
+        };
+        updateFallbackVisibility();
+        window.addEventListener("scroll", scheduleFallbackVisibility, { passive: true });
+        window.addEventListener("resize", scheduleFallbackVisibility, { passive: true });
+        window.addEventListener("load", scheduleFallbackVisibility, { once: true });
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleFallbackVisibility);
+        if ("MutationObserver" in window) {
+          const targetMutationObserver = new MutationObserver(function (records) {
+            const structureChanged = records.some((record) => record.addedNodes.length || record.removedNodes.length);
+            const actionSelectorChanged = records.some((record) => record.type === 'attributes' && ['role', 'tabindex', 'href', 'contenteditable'].includes(record.attributeName));
+            const relevantStateChanged = records.some((record) => record.type === 'attributes' && !(record.target === stickyCta && record.attributeName === 'class'));
+            if (structureChanged || actionSelectorChanged) actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+            if (structureChanged || relevantStateChanged) scheduleFallbackVisibility();
+          });
+          targetMutationObserver.observe(document.body, { childList: true, subtree: true, attributes: true,
+            attributeFilter: ['hidden', 'inert', 'disabled', 'aria-disabled', 'class', 'role', 'tabindex', 'href', 'contenteditable'] });
+        }
+        return;
+      }
+
+      let visibilityFrame = 0;
+      const scheduleVisibilityUpdate = function () {
+        if (visibilityFrame) return;
+        visibilityFrame = window.requestAnimationFrame(function () {
+          visibilityFrame = 0;
+          updateVisibility();
+        });
+      };
+      const refreshVisibilityTargets = function () {
+        actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+        updateVisibility();
+      };
+      window.addEventListener("scroll", scheduleVisibilityUpdate, { passive: true });
+      window.addEventListener("resize", scheduleVisibilityUpdate, { passive: true });
+      window.addEventListener("load", refreshVisibilityTargets, { once: true });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(refreshVisibilityTargets);
+      if ("MutationObserver" in window) {
+        const targetMutationObserver = new MutationObserver(function (records) {
+          const structureChanged = records.some((record) => record.addedNodes.length || record.removedNodes.length);
+          const actionSelectorChanged = records.some((record) => record.type === 'attributes' && ['role', 'tabindex', 'href', 'contenteditable'].includes(record.attributeName));
+          const relevantStateChanged = records.some((record) => record.type === 'attributes');
+          if (structureChanged || actionSelectorChanged) actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+          if (structureChanged || relevantStateChanged) scheduleVisibilityUpdate();
+        });
+        targetMutationObserver.observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['hidden', 'inert', 'disabled', 'aria-disabled', 'class', 'role', 'tabindex', 'href', 'contenteditable']
+        });
+      }
+
+      if (heroCta && !isFunnel) {
+        const heroObserver = new IntersectionObserver(function (entries) {
+          heroOut = !entries[0].isIntersecting;
+          updateVisibility();
+        }, { threshold: 0.1 });
+        heroObserver.observe(heroCta);
+      }
+
+      if (footerCta) observeFooter();
       let mobileFooterMode = window.matchMedia("(max-width: 767.98px)").matches;
       window.addEventListener("resize", function () {
         const nextMobileFooterMode = window.matchMedia("(max-width: 767.98px)").matches;
