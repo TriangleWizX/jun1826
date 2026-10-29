@@ -180,8 +180,10 @@ bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
     </div>
     </div>
     <section class="ss-visit-request" id="visit-request-form" aria-labelledby="visit-request-title">
-      <h2 id="visit-request-title">Send a visit request instead</h2>
-      <p>Rather send a note? Tell Sandy who is starting and a day that fits. He will text you back.</p>
+      <div class="ss-visit-request-intro">
+        <h2 id="visit-request-title">Send a visit request instead</h2>
+        <p>Rather send a note? Tell Sandy who is starting and a day that fits. He will text you back.</p>
+      </div>
       <form data-visit-request action="{{ contact.formspreeEndpoint }}" method="post">
         <input type="hidden" name="source" value="free-intro-form">
         <div class="mb-3"><label for="visit-request-name">Your name (parent or guardian for a child or teen)</label><input class="form-control" id="visit-request-name" name="name" autocomplete="name" required></div>

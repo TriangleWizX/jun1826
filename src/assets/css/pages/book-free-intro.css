@@ -374,4 +374,49 @@
 .page-book-intro .ss-visit-request label { display: block; margin-bottom: var(--space-2xs); font-weight: 600; }
 .page-book-intro .ss-visit-request input, .page-book-intro .ss-visit-request select { width: 100%; min-height: 44px; box-sizing: border-box; }
 .page-book-intro .ss-visit-request button[type="submit"] { width: 100%; min-height: 44px; box-sizing: border-box; }
+@media (min-width: 992px) {
+  .page-book-intro .ss-visit-request {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    column-gap: var(--space-lg);
+    row-gap: var(--space-xs);
+    align-items: start;
+  }
+
+  .page-book-intro .ss-visit-request > .ss-visit-request-intro {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .page-book-intro .ss-visit-request > form {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .page-book-intro .ss-visit-request > [data-visit-request-success],
+  .page-book-intro .ss-visit-request > [data-visit-request-error] {
+    grid-column: 1 / -1;
+  }
+}
+@supports selector(:user-invalid) {
+  .page-book-intro .ss-visit-request :is(input, select, textarea):user-invalid {
+    border-color: #B42318;
+    box-shadow: 0 0 0 2px rgba(180, 35, 24, 0.18);
+  }
+}
+.page-book-intro .ss-visit-request .ss-visit-request-field-error {
+  display: block;
+  margin-top: var(--space-3xs, 0.25rem);
+  color: var(--color-ink, #362B24);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.page-book-intro .ss-visit-request .ss-visit-request-field-error[hidden] {
+  display: none;
+}
+.page-book-intro .ss-visit-request :is(input, select, textarea)[aria-invalid="true"] {
+  border-color: #B42318;
+  box-shadow: 0 0 0 2px rgba(180, 35, 24, 0.18);
+}
 .page-book-intro [data-calendar-fallback] { margin-top: var(--space-sm); }
