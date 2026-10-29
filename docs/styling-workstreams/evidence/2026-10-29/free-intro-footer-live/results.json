@@ -1,0 +1,46 @@
+{
+  "commit": "f7afb90",
+  "route": "https://senseisandy.com/free-bjj-intro-tannersville-ny",
+  "http": {
+    "initial_status": 301,
+    "final_status": 200,
+    "final_bytes": 133891,
+    "final_sha256": "3d242b3a5bf3a670f8658d1af85ff42aeb199e26d14a9a56c4454d5bb39e8b54"
+  },
+  "local_preview": {
+    "390x844_footer_boundary_after_resize_from_780": {
+      "scrollY": 4846,
+      "footer_top": 771.05,
+      "cta_class": "is-footer-visible is-visible",
+      "cta_display": "none",
+      "horizontal_overflow": false
+    },
+    "320x640": {
+      "horizontal_overflow": false
+    },
+    "1440x900": {
+      "cta_display": "none",
+      "horizontal_overflow": false
+    }
+  },
+  "live_browser": {
+    "390x844_page_top": {
+      "horizontal_overflow": false
+    },
+    "390x844_footer": {
+      "scrollY": 5867,
+      "footer_top": -155.95,
+      "cta_class": "is-footer-visible",
+      "cta_display": "none",
+      "horizontal_overflow": false
+    }
+  },
+  "live_html_checks": {
+    "footer_selector": true,
+    "measured_clearance_script": true,
+    "breakpoint_resize_reobserve": true,
+    "short_height_180px_rule": true,
+    "broad_shared_actionbar_detector_absent": true
+  },
+  "note": "No form was submitted. The live response body is retained in route.html; serving infrastructure alters response bytes, so verification used HTTP status, rendered behavior, and content markers rather than raw hash equality to the local build."
+}

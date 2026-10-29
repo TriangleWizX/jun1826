@@ -82,3 +82,36 @@ The focused commit and live release were **not performed**. The isolated candida
 The current shared-tree diff is not a safe substitute. Its `footer.njk` delta combines Free Intro footer clearance with a broad action-target overlap detector that affects shared mobile action-bar behavior. Its page stylesheet also combines the clearance selector with unrelated typography, focus, request-form layout/validation, and short-viewport changes. The minified pair and generated `dist/` are broadly dirty. A clean commit and exact one-route deploy payload cannot be reconstructed from those mixed changes without isolating and re-verifying the shared behavior.
 
 Release status: **locally verified behavior; source integration and production deployment remain unverified**. Do not claim the sticky CTA footer fix is live. A future release needs an independently reviewed narrow patch, a fresh isolated production build from the accepted source, exact `free-bjj-intro-tannersville-ny/index.html` payload proof, and live verification.
+
+
+## Resume attempt — 2026-10-29
+
+The implementation and focused browser behavior are present in committed history (`ba652645` ancestry), and the previously recorded isolated browser run covers the footer boundary, breakpoint resize, fallback observer, 320px phone, and desktop states. A current clean production build was not repeated: the main worktree has extensive unrelated generated `dist/` modifications, and an isolated source export exceeded the inventory's 250 MiB temporary budget (779 MiB before build). That export was removed before invoking Eleventy. The main `dist/` was not touched.
+
+The deploy helper dry run for the earlier focused commit maps to exactly `free-bjj-intro-tannersville-ny/index.html`, but the live tree's generated route and manifest are dirty with additional unrelated Free Intro/form edits. No deploy was run. The remaining release gates are a safely bounded clean production output for current `HEAD`, a focused commit containing only the accepted footer behavior and generated route, and live browser verification. Lighthouse/PageSpeed remain excluded.
+
+The pre-existing `/tmp/free-intro-footer-release-20261029/browser-profile/` was found despite an earlier closeout claiming the directory removed. It measures 12 KiB; `ps` and `lsof +D` found no process or open-file holders. It remains retained as unowned prior-session state pending source/use reconciliation; it was not deleted.
+
+
+## Approved narrow release — 2026-10-29
+
+Scope A was approved: preserve all unrelated dirty work and release only the Free Intro footer-clearance fix. The release candidate was rebuilt from clean committed source plus the reviewed narrow patch in an isolated source copy. It excludes the unrelated Free Intro visit-request layout/validation/typography edits and the broad shared action-bar overlap scanner.
+
+### Commit and payload
+
+- Commit: `f7afb9079812a5d011e957348d093befa641f18c` (`fix(ui): keep Free Intro sticky CTA clear of footer`).
+- Files: `src/_includes/components/footer.njk`, `src/assets/css/pages/book-free-intro.css`, its minified pair, `tools/build-free-intro-styles.mjs`, and generated `dist/free-bjj-intro-tannersville-ny/index.html`.
+- The deploy-helper dry run selected exactly `free-bjj-intro-tannersville-ny/index.html`. Before deployment, the main worktree's pre-existing dirty route was saved with SHA-256 `4c411840f22e0adda95e5f85f503eac25467a3f6c58fca94fe61c1979b7df55f`; the route was temporarily set to the committed artifact (`6aeedd3bb734616cdd69508829e9411505ffc8a5d627cc131e95b51e53c370d5`) for the upload, then restored and re-hashed to the original value.
+- The deploy command exited successfully. The helper's rotation removed one older valid top-level backup (1,124,055,614 bytes); the public route was then checked independently.
+
+### Verification
+
+- Isolated `npm run build` completed, generating 507 Eleventy pages; the Free Intro style builder retained `.ss-mobile-sticky-cta.is-footer-visible` in the inline stylesheet and preserved the `max-height: 180px` rule.
+- `npm run qa:volatile-facts` passed with 577 files checked.
+- Isolated browser preview: at 390×844 after resizing from 780px while near the footer, the page CTA acquired `is-footer-visible` and computed `display:none`; 320×640 and 1440×900 showed no horizontal overflow.
+- Live HTTP followed the canonical redirect from `/free-bjj-intro-tannersville-ny/` to `/free-bjj-intro-tannersville-ny` and returned 200. At 390×844, the live page had no horizontal overflow and the page CTA computed `display:none` at the footer with `is-footer-visible`. Live HTML also contains the measured-clearance logic, breakpoint re-observation, and preserved 180px rule; it does not contain the broad action-bar scanner. The server response differs bytewise from the local artifact, so live proof uses the response status, rendered state, and content checks rather than direct hash equality. No form was submitted.
+- Live response metadata, content checks, and captured geometry are stored in [results.json](evidence/2026-10-29/free-intro-footer-live/results.json); the public HTML response hash is recorded there.
+
+### Closeout
+
+The main worktree's prior dirty route was restored byte-for-byte. The isolated source/build copy (about 1.3 GiB) and dedicated browser profile (205 MiB) were stopped, checked for process/open-file holders, and removed. The small backup copy of the prior dirty route was also removed after hash verification. The broader styling plan remains subject to its other previously recorded owner and release gates. Lighthouse/PageSpeed were not run, as requested.
