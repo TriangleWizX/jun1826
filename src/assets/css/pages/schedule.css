@@ -17,7 +17,7 @@
 .ss-cal-day{padding:var(--space-md);border-bottom:var(--rule-hair) solid var(--color-rule)}.ss-cal-day:last-child{border-bottom:0}.ss-cal-day-header{display:flex;justify-content:space-between;gap:var(--space-sm);align-items:baseline}.ss-cal-day-name{margin:0;font:700 var(--text-lg)/1.2 var(--font-body)}.ss-cal-day-badge{display:inline-flex;border-radius:var(--radius-pill);padding:var(--space-3xs) var(--space-xs);background:var(--color-paper-3);font:700 var(--text-xs)/1 var(--font-body)}.ss-cal-day-badge.active{background:var(--color-accent);color:var(--color-accent-ink)}.ss-cal-slot{display:grid;grid-template-columns:minmax(5rem,.45fr) 1fr;gap:var(--space-md);padding:var(--space-sm) 0;border-top:var(--rule-hair) solid var(--color-rule)}.ss-cal-slot-time{font-weight:700;color:var(--color-accent-deep)}.ss-cal-slot-name{color:var(--color-ink)}.ss-cal-first-time{margin-top:var(--space-md);padding:var(--space-sm);border-radius:var(--radius-input);background:var(--color-accent-soft);color:var(--color-ink)}
 .ss-section{padding-block:var(--space-2xl)}.ss-section-head{max-width:var(--container-narrow);margin-bottom:var(--space-lg)}.ss-saturday-feature,.ss-free-intro-flow,.ss-location-desktop{background:var(--color-paper-2)}.ss-saturday-grid,.ss-location-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-xl)}.ss-check-list{padding-inline-start:var(--space-lg)}
 .ss-faq-accordion{border-top:var(--rule-hair) solid var(--color-rule)}.ss-faq-accordion .accordion-item{border:0;border-bottom:var(--rule-hair) solid var(--color-rule);background:transparent}.ss-faq-accordion .accordion-button{padding:var(--space-md) 0;background:transparent;color:var(--color-ink);font:700 var(--text-md)/1.3 var(--font-body);box-shadow:none}.ss-faq-accordion .accordion-body{padding:0 0 var(--space-md)}
-.page-schedule :is(a,button,input,select,textarea):focus-visible{outline:var(--rule-fine) solid var(--color-focus);outline-offset:2px}.page-schedule [aria-disabled=true],.page-schedule :disabled{opacity:.4;cursor:not-allowed;pointer-events:none}.page-schedule [data-state=loading] .ss-btn-text{opacity:.55}.page-schedule [aria-invalid=true]{border-color:var(--color-error)}.page-schedule [data-state=success]{border-color:var(--color-success)}
+.page-schedule :is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--color-focus, var(--ss-green, #116a42));outline-offset:2px}.page-schedule [aria-disabled=true],.page-schedule :disabled{opacity:.4;cursor:not-allowed;pointer-events:none}.page-schedule [data-state=loading] .ss-btn-text{opacity:.55}.page-schedule [aria-invalid=true]{border-color:var(--color-error)}.page-schedule [data-state=success]{border-color:var(--color-success)}
 @media (hover:hover) and (pointer:fine){.ss-btn-primary:hover,.ss-action-primary:hover{background:var(--color-accent-strong);transform:translateY(-1px)}.ss-btn-primary:hover .ss-btn-icon-wrapper{transform:translate(1px,-1px) scale(1.05)}}
 @media (max-width:60rem){.ss-hero-editorial-split{grid-template-columns:1fr}.ss-info-grid,.ss-hero-features-row{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:40rem){.ss-hero-editorial-split,.ss-section{padding-block:var(--space-xl)}.ss-double-bezel-inner,.ss-calendar-bezel-inner{padding:var(--space-md)}.ss-info-grid,.ss-hero-features-row,.ss-saturday-grid,.ss-location-grid{grid-template-columns:1fr}.ss-cal-slot{grid-template-columns:1fr;gap:var(--space-2xs)}.ss-mobile-actionbar{position:sticky;bottom:0;z-index:var(--z-sticky);display:flex;gap:var(--space-xs);padding:var(--space-xs) var(--gutter);background:var(--color-paper);border-top:var(--rule-hair) solid var(--color-rule)}}
 @media (prefers-reduced-motion:reduce){.page-schedule *{transition:none;animation:none}}
@@ -98,11 +98,15 @@
   text-decoration: none;
 }
 
+.page-schedule .ss-hero-actions .ss-btn-premium:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
 .page-schedule .ss-hero-actions .ss-btn-premium-icon {
   background: var(--color-accent-strong);
   color: var(--color-accent-ink);
 }
-
 
 /* Keep the two standalone directions links easy to tap at every viewport. */
 .page-schedule .ss-schedule-target {
