@@ -102,3 +102,11 @@
   background: var(--color-accent-strong);
   color: var(--color-accent-ink);
 }
+
+
+/* Keep the two standalone directions links easy to tap at every viewport. */
+.page-schedule .ss-schedule-target {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
