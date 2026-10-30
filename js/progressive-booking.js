@@ -325,6 +325,37 @@
       track('details_submit_attempt');
     });
     const visitRequestForm = document.querySelector('[data-visit-request]');
+  if (visitRequestForm) {
+    const requestFields = Array.from(visitRequestForm.querySelectorAll('input:not([type="hidden"]), select, textarea'));
+    requestFields.forEach((field) => {
+      if (!field.id) return;
+      const error = document.createElement('span');
+      error.id = `${field.id}-error`;
+      error.className = 'ss-visit-request-field-error';
+      error.setAttribute('role', 'alert');
+      error.setAttribute('aria-atomic', 'true');
+      error.hidden = true;
+      field.insertAdjacentElement('afterend', error);
+      const describedBy = new Set((field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean));
+      describedBy.add(error.id);
+      field.setAttribute('aria-describedby', Array.from(describedBy).join(' '));
+
+      const updateFieldError = () => {
+        const invalid = !field.validity.valid;
+        if (invalid) field.setAttribute('aria-invalid', 'true');
+        else field.removeAttribute('aria-invalid');
+        error.textContent = invalid ? field.validationMessage : '';
+        error.hidden = !invalid;
+      };
+      field.addEventListener('invalid', updateFieldError);
+      field.addEventListener('input', () => {
+        if (field.hasAttribute('aria-invalid')) updateFieldError();
+      });
+      field.addEventListener('change', () => {
+        if (field.hasAttribute('aria-invalid')) updateFieldError();
+      });
+    });
+  }
     visitRequestForm?.addEventListener('submit', async (event) => {
       event.preventDefault();
       const success = document.querySelector('[data-visit-request-success]');
