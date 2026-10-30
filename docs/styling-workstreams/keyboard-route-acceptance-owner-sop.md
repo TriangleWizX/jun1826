@@ -51,7 +51,7 @@ Copy this table for each route and test pass:
 
 | Route | Width / zoom | Check | Pass / fail / not applicable | Evidence or exact failure | Follow-up owner |
 | --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |
+| `/visit` | Native 200%; 503×341 CSS px, DPR 2.5 | Generated Tab to Alley Bootcamp link; generated Tab to footer Text Sandy action, then PageDown, ArrowUp ×8, ArrowDown ×2, PageUp; confirm visible focus and sticky clearance | Pass | Commit `2462f0c9`, Chrome 151.0.7922.137. Alley link y=160.66–180.66, bar top 277.6. Footer link y=257.63–324.10 with visible 2px green outline and 4px shadow; bar top 341.6 and hidden. `visualViewport.scale=1`; no horizontal overflow; HTTP 200 with both listeners present. No form or outbound action activated. | Coordinator |
 
 For failures, include a screenshot with the focused element visible, browser and release details, exact key sequence, and expected versus observed focus/state. Do not include student/customer information in screenshots.
 
