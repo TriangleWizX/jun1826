@@ -1,0 +1,137 @@
+{
+  "task": "Perform live screen-reader speech acceptance for the Sensei Sandy website using Orca with headed Chrome. Verify shared navigation and menu narration, Schedule date controls, and Free Intro form labels and required-field errors. Record actual Orca speech logs and browser state. Do not submit the form or activate booking, SMS, email, or availability actions.",
+  "definition_of_done": [
+    {
+      "id": "SR-NAV-1",
+      "criterion": "Live Orca speech is captured for shared navigation and mobile menu open, expanded state, close, and focus return; actual words and state are recorded."
+    },
+    {
+      "id": "SR-SCHEDULE-1",
+      "criterion": "Live Orca speech is captured for keyboard focus on a schedule date and keyboard selection of another date; announced date and class details are recorded."
+    },
+    {
+      "id": "SR-FORM-1",
+      "criterion": "Live Orca speech is captured for Free Intro field labels and required-field invalid state; no real submission occurs."
+    }
+  ],
+  "constraints": [
+    "Use production route state as current evidence and preserve prior local preview results as historical context only.",
+    "Never submit the Free Intro form or activate booking, SMS, email, availability, or other external actions.",
+    "Do not alter public copy, schedule facts, or deploy site code unless a reproduced defect and authoritative fix are established.",
+    "Use one headed Chrome and Orca session at a time because the local display and speech service are shared.",
+    "Record the browser, Orca version, route, input method, spoken text, and browser state; do not claim physical speech was independently heard unless it was."
+  ],
+  "workstreams": [
+    {
+      "id": "SR-NAV-1",
+      "task": "Audit production shared navigation and mobile-menu screen-reader speech using Orca and keyboard navigation.",
+      "deliverable": "Exact Orca speech excerpts and state observations for skip link, navigation landmarks/links, menu open, expanded state, Escape, and focus return.",
+      "contribution": "Establish whether navigation labels and menu state changes are actually announced to Orca.",
+      "dod_ids": [
+        "SR-NAV-1"
+      ],
+      "depends_on": [],
+      "read_paths": [
+        "src/partials/nav-include.html",
+        "docs/styling-workstreams/evidence/2026-10-29/spoken-at/spoken-output.txt"
+      ],
+      "write_paths": [
+        "docs/styling-workstreams/evidence/2026-10-30/screen-reader/nav.json"
+      ],
+      "allowed_tools": [
+        "browser-use",
+        "Orca",
+        "Speech Dispatcher",
+        "Playwright CDP for keyboard input and state capture"
+      ],
+      "verification": [
+        "Use a fresh production page and log Orca output during actual keyboard interaction.",
+        "Check expanded/collapsed state in the accessibility tree and compare it with Orca speech.",
+        "Do not activate any external link."
+      ],
+      "authorized_actions": [
+        "read",
+        "interact",
+        "capture evidence",
+        "write"
+      ]
+    },
+    {
+      "id": "SR-SCHEDULE-1",
+      "task": "Audit production Schedule date navigation and selected-date speech using Orca and keyboard controls.",
+      "deliverable": "Exact Orca speech excerpts for a focused date control, a keyboard-selected date, and its class details.",
+      "contribution": "Determine whether date focus, selection changes, and related class details are spoken clearly and in order.",
+      "dod_ids": [
+        "SR-SCHEDULE-1"
+      ],
+      "depends_on": [],
+      "read_paths": [
+        "src/schedule.html",
+        "src/assets/js/schedule-month-calendar.js",
+        "docs/styling-workstreams/evidence/2026-10-29/spoken-at/spoken-output.txt"
+      ],
+      "write_paths": [
+        "docs/styling-workstreams/evidence/2026-10-30/screen-reader/schedule.json"
+      ],
+      "allowed_tools": [
+        "browser-use",
+        "Orca",
+        "Speech Dispatcher",
+        "Playwright CDP for keyboard input and state capture"
+      ],
+      "verification": [
+        "Navigate dates using keyboard only and capture Orca output.",
+        "Compare spoken date and class details with the rendered selected-day state.",
+        "Do not activate booking or external contact links."
+      ],
+      "authorized_actions": [
+        "read",
+        "interact",
+        "capture evidence",
+        "write"
+      ]
+    },
+    {
+      "id": "SR-FORM-1",
+      "task": "Audit production Free Intro form labels and required-field error speech using Orca without submitting the form.",
+      "deliverable": "Exact Orca speech excerpts for field labels, required status, and the browser validation error; accessibility associations are recorded.",
+      "contribution": "Determine whether the form's required-field guidance is spoken when focus moves to an invalid field.",
+      "dod_ids": [
+        "SR-FORM-1"
+      ],
+      "depends_on": [],
+      "read_paths": [
+        "src/_includes/components/form-free-intro.njk",
+        "js/progressive-booking.js",
+        "docs/styling-workstreams/evidence/2026-10-29/spoken-at/spoken-output.txt"
+      ],
+      "write_paths": [
+        "docs/styling-workstreams/evidence/2026-10-30/screen-reader/free-intro-form.json"
+      ],
+      "allowed_tools": [
+        "browser-use",
+        "Orca",
+        "Speech Dispatcher",
+        "Playwright CDP for keyboard input and state capture"
+      ],
+      "verification": [
+        "Use only a fresh blank form and inspect one required field.",
+        "Use native validity reporting without form submission and capture Orca speech.",
+        "Verify label and error associations in the DOM/accessibility tree."
+      ],
+      "authorized_actions": [
+        "read",
+        "interact",
+        "capture evidence",
+        "write"
+      ]
+    }
+  ],
+  "authorized_actions": [
+    "read",
+    "interact",
+    "capture evidence",
+    "recommend",
+    "write"
+  ]
+}

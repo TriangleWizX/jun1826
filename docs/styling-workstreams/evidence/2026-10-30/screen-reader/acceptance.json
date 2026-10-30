@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-30",
+  "environment": {
+    "site": "https://senseisandy.com",
+    "browser": "Google Chrome, task-owned headed session",
+    "screen_reader": "Orca 46.1",
+    "speech_evidence": "Orca debug SPEECH OUTPUT log; not independently listened to",
+    "viewport_for_schedule": "390x844 emulated",
+    "actions_excluded": ["form submission", "booking", "SMS", "email", "availability action"]
+  },
+  "navigation": {
+    "result": "follow_up_required",
+    "route": "/",
+    "sequence": ["Tab to skip link", "Tab through top bar to Menu", "Enter"],
+    "speech": ["Skip main content link."],
+    "browser_state": {
+      "menu_visible_after_enter": true,
+      "focus_after_enter": "Classes navigation link",
+      "toggle_aria_expanded_after_enter": "false"
+    },
+    "finding": "The menu became visible but the toggle still exposed aria-expanded=false, focus moved into the menu, and Orca did not clearly announce the expanded state. Reconcile state and retest menu open, Escape, collapsed announcement, and focus return."
+  },
+  "schedule": {
+    "result": "pass_for_tested_date_change",
+    "route": "/schedule/",
+    "sequence": ["Focus selected mobile date Friday October 30, 2026", "ArrowRight once"],
+    "speech": [
+      "Friday, October 30, 2026. 5:00 PM Friday Gi Lab. 6:00 PM Adult Gi toggle button expanded.",
+      "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch toggle button expanded."
+    ],
+    "browser_state_after_arrow_right": {
+      "selected_date": "2026-10-31",
+      "focused_accessible_name": "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch",
+      "live_region_included_selected_date_and_class_details": true
+    }
+  },
+  "free_intro_form": {
+    "result": "follow_up_required",
+    "route": "/free-bjj-intro-tannersville-ny/",
+    "field": {
+      "id": "visit-request-name",
+      "label": "Your name (parent or guardian for a child or teen)",
+      "required": true,
+      "visible": true,
+      "validation_message": "Please fill out this field.",
+      "form_submitted": false
+    },
+    "speech": [],
+    "finding": "No Orca field-label, required-state, or native invalid-field utterance was captured after focusing the visible field and invoking reportValidity(). The hidden schedule-dialog field was not counted. Retest and review spoken feedback."
+  }
+}
