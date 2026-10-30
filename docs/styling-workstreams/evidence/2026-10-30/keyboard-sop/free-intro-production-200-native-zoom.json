@@ -1,0 +1,80 @@
+{
+  "route": "https://senseisandy.com/free-bjj-intro-tannersville-ny/",
+  "result": "pass",
+  "browser": "Google Chrome 151.0.7922.137",
+  "method": "Headed Chrome on X11 with an isolated task-owned profile. Five native Ctrl+Plus key chords set browser page zoom to 200%; Ctrl+0 restored 100% before shutdown. After reloading to reset document focus, six Tab stops were inspected after each focus update settled for 120 ms.",
+  "zoom_evidence": {
+    "baseline": {
+      "innerWidth_css_px": 1158,
+      "innerHeight_css_px": 747,
+      "devicePixelRatio": 1.25,
+      "visualViewportScale": 1
+    },
+    "at_200_percent": {
+      "innerWidth_css_px": 579,
+      "innerHeight_css_px": 373,
+      "devicePixelRatio": 2.5,
+      "visualViewportScale": 1
+    }
+  },
+  "sticky_cta_top_css_px": 308.525,
+  "tab_stops": [
+    {
+      "step": 1,
+      "text": "Skip to main content",
+      "focus_visible": true,
+      "bounds_y_css_px": [16, 65.919],
+      "clearance_from_sticky_px": 242.606,
+      "in_view": true,
+      "horizontal_overflow": false
+    },
+    {
+      "step": 2,
+      "text": "Sensei Sandy BJJ",
+      "focus_visible": true,
+      "bounds_y_css_px": [12, 56],
+      "clearance_from_sticky_px": 252.525,
+      "in_view": true,
+      "horizontal_overflow": false
+    },
+    {
+      "step": 3,
+      "text": "Text Sandy (header)",
+      "focus_visible": true,
+      "bounds_y_css_px": [12, 56],
+      "clearance_from_sticky_px": 252.525,
+      "in_view": true,
+      "horizontal_overflow": false
+    },
+    {
+      "step": 4,
+      "text": "Menu",
+      "focus_visible": true,
+      "bounds_y_css_px": [12, 56],
+      "clearance_from_sticky_px": 252.525,
+      "in_view": true,
+      "horizontal_overflow": false
+    },
+    {
+      "step": 5,
+      "text": "Book your free visit",
+      "focus_visible": true,
+      "bounds_y_css_px": [248.413, 296.688],
+      "clearance_from_sticky_px": 11.837,
+      "in_view": true,
+      "horizontal_overflow": false
+    },
+    {
+      "step": 6,
+      "text": "Text Sandy (hero)",
+      "focus_visible": true,
+      "bounds_y_css_px": [248.288, 296.563],
+      "clearance_from_sticky_px": 11.962,
+      "in_view": true,
+      "horizontal_overflow": false
+    }
+  ],
+  "page_errors": [],
+  "actions_not_activated": ["booking", "SMS", "form submission"],
+  "not_tested": ["physical HID keyboard", "screen-reader speech"]
+}

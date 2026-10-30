@@ -1,0 +1,54 @@
+{
+  "check": "post-deployment production keyboard focus recheck",
+  "date": "2026-10-30",
+  "commit": "3ce8a79",
+  "url": "https://senseisandy.com/free-bjj-intro-tannersville-ny",
+  "http_status": 200,
+  "response_bytes_after_ssi": 146125,
+  "response_sha256": "8b9bffa584b67e0eaf9d4140b521db572ba64d1743e4a5a6b424298f2c71fe43",
+  "expected_title": "Free First BJJ Visit in Tannersville | Sensei Sandy",
+  "handler_markers_present": true,
+  "deploy": {
+    "payload": [
+      "free-bjj-intro-tannersville-ny/index.html"
+    ],
+    "remote_bytes": 97147,
+    "verified_backup": "/home/sensdapt/senseisandy-predeploy-20261030T045832Z.tar.gz"
+  },
+  "browser": {
+    "engine": "Chrome via isolated Playwright",
+    "mode": "headless",
+    "keyboard_input": "Tab key events; no links activated",
+    "viewport_css_px": [
+      452,
+      351
+    ],
+    "device_pixel_ratio": 2.5,
+    "visual_viewport_scale": 1,
+    "tab_sequence": [
+      "Skip to main content",
+      "Sensei Sandy BJJ",
+      "Text Sandy (header)",
+      "Menu",
+      "Book your free visit",
+      "Text Sandy (hero)"
+    ],
+    "active_text": "Text Sandy",
+    "focus_visible": true,
+    "bounds_y": [
+      224.734375,
+      273.40625
+    ],
+    "visible_sticky_cta_top_y": 285.328125,
+    "clearance_px": 11.921875,
+    "overlap": false,
+    "horizontal_overflow": false,
+    "page_errors": 0,
+    "scroll_padding_block_end_css_px": 88
+  },
+  "screenshot": "free-intro-production-handler-200-focus.png",
+  "limitations": [
+    "The CSS viewport and DPR match the prior native 200% run; this post-deploy run did not change Chrome browser UI zoom.",
+    "Physical HID and screen-reader speech were not tested."
+  ]
+}

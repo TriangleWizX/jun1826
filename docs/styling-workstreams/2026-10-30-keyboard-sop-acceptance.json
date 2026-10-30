@@ -73,22 +73,19 @@
     "Lighthouse/PageSpeed"
   ],
   "release": {
-    "status": "corrected route handler built locally; deployment pending",
-    "commit": "f38f1ff4de6f953c5add7f8f5ea0f19892941a5f (prior CSS-only commit)",
-    "deployed_paths": [],
-    "dry_run": "Earlier CSS-only release candidate listed two paths; corrected handler release must dry-run to exactly free-bjj-intro-tannersville-ny/index.html.",
-    "backup": "Earlier read-only backup QA found two archives and zero invalid; exact deploy reused newest verified account-level backup. An earlier default attempt removed one older verified archive of 1,130,752,653 bytes.",
-    "deploy_receipt": "No per-file receipt was captured for the earlier deploy attempt. Live CSS response later matched candidate size and SHA-256, but production route does not reference that standalone CSS file.",
-    "live_route": "HTTP 200, 144965-byte HTML body, expected Free Intro title. Inline CSS contains 88px scroll-padding; loaded stylesheet link is mobile-foundation.114422.css. Standalone free-intro-delivery CSS is not linked.",
-    "live_css": "Fetched bytes matched earlier candidate SHA-256 f79608e60361a9ae3e611d6bcb5fe71b236d8d20d17f993a4c506468978c7548; asset is not active on this route.",
-    "live_browser_recheck": "Pre-fix Tab traversal at 452x351 CSS px / DPR2.5 showed hero Text Sandy overlapping visible sticky CTA. Temporary DOM handler trial cleared overlap; updated local build passed. Handler not yet deployed.",
-    "remaining": "Commit the route source and evidence; dry-run and deploy only generated free-bjj-intro-tannersville-ny/index.html; verify served handler and repeat production keyboard check. Native 200% headed browser check remains pending.",
-    "remaining_checks": [
-      "Commit focused route source and evidence; confirm dry-run contains exactly free-bjj-intro-tannersville-ny/index.html.",
-      "Deploy that exact path and confirm served HTML contains the handler.",
-      "Repeat production Tab traversal at 452x351 CSS px / DPR2.5; verify visible focus and no sticky overlap without activating links; save screenshot.",
-      "Repeat at native 200% zoom if headed Chrome can launch."
+    "status": "deployed; viewport-equivalent and actual native Chrome 200% production keyboard checks passed",
+    "commit": "3ce8a79aae1ecd464e5d8ff74b5730d59f098597",
+    "deployed_paths": [
+      "free-bjj-intro-tannersville-ny/index.html"
     ],
+    "dry_run": "payload_files=1 commit=3ce8a79; free-bjj-intro-tannersville-ny/index.html",
+    "backup": "Earlier read-only backup QA found two archives and zero invalid; exact deploy reused newest verified account-level backup. An earlier default attempt removed one older verified archive of 1,130,752,653 bytes.",
+    "deploy_receipt": "payload_files=1; backup_reused=/home/sensdapt/senseisandy-predeploy-20261030T045832Z.tar.gz; remote_bytes=97147",
+    "live_route": "HTTP 200; expected title; 146125-byte response after server-side SSI expansion; handler present.",
+    "live_css": "Route has inline delivery CSS with scroll-padding 88px and links mobile-foundation.114422.css. Standalone free-intro-delivery file is not linked and is not required for the handler.",
+    "live_browser_recheck": "Passed at 452x351 CSS px / DPR2.5 / visualViewport.scale1 in isolated headless Chrome. Text Sandy focus visible, bounds y224.734..273.406, sticky CTA top y285.328, overlap false, no horizontal overflow, no page errors.",
+    "remaining": "Physical HID keyboard hardware and screen-reader speech remain out of scope.",
+    "remaining_checks": [],
     "attempted_paths": [
       "free-bjj-intro-tannersville-ny/index.html",
       "assets/css/pages/free-intro-delivery.f79608e60361.css"
@@ -99,9 +96,12 @@
       "http_status": 200,
       "content_length": 49672,
       "candidate_length": 49672,
-      "remote_body_hash_verified": false
+      "remote_body_hash_verified": true,
+      "sha256": "f79608e60361a9ae3e611d6bcb5fe71b236d8d20d17f993a4c506468978c7548"
     },
-    "current_behavior": "Production before updated handler: hero Text Sandy bounds y343.95..392.225; visible sticky CTA top y285.328; overlap. Production handler trial: bounds y224.734..273.406; sticky CTA top y285.328; no overlap."
+    "current_behavior": "Deployed route handler moves a keyboard-focused control above the visible sticky CTA.",
+    "live_route_sha256": "8b9bffa584b67e0eaf9d4140b521db572ba64d1743e4a5a6b424298f2c71fe43",
+    "native_browser_zoom_recheck": "passed; headed Chrome native page zoom via X11 Ctrl+Plus; width 1158 to 579 CSS px and DPR 1.25 to 2.5 while visualViewport.scale stayed 1"
   },
   "production_candidate_check": {
     "route_http_status": 200,
@@ -171,5 +171,150 @@
     "overlap": false,
     "horizontal_overflow": false,
     "screenshot": "evidence/2026-10-30/keyboard-sop/free-intro-local-handler-200-focus.png"
+  },
+  "production_live_recheck": {
+    "route_http_status": 200,
+    "route_body_bytes_after_ssi": 146125,
+    "route_title": "Free First BJJ Visit in Tannersville | Sensei Sandy",
+    "handler_present": true,
+    "browser": "isolated headless Chrome with Playwright keyboard input",
+    "viewport_css_px": [
+      452,
+      351
+    ],
+    "dpr": 2.5,
+    "visual_viewport_scale": 1,
+    "tab_sequence": [
+      "Skip to main content",
+      "Sensei Sandy BJJ",
+      "Text Sandy (header)",
+      "Menu",
+      "Book your free visit",
+      "Text Sandy (hero)"
+    ],
+    "active_text": "Text Sandy",
+    "active_href": "sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question",
+    "focus_visible": true,
+    "bounds_y": [
+      224.734375,
+      273.40625
+    ],
+    "sticky_cta_top_y": 285.328125,
+    "overlap": false,
+    "clearance_px": 11.921875,
+    "scroll_padding_block_end_css_px": 88,
+    "horizontal_overflow": false,
+    "page_errors": 0,
+    "actions_not_activated": [
+      "SMS link",
+      "booking link"
+    ],
+    "screenshot": "evidence/2026-10-30/keyboard-sop/free-intro-production-handler-200-focus.png",
+    "native_browser_zoom_recheck": "not run; layout viewport and DPR match native 200% recorded metrics, visualViewport.scale remains 1",
+    "response_sha256": "8b9bffa584b67e0eaf9d4140b521db572ba64d1743e4a5a6b424298f2c71fe43",
+    "evidence_json": "evidence/2026-10-30/keyboard-sop/free-intro-production-handler-200-focus.json"
+  },
+  "production_native_200_zoom_recheck": {
+    "evidence": "evidence/2026-10-30/keyboard-sop/free-intro-production-200-native-zoom.json",
+    "route": "https://senseisandy.com/free-bjj-intro-tannersville-ny/",
+    "browser": "Google Chrome 151.0.7922.137",
+    "method": "Headed Chrome on X11 with a task-owned profile; five native Ctrl+Plus key chords set browser page zoom to 200%; Ctrl+0 restored 100% before shutdown. Keyboard Tab input used Playwright CDP after a fresh document reload.",
+    "baseline": {
+      "innerWidth_css_px": 1158,
+      "innerHeight_css_px": 747,
+      "devicePixelRatio": 1.25,
+      "visualViewportScale": 1
+    },
+    "at_200_percent": {
+      "innerWidth_css_px": 579,
+      "innerHeight_css_px": 373,
+      "devicePixelRatio": 2.5,
+      "visualViewportScale": 1
+    },
+    "tab_settle_ms": 120,
+    "sticky_cta_top_css_px": 308.525,
+    "stops": [
+      {
+        "step": 1,
+        "text": "Skip to main content",
+        "focus_visible": true,
+        "bounds_y": [
+          16,
+          65.919
+        ],
+        "clearance_px": 242.606,
+        "in_view": true,
+        "horizontal_overflow": false
+      },
+      {
+        "step": 2,
+        "text": "Sensei Sandy BJJ",
+        "focus_visible": true,
+        "bounds_y": [
+          12,
+          56
+        ],
+        "clearance_px": 252.525,
+        "in_view": true,
+        "horizontal_overflow": false
+      },
+      {
+        "step": 3,
+        "text": "Text Sandy (header)",
+        "focus_visible": true,
+        "bounds_y": [
+          12,
+          56
+        ],
+        "clearance_px": 252.525,
+        "in_view": true,
+        "horizontal_overflow": false
+      },
+      {
+        "step": 4,
+        "text": "Menu",
+        "focus_visible": true,
+        "bounds_y": [
+          12,
+          56
+        ],
+        "clearance_px": 252.525,
+        "in_view": true,
+        "horizontal_overflow": false
+      },
+      {
+        "step": 5,
+        "text": "Book your free visit",
+        "focus_visible": true,
+        "bounds_y": [
+          248.413,
+          296.688
+        ],
+        "clearance_px": 11.837,
+        "in_view": true,
+        "horizontal_overflow": false
+      },
+      {
+        "step": 6,
+        "text": "Text Sandy (hero)",
+        "focus_visible": true,
+        "bounds_y": [
+          248.288,
+          296.563
+        ],
+        "clearance_px": 11.962,
+        "in_view": true,
+        "horizontal_overflow": false
+      }
+    ],
+    "page_errors": [],
+    "not_tested": [
+      "physical HID keyboard",
+      "screen-reader speech",
+      "form submission",
+      "SMS activation",
+      "booking activation"
+    ],
+    "result": "pass"
   }
 }
