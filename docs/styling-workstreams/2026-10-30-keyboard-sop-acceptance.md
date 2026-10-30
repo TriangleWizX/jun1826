@@ -74,4 +74,12 @@ After the correction, production Playwright verification passed at 767 CSS px: E
 
 The distinct sticky-action PageDown check also passed on production Free Intro at 390×844 CSS px. Keyboard Tab navigation focused the form input at Tab stop 18. PageDown kept visible focus, moved the input from y=721.98–765.98 to y=205.98–249.98, and produced no overlap with the sticky action. No form was submitted.
 
-This follow-up used browser-generated key events, not a physical HID keyboard. The owner's physical keyboard pass remains outstanding. Lighthouse/PageSpeed was not run.
+This follow-up used browser-generated key events. The owner accepts browser-generated keyboard input instead of physical keyboard input for this SOP, so physical HID testing is out of scope. Lighthouse/PageSpeed was not run.
+
+## Visit shared sticky-action focus follow-up — 2026-10-30
+
+Added a `focusin` recheck to the shared mobile action-bar visibility logic. Both the IntersectionObserver path and its fallback schedule the existing overlap check only for `:focus-visible` targets. No pointer-triggered behavior changed.
+
+Local candidate verification used headed Chrome through Browser Use with generated Tab input at a 451×323 CSS viewport, DPR 2.5, and `visualViewport.scale=1`. The Tab stop immediately before the previously affected “Here week? Start morning Alley Bootcamp” link was focused, then a generated Tab moved focus to that link. The link finished at y=278–298 with `:focus-visible=true`; the sticky bar was hidden and did not overlap the link. This is local candidate evidence, not production verification.
+
+Deployment is pending. The full build output for Visit includes unrelated uncommitted source changes, and the public HTTP response expands server-side includes. I did not commit or deploy that generated route because it could publish unrelated changes or freeze dynamic includes. Keep the shared fix and release artifact reviewable, then deploy only after producing the exact source-backed route payload.

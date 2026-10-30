@@ -173,6 +173,9 @@
             updateFallbackVisibility();
           });
         };
+        document.addEventListener("focusin", function (event) {
+          if (event.target.matches(':focus-visible')) scheduleFallbackVisibility();
+        });
         updateFallbackVisibility();
         window.addEventListener("scroll", scheduleFallbackVisibility, { passive: true });
         window.addEventListener("resize", scheduleFallbackVisibility, { passive: true });
@@ -200,6 +203,9 @@
           updateVisibility();
         });
       };
+      document.addEventListener("focusin", function (event) {
+        if (event.target.matches(':focus-visible')) scheduleVisibilityUpdate();
+      });
       const refreshVisibilityTargets = function () {
         actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
         updateVisibility();
