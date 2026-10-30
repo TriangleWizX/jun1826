@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-30",
+  "environment": "production HTTPS",
+  "browser": "Google Chrome headed / Browser Use 0.1.13, isolated task profile",
+  "viewport": "390x844 CSS px",
+  "test": "Keyboard Enter activation for shared footer links with same-origin destinations",
+  "result": "14/14 passed after retrying two transient URL observations",
+  "excluded": [
+    { "label": "Call", "reason": "tel: action intentionally not activated" },
+    { "label": "Text", "reason": "sms: action intentionally not activated" },
+    { "label": "Email", "reason": "mailto: action intentionally not activated" }
+  ],
+  "results": [
+    { "label": "Sensei Sandy BJJ", "path": "/", "key": "Enter", "activated": true },
+    { "label": "Free First Visit", "path": "/free-bjj-intro-tannersville-ny#booking-flow", "key": "Enter", "activated": true, "note": "Retried after the first navigation observation remained on the source route; retry reached the expected route and hash." },
+    { "label": "Schedule", "path": "/schedule", "key": "Enter", "activated": true },
+    { "label": "Contact", "path": "/contact", "key": "Enter", "activated": true },
+    { "label": "Instagram Start", "path": "/instagram", "key": "Enter", "activated": true },
+    { "label": "Kids", "path": "/bjj-classes/kids-tannersville-ny", "key": "Enter", "activated": true },
+    { "label": "Teens", "path": "/bjj-classes/teens-tannersville-ny", "key": "Enter", "activated": true },
+    { "label": "Adults", "path": "/bjj-classes/adults-tannersville-ny", "key": "Enter", "activated": true },
+    { "label": "Private Lessons", "path": "/private-lessons", "key": "Enter", "activated": true },
+    { "label": "Nearby Towns", "path": "/bjj-classes", "key": "Enter", "activated": true },
+    { "label": "FAQ", "path": "/bjj-faqs", "key": "Enter", "activated": true },
+    { "label": "Glossary", "path": "/bjj-glossary", "key": "Enter", "activated": true, "note": "The destination appended ?t=tap; origin and path matched." },
+    { "label": "Stories", "path": "/success-stories", "key": "Enter", "activated": true },
+    { "label": "Pricing", "path": "/options-pricing", "key": "Enter", "activated": true }
+  ],
+  "scope": "Shared footer activation verified once; route-by-route focus visibility and reachability are separately recorded in navigation-footer-settled.json."
+}
