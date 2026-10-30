@@ -291,3 +291,38 @@
   window.SENSEI_LINK_UTILS.normalizeLane = normalizeLane;
   window.buildBookIntroUrl = buildBookIntroUrl;
 })();
+
+;(function () {
+  let pageDownFocusRequest = 0;
+  document.addEventListener('keydown', function (event) {
+    const request = ++pageDownFocusRequest;
+    if (event.key !== 'PageDown' || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    const target = document.activeElement;
+    if (!(target instanceof HTMLElement) || !target.matches(':focus-visible')) return;
+    if (target.matches('input, textarea, select, [contenteditable="true"]') || target.closest('[data-month-calendar]')) return;
+    const before = target.getBoundingClientRect();
+    if (before.height <= 0 || before.height > window.innerHeight - 16) return;
+    const startedAt = performance.now();
+    let previousScrollY = window.scrollY;
+    let stableFrames = 0;
+    const keepFocusVisibleAfterScroll = function () {
+      if (request !== pageDownFocusRequest || document.activeElement !== target || !target.matches(':focus-visible')) return;
+      const currentScrollY = window.scrollY;
+      if (Math.abs(currentScrollY - previousScrollY) < 0.5) stableFrames += 1;
+      else stableFrames = 0;
+      previousScrollY = currentScrollY;
+      const elapsed = performance.now() - startedAt;
+      if ((elapsed < 120 || stableFrames < 3) && elapsed < 1800) {
+        window.requestAnimationFrame(keepFocusVisibleAfterScroll);
+        return;
+      }
+      const rect = target.getBoundingClientRect();
+      const margin = 8;
+      const correction = rect.top < margin ? rect.top - margin
+        : rect.bottom > window.innerHeight - margin ? rect.bottom - (window.innerHeight - margin)
+        : 0;
+      if (correction) window.scrollBy({ top: correction, behavior: 'instant' });
+    };
+    window.requestAnimationFrame(keepFocusVisibleAfterScroll);
+  });
+})();
