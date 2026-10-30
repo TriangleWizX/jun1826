@@ -332,7 +332,8 @@
       const error = document.createElement('span');
       error.id = `${field.id}-error`;
       error.className = 'ss-visit-request-field-error';
-      error.setAttribute('role', 'alert');
+      error.setAttribute('role', 'status');
+      error.setAttribute('aria-live', 'polite');
       error.setAttribute('aria-atomic', 'true');
       error.hidden = true;
       field.insertAdjacentElement('afterend', error);
