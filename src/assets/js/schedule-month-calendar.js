@@ -215,6 +215,41 @@
     }
     render();
     root.classList.add('is-ready');
+    let lastFocusedDate = null;
+    document.addEventListener('focusin', (event) => {
+      if (event.target === document.body) return;
+      lastFocusedDate = root.contains(event.target) && event.target.hasAttribute('data-calendar-date')
+        ? event.target.dataset.calendarDate
+        : null;
+    });
+    const calendarBreakpoint = window.matchMedia('(width < 768px)');
+    let focusTransferFrame = 0;
+    calendarBreakpoint.addEventListener('change', () => {
+      const active = document.activeElement;
+      const date = active && root.contains(active) && active.hasAttribute('data-calendar-date')
+        ? active.dataset.calendarDate
+        : active === document.body ? lastFocusedDate : null;
+      if (!date) return;
+      const transfer = ++focusTransferFrame;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (transfer !== focusTransferFrame) return;
+        const current = document.activeElement;
+        const focusStayedWithCalendar = current === document.body
+          || (root.contains(current) && current.hasAttribute('data-calendar-date') && current.dataset.calendarDate === date);
+        if (!focusStayedWithCalendar) return;
+        const selector = isPhone() ? '.ss-month-mobile-date' : '.ss-month-date';
+        const target = root.querySelector(`${selector}[data-calendar-date="${date}"]`);
+        if (target && target.getClientRects().length) {
+          target.focus({ preventScroll: true });
+          const rect = target.getBoundingClientRect();
+          const focusInset = 4;
+          const clipped = rect.top < focusInset || rect.bottom > window.innerHeight - focusInset
+            || rect.left < focusInset || rect.right > window.innerWidth - focusInset;
+          // A layout switch can keep the same date focused while moving it offscreen.
+          if (clipped) target.scrollIntoView({ behavior: 'instant', block: 'center', inline: 'nearest' });
+        }
+      }));
+    });
   };
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount, { once: true });
