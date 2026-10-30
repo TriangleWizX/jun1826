@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-30",
+  "status": "complete_with_repeat_observation",
+  "environment": {
+    "site": "https://senseisandy.com",
+    "viewport": "390x844",
+    "browser": "Task-owned Google Chrome; version not captured",
+    "screen_reader": "Orca 46.1",
+    "speech_source": "Orca debug SPEECH OUTPUT log; audio was not independently listened to",
+    "browser_use_cli": "0.1.13",
+    "limits": [
+      "No form submission",
+      "No booking, SMS, email, or availability action",
+      "No Lighthouse or PageSpeed run"
+    ]
+  },
+  "navigation": {
+    "result": "pass",
+    "route": "/",
+    "sequence": ["Tab to Menu", "Enter", "wait for collapse transition", "Escape"],
+    "speech": [
+      "Open menu collapsed push button.",
+      "Close menu expanded push button.",
+      "Home link.",
+      "Open menu collapsed push button."
+    ],
+    "states": {
+      "before_open": {"focus": "Menu toggle", "aria_expanded": "false"},
+      "after_enter_settled": {"nav_visible": true, "aria_expanded": "true", "focus": "Home link"},
+      "after_escape": {"nav_visible": false, "aria_expanded": "false", "focus": "Menu toggle"}
+    }
+  },
+  "schedule": {
+    "result": "pass_for_tested_date_change",
+    "route": "/schedule/",
+    "sequence": ["focus selected mobile date Friday October 30, 2026", "ArrowRight once"],
+    "speech": [
+      "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch toggle button expanded."
+    ],
+    "browser_state_after_arrow_right": {
+      "selected_date": "2026-10-31",
+      "accessible_name": "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch",
+      "displayed_details_matched": true
+    }
+  },
+  "free_intro_form": {
+    "result": "error_announced_with_repeat_observation",
+    "route": "/free-bjj-intro-tannersville-ny/",
+    "sequence": ["Tab through the page to the visible name field", "invoke field.reportValidity() only"],
+    "field": {
+      "id": "visit-request-name",
+      "label": "Your name (parent or guardian for a child or teen)",
+      "required": true,
+      "aria_describedby": "visit-request-name-error",
+      "aria_invalid_after_check": "true",
+      "validation_message": "Please fill out this field.",
+      "error_node": {
+        "role": "status",
+        "aria_live": "polite",
+        "aria_atomic": "true",
+        "text": "Please fill out this field."
+      },
+      "form_submitted": false
+    },
+    "speech": [
+      "Your name (parent or guardian for a child or teen) entry required.",
+      "Please fill out this field."
+    ],
+    "production_repeat_count": 3,
+    "local_preview_repeat_count": 1,
+    "repeat_observation": "The production log repeated the error three times within about 180 ms; the local preview logged it once. The source of the production repetition was not established."
+  },
+  "release": {
+    "commits": ["b654b4d4", "cea4afa"],
+    "payload": ["js/progressive-booking.js"],
+    "final_dry_run": "payload_files=1 commit=cea4afa; js/progressive-booking.js",
+    "final_upload_remote_bytes": 22362,
+    "live_cache_busted_http_status": 200,
+    "live_cache_busted_bytes": 22362,
+    "live_markers": {
+      "role_status": true,
+      "aria_live_polite": true,
+      "aria_atomic": true
+    },
+    "backup_rotation": [
+      {
+        "removed": "senseisandy-predeploy-20261030T022847Z.tar.gz",
+        "bytes": 1130753950,
+        "reason": "older-top-level-rotation"
+      },
+      {
+        "removed": "senseisandy-predeploy-20261030T045832Z.tar.gz",
+        "bytes": 1130772772,
+        "reason": "older-top-level-rotation"
+      }
+    ],
+    "verification": [
+      "node --check js/progressive-booking.js passed",
+      "Isolated Eleventy output built under the inventoried temp root",
+      "Local preview Orca check announced the field error",
+      "Both deploy dry-run passes contained exactly one payload path",
+      "Final upload reported remote_bytes=22362",
+      "Cache-busted production asset returned HTTP 200, 22362 bytes, and expected live-region markers",
+      "Production Orca recheck announced the field error and recorded its repeat count"
+    ]
+  }
+}

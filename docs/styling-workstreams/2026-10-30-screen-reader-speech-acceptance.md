@@ -1,5 +1,7 @@
 # Screen-reader speech acceptance — 2026-10-30
 
+**Updated:** Use [the final production acceptance report](2026-10-30-screen-reader-speech-final.md) and [follow-up evidence](evidence/2026-10-30/screen-reader/followup.json) as the authoritative results; they supersede the preliminary findings recorded below.
+
 ## Scope and result
 
 Production checks used Orca 46.1 with the task-owned Google Chrome session. Orca's debug speech output is the evidence source; no independent listening was performed. Browser state was read from the same production tab. No form was submitted and no booking/contact action was activated.
