@@ -65,3 +65,13 @@ Evidence:
 The earlier viewport-equivalent run is retained as separate evidence; native browser-zoom evidence is recorded above.
 
 This SOP did not cover physical HID keyboard hardware, screen-reader speech, site-wide contrast compliance, Lighthouse/PageSpeed, or live form, booking, SMS, email, or availability actions. Those checks remain owner-reserved or untested.
+
+## Follow-up: Schedule details and PageDown — 2026-10-30
+
+The deployed Schedule route initially lacked the mobile calendar container and stylesheet declared by source, so the newly released script raised a null-container error. Commits `d689e37` and `b359bf9` corrected the cache reference and restored only the missing source-backed route dependencies. The dirty generated Schedule file was preserved byte-for-byte during both scoped deploys.
+
+After the correction, production Playwright verification passed at 767 CSS px: Enter expanded a date's class details; Space collapsed and re-expanded them; focus remained on the same date through 767 → 768 → 769 → 767. The deployed Schedule route, calendar script, and calendar stylesheet each returned HTTP 200, and the browser reported no page errors.
+
+The distinct sticky-action PageDown check also passed on production Free Intro at 390×844 CSS px. Keyboard Tab navigation focused the form input at Tab stop 18. PageDown kept visible focus, moved the input from y=721.98–765.98 to y=205.98–249.98, and produced no overlap with the sticky action. No form was submitted.
+
+This follow-up used browser-generated key events, not a physical HID keyboard. The owner's physical keyboard pass remains outstanding. Lighthouse/PageSpeed was not run.

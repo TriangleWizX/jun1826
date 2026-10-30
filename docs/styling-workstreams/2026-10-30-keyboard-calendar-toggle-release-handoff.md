@@ -27,3 +27,14 @@ The production keyboard SOP report records shared navigation, menu behavior, Sch
 The first live browser check found that the previously committed generated Schedule route did not include `data-calendar-mobile-days` or link `schedule-month-calendar.css`, even though both are present in the source template. The new JS loaded but threw when it tried to render the missing mobile container. The local source build and interaction test passed because they included both dependencies.
 
 The follow-up release adds only the source-backed mobile container and stylesheet link to the stale generated route. The production calendar stylesheet was independently read and returned HTTP 200 (11,369 bytes); it includes the mobile day-card, button, and hidden-details rules. The release must be rechecked in production for no page errors and Enter/Space state behavior before calling this fix live-verified.
+
+## Final production verification
+
+- Calendar fix commit: `d689e37`; exact deploy payload: `assets/js/schedule-month-calendar.js` and `schedule/index.html`.
+- Route compatibility commit: `b359bf9`; exact deploy payload: `schedule/index.html` only.
+- Both deploys temporarily substituted the committed route blob, then restored the unrelated dirty generated route byte-for-byte (SHA-256 `5bf1b9e47627b22f01efb14262f7865de289ab908f1876ef363f7e89e0dcbbb2`).
+- Production browser verification after the compatibility correction passed: `/schedule/` HTTP 200; cache-busted Calendar JS and stylesheet each HTTP 200; no page errors; Enter expanded, Space collapsed and re-expanded; focus stayed on the same date through 767/768/769/767.
+- The separate PageDown sticky-action step passed on production Free Intro at 390×844 CSS px. Keyboard Tab navigation focused a form input near the bottom (Tab stop 18); PageDown kept focus visible, moved the input from y=721.98–765.98 to y=205.98–249.98, and the sticky action did not overlap it. No form was submitted.
+- The `npm run qa:schedule` audit passed. `npm run qa:schedule-booking` could not launch its bundled Chrome and failed with `SIGTRAP`; the focused isolated and production Playwright checks passed independently.
+
+The written owner SOP requires a physical keyboard. This session used browser-generated keyboard events, so the physical HID run remains for the owner. No Lighthouse/PageSpeed check was run.
