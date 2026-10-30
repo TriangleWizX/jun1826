@@ -21,3 +21,9 @@ The shared Schedule source and generated route have unrelated dirty edits. Only 
 ## Open acceptance work
 
 The production keyboard SOP report records shared navigation, menu behavior, Schedule date navigation at 767/768/769, form focus, footer actions, and 200% zoom/sticky clearance as passed. The distinct sticky-action check that presses PageDown while a lower-page control is focused has no explicit pass evidence in that report; keep it open until that exact check is recorded. Physical keyboard hardware and screen-reader speech are outside that SOP run. Lighthouse/PageSpeed remains owner-run and was not performed.
+
+## Production compatibility correction
+
+The first live browser check found that the previously committed generated Schedule route did not include `data-calendar-mobile-days` or link `schedule-month-calendar.css`, even though both are present in the source template. The new JS loaded but threw when it tried to render the missing mobile container. The local source build and interaction test passed because they included both dependencies.
+
+The follow-up release adds only the source-backed mobile container and stylesheet link to the stale generated route. The production calendar stylesheet was independently read and returned HTTP 200 (11,369 bytes); it includes the mobile day-card, button, and hidden-details rules. The release must be rechecked in production for no page errors and Enter/Space state behavior before calling this fix live-verified.
