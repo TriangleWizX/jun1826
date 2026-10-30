@@ -19,6 +19,7 @@
   const format = (date, options) => new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'UTC' }).format(date);
   const isPhone = () => window.matchMedia('(width < 768px)').matches;
   let selected = today;
+  let expandedDate = null;
   let month = civil(today.getUTCFullYear(), today.getUTCMonth(), 1);
   const make = (tag, className, text) => {
     const element = document.createElement(tag);
@@ -71,6 +72,10 @@
     if (href) { const link = make('a', 'ss-class-booking-link', 'Plan a free visit for this class'); link.href = href; nextClassDetails.append(link); }
   };
   const onDateKeydown = (event, date) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      if (!event.currentTarget.classList.contains('ss-month-mobile-date')) select(date);
+      return;
+    }
     if (event.key === 'PageUp' || event.key === 'PageDown') { event.preventDefault(); shiftMonth(event.key === 'PageUp' ? -1 : 1, true); return; }
     const moves = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7, Home: -date.getUTCDay(), End: 6 - date.getUTCDay() };
     if (!(event.key in moves)) return;
@@ -93,7 +98,7 @@
     button.setAttribute('aria-controls', `ss-mobile-classes-${iso(date)}`);
     button.setAttribute('aria-expanded', 'false');
     if (iso(date) === iso(today)) button.setAttribute('aria-current', 'date');
-    button.addEventListener('click', () => select(date));
+    button.addEventListener('click', () => select(date, true));
     button.addEventListener('keydown', (event) => onDateKeydown(event, date));
     card.append(button);
     const entries = make('div', 'ss-month-mobile-classes');
@@ -114,7 +119,12 @@
     card.append(entries);
     return card;
   };
-  const select = (date) => {
+  const select = (date, toggleDetails = false) => {
+    const dateKey = iso(date);
+    const alreadySelected = dateKey === iso(selected);
+    expandedDate = toggleDetails && alreadySelected && expandedDate === dateKey
+      ? null
+      : dateKey;
     selected = date;
     root.querySelector('[data-calendar-selected-title]').textContent = format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
     const slots = classes(date);
@@ -137,8 +147,9 @@
       button.setAttribute('aria-pressed', String(active));
       button.tabIndex = active ? 0 : -1;
       if (button.classList.contains('ss-month-mobile-date')) {
-        button.setAttribute('aria-expanded', String(active));
-        button.closest('.ss-month-mobile-day').querySelector('.ss-month-mobile-classes').hidden = !active;
+        const expanded = button.dataset.calendarDate === expandedDate;
+        button.setAttribute('aria-expanded', String(expanded));
+        button.closest('.ss-month-mobile-day').querySelector('.ss-month-mobile-classes').hidden = !expanded;
       }
     });
   };
