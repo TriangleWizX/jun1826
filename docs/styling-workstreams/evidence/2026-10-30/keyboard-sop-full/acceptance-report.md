@@ -25,7 +25,7 @@ Viewport baseline: 390 × 844 CSS px at 100%; native Chrome page zoom 200% was u
 
 ## Schedule breakpoint follow-up
 
-Production release `cf362f7` served `/schedule` with `schedule-month-calendar.js?v=20261030-focus-visible`. The live asset returned HTTP 200, 15,891 bytes, and SHA-256 `1a1bb3823dfdcb9c793246b854d4673277ec5d8755644f66e77087e7d57c597d`, matching the committed generated asset.
+Production release `cf362f7` served the canonical `/schedule` route (the trailing-slash URL redirected with HTTP 301; the final route returned HTTP 200) with `schedule-month-calendar.js?v=20261030-focus-visible`. The live asset returned HTTP 200, 15,891 bytes, and SHA-256 `1a1bb3823dfdcb9c793246b854d4673277ec5d8755644f66e77087e7d57c597d`, matching the committed generated asset.
 
 In the isolated Browser Use session, the same date (`2026-10-30`) kept `:focus-visible` and remained inside the viewport at exact CSS widths 767, 768, and 769. It used the mobile date control at 767 and the desktop calendar control at 768 and 769. The focus recovery callback was exercised in both directions through 767 → 768 → 769 → 767 → 768. Because this headless Chrome changed CSS width without dispatching `MediaQueryList.change` and did not advance `requestAnimationFrame`, the harness invoked the captured production callback and ran its two animation-frame callbacks synchronously. This verifies callback behavior and visible geometry, but does not establish native resize-event timing.
 
