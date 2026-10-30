@@ -1,6 +1,6 @@
 {
   "date": "2026-10-30",
-  "status": "complete_with_repeat_observation",
+  "status": "complete_after_orca_fix_retest",
   "environment": {
     "site": "https://senseisandy.com",
     "viewport": "390x844",
@@ -17,7 +17,12 @@
   "navigation": {
     "result": "pass",
     "route": "/",
-    "sequence": ["Tab to Menu", "Enter", "wait for collapse transition", "Escape"],
+    "sequence": [
+      "Tab to Menu",
+      "Enter",
+      "wait for collapse transition",
+      "Escape"
+    ],
     "speech": [
       "Open menu collapsed push button.",
       "Close menu expanded push button.",
@@ -25,28 +30,45 @@
       "Open menu collapsed push button."
     ],
     "states": {
-      "before_open": {"focus": "Menu toggle", "aria_expanded": "false"},
-      "after_enter_settled": {"nav_visible": true, "aria_expanded": "true", "focus": "Home link"},
-      "after_escape": {"nav_visible": false, "aria_expanded": "false", "focus": "Menu toggle"}
+      "before_open": {
+        "focus": "Menu toggle",
+        "aria_expanded": "false"
+      },
+      "after_enter_settled": {
+        "nav_visible": true,
+        "aria_expanded": "true",
+        "focus": "Home link"
+      },
+      "after_escape": {
+        "nav_visible": false,
+        "aria_expanded": "false",
+        "focus": "Menu toggle"
+      }
     }
   },
   "schedule": {
     "result": "pass_for_tested_date_change",
     "route": "/schedule/",
-    "sequence": ["focus selected mobile date Friday October 30, 2026", "ArrowRight once"],
+    "sequence": [
+      "focus selected mobile date Friday October 30, 2026",
+      "ArrowRight once"
+    ],
     "speech": [
-      "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch toggle button expanded."
+      "Saturday, October 31, 2026. 10:30\u201311:30 AM Adult No-Gi. 5:00\u20138:00 PM Halloween Spooktacular \u00b7 Meet Sasquatch toggle button expanded."
     ],
     "browser_state_after_arrow_right": {
       "selected_date": "2026-10-31",
-      "accessible_name": "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch",
+      "accessible_name": "Saturday, October 31, 2026. 10:30\u201311:30 AM Adult No-Gi. 5:00\u20138:00 PM Halloween Spooktacular \u00b7 Meet Sasquatch",
       "displayed_details_matched": true
     }
   },
   "free_intro_form": {
     "result": "error_announced_with_repeat_observation",
     "route": "/free-bjj-intro-tannersville-ny/",
-    "sequence": ["Tab through the page to the visible name field", "invoke field.reportValidity() only"],
+    "sequence": [
+      "Tab through the page to the visible name field",
+      "invoke field.reportValidity() only"
+    ],
     "field": {
       "id": "visit-request-name",
       "label": "Your name (parent or guardian for a child or teen)",
@@ -71,8 +93,13 @@
     "repeat_observation": "The production log repeated the error three times within about 180 ms; the local preview logged it once. The source of the production repetition was not established."
   },
   "release": {
-    "commits": ["b654b4d4", "cea4afa"],
-    "payload": ["js/progressive-booking.js"],
+    "commits": [
+      "b654b4d4",
+      "cea4afa"
+    ],
+    "payload": [
+      "js/progressive-booking.js"
+    ],
     "final_dry_run": "payload_files=1 commit=cea4afa; js/progressive-booking.js",
     "final_upload_remote_bytes": 22362,
     "live_cache_busted_http_status": 200,
@@ -92,6 +119,11 @@
         "removed": "senseisandy-predeploy-20261030T045832Z.tar.gz",
         "bytes": 1130772772,
         "reason": "older-top-level-rotation"
+      },
+      {
+        "removed": "senseisandy-predeploy-20261030T080255Z.tar.gz",
+        "bytes": 1130771252,
+        "reason": "older-top-level-rotation"
       }
     ],
     "verification": [
@@ -101,7 +133,49 @@
       "Both deploy dry-run passes contained exactly one payload path",
       "Final upload reported remote_bytes=22362",
       "Cache-busted production asset returned HTTP 200, 22362 bytes, and expected live-region markers",
-      "Production Orca recheck announced the field error and recorded its repeat count"
-    ]
+      "Production Orca recheck announced the field error and recorded its repeat count",
+      "Fix source and generated JS passed node --check and matched SHA-256 c8e1d7619caddbf7dfc147a1c7a7db1966ec2b4d66d631a880f4c78b45c4bd7e",
+      "Production Orca 46.1 retest logged one error utterance after one reportValidity() call; form remained unsubmitted",
+      "One-file deploy completed with remote_bytes=22220; cache-busted live read returned HTTP 200 and exact local bytes"
+    ],
+    "fix_commit": "84554b7",
+    "fix_payload": [
+      "js/progressive-booking.js"
+    ],
+    "fix_upload_remote_bytes": 22220,
+    "fix_live_verification": {
+      "status": 200,
+      "bytes": 22220,
+      "sha256": "c8e1d7619caddbf7dfc147a1c7a7db1966ec2b4d66d631a880f4c78b45c4bd7e",
+      "matches_local": true,
+      "role_status": false,
+      "aria_live_polite": false,
+      "aria_describedby": true
+    }
+  },
+  "orca_fix_retest": {
+    "commit": "84554b7",
+    "environment": {
+      "site": "https://senseisandy.com/free-bjj-intro-tannersville-ny/",
+      "browser": "task-owned Google Chrome 151",
+      "screen_reader": "Orca 46.1",
+      "viewport": "390x844",
+      "speech_source": "Orca debug SPEECH OUTPUT log"
+    },
+    "trigger": "One field-level reportValidity() call on the blank required name field; no form submission.",
+    "speech": [
+      "Please fill out this field."
+    ],
+    "speech_count_for_single_trigger": 1,
+    "dom": {
+      "field_id": "visit-request-name",
+      "aria_invalid": "true",
+      "aria_describedby": "visit-request-name-error",
+      "error_text": "Please fill out this field.",
+      "error_role": null,
+      "error_aria_live": null,
+      "form_submitted": false
+    },
+    "result": "One native validation announcement was recorded for one field-level validity call. The prior three-repeat observation was not reproduced in this focused retest."
   }
 }
