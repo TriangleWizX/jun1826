@@ -7,7 +7,31 @@ bodyClass: "ss-clockwork page-book-intro"
 extraCss:
   - "/assets/css/pages/book-free-intro.min.css"
 permalink: "/free-bjj-intro-tannersville-ny/index.html"
-bodyExtra: '<script src="/js/book-free-intro-bridge.15e842.js" defer></script>'
+bodyExtra: |
+  <script src="/js/book-free-intro-bridge.15e842.js" defer></script>
+  <script>
+    (() => {
+      let keyboardNavigation = false;
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab') keyboardNavigation = true;
+      }, true);
+      document.addEventListener('pointerdown', () => {
+        keyboardNavigation = false;
+      }, true);
+      document.addEventListener('focusin', (event) => {
+        const target = event.target;
+        if (!keyboardNavigation || !target.matches(':focus-visible') || target.closest('.ss-mobile-actionbar, .ss-mobile-sticky-cta')) return;
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          const sticky = document.querySelector('.ss-mobile-sticky-cta.is-visible, .ss-mobile-actionbar.is-visible');
+          const rect = target.getBoundingClientRect();
+          const stickyTop = sticky ? sticky.getBoundingClientRect().top : window.innerHeight;
+          const safeBottom = Math.min(window.innerHeight, stickyTop) - 12;
+          if (rect.bottom > safeBottom) window.scrollBy({ top: rect.bottom - safeBottom, behavior: 'instant' });
+          else if (rect.top < 12) window.scrollBy({ top: rect.top - 12, behavior: 'instant' });
+        }));
+      }, true);
+    })();
+  </script>
 ---
 <!-- Visitor-facing first-visit labels are supplied by canonical offer data. -->
 <!-- Keep this route source-owned so generated HTML deploys with its asset manifest. -->

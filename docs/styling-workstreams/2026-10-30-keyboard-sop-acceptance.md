@@ -27,7 +27,7 @@ The fix applies 88 CSS pixels of scroll padding to the viewport only when the Fr
 
 The production browser was Chrome 151.0.7922.137. The production response was HTTP 200, dated Fri, 30 Oct 2026 04:28:33 GMT; it exposed no release identifier. Evidence screenshots from that run are under `evidence/2026-10-30/keyboard-sop/`.
 
-## Final local recheck
+## Earlier local CSS recheck
 
 - Environment: isolated current-HEAD source build served from loopback; route `/free-bjj-intro-tannersville-ny/`.
 - Browser: Chrome 151.0.7922.137, headed, isolated profile; off-origin DNS blocked.
@@ -44,4 +44,30 @@ No booking, SMS, email, availability, or form action was activated. The test doe
 
 ## Release record
 
-Pending: commit, exact Free Intro route deployment, and live browser recheck. Record the commit ID, exact deployed paths, HTTP/content evidence, and final browser result here before closing the release.
+Prior CSS commit: `f38f1ff4de6f953c5add7f8f5ea0f19892941a5f`. Its generated standalone CSS asset returns HTTP 200 and matches its candidate hash, but the live Free Intro route does not link that asset; its CSS is inline and it loads `mobile-foundation.114422.css`. The current keyboard-handler source change has not yet been committed or deployed.
+
+## Production browser finding and updated local candidate
+
+- Fetched the canonical route with elevated network access: HTTP 200, 144,965-byte HTML body, title `Free First BJJ Visit in Tannersville | Sensei Sandy`.
+- The route contains the 88px scroll-padding rule inline. It links `mobile-foundation.114422.css`; it does not link the standalone `free-intro-delivery.f79608e60361.css`. The standalone asset SHA-256 matches the earlier candidate, but that asset is not active for this route.
+- On production at a 452 × 351 CSS viewport and DPR 2.5, real Tab traversal reached the hero `Text Sandy` link. Before the handler, bounds were y=343.95…392.23 and the visible sticky CTA began at y=285.33, so the link was obscured. Focus was visible and no link was activated. This is viewport-equivalent sizing, not native browser zoom.
+- A production DOM trial of the page-scoped keyboard handler moved the same focused link to y=224.73…273.41, above the sticky CTA at y=285.33. `:focus-visible` stayed true, viewport was 452 × 351 at DPR 2.5, and horizontal overflow was false.
+- The handler is now in `src/free-bjj-intro-tannersville-ny/index.html`. A fresh isolated build of the candidate passed the same keyboard sequence and geometry check; screenshot: `evidence/2026-10-30/keyboard-sop/free-intro-local-handler-200-focus.png`.
+
+## Release status update
+
+- Prior CSS commit: `f38f1ff4de6f953c5add7f8f5ea0f19892941a5f`. The keyboard scroll handler is a new, uncommitted source change.
+- The isolated candidate dry-run listed exactly `free-bjj-intro-tannersville-ny/index.html` and `assets/css/pages/free-intro-delivery.f79608e60361.css`.
+- An earlier default deploy attempt completed backup QA and removed one older verified archive of 1,130,752,653 bytes as part of configured rotation, but returned no upload receipt. The later exact deploy reused the newest verified account-level backup and attempted these two paths: `free-bjj-intro-tannersville-ny/index.html` and `assets/css/pages/free-intro-delivery.f79608e60361.css`. The live CSS HEAD response confirms the asset is served at the expected URL and size, but not the file hash or route HTML upload.
+- Live HTTP/content and production browser checks remain unverified. The current execution environment has restricted external network access, so no further live check was made. Do not treat this as deployed until remote bytes and live behavior are confirmed.
+- The shared `dist/` tree is dirty and currently lacks the candidate fingerprinted CSS. It was not edited or restored for this release. The candidate remains in `/tmp/keyboard-sop-fix-build-20261030/release-candidate/` for byte comparison when network access returns.
+
+
+## Remaining live acceptance handoff
+
+1. Commit the route source and reviewed evidence. Dry-run the exact generated payload and deploy only `free-bjj-intro-tannersville-ny/index.html`.
+2. Fetch production HTML and confirm the inline handler is present.
+3. Repeat Tab traversal on production at 452 × 351 CSS pixels / DPR 2.5. Confirm `Text Sandy` stays fully above the visible sticky CTA, `:focus-visible` remains present, and no link is activated. Save screenshot and measurements.
+4. If headed Chrome can launch, repeat with native 200% browser zoom.
+
+The handler is page-scoped and changes scroll position only after keyboard Tab focus. Pointer use is unaffected. Lighthouse/PageSpeed, physical HID, screen-reader speech, site-wide contrast, and live form/booking/contact actions remain outside this SOP.

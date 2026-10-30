@@ -14,17 +14,19 @@
       "desktop Classes menu links and Escape return",
       "Schedule keyboard controls at 767, 768, and 769 CSS px",
       "Free Intro form field and submit-control focus without submission",
-      "footer link focus and internal-link Enter behavior",
-      "200% zoom reflow and no horizontal overflow on Home, Schedule, Free Intro, and Visit"
+      "footer link focus and internal-link Enter behavior"
     ],
     "failed": [
-      "At 200% zoom, a focused Free Intro link was partly obscured by the mobile sticky action bar"
+      "At 200% zoom, a focused Free Intro link was partly obscured by the mobile sticky action bar; fixed in source and locally rechecked, production recheck pending"
     ],
     "actions_not_activated": [
       "booking",
       "SMS/contact",
       "availability",
       "live form submission"
+    ],
+    "partial": [
+      "200% zoom reflow and no horizontal overflow on Home, Schedule, Free Intro, and Visit; Free Intro focused link overlapped the sticky action bar before the fix"
     ]
   },
   "fix": {
@@ -38,13 +40,23 @@
     "browser": "Chrome 151.0.7922.137",
     "input": "OS-level X11 XTest key events; not physical HID",
     "native_zoom_percent": 200,
-    "viewport_css_px": [452, 351],
+    "viewport_css_px": [
+      452,
+      351
+    ],
     "device_pixel_ratio": 2.5,
     "visual_viewport_scale": 1,
-    "sequence": ["Ctrl+Home", "Tab: Book your free visit", "Tab: Text Sandy"],
+    "sequence": [
+      "Ctrl+Home",
+      "Tab: Book your free visit",
+      "Tab: Text Sandy"
+    ],
     "focused_link_visible": true,
     "scroll_padding_block_end_css_px": 88,
-    "focused_link_bounds_y": [214.36, 262.64],
+    "focused_link_bounds_y": [
+      214.36,
+      262.64
+    ],
     "sticky_action_top_y": 285.73,
     "overlap": false,
     "focus_target_top_painted": true,
@@ -61,9 +73,103 @@
     "Lighthouse/PageSpeed"
   ],
   "release": {
-    "status": "pending",
-    "commit": null,
+    "status": "corrected route handler built locally; deployment pending",
+    "commit": "f38f1ff4de6f953c5add7f8f5ea0f19892941a5f (prior CSS-only commit)",
     "deployed_paths": [],
-    "live_browser_recheck": null
+    "dry_run": "Earlier CSS-only release candidate listed two paths; corrected handler release must dry-run to exactly free-bjj-intro-tannersville-ny/index.html.",
+    "backup": "Earlier read-only backup QA found two archives and zero invalid; exact deploy reused newest verified account-level backup. An earlier default attempt removed one older verified archive of 1,130,752,653 bytes.",
+    "deploy_receipt": "No per-file receipt was captured for the earlier deploy attempt. Live CSS response later matched candidate size and SHA-256, but production route does not reference that standalone CSS file.",
+    "live_route": "HTTP 200, 144965-byte HTML body, expected Free Intro title. Inline CSS contains 88px scroll-padding; loaded stylesheet link is mobile-foundation.114422.css. Standalone free-intro-delivery CSS is not linked.",
+    "live_css": "Fetched bytes matched earlier candidate SHA-256 f79608e60361a9ae3e611d6bcb5fe71b236d8d20d17f993a4c506468978c7548; asset is not active on this route.",
+    "live_browser_recheck": "Pre-fix Tab traversal at 452x351 CSS px / DPR2.5 showed hero Text Sandy overlapping visible sticky CTA. Temporary DOM handler trial cleared overlap; updated local build passed. Handler not yet deployed.",
+    "remaining": "Commit the route source and evidence; dry-run and deploy only generated free-bjj-intro-tannersville-ny/index.html; verify served handler and repeat production keyboard check. Native 200% headed browser check remains pending.",
+    "remaining_checks": [
+      "Commit focused route source and evidence; confirm dry-run contains exactly free-bjj-intro-tannersville-ny/index.html.",
+      "Deploy that exact path and confirm served HTML contains the handler.",
+      "Repeat production Tab traversal at 452x351 CSS px / DPR2.5; verify visible focus and no sticky overlap without activating links; save screenshot.",
+      "Repeat at native 200% zoom if headed Chrome can launch."
+    ],
+    "attempted_paths": [
+      "free-bjj-intro-tannersville-ny/index.html",
+      "assets/css/pages/free-intro-delivery.f79608e60361.css"
+    ],
+    "live_asset_observation": {
+      "path": "assets/css/pages/free-intro-delivery.f79608e60361.css",
+      "method": "HEAD",
+      "http_status": 200,
+      "content_length": 49672,
+      "candidate_length": 49672,
+      "remote_body_hash_verified": false
+    },
+    "current_behavior": "Production before updated handler: hero Text Sandy bounds y343.95..392.225; visible sticky CTA top y285.328; overlap. Production handler trial: bounds y224.734..273.406; sticky CTA top y285.328; no overlap."
+  },
+  "production_candidate_check": {
+    "route_http_status": 200,
+    "route_html_bytes": 144965,
+    "title": "Free First BJJ Visit in Tannersville | Sensei Sandy",
+    "loaded_css": [
+      "https://senseisandy.com/assets/css/mobile-foundation.114422.css"
+    ],
+    "inline_scroll_padding_css_px": 88,
+    "pre_handler_keyboard_check": {
+      "viewport_css_px": [
+        452,
+        351
+      ],
+      "dpr": 2.5,
+      "visual_viewport_scale": 1,
+      "active_text": "Text Sandy",
+      "focus_visible": true,
+      "target_bounds_y": [
+        343.95,
+        392.225
+      ],
+      "visible_sticky_cta_top_y": 285.328,
+      "overlap": true,
+      "horizontal_overflow": false,
+      "actions_not_activated": [
+        "SMS link",
+        "booking link"
+      ]
+    },
+    "handler_trial": {
+      "active_text": "Text Sandy",
+      "focus_visible": true,
+      "target_bounds_y": [
+        224.734,
+        273.406
+      ],
+      "visible_sticky_cta_top_y": 285.328,
+      "overlap": false,
+      "scroll_y": 28,
+      "viewport_css_px": [
+        452,
+        351
+      ],
+      "dpr": 2.5,
+      "visual_viewport_scale": 1,
+      "horizontal_overflow": false
+    },
+    "notes": "Viewport-equivalent check; not native Chrome zoom. The standalone free-intro-delivery CSS asset is not linked by production route; route styling including scroll-padding is inline."
+  },
+  "local_handler_recheck": {
+    "source": "src/free-bjj-intro-tannersville-ny/index.html",
+    "isolated_build": "passed",
+    "viewport_css_px": [
+      452,
+      351
+    ],
+    "dpr": 2.5,
+    "visual_viewport_scale": 1,
+    "active_text": "Text Sandy",
+    "focus_visible": true,
+    "bounds_y": [
+      224.734,
+      273.406
+    ],
+    "sticky_cta_top_y": 285.328,
+    "overlap": false,
+    "horizontal_overflow": false,
+    "screenshot": "evidence/2026-10-30/keyboard-sop/free-intro-local-handler-200-focus.png"
   }
 }
