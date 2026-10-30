@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-30",
+  "objective": "Handle the keyboard route acceptance SOP",
+  "production_baseline": {
+    "browser": "Chrome 151.0.7922.137",
+    "response": "HTTP 200",
+    "response_date": "Fri, 30 Oct 2026 04:28:33 GMT",
+    "release_id": null,
+    "route_cohorts": "nine SOP route cohorts",
+    "passed": [
+      "skip link and main-content focus",
+      "shared navigation order and visible focus",
+      "mobile menu Enter/Space, Escape, focus entry and return",
+      "desktop Classes menu links and Escape return",
+      "Schedule keyboard controls at 767, 768, and 769 CSS px",
+      "Free Intro form field and submit-control focus without submission",
+      "footer link focus and internal-link Enter behavior",
+      "200% zoom reflow and no horizontal overflow on Home, Schedule, Free Intro, and Visit"
+    ],
+    "failed": [
+      "At 200% zoom, a focused Free Intro link was partly obscured by the mobile sticky action bar"
+    ],
+    "actions_not_activated": [
+      "booking",
+      "SMS/contact",
+      "availability",
+      "live form submission"
+    ]
+  },
+  "fix": {
+    "source": "src/assets/css/pages/book-free-intro.css",
+    "generated_source": "src/assets/css/pages/book-free-intro.min.css",
+    "behavior": "At max-width 767.98px, apply 88px viewport scroll padding on pages whose body has page-book-intro.",
+    "reason": "Per-element scroll margin did not reliably clear a partially visible focused link from the fixed sticky bar."
+  },
+  "local_recheck": {
+    "route": "http://127.0.0.1:4175/free-bjj-intro-tannersville-ny/",
+    "browser": "Chrome 151.0.7922.137",
+    "input": "OS-level X11 XTest key events; not physical HID",
+    "native_zoom_percent": 200,
+    "viewport_css_px": [452, 351],
+    "device_pixel_ratio": 2.5,
+    "visual_viewport_scale": 1,
+    "sequence": ["Ctrl+Home", "Tab: Book your free visit", "Tab: Text Sandy"],
+    "focused_link_visible": true,
+    "scroll_padding_block_end_css_px": 88,
+    "focused_link_bounds_y": [214.36, 262.64],
+    "sticky_action_top_y": 285.73,
+    "overlap": false,
+    "focus_target_top_painted": true,
+    "screenshot": "evidence/2026-10-30/keyboard-sop/free-intro-200-focus-fixed.png",
+    "baseline_route_html_identical_outside_inline_css": true,
+    "delivery_css_equals_baseline_plus_only_scoped_rule": true,
+    "baseline_delivery_css_sha256": "92e25ef1f169acc4767e23e340cf99b621972b52afbfa921886f9481680b48ad",
+    "candidate_delivery_css_sha256": "f79608e60361a9ae3e611d6bcb5fe71b236d8d20d17f993a4c506468978c7548"
+  },
+  "owner_reserved_or_not_tested": [
+    "physical HID keyboard",
+    "screen-reader speech",
+    "site-wide contrast compliance",
+    "Lighthouse/PageSpeed"
+  ],
+  "release": {
+    "status": "pending",
+    "commit": null,
+    "deployed_paths": [],
+    "live_browser_recheck": null
+  }
+}

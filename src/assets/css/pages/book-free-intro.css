@@ -420,3 +420,9 @@
   box-shadow: 0 0 0 2px rgba(180, 35, 24, 0.18);
 }
 .page-book-intro [data-calendar-fallback] { margin-top: var(--space-sm); }
+
+@media (max-width: 767.98px) {
+  html:has(body.page-book-intro) {
+    scroll-padding-block-end: calc(var(--space-2xl) + var(--space-sm));
+  }
+}
