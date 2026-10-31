@@ -1113,3 +1113,7 @@ html:has(body.page-home), body.page-home {
     gap: 0.6rem;
   }
 }
+.page-home .ss-home-lane-bento-card--bootcamp .ss-double-bezel-inner::before {
+  background-image: url("/assets/images/alley-bootcamp-hero-960.webp");
+  background-position: 78% center;
+}
