@@ -48,7 +48,7 @@
   border-radius: 999px;
   background-color: var(--ss-surface2);
   border: 1px solid var(--ss-border);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -558,6 +558,9 @@
   .birthday-mobile-sticky {
     display: flex;
   }
+  body.birthday-page-main .birthday-mobile-sticky { display: flex !important; }
+  .birthday-page-main .ss-mobile-actionbar { display: none !important; }
+  .birthday-mobile-sticky.is-obscured { visibility: hidden; pointer-events: none; }
   .birthday-timeline::before {
     left: 1.5rem;
   }
@@ -576,7 +579,7 @@
   .birthday-badge {
     margin-bottom: 0.5rem;
     padding: 0.35rem 0.75rem;
-    font-size: 0.68rem;
+    font-size: 0.875rem;
   }
   .birthday-page-main .birthday-hero-copy h1 {
     font-size: clamp(1.75rem, 6.5vw, 2.25rem);
@@ -591,9 +594,19 @@
     margin-bottom: 1.15rem;
   }
   .birthday-btn {
-    min-height: 44px;
+    min-height: 48px;
     padding: 0.55rem 1.25rem;
     font-size: 0.9rem;
   }
 }
 
+
+/* Keep keyboard focus visible above the form's subtle mouse-focus shadow. */
+.birthday-page-main :is(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--ss-green);
+  outline-offset: 2px;
+}
+
+.ss-birthday-section--dark :is(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline-color: var(--ss-surface);
+}

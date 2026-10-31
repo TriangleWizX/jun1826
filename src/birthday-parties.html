@@ -654,3 +654,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<script>
+(() => {
+  const bar = document.querySelector('.birthday-mobile-sticky');
+  if (!bar) return;
+  const controls = Array.from(document.querySelectorAll('main a[href], main button:not([disabled]), main input:not([type="hidden"]):not([disabled]), main select:not([disabled]), main textarea:not([disabled])')).filter((el) => !bar.contains(el));
+  let frame = 0;
+  const update = () => {
+    frame = 0;
+    const barTop = bar.getBoundingClientRect().top;
+    const coveredControl = controls.some((el) => {
+      const rect = el.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0 && rect.top < window.innerHeight && rect.bottom > barTop;
+    });
+    bar.classList.toggle('is-obscured', coveredControl);
+  };
+  const scheduleUpdate = () => {
+    if (!frame) frame = window.requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate);
+  update();
+})();
+</script>

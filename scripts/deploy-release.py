@@ -64,6 +64,7 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/catskills-home-base-touch.css',
     'src/assets/css/pages/everyday-jiu-jitsu.css',
     'src/assets/css/pages/everyday-jiu-jitsu.min.css',
+    'src/assets/css/pages/birthday-parties.css',
     'src/assets/css/pages/partners-hospitality-hunter-windham.css',
     'src/assets/css/pages/partners-hospitality-hunter-windham.min.css',
 }
@@ -179,6 +180,27 @@ def changed_outputs(commit, only=()):
             css_path = ROOT / 'dist' / css_rel
             if not css_path.is_file():
                 raise ValueError(f'Missing Everyday Jiu-Jitsu stylesheet: {css_rel}')
+            outputs.add((css_path, css_rel))
+
+    # Birthday Parties owns a root HTML page and a fingerprinted route stylesheet.
+    if any(name in names for name in (
+        'src/birthday-parties.html',
+        'src/assets/css/pages/birthday-parties.css',
+    )):
+        candidate = ROOT / 'dist' / 'birthday-parties.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'birthday-parties.html'))
+            page_text = candidate.read_text(encoding='utf-8')
+            fingerprints = re.findall(
+                r'''href=["']/?(assets/css/pages/birthday-parties\.[a-f0-9]+\.css)["']''',
+                page_text,
+            )
+            if len(fingerprints) != 1:
+                raise ValueError('Birthday Parties must reference exactly one fingerprinted stylesheet')
+            css_rel = fingerprints[0]
+            css_path = ROOT / 'dist' / css_rel
+            if not css_path.is_file():
+                raise ValueError(f'Missing Birthday Parties stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
 
     # Hospitality Partners owns a root HTML page and a fingerprinted route stylesheet.
