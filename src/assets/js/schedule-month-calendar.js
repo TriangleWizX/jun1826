@@ -33,14 +33,18 @@
   const className = (item, className = 'ss-calendar-class-link') => {
     if (item.audience === 'Youth/Teen') {
       const group = make('span', `${className} ss-calendar-class-link-group`);
-      group.append(make('span', 'ss-calendar-class-label', name(item)));
-      const links = make('span', 'ss-calendar-class-program-links');
-      for (const [label, href] of [['Kids', '/bjj-classes/kids-tannersville-ny/'], ['Teens', '/bjj-classes/teens-tannersville-ny/']]) {
-        const link = make('a', '', label);
-        link.href = href;
-        links.append(link);
+      const label = name(item);
+      const audienceText = 'Kids and teens';
+      const audienceAt = label.indexOf(audienceText);
+      const kidsLink = make('a', '', 'Kids');
+      kidsLink.href = '/bjj-classes/kids-tannersville-ny/';
+      const teensLink = make('a', '', 'Teens');
+      teensLink.href = '/bjj-classes/teens-tannersville-ny/';
+      if (audienceAt >= 0) {
+        group.append(document.createTextNode(label.slice(0, audienceAt)), kidsLink, document.createTextNode(' and '), teensLink, document.createTextNode(label.slice(audienceAt + audienceText.length)));
+      } else {
+        group.append(document.createTextNode(`${label} (`), kidsLink, document.createTextNode(' and '), teensLink, document.createTextNode(')'));
       }
-      group.append(links);
       return group;
     }
     const href = classHref(item);
