@@ -659,3 +659,28 @@ body.page-tannersville :where(.btn, .ss-btn, .hero-cta, .cta-button) {
     background-color 650ms var(--ss-ease-premium),
     border-color 650ms var(--ss-ease-premium);
 }
+
+/* Keep the secondary fourth tile balanced beneath the three audience choices. */
+@media (min-width: 992px) {
+  body.page-programs section[aria-labelledby="program-options-title"] > .container > .row.g-4 > .col-md-4:nth-child(4) {
+    margin-inline: auto;
+  }
+}
+
+/* Give the Programs page navigation choices a reliable touch area on phones and tablets. */
+@media (any-pointer: coarse) {
+  body.page-programs nav[aria-label="Plan your visit"] > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  body.page-programs section[aria-labelledby="program-options-title"] article a:not([data-cta-target]) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    text-align: center;
+  }
+}

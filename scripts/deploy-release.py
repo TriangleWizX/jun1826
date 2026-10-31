@@ -202,6 +202,26 @@ def changed_outputs(commit, only=()):
             if not css_path.is_file():
                 raise ValueError(f'Missing Hospitality Partners stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
+    # Programs consumes canonical Tannersville CSS directly; its generated root
+    # route and fingerprinted stylesheet must travel together.
+    if 'src/assets/css/pages/tannersville.css' in names:
+        page = ROOT / 'dist' / 'programs.html'
+        if not page.is_file():
+            raise ValueError('Tannersville stylesheet release requires dist/programs.html')
+        page_text = page.read_text(encoding='utf-8')
+        fingerprints = re.findall(
+            r'''href=["']/?(assets/css/pages/tannersville\.[a-f0-9]{6}\.css)["']''',
+            page_text,
+        )
+        if len(fingerprints) != 1:
+            raise ValueError('Programs must reference exactly one fingerprinted Tannersville stylesheet')
+        css_rel = fingerprints[0]
+        css_path = ROOT / 'dist' / css_rel
+        if not css_path.is_file():
+            raise ValueError(f'Missing Programs Tannersville stylesheet: {css_rel}')
+        outputs.add((page, 'programs.html'))
+        outputs.add((css_path, css_rel))
+
     # The normal build regenerates the sitemap index and children from source
     # pages and the URL registry. Include their generated dist copies in every
     # source-content release so production cannot retain stale lastmod data.
