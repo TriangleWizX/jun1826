@@ -75,3 +75,10 @@ The implementation commit updates only `src/assets/js/schedule-month-calendar.js
 - The script cache key changed to `20261031-class-page-links-labels`. Deploy dry run and upload each selected only `assets/js/schedule-month-calendar.js` and `schedule/index.html`; deployment reused a verified remote backup.
 - Live HTTP verification confirmed the Schedule page references the new key and the delivered script contains both labels with their matching destinations. Browser-use was attempted, but no local Chrome instance was running, so the final check used live HTTP content. No Lighthouse or PageSpeed checks were run.
 - The dirty local `dist/schedule/index.html` was restored byte-for-byte after release candidate deployment. Its SHA-256 is recorded in the workspace inventory.
+
+## Inline youth link follow-up — 2026-10-31
+
+- Commit `fecdcb2` moves the Kids and Teens anchors into the class label immediately after the time. For standard youth slots, the rendered text reads `Kids and teens No-Gi` or `Kids and teens Gi`, with only `Kids` and `Teens` linked to their matching pages. A named youth class keeps its name and adds the linked audience labels in parentheses.
+- The script cache key is `20261031-class-page-links-inline-youth`. The dry run and deployment selected only `assets/js/schedule-month-calendar.js` and `schedule/index.html`; the deployment reused an existing verified remote backup.
+- `npm run qa:schedule`, JavaScript syntax checks, and the read-only workspace audit passed. Live HTTP checks confirmed the new key, both route targets, and the absence of the old separate-link row. Browser-use could not attach because Chrome was not running, so rendered browser inspection was unavailable.
+- The dirty local Schedule route was restored byte-for-byte; its matching SHA-256 is recorded in the workspace inventory. No Lighthouse or PageSpeed checks were run.
