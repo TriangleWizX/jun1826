@@ -53,6 +53,8 @@ RESEARCH_RECORD_OUTPUTS = (
  'sources/research/youth-sports-injury-prevention/index.html',
 )
 ROUTE_SCOPED_CSS_INPUTS = {
+    'src/assets/css/pages/home.css',
+    'src/assets/css/pages/home.min.css',
     'src/assets/css/pages/instagram.css',
     'src/assets/css/pages/schedule.css',
     'src/assets/css/pages/schedule.min.css',
