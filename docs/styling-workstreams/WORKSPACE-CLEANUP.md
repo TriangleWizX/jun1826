@@ -4,6 +4,19 @@ Use this policy for styling workstreams and other temporary repository copies. T
 
 ## Inventory before dispatch
 
+### Current keyboard acceptance session
+
+| Workstream ID | Owner | Exact path | Purpose | Creation date / base | Size budget | Closeout trigger | Status and preserved artifacts |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `KEY-PAGEDOWN-CLOUD-20261030` | Coordinator | `/tmp/keyboard-pagedown-cloud-runtime-20261030/` and `/tmp/keyboard-pagedown-cloud-tmp-20261030/` (removed) | Attempted live post-deploy synthetic Tab and PageDown acceptance; local daemon failed without Chromium, Cloud SDK hung; active-session query returned zero | 2026-10-30 / commit `9e451b9` | ≤20 MiB local runtime/temp | Remove exact runtime/temp after this session | `removed`; exact runtime/temp removed after confirming no active Cloud session; evidence retained in acceptance report |
+| `KEY-PAGEDOWN-CHROME-20261030` | Coordinator | `/tmp/keyboard-pagedown-chrome-profile-20261030/` and `/tmp/keyboard-pagedown-chrome-runtime-20261030/` (removed) | Isolated local Chrome with Browser Use CDP for live generated Tab and PageDown acceptance | 2026-10-30 / commit `9e451b9` | 182 MiB profile plus 12 KiB runtime measured at cleanup | Stop owned Chrome and remove exact profile/runtime after evidence capture | `removed`; Chrome was closed; exact profile/runtime removed; evidence retained in acceptance report |
+| `KEY-PAGEDOWN-RELEASE-20261030` | Coordinator | `/tmp/keyboard-pagedown-release-20261030/` (removed) | Clean detached worktree for building the PageDown handler and inspecting exact generated deploy payload; base `eca47b2ea5655a674068bc974af53209f68f79d8`; shared `node_modules` symlink only | 2026-10-30 | 1.0 GiB measured before cleanup | Remove after exact deploy and post-deploy verification this session | `removed`; worktree registration and path removed after release evidence was recorded |
+
+| Workstream ID | Owner | Exact path | Purpose | Creation date / base | Size budget | Closeout trigger | Status and preserved artifacts |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `KEY-ACCEPTANCE-RESUME-20261030` | Coordinator | `/tmp/keyboard-final-browser-runtime/` and `/tmp/keyboard-final-browser-tmp/` | Browser Use isolated daemon runtime only; no Chrome profile created | 2026-10-30 / `eca47b2e` | 10 MiB | Remove after native Schedule transition verification attempt this session | `removed`; daemon could not attach because no Chrome was running; no evidence created |
+| `KEY-PAGEDOWN-OUTPUT-20261030` | Coordinator | `/tmp/keyboard-pagedown-output-20261030/` | Current-source Eleventy output for verifying the shared PageDown focus-preservation script and route mapping | 2026-10-30 / working tree source | 108 MiB measured; ≤200 MiB | Remove after rendered-output and syntax checks this session | `removed`; current-source render verified handler on Home, Schedule, Free Intro, and Visit; output deleted |
+
 Before creating a temporary workspace, record in the orchestration report:
 
 - Workstream ID, owner, purpose, and exact path.

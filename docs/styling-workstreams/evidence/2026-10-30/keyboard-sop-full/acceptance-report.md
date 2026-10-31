@@ -35,8 +35,26 @@ The live mobile date controls also passed Enter and literal Space activation: ea
 
 No booking, availability, contact, tel, sms, mailto, or form submission was triggered. Lighthouse/PageSpeed, site-wide contrast, screen-reader speech, and physical-device checks remain excluded per the owner’s instructions. This report distinguishes route coverage from shared-component checks and does not establish screen-reader conformance.
 
-## Remaining acceptance work
+## Completed acceptance gaps — 2026-10-30
 
-1. Resolve the PageDown criterion with the site owner: retain the current browser scrolling behavior and amend the expected observation, or identify a specific interaction that keeps focus visible without trapping scrolling.
-2. Confirm the focus transfer with natural `MediaQueryList.change` and `requestAnimationFrame` delivery in a headed browser or on the owner’s device; this headless Browser Use session suppressed both.
-3. Keep the goal open until the PageDown acceptance decision and any resulting verification are complete. Physical keyboard and screen-reader speech remain owner-reserved.
+The owner approved browser-generated keyboard input in place of physical keyboard input. No physical HID test was performed or required. Live interaction used isolated headless Google Chrome 151.0.7922.137 controlled through Playwright 1.62.1 over loopback CDP. Only Tab and PageDown were sent; no link was activated and no form or external action was submitted.
+
+### PageDown focus visibility — PASS
+
+On production Home at 1512×900 CSS pixels, Tab focused “Reserve Your Free First Visit” at y=556.3–610.7. PageDown scrolled from `scrollY=0` to `548`; after scrolling settled, the same link remained `:focus-visible` at y=8.3–62.7. Its focus outline remained solid (3px before, 2px after) with the visible green shadow. This confirms normal scroll movement while keeping the focus indicator visible.
+
+### Schedule breakpoint delivery — PASS
+
+On production `/schedule/`, the 767px viewport matched `(width < 768px)`. Browser Tab focused date `2026-10-30` in the mobile date list with `:focus-visible`. Resizing to 768px delivered one native `MediaQueryList.change` event with `matches=false`; the production `requestAnimationFrame` handler transferred focus to the same date in the desktop calendar, still visible at y=378.3–522.3 in a 900px viewport. At 769px the query stayed false and focus remained on that date.
+
+With the Schedule date still focused, PageDown advanced the calendar from October 2026 to November 2026. Focus remained visible on date `2026-11-30` inside the calendar. This confirms the global focus handler leaves the calendar’s month-navigation behavior intact.
+
+### Release and local checks — PASS
+
+Commit `9e451b9` contains the shared handler in `js/link-utils.js` and the served `js/link-utils.min.js`. The isolated Eleventy build passed; `node --check` passed for both JavaScript files; the generated Home, Schedule, Free Intro, and Visit HTML loads the shared runtime without an inline duplicate. The filtered deploy dry run listed exactly one file, `js/link-utils.min.js`. Production returned HTTP 200, 7,233 bytes, and SHA-256 `c49d3ebf5699bfa0a4de09a5dfa58abc2abec2658878ce2fd84721cddabec203`, matching the isolated build. The main checkout’s generated `dist/js/link-utils.min.js` was restored to its original clean bytes after upload.
+
+Browser Use Cloud could not start because the account lacked Cloud browser permission, and its local daemon could not attach before Chrome was started. The accepted browser-generated input was verified with isolated local Chrome through Playwright CDP instead. The Chrome profile and process were task-owned and closed after the checks.
+
+## Scope and limits
+
+Physical keyboard/HID testing, screen-reader speech, Lighthouse/PageSpeed, site-wide contrast, and physical-device checks remain excluded under the owner’s instructions. No booking, availability, contact, telephone, SMS, email, or form action was activated.

@@ -2,12 +2,12 @@
 
 **Purpose:** Manually verify keyboard access after the responsive styling release. This procedure covers visible focus, shared navigation, Schedule controls, page-specific controls, and sticky actions. It does not include Lighthouse, PageSpeed, site-wide contrast, screen-reader speech, or testing on a physical phone or tablet.
 
-**Owner-run target:** Production commits `d689e37`, `b359bf9`, and `8fa2cf7` were deployed and browser-verified on 2026-10-30. The owner accepts browser-generated keyboard input instead of physical keyboard input for this SOP; physical HID testing is out of scope. Keep the pointer untouched and use keyboard events only for navigation and activation. Record the tester, date, browser, route, viewport, zoom, and each result below.
+**Owner-run target:** Production commits `d689e37`, `b359bf9`, `8fa2cf7`, and `9e451b9` were deployed and browser-verified on 2026-10-30. The owner accepts browser-generated keyboard input instead of physical keyboard input for this SOP; physical HID testing is out of scope. Keep the pointer untouched and use keyboard events only for navigation and activation. Record the tester, date, browser, route, viewport, zoom, and each result below.
 
 ## Set up
 
 1. Test the deployed release after the deployment URL is confirmed. If testing a preview, use a current-source preview and record its URL and build/commit. Do not treat old `dist/` output as current-source proof.
-2. Use desktop Chrome or Firefox with a physical keyboard or the owner-approved browser keyboard input. Keep the pointer untouched during each pass. Start at 100% zoom; repeat the reflow-sensitive checks at 200%.
+2. Use desktop Chrome or Firefox with owner-approved browser-generated keyboard input. Physical keyboard input is not required. Keep the pointer untouched during each pass. Start at 100% zoom; repeat the reflow-sensitive checks at 200%.
 3. Open DevTools only if needed to record viewport dimensions. For breakpoint checks, set the CSS viewport to **767px, 768px, and 769px**. This is browser viewport sizing, not native zoom.
 4. Do not send real booking, contact, or availability submissions. Stop before any action that would transmit data or create an external side effect.
 5. Record browser/version, date, environment, release identifier, viewport width, zoom, and tester.
@@ -51,7 +51,7 @@ Copy this table for each route and test pass:
 
 | Route | Width / zoom | Check | Pass / fail / not applicable | Evidence or exact failure | Follow-up owner |
 | --- | --- | --- | --- | --- | --- |
-| `/visit` | Native 200%; 503×341 CSS px, DPR 2.5 | Generated Tab to Alley Bootcamp link; generated Tab to footer Text Sandy action, then PageDown, ArrowUp ×8, ArrowDown ×2, PageUp; confirm visible focus and sticky clearance | Pass | Commit `2462f0c9`, Chrome 151.0.7922.137. Alley link y=160.66–180.66, bar top 277.6. Footer link y=257.63–324.10 with visible 2px green outline and 4px shadow; bar top 341.6 and hidden. `visualViewport.scale=1`; no horizontal overflow; HTTP 200 with both listeners present. No form or outbound action activated. | Coordinator |
+| `/visit` | Native 200%; 503×341 CSS px, DPR 2.5 | Generated Tab to Alley Bootcamp link; generated Tab to footer Text Sandy action, then PageDown, ArrowUp ×8, ArrowDown ×2, PageUp; confirm visible focus and sticky clearance | Pass for Visit sticky-bar clearance; PageDown visibility passed separately on Home and Schedule | Commit `2462f0c9`, Chrome 151.0.7922.137. Alley link y=160.66–180.66, bar top 277.6. Footer link y=257.63–324.10 with visible 2px green outline and 4px shadow; bar top 341.6 and hidden. `visualViewport.scale=1`; no horizontal overflow; HTTP 200 with both listeners present. This row records sticky clearance at the captured states; separate PageDown focus-visibility evidence is in `evidence/2026-10-30/keyboard-sop-full/acceptance-report.md`. No form or outbound action activated. | Coordinator |
 
 For failures, include a screenshot with the focused element visible, browser and release details, exact key sequence, and expected versus observed focus/state. Do not include student/customer information in screenshots.
 
