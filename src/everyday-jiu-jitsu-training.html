@@ -11,6 +11,9 @@ permalink: "/everyday-jiu-jitsu-training/"
 ---
 
 <div class="acq-layout">
+  <button class="acq-mobile-toggle" id="acqMobileToggle" type="button" aria-controls="acqSidebar" aria-expanded="false" aria-label="Open lesson navigation">
+    <span class="acq-menu-icon" aria-hidden="true"></span>
+  </button>
   
   <!-- Sidebar -->
   <aside class="acq-sidebar" id="acqSidebar">
@@ -21,19 +24,19 @@ permalink: "/everyday-jiu-jitsu-training/"
     <ul class="acq-nav">
       <li class="acq-nav-module">
         <div class="acq-nav-module-title">Module 1: Foundations</div>
-        <a class="acq-nav-item active" data-target="lesson-1">
+        <a class="acq-nav-item active" href="#lesson-1" data-target="lesson-1" aria-current="true">
           <i class="bi bi-play-circle"></i> 1. Start Calm & Safe
         </a>
-        <a class="acq-nav-item" data-target="lesson-2">
+        <a class="acq-nav-item" href="#lesson-2" data-target="lesson-2">
           <i class="bi bi-play-circle"></i> 2. The Room Walkthrough
         </a>
       </li>
       <li class="acq-nav-module">
         <div class="acq-nav-module-title">Module 2: Mechanics</div>
-        <a class="acq-nav-item" data-target="lesson-3">
+        <a class="acq-nav-item" href="#lesson-3" data-target="lesson-3">
           <i class="bi bi-play-circle"></i> 3. Pure Leverage
         </a>
-        <a class="acq-nav-item" data-target="lesson-4">
+        <a class="acq-nav-item" href="#lesson-4" data-target="lesson-4">
           <i class="bi bi-file-earmark-text"></i> 4. First Class Checklist
         </a>
       </li>
@@ -43,11 +46,6 @@ permalink: "/everyday-jiu-jitsu-training/"
       </li>
     </ul>
   </aside>
-
-  <!-- Mobile Toggle -->
-  <div class="acq-mobile-toggle" id="acqMobileToggle">
-    <i class="bi bi-list"></i>
-  </div>
 
   <!-- Main Content -->
   <main class="acq-main">
@@ -191,7 +189,10 @@ permalink: "/everyday-jiu-jitsu-training/"
       // Hide all lessons
       lessons.forEach(lesson => lesson.classList.remove('active'));
       // Deactivate all nav items
-      navItems.forEach(item => item.classList.remove('active'));
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        item.removeAttribute('aria-current');
+      });
       
       // Show target lesson
       const targetLesson = document.getElementById(targetId);
@@ -199,15 +200,25 @@ permalink: "/everyday-jiu-jitsu-training/"
       
       // Activate corresponding nav item
       const targetNav = document.querySelector(`.acq-nav-item[data-target="${targetId}"]`);
-      if(targetNav) targetNav.classList.add('active');
+      if(targetNav) {
+        targetNav.classList.add('active');
+        targetNav.setAttribute('aria-current', 'true');
+      }
 
       // Scroll to top
       window.scrollTo(0,0);
       
-      // Hide sidebar on mobile
-      if(window.innerWidth <= 900) {
-        sidebar.classList.remove('open');
+      // Return focus to the navigation control when a mobile lesson is chosen.
+      if(window.innerWidth <= 900 && sidebar.classList.contains('open')) {
+        setSidebarOpen(false, true);
       }
+    }
+
+    function setSidebarOpen(open, returnFocus = false) {
+      sidebar.classList.toggle('open', open);
+      mobileToggle.setAttribute('aria-expanded', String(open));
+      mobileToggle.setAttribute('aria-label', open ? 'Close lesson navigation' : 'Open lesson navigation');
+      if(!open && returnFocus) mobileToggle.focus();
     }
 
     navItems.forEach(item => {
@@ -228,7 +239,12 @@ permalink: "/everyday-jiu-jitsu-training/"
 
     if(mobileToggle && sidebar) {
       mobileToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
+        setSidebarOpen(!sidebar.classList.contains('open'));
+      });
+      document.addEventListener('keydown', (event) => {
+        if(event.key === 'Escape' && sidebar.classList.contains('open')) {
+          setSidebarOpen(false, true);
+        }
       });
     }
   });
