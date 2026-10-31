@@ -122,4 +122,11 @@ Bootcamp homepage live verification: source commit `ecc48e4a`; release mapping c
 
 | Workstream ID | Owner | Exact path | Purpose / base | Created | Size budget | Closeout | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `SCL-DIRTY-ROUTE-PRESERVE-20261031` | Coordinator | `/tmp/scl-dirty-schedule-index-20261031.html` | Byte-preserving copy of dirty local generated Schedule route while a clean committed route with only the cache-buster change is staged; base `d713212` | 2026-10-31 | Current route file only | Restore original bytes after deployment verification, then remove | active; SHA-256 58d38e5885de43fc13456e6d458e401a88d7d5ddc8bc6e3a6020b133d1c680ef |
+| `SCL-DIRTY-ROUTE-PRESERVE-20261031` | Coordinator | `/tmp/scl-dirty-schedule-index-20261031.html` | Byte-preserving copy of dirty local generated Schedule route while a clean committed route with only the cache-buster change is staged; base `d713212` | 2026-10-31 | Current route file only | Restore original bytes after deployment verification, then remove | removed after live verification; preserved snapshot hash `58d38e5885de43fc13456e6d458e401a88d7d5ddc8bc6e3a6020b133d1c680ef`; restored local route hash `9d2a0a1c1c40f1370a64077156f1c5f6c1b29da17ec951eb4af4c52090635183`; temp backup deleted |
+
+## Schedule class-link independent review wave — 2026-10-31
+
+| Workstream ID | Owner / persona | Exact path | Purpose / base | Created | Size budget | Closeout | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `SCL-DATA-1` | Coordinator; schedule route mapper fallback | `/tmp/scl-route-audit-20261031/` (removed) | Sparse read-only route and schedule audit; base `2e50764` | 2026-10-31 | ≤64 MiB, 280 KiB measured; no dependencies or dist | Remove after report reviewed in this session | removed; audit retracted the suspected White Belt mismatch after confirming `programUrl` takes precedence; clean checkout and registration removed. |
+| `SCL-UI-1` | Coordinator; calendar interaction/accessibility auditor fallback | `/tmp/scl-ui-audit-20261031/` (removed) | Sparse read-only link semantics audit; base `2e50764` | 2026-10-31 | ≤64 MiB, 300 KiB measured; no dependencies or dist | Remove after report reviewed in this session | removed; audit passed native class links, separate booking links, no nested anchors, and declared focus styles across renderers; clean checkout and registration removed. |

@@ -45,10 +45,26 @@ Every actual class listed for a date in the month calendar should link to the ma
 
 ## Implementation and verification
 
-The calendar now renders class-page links in the desktop month cells, mobile day details, selected-day list, and next-class summary. Desktop class cards are containers, not booking anchors; class-page destinations and booking actions are sibling links. The combined youth/teen entry exposes both age-specific class pages. Class-page links remain absent for closures and event records without a matching page.
+The calendar renders class-page links in desktop month cells, mobile day details, selected-day lists, and the source next-class renderer. Desktop class cards are containers, not booking anchors; class-page destinations and booking actions are sibling links. The combined youth/teen entry exposes both age-specific class pages. Closures and event records without a matching page remain plain text. The current production Schedule HTML does not expose the Next class summary container, so its source renderer is not counted as live proof; the acceptance target is each dated calendar entry.
 
 Checks completed: `node --check` on source and generated calendar JavaScript; `npm run qa:schedule`; `npm run qa:schedule-booking`; `npm run qa:volatile-facts`; `git diff --check`; isolated local Chromium interaction at 390px and 1440px with off-origin requests blocked. Both browser widths passed checks for youth, teen, adult, Bootcamp, Foundations, women's pilot routes, separate booking links, closure behavior, zero nested anchors, and no page errors. No Lighthouse or PageSpeed checks were run.
 
 ## Release boundary and recovery note
 
 The implementation commit updates only `src/assets/js/schedule-month-calendar.js`. Because the live page uses a 30-day cache policy and a fixed query string, a follow-up release changes only the script version in `src/schedule.html` and the equivalent clean committed `dist/schedule/index.html`. The main source and generated Schedule files contain unrelated local edits; the follow-up generated route is reconstructed from committed `HEAD` plus only the query-string change. A full build was mistakenly run in the shared checkout earlier in this session and rewrote the dirty generated Schedule output. Its post-build local state was saved byte-for-byte before preparing the safe release candidate, then will be restored with the cache-string change added locally. No further full build should run in this checkout.
+
+
+## Release and live verification
+
+- Commit `d713212`: implementation and handoff. Dry run and deployment selected only `assets/js/schedule-month-calendar.js`; the live file is 17,120 bytes and its SHA-256 matches the committed generated asset (`b044853fb5e66908a6655ccfa46f28b807b8369d1e95ff28f370e4b011d6b412`).
+- Commit `2e50764`: cache-key refresh. Dry run and deployment selected only `schedule/index.html`; the live page returned HTTP 200 and references `?v=20261031-class-page-links`. The deployed HTML is not byte-identical to the local candidate, so only the observed reference and browser behavior are claimed.
+- Live browser: 390px and 1440px selected-day checks pass; desktop month-grid links pass; no nested anchors or page errors. Both booking links remain separate. Closure date has no links.
+- All seven destinations were checked live and returned HTTP 200. Lighthouse and PageSpeed were not run.
+- The temporary snapshot of dirty `dist/schedule/index.html` was removed after restoring the snapshot plus the local cache-key change. Snapshot hash before cache-key change: `58d38e5885de43fc13456e6d458e401a88d7d5ddc8bc6e3a6020b133d1c680ef`; restored local hash: `9d2a0a1c1c40f1370a64077156f1c5f6c1b29da17ec951eb4af4c52090635183`.
+
+## Independent audit closeout
+
+- SCL-DATA-1 retracted the suspected White Belt route mismatch after confirming both Tuesday and Thursday records supply `/white-belt-foundations/`, which takes precedence over the Adult fallback.
+- SCL-UI-1 passed source-level semantics review for desktop date cells, mobile details, selected-day cards, and the next-class renderer: class and booking actions are separate native anchors, anchors are not nested, and classes without routes remain text. CSS declares visible focus outlines. This was source/CSS inspection, not an additional runtime keyboard test; rendered route behavior is covered by the separate live browser checks above.
+- Both audit worktrees were clean and removed after review. Their inventory rows now record closeout. The older `/tmp/style-swarm-20261027-control` checkout remains retained under its existing named inventory owner because it contains unreconciled dirty work; it was not touched.
+- `npm run qa:workspace:preflight` passed. The full workspace audit did not complete within the session command window and was interrupted; no cleanup action was based on its heuristic candidates.
