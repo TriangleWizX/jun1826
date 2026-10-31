@@ -85,7 +85,7 @@
       };
 
       if (!stickyCta) return;
-      stickyCta.classList.add("is-observed");
+{% if not (bodyClass and "page-home" in bodyClass) %}      stickyCta.classList.add("is-observed");{% endif %}
       let actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
       let heroOut = isFunnel || !heroCta;
       let footerIn = false;
@@ -176,7 +176,7 @@
         document.addEventListener("focusin", function (event) {
           if (event.target.matches(':focus-visible')) scheduleFallbackVisibility();
         });
-        updateFallbackVisibility();
+        updateFallbackVisibility();{% if bodyClass and "page-home" in bodyClass %} /* Apply the hidden state after overlap geometry is read. */ stickyCta.classList.add("is-observed");{% endif %}
         window.addEventListener("scroll", scheduleFallbackVisibility, { passive: true });
         window.addEventListener("resize", scheduleFallbackVisibility, { passive: true });
         window.addEventListener("load", scheduleFallbackVisibility, { once: true });
@@ -218,7 +218,7 @@
         const targetMutationObserver = new MutationObserver(function (records) {
           const structureChanged = records.some((record) => record.addedNodes.length || record.removedNodes.length);
           const actionSelectorChanged = records.some((record) => record.type === 'attributes' && ['role', 'tabindex', 'href', 'contenteditable'].includes(record.attributeName));
-          const relevantStateChanged = records.some((record) => record.type === 'attributes');
+          const relevantStateChanged = records.some((record) => record.type === 'attributes'{% if bodyClass and "page-home" in bodyClass %} && !(record.target === stickyCta && record.attributeName === 'class'){% endif %});
           if (structureChanged || actionSelectorChanged) actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
           if (structureChanged || relevantStateChanged) scheduleVisibilityUpdate();
         });
@@ -264,7 +264,7 @@
         });
       }
 
-      updateVisibility();
+      updateVisibility();{% if bodyClass and "page-home" in bodyClass %} /* Defer the initial style change until geometry reads finish. */ stickyCta.classList.add("is-observed");{% endif %}
     })();
   });
 </script>

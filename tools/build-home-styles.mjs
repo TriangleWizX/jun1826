@@ -53,9 +53,10 @@ const owned = links.filter((l) => l.rel === 'stylesheet' && (
   /\/assets\/css\/site-shell\.min[.]/.test(l.href) ||
   /\/assets\/css\/global\.min[.]/.test(l.href) ||
   /\/assets\/css\/routes\/site-[a-f0-9]{12}\.min\.css/.test(l.href) ||
-  /\/assets\/css\/pages\/home\.min[.]/.test(l.href)
+  /\/assets\/css\/pages\/home\.min[.]/.test(l.href) ||
+  /\/assets\/css\/mobile-foundation\.[a-f0-9]{6,12}\.css/.test(l.href)
 ));
-if (owned.length !== 6) throw new Error(`Expected six homepage stylesheet inputs, got ${owned.length}`);
+if (owned.length !== 7) throw new Error(`Expected seven homepage stylesheet inputs, got ${owned.length}`);
 const expanded = await expandHtml(index);
 const scriptContent = [];
 for (const match of expanded.matchAll(/<script\b[^>]*\bsrc=["'](\/[^"']+)["'][^>]*>/gi)) {
