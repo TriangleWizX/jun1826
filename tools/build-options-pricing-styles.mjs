@@ -53,9 +53,10 @@ const owned = links.filter((l) => l.rel === 'stylesheet' && (
   /\/assets\/css\/bootstrap-icons-local[.]/.test(l.href) ||
   /\/assets\/css\/site-shell\.min[.]/.test(l.href) ||
   /\/assets\/css\/routes\/site-[a-f0-9]{12}\.min\.css/.test(l.href) ||
-  /\/assets\/css\/pages\/options-pricing-highend[.]/.test(l.href)
+  /\/assets\/css\/pages\/options-pricing-highend[.]/.test(l.href) ||
+  /\/assets\/css\/mobile-foundation(?:\.[a-f0-9]{6})?\.css/.test(l.href)
 ));
-if (owned.length !== 5) throw new Error(`Expected five options-pricing stylesheet inputs, got ${owned.length}`);
+if (owned.length !== 6) throw new Error(`Expected six options-pricing stylesheet inputs, got ${owned.length}`);
 
 const expanded = await expandHtml(pricingPage);
 const scriptContent = [];
