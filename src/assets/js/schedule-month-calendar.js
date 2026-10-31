@@ -35,7 +35,7 @@
       const group = make('span', `${className} ss-calendar-class-link-group`);
       group.append(make('span', 'ss-calendar-class-label', name(item)));
       const links = make('span', 'ss-calendar-class-program-links');
-      for (const [label, href] of [['Kids page', '/bjj-classes/kids-tannersville-ny/'], ['Teen page', '/bjj-classes/teens-tannersville-ny/']]) {
+      for (const [label, href] of [['Kids', '/bjj-classes/kids-tannersville-ny/'], ['Teens', '/bjj-classes/teens-tannersville-ny/']]) {
         const link = make('a', '', label);
         link.href = href;
         links.append(link);
