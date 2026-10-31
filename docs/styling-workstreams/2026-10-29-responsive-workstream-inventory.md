@@ -117,3 +117,9 @@ The owner has reserved site-wide contrast compliance review for their own PageSp
 
 
 Bootcamp homepage live verification: source commit `ecc48e4a`; release mapping commit `ce576a0b`. Clean production build completed in the temporary worktree. Filtered dry run and upload each listed exactly `index.html`, `assets/css/pages/home.css`, `assets/css/pages/home.min.css`, and `assets/css/pages/home.min.e27ab6.css`. Live homepage returned HTTP 200 and contained the Bootcamp card class, muted image rule, and fingerprinted image URL. The three CSS files returned HTTP 200 and matched the clean build by SHA-256; the fingerprinted WebP returned HTTP 200 (`image/webp`, 70,042 bytes). Local Browser Use screenshots at 390px and 1440px were already reviewed in the previous session; the main dirty source and generated tree remained untouched. The first default backup stage rotated out the older 1,130,755,264-byte account archive under the deploy script's older-archive retention rule. Read-only backup QA found two valid archives and zero invalid archives; the successful retry reused the newest verified archive.
+
+## Schedule class-link local output preservation — 2026-10-31
+
+| Workstream ID | Owner | Exact path | Purpose / base | Created | Size budget | Closeout | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `SCL-DIRTY-ROUTE-PRESERVE-20261031` | Coordinator | `/tmp/scl-dirty-schedule-index-20261031.html` | Byte-preserving copy of dirty local generated Schedule route while a clean committed route with only the cache-buster change is staged; base `d713212` | 2026-10-31 | Current route file only | Restore original bytes after deployment verification, then remove | active; SHA-256 58d38e5885de43fc13456e6d458e401a88d7d5ddc8bc6e3a6020b133d1c680ef |
