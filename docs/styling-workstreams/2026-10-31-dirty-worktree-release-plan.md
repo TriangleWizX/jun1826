@@ -6,8 +6,7 @@ Review the 905 remaining dirty paths in the main checkout, classify each by sour
 
 ## Current baseline
 
-- Main is at `5c87f625`; no paths are staged.
-- Dirty state: 202 modified, 11 deleted, and 692 untracked paths (905 total). Largest groups: 566 docs/evidence paths, 113 generated `dist` paths, and 85 source paths. Untracked files total about 366 MB after removing 34 exact duplicates of committed screenshots (25.7 MB freed).
+- Audit baseline: `bdd1bc5`; 201 modified, 10 deleted, and 692 untracked paths (903 total). Largest groups: 531 docs/evidence paths, 113 generated `dist` paths, and 85 source paths. Untracked files total about 366 MB after removing 34 exact duplicates of committed screenshots (25.7 MB freed).
 - The requested Kids/Teens schedule links are already in committed calendar code and live. The public schedule loads the inline-youth version of `schedule-month-calendar.js`; this is not additional dirty work.
 - Recent HTTP verification and deployment authorization persist. Lighthouse/PageSpeed runs remain excluded by the owner's prior instruction.
 
@@ -43,4 +42,5 @@ Review the 905 remaining dirty paths in the main checkout, classify each by sour
 - `DW-RECORDS-3` found 528 untracked docs/evidence files (~168 MB), 140 untracked viewport PNGs (~190 MB), nine personal-looking photos (~8 MB), three drafts, patches, and a bundle. There are no remaining exact duplicates of tracked blobs. Keep photos, drafts, evidence, patches, and bundle out of blanket commit/deployment; several evidence images are referenced by records. No high-confidence token/private-key pattern was found in scanned text paths.
 - A separate, previously authorized repository cleanup commit `5c87f625` removes the obsolete tracked `.htaccess.bk`; it is not a production payload. The current `.htaccess` is a distinct file.
 - The temporary `/tmp/dw-schedule-build-20261031/` checkout was removed after confirming no build process was active; the workspace inventory now records its closeout. This recovered about 1.2 GiB and does not alter the main worktree.
+- A focused route-CSS review found the dirty shared `location.njk` declaration would add Woodstock and Tannersville styles to many unrelated town routes. `tannersville.min.css` already belongs to the Tannersville route; `high-end-near.css` targets a different Woodstock page and does not match the Woodstock class route. The shared template edits and Woodstock trial link were removed. The local generated tree still has both extra stylesheet links on 23 modified town pages (46 extra links total); those outputs remain unreleased and uncommitted pending clean-build reconciliation.
 - These findings reject a single `git add -A` plus full-site deployment. Continue by reviewing coherent, source-backed release bundles in isolated clean builds. Do not call the overall dirty-worktree goal complete while unreviewed paths remain.
