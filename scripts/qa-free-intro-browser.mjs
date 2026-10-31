@@ -27,7 +27,7 @@ const browser = await chromium.launch({
   executablePath: fs.existsSync(chromium.executablePath()) ? chromium.executablePath() : '/usr/bin/google-chrome',
   headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage']
 });
-const report = { pages: [], missingAssets: [], externalRequestsBlocked: 0, youthConsent: {} };
+const report = { pages: [], missingAssets: [], externalRequestsBlocked: 0, screenshotsSkipped: process.env.INTRO_QA_SKIP_SCREENSHOTS === '1', visitRequestValidation: {}, youthConsent: {} };
 try {
   const context = await browser.newContext({ serviceWorkers: 'block' });
   let submitted;
@@ -72,9 +72,16 @@ try {
       assert.equal(metrics.imagesMissingAlt, 0, `Image alt: ${route}`);
       assert.deepEqual(metrics.fieldsMissingLabel, [], `Form labels: ${route}`);
       report.pages.push({ route, width, ...metrics });
-      if (route === routes[0] || route === routes[1]) await page.screenshot({ path: path.join(output, `${route.slice(1)}-${width}.png`), fullPage: true });
+      if (!report.screenshotsSkipped && (route === routes[0] || route === routes[1])) await page.screenshot({ path: path.join(output, `${route.slice(1)}-${width}.png`), fullPage: true });
     }
   }
+  await page.goto(origin + routes[0]);
+  const visitRequest = page.locator('#visit-request-form form[data-visit-request]');
+  assert.equal(await visitRequest.evaluate(form => form.checkValidity()), false, 'Empty visit request form is invalid');
+  await visitRequest.locator('button[type="submit"]').click();
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'visit-request-name', 'Native validation focuses the first required visit-request field');
+  assert.equal(await page.locator('#visit-request-form').isVisible(), true, 'Invalid visit request remains on the form');
+  report.visitRequestValidation = { nativeRequiredState: true, firstRequiredFieldFocused: true, invalidSubmitStayedLocal: true };
   await page.goto(origin + routes[1]);
   await page.evaluate(() => {
     sessionStorage.setItem('youthIntroData', JSON.stringify({ consent_text_version: 'youth-intro-v1' }));
@@ -82,6 +89,13 @@ try {
   });
   await page.reload();
   assert.equal(await page.locator('[name="consent_text_version"]').inputValue(), 'youth-intro-v2-2026-10-02');
+  await page.fill('#studentAge', '4');
+  assert.equal(await page.locator('#yi-route').isVisible(), true, 'Entered out-of-range age opens the alternate route');
+  await page.fill('#studentAge', '');
+  await page.click('#yi-next');
+  assert.equal(await page.evaluate(() => document.activeElement?.id), 'studentType', 'Blank age stays in required-field validation and focuses the first invalid field');
+  assert.equal(await page.locator('#studentType').getAttribute('aria-invalid'), 'true', 'Invalid first-step control is announced');
+  assert.equal(await page.locator('#studentType').evaluate(field => (field.getAttribute('aria-describedby') || '').split(/\s+/).some(id => id.startsWith('yi-validation-') && document.getElementById(id))), true, 'Inline validation text is associated with the invalid control');
   await page.selectOption('#studentType', 'first_time');
   for (const [id, value] of Object.entries({guardianName: 'Test Parent', studentName: 'Test Child', studentAge: '8', town: 'Tannersville'})) await page.fill('#' + id, value);
   await page.click('#yi-next');

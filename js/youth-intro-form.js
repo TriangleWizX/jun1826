@@ -103,22 +103,71 @@
   }
   let current = Number(sessionStorage.getItem('youthIntroStep') || 1);
   const fields = () => [...steps[current - 1].querySelectorAll('input,select,textarea')];
-  function valid() { const ok = fields().every((field) => field.checkValidity()); if (!ok) { form.reportValidity(); return false; } return true; }
-  function show(step) { current = step; sessionStorage.setItem('youthIntroStep', String(step)); steps.forEach((node, i) => { node.hidden = i !== step - 1; }); progress.style.width = `${step * 20}%`; label.textContent = `Step ${step} of 5`; back.hidden = step === 1; next.hidden = step === 5; if (step === 4) { const age = Number(form.studentAge.value); form.ageLane.value = age <= 9 ? 'kids' : 'teens'; } }
+  function clearFieldError(field) {
+    const errorId = field.dataset.validationErrorId;
+    if (!errorId) return;
+    field.removeAttribute('aria-invalid');
+    field.classList.remove('is-invalid');
+    const describedBy = (field.getAttribute('aria-describedby') || '').split(/\s+/).filter((id) => id && id !== errorId);
+    if (describedBy.length) field.setAttribute('aria-describedby', describedBy.join(' '));
+    else field.removeAttribute('aria-describedby');
+    document.getElementById(errorId)?.remove();
+    delete field.dataset.validationErrorId;
+  }
+  function describeFieldError(field) {
+    const fieldKey = field.id || field.name || `field-${[...form.elements].indexOf(field)}`;
+    const errorId = `yi-validation-${fieldKey}`;
+    let message = document.getElementById(errorId);
+    if (!message) {
+      message = document.createElement('div');
+      message.id = errorId;
+      message.className = 'invalid-feedback d-block';
+      message.textContent = field.validationMessage || 'Please check this field.';
+      (field.closest('.mb-3, .form-check') || field.parentElement).appendChild(message);
+    }
+    field.dataset.validationErrorId = errorId;
+    field.setAttribute('aria-invalid', 'true');
+    field.classList.add('is-invalid');
+    const describedBy = new Set((field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean));
+    describedBy.add(errorId);
+    field.setAttribute('aria-describedby', [...describedBy].join(' '));
+    if (field.dataset.validationErrorBound) return;
+    const updateError = () => {
+      if (field.checkValidity()) clearFieldError(field);
+      else {
+        const currentMessage = document.getElementById(field.dataset.validationErrorId);
+        if (currentMessage) currentMessage.textContent = field.validationMessage || 'Please check this field.';
+      }
+    };
+    field.addEventListener('input', updateError);
+    field.addEventListener('change', updateError);
+    field.dataset.validationErrorBound = 'true';
+  }
+  function valid() {
+    const currentFields = fields();
+    const invalidFields = currentFields.filter((field) => !field.checkValidity());
+    currentFields.forEach(clearFieldError);
+    if (!invalidFields.length) return true;
+    invalidFields.forEach(describeFieldError);
+    invalidFields[0].reportValidity();
+    invalidFields[0].focus();
+    return false;
+  }
+  function show(step, moveFocus = false) { current = step; sessionStorage.setItem('youthIntroStep', String(step)); steps.forEach((node, i) => { node.hidden = i !== step - 1; }); progress.style.width = `${step * 20}%`; label.textContent = `Step ${step} of 5`; back.hidden = step === 1; next.hidden = step === 5; if (step === 4) { const age = Number(form.studentAge.value); form.ageLane.value = age <= 9 ? 'kids' : 'teens'; } if (moveFocus) { const heading = steps[step - 1].querySelector('h2'); if (heading) { heading.tabIndex = -1; heading.focus(); } } }
   function track(name, extra) { const payload = { event: name, page_path: location.pathname, age_band: Number(form.studentAge.value) <= 9 ? '5–9' : '10–17', town: form.town.value, ...extra }; if (window.gtag) window.gtag('event', name, payload); else window.dataLayer?.push(payload); }
   function showAlternativeRoute() {
     const type = form.studentType.value;
     const age = Number(form.studentAge.value);
     if (type === 'returning') { routeBox.innerHTML = 'Trained here before? Use <a href="sms:+19177368649?body=Hi%20Sandy%2C%20I%27m%20a%20returning%20student%20looking%20to%20re-enter.">Text Sandy to plan your next class</a>.'; routeBox.hidden = false; return true; }
     if (type === 'visitor') { routeBox.innerHTML = 'Here for a short stay? See the <a href="/catskills-home-base.html">class plans for your stay</a>.'; routeBox.hidden = false; return true; }
-    if (Number.isFinite(age) && (age < 5 || age > 17)) { routeBox.innerHTML = 'This intro is for ages 5–17. Please use <a href="/options-pricing">other class plans</a> or <a href="sms:+19177368649">text Sandy</a> for help.'; routeBox.hidden = false; return true; }
+    if (form.studentAge.value.trim() && Number.isFinite(age) && (age < 5 || age > 17)) { routeBox.innerHTML = 'This intro is for ages 5–17. Please use <a href="/options-pricing">other class plans</a> or <a href="sms:+19177368649">text Sandy</a> for help.'; routeBox.hidden = false; return true; }
     routeBox.hidden = true;
     return false;
   }
   form.studentType.addEventListener('change', showAlternativeRoute);
   form.studentAge.addEventListener('input', showAlternativeRoute);
-  next.addEventListener('click', () => { if (current === 1 && showAlternativeRoute()) { track('intro_form_error', { step: current, reason: 'alternate_route' }); return; } if (!valid()) { track('intro_form_error', { step: current }); return; } track('intro_form_step_complete', { step: current }); show(current + 1); });
-  back.addEventListener('click', () => show(current - 1));
+  next.addEventListener('click', () => { if (current === 1 && showAlternativeRoute()) { track('intro_form_error', { step: current, reason: 'alternate_route' }); return; } if (!valid()) { track('intro_form_error', { step: current }); return; } track('intro_form_step_complete', { step: current }); show(current + 1, true); });
+  back.addEventListener('click', () => show(current - 1, true));
   form.addEventListener('input', () => { sessionStorage.setItem('youthIntroData', JSON.stringify(Object.fromEntries(new FormData(form)))); });
   form.preferredDate.addEventListener('change', refreshAvailability);
   form.ageLane.addEventListener('change', refreshAvailability);
