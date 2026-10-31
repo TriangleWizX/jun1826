@@ -29,6 +29,25 @@
   };
   const name = (item) => item.label || item.publicLabel || (item.format === 'Bootcamp' ? 'Alley Bootcamp' : `${item.audience === 'Youth/Teen' ? 'Kids and teens' : item.audience} ${item.format}`);
   const kind = (item) => item.format === 'Bootcamp' ? 'bootcamp' : item.audience === 'Women' ? 'women' : item.publicLabel === 'White Belt Foundations' ? 'foundations' : item.audience === 'Youth/Teen' ? 'youth' : item.audience ? 'adult' : 'special';
+  const classHref = (item) => item.programUrl || (item.format === 'Bootcamp' ? '/alley-bootcamp/' : item.audience === 'Women' ? '/womens-jiu-jitsu-tannersville.html' : item.audience === 'Youth/Teen' ? '' : item.audience === 'Adult' ? '/bjj-classes/adults-tannersville-ny/' : '');
+  const className = (item, className = 'ss-calendar-class-link') => {
+    if (item.audience === 'Youth/Teen') {
+      const group = make('span', `${className} ss-calendar-class-link-group`);
+      group.append(make('span', 'ss-calendar-class-label', name(item)));
+      const links = make('span', 'ss-calendar-class-program-links');
+      for (const [label, href] of [['Kids page', '/bjj-classes/kids-tannersville-ny/'], ['Teen page', '/bjj-classes/teens-tannersville-ny/']]) {
+        const link = make('a', '', label);
+        link.href = href;
+        links.append(link);
+      }
+      group.append(links);
+      return group;
+    }
+    const href = classHref(item);
+    const link = href ? make('a', className, name(item)) : make('span', '', name(item));
+    if (href) link.href = href;
+    return link;
+  };
   const isUpcoming = (slot, date) => {
     const match = String(slot.time || '').match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
     if (!match) return false;
@@ -66,8 +85,7 @@
     const { date, slot } = upcoming;
     const day = make('time', 'ss-next-class-date', format(date, { weekday: 'long', month: 'long', day: 'numeric' }));
     day.dateTime = iso(date);
-    nextClassDetails.append(day, make('strong', 'ss-next-class-time', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), make('span', 'ss-next-class-name', name(slot)));
-    if (slot.programUrl) { const link = make('a', '', 'View class plan'); link.href = slot.programUrl; nextClassDetails.append(link); }
+    nextClassDetails.append(day, make('strong', 'ss-next-class-time', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), className(slot, 'ss-next-class-name ss-calendar-class-link'));
     const href = bookingHref(slot, date);
     if (href) { const link = make('a', 'ss-class-booking-link', 'Plan a free visit for this class'); link.href = href; nextClassDetails.append(link); }
   };
@@ -107,11 +125,10 @@
     if (!slots.length) entries.append(make('p', 'ss-month-mobile-rest', 'Rest day'));
     for (const slot of slots) {
       const item = make('div', `ss-month-mobile-class is-${kind(slot)}`);
-      item.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), make('span', '', name(slot)));
+      item.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), className(slot));
       if (slot.focus) item.append(make('small', '', slot.focus));
       if (slot.ages) item.append(make('small', '', `Ages ${slot.ages} · ${slot.format}`));
       if (slot.note) item.append(make('small', '', slot.note));
-      if (slot.programUrl) { const link = make('a', '', 'View class plan'); link.href = slot.programUrl; item.append(link); }
       const href = bookingHref(slot, date);
       if (href) { const link = make('a', 'ss-class-booking-link', 'Plan a free visit for this class'); link.href = href; item.append(link); }
       entries.append(item);
@@ -132,11 +149,10 @@
     if (!slots.length) cardFragment.append(make('p', '', 'Rest day. Pick a class date above.'));
     for (const slot of slots) {
       const card = make('article', `ss-selected-class is-${kind(slot)}`);
-      card.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), make('span', '', name(slot)));
+      card.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), className(slot));
       if (slot.focus) card.append(make('small', '', slot.focus));
       if (slot.ages) card.append(make('small', '', `Ages ${slot.ages} · ${slot.format}`));
       if (slot.note) card.append(make('small', '', slot.note));
-      if (slot.programUrl) { const link = make('a', '', 'View class plan'); link.href = slot.programUrl; card.append(link); }
       const href = bookingHref(slot, date);
       if (href) { const link = make('a', 'ss-class-booking-link', 'Plan a free visit for this class'); link.href = href; card.append(link); }
       cardFragment.append(card);
@@ -185,14 +201,16 @@
       if (iso(date) === iso(today)) button.setAttribute('aria-current', 'date');
       content.append(button);
       for (const slot of slots) {
+        const item = make('div', `ss-date-class is-${kind(slot)}`);
+        item.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), className(slot));
         const href = bookingHref(slot, date);
-        const card = make(href ? 'a' : 'span', `ss-date-class is-${kind(slot)}${href ? ' ss-date-class-link' : ''}`);
         if (href) {
-          card.href = href;
-          card.title = `Plan a free visit for ${name(slot)} on ${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}`;
+          const link = make('a', 'ss-class-booking-link', 'Plan a free visit');
+          link.href = href;
+          link.title = `Plan a free visit for ${name(slot)} on ${format(date, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}`;
+          item.append(link);
         }
-        card.append(make('strong', '', slot.endTime ? `${slot.time}–${slot.endTime}` : slot.time), make('span', '', name(slot)));
-        content.append(card);
+        content.append(item);
       }
       button.addEventListener('click', () => select(date));
       button.addEventListener('keydown', (event) => onDateKeydown(event, date));
