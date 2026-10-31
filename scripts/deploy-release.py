@@ -78,6 +78,31 @@ def is_shared_style_input(name):
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    # Bio's route-only stylesheet build emits one content-hashed CSS file. Map
+    # its exact generated dependencies from the Bio HTML so the release stays
+    # scoped even though dist/ is ignored.
+    if 'src/bio.html' in names or 'tools/build-bio-delivery-styles.mjs' in names:
+        page = ROOT / 'dist' / 'bio.html'
+        if not page.is_file():
+            raise ValueError('Bio release requires a generated dist/bio.html')
+        html = page.read_text(encoding='utf-8')
+        outputs.add((page, 'bio.html'))
+        bio_assets = set(re.findall(
+            r'''(?:src|href)=["']/?(assets/(?:css/pages/bio-delivery\.[a-f0-9]{12}\.css|images/bio-black-belt-promo-670x669\.[a-f0-9]{6}\.webp))["']''',
+            html,
+        ))
+        required = {
+            'assets/css/pages/bio-delivery',
+            'assets/images/bio-black-belt-promo-670x669',
+        }
+        found = {re.sub(r'\.[a-f0-9]+\.(?:css|webp)$', '', asset) for asset in bio_assets}
+        if not required.issubset(found):
+            raise ValueError('Bio release HTML must reference the fingerprinted delivery CSS and promotion WebP')
+        for rel in sorted(bio_assets):
+            candidate = ROOT / 'dist' / rel
+            if not candidate.is_file():
+                raise ValueError(f'Missing generated Bio dependency: {rel}')
+            outputs.add((candidate, rel))
     # Friday Night Fanatics directly loads its route-owned fingerprinted CSS.
     if 'src/assets/css/pages/friday-night-fanatics.css' in names:
         page = ROOT / 'dist' / 'friday-night-fanatics.html'
