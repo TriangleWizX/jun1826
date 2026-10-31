@@ -2,7 +2,7 @@
 
 **Purpose:** Manually verify keyboard access after the responsive styling release. This procedure covers visible focus, shared navigation, Schedule controls, page-specific controls, and sticky actions. It does not include Lighthouse, PageSpeed, site-wide contrast, screen-reader speech, or testing on a physical phone or tablet.
 
-**Owner-run target:** Production commits `d689e37`, `b359bf9`, `8fa2cf7`, and `9e451b9` were deployed and browser-verified on 2026-10-30. The owner accepts browser-generated keyboard input instead of physical keyboard input for this SOP; physical HID testing is out of scope. Keep the pointer untouched and use keyboard events only for navigation and activation. Record the tester, date, browser, route, viewport, zoom, and each result below.
+**Owner-run target:** Production commits `d689e37`, `b359bf9`, `8fa2cf7`, `9e451b9`, `6da8cc6`, and `6602f7d` were deployed and browser-verified on 2026-10-30. The final 200% Schedule PageDown result is recorded in [the acceptance report](evidence/2026-10-30/keyboard-sop-full/acceptance-report.md) and [the focused recheck](evidence/2026-10-30/keyboard-sop-full/schedule-focus-recheck.md). The owner accepts browser-generated keyboard input instead of physical keyboard input for this SOP; physical HID testing is out of scope. Keep the pointer untouched and use keyboard events only for navigation and activation. Record the tester, date, browser, route, viewport, zoom, and each result below.
 
 ## Set up
 
