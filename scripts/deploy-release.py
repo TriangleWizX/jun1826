@@ -175,7 +175,7 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('home-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
-    if 'tools/build-schedule-styles.mjs' in names:
+    if 'tools/build-schedule-styles.mjs' in names or 'src/assets/css/pages/schedule.css' in names:
         candidate = ROOT / 'dist' / 'schedule' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'schedule/index.html'))
