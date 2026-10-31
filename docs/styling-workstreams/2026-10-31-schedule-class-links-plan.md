@@ -68,3 +68,10 @@ The implementation commit updates only `src/assets/js/schedule-month-calendar.js
 - SCL-UI-1 passed source-level semantics review for desktop date cells, mobile details, selected-day cards, and the next-class renderer: class and booking actions are separate native anchors, anchors are not nested, and classes without routes remain text. CSS declares visible focus outlines. This was source/CSS inspection, not an additional runtime keyboard test; rendered route behavior is covered by the separate live browser checks above.
 - Both audit worktrees were clean and removed after review. Their inventory rows now record closeout. The older `/tmp/style-swarm-20261027-control` checkout remains retained under its existing named inventory owner because it contains unreconciled dirty work; it was not touched.
 - `npm run qa:workspace:preflight` passed. The full workspace audit did not complete within the session command window and was interrupted; no cleanup action was based on its heuristic candidates.
+
+## Youth link label follow-up — 2026-10-31
+
+- Commit `652dfcc` changes the combined youth class links to the concise labels `Kids` and `Teens`, retaining `/bjj-classes/kids-tannersville-ny/` and `/bjj-classes/teens-tannersville-ny/` as their destinations.
+- The script cache key changed to `20261031-class-page-links-labels`. Deploy dry run and upload each selected only `assets/js/schedule-month-calendar.js` and `schedule/index.html`; deployment reused a verified remote backup.
+- Live HTTP verification confirmed the Schedule page references the new key and the delivered script contains both labels with their matching destinations. Browser-use was attempted, but no local Chrome instance was running, so the final check used live HTTP content. No Lighthouse or PageSpeed checks were run.
+- The dirty local `dist/schedule/index.html` was restored byte-for-byte after release candidate deployment. Its SHA-256 is recorded in the workspace inventory.
