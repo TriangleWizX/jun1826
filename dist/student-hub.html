@@ -7,7 +7,7 @@
 <link href="/assets/favicon/favicon-32x32.acabc1.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/assets/favicon/apple-touch-icon.253689.png" rel="apple-touch-icon"/>
 <link href="/site.webmanifest" rel="manifest"/>
-<title>Sensei Sandy Student Hub</title>
+<title>Sensei Sandy Student Hub | Member Resources &amp; Schedule</title>
 <meta content="A current-student utility for today&#39;s classes, training preparation, the current training problem, optional references, and parent reflection." name="description"/>
 
 
@@ -19,11 +19,11 @@
 <meta content="https://senseisandy.com/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.webp" property="og:image"/>
 
 <meta content="noindex, follow" name="robots"/>
-<meta content="Sensei Sandy Student Hub" property="og:title"/>
+<meta content="Sensei Sandy Student Hub | Member Resources &amp; Schedule" property="og:title"/>
 <meta content="A current-student utility for today&#39;s classes, training preparation, the current training problem, optional references, and parent reflection." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Sensei Sandy Student Hub" name="twitter:title"/>
+<meta content="Sensei Sandy Student Hub | Member Resources &amp; Schedule" name="twitter:title"/>
 <meta content="A current-student utility for today&#39;s classes, training preparation, the current training problem, optional references, and parent reflection." name="twitter:description"/>
 <meta content="https://senseisandy.com/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.webp" name="twitter:image"/>
 <meta content="https://senseisandy.com/student-hub" name="twitter:url"/>
@@ -203,11 +203,13 @@
 <link rel="stylesheet" href="/assets/css/fonts.min.5ee9a4.css">
 <link rel="stylesheet" href="/assets/css/site-shell.min.7f177f.css">
 
-    <link rel="stylesheet" href="/assets/css/pages/student-hub-premium.66115b.css">
+    <link rel="stylesheet" href="/assets/css/pages/student-hub-premium.159dbc.css">
     <link rel="stylesheet" href="/assets/css/routes/site-18ac9c2704ce.min.css">
 
 
 
+
+<link rel="stylesheet" href="/assets/css/mobile-foundation.d8c863.css">
 
   
 </head>
@@ -636,6 +638,7 @@
 </div>
 </div>
 </div>
+<script src="/assets/js/student-hub-referral-copy.js" defer></script>
 <!-- ═══════════════════════════════════════════════════
            WEEKLY MOVEMENT VIDEOS
       ════════════════════════════════════════════════════ -->
@@ -756,11 +759,13 @@
 <nav class="ss-mobile-actionbar" aria-label="Quick actions">
 <a class="ss-action-primary" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question" aria-label="Questions about starting? Text Sandy " data-cta-target="text" data-cta-placement="sticky_mobile">Text Sandy</a>
 <a class="ss-action-home" href="/" aria-label="Home" data-cta-target="home" data-cta-placement="sticky_mobile"><picture style="display:contents"><source type="image/webp" srcset="/assets/img/brand/sensei-sandy-bjj-logo-64.40d9db.webp"><img loading="lazy" src="/assets/img/brand/sensei-sandy-bjj-logo-64.6f668c.png" alt="" width="28" height="28" decoding="async" /></picture> <span class="visually-hidden">Home</span></a>
+<a class="ss-action-reserve" href="/free-bjj-intro-tannersville-ny#booking-flow" data-cta-target="book" data-cta-placement="sticky_mobile" data-analytics-event="reserve_intro_clicked">Reserve Free Intro</a>
 </nav>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     (function initStickyVisibility() {
+      const isFunnel = document.body.hasAttribute('data-ws29-funnel');
       const heroCta = document.querySelector([
         '.home-hero .primary-cta',
         '.hero-card .btn-white-secondary',
@@ -773,21 +778,168 @@
       ].join(', '));
       const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
       const stickyCta = document.querySelector('.ss-mobile-actionbar');
+      const pageStickyCta = document.querySelector('.page-book-intro .ss-mobile-sticky-cta');
+      const actionTargetSelector = 'a[href], button, input:not([type="hidden"]), select, textarea, summary, label, [role="button"], [role="link"], [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"], [role="tab"], [role="checkbox"], [role="radio"], [role="switch"], [tabindex]:not([tabindex^="-"]), [contenteditable="true"]';
+
+      const pageStickyClearance = function () {
+        if (!pageStickyCta) return 0;
+        const wasVisible = pageStickyCta.classList.contains("is-visible");
+        const wasFooterVisible = pageStickyCta.classList.contains("is-footer-visible");
+        pageStickyCta.classList.remove("is-footer-visible");
+        pageStickyCta.classList.add("is-visible");
+        const height = pageStickyCta.getBoundingClientRect().height;
+        if (!wasVisible) pageStickyCta.classList.remove("is-visible");
+        if (wasFooterVisible) pageStickyCta.classList.add("is-footer-visible");
+        return Math.ceil(height);
+      };
 
       if (!stickyCta) return;
       stickyCta.classList.add("is-observed");
+      let actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+      let heroOut = isFunnel || !heroCta;
+      let footerIn = false;
+      let formIn = false;
+      const syncPageStickyFooterVisibility = function () {
+        if (!pageStickyCta) return;
+        let pageFooterIn = footerIn;
+        if (!("IntersectionObserver" in window) && footerCta) {
+          const footerRect = footerCta.getBoundingClientRect();
+          const clearance = pageStickyClearance();
+          pageFooterIn = footerRect.top < window.innerHeight + clearance && footerRect.bottom > 0;
+        }
+        const isMobile = window.matchMedia("(max-width: 767.98px)").matches;
+        pageStickyCta.classList.toggle("is-footer-visible", pageFooterIn && isMobile);
+        if (!("IntersectionObserver" in window)) {
+          pageStickyCta.classList.toggle("is-visible", isMobile && !pageFooterIn);
+        }
+      };
+      const updateVisibility = function () {
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn && !formIn && !pageActionOverlapsBar());
+        if (pageStickyCta) {
+          const isMobile = window.matchMedia("(max-width: 767.98px)").matches;
+          pageStickyCta.classList.toggle("is-visible", isMobile && heroOut && !footerIn && !formIn);
+        }
+        syncPageStickyFooterVisibility();
+      };
+      const pageActionOverlapsBar = function () {
+        if (!stickyCta.offsetHeight) return false;
+        const barRect = stickyCta.getBoundingClientRect();
+        const barTop = window.innerHeight - stickyCta.offsetHeight;
+        for (const target of actionTargets) {
+          if (stickyCta.contains(target) || target.closest('[hidden], [inert]')) continue;
+          if (target.matches(':disabled') || target.getAttribute('aria-disabled') === 'true') continue;
+          if (target.tagName === 'LABEL' && (!target.control || target.control.matches(':disabled, [aria-disabled="true"]'))) continue;
+          if (target.closest('.visually-hidden, .sr-only')) continue;
+          const bounds = target.getBoundingClientRect();
+          if (bounds.right <= barRect.left || bounds.left >= barRect.right ||
+              bounds.bottom <= barTop || bounds.top >= window.innerHeight) continue;
+          let hidden = false;
+          for (let node = target; node && node !== document.body; node = node.parentElement) {
+            const style = window.getComputedStyle(node);
+            if (style.display === 'none' || style.visibility === 'hidden' || style.pointerEvents === 'none' || style.opacity === '0') {
+              hidden = true;
+              break;
+            }
+          }
+          if (hidden) continue;
+          for (const fragment of target.getClientRects()) {
+            if (fragment.right > barRect.left && fragment.left < barRect.right &&
+                fragment.bottom > barTop && fragment.top < window.innerHeight) return true;
+          }
+        }
+        return false;
+      };
+
+      let footerObserver = null;
+      const observeFooter = function () {
+        if (!footerCta) return;
+        if (footerObserver) footerObserver.disconnect();
+        footerIn = false;
+        const footerClearance = Math.ceil(Math.max(
+          stickyCta.getBoundingClientRect().height,
+          pageStickyClearance()
+        ));
+        const footerObserverOptions = isFunnel || pageStickyCta
+          ? { rootMargin: `0px 0px ${footerClearance}px 0px`, threshold: 0 }
+          : { threshold: 0.05 };
+        footerObserver = new IntersectionObserver(function (entries) {
+          footerIn = entries[0].isIntersecting;
+          updateVisibility();
+        }, footerObserverOptions);
+        footerObserver.observe(footerCta);
+      };
+
       if (!("IntersectionObserver" in window)) {
-        stickyCta.classList.add("is-visible");
+        let fallbackVisibilityFrame = 0;
+        const updateFallbackVisibility = function () {
+          stickyCta.classList.toggle("is-visible", !pageActionOverlapsBar());
+          syncPageStickyFooterVisibility();
+        };
+        const scheduleFallbackVisibility = function () {
+          if (fallbackVisibilityFrame) return;
+          fallbackVisibilityFrame = window.requestAnimationFrame(function () {
+            fallbackVisibilityFrame = 0;
+            updateFallbackVisibility();
+          });
+        };
+        document.addEventListener("focusin", function (event) {
+          if (event.target.matches(':focus-visible')) scheduleFallbackVisibility();
+        });
+        updateFallbackVisibility();
+        window.addEventListener("scroll", scheduleFallbackVisibility, { passive: true });
+        window.addEventListener("resize", scheduleFallbackVisibility, { passive: true });
+        window.addEventListener("load", scheduleFallbackVisibility, { once: true });
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleFallbackVisibility);
+        if ("MutationObserver" in window) {
+          const targetMutationObserver = new MutationObserver(function (records) {
+            const structureChanged = records.some((record) => record.addedNodes.length || record.removedNodes.length);
+            const actionSelectorChanged = records.some((record) => record.type === 'attributes' && ['role', 'tabindex', 'href', 'contenteditable'].includes(record.attributeName));
+            const relevantStateChanged = records.some((record) => record.type === 'attributes' && !(record.target === stickyCta && record.attributeName === 'class'));
+            if (structureChanged || actionSelectorChanged) actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+            if (structureChanged || relevantStateChanged) scheduleFallbackVisibility();
+          });
+          targetMutationObserver.observe(document.body, { childList: true, subtree: true, attributes: true,
+            attributeFilter: ['hidden', 'inert', 'disabled', 'aria-disabled', 'class', 'role', 'tabindex', 'href', 'contenteditable'] });
+        }
         return;
       }
 
-      let heroOut = !heroCta;
-      let footerIn = false;
-      const updateVisibility = function () {
-        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+      let visibilityFrame = 0;
+      const scheduleVisibilityUpdate = function () {
+        if (visibilityFrame) return;
+        visibilityFrame = window.requestAnimationFrame(function () {
+          visibilityFrame = 0;
+          updateVisibility();
+        });
       };
+      document.addEventListener("focusin", function (event) {
+        if (event.target.matches(':focus-visible')) scheduleVisibilityUpdate();
+      });
+      const refreshVisibilityTargets = function () {
+        actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+        updateVisibility();
+      };
+      window.addEventListener("scroll", scheduleVisibilityUpdate, { passive: true });
+      window.addEventListener("resize", scheduleVisibilityUpdate, { passive: true });
+      window.addEventListener("load", refreshVisibilityTargets, { once: true });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(refreshVisibilityTargets);
+      if ("MutationObserver" in window) {
+        const targetMutationObserver = new MutationObserver(function (records) {
+          const structureChanged = records.some((record) => record.addedNodes.length || record.removedNodes.length);
+          const actionSelectorChanged = records.some((record) => record.type === 'attributes' && ['role', 'tabindex', 'href', 'contenteditable'].includes(record.attributeName));
+          const relevantStateChanged = records.some((record) => record.type === 'attributes');
+          if (structureChanged || actionSelectorChanged) actionTargets = Array.from(document.querySelectorAll(actionTargetSelector));
+          if (structureChanged || relevantStateChanged) scheduleVisibilityUpdate();
+        });
+        targetMutationObserver.observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['hidden', 'inert', 'disabled', 'aria-disabled', 'class', 'role', 'tabindex', 'href', 'contenteditable']
+        });
+      }
 
-      if (heroCta) {
+      if (heroCta && !isFunnel) {
         const heroObserver = new IntersectionObserver(function (entries) {
           heroOut = !entries[0].isIntersecting;
           updateVisibility();
@@ -795,12 +947,30 @@
         heroObserver.observe(heroCta);
       }
 
-      if (footerCta) {
-        const footerObserver = new IntersectionObserver(function (entries) {
-          footerIn = entries[0].isIntersecting;
+      if (footerCta) observeFooter();
+      let mobileFooterMode = window.matchMedia("(max-width: 767.98px)").matches;
+      window.addEventListener("resize", function () {
+        const nextMobileFooterMode = window.matchMedia("(max-width: 767.98px)").matches;
+        if (pageStickyCta && nextMobileFooterMode !== mobileFooterMode) {
+          mobileFooterMode = nextMobileFooterMode;
+          observeFooter();
           updateVisibility();
-        }, { threshold: 0.05 });
-        footerObserver.observe(footerCta);
+        }
+      }, { passive: true });
+
+      if (isFunnel) {
+        const visibleSubmits = new Set();
+        const submitObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) visibleSubmits.add(entry.target);
+            else visibleSubmits.delete(entry.target);
+          });
+          formIn = visibleSubmits.size > 0;
+          updateVisibility();
+        }, { rootMargin: `0px 0px ${Math.ceil(stickyCta.getBoundingClientRect().height)}px 0px`, threshold: 0 });
+        document.querySelectorAll('main form button[type="submit"], main form input[type="submit"]').forEach(function (button) {
+          submitObserver.observe(button);
+        });
       }
 
       updateVisibility();

@@ -52,6 +52,26 @@ RESEARCH_RECORD_OUTPUTS = (
  'sources/research/pediatric-bjj-injury-review/index.html',
  'sources/research/youth-sports-injury-prevention/index.html',
 )
+ROUTE_SCOPED_CSS_INPUTS = {
+    'src/assets/css/pages/instagram.css',
+    'src/assets/css/pages/schedule.css',
+    'src/assets/css/pages/schedule.min.css',
+    'src/assets/css/pages/options-pricing-highend.css',
+    'src/assets/css/pages/law-enforcement.css',
+    'src/assets/css/pages/law-enforcement.min.css',
+    'src/assets/css/pages/catskills-home-base-touch.css',
+    'src/assets/css/pages/everyday-jiu-jitsu.css',
+    'src/assets/css/pages/everyday-jiu-jitsu.min.css',
+    'src/assets/css/pages/partners-hospitality-hunter-windham.css',
+    'src/assets/css/pages/partners-hospitality-hunter-windham.min.css',
+}
+
+
+def is_shared_style_input(name):
+    return name.startswith(('src/assets/css/', 'src/assets/js/', 'src/js/',
+                            'src/partials/', 'src/_includes/', 'src/_data/')) \
+        and name not in ROUTE_SCOPED_CSS_INPUTS
+
 
 def changed_outputs(commit):
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
@@ -109,6 +129,50 @@ def changed_outputs(commit):
         candidate = ROOT / 'dist' / 'law-enforcement-bjj.html'
         if candidate.is_file():
             outputs.add((candidate, 'law-enforcement-bjj.html'))
+
+    # Everyday Jiu-Jitsu owns a directory-index page and a fingerprinted route stylesheet.
+    if any(name in names for name in (
+        'src/everyday-jiu-jitsu-training.html',
+        'src/assets/css/pages/everyday-jiu-jitsu.css',
+        'src/assets/css/pages/everyday-jiu-jitsu.min.css',
+    )):
+        candidate = ROOT / 'dist' / 'everyday-jiu-jitsu-training' / 'index.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'everyday-jiu-jitsu-training/index.html'))
+            page_text = candidate.read_text(encoding='utf-8')
+            fingerprints = re.findall(
+                r'''href=["']/?(assets/css/pages/everyday-jiu-jitsu\.[a-f0-9]+\.css)["']''',
+                page_text,
+            )
+            if len(fingerprints) != 1:
+                raise ValueError('Everyday Jiu-Jitsu must reference exactly one fingerprinted stylesheet')
+            css_rel = fingerprints[0]
+            css_path = ROOT / 'dist' / css_rel
+            if not css_path.is_file():
+                raise ValueError(f'Missing Everyday Jiu-Jitsu stylesheet: {css_rel}')
+            outputs.add((css_path, css_rel))
+
+    # Hospitality Partners owns a root HTML page and a fingerprinted route stylesheet.
+    if any(name in names for name in (
+        'src/partners-hospitality-hunter-windham.html',
+        'src/assets/css/pages/partners-hospitality-hunter-windham.css',
+        'src/assets/css/pages/partners-hospitality-hunter-windham.min.css',
+    )):
+        candidate = ROOT / 'dist' / 'partners-hospitality-hunter-windham.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'partners-hospitality-hunter-windham.html'))
+            page_text = candidate.read_text(encoding='utf-8')
+            fingerprints = re.findall(
+                r'''href=["']/?(assets/css/pages/partners-hospitality-hunter-windham\.[a-f0-9]+\.css)["']''',
+                page_text,
+            )
+            if len(fingerprints) != 1:
+                raise ValueError('Hospitality Partners must reference exactly one fingerprinted stylesheet')
+            css_rel = fingerprints[0]
+            css_path = ROOT / 'dist' / css_rel
+            if not css_path.is_file():
+                raise ValueError(f'Missing Hospitality Partners stylesheet: {css_rel}')
+            outputs.add((css_path, css_rel))
     # The normal build regenerates the sitemap index and children from source
     # pages and the URL registry. Include their generated dist copies in every
     # source-content release so production cannot retain stale lastmod data.
@@ -150,6 +214,10 @@ def changed_outputs(commit):
         candidate = ROOT / 'dist' / 'family-jiu-jitsu' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'family-jiu-jitsu/index.html'))
+    if 'src/rural-bjj-catskills.html' in names:
+        candidate = ROOT / 'dist' / 'rural-bjj-catskills.html'
+        if candidate.is_file():
+            outputs.add((candidate, 'rural-bjj-catskills.html'))
     for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
         if asset in names: outputs.add((ROOT / asset, asset))
     if 'data/url-registry.json' in names:
@@ -175,7 +243,10 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('home-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
-    if 'tools/build-schedule-styles.mjs' in names or 'src/assets/css/pages/schedule.css' in names:
+    if ('tools/build-schedule-styles.mjs' in names or
+            any(name in names for name in ('src/schedule.html',
+                                           'src/assets/css/pages/schedule.css',
+                                           'src/assets/css/pages/schedule.min.css'))):
         candidate = ROOT / 'dist' / 'schedule' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'schedule/index.html'))
@@ -221,7 +292,8 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('visit-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
-    if 'tools/build-instagram-styles.mjs' in names:
+    if ('tools/build-instagram-styles.mjs' in names or
+            'src/assets/css/pages/instagram.css' in names):
         candidate = ROOT / 'dist' / 'instagram' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'instagram/index.html'))
@@ -239,7 +311,8 @@ def changed_outputs(commit):
             for css_cand in pages_css_dir.glob('free-intro-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
-    if 'tools/build-options-pricing-styles.mjs' in names:
+    if ('tools/build-options-pricing-styles.mjs' in names or
+            'src/assets/css/pages/options-pricing-highend.css' in names):
         html_c = ROOT / 'dist' / 'options-pricing.html'
         dir_c = ROOT / 'dist' / 'options-pricing' / 'index.html'
         if html_c.is_file():
@@ -281,7 +354,7 @@ def changed_outputs(commit):
                         'src/_includes/components/footer.njk' in names or
                         'src/_includes/components/free-intro-process.njk' in names or
                         'src/_includes/footer-high-intent.html' in names)
-    glossary_release = ('.gitignore' in names or 'scripts/deploy-release.py' in names) and (ROOT / 'src' / 'bjj-glossary').is_dir()
+    glossary_release = '.gitignore' in names and (ROOT / 'src' / 'bjj-glossary').is_dir()
     manifest_file = ROOT / 'src/assets/data/asset-hash-manifest.json'
     manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
 
@@ -300,6 +373,8 @@ def changed_outputs(commit):
             candidate = ROOT / name
             if candidate.is_file():
                 outputs.add((candidate, name))
+            continue
+        if name == 'src/assets/css/pages/options-pricing-highend.css':
             continue
         if name.startswith('src/assets/'):
             asset_rel = name[4:]
@@ -396,6 +471,12 @@ def changed_outputs(commit):
                 candidate = ROOT / 'dist' / 'jiu-jitsu-terms' / 'index.html'
             elif name == 'src/bjj-butterfly-guard.html':
                 candidate = ROOT / 'dist' / 'bjj-butterfly-guard' / 'index.html'
+            elif name == 'src/bjj-videos.html':
+                candidate = ROOT / 'dist' / 'bjj-videos' / 'index.html'
+            elif name == 'src/videos.html':
+                candidate = ROOT / 'dist' / 'videos' / 'index.html'
+            elif name == 'src/clean.html':
+                candidate = ROOT / 'dist' / 'clean' / 'index.html'
             elif name == 'src/deer-mountain-inn.html':
                 html_c = ROOT / 'dist' / 'deer-mountain-inn.html'
                 dir_c = ROOT / 'dist' / 'deer-mountain-inn' / 'index.html'
@@ -506,6 +587,74 @@ def changed_outputs(commit):
         for candidate in (ROOT / 'dist' / 'bjj-glossary').rglob('*'):
             if candidate.is_file():
                 outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+    # Kids CSS is derived from markup, runtime selectors and shared styles, not
+    # just kids.css. Conservatively include its page for shared build inputs.
+    kids_rel = 'bjj-classes/kids-tannersville-ny/index.html'
+    kids_inputs = any(
+        name in ('package.json', 'package-lock.json', 'src/tokens.css',
+                 'tools/build-kids-styles.mjs', 'tools/build-route-styles.mjs',
+                 'tools/materialize-ssi-fragments.mjs') or
+        is_shared_style_input(name)
+        for name in names
+    )
+    kids_page = ROOT / 'dist' / kids_rel
+    if kids_inputs or any(rel == kids_rel for _, rel in outputs):
+        if not kids_page.is_file():
+            raise ValueError('Kids release requires a fresh production build')
+        bundles = re.findall(r'href=[\"\']/(assets/css/pages/kids-delivery\.[a-f0-9]{12}\.css)[\"\']',
+                             kids_page.read_text(encoding='utf-8'))
+        if len(bundles) != 1:
+            raise ValueError('Kids release requires exactly one active delivery bundle')
+        bundle = ROOT / 'dist' / bundles[0]
+        if not bundle.is_file():
+            raise ValueError('Missing active Kids CSS delivery bundle')
+        outputs.add((kids_page, kids_rel))
+        outputs.add((bundle, bundles[0]))
+
+    # Audience page and route CSS are generated after fingerprinting and are
+    # therefore not listed in the source asset manifest. Include each active
+    # bundle with its page so an exact release cannot publish a missing link.
+    audience_inputs = any(
+        name in (
+            'package.json', 'package-lock.json',
+            'tools/build-audience-styles.mjs', 'tools/build-route-styles.mjs',
+            'tools/materialize-ssi-fragments.mjs',
+            'src/bjj-classes/teens-tannersville-ny/index.html',
+            'src/bjj-classes/adults-tannersville-ny/index.html',
+            'src/assets/css/pages/teens.css', 'src/assets/css/pages/adults.css',
+        )
+        or is_shared_style_input(name)
+        for name in names
+    )
+    if audience_inputs:
+        for audience, audience_rel in (
+            ('teens', 'bjj-classes/teens-tannersville-ny/index.html'),
+            ('adults', 'bjj-classes/adults-tannersville-ny/index.html'),
+        ):
+            audience_page = ROOT / 'dist' / audience_rel
+            if not audience_page.is_file():
+                raise ValueError(f'{audience.title()} release requires fresh production build')
+            bundles = re.findall(
+                rf'href=["\']/(assets/css/pages/{audience}-delivery\.[a-f0-9]{{12}}\.css)["\']',
+                audience_page.read_text(encoding='utf-8'),
+            )
+            if len(bundles) != 1:
+                raise ValueError(f'{audience.title()} release requires exactly one active delivery bundle')
+            bundle = ROOT / 'dist' / bundles[0]
+            if not bundle.is_file():
+                raise ValueError(f'Missing active {audience.title()} CSS delivery bundle')
+            route_bundles = re.findall(
+                rf'href=["\']/(assets/css/routes/site-{audience}-delivery\.[a-f0-9]{{12}}\.css)["\']',
+                audience_page.read_text(encoding='utf-8'),
+            )
+            if len(route_bundles) != 1:
+                raise ValueError(f'{audience.title()} release requires exactly one active route CSS delivery bundle')
+            route_bundle = ROOT / 'dist' / route_bundles[0]
+            if not route_bundle.is_file():
+                raise ValueError(f'Missing active {audience.title()} route CSS delivery bundle')
+            outputs.add((audience_page, audience_rel))
+            outputs.add((bundle, bundles[0]))
+            outputs.add((route_bundle, route_bundles[0]))
     return sorted(outputs, key=lambda item: (1 if item[1].endswith('.html') else 0, item[1]))
 
 def connect(cfg):
