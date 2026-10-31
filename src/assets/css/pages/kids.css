@@ -2293,6 +2293,11 @@ body.page-programs.ss-page-kids .kids-yam-copy {
   box-shadow: 0 18px 38px rgba(15, 127, 76, 0.22);
 }
 
+.kids-program-page .btn-primary:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
 .kids-program-page .btn-secondary {
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
@@ -2623,6 +2628,13 @@ body.page-programs.ss-page-kids .kids-yam-copy {
   padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 2rem);
 }
 
+@media (max-width: 920px) {
+  .kids-program-page .program-conversion-template .program-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 .kids-program-page .program-conversion-template .program-hero__content {
   min-width: 0;
 }
@@ -2835,7 +2847,7 @@ body.page-programs.ss-page-kids .kids-yam-copy {
 }
 .prog-reassurance-item p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--ss-muted, #4f433c);
   line-height: 1.4;
 }
@@ -2937,3 +2949,45 @@ body.page-programs.ss-page-kids .kids-yam-copy {
   }
 }
 
+body.page-programs.ss-page-kids .program-hero .hero-actions .btn-outline-secondary {
+  color: var(--ss-ink, #362B24);
+  border-color: currentColor;
+}
+
+/* Keep the route's descriptive eyebrow and reassurance copy at 14 CSS px. */
+.kids-program-page .program-conversion-template .eyebrow {
+  font-size: 14px;
+}
+
+body.page-programs.ss-page-kids .prog-reassurance-item p {
+  font-size: 14px;
+}
+
+/* Keep informational chips and badges readable on the Kids program route. */
+.kids-program-page .program-conversion-template .program-hero__chip,
+.kids-program-page .program-conversion-template > .benefit-chips span,
+.kids-program-page .prog-guarantee-seal__kicker,
+.kids-program-page .badge {
+  font-size: 0.875rem;
+}
+
+/* The welcome-kit badge carries inline type sizing in the shared content partial. */
+.kids-program-page #after-school .prog-bonus-card > .badge {
+  font-size: 0.875rem !important;
+}
+
+/* Keep the hero's secondary actions clearly focused for keyboard users. */
+.kids-program-page .program-conversion-template .program-hero .hero-actions .btn:focus-visible {
+  outline: 3px solid var(--ss-ink, #362b24);
+  outline-offset: 3px;
+}
+/* Keep the Kids hero quick-link boundary distinct on the pale gradient. */
+body.page-programs.ss-page-kids .program-hero__chip {
+  border-color: rgba(54, 43, 36, 0.85);
+}
+
+body.page-programs.ss-page-kids .kids-program-page .program-conversion-template .program-hero__chip:hover,
+body.page-programs.ss-page-kids .kids-program-page .program-conversion-template .program-hero__chip:focus-visible,
+body.page-programs.ss-page-kids .kids-program-page .program-conversion-template .program-hero__chip:active {
+  border-color: var(--ss-green, #116a42);
+}

@@ -2487,6 +2487,13 @@ body.page-programs[data-audience="teens"] :where(.teens-eyebrow, .eyebrow, .ss-e
   padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 2rem);
 }
 
+@media (max-width: 920px) {
+  .teens-program-page .program-conversion-template .program-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 .teens-program-page .program-conversion-template .program-hero__content {
   min-width: 0;
 }
@@ -2515,6 +2522,11 @@ body.page-programs[data-audience="teens"] :where(.teens-eyebrow, .eyebrow, .ss-e
 .teens-program-page .program-conversion-template .hero-actions .btn {
   border-radius: 999px;
   font-weight: 800;
+}
+
+.teens-program-page .program-conversion-template .hero-actions .btn:focus-visible {
+  outline: 3px solid var(--ss-ink, #362b24);
+  outline-offset: 3px;
 }
 
 .teens-program-page .program-conversion-template .program-hero__quick-links,
@@ -2699,7 +2711,7 @@ body.page-programs[data-audience="teens"] :where(.teens-eyebrow, .eyebrow, .ss-e
 }
 .prog-reassurance-item p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--ss-muted, #4f433c);
   line-height: 1.4;
 }
@@ -2801,3 +2813,36 @@ body.page-programs[data-audience="teens"] :where(.teens-eyebrow, .eyebrow, .ss-e
   }
 }
 
+body.page-programs.ss-page-teens .program-hero .hero-actions .btn-outline-secondary {
+  color: var(--ss-ink, #362B24);
+  border-color: currentColor;
+}
+
+/* Keep visible teen-program supporting labels above the 14px text floor. */
+body.page-programs[data-audience="teens"] .teens-program-page .program-hero .eyebrow,
+body.page-programs[data-audience="teens"] .teens-program-page .program-hero__chip,
+body.page-programs[data-audience="teens"] .teens-kicker,
+body.page-programs[data-audience="teens"] .prog-guarantee-seal__kicker,
+body.page-programs[data-audience="teens"] .badge {
+  font-size: 0.875rem;
+}
+
+/* The shared "Included Term" badge has an authored inline font size. */
+body.page-programs[data-audience="teens"] .teens-program-page .prog-bonus-card > .badge {
+  font-size: 0.875rem !important;
+}
+
+/* Keep the teen-program fact chips at the 14px supporting-text floor. */
+body.page-programs[data-audience="teens"] .teens-program-page .program-conversion-template > .benefit-chips span {
+  font-size: 0.875rem;
+}
+/* Keep the Teens hero quick-link boundary distinct on the pale gradient. */
+body.page-programs.ss-page-teens .program-hero__chip {
+  border-color: rgba(54, 43, 36, 0.85);
+}
+
+body.page-programs.ss-page-teens .teens-program-page .program-conversion-template .program-hero__chip:hover,
+body.page-programs.ss-page-teens .teens-program-page .program-conversion-template .program-hero__chip:focus-visible,
+body.page-programs.ss-page-teens .teens-program-page .program-conversion-template .program-hero__chip:active {
+  border-color: var(--ss-green, #116a42);
+}
