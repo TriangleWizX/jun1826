@@ -1,0 +1,266 @@
+{
+  "date": "2026-10-30",
+  "environment": "production HTTPS",
+  "url": "https://senseisandy.com/schedule",
+  "browser_use": "0.1.13",
+  "browser": "HeadlessChrome 151.0.7922.137, foreground-visible tab",
+  "generated_input": {
+    "method": "Browser Use press_key",
+    "sequence": "Tab x12, viewport 767→768→769→767, PageDown, PageUp",
+    "physical_keyboard_used": false
+  },
+  "trace": [
+    {
+      "width": 767,
+      "height": 900,
+      "dpr": 1,
+      "visualScale": 1,
+      "visibility": "visible",
+      "active": {
+        "date": "2026-10-31",
+        "label": "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch",
+        "selected": "true",
+        "focusVisible": true,
+        "rect": {
+          "x": 41.109375,
+          "y": 425.6875,
+          "right": 710.875,
+          "bottom": 473.96875,
+          "width": 669.765625,
+          "height": 48.28125
+        },
+        "outline": {
+          "style": "solid",
+          "width": "3px",
+          "color": "rgb(17, 106, 66)"
+        },
+        "centerCoveredByTarget": true
+      },
+      "scrollY": 2435,
+      "rootScrollTop": 2435,
+      "horizontalOverflow": false,
+      "mediaQuery": true,
+      "mediaEvents": [],
+      "label": "tab-to-selected-date-at-767-after-2.5s-settle"
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "dpr": 1,
+      "visualScale": 1,
+      "visibility": "visible",
+      "active": {
+        "date": "2026-10-31",
+        "label": "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch",
+        "selected": "true",
+        "focusVisible": true,
+        "rect": {
+          "x": 619.125,
+          "y": 427.78125,
+          "right": 663.125,
+          "bottom": 471.78125,
+          "width": 44,
+          "height": 44
+        },
+        "outline": {
+          "style": "solid",
+          "width": "3px",
+          "color": "rgb(17, 106, 66)"
+        },
+        "centerCoveredByTarget": true
+      },
+      "scrollY": 1735,
+      "rootScrollTop": 1735,
+      "horizontalOverflow": false,
+      "mediaQuery": false,
+      "mediaEvents": [
+        {
+          "width": 768,
+          "matches": false,
+          "date": "2026-10-31",
+          "className": "ss-month-mobile-date"
+        }
+      ],
+      "label": "native-transition-to-768"
+    },
+    {
+      "width": 769,
+      "height": 900,
+      "dpr": 1,
+      "visualScale": 1,
+      "visibility": "visible",
+      "active": {
+        "date": "2026-10-31",
+        "label": "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch",
+        "selected": "true",
+        "focusVisible": true,
+        "rect": {
+          "x": 620.03125,
+          "y": 427.796875,
+          "right": 664.03125,
+          "bottom": 471.796875,
+          "width": 44,
+          "height": 44
+        },
+        "outline": {
+          "style": "solid",
+          "width": "3px",
+          "color": "rgb(17, 106, 66)"
+        },
+        "centerCoveredByTarget": true
+      },
+      "scrollY": 1735,
+      "rootScrollTop": 1735,
+      "horizontalOverflow": false,
+      "mediaQuery": false,
+      "mediaEvents": [
+        {
+          "width": 768,
+          "matches": false,
+          "date": "2026-10-31",
+          "className": "ss-month-mobile-date"
+        }
+      ],
+      "label": "desktop-layout-at-769"
+    },
+    {
+      "width": 767,
+      "height": 900,
+      "dpr": 1,
+      "visualScale": 1,
+      "visibility": "visible",
+      "active": {
+        "date": "2026-10-31",
+        "label": "Saturday, October 31, 2026. 10:30–11:30 AM Adult No-Gi. 5:00–8:00 PM Halloween Spooktacular · Meet Sasquatch",
+        "selected": "true",
+        "focusVisible": true,
+        "rect": {
+          "x": 41.109375,
+          "y": 425.6875,
+          "right": 710.875,
+          "bottom": 473.96875,
+          "width": 669.765625,
+          "height": 48.28125
+        },
+        "outline": {
+          "style": "solid",
+          "width": "3px",
+          "color": "rgb(17, 106, 66)"
+        },
+        "centerCoveredByTarget": true
+      },
+      "scrollY": 2435,
+      "rootScrollTop": 2435,
+      "horizontalOverflow": false,
+      "mediaQuery": true,
+      "mediaEvents": [
+        {
+          "width": 768,
+          "matches": false,
+          "date": "2026-10-31",
+          "className": "ss-month-mobile-date"
+        },
+        {
+          "width": 767,
+          "matches": true,
+          "date": "2026-10-31",
+          "className": "ss-month-date"
+        }
+      ],
+      "label": "native-transition-back-to-767"
+    },
+    {
+      "width": 767,
+      "height": 900,
+      "dpr": 1,
+      "visualScale": 1,
+      "visibility": "visible",
+      "active": {
+        "date": "2026-11-30",
+        "label": "Monday, November 30, 2026. 5:00 PM Kids and teens No-Gi. 6:00 PM Adult Gi",
+        "selected": "true",
+        "focusVisible": true,
+        "rect": {
+          "x": 41.109375,
+          "y": 363.40625,
+          "right": 710.875,
+          "bottom": 411.6875,
+          "width": 669.765625,
+          "height": 48.28125
+        },
+        "outline": {
+          "style": "solid",
+          "width": "3px",
+          "color": "rgb(17, 106, 66)"
+        },
+        "centerCoveredByTarget": true
+      },
+      "scrollY": 2435,
+      "rootScrollTop": 2435,
+      "horizontalOverflow": false,
+      "mediaQuery": true,
+      "mediaEvents": [
+        {
+          "width": 768,
+          "matches": false,
+          "date": "2026-10-31",
+          "className": "ss-month-mobile-date"
+        },
+        {
+          "width": 767,
+          "matches": true,
+          "date": "2026-10-31",
+          "className": "ss-month-date"
+        }
+      ],
+      "label": "PageDown-to-November"
+    },
+    {
+      "width": 767,
+      "height": 900,
+      "dpr": 1,
+      "visualScale": 1,
+      "visibility": "visible",
+      "active": {
+        "date": "2026-10-30",
+        "label": "Friday, October 30, 2026. 5:00 PM Friday Gi Lab. 6:00 PM Adult Gi",
+        "selected": "true",
+        "focusVisible": true,
+        "rect": {
+          "x": 41.109375,
+          "y": 363.40625,
+          "right": 710.875,
+          "bottom": 411.6875,
+          "width": 669.765625,
+          "height": 48.28125
+        },
+        "outline": {
+          "style": "solid",
+          "width": "3px",
+          "color": "rgb(17, 106, 66)"
+        },
+        "centerCoveredByTarget": true
+      },
+      "scrollY": 2435,
+      "rootScrollTop": 2435,
+      "horizontalOverflow": false,
+      "mediaQuery": true,
+      "mediaEvents": [
+        {
+          "width": 768,
+          "matches": false,
+          "date": "2026-10-31",
+          "className": "ss-month-mobile-date"
+        },
+        {
+          "width": 767,
+          "matches": true,
+          "date": "2026-10-31",
+          "className": "ss-month-date"
+        }
+      ],
+      "label": "PageUp-to-October"
+    }
+  ],
+  "side_effects": "No links activated; no forms or external actions submitted."
+}

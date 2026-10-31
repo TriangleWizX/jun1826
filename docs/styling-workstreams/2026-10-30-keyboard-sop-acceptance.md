@@ -10,7 +10,7 @@ The production keyboard check has now also passed with actual Chrome 200% page z
 
 | SOP area | Result | Evidence / limits |
 | --- | --- | --- |
-| Shared navigation across nine route cohorts | Pass | Skip link, main-content focus, visible focus, traversal order, footer links, and wrap checked. |
+| Shared navigation across ten route cohorts | Pass | Skip link, main-content focus, visible focus, traversal order, footer links, and wrap checked. |
 | Mobile menu | Pass | Enter/Space, expanded state, focus entry, Escape, and focus return checked. |
 | Desktop Classes menu | Pass | All four class links exposed; Escape returned focus to Classes. |
 | Schedule at 767, 768, and 769 CSS px | Pass | Arrow keys, Home/End, PageUp/PageDown, Enter/Space, and selected-date focus checked across breakpoints. |
@@ -92,3 +92,7 @@ Post-deploy Browser Use verification used headed Chrome 151.0.7922.137 at actual
 A route-specific production recheck found the Schedule hero CTA had `outline-style: none` after PageDown at native 200% zoom, even though the source outline rule was complete. Commit `6da8cc6` added a paper-colored shadow ring and mapped `src/assets/css/pages/schedule.css` to the generated Schedule aliases. The exact release payload was `schedule.html` and `schedule/index.html`; the release reused the newest verified existing rollback archive.
 
 After deployment, Browser Use 0.1.13 with Chrome 151 at native 200% Page Zoom (756×406 CSS px, DPR 2, visual scale 1) sent Tab ×5 then PageDown. The same CTA remained visibly focused at y=7.75–57.75 after scrollY moved from 53.5 to 326. Its 3px dark outline and 5px paper-colored shadow remained visible. There was no sticky-bar overlap or horizontal overflow. Both route aliases returned HTTP 200 with the new declaration. Detailed response hashes and screenshot are in `evidence/2026-10-30/keyboard-sop-full/schedule-focus-recheck.md`. No link, form, or external action was activated.
+
+## Final Schedule date keyboard recheck — 2026-10-30
+
+Production Browser Use generated Tab focused the selected Schedule date at 767 CSS px and Chrome scrolled it into view. The same date kept visible focus through native 767 → 768 → 769 → 767 breakpoint changes. PageDown moved the calendar to November; PageUp returned it to October with focus still visible. No link or form was activated. See the [production trace](evidence/2026-10-30/keyboard-sop-full/schedule-tab-focus-visible-production.json) and [screenshot](evidence/2026-10-30/keyboard-sop-full/schedule-tab-focus-visible-production.png).
