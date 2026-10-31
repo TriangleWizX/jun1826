@@ -75,7 +75,9 @@ def is_shared_style_input(name):
         and name not in ROUTE_SCOPED_CSS_INPUTS
 
 
-def changed_outputs(commit):
+def changed_outputs(commit, only=()):
+    requested_outputs = set(only)
+    requested = lambda rel: not requested_outputs or rel in requested_outputs
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
     # Bio's route-only stylesheet build emits one content-hashed CSS file. Map
@@ -625,7 +627,7 @@ def changed_outputs(commit):
         for name in names
     )
     kids_page = ROOT / 'dist' / kids_rel
-    if kids_inputs or any(rel == kids_rel for _, rel in outputs):
+    if requested(kids_rel) and (kids_inputs or any(rel == kids_rel for _, rel in outputs)):
         if not kids_page.is_file():
             raise ValueError('Kids release requires a fresh production build')
         bundles = re.findall(r'href=[\"\']/(assets/css/pages/kids-delivery\.[a-f0-9]{12}\.css)[\"\']',
@@ -658,6 +660,8 @@ def changed_outputs(commit):
             ('teens', 'bjj-classes/teens-tannersville-ny/index.html'),
             ('adults', 'bjj-classes/adults-tannersville-ny/index.html'),
         ):
+            if not requested(audience_rel):
+                continue
             audience_page = ROOT / 'dist' / audience_rel
             if not audience_page.is_file():
                 raise ValueError(f'{audience.title()} release requires fresh production build')
@@ -831,7 +835,7 @@ def main():
         finally:
             client.close()
         return
-    files = changed_outputs(args.commit)
+    files = changed_outputs(args.commit, args.only)
     if args.only:
         allowed = set(args.only)
         files = [item for item in files if item[1] in allowed]
