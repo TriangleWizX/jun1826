@@ -2157,11 +2157,18 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
   padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1rem, 3vw, 1.5rem) clamp(2rem, 4vw, 3.5rem);
 }
 
+@media (max-width: 920px) {
+  .adults-program-page .program-conversion-template .program-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 .adults-program-page .program-conversion-template .program-hero__content { min-width: 0; }
 .adults-program-page .program-conversion-template .eyebrow,
 .adults-program-page .program-conversion-template .section-kicker {
   color: var(--ss-green, #116a42);
-  font-size: 0.76rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2208,7 +2215,7 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
   background: rgba(255, 250, 242, 0.9);
   color: var(--ss-ink, #362b24);
   font-family: var(--ss-body-font, "Lexend", sans-serif);
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
@@ -2293,7 +2300,7 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
   text-align: left;
 }
 .prog-guarantee-seal__kicker {
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 750;
@@ -2348,7 +2355,7 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
 }
 .prog-reassurance-item p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--ss-muted, #4f433c);
   line-height: 1.4;
 }
@@ -2448,4 +2455,15 @@ body.page-programs[data-audience="adults"] :where(.adults-eyebrow, .eyebrow, .ss
     width: 100%;
     justify-content: center;
   }
+}
+
+body.page-programs.ss-page-adults .program-hero .hero-actions .btn-outline-secondary {
+  color: var(--ss-ink, #362B24);
+  border-color: currentColor;
+}
+
+/* Keep the program hero actions visibly focused for keyboard users. */
+body.page-programs.ss-page-adults a.btn:focus-visible {
+  outline: 3px solid var(--ss-ink, #362b24);
+  outline-offset: 3px;
 }
