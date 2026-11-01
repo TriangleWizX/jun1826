@@ -365,4 +365,4 @@ During a row update, the working copy inventory was replaced with a shortened fi
 
 ## Blog CSS residual cleanup — 2026-11-03
 
-The old Blog CSS release worktree and candidate were already removed. A 16 KiB residual at `/tmp/blog-css-release-20261102/browser-profile/` contained only an empty `Default/` directory and `Local State`. A `/proc/*/cmdline` check found no Chrome process using the path. Removed that exact profile and its empty parent. The current Blog subtitle edit is page HTML, not CSS, and was preserved; the build-helper safelist reorder keeps the same entry and was preserved because it changes no output.
+The old Blog CSS release worktree and candidate were already removed. A 16 KiB residual at `/tmp/blog-css-release-20261102/browser-profile/` contained only an empty `Default/` directory and `Local State`. A `/proc/*/cmdline` check found no Chrome process using the path. Removed that exact profile and its empty parent. The current Blog subtitle edit is page HTML, not CSS, and was preserved. The build-helper safelist reorder was restored to `HEAD`; the same safelist entry remains, so this removed only a no-op ordering diff.
