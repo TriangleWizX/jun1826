@@ -699,6 +699,10 @@
   text-underline-offset: 0.2em;
 }
 
+@media (max-width: 575.98px) {
+  .page-alley-bootcamp .ab-price-link { min-height: 44px; }
+}
+
 .page-alley-bootcamp .ab-faq { background: #f4f1ed; }
 .page-alley-bootcamp .ab-faq__container { max-width: 900px; }
 .page-alley-bootcamp .ab-faq-list { display: grid; gap: 0.65rem; }

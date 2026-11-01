@@ -70,6 +70,7 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/bjj-stretches.css',
     'src/assets/css/pages/bjj-stretches.min.css',
     'src/assets/css/pages/partners-wellness.css',
+    'src/assets/css/pages/alley-bootcamp.css',
 }
 
 
@@ -109,6 +110,25 @@ def changed_outputs(commit, only=()):
             if not candidate.is_file():
                 raise ValueError(f'Missing generated Bio dependency: {rel}')
             outputs.add((candidate, rel))
+    # Alley Bootcamp directly loads route-owned fingerprinted CSS.
+    if 'src/assets/css/pages/alley-bootcamp.css' in names:
+        page = ROOT / 'dist' / 'alley-bootcamp' / 'index.html'
+        if not page.is_file():
+            raise ValueError('Alley Bootcamp CSS release requires fresh route build')
+        page_text = page.read_text(encoding='utf-8')
+        fingerprints = re.findall(
+            r'''href=["']/?(assets/css/pages/alley-bootcamp\.[a-f0-9]+\.css)["']''',
+            page_text,
+        )
+        if len(fingerprints) != 1:
+            raise ValueError('Alley Bootcamp must reference exactly one fingerprinted stylesheet')
+        css_rel = fingerprints[0]
+        css_path = ROOT / 'dist' / css_rel
+        if not css_path.is_file():
+            raise ValueError(f'Missing Alley Bootcamp stylesheet: {css_rel}')
+        outputs.add((page, 'alley-bootcamp/index.html'))
+        outputs.add((css_path, css_rel))
+
     # Friday Night Fanatics directly loads its route-owned fingerprinted CSS.
     if 'src/assets/css/pages/friday-night-fanatics.css' in names:
         page = ROOT / 'dist' / 'friday-night-fanatics.html'
