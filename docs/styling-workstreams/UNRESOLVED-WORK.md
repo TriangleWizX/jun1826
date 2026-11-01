@@ -14,7 +14,7 @@
 
 ### 1. Rebuild the source-to-output map from current `HEAD`
 
-The comparison in [the Nov. 2 dirty source/output report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`, not current `522a1abd`. It found broad fan-out (454 changed outputs, 32 additions, 22 removals) but is not current release proof. Root `dist/` has widespread mixed edits and deletions. For any newly approved cohort, build from current `HEAD` in an isolated output directory, map source inputs to exact generated paths, and deploy only an independently reviewed exact payload.
+The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`; it is not current release proof. The current clean-HEAD audit at `b495bc6a` passed its build, but this documentation-only commit maps to zero deploy files. A clean build differs from committed `dist/` at 100 paths (99 modified, 1 deleted); those differences are not attributed to an approved dirty-source change. See [the current-HEAD output audit](2026-11-02-current-head-output-map.md) and [its path/hash evidence](evidence/2026-11-02/current-head-output-map/map.json). Keep root `dist/` out of deployment. For any newly approved cohort, build from a clean base and deploy only its independently reviewed exact payload.
 
 ### 2. Decide the unmerged keyboard branch separately from the owner SOP
 

@@ -1,0 +1,518 @@
+{
+  "commit": "b495bc6a",
+  "build_command": "npm run build",
+  "build_exit_code": 0,
+  "dist_file_count": 2229,
+  "dist_bytes": 560920883,
+  "dist_status_delta_count": 100,
+  "dist_status_delta": [
+    {
+      "status": "D",
+      "path": "dist/assets/css/pages/free-intro-delivery.f79608e60361.css",
+      "sha256": null
+    },
+    {
+      "status": "M",
+      "path": "dist/assets/css/pages/schedule-month-calendar.css",
+      "sha256": "4d0c986bb87f60084106191d96c68514f0b5873d519371dd6dfd2258c78fd66b"
+    },
+    {
+      "status": "M",
+      "path": "dist/assets/js/schedule-month-calendar.js",
+      "sha256": "9fbe94b59c1aeac5a860fc05227cdaec0475f47b4ff7134a21fd59598d753540"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/acra-ny/index.html",
+      "sha256": "91663ac1d50f75a7c8da1fb02e5802a5e561d7ae1505c95f98a43cb184c20f33"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/ashland-ny/index.html",
+      "sha256": "2bda04441c20cf6adc6169312e98913ce5fc37b637300a5596753f4409668082"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/beginner-lane/index.html",
+      "sha256": "ac0fd5ac45c83b641c4bd635e2cc72b708d514eef6e03445fc142191503af2c3"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/boiceville-ny/index.html",
+      "sha256": "862ba0eeeaa3f1c853da32dee6779a36446621df3f9132fa62039d2a89496899"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/coxsackie-ny/index.html",
+      "sha256": "86305fcbe6bb1748e5caa45a1ec16bffa87136f577efb204195156de3196c6de"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/durham-ny/index.html",
+      "sha256": "bb1881519be7b6011e9108eefe1712bcb78bd6604af62fe841b7bb2871836221"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/elka-park-ny/index.html",
+      "sha256": "db27a0cd23d7356cd25b5da077fb5abaea7d2d838a60dafb6aff8309687d610e"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/gilboa-ny/index.html",
+      "sha256": "c7904b55e8aafb3804e4ec859ad20d504b3ad665833fa353e0b23ee55ef58fc6"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/grand-gorge-ny/index.html",
+      "sha256": "48f68d4e9da2eeafdd3b6ffea247669a9a0a6d4108f24628d91f8a2432997a47"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/greenville-ny/index.html",
+      "sha256": "5e8bca97eb34e4ddd1f8c4acdb7457c9de08aa7e822cb1648a59ba5e9c111401"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/kids-tannersville-ny/index.html",
+      "sha256": "815c8f0a5209bc9adb03bd2913c002330daf31210881948befb315055a3a2c25"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/lanesville-ny/index.html",
+      "sha256": "6654564559cfeaf96f49edc015de8869bbe710861c2d2179df64b69e2e4ffa34"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/leeds-ny/index.html",
+      "sha256": "e4a63a6fc480594e3b13a3174af779e0d07dd4d84c7b20eb6ac6cc783eee7208"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/lexington-ny/index.html",
+      "sha256": "29b8becff1ac082830294aefd0a5621dc97ea8e91a0ed73ee60a7dc9e5203d59"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/maplecrest-ny/index.html",
+      "sha256": "f453e07e242d175460eb5df2985c302a5f0630966bd52ecf90b4eb3381eb8c1f"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/olive-ny/index.html",
+      "sha256": "76e44739b1e0d62b5378e1c9365d44a708256e7e5c6117915d64585f99db653f"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/prattsville-ny/index.html",
+      "sha256": "0ccf38402aa130eb0bd551271e34674e4625627e3e0c2af16312f38a9f9ffb09"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/purling-ny/index.html",
+      "sha256": "618db69a7777b23a4348401b44a8f3a046db1bb48e98066f6e61bc932c838de3"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/round-top-ny/index.html",
+      "sha256": "7147a7880077fe080130ad0facae75a766bfd716997ac025eb9c39f1b1b823b0"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/roxbury-ny/index.html",
+      "sha256": "1f0189cf08b4afeef12659604436842864c288bbdc0d809fac7ed27c4b7255d4"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/saugerties-ny/index.html",
+      "sha256": "5f763c18c223c0b5d862727f259d6372ead75611ce4d5c5a0a34130c94490e5f"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/schoharie-ny/index.html",
+      "sha256": "6c61894acb1926399f4f9612579dd11e080caa91c30207aac7bc3b4a99a20fd1"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/shandaken-ny/index.html",
+      "sha256": "f340a674d403f406552d23b6c7e43fecd15e038b77613feaad571aa8f423b487"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/shokan-ny/index.html",
+      "sha256": "237e6319127c3e68755545c7b1aa9bced8be8f3bca37d9adcae7a6687d3b1e9c"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/stamford-ny/index.html",
+      "sha256": "6665ba6b0bf53fc171474b6e7789667d3315ba6b3403b21d75323b8c9a502a76"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-classes/teens-tannersville-ny/index.html",
+      "sha256": "38387aeb89040613c6086f0962138cd75c0466c61bf37157929bfb4d3c1baf15"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-glossary/bottom-position/index.html",
+      "sha256": "807192c8b3a32541a6da75884042b3ea0976d3ba403a730d4961e63cb1f1c75b"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-glossary/collar-grip/index.html",
+      "sha256": "412e1260e3552647de3f2e7165e205b85186d4ac9b2928fd03de3e5b9d328afc"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-glossary/hip-escape/index.html",
+      "sha256": "cbd827b5e40d640ca541ec7aeb6edb78346ed849ecacb116fae3d2275eebb4a1"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-glossary/open-guard-pass/index.html",
+      "sha256": "7cac80bb482270c4b1f7cb35e217ce18d41720fa3118ab45e97ed446b89ee298"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-glossary/waiter-sweep/index.html",
+      "sha256": "e1ea3273bd7535bc1fab57b05ca53c6704d81bdb898f6617e2157aef91aaab66"
+    },
+    {
+      "status": "M",
+      "path": "dist/bjj-glossary/x-guard/index.html",
+      "sha256": "1127ff9b4d5b43a676ff4bb1aa1cc9d3377db010a1cd6235c25b28558cff7d00"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/after-school-jiu-jitsu-calm-routine-catskills/index.html",
+      "sha256": "04f91483d5ef0674fa8b1b520c419247f500c4f505f8a13ef64aab495eb70593"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/after-school-jiu-jitsu/index.html",
+      "sha256": "818b179e1c795498920792bff77fb0005f0d9638b2766632be6ae15f9cae84c5"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/beginner-friendly-bjj-tannersville/index.html",
+      "sha256": "eb03fe1c8578f74e3db17b352e6e9e032f430134b2de4b88c76e906cf6cb8dc7"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/beginners-guide-bjj-human-chess/index.html",
+      "sha256": "b2f7d9062508a899effadb3793a4e8e6c4c6c24acd8a9c952cf2a817b575a4ac"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/bio-switch-nervous-system/index.html",
+      "sha256": "5aa446d36d7cfba9742cbe2fedc2f1825fa3fedf447b6ae9e670a9ea536a34d9"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/bioginastica-movement-no-gi/index.html",
+      "sha256": "7c67bcead618229bb4a4a823533b5f40ff01c35399b37c173c80ea22e41ed591"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/bjj-36-techniques/index.html",
+      "sha256": "b9be9c28996df258efbff1b61875e2ee174cb5afb6a6a831141ba54de95c54f2"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/bjj-beginners-over-40-catskills/index.html",
+      "sha256": "fe709ba98620030e81c5a408ad4c1476fe35fd98cfb8b3a15b13c9f9f045deb3"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/bjj-belts-stripes-promotions/index.html",
+      "sha256": "34b4d7540cbac451b1e8540654d8f8b8b0cda18c56d9c1ac3c6581e1cbc3f7c1"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/bjj-black-belt-degree-time/index.html",
+      "sha256": "93a93334d459fab426ec75a3cd6ac81ffbd2a37829e2e9ec5b3158b3c4b02d54"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/bjj-sensei/index.html",
+      "sha256": "255566a67897a0e2838d10dd501a34944231148d632ef68744eea68c4130aecb"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/can-you-beat-sensei-without-a-black-belt/index.html",
+      "sha256": "3e784b5f59b3bbe4c343d74ba2ea865acd8067122cc46f3432659405d22eefae"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/catskills-gym-alternative-jiu-jitsu/index.html",
+      "sha256": "9d81b4bb0bb89166f155045a63615b164359768c4f7de7de44beb891a805d31a"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/gi-bjj-windham-ny/index.html",
+      "sha256": "81b73ab6cb9d26df8255c336aff9fe04097e4e311a7b86c0e3b28101d67450ae"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/gi-vs-no-gi-bjj-cheat-code/index.html",
+      "sha256": "03cd3c1491e9c99a4d425b06b5d898d0f4a9bb2390f1f5b052a3a4520182ca99"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/index.html",
+      "sha256": "63fb58abb3a5ce55bfde6fc0beabdb4b2fcc88aa405b8ecda1ad9a4d71aed20c"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/jiu-jitsu-windham-ny/index.html",
+      "sha256": "3b1296d7edb89b430bc0743a0d36735e6b650d402605d35af0ac078d2742c819"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/kids-jiu-jitsu-windham-ny/index.html",
+      "sha256": "b8f98475e46a1a73e7e42bd0dd1f9e55d3b64d678cb2c298ab22cca38bd11898"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/kids-teens-bjj-belts-ranks-stripes-promotions/index.html",
+      "sha256": "93bb64e7c3ea5559da36b1ece8d331671634680c71c704e6fcfc923ede237dd0"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/kinetic-chess-onteora-park/index.html",
+      "sha256": "10156a39ffb5969b0ced1cfd62e988879d986de5b7d9c4abd67db8a2100f9ea2"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/neck-cranks-bjj-longevity-guide/index.html",
+      "sha256": "db8b83e8616a83101d79f62189986ba4dee16dd47eb42dfcae501c6261265e8f"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/no-gi-windham-ny/index.html",
+      "sha256": "2bf55f77100b732b7fb4162702b6554224fa6c4cf74511294b6b180d4882621c"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/sanda-vs-jiu-jitsu-for-mma/index.html",
+      "sha256": "8ec52ad58c80744d7f206090297c03d861e3e7d11543c45eb850c9a3072b6ae6"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/sanda-vs-jiu-jitsu/index.html",
+      "sha256": "0d8b3cec7b7479f9dcb70a924534f1a2feda49e59b70695327e76fc210659aac"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/seated-guard-basics/index.html",
+      "sha256": "5a8f1ba7dc5cf1881c76efcea319a9cc84fe9650f050c7e0188834c81aa4364a"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/sensei-mma-bjj/index.html",
+      "sha256": "c32cabe264f519e79f03cfd3d3262ba4438326be937ab4fcef14816dfdca683a"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/sensei-rules/index.html",
+      "sha256": "e14ec4f31e0028f666b9d519ec92b4aa6a8bff088bcac5c510269a60c3031c9d"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/spring-fling-is-here/index.html",
+      "sha256": "b2a6548120041aedbe63765b08736479c095b30438dc7dff0157e1d6c7e9f69e"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/tags/adult-bjj/index.html",
+      "sha256": "de265a22956a5739d93514d3382484fe54e99691fabc90b707f7720e67ef9fbb"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/tags/starting-jiu-jitsu/index.html",
+      "sha256": "32522d9cdd8456f22f647ec84c15d140af7be9d97c93bbb3f8ebb3185dd302b1"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/takedown-defense/index.html",
+      "sha256": "3dd95b9887d4b4cd0550d5ed324e1629dc4afb639c1801c79982be627c642cc8"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/things-to-do-near-hunter-ny-private-bjj-coaching/index.html",
+      "sha256": "d6ddee23145ce207f480563c6d83fe1151363474501069ec10e7f63bf687820f"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/what-is-sanda-sanshou/index.html",
+      "sha256": "594242bc4e32884a9948c2da040760a6cd7393e0e23af1295dc608d0a3493516"
+    },
+    {
+      "status": "M",
+      "path": "dist/blog/wrestle-ups-scramble/index.html",
+      "sha256": "d9d283877b551be01777451d9a60eda3232844601ad79636b5f89f2abb736279"
+    },
+    {
+      "status": "M",
+      "path": "dist/free-bjj-intro-tannersville-ny/confirmation/index.html",
+      "sha256": "8a281ec2d903da4c082363f2c5851b9a3b2245d9fe8d08162937219349702b6d"
+    },
+    {
+      "status": "M",
+      "path": "dist/free-bjj-intro-tannersville-ny/index.html",
+      "sha256": "64bbec0e4f6734e72b16c9d4cc969ab9c9a6e3b6bfbf05e2453dd06dc80944d5"
+    },
+    {
+      "status": "M",
+      "path": "dist/giveaway-rules.html",
+      "sha256": "e4c82d7afc618977726fceafd1cb60bb730a48d0b58621650a5463c42eba5f34"
+    },
+    {
+      "status": "M",
+      "path": "dist/index.html",
+      "sha256": "58569a45657a0c96e76a6796a4f70275566a5a64ee659ae7605c4ddd202af5d4"
+    },
+    {
+      "status": "M",
+      "path": "dist/instagram/index.html",
+      "sha256": "b9583a6bcc7c9266bbc6f6272a1ea9509700d574a0553da37cc329649b98b9e8"
+    },
+    {
+      "status": "M",
+      "path": "dist/local-bjj-tournaments-for-families.html",
+      "sha256": "37dd8da162172ec2d0df0d4c54dd93146012261e758f46248d139c49fdcccf1d"
+    },
+    {
+      "status": "M",
+      "path": "dist/nav-include.html",
+      "sha256": "6127247db96d9c8642e89baf63dd446cf8e94aba6739bc2692c9dc3bee93be27"
+    },
+    {
+      "status": "M",
+      "path": "dist/near/cairo-ny/index.html",
+      "sha256": "2fd1c869b7727bdec2ffa8234cb2b8192f80408769fcde9e599e151f1da6054d"
+    },
+    {
+      "status": "M",
+      "path": "dist/near/catskill-ny/index.html",
+      "sha256": "358425f67f57efdf6a9077c4551d6a76ac3e524cacdaf0e24ce39cb07c526365"
+    },
+    {
+      "status": "M",
+      "path": "dist/near/haines-falls-ny/index.html",
+      "sha256": "0b0e481623212f7713b2177fc35348d8b2ca50afd383952a0e86189cb3420d56"
+    },
+    {
+      "status": "M",
+      "path": "dist/near/hunter-ny/index.html",
+      "sha256": "8f15075613ac1c138f3fefd27a27f67a361d841efec7c1f74422f17d2b2ca147"
+    },
+    {
+      "status": "M",
+      "path": "dist/near/palenville-ny/index.html",
+      "sha256": "9bc8f0b9116a769f34318fa7f240cdacbe64cf3cd16d8a1ea51f3ce9ed85feb2"
+    },
+    {
+      "status": "M",
+      "path": "dist/near/windham-ny/index.html",
+      "sha256": "f20e4e142ba2a32223970f3814ab7ac614d3d34875bdf9ee5426bb560fb52b45"
+    },
+    {
+      "status": "M",
+      "path": "dist/options-pricing.html",
+      "sha256": "e3a3815f536f92042b05eb29972bf16afa1a9b84785ef913148358b8a87b1aa9"
+    },
+    {
+      "status": "M",
+      "path": "dist/pricing-module-fragment.html",
+      "sha256": "534c739c400ffbde4fa14114d25c4cc0bb7b1fc246948e873ef3de6e35150c99"
+    },
+    {
+      "status": "M",
+      "path": "dist/schedule.html",
+      "sha256": "ceb28a5a57088ab97dbfefc800409fbad80be518abea7d4d436e42d46aacbb89"
+    },
+    {
+      "status": "M",
+      "path": "dist/schedule/index.html",
+      "sha256": "d6cb1f07db90c041fc9a595ff9ebee00c1493fd9ef293daf287b8b091bf38efa"
+    },
+    {
+      "status": "M",
+      "path": "dist/sensei-jiu-jitsu.html",
+      "sha256": "13e591e64f1b63a5237b25a4afcbd0d75412e47f510392b6155691b43e0048b6"
+    },
+    {
+      "status": "M",
+      "path": "dist/sensei-studio.html",
+      "sha256": "3d74a25ebb8ff8e04c2e7aef6d7afcd286d07c7ada80e6da94931dd010fb8a33"
+    },
+    {
+      "status": "M",
+      "path": "dist/sitemap-blog.xml",
+      "sha256": "50d4075f78f8799c005532379a9476bdf5604561c882f2a794bc1915cb7f00a6"
+    },
+    {
+      "status": "M",
+      "path": "dist/sitemap-core.xml",
+      "sha256": "9da04aafd7cf75fd4b5a5e6783b695cc48667cd2c56b368afb24b6a7e4c0cbda"
+    },
+    {
+      "status": "M",
+      "path": "dist/sources/cdc-physical-activity/index.html",
+      "sha256": "003ff4b75c44c532bf4bfed4932a9a71f4f67d9b3f641e589af4229d203072bf"
+    },
+    {
+      "status": "M",
+      "path": "dist/sources/clockwork-bjj-instructors/index.html",
+      "sha256": "9dc61e0854ebd5c828c3edad8be415e31d5ac8abe5ef2bd735277efca196e34d"
+    },
+    {
+      "status": "M",
+      "path": "dist/sources/gracie-academy/index.html",
+      "sha256": "4cb462fd104e3850dc86bfc3ba7718924ed9cd06f80b6e0c6bcfceca3f7e5edd"
+    },
+    {
+      "status": "M",
+      "path": "dist/sources/index.html",
+      "sha256": "e0bca882768d0923dbdbf40c496523d2c5975d1f3304b12d17b1a9ac22632110"
+    },
+    {
+      "status": "M",
+      "path": "dist/sources/kenny-florian/index.html",
+      "sha256": "b3fcac8fedac63b10f3d5d81b4905805f8912cf5b530748d6e954cd881594737"
+    },
+    {
+      "status": "M",
+      "path": "dist/sources/kodokan-etiquette/index.html",
+      "sha256": "ce3e32e9a54d30f25cd7a132816d619ebf3360d618f35562d44a1d4ab689da4a"
+    },
+    {
+      "status": "M",
+      "path": "dist/sources/marietta-police-bjj/index.html",
+      "sha256": "94478891f3cc266e51ac52249939b7f812ad1076d0f211178359bda3b163b50b"
+    },
+    {
+      "status": "M",
+      "path": "dist/student-hub.html",
+      "sha256": "a1b4ec1685cdf7bb4a951118eecb3d8cd6a59800e082b6648f4ed2cb1eba34fb"
+    },
+    {
+      "status": "M",
+      "path": "dist/white-belt-foundations/index.html",
+      "sha256": "e540d7bcdfead9bad470742641d53f062976357647a3aac49e11621aa1b33330"
+    },
+    {
+      "status": "M",
+      "path": "dist/womens-jiu-jitsu-tannersville.html",
+      "sha256": "e3bb1226bc2d0f7d27bada6fd678849fb3768334104ba83968acd1503581a86f"
+    }
+  ],
+  "committed_source_paths_since_parent": [],
+  "deploy_dry_run_command": "python3 scripts/deploy-release.py --commit b495bc6a --config /tmp/head-output-map-20261102/dry-run-config.json --dist-dir dist --dry-run",
+  "deploy_dry_run_output": "payload_files=0 commit=b495bc6a",
+  "interpretation": "b495bc6a is documentation-only, so the committed mapper finds no deployable website files. The clean build differs from tracked generated output in the listed 100 paths; these differences are not a payload authorization and need a selected web-source change plus fresh exact mapping.",
+  "status_delta_summary": {
+    "modified": 99,
+    "deleted": 1
+  }
+}
