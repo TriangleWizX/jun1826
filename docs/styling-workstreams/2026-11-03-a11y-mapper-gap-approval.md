@@ -52,4 +52,4 @@ The accessibility release is complete. This is only a decision about whether the
 
 **B — Publish the Core Culture guide at its own URL.** Approve a separate URL migration. That work would update the canonical URL, redirect rule, URL registry/disposition, sitemap, internal links, and the exact deploy payload.
 
-Reply **A** or **B**. No reply leaves the current redirect in place.
+**Decision: A approved.** The current redirect remains in place. The registry and `.htaccess` rule were checked and already agree; neither was changed.
