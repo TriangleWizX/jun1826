@@ -3,6 +3,11 @@
   const STATE_KEY = 'glossaryLastState';
   const SCROLL_KEY = 'glossaryLastScrollY';
 
+  function getScrollBehavior() {
+    const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    return reducedMotion ? 'auto' : 'smooth';
+  }
+
   function normalizeSearchText(value) {
     return String(value || '')
       .toLowerCase()
@@ -265,7 +270,7 @@
         <div class="reader-cta-actions"><a class="glossary-btn glossary-btn-primary" href="/free-bjj-intro-tannersville-ny">Reserve Free Intro</a><a class="glossary-btn glossary-btn-secondary" href="/schedule">See times</a></div>`;
 
       if (shouldScrollMobile && window.innerWidth < 992) {
-        (root.querySelector('#glossary-reader') || readerCard)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        (root.querySelector('#glossary-reader') || readerCard)?.scrollIntoView({ behavior: getScrollBehavior(), block: 'start' });
       }
     }
 
@@ -465,7 +470,7 @@
         selectTerm(termSlug, true);
         const appSection = root.querySelector('#glossary-app');
         if (appSection) {
-          appSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          appSection.scrollIntoView({ behavior: getScrollBehavior(), block: 'start' });
         }
       });
     });
