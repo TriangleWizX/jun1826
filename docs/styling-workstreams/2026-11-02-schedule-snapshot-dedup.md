@@ -11,7 +11,8 @@ Remove only copies from `/tmp/schedule-link-target-fix-1/` that are byte-identic
 - Audited 2,074 regular files under the candidate's `src/` against the 2,080 current files. Removed 1,958 files (521,381,470 bytes) only when each matched both the current file and its committed `HEAD` blob.
 - Preserved the 72 `src/` files that differed from current, 11 untracked files, 33 files that did not match `HEAD`, and the unique report, proof JSON, proof script, screenshots, scratch draft, and other nonduplicate output. The remaining snapshot measured 939 MiB at this point.
 - Later, removed 521 `docs/` files (74,322,828 bytes) after confirming they matched both the current checkout and committed `HEAD`. Kept all differing documentation and any file not tracked at `HEAD` untouched. The remaining snapshot measured 867 MiB after this pass.
-- Total verified committed duplicates removed: 16,676 files and 1,613,794,316 bytes. No project source, generated output, deployment, or live site was changed.
+- A follow-up scan removed 1,061 more files (53,407,652 bytes) from ordinary site/code folders because each Git blob exactly matched committed `HEAD`. It skipped private/tooling, research, data, reports, and unique-evidence folders. The snapshot then measured 814 MiB.
+- Total verified committed duplicates removed: 17,737 files and 1,667,201,968 bytes. No project source, generated output, deployment, or live site was changed.
 
 ## Verification and disposition
 
