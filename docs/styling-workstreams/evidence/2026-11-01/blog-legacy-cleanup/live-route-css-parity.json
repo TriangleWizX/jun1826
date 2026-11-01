@@ -1,0 +1,966 @@
+{
+  "checked": 53,
+  "errors": 0,
+  "metadata_main_equal": 53,
+  "live_badge_rule": 0,
+  "live_focus_rule": 0,
+  "candidate_badge_rule": 53,
+  "candidate_focus_rule": 53,
+  "routes": [
+    {
+      "route": "/blog/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/adult-brazilian-jiu-jitsu-near-me-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/basic-jiu-jitsu-terms/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/beginner-friendly-bjj-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/beginners-guide-bjj-human-chess/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/bjj-beginners-over-40-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/bjj-on-the-mountain/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/bjj-vs-karate-for-kids-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/bjj-vs-taekwondo-family-martial-arts/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/bully-proof-jiu-jitsu-stories-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/bully-proof-martial-arts-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/busy-parent-guide-to-family-martial-arts/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/can-you-beat-sensei-without-a-black-belt/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/catskills-gym-alternative-jiu-jitsu/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/cost-of-private-bjj-lessons-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/desk-worker-bjj-guide-mobility-core-calm/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/exactly-what-happens-first-bjj-class-minute-by-minute/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/family-friendly-bjj-near-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/family-martial-arts-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/gain-points-system/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/gi-vs-no-gi-bjj-cheat-code/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/growth-over-gold-bjj-mindset/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/how-sandy-teaches-bjj/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/how-to-fall-safely-bjj-breakfalls/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/how-to-pick-a-bjj-school-in-the-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/hunter-elementary-tuesday-drop-off-bjj/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/jiu-jitsu-for-teenagers-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/kids-bjj-training-partners/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/private-bjj-coaching-catskills-visitors/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/private-bjj-lessons-adults-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/private-bjj-lessons-kids-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/private-self-defense-coaching-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/safe-bjj-mma-training-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/safe-martial-arts-beginners-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/safe-self-defense-kids-positional-control/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/sanda-vs-jiu-jitsu-for-mma/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/sanda-vs-jiu-jitsu/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/schedule-sensei-reset-protocol/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/seated-guard-basics/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/sensei-mma-bjj/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/sensei-rules/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/snow-day-protocol-bjj-home-dojo/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/starting-bjj-over-30-over-40-catskills/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/tags/adult-bjj/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/tags/starting-jiu-jitsu/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/tags/youth/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/takedown-defense/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/teen-boundary-setting-conflict-deescalation/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/teen-confidence-deescalation-jiu-jitsu/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/water-before-training-how-much-when/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/what-is-sanda-sanshou/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/what-kids-learn-in-bjj/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    },
+    {
+      "route": "/blog/why-high-school-athletes-train-bjj-tannersville/",
+      "status": 200,
+      "equal": {
+        "main_sha256": true,
+        "title": true,
+        "canonical": true,
+        "description": true
+      },
+      "live_rules": {
+        "badge": false,
+        "focus": false
+      },
+      "candidate_rules": {
+        "badge": true,
+        "focus": true
+      }
+    }
+  ],
+  "finished_unix": 1793511513.2976818
+}

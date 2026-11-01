@@ -1,0 +1,793 @@
+{
+  "checked": 87,
+  "ok_200_main_equal": 53,
+  "errors": 0,
+  "non_200": 0,
+  "main_mismatch": 34,
+  "routes": [
+    {
+      "route": "/blog/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog",
+      "base_main_sha256": "0ca8a30f961366adae1a09fbce749c8d7eafbaff96770790df169feb87eac93d",
+      "live_main_sha256": "0ca8a30f961366adae1a09fbce749c8d7eafbaff96770790df169feb87eac93d",
+      "live_bytes": 258316,
+      "error": null
+    },
+    {
+      "route": "/blog/adult-brazilian-jiu-jitsu-near-me-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/adult-brazilian-jiu-jitsu-near-me-tannersville",
+      "base_main_sha256": "9e6cf903dc58f5cfec5cd750f0892be11e14de4ec83c413fd7534e05ddbd3cbc",
+      "live_main_sha256": "9e6cf903dc58f5cfec5cd750f0892be11e14de4ec83c413fd7534e05ddbd3cbc",
+      "live_bytes": 181333,
+      "error": null
+    },
+    {
+      "route": "/blog/after-school-jiu-jitsu-calm-routine-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/after-school-jiu-jitsu-calm-routine-catskills",
+      "base_main_sha256": "6847bde528de00e62c065ea6e6cff016402281c8bfbe532826d3bacfda78a219",
+      "live_main_sha256": "de1e4f162fd1bb8957b695175e3f654eada25e04a01d12aeebb99f398524680e",
+      "live_bytes": 184290,
+      "error": null
+    },
+    {
+      "route": "/blog/after-school-jiu-jitsu/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/after-school-jiu-jitsu",
+      "base_main_sha256": "36dece87cc54ef126ba2a59787a61ffe5ebd27fea24b92fbba5f7d1c88cf6fe3",
+      "live_main_sha256": "f4ce56f545e208116fd089f869d57d188d41dc14b9d16eb4e0772d23ec3fc2f8",
+      "live_bytes": 188059,
+      "error": null
+    },
+    {
+      "route": "/blog/basic-jiu-jitsu-terms/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/basic-jiu-jitsu-terms",
+      "base_main_sha256": "9c986a66debf79bd68a99ae6c042c3e5cb6cb19c0c3eea1a248f6cf5b9ca8bac",
+      "live_main_sha256": "9c986a66debf79bd68a99ae6c042c3e5cb6cb19c0c3eea1a248f6cf5b9ca8bac",
+      "live_bytes": 180266,
+      "error": null
+    },
+    {
+      "route": "/blog/beginner-friendly-bjj-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/beginner-friendly-bjj-tannersville",
+      "base_main_sha256": "94e0cb4ea32aa720a7b369d7f3e491e248ab72aea1dd3c3e755de2dd21b94edd",
+      "live_main_sha256": "94e0cb4ea32aa720a7b369d7f3e491e248ab72aea1dd3c3e755de2dd21b94edd",
+      "live_bytes": 183132,
+      "error": null
+    },
+    {
+      "route": "/blog/beginners-guide-bjj-human-chess/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/beginners-guide-bjj-human-chess",
+      "base_main_sha256": "cad3073d40181174b9eb75b248355b1a4d3a2a1bf834022a10b274cba02c1201",
+      "live_main_sha256": "cad3073d40181174b9eb75b248355b1a4d3a2a1bf834022a10b274cba02c1201",
+      "live_bytes": 185109,
+      "error": null
+    },
+    {
+      "route": "/blog/bio-switch-nervous-system/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bio-switch-nervous-system",
+      "base_main_sha256": "cc110edf9aed99b8a9598b5b4516c02a30f2a976a36b5d8615300ff8ca377529",
+      "live_main_sha256": "e96078e83fbda26ea5dec40d2210b6f8535f8c79bc36050feead51d4447d60ac",
+      "live_bytes": 185465,
+      "error": null
+    },
+    {
+      "route": "/blog/bioginastica-movement-no-gi/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bioginastica-movement-no-gi",
+      "base_main_sha256": "c0c0a591a3a0a57615017d80d4363afbd3adb5e26c4aa75d2268b8617de394c3",
+      "live_main_sha256": "81549ea8f8b25b509f3a40f58ae781031c5d67520de8ccef66a5a2d8732d488f",
+      "live_bytes": 185040,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-36-techniques/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-36-techniques",
+      "base_main_sha256": "3e04dfeee459a1ed484cf8eee109aef7c8f3f5d90e12acaf32853e1c6061b440",
+      "live_main_sha256": "c5b383d5297732b1ae6a9ba62c0175a0d6b3a31b9d24f6e299c1474976956533",
+      "live_bytes": 187897,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-beginners-over-40-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-beginners-over-40-catskills",
+      "base_main_sha256": "168faf0f410fd9dc777f47f73c935882b5cc2a7fdf8d380a980be50841f6611d",
+      "live_main_sha256": "168faf0f410fd9dc777f47f73c935882b5cc2a7fdf8d380a980be50841f6611d",
+      "live_bytes": 180324,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-belts-stripes-promotions/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-belts-stripes-promotions",
+      "base_main_sha256": "fb4c1867afc2a2a34307a9fbfbb70a8c8fc3670479a649a0ddad288e0f2b277e",
+      "live_main_sha256": "9acec5101fec7fbb47e7841a40178ebfd29ed5c4c149648173e9184fb96b0c00",
+      "live_bytes": 187157,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-black-belt-degree-time/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-black-belt-degree-time",
+      "base_main_sha256": "c533d7239bb1dc48c16c329c7fb04f61ec276bafe5cf456d60475c0efe06f2f8",
+      "live_main_sha256": "6dfe7b4793df7bac4fa22351ede473704a9e0ed48c47e2f0e0b18ce886e64beb",
+      "live_bytes": 189827,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-on-the-mountain/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-on-the-mountain",
+      "base_main_sha256": "06714958465c20bf199e17c46249bf35dcf7bfffb217b87235e503a672026ea2",
+      "live_main_sha256": "06714958465c20bf199e17c46249bf35dcf7bfffb217b87235e503a672026ea2",
+      "live_bytes": 180406,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-promotions-how-often/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-promotions-how-often",
+      "base_main_sha256": "49a1daad101a93e6279f29dfcf45cb3f932715a5366056d2b613254d059f959c",
+      "live_main_sha256": "3a8bbeb1fd9dcb943aa1d64fa9a8f72376d1c055a60730b8dcc21b9c06fccfea",
+      "live_bytes": 190662,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-schedule-windham-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/bjj-classes/windham-ny",
+      "base_main_sha256": "486c0fa4b9fdf1e69a63b2b540b6309592a3538d7879c875d0d352d36f2cebe3",
+      "live_main_sha256": "70d08f8464f55236c3a1f69bee3774caa00515a8e6de54b80293172932fb4518",
+      "live_bytes": 92969,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-sensei/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-sensei",
+      "base_main_sha256": "4e8c942133a9b469e11ac302b6034854a80dff7d2b3b11e6bd0b57d9476494b5",
+      "live_main_sha256": "1f0e668280c588f9fbf2fb127a938eeae083fd5f24016bf40ea7b411d27ffa4d",
+      "live_bytes": 213143,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-vs-karate-for-kids-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-vs-karate-for-kids-catskills",
+      "base_main_sha256": "8cbfee78775bef38ab4f7f8291381f5922a192d0301b7cf82e952920024cb345",
+      "live_main_sha256": "8cbfee78775bef38ab4f7f8291381f5922a192d0301b7cf82e952920024cb345",
+      "live_bytes": 181112,
+      "error": null
+    },
+    {
+      "route": "/blog/bjj-vs-taekwondo-family-martial-arts/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bjj-vs-taekwondo-family-martial-arts",
+      "base_main_sha256": "4b832162479f0e48035e7cd2ba3a234f5aa64a4ee3d241e42d4503876e7bbbf4",
+      "live_main_sha256": "4b832162479f0e48035e7cd2ba3a234f5aa64a4ee3d241e42d4503876e7bbbf4",
+      "live_bytes": 180925,
+      "error": null
+    },
+    {
+      "route": "/blog/bully-proof-jiu-jitsu-stories-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bully-proof-jiu-jitsu-stories-catskills",
+      "base_main_sha256": "8a2d3735354701a50124debfaf1a9dacdd57306ed27af833dda3c0889b665f47",
+      "live_main_sha256": "8a2d3735354701a50124debfaf1a9dacdd57306ed27af833dda3c0889b665f47",
+      "live_bytes": 184164,
+      "error": null
+    },
+    {
+      "route": "/blog/bully-proof-martial-arts-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/bully-proof-martial-arts-tannersville",
+      "base_main_sha256": "5c937d5de618f16e6e41e4c3e57e8b96acb1667dad378c7234d14167422b6b47",
+      "live_main_sha256": "5c937d5de618f16e6e41e4c3e57e8b96acb1667dad378c7234d14167422b6b47",
+      "live_bytes": 185113,
+      "error": null
+    },
+    {
+      "route": "/blog/busy-parent-guide-to-family-martial-arts/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/busy-parent-guide-to-family-martial-arts",
+      "base_main_sha256": "a96f6ef472fbfa66e8ad4d014df4ec1dd2541bbb2246f8a73ba37a79d894a8ff",
+      "live_main_sha256": "a96f6ef472fbfa66e8ad4d014df4ec1dd2541bbb2246f8a73ba37a79d894a8ff",
+      "live_bytes": 185246,
+      "error": null
+    },
+    {
+      "route": "/blog/cairo-ny-bjj-specialist/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/cairo-ny-bjj-specialist",
+      "base_main_sha256": "ec82c8e5b630bf66a8cc4183910bfef447fd8599851e45d3c88dd0890dec491a",
+      "live_main_sha256": "8c544dffb6fe64bf79e0bff7583c2ff7df6134df336967b4c885af114b7e49a3",
+      "live_bytes": 191405,
+      "error": null
+    },
+    {
+      "route": "/blog/can-you-beat-sensei-without-a-black-belt/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/can-you-beat-sensei-without-a-black-belt",
+      "base_main_sha256": "43ceb0c715a940de9475a15d20c2fc4105165dcf5809c543f41bf1518fdd8c89",
+      "live_main_sha256": "43ceb0c715a940de9475a15d20c2fc4105165dcf5809c543f41bf1518fdd8c89",
+      "live_bytes": 186488,
+      "error": null
+    },
+    {
+      "route": "/blog/catskills-gym-alternative-jiu-jitsu/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/catskills-gym-alternative-jiu-jitsu",
+      "base_main_sha256": "601165b4461bad840d9c12082dcfd9be1e706150e1a57a53fdc593ac18b7b42f",
+      "live_main_sha256": "601165b4461bad840d9c12082dcfd9be1e706150e1a57a53fdc593ac18b7b42f",
+      "live_bytes": 186305,
+      "error": null
+    },
+    {
+      "route": "/blog/confidence-protocol/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/free-bjj-intro-tannersville-ny",
+      "base_main_sha256": "082abdf9a06c77ad0859f918bbd6409824152e879c842062721268b0d15943d3",
+      "live_main_sha256": "55f406434b2feddb7f7a505ea6a3960e652dbf9f1a0d4c0bb7a554f6f8366807",
+      "live_bytes": 146078,
+      "error": null
+    },
+    {
+      "route": "/blog/cost-of-private-bjj-lessons-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/cost-of-private-bjj-lessons-catskills",
+      "base_main_sha256": "44f9360a16fa3c0d0295d5bb57cb72cccc4f3f1303b5899fb9a3b92e8672b9a2",
+      "live_main_sha256": "44f9360a16fa3c0d0295d5bb57cb72cccc4f3f1303b5899fb9a3b92e8672b9a2",
+      "live_bytes": 183477,
+      "error": null
+    },
+    {
+      "route": "/blog/desk-worker-bjj-guide-mobility-core-calm/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/desk-worker-bjj-guide-mobility-core-calm",
+      "base_main_sha256": "358e633fe5941af4a8d862f573affe6b7a87ee7ffef58ca94c44f36064a114ea",
+      "live_main_sha256": "358e633fe5941af4a8d862f573affe6b7a87ee7ffef58ca94c44f36064a114ea",
+      "live_bytes": 187281,
+      "error": null
+    },
+    {
+      "route": "/blog/exactly-what-happens-first-bjj-class-minute-by-minute/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/exactly-what-happens-first-bjj-class-minute-by-minute",
+      "base_main_sha256": "eeb5de761cf1387339d75876316a6e342229182a4c4da4f0a7d4396173142c97",
+      "live_main_sha256": "eeb5de761cf1387339d75876316a6e342229182a4c4da4f0a7d4396173142c97",
+      "live_bytes": 186118,
+      "error": null
+    },
+    {
+      "route": "/blog/family-friendly-bjj-near-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/family-friendly-bjj-near-tannersville",
+      "base_main_sha256": "71825e4b569e848269328f48d6c1f413fabfb14663c3f2384a3b21bebb2f727b",
+      "live_main_sha256": "71825e4b569e848269328f48d6c1f413fabfb14663c3f2384a3b21bebb2f727b",
+      "live_bytes": 185831,
+      "error": null
+    },
+    {
+      "route": "/blog/family-martial-arts-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/family-martial-arts-catskills",
+      "base_main_sha256": "10dfe2ff6af840b9fa53b833ab342c63375ea9d24c437905261583e04f001b26",
+      "live_main_sha256": "10dfe2ff6af840b9fa53b833ab342c63375ea9d24c437905261583e04f001b26",
+      "live_bytes": 180699,
+      "error": null
+    },
+    {
+      "route": "/blog/gain-points-system/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/gain-points-system",
+      "base_main_sha256": "ee6dc98d635e4988d00ea325b9d29c263065caa97f0456a293aaff85db5d4619",
+      "live_main_sha256": "ee6dc98d635e4988d00ea325b9d29c263065caa97f0456a293aaff85db5d4619",
+      "live_bytes": 183317,
+      "error": null
+    },
+    {
+      "route": "/blog/gi-bjj-windham-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/gi-bjj-windham-ny",
+      "base_main_sha256": "ccd678c68fc2f5e4e20aabb4ffe09f521cc8ca9535efe5b1b23b25f2bb8aaa44",
+      "live_main_sha256": "9b5b365f6cbc1d9d78623729c1e3b179dfae8942f0f40b73a1e68c94f2fb80e5",
+      "live_bytes": 186819,
+      "error": null
+    },
+    {
+      "route": "/blog/gi-vs-no-gi-bjj-cheat-code/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/gi-vs-no-gi-bjj-cheat-code",
+      "base_main_sha256": "c0fb82fbb57596196310f3a1e32604d27fce8bc4a03ce9e12421da9e6f704ff6",
+      "live_main_sha256": "c0fb82fbb57596196310f3a1e32604d27fce8bc4a03ce9e12421da9e6f704ff6",
+      "live_bytes": 195605,
+      "error": null
+    },
+    {
+      "route": "/blog/growth-over-gold-bjj-mindset/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/growth-over-gold-bjj-mindset",
+      "base_main_sha256": "3cff8fb37ddf70d01ac1d99a9c3d4b24c7bf9c6ade6b9314b49584459ad62eb0",
+      "live_main_sha256": "3cff8fb37ddf70d01ac1d99a9c3d4b24c7bf9c6ade6b9314b49584459ad62eb0",
+      "live_bytes": 184194,
+      "error": null
+    },
+    {
+      "route": "/blog/how-sandy-teaches-bjj/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/how-sandy-teaches-bjj",
+      "base_main_sha256": "313c8112f9a4b12f667ff3d0db9e2dd900a6195506e9016bbf44b90d3371d0ef",
+      "live_main_sha256": "313c8112f9a4b12f667ff3d0db9e2dd900a6195506e9016bbf44b90d3371d0ef",
+      "live_bytes": 180204,
+      "error": null
+    },
+    {
+      "route": "/blog/how-to-fall-safely-bjj-breakfalls/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/how-to-fall-safely-bjj-breakfalls",
+      "base_main_sha256": "edf74ef6d25fbc75b5f3766f3657708265711d0f72bcbd6efca466201bc67974",
+      "live_main_sha256": "edf74ef6d25fbc75b5f3766f3657708265711d0f72bcbd6efca466201bc67974",
+      "live_bytes": 186628,
+      "error": null
+    },
+    {
+      "route": "/blog/how-to-pick-a-bjj-school-in-the-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/how-to-pick-a-bjj-school-in-the-catskills",
+      "base_main_sha256": "952518a151c06fd8246d665da842c081bf3cb9c98072e6ee39ffc0ff7dbae277",
+      "live_main_sha256": "952518a151c06fd8246d665da842c081bf3cb9c98072e6ee39ffc0ff7dbae277",
+      "live_bytes": 194064,
+      "error": null
+    },
+    {
+      "route": "/blog/hunter-elementary-tuesday-drop-off-bjj/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/hunter-elementary-tuesday-drop-off-bjj",
+      "base_main_sha256": "b76f4357c1b9d92c6f8b59b98b09dec95caba9cd2ea0c8d71619c609da7e9224",
+      "live_main_sha256": "b76f4357c1b9d92c6f8b59b98b09dec95caba9cd2ea0c8d71619c609da7e9224",
+      "live_bytes": 186288,
+      "error": null
+    },
+    {
+      "route": "/blog/jiu-jitsu-for-teenagers-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/jiu-jitsu-for-teenagers-catskills",
+      "base_main_sha256": "f27cc91455a4561d2e4cf523d0286baf1e43997d2d2866b7aa5407b3e496b5ac",
+      "live_main_sha256": "f27cc91455a4561d2e4cf523d0286baf1e43997d2d2866b7aa5407b3e496b5ac",
+      "live_bytes": 181480,
+      "error": null
+    },
+    {
+      "route": "/blog/jiu-jitsu-near-hunter-mountain/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/jiu-jitsu-near-hunter-mountain",
+      "base_main_sha256": "c8c3b409c96b37bfdc77f7db52a6d8cd68f47dea64d6778d675e64646c4d8f7a",
+      "live_main_sha256": "b2b8f3b4937fe7cd4658eb7bfbb44237bfc7227ba215556638a9269067f07667",
+      "live_bytes": 186650,
+      "error": null
+    },
+    {
+      "route": "/blog/jiu-jitsu-near-windham-mountain-club-ski-families/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/jiu-jitsu-near-windham-mountain-club-ski-families",
+      "base_main_sha256": "f8b1fe0e0ebc6c10b89411f4442b1e2036c6d8a6f07069c21662a39a6ea02287",
+      "live_main_sha256": "0181d98d9a7d6a15bef7c6f03a097fa7fb83b485413a7593bc37e6c2e4ddd65c",
+      "live_bytes": 184756,
+      "error": null
+    },
+    {
+      "route": "/blog/jiu-jitsu-near-windham-mountain-club/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/jiu-jitsu-near-windham-mountain-club",
+      "base_main_sha256": "489fc82d28ff9fda63e1671437afd6fedaf0a40e6e62b3a447a37d11bada443c",
+      "live_main_sha256": "1dcd49f9be6a4d93d4cf18253d7e1a5ec1b75d9a3522e6f03f6cee855b588c43",
+      "live_bytes": 188324,
+      "error": null
+    },
+    {
+      "route": "/blog/jiu-jitsu-windham-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/jiu-jitsu-windham-ny",
+      "base_main_sha256": "dba5f0669f388e4dee3375642eb0e238f13d2d2160e91e6fef884a2f3988f175",
+      "live_main_sha256": "21cdbe5e777c2a32bbdea4d77bff380d031078c92f62c7ba834f5689103782ce",
+      "live_bytes": 187219,
+      "error": null
+    },
+    {
+      "route": "/blog/kids-bjj-training-partners/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/kids-bjj-training-partners",
+      "base_main_sha256": "994420ffac3af81971cb603591d752ba4a37308aed7ccbb1ecd73ee47490c6b0",
+      "live_main_sha256": "994420ffac3af81971cb603591d752ba4a37308aed7ccbb1ecd73ee47490c6b0",
+      "live_bytes": 180376,
+      "error": null
+    },
+    {
+      "route": "/blog/kids-jiu-jitsu-windham-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/kids-jiu-jitsu-windham-ny",
+      "base_main_sha256": "0c20e9a55c57224c57c26b69549769dbf941ffde40b30477281137f6a1c6fbf0",
+      "live_main_sha256": "cfaed797b38b32d252ee05a8d2299ef171a261d10efc60745f1e691401ef51db",
+      "live_bytes": 188305,
+      "error": null
+    },
+    {
+      "route": "/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu",
+      "base_main_sha256": "4637bf12fa9152423f9f331b79fa15bf9e8be17034fbd35edfd59a5af5f3b136",
+      "live_main_sha256": "7d0666eec1eb3ffb8735b3a51b58a0a1413b1cfd70d9664f76cb124ce6363826",
+      "live_bytes": 185330,
+      "error": null
+    },
+    {
+      "route": "/blog/kids-martial-arts-haines-falls/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/kids-martial-arts-haines-falls",
+      "base_main_sha256": "7ab5cb663243b10c2b3d350c33bca8e509160810f7be30e801ff9960091c5e45",
+      "live_main_sha256": "c803bb56c70e48698f1d800a28c1f425c4833bd5537d2b66a6d05b1c5cf85677",
+      "live_bytes": 188639,
+      "error": null
+    },
+    {
+      "route": "/blog/kids-teens-bjj-belts-ranks-stripes-promotions/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/kids-teens-bjj-belts-ranks-stripes-promotions",
+      "base_main_sha256": "e4932e73469f027055997974f40dc5d2efe70ec8eaf8dffdd1085c43cde7145d",
+      "live_main_sha256": "d015f42ad6793844fb04a557353794ef8549c1fc408dfb3f3e83cb7622cd18fe",
+      "live_bytes": 192278,
+      "error": null
+    },
+    {
+      "route": "/blog/kinetic-chess-onteora-park/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/kinetic-chess-onteora-park",
+      "base_main_sha256": "51cc9b7f9fb76fae0fefa49f7a56c84509fae681ec69947ad5a7346b894b07f5",
+      "live_main_sha256": "987873da58121a8b5371b589d55a27624b7fcdbba64eca245749ebd6562b00cb",
+      "live_bytes": 186389,
+      "error": null
+    },
+    {
+      "route": "/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu",
+      "base_main_sha256": "aa7cf69a3716215827633e1c5d85a72f12bdad5dd495f05bf719f13abc5ea22d",
+      "live_main_sha256": "a3c2e4654467eebfb4e008f78e82fbb8054ad76e1dd013793d862982b5340069",
+      "live_bytes": 184852,
+      "error": null
+    },
+    {
+      "route": "/blog/neck-cranks-bjj-longevity-guide/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/neck-cranks-bjj-longevity-guide",
+      "base_main_sha256": "13b4691b6086424728e7e4e25db316bb3f956aa1c7b9e27a481ce80acd7b45d1",
+      "live_main_sha256": "4d10011cab8b72969f5fc5cfa836ebde0ddfbb24a909055fa455d97571db4563",
+      "live_bytes": 186664,
+      "error": null
+    },
+    {
+      "route": "/blog/no-gi-windham-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/no-gi-windham-ny",
+      "base_main_sha256": "20c2811dc3b45d038bf6e3c9d565a34561003550315f81636740095e7626e664",
+      "live_main_sha256": "b9f841ce1ed3bb0b6fbebceb8affe597dc1e46c8b4cc50bc46ff9fa99e981022",
+      "live_bytes": 186222,
+      "error": null
+    },
+    {
+      "route": "/blog/private-bjj-coaching-catskills-visitors/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/private-bjj-coaching-catskills-visitors",
+      "base_main_sha256": "c17c5647430955b37375c19ef3af94b6f82856eb1d93fd8ed56d460a22799865",
+      "live_main_sha256": "c17c5647430955b37375c19ef3af94b6f82856eb1d93fd8ed56d460a22799865",
+      "live_bytes": 183295,
+      "error": null
+    },
+    {
+      "route": "/blog/private-bjj-lessons-adults-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/private-bjj-lessons-adults-catskills",
+      "base_main_sha256": "0f25c2df47107ed66615365916a18bc7193457cc43fe4e14d2714e551b12ad13",
+      "live_main_sha256": "0f25c2df47107ed66615365916a18bc7193457cc43fe4e14d2714e551b12ad13",
+      "live_bytes": 180461,
+      "error": null
+    },
+    {
+      "route": "/blog/private-bjj-lessons-kids-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/private-bjj-lessons-kids-tannersville",
+      "base_main_sha256": "a5450d337b2e10b70076971213d6703c5fb2a2cd7b18c310cf0516fdb41a0026",
+      "live_main_sha256": "a5450d337b2e10b70076971213d6703c5fb2a2cd7b18c310cf0516fdb41a0026",
+      "live_bytes": 189573,
+      "error": null
+    },
+    {
+      "route": "/blog/private-jiu-jitsu-lessons-windham-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/private-jiu-jitsu-lessons-windham-ny",
+      "base_main_sha256": "9e0184673bcae8bc9f4042c14788806e1f25743f59d4b3e4d244926e30004497",
+      "live_main_sha256": "35b3de644f6a6e40ae0bdecd8be6f8c778f3b01433c26a4ef303118112a2540e",
+      "live_bytes": 186912,
+      "error": null
+    },
+    {
+      "route": "/blog/private-self-defense-coaching-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/private-self-defense-coaching-tannersville",
+      "base_main_sha256": "0ed031297ca9e9d4ab0e15d8073dcc8dcde2f8925c0a11718115341ec4fc3bc9",
+      "live_main_sha256": "0ed031297ca9e9d4ab0e15d8073dcc8dcde2f8925c0a11718115341ec4fc3bc9",
+      "live_bytes": 183450,
+      "error": null
+    },
+    {
+      "route": "/blog/safe-bjj-mma-training-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/safe-bjj-mma-training-tannersville",
+      "base_main_sha256": "bf61750c59cae28064c675a37a7710a37c44c5f459f2eb10fcacbb643434b48c",
+      "live_main_sha256": "bf61750c59cae28064c675a37a7710a37c44c5f459f2eb10fcacbb643434b48c",
+      "live_bytes": 185949,
+      "error": null
+    },
+    {
+      "route": "/blog/safe-martial-arts-beginners-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/safe-martial-arts-beginners-catskills",
+      "base_main_sha256": "8a8df52ddf6e561303d68cad96f00cccf098796fa54dda6f3c4dc51559ae75f3",
+      "live_main_sha256": "8a8df52ddf6e561303d68cad96f00cccf098796fa54dda6f3c4dc51559ae75f3",
+      "live_bytes": 180793,
+      "error": null
+    },
+    {
+      "route": "/blog/safe-self-defense-kids-positional-control/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/safe-self-defense-kids-positional-control",
+      "base_main_sha256": "72c1053ddc633ffcc4c7f1692ac0c57181b7765a6626a36d05836b85410b3ee4",
+      "live_main_sha256": "72c1053ddc633ffcc4c7f1692ac0c57181b7765a6626a36d05836b85410b3ee4",
+      "live_bytes": 183469,
+      "error": null
+    },
+    {
+      "route": "/blog/sanda-vs-jiu-jitsu-for-mma/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/sanda-vs-jiu-jitsu-for-mma",
+      "base_main_sha256": "985760340d5de7c26db4fdf35a32a6ae78006a396999290816dd12c64e88d4c2",
+      "live_main_sha256": "985760340d5de7c26db4fdf35a32a6ae78006a396999290816dd12c64e88d4c2",
+      "live_bytes": 185586,
+      "error": null
+    },
+    {
+      "route": "/blog/sanda-vs-jiu-jitsu/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/sanda-vs-jiu-jitsu",
+      "base_main_sha256": "86f63dcf1585baf5607f14ec127c545e254373043ec2c369c6cadc259e4a04df",
+      "live_main_sha256": "86f63dcf1585baf5607f14ec127c545e254373043ec2c369c6cadc259e4a04df",
+      "live_bytes": 192825,
+      "error": null
+    },
+    {
+      "route": "/blog/schedule-sensei-reset-protocol/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/schedule-sensei-reset-protocol",
+      "base_main_sha256": "4a0d3f942bd98073d1702b410d19cb901d3c2c80ac42c728e0afdb2e99f088e0",
+      "live_main_sha256": "4a0d3f942bd98073d1702b410d19cb901d3c2c80ac42c728e0afdb2e99f088e0",
+      "live_bytes": 187963,
+      "error": null
+    },
+    {
+      "route": "/blog/schedule-sensei-weekly-template/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/schedule-sensei-weekly-template",
+      "base_main_sha256": "56f5467a5f54a2e9d7030f59eb06145ae2adda93ac7dc551909000002944697a",
+      "live_main_sha256": "fd2a0b25b9f40bbc803ee3d2794b6e0c17719ebb4f43d58b48e091c9e0481a94",
+      "live_bytes": 195446,
+      "error": null
+    },
+    {
+      "route": "/blog/schedule-sensei/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/schedule-sensei",
+      "base_main_sha256": "19289939c545f8b628bead5efbe9ec4e090ce531d3cd729b5228182317972cf4",
+      "live_main_sha256": "c6d0ec84798faa5150a049512edf7345aa56d017780bfeea71280c61c2303a89",
+      "live_bytes": 192523,
+      "error": null
+    },
+    {
+      "route": "/blog/seated-guard-basics/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/seated-guard-basics",
+      "base_main_sha256": "90720516fa3b94f40e45a2e1a5c43642a0ad3ce332c78c44a30967a6e46586b5",
+      "live_main_sha256": "90720516fa3b94f40e45a2e1a5c43642a0ad3ce332c78c44a30967a6e46586b5",
+      "live_bytes": 185603,
+      "error": null
+    },
+    {
+      "route": "/blog/sensei-mma-bjj/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/sensei-mma-bjj",
+      "base_main_sha256": "c715640cbbaf7c5afd64521b6c4eab5243106b0111eee11f8c875428ec28459f",
+      "live_main_sha256": "c715640cbbaf7c5afd64521b6c4eab5243106b0111eee11f8c875428ec28459f",
+      "live_bytes": 186814,
+      "error": null
+    },
+    {
+      "route": "/blog/sensei-rules/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/sensei-rules",
+      "base_main_sha256": "86cccd40f12d68dc1a5baaa832e00a814937e53c2ac0479e48e13249eba64a63",
+      "live_main_sha256": "86cccd40f12d68dc1a5baaa832e00a814937e53c2ac0479e48e13249eba64a63",
+      "live_bytes": 188654,
+      "error": null
+    },
+    {
+      "route": "/blog/snow-day-protocol-bjj-home-dojo/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/snow-day-protocol-bjj-home-dojo",
+      "base_main_sha256": "ea1a063af44a83e5e111e28b45c0faf734f9b0949b169013b85332ecf5da022d",
+      "live_main_sha256": "ea1a063af44a83e5e111e28b45c0faf734f9b0949b169013b85332ecf5da022d",
+      "live_bytes": 186940,
+      "error": null
+    },
+    {
+      "route": "/blog/spring-fling-is-here/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/spring-fling-is-here",
+      "base_main_sha256": "2c14ae860abf67b80fe434118ce9e35e3b01d246cb288867a13f3c78b19b4009",
+      "live_main_sha256": "26fb36a92d97aed5c15d2b42649306ae5b2c032aa6af4467538e89cf064032f6",
+      "live_bytes": 185688,
+      "error": null
+    },
+    {
+      "route": "/blog/starting-bjj-over-30-over-40-catskills/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/starting-bjj-over-30-over-40-catskills",
+      "base_main_sha256": "5c594aefe45c2e1e1e020a4e9df7d6f1944d9c9286da0763c91d789e7ca97870",
+      "live_main_sha256": "5c594aefe45c2e1e1e020a4e9df7d6f1944d9c9286da0763c91d789e7ca97870",
+      "live_bytes": 187623,
+      "error": null
+    },
+    {
+      "route": "/blog/tags/adult-bjj/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/tags/adult-bjj",
+      "base_main_sha256": "a038d04e7ad64ea4297792547e29d08e58dbe7fb1093052409727d68472eb913",
+      "live_main_sha256": "a038d04e7ad64ea4297792547e29d08e58dbe7fb1093052409727d68472eb913",
+      "live_bytes": 190495,
+      "error": null
+    },
+    {
+      "route": "/blog/tags/starting-jiu-jitsu/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/tags/starting-jiu-jitsu",
+      "base_main_sha256": "e2fd794fd60d174caefb3ac3ab9b287a3213a0fca470c17eb4011026b988b679",
+      "live_main_sha256": "e2fd794fd60d174caefb3ac3ab9b287a3213a0fca470c17eb4011026b988b679",
+      "live_bytes": 187868,
+      "error": null
+    },
+    {
+      "route": "/blog/tags/youth/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/tags/youth",
+      "base_main_sha256": "00ce5151c1b208d28a5b25f373eeefb5158731f5e03c0eadf063652464fce758",
+      "live_main_sha256": "00ce5151c1b208d28a5b25f373eeefb5158731f5e03c0eadf063652464fce758",
+      "live_bytes": 187251,
+      "error": null
+    },
+    {
+      "route": "/blog/takedown-defense/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/takedown-defense",
+      "base_main_sha256": "e6f00a9dec3d2a070ecf1cf0a91ef39b03c99799e70848acdb6ed3a74152223e",
+      "live_main_sha256": "e6f00a9dec3d2a070ecf1cf0a91ef39b03c99799e70848acdb6ed3a74152223e",
+      "live_bytes": 185679,
+      "error": null
+    },
+    {
+      "route": "/blog/tannersville-bjj-tuesday/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/tannersville-bjj-tuesday",
+      "base_main_sha256": "3029bf3372810bfeb698dbf64dfebcaa5c77515be31e3cb1e0e1900f8f1f6d1e",
+      "live_main_sha256": "1c10aa650d0521130c9e54c637408d293f24f529599caecb5dcd63ff41bbcb3e",
+      "live_bytes": 191993,
+      "error": null
+    },
+    {
+      "route": "/blog/teen-boundary-setting-conflict-deescalation/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/teen-boundary-setting-conflict-deescalation",
+      "base_main_sha256": "7baee6e72aa026a4917593d4788fd5cd9729c5f498caa509c83c4b35b5443840",
+      "live_main_sha256": "7baee6e72aa026a4917593d4788fd5cd9729c5f498caa509c83c4b35b5443840",
+      "live_bytes": 186377,
+      "error": null
+    },
+    {
+      "route": "/blog/teen-confidence-deescalation-jiu-jitsu/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/teen-confidence-deescalation-jiu-jitsu",
+      "base_main_sha256": "36bd008580a252a5a293729de6497a6ccfc56a1e05ddadc4ae968f7c31c03bc2",
+      "live_main_sha256": "36bd008580a252a5a293729de6497a6ccfc56a1e05ddadc4ae968f7c31c03bc2",
+      "live_bytes": 180881,
+      "error": null
+    },
+    {
+      "route": "/blog/teen-jiu-jitsu-hunter-ny/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/teen-jiu-jitsu-hunter-ny",
+      "base_main_sha256": "3575edb803790051df9954245b2f24d64c1215c9b3e04b47ce6db4bd083648d1",
+      "live_main_sha256": "864384c5f78630274c25767404c6d0e775de7373ced7a65f0db330f5e6b2d08d",
+      "live_bytes": 186661,
+      "error": null
+    },
+    {
+      "route": "/blog/things-to-do-near-hunter-ny-private-bjj-coaching/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/things-to-do-near-hunter-ny-private-bjj-coaching",
+      "base_main_sha256": "ddc2f13242ae07a3d5734369a715fa7fcf89645d44afbb9d8ddafea549ad471a",
+      "live_main_sha256": "c82c5515965bf9c5698f19a1c352876cf6f1f8811fc8024d9d5c7149f924f360",
+      "live_bytes": 188844,
+      "error": null
+    },
+    {
+      "route": "/blog/water-before-training-how-much-when/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/water-before-training-how-much-when",
+      "base_main_sha256": "9f8c39d09d3219921e55ea0aee7fa36921cfad40b33bbd9a9f447ae302120f93",
+      "live_main_sha256": "9f8c39d09d3219921e55ea0aee7fa36921cfad40b33bbd9a9f447ae302120f93",
+      "live_bytes": 187893,
+      "error": null
+    },
+    {
+      "route": "/blog/what-does-sensei-mean-in-bjj/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/what-does-sensei-mean-in-bjj",
+      "base_main_sha256": "d818eb42fb406746531e4ecc2e4af1e7d24cb11b0d03511f084e51db843e91cf",
+      "live_main_sha256": "6f2452d42862faa32233bd2a9e5d6dad54303001829616f5186e9ae3ae16cbf4",
+      "live_bytes": 186848,
+      "error": null
+    },
+    {
+      "route": "/blog/what-is-sanda-sanshou/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/what-is-sanda-sanshou",
+      "base_main_sha256": "e1f0c5f515fb243836fa644beaf1eb2c0e972afec99ec6fad4b203bc4663b8a9",
+      "live_main_sha256": "e1f0c5f515fb243836fa644beaf1eb2c0e972afec99ec6fad4b203bc4663b8a9",
+      "live_bytes": 185092,
+      "error": null
+    },
+    {
+      "route": "/blog/what-kids-learn-in-bjj/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/what-kids-learn-in-bjj",
+      "base_main_sha256": "5d5cfd66a0a534533ba022676eb39fcedd3cf2ecca5bcefd7080d211f05556d4",
+      "live_main_sha256": "5d5cfd66a0a534533ba022676eb39fcedd3cf2ecca5bcefd7080d211f05556d4",
+      "live_bytes": 180361,
+      "error": null
+    },
+    {
+      "route": "/blog/why-high-school-athletes-train-bjj-tannersville/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/why-high-school-athletes-train-bjj-tannersville",
+      "base_main_sha256": "536148f728e273f843682b2b83a700259256658647142008b013414a9ca3bb41",
+      "live_main_sha256": "536148f728e273f843682b2b83a700259256658647142008b013414a9ca3bb41",
+      "live_bytes": 186579,
+      "error": null
+    },
+    {
+      "route": "/blog/wrestle-ups-scramble/",
+      "status": 200,
+      "final_url": "https://senseisandy.com/blog/wrestle-ups-scramble",
+      "base_main_sha256": "59c03f453d437c7cb467b900e2f6d85cde8c09f97e84aaa5a19cff0466878062",
+      "live_main_sha256": "176ee4a7bf6774f17f93db4dc5686d67790cbd36ab5a46206664a36658f8637d",
+      "live_bytes": 190164,
+      "error": null
+    }
+  ],
+  "finished_unix": 1793511144.5860043
+}
