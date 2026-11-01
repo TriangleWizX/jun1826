@@ -59,6 +59,7 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/instagram.css',
     'src/assets/css/pages/schedule.css',
     'src/assets/css/pages/schedule.min.css',
+    'src/assets/css/pages/near.css',
     'src/assets/css/pages/options-pricing-highend.css',
     'src/assets/css/pages/law-enforcement.css',
     'src/assets/css/pages/law-enforcement.min.css',
