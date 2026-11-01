@@ -223,7 +223,7 @@ Generated-output follow-up: `/tmp/style-swarm-20261026-hub/dist` and `/tmp/style
 
 | Workstream ID | Owner | Exact path | Purpose / base | Creation date | Size budget | Closeout trigger | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `BLOG-CSS-LEGACY-DIRTY-20261101` | Coordinator; read-only filesystem-forensics audit by `/root/blog_dirty_cleanup_audit` | `/tmp/blog-css-release-20261102/` | Detached worktree at `6722bb70349fe9af7ca5cb7569bf3b20b1fb2a36`; 94 generated outputs and asset-hash manifest restored to its commit; seven diagnostic evidence files, baseline hashes, and dry-run maps preserved in `evidence/2026-11-01/blog-legacy-cleanup/`; raw live header and HTML snapshots discarded. Report: `2026-11-01-blog-legacy-worktree-cleanup.md`. | Unknown; audited 2026-11-01 | 1,619,591,811 B before removal | Reconcile and close stale checkout | removed 2026-11-01; exact worktree removed after no-process check; 1,619,591,811 B reclaimed; residual 12 KiB browser-profile directory discovered during 2026-11-02 lifecycle preflight and removed after confirming no Chrome process or registered worktree; evidence preserved ; empty browser-profile and Default directories reappeared and were removed after 2026-11-02 preflight; no active process |
+| `BLOG-CSS-LEGACY-DIRTY-20261101` | Coordinator; read-only filesystem-forensics audit by `/root/blog_dirty_cleanup_audit` | `/tmp/blog-css-release-20261102/` | Detached worktree removed; residual browser profile keeps reappearing after cleanup. Current stub: empty `Default/` plus 2,959-byte `Local State`; no active browser process. Historical evidence remains in `evidence/2026-11-01/blog-legacy-cleanup/`. | Unknown; audited 2026-11-01 | Review by 2026-11-08; remove only if stub stays absent and no browser process owns it | Reconcile and close stale checkout | retained; reappeared after prior cleanup; owner Coordinator; review 2026-11-08 |
 
 ## Retained unregistered snapshot — 2026-11-01
 
@@ -366,3 +366,9 @@ During a row update, the working copy inventory was replaced with a shortened fi
 ## Blog CSS residual cleanup — 2026-11-03
 
 The old Blog CSS release worktree and candidate were already removed. A 16 KiB residual at `/tmp/blog-css-release-20261102/browser-profile/` contained only an empty `Default/` directory and `Local State`. A `/proc/*/cmdline` check found no Chrome process using the path. Removed that exact profile and its empty parent. The current Blog subtitle edit is page HTML, not CSS, and was preserved. The build-helper safelist reorder was restored to `HEAD`; the same safelist entry remains, so this removed only a no-op ordering diff.
+
+## Approved A cohort output mapping — 2026-11-03
+
+| Workstream ID | Owner | Exact path | Purpose / base | Creation date / size budget | Closeout trigger | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| `A11Y-OUTPUT-MAP-20261103` | Coordinator; ordinary static-site release-integrity specialist fallback | `/tmp/a11y-release-output-map-20261103/` | Clean detached checkout at `62f818f`; overlaid A cohort, built baseline/candidate, temporary candidate commit `3ea2b39`; mapper report and exact generated deltas saved under `evidence/2026-11-03/a11y-release-output-map/` | 2026-11-03; peaked at 1.6 GiB; shared root `node_modules` symlink | No deployment; mapper gap documented; exact checkout removed; 1.6 GiB reclaimed | removed |
