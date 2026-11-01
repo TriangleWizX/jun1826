@@ -67,6 +67,8 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/birthday-parties.css',
     'src/assets/css/pages/partners-hospitality-hunter-windham.css',
     'src/assets/css/pages/partners-hospitality-hunter-windham.min.css',
+    'src/assets/css/pages/bjj-stretches.css',
+    'src/assets/css/pages/bjj-stretches.min.css',
 }
 
 
@@ -224,6 +226,28 @@ def changed_outputs(commit, only=()):
             if not css_path.is_file():
                 raise ValueError(f'Missing Hospitality Partners stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
+    # BJJ Stretches owns a root route and fingerprinted minified stylesheet.
+    if any(name in names for name in (
+        'src/assets/css/pages/bjj-stretches.css',
+        'src/assets/css/pages/bjj-stretches.min.css',
+    )):
+        page = ROOT / 'dist' / 'bjj-stretches.html'
+        if not page.is_file():
+            raise ValueError('BJJ Stretches CSS release requires dist/bjj-stretches.html')
+        page_text = page.read_text(encoding='utf-8')
+        fingerprints = re.findall(
+            r'href="/?(assets/css/pages/bjj-stretches\.min\.[a-f0-9]+\.css)"',
+            page_text,
+        )
+        if len(fingerprints) != 1:
+            raise ValueError('BJJ Stretches must reference exactly one fingerprinted minified stylesheet')
+        css_rel = fingerprints[0]
+        css_path = ROOT / 'dist' / css_rel
+        if not css_path.is_file():
+            raise ValueError(f'Missing BJJ Stretches stylesheet: {css_rel}')
+        outputs.add((page, 'bjj-stretches.html'))
+        outputs.add((css_path, css_rel))
+
     # Programs consumes canonical Tannersville CSS directly; its generated root
     # route and fingerprinted stylesheet must travel together.
     if 'src/assets/css/pages/tannersville.css' in names:
