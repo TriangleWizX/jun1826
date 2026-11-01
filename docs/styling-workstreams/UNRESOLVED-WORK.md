@@ -1,6 +1,6 @@
 # Unresolved Work: Dirty Worktree Commit and Deploy
 
-Status snapshot: `main` at `3a18f63`; 179 commits ahead of `origin/main`; 302 dirty or untracked entries remain. This handoff is not a completion claim. The shared `dist/` folder is mixed and is not a safe release source.
+Status snapshot: `main` at `ad4fe4d`; 180 commits ahead of `origin/main`; 301 dirty or untracked entries remain. This handoff is not a completion claim. The shared `dist/` folder is mixed and is not a safe release source.
 
 ## Persona and review method
 
@@ -13,6 +13,7 @@ Status snapshot: `main` at `3a18f63`; 179 commits ahead of `origin/main`; 302 di
 - Blog CSS: commit `99a58f2` integrated the nine approved style changes and the two live-release records. The release was already deployed and verified; no second upload was needed. Extra dirty Blog styling and generated Blog files were left out.
 - Local CodeGraph state: commit `ec86ee5` stops the daemon PID file from dirtying Git status again. The inactive PID and socket were removed; the local database and logs were preserved.
 - Keyboard SOP wording: commit `4414ef7` corrected which production commits the owner SOP covers. Browser-generated keyboard input is accepted; a physical keyboard is not required.
+- Workspace inventory: commit `ad4fe4d` records two inactive Show-Up browser-profile closeouts. Together they freed 11,336,038 bytes; the post-cleanup audit measured about 90 GiB free. Large retained workspaces still need exact-path reconciliation.
 
 ## Fix and release work still open
 
