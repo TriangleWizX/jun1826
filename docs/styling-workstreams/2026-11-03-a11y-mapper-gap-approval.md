@@ -43,3 +43,13 @@ The first live check showed `/law-enforcement-bjj` still referenced the previous
 - The page was uploaded using the existing verified rollback backup. A live read confirmed HTTP 200, the updated `/assets/css/site-shell.min.125ed2.css` reference, and the scoped `.page-tactical` form rule in that stylesheet.
 - Its seven agency form fields already have matching labels and IDs, so no form markup change was needed on the canonical source.
 - `/core-culture-parent-guide/` still redirects to `/parent-resources`. That destination is a separate page; this release left its canonical URL and content unchanged.
+
+## Optional next decision: Core Culture guide URL
+
+The accessibility release is complete. This is only a decision about whether the separate Core Culture guide should have its own public URL.
+
+**A — Keep the current redirect (recommended).** Keep `/core-culture-parent-guide/` redirecting to `/parent-resources`. No further change is needed.
+
+**B — Publish the Core Culture guide at its own URL.** Approve a separate URL migration. That work would update the canonical URL, redirect rule, URL registry/disposition, sitemap, internal links, and the exact deploy payload.
+
+Reply **A** or **B**. No reply leaves the current redirect in place.
