@@ -493,8 +493,35 @@ def changed_outputs(commit, only=()):
                         'src/_includes/components/free-intro-process.njk' in names or
                         'src/_includes/footer-high-intent.html' in names)
     glossary_release = '.gitignore' in names and (ROOT / 'src' / 'bjj-glossary').is_dir()
-    manifest_file = ROOT / 'src/assets/data/asset-hash-manifest.json'
+    manifest_file = DIST_ROOT.parent / 'src/assets/data/asset-hash-manifest.json'
     manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
+
+    # The shared Near stylesheet is fingerprinted and consumed by all nearby
+    # town routes, the legacy nearby-towns page, and the BJJ classes hub's
+    # inline delivery bundle. Use the manifest beside the selected build.
+    if 'src/assets/css/pages/near.css' in names:
+        active_near_css = manifest.get('/assets/css/pages/near.css')
+        if not active_near_css:
+            raise ValueError('Near CSS release requires its active manifest fingerprint')
+        near_css_path = DIST_ROOT / active_near_css.lstrip('/')
+        if not near_css_path.is_file():
+            raise ValueError(f'Near CSS release is missing active asset {active_near_css}')
+        outputs.add((near_css_path, near_css_path.relative_to(DIST_ROOT).as_posix()))
+        matched_routes = 0
+        for candidate in DIST_ROOT.rglob('*.html'):
+            rel = candidate.relative_to(DIST_ROOT).as_posix()
+            if rel not in ROOT_FILES and not rel.startswith(DEPLOYABLE_ROOTS):
+                continue
+            html = candidate.read_text(encoding='utf-8', errors='ignore')
+            if active_near_css in html:
+                outputs.add((candidate, rel))
+                matched_routes += 1
+        bjj_classes_page = DIST_ROOT / 'bjj-classes' / 'index.html'
+        if not bjj_classes_page.is_file():
+            raise ValueError('Near CSS release requires the BJJ classes page with its inline delivery bundle')
+        outputs.add((bjj_classes_page, 'bjj-classes/index.html'))
+        if not matched_routes:
+            raise ValueError('Near CSS release found no deployable routes using its active fingerprint')
 
     # The shared glossary stylesheet is fingerprinted and consumed by many
     # generated term routes. A source-only CSS change must include every fresh
