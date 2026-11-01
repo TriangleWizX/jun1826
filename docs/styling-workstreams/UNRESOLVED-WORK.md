@@ -1,6 +1,6 @@
 # Unresolved work: dirty worktree, commit, and deploy
 
-**Status snapshot:** `main` at `522a1abd` (`Integrate live Blog text floor output`), 182 commits ahead of `origin/main`. The worktree has 302 status entries, including 81 under `dist/` and 54 under `src/`. Blog release paths integrated below are clean; the remaining generated tree is mixed and is not a release source.
+**Status snapshot (2026-11-03):** `main` at `48fe805f` (`Record no-op Blog stylesheet cleanup`), 189 commits ahead of `origin/main`. The worktree has 302 status entries, including 81 under `dist/` and 54 under `src/`. Since source baseline `dc06a6d8`, only review/cleanup documentation changed; no production source cohort has been selected or released. Blog release paths below are clean; the remaining generated tree is mixed and is not a release source.
 
 ## Closed work
 
@@ -9,12 +9,14 @@
 - **Keyboard SOP wording:** commit `4414ef7` corrected its list of production commits. The owner-run keyboard SOP remains open; browser-generated keyboard input is accepted, and physical keyboard input is not required.
 - **Show-Up browser profiles:** commit `ad4fe4d` records removal of two inactive profiles, freeing 11,336,038 bytes. The latest documented cleanup audit measured roughly 90 GiB free.
 - **Stale Blog candidate in root `dist/`:** its tracked Blog routes and sitemap were restored to match `HEAD`; do not treat root `dist/` as a release source.
+- **Path-review checkouts:** the two clean detached review worktrees at `475d2bbb` were removed after their findings were integrated into the approval sheet. Each occupied about 1.1 GiB; removal raised free space from 88.1 to 91 GiB.
+- **Residual Blog profile:** the old Blog CSS release candidate was already removed. Its remaining 16 KiB browser-profile shell was confirmed unused and deleted; details are recorded in [workspace cleanup](WORKSPACE-CLEANUP.md).
 
 ## Remaining work
 
 ### 1. Rebuild the source-to-output map from current `HEAD`
 
-The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`; it is not current release proof. The current source baseline is `dc06a6d8`, a docs-only advance from the clean-HEAD audit. The [dirty-source overlay review](2026-11-02-dirty-source-overlay-map-plan.md) found 506 generated path changes; the committed mapper selects 266 and omits 293 whitelisted deployable outputs (257 HTML, 35 CSS, 1 WebP). Do not deploy the broad overlay. See the [path-by-path approval sheet](2026-11-02-dirty-path-approval-sheet.md) and [exact mapping evidence](evidence/2026-11-02/dirty-source-overlay-map/output-delta.json). Keep mixed root `dist/` out of deployment.
+The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`; it is not current release proof. The source baseline remains `dc06a6d8`; subsequent commits through `48fe805f` changed review/cleanup documentation only. The [dirty-source overlay review](2026-11-02-dirty-source-overlay-map-plan.md) found 506 generated path changes; the committed mapper selects 266 and omits 293 whitelisted deployable outputs (257 HTML, 35 CSS, 1 WebP). Do not deploy the broad overlay. The owner has not selected a source cohort in the [path-by-path approval sheet](2026-11-02-dirty-path-approval-sheet.md). Keep mixed root `dist/` out of deployment; use current source and a clean isolated build only after a cohort is selected.
 
 ### 2. Decide the unmerged keyboard branch separately from the owner SOP
 
