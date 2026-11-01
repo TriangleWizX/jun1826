@@ -100,16 +100,22 @@ function checkCanonicalSchedule() {
   if (fs.existsSync(renderedSchedulePath)) {
     const rendered = fs.readFileSync(renderedSchedulePath, 'utf8');
     const renderedRows = [
-      ['Monday', '5:00–6:00 PM', 'Youth + Teen Small-Group Class · Ages 5–17 No-Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
-      ['Tuesday', '5:00–6:00 PM', 'Youth + Teen Small-Group Class · Ages 5–17 Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
-      ['Wednesday', '5:00–6:00 PM', 'Youth + Teen Small-Group Class · Ages 5–17 No-Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
-      ['Thursday', '5:00–6:00 PM', 'Youth + Teen Small-Group Class · Ages 5–17 Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
-      ['Friday', '5:00–6:00 PM', 'Youth + Teen Small-Group Class · Ages 5–17 Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
+      ['Monday', '5:00–6:00 PM', 'Small-Group Class · Ages 5–17 No-Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
+      ['Tuesday', '5:00–6:00 PM', 'Small-Group Class · Ages 5–17 Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
+      ['Wednesday', '5:00–6:00 PM', 'Small-Group Class · Ages 5–17 No-Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
+      ['Thursday', '5:00–6:00 PM', 'Small-Group Class · Ages 5–17 Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
+      ['Friday', '5:00–6:00 PM', 'Small-Group Class · Ages 5–17 Gi', '6:00–7:00 PM', 'Adult Small-Group Class · Ages 18+ · Gi'],
       ['Saturday', '10:30–11:30 AM', 'Adult No-Gi', null, null]
     ];
+    const youthLinksAfterTime = (time) => rendered.includes(
+      `${time} <a href="/bjj-classes/kids-tannersville-ny">Kids</a> + <a href="/bjj-classes/teens-tannersville-ny">Teens</a>`
+    );
     for (const [day, youthTime, youthOrAdult, adultTime, adult] of renderedRows) {
       if (!rendered.includes(day) || !rendered.includes(youthOrAdult) || !rendered.includes(youthTime) || (adult && (!rendered.includes(adult) || !rendered.includes(adultTime)))) {
         return [`Rendered schedule row is incomplete or contradictory: ${day}`];
+      }
+      if (day !== 'Saturday' && !youthLinksAfterTime(youthTime)) {
+        return [`Rendered schedule links must follow the youth class time: ${day}`];
       }
     }
     if (rendered.includes('Current Schedule Through Saturday, September 5')) return ['Rendered page still contains an expired schedule block.'];
