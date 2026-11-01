@@ -51,4 +51,18 @@ details.glossary-advanced-filters fieldset legend { color: var(--color-ink); fon
 @media (max-width:40rem){.glossary-index,.glossary-term{padding-block:var(--space-xl)}.glossary-grid,.related-grid,.relationship-grid,.day-one-grid,.glossary-term-review-grid,.ss-link-grid,.glossary-flywheel-grid{grid-template-columns:1fr}.glossary-filter-panel,.term-hero,.glossary-term-section,.glossary-flywheel-section{padding:var(--space-md)}.glossary-hero__title{font-size:clamp(2.5rem,13vw,4rem)}}
 @media (prefers-reduced-motion:reduce){.term-card,.related-card,.glossary-flywheel-step{transition:none}}
 [hidden]{display:none!important}
+@media (max-width: 40rem) {
+  .glossary-az-bar,
+  .glossary-az-scroll,
+  .glossary-filter-categories {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+  .glossary-az-letter,
+  .glossary-category-pill,
+  .day-one-chip {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
 

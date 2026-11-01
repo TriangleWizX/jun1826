@@ -362,9 +362,11 @@
       letterLinks.forEach((link) => {
         const l = (link.dataset.letterLink || '').toUpperCase();
         const enabled = visibleLetters.has(l) || state.l === l;
+        const pressed = state.l === l;
         link.classList.toggle('is-disabled', !enabled);
-        link.classList.toggle('is-active', state.l === l);
+        link.classList.toggle('is-active', pressed);
         link.setAttribute('aria-disabled', enabled ? 'false' : 'true');
+        link.setAttribute('aria-pressed', String(pressed));
       });
 
       // If currently selected term is not visible, select the first visible term
@@ -442,6 +444,7 @@
 
     letterLinks.forEach((link) => {
       link.addEventListener('click', () => {
+        if (link.getAttribute('aria-disabled') === 'true') return;
         const l = (link.dataset.letterLink || '').toUpperCase();
         commit({ l: state.l === l ? '' : l });
       });

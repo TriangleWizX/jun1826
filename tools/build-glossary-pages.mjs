@@ -738,7 +738,7 @@ const renderHubPage = (terms, termMap, glossaryFiltersScript) => {
         <span class="glossary-az-label">A&ndash;Z:</span>
         <div class="glossary-az-scroll" id="glossary-az-rail">
           <button type="button" id="surprise-me-az" class="glossary-az-letter" aria-label="Pick a random term">Random</button>
-          ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((l) => `<button type="button" class="glossary-az-letter" data-letter-link="${l}" aria-label="Jump to letter ${l}">${l}</button>`).join('')}
+          ${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((l) => `<button type="button" class="glossary-az-letter" data-letter-link="${l}" aria-label="Jump to letter ${l}" aria-pressed="false">${l}</button>`).join('')}
         </div>
       </div>
 
