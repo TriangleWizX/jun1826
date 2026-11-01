@@ -40,7 +40,7 @@
 .page-book-intro h3 { font-family: var(--font-body); font-size: 1.125rem; margin-block: var(--space-md) var(--space-xs); }
 .page-book-intro p { line-height: var(--leading-body); margin: 0 0 var(--space-sm); }
 .page-book-intro #book-intro-subtitle { font-size: 1.125rem; margin-bottom: var(--space-xs); }
-.page-book-intro #first-visit-lane-note { color: var(--color-ink-2); font-size: .9375rem; max-width: 48ch; margin: 0; }
+.page-book-intro #first-visit-lane-note { color: var(--color-ink-2); font-size: 1rem; max-width: 48ch; margin: 0; }
 .page-book-intro .ss-first-offer-card {
   box-sizing: border-box;
   border: 1px solid var(--color-rule-2);

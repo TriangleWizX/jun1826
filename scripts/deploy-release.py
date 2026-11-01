@@ -56,6 +56,8 @@ RESEARCH_RECORD_OUTPUTS = (
 ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/home.css',
     'src/assets/css/pages/home.min.css',
+    'src/assets/css/pages/book-free-intro.css',
+    'src/assets/css/pages/book-free-intro.min.css',
     'src/assets/css/pages/bio-mobile-fixes.css',
     'src/assets/css/pages/instagram.css',
     'src/assets/css/pages/schedule.css',
@@ -451,15 +453,21 @@ def changed_outputs(commit, only=()):
             for css_cand in pages_css_dir.glob('instagram-delivery.*.css'):
                 if css_cand.is_file():
                     outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
-    if 'tools/build-free-intro-styles.mjs' in names:
+    if any(name in names for name in (
+        'tools/build-free-intro-styles.mjs',
+        'src/assets/css/pages/book-free-intro.css',
+        'src/assets/css/pages/book-free-intro.min.css',
+    )):
         candidate = DIST_ROOT / 'free-bjj-intro-tannersville-ny' / 'index.html'
-        if candidate.is_file():
-            outputs.add((candidate, 'free-bjj-intro-tannersville-ny/index.html'))
+        if not candidate.is_file():
+            raise ValueError('Free Intro stylesheet release requires the generated route')
+        outputs.add((candidate, 'free-bjj-intro-tannersville-ny/index.html'))
         pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
-        if pages_css_dir.is_dir():
-            for css_cand in pages_css_dir.glob('free-intro-delivery.*.css'):
-                if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
+        delivery_assets = sorted(pages_css_dir.glob('free-intro-delivery.*.css')) if pages_css_dir.is_dir() else []
+        if len(delivery_assets) != 1 or not delivery_assets[0].is_file():
+            raise ValueError('Free Intro stylesheet release requires exactly one generated delivery CSS asset')
+        css_cand = delivery_assets[0]
+        outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if ('tools/build-options-pricing-styles.mjs' in names or
             'src/assets/css/pages/options-pricing-highend.css' in names):
         html_c = DIST_ROOT / 'options-pricing.html'
