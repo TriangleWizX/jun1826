@@ -63,6 +63,7 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/schedule.css',
     'src/assets/css/pages/schedule.min.css',
     'src/assets/css/pages/near.css',
+    'src/assets/css/pages/winter-armor-2027.css',
     'src/assets/css/pages/options-pricing-highend.css',
     'src/assets/css/pages/law-enforcement.css',
     'src/assets/css/pages/law-enforcement.min.css',
@@ -94,6 +95,11 @@ def changed_outputs(commit, only=()):
     requested = lambda rel: not requested_outputs or rel in requested_outputs
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    if 'src/assets/data/asset-hash-manifest.json' in names:
+        manifest_output = DIST_ROOT / 'assets' / 'data' / 'asset-hash-manifest.json'
+        if not manifest_output.is_file():
+            raise ValueError('Asset manifest source change requires generated dist/assets/data/asset-hash-manifest.json')
+        outputs.add((manifest_output, 'assets/data/asset-hash-manifest.json'))
     # The Home builder inlines page CSS into its generated root route.
     # Include the homepage HTML when a Home stylesheet changes.
     if {'src/assets/css/pages/home.css', 'src/assets/css/pages/home.min.css'} & set(names):
@@ -624,6 +630,25 @@ def changed_outputs(commit, only=()):
         outputs.add((bjj_classes_page, 'bjj-classes/index.html'))
         if not matched_routes:
             raise ValueError('Near CSS release found no deployable routes using its active fingerprint')
+
+    # Winter Armor owns one directory route and one fingerprinted stylesheet.
+    if 'src/assets/css/pages/winter-armor-2027.css' in names:
+        page = DIST_ROOT / 'winter-armor-2027' / 'index.html'
+        if not page.is_file():
+            raise ValueError('Winter Armor CSS release requires generated winter-armor-2027/index.html')
+        page_text = page.read_text(encoding='utf-8')
+        fingerprints = re.findall(
+            r'''href=["']/?(assets/css/pages/winter-armor-2027\.[a-f0-9]+\.css)["']''',
+            page_text,
+        )
+        if len(fingerprints) != 1:
+            raise ValueError('Winter Armor page must reference exactly one fingerprinted stylesheet')
+        css_rel = fingerprints[0]
+        css_path = DIST_ROOT / css_rel
+        if not css_path.is_file():
+            raise ValueError(f'Missing Winter Armor stylesheet: {css_rel}')
+        outputs.add((page, 'winter-armor-2027/index.html'))
+        outputs.add((css_path, css_rel))
 
     # The shared glossary stylesheet is fingerprinted and consumed by many
     # generated term routes. A source-only CSS change must include every fresh

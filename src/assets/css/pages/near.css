@@ -62,6 +62,19 @@ body.page-near .near-buttons .btn:hover {
   }
 }
 
+body.page-near .near-section .container > p > a:not(.btn),
+body.page-near .near-section .container > ul a:not(.btn) {
+  color: var(--ss-green, #116A42);
+  text-underline-offset: 0.15em;
+}
+
+body.page-near .near-section .container > p > a:not(.btn):hover,
+body.page-near .near-section .container > p > a:not(.btn):focus-visible,
+body.page-near .near-section .container > ul a:not(.btn):hover,
+body.page-near .near-section .container > ul a:not(.btn):focus-visible {
+  color: var(--ss-slate, #306061);
+}
+
 .ss-near-breadcrumbs {
   width: min(1040px, calc(100% - 2rem));
   margin: 0.65rem auto 0;
@@ -638,3 +651,8 @@ body.page-near .ss-trip-card .btn-outline-primary:focus-visible {
   color: var(--ss-surface);
 }
 
+@media (max-width: 575.98px) {
+  body.ss-page-bjj-classes.ss-page-nearby-towns .he-eyebrow {
+    white-space: normal;
+  }
+}

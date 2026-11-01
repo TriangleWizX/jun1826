@@ -18,8 +18,21 @@
 .wa-page p { color: inherit; }
 .wa-page h1, .wa-page h2, .wa-page h3 { color: inherit; }
 .wa-page a { color: inherit; }
-.wa-page a:focus-visible, .wa-page button:focus-visible, .wa-page input:focus-visible {
-  outline: 3px solid #e9a869;
+.wa-page :is(a, button, input):focus-visible {
+  outline: 3px solid var(--wa-ice);
+  outline-offset: 3px;
+}
+
+.wa-page :is(.wa-section--kits, .wa-section--items, .wa-section--faq, .wa-card) :is(a, button, input):focus-visible {
+  outline-color: var(--wa-ink);
+}
+
+.wa-page .wa-section--order :is(a, button, input):focus-visible {
+  outline-color: var(--wa-ice);
+}
+
+body.page-winter-armor .ss-global-nav-wrapper .ss-nav-cta:focus-visible {
+  outline: 3px solid #eaf1f3;
   outline-offset: 3px;
 }
 
@@ -42,7 +55,7 @@
 
 .wa-kicker, .wa-eyebrow {
   margin: 0 0 .75rem;
-  font-size: .77rem;
+  font-size: .875rem;
   font-weight: 700;
   letter-spacing: .13em;
   text-transform: uppercase;
@@ -127,7 +140,7 @@
 }
 .wa-card--kit .wa-card-media img { width: 100%; max-height: 225px; }
 .wa-card--kit:nth-child(2) .wa-card-media img { width: min(100%, 258px); }
-.wa-card-media figcaption { margin-top: .4rem; font-size: .8rem; color: #455c65; }
+.wa-card-media figcaption { margin-top: .4rem; font-size: .875rem; color: #455c65; }
 .wa-card-media--pair {
   min-height: 220px;
   display: grid;
@@ -200,3 +213,4 @@
   .wa-card-media--pair .wa-product-photo:first-child img { height: 210px; }
   .wa-card-media--pair .wa-product-photo:last-child img { height: auto; max-height: 170px; }
 }
+.wa-page .wa-help-grid a:focus-visible { outline-color: var(--ss-ink, #362B24); }
