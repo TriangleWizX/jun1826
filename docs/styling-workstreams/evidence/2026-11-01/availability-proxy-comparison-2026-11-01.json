@@ -1,0 +1,495 @@
+{
+  "date": "2026-11-01",
+  "comparison": "clean HEAD versus fresh build from 77 dirty production inputs; main dist was not used or changed by the candidate build.",
+  "viewport_results": [
+    {
+      "label": "clean_head",
+      "samples": 460,
+      "passed": 430,
+      "failed": 30,
+      "failure_reasons": {
+        "primary target below 44px": 13,
+        "visible text outside viewport": 11,
+        "visible actionable control outside viewport": 1,
+        "text below 14px": 8,
+        "body text below 16px": 2
+      },
+      "failure_samples": [
+        {
+          "route": "/",
+          "width": 320,
+          "screenshot": "home-320x720.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 360,
+          "screenshot": "home-360x640.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 360,
+          "screenshot": "home-360x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 390,
+          "screenshot": "home-390x844.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 430,
+          "screenshot": "home-430x932.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 639,
+          "screenshot": "home-639x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 640,
+          "screenshot": "home-640x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 641,
+          "screenshot": "home-641x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 767,
+          "screenshot": "home-767x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/options-pricing",
+          "width": 991,
+          "screenshot": "options-pricing-991x900.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/options-pricing",
+          "width": 992,
+          "screenshot": "options-pricing-992x900.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/options-pricing",
+          "width": 993,
+          "screenshot": "options-pricing-993x900.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/options-pricing",
+          "width": 1101,
+          "screenshot": "options-pricing-1101x900.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/options-pricing",
+          "width": 1280,
+          "screenshot": "options-pricing-1280x900.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/sources/research/ecological-dynamic-learning-review-2026",
+          "width": 320,
+          "screenshot": "sources--research--ecological-dynamic-learning-review-2026-320x720.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/sources/research/ecological-dynamic-learning-review-2026",
+          "width": 390,
+          "screenshot": "sources--research--ecological-dynamic-learning-review-2026-390x844.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/student-hub",
+          "width": 320,
+          "screenshot": "student-hub-320x720.png",
+          "reasons": [
+            "visible actionable control outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/report-card",
+          "width": 320,
+          "screenshot": "report-card-320x720.png",
+          "reasons": [
+            "visible text outside viewport",
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/report-card",
+          "width": 390,
+          "screenshot": "report-card-390x844.png",
+          "reasons": [
+            "visible text outside viewport",
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/bio",
+          "width": 320,
+          "screenshot": "bio-320x720.png",
+          "reasons": [
+            "text below 14px",
+            "body text below 16px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/bio",
+          "width": 390,
+          "screenshot": "bio-390x844.png",
+          "reasons": [
+            "visible text outside viewport",
+            "text below 14px",
+            "body text below 16px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/bjj-classes",
+          "width": 320,
+          "screenshot": "bjj-classes-320x720.png",
+          "reasons": [
+            "visible text outside viewport"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/bring-a-friend",
+          "width": 320,
+          "screenshot": "bring-a-friend-320x720.png",
+          "reasons": [
+            "text below 14px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/bring-a-friend",
+          "width": 390,
+          "screenshot": "bring-a-friend-390x844.png",
+          "reasons": [
+            "text below 14px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/hyphen-weekend",
+          "width": 320,
+          "screenshot": "hyphen-weekend-320x720.png",
+          "reasons": [
+            "text below 14px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/hyphen-weekend",
+          "width": 390,
+          "screenshot": "hyphen-weekend-390x844.png",
+          "reasons": [
+            "text below 14px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/videos",
+          "width": 320,
+          "screenshot": "videos-320x720.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/videos",
+          "width": 390,
+          "screenshot": "videos-390x844.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/winter-rank-drop",
+          "width": 320,
+          "screenshot": "winter-rank-drop-320x720.png",
+          "reasons": [
+            "text below 14px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/winter-rank-drop",
+          "width": 390,
+          "screenshot": "winter-rank-drop-390x844.png",
+          "reasons": [
+            "text below 14px"
+          ],
+          "http_failures": []
+        }
+      ],
+      "summary_sha256": "ea4ed5f8237affb691b252ed65381d824d6e9121f302ecc7554c7a8f753d4911"
+    },
+    {
+      "label": "dirty_source",
+      "samples": 460,
+      "passed": 445,
+      "failed": 15,
+      "failure_reasons": {
+        "primary target below 44px": 11,
+        "text below 14px": 2,
+        "body text below 16px": 2,
+        "visible text outside viewport": 1,
+        "unexpected HTTP error responses": 2
+      },
+      "failure_samples": [
+        {
+          "route": "/",
+          "width": 320,
+          "screenshot": "home-320x720.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 360,
+          "screenshot": "home-360x640.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 360,
+          "screenshot": "home-360x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 390,
+          "screenshot": "home-390x844.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 430,
+          "screenshot": "home-430x932.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 639,
+          "screenshot": "home-639x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 640,
+          "screenshot": "home-640x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 641,
+          "screenshot": "home-641x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/",
+          "width": 767,
+          "screenshot": "home-767x900.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/bio",
+          "width": 320,
+          "screenshot": "bio-320x720.png",
+          "reasons": [
+            "text below 14px",
+            "body text below 16px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/bio",
+          "width": 390,
+          "screenshot": "bio-390x844.png",
+          "reasons": [
+            "visible text outside viewport",
+            "text below 14px",
+            "body text below 16px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/blog/exactly-what-happens-first-bjj-class-minute-by-minute",
+          "width": 320,
+          "screenshot": "blog--exactly-what-happens-first-bjj-class-minute-by-minute-320x720.png",
+          "reasons": [
+            "unexpected HTTP error responses"
+          ],
+          "http_failures": [
+            {
+              "url": "http://127.0.0.1:37707/assets/images/hero.89f093.webp",
+              "status": 404
+            }
+          ]
+        },
+        {
+          "route": "/blog/exactly-what-happens-first-bjj-class-minute-by-minute",
+          "width": 390,
+          "screenshot": "blog--exactly-what-happens-first-bjj-class-minute-by-minute-390x844.png",
+          "reasons": [
+            "unexpected HTTP error responses"
+          ],
+          "http_failures": [
+            {
+              "url": "http://127.0.0.1:37707/assets/images/hero.89f093.webp",
+              "status": 404
+            }
+          ]
+        },
+        {
+          "route": "/videos",
+          "width": 320,
+          "screenshot": "videos-320x720.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        },
+        {
+          "route": "/videos",
+          "width": 390,
+          "screenshot": "videos-390x844.png",
+          "reasons": [
+            "primary target below 44px"
+          ],
+          "http_failures": []
+        }
+      ],
+      "summary_sha256": "256c874b7ed4dcb0ef905138b1b1c8c3652d20ae2afa1c14bf7febfb9f12ddfb"
+    }
+  ],
+  "availability_proxy": [
+    {
+      "label": "clean_head",
+      "request_count": 457,
+      "upstream_status_counts": {
+        "200": 457
+      },
+      "error_records": 0,
+      "diagnostics_sha256": "0b21588d282a21d48ab2b936272a3c110fd3271e1e325f35579106e95537c478",
+      "record_fields": [
+        "elapsedMs",
+        "method",
+        "timestamp",
+        "upstreamStatus"
+      ]
+    },
+    {
+      "label": "dirty_source",
+      "request_count": 456,
+      "upstream_status_counts": {
+        "200": 456
+      },
+      "error_records": 0,
+      "diagnostics_sha256": "7ed28f148c75da3dddbb3e8c858a032198ba4f73c378c1cc51c1517acf55eaf4",
+      "record_fields": [
+        "elapsedMs",
+        "method",
+        "timestamp",
+        "upstreamStatus"
+      ]
+    }
+  ],
+  "diagnostics_note": "Request metadata only; no response bodies captured.",
+  "interpretation": "Dirty source passed 445/460 samples versus clean HEAD 430/460. Matching exact route, screenshot, and failure reason, 17 clean-HEAD failures did not recur; two new phone-width missing-hero-image failures appeared on the minute-by-minute blog route, and 13 failures are shared. Remaining dirty failures include Home and Videos primary targets and Bio text/viewport findings. All recorded availability upstream responses were HTTP 200."
+}
