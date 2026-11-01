@@ -19,3 +19,10 @@ The Home input declares `home.min.css`. Canonical `home.css` already had a mobil
 - Deployment uploaded only `index.html`, reporting 164,127 bytes. The tool verified a fresh backup at `/home/sensdapt/senseisandy-predeploy-20261101T090623Z.tar.gz` before upload.
 - Live `/` returned HTTP 200 at 320, 390, 767, and 768px. The link measured 44px at 320, 390, and 767px; it measured 26.39px at 768px as expected beyond the mobile rule boundary. A separate 390px live pass found six stylesheet/script references and no HTTP error responses or failed requests.
 - Keyboard acceptance, contrast review, and Lighthouse/PageSpeed were not run.
+
+
+## Live release follow-up — 2026-11-01
+
+- The public homepage returned HTTP 200 at `https://senseisandy.com/`. Its live HTML contains the `.page-home .ss-home-parent-guide-link { min-height: 44px; }` rule and one matching parent-guide link.
+- Project browser proof measured the live link at **44px** high at 390px viewport width and **26.39px** at 1440px. The source rule is intentionally limited to the mobile breakpoint through 767.98px. Both viewports had no horizontal overflow or JavaScript page errors.
+- The deployed source fix is already in commit `3f877e09`. No additional code change or upload was needed. Compact live measurements: [home-parent-live-viewport.json](2026-11-01/home-parent-live-viewport.json).

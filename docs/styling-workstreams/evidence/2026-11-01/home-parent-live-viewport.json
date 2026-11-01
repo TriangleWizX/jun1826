@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-01",
+  "source_commit": "3f877e09",
+  "url": "https://senseisandy.com/",
+  "selector": ".page-home .ss-home-parent-guide-link",
+  "live_inline_rule_present": true,
+  "measurements": {
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "target_href": "/parents-guide-kids-bjj",
+      "target_height_css_px": 44,
+      "horizontal_overflow": false,
+      "page_errors": 0
+    },
+    "desktop": {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": 200,
+      "target_href": "/parents-guide-kids-bjj",
+      "target_height_css_px": 26.390625,
+      "horizontal_overflow": false,
+      "page_errors": 0
+    }
+  },
+  "method": "tools/browser-proof.mjs; Chromium headless; no interactions or form submissions"
+}
