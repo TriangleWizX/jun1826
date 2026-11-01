@@ -531,6 +531,20 @@ def changed_outputs(commit, only=()):
     manifest_file = DIST_ROOT.parent / 'src/assets/data/asset-hash-manifest.json'
     manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
 
+    # The canonical Law Enforcement route uses the page-tactical body class.
+    # Refresh its fingerprinted shell reference when the scoped tactical rules
+    # change, even though the legacy tactical-longevity route redirects away.
+    if {'src/assets/css/site-shell.css', 'src/assets/css/site-shell.min.css'} & set(names):
+        page = DIST_ROOT / 'law-enforcement-bjj.html'
+        if not page.is_file():
+            raise ValueError('Tactical shell CSS release requires dist/law-enforcement-bjj.html')
+        active_shell_css = manifest.get('/assets/css/site-shell.min.css')
+        if not active_shell_css:
+            raise ValueError('Tactical shell CSS release requires its active manifest fingerprint')
+        if active_shell_css not in page.read_text(encoding='utf-8', errors='ignore'):
+            raise ValueError('Law Enforcement route does not reference the active shell CSS fingerprint')
+        outputs.add((page, 'law-enforcement-bjj.html'))
+
     # The Hyphen Weekend page links its fingerprinted CSS directly. Include
     # both the active stylesheet and route HTML when that source CSS changes.
     if 'src/assets/css/hyphen-weekend.css' in names:
