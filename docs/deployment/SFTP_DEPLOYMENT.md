@@ -27,6 +27,8 @@ Deploys must only occur after explicit authorization from Sandy following local 
 
 The repository helper is `npm run deploy:release -- --commit <sha>`. Run `--dry-run` first. It derives only generated deployable outputs from the commit, excludes QA/source/report files, uploads one file at a time, writes through a temporary remote name, atomically renames it, and reconnects/retries disconnected files without restarting completed uploads.
 
+For a reviewed isolated build, pass `--dist-dir <path>` to make the helper derive and upload payload bytes from that generated directory instead of the repository's default `dist/`. The helper still maps outputs from the selected Git commit and `--only` continues to restrict the result to exact deploy-relative paths. Use this when the root `dist/` contains unrelated dirty output; verify the isolated build and dry-run payload before upload.
+
 1. **Verify Backup**: Confirm a full production backup exists in `/home/twizss/SenseiSandy-Backups/` (see `docs/deployment/BACKUP_AND_ROLLBACK.md`).
 2. **Owner Authorization**: Ensure explicit authorization from Sandy is received.
 3. **Select Active Source Files**: Upload active static files (HTML, CSS, JS, assets) to `/home/username/public_html`.

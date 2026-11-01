@@ -4,6 +4,7 @@ import argparse, json, pathlib, posixpath, re, shlex, subprocess, tarfile, time
 import paramiko
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+DIST_ROOT = ROOT / 'dist'
 SKIP_PREFIXES = ('.agents/', 'artifacts/', 'reports/', 'scripts/', 'docs/', '.vscode/', 'package')
 DEPLOYABLE_ROOTS = ('_includes/', 'assets/', 'winter-rank-drop/', 'winter-armor-2027/', 'admin/', 'athlete-cross-training/', 'annual-track/', 'alley-bootcamp/', 'bjj-classes/', 'bjj-glossary/', 'bjj-videos/', 'blog/', 'clean/', 'members/', 'near/', 'partials/', 'js/', 'images/', 'img/', 'fonts/', 'downloads/', 'youtube/', 'yam/', 'yams/', 'external/', 'partners/', 'reviews-village/', 'research/', 'scribners-staff-reset-pass/', 'social/', 'instagram/', 'snippets/', 'sources/', 'schedule/', 'tactical-longevity/', 'videos/', 'free-bjj-intro-tannersville-ny/', 'white-belt-foundations/', 'options-pricing/', 'evidence/', 'hyphen-weekend/', '413/', 'api/', 'free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/', 'school-families-jiu-jitsu/', 'visit/', 'after-school/', 'deer-mountain-inn/', 'phoenicia-diner/', 'parents-guide-kids-bjj/', 'about/', 'what-is-a-jiu-jitsu-sensei/', 'jiu-jitsu-terms/', 'bjj-butterfly-guard/')
 ROOT_FILES = {'bio.html', 'nearby-towns.html', 'law-enforcement-bjj.html', 'scribners.html', 'scribners-jiu-jitsu.html', 'scribners-thank-you.html', 'partners-hospitality-hunter-windham.html', 'partners-wellness-pt-referrals.html', 'community-partners.html', 'elite-concierge.html', 'adult-private-coaching-intensive.html', 'bring-a-friend.html', 'guarantee-terms.html', '.htaccess', 'index.html', 'robots.txt', 'sitemap.xml', 'sitemap-core.xml', 'sitemap-programs.xml', 'site-shell.html', 'nav-include.html', 'footer-include.html', 'report-card.html', 'weekly-audit.html', 'daily-checkin.html', 'manifest-daily-checkin.json', 'sw-daily-checkin.js', 'show-up-kit.html', 'contact.html', 'bjj_anatomy_game.html', 'birthday-parties.html', 'private-lessons.html', 'programs.html', 'options-pricing.html', 'bjj-faqs.html', 'how-class-works.html', 'parent-resources.html', 'hyphen-weekend.html', 'student-hub.html', 'catskills-home-base.html', 'friday-night-fanatics.html', 'holiday-schedule.html', 'bjj-stretches.html', 'bjj-tannersville-ny-directions.html', 'local-bjj-tournaments-for-parents.html', 'local-bjj-tournaments-for-families.html', 'success-stories.html', 'sensei-jiu-jitsu.html', 'sensei-studio.html', 'bully-proof-jiu-jitsu-tannersville-ny.html', 'jiu-jitsu-safety-tannersville-ny.html', 'rural-bjj-catskills.html', 'waiver.html', 'schedule.html', 'camp-clinics.html', 'summer-academy.html', 'black-belt-concierge.html', 'inclusion.html'}
@@ -91,7 +92,7 @@ def changed_outputs(commit, only=()):
     # its exact generated dependencies from the Bio HTML so the release stays
     # scoped even though dist/ is ignored.
     if 'src/bio.html' in names or 'tools/build-bio-delivery-styles.mjs' in names:
-        page = ROOT / 'dist' / 'bio.html'
+        page = DIST_ROOT / 'bio.html'
         if not page.is_file():
             raise ValueError('Bio release requires a generated dist/bio.html')
         html = page.read_text(encoding='utf-8')
@@ -108,13 +109,13 @@ def changed_outputs(commit, only=()):
         if not required.issubset(found):
             raise ValueError('Bio release HTML must reference the fingerprinted delivery CSS and promotion WebP')
         for rel in sorted(bio_assets):
-            candidate = ROOT / 'dist' / rel
+            candidate = DIST_ROOT / rel
             if not candidate.is_file():
                 raise ValueError(f'Missing generated Bio dependency: {rel}')
             outputs.add((candidate, rel))
     # Alley Bootcamp directly loads route-owned fingerprinted CSS.
     if 'src/assets/css/pages/alley-bootcamp.css' in names:
-        page = ROOT / 'dist' / 'alley-bootcamp' / 'index.html'
+        page = DIST_ROOT / 'alley-bootcamp' / 'index.html'
         if not page.is_file():
             raise ValueError('Alley Bootcamp CSS release requires fresh route build')
         page_text = page.read_text(encoding='utf-8')
@@ -125,7 +126,7 @@ def changed_outputs(commit, only=()):
         if len(fingerprints) != 1:
             raise ValueError('Alley Bootcamp must reference exactly one fingerprinted stylesheet')
         css_rel = fingerprints[0]
-        css_path = ROOT / 'dist' / css_rel
+        css_path = DIST_ROOT / css_rel
         if not css_path.is_file():
             raise ValueError(f'Missing Alley Bootcamp stylesheet: {css_rel}')
         outputs.add((page, 'alley-bootcamp/index.html'))
@@ -133,7 +134,7 @@ def changed_outputs(commit, only=()):
 
     # Friday Night Fanatics directly loads its route-owned fingerprinted CSS.
     if 'src/assets/css/pages/friday-night-fanatics.css' in names:
-        page = ROOT / 'dist' / 'friday-night-fanatics.html'
+        page = DIST_ROOT / 'friday-night-fanatics.html'
         if not page.is_file():
             raise ValueError('Friday Night Fanatics release requires a fresh route build')
         page_text = page.read_text(encoding='utf-8')
@@ -144,14 +145,14 @@ def changed_outputs(commit, only=()):
         if len(fingerprints) != 1:
             raise ValueError('Friday Night Fanatics must reference exactly one fingerprinted stylesheet')
         css_rel = fingerprints[0]
-        css_path = ROOT / 'dist' / css_rel
+        css_path = DIST_ROOT / css_rel
         if not css_path.is_file():
             raise ValueError(f'Missing Friday Night Fanatics stylesheet: {css_rel}')
         outputs.add((page, 'friday-night-fanatics.html'))
         outputs.add((css_path, css_rel))
     # The partner footer fragment is included by SSI and deployed as its own root file.
     if 'src/footer-partner.html' in names:
-        candidate = ROOT / 'dist' / 'footer-partner.html'
+        candidate = DIST_ROOT / 'footer-partner.html'
         if candidate.is_file():
             outputs.add((candidate, 'footer-partner.html'))
 
@@ -160,7 +161,7 @@ def changed_outputs(commit, only=()):
         'src/catskills-home-base.html',
         'src/assets/css/pages/catskills-home-base-touch.css',
     )):
-        page = ROOT / 'dist' / 'catskills-home-base.html'
+        page = DIST_ROOT / 'catskills-home-base.html'
         if page.is_file():
             outputs.add((page, 'catskills-home-base.html'))
             page_text = page.read_text(encoding='utf-8')
@@ -171,7 +172,7 @@ def changed_outputs(commit, only=()):
             if len(fingerprints) != 1:
                 raise ValueError('Catskills Home Base must reference exactly one fingerprinted touch stylesheet')
             css_rel = fingerprints[0]
-            css_path = ROOT / 'dist' / css_rel
+            css_path = DIST_ROOT / css_rel
             if not css_path.is_file():
                 raise ValueError(f'Missing Catskills Home Base stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
@@ -181,7 +182,7 @@ def changed_outputs(commit, only=()):
         'src/assets/css/pages/law-enforcement.css',
         'src/assets/css/pages/law-enforcement.min.css',
     )):
-        candidate = ROOT / 'dist' / 'law-enforcement-bjj.html'
+        candidate = DIST_ROOT / 'law-enforcement-bjj.html'
         if candidate.is_file():
             outputs.add((candidate, 'law-enforcement-bjj.html'))
 
@@ -191,7 +192,7 @@ def changed_outputs(commit, only=()):
         'src/assets/css/pages/everyday-jiu-jitsu.css',
         'src/assets/css/pages/everyday-jiu-jitsu.min.css',
     )):
-        candidate = ROOT / 'dist' / 'everyday-jiu-jitsu-training' / 'index.html'
+        candidate = DIST_ROOT / 'everyday-jiu-jitsu-training' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'everyday-jiu-jitsu-training/index.html'))
             page_text = candidate.read_text(encoding='utf-8')
@@ -202,7 +203,7 @@ def changed_outputs(commit, only=()):
             if len(fingerprints) != 1:
                 raise ValueError('Everyday Jiu-Jitsu must reference exactly one fingerprinted stylesheet')
             css_rel = fingerprints[0]
-            css_path = ROOT / 'dist' / css_rel
+            css_path = DIST_ROOT / css_rel
             if not css_path.is_file():
                 raise ValueError(f'Missing Everyday Jiu-Jitsu stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
@@ -212,7 +213,7 @@ def changed_outputs(commit, only=()):
         'src/birthday-parties.html',
         'src/assets/css/pages/birthday-parties.css',
     )):
-        candidate = ROOT / 'dist' / 'birthday-parties.html'
+        candidate = DIST_ROOT / 'birthday-parties.html'
         if candidate.is_file():
             outputs.add((candidate, 'birthday-parties.html'))
             page_text = candidate.read_text(encoding='utf-8')
@@ -223,7 +224,7 @@ def changed_outputs(commit, only=()):
             if len(fingerprints) != 1:
                 raise ValueError('Birthday Parties must reference exactly one fingerprinted stylesheet')
             css_rel = fingerprints[0]
-            css_path = ROOT / 'dist' / css_rel
+            css_path = DIST_ROOT / css_rel
             if not css_path.is_file():
                 raise ValueError(f'Missing Birthday Parties stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
@@ -234,7 +235,7 @@ def changed_outputs(commit, only=()):
         'src/assets/css/pages/partners-hospitality-hunter-windham.css',
         'src/assets/css/pages/partners-hospitality-hunter-windham.min.css',
     )):
-        candidate = ROOT / 'dist' / 'partners-hospitality-hunter-windham.html'
+        candidate = DIST_ROOT / 'partners-hospitality-hunter-windham.html'
         if candidate.is_file():
             outputs.add((candidate, 'partners-hospitality-hunter-windham.html'))
             page_text = candidate.read_text(encoding='utf-8')
@@ -245,13 +246,13 @@ def changed_outputs(commit, only=()):
             if len(fingerprints) != 1:
                 raise ValueError('Hospitality Partners must reference exactly one fingerprinted stylesheet')
             css_rel = fingerprints[0]
-            css_path = ROOT / 'dist' / css_rel
+            css_path = DIST_ROOT / css_rel
             if not css_path.is_file():
                 raise ValueError(f'Missing Hospitality Partners stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
     # Wellness Partners owns a root route and fingerprinted stylesheet.
     if 'src/assets/css/pages/partners-wellness.css' in names:
-        page = ROOT / 'dist' / 'partners-wellness-pt-referrals.html'
+        page = DIST_ROOT / 'partners-wellness-pt-referrals.html'
         if not page.is_file():
             raise ValueError('Wellness Partners CSS release requires dist/partners-wellness-pt-referrals.html')
         page_text = page.read_text(encoding='utf-8')
@@ -262,7 +263,7 @@ def changed_outputs(commit, only=()):
         if len(fingerprints) != 1:
             raise ValueError('Wellness Partners must reference exactly one fingerprinted stylesheet')
         css_rel = fingerprints[0]
-        css_path = ROOT / 'dist' / css_rel
+        css_path = DIST_ROOT / css_rel
         if not css_path.is_file():
             raise ValueError(f'Missing Wellness Partners stylesheet: {css_rel}')
         outputs.add((page, 'partners-wellness-pt-referrals.html'))
@@ -273,7 +274,7 @@ def changed_outputs(commit, only=()):
         'src/assets/css/pages/bjj-stretches.css',
         'src/assets/css/pages/bjj-stretches.min.css',
     )):
-        page = ROOT / 'dist' / 'bjj-stretches.html'
+        page = DIST_ROOT / 'bjj-stretches.html'
         if not page.is_file():
             raise ValueError('BJJ Stretches CSS release requires dist/bjj-stretches.html')
         page_text = page.read_text(encoding='utf-8')
@@ -284,7 +285,7 @@ def changed_outputs(commit, only=()):
         if len(fingerprints) != 1:
             raise ValueError('BJJ Stretches must reference exactly one fingerprinted minified stylesheet')
         css_rel = fingerprints[0]
-        css_path = ROOT / 'dist' / css_rel
+        css_path = DIST_ROOT / css_rel
         if not css_path.is_file():
             raise ValueError(f'Missing BJJ Stretches stylesheet: {css_rel}')
         outputs.add((page, 'bjj-stretches.html'))
@@ -293,7 +294,7 @@ def changed_outputs(commit, only=()):
     # Programs consumes canonical Tannersville CSS directly; its generated root
     # route and fingerprinted stylesheet must travel together.
     if 'src/assets/css/pages/tannersville.css' in names:
-        page = ROOT / 'dist' / 'programs.html'
+        page = DIST_ROOT / 'programs.html'
         if not page.is_file():
             raise ValueError('Tannersville stylesheet release requires dist/programs.html')
         page_text = page.read_text(encoding='utf-8')
@@ -304,7 +305,7 @@ def changed_outputs(commit, only=()):
         if len(fingerprints) != 1:
             raise ValueError('Programs must reference exactly one fingerprinted Tannersville stylesheet')
         css_rel = fingerprints[0]
-        css_path = ROOT / 'dist' / css_rel
+        css_path = DIST_ROOT / css_rel
         if not css_path.is_file():
             raise ValueError(f'Missing Programs Tannersville stylesheet: {css_rel}')
         outputs.add((page, 'programs.html'))
@@ -319,7 +320,7 @@ def changed_outputs(commit, only=()):
                           for name in names))
     if sitemap_inputs:
         for rel in SITEMAP_OUTPUTS:
-            candidate = ROOT / 'dist' / rel
+            candidate = DIST_ROOT / rel
             if candidate.is_file():
                 outputs.add((candidate, rel))
     # Explicit generated outputs are authoritative when shared partials change.
@@ -339,148 +340,148 @@ def changed_outputs(commit, only=()):
     }
     if any(name in research_record_inputs for name in names):
         for rel in RESEARCH_RECORD_OUTPUTS:
-            candidate = ROOT / 'dist' / rel
+            candidate = DIST_ROOT / rel
             if candidate.is_file():
                 outputs.add((candidate, rel))
     if 'src/_data/faqs.json' in names:
-        candidate = ROOT / 'dist' / 'bjj-faqs.html'
+        candidate = DIST_ROOT / 'bjj-faqs.html'
         if candidate.is_file():
             outputs.add((candidate, 'bjj-faqs.html'))
     if 'src/winter-rank-drop.html' in names: outputs.add((ROOT / 'dist/winter-rank-drop/index.html', 'winter-rank-drop/index.html'))
     if 'src/family-jiu-jitsu.html' in names:
-        candidate = ROOT / 'dist' / 'family-jiu-jitsu' / 'index.html'
+        candidate = DIST_ROOT / 'family-jiu-jitsu' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'family-jiu-jitsu/index.html'))
     if 'src/rural-bjj-catskills.html' in names:
-        candidate = ROOT / 'dist' / 'rural-bjj-catskills.html'
+        candidate = DIST_ROOT / 'rural-bjj-catskills.html'
         if candidate.is_file():
             outputs.add((candidate, 'rural-bjj-catskills.html'))
     for asset in ('assets/730dd3cb-0f20-425a-8771-431897ef21d9.png','assets/730dd3cb-0f20-425a-8771-431897ef21d9.webp'):
         if asset in names: outputs.add((ROOT / asset, asset))
     if 'data/url-registry.json' in names:
-        for candidate in (ROOT / 'dist' / 'bjj-classes').rglob('*.html'):
+        for candidate in (DIST_ROOT / 'bjj-classes').rglob('*.html'):
             if candidate.is_file():
-                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
-        for candidate in (ROOT / 'dist' / 'sources').rglob('*.html'):
+                outputs.add((candidate, candidate.relative_to(DIST_ROOT).as_posix()))
+        for candidate in (DIST_ROOT / 'sources').rglob('*.html'):
             if candidate.is_file():
-                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
-        for candidate in (ROOT / 'dist' / 'members').rglob('*.html'):
+                outputs.add((candidate, candidate.relative_to(DIST_ROOT).as_posix()))
+        for candidate in (DIST_ROOT / 'members').rglob('*.html'):
             if candidate.is_file():
-                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+                outputs.add((candidate, candidate.relative_to(DIST_ROOT).as_posix()))
         for rf in ('waiver.html', 'scribners-thank-you.html'):
-            candidate = ROOT / 'dist' / rf
+            candidate = DIST_ROOT / rf
             if candidate.is_file():
                 outputs.add((candidate, rf))
     if 'tools/build-home-styles.mjs' in names:
-        candidate = ROOT / 'dist' / 'index.html'
+        candidate = DIST_ROOT / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('home-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if ('tools/build-schedule-styles.mjs' in names or
             any(name in names for name in ('src/schedule.html',
                                            'src/assets/css/pages/schedule.css',
                                            'src/assets/css/pages/schedule.min.css'))):
-        candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+        candidate = DIST_ROOT / 'schedule' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'schedule/index.html'))
             outputs.add((candidate, 'schedule.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('schedule-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if 'tools/build-glossary-styles.mjs' in names:
-        candidate = ROOT / 'dist' / 'bjj-glossary' / 'index.html'
+        candidate = DIST_ROOT / 'bjj-glossary' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'bjj-glossary/index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('glossary-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if 'tools/build-directions-styles.mjs' in names:
-        candidate = ROOT / 'dist' / 'bjj-tannersville-ny-directions.html'
+        candidate = DIST_ROOT / 'bjj-tannersville-ny-directions.html'
         if candidate.is_file():
             outputs.add((candidate, 'bjj-tannersville-ny-directions.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('directions-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if 'tools/build-tannersville-styles.mjs' in names:
-        candidate = ROOT / 'dist' / 'bjj-classes' / 'tannersville-ny' / 'index.html'
+        candidate = DIST_ROOT / 'bjj-classes' / 'tannersville-ny' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'bjj-classes/tannersville-ny/index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('tannersville-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if 'tools/build-visit-styles.mjs' in names:
-        candidate = ROOT / 'dist' / 'visit' / 'index.html'
+        candidate = DIST_ROOT / 'visit' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'visit/index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('visit-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if ('tools/build-instagram-styles.mjs' in names or
             'src/assets/css/pages/instagram.css' in names):
-        candidate = ROOT / 'dist' / 'instagram' / 'index.html'
+        candidate = DIST_ROOT / 'instagram' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'instagram/index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('instagram-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if 'tools/build-free-intro-styles.mjs' in names:
-        candidate = ROOT / 'dist' / 'free-bjj-intro-tannersville-ny' / 'index.html'
+        candidate = DIST_ROOT / 'free-bjj-intro-tannersville-ny' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'free-bjj-intro-tannersville-ny/index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('free-intro-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if ('tools/build-options-pricing-styles.mjs' in names or
             'src/assets/css/pages/options-pricing-highend.css' in names):
-        html_c = ROOT / 'dist' / 'options-pricing.html'
-        dir_c = ROOT / 'dist' / 'options-pricing' / 'index.html'
+        html_c = DIST_ROOT / 'options-pricing.html'
+        dir_c = DIST_ROOT / 'options-pricing' / 'index.html'
         if html_c.is_file():
             outputs.add((html_c, 'options-pricing.html'))
         if dir_c.is_file():
             outputs.add((dir_c, 'options-pricing/index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('options-pricing-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if 'tools/build-bjj-classes-styles.mjs' in names:
-        candidate = ROOT / 'dist' / 'bjj-classes' / 'index.html'
+        candidate = DIST_ROOT / 'bjj-classes' / 'index.html'
         if candidate.is_file():
             outputs.add((candidate, 'bjj-classes/index.html'))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('bjj-classes-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     if 'tools/build-article-styles.mjs' in names:
-        blog_dir = ROOT / 'dist' / 'blog'
+        blog_dir = DIST_ROOT / 'blog'
         if blog_dir.is_dir():
             for blog_cand in blog_dir.rglob('index.html'):
                 if blog_cand.is_file():
-                    outputs.add((blog_cand, blog_cand.relative_to(ROOT / 'dist').as_posix()))
-        pages_css_dir = ROOT / 'dist' / 'assets' / 'css' / 'pages'
+                    outputs.add((blog_cand, blog_cand.relative_to(DIST_ROOT).as_posix()))
+        pages_css_dir = DIST_ROOT / 'assets' / 'css' / 'pages'
         if pages_css_dir.is_dir():
             for css_cand in pages_css_dir.glob('article-delivery.*.css'):
                 if css_cand.is_file():
-                    outputs.add((css_cand, css_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((css_cand, css_cand.relative_to(DIST_ROOT).as_posix()))
     # Asset fingerprint policy changes rewrite generated HTML sitewide. Include
     # the resulting deployable HTML and JS payload even though dist/ is ignored.
     fingerprint_release = 'tools/fingerprint-assets.cjs' in names
@@ -502,7 +503,7 @@ def changed_outputs(commit, only=()):
         active_glossary_css = manifest.get('/assets/css/bjj-glossary.css')
         if not active_glossary_css:
             raise ValueError('Glossary CSS release requires its active manifest fingerprint')
-        glossary_routes = ROOT / 'dist' / 'bjj-glossary'
+        glossary_routes = DIST_ROOT / 'bjj-glossary'
         matched_routes = 0
         if glossary_routes.is_dir():
             for candidate in glossary_routes.rglob('index.html'):
@@ -510,7 +511,7 @@ def changed_outputs(commit, only=()):
                     continue
                 html = candidate.read_text(encoding='utf-8', errors='ignore')
                 if active_glossary_css in html:
-                    outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((candidate, candidate.relative_to(DIST_ROOT).as_posix()))
                     matched_routes += 1
         if not matched_routes:
             raise ValueError('Glossary CSS release found no generated term routes using the active fingerprint')
@@ -518,7 +519,7 @@ def changed_outputs(commit, only=()):
     # The hub embeds its glossary delivery CSS inline, so a hub stylesheet
     # source change must publish the generated hub page itself.
     if 'src/assets/css/pages/glossary.css' in names:
-        candidate = ROOT / 'dist' / 'bjj-glossary' / 'index.html'
+        candidate = DIST_ROOT / 'bjj-glossary' / 'index.html'
         if not candidate.is_file():
             raise ValueError('Glossary hub CSS release requires a fresh generated hub page')
         outputs.add((candidate, 'bjj-glossary/index.html'))
@@ -526,12 +527,12 @@ def changed_outputs(commit, only=()):
     for name in names:
         if name.startswith('src/assets/calendar/') and name.endswith('.ics'):
             asset_rel = name[4:]
-            candidate = ROOT / 'dist' / asset_rel
+            candidate = DIST_ROOT / asset_rel
             if candidate.is_file():
                 outputs.add((candidate, asset_rel))
         if name in ('src/assets/css/pages/schedule-month-calendar.css', 'src/assets/js/schedule-month-calendar.js'):
             asset_rel = name[4:]
-            candidate = ROOT / 'dist' / asset_rel
+            candidate = DIST_ROOT / asset_rel
             if candidate.is_file():
                 outputs.add((candidate, asset_rel))
         if name.startswith('api/'):
@@ -543,132 +544,132 @@ def changed_outputs(commit, only=()):
             continue
         if name.startswith('src/assets/'):
             asset_rel = name[4:]
-            candidate = ROOT / 'dist' / asset_rel
+            candidate = DIST_ROOT / asset_rel
             if candidate.is_file() and (asset_rel in ROOT_FILES or asset_rel.startswith(DEPLOYABLE_ROOTS)):
                 outputs.add((candidate, asset_rel))
             asset_href = '/' + asset_rel
             if asset_href in manifest:
                 fingerprinted = manifest[asset_href].lstrip('/')
-                candidate_fp = ROOT / 'dist' / fingerprinted
+                candidate_fp = DIST_ROOT / fingerprinted
                 if candidate_fp.is_file() and (fingerprinted in ROOT_FILES or fingerprinted.startswith(DEPLOYABLE_ROOTS)):
                     outputs.add((candidate_fp, fingerprinted))
             if asset_rel.endswith('.css') and not asset_rel.endswith('.min.css'):
                 min_rel = asset_rel[:-4] + '.min.css'
-                candidate_min = ROOT / 'dist' / min_rel
+                candidate_min = DIST_ROOT / min_rel
                 if candidate_min.is_file() and (min_rel in ROOT_FILES or min_rel.startswith(DEPLOYABLE_ROOTS)):
                     outputs.add((candidate_min, min_rel))
                 min_href = '/' + min_rel
                 if min_href in manifest:
                     fingerprinted_min = manifest[min_href].lstrip('/')
-                    candidate_min_fp = ROOT / 'dist' / fingerprinted_min
+                    candidate_min_fp = DIST_ROOT / fingerprinted_min
                     if candidate_min_fp.is_file() and (fingerprinted_min in ROOT_FILES or fingerprinted_min.startswith(DEPLOYABLE_ROOTS)):
                         outputs.add((candidate_min_fp, fingerprinted_min))
             continue
         if name == 'src/partials/pricing-module-fragment.html':
-            candidate = ROOT / 'dist' / 'pricing-module-fragment.html'
+            candidate = DIST_ROOT / 'pricing-module-fragment.html'
             if candidate.is_file(): outputs.add((candidate, 'pricing-module-fragment.html'))
             continue
         if name == 'src/partials/home-conversion-shell.html':
-            candidate = ROOT / 'dist' / 'index.html'
+            candidate = DIST_ROOT / 'index.html'
             if candidate.is_file(): outputs.add((candidate, 'index.html'))
             continue
         if name == 'src/partials/program-conversion-adults.html':
-            cand = ROOT / 'dist' / 'bjj-classes' / 'adults-tannersville-ny' / 'index.html'
+            cand = DIST_ROOT / 'bjj-classes' / 'adults-tannersville-ny' / 'index.html'
             if cand.is_file(): outputs.add((cand, 'bjj-classes/adults-tannersville-ny/index.html'))
         if name == 'src/partials/program-conversion-kids.html':
-            cand = ROOT / 'dist' / 'bjj-classes' / 'kids-tannersville-ny' / 'index.html'
+            cand = DIST_ROOT / 'bjj-classes' / 'kids-tannersville-ny' / 'index.html'
             if cand.is_file(): outputs.add((cand, 'bjj-classes/kids-tannersville-ny/index.html'))
         if name == 'src/partials/program-conversion-teens.html':
-            cand = ROOT / 'dist' / 'bjj-classes' / 'teens-tannersville-ny' / 'index.html'
+            cand = DIST_ROOT / 'bjj-classes' / 'teens-tannersville-ny' / 'index.html'
             if cand.is_file(): outputs.add((cand, 'bjj-classes/teens-tannersville-ny/index.html'))
         if name == 'src/partials/footer-include.html':
-            candidate = ROOT / 'dist' / 'footer-include.html'
+            candidate = DIST_ROOT / 'footer-include.html'
             if candidate.is_file(): outputs.add((candidate, 'footer-include.html'))
         if name == 'src/partials/nav-include.html':
-            candidate = ROOT / 'dist' / 'nav-include.html'
+            candidate = DIST_ROOT / 'nav-include.html'
             if candidate.is_file(): outputs.add((candidate, 'nav-include.html'))
         if name == 'src/partials/cta-footer.html':
-            candidate = ROOT / 'dist' / 'cta-footer.html'
+            candidate = DIST_ROOT / 'cta-footer.html'
             if candidate.is_file(): outputs.add((candidate, 'cta-footer.html'))
         if name.startswith('src/'):
             if name == 'src/alley-bootcamp/index.html':
-                candidate = ROOT / 'dist' / 'alley-bootcamp' / 'index.html'
+                candidate = DIST_ROOT / 'alley-bootcamp' / 'index.html'
                 if candidate.is_file(): outputs.add((candidate, 'alley-bootcamp/index.html'))
                 continue
             if name == 'src/evidence.html':
-                candidate = ROOT / 'dist' / 'evidence' / 'index.html'
+                candidate = DIST_ROOT / 'evidence' / 'index.html'
             elif name == 'src/athlete-cross-training.html':
-                candidate = ROOT / 'dist' / 'athlete-cross-training' / 'index.html'
+                candidate = DIST_ROOT / 'athlete-cross-training' / 'index.html'
             elif name == 'src/athlete-cross-training/evidence.html':
-                candidate = ROOT / 'dist' / 'athlete-cross-training' / 'evidence' / 'index.html'
+                candidate = DIST_ROOT / 'athlete-cross-training' / 'evidence' / 'index.html'
             elif name == 'src/schedule.html':
-                candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+                candidate = DIST_ROOT / 'schedule' / 'index.html'
                 if candidate.is_file():
                     outputs.add((candidate, 'schedule/index.html'))
                     outputs.add((candidate, 'schedule.html'))
             elif name in ('src/options-pricing.html', 'src/options-pricing.njk'):
-                html_c = ROOT / 'dist' / 'options-pricing.html'
-                dir_c = ROOT / 'dist' / 'options-pricing' / 'index.html'
+                html_c = DIST_ROOT / 'options-pricing.html'
+                dir_c = DIST_ROOT / 'options-pricing' / 'index.html'
                 if html_c.is_file():
                     outputs.add((html_c, 'options-pricing.html'))
                 if dir_c.is_file():
                     outputs.add((dir_c, 'options-pricing/index.html'))
                 continue
             elif name == 'src/about.html':
-                html_c = ROOT / 'dist' / 'about.html'
-                dir_c = ROOT / 'dist' / 'about' / 'index.html'
+                html_c = DIST_ROOT / 'about.html'
+                dir_c = DIST_ROOT / 'about' / 'index.html'
                 if html_c.is_file():
                     outputs.add((html_c, 'about.html'))
                 if dir_c.is_file():
                     outputs.add((dir_c, 'about/index.html'))
                 continue
             elif name == 'src/fall-practice-reset.html':
-                candidate = ROOT / 'dist' / 'fall-practice-reset' / 'index.html'
+                candidate = DIST_ROOT / 'fall-practice-reset' / 'index.html'
             elif name == 'src/hyphen-weekend.html':
-                candidate = ROOT / 'dist' / 'hyphen-weekend' / 'index.html'
+                candidate = DIST_ROOT / 'hyphen-weekend' / 'index.html'
             elif name == 'src/school-families-jiu-jitsu.html':
-                candidate = ROOT / 'dist' / 'school-families-jiu-jitsu' / 'index.html'
+                candidate = DIST_ROOT / 'school-families-jiu-jitsu' / 'index.html'
             elif name == 'src/after-school.html':
-                candidate = ROOT / 'dist' / 'after-school' / 'index.html'
+                candidate = DIST_ROOT / 'after-school' / 'index.html'
             elif name == 'src/what-is-a-jiu-jitsu-sensei.html':
-                candidate = ROOT / 'dist' / 'what-is-a-jiu-jitsu-sensei' / 'index.html'
+                candidate = DIST_ROOT / 'what-is-a-jiu-jitsu-sensei' / 'index.html'
             elif name == 'src/jiu-jitsu-terms.html':
-                candidate = ROOT / 'dist' / 'jiu-jitsu-terms' / 'index.html'
+                candidate = DIST_ROOT / 'jiu-jitsu-terms' / 'index.html'
             elif name == 'src/bjj-butterfly-guard.html':
-                candidate = ROOT / 'dist' / 'bjj-butterfly-guard' / 'index.html'
+                candidate = DIST_ROOT / 'bjj-butterfly-guard' / 'index.html'
             elif name == 'src/bjj-videos.html':
-                candidate = ROOT / 'dist' / 'bjj-videos' / 'index.html'
+                candidate = DIST_ROOT / 'bjj-videos' / 'index.html'
             elif name == 'src/videos.html':
-                candidate = ROOT / 'dist' / 'videos' / 'index.html'
+                candidate = DIST_ROOT / 'videos' / 'index.html'
             elif name == 'src/clean.html':
-                candidate = ROOT / 'dist' / 'clean' / 'index.html'
+                candidate = DIST_ROOT / 'clean' / 'index.html'
             elif name == 'src/deer-mountain-inn.html':
-                html_c = ROOT / 'dist' / 'deer-mountain-inn.html'
-                dir_c = ROOT / 'dist' / 'deer-mountain-inn' / 'index.html'
+                html_c = DIST_ROOT / 'deer-mountain-inn.html'
+                dir_c = DIST_ROOT / 'deer-mountain-inn' / 'index.html'
                 if html_c.is_file():
                     outputs.add((html_c, 'deer-mountain-inn.html'))
                 if dir_c.is_file():
                     outputs.add((dir_c, 'deer-mountain-inn/index.html'))
                 continue
             elif name == 'src/phoenicia-diner.html':
-                html_c = ROOT / 'dist' / 'phoenicia-diner.html'
-                dir_c = ROOT / 'dist' / 'phoenicia-diner' / 'index.html'
+                html_c = DIST_ROOT / 'phoenicia-diner.html'
+                dir_c = DIST_ROOT / 'phoenicia-diner' / 'index.html'
                 if html_c.is_file():
                     outputs.add((html_c, 'phoenicia-diner.html'))
                 if dir_c.is_file():
                     outputs.add((dir_c, 'phoenicia-diner/index.html'))
                 continue
             elif name == 'src/blog/beginner-friendly-bjj-tannersville-links/index.html':
-                candidate = ROOT / 'dist' / 'blog' / 'beginner-friendly-bjj-tannersville' / 'index.html'
+                candidate = DIST_ROOT / 'blog' / 'beginner-friendly-bjj-tannersville' / 'index.html'
             elif name == 'src/_includes/schedule-master.html':
-                candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+                candidate = DIST_ROOT / 'schedule' / 'index.html'
                 if candidate.is_file():
                     outputs.add((candidate, 'schedule.html'))
             elif name in ('src/_data/tournaments.js', 'src/_includes/partials/tournament-grid.html'):
-                cand_fam = ROOT / 'dist' / 'local-bjj-tournaments-for-families.html'
+                cand_fam = DIST_ROOT / 'local-bjj-tournaments-for-families.html'
                 if cand_fam.is_file():
                     outputs.add((cand_fam, 'local-bjj-tournaments-for-families.html'))
-                cand_par = ROOT / 'dist' / 'local-bjj-tournaments-for-parents.html'
+                cand_par = DIST_ROOT / 'local-bjj-tournaments-for-parents.html'
                 if cand_par.is_file():
                     outputs.add((cand_par, 'local-bjj-tournaments-for-parents.html'))
                 continue
@@ -678,16 +679,16 @@ def changed_outputs(commit, only=()):
                     relative = relative[:-10]
                 else:
                     relative = relative[:-4]
-                candidate = ROOT / 'dist' / relative / 'index.html'
+                candidate = DIST_ROOT / relative / 'index.html'
             else:
-                candidate = ROOT / 'dist' / name[4:]
+                candidate = DIST_ROOT / name[4:]
         elif name in ROOT_FILES:
-            candidate = ROOT / 'dist' / name
+            candidate = DIST_ROOT / name
         elif name.startswith(DEPLOYABLE_ROOTS):
-            candidate = ROOT / 'dist' / name
+            candidate = DIST_ROOT / name
         else:
             continue
-        rel = candidate.relative_to(ROOT / 'dist').as_posix()
+        rel = candidate.relative_to(DIST_ROOT).as_posix()
         if rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS):
             if candidate.is_file(): outputs.add((candidate, rel))
     brand_release = any(
@@ -697,22 +698,22 @@ def changed_outputs(commit, only=()):
         for name in names
     )
     if brand_release:
-        brand_dir = ROOT / 'dist' / 'assets' / 'img' / 'brand'
+        brand_dir = DIST_ROOT / 'assets' / 'img' / 'brand'
         if brand_dir.is_dir():
             for brand_cand in brand_dir.rglob('*'):
                 if brand_cand.is_file():
-                    outputs.add((brand_cand, brand_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((brand_cand, brand_cand.relative_to(DIST_ROOT).as_posix()))
     lineage_release = any(
         name.startswith('src/assets/img/lineage/') or
         name == 'src/blog/bjj-sensei/index.html'
         for name in names
     )
     if lineage_release:
-        lineage_dir = ROOT / 'dist' / 'assets' / 'img' / 'lineage'
+        lineage_dir = DIST_ROOT / 'assets' / 'img' / 'lineage'
         if lineage_dir.is_dir():
             for lineage_cand in lineage_dir.rglob('*'):
                 if lineage_cand.is_file():
-                    outputs.add((lineage_cand, lineage_cand.relative_to(ROOT / 'dist').as_posix()))
+                    outputs.add((lineage_cand, lineage_cand.relative_to(DIST_ROOT).as_posix()))
     pricing_release = any(
         name in ('src/_data/pricing.json', 'src/options-pricing.njk', 'src/pricing.md')
         for name in names
@@ -725,13 +726,13 @@ def changed_outputs(commit, only=()):
             'pricing.md',
             'visit/index.html',
         ):
-            cand_path = ROOT / 'dist' / cand_rel
+            cand_path = DIST_ROOT / cand_rel
             if cand_path.is_file():
                 outputs.add((cand_path, cand_rel))
     if fingerprint_release or sitewide_release:
-        for candidate in (ROOT / 'dist').rglob('*'):
+        for candidate in (DIST_ROOT).rglob('*'):
             if not candidate.is_file(): continue
-            rel = candidate.relative_to(ROOT / 'dist').as_posix()
+            rel = candidate.relative_to(DIST_ROOT).as_posix()
             is_js = rel.startswith('js/') or rel.startswith('assets/js/')
             is_css = rel.startswith('assets/css/')
             is_brand = rel.startswith('assets/img/brand/')
@@ -739,19 +740,19 @@ def changed_outputs(commit, only=()):
             if is_site_html or is_js or is_css or is_brand or rel == 'assets/data/asset-hash-manifest.json':
                 outputs.add((candidate, rel))
     if schema_release:
-        for candidate in (ROOT / 'dist').rglob('*.html'):
+        for candidate in (DIST_ROOT).rglob('*.html'):
             if not candidate.is_file():
                 continue
-            rel = candidate.relative_to(ROOT / 'dist').as_posix()
+            rel = candidate.relative_to(DIST_ROOT).as_posix()
             if not (rel in ROOT_FILES or rel.startswith(DEPLOYABLE_ROOTS)):
                 continue
             if 'reviewCount' in candidate.read_text(encoding='utf-8', errors='ignore'):
                 outputs.add((candidate, rel))
 
     if glossary_release:
-        for candidate in (ROOT / 'dist' / 'bjj-glossary').rglob('*'):
+        for candidate in (DIST_ROOT / 'bjj-glossary').rglob('*'):
             if candidate.is_file():
-                outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+                outputs.add((candidate, candidate.relative_to(DIST_ROOT).as_posix()))
     # Kids CSS is derived from markup, runtime selectors and shared styles, not
     # just kids.css. Conservatively include its page for shared build inputs.
     kids_rel = 'bjj-classes/kids-tannersville-ny/index.html'
@@ -762,7 +763,7 @@ def changed_outputs(commit, only=()):
         is_shared_style_input(name)
         for name in names
     )
-    kids_page = ROOT / 'dist' / kids_rel
+    kids_page = DIST_ROOT / kids_rel
     if requested(kids_rel) and (kids_inputs or any(rel == kids_rel for _, rel in outputs)):
         if not kids_page.is_file():
             raise ValueError('Kids release requires a fresh production build')
@@ -770,7 +771,7 @@ def changed_outputs(commit, only=()):
                              kids_page.read_text(encoding='utf-8'))
         if len(bundles) != 1:
             raise ValueError('Kids release requires exactly one active delivery bundle')
-        bundle = ROOT / 'dist' / bundles[0]
+        bundle = DIST_ROOT / bundles[0]
         if not bundle.is_file():
             raise ValueError('Missing active Kids CSS delivery bundle')
         outputs.add((kids_page, kids_rel))
@@ -798,7 +799,7 @@ def changed_outputs(commit, only=()):
         ):
             if not requested(audience_rel):
                 continue
-            audience_page = ROOT / 'dist' / audience_rel
+            audience_page = DIST_ROOT / audience_rel
             if not audience_page.is_file():
                 raise ValueError(f'{audience.title()} release requires fresh production build')
             bundles = re.findall(
@@ -807,7 +808,7 @@ def changed_outputs(commit, only=()):
             )
             if len(bundles) != 1:
                 raise ValueError(f'{audience.title()} release requires exactly one active delivery bundle')
-            bundle = ROOT / 'dist' / bundles[0]
+            bundle = DIST_ROOT / bundles[0]
             if not bundle.is_file():
                 raise ValueError(f'Missing active {audience.title()} CSS delivery bundle')
             route_bundles = re.findall(
@@ -816,7 +817,7 @@ def changed_outputs(commit, only=()):
             )
             if len(route_bundles) != 1:
                 raise ValueError(f'{audience.title()} release requires exactly one active route CSS delivery bundle')
-            route_bundle = ROOT / 'dist' / route_bundles[0]
+            route_bundle = DIST_ROOT / route_bundles[0]
             if not route_bundle.is_file():
                 raise ValueError(f'Missing active {audience.title()} route CSS delivery bundle')
             outputs.add((audience_page, audience_rel))
@@ -961,7 +962,11 @@ def verify_local_backup(path):
     print(f'local_backup_verified={backup} bytes={backup.stat().st_size}', flush=True)
 
 def main():
-    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--reuse-existing-backup', action='store_true', help='reuse the newest verified account-level archive instead of creating a fresh snapshot'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); parser.add_argument('--only', action='append', default=[], help='limit upload to these exact deploy-relative paths; repeatable'); args = parser.parse_args()
+    global DIST_ROOT
+    parser = argparse.ArgumentParser(); parser.add_argument('--commit', default='HEAD'); parser.add_argument('--config', default='.vscode/sftp.json'); parser.add_argument('--dist-dir', default=str(DIST_ROOT), help='generated output directory to deploy from (default: repository dist/)'); parser.add_argument('--dry-run', action='store_true'); parser.add_argument('--retries', type=int, default=3); parser.add_argument('--local-backup', help='use an independently verified full backup when remote quota prevents a second copy'); parser.add_argument('--reuse-existing-backup', action='store_true', help='reuse the newest verified account-level archive instead of creating a fresh snapshot'); parser.add_argument('--qa-backups', action='store_true'); parser.add_argument('--cleanup', action='store_true'); parser.add_argument('--only', action='append', default=[], help='limit upload to these exact deploy-relative paths; repeatable'); args = parser.parse_args()
+    DIST_ROOT = pathlib.Path(args.dist_dir).expanduser().resolve()
+    if not DIST_ROOT.is_dir():
+        parser.error(f'generated output directory does not exist: {DIST_ROOT}')
     if args.local_backup and args.reuse_existing_backup: parser.error('--local-backup and --reuse-existing-backup cannot be combined')
     cfg = json.loads((ROOT / args.config).read_text())
     if args.qa_backups:
@@ -978,13 +983,13 @@ def main():
         if not files and args.commit == 'HEAD':
             staged = subprocess.check_output(['git', 'diff', '--cached', '--name-only'], cwd=ROOT, text=True).splitlines()
             if 'src/schedule.html' in staged:
-                candidate = ROOT / 'dist' / 'schedule' / 'index.html'
+                candidate = DIST_ROOT / 'schedule' / 'index.html'
                 if candidate.is_file() and 'schedule/index.html' in allowed:
                     files.append((candidate, 'schedule/index.html'))
             for name in staged:
                 if name.startswith('src/assets/calendar/') and name.endswith('.ics') or name in ('src/assets/css/pages/schedule-month-calendar.css', 'src/assets/js/schedule-month-calendar.js'):
                     rel = name[4:]
-                    candidate = ROOT / 'dist' / rel
+                    candidate = DIST_ROOT / rel
                     if candidate.is_file() and rel in allowed:
                         files.append((candidate, rel))
             files = sorted(set(files), key=lambda item: (1 if item[1].endswith('.html') else 0, item[1]))
