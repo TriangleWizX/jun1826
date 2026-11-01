@@ -38,6 +38,8 @@ const routes = [
 ];
 
 const widths = [360, 390, 430];
+const availabilityOrigin = 'https://senseisandy.com';
+const availabilityProxyDiagnostics = [];
 
 const mime = {
   '.html': 'text/html',
@@ -67,7 +69,50 @@ async function materialize(file, stack = []) {
 
 const server = http.createServer(async (req, res) => {
   try {
-    const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    const requestUrl = new URL(req.url, 'http://localhost');
+    const pathname = decodeURIComponent(requestUrl.pathname);
+    if (req.method !== 'GET') {
+      res.writeHead(405, { Allow: 'GET' }).end('Method not allowed');
+      return;
+    }
+    if (pathname === '/api/first-visit-availability') {
+      const startedAt = performance.now();
+      let upstreamStatus = null;
+      try {
+        const upstreamUrl = new URL(pathname, availabilityOrigin);
+        upstreamUrl.search = requestUrl.search;
+        const upstream = await fetch(upstreamUrl, {
+          headers: { Accept: 'application/json' },
+          signal: AbortSignal.timeout(5000),
+          redirect: 'error'
+        });
+        upstreamStatus = upstream.status;
+        const body = Buffer.from(await upstream.arrayBuffer());
+        res.writeHead(upstream.status, {
+          'Content-Type': upstream.headers.get('content-type') || 'application/json',
+          'Cache-Control': 'no-store'
+        }).end(body);
+        availabilityProxyDiagnostics.push({
+          timestamp: new Date().toISOString(),
+          method: 'GET',
+          elapsedMs: Math.max(0, Math.round(performance.now() - startedAt)),
+          upstreamStatus
+        });
+      } catch (error) {
+        availabilityProxyDiagnostics.push({
+          timestamp: new Date().toISOString(),
+          method: 'GET',
+          elapsedMs: Math.max(0, Math.round(performance.now() - startedAt)),
+          upstreamStatus,
+          errorName: typeof error?.name === 'string' ? error.name : 'Error'
+        });
+        res.writeHead(502, {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store'
+        }).end(JSON.stringify({ error: 'Availability service unavailable' }));
+      }
+      return;
+    }
     const base = path.resolve(dist, '.' + pathname);
     if (!base.startsWith(dist + path.sep) && base !== dist) {
       res.writeHead(403).end('Forbidden');
@@ -260,6 +305,10 @@ try {
   }
 
   await fs.writeFile(path.join(out, 'summary.json'), JSON.stringify(results, null, 2) + '\n');
+  await fs.writeFile(path.join(out, 'availability-proxy-diagnostics.json'), JSON.stringify({
+    requestCount: availabilityProxyDiagnostics.length,
+    requests: availabilityProxyDiagnostics
+  }, null, 2) + '\n');
 
   // Generate markdown report
   const reportLines = [
