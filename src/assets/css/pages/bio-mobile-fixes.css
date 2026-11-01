@@ -28,3 +28,25 @@
     overflow-wrap: anywhere;
   }
 }
+
+/* Give the Bio action bar enough room for both labels on narrow phones. */
+@media (max-width: 767.98px) {
+  body.page-bio .ss-mobile-actionbar .ss-action-primary,
+  body.page-bio .ss-mobile-actionbar .ss-action-reserve {
+    box-sizing: border-box;
+    width: auto;
+    flex: 0 1 auto;
+    padding-inline: 6px;
+    font-size: 14px;
+    white-space: normal;
+    overflow: visible;
+    line-height: 1.15;
+  }
+
+  body.page-bio .ss-mobile-actionbar .ss-action-home {
+    box-sizing: border-box;
+    width: 44px;
+    flex: 0 0 44px;
+    padding-inline: 6px;
+  }
+}

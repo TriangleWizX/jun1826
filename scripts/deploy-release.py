@@ -56,6 +56,7 @@ RESEARCH_RECORD_OUTPUTS = (
 ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/home.css',
     'src/assets/css/pages/home.min.css',
+    'src/assets/css/pages/bio-mobile-fixes.css',
     'src/assets/css/pages/instagram.css',
     'src/assets/css/pages/schedule.css',
     'src/assets/css/pages/schedule.min.css',
@@ -100,7 +101,7 @@ def changed_outputs(commit, only=()):
     # Bio's route-only stylesheet build emits one content-hashed CSS file. Map
     # its exact generated dependencies from the Bio HTML so the release stays
     # scoped even though dist/ is ignored.
-    if 'src/bio.html' in names or 'tools/build-bio-delivery-styles.mjs' in names:
+    if 'src/bio.html' in names or 'tools/build-bio-delivery-styles.mjs' in names or 'src/assets/css/pages/bio-mobile-fixes.css' in names:
         page = DIST_ROOT / 'bio.html'
         if not page.is_file():
             raise ValueError('Bio release requires a generated dist/bio.html')
