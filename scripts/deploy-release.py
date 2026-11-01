@@ -75,6 +75,7 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/alley-bootcamp.css',
     'src/assets/css/bjj-glossary.css',
     'src/assets/css/pages/glossary.css',
+    'src/assets/css/hyphen-weekend.css',
 }
 
 
