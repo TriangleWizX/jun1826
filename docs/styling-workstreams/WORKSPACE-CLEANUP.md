@@ -215,3 +215,21 @@ Read-only audit contract: `CLEANUP-REDUNDANCY-VERIFY-20261101`. Owner: coordinat
 | `TMP-STYLE-CONTROLS-20261026` | Coordinator; lifecycle auditor | `/tmp/style-swarm-20261026-controls/` | Git repository at `02634569`; 66 dirty entries, three untracked files, unique control/target artifacts | 2026-10-26 name; audited 2026-11-01 | 1,050,218,496 B | Reconcile unique control/target artifacts; review 2026-11-08 | Preserve; not redundant |
 
 Generated-output follow-up: `/tmp/style-swarm-20261026-hub/dist` and `/tmp/style-swarm-20261026-controls/dist` are exact duplicates (128 files, tree SHA-256 `4598a05391e27564370763c423e733db7cba34817ca8977226e08693af95a7f3`). Both are tracked in independent Git repositories and production equivalence is unverified. Preserve both; deleting either would create tracked deletions in unresolved checkouts. Candidate `node_modules` paths are symlinks, not duplicate installs; no standalone virtual environments were found.
+
+## Blog CSS worktree reconciliation — 2026-11-01
+
+| Workstream ID | Owner | Exact path | Purpose / base | Creation date | Size budget | Closeout trigger | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `BLOG-CSS-LEGACY-DIRTY-20261101` | Coordinator | `/tmp/blog-css-release-20261102/` | Existing detached worktree at `6722bb70349fe9af7ca5cb7569bf3b20b1fb2a36`; 94 dirty generated outputs, modified source asset manifest, and 558 untracked paths. This is not the planned clean build. No active process found. Preserve until exact untracked/source artifacts are reconciled. | Unknown; audited 2026-11-01 | 1.6 GiB | Reconcile unique source/generated artifacts and references; review 2026-11-08 | retained; do not reuse or delete |
+
+## Retained unregistered snapshot — 2026-11-01
+
+| Workstream ID | Owner | Exact path | Purpose / evidence | Created / base | Size | Closeout / review | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `TMP-STYLE-ACTIVE-20261025` | Coordinator | `/tmp/style-active/` | Non-Git full-site snapshot with source, generated output, documentation, and local tooling. No active process found. It contains unique materials and private-looking local config; no contents were opened. Preserve pending path-by-path reconciliation; never deploy or copy private config. | 2026-10-25; base unknown | 6.1 GiB | Identify and reconcile unique source/evidence; review 2026-11-08 | retained; no deletion approved |
+
+## Blog CSS clean release workspace — 2026-11-01
+
+| Workstream ID | Owner | Exact path | Purpose / base | Creation date | Size budget | Closeout trigger | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `BLOG-CSS-CLEAN-RELEASE-20261101` | Coordinator; ordinary Blog CSS and static-output release specialist fallback, paired with `Instructions - CODE`, UUID `25a8fe8a-c164-4e8e-8236-3a6585bfa165` | `/tmp/blog-css-focused-release-20261101/` | Clean detached worktree at `0f2769a3`; integrated only the hero badge wrapping rule, its PurgeCSS safelist, and the documented Blog CTA focus rule. Shared root `node_modules` by symlink; root dirty `dist` was not used. | 2026-11-01 | 1,595,920,024 B peak | Build passed. Live comparison found only 14/33 changed routes with matching main content/key metadata; those 14 already contain both rules. The other 19 differ and were excluded. No deploy. Browser Use doctor found a separate active daemon/preview, so no browser interaction was made. Removed this exact worktree and its generated outputs in-session. | removed; 1,595,920,024 B reclaimed |

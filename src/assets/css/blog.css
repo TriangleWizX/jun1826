@@ -893,6 +893,11 @@ body {
   box-shadow: 0 20px 40px rgba(31, 23, 18, 0.12);
 }
 
+.page-blog .hero__inner > .badge {
+  max-width: 100%;
+  white-space: normal;
+}
+
 .page-blog .hero__title {
   font-size: clamp(1.65rem, 3.5vw, 2.4rem);
   line-height: 1.15;
@@ -1026,6 +1031,12 @@ body {
   .page-blog .ss-prose h2 {
     font-size: clamp(1.8rem, 9vw, 2.4rem);
   }
+}
+
+.page-blog .btn:focus-visible {
+  outline: 3px solid var(--color-focus, #211d18);
+  outline-offset: 3px;
+  box-shadow: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

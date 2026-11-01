@@ -145,6 +145,7 @@ const results = await new PurgeCSS().purge({
   content: [{ raw: expandedAllHtml, extension: 'html' }, ...scriptContent],
   css: [{ raw: cssParts.join('\n') }],
   safelist: [
+    '.page-blog .hero__inner > .badge',
     ...RUNTIME_SAFELIST,
     /:where/,
     /^ss-/,
