@@ -89,6 +89,12 @@ def changed_outputs(commit, only=()):
     requested = lambda rel: not requested_outputs or rel in requested_outputs
     names = subprocess.check_output(['git', 'diff-tree', '--no-commit-id', '--name-only', '-r', commit], cwd=ROOT, text=True).splitlines()
     outputs = set()
+    # The Home builder inlines page CSS into its generated root route.
+    # Include the homepage HTML when a Home stylesheet changes.
+    if {'src/assets/css/pages/home.css', 'src/assets/css/pages/home.min.css'} & set(names):
+        home_page = DIST_ROOT / 'index.html'
+        if home_page.is_file():
+            outputs.add((home_page, 'index.html'))
     # Bio's route-only stylesheet build emits one content-hashed CSS file. Map
     # its exact generated dependencies from the Bio HTML so the release stays
     # scoped even though dist/ is ignored.
