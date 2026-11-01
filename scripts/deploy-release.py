@@ -76,6 +76,7 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/bjj-glossary.css',
     'src/assets/css/pages/glossary.css',
     'src/assets/css/hyphen-weekend.css',
+    'src/assets/css/pages/winter-rank-drop.css',
 }
 
 
@@ -522,6 +523,22 @@ def changed_outputs(commit, only=()):
             raise ValueError('Hyphen Weekend route does not reference its active CSS fingerprint')
         outputs.add((hyphen_css_path, hyphen_css_path.relative_to(DIST_ROOT).as_posix()))
         outputs.add((route_path, 'hyphen-weekend/index.html'))
+
+    if 'src/assets/css/pages/winter-rank-drop.css' in names:
+        active_winter_css = manifest.get('/assets/css/pages/winter-rank-drop.css')
+        if not active_winter_css:
+            raise ValueError('Winter Rank Drop CSS release requires its active manifest fingerprint')
+        winter_css_path = DIST_ROOT / active_winter_css.lstrip('/')
+        if not winter_css_path.is_file():
+            raise ValueError(f'Winter Rank Drop CSS release is missing active asset {active_winter_css}')
+        route_path = DIST_ROOT / 'winter-rank-drop' / 'index.html'
+        if not route_path.is_file():
+            raise ValueError('Winter Rank Drop CSS release requires its generated route')
+        route_html = route_path.read_text(encoding='utf-8', errors='ignore')
+        if active_winter_css not in route_html:
+            raise ValueError('Winter Rank Drop route does not reference its active CSS fingerprint')
+        outputs.add((winter_css_path, winter_css_path.relative_to(DIST_ROOT).as_posix()))
+        outputs.add((route_path, 'winter-rank-drop/index.html'))
 
     # The shared Near stylesheet is fingerprinted and consumed by all nearby
     # town routes, the legacy nearby-towns page, and the BJJ classes hub's
