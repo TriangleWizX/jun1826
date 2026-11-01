@@ -1,30 +1,35 @@
-# Accessibility/UI release mapper gap: approve or deny
+# Accessibility UI mapper fix: release record
 
-The user-approved A cohort is ready in source review, and its exact build was tested in a clean temporary checkout. **No production commit or deployment has been made.** The working checkout is clean apart from the workspace record and this report; the other 835 paths remain preserved in `stash@{0}`.
+## Decision and implementation
 
-## What the exact check found
+The user approved the mapper fix after approving Category A of the accessibility UI cohort. `scripts/deploy-release.py` now maps these changed sources to their generated outputs and fails if any output is missing:
 
-- Clean baseline: 2,220 generated files. A candidate: 2,221.
-- Candidate difference: 15 added, 14 removed, and 462 changed outputs.
-- The committed deployment mapper selects 59 paths. Four changed page outputs required by approved A source changes are missing:
+| Source | Generated output |
+| --- | --- |
+| `src/core-culture-parent-guide.html` | `core-culture-parent-guide/index.html` |
+| `src/front-headlock-series/index.html` | `front-headlock-series/index.html` |
+| `src/practice-vault.njk` | `practice-vault/index.html` |
+| `src/tactical-longevity.html` | `tactical-longevity/index.html` |
 
-  - `core-culture-parent-guide/index.html`
-  - `front-headlock-series/index.html`
-  - `practice-vault/index.html`
-  - `tactical-longevity/index.html`
+The deploy script is private tooling. It was committed but not included in the public upload.
 
-The larger difference includes many pages whose shared stylesheet hash reference changed. Those unrelated pages are not in the proposed payload. Full path evidence is in [the output map folder](evidence/2026-11-03/a11y-release-output-map/).
+## Release evidence
 
-## Decision
+- Release commit: `825a6ac` (`Release focused accessibility UI improvements`).
+- `npm run clean && npm run build` completed successfully from the approved source cohort.
+- The exact mapper dry-run selected 64 paths. This is the previous 59-path payload, the four newly mapped pages, and the fingerprinted global CSS required by the clean build. The list is in [mapper-dry-run.txt](evidence/2026-11-03/a11y-release-output-map/mapper-dry-run.txt).
+- `git diff --cached --check` passed before commit; the generated `dist/` had unrelated baseline formatting differences and was never staged.
+- All 64 approved payload files uploaded successfully with remote byte counts reported. The deployment created and verified an account-level rollback backup, and removed one older verified backup of about 1.1 GB.
+- Live reads returned HTTP 200 and matching local titles for `/front-headlock-series/` and `/practice-vault/`.
+- Keyboard acceptance, site-wide contrast, and Lighthouse/PageSpeed were not run, per the user's instructions.
 
-### Approve — add these four output mappings
+## Live route finding requiring a separate decision
 
-I’ll make a small change to `scripts/deploy-release.py` so these four approved routes are selected when their corresponding A sources change. The script remains private build/deploy tooling and will **not** be uploaded to the public site. Then I’ll rerun the isolated build, mapper dry-run, and focused route proof. Deployment will use only the exact A payload once each required page and stylesheet is covered.
+Two uploaded outputs are behind existing canonical redirects:
 
-### Deny — keep the mapper unchanged
+- `/core-culture-parent-guide/` redirects to `/parent-resources`.
+- `/tactical-longevity/` redirects to `/law-enforcement-bjj`.
 
-I’ll leave the A cohort in the local hold stash and will not commit or deploy it. The current mapper would omit those four pages.
+The redirect registry and `.htaccess` both define these redirects. The new alias outputs were uploaded, but those two URL paths serve the canonical pages instead. The approved source cohort did not include `src/parent-resources.html` or `src/law-enforcement-bjj.html`, so this release did not copy the accessibility edits onto those canonical pages. If those edits are needed on the public canonical pages, review and approve that separate, narrowly scoped source update.
 
-## Reply
-
-Reply **APPROVE mapper fix** or **DENY mapper fix**. Your prior A-cohort approval remains in place; this asks only about the four missing deployment mappings.
+The rest of the previously unapproved dirty work remains preserved in `hold-before-a11y-release-20261103`.
