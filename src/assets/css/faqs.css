@@ -22,7 +22,7 @@
 .eyebrow {
   margin: 0 0 12px;
   color: var(--ss-green, #116A42); /* Olive green matching buttons */
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -31,7 +31,7 @@
 .section-eyebrow {
   margin: 0 0 16px;
   color: var(--ss-muted, #4F433C);
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -212,6 +212,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: none;
+  min-height: 44px;
 }
 
 .faq-filter-btn:hover {
@@ -708,7 +709,7 @@
 .faq-lineage-eyebrow {
   margin: 0 0 0.75rem;
   color: var(--ss-green, #116A42);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -851,7 +852,7 @@
 }
 
 .faq-lineage-node-name {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--ss-ink, #211d18);
   margin: 0 0 0.2rem;
@@ -863,7 +864,7 @@
 }
 
 .faq-lineage-node-role {
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   color: var(--ss-muted, #756b5f);
   margin: 0;
   line-height: 1.3;
@@ -886,7 +887,7 @@
 
 /* Image credit */
 .faq-lineage-credit {
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   color: var(--ss-muted, #756b5f);
   text-align: center;
   margin: 0 0 2rem;
@@ -926,7 +927,7 @@
 }
 
 .faq-lineage-verify-lbl {
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   color: #8B7A70;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -984,14 +985,6 @@
   .faq-lineage-avatar-outer {
     width: 64px;
     height: 64px;
-  }
-
-  .faq-lineage-node-name {
-    font-size: 0.72rem;
-  }
-
-  .faq-lineage-node-role {
-    font-size: 0.62rem;
   }
 
   .faq-lineage-verify-grid {

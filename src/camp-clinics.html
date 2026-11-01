@@ -377,11 +377,15 @@ document.addEventListener("DOMContentLoaded", function () {
   var prev = document.querySelector('.arrow-btn[aria-label="Previous Testimonial"]');
   var next = document.querySelector('.arrow-btn[aria-label="Next Testimonial"]');
   if (row && prev && next) {
+    var scrollTestimonials = function (distance) {
+      var behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+      row.scrollBy({ left: distance, behavior: behavior });
+    };
     prev.addEventListener("click", function () {
-      row.scrollBy({ left: -320, behavior: "smooth" });
+      scrollTestimonials(-320);
     });
     next.addEventListener("click", function () {
-      row.scrollBy({ left: 320, behavior: "smooth" });
+      scrollTestimonials(320);
     });
   }
 });

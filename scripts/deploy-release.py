@@ -324,6 +324,22 @@ def changed_outputs(commit, only=()):
         outputs.add((page, 'programs.html'))
         outputs.add((css_path, css_rel))
 
+    # These accessibility-reviewed source routes do not follow the standard
+    # root-file or deployable-directory mapping. Include their generated pages
+    # when the matching route source changes.
+    explicit_route_outputs = {
+        'src/core-culture-parent-guide.html': 'core-culture-parent-guide/index.html',
+        'src/front-headlock-series/index.html': 'front-headlock-series/index.html',
+        'src/practice-vault.njk': 'practice-vault/index.html',
+        'src/tactical-longevity.html': 'tactical-longevity/index.html',
+    }
+    for source, rel in explicit_route_outputs.items():
+        if source in names:
+            candidate = DIST_ROOT / rel
+            if not candidate.is_file():
+                raise ValueError(f'Missing generated route for {source}: {rel}')
+            outputs.add((candidate, rel))
+
     # The normal build regenerates the sitemap index and children from source
     # pages and the URL registry. Include their generated dist copies in every
     # source-content release so production cannot retain stale lastmod data.

@@ -655,8 +655,9 @@
 }
 
 .page-camp-clinics .arrow-btn {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
   border-radius: 50%;
   border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14));
   background: #fffaf2;

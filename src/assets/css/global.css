@@ -1092,6 +1092,12 @@ body {
 .teens-program-page .program-overview-section.bg-light > .container > p:nth-of-type(2) {
   display: none;
 }
+.btn-tactical {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 /* Keep every green primary surface readable in normal, hover, focus, and active states. */
 :where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary),
 :where(.btn-success, .btn-ss-olive, .btn-green-primary, .btn-tactical, .btn-wellness-primary, .ss-btn-premium, .ss-hero-btn-primary, .near-mobile-sticky .primary):hover,

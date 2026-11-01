@@ -2856,3 +2856,10 @@ body .ss-global-nav-wrapper {
 body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
   z-index: 2001;
 }
+
+
+/* Page-scoped 44px controls approved for the focused accessibility cohort. */
+.page-tactical .btn-tactical { display: inline-flex; align-items: center; min-height: 44px; }
+.page-tactical .btn-tactical-secondary { min-height: 44px; }
+.page-tactical .tactical-form .form-control:not(textarea),
+.page-tactical .tactical-form .form-select { min-height: 44px; }

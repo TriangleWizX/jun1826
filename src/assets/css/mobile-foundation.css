@@ -110,6 +110,23 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  :where(html, body) { scroll-behavior: auto; }
+  :where(.ss-global-nav-wrapper, .ss-global-nav-wrapper *,
+    .ss-global-nav-wrapper *::before, .ss-global-nav-wrapper *::after,
+    .ss-new-site-footer, .ss-new-site-footer *,
+    .ss-new-site-footer *::before, .ss-new-site-footer *::after,
+    .ss-floating-chat, .ss-mobile-sticky-action,
+    .mobile-sticky-cta, .mobile-sticky-cta *,
+    .desktop-sticky-cta, .desktop-sticky-cta *,
+    .ss-mobile-actionbar, .ss-mobile-actionbar *,
+    body.page-programs .prog-sticky-cta,
+    body.page-programs .prog-sticky-cta.is-visible) {
+    animation: none;
+    transition: none;
+  }
+}
+
 @media (width <= 640px) {
   body[class] :where(.container, .container-fluid, .container-sm, .container-md,
     .container-lg, .container-xl, .container-xxl) {

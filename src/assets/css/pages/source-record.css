@@ -157,6 +157,7 @@
 .ss-action-pill {
   display: inline-flex;
   align-items: center;
+ min-height: 44px;
   gap: 0.45rem;
   padding: 0.65rem 1.25rem;
   border-radius: 999px;

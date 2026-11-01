@@ -39,39 +39,39 @@ permalink: "/waiver.html"
 <h3 class="form-section-header"> 1. Student Information (Required)</h3>
 <div class="row g-3">
 <div class="col-md-6 ss-field">
-<label class="form-label ss-label">Full Name <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="student_name" placeholder="Student's Legal Name" required="" type="text"/>
+<label class="form-label ss-label" for="student_name">Full Name <span class="required-star">*</span></label>
+<input id="student_name" class="form-control ss-input" name="student_name" placeholder="Student's Legal Name" required="" type="text"/>
 </div>
 <div class="col-md-6 ss-field">
-<label class="form-label ss-label">Date of Birth <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="student_dob" required="" type="date"/>
+<label class="form-label ss-label" for="student_dob">Date of Birth <span class="required-star">*</span></label>
+<input id="student_dob" class="form-control ss-input" name="student_dob" required="" type="date"/>
 </div>
 <div class="col-12 ss-field">
-<label class="form-label ss-label">Address (optional now)</label>
-<input class="form-control ss-input" name="address" placeholder="Street, City, State, ZIP" type="text"/>
+<label class="form-label ss-label" for="address">Address (optional now)</label>
+<input id="address" class="form-control ss-input" name="address" placeholder="Street, City, State, ZIP" type="text"/>
 </div>
 <div class="col-md-6 ss-field">
-<label class="form-label ss-label">Phone Number <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="phone" required="" type="tel"/>
+<label class="form-label ss-label" for="phone">Phone Number <span class="required-star">*</span></label>
+<input id="phone" class="form-control ss-input" name="phone" required="" type="tel"/>
 </div>
 <div class="col-md-6 ss-field">
-<label class="form-label ss-label">Email Address <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="email" required="" type="email"/>
+<label class="form-label ss-label" for="email">Email Address <span class="required-star">*</span></label>
+<input id="email" class="form-control ss-input" name="email" required="" type="email"/>
 </div>
 </div>
 <h5 class="mt-4 text-secondary">Emergency Contact</h5>
 <div class="row g-3">
 <div class="col-md-5 ss-field">
-<label class="form-label ss-label">Contact Name <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="emergency_name" required="" type="text"/>
+<label class="form-label ss-label" for="emergency_name">Contact Name <span class="required-star">*</span></label>
+<input id="emergency_name" class="form-control ss-input" name="emergency_name" required="" type="text"/>
 </div>
 <div class="col-md-3 ss-field">
-<label class="form-label ss-label">Relationship <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="emergency_relation" required="" type="text"/>
+<label class="form-label ss-label" for="emergency_relation">Relationship <span class="required-star">*</span></label>
+<input id="emergency_relation" class="form-control ss-input" name="emergency_relation" required="" type="text"/>
 </div>
 <div class="col-md-4 ss-field">
-<label class="form-label ss-label">Emergency Phone <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="emergency_phone" required="" type="tel"/>
+<label class="form-label ss-label" for="emergency_phone">Emergency Phone <span class="required-star">*</span></label>
+<input id="emergency_phone" class="form-control ss-input" name="emergency_phone" required="" type="tel"/>
 </div>
 </div>
 <details class="mt-4">
@@ -79,19 +79,19 @@ permalink: "/waiver.html"
 <p class="small text-muted mt-2 mb-3">You can complete these now or send them later by text.</p>
 <div class="row g-3">
 <div class="col-md-6 ss-field">
-<label class="form-label ss-label">Have you trained BJJ before?</label>
-<select class="form-select ss-input" name="experience">
+<label class="form-label ss-label" for="experience">Have you trained BJJ before?</label>
+<select id="experience" class="form-select ss-input" name="experience">
 <option value="No">No</option>
 <option value="Yes">Yes</option>
 </select>
 </div>
 <div class="col-md-6 ss-field">
-<label class="form-label ss-label">If yes, Previous School/Instructor:</label>
-<input class="form-control ss-input" name="prev_school" type="text"/>
+<label class="form-label ss-label" for="prev_school">If yes, Previous School/Instructor:</label>
+<input id="prev_school" class="form-control ss-input" name="prev_school" type="text"/>
 </div>
 <div class="col-12 ss-field">
-<label class="form-label ss-label">Relevant Injuries / Medical Conditions:</label>
-<textarea class="form-control ss-textarea" name="medical_conditions" rows="2"></textarea>
+<label class="form-label ss-label" for="medical_conditions">Relevant Injuries / Medical Conditions:</label>
+<textarea id="medical_conditions" class="form-control ss-textarea" name="medical_conditions" rows="2"></textarea>
 </div>
 </div>
 </details>
@@ -118,7 +118,7 @@ permalink: "/waiver.html"
 </details>
 <div class="form-check mb-4 ss-field">
 <input class="form-check-input" id="waiverCheck" name="waiver_agree" required="" type="checkbox"/>
-<label class="form-check-label fw-bold ss-label" for="waiverCheck">
+<label class="form-check-label fw-bold ss-label ss-consent-label" for="waiverCheck">
                 I HAVE READ THE ABOVE WARNING, WAIVER, RELEASE AND AGREEMENT TO PARTICIPATE. I UNDERSTAND ITS CONTENTS AND DO HEREBY SIGN IT VOLUNTARILY.
             </label>
 </div>
@@ -135,13 +135,13 @@ permalink: "/waiver.html"
 </details>
 <div class="form-check mb-3 ss-field">
 <input checked="" class="form-check-input" id="mediaYes" name="media_consent" type="radio" value="Agreed"/>
-<label class="form-check-label ss-label" for="mediaYes">
+<label class="form-check-label ss-label ss-consent-label" for="mediaYes">
 <strong>I AGREE</strong> to the Media Release.
             </label>
 </div>
 <div class="form-check mb-4 ss-field">
 <input class="form-check-input" id="mediaNo" name="media_consent" type="radio" value=" declined"/>
-<label class="form-check-label ss-label" for="mediaNo">
+<label class="form-check-label ss-label ss-consent-label" for="mediaNo">
                 I DO NOT wish to be photographed/filmed (We will note this in your file).
             </label>
 </div>
@@ -151,16 +151,16 @@ permalink: "/waiver.html"
         </div>
 <div class="row g-3">
 <div class="col-md-8 ss-field">
-<label class="form-label ss-label">Type Full Name (Signature) <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="digital_signature" placeholder="/s/ Your Name" required="" type="text"/>
+<label class="form-label ss-label" for="digital_signature">Type Full Name (Signature) <span class="required-star">*</span></label>
+<input id="digital_signature" class="form-control ss-input" name="digital_signature" placeholder="/s/ Your Name" required="" type="text"/>
 </div>
 <div class="col-md-4 ss-field">
-<label class="form-label ss-label">Date <span class="required-star">*</span></label>
-<input class="form-control ss-input" name="sign_date" required="" type="date"/>
+<label class="form-label ss-label" for="sign_date">Date <span class="required-star">*</span></label>
+<input id="sign_date" class="form-control ss-input" name="sign_date" required="" type="date"/>
 </div>
 <div class="col-12 ss-field">
-<label class="form-label ss-label">Parent/Guardian Name (Required if student is under 18)</label>
-<input class="form-control ss-input" name="guardian_signature" placeholder="Guardian Name" type="text"/>
+<label class="form-label ss-label" for="guardian_signature">Parent/Guardian Name (Required if student is under 18)</label>
+<input id="guardian_signature" class="form-control ss-input" name="guardian_signature" placeholder="Guardian Name" type="text"/>
 </div>
 </div>
 <hr class="my-4"/>

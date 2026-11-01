@@ -17,6 +17,8 @@ body.page-weekly-audit > .ss-new-site-footer,
 body.page-weekly-audit > .ss-mobile-actionbar,
 body.page-weekly-audit > #scrollProgress,
 body.page-weekly-audit > .ss-promotion-banner { display: none !important; }
+.wa-skip-link { position:absolute; z-index:1000; inset-block-start:1rem; inset-inline-start:1rem; min-width:44px; min-height:44px; padding:.7rem 1rem; transform:translateY(-200%); background:#fff; color:#1f1712; border:2px solid #1f1712; border-radius:.4rem; font-weight:700; }
+.wa-skip-link:focus, .wa-skip-link:focus-visible { transform:translateY(0); }
 .checkin-page { max-width: 1180px; margin: 0 auto; padding: 2rem 1rem 5rem; color: var(--color-ink, #1f1712); }
 .checkin-header { max-width: 60rem; margin-bottom: 2rem; }
 .checkin-header h1 { margin: 0 0 .5rem; font-family: var(--font-display, Georgia, serif); font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 400; line-height: 1.05; }
@@ -81,6 +83,7 @@ body.page-weekly-audit > .ss-promotion-banner { display: none !important; }
 .checkin-suite-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .65rem; padding: .55rem .85rem; margin-bottom: 1.25rem; border-radius: .5rem; background: #f4f1ed; font-size: .82rem; color: var(--color-muted, #4f433c); }
 .checkin-suite-tag { font-weight: 700; color: var(--color-ink, #1f1712); text-transform: uppercase; font-size: .72rem; letter-spacing: .05em; }
 .checkin-suite-step { display: inline-flex; align-items: center; gap: .3rem; color: var(--color-accent, #116a42); font-weight: 600; text-decoration: none; }
+.checkin-suite-nav a.checkin-suite-step { min-height: 44px; }
 .checkin-suite-step:hover { text-decoration: underline; }
 .checkin-suite-step.is-active { color: var(--color-ink, #1f1712); font-weight: 700; text-decoration: none; }
 .checkin-suite-sep { color: rgba(54, 43, 36, 0.35); }
@@ -114,7 +117,8 @@ body.page-weekly-audit > .ss-promotion-banner { display: none !important; }
 }
 </style>
 
-<main class="checkin-page">
+<a class="wa-skip-link" href="#weekly-audit-main">Skip to weekly check-in</a>
+<main class="checkin-page" id="weekly-audit-main" tabindex="-1">
   <nav aria-label="Progress Suite" class="checkin-suite-nav">
     <span class="checkin-suite-tag">Training Progress Suite:</span>
     <a href="/daily-checkin" class="checkin-suite-step" rel="nofollow"><i class="bi bi-journal-text" aria-hidden="true"></i> Daily Note</a>

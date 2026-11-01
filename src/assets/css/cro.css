@@ -1,5 +1,12 @@
 /* assets/css/cro.css */
 
+.page-programs .ss-side-card ul > li + li { margin-top: 0.25rem; }
+.page-programs .ss-side-card ul > li > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 :root {
   --ss-green: #116A42;
   --ss-teal: #289FA1;

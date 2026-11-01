@@ -753,20 +753,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Using standard bootstrap form classes for the inner form, but styled via the wrapper -->
 <div class="row g-3">
 <div class="col-md-6">
-<label class="form-label small fw-medium">Name</label>
-<input class="form-control rounded-pill px-4 py-2" required="" type="text"/>
+<label class="form-label small fw-medium" for="pilot-name">Name</label>
+<input class="form-control rounded-pill px-4 py-2" id="pilot-name" required="" type="text"/>
 </div>
 <div class="col-md-6">
-<label class="form-label small fw-medium">Agency / Organization</label>
-<input class="form-control rounded-pill px-4 py-2" required="" type="text"/>
+<label class="form-label small fw-medium" for="pilot-agency">Agency / Organization</label>
+<input class="form-control rounded-pill px-4 py-2" id="pilot-agency" required="" type="text"/>
 </div>
 <div class="col-md-6">
-<label class="form-label small fw-medium">Role / Title</label>
-<input class="form-control rounded-pill px-4 py-2" type="text"/>
+<label class="form-label small fw-medium" for="pilot-role">Role / Title</label>
+<input class="form-control rounded-pill px-4 py-2" id="pilot-role" type="text"/>
 </div>
 <div class="col-md-6">
-<label class="form-label small fw-medium">around Participant Count</label>
-<select class="form-select rounded-pill px-4 py-2">
+<label class="form-label small fw-medium" for="pilot-participant-count">around Participant Count</label>
+<select class="form-select rounded-pill px-4 py-2" id="pilot-participant-count">
 <option>1-4 (Individual)</option>
 <option selected="">5-8 (Pilot Squad)</option>
 <option>9-12 (Department Block)</option>
@@ -774,16 +774,16 @@ document.addEventListener('DOMContentLoaded', function() {
 </select>
 </div>
 <div class="col-md-6">
-<label class="form-label small fw-medium">Email</label>
-<input class="form-control rounded-pill px-4 py-2" required="" type="email"/>
+<label class="form-label small fw-medium" for="pilot-email">Email</label>
+<input class="form-control rounded-pill px-4 py-2" id="pilot-email" required="" type="email"/>
 </div>
 <div class="col-md-6">
-<label class="form-label small fw-medium">Mobile Number</label>
-<input class="form-control rounded-pill px-4 py-2" required="" type="tel"/>
+<label class="form-label small fw-medium" for="pilot-mobile">Mobile Number</label>
+<input class="form-control rounded-pill px-4 py-2" id="pilot-mobile" required="" type="tel"/>
 </div>
 <div class="col-12">
-<label class="form-label small fw-medium">Main Training Objective &amp; Preferred Window</label>
-<textarea class="form-control rounded-4 p-3" rows="3"></textarea>
+<label class="form-label small fw-medium" for="pilot-objective">Main Training Objective &amp; Preferred Window</label>
+<textarea class="form-control rounded-4 p-3" id="pilot-objective" rows="3"></textarea>
 </div>
 <div class="col-12 text-center mt-4">
 <button class="btn-tactical text-decoration-none w-100 justify-content-center" data-leo-event="Agency_Pilot_Inquiry_Click" type="submit">
@@ -1006,7 +1006,8 @@ document.addEventListener('DOMContentLoaded', function() {
         '.hero-card .btn-white-secondary',
         '.hero-card .btn-green-primary',
         '.ss-hero .primary-cta',
-        '#hero-cta'
+        '#hero-cta',
+ '.page-tactical [data-cta-placement="hero"][data-cta-tier="primary"]'
       ].join(', '));
       const footerCta = document.querySelector('footer, .ss-new-site-footer, .ss-site-footer, .ss-cta-footer-section');
       const stickyCta = document.querySelector('.ss-mobile-actionbar');
@@ -1020,10 +1021,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let heroOut = !heroCta;
       let footerIn = false;
+      let frame = 0;
+      const pageControls = Array.from(document.querySelectorAll("main a[href], main button:not([disabled]), main input:not([type=hidden]):not([disabled]), main select:not([disabled]), main textarea:not([disabled])"));
       const updateVisibility = function () {
-        stickyCta.classList.toggle("is-visible", heroOut && !footerIn);
+        const barTop = window.innerHeight - stickyCta.offsetHeight;
+        const controlCovered = pageControls.some(function (control) {
+          if (stickyCta.contains(control)) return false;
+          const rect = control.getBoundingClientRect();
+          return rect.width > 0 && rect.height > 0 && rect.top < window.innerHeight && rect.bottom > barTop;
+        });
+        stickyCta.classList.toggle("is-visible", heroOut && !footerIn && !controlCovered);
       };
-
+      const scheduleUpdate = function () {
+        if (frame) return;
+        frame = window.requestAnimationFrame(function () {
+          frame = 0;
+          updateVisibility();
+        });
+      };
       if (heroCta) {
         const heroObserver = new IntersectionObserver(function (entries) {
           heroOut = !entries[0].isIntersecting;
@@ -1031,7 +1046,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { threshold: 0.1 });
         heroObserver.observe(heroCta);
       }
-
       if (footerCta) {
         const footerObserver = new IntersectionObserver(function (entries) {
           footerIn = entries[0].isIntersecting;
@@ -1039,7 +1053,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { threshold: 0.05 });
         footerObserver.observe(footerCta);
       }
-
+      window.addEventListener("scroll", scheduleUpdate, { passive: true });
+      window.addEventListener("resize", scheduleUpdate);
       updateVisibility();
     })();
   });

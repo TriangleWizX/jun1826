@@ -1712,6 +1712,15 @@ ul {
     transform: none
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .sticky-cta,
+    .btn-animated,
+    .hero__cta .btn-animated,
+    .text-center .btn-animated {
+        animation: none;
+    }
+}
+
 .text-center {
     text-align: center;
     display: flex;

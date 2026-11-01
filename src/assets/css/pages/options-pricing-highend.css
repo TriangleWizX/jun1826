@@ -31,6 +31,11 @@ body.page-options-pricing .op-main {
   text-align: start;
 }
 
+/* Keep Bootstrap's horizontal gutters inside the page-width container. */
+body.page-options-pricing .op-main .container-xxl {
+  box-sizing: border-box;
+}
+
 body.page-options-pricing .op-main::before {
   position: absolute;
   z-index: -1;
@@ -49,7 +54,7 @@ body.page-options-pricing .op-main::before {
 
 body.page-options-pricing .op-main a:focus-visible,
 body.page-options-pricing .op-main summary:focus-visible {
-  outline: 3px solid rgba(36, 127, 128, 0.42);
+  outline: 3px solid var(--ss-green);
   outline-offset: 4px;
 }
 
@@ -1044,6 +1049,10 @@ body.page-options-pricing .op-household-note {
   text-align: center;
 }
 
+body.page-options-pricing .op-household-note > summary {
+  min-height: 44px;
+}
+
 body.page-options-pricing .op-annual-high-anchor {
   max-width: var(--container-standard);
   margin: var(--space-sm) auto 0;
@@ -2008,7 +2017,7 @@ body.page-options-pricing .op-badge--value {
 
 body.page-options-pricing .op-badge--perk {
   background: rgba(36, 127, 128, 0.1);
-  color: var(--op-teal);
+  color: #146364;
   border: 1px solid rgba(36, 127, 128, 0.2);
 }
 
@@ -2175,12 +2184,16 @@ body.page-options-pricing .op-card__actions .op-button__icon {
     font-size: 0.875rem;
   }
 
+  body.page-options-pricing .op-card__kicker {
+    letter-spacing: 0.08em;
+  }
+
   body.page-options-pricing .op-community-card p:not(.op-card__kicker) {
     font-size: 0.875rem;
   }
 }
 
-/* Keep pricing explanations and term details readable at the 14px floor. */
+/* Keep pricing explanations and term details readable at the 14px secondary-text floor. */
 @media (min-width: 768px) {
   body.page-options-pricing :is(
     .op-eyebrow,
@@ -2234,5 +2247,48 @@ body.page-options-pricing .op-card__actions .op-button__icon {
 
   body.page-options-pricing #laundry-support .op-private-price span {
     font-size: 14px;
+  }
+}
+
+
+
+@media (max-width: 767.98px) {
+  body.page-options-pricing .op-text-link,
+  body.page-options-pricing .op-proof-card > a,
+  body.page-options-pricing .op-after-first__option > a,
+  body.page-options-pricing .op-final-card__text-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body.page-adult-private-coaching .op-stack-list li > span { min-width: 0; }
+  body.page-adult-private-coaching .op-stack-list li > strong { flex: 0 0 auto; }
+}
+/* Keep the status label inside narrow coaching package rows. */
+@media (max-width: 575.98px) {
+  body.page-adult-private-coaching .op-stack-list li {
+    flex-wrap: wrap;
+  }
+  body.page-adult-private-coaching .op-stack-list li > span {
+    flex: 1 1 12rem;
+    min-width: 0;
+  }
+  body.page-adult-private-coaching .op-stack-list li > strong {
+    flex: 0 0 auto;
+    margin-inline-start: auto;
+  }
+}
+
+/* Let the status label wrap when a coaching package row is narrow. */
+@media (max-width: 575.98px) {
+  body.page-adult-private-coaching .op-stack-list li > strong {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }

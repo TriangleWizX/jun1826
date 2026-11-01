@@ -276,25 +276,46 @@ permalink: "/report-card.html"
     /* stripes progress bar */
     .rc-stripes-container {
       display: flex;
-      gap: 5px;
+      align-items: center;
+      gap: 2px;
       margin: 0.65rem 0 0.4rem;
-      height: 8px;
-      width: 100%;
-      max-width: 120px;
+      width: max-content;
+      max-width: 100%;
     }
     .rc-stripe-block {
-      flex: 1;
-      background-color: var(--ss-rc-border);
-      border-radius: 2px;
-      transition: background-color 0.2s, transform 0.1s;
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 44px;
+      width: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
       cursor: pointer;
     }
-    .rc-stripe-block.active {
+    .rc-stripe-block::before {
+      content: "";
+      display: block;
+      width: 26px;
+      height: 8px;
+      border-radius: 2px;
+      background-color: var(--ss-rc-border);
+      transition: background-color 0.2s;
+    }
+    .rc-stripe-block.active::before,
+    .rc-stripe-block[aria-pressed="true"]::before {
       background-color: var(--ss-rc-blue);
     }
-    .rc-stripe-block:hover {
+    .rc-stripe-block:hover::before {
       background-color: var(--ss-rc-gold);
-      transform: scaleY(1.2);
+    }
+    .rc-stripe-block:focus-visible {
+      outline: 2px solid var(--ss-rc-gold);
+      outline-offset: -2px;
     }
 
     /* Avatars row */
@@ -532,6 +553,7 @@ permalink: "/report-card.html"
       flex-wrap: wrap;
     }
     .rc-btn {
+      min-height: 44px;
       font-family: 'Lexend', sans-serif;
       font-size: 0.78rem;
       font-weight: 600;
@@ -603,6 +625,7 @@ permalink: "/report-card.html"
       font-weight: 600;
       text-decoration: none;
     }
+    .rc-suite-nav a.rc-suite-step { min-height: 44px; }
     .rc-suite-step:hover {
       color: var(--ss-rc-dark);
       text-decoration: underline;
@@ -680,6 +703,7 @@ permalink: "/report-card.html"
     /* Footer branding system */
     .rc-footer-branding {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 12px;
@@ -1084,11 +1108,11 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <span class="rc-card-label">Level</span>
 </div>
 <input aria-label="Level input" class="rc-value-input" id="level" type="text" placeholder="Belt / level"/>
-<div aria-label="Belt stripes selector" class="rc-stripes-container" data-stripes="2">
-<span aria-label="Set stripes to 1" class="rc-stripe-block active" role="button"></span>
-<span aria-label="Set stripes to 2" class="rc-stripe-block active" role="button"></span>
-<span aria-label="Set stripes to 3" class="rc-stripe-block" role="button"></span>
-<span aria-label="Set stripes to 4" class="rc-stripe-block" role="button"></span>
+<div aria-label="Choose stripe count" class="rc-stripes-container" data-stripes="2" role="group">
+<button aria-label="Set stripes to 1" aria-pressed="false" class="rc-stripe-block active" data-stripe-count="1" type="button"></button>
+<button aria-label="Set stripes to 2" aria-pressed="true" class="rc-stripe-block active" data-stripe-count="2" type="button"></button>
+<button aria-label="Set stripes to 3" aria-pressed="false" class="rc-stripe-block" data-stripe-count="3" type="button"></button>
+<button aria-label="Set stripes to 4" aria-pressed="false" class="rc-stripe-block" data-stripe-count="4" type="button"></button>
 </div>
 <span class="rc-card-subtext" id="stripes-text">Optional stripe detail</span>
 </div>
@@ -1359,6 +1383,22 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
 <script>
 (() => {
   const value = (id) => document.getElementById(id)?.value.trim() || '';
+  const stripeGroup = document.querySelector('.rc-stripes-container');
+  const stripeButtons = [...(stripeGroup?.querySelectorAll('[data-stripe-count]') || [])];
+  const setStripeCount = (count) => {
+    if (!stripeGroup || !stripeButtons.length) return;
+    const selected = Math.max(1, Math.min(4, Number(count) || 2));
+    stripeGroup.dataset.stripes = String(selected);
+    stripeButtons.forEach((button) => {
+      const buttonCount = Number(button.dataset.stripeCount);
+      button.classList.toggle('active', buttonCount <= selected);
+      button.setAttribute('aria-pressed', String(buttonCount === selected));
+    });
+  };
+  stripeButtons.forEach((button) => {
+    button.addEventListener('click', () => setStripeCount(button.dataset.stripeCount));
+  });
+  setStripeCount(stripeGroup?.dataset.stripes);
   const summary = () => {
     const student = value('student-name') || 'Student';
     const date = value('review-date');
@@ -1399,6 +1439,7 @@ body { font-family: var(--font-body, 'Lexend', sans-serif); }
     document.querySelectorAll('#report-card-guide-title ~ * input, #report-card-guide-title ~ * textarea').forEach((field) => { field.value = ''; });
     ['student-name', 'level', 'coaches', 'schedule', 'problem-tested', 'observation-context', 'observations-reviewed', 'contexts-observed', 'review-date', 'primary-focus', 'secondary-focus', 'feedback-working', 'feedback-next', 'feedback-yours'].forEach((id) => { const field = document.getElementById(id); if (field) field.value = ''; });
     const type = document.getElementById('review-type'); if (type) type.selectedIndex = 0;
+    setStripeCount(2);
   });
 })();
 </script>

@@ -15,7 +15,7 @@ body.page-core-culture-parent-guide .cc-breadcrumbs {
   align-items: center;
   margin-bottom: clamp(1rem, 3vw, 2rem);
   color: var(--ss-muted, #4f433c);
-  font-size: .84rem;
+  font-size: .875rem;
 }
 
 body.page-core-culture-parent-guide .cc-doppelrand-shell {
@@ -53,6 +53,45 @@ body.page-core-culture-parent-guide .cc-section-title {
   text-wrap: balance;
 }
 
+body.page-core-culture-parent-guide .cc-hero-actions,
+body.page-core-culture-parent-guide .cc-cta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+}
+
+body.page-core-culture-parent-guide .cc-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .625rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: 700 1rem/1.25 var(--font-body, Lexend, sans-serif);
+  text-align: center;
+  text-decoration: none;
+}
+
+body.page-core-culture-parent-guide .cc-btn-primary {
+  background: var(--ss-green, #116a42);
+  color: var(--ss-surface, #fff);
+}
+
+body.page-core-culture-parent-guide .cc-btn-secondary {
+  border-color: var(--ss-border, rgba(54, 43, 36, .2));
+  background: var(--ss-surface, #fff);
+  color: var(--ss-ink, #362b24);
+}
+
+body.page-core-culture-parent-guide .cc-btn:focus-visible {
+  outline: 3px solid var(--ss-teal, #289fa1);
+  outline-offset: 3px;
+}
+
 body.page-core-culture-parent-guide .cc-text,
 body.page-core-culture-parent-guide .cc-list,
 body.page-core-culture-parent-guide .cc-pull-quote {
@@ -64,10 +103,6 @@ body.page-core-culture-parent-guide .cc-role-grid {
 }
 
 @media (max-width: 47.99rem) {
-  body.page-core-culture-parent-guide .cc-main {
-    width: min(100% - 1.25rem, 76rem);
-  }
-
   body.page-core-culture-parent-guide .cc-hero-image-inner img {
     height: min(58vw, 20rem);
   }
