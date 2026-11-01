@@ -36,3 +36,9 @@ The contextual persona router did not identify a suitable specialist. Its Static
 Do not commit or deploy this cohort yet. Keep the dirty source and ignored `dist/` outputs intact. Before release, obtain authoritative confirmation of the public offer values and video-session booking path, and provide the promised video or revise that claim. The local route correction remains uncommitted with the page content. After the facts are cleared, inspect the exact route payload and verify the live routes after deployment.
 
 No browser session, network check, or Lighthouse/PageSpeed check was run. The temporary Eleventy output was removed after route verification; it occupied about 520 MiB. No public payload was deployed.
+
+## Follow-up production route check — 2026-11-01
+
+Read-only GET checks confirmed that production does not serve any of the three pages: extensionless, trailing-slash, and `.html` variants for `/sales-calculator`, `/video-goal-session`, and `/welcome-primer` all returned HTTP 404 (1,251-byte responses). The public `/schedule` route returned HTTP 200 (167,923 bytes; SHA-256 `89fea808237c255b6ae851142f46664b9cb9e9fa5c48bf46f5e8897024dc9a41`). Its HTML contains no links to the video session or calculator pages and contains 10 links each to the Kids and Teens routes.
+
+This confirms the held schedule links and pages are local-only. The route fix alone is insufficient to publish them: the public offer details and video-session booking path remain unverified, and the welcome page still promises a video asset that is absent. No files were uploaded and no source or generated output was changed by the live check. No Lighthouse, PageSpeed, or form submission was performed.
