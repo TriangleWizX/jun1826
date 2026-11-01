@@ -105,16 +105,17 @@ def changed_outputs(commit, only=()):
         html = page.read_text(encoding='utf-8')
         outputs.add((page, 'bio.html'))
         bio_assets = set(re.findall(
-            r'''(?:src|href)=["']/?(assets/(?:css/pages/bio-delivery\.[a-f0-9]{12}\.css|images/bio-black-belt-promo-670x669\.[a-f0-9]{6}\.webp))["']''',
+            r'''(?:src|href)=["']/?(assets/(?:css/pages/(?:bio-delivery\.[a-f0-9]{12}|bio-mobile-fixes\.[a-f0-9]{6})\.css|images/bio-black-belt-promo-670x669\.[a-f0-9]{6}\.webp))["']''',
             html,
         ))
         required = {
             'assets/css/pages/bio-delivery',
+            'assets/css/pages/bio-mobile-fixes',
             'assets/images/bio-black-belt-promo-670x669',
         }
         found = {re.sub(r'\.[a-f0-9]+\.(?:css|webp)$', '', asset) for asset in bio_assets}
         if not required.issubset(found):
-            raise ValueError('Bio release HTML must reference the fingerprinted delivery CSS and promotion WebP')
+            raise ValueError('Bio release HTML must reference fingerprinted delivery CSS, mobile-fix CSS, and promotion WebP')
         for rel in sorted(bio_assets):
             candidate = DIST_ROOT / rel
             if not candidate.is_file():
