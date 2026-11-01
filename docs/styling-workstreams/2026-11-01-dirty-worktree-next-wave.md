@@ -121,6 +121,47 @@ Both reviews are read-only, use the shared checkout, and do not access owner-res
 - The current source-to-requirement review found no dirty cohort ready for release. The schedule Kids/Teens hotlinks are already committed/live; its remaining dirty change is separate video-session/calculator content. The remaining Blog, Free Intro, and waiver changes lack a fresh requirement-to-output release case. No commit or deployment was made from this broad candidate.
 - Closed the exact temporary build after preserving the comparison evidence; no process had files open there. Owner-reserved keyboard acceptance, site-wide contrast, and Lighthouse/PageSpeed remain untouched.
 
+### Approved availability QA proxy follow-up — 2026-11-01
+
+#### Persona & Expert Framework
+
+- **Coordinator:** AI SuperExpert Agent Specialist — Dr. Ada Turing (`937a02cd-470a-4211-b880-b05bdf8bf585`), carried forward from the active goal plan; `Instructions - COMPETENCE` (`e144b81f-10ea-41a6-a06c-03d69dfb738f`) remains the master instruction asset for this unchanged goal.
+- **Worker role:** no suitable Indranet persona was returned by `auto_persona.py`. `Static Site Generator` (`10974975-0c53-4e27-bdca-e95e86ccb2e9`, full 896-character prompt) builds personal Markdown blogs; `MainFrame` (`233ea43c-361c-4207-bced-f7764860358e`, full 3,064-character prompt) designs product wireframes. Both are rejected as poor fits. Use the ordinary specialist fallback **Availability Proxy QA Reviewer**.
+- **Worker instruction:** `Instructions - CODE` (`25a8fe8a-c164-4e8e-8236-3a6585bfa165`), source `assets/indranet-prompt-exporter/exports/index.json`, catalog status `partial`; its complete 1,500-character text was read, SHA-256 `99075cfe1fba1325006241a460605c847c9c35c0be15da863951c11ec26a7ccf`, attachments none. It fits code review, functional testing, QA, and build/deployment verification. Apply focused requirement review, inspect the exact diff, verify the real GET relay, and preserve only metadata diagnostics.
+
+#### Workstream contract
+
+| DoD | Owner lens | Read scope | Write scope | Verification / stop condition |
+| --- | --- | --- | --- | --- |
+| `QA-AVAILABILITY-PROXY-20261101` | Ordinary Availability Proxy QA Reviewer; one read-only peer review | User approval at implementation ledger lines 224 and 261; `scripts/qa-viewports.mjs`; frontend GET/query contract in `js/first-visit-availability.js`; existing 96-route/460-sample records | Isolated clean-baseline and current-dirty builds/outputs under the registered `/tmp/availability-proxy-viewports-20261101/`; preserve compact reports and metadata-only proxy diagnostics under `docs/styling-workstreams/evidence/2026-11-01/` | Run 460 samples against each build; require successful real availability upstream responses and metadata-only diagnostics. Compare matrix failures between baseline and dirty output before releasing any source cohort. Stop on an upstream failure or when the candidate does not address a mapped requirement. This is local QA tooling and has no public-site deploy payload. |
+
 ### Next evidence needed
 
 Reconcile the shared fingerprint manifest and its CSS/JS references in an isolated build from a known source revision, then map each changed generated route to the exact source diff and release requirement. Until that evidence exists, preserve root `dist/` and the remaining dirty source cohorts; do not stage broadly.
+
+
+### Availability proxy comparison and next focused fix — 2026-11-01
+
+- The clean-HEAD candidate passed 430/460 samples; the fresh build from 77 dirty production inputs passed 445/460. Exact route/screenshot/reason comparison: 17 clean-HEAD failure samples no longer failed, 13 are shared, and two new phone samples fail because `/blog/exactly-what-happens-first-bjj-class-minute-by-minute` requests missing `/assets/images/hero.89f093.webp`. All 457 clean-baseline and 456 dirty-candidate availability requests returned upstream HTTP 200; diagnostics contain request metadata only. Compact evidence: `evidence/2026-11-01/availability-proxy-comparison-2026-11-01.md` and `.json`. The 2.8 GiB temporary QA folder was closed after preserving compact evidence; the main `dist/` was untouched.
+- **`HERO-SRCSET-RELEASE-20261101`** uses the ordinary fallback **Static-Site Asset Pipeline Auditor**. The contextual selector returned `no_suitable_persona`; `Instructions - COMPETENCE` ranked as ready but its source is a capability catalog, not a build/debug method. Apply the previously full-source-reviewed `Instructions - CODE` (`25a8fe8a-c164-4e8e-8236-3a6585bfa165`). The isolated change is only the mobile `srcset` reference in `src/blog/exactly-what-happens-first-bjj-class-minute-by-minute/index.html`, from the obsolete hashed alias to visually matched canonical `/assets/images/hero.webp`. Read-only analysis found the asset fingerprint tool does not parse `srcset`; do not broaden the tool change unless the clean isolated build proves the canonical source path is still omitted.
+- Build and verify from detached clean `HEAD` `581d6a7e` under the registered `/tmp/hero-srcset-release-20261101/`. Reuse root `node_modules` by symlink. Release gate: candidate route renders the intended mobile image with no missing request at 320/390px; generated diff is limited to the route and any required image artifact; `deploy-release.py --dry-run --only` lists exactly those paths. Preserve all other root dirty source/output paths.
+
+
+### `HERO-SRCSET-RELEASE-20261101` completion
+
+- Commit `c95c22f` changes only the mobile source image to the canonical `/assets/images/hero.webp`; commit `1d5bace` records the release evidence. The exact local source change matched the staged source diff.
+- The first upload accidentally used the root ignored `dist/`, which had dirty shared-navigation CSS. It was replaced immediately from the registered clean-HEAD candidate. Final dry-run listed only `blog/exactly-what-happens-first-bjj-class-minute-by-minute/index.html`; final upload reported 141,787 bytes. Final live route: HTTP 200, one canonical mobile `srcset`, no legacy mobile source; image URL HTTP 200 at 69,664 bytes. Fresh backups were verified before both uploads; the final pre-correction rollback snapshot is `/home/sensdapt/senseisandy-predeploy-20261101T085105Z.tar.gz`.
+- The isolated Browser Use check passed at 320px and 390px with the canonical image complete at 1856×822. The generated root `dist/` route was restored to its pre-task bytes after deployment. The candidate worktree, Chrome profile, and preview were closed, removing 1.6 GiB.
+- This closes only the image delivery gap. The full goal remains active. The dirty-source matrix result, remaining source/output reconciliation, and owner-reserved keyboard, contrast, and Lighthouse checks remain open.
+
+
+### Workstream contract — `VIDEOS-PRIMARY-TARGET-AUDIT-20261101`
+
+- **Role:** ordinary **Videos Target Delivery Auditor** fallback; contextual persona selection returned `no_suitable_persona`. Pair with previously full-source-reviewed `Instructions - CODE` (`25a8fe8a-c164-4e8e-8236-3a6585bfa165`, ready, `assets/indranet-prompt-exporter/exports/index.json`, no attachments). Codebase-memory MCP remains unavailable, so use scoped source inspection.
+- **DoD:** find the source control responsible for the two `/videos` 320px and 390px `primary target below 44px` samples; prove whether the page's canonical CSS and active minified/generated CSS differ; recommend a smallest safe correction plus a focused responsive verification plan. Read-only; do not change root source or generated output.
+- **Isolation:** detached worktree at `1d5bace`, exact root `/tmp/videos-primary-target-audit-20261101/`, no dependencies or browser profile. Only report path `/tmp/videos-primary-target-audit-20261101/report.md`. Exclusions: keyboard acceptance, contrast, Lighthouse, PageSpeed, network, and root `dist/`.
+
+### Blog selector correction audit closeout — 2026-11-01
+
+- The 87-page live recheck found both committed Blog CSS rules on 71 pages and found 16 without them. Its route table initially omitted `/blog/`; a focused live GET verified that route returns HTTP 200 and contains both rules, reconciling the 71/87 count.
+- Durable evidence: `evidence/2026-11-01/blog-live-selector-recheck.md`. This corrects the prior coverage uncertainty but does not clear the Blog release hold: generated route content and asset references still differ from production, and the root `dist/` remains mixed.
