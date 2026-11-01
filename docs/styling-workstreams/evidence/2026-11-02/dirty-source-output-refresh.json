@@ -1,0 +1,2794 @@
+{
+  "base_commit": "423eb464",
+  "generated_by": "npm run build; node tools/fingerprint-assets.cjs --clean; --check",
+  "inputs_overlay_count": 68,
+  "inputs": [
+    {
+      "path": "package.json",
+      "sha256": "7ede068b1a02744cc7c5bc607107bac390b0808db42ec0c9443fc06ae50f46e6"
+    },
+    {
+      "path": "scripts/deploy-release.py",
+      "sha256": "46e6ca3be36a3a918acb4691210c5c5a4814b740f2d6c949b7be20990d83ebe2"
+    },
+    {
+      "path": "scripts/lib/visibility-contrast.mjs",
+      "sha256": "f28d9cb3389b072aa6528f2ce3c9d0b4b57baf2aa1695906d86beafd3bb48e2e"
+    },
+    {
+      "path": "scripts/qa-cwv-lab.mjs",
+      "sha256": "571234ce1e62c5dbfcc37b017ec8c08fb5ac759e8ccab052ae611690e8320a9f"
+    },
+    {
+      "path": "scripts/qa-desktop-topbar-overlap.mjs",
+      "sha256": "d329646579b3f6c786f88aadf643aa76f20887cdbd20ffd34ba0531b2d795ba3"
+    },
+    {
+      "path": "scripts/qa-faq-disclosures.mjs",
+      "sha256": "f31c78aa7a5d7126216cb5b85d3e3316965c771009bd133d588b0e2b8ea8efff"
+    },
+    {
+      "path": "scripts/qa-home-builder.mjs",
+      "sha256": "ca31f76201eb6f7a3def80b4be92dd225742b53be64f025052b8b356665e5f47"
+    },
+    {
+      "path": "scripts/qa-schedule-booking-handoff.mjs",
+      "sha256": "0003926b250adc46697eead03e6214a6373c5c882794bd70e32fe01f69d82db9"
+    },
+    {
+      "path": "scripts/qa-sticky-overlap.mjs",
+      "sha256": "ad29ab1389386d3e8e71fa7226c14b4f52440ac108bc34f5dd1513a7fe68d96f"
+    },
+    {
+      "path": "scripts/qa-viewports.mjs",
+      "sha256": "60770e43cf75ab5636436853d0e490bf3e0c4f3267351f587ec9fca136feafab"
+    },
+    {
+      "path": "scripts/qa-visibility.mjs",
+      "sha256": "167e69c81ed40e2fe885ccdded0310ae7397cfcde62d2329c48a80eeed552b10"
+    },
+    {
+      "path": "src/_includes/components/form-free-intro.njk",
+      "sha256": "88784880c3123d9e8396702c6382cc70e514c53462322da17fc5fb46ced589b4"
+    },
+    {
+      "path": "src/_includes/critical/free-intro.njk",
+      "sha256": "fdb6528e496059c4795e09b9be36e36c2413a6f0a0492a8ac43c4c88ea93a507"
+    },
+    {
+      "path": "src/after-booking-promise.html",
+      "sha256": "c3b590f218f54c91c50c4a3b2d506b9abb8eb1455ab7a5b20682c0fe81dcb1bd"
+    },
+    {
+      "path": "src/assets/css/blog.css",
+      "sha256": "9820dfc393bd9cd2f7deee68037f0e820086687dc82b048a70bfadbcdb49cbb0"
+    },
+    {
+      "path": "src/assets/css/contact-vip.css",
+      "sha256": "6d439a2b1d8a35c5cb02cb055d3fd5f9154a22e9416cac9821d1234db3fcdb4c"
+    },
+    {
+      "path": "src/assets/css/cro.css",
+      "sha256": "72d74bff7557f77f26dfe20bacfe1048ee3504d88e53eaaeee624eae263527e3"
+    },
+    {
+      "path": "src/assets/css/faqs.css",
+      "sha256": "1cfad4175c73fe5649a792f1d397df2dbc41cb8378d2272c4e5278de7385bb12"
+    },
+    {
+      "path": "src/assets/css/global.css",
+      "sha256": "e7dde2498a93e86ea9775287c2b9691f26c48e575fa7b98348b90ace9d0a17d4"
+    },
+    {
+      "path": "src/assets/css/hyphen-weekend.css",
+      "sha256": "b4f318d6b887d77929879411ee9d23a8822eb244437b6a54530f39ef35481d30"
+    },
+    {
+      "path": "src/assets/css/mobile-foundation.css",
+      "sha256": "9b5624ca6d75f2f7c7d50ccce49b1b4da93cc69f1a8f363c458254540f07aa3e"
+    },
+    {
+      "path": "src/assets/css/pages/core-culture-parent-guide.css",
+      "sha256": "6488dbd5956de40e210bb28eb67ae1634ef46432f48e397a8c8187608974da93"
+    },
+    {
+      "path": "src/assets/css/pages/everyday-jiu-jitsu.min.css",
+      "sha256": "4323c42897f6054502dd3cf2ba5d980f40615cddb18a6eeb1db972e6a97fc542"
+    },
+    {
+      "path": "src/assets/css/pages/near.css",
+      "sha256": "2a040acbb69e86b597e47388f73fa05dde05a13363a4ece6e1c5b63055862a2a"
+    },
+    {
+      "path": "src/assets/css/pages/options-pricing-highend.css",
+      "sha256": "60566bd0b3d09a1903732ca0c21f1f93dd15a830e4ea24bae6f383d2b0cc3b7f"
+    },
+    {
+      "path": "src/assets/css/pages/shiney-ticket.css",
+      "sha256": "9bf104fac39b150aff02c864dc836f337ec952cd08cd14dc0f80caec3b3f1b48"
+    },
+    {
+      "path": "src/assets/css/pages/show-up-kit.css",
+      "sha256": "4c0422c998e6ca1adc46098501465aaf987c92e7c8d8197eff18d80ffd41afea"
+    },
+    {
+      "path": "src/assets/css/pages/source-record.css",
+      "sha256": "ec2d74e1723fb1f670f3811ca3b9b66bb947b92090e38371d8b0369cb54e980f"
+    },
+    {
+      "path": "src/assets/css/pages/spring-armor-drop.css",
+      "sha256": "8c9cd0a563b35e935e53f99d1fb36ef955fe8d0a422fe691534ce064bb965d3f"
+    },
+    {
+      "path": "src/assets/css/pages/student-hub-premium.css",
+      "sha256": "cf1c3b0ce45829f367948b3e0b29345f9f9003ddf1da7706c1fdfe49e4007816"
+    },
+    {
+      "path": "src/assets/css/pages/winter-armor-2027.css",
+      "sha256": "15a2cfa9933728827a88925cd1073d3417145efbe62913bd8de557ebe421f3b3"
+    },
+    {
+      "path": "src/assets/css/pages/winter-rank-drop.css",
+      "sha256": "fca2488edce92408e2b235cde483548a64ef672c2e0d572b2a9823b5dc8dd30b"
+    },
+    {
+      "path": "src/assets/css/partner-pages.css",
+      "sha256": "6f4071a0f51d054d4c85f88b8dabef2547a060e319fbea8a7d457f3d6d5c7b24"
+    },
+    {
+      "path": "src/assets/css/site-shell.css",
+      "sha256": "435e5725d479e047b3d5d75d9d773653cce57cbdff6d4ecbef3ef5f0520980d6"
+    },
+    {
+      "path": "src/assets/css/styles.css",
+      "sha256": "262ba09513422dacdf38f20a9be5e8e1b5a3471a25bc0b2abd2917f976f7c5f3"
+    },
+    {
+      "path": "src/assets/data/asset-hash-manifest.json",
+      "sha256": "cb54ba3017cb9bd4cc5b1861c7448ca8cabd69bd4cad5d860f03d2b730119577"
+    },
+    {
+      "path": "src/birthday-parties.html",
+      "sha256": "11e8f90af967c2cd9da5e9afb0af6352abd6efb47986e275f6fab883f746c10b"
+    },
+    {
+      "path": "src/bjj-glossary/choke/index.html",
+      "sha256": "a22d537c914ff13fcdc5eecb36641d4253d81a8c65680e01397158143ff84330"
+    },
+    {
+      "path": "src/bjj-glossary/open-mat/index.html",
+      "sha256": "e5e01153a452dcfa8488d8e36c5c54e769996e809f415fa581180ce26b242985"
+    },
+    {
+      "path": "src/blog/bjj-sensei/index.html",
+      "sha256": "59866e619391e9ca9febd6e0b1dfedac5769a33fb84391920dede1afa322f5d6"
+    },
+    {
+      "path": "src/bring-a-friend.html",
+      "sha256": "56a9179b845917c69e689951905a4eda59956ff3e38bb17c736c5130195e070a"
+    },
+    {
+      "path": "src/camp-clinics.html",
+      "sha256": "6ecde3d60267fe2c2bdcb490b169c42e6bcf8833c6fc509b80f0bbd737542226"
+    },
+    {
+      "path": "src/core-culture-parent-guide.html",
+      "sha256": "6c6233f9f2764a52474df2f225b0a62051dcac07fadfe5b0e4c293c481da7a9d"
+    },
+    {
+      "path": "src/daily-checkin.html",
+      "sha256": "8c3b60d03ed2767d5ef2106813203db5113809d43003da18346d921caeabc9ee"
+    },
+    {
+      "path": "src/deer-mountain-inn.html",
+      "sha256": "fdf0ee5bef5a30bd243a898a16a8ccf6b38f2454612719a621087ce4f58ada45"
+    },
+    {
+      "path": "src/footer-partner.html",
+      "sha256": "d32d972586d6d938943e188865363c343db1c3667cece58f31f1a1e8cda9196d"
+    },
+    {
+      "path": "src/front-headlock-series/index.html",
+      "sha256": "4a99bd01fd8fa8de532991e7acaccab751b358af84c4fd430f9fa1f69cf1c90d"
+    },
+    {
+      "path": "src/hyphen-weekend.html",
+      "sha256": "91bca0f653a887219f0cb25a7a76dede2af906dc5092eba1f2a1d05f640e9491"
+    },
+    {
+      "path": "src/nervous-first-timers.html",
+      "sha256": "7d36fc03b1b25097beaf11ed236e7f94ef9483fc68ba81329c977563aa606135"
+    },
+    {
+      "path": "src/options-pricing.njk",
+      "sha256": "27edfa437467c9ad5853bde77c63235f316c3736490cf88e7985f38b0ec5cb05"
+    },
+    {
+      "path": "src/partials/nav-include.html",
+      "sha256": "4aefef4b44079e1c82ff902891058cf362e6f13c586d068fac32efb8dbe23be8"
+    },
+    {
+      "path": "src/phoenicia-diner.html",
+      "sha256": "892ad076395903054bd7c7cb0f4e235148e26847de90fc3bdc5da697af61f246"
+    },
+    {
+      "path": "src/practice-vault.njk",
+      "sha256": "1a966d8de5b5e9fcef18fb68366c8b2cd42ab1d8f8284b16f852fe54d905b34e"
+    },
+    {
+      "path": "src/report-card.html",
+      "sha256": "f4db718560f3e464cf4b0a156568e0232e6eadc2db07fdfb711ff013adb75d41"
+    },
+    {
+      "path": "src/rural-bjj-catskills.html",
+      "sha256": "f125c0f1a745ef54be9b28e85abd3f7e002075d86388fdce9352ba31d521baf0"
+    },
+    {
+      "path": "src/sales-calculator.html",
+      "sha256": "7bbc0d8cc5f2bb051473a4da0c5e91ef77b8f598d89b66a793de2e36dd2b8e1b"
+    },
+    {
+      "path": "src/schedule.html",
+      "sha256": "e70a9138d89de500d5eed077a12dc097e112d7e5e46ac2efb3cbec837f975298"
+    },
+    {
+      "path": "src/scribners.html",
+      "sha256": "91043e1c9f91fa28855f2b48b50f90598492310b3aa6a8e6f8a6a744e710edb0"
+    },
+    {
+      "path": "src/show-up-kit.html",
+      "sha256": "b7b14108c51574bcde7bd11345e01168f4ae325d57efe5687a68868a5d5fbb04"
+    },
+    {
+      "path": "src/sources/research/records.njk",
+      "sha256": "c88c8c8c829b31977c49122df3074105178c5ce615944303ade3d2dddaccdb2e"
+    },
+    {
+      "path": "src/tactical-longevity.html",
+      "sha256": "d9b4fed8a2be5d8f051eb67d228fa1357a0ac7ce48d3121ae65ecbe46f90b5d2"
+    },
+    {
+      "path": "src/video-goal-session.html",
+      "sha256": "7e272118476a0f6ac975c96d06fdd97118eea3ab868c73318136449400960015"
+    },
+    {
+      "path": "src/visit/index.html",
+      "sha256": "8a66e1237b2e0a9e48ef813f0dcd24d5b72df4bbc9387a464faa8b8611e96211"
+    },
+    {
+      "path": "src/waiver.html",
+      "sha256": "868d56394d6c60fc73a5eebdd12bf3282971e559e6ea09037afc8493e81fe36c"
+    },
+    {
+      "path": "src/weekly-audit.html",
+      "sha256": "9d2512dadb4311147d5868cbdb4d7ade1a630ecb2e1161dd65484bf52ed288f9"
+    },
+    {
+      "path": "src/welcome-primer.html",
+      "sha256": "8173fa0a3157f3ba99358af812484f37c841975ac0ae22d159b83115209c8458"
+    },
+    {
+      "path": "src/winter-rank-drop.html",
+      "sha256": "97efeb1d621a35f485220afe44fb6d08633292e480ad8bfec2075bde6b3f4849"
+    },
+    {
+      "path": "tools/build-article-styles.mjs",
+      "sha256": "f892f274bf090bc04e117c8648595324c783553fad867133d74a37bd1492dc5b"
+    }
+  ],
+  "root_dist_used": false,
+  "tmp_workspace": "/tmp/dirty-source-output-refresh-20261101",
+  "fingerprint_check": {
+    "baseline": {
+      "exit": 0,
+      "managed_assets": 157
+    },
+    "dirty_source": {
+      "exit": 0,
+      "managed_assets": 160
+    }
+  },
+  "counts": {
+    "clean": 2214,
+    "dirty": 2224,
+    "added": 32,
+    "removed": 22,
+    "changed": 454
+  },
+  "added": [
+    {
+      "path": "dist/assets/css/blog.29eb26.css",
+      "sha256": "9820dfc393bd9cd2f7deee68037f0e820086687dc82b048a70bfadbcdb49cbb0"
+    },
+    {
+      "path": "dist/assets/css/cro.min.0d7a21.css",
+      "sha256": "6e62593b405c23431e1e8461c9c4cf493730524e98c1a67820db512fe7ea1097"
+    },
+    {
+      "path": "dist/assets/css/faqs.e82adc.css",
+      "sha256": "1cfad4175c73fe5649a792f1d397df2dbc41cb8378d2272c4e5278de7385bb12"
+    },
+    {
+      "path": "dist/assets/css/hyphen-weekend.54cbe5.css",
+      "sha256": "f00d1055e61e8d6ed2a54d9b88d6c09649bebb144ae2ea9f08f462dd9d5beb07"
+    },
+    {
+      "path": "dist/assets/css/mobile-foundation.d8c863.css",
+      "sha256": "9b5624ca6d75f2f7c7d50ccce49b1b4da93cc69f1a8f363c458254540f07aa3e"
+    },
+    {
+      "path": "dist/assets/css/pages/article-delivery.4a16a0631203.css",
+      "sha256": "4a16a0631203bc8966cec371b06d010527ace817c3ce9751025a20521bfb6707"
+    },
+    {
+      "path": "dist/assets/css/pages/bio-delivery.2dd0cf671154.css",
+      "sha256": "2dd0cf671154565f3635d57b823f9edbb0e81e33e9e25623bf781905936ab81d"
+    },
+    {
+      "path": "dist/assets/css/pages/bjj-classes-delivery.d66db691e006.css",
+      "sha256": "d66db691e006028970470986d3aee52673fbbf28d32f41db03f0a8cbaa1922b3"
+    },
+    {
+      "path": "dist/assets/css/pages/core-culture-parent-guide.ff16de.css",
+      "sha256": "6488dbd5956de40e210bb28eb67ae1634ef46432f48e397a8c8187608974da93"
+    },
+    {
+      "path": "dist/assets/css/pages/directions-delivery.1f8f14915bf1.css",
+      "sha256": "1f8f14915bf1f69f7961d50428ae35eb3098472baf1aea8a6c4cd0ff19391c29"
+    },
+    {
+      "path": "dist/assets/css/pages/everyday-jiu-jitsu.min.css",
+      "sha256": "4323c42897f6054502dd3cf2ba5d980f40615cddb18a6eeb1db972e6a97fc542"
+    },
+    {
+      "path": "dist/assets/css/pages/free-intro-delivery.dcec224ca06f.css",
+      "sha256": "dcec224ca06f367ded3fdcfb66f2314150cfddb2a3b956b20f848518a09afaa8"
+    },
+    {
+      "path": "dist/assets/css/pages/glossary-delivery.74fc5fa5666e.css",
+      "sha256": "74fc5fa5666e1da5e6b9e8ea72a7039c1d6121297a0af872d9d802d052995cf2"
+    },
+    {
+      "path": "dist/assets/css/pages/home-delivery.51533cba8572.css",
+      "sha256": "51533cba85722fb8b46c2e3863db4cc38d14a13785198c3ae093c7bc7b110e38"
+    },
+    {
+      "path": "dist/assets/css/pages/instagram-delivery.a3e89ed3c582.css",
+      "sha256": "a3e89ed3c582695251a1cff9dca592dc49d8cf1c0dd428c7d6c6444d01ad3a12"
+    },
+    {
+      "path": "dist/assets/css/pages/kids-delivery.5bce252e0a13.css",
+      "sha256": "5bce252e0a134aa8a7e0e332d834763ac8b02a49b534782092280004def5c814"
+    },
+    {
+      "path": "dist/assets/css/pages/near.5c00d3.css",
+      "sha256": "2a040acbb69e86b597e47388f73fa05dde05a13363a4ece6e1c5b63055862a2a"
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-delivery.a03ffcf6b2aa.css",
+      "sha256": "a03ffcf6b2aae8cb65ca4b4ecb2c120b8802821d4df261f83f18d05b0b0abe3f"
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-highend.cc17f8.css",
+      "sha256": "60566bd0b3d09a1903732ca0c21f1f93dd15a830e4ea24bae6f383d2b0cc3b7f"
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-delivery.b638bd44309e.css",
+      "sha256": "b638bd44309e3a374432e316ea7c8254be4cd69328e0a527aa167dd9317d7222"
+    },
+    {
+      "path": "dist/assets/css/pages/shiney-ticket.20393e.css",
+      "sha256": "9bf104fac39b150aff02c864dc836f337ec952cd08cd14dc0f80caec3b3f1b48"
+    },
+    {
+      "path": "dist/assets/css/pages/source-record.07d3b1.css",
+      "sha256": "ec2d74e1723fb1f670f3811ca3b9b66bb947b92090e38371d8b0369cb54e980f"
+    },
+    {
+      "path": "dist/assets/css/pages/spring-armor-drop.37e4f2.css",
+      "sha256": "8c9cd0a563b35e935e53f99d1fb36ef955fe8d0a422fe691534ce064bb965d3f"
+    },
+    {
+      "path": "dist/assets/css/pages/student-hub-premium.159dbc.css",
+      "sha256": "cf1c3b0ce45829f367948b3e0b29345f9f9003ddf1da7706c1fdfe49e4007816"
+    },
+    {
+      "path": "dist/assets/css/pages/tannersville-delivery.f89538be2095.css",
+      "sha256": "f89538be2095bb275194d0f70cc411312dd3fc58485c4935423902d4a8f9d13a"
+    },
+    {
+      "path": "dist/assets/css/pages/visit-delivery.4cad1859b953.css",
+      "sha256": "4cad1859b95330f73bc06491b377e778affbc34bf39182d1761225fe45bf0820"
+    },
+    {
+      "path": "dist/assets/css/pages/winter-armor-2027.827d06.css",
+      "sha256": "15a2cfa9933728827a88925cd1073d3417145efbe62913bd8de557ebe421f3b3"
+    },
+    {
+      "path": "dist/assets/css/pages/winter-rank-drop.50b5f8.css",
+      "sha256": "fca2488edce92408e2b235cde483548a64ef672c2e0d572b2a9823b5dc8dd30b"
+    },
+    {
+      "path": "dist/assets/images/studio/sensei-sandy-bjj-studio-lobby-entrance-1440.2392db.webp",
+      "sha256": "f7e97a45ee9078c63d9cf5a8cb60c7e5a7db234ff36ceacee411da2a3ed21bba"
+    },
+    {
+      "path": "dist/sales-calculator/index.html",
+      "sha256": "041e1f01a33e64591b8054e74b8e5546ba29fe170b159b7d395321f37c2ad63a"
+    },
+    {
+      "path": "dist/video-goal-session/index.html",
+      "sha256": "f101f8f7ba959d63b850d909574da24db36c19f940ff590dd7db52e7a2cb55a8"
+    },
+    {
+      "path": "dist/welcome-primer/index.html",
+      "sha256": "6e8c28d3d2358fb6dac4e54a85a15fb2cc1e822fb96e4d0b187570c8df118639"
+    }
+  ],
+  "removed": [
+    {
+      "path": "dist/assets/css/faqs.87510f.css",
+      "sha256": "167e4437143dcc809d1206484c57fa7fc4f4f45a00773c6bd9e332022f69551c"
+    },
+    {
+      "path": "dist/assets/css/hyphen-weekend.bdac9d.css",
+      "sha256": "669fcae34a0d40c62ddd086f5d2b46286051d0fe22e88ae7630e31f562b9f516"
+    },
+    {
+      "path": "dist/assets/css/mobile-foundation.114422.css",
+      "sha256": "4414af7111252cd81e95a48661a77641b5dc9c8ec8784beb6c858bc60ce76b6e"
+    },
+    {
+      "path": "dist/assets/css/pages/article-delivery.d7324c9b8349.css",
+      "sha256": "d7324c9b8349b634cb05c89b153504e1ab33c39eefc1ab93e2ad2f761830f04d"
+    },
+    {
+      "path": "dist/assets/css/pages/bjj-classes-delivery.02a5cfce8520.css",
+      "sha256": "02a5cfce85205641200cef06a545451e5580d5eedc22844700378db739da8579"
+    },
+    {
+      "path": "dist/assets/css/pages/directions-delivery.730242e947db.css",
+      "sha256": "730242e947db2104a53e40ad83b18375c029976cf4155e0e22da742dcce24d78"
+    },
+    {
+      "path": "dist/assets/css/pages/free-intro-delivery.f79608e60361.css",
+      "sha256": "f79608e60361a9ae3e611d6bcb5fe71b236d8d20d17f993a4c506468978c7548"
+    },
+    {
+      "path": "dist/assets/css/pages/glossary-delivery.e1522fe54ce7.css",
+      "sha256": "e1522fe54ce7ec1d3b867822f15092f4ffd48f9e1867333446a225657f88b06f"
+    },
+    {
+      "path": "dist/assets/css/pages/home-delivery.91b43abcf45f.css",
+      "sha256": "91b43abcf45ff9a5dfff21bb433aa41f009bb36bb9d0f1184d0215c9e9dceaee"
+    },
+    {
+      "path": "dist/assets/css/pages/instagram-delivery.2346668bedf2.css",
+      "sha256": "2346668bedf2371bd8d8fbd25240d46c8899d0773083695cb2f5f1b1ddd2626b"
+    },
+    {
+      "path": "dist/assets/css/pages/near.ded2d3.css",
+      "sha256": "e555cfe8317e9288c41061de1629346bd44d143787a1f7d6c09286633d3bf2b0"
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-delivery.206d5681eba4.css",
+      "sha256": "206d5681eba47d381ce091002c18e826f7dbf138df12169e89de8f74388072f1"
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-highend.2c2d79.css",
+      "sha256": "cd8a1ff0468768060261ddffcb74b18ae477484e7801727b8d6dc203a2902af7"
+    },
+    {
+      "path": "dist/assets/css/pages/schedule-delivery.1cd1bea13549.css",
+      "sha256": "1cd1bea13549c2888be698481814a5bfe149b70d82827207218913f8395f46da"
+    },
+    {
+      "path": "dist/assets/css/pages/shiney-ticket.d0acd0.css",
+      "sha256": "ba0d3473f3662713597a58bcda442a7d0cb74462cabb140524552e1c397efa6d"
+    },
+    {
+      "path": "dist/assets/css/pages/source-record.d113af.css",
+      "sha256": "836a20afbf6e905c479efeb8942eab467594c89182bb7f7fbfd7bf3179656b51"
+    },
+    {
+      "path": "dist/assets/css/pages/spring-armor-drop.156726.css",
+      "sha256": "5d3d2777c62ce4a4eab74a2fe9d49960fcf8f49db906351efee9e35f05f74575"
+    },
+    {
+      "path": "dist/assets/css/pages/student-hub-premium.66115b.css",
+      "sha256": "a030de0bd8628e5304d55f745ba286203a58d0db991dabc348eb9c2c48ffb7d8"
+    },
+    {
+      "path": "dist/assets/css/pages/tannersville-delivery.73647b4f33e1.css",
+      "sha256": "73647b4f33e1695a0b770460c4077cb0721e10a1ce486653050523faa8da5bb2"
+    },
+    {
+      "path": "dist/assets/css/pages/visit-delivery.68516adf06a7.css",
+      "sha256": "68516adf06a7f8d8be7ac6850e95ba48ab2465e10f2dbd7b1fe1178c48da7147"
+    },
+    {
+      "path": "dist/assets/css/pages/winter-armor-2027.3f3262.css",
+      "sha256": "83f8f4c5cc1cbe63f3f5024e16232f20d0bb8a417cacd0106e8a6a87f43a3259"
+    },
+    {
+      "path": "dist/assets/css/pages/winter-rank-drop.cb1eca.css",
+      "sha256": "7824ab8a075f8626a4862e6b06e4c57448820c4e6598f0ad18f2846732b01b9e"
+    }
+  ],
+  "changed": [
+    {
+      "path": "dist/404.html",
+      "clean_sha256": "ba9ae98e71cff2eabe139f197d22f7fc4a92a4904af409a7f544b2e4e267099f",
+      "dirty_sha256": "c6ceb9e8425448ab574fe166162c725a1b3f6429c5e732baa71b7d4aac54f065"
+    },
+    {
+      "path": "dist/about/index.html",
+      "clean_sha256": "ed87270db539bb9372731c2acdfc3c13fb696bf82f776523766fae6902fa9861",
+      "dirty_sha256": "3012da560cf437a01e71b9a7c109b2dacbd59ca11e92a8b833b9d9d825e79753"
+    },
+    {
+      "path": "dist/admin/youth-intro.html",
+      "clean_sha256": "ee75ed56920f038cc5c83c3e9aaf006d30fd9a9be0520058d85ec7e8cff2f989",
+      "dirty_sha256": "00a5361fae5dd8ab61a6552b6d1ba5fd48236404f71c784facb65a0ce9fe6217"
+    },
+    {
+      "path": "dist/adult-private-coaching-intensive.html",
+      "clean_sha256": "68fc337c74400cf992f6f826db6f46e9fe0147b90df5fd0c403c35ff6ee5e8ee",
+      "dirty_sha256": "a870cc50e4871947a5f45f2eb5059b8c304bfa03712e763873f96f1715e05a77"
+    },
+    {
+      "path": "dist/after-booking-promise.html",
+      "clean_sha256": "aaf4e782f1b9ae66c3e64a1bd9c504a9b2545a78983a1c296461bd194e824ac5",
+      "dirty_sha256": "41e682ac4e77731a29ad1902eb5dbc332761b08f659712e1df2f8f4b8ae1f3cc"
+    },
+    {
+      "path": "dist/alley-bootcamp/index.html",
+      "clean_sha256": "baf5d3e646fd3183014a5625527ad0d31593e6e6f3998d0789b35a049282a2bc",
+      "dirty_sha256": "9fcef9f9fb0162ddfbe9d9153f36aad3960ff3f8b9c4e8b8d85c2b37fdeab852"
+    },
+    {
+      "path": "dist/assets/css/blog.css",
+      "clean_sha256": "dab909e972fc375839b3546bb3eb0f04ed9afe8b58336fc97a521f7545241a3c",
+      "dirty_sha256": "9820dfc393bd9cd2f7deee68037f0e820086687dc82b048a70bfadbcdb49cbb0"
+    },
+    {
+      "path": "dist/assets/css/contact-vip.css",
+      "clean_sha256": "2d0d4f02f4a142610fb55f1ef554a7f0cf66b6a4267e8a49e65f911dd4fb548d",
+      "dirty_sha256": "6d439a2b1d8a35c5cb02cb055d3fd5f9154a22e9416cac9821d1234db3fcdb4c"
+    },
+    {
+      "path": "dist/assets/css/cro.css",
+      "clean_sha256": "41ea303890a6eaf517d0c7da3b9632881595e6f4257444cffe43cbf731e6bd12",
+      "dirty_sha256": "72d74bff7557f77f26dfe20bacfe1048ee3504d88e53eaaeee624eae263527e3"
+    },
+    {
+      "path": "dist/assets/css/faqs.css",
+      "clean_sha256": "167e4437143dcc809d1206484c57fa7fc4f4f45a00773c6bd9e332022f69551c",
+      "dirty_sha256": "1cfad4175c73fe5649a792f1d397df2dbc41cb8378d2272c4e5278de7385bb12"
+    },
+    {
+      "path": "dist/assets/css/global.css",
+      "clean_sha256": "f36c145cffb15fe11deaf4de212be2905641c47a20b316f65f6a004bcf43acd6",
+      "dirty_sha256": "e7dde2498a93e86ea9775287c2b9691f26c48e575fa7b98348b90ace9d0a17d4"
+    },
+    {
+      "path": "dist/assets/css/hyphen-weekend.css",
+      "clean_sha256": "e7f429c42425eaca8f2f25b9cad549092ee364b8bde6fd956ea0abffa5b51a9a",
+      "dirty_sha256": "b4f318d6b887d77929879411ee9d23a8822eb244437b6a54530f39ef35481d30"
+    },
+    {
+      "path": "dist/assets/css/mobile-foundation.css",
+      "clean_sha256": "4414af7111252cd81e95a48661a77641b5dc9c8ec8784beb6c858bc60ce76b6e",
+      "dirty_sha256": "9b5624ca6d75f2f7c7d50ccce49b1b4da93cc69f1a8f363c458254540f07aa3e"
+    },
+    {
+      "path": "dist/assets/css/pages/core-culture-parent-guide.css",
+      "clean_sha256": "bba7db1f5d3dfbc5cf358b2431db7353320c7eff4085346af3ce835b240f6ff2",
+      "dirty_sha256": "6488dbd5956de40e210bb28eb67ae1634ef46432f48e397a8c8187608974da93"
+    },
+    {
+      "path": "dist/assets/css/pages/near.css",
+      "clean_sha256": "e555cfe8317e9288c41061de1629346bd44d143787a1f7d6c09286633d3bf2b0",
+      "dirty_sha256": "2a040acbb69e86b597e47388f73fa05dde05a13363a4ece6e1c5b63055862a2a"
+    },
+    {
+      "path": "dist/assets/css/pages/options-pricing-highend.css",
+      "clean_sha256": "cd8a1ff0468768060261ddffcb74b18ae477484e7801727b8d6dc203a2902af7",
+      "dirty_sha256": "60566bd0b3d09a1903732ca0c21f1f93dd15a830e4ea24bae6f383d2b0cc3b7f"
+    },
+    {
+      "path": "dist/assets/css/pages/shiney-ticket.css",
+      "clean_sha256": "ba0d3473f3662713597a58bcda442a7d0cb74462cabb140524552e1c397efa6d",
+      "dirty_sha256": "9bf104fac39b150aff02c864dc836f337ec952cd08cd14dc0f80caec3b3f1b48"
+    },
+    {
+      "path": "dist/assets/css/pages/show-up-kit.css",
+      "clean_sha256": "4eb7040d49b7748729e8fd5d6f1dc254718e98477968f859c5d0c640a96c888e",
+      "dirty_sha256": "4c0422c998e6ca1adc46098501465aaf987c92e7c8d8197eff18d80ffd41afea"
+    },
+    {
+      "path": "dist/assets/css/pages/source-record.css",
+      "clean_sha256": "836a20afbf6e905c479efeb8942eab467594c89182bb7f7fbfd7bf3179656b51",
+      "dirty_sha256": "ec2d74e1723fb1f670f3811ca3b9b66bb947b92090e38371d8b0369cb54e980f"
+    },
+    {
+      "path": "dist/assets/css/pages/spring-armor-drop.css",
+      "clean_sha256": "5d3d2777c62ce4a4eab74a2fe9d49960fcf8f49db906351efee9e35f05f74575",
+      "dirty_sha256": "8c9cd0a563b35e935e53f99d1fb36ef955fe8d0a422fe691534ce064bb965d3f"
+    },
+    {
+      "path": "dist/assets/css/pages/student-hub-premium.css",
+      "clean_sha256": "a030de0bd8628e5304d55f745ba286203a58d0db991dabc348eb9c2c48ffb7d8",
+      "dirty_sha256": "cf1c3b0ce45829f367948b3e0b29345f9f9003ddf1da7706c1fdfe49e4007816"
+    },
+    {
+      "path": "dist/assets/css/pages/winter-armor-2027.css",
+      "clean_sha256": "83f8f4c5cc1cbe63f3f5024e16232f20d0bb8a417cacd0106e8a6a87f43a3259",
+      "dirty_sha256": "15a2cfa9933728827a88925cd1073d3417145efbe62913bd8de557ebe421f3b3"
+    },
+    {
+      "path": "dist/assets/css/pages/winter-rank-drop.css",
+      "clean_sha256": "7824ab8a075f8626a4862e6b06e4c57448820c4e6598f0ad18f2846732b01b9e",
+      "dirty_sha256": "fca2488edce92408e2b235cde483548a64ef672c2e0d572b2a9823b5dc8dd30b"
+    },
+    {
+      "path": "dist/assets/css/partner-pages.css",
+      "clean_sha256": "ddc955901908ccff58636c8dfd82bb16bfd75e73971589d80b006c96027599dd",
+      "dirty_sha256": "6f4071a0f51d054d4c85f88b8dabef2547a060e319fbea8a7d457f3d6d5c7b24"
+    },
+    {
+      "path": "dist/assets/css/site-shell.css",
+      "clean_sha256": "b424d565c58cb3bacb2060c5c69cc99bafd073fd7080b68a3ecf6cfa1ef7f3f6",
+      "dirty_sha256": "435e5725d479e047b3d5d75d9d773653cce57cbdff6d4ecbef3ef5f0520980d6"
+    },
+    {
+      "path": "dist/assets/css/styles.css",
+      "clean_sha256": "390f21390e624c499c9e0a308427c0123a610a6588317646e89b670315aaf622",
+      "dirty_sha256": "262ba09513422dacdf38f20a9be5e8e1b5a3471a25bc0b2abd2917f976f7c5f3"
+    },
+    {
+      "path": "dist/assets/data/asset-hash-manifest.json",
+      "clean_sha256": "50585a72166079d1257b7295394841ed98c7938c4706c6fe05bfcf2a2e340969",
+      "dirty_sha256": "cb54ba3017cb9bd4cc5b1861c7448ca8cabd69bd4cad5d860f03d2b730119577"
+    },
+    {
+      "path": "dist/athlete-cross-training/evidence/index.html",
+      "clean_sha256": "1b09da0aeab33151b11ac63cd0f10392e5d1c698b7844e2a6298224e64159422",
+      "dirty_sha256": "9d9c95733496ce2c500be93db9778746a7c1033d20bbd0902e2b5c90a83e74b6"
+    },
+    {
+      "path": "dist/athlete-cross-training/index.html",
+      "clean_sha256": "207196ee6a0311977768a0a91635d7bb1e233f00dba3996cab7ab01aabf12cc4",
+      "dirty_sha256": "c525e4598b5acd9c8570ffd445d94e925c74f93cb0ff99fbbd467a800835083c"
+    },
+    {
+      "path": "dist/bio.html",
+      "clean_sha256": "163aa1e95deed56a5621bf65a591455b57e124e5c6520512deb6dc5f7d4ea0e7",
+      "dirty_sha256": "879d84a1cc94121fdfd1c365ce035307164c5b912a03a2083fe2c5b7c5366bf9"
+    },
+    {
+      "path": "dist/birthday-parties.html",
+      "clean_sha256": "bd422916785f8cc02e4e3f0fd2deca3d58abbf26000eac82fd7cf18672d8ebf9",
+      "dirty_sha256": "92cc74b0523ce920364f0d3ad5e2cfce6b732468fa42b5a3b0a06ea51e8b4189"
+    },
+    {
+      "path": "dist/bjj-butterfly-guard/index.html",
+      "clean_sha256": "b0bdc201d109d0b2641c8ca0e8e214ba0a0561b18c4a7523bf411234a5a0ce8a",
+      "dirty_sha256": "20bc75402f1d8fc0f3add819eca65dcabc3d335d44bb54d680ed3124a3c613e4"
+    },
+    {
+      "path": "dist/bjj-classes/acra-ny/index.html",
+      "clean_sha256": "91663ac1d50f75a7c8da1fb02e5802a5e561d7ae1505c95f98a43cb184c20f33",
+      "dirty_sha256": "29e68c01ca70497dbbd2c584101d9b62e6189e38d10c1c6cb1947107ee5b6781"
+    },
+    {
+      "path": "dist/bjj-classes/adults-tannersville-ny/index.html",
+      "clean_sha256": "39467a4666983addebc12afae2000ce8ab960b35ee51b638128d46dc17a4512f",
+      "dirty_sha256": "097c4aa949cdafa5818e2ee27eef10fcdc9a1ce43c48f68e4f833144d53632ed"
+    },
+    {
+      "path": "dist/bjj-classes/ashland-ny/index.html",
+      "clean_sha256": "2bda04441c20cf6adc6169312e98913ce5fc37b637300a5596753f4409668082",
+      "dirty_sha256": "1552f4ba79768835fe89c40172871227526ec5db66681cd25d5c4bbab5aee7be"
+    },
+    {
+      "path": "dist/bjj-classes/beginner-lane/index.html",
+      "clean_sha256": "ac0fd5ac45c83b641c4bd635e2cc72b708d514eef6e03445fc142191503af2c3",
+      "dirty_sha256": "b2629ef856b279cbab9197f5676546744c71b4d2e46552012c457bd63c2131bf"
+    },
+    {
+      "path": "dist/bjj-classes/boiceville-ny/index.html",
+      "clean_sha256": "862ba0eeeaa3f1c853da32dee6779a36446621df3f9132fa62039d2a89496899",
+      "dirty_sha256": "44fbe4767f44dc36e791892e841f96b4669d013ea32977276136e5e3071b8acf"
+    },
+    {
+      "path": "dist/bjj-classes/cairo-ny/index.html",
+      "clean_sha256": "d4383e1eaac20b285b5dea6ac425da4b7a24281e0982210e8a6f712e4e231425",
+      "dirty_sha256": "62c34699a996e9142e03d1bd265c87b163c0777a9e8923974a9856f59fd7a4aa"
+    },
+    {
+      "path": "dist/bjj-classes/catskill-ny/index.html",
+      "clean_sha256": "594912ccec1f9c6680953133a31b6b2dfe9cc01bb745a3aeeaa72c14fc2070cf",
+      "dirty_sha256": "ec329c68fc5c6da5e97f5c9636bf897183bb5584f013a157e31ab94b1591fe85"
+    },
+    {
+      "path": "dist/bjj-classes/coxsackie-ny/index.html",
+      "clean_sha256": "86305fcbe6bb1748e5caa45a1ec16bffa87136f577efb204195156de3196c6de",
+      "dirty_sha256": "96fe1f3c91754c8b22b1cd2bd5cf4ddc8470a7813d6ec23bc6db8710e05b9e6b"
+    },
+    {
+      "path": "dist/bjj-classes/durham-ny/index.html",
+      "clean_sha256": "bb1881519be7b6011e9108eefe1712bcb78bd6604af62fe841b7bb2871836221",
+      "dirty_sha256": "955bc5f8d9caab96871785852048d8405cf8a318f9d24de77e0c3a5de324ca52"
+    },
+    {
+      "path": "dist/bjj-classes/elka-park-ny/index.html",
+      "clean_sha256": "db27a0cd23d7356cd25b5da077fb5abaea7d2d838a60dafb6aff8309687d610e",
+      "dirty_sha256": "d6522168c2891d91c12b11e28c94d944f86fbc19f31b7e0b558e4491c4f066a0"
+    },
+    {
+      "path": "dist/bjj-classes/family-martial-arts-catskills/index.html",
+      "clean_sha256": "b93c55c3e9ac7fbb37681e2bf6671ded1beecefd1259706ce2aa655af413953a",
+      "dirty_sha256": "4e4f67269a51b926eef13e5777cdc0d5a0f736a62a5dc411d2f4cc55e6cd31f2"
+    },
+    {
+      "path": "dist/bjj-classes/gilboa-ny/index.html",
+      "clean_sha256": "c7904b55e8aafb3804e4ec859ad20d504b3ad665833fa353e0b23ee55ef58fc6",
+      "dirty_sha256": "ff9ccb8ba367a5b322026fff1493ac396768f70177265ad0882b0b3dbb27c472"
+    },
+    {
+      "path": "dist/bjj-classes/grand-gorge-ny/index.html",
+      "clean_sha256": "48f68d4e9da2eeafdd3b6ffea247669a9a0a6d4108f24628d91f8a2432997a47",
+      "dirty_sha256": "ed0fdca59fb9f11d01ea571fbe699410d9a241873f05a0014b152f4e2a2a82b8"
+    },
+    {
+      "path": "dist/bjj-classes/greenville-ny/index.html",
+      "clean_sha256": "5e8bca97eb34e4ddd1f8c4acdb7457c9de08aa7e822cb1648a59ba5e9c111401",
+      "dirty_sha256": "d3601812ca5fe47e8e7929d27fbe1a62d3637c1f1238bfbd95f74fbb906382ff"
+    },
+    {
+      "path": "dist/bjj-classes/haines-falls-ny/index.html",
+      "clean_sha256": "aea627107193f39e84166fe82c018011f8b119e5c5ee97b0f16663b09f6e8d2e",
+      "dirty_sha256": "ec6949102c11bacc5b90caee57bc9c710986a5cad0a5d9d48fd2487b2448b63c"
+    },
+    {
+      "path": "dist/bjj-classes/hunter-ny/index.html",
+      "clean_sha256": "efa4c9597c8656e023033e68ef51a779f0e255a5db610b7562a62ff3b5c82dd6",
+      "dirty_sha256": "2c3c9023b927a31d9b98680a0c677aaded608ef436f51286881cb97571bdf35b"
+    },
+    {
+      "path": "dist/bjj-classes/index.html",
+      "clean_sha256": "df95bd2a3d382620ed949edc02d9f6d2cd5dd23e47458e174e626306b3797755",
+      "dirty_sha256": "16d991246a6073cf08cf08e472b64213827876ff1b3a980e8db16948a74adaa3"
+    },
+    {
+      "path": "dist/bjj-classes/kids-tannersville-ny/index.html",
+      "clean_sha256": "815c8f0a5209bc9adb03bd2913c002330daf31210881948befb315055a3a2c25",
+      "dirty_sha256": "93a55ac956897122cc0b4dc71e2c505364b0225543ad604e58aa0b9d12bd9c4e"
+    },
+    {
+      "path": "dist/bjj-classes/lanesville-ny/index.html",
+      "clean_sha256": "6654564559cfeaf96f49edc015de8869bbe710861c2d2179df64b69e2e4ffa34",
+      "dirty_sha256": "db08637b643b591d37742b80cfb2e3f0289dbbae0651e0bb46e5558fb038b528"
+    },
+    {
+      "path": "dist/bjj-classes/leeds-ny/index.html",
+      "clean_sha256": "e4a63a6fc480594e3b13a3174af779e0d07dd4d84c7b20eb6ac6cc783eee7208",
+      "dirty_sha256": "05cff8e9d95cbc69538e4b2bb77af2aefb789a84b18c18c6b71d7f3c0e76e94e"
+    },
+    {
+      "path": "dist/bjj-classes/lexington-ny/index.html",
+      "clean_sha256": "29b8becff1ac082830294aefd0a5621dc97ea8e91a0ed73ee60a7dc9e5203d59",
+      "dirty_sha256": "7032c85e7455c0400b5284cfcfc5037dd6e00a2def8f0232058260f9a0d01288"
+    },
+    {
+      "path": "dist/bjj-classes/maplecrest-ny/index.html",
+      "clean_sha256": "f453e07e242d175460eb5df2985c302a5f0630966bd52ecf90b4eb3381eb8c1f",
+      "dirty_sha256": "35599ffe9779766ac22f69960ff6087f23f3d11d7cc5ef39e921f89c1b0bdd5d"
+    },
+    {
+      "path": "dist/bjj-classes/olive-ny/index.html",
+      "clean_sha256": "76e44739b1e0d62b5378e1c9365d44a708256e7e5c6117915d64585f99db653f",
+      "dirty_sha256": "8ee365ee829d8119b600ad77574935ca302d948f24edbd0de3329ba29f3966d7"
+    },
+    {
+      "path": "dist/bjj-classes/palenville-ny/index.html",
+      "clean_sha256": "7aa471ecc22abfe5618d5b3bf60fa9b17e7ac3586f581756f454396aa0e00b02",
+      "dirty_sha256": "50e67abff078636946b8d4ca4f3a70808d5796cc783390ab4d6e76f5db7dd889"
+    },
+    {
+      "path": "dist/bjj-classes/phoenicia-ny/index.html",
+      "clean_sha256": "67c9145ced94e8c3c176ceb7ecf0f2e25788f365bc9af9bf4a2ee5940d7c08de",
+      "dirty_sha256": "7153526e44f0beba070511a9a0e40fca2944a5b1666145fdb231143bd13d2c4d"
+    },
+    {
+      "path": "dist/bjj-classes/prattsville-ny/index.html",
+      "clean_sha256": "0ccf38402aa130eb0bd551271e34674e4625627e3e0c2af16312f38a9f9ffb09",
+      "dirty_sha256": "a36d14b7932c9b3d0d17ddf03ec1037da43b8d8398ca8a432f0bcb12595c02ea"
+    },
+    {
+      "path": "dist/bjj-classes/purling-ny/index.html",
+      "clean_sha256": "618db69a7777b23a4348401b44a8f3a046db1bb48e98066f6e61bc932c838de3",
+      "dirty_sha256": "48b405c34ca4a462517d58294f3c7fc106976add9f35c0c5b6abf6537e90a08f"
+    },
+    {
+      "path": "dist/bjj-classes/round-top-ny/index.html",
+      "clean_sha256": "7147a7880077fe080130ad0facae75a766bfd716997ac025eb9c39f1b1b823b0",
+      "dirty_sha256": "9b7de0978e36a440cdbd00c8fcb6241830f561e7c19af69cefd6d8e16bf8a144"
+    },
+    {
+      "path": "dist/bjj-classes/roxbury-ny/index.html",
+      "clean_sha256": "1f0189cf08b4afeef12659604436842864c288bbdc0d809fac7ed27c4b7255d4",
+      "dirty_sha256": "091b0475c6c6730f377a9a78a5cc2a6efd5f2ecfad3998c3136c20f1c705c923"
+    },
+    {
+      "path": "dist/bjj-classes/saugerties-ny/index.html",
+      "clean_sha256": "5f763c18c223c0b5d862727f259d6372ead75611ce4d5c5a0a34130c94490e5f",
+      "dirty_sha256": "54fe7c06db28a76dc585b8666896c162aa97a1a0dc07cc6a44c6f18aef73a55d"
+    },
+    {
+      "path": "dist/bjj-classes/schoharie-ny/index.html",
+      "clean_sha256": "6c61894acb1926399f4f9612579dd11e080caa91c30207aac7bc3b4a99a20fd1",
+      "dirty_sha256": "18ee1d97b07e79884f44394c1cd98067cad13cb4c98ce3ba6453ef50ae6789b3"
+    },
+    {
+      "path": "dist/bjj-classes/shandaken-ny/index.html",
+      "clean_sha256": "f340a674d403f406552d23b6c7e43fecd15e038b77613feaad571aa8f423b487",
+      "dirty_sha256": "a42f790ea4f07def5484a478ea2817c880d82404ecc27067f943697a633315ba"
+    },
+    {
+      "path": "dist/bjj-classes/shokan-ny/index.html",
+      "clean_sha256": "237e6319127c3e68755545c7b1aa9bced8be8f3bca37d9adcae7a6687d3b1e9c",
+      "dirty_sha256": "b47946e3f18f5851ef42658bdd59ff3368fc11c26e6c466f734cfe599a06d406"
+    },
+    {
+      "path": "dist/bjj-classes/stamford-ny/index.html",
+      "clean_sha256": "6665ba6b0bf53fc171474b6e7789667d3315ba6b3403b21d75323b8c9a502a76",
+      "dirty_sha256": "b895467b8e1ecf1cf4630d01a3bf3a14ad66da499e42bb4d2b28da5e62df8bef"
+    },
+    {
+      "path": "dist/bjj-classes/tannersville-ny/index.html",
+      "clean_sha256": "9fb8e5c0deaf76d0855a4f4b635973082be2c730e81f65d73ee6759382b0b1a1",
+      "dirty_sha256": "e2f522405861ce56ef9a370f41716cb87d718ced807eadb36f3b7b57d138f4ef"
+    },
+    {
+      "path": "dist/bjj-classes/teens-tannersville-ny/index.html",
+      "clean_sha256": "38387aeb89040613c6086f0962138cd75c0466c61bf37157929bfb4d3c1baf15",
+      "dirty_sha256": "2a2db559f912ea6b6ad0d0a7a39fbb9a31c629912d04044feba9bdf41ab89b32"
+    },
+    {
+      "path": "dist/bjj-classes/windham-ny/index.html",
+      "clean_sha256": "3528ffdc2be818a8edcbd8a404ab6229b528ef1eb481cbd366c421b2d07a65f7",
+      "dirty_sha256": "648e60398152986a1b9bd010ba508d879ae7ceae873f5dece34e695dcfc855b5"
+    },
+    {
+      "path": "dist/bjj-classes/woodstock-ny/index.html",
+      "clean_sha256": "924ac6d1e709b01d81ee689b21e514c79185ce1541d522bebd36a9778d3f2655",
+      "dirty_sha256": "d963a8794d8ececab5850881247c075b8ad449eb6b64ced63866a335bd6f94af"
+    },
+    {
+      "path": "dist/bjj-faqs.html",
+      "clean_sha256": "8d983642c3146d25fae5e4c552fdea016fe6f0947382ea2bf2b21e160c035166",
+      "dirty_sha256": "a8ec1a25ffd0b0623448cdc04b8a08e14f67c2ee1c0e1380b54843ab30869059"
+    },
+    {
+      "path": "dist/bjj-glossary/ankle-lock/index.html",
+      "clean_sha256": "248861b3cd35c5e571cbb77bde6cf6e6c2b5fb30abfba805dc21552036fa4787",
+      "dirty_sha256": "86b26a5cbf286ad851fe93428a9f70fda42f030e1c6de2f9cd814daee7e4c854"
+    },
+    {
+      "path": "dist/bjj-glossary/ankle-pick/index.html",
+      "clean_sha256": "5001d1b1883988ba14ce2ba44ecaa93a51e01039b3f61fd45ba2888b4f55d853",
+      "dirty_sha256": "89d008b371d83231f37b45982e81672e0333b50a189737da52bec7bbc4d2f2ae"
+    },
+    {
+      "path": "dist/bjj-glossary/arm-drag/index.html",
+      "clean_sha256": "de45bfae7fe0a67e6836401b46605add5b7246ecfca06721a25581d64b00a773",
+      "dirty_sha256": "53f524717e1d9d4c1affca14791c518a61c72e83c1c18d975dca85d73c0f5d83"
+    },
+    {
+      "path": "dist/bjj-glossary/armbar/index.html",
+      "clean_sha256": "6302c884cf77698823672f50c00482a9698b1a649642a40364b2e9d00b778e98",
+      "dirty_sha256": "5ceccfac7111e07fda6a82bdd4bb9e7f18b4fb63a7c04cf08f2992552a71f0d9"
+    },
+    {
+      "path": "dist/bjj-glossary/back-control/index.html",
+      "clean_sha256": "3903304e75576f8c450759d37a0b1a4a6257d78d12f89303906e1c7e2ca69c32",
+      "dirty_sha256": "e10eabc87df8946769d368b48ac3935a2346ac140cbc1a5ef8135246530c3f85"
+    },
+    {
+      "path": "dist/bjj-glossary/back-defense/index.html",
+      "clean_sha256": "d69a3f67f2c4d9d97fe2f6caf9db100bc55e91aecb4d5d55c48d1abb55df14e1",
+      "dirty_sha256": "534dbfbb12750c376705a0edf6c4a5dafff21eb6ac857a67f93207fd8c50be7f"
+    },
+    {
+      "path": "dist/bjj-glossary/back-take/index.html",
+      "clean_sha256": "58b6186b2d6421c24c007158147f4170b95adb2bd2e18754f253375a3bd4cbae",
+      "dirty_sha256": "2c9956d61dc6d8530865a1aaa3446035e16fcfd4e29dfeee87b7756063c062d0"
+    },
+    {
+      "path": "dist/bjj-glossary/backstep-pass/index.html",
+      "clean_sha256": "5aa0227e4e1c12b8ecd4a30c9bc86eb18c07d999dbc76177f7ed53ad4f647cf1",
+      "dirty_sha256": "29cfaa95aae59cf5916909174eccf5c90fb2ad0cd0e2c75b79b4dff1a316ec22"
+    },
+    {
+      "path": "dist/bjj-glossary/base/index.html",
+      "clean_sha256": "d5a51d6f074ffd6c01cb90d4ea321470ab756e0d320c4c23828e4543a4da160a",
+      "dirty_sha256": "a49b66f0195ed889145db16bbce09a4269176e202d427452ca5eb804b5c86e98"
+    },
+    {
+      "path": "dist/bjj-glossary/beginner-lane/index.html",
+      "clean_sha256": "1d75156b4439fddd2d9ec4ed0dcd10db2ea0f536bf6809c4b7b95ee975bce664",
+      "dirty_sha256": "7a9cdb17d98737bedd4e148378a8686bebb196b85f5f622146b495054360efae"
+    },
+    {
+      "path": "dist/bjj-glossary/body-lock-pass/index.html",
+      "clean_sha256": "ff827bfe1688335e11d83e65dd59ec086084ad642d96db7b1e4202a8b9792cae",
+      "dirty_sha256": "12bf1928f21a6481cb38b67cc77bca8f85380bd3026796fe1a026e983f4791a8"
+    },
+    {
+      "path": "dist/bjj-glossary/body-lock/index.html",
+      "clean_sha256": "8a1ab00b44282de3fda9668e4bbb27a55da0035e9febe2d92799e1d60194ca34",
+      "dirty_sha256": "8b78cb1345ea61d8ba07c8c1f8a888fcffc568e93597661a52df36c4df51ac35"
+    },
+    {
+      "path": "dist/bjj-glossary/bottom-position/index.html",
+      "clean_sha256": "807192c8b3a32541a6da75884042b3ea0976d3ba403a730d4961e63cb1f1c75b",
+      "dirty_sha256": "78bd0adc275bd21147f8fad2adbfa79bb35c3b4cb44b708f95354c0b975db587"
+    },
+    {
+      "path": "dist/bjj-glossary/bridge/index.html",
+      "clean_sha256": "ba243a3842bfcc9d1bf11e270c2547269902c15cdc8592aff75475f0d54b3f16",
+      "dirty_sha256": "96bc81aec1c98cc62d7edd86bbdd18cf833d5a70bae5978e262684fd2fbf8de7"
+    },
+    {
+      "path": "dist/bjj-glossary/bully-proof/index.html",
+      "clean_sha256": "a82ef8c05915dcdd22c55a5f795549e4ff45b9e2936875a8c5dc32eab5310b04",
+      "dirty_sha256": "9ae4b9b9394f81129f15eef7986695aa78f5856dd6e44b8314dd92c7705d5684"
+    },
+    {
+      "path": "dist/bjj-glossary/butterfly-guard/index.html",
+      "clean_sha256": "c6ec497dd7309bfbb6541bea7085412a6427b3680f864c09d1f021c932f3d8ae",
+      "dirty_sha256": "5697921e3928559b1e4ea633597882d8c2f7f3c0c6103f5fb0091d5c05f1822d"
+    },
+    {
+      "path": "dist/bjj-glossary/butterfly-hook/index.html",
+      "clean_sha256": "5a7aba95ddc2ee6d373949ef20d0b10b00885dbf3bfaf9d4e2d0bc2499eee27b",
+      "dirty_sha256": "2c58f30c1688b857e72b832b1e985a7ae00f44c9bf76e7b8c4d79d723fe92313"
+    },
+    {
+      "path": "dist/bjj-glossary/butterfly-sweep/index.html",
+      "clean_sha256": "663d5ab90bd15bb0a6c943acf79e477f4db3f5aafa7d4e77513756f5346ce91c",
+      "dirty_sha256": "8cc07faab8d97fea857d99bfbff3c193dc9f2f92b8371d8b65635a22efd12c9d"
+    },
+    {
+      "path": "dist/bjj-glossary/chest-to-back/index.html",
+      "clean_sha256": "8bc06d7281be310db2b7b3160703c4db5cb2f5b1b04709e248a1b115f43456ce",
+      "dirty_sha256": "3b090d600c95d067864d3c2eae5f0a086ee5e14a0d3e62ff9c7ff8180c7ae3b6"
+    },
+    {
+      "path": "dist/bjj-glossary/chest-to-chest/index.html",
+      "clean_sha256": "a45f893d00a3b4442f3b41f671b9f725bca17e1c03d11a9315bebf60f4134f98",
+      "dirty_sha256": "54cdf0d82be3e756e395247c181967003223a48ae84a81cb0de6deb1b4797481"
+    },
+    {
+      "path": "dist/bjj-glossary/choke/index.html",
+      "clean_sha256": "87179dd73a8a346fca53f51ba4e2463cab1387a9b65c0d2c8462c82242f915ee",
+      "dirty_sha256": "4fce4eab73da0162d4672b31b3ae05ed34918a33214715c813582616c55b1576"
+    },
+    {
+      "path": "dist/bjj-glossary/clinch/index.html",
+      "clean_sha256": "3c96bbf7bec54fcbcd43c3fd208aadbb3122c1474bb7f91de4189819dfc79077",
+      "dirty_sha256": "b6e7dd0c362c9f9248f25af3b365effafae9aae96d2b47d60ec11a7e906e5761"
+    },
+    {
+      "path": "dist/bjj-glossary/closed-guard-break/index.html",
+      "clean_sha256": "6e8f707b8fa3ae3e0f3fb2f5eea681016ff06e82272706dba8c261315c6fb99a",
+      "dirty_sha256": "1e8cadd030e383c4bd79a3d7cd3ec05b8475dabd93eff97131c2b0424fc01cf0"
+    },
+    {
+      "path": "dist/bjj-glossary/closed-guard/index.html",
+      "clean_sha256": "39237fcaabb728dcaef575039158e91cb9cece4038bbd55d9516628ec82da3d6",
+      "dirty_sha256": "1ea06ec2249690b75d55c2ac3ba50e0e9f1638d75a11e324d9a7229b3d41665c"
+    },
+    {
+      "path": "dist/bjj-glossary/collar-grip/index.html",
+      "clean_sha256": "412e1260e3552647de3f2e7165e205b85186d4ac9b2928fd03de3e5b9d328afc",
+      "dirty_sha256": "cab2f3270691ac4e3a66003742104db4e72f3bd64dee70e7b0f8f2f1a57c08ff"
+    },
+    {
+      "path": "dist/bjj-glossary/collar-tie/index.html",
+      "clean_sha256": "4d8c96a8146367551849fb9f5ee2f338d709b5ce26d758908d264916220d8043",
+      "dirty_sha256": "4a18467f7e972d2b7a1c38a000adde1a6c666a4511366fd885c32b9465b8f801"
+    },
+    {
+      "path": "dist/bjj-glossary/control/index.html",
+      "clean_sha256": "68914fbfbf8b4ef11d36ed14f3c4d7959dc9f4f8e8b999e42a7552d6aa1d39ea",
+      "dirty_sha256": "5d6c7c4b0eec53706aabd0f328e553872601d5feef2d44d9bda05afb6af8b735"
+    },
+    {
+      "path": "dist/bjj-glossary/cross-collar-choke/index.html",
+      "clean_sha256": "221f9e7f416f829b144626348a644c03e922e1cd358474eaa57b4e5be4ff6755",
+      "dirty_sha256": "b1759f822e9281aed25d9b7fbc830f2ef3ff0d29e28caeb959cf3907c279a692"
+    },
+    {
+      "path": "dist/bjj-glossary/crossface-defense/index.html",
+      "clean_sha256": "150468835489863e877fe3f78931104ee2bb1af9c9bc556bad40663132b597b2",
+      "dirty_sha256": "be8efdf4ed37cceb9cc3b21f47b734f1d838477bd2c4723d8248682811cc42ec"
+    },
+    {
+      "path": "dist/bjj-glossary/crossface-pressure/index.html",
+      "clean_sha256": "023c26dfca8a908923f784f638ecace41699dee2449f09f4ad7497cac10091f0",
+      "dirty_sha256": "77a9e46cf281bb6264fe1a9d185189e9e7da9f4ee9438192abcf6118fa7f7cfd"
+    },
+    {
+      "path": "dist/bjj-glossary/crossface/index.html",
+      "clean_sha256": "3431cec7078223c0a68bb35b2040a9732e9f393b7a234436adcfe188a076904b",
+      "dirty_sha256": "aef6c47e04744f857ef5481d74e88a162c93011434b30cd2836ec107e673fc20"
+    },
+    {
+      "path": "dist/bjj-glossary/de-la-riva/index.html",
+      "clean_sha256": "fa2c68875ed80bd1cad1c92afcf33eccba9e3c1ff2137229d4499087cdb0db79",
+      "dirty_sha256": "cd17f76fde23c973cdd44595d248fe850c30afc596c5b9a84e43316b742f9411"
+    },
+    {
+      "path": "dist/bjj-glossary/dominant-position/index.html",
+      "clean_sha256": "70ee9120158b1ad00c5126bc87c24e0072500162d3f2ee95fa8923cfc000a91e",
+      "dirty_sha256": "dc940410eabb03f069a10f4d9916121009b9c0c3e9efd1adef6152ca7e9698b1"
+    },
+    {
+      "path": "dist/bjj-glossary/double-leg-defense/index.html",
+      "clean_sha256": "11ccddab366de7b4dba1cc225b62237e98bbc26c40b78400570e0252a704e986",
+      "dirty_sha256": "c4b30a8149d18bd294cb033d47e2a94c2f234f588747e86a97bd48a9dac7dd85"
+    },
+    {
+      "path": "dist/bjj-glossary/double-leg/index.html",
+      "clean_sha256": "b8f440027a3926134c4e2e9700ead1e5a0b579b6e10a81fed4798bd67eb7dcb1",
+      "dirty_sha256": "0e82022baa273d456a598075bab02da04693cbd0cfdf6b9dc59cb3fe54da6889"
+    },
+    {
+      "path": "dist/bjj-glossary/drilling/index.html",
+      "clean_sha256": "7f60f871b9e10398a0d115787cfce5de9e5be5ff3c7c89b2f54dfa3189d457eb",
+      "dirty_sha256": "d1f20537ea9dce0a8332dbc5071a6b0ee8c4017d8590b7585172c7e7c2c84257"
+    },
+    {
+      "path": "dist/bjj-glossary/elbow-knee-escape/index.html",
+      "clean_sha256": "24da826c6376e54c7b42157e8b00162449b5b6f5e2811e562be251dab9e11587",
+      "dirty_sha256": "7eb5fa9abb7f4a8723a5378539563c158c1b6a078e5aae4f1231cb8c69441238"
+    },
+    {
+      "path": "dist/bjj-glossary/escape/index.html",
+      "clean_sha256": "a4848eb9073591b6b707e5e932f8d5119ac6b17d330d294313ca05ea2fa33b86",
+      "dirty_sha256": "b2afe6b337d4fff0254085cd23901108f6dde1467128022f1950f563fa4f40f5"
+    },
+    {
+      "path": "dist/bjj-glossary/flower-sweep/index.html",
+      "clean_sha256": "b8d49cf3026bee760f2eb54f7bc7b60e594ad3f2d5ca1e54e804148c2d60dd50",
+      "dirty_sha256": "11c197e32303330d87986b4346ecdfb625dcc6832adeb8c404e18a7a1de585df"
+    },
+    {
+      "path": "dist/bjj-glossary/frame-recovery/index.html",
+      "clean_sha256": "8857cf6194ee3255a9b61ec44740262863e9bdefa1ef030b510e4eadd83ce8c7",
+      "dirty_sha256": "73b57084b554454c46157000ad02fb73e1a829b0c8bcb4cc30449985c8612b25"
+    },
+    {
+      "path": "dist/bjj-glossary/frame/index.html",
+      "clean_sha256": "08d48c54375e1ad9fa130440ca90ca7d77c1481aaea849a0daf899d107a9c995",
+      "dirty_sha256": "a0bd81b063afc4c2423d8a67c127569f191691494de88cd5948d48ad8bed6143"
+    },
+    {
+      "path": "dist/bjj-glossary/frames/index.html",
+      "clean_sha256": "65408f521184272ba7f07560bc8e7945753cdc55de0203cea0b12df6366e9840",
+      "dirty_sha256": "cd86fd2c4470e37b03894d17682e6119ea85b14fd6aaef31119242a9bfdecf58"
+    },
+    {
+      "path": "dist/bjj-glossary/front-headlock-escape/index.html",
+      "clean_sha256": "62b0fed565f518a655a4617a61a0a4c8e6ab0bca47f2ad3556fc2b3bd49b4436",
+      "dirty_sha256": "55cc46473ab9036e80aa0a8d76dd24a780c2514efbba5f8302ae5b8ef6e8d20a"
+    },
+    {
+      "path": "dist/bjj-glossary/front-headlock-series/index.html",
+      "clean_sha256": "8497f370d844be853ad38522f673e17c867707818b76a05d9374d78f61a152d2",
+      "dirty_sha256": "18ba3c1b1c547e1d440654d508d6afad1f34b7ee20997d5053fb16b300606878"
+    },
+    {
+      "path": "dist/bjj-glossary/front-headlock/index.html",
+      "clean_sha256": "8fdd5ec818cd14d6ba885769dda44f49c80102ce87652a9d2088422c69eba277",
+      "dirty_sha256": "9b981692a8436569cb24e5f585b0640d4f03be26a822ac296a6351e191f82160"
+    },
+    {
+      "path": "dist/bjj-glossary/gi/index.html",
+      "clean_sha256": "fc7c0ce5fa81683cbc47d06e127133693cbdc82d633c8d0d393ab3b779ff0c3d",
+      "dirty_sha256": "1252dd3c68e596e554752d15184f623cf26a18d6a01913318d1d860a67315597"
+    },
+    {
+      "path": "dist/bjj-glossary/go-behind-defense/index.html",
+      "clean_sha256": "66dff2a1b2f4b5614686bb441c2279e0f7fb237153322e335c97394ed1e49202",
+      "dirty_sha256": "4bee2f7df48a413e2e821ef07613e1c059d80bade4b537909eac61445ecbe65d"
+    },
+    {
+      "path": "dist/bjj-glossary/go-behind/index.html",
+      "clean_sha256": "10d2b9e50814c0d1e1e388587d78e59caf2e459f308ed5d1d3a7dcb312da3494",
+      "dirty_sha256": "4874ddf7f08f60abd4fe832935943510a710a2e8c7be434a80325fc506ee7312"
+    },
+    {
+      "path": "dist/bjj-glossary/granby-roll/index.html",
+      "clean_sha256": "f93864c40ad56ce1a014ce0f29c4c06c4e9d44ad473b1a2b834bdf1e38b55f3a",
+      "dirty_sha256": "3e16ecc2870e5c7ea0484372111497e2d54243a9c1c23a3c191e7adc41255d20"
+    },
+    {
+      "path": "dist/bjj-glossary/grip-fighting/index.html",
+      "clean_sha256": "67eb626ec0c69c6bfa9312cefa01ac2d54f804a68d24770aff21dd219fa49ee8",
+      "dirty_sha256": "49eacafe68109c36a68b147b48a835c313c71bc898270cd15b950b42717c3ad2"
+    },
+    {
+      "path": "dist/bjj-glossary/grip/index.html",
+      "clean_sha256": "2becba3087290f652259634bae11db0e2d18070dddb80acfed2db5b235980f3f",
+      "dirty_sha256": "68dfe65ebdf234486243408fc85d325e4f37c1be8cc3879b5320529ba062edc8"
+    },
+    {
+      "path": "dist/bjj-glossary/guard-pass/index.html",
+      "clean_sha256": "a036bab8df29b17eb71a534c742a899334046addedd3541eca15fe61eac815f5",
+      "dirty_sha256": "a0ea07cb6d742c4016604f8dcc9aa7d5c787504b9fdbb0be97f6ee49eeef9a28"
+    },
+    {
+      "path": "dist/bjj-glossary/guard-pull/index.html",
+      "clean_sha256": "c36a5f318481875977f29169f30c8f4c13c34feff17f49beb195a253b30233ee",
+      "dirty_sha256": "151799fd0f0b9789221a3313e00284f4415e48ecc604f79969d01bc54017c726"
+    },
+    {
+      "path": "dist/bjj-glossary/guard-recovery/index.html",
+      "clean_sha256": "e27c2d9eec1519ec6359c3b6e8b11a72eda4b7e8711cd0cd88842113ee30a3c0",
+      "dirty_sha256": "388214a69b8ef7fc6e1934f4aa70a01f7fba676a97674b9e0638d36344dc44cd"
+    },
+    {
+      "path": "dist/bjj-glossary/guard-retention/index.html",
+      "clean_sha256": "69b1da09ec876b8edb4b5a3b60a59e9b1656aa3c56bb76ecf381bbfcdc2464fb",
+      "dirty_sha256": "6efa7b2c573b2b4e896fbcc760225e4bb997bd872c77aca5809675b1b231db04"
+    },
+    {
+      "path": "dist/bjj-glossary/guard/index.html",
+      "clean_sha256": "a1062916af2cd44e54d27fb3069bccba283e8350334afae8ff9c971c4707b731",
+      "dirty_sha256": "22568233f87c83519c4337913b48846e106b8ef54770a849e676dff3007a4aca"
+    },
+    {
+      "path": "dist/bjj-glossary/guillotine/index.html",
+      "clean_sha256": "1cfdebc8d7d8d7ed19f74eeca0463c46fc7814722b5f381fc6396744be59084f",
+      "dirty_sha256": "bdebaf3c32d5caa33192bd26ef4bf24d905f30947a094e51cf72b18f732af9b3"
+    },
+    {
+      "path": "dist/bjj-glossary/half-guard/index.html",
+      "clean_sha256": "f78ee6f6397853fa6bc75ec21a47d9f55170982525a1210caa63fc2a15588b74",
+      "dirty_sha256": "2272970cf16d3b8bef579ab201d33cff5494a4be15f841d745bdaf6ff70558e1"
+    },
+    {
+      "path": "dist/bjj-glossary/hand-fighting/index.html",
+      "clean_sha256": "a1720ab86bdfd89457efe9a607856e660df44df0cd4ca510ef448240d3157bde",
+      "dirty_sha256": "b3e4fc02aa5abadf1a06cfae2e2ca93e322ce786263154864d808c5936332f33"
+    },
+    {
+      "path": "dist/bjj-glossary/head-line/index.html",
+      "clean_sha256": "47132a49eab818f9fabd149bbfcdf77a960e960c60b64641f3b823cf383b21f5",
+      "dirty_sha256": "9c8845032337109d6d961a2d472d51ebcae40a5a34698f9fe01e519172272422"
+    },
+    {
+      "path": "dist/bjj-glossary/head-position/index.html",
+      "clean_sha256": "e30f76a11f1be38a19b5a8205871c0bb894fbf71e89bb8bd99d04b2b6e471a4b",
+      "dirty_sha256": "7f0ab52daeab1f06eb529576cab6abc6f8f9a3b7fc46c8b321d804bb9c0c5aee"
+    },
+    {
+      "path": "dist/bjj-glossary/heavy-hips/index.html",
+      "clean_sha256": "3064c74fbfe97d839674e42aa8cfef1fbc556a689f66864b770ef2e4bc56a86c",
+      "dirty_sha256": "730c8c6354f9e5225da95ffe37ca8d48bee01a55489969e0bb99de02917e0ca2"
+    },
+    {
+      "path": "dist/bjj-glossary/hip-escape/index.html",
+      "clean_sha256": "cbd827b5e40d640ca541ec7aeb6edb78346ed849ecacb116fae3d2275eebb4a1",
+      "dirty_sha256": "2b19ffd6cc6131a9dcd635a21b9b3e981dea4b79c27736881ca2da133d04f2f6"
+    },
+    {
+      "path": "dist/bjj-glossary/hip-heist/index.html",
+      "clean_sha256": "3525d475f5645216b60c6223b257272aae931a5284e476d392af2233bfdb9b80",
+      "dirty_sha256": "175cca82e28bf39a3c2823c96fc114b6ce3f5917519186ca9e02df508cb3c881"
+    },
+    {
+      "path": "dist/bjj-glossary/hooks/index.html",
+      "clean_sha256": "42d6b73260a0a9908ae67e8e3b80573dcd713f0871d6a6ec5a0dc1e6a90dd9e4",
+      "dirty_sha256": "0ece1c97818d315bc229b7c8f2bfc99ece8086d426aac87310f5876c4c04751b"
+    },
+    {
+      "path": "dist/bjj-glossary/how-to-tap/index.html",
+      "clean_sha256": "caf572bc5cd26c70490ab81d5150baa52604714e2fe3a40d3cc92aed8f9afd82",
+      "dirty_sha256": "3cd07311c81064f96ef273105512c3d8db45e063f8b773f54036626d48a13345"
+    },
+    {
+      "path": "dist/bjj-glossary/index.html",
+      "clean_sha256": "eaad212de5a1e4f1a8efbad0e632df72fd2a6a954cecc890df2183be94d46fc2",
+      "dirty_sha256": "b56002f519ad46f2c543167ff30df094f598cfec8ec056d2ef6704a6a4db9603"
+    },
+    {
+      "path": "dist/bjj-glossary/inside-position/index.html",
+      "clean_sha256": "a58c287ea73805e9797861ed03387653805e77dc9331dcd71e77af68a849e080",
+      "dirty_sha256": "0014f7d42e3aa87153e9533b16ea3bcdc764b7f5a2e88cdd9803880eff7ed743"
+    },
+    {
+      "path": "dist/bjj-glossary/inside-tie/index.html",
+      "clean_sha256": "df2d7a0d7aec4c15c2a9a3dfcb52d9ebc28e7c5506b50d3dc79007ce2eabc183",
+      "dirty_sha256": "a7e1c1a12f56eb964402da8763133b425bdc84363bf3174f319a0244247fa36f"
+    },
+    {
+      "path": "dist/bjj-glossary/inside-trip/index.html",
+      "clean_sha256": "c289a09a027a322688189ca324e2c04cdc3e988824951f1eb84a919134f95661",
+      "dirty_sha256": "c0eb3b6ae403820be74f10b2142bd39d3b08d396ed3cfba419789ff6059aa52a"
+    },
+    {
+      "path": "dist/bjj-glossary/inversion/index.html",
+      "clean_sha256": "d0a44d5ba26dade8b33e17d07b4f0b065512d89878dd43bf973fe8face3874b5",
+      "dirty_sha256": "bb37d8e67db46a40f533cc7d4dae79e81bfa356bfddbc0750196d3fba262a1d3"
+    },
+    {
+      "path": "dist/bjj-glossary/jiu-jitsu/index.html",
+      "clean_sha256": "3860ed90616494d08dad64fe5c555b95235bdb053665c517e873ae6b567cf631",
+      "dirty_sha256": "67d3cd7d6189a116de75b43f6071556a55e9b02d56c1e88379018d022d8daf58"
+    },
+    {
+      "path": "dist/bjj-glossary/k-guard/index.html",
+      "clean_sha256": "eaf34edca96752f51423e1d0c66c91644c76e9ac1882c2880ceaf318970da741",
+      "dirty_sha256": "726ed0a06a1cdc2de1746c7f95f09a7ae66849e4068cd49ebb63b51e72c22b90"
+    },
+    {
+      "path": "dist/bjj-glossary/kimura/index.html",
+      "clean_sha256": "63a9c80f49b7af8c323afe72575e43d3a1250e2f35e9580c57db8cbc8fe748bf",
+      "dirty_sha256": "f53fb3ad04ac5b95a894be448751beaeb339a63f5859de618d996ee8bbc70d63"
+    },
+    {
+      "path": "dist/bjj-glossary/knee-cut/index.html",
+      "clean_sha256": "0b38785e3847b48a792eefcabbb5d681bff7502da8b61c5ff59737450e33672b",
+      "dirty_sha256": "6b735abdacb09b674a4b3a7e7408b1d94ed1e7f0e4f9d28faddfc7e11692d65f"
+    },
+    {
+      "path": "dist/bjj-glossary/knee-line/index.html",
+      "clean_sha256": "14bdbf1a88f4cd11213cc17d572cb127ed3ba24ba7a360f2d3a76d0f7ee2eef8",
+      "dirty_sha256": "c71b1d43cd66c01d8c5781f8c7d4786e71d7c340e29eee9442072895988a50df"
+    },
+    {
+      "path": "dist/bjj-glossary/knee-shield/index.html",
+      "clean_sha256": "cc1404aca04312a98bc11fdca60226ee253dc9225edbb015fed77be57f9f7d7d",
+      "dirty_sha256": "1cd832ce44e8b3d821f6043243b1861f505e3cb6137ac78d94e40d6baa723b30"
+    },
+    {
+      "path": "dist/bjj-glossary/knee-slide/index.html",
+      "clean_sha256": "06ddfcec681bb522f56dcaa0e20df315273631a6cfe5630ea045cf6206eb04be",
+      "dirty_sha256": "874d6dcbc1cac5d9701e0337b71aa4d976a9b16f10a347a08475a223396169e0"
+    },
+    {
+      "path": "dist/bjj-glossary/lapel-grip/index.html",
+      "clean_sha256": "871a2b65885530d4f4f49290af50ee2c4420cf0a568716275d07417bc7815de1",
+      "dirty_sha256": "2d11ebeb00440c71fdaccac44f32dad476d82372b01706a40d069119ae2fea5b"
+    },
+    {
+      "path": "dist/bjj-glossary/leg-drag/index.html",
+      "clean_sha256": "b1d7514ee95360803f9e187fa5ea9cc683ea509137a9f4985552ff6ad3231402",
+      "dirty_sha256": "ada6481f5f6d335494e56fdfdd3ccb99609dbe89229c31a71740244ef729cfee"
+    },
+    {
+      "path": "dist/bjj-glossary/leg-entanglement/index.html",
+      "clean_sha256": "bdaac69ee9d1f6b2e6ca10ae999bb780aad594288a0e840e85222ad1ee72e44b",
+      "dirty_sha256": "0832c9db0fdd142c8c7d110a1fc0f7b2f840d1f473d3ab85df8b6e18358498b5"
+    },
+    {
+      "path": "dist/bjj-glossary/level-change/index.html",
+      "clean_sha256": "e2e7d8daa7c0a5f7e148c47d3f5a2907472484332b1278533293b204e54fd318",
+      "dirty_sha256": "069ebd557cdddd96e96af6e9e11adcdac0be0eb35ef59675f9f0a4f0f144e22a"
+    },
+    {
+      "path": "dist/bjj-glossary/long-step/index.html",
+      "clean_sha256": "fdb254a0f57a15713ce7623cfcbe20870739c346c5722854bf5b7280993ea1ae",
+      "dirty_sha256": "df38b2ff5c5996f8c50195473413eb4087f5169a9d0ca19ab410f8b0ab9b7f22"
+    },
+    {
+      "path": "dist/bjj-glossary/mat-return/index.html",
+      "clean_sha256": "1258fa76f6c44d4279d543d365fb84daaf8cbaad5627f861c5ebd23f595e6b9f",
+      "dirty_sha256": "220da68958b48c799fbbe1133c666bb297698224616ef14148f2b9e7302fa5ce"
+    },
+    {
+      "path": "dist/bjj-glossary/mount-transition/index.html",
+      "clean_sha256": "e4f2c0b6a36110d5df5bd61098379fc103eadff6362e10dcbf1b85c8c9345a6e",
+      "dirty_sha256": "b0b07736dd8f4bc0d614334fa8b722932c1383d77721ee70585b8053284aef79"
+    },
+    {
+      "path": "dist/bjj-glossary/mount/index.html",
+      "clean_sha256": "4252df810102a9466cccc617795f4049ec116e390ae8e46af617fe38b7b7db05",
+      "dirty_sha256": "e0fa280bff2bb2a7c82860a90539cf5b033b2ffcffff612520123afa34d4d8d7"
+    },
+    {
+      "path": "dist/bjj-glossary/neutral-position/index.html",
+      "clean_sha256": "77815968e7b43eb9a1451efc8083bbd03caeb5134018251f2cfd52786a9f35e8",
+      "dirty_sha256": "d5f8fed44885654e6a544b7b1c9452f34cb7b65861081447c41ceb18c61ce7f6"
+    },
+    {
+      "path": "dist/bjj-glossary/no-gi/index.html",
+      "clean_sha256": "5342847d200324f7a395ff8f5c74432247494b48a3bea83a98acddaaa4d822cb",
+      "dirty_sha256": "a42b38de4e9d4a4df5c0eb5c04160006e647ca01171fb09d51e564e48fbec877"
+    },
+    {
+      "path": "dist/bjj-glossary/north-south/index.html",
+      "clean_sha256": "3258cda7df5ed27b49768cce60cb8fcdf14fd6ec1427ee2033ce2720a291f54e",
+      "dirty_sha256": "22f38ff67ac68933e351ae5f57f919f20e9886c041f2665e7bc174c8ba0974ed"
+    },
+    {
+      "path": "dist/bjj-glossary/off-balance/index.html",
+      "clean_sha256": "b5ad93d83a4c839872fd85bcfe96992cbfe0fab2ad78ba231550abc459bc89aa",
+      "dirty_sha256": "827ef025309f628c938b55cdab10192b3503346347f70f12ab987e0da138c015"
+    },
+    {
+      "path": "dist/bjj-glossary/open-guard-pass/index.html",
+      "clean_sha256": "7cac80bb482270c4b1f7cb35e217ce18d41720fa3118ab45e97ed446b89ee298",
+      "dirty_sha256": "16047bd2171e2bdd73181e527523c7d0577f343fb05b530dc6db4496b25f1ae2"
+    },
+    {
+      "path": "dist/bjj-glossary/open-guard/index.html",
+      "clean_sha256": "179fc0734b97322cc05642ca420881a02bbb19f3f4ab3b4c38b021f6bf4e5d39",
+      "dirty_sha256": "4596e09f1a13d04e60d4436f0507d5c8cf3f751bb5923ed2d1e5baf3a6922d8d"
+    },
+    {
+      "path": "dist/bjj-glossary/open-mat/index.html",
+      "clean_sha256": "0a8cc6777ea64ced54e9a872d04cdd59519802870c9aa22dde5f02d4d5702d8e",
+      "dirty_sha256": "d3418e3b2c9730d079f688bb290eb62a8429eca43684fbf6968b2d724d158781"
+    },
+    {
+      "path": "dist/bjj-glossary/outside-trip/index.html",
+      "clean_sha256": "7429065140838c940c3411e9eb15e356b42513f2c2bbb268d4d0b32b3f207c3a",
+      "dirty_sha256": "aaf2eebbdac224fccee416a6b23ab4c471fed0adf8c07a43c7fc1d1feef9554c"
+    },
+    {
+      "path": "dist/bjj-glossary/overhook/index.html",
+      "clean_sha256": "ed0010e820cc74ec722eeef0e389339adb9bb78d54ca89e94d053fa813d77a30",
+      "dirty_sha256": "f99dbd27858383b6341155ecf34a2dc56a862fd4edd27dad2315cbe52b819562"
+    },
+    {
+      "path": "dist/bjj-glossary/penetration-step/index.html",
+      "clean_sha256": "2db5aa431c42478c16205d50b31098368518ec1826983d79f26fefbbf4b6afe4",
+      "dirty_sha256": "562ded6f22cfcf19341f8eebdcf200b22551f5cf3cc77ab8a661b0f97f472a5d"
+    },
+    {
+      "path": "dist/bjj-glossary/pin-escape/index.html",
+      "clean_sha256": "b20ed9f341950be753e6d4ef10efc1ece4ef2d486bc078d0476f122947db201d",
+      "dirty_sha256": "af2e65de929c71f4ffb517c1dfd6743272b5a9342e12c06d6d4bdaa0ac48a5e9"
+    },
+    {
+      "path": "dist/bjj-glossary/pin/index.html",
+      "clean_sha256": "66b42d9f4d94828014c247866db11bdfd52a985be2a6252b41bc6fa49cfc7990",
+      "dirty_sha256": "c21c28902f165e551f6de9c42aef0631701fa2df78bb8c5e61ce22e064643239"
+    },
+    {
+      "path": "dist/bjj-glossary/position-over-submission/index.html",
+      "clean_sha256": "223a7794bb086a32e0a98add524d29e404f5c3b9dfaf29ba2af3f9408e8733d1",
+      "dirty_sha256": "48cd52580dbc8128370f738f2221562ed0d53aa6293a1e914a9459f86bee9044"
+    },
+    {
+      "path": "dist/bjj-glossary/position/index.html",
+      "clean_sha256": "ce80ca644ed9f166209bb29cf54a21eeb58268a1bcd1c71b226714a5fd25a183",
+      "dirty_sha256": "3530ce7200318a6b4d4e3c2e9a8b15fc6d7d4c5315bb906118ef2781c824689a"
+    },
+    {
+      "path": "dist/bjj-glossary/posture-break/index.html",
+      "clean_sha256": "ead32e1b532444e8e734cbe59f7b2c06a95370f7ca706b0bf80abef9b5cf29fd",
+      "dirty_sha256": "516c03745a5492d53ecf2fdee674836bfbbc65b6a977421763b01b147405c21d"
+    },
+    {
+      "path": "dist/bjj-glossary/posture-recovery/index.html",
+      "clean_sha256": "993c6a8c1072c6f199b5cf3429190e9ca9b1b7171174460600bc3e7118b627b0",
+      "dirty_sha256": "e0d14e0cc16cb13fd46973caabf3fa3848745e8cc7aa644b31d9e02bbd470c63"
+    },
+    {
+      "path": "dist/bjj-glossary/posture/index.html",
+      "clean_sha256": "2dd15d401be410212a4c038ff28162f1e0664e4851a6bf70b10e059f10f3a55e",
+      "dirty_sha256": "263d0948449ccc7e658e02bf5c5d84e2a8d1ce5e3f9c06264633a4389d9235e6"
+    },
+    {
+      "path": "dist/bjj-glossary/pressure/index.html",
+      "clean_sha256": "a4601df01a26f42311b1c45f3ec201f8225ab489cd9ca14370b951270bc6bd0d",
+      "dirty_sha256": "0f537b30e5798d19d014935e39c224e896d34eccbe9642e8d46c48a982f9cb6f"
+    },
+    {
+      "path": "dist/bjj-glossary/pummel/index.html",
+      "clean_sha256": "5697c5838471e439c713bb55aba044e139fedcc7e13f14b931dca80f4903ec95",
+      "dirty_sha256": "369b3db151410d6eeb11ffaea1ad472c6b504180e70ea0e5d2e6c7cb2eebae16"
+    },
+    {
+      "path": "dist/bjj-glossary/quarter-guard/index.html",
+      "clean_sha256": "2ea8c8c6bbaf33fe5c4283cd6a68a12af95c67c9ad44b88192426131fcd3465d",
+      "dirty_sha256": "d6ca9fb00246b3b76123885a8905ca36d09d311ae0740185db1b163c0c9b0be7"
+    },
+    {
+      "path": "dist/bjj-glossary/re-guard/index.html",
+      "clean_sha256": "827a095caaa32d5b984702d3eb7946834ffbae0d4fbfe453b05cf6d98fb412da",
+      "dirty_sha256": "4ea639ed241b2c29df0ac183815545570fa6849c3ff6c173e253517b22e2fb4a"
+    },
+    {
+      "path": "dist/bjj-glossary/re-shot/index.html",
+      "clean_sha256": "67edcac96a81cf1f8e04e35d8fc1b3c7136dee74f5e473d6789e6050741b0f99",
+      "dirty_sha256": "827484a9a33c4bca17772272a215239f5b958a4aa98cdf5bea09fc8529395802"
+    },
+    {
+      "path": "dist/bjj-glossary/rear-naked-choke/index.html",
+      "clean_sha256": "abfa7c29ab4849da86b9eaba961b7cd72a409dc775f8211833ef84a0e69e3071",
+      "dirty_sha256": "2129eed504e5fca2f78b04949f43b502861328d8fd764e5882decf42378e57ab"
+    },
+    {
+      "path": "dist/bjj-glossary/reverse-de-la-riva/index.html",
+      "clean_sha256": "feb97184331528688bc7d3a58d37485f4e86650c06507f621ce5a4f658a80a2a",
+      "dirty_sha256": "add62ed4013a840837db1b52364c103821236727f2e589bcfc09a81c2e5dfc1b"
+    },
+    {
+      "path": "dist/bjj-glossary/roll/index.html",
+      "clean_sha256": "d7b0165e83973e610c26d4b60e88e019de9ed1ff5587d13cce74159ff43318ad",
+      "dirty_sha256": "7c8af16a057298b691a19f28d2f8e6c1cbd03633b32279983207aea923f53fb4"
+    },
+    {
+      "path": "dist/bjj-glossary/safety/index.html",
+      "clean_sha256": "d5136ec03e7aacc17f17b6e4b508cd00adec13ea2285af1ef090f4f6db03bbc1",
+      "dirty_sha256": "34c959ed079665e9f492f76f9845ea929add55f512c36f5a71ed38811cb49cd3"
+    },
+    {
+      "path": "dist/bjj-glossary/scissor-sweep/index.html",
+      "clean_sha256": "b22c2fb982f583eccb3a0dff6fa8ca28260f6d01c52f6c7b93675b44a737f52c",
+      "dirty_sha256": "ecf54c83549a14d9242a99022c9a378ae766630d2106c8d24df3167fd4e06e2f"
+    },
+    {
+      "path": "dist/bjj-glossary/scramble/index.html",
+      "clean_sha256": "34486c9993f6f9851c95b9ad433a3c55b1ac8701274c5721f8a93cf8d6a09946",
+      "dirty_sha256": "a6c17acd1029ad4fa02f07b5eb730131d357f8bc2d9d977b7e7ff768da69a403"
+    },
+    {
+      "path": "dist/bjj-glossary/seatbelt-escape/index.html",
+      "clean_sha256": "33b1d1b3e2a9b8f76166c4dc8ee340bf4d05946dfde2d16a60f66c00eea4fc8c",
+      "dirty_sha256": "1048742602fad4b3c9c86532ec0658706866b2f135a2b2efee537343f5fbd6b1"
+    },
+    {
+      "path": "dist/bjj-glossary/seatbelt/index.html",
+      "clean_sha256": "28aca8df5eb54e7fcdfb1039c73c5d33353f826747eb942a6b7bb942e2280178",
+      "dirty_sha256": "a67352b1bd123d01f389ffab71c3d104af76cb098fdbf7d63eb9755e40ea6adf"
+    },
+    {
+      "path": "dist/bjj-glossary/seated-guard/index.html",
+      "clean_sha256": "d81410a93fded8adc32e3c63d44e03f6d47d79f088b9cc507af160b2d03ccb51",
+      "dirty_sha256": "1549da6dca3d24ce1e1ce1028223c6ce545926d18063d636c598242732c4c81e"
+    },
+    {
+      "path": "dist/bjj-glossary/shot-entry/index.html",
+      "clean_sha256": "561a6b8d782e4b5352a2fc3789560800eac2c27ab6a16095eeb03918c641ee52",
+      "dirty_sha256": "9512c65cd6ed73aa4d911ab3a7f91f508258dcae56e6553d9c0d3f6c99da2429"
+    },
+    {
+      "path": "dist/bjj-glossary/shoulder-pressure/index.html",
+      "clean_sha256": "9ec3824846c2c6bdecff70f229bce5500053a8f86124e0c953968b973f4f5f13",
+      "dirty_sha256": "acbfd0bb01ca49e05c3fe77435c8e1468206ae9f39f7dbbc5b9560780875c99f"
+    },
+    {
+      "path": "dist/bjj-glossary/shrimp/index.html",
+      "clean_sha256": "7a30774ba28b508ac8646b42bdfcca2dcbc2718c33a444e568997ccc526ce4b6",
+      "dirty_sha256": "0b2319a3e0b2f373503209d9b7bb07c8bbee6145d88d22fab6e0b834682861f2"
+    },
+    {
+      "path": "dist/bjj-glossary/sickle-sweep/index.html",
+      "clean_sha256": "b25723a3e829bf0fe7233a2ba91dd7db2aa8b72da0c2beddac6fb2f897d38d03",
+      "dirty_sha256": "baf2e0c1da5986fc76d70565e70bee89b89e211e06cea9822412bc768a51de1b"
+    },
+    {
+      "path": "dist/bjj-glossary/side-control/index.html",
+      "clean_sha256": "b42eee992f80505e0bb7e377b805d28a18bcb69da01355e200f7f9daea4d0cca",
+      "dirty_sha256": "7a408eb92e943f4bc47f33cdd0d7a94c5b3fab66dfa156336a4931bf980f013e"
+    },
+    {
+      "path": "dist/bjj-glossary/single-leg-defense/index.html",
+      "clean_sha256": "eba8300824ad43193f8a4739daa2f6964bb63a66d5048000253725d8ded1bbbc",
+      "dirty_sha256": "3d528f1f978806c1844aa1cf625f81658476a8a5f31130c4101fc872dc246a39"
+    },
+    {
+      "path": "dist/bjj-glossary/single-leg/index.html",
+      "clean_sha256": "68852a25d5ee83aae3e0d21ed2d33a538b5f24a8d1dc7d3c529a33b42d3d3887",
+      "dirty_sha256": "3eadd75f18d70717ace8c2055a58960bb98c48fd06ca9173d11eb3b5a5d04bee"
+    },
+    {
+      "path": "dist/bjj-glossary/sleeve-grip/index.html",
+      "clean_sha256": "fbd939ead45662aaa2db28d6271773ee16b21bbbd25f416f562b81a83984e4bc",
+      "dirty_sha256": "61d691fc79feb119535b8e34eea6658f57882dd640f56a5756d694a4ae32436a"
+    },
+    {
+      "path": "dist/bjj-glossary/snap-down-defense/index.html",
+      "clean_sha256": "e104b899a278ea5c7760a601033bfa98b7374c83067cb94430cd771f6a7d4dae",
+      "dirty_sha256": "37120d4c97773744c8af40a6524026cfcde6ec65e17e53c3f7549e743bb2562e"
+    },
+    {
+      "path": "dist/bjj-glossary/snap-down/index.html",
+      "clean_sha256": "29864fe941a0a1c9d1d64c85f1d3192dd3b46488cc324a56f91ab973d4fbfbaa",
+      "dirty_sha256": "81037255bb54c87af89e973a9bf8a44e0e92f2c702c76a06104d8558a36d07bd"
+    },
+    {
+      "path": "dist/bjj-glossary/spin-behind/index.html",
+      "clean_sha256": "24a402951a0e6a517fa7dda7183db9ef910012c05eaf15318e6151a5ef9935a8",
+      "dirty_sha256": "5e205965ef0c1bb8bfc9014cb0c2c96089e7f05b14ae42c82c50870e1b81d314"
+    },
+    {
+      "path": "dist/bjj-glossary/sprawl-defense/index.html",
+      "clean_sha256": "89ea4b61596046b645556553d0e9cc942ed933e436c1a50b31c54eb22a8b89e5",
+      "dirty_sha256": "6c68e15918fdd9678a9c8904df283f0dd47198bacf87903e832260c20a348607"
+    },
+    {
+      "path": "dist/bjj-glossary/sprawl/index.html",
+      "clean_sha256": "77cd5b6f8d79b7a627765a0443ee017f4b1d7710124dbafd5932122ffd8bd96a",
+      "dirty_sha256": "1ee204b1f9f0fd040452e73069e1fc26202f649dfd33f7611bfbbd61bb9455ea"
+    },
+    {
+      "path": "dist/bjj-glossary/submission/index.html",
+      "clean_sha256": "d14a5e1fd47f4848ea4819531bde261b33f5ab839c97eaf356c5f708861a88f6",
+      "dirty_sha256": "e2f2e66f3c493767c2cb7a18e0994814e82c4efba006829905bbab45f241ee07"
+    },
+    {
+      "path": "dist/bjj-glossary/sweep-single/index.html",
+      "clean_sha256": "32b3ab86d31339ebfad1d69fb699f4f62abe7afa0c982d083ef0b85de3b0cde3",
+      "dirty_sha256": "4b6ee8d68e17eedca033eb800f324f4c858c18a6cb3986d5dbf36060f18e0e10"
+    },
+    {
+      "path": "dist/bjj-glossary/sweep/index.html",
+      "clean_sha256": "6fdecdfd0a9fabc45883f3449315b1e37b1922adfbccf0a1cfd93eb7ad859d3b",
+      "dirty_sha256": "60452087259b16257dd5b0d86e7c0a742d96be8c9caa30f862f7d33b5d81c97c"
+    },
+    {
+      "path": "dist/bjj-glossary/takedown-defense/index.html",
+      "clean_sha256": "fae1c560a49afc1490f5a14bc3712158acc89c736301b68d6e3fad696bde1d33",
+      "dirty_sha256": "c8424bead1074c861f2da3fdf8fd8540e91fe539841e51eb154d0d9af1050c97"
+    },
+    {
+      "path": "dist/bjj-glossary/takedown/index.html",
+      "clean_sha256": "fdbc8fa737ca1c5f6a03baa85814dda0a04ebb23aa2d19b69f46412098a83536",
+      "dirty_sha256": "2a557932348731f87f83cdb260bcd03b5cf39960a198a269037752cc5edb6a2c"
+    },
+    {
+      "path": "dist/bjj-glossary/tap/index.html",
+      "clean_sha256": "58d96b244b04831a598f020bcae5c27881c8d2b5361ec49677bf57bcdf320b68",
+      "dirty_sha256": "6cb83dcaf46abe114542a3bd24e8de384fe1e8eac091cda697d7ad0c34b142b6"
+    },
+    {
+      "path": "dist/bjj-glossary/technical-stand-up/index.html",
+      "clean_sha256": "3612ff2aabae37f47a019b713150ab8f54c22d09d8d47264da03a9ba880b1670",
+      "dirty_sha256": "ea73076817f4f04291a32bc098cf8dacbced26ef2dc9841446ad300892c1fb04"
+    },
+    {
+      "path": "dist/bjj-glossary/top-position/index.html",
+      "clean_sha256": "4087c2b3cab13604d56eb676c9fa1249f93bfdb01ed41ce58e8d8b808689cb2a",
+      "dirty_sha256": "14ae9d6ca6ff2250832becdf9a93d0cd0941ac4fa44439ec9070b64810da743f"
+    },
+    {
+      "path": "dist/bjj-glossary/top-ride/index.html",
+      "clean_sha256": "3f7024794272733365ab61f95d7e683ea60f3ffef6dece71047f9b413512106e",
+      "dirty_sha256": "00574cf4058e9eea98dde26bb7017f66b2f810f9b5f95a67f8dffb8703af1b8c"
+    },
+    {
+      "path": "dist/bjj-glossary/torreando-defense/index.html",
+      "clean_sha256": "e3f53f9b637663924a6cfefda29509de28b732b715ecb22ea6211c1b056b90b5",
+      "dirty_sha256": "c32826a67cbb292fe699505c543468316da21df36537ec0fc9ab74a6b9751fcd"
+    },
+    {
+      "path": "dist/bjj-glossary/torreando/index.html",
+      "clean_sha256": "edc321130c977dbdb308e73fb9417e859d43baf8da4085164e951df8e5422b4a",
+      "dirty_sha256": "420fa3e9e3ebb99a899d341509731ce1388635566f83066adc3d5d53767302ac"
+    },
+    {
+      "path": "dist/bjj-glossary/transition/index.html",
+      "clean_sha256": "d20da42f395fd72429bad2c79f8e717c64b04db796ac7792c2081218a6c5bd71",
+      "dirty_sha256": "c065d6126196a786e18acb8c2cc91358543db6c5075deb30c748d2ee69f53b42"
+    },
+    {
+      "path": "dist/bjj-glossary/triangle/index.html",
+      "clean_sha256": "e1d2f2980b18eab2401f0ad9dc56fbab7b0f9f8d94a9a9e042b123533594a2fa",
+      "dirty_sha256": "9cc90f9334fb88c2cd9a724f6d45a3c050e592340428bdb406edec49afa932d1"
+    },
+    {
+      "path": "dist/bjj-glossary/tripod-sweep/index.html",
+      "clean_sha256": "41fedc59934177049b0ad1504757a8c9a205d629cea142139a5ea4927c8143a6",
+      "dirty_sha256": "07ccf43f4e4ea018464709bed8be0e0e40076beaee3c5e955f2fdee3c9dde14a"
+    },
+    {
+      "path": "dist/bjj-glossary/turtle/index.html",
+      "clean_sha256": "a4e1f048e7105797dce70b00e35407c5a6d335bb77d5607049d54749aaab8611",
+      "dirty_sha256": "404a80242bf046868a383bac497ff84a84af1d178b8c50f309e7a22fd91cfb96"
+    },
+    {
+      "path": "dist/bjj-glossary/underhook/index.html",
+      "clean_sha256": "2a267d9ff42dad93a3ef0ec0ce634aadb8cfd8ecf229241bedfefef78f8c9c2b",
+      "dirty_sha256": "7de55d7e5f8a89e540a7de7b9ea5b0df7322915c627c71a2b949fe63eb922803"
+    },
+    {
+      "path": "dist/bjj-glossary/upa-escape/index.html",
+      "clean_sha256": "408a3929b1b10ee52f2d1c5da97568e3f6024ad77886e0e411e0238acc88e9aa",
+      "dirty_sha256": "ce334999d53d9b1f0b6ce66c829a146eb041f3b5567cbc73d1ca25a9b1bc2d1a"
+    },
+    {
+      "path": "dist/bjj-glossary/updates/index.html",
+      "clean_sha256": "18eef8883cd5300a395275b796d6be0b48194c24de38ed7f52821b308303b5b9",
+      "dirty_sha256": "0de8c773c8f597e1e5d1794beaeda319ca21617f2a86ffb2f7430d0aa055e658"
+    },
+    {
+      "path": "dist/bjj-glossary/waiter-sweep/index.html",
+      "clean_sha256": "e1ea3273bd7535bc1fab57b05ca53c6704d81bdb898f6617e2157aef91aaab66",
+      "dirty_sha256": "a9b7299027423ee6f25bd8cc0eef70baa2875c346e34210410033fd910081be5"
+    },
+    {
+      "path": "dist/bjj-glossary/whizzer-defense/index.html",
+      "clean_sha256": "856e542afd011b0c48467df7fd167e48c00c3867190a7491034f84423265b1ee",
+      "dirty_sha256": "7277c901a06146253a24ab31c4b444649e3f0b45f61360ed8d418451f3a52225"
+    },
+    {
+      "path": "dist/bjj-glossary/whizzer/index.html",
+      "clean_sha256": "a0f55dbea9f923b4372d734034e41c3f14cbabdae9ce6afee136c4bf9f443447",
+      "dirty_sha256": "0ed0afd5e5c51a477997d176908e52c7c54b9ac79710bacf0a6d54d36d76e99b"
+    },
+    {
+      "path": "dist/bjj-glossary/windshield-wiper/index.html",
+      "clean_sha256": "955f3a78628fa9958fb21038bb72cc52f97dfce08930841641489a4292f53bee",
+      "dirty_sha256": "55de7f12974eca15483434bd27f843e2b344b1fe40cae14313f5931d63c6b272"
+    },
+    {
+      "path": "dist/bjj-glossary/wrestle-up/index.html",
+      "clean_sha256": "c358dbc1562e55accd39fc6d54202a80b8cefc9bcfb952fa39db942c6f651f60",
+      "dirty_sha256": "6f3f9f626dc92eed8bf382275f8fb9a13d38f42614cd8f72a1bf623039429a3a"
+    },
+    {
+      "path": "dist/bjj-glossary/wrist-control/index.html",
+      "clean_sha256": "c04641d0db61c99803eb4d1d11baa3f4608f89463e91e340fa2a04da302dc927",
+      "dirty_sha256": "720a25c3ea097cd30421f340a58a6cf37fa12483bd45cb156ef7a9f8870fe3e3"
+    },
+    {
+      "path": "dist/bjj-glossary/x-guard/index.html",
+      "clean_sha256": "1127ff9b4d5b43a676ff4bb1aa1cc9d3377db010a1cd6235c25b28558cff7d00",
+      "dirty_sha256": "7de52153d2e5034e4edc03b3d5a45e4c60b849d9dbd7a6cb165ae20b384f5a83"
+    },
+    {
+      "path": "dist/bjj-glossary/z-guard/index.html",
+      "clean_sha256": "35253d072f86fae4e8e17e87b13536d8da12e183a17d39fe95d0e75fd2f22b03",
+      "dirty_sha256": "536d9295fac3b1e7e63c0d5c137ad498a536dbe9b9feb772ef0e491fbe5fc16e"
+    },
+    {
+      "path": "dist/bjj-stretches.html",
+      "clean_sha256": "f977d0c5871c37950f548dc009bd565a3e1689962dcca43db8567c81e4bca416",
+      "dirty_sha256": "b5624a009ba499ef2a0e2791cd04e3f74ba855e34a82ce27fcfe43cb637efbab"
+    },
+    {
+      "path": "dist/bjj-tannersville-ny-directions.html",
+      "clean_sha256": "1c2a0faf9cf18bd547be520f3dee21425dce4677e805d679c13ff7d0d2640446",
+      "dirty_sha256": "9f8985d0265d13af5e70fd94102ecb7ff37150b009c8143f862f30a8c0fd9cb5"
+    },
+    {
+      "path": "dist/black-belt-concierge.html",
+      "clean_sha256": "bf3f404bb469898dbad1b4f65d541c7996c95010171e8d4aa77275bb3bdf938a",
+      "dirty_sha256": "8cec4a05641460adc8a27855fb7f8f5a87ea59223bef20e0742fff9e7b76ede7"
+    },
+    {
+      "path": "dist/blog/adult-brazilian-jiu-jitsu-near-me-tannersville/index.html",
+      "clean_sha256": "cf78ca1c73367f1bb149fd6efe2352e9a27f585d0f32f1d40db9d781a58fea9b",
+      "dirty_sha256": "ab2db5d2c7bf0f7a49946642370df35ac8c8fe2b09e629c807f585255ffb12b9"
+    },
+    {
+      "path": "dist/blog/after-school-jiu-jitsu-calm-routine-catskills/index.html",
+      "clean_sha256": "a988293035de9585214df54aa03bdd3de4c4c148afdedfc298f5d3953d7a0fea",
+      "dirty_sha256": "5e60126cf4fc805a43dd164807a09fe50d4dc5b849aa6982778477ff8dfaee8f"
+    },
+    {
+      "path": "dist/blog/after-school-jiu-jitsu/index.html",
+      "clean_sha256": "7700ad5f641186a5d4164d2a539c04b71e33a75b1037980a185adae0cc5b3bc4",
+      "dirty_sha256": "14debd20d53818f35da8550c3baa8823c6ff5bb57a1b9ec5f7047875ac76353b"
+    },
+    {
+      "path": "dist/blog/basic-jiu-jitsu-terms/index.html",
+      "clean_sha256": "baeb7b5c1de3fec0d420013ed54e9cdda215ca619ff70942bd69d78d6f472c33",
+      "dirty_sha256": "f8434c9cd93c3f7b73295b6cbb8a56493c517a02e292fc842130434866e3921b"
+    },
+    {
+      "path": "dist/blog/beginner-friendly-bjj-tannersville/index.html",
+      "clean_sha256": "a6f55d2b24512e108b4167815cab147cb7ff9e03551a692da3c142fed3b93a99",
+      "dirty_sha256": "03ccb1f149af6c2a5b5f776eb6aedb6bd39a71edde78bba9ed8539a78d31d5b7"
+    },
+    {
+      "path": "dist/blog/beginners-guide-bjj-human-chess/index.html",
+      "clean_sha256": "e79005548fbab4efe567788554934ec2e37195e5f77546a4351b4eb8a434c7b4",
+      "dirty_sha256": "1310420909b8e21a1f40c95f943ce90842c76681eb82dd2c6cb5073d72bb600f"
+    },
+    {
+      "path": "dist/blog/bio-switch-nervous-system/index.html",
+      "clean_sha256": "be3753615494d0fc8920db08f0353cc8217eaa87543ff07a47e701bacaab3cf5",
+      "dirty_sha256": "a9e8839dde8c4b757bce8d7a594bc8d6aebf3d277ff28c137b50af5435962375"
+    },
+    {
+      "path": "dist/blog/bioginastica-movement-no-gi/index.html",
+      "clean_sha256": "bf11c38eaa2de599a1835f27d54078ab570d6fd3b7fb9046947d7d2cbdaf299d",
+      "dirty_sha256": "cbaf7e689357121cd4b846ff00f652464b47af9eca1897341a3f30d3a9cd744d"
+    },
+    {
+      "path": "dist/blog/bjj-36-techniques/index.html",
+      "clean_sha256": "a6fe23e907304faf5f216baf9bf4ddde2b967f808c09f97499c0cf823e8e4db5",
+      "dirty_sha256": "3af8a950b9ac4e885bf2c082b9f9349c19cceb3a286bbff36d034db0752ae9f0"
+    },
+    {
+      "path": "dist/blog/bjj-beginners-over-40-catskills/index.html",
+      "clean_sha256": "97c86d9a6eb2b860fec509b003291d37a958821766f57ad1960ee39f3b55e404",
+      "dirty_sha256": "6d4c0e379afa6fc7906310750de2296f2b7dfe01d189633d312a492ec8c934e9"
+    },
+    {
+      "path": "dist/blog/bjj-belts-stripes-promotions/index.html",
+      "clean_sha256": "3b0d7aac4f6fb9375b786e157db4a3584fc4783891340d7581dd5ac124eab3b4",
+      "dirty_sha256": "69674e4a6dfb56b59ed5d8652fd0fe1db12a044b887990c61fc59db84dd525de"
+    },
+    {
+      "path": "dist/blog/bjj-black-belt-degree-time/index.html",
+      "clean_sha256": "a11dcf58120970028d6ff7496af18015042df9beb94c0ad984c0ea17209f1e3f",
+      "dirty_sha256": "54a128803f7f00256769938bb06863a1041f910943e56f23bb680d830d2c7773"
+    },
+    {
+      "path": "dist/blog/bjj-on-the-mountain/index.html",
+      "clean_sha256": "caa802897758025e4641a36940e38d8d9522945b1fccf0088e5dfb7557b530b3",
+      "dirty_sha256": "31c85bc46eb7293a1a8e667b2a1014a96f86c92992170465ac870cc82a9d67ea"
+    },
+    {
+      "path": "dist/blog/bjj-promotions-how-often/index.html",
+      "clean_sha256": "e3cf907453954aba0269189eea11cb683ae0ca5a5cbb0ff6869210271f021a60",
+      "dirty_sha256": "f1b4c89abad08ac710d47ad5e509c59cf84e086c15ed6760a09203465589ee89"
+    },
+    {
+      "path": "dist/blog/bjj-schedule-windham-ny/index.html",
+      "clean_sha256": "d9cec347cc7e1c6d0746976efbf89f3e2a337fff8d58f1b2d18a3321f5f75ffc",
+      "dirty_sha256": "863ea74a0ad1c38a72b4f9b813fe4544fef70fca1d02c1cc29f1e4b405187aea"
+    },
+    {
+      "path": "dist/blog/bjj-sensei/index.html",
+      "clean_sha256": "8c00fa7d60b64146ff1e40623be04e471cbf353f3ca91176a1f90b0da90a4069",
+      "dirty_sha256": "c096fbabae749f5a108ed7bcfa6290a955f195d087c22a80e03f5f8718633bca"
+    },
+    {
+      "path": "dist/blog/bjj-vs-karate-for-kids-catskills/index.html",
+      "clean_sha256": "bad48bfc6f14f5250403eade9ce70c1da870d226b9bce67e417b998ea3a07a25",
+      "dirty_sha256": "62bcd02231f8e98d66ff0fafc482b7ceffff32aee6cc465d9a2787f6609c4416"
+    },
+    {
+      "path": "dist/blog/bjj-vs-taekwondo-family-martial-arts/index.html",
+      "clean_sha256": "b3345d73a47e8396b7b7e7f3d6930a7170ae0960e1c355f7479192ac7cc72ff7",
+      "dirty_sha256": "8e5a9dd1479c648981f7fcac45f5b3986bf8b3812cd2b129f37e1cd1b6f6934d"
+    },
+    {
+      "path": "dist/blog/bully-proof-jiu-jitsu-stories-catskills/index.html",
+      "clean_sha256": "9b0163cd0ae3c8aec347a19e533c539f450df2e37e5a776a11f5fbc4bac00e3f",
+      "dirty_sha256": "0695c0257e298aed8f1ebafa5d2372a0be272db4026c59faf7425f0dda8338b6"
+    },
+    {
+      "path": "dist/blog/bully-proof-martial-arts-tannersville/index.html",
+      "clean_sha256": "77aac4acbf08d54745fc3823fe743b35f83c2c2ba9f932e11f646ca0e903bbc0",
+      "dirty_sha256": "306f87d6df1d452c04911f58cd207b7cba7aab464414c956bfdf08df4328a9ef"
+    },
+    {
+      "path": "dist/blog/busy-parent-guide-to-family-martial-arts/index.html",
+      "clean_sha256": "e142b747692823ee83f2ae8a7488235a3984ae1730e5c1ccdac0befd2d5c9aaf",
+      "dirty_sha256": "eb7ead0b6863210fbd9ea1d5cf44ccb02ce5814c6ce9ebd44cff1cef58ab365f"
+    },
+    {
+      "path": "dist/blog/cairo-ny-bjj-specialist/index.html",
+      "clean_sha256": "c4a357586a3da551dc3e4c141a2ac4986e7ef1ad382b2be19eb7ad9bebbed534",
+      "dirty_sha256": "dc0c1b209dbc02d2bb811ff0259649dddb826527d8f5a897d854ce97aa061c1c"
+    },
+    {
+      "path": "dist/blog/can-you-beat-sensei-without-a-black-belt/index.html",
+      "clean_sha256": "456158fb82f4a9889b0ea9dd6d57b6b7c7d360f8491ceb8561864fe05f82e5ec",
+      "dirty_sha256": "7ea8b368142ee845a1809a9491ad187cddefb65ec036922e1213f91d92660473"
+    },
+    {
+      "path": "dist/blog/catskills-gym-alternative-jiu-jitsu/index.html",
+      "clean_sha256": "9e0efd90efa7b0761988370f9be2c7d903bafc5ca12766f39a3c64b1b52e5273",
+      "dirty_sha256": "199a185032f4456a1791695c48332fbba46c88dc162381aef82f9f36e407aa61"
+    },
+    {
+      "path": "dist/blog/confidence-protocol/index.html",
+      "clean_sha256": "de68e66061fca0fb6cdc0b12a4ed70cfe45f2158cc3d922aede6cf4659e1a7fa",
+      "dirty_sha256": "b1c10d6df795c78fd3faeb451e8594491d5ba5788de26ec9d4d4962cdb038547"
+    },
+    {
+      "path": "dist/blog/cost-of-private-bjj-lessons-catskills/index.html",
+      "clean_sha256": "260e8ed0caeed0f996b70f7c417030b3e79137244dc7afa1d1a2ff00953dba72",
+      "dirty_sha256": "7d945ea04200ac8803fb3b0810f35a3f5d3123555ed56f182abd7aabfdfe2811"
+    },
+    {
+      "path": "dist/blog/desk-worker-bjj-guide-mobility-core-calm/index.html",
+      "clean_sha256": "73e46af7ad02b6ab26bcf804ccd345380ae4f8c9ed5f51a662c74d05169d0a1f",
+      "dirty_sha256": "16a59e64f9e4086f9bcc7166204f9a7b10102607ab79c0878a5545ee6f97789a"
+    },
+    {
+      "path": "dist/blog/exactly-what-happens-first-bjj-class-minute-by-minute/index.html",
+      "clean_sha256": "56ac5506206334a5a004d3d3c108a779c405535f7345d03e93902407903ca62d",
+      "dirty_sha256": "c8606f0a83329a0b5b0ce31705173b634d7c52461d39952b34a8fa68b76f31be"
+    },
+    {
+      "path": "dist/blog/family-friendly-bjj-near-tannersville/index.html",
+      "clean_sha256": "c8084584f6f5b462811c167b77330cfe85111ba6bd6689c4de86ab7d3ac3824f",
+      "dirty_sha256": "2af523dbfbe7aec8d248c9d4e82b4567d62dcfb00227b852382994b18d0a2961"
+    },
+    {
+      "path": "dist/blog/family-martial-arts-catskills/index.html",
+      "clean_sha256": "b2385785f6254d9be407e879aff003d5262b94739fe4ae02ecffc9ee441765ef",
+      "dirty_sha256": "f7f6414636433d37ffdb434d79a64bf8e3b34482a57e46cb1402d4ce04d27eac"
+    },
+    {
+      "path": "dist/blog/gain-points-system/index.html",
+      "clean_sha256": "7fb8863517172c9249cc3a25f9887a83508996b0e902c4109a14d14d458304f0",
+      "dirty_sha256": "cff870adbfe34b2467e615c6aaee2edf95e2858c621d22277306a13e8fb9e1fd"
+    },
+    {
+      "path": "dist/blog/gi-bjj-windham-ny/index.html",
+      "clean_sha256": "6120366f8af3507033f8079d57c9cf72aacfc5debd76e6512d3076d55f804578",
+      "dirty_sha256": "8d7c6620db5ef4f648d2ee0937c3a6923e5f8656b360382f32e5ef2af543decb"
+    },
+    {
+      "path": "dist/blog/gi-vs-no-gi-bjj-cheat-code/index.html",
+      "clean_sha256": "de664f4e5341aefd1850f951ceca703744d2563166508d52bbe342f9483461d1",
+      "dirty_sha256": "459b54d2b966c8320003997cfe149df19fc47bf59698fa53307eb814265d825f"
+    },
+    {
+      "path": "dist/blog/growth-over-gold-bjj-mindset/index.html",
+      "clean_sha256": "e61083ace8a8c7a30615c724eb04affa6322dd03ec92de926266245b20ecb714",
+      "dirty_sha256": "5141aa4f0f42de5b7285b2cd1fb0e6eb64e9d35400679429f03a9b30b382f69c"
+    },
+    {
+      "path": "dist/blog/how-sandy-teaches-bjj/index.html",
+      "clean_sha256": "436ac029b90c2b6714e305d0061583aa8975291034d071e73129785c1ebc782b",
+      "dirty_sha256": "db43f57b6171736b2f00fc6a50c1863cc643fb831ea3014f8486a71b2c906c8c"
+    },
+    {
+      "path": "dist/blog/how-to-fall-safely-bjj-breakfalls/index.html",
+      "clean_sha256": "011e9b21445e3faf21a6fcf9f8a01cc69a2478f0fe7816d64c63c398e3dbfa08",
+      "dirty_sha256": "ea73d46040b33dc28ba2aa679bd846d16acca6d556870c80f40dcbec9306c568"
+    },
+    {
+      "path": "dist/blog/how-to-pick-a-bjj-school-in-the-catskills/index.html",
+      "clean_sha256": "36c3855e4e1fb9380dd305035fc68a48d44aa7357a6d7561cb02546c5dcd6e3c",
+      "dirty_sha256": "502a51dcf373319ad0d105c17708899c94e87ee47846bdea0e715f21d1d2e4da"
+    },
+    {
+      "path": "dist/blog/hunter-elementary-tuesday-drop-off-bjj/index.html",
+      "clean_sha256": "7dea098e96759ab1438ce43fafafb602394a1de04833993fa4b7da31cd13a37e",
+      "dirty_sha256": "60fc4d6995a74ba948905feb65e21352c62dae6bb884c718c92e9d83c97bd3d1"
+    },
+    {
+      "path": "dist/blog/index.html",
+      "clean_sha256": "4ca4eaaf096d560fd4484ceb1f4b57655036ef7523dbb0a03fe389b8c6cb7071",
+      "dirty_sha256": "e63c92399600310fdcded85c2804b6084f66dac8fd99041f656ccd421c133e03"
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-for-teenagers-catskills/index.html",
+      "clean_sha256": "d34e0a128793c3af476d0181596ab5a2b5a62a42c1e66f64c6967efd91d671cb",
+      "dirty_sha256": "631fcf34c4e97c459f5e46785e3a627876d064746de90791f6a12682a4f3eb68"
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-near-hunter-mountain/index.html",
+      "clean_sha256": "e5e9521db0a7460d2b2c40b075cca692070dbae7a27822ce0e01d43d16bfb041",
+      "dirty_sha256": "a2510c0c7e4ccf21285dd0c79495da445aeeb11ac096128355f732731095fd31"
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-near-windham-mountain-club-ski-families/index.html",
+      "clean_sha256": "0913064bfc047a116626e4a9f9bb23594c188b038c9c1013d18c3f305b956f6a",
+      "dirty_sha256": "1596aa504dff3da078dd9d687246d3c04f1bc85a22e6a3ba718ea8a41dc97094"
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-near-windham-mountain-club/index.html",
+      "clean_sha256": "4712de2cbb2496ea9caf397e1440cff39e44948d1ef34e1c3e43f8f199c95184",
+      "dirty_sha256": "68d983ca7d48836f905f7922e228ddfb3699a786990fe229092e66fb463fad71"
+    },
+    {
+      "path": "dist/blog/jiu-jitsu-windham-ny/index.html",
+      "clean_sha256": "a2a1067dc694ac501467a8792ee0c8a544442a315173776c1a033754503763c4",
+      "dirty_sha256": "6a68d7a1c2b1f7b191f877552c72d54713d77fe3f405d239df050a6bb106eb90"
+    },
+    {
+      "path": "dist/blog/kids-bjj-training-partners/index.html",
+      "clean_sha256": "83690aba3139e3747b985f8e31cc47d85e86a2b7c5d4594999e812a2ede03584",
+      "dirty_sha256": "1e5b9c8071447896223a8e3878a59844442ed832ae2430c0f8982565ff05e1d9"
+    },
+    {
+      "path": "dist/blog/kids-jiu-jitsu-windham-ny/index.html",
+      "clean_sha256": "2b5852d3e7c9c656788eb03e43f9bc9a6b52469cedb34048f3bc15e178dd9d44",
+      "dirty_sha256": "fd7e0dcf3d3afa6c512ebfa63e5e1f300b200d687cff86c23eb9bd953e258cfe"
+    },
+    {
+      "path": "dist/blog/kids-martial-arts-haines-falls-beginner-friendly-jiu-jitsu/index.html",
+      "clean_sha256": "8213b392a842ec786923e4e146dc75115de3b1cef3ce2a54a108cfc5c4b698a4",
+      "dirty_sha256": "9c355336fc4547706e7cf786d8757266d362a28d2fb2aa2b133df361a918899a"
+    },
+    {
+      "path": "dist/blog/kids-martial-arts-haines-falls/index.html",
+      "clean_sha256": "b3ab0099102cf375c7f8105679f8db928cfd04d7cf464a31dc7b87ecabdb0a43",
+      "dirty_sha256": "1d2a567378a280aaa1138c01067fb3ae12cccddd59397a3c43be536c1ffe8c64"
+    },
+    {
+      "path": "dist/blog/kids-teens-bjj-belts-ranks-stripes-promotions/index.html",
+      "clean_sha256": "ccc13a21aeda2f622c1db3b6b53801486436d3aff97e9072a67c3ed82bae9de7",
+      "dirty_sha256": "2a39fcd10ffc35d7ba9c2f9f90112522bb5b0d4346a2247904098b646aebb942"
+    },
+    {
+      "path": "dist/blog/kinetic-chess-onteora-park/index.html",
+      "clean_sha256": "1bea80a5b8d2e06790195f618fcbbe2ff36686fdc14c6a9fc72372fa807531d5",
+      "dirty_sha256": "3e18251a62d4418bf35d0b013f896dc152aa2b2c9ff4f09269239330a50c2573"
+    },
+    {
+      "path": "dist/blog/martial-arts-windham-ny-why-families-pick-jiu-jitsu/index.html",
+      "clean_sha256": "791a4273428c63985437747186e76dcd2aec14d345f8385147e253237e812c6a",
+      "dirty_sha256": "67ce8a65e7547a227264fd2c070586056cb6241c55b0bc97597d64bdcb1ef0f5"
+    },
+    {
+      "path": "dist/blog/neck-cranks-bjj-longevity-guide/index.html",
+      "clean_sha256": "05ff4951590787e68f6409f4c3ba04ce77087b37d5d275594f06f2a2c622d5c9",
+      "dirty_sha256": "78151ea2dc5449e6d045b233210927f838910a9bb80c32f4bca81e3e34a58130"
+    },
+    {
+      "path": "dist/blog/no-gi-windham-ny/index.html",
+      "clean_sha256": "4ac358aaf1489e835e0ffafd9cb2e3933e45ad9b3bd5ec886413d16178d58a8b",
+      "dirty_sha256": "b7e4c8ebf18cec69fe054fbeea9131096982d398f51592efdc49402694c02b99"
+    },
+    {
+      "path": "dist/blog/private-bjj-coaching-catskills-visitors/index.html",
+      "clean_sha256": "a71cd71aa46ca721f3d2ba033942212cb9c80e308a115479f815dcf86940ee61",
+      "dirty_sha256": "205021d956a5e8c71159e516c33f496f01c240b24d5cb4fc68f9db60fb4c2493"
+    },
+    {
+      "path": "dist/blog/private-bjj-lessons-adults-catskills/index.html",
+      "clean_sha256": "cf0616ac96143f804fd927f55001821e863cc62951bc3267d486d8ad3aeee438",
+      "dirty_sha256": "dd9398e9b4da393457d37797ac015cc769732a79d64f432bd80f6abfffc6964e"
+    },
+    {
+      "path": "dist/blog/private-bjj-lessons-kids-tannersville/index.html",
+      "clean_sha256": "9b03ccb9d6ea3012b10fa3f0700df9a30a450b69c9e7b022b0162d887672a86e",
+      "dirty_sha256": "693dc2f9ff7bddfa92f456658dfaa7cead6346b600c23cb1058ce405175eb13e"
+    },
+    {
+      "path": "dist/blog/private-jiu-jitsu-lessons-windham-ny/index.html",
+      "clean_sha256": "8a544e17837eb695421d2ac9c16a91222a35fc4886af39367170bcfc959df8e1",
+      "dirty_sha256": "27cade666ba410c84a035d686ca36bea0331b2c83d41f8c3cf8debc569937cbe"
+    },
+    {
+      "path": "dist/blog/private-self-defense-coaching-tannersville/index.html",
+      "clean_sha256": "3b2bf1e19cc0b83b811311ce30acf55d346f8e4bb5e7469c4af0fc7960845333",
+      "dirty_sha256": "a7ecafa5691a6e984f5231bb1712bbd0d889748d1aebcedaf7e2cbcfa42f5548"
+    },
+    {
+      "path": "dist/blog/safe-bjj-mma-training-tannersville/index.html",
+      "clean_sha256": "9b4f54f6f7805986c64370325bce9e70a25c9a08367a3c39b71ce23c110c73c6",
+      "dirty_sha256": "d749d9e5221fecebd0b59a9e756ec745afe2a431f9e9852440ceeda8ab0b0b2a"
+    },
+    {
+      "path": "dist/blog/safe-martial-arts-beginners-catskills/index.html",
+      "clean_sha256": "a41bc9bfe7d0a15ab0145647fe150d3845d94c7e8672121b32f1bf6b1c4a98f7",
+      "dirty_sha256": "4c8dec6f0abbe31b6809555d81513c2f3d2fd99b939ad6b0e6671cc39b5f680c"
+    },
+    {
+      "path": "dist/blog/safe-self-defense-kids-positional-control/index.html",
+      "clean_sha256": "9cc1e0d33bc90f51bd936fa85c36fb54aad957b453400a70df4c0f126125bc10",
+      "dirty_sha256": "edbd9718053cdab9336eb9186d2c4e959c5dcea9cb6d649ee153bd02173258c5"
+    },
+    {
+      "path": "dist/blog/sanda-vs-jiu-jitsu-for-mma/index.html",
+      "clean_sha256": "266e77f1bc6a19e501d2d096ef6a4f153a2ae608d84b8ae97d7a4210f090d20c",
+      "dirty_sha256": "f73d3302095faf84f92a682e58737a8c9f7fa6532649da4e3f6fdccc9d691cb0"
+    },
+    {
+      "path": "dist/blog/sanda-vs-jiu-jitsu/index.html",
+      "clean_sha256": "f6755cb81dc3a49f16807f48805d77f2ad16730a46a8e0530b4f33e0b11f862b",
+      "dirty_sha256": "450f990fdc4196d4270898a2aa606221070102091ea0d8a2d072f9d0d0c41df0"
+    },
+    {
+      "path": "dist/blog/schedule-sensei-reset-protocol/index.html",
+      "clean_sha256": "888514f58d7a64d3a87e3aa624b5e299c6deb294deb005f6cb39de493b0bbbe0",
+      "dirty_sha256": "e42ff4d3ccf17fac546782001e6add262e1a7d18cca9a0f74205daa94f7f4ddc"
+    },
+    {
+      "path": "dist/blog/schedule-sensei-weekly-template/index.html",
+      "clean_sha256": "5e0f173cc96306b07d4f755ccd444566f191eab59af5f14b543124e021061884",
+      "dirty_sha256": "54e69dc9ed61b4973b6438ed1a5f2264d19b0a6ca2cc4cb289e78b396cc5b414"
+    },
+    {
+      "path": "dist/blog/schedule-sensei/index.html",
+      "clean_sha256": "806e4290dd87ec5f0b90d09800484b0aa17ad2804ee22c86368102a73f3da670",
+      "dirty_sha256": "5aae32c37bbdc5519fad809577f61382a5b3192662f91cf07996c1e058790934"
+    },
+    {
+      "path": "dist/blog/seated-guard-basics/index.html",
+      "clean_sha256": "73ee817e3b1178c81bbb23defae740d1456e9f91bc2d145f2c2e6fa78222dfc3",
+      "dirty_sha256": "fa783d5997076c925c3c456a84b3bf994e599380ca9d5eec9cdd35df0cf8a192"
+    },
+    {
+      "path": "dist/blog/sensei-mma-bjj/index.html",
+      "clean_sha256": "f9b44233c443a46d688eaae43296846fe4997558d76f6006e70711893dd324d6",
+      "dirty_sha256": "ed45bcad82afac8985b8e4f5477e98e96ecbb517725396b9d5a7ceebf56db639"
+    },
+    {
+      "path": "dist/blog/sensei-rules/index.html",
+      "clean_sha256": "53aad9f5f50c1cb4c2e83dde3f349d8b04711b5a61cff6e3565ad6f28278e0e7",
+      "dirty_sha256": "eb22a6e24b6b3e08d0dbb671fbe2466511ebd9bf078a980f91ee9879b6c5a572"
+    },
+    {
+      "path": "dist/blog/snow-day-protocol-bjj-home-dojo/index.html",
+      "clean_sha256": "f6f71d7460260393ec094d9e831613feb73b420f0d8ec7338b31cfd42b095f8d",
+      "dirty_sha256": "b1a7debbed5ff25a9f7cb36af375d948beb4a96ff6ac1d18490087d3d36af2b0"
+    },
+    {
+      "path": "dist/blog/spring-fling-is-here/index.html",
+      "clean_sha256": "0590a97e6b6430b411f842fe4e2fba654c1ab8093241feca8c765fcac41d8a52",
+      "dirty_sha256": "71f2c98334c22feca76dd11c194b30819a459f6658b79e2f8ccaa92c54737085"
+    },
+    {
+      "path": "dist/blog/starting-bjj-over-30-over-40-catskills/index.html",
+      "clean_sha256": "bf848aeac18182c7b265c44d285438a0cc319a49d281238693c5fce57e591c8d",
+      "dirty_sha256": "60f51a09f98e500c5b8054acd97fa62a9b8917da42e4745c88d25efddf4e32ad"
+    },
+    {
+      "path": "dist/blog/tags/adult-bjj/index.html",
+      "clean_sha256": "310e2e1ccbc3f8331d86414fa7c7e408c45c4938ddedaeede9dafd6813fd93ea",
+      "dirty_sha256": "db4d2f18f451ce1ad93dbc43cbcad537214f35ad19e51c4f0a5196876817b5ed"
+    },
+    {
+      "path": "dist/blog/tags/starting-jiu-jitsu/index.html",
+      "clean_sha256": "0f50d8d6c3118d3ed0d4088d21d184d629e54a9c82b66b34eac02062ce41aa4e",
+      "dirty_sha256": "199a555423934a92f9f230fddcc4c04d9cc6eb9852e77f0a35377ce7aad8fe16"
+    },
+    {
+      "path": "dist/blog/tags/youth/index.html",
+      "clean_sha256": "7f1876e68f2fe0291414000c2082585f0117630a1a114d7a3d995ab5211b304a",
+      "dirty_sha256": "05fb3f5412ec6c16e1de165bbdf13c570fedffd89e4a11ea118986453787e61e"
+    },
+    {
+      "path": "dist/blog/takedown-defense/index.html",
+      "clean_sha256": "dcce15b884f075878e9841d0e374bccd8d0c327789ac1592cb2713213aca4b0a",
+      "dirty_sha256": "dcf242294cf9b98bf46649968e72a851e516918d914cacce0bf9b7dbff7571a4"
+    },
+    {
+      "path": "dist/blog/tannersville-bjj-tuesday/index.html",
+      "clean_sha256": "0d4ecfe89a6ccbe530652467a1ed47fc0223c8b5cbd85be450646cd9e224337d",
+      "dirty_sha256": "3d8d7a99c0bf545868053dbefe8fd118c631f23cbe04d48e71eac7a50d67f13b"
+    },
+    {
+      "path": "dist/blog/teen-boundary-setting-conflict-deescalation/index.html",
+      "clean_sha256": "5f4709e117dd97d62b98e01de5bc066c83cea247564bacac5242cbc6636b1c1a",
+      "dirty_sha256": "5d228645a000a80cf3942ce4c64349f42224ef55951365169b82f364cee74fb6"
+    },
+    {
+      "path": "dist/blog/teen-confidence-deescalation-jiu-jitsu/index.html",
+      "clean_sha256": "165988ffa4a04489c14663c84ab197abb9ad14deca26f4e99df3700ba44df885",
+      "dirty_sha256": "56fe4b047a5094ffdba2639c50ea779a025357edfb68254d918e1f1039a1d950"
+    },
+    {
+      "path": "dist/blog/teen-jiu-jitsu-hunter-ny/index.html",
+      "clean_sha256": "dc110aff0cb0e2e09c1fb8a6fe0adc8f853319b401a90d02744fa25b35e89885",
+      "dirty_sha256": "5889a6b55d7b93a901adb38330711f02b623c8e55cae216cf1c0c5ea5e049375"
+    },
+    {
+      "path": "dist/blog/things-to-do-near-hunter-ny-private-bjj-coaching/index.html",
+      "clean_sha256": "7893efb5b94058904e23bd840136f9edc68d35da1300f9d0b82e05212497f11b",
+      "dirty_sha256": "1fa556eda9413349d83402cfb1eedf7dc78beea8dec3aec2ad5ebc81ee9a50a5"
+    },
+    {
+      "path": "dist/blog/water-before-training-how-much-when/index.html",
+      "clean_sha256": "e17ee5a52de8f436039241c44ea641006e361f3be6e4be8f0feba026fcd107d7",
+      "dirty_sha256": "59f2cff4d4dc7aa80939678a297d1018a15ac2cf1f90e38e584a1bdfe7b1c288"
+    },
+    {
+      "path": "dist/blog/what-does-sensei-mean-in-bjj/index.html",
+      "clean_sha256": "e9218ff3fd143cf80cf716f490b7e663e912bb9dc89e53b0b51c91dacee896f1",
+      "dirty_sha256": "0b1b8ab649cde0c53f0cb229518298f610bd1b6ec40bd42557c79601b4ab757c"
+    },
+    {
+      "path": "dist/blog/what-is-sanda-sanshou/index.html",
+      "clean_sha256": "a9b1368d60b7ee155b774180c381fba440db33bf754d674f23b14bd4da5084bb",
+      "dirty_sha256": "4b60d8be63c934b96e169874d0f341533c3877f30f2a97ddbbbf46fc75b4ac45"
+    },
+    {
+      "path": "dist/blog/what-kids-learn-in-bjj/index.html",
+      "clean_sha256": "f3edbd6b7df1cf2dbba4a9c87cab8f7b3afe835e44922f328ebd5703e5ecc962",
+      "dirty_sha256": "8e229f6af6ce89bacd119f6ceadf9cdd70cc67bb06bbe6ab6015b891bdd723cc"
+    },
+    {
+      "path": "dist/blog/why-high-school-athletes-train-bjj-tannersville/index.html",
+      "clean_sha256": "df0f0531faafaa2c7968a45f11eebd10d93435725a2f0ee6a219de758d9f6d51",
+      "dirty_sha256": "878e20e3ba5c561695fd093e834bcf6647a389e8fdb740276bc44724917b880e"
+    },
+    {
+      "path": "dist/blog/wrestle-ups-scramble/index.html",
+      "clean_sha256": "dabb03674cfa645ba4eabe4e71d05278a510dc26539fa56b2684a708e59d3a2c",
+      "dirty_sha256": "2e8689ff12e8a67d7b475cd86bbe55e326a67fc059bee289a141cf6845c2d5af"
+    },
+    {
+      "path": "dist/bottom-position/index.html",
+      "clean_sha256": "c2b2df483e3ef03de9e963193b295cf714ab8f3c584a51a0f8d5c97d3ba92e0c",
+      "dirty_sha256": "9ba2c07afc9f63fd8ce124cbd4e4f2b46160113b027eac4d7ad0ad9177862559"
+    },
+    {
+      "path": "dist/bring-a-friend.html",
+      "clean_sha256": "826de6c8b698feb3873975ebfe1fb6ea7b863118877c535c13af396736821bc3",
+      "dirty_sha256": "ad550773c91a1b7afbc6e1931959225678042a04e9bcb3d36b032b2db97489b1"
+    },
+    {
+      "path": "dist/bully-proof-jiu-jitsu-tannersville-ny.html",
+      "clean_sha256": "548b992adef666918d4fe41d38953a2168a2dd14fdd224030faaca0f04ac9d7d",
+      "dirty_sha256": "78ea450f9c04019b30b7f4616f6ca6c8ae217d19e9060a25ca1d250e5c57ff9e"
+    },
+    {
+      "path": "dist/camp-clinics.html",
+      "clean_sha256": "d6d3dee8bb016c8fa59d78cd8358a83d64ec106b77f3905ebd7c93135d5161fa",
+      "dirty_sha256": "59ba90b009c8dbc27ef6d154f2f07ead064797940138010c4cd3e3198f05f2c5"
+    },
+    {
+      "path": "dist/catskills-home-base.html",
+      "clean_sha256": "23aa5d37af5255a635168ff6068bd2bd621a734e0a9a4b129e8b9cde088ea8de",
+      "dirty_sha256": "54720b8a6a2950eabba6566f1514692c9263ae2042e0afb5d44505ce7e719cac"
+    },
+    {
+      "path": "dist/choke/index.html",
+      "clean_sha256": "c5ddb36e921d08d038617a62e8d8e82533a8d031f085c75dcbec65d34a23e6a9",
+      "dirty_sha256": "62a10b90d3bf25803447fd113638cf4c61ae1066b3afd8c2fb9a5afddcb1028c"
+    },
+    {
+      "path": "dist/class-rules.html",
+      "clean_sha256": "b33f74511732e7ad3719945586b1233356db1dc5e41a16c975a3eeb61149d55e",
+      "dirty_sha256": "f319ab8ffe61e5b7d44204db6e5fb24ef83b97f76e208a21478fff29d6c7e52d"
+    },
+    {
+      "path": "dist/community-partners.html",
+      "clean_sha256": "24403780d6152c59cfca3790c51164eb52a658afea0f42791f7ba4ac155333fd",
+      "dirty_sha256": "5a45738ceff2c0ef21dee1d52885aa7c2059feb280cd114d0e1510b4d1263c0d"
+    },
+    {
+      "path": "dist/confidence-protocol/index.html",
+      "clean_sha256": "ffa45298d4cd7ba5bda962528627f8f3c878afdfa1e975fab68349359fe2333f",
+      "dirty_sha256": "8b3251412e8b721e867c2df8f5f865d1c5595b1bcfca6e8e2cde89d68ba8d5a3"
+    },
+    {
+      "path": "dist/contact.html",
+      "clean_sha256": "c87c78d660f917f01a5e6fe4d1115a2056a1f8796d2dfebbfdb0eb3f550968fe",
+      "dirty_sha256": "3013b45953f7da55d6fbe57632cf8f187ba153fd7a00d76ddf628f19aaf4d2e9"
+    },
+    {
+      "path": "dist/core-culture-parent-guide/index.html",
+      "clean_sha256": "2b0b94b78f98dd40fddcc986aa17399bec844d43433cc5b75cfd433b78e07a42",
+      "dirty_sha256": "06534cb8c26d641a359b188e222d693f393f1d2986034f502bf5e9161d30e2c9"
+    },
+    {
+      "path": "dist/cta-decision.html",
+      "clean_sha256": "0bea3e7d31d7a38bcc5ed9104ea9fb072dbb28ac2940dbf49e48746cee311511",
+      "dirty_sha256": "2fe7d417fb861c3410a59e406c7a31b228e439844efc0ade172b5cef51195153"
+    },
+    {
+      "path": "dist/cta-header.html",
+      "clean_sha256": "52c34a74a3a6e10e47c82818e569045d49245975ac66fa1aac98c31634af51c0",
+      "dirty_sha256": "cd21e55359b825d693fd10914e480473b1ac4338f62b7be1e4d97af30eca72cf"
+    },
+    {
+      "path": "dist/cta-hero.html",
+      "clean_sha256": "d6179c643ddda7ddb985948e602e5b502e72dace28d1ab2fc7da8fd8a21fd7d8",
+      "dirty_sha256": "530b87669beed31448fe970144d5b42979bde6ab6bbc9c9f0888a06df7e1dacc"
+    },
+    {
+      "path": "dist/cta-primary.html",
+      "clean_sha256": "93bcd7c1b6dabe1d795884b0940a1effb5f073096df3586b98093fc2e17d7c05",
+      "dirty_sha256": "fe4fcb3b27f1395b2f9058b9b9710723c2d888941dd5fc8624a1b1870852f7fc"
+    },
+    {
+      "path": "dist/cta-row.html",
+      "clean_sha256": "96acbc4d587a1ccb17e3cf66bd0e20f7c9f61d8e5509d92f10ed2110fb95ca5c",
+      "dirty_sha256": "0ecd0d6fb296e666e19f3364fb6b8dce6c812b410a94d94db09731039142b9f8"
+    },
+    {
+      "path": "dist/daily-checkin.html",
+      "clean_sha256": "b033f3c3d9a00e7e299ff053001c6a9894afe7b09e891589024da1f770f722b4",
+      "dirty_sha256": "7fe85bb8cfa57b2d16f4ea65b8cc034d5bdce21c6c8ebdb5068d68bdd7b13400"
+    },
+    {
+      "path": "dist/deer-mountain-inn.html",
+      "clean_sha256": "47274bf6e06960afccab730135eeb47baa672c3eabd71167e2acd07b35ed14c6",
+      "dirty_sha256": "2bef8e277797f304f5de6a3cea5803c07b403aa0125573b3023a595140f83e29"
+    },
+    {
+      "path": "dist/drilling/index.html",
+      "clean_sha256": "d30c2300325ceae253f317235f9311936738f4b0dd2d263f8fb000a2c5f4b608",
+      "dirty_sha256": "942bf9f222a4db8c11669b58dd65b3516aeaadc8030898004a5ad91ab44e27b4"
+    },
+    {
+      "path": "dist/everyday-jiu-jitsu-training/index.html",
+      "clean_sha256": "904ae788b234cf0e1bfd5a7c3ec3b2e1cf12da46efce0fef62ce3ad5d8be4d1f",
+      "dirty_sha256": "ae6a77b4fb8145df126c2936324e8e6beb391200634fe5c9dd57957970380dbf"
+    },
+    {
+      "path": "dist/evidence/index.html",
+      "clean_sha256": "4f23b348cb8bf2d54ab37819bd012851727fd22a350cd47a25092b1a23984e4c",
+      "dirty_sha256": "2f1343779fe00a3f3ed2e2daf3be9cbc1cb4f3919a83210ef54c37189cf6d5a0"
+    },
+    {
+      "path": "dist/footer-include-no-proof.html",
+      "clean_sha256": "48727cd6b86b6f2be55bff3cefabed61f85ee0da3415c455d85c8a32d41d0fa1",
+      "dirty_sha256": "47697471118bb539c78d7ea939e4f2b2e8af03651611129f60dc427fb54eb845"
+    },
+    {
+      "path": "dist/footer-partner.html",
+      "clean_sha256": "7cb5ae09882ab1b6d268080285253694a7c8ee2947f1336bed8996c1ed57ebd7",
+      "dirty_sha256": "6f478996a50de57b35add13c62adc5b18abd6d6c510569b14b5cea91e324ad5e"
+    },
+    {
+      "path": "dist/frames/index.html",
+      "clean_sha256": "cb49c0e78d916328e87a10844f4e0c82ea52aa226b7c97bd1675c4c384f2acc1",
+      "dirty_sha256": "62d937b858f32f0f0f02f298ac3c811a21d22cb04188408067d9ea69bb1549e4"
+    },
+    {
+      "path": "dist/free-beginner-jiu-jitsu-intro-kids-teens-tannersville-ny/index.html",
+      "clean_sha256": "151d63ff8111f78b9fa46ac3ad0ba0d37bba932cf9ceca93300e8de8c7efbe26",
+      "dirty_sha256": "368d45447e087a87c2ab7d250e26e82cebcd53229529745b1d18e16ef3dcdac2"
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/adults/index.html",
+      "clean_sha256": "e0bdda8702b2e8a5abe845c7fff07c347d40560a19d9c28c4440dbfaa9b06759",
+      "dirty_sha256": "b7446c6907420c11eb4431f9ea8d7a9c2164be894a330881ffd64b8e84dba679"
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/confirmation/index.html",
+      "clean_sha256": "8a281ec2d903da4c082363f2c5851b9a3b2245d9fe8d08162937219349702b6d",
+      "dirty_sha256": "e6316ee9a19bc10c147d4250fd731834f59f582f9a25ab8bdc964a860a46050c"
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/index.html",
+      "clean_sha256": "8a040915826e29c1df5cbb5aa880be467e95f801fc85b0851bd6c44fbb11d4f4",
+      "dirty_sha256": "902034c7983033f49a154c3d2fad2845205d4f0dc433eacd8a2df9ccb68c4564"
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/kids/index.html",
+      "clean_sha256": "a24b9e9e8a53816830827bb68537537bf0aa67a1fb7c50e70b5a6e465514959b",
+      "dirty_sha256": "c31d7a0da8bc32e845f963fbe666f65aad96bbd666675cf03e5a03b591b75045"
+    },
+    {
+      "path": "dist/free-bjj-intro-tannersville-ny/teens/index.html",
+      "clean_sha256": "8c2a2e5672c99e8e9fbad3370ba36f86d4f703c478da7b473e6cacc2250ed480",
+      "dirty_sha256": "2c939c466b076e6a891de7c6bb75f0b65a7033979ccbc0278cc7f17e09a22654"
+    },
+    {
+      "path": "dist/friday-night-fanatics.html",
+      "clean_sha256": "be826a4b3b8f7356f8a82ba1f6fb715b42544ee4056d63438a5f13a0bfb2eb86",
+      "dirty_sha256": "8b8f01b69dca9d971ed08acad2db265eb98991b39cafcba74ff6feb59daf0d67"
+    },
+    {
+      "path": "dist/front-headlock-escape/index.html",
+      "clean_sha256": "2947a48d4625222d7f54fc5bb7f1746d3487daa76c73f2f776e06e7c748f6f1f",
+      "dirty_sha256": "e3832a93987d16ca210e0bf184b59dde502b817b2992d41f9ce93994e3fefdfe"
+    },
+    {
+      "path": "dist/front-headlock-series/index.html",
+      "clean_sha256": "1708c901d36967381245e2e9820dc788eea551bdfc62a7422a489f17a1048634",
+      "dirty_sha256": "2461d99d20bbff836478fa352f14be9e4dc4dcb4ad0acae75d302ac496d5b016"
+    },
+    {
+      "path": "dist/giveaway-rules.html",
+      "clean_sha256": "e4c82d7afc618977726fceafd1cb60bb730a48d0b58621650a5463c42eba5f34",
+      "dirty_sha256": "fa6a7935053d81424fa276fb0e70ef0c41b112933772a9761b0480e3763b7dad"
+    },
+    {
+      "path": "dist/guarantee-terms.html",
+      "clean_sha256": "4be11abb1612c16fa3ddbedda284ba7d8e6f76a22f4e3835e6e314b824393be0",
+      "dirty_sha256": "d992d168115fa2814b5b4a8415fcc6f89ca506a97b267503ba071b07e4e56641"
+    },
+    {
+      "path": "dist/halloween-spooktacular.html",
+      "clean_sha256": "975038cdb6b2db9bde5d254dd825c3381e544216a2ed4bff50855177e65c644a",
+      "dirty_sha256": "49744659ec9544ada0b2a9cb0114b3b944bcd9eb7f87106156f541c9afb91941"
+    },
+    {
+      "path": "dist/holiday-schedule.html",
+      "clean_sha256": "ee9e4260c662c10bc54b4213bb0c99d8c4735251841672c3674c790b21141144",
+      "dirty_sha256": "8d87c5346200ef86e185bf8e26cf089526b1b012e452f301955e518f044b19cf"
+    },
+    {
+      "path": "dist/how-class-works.html",
+      "clean_sha256": "780a532e7f70770071e93054074934965b660ebbb5b196d2e5a6fb664f5f2086",
+      "dirty_sha256": "8db5fca864d5beef683977adcd962bafc9dfc028fb8efddd6da389493833fd1e"
+    },
+    {
+      "path": "dist/hyphen-weekend/index.html",
+      "clean_sha256": "fe923c9768ffc818847f0a170308237f507c5af39dcc611051d3a2904ab338ca",
+      "dirty_sha256": "b41638e5b9d2f665982a580368168f7c35e47b7072795e40ff21cb02a16f19d1"
+    },
+    {
+      "path": "dist/inclusion.html",
+      "clean_sha256": "20878cc11223c783afaefcdd212a54197672aea4b9d26d65b5d50b39acc59947",
+      "dirty_sha256": "88ef1f1711d8b59f5f5fecdd39f9bc1439cd2f16f7078edcbedb7c56ce94c47a"
+    },
+    {
+      "path": "dist/index.html",
+      "clean_sha256": "58569a45657a0c96e76a6796a4f70275566a5a64ee659ae7605c4ddd202af5d4",
+      "dirty_sha256": "dff8bc2d6172e54ea315b11fa622f168036eb0e86ea73a6e3a0ec6fa08d0afe9"
+    },
+    {
+      "path": "dist/instagram/index.html",
+      "clean_sha256": "b9583a6bcc7c9266bbc6f6272a1ea9509700d574a0553da37cc329649b98b9e8",
+      "dirty_sha256": "b4326669f9b408dc457a63877f53a6cc4f3c1be6d3c92181b4cb00874818dad3"
+    },
+    {
+      "path": "dist/jiu-jitsu-safety-tannersville-ny.html",
+      "clean_sha256": "ef2fa44acc1f15a72047708804a49b988bac8119bcdfb1c0a2908381a8c6ca8a",
+      "dirty_sha256": "22c9cd4ef71f473cb2178639344feb1c93dd7e0149bf260c661bac441c397b3a"
+    },
+    {
+      "path": "dist/jiu-jitsu-terms/index.html",
+      "clean_sha256": "a674d5e96d1898253c46a5d44ef041c3aba584724c0bacfcf29cc6ae11fc3ec6",
+      "dirty_sha256": "066a04a0fd0a6716cdd234e99b0ae25c171f24b23392ff5002da4c96cd99b1e0"
+    },
+    {
+      "path": "dist/lane-picker.html",
+      "clean_sha256": "a15958a170b8e40a4bfa5a61755c6d213246ee018ffa7126a0d5594906d653a0",
+      "dirty_sha256": "a8f2751d1bb978c66d7a5ac32e5beb5008b8ce21d11c5e1e6dc33ee2ee63fb80"
+    },
+    {
+      "path": "dist/law-enforcement-bjj.html",
+      "clean_sha256": "cf251f608aacde6c219ac9dcd030c4a9578f5a3fa79c049b6d53f82d3e271870",
+      "dirty_sha256": "aefbcd345065c5c8e033fcaf23c87012bfc9b45e8cbb62ca25745020030b4e22"
+    },
+    {
+      "path": "dist/local-bjj-tournaments-for-families.html",
+      "clean_sha256": "37dd8da162172ec2d0df0d4c54dd93146012261e758f46248d139c49fdcccf1d",
+      "dirty_sha256": "ee561d85d7fa88054f3986b58010569abf8de4e0198283e9582f6102af58c8fd"
+    },
+    {
+      "path": "dist/local-bjj-tournaments-for-parents.html",
+      "clean_sha256": "99050b1dec09b3cae06d692901104a37e8d384f8db8ef6d3703cf4cbc9e8c78f",
+      "dirty_sha256": "87b3f16e7ad9c582a9d3826bd0a7bbc975262a16ada9ec9f2f06984cacc50376"
+    },
+    {
+      "path": "dist/members/holiday-routine/index.html",
+      "clean_sha256": "ea396589c49ab4a37b664f6b3cf5c1ec7acb032670971d838fdc5113d0932b63",
+      "dirty_sha256": "46811cc7d57a36dc9161f295ce3d842eaf029a05ca4d4223275c108a372bb311"
+    },
+    {
+      "path": "dist/members/winter-training-plan/index.html",
+      "clean_sha256": "e04c3e919dd715dcb54f88c2b46e7aabfe8c80ccf97a6f0019922c870174cb80",
+      "dirty_sha256": "87872cd90eebb2f675ca13dee75ba06b020e988d3db6957f2a7a9f78274dcb35"
+    },
+    {
+      "path": "dist/nav-include.html",
+      "clean_sha256": "6127247db96d9c8642e89baf63dd446cf8e94aba6739bc2692c9dc3bee93be27",
+      "dirty_sha256": "4aefef4b44079e1c82ff902891058cf362e6f13c586d068fac32efb8dbe23be8"
+    },
+    {
+      "path": "dist/near/cairo-ny/index.html",
+      "clean_sha256": "2fd1c869b7727bdec2ffa8234cb2b8192f80408769fcde9e599e151f1da6054d",
+      "dirty_sha256": "e60c1ad64ca0933608c8dc10b8d1ac89ca17dc16098902389232e6225c66b324"
+    },
+    {
+      "path": "dist/near/catskill-ny/index.html",
+      "clean_sha256": "358425f67f57efdf6a9077c4551d6a76ac3e524cacdaf0e24ce39cb07c526365",
+      "dirty_sha256": "ff8064e89e2c6b66df17b1fa9e16be6e5125ca2a77dff6b4690413d94bce9093"
+    },
+    {
+      "path": "dist/near/haines-falls-ny/index.html",
+      "clean_sha256": "0b0e481623212f7713b2177fc35348d8b2ca50afd383952a0e86189cb3420d56",
+      "dirty_sha256": "cddec3b81711e5fc4d6ef051e62944e9ce7a5b6d022e186ea5ab64b05ddb3aa8"
+    },
+    {
+      "path": "dist/near/hunter-ny/index.html",
+      "clean_sha256": "8f15075613ac1c138f3fefd27a27f67a361d841efec7c1f74422f17d2b2ca147",
+      "dirty_sha256": "27a77473c8e7fffcbf508dc632d50246da987ac76284c9f569b4f4bffad04081"
+    },
+    {
+      "path": "dist/near/palenville-ny/index.html",
+      "clean_sha256": "9bc8f0b9116a769f34318fa7f240cdacbe64cf3cd16d8a1ea51f3ce9ed85feb2",
+      "dirty_sha256": "9e48795219b90f200487790b21f79826c29d5daa20254eafb016da4f75d7245c"
+    },
+    {
+      "path": "dist/near/windham-ny/index.html",
+      "clean_sha256": "f20e4e142ba2a32223970f3814ab7ac614d3d34875bdf9ee5426bb560fb52b45",
+      "dirty_sha256": "bac6449f216c7db6d048fd9725f95adaf9a830700642118615bd39f1d225ef07"
+    },
+    {
+      "path": "dist/nearby-towns.html",
+      "clean_sha256": "8db7aa9478df82dd6e943ab065b77f1c0ac06dad09d6b035c7a5578a791d90ba",
+      "dirty_sha256": "65bcdb6d2c72d1cfc2e93ebb412b202f8834b5aab47b1a04ec09bc9c4b03f256"
+    },
+    {
+      "path": "dist/nervous-first-timers/index.html",
+      "clean_sha256": "ba1212f85876a2cfd65badc8caac55dce85b4c5c9bf7d3310087785070ee4e27",
+      "dirty_sha256": "ee5a295b90bcb6198bf10ca46f753af65cc246838153275cf1432f14866b8592"
+    },
+    {
+      "path": "dist/open-mat/index.html",
+      "clean_sha256": "3c6fb69630238d9b0dbcc9e0dd5f8572610672a76a3a18f7a71165d64439c44b",
+      "dirty_sha256": "0a0fd5c388c4a91c624c4e77b5adaad692de54bae5c99a765810c25ff104baae"
+    },
+    {
+      "path": "dist/options-pricing.html",
+      "clean_sha256": "e3a3815f536f92042b05eb29972bf16afa1a9b84785ef913148358b8a87b1aa9",
+      "dirty_sha256": "da5304c2d741ca442c963bd9f7fe7484ec324ab93a6dac0d0adabf567a2f568a"
+    },
+    {
+      "path": "dist/options-pricing/index.html",
+      "clean_sha256": "8002ccfba082dc5d4166b866cd1470d26a127ded03ef3f1209b4fb05fce67849",
+      "dirty_sha256": "f8c9a52572f740e2425f39dd2ae121b4cf4577752688350c814cef681276cc22"
+    },
+    {
+      "path": "dist/parent-resources.html",
+      "clean_sha256": "6abaefbddb59ff565ccb362cd03680e6e93cb3188205d23d6b1c9673681cc04d",
+      "dirty_sha256": "c18a415ed921edd3e4c786f2846398af8deafb3bb980271445a9cc141713f688"
+    },
+    {
+      "path": "dist/parents-guide-kids-bjj/index.html",
+      "clean_sha256": "a6d80e8bb5ec6cc2130601597ce1fe81e9ec9ab81cc733cb47816925fe031f36",
+      "dirty_sha256": "3f8e8bb6bdeed670594030e614f66aaf676ba1d5b5921a496cbf2cd47e3fbd40"
+    },
+    {
+      "path": "dist/partials/nav-include.html",
+      "clean_sha256": "6127247db96d9c8642e89baf63dd446cf8e94aba6739bc2692c9dc3bee93be27",
+      "dirty_sha256": "4aefef4b44079e1c82ff902891058cf362e6f13c586d068fac32efb8dbe23be8"
+    },
+    {
+      "path": "dist/partners-hospitality-hunter-windham.html",
+      "clean_sha256": "e32cfd3b98ed657df90ea14556ea006cffb5bac508b5481194e3266b99054f0d",
+      "dirty_sha256": "01576b32c73a0a4c1ecac1689c201589346de7605932f8b0a8080a39bd6c7947"
+    },
+    {
+      "path": "dist/partners-wellness-pt-referrals.html",
+      "clean_sha256": "146b9e596f7b05d4271181fdc4b9349d841b116674fb8b34a00e742871180b12",
+      "dirty_sha256": "053ed022e55d800c9adce1ece7504529a3fb6ef93c5f7aff5e68a3d9221db72a"
+    },
+    {
+      "path": "dist/phoenicia-diner.html",
+      "clean_sha256": "05a038f1b1b6a628d578ad1d5c5c453901657827bb11591667ed8368a3c84814",
+      "dirty_sha256": "79c83665b206df8d57661eaa446a31956691878c3daaf4c836d506db3a19fe8c"
+    },
+    {
+      "path": "dist/position/index.html",
+      "clean_sha256": "35c15084735389a554bee57c30e0edd8931466f2608d5f90a10124d16eaf4e25",
+      "dirty_sha256": "e73184e3cfd7374b819ff45013e1c2ffa9f8b3018ab19347e25c16ab81de1b36"
+    },
+    {
+      "path": "dist/practice-vault/index.html",
+      "clean_sha256": "67db8a57d9b5e077d5a2b1d706c7bc8c31fbce447417fba998a71af95753ecec",
+      "dirty_sha256": "11a3772c6b77a12851f43be9bc8a999d1233f85c63a683db25e1c700872b5daa"
+    },
+    {
+      "path": "dist/pricing-module-fragment.html",
+      "clean_sha256": "534c739c400ffbde4fa14114d25c4cc0bb7b1fc246948e873ef3de6e35150c99",
+      "dirty_sha256": "f95cb9d01c7cea07f24cb45ab4bb8fa9fceebacb09a207931816ea73747fd4bd"
+    },
+    {
+      "path": "dist/pricing-module.html",
+      "clean_sha256": "fa8b94fe96a53f2fd91d6d75a40ded2cb9ed719acbb5db282d74b2c9197c231b",
+      "dirty_sha256": "188fc47a0982ef3c3d677901289beb8eb608e4b032382e563e976e66b2996ee3"
+    },
+    {
+      "path": "dist/private-lessons.html",
+      "clean_sha256": "7080f97aa04877efebb5c2cffd367458682c1d20e7f1af31ed74d51d0ec36e02",
+      "dirty_sha256": "fe65a3adb318be3a1790f2dafd204a912560c2dcfb97a9ac40b9bd7249516601"
+    },
+    {
+      "path": "dist/programs.html",
+      "clean_sha256": "e5d624ca717b48086dc888e3a2e336fe0ab3f7843f188570dcde095728f2214e",
+      "dirty_sha256": "d8cf9dd2c85d8e48055bb66498bc3065380a7c4e2009383c8996c9a748cc7c9e"
+    },
+    {
+      "path": "dist/report-card.html",
+      "clean_sha256": "a31c7eb3c44af66ca20f12ab115d47b78a71018ed03679b5dc035a694cbe8f6d",
+      "dirty_sha256": "2f056714e41e0efd646e6adeacf3381010c099ceff24e827bdd559ea695b9570"
+    },
+    {
+      "path": "dist/research/law-enforcement-bjj-evidence.html",
+      "clean_sha256": "8b9a6401823fa1c827ee70d5e2b42801913ed36007e8376a9620ec3bf1c99544",
+      "dirty_sha256": "694afd1c825864abdbe9ec32d71240a259b6dcdd9afc95b22c2e784e1a5f406a"
+    },
+    {
+      "path": "dist/research/marietta-police-bjj-case-summary.html",
+      "clean_sha256": "e57515948ae8567b4c36784dd2c6feab224ca0738f6efc0ce83aa9e2350ea549",
+      "dirty_sha256": "d46e0db36e72a41530c83f7e7da889865ba4008cbd501df1288fc06b5a9e09f1"
+    },
+    {
+      "path": "dist/roll/index.html",
+      "clean_sha256": "8f90a0481da1c5663e753dd3c2445b3e741e1124138d73634f85b9d3b7c1ab88",
+      "dirty_sha256": "08d72e2e9f23627c561abff46495af8a9120232e48faa1996d43dc9b41a746f6"
+    },
+    {
+      "path": "dist/rural-bjj-catskills.html",
+      "clean_sha256": "b01bd865e31901d756eeabbd2fe3f692fd812fbe4e79681d30baa3c00dcc741d",
+      "dirty_sha256": "f5db1317236cc643100487f2be3d934b6d8414283f55acf53cbd45ceaee32110"
+    },
+    {
+      "path": "dist/schedule.html",
+      "clean_sha256": "ceb28a5a57088ab97dbfefc800409fbad80be518abea7d4d436e42d46aacbb89",
+      "dirty_sha256": "489bc921deb4460f57f47b85731a03526271c8cb0366018682318a7f132bbd66"
+    },
+    {
+      "path": "dist/schedule/index.html",
+      "clean_sha256": "d6cb1f07db90c041fc9a595ff9ebee00c1493fd9ef293daf287b8b091bf38efa",
+      "dirty_sha256": "dae63f462cc9f1c2f6a57e5dd9b63850ffe4e9a8b282c4e1f30b15b4004867f3"
+    },
+    {
+      "path": "dist/scribners-jiu-jitsu.html",
+      "clean_sha256": "ea752e5794457688281f244d6619642418a5a5b69e7b7b7623a999fbcd3d0f25",
+      "dirty_sha256": "297078714767ab8c79775d7b4de086d440bd1506a914c6d8cc3c1810c222682a"
+    },
+    {
+      "path": "dist/scribners-thank-you.html",
+      "clean_sha256": "205b95fe3f73c3ed62dc9f6d12e89cc6005ea839e4d764f54c94d31ca30daa80",
+      "dirty_sha256": "e09e8c7aea8ecf795cbf3d99ba43b88599ee7180db28b4c43118f175baa7f81c"
+    },
+    {
+      "path": "dist/scribners.html",
+      "clean_sha256": "57901bfb8253db41d2b5f23a4b03fdf21ed18c320254d70571fad561665c8817",
+      "dirty_sha256": "ecdeb84502ea368a9b4ce63a47d05d7e72af136b266a73fbde1decd98c0e9281"
+    },
+    {
+      "path": "dist/sensei-jiu-jitsu.html",
+      "clean_sha256": "13e591e64f1b63a5237b25a4afcbd0d75412e47f510392b6155691b43e0048b6",
+      "dirty_sha256": "0d8dcd03e4bd914356ba7f3eba3826ccddd737872e558506589eaa550c79a815"
+    },
+    {
+      "path": "dist/sensei-studio.html",
+      "clean_sha256": "3d74a25ebb8ff8e04c2e7aef6d7afcd286d07c7ada80e6da94931dd010fb8a33",
+      "dirty_sha256": "8f30e2f7d169a5cb52cbbfb4d820458aa2b72f78c5807b60b8d33e9c7a2f2e92"
+    },
+    {
+      "path": "dist/show-up-kit.html",
+      "clean_sha256": "4045f5ec959f51e813d2d632ea77c6011dce19d5ce97d8d908adaa1c3623567d",
+      "dirty_sha256": "5f3a7ff1025afb83881e1216b13358038cd424bdd4cab67b6c6d5e9396de9c93"
+    },
+    {
+      "path": "dist/site-shell.html",
+      "clean_sha256": "a56e8b26505b7063409ec4e2fde6b2a27198360c034d8d9bd9c658235487474d",
+      "dirty_sha256": "45bf29a26b60c4b47a6263b258b95a2310c6822416e4b77cc172fd07e5650c8e"
+    },
+    {
+      "path": "dist/snap-down-defense/index.html",
+      "clean_sha256": "48d2836ebc80814f8d296420fa187beee9e7cca6229efbecee378befebdd7a35",
+      "dirty_sha256": "d1fdf98f714e2c31022e80741a1170f35378e29d5e425dbb0a3be953d8524f8f"
+    },
+    {
+      "path": "dist/snippets/webp-picture.html",
+      "clean_sha256": "f7ca68073cd40dc9a173433d9c15cbdf0963aaea9b18cf1ecbc77c64190d54c0",
+      "dirty_sha256": "0714f2794d2e1f0ddc48d033353a3dc4a0cbeaf1b45103dc5a5e6412741c3a7f"
+    },
+    {
+      "path": "dist/sources/cdc-physical-activity/index.html",
+      "clean_sha256": "003ff4b75c44c532bf4bfed4932a9a71f4f67d9b3f641e589af4229d203072bf",
+      "dirty_sha256": "8b840c4d87a7f12957a9ecb966b9a9db6bd18392c0c4c1f5df7f1ddb83f3d0f9"
+    },
+    {
+      "path": "dist/sources/clockwork-bjj-instructors/index.html",
+      "clean_sha256": "9dc61e0854ebd5c828c3edad8be415e31d5ac8abe5ef2bd735277efca196e34d",
+      "dirty_sha256": "27a559ebf02d35268d9d3a840537a574583e0a3e536e70a967b01ca693aea9ba"
+    },
+    {
+      "path": "dist/sources/gracie-academy/index.html",
+      "clean_sha256": "4cb462fd104e3850dc86bfc3ba7718924ed9cd06f80b6e0c6bcfceca3f7e5edd",
+      "dirty_sha256": "cf47a80921fe64150956f9ee06b17bcdef2d35f4f09452d0abb7f555678801d3"
+    },
+    {
+      "path": "dist/sources/index.html",
+      "clean_sha256": "e0bca882768d0923dbdbf40c496523d2c5975d1f3304b12d17b1a9ac22632110",
+      "dirty_sha256": "313e739fe126e92405fd33ef6b04fad81d653cc76e358623825a4b168176adab"
+    },
+    {
+      "path": "dist/sources/kenny-florian/index.html",
+      "clean_sha256": "b3fcac8fedac63b10f3d5d81b4905805f8912cf5b530748d6e954cd881594737",
+      "dirty_sha256": "5f5bdbe230700b779970fed53d5e5312ed466c1fda8be86902e8646c605582d2"
+    },
+    {
+      "path": "dist/sources/kodokan-etiquette/index.html",
+      "clean_sha256": "ce3e32e9a54d30f25cd7a132816d619ebf3360d618f35562d44a1d4ab689da4a",
+      "dirty_sha256": "2e80c8492d99b2e44f068746b9f1ac4f98c3ffe5a7f56a15937e7344799f2303"
+    },
+    {
+      "path": "dist/sources/local/catskills-youth-theater-2026/index.html",
+      "clean_sha256": "b7fe9b022cd8888c0bea0698a7be040774496e1d4421c71ce0b4bc929cb90b3e",
+      "dirty_sha256": "483f09934ca78eb0fa3d75c39cbb221c98b9d4e44fd36341b31bfaf5bb5e5f8d"
+    },
+    {
+      "path": "dist/sources/local/htc-soccer-2026/index.html",
+      "clean_sha256": "80217cd64c6aba626d228b8ec0461f500f87d5ce78c0a927862729709ed7d372",
+      "dirty_sha256": "07d8b7a5bc18267bbf31c45bbd465f4cd7fdb5dfc47af016b23773e3edef9890"
+    },
+    {
+      "path": "dist/sources/local/hunter-mountain-2026-27/index.html",
+      "clean_sha256": "3b3d8ab08796976ace9d6f6796458661c885d79a6ff855ac6e2b9cfaefca1e5f",
+      "dirty_sha256": "c1bf3f569338005e4666fa263398c51bec4b54df8ab102fc5aa88dc32c23483b"
+    },
+    {
+      "path": "dist/sources/local/studios-main-pilates/index.html",
+      "clean_sha256": "499989bab20e4095d96d6ac638334eb6263537017c2df3c0f49890bb69d2de09",
+      "dirty_sha256": "b18731e464195909350290f5f24d97a8fa752fa99e9647a07da5d908561f2dde"
+    },
+    {
+      "path": "dist/sources/marietta-police-bjj/index.html",
+      "clean_sha256": "94478891f3cc266e51ac52249939b7f812ad1076d0f211178359bda3b163b50b",
+      "dirty_sha256": "0913b1c8e7547d673c84a7701f69dee5092c954d2a6c8e8a7a656d09ee802b72"
+    },
+    {
+      "path": "dist/sources/research/bjj-adult-fitness/index.html",
+      "clean_sha256": "c86d443f80d6d3ea2bc75f760057b3d5a4bbe4eb41cdf49c7c9b7beb93274312",
+      "dirty_sha256": "df26021b367f55b732a85041e50b1b81de8b4e26ecef0e6cc2bbfa4f5ac55290"
+    },
+    {
+      "path": "dist/sources/research/bjj-ecological-dynamical-2026/index.html",
+      "clean_sha256": "dac6c0466de189948b8a3558720e71a17aa459f0cc66400e49edd40bd0f40f0b",
+      "dirty_sha256": "65b6835eb308cbfd7a8fd0ac478803e7f98abc74107da02e23fd895f588ec12b"
+    },
+    {
+      "path": "dist/sources/research/bjj-injury-2025/index.html",
+      "clean_sha256": "3c29ddbc4ce63f735d4a92971706802e03039fb7914bc119a8aa78fe294d0a3a",
+      "dirty_sha256": "31b605ff6e10674a401563f47958f0c0f0e211929ef7a847f1e0c68b20de221c"
+    },
+    {
+      "path": "dist/sources/research/bjj-injury-rates-review/index.html",
+      "clean_sha256": "cc25e278780ab650b0317e2a841b04ec769590fecb9d375b4b00b34331b7bdad",
+      "dirty_sha256": "6a95f442d7d64cacc8ad8f1a2d0088bf61f5dd5d1c1882c9455c2af00aaa68c6"
+    },
+    {
+      "path": "dist/sources/research/bjj-mma-youth-development/index.html",
+      "clean_sha256": "3373bc4620883d62be375949332667767b950c287b6258a6e7edfc5cac337f70",
+      "dirty_sha256": "f3c7d06af7594a9ac98131bfc548be12701b3dcc83fbdb5a3627610c95062d20"
+    },
+    {
+      "path": "dist/sources/research/bjj-school-rct/index.html",
+      "clean_sha256": "652a035448db1e37858067757fcd6f62be36e3e698b4c22e174810888558e06a",
+      "dirty_sha256": "6a5673bea3b8c58eb3bb3ba045234188fc2a35061c00e7d57bc5f854f09eb13b"
+    },
+    {
+      "path": "dist/sources/research/challenge-point-perspective-2026/index.html",
+      "clean_sha256": "0ad6b027f2b64560492507cceadb1f9b1970b01b4b2ef22453956251eebc6648",
+      "dirty_sha256": "93f22f91f8a357c34891d07c1575ed6d85869470b76cb5e69b4126803d47c596"
+    },
+    {
+      "path": "dist/sources/research/combat-sports-injury-epidemiology-review/index.html",
+      "clean_sha256": "883cf5f952419a7bc7ceddf16588e7d8c34ab2d5f61f6abc26b9495883fb98fc",
+      "dirty_sha256": "0c7c5e15b8d71524f0f0821e9ba809b8479eab9bfbc6341c759694f1bbd59136"
+    },
+    {
+      "path": "dist/sources/research/combat-sports-post-concussion-care/index.html",
+      "clean_sha256": "e3a03632ae44dd30c88e90544c08504575e87a784551f2188faba98b87c0ad87",
+      "dirty_sha256": "d7222abfda03b30a3e23aead210a4f2aa40f1f94e7503cb0057c078dbdaee9ce"
+    },
+    {
+      "path": "dist/sources/research/deliberate-practice-expertise/index.html",
+      "clean_sha256": "1c540a8ba2348d59f5f16b48abb70a531f45ef82598aeedabde8ded22bc0b305",
+      "dirty_sha256": "a8be05e8cad91e246916555114dd168c8d142df34a033e51ee705b76ce5bb75d"
+    },
+    {
+      "path": "dist/sources/research/ecological-dynamic-learning-review-2026/index.html",
+      "clean_sha256": "d115ad84cd99abfb2c09a42a2936d46e638386ea741de3bea411c35e0c5c0b75",
+      "dirty_sha256": "01ec48910f2c496a4f97bf384ffab31e7385d0779b8e60147ad2140067bd3c7f"
+    },
+    {
+      "path": "dist/sources/research/exercise-cognition-neuroplasticity-review/index.html",
+      "clean_sha256": "d5d696739fca5a323c08f927d4c2938a836b898c5479c5b6c80df54efbf19fa7",
+      "dirty_sha256": "f7a29226c566d8f9ce24b2953a54d819396dd7bb02292898f9420292ff502222"
+    },
+    {
+      "path": "dist/sources/research/games-based-teaching-review/index.html",
+      "clean_sha256": "035de4a3f9fd221a37d4b1d269b9a55f9d790be0802b0f17eb8275886f07476b",
+      "dirty_sha256": "c5f9ec0c76207f111df32c714a1fe1b6ab283a38d16fd4d9869eefa1cb986620"
+    },
+    {
+      "path": "dist/sources/research/greene-county-child-health-2024/index.html",
+      "clean_sha256": "f920ee1a26d7f30aa8fdfb399ca6013a0c367946a51759d36277d6cc48f0ed0a",
+      "dirty_sha256": "1d729a4a7bdaaf63b9cdae40330f3b5b9d980d9bc4e679e455a7c9f6dfe522d7"
+    },
+    {
+      "path": "dist/sources/research/greene-county-community-health-2022-2024/index.html",
+      "clean_sha256": "793d022502637e74b9376742402d1bd154adafcb99c0bf58323eea464c3c91c8",
+      "dirty_sha256": "3778eff7437844e99a3baa23df8a6c53619c621e1675f2bdb059988f7a2f0fff"
+    },
+    {
+      "path": "dist/sources/research/open-skill-youth-meta-analysis/index.html",
+      "clean_sha256": "8348c74f716dc75b32374da6ba01d652e8020147c45d8a6cd720ccbef373b394",
+      "dirty_sha256": "47b26225e505d78046a03ac2c30f504898893c04b22cb8e294da138b2e6f1115"
+    },
+    {
+      "path": "dist/sources/research/pe-games-review-2026/index.html",
+      "clean_sha256": "728a67dd3886f1bb55f47b059ac476790570aa8f470c9954edc19da8689e6525",
+      "dirty_sha256": "206f7afa560fbd3118b84f1ed79b71452003870efe2af98ab0d0c5664e9870e4"
+    },
+    {
+      "path": "dist/sources/research/pediatric-bjj-injury-review/index.html",
+      "clean_sha256": "375ff1a47bba8bd9f79530c21f268c7f7d507095b03177da88ec91ba02dd02d6",
+      "dirty_sha256": "05d169add42ec23113dc563c4873a755de3be28c5d873aad4bf7c2fcec423683"
+    },
+    {
+      "path": "dist/sources/research/rugby-ecological-dynamics-2026/index.html",
+      "clean_sha256": "9b3ff92623322d75b4b4a4073dfe83ac8e8924a459bfa9d0948e06a231650d56",
+      "dirty_sha256": "bc756aca8cae2ea902acba5ec7d2b46a78b7e7cb7ae3e7a9419fbb54ae19532b"
+    },
+    {
+      "path": "dist/sources/research/youth-martial-arts-attention-rct/index.html",
+      "clean_sha256": "4af8164054fa6f91361e42ea72074f51ac73f647fad69f96b36b28ed8b235677",
+      "dirty_sha256": "168c8565c0ee974d6ffe7785e7bf3c01dfd46cc867e3ede8c2453b4b2730290e"
+    },
+    {
+      "path": "dist/sources/research/youth-sports-injury-prevention/index.html",
+      "clean_sha256": "7ef6bf8df9056d8d79496631268806c135618db2ba60fb2c5854c4ca0cc9016c",
+      "dirty_sha256": "ea00d387eabdb72f9191b7fe843b5078857c02c8deef5f5639addf4ab5fa935f"
+    },
+    {
+      "path": "dist/spring-armor-drop.html",
+      "clean_sha256": "11c0dfb05c9efef82b5b715eb0893071381a520f6b59bfb9b517fd42be56a4e4",
+      "dirty_sha256": "e54e7453761ce7a3ad0ba15b6498719438f80f58a924272dec0470199bf089dc"
+    },
+    {
+      "path": "dist/student-hub.html",
+      "clean_sha256": "a1b4ec1685cdf7bb4a951118eecb3d8cd6a59800e082b6648f4ed2cb1eba34fb",
+      "dirty_sha256": "f6b0c7e88971805b92aa25434a74961158ea48108dbadc8ae3e1bfe4d0bcca04"
+    },
+    {
+      "path": "dist/success-stories.html",
+      "clean_sha256": "c71803d5387c652cbd872aa3c3ccd061522595223c0c2773278edd2dfd1785ac",
+      "dirty_sha256": "06ff2a2d0d83d757712b5beb09b6d5b25223245642a41bce05b62b64d2c56957"
+    },
+    {
+      "path": "dist/summer-academy.html",
+      "clean_sha256": "17ba7f2b5b3416df6881fd7bfa4b65c4891854a2216c58bc1ae1f156e4e47708",
+      "dirty_sha256": "256f90d49ea34c93d357037a60d71d3ed6ac5dfb1670da27ad5a8981fdd5c78b"
+    },
+    {
+      "path": "dist/sweep-single/index.html",
+      "clean_sha256": "3a94e6d64c96caa585395070912f0a3a1a59012a512ea209c95264dac4cb56cb",
+      "dirty_sha256": "8ed5493c67a95e5039a8bef8b16ff7553b1fad546f7e533249b0ef0d2dc350b6"
+    },
+    {
+      "path": "dist/tactical-longevity/index.html",
+      "clean_sha256": "e2b85d8f9971880a4181facea4d6014eee60fad5bfbd8f9ca631a1ef346a0909",
+      "dirty_sha256": "4b3595ef542278f85f3768e8c5bc185f1ae735b2f4502874787410e4129b5504"
+    },
+    {
+      "path": "dist/updates/index.html",
+      "clean_sha256": "cfd7fc6462b63e5d7b0704be76f0cac7ad1a56cee6a93426106cbb34a3e7a986",
+      "dirty_sha256": "a10c1b2ababa9a762cd571f0263e80bd560c3626c6c646a109a4d334affe3641"
+    },
+    {
+      "path": "dist/visit/index.html",
+      "clean_sha256": "4a466526aec103b7c8934eeb433021dc262ed34e710009861a0ba242e2122251",
+      "dirty_sha256": "8ae6e61d2c13e91a4be9f3dd51c7185e286284ef7dea2d67fbab12447fae596a"
+    },
+    {
+      "path": "dist/waiver.html",
+      "clean_sha256": "fa57547213e718c5fc400712645a99654a57b2e3918fdcced103519f03165b09",
+      "dirty_sha256": "91c5ae21156fa2758b9526626c5fc1321b8b0ed9dd2a891c2a353913ceab22ff"
+    },
+    {
+      "path": "dist/weekly-audit.html",
+      "clean_sha256": "dff9aa4a26c41ed62c03e0bcef68aff241739bbd5a87378ae96cfd23e569612c",
+      "dirty_sha256": "b37a55f5533436ad68c5a9c9f8d03dfb2d38d017ae930527dc38251931910a3e"
+    },
+    {
+      "path": "dist/what-is-a-jiu-jitsu-sensei/index.html",
+      "clean_sha256": "0d30b01d96c49eaff8653c52953a379b801f5bbd7c25b15586a53831c8c0b9b7",
+      "dirty_sha256": "40ac6e293b6baef53ae744b5d2bae814de7d6aeb2ea27b1e8e1d7831423bad28"
+    },
+    {
+      "path": "dist/white-belt-foundations/index.html",
+      "clean_sha256": "e540d7bcdfead9bad470742641d53f062976357647a3aac49e11621aa1b33330",
+      "dirty_sha256": "afa62f1ed8fc0c55c9d9a0a89f1e664bb7dd70e54b07c93c6b79d373efc45e15"
+    },
+    {
+      "path": "dist/winter-armor-2027/index.html",
+      "clean_sha256": "1b0fc8df8e020d3f0f3188c326027f7ed15433e2b0986f09a24e25e1e16a8fa3",
+      "dirty_sha256": "1e3c010a6c245d02a568fc3c961f3738fae217792c001da1223aea00428858ac"
+    },
+    {
+      "path": "dist/winter-rank-drop/index.html",
+      "clean_sha256": "542ff5c674eb4ccea0f451d7fe441b7e8cf74b9ed12c35058934f5126effcdf4",
+      "dirty_sha256": "95a749d090851fba7c0d21a8f6bb183b046b43e726cc47cfbe375eb1369c6e5e"
+    },
+    {
+      "path": "dist/womens-jiu-jitsu-tannersville.html",
+      "clean_sha256": "e3bb1226bc2d0f7d27bada6fd678849fb3768334104ba83968acd1503581a86f",
+      "dirty_sha256": "e8eb528005bab5c1999c03ff5475ca4662d466255dde554989012047c443cdd3"
+    }
+  ],
+  "manifest_sha256": {
+    "clean": "53b7fc50bc095db773e175a87908a7e57734055b7f93ab08869a6f665361caa3",
+    "dirty": "776947fb79110299860c92921619d02c305f9388da9b810a631ed9da4795d11b"
+  }
+}
