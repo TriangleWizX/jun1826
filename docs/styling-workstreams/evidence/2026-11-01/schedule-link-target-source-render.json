@@ -1,0 +1,42 @@
+{
+  "workstream": "SCHEDULE-TARGETS-1",
+  "source_base": "fa73b53",
+  "candidate": "Detached clean checkout with only current Schedule and linked-route sources overlaid",
+  "render": {
+    "route": "http://127.0.0.1:4178/schedule/",
+    "selector": ".ss-schedule-target",
+    "rule": ".page-schedule .ss-schedule-target { display: inline-flex; align-items: center; min-height: 44px; }",
+    "measurements_css_px": {
+      "320": [
+        { "text": "Special schedule updates", "height": 44 },
+        { "text": "Directions and parking", "height": 44 },
+        { "text": "Get directions and parking details", "height": 51.8 }
+      ],
+      "390": [
+        { "text": "Special schedule updates", "height": 44 },
+        { "text": "Directions and parking", "height": 44 },
+        { "text": "Get directions and parking details", "height": 51.8 }
+      ],
+      "1440": [
+        { "text": "Special schedule updates", "height": 44 },
+        { "text": "Directions and parking", "height": 44 },
+        { "text": "Get directions and parking details", "height": 44 }
+      ]
+    },
+    "open_maps_height": 48,
+    "horizontal_overflow": false,
+    "closed_details_link_excluded": true
+  },
+  "live_http": {
+    "url": "https://senseisandy.com/schedule",
+    "status": 200,
+    "bytes": 181155,
+    "sha256": "e3fd4fdfc66c027cea3eb6690bdc3be00f52bb4c4df6dc6c02f497b547eb0403",
+    "target_markup_count": 3,
+    "embedded_rule": ".page-schedule .ss-schedule-target{display:inline-flex;align-items:center;min-height:44px}"
+  },
+  "limitations": [
+    "Live route CSS marker was verified over HTTPS; the live domain was not rendered in the browser during this check.",
+    "The candidate full build's asset fingerprint check reported 16 stale image/manifest items unrelated to this target rule."
+  ]
+}
