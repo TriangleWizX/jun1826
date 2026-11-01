@@ -504,6 +504,24 @@ def changed_outputs(commit, only=()):
     manifest_file = DIST_ROOT.parent / 'src/assets/data/asset-hash-manifest.json'
     manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
 
+    # The Hyphen Weekend page links its fingerprinted CSS directly. Include
+    # both the active stylesheet and route HTML when that source CSS changes.
+    if 'src/assets/css/hyphen-weekend.css' in names:
+        active_hyphen_css = manifest.get('/assets/css/hyphen-weekend.css')
+        if not active_hyphen_css:
+            raise ValueError('Hyphen Weekend CSS release requires its active manifest fingerprint')
+        hyphen_css_path = DIST_ROOT / active_hyphen_css.lstrip('/')
+        if not hyphen_css_path.is_file():
+            raise ValueError(f'Hyphen Weekend CSS release is missing active asset {active_hyphen_css}')
+        route_path = DIST_ROOT / 'hyphen-weekend' / 'index.html'
+        if not route_path.is_file():
+            raise ValueError('Hyphen Weekend CSS release requires its generated route')
+        route_html = route_path.read_text(encoding='utf-8', errors='ignore')
+        if active_hyphen_css not in route_html:
+            raise ValueError('Hyphen Weekend route does not reference its active CSS fingerprint')
+        outputs.add((hyphen_css_path, hyphen_css_path.relative_to(DIST_ROOT).as_posix()))
+        outputs.add((route_path, 'hyphen-weekend/index.html'))
+
     # The shared Near stylesheet is fingerprinted and consumed by all nearby
     # town routes, the legacy nearby-towns page, and the BJJ classes hub's
     # inline delivery bundle. Use the manifest beside the selected build.
