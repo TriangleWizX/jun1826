@@ -1,6 +1,6 @@
 # Unresolved work: dirty worktree, commit, and deploy
 
-**Status snapshot (2026-11-03):** `main` at `48fe805f` (`Record no-op Blog stylesheet cleanup`), 189 commits ahead of `origin/main`. The worktree has 302 status entries, including 81 under `dist/` and 54 under `src/`. Since source baseline `dc06a6d8`, only review/cleanup documentation changed; no production source cohort has been selected or released. Blog release paths below are clean; the remaining generated tree is mixed and is not a release source.
+**Status snapshot (2026-11-03):** The worktree has 302 status entries, including 81 under `dist/` and 54 under `src/`. The production source baseline remains `dc06a6d8`; commits since that source baseline changed review/cleanup documentation only. No remaining production source cohort has been selected or released. Blog release paths below are clean; the remaining generated tree is mixed and is not a release source.
 
 ## Closed work
 
@@ -16,7 +16,7 @@
 
 ### 1. Rebuild the source-to-output map from current `HEAD`
 
-The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`; it is not current release proof. The source baseline remains `dc06a6d8`; subsequent commits through `48fe805f` changed review/cleanup documentation only. The [dirty-source overlay review](2026-11-02-dirty-source-overlay-map-plan.md) found 506 generated path changes; the committed mapper selects 266 and omits 293 whitelisted deployable outputs (257 HTML, 35 CSS, 1 WebP). Do not deploy the broad overlay. The owner has not selected a source cohort in the [path-by-path approval sheet](2026-11-02-dirty-path-approval-sheet.md). Keep mixed root `dist/` out of deployment; use current source and a clean isolated build only after a cohort is selected.
+The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`; it is not current release proof. The source baseline remains `dc06a6d8`; subsequent commits changed review/cleanup documentation only. The [dirty-source overlay review](2026-11-02-dirty-source-overlay-map-plan.md) found 506 generated path changes; the committed mapper selects 266 and omits 293 whitelisted deployable outputs (257 HTML, 35 CSS, 1 WebP). Do not deploy the broad overlay. The owner has not selected a source cohort in the [path-by-path approval sheet](2026-11-02-dirty-path-approval-sheet.md). Keep mixed root `dist/` out of deployment; use current source and a clean isolated build only after a cohort is selected.
 
 ### 2. Decide the unmerged keyboard branch separately from the owner SOP
 
