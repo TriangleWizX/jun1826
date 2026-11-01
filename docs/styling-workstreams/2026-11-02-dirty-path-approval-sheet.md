@@ -1,12 +1,35 @@
 # Dirty path approval sheet
 
-Baseline: current committed `dc06a6d8`. Review evidence: [overlay report](2026-11-02-dirty-source-overlay-map-plan.md), [exact output deltas](evidence/2026-11-02/dirty-source-overlay-map/output-delta.json), [input paths and hashes](evidence/2026-11-02/dirty-source-overlay-map/overlay-inputs.json).
+Baseline: current committed `475d2bbb`. Review evidence: [overlay report](2026-11-02-dirty-source-overlay-map-plan.md), [exact output deltas](evidence/2026-11-02/dirty-source-overlay-map/output-delta.json), [input paths and hashes](evidence/2026-11-02/dirty-source-overlay-map/overlay-inputs.json). Route review: 33 HTML/Nunjucks paths. CSS review: 21 paths.
 
 ## Simple explanation
 
 The source files are the recipes. `dist/` is the baked site. The broad source overlay changed 506 generated paths, but the committed deploy tool selects only 266. It misses 293 public outputs. This list is for choosing what to keep or review next; it does not approve a deployment.
 
-For each source row, write one choice: **KEEP** (leave it local), **DROP** (restore that exact file to committed HEAD), or **REVIEW FOR RELEASE** (focus on this file after the output mapper is fixed). Blank means keep local. Nothing will be dropped or deployed from an empty checkbox.
+For each source row, choose: **KEEP LOCAL** (leave as-is; do not release), **DROP** (restore that exact file to committed HEAD), or **REVIEW** (do a focused check before any release). Blank means keep local. The reviewers found no path clearly safe to delete. Nothing will be dropped or deployed from an empty choice. Source review does not prove rendered behavior.
+
+## What the reviewers found
+
+- **No obvious deletions.** The changes appear intentional; keep them local until you choose what should be checked or released.
+- **Hold the sales-page group:** `src/sales-calculator.html`, `src/video-goal-session.html`, `src/welcome-primer.html`, plus links in `src/after-booking-promise.html`, `src/options-pricing.njk`, and `src/schedule.html`. Current issues are unapproved claims/pricing, missing booking details/video, or a page that promises a missing video.
+- **Hold Student Hub data-dependent styling:** `src/assets/css/pages/student-hub-premium.css`; its weekly focus and YAM archive data remain shelved.
+- **Hold Winter Rank Drop work:** `src/winter-rank-drop.html` and `src/assets/css/pages/winter-rank-drop.css` until the stale Winter content is reconciled.
+- **Keep broad shared styling local for now:** `src/assets/css/site-shell.css` affects many routes; `src/assets/css/mobile-foundation.css` changes reduced-motion and keyboard-visible action-bar behavior.
+- **Review `src/assets/data/asset-hash-manifest.json` with a clean build.** It changes many asset fingerprints and removes the Blog CSS mapping; verify all references before release.
+- **One CSS output mapping gap:** `src/assets/css/pages/options-pricing-highend.css` changes but the deploy mapper omits its raw output. Do not release it through the current mapper.
+- The helper edit in `tools/build-article-styles.mjs` only reorders an unchanged safelist entry; it appears behavior-neutral.
+
+## Easy approval choices
+
+You can answer with one or more numbers:
+
+1. **Keep everything local** and make no source changes. Safest; all edits remain intact.
+2. **Review the focused accessibility/UI group**: form labels/IDs, report-card button behavior, skip links, reduced motion, and 44px tap targets. This requests focused checks; it does not approve deployment.
+3. **Review the content/render group**: Blog subtitle, Core Culture stylesheet link, glossary classes, research breadcrumb wrapping, nearby mobile wrapping, Visit badge color, and consent labels.
+4. **Review named paths** by listing their row numbers.
+5. **Drop named paths** by listing row numbers. Only those exact files will be restored; generated `dist/` files stay untouched.
+
+Until you pick a review cohort, recommendation is **1: keep everything local**. The root `dist/` remains mixed and must not be deployed.
 
 ## Source and build inputs
 
@@ -14,60 +37,60 @@ These are the 54 inputs used in the isolated overlay: 53 dirty `src/` files and 
 
 | # | Path | State | Type | Why / hold | Your choice |
 |---:|---|---|---|---|---|
-| 1 | `src/_includes/components/form-free-intro.njk` | M | Page or template | Free Intro layout B is already released; compare this remaining diff before replay. |  |
+| 1 | `src/_includes/components/form-free-intro.njk` | M | Page or template | Free Intro layout B is already released; inspect only the remaining kicker color edit. |  |
 | 2 | `src/_includes/critical/free-intro.njk` | M | Page or template | Free Intro layout B is already released; compare this remaining diff before replay. |  |
-| 3 | `src/after-booking-promise.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 4 | `src/assets/css/contact-vip.css` | M | CSS | Free Intro layout B is already released; compare this remaining diff before replay. |  |
-| 5 | `src/assets/css/cro.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 6 | `src/assets/css/faqs.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 7 | `src/assets/css/global.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 8 | `src/assets/css/hyphen-weekend.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 9 | `src/assets/css/mobile-foundation.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 10 | `src/assets/css/pages/core-culture-parent-guide.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 11 | `src/assets/css/pages/everyday-jiu-jitsu.min.css` | NEW | CSS | No release decision yet; keep local pending focused review. |  |
-| 12 | `src/assets/css/pages/near.css` | M | CSS | Held: the canonical town routes do not render this breadcrumb. |  |
-| 13 | `src/assets/css/pages/options-pricing-highend.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 14 | `src/assets/css/pages/shiney-ticket.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 15 | `src/assets/css/pages/source-record.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 16 | `src/assets/css/pages/spring-armor-drop.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
+| 3 | `src/after-booking-promise.html` | M | Page or template | Hold with the sales-page group: it points to a welcome video that is missing. |  |
+| 4 | `src/assets/css/contact-vip.css` | M | CSS | Adds a 44px minimum control/link height; layout B was already released, so check whether this remaining change is needed. |  |
+| 5 | `src/assets/css/cro.css` | M | CSS | Adds spacing and 44px targets to Programs side-card links. |  |
+| 6 | `src/assets/css/faqs.css` | M | CSS | Raises several text sizes and target sizes; broad FAQ styling change. |  |
+| 7 | `src/assets/css/global.css` | M | CSS | Makes `.btn-tactical` at least 44px tall across pages. |  |
+| 8 | `src/assets/css/hyphen-weekend.css` | M | CSS | Adds/stylizes a large page section, tabs, cards, and 44px controls. |  |
+| 9 | `src/assets/css/mobile-foundation.css` | M | CSS | Reduced-motion and keyboard-visible action-bar behavior changed; owner keyboard SOP is pending. |  |
+| 10 | `src/assets/css/pages/core-culture-parent-guide.css` | M | CSS | Breadcrumb size, button layout, and 44px controls/focus ring changed. |  |
+| 11 | `src/assets/css/pages/everyday-jiu-jitsu.min.css` | NEW | CSS | No source difference from baseline was found; no dirty change to approve. |  |
+| 12 | `src/assets/css/pages/near.css` | M | CSS | Changes link color and narrow hero wrapping; held until the live canonical route is shown to use this CSS. |  |
+| 13 | `src/assets/css/pages/options-pricing-highend.css` | M | CSS | Focus, wrapping, and target-size changes; mapper currently omits its output. |  |
+| 14 | `src/assets/css/pages/shiney-ticket.css` | M | CSS | Campaign layout, text size, and form/button targets changed. |  |
+| 15 | `src/assets/css/pages/source-record.css` | M | CSS | One control/link gains a 44px minimum height. |  |
+| 16 | `src/assets/css/pages/spring-armor-drop.css` | M | CSS | Proof-section palette and supporting text size changed. |  |
 | 17 | `src/assets/css/pages/student-hub-premium.css` | M | CSS | Shelved: weekly focus and YAM records await current approved data. |  |
-| 18 | `src/assets/css/pages/winter-armor-2027.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 19 | `src/assets/css/pages/winter-rank-drop.css` | M | CSS | No change for the stale text-floor requirement; any other edits still need review. |  |
-| 20 | `src/assets/css/partner-pages.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 21 | `src/assets/css/site-shell.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 22 | `src/assets/css/styles.css` | M | CSS | No release decision yet; keep local pending focused review. |  |
-| 23 | `src/assets/data/asset-hash-manifest.json` | M | Asset map | Changed asset map needs exact source/output reconciliation. |  |
-| 24 | `src/birthday-parties.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 25 | `src/bjj-glossary/choke/index.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 26 | `src/bjj-glossary/open-mat/index.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 27 | `src/blog/bjj-sensei/index.html` | M | Page or template | Blog CSS is clean at HEAD; this page edit remains unreviewed. |  |
-| 28 | `src/bring-a-friend.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 29 | `src/camp-clinics.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 30 | `src/core-culture-parent-guide.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 31 | `src/daily-checkin.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 32 | `src/deer-mountain-inn.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 33 | `src/footer-partner.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 34 | `src/front-headlock-series/index.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 35 | `src/hyphen-weekend.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 36 | `src/nervous-first-timers.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 37 | `src/options-pricing.njk` | M | Page or template | No release decision yet; keep local pending focused review. |  |
+| 18 | `src/assets/css/pages/winter-armor-2027.css` | M | CSS | Focus outlines and caption text size changed; release only if a current approved item uses it. |  |
+| 19 | `src/assets/css/pages/winter-rank-drop.css` | M | CSS | Text floor, skip link, and mobile nav targets changed; Winter content is stale. |  |
+| 20 | `src/assets/css/partner-pages.css` | M | CSS | One icon/button target becomes 44×44. |  |
+| 21 | `src/assets/css/site-shell.css` | M | CSS | Broad site-wide wrapping, text size, and tap-target rules; review one small selector group at a time. |  |
+| 22 | `src/assets/css/styles.css` | M | CSS | Turns off selected CTA animations when reduced motion is requested. |  |
+| 23 | `src/assets/data/asset-hash-manifest.json` | M | Asset map | Many fingerprint additions/removals, including Blog CSS; validate against a clean build and references. |  |
+| 24 | `src/birthday-parties.html` | M | Page or template | Adds the shared consent-label class to the form. |  |
+| 25 | `src/bjj-glossary/choke/index.html` | M | Page or template | Adds body/ancestor styling classes. |  |
+| 26 | `src/bjj-glossary/open-mat/index.html` | M | Page or template | Adds body/ancestor styling classes. |  |
+| 27 | `src/blog/bjj-sensei/index.html` | M | Page or template | Changes subtitle from white to dark; verify against its rendered background. |  |
+| 28 | `src/bring-a-friend.html` | M | Page or template | Adds the shared consent-label class to the form. |  |
+| 29 | `src/camp-clinics.html` | M | Page or template | Adds reduced-motion handling for testimonial scrolling. |  |
+| 30 | `src/core-culture-parent-guide.html` | M | Page or template | Adds a page stylesheet link; confirm generated asset and use. |  |
+| 31 | `src/daily-checkin.html` | M | Page or template | Makes suite navigation links at least 44px tall. |  |
+| 32 | `src/deer-mountain-inn.html` | M | Page or template | Adds the shared consent-label class to the form. |  |
+| 33 | `src/footer-partner.html` | M | Page or template | Moves existing footer-link CSS into the page head; appears behavior-neutral. |  |
+| 34 | `src/front-headlock-series/index.html` | M | Page or template | Gives the mobile CTA a 44px minimum height. |  |
+| 35 | `src/hyphen-weekend.html` | M | Page or template | Adds skip link and main focus target; needs keyboard check. |  |
+| 36 | `src/nervous-first-timers.html` | M | Page or template | Adds a CRO stylesheet link; confirm it is needed and loads. |  |
+| 37 | `src/options-pricing.njk` | M | Page or template | Links to held calculator/video pages; hold with sales-page group. |  |
 | 38 | `src/partials/nav-include.html` | M | Page or template | The requested Kids/Teens hotlinks are already released; review any remaining difference before replay. |  |
-| 39 | `src/phoenicia-diner.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 40 | `src/practice-vault.njk` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 41 | `src/report-card.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 42 | `src/rural-bjj-catskills.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
+| 39 | `src/phoenicia-diner.html` | M | Page or template | Adds the shared consent-label class to the form. |  |
+| 40 | `src/practice-vault.njk` | M | Page or template | Makes Adults/Youth tabs at least 44px tall. |  |
+| 41 | `src/report-card.html` | M | Page or template | Converts stripe controls to stateful buttons; focused behavior check needed. |  |
+| 42 | `src/rural-bjj-catskills.html` | M | Page or template | Adds mobile wrapping for the last card. |  |
 | 43 | `src/sales-calculator.html` | NEW | Page or template | Held: claims/pricing not approved. |  |
 | 44 | `src/schedule.html` | M | Page or template | The requested schedule-link change is already released; review any remaining difference before replay. |  |
-| 45 | `src/scribners.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 46 | `src/sources/research/records.njk` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 47 | `src/tactical-longevity.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
+| 45 | `src/scribners.html` | M | Page or template | Adds the shared consent-label class to the form. |  |
+| 46 | `src/sources/research/records.njk` | M | Page or template | Wraps long breadcrumbs instead of clipping them. |  |
+| 47 | `src/tactical-longevity.html` | M | Page or template | Adds form labels/IDs and consent-label class; check IDs and preserve form meaning. |  |
 | 48 | `src/video-goal-session.html` | NEW | Page or template | Held: booking details and video are missing. |  |
-| 49 | `src/visit/index.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 50 | `src/waiver.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 51 | `src/weekly-audit.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
+| 49 | `src/visit/index.html` | M | Page or template | Changes a step badge from teal to green. |  |
+| 50 | `src/waiver.html` | M | Page or template | Adds label/input links and consent-label class; check IDs are unique. |  |
+| 51 | `src/weekly-audit.html` | M | Page or template | Adds skip link and larger suite-nav targets; check focus destination/offset. |  |
 | 52 | `src/welcome-primer.html` | NEW | Page or template | Held: welcome video and public booking details are missing. |  |
-| 53 | `src/winter-rank-drop.html` | M | Page or template | No release decision yet; keep local pending focused review. |  |
-| 54 | `tools/build-article-styles.mjs` | M | Build helper | Changed Blog CSS safelist; do not use for a broad release until reviewed. |  |
+| 53 | `src/winter-rank-drop.html` | M | Page or template | Standalone compiled page has local edits; hold until Winter content is reconciled. |  |
+| 54 | `tools/build-article-styles.mjs` | M | Build helper | Reorders an unchanged Blog CSS safelist entry; appears to have no output effect. |  |
 
 ### Excluded source file
 
