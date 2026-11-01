@@ -14,7 +14,7 @@
 
 ### 1. Rebuild the source-to-output map from current `HEAD`
 
-The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`; it is not current release proof. The current clean-HEAD audit at `b495bc6a` passed its build, but this documentation-only commit maps to zero deploy files. A clean build differs from committed `dist/` at 100 paths (99 modified, 1 deleted); those differences are not attributed to an approved dirty-source change. See [the current-HEAD output audit](2026-11-02-current-head-output-map.md) and [its path/hash evidence](evidence/2026-11-02/current-head-output-map/map.json). Keep root `dist/` out of deployment. For any newly approved cohort, build from a clean base and deploy only its independently reviewed exact payload.
+The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used base `423eb464`; it is not current release proof. The current source baseline is `dc06a6d8`, a docs-only advance from the clean-HEAD audit. The [dirty-source overlay review](2026-11-02-dirty-source-overlay-map-plan.md) found 506 generated path changes; the committed mapper selects 266 and omits 293 whitelisted deployable outputs (257 HTML, 35 CSS, 1 WebP). Do not deploy the broad overlay. See the [path-by-path approval sheet](2026-11-02-dirty-path-approval-sheet.md) and [exact mapping evidence](evidence/2026-11-02/dirty-source-overlay-map/output-delta.json). Keep mixed root `dist/` out of deployment.
 
 ### 2. Decide the unmerged keyboard branch separately from the owner SOP
 
@@ -25,6 +25,8 @@ The [Nov. 2 dirty-source report](2026-11-02-dirty-source-output-refresh.md) used
 The local sales calculator, video-goal-session, welcome-primer pages, and related schedule links are not release-ready. [The route and claims review](2026-11-02-sales-flow-pages-hold.md) found pricing conflicts with canonical data, class-size limits used as urgency, unresolved public offer and booking details, and a promised welcome video that is absent. Production checks found the routes return 404 and the live schedule does not link to the held pages. Keep the local files intact until the owner confirms authoritative offer values and booking path, and the video is supplied or its claim is revised. Then remap, build, and verify exact routes.
 
 ### 4. Reconcile remaining dirty source cohorts one requirement at a time
+
+- The current dirty-source overlay at `dc06a6d8` changes 506 generated outputs, while the committed mapper emits 266 paths. Independent review found 293 deployable route/style outputs missing. This is a coverage gap, not a release set; no upload. Use the approval sheet to choose a narrow source cohort, then repair and re-check its mapping.
 
 - Winter text-floor item `WINTER-DESKTOP-TYPE-1` is stale: the committed runtime removes `.winter-summary` and renders no `.winter-product` elements. The isolated preview showed HTTP 200, no horizontal overflow, and no page errors at the planned widths, but the specified targets were absent. No CSS patch or deploy; see [review](2026-11-02-winter-desktop-type-release-plan.md). Reconcile the intended visible content and selectors before reopening.
 

@@ -1,0 +1,347 @@
+{
+  "root_head": "dc06a6d8",
+  "included_src_tracked_delta_count": 49,
+  "included_src_untracked_count": 5,
+  "excluded": [
+    "src/assets/css/pages/law-enforcement.css.tmp"
+  ],
+  "included_tools": [
+    "tools/build-article-styles.mjs"
+  ],
+  "excluded_categories": [
+    "dist",
+    "docs",
+    "screenshots",
+    "evidence",
+    "raw root photos",
+    "QA scripts",
+    "package.json QA-command additions",
+    "scripts/deploy-release.py"
+  ],
+  "inputs": [
+    {
+      "path": "src/_includes/components/form-free-intro.njk",
+      "state": "present",
+      "sha256": "88784880c3123d9e8396702c6382cc70e514c53462322da17fc5fb46ced589b4",
+      "bytes": 12787
+    },
+    {
+      "path": "src/_includes/critical/free-intro.njk",
+      "state": "present",
+      "sha256": "fdb6528e496059c4795e09b9be36e36c2413a6f0a0492a8ac43c4c88ea93a507",
+      "bytes": 14532
+    },
+    {
+      "path": "src/after-booking-promise.html",
+      "state": "present",
+      "sha256": "c3b590f218f54c91c50c4a3b2d506b9abb8eb1455ab7a5b20682c0fe81dcb1bd",
+      "bytes": 2626
+    },
+    {
+      "path": "src/assets/css/contact-vip.css",
+      "state": "present",
+      "sha256": "6d439a2b1d8a35c5cb02cb055d3fd5f9154a22e9416cac9821d1234db3fcdb4c",
+      "bytes": 9345
+    },
+    {
+      "path": "src/assets/css/cro.css",
+      "state": "present",
+      "sha256": "72d74bff7557f77f26dfe20bacfe1048ee3504d88e53eaaeee624eae263527e3",
+      "bytes": 9504
+    },
+    {
+      "path": "src/assets/css/faqs.css",
+      "state": "present",
+      "sha256": "1cfad4175c73fe5649a792f1d397df2dbc41cb8378d2272c4e5278de7385bb12",
+      "bytes": 22497
+    },
+    {
+      "path": "src/assets/css/global.css",
+      "state": "present",
+      "sha256": "e7dde2498a93e86ea9775287c2b9691f26c48e575fa7b98348b90ace9d0a17d4",
+      "bytes": 25919
+    },
+    {
+      "path": "src/assets/css/hyphen-weekend.css",
+      "state": "present",
+      "sha256": "b4f318d6b887d77929879411ee9d23a8822eb244437b6a54530f39ef35481d30",
+      "bytes": 20726
+    },
+    {
+      "path": "src/assets/css/mobile-foundation.css",
+      "state": "present",
+      "sha256": "9b5624ca6d75f2f7c7d50ccce49b1b4da93cc69f1a8f363c458254540f07aa3e",
+      "bytes": 4897
+    },
+    {
+      "path": "src/assets/css/pages/core-culture-parent-guide.css",
+      "state": "present",
+      "sha256": "6488dbd5956de40e210bb28eb67ae1634ef46432f48e397a8c8187608974da93",
+      "bytes": 2729
+    },
+    {
+      "path": "src/assets/css/pages/everyday-jiu-jitsu.min.css",
+      "state": "present",
+      "sha256": "4323c42897f6054502dd3cf2ba5d980f40615cddb18a6eeb1db972e6a97fc542",
+      "bytes": 4602
+    },
+    {
+      "path": "src/assets/css/pages/near.css",
+      "state": "present",
+      "sha256": "2a040acbb69e86b597e47388f73fa05dde05a13363a4ece6e1c5b63055862a2a",
+      "bytes": 12356
+    },
+    {
+      "path": "src/assets/css/pages/options-pricing-highend.css",
+      "state": "present",
+      "sha256": "60566bd0b3d09a1903732ca0c21f1f93dd15a830e4ea24bae6f383d2b0cc3b7f",
+      "bytes": 57789
+    },
+    {
+      "path": "src/assets/css/pages/shiney-ticket.css",
+      "state": "present",
+      "sha256": "9bf104fac39b150aff02c864dc836f337ec952cd08cd14dc0f80caec3b3f1b48",
+      "bytes": 7055
+    },
+    {
+      "path": "src/assets/css/pages/source-record.css",
+      "state": "present",
+      "sha256": "ec2d74e1723fb1f670f3811ca3b9b66bb947b92090e38371d8b0369cb54e980f",
+      "bytes": 6252
+    },
+    {
+      "path": "src/assets/css/pages/spring-armor-drop.css",
+      "state": "present",
+      "sha256": "8c9cd0a563b35e935e53f99d1fb36ef955fe8d0a422fe691534ce064bb965d3f",
+      "bytes": 2232
+    },
+    {
+      "path": "src/assets/css/pages/student-hub-premium.css",
+      "state": "present",
+      "sha256": "cf1c3b0ce45829f367948b3e0b29345f9f9003ddf1da7706c1fdfe49e4007816",
+      "bytes": 34132
+    },
+    {
+      "path": "src/assets/css/pages/winter-armor-2027.css",
+      "state": "present",
+      "sha256": "15a2cfa9933728827a88925cd1073d3417145efbe62913bd8de557ebe421f3b3",
+      "bytes": 7085
+    },
+    {
+      "path": "src/assets/css/pages/winter-rank-drop.css",
+      "state": "present",
+      "sha256": "fca2488edce92408e2b235cde483548a64ef672c2e0d572b2a9823b5dc8dd30b",
+      "bytes": 8154
+    },
+    {
+      "path": "src/assets/css/partner-pages.css",
+      "state": "present",
+      "sha256": "6f4071a0f51d054d4c85f88b8dabef2547a060e319fbea8a7d457f3d6d5c7b24",
+      "bytes": 19252
+    },
+    {
+      "path": "src/assets/css/site-shell.css",
+      "state": "present",
+      "sha256": "435e5725d479e047b3d5d75d9d773653cce57cbdff6d4ecbef3ef5f0520980d6",
+      "bytes": 72703
+    },
+    {
+      "path": "src/assets/css/styles.css",
+      "state": "present",
+      "sha256": "262ba09513422dacdf38f20a9be5e8e1b5a3471a25bc0b2abd2917f976f7c5f3",
+      "bytes": 69299
+    },
+    {
+      "path": "src/assets/data/asset-hash-manifest.json",
+      "state": "present",
+      "sha256": "f7c3c4e37a0fa17e9f4117222ef6a238d1801ee41bf3f86a1e01d39f17a3d5d7",
+      "bytes": 17359
+    },
+    {
+      "path": "src/birthday-parties.html",
+      "state": "present",
+      "sha256": "11e8f90af967c2cd9da5e9afb0af6352abd6efb47986e275f6fab883f746c10b",
+      "bytes": 34111
+    },
+    {
+      "path": "src/bjj-glossary/choke/index.html",
+      "state": "present",
+      "sha256": "a22d537c914ff13fcdc5eecb36641d4253d81a8c65680e01397158143ff84330",
+      "bytes": 5698
+    },
+    {
+      "path": "src/bjj-glossary/open-mat/index.html",
+      "state": "present",
+      "sha256": "e5e01153a452dcfa8488d8e36c5c54e769996e809f415fa581180ce26b242985",
+      "bytes": 5508
+    },
+    {
+      "path": "src/blog/bjj-sensei/index.html",
+      "state": "present",
+      "sha256": "59866e619391e9ca9febd6e0b1dfedac5769a33fb84391920dede1afa322f5d6",
+      "bytes": 37006
+    },
+    {
+      "path": "src/bring-a-friend.html",
+      "state": "present",
+      "sha256": "56a9179b845917c69e689951905a4eda59956ff3e38bb17c736c5130195e070a",
+      "bytes": 12414
+    },
+    {
+      "path": "src/camp-clinics.html",
+      "state": "present",
+      "sha256": "6ecde3d60267fe2c2bdcb490b169c42e6bcf8833c6fc509b80f0bbd737542226",
+      "bytes": 21424
+    },
+    {
+      "path": "src/core-culture-parent-guide.html",
+      "state": "present",
+      "sha256": "6c6233f9f2764a52474df2f225b0a62051dcac07fadfe5b0e4c293c481da7a9d",
+      "bytes": 42898
+    },
+    {
+      "path": "src/daily-checkin.html",
+      "state": "present",
+      "sha256": "8c3b60d03ed2767d5ef2106813203db5113809d43003da18346d921caeabc9ee",
+      "bytes": 27266
+    },
+    {
+      "path": "src/deer-mountain-inn.html",
+      "state": "present",
+      "sha256": "fdf0ee5bef5a30bd243a898a16a8ccf6b38f2454612719a621087ce4f58ada45",
+      "bytes": 27302
+    },
+    {
+      "path": "src/footer-partner.html",
+      "state": "present",
+      "sha256": "d32d972586d6d938943e188865363c343db1c3667cece58f31f1a1e8cda9196d",
+      "bytes": 3196
+    },
+    {
+      "path": "src/front-headlock-series/index.html",
+      "state": "present",
+      "sha256": "4a99bd01fd8fa8de532991e7acaccab751b358af84c4fd430f9fa1f69cf1c90d",
+      "bytes": 2417
+    },
+    {
+      "path": "src/hyphen-weekend.html",
+      "state": "present",
+      "sha256": "91bca0f653a887219f0cb25a7a76dede2af906dc5092eba1f2a1d05f640e9491",
+      "bytes": 13952
+    },
+    {
+      "path": "src/nervous-first-timers.html",
+      "state": "present",
+      "sha256": "7d36fc03b1b25097beaf11ed236e7f94ef9483fc68ba81329c977563aa606135",
+      "bytes": 28623
+    },
+    {
+      "path": "src/options-pricing.njk",
+      "state": "present",
+      "sha256": "27edfa437467c9ad5853bde77c63235f316c3736490cf88e7985f38b0ec5cb05",
+      "bytes": 49835
+    },
+    {
+      "path": "src/partials/nav-include.html",
+      "state": "present",
+      "sha256": "4aefef4b44079e1c82ff902891058cf362e6f13c586d068fac32efb8dbe23be8",
+      "bytes": 45657
+    },
+    {
+      "path": "src/phoenicia-diner.html",
+      "state": "present",
+      "sha256": "892ad076395903054bd7c7cb0f4e235148e26847de90fc3bdc5da697af61f246",
+      "bytes": 27592
+    },
+    {
+      "path": "src/practice-vault.njk",
+      "state": "present",
+      "sha256": "1a966d8de5b5e9fcef18fb68366c8b2cd42ab1d8f8284b16f852fe54d905b34e",
+      "bytes": 15798
+    },
+    {
+      "path": "src/report-card.html",
+      "state": "present",
+      "sha256": "f4db718560f3e464cf4b0a156568e0232e6eadc2db07fdfb711ff013adb75d41",
+      "bytes": 70388
+    },
+    {
+      "path": "src/rural-bjj-catskills.html",
+      "state": "present",
+      "sha256": "f125c0f1a745ef54be9b28e85abd3f7e002075d86388fdce9352ba31d521baf0",
+      "bytes": 22408
+    },
+    {
+      "path": "src/sales-calculator.html",
+      "state": "present",
+      "sha256": "7bbc0d8cc5f2bb051473a4da0c5e91ef77b8f598d89b66a793de2e36dd2b8e1b",
+      "bytes": 20222
+    },
+    {
+      "path": "src/schedule.html",
+      "state": "present",
+      "sha256": "e70a9138d89de500d5eed077a12dc097e112d7e5e46ac2efb3cbec837f975298",
+      "bytes": 21399
+    },
+    {
+      "path": "src/scribners.html",
+      "state": "present",
+      "sha256": "91043e1c9f91fa28855f2b48b50f90598492310b3aa6a8e6f8a6a744e710edb0",
+      "bytes": 27163
+    },
+    {
+      "path": "src/sources/research/records.njk",
+      "state": "present",
+      "sha256": "c88c8c8c829b31977c49122df3074105178c5ce615944303ade3d2dddaccdb2e",
+      "bytes": 26064
+    },
+    {
+      "path": "src/tactical-longevity.html",
+      "state": "present",
+      "sha256": "d9b4fed8a2be5d8f051eb67d228fa1357a0ac7ce48d3121ae65ecbe46f90b5d2",
+      "bytes": 49811
+    },
+    {
+      "path": "src/video-goal-session.html",
+      "state": "present",
+      "sha256": "7e272118476a0f6ac975c96d06fdd97118eea3ab868c73318136449400960015",
+      "bytes": 12174
+    },
+    {
+      "path": "src/visit/index.html",
+      "state": "present",
+      "sha256": "8a66e1237b2e0a9e48ef813f0dcd24d5b72df4bbc9387a464faa8b8611e96211",
+      "bytes": 13913
+    },
+    {
+      "path": "src/waiver.html",
+      "state": "present",
+      "sha256": "868d56394d6c60fc73a5eebdd12bf3282971e559e6ea09037afc8493e81fe36c",
+      "bytes": 12384
+    },
+    {
+      "path": "src/weekly-audit.html",
+      "state": "present",
+      "sha256": "9d2512dadb4311147d5868cbdb4d7ade1a630ecb2e1161dd65484bf52ed288f9",
+      "bytes": 19761
+    },
+    {
+      "path": "src/welcome-primer.html",
+      "state": "present",
+      "sha256": "8173fa0a3157f3ba99358af812484f37c841975ac0ae22d159b83115209c8458",
+      "bytes": 10587
+    },
+    {
+      "path": "src/winter-rank-drop.html",
+      "state": "present",
+      "sha256": "97efeb1d621a35f485220afe44fb6d08633292e480ad8bfec2075bde6b3f4849",
+      "bytes": 6648
+    },
+    {
+      "path": "tools/build-article-styles.mjs",
+      "state": "present",
+      "sha256": "f892f274bf090bc04e117c8648595324c783553fad867133d74a37bd1492dc5b",
+      "bytes": 9169
+    }
+  ]
+}
