@@ -23,11 +23,13 @@ try {
   await schedulePage.addStyleTag({ content: calendarCss });
   await schedulePage.addScriptTag({ content: calendarScript });
   const scheduleData = JSON.parse(await schedulePage.locator('[data-month-calendar]').getAttribute('data-schedule'));
+  assert.equal(await schedulePage.locator('.ss-month-mobile-days:visible').count(), 1, 'Mobile calendar presentation must be visible');
+  assert.equal(await schedulePage.locator('.ss-month-grid:visible').count(), 0, 'Desktop calendar presentation must be hidden on mobile');
   const findDateButton = async (date) => {
-    let button = schedulePage.locator(`[data-calendar-date="${date}"]`);
+    let button = schedulePage.locator(`[data-calendar-date="${date}"]:visible`);
     for (let monthShift = 0; !(await button.count()) && monthShift < 2; monthShift++) {
-      await schedulePage.locator('[data-calendar-next]').click();
-      button = schedulePage.locator(`[data-calendar-date="${date}"]`);
+      await schedulePage.locator('[data-calendar-next]:visible').click();
+      button = schedulePage.locator(`[data-calendar-date="${date}"]:visible`);
     }
     return button;
   };
@@ -38,7 +40,7 @@ try {
     date.setUTCDate(target.getUTCDate() + offset - 1);
     const dateKey = date.toISOString().slice(0, 10);
     const button = await findDateButton(dateKey);
-    assert.equal(await button.count(), 1, `Calendar must render ${dateKey}`);
+    assert.equal(await button.count(), 1, `Mobile calendar must render one visible ${dateKey} date card`);
     const closed = scheduleData.closures.some((item) => item.date === dateKey);
     const special = scheduleData.specialEvents.filter((item) => item.date === dateKey);
     const entries = closed ? [] : special.length ? special : [
@@ -46,7 +48,8 @@ try {
       ...scheduleData.datedClasses.filter((item) => item.date === dateKey)
     ];
     const expected = entries.filter((item) => ['Adult', 'Women', 'Youth/Teen'].includes(item.audience) && item.time);
-    const linksOnDay = await schedulePage.locator(`td:has([data-calendar-date="${dateKey}"]) .ss-date-class-link`).evaluateAll((elements) => elements.map((element) => ({ href: element.href, height: element.getBoundingClientRect().height })));
+    if (await button.getAttribute('aria-expanded') !== 'true') await button.click();
+    const linksOnDay = await schedulePage.locator(`.ss-month-mobile-day:visible:has([data-calendar-date="${dateKey}"]) .ss-month-mobile-class .ss-class-booking-link:visible`).evaluateAll((elements) => elements.map((element) => ({ href: element.href, height: element.getBoundingClientRect().height })));
     assert.equal(linksOnDay.length, expected.length, `Each bookable class on ${dateKey} must have its own link`);
     for (const link of linksOnDay) {
       const url = new URL(link.href, 'https://senseisandy.com');
@@ -58,11 +61,10 @@ try {
     if (dateKey === targetDate) {
       youthLink = new URL(linksOnDay.find((link) => new URL(link.href, 'https://senseisandy.com').searchParams.get('lane') === 'youth').href, 'https://senseisandy.com');
       adultLink = new URL(linksOnDay.find((link) => new URL(link.href, 'https://senseisandy.com').searchParams.get('lane') === 'adult').href, 'https://senseisandy.com');
-      await button.click();
     }
   }
   assert.ok(youthLink && adultLink, 'Upcoming youth and adult classes must have separate links');
-  assert.ok((await schedulePage.locator('.ss-date-class-link').evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().height))).every((height) => height >= 40), 'Mobile class links must have practical tap targets');
+  assert.ok((await schedulePage.locator('.ss-month-mobile-class .ss-class-booking-link:visible').evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().height))).every((height) => height >= 40), 'Mobile class links must have practical tap targets');
   const womenClasses = scheduleData.datedClasses.filter((item) => item.audience === 'Women');
   assert.equal(await schedulePage.locator('[data-calendar-jump]').count(), womenClasses.length, 'Every approved Women’s Foundations date must have a calendar shortcut');
   const nextWomenClass = womenClasses.find((item) => item.date >= targetDate);
