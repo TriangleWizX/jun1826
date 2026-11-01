@@ -1,0 +1,58 @@
+{
+  "baseline": {
+    "samples": 460,
+    "passing": 459,
+    "failures": 1,
+    "bio320": {
+      "pass": false,
+      "failureReasons": [
+        "visible text outside viewport"
+      ],
+      "reserveTextOverflow": {
+        "tag": "A",
+        "id": "",
+        "classes": "ss-action-reserve",
+        "text": "Reserve Free Intro",
+        "x": 181.78125,
+        "right": 335.5625,
+        "y": 671.9375,
+        "width": 153.78125,
+        "height": 20,
+        "font": "16.12px",
+        "maxWidth": "none",
+        "whiteSpace": "nowrap",
+        "overflowWrap": "normal",
+        "ancestors": [
+          {
+            "tag": "NAV",
+            "classes": "ss-mobile-actionbar is-observed is-visible",
+            "x": 0,
+            "width": 320,
+            "overflowX": "visible",
+            "display": "flex"
+          }
+        ]
+      }
+    }
+  },
+  "availabilityProxy": {
+    "requests": 457,
+    "upstreamStatuses": {
+      "200": 457
+    },
+    "errors": 0
+  },
+  "afterFix": {
+    "candidateAndLiveWidths": [
+      "320x720",
+      "360x640",
+      "390x844"
+    ],
+    "checks": [
+      "complete CTA text visible",
+      "target height >= 44px",
+      "no horizontal page overflow"
+    ],
+    "fullMatrixRerun": false
+  }
+}
