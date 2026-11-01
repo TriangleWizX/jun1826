@@ -346,6 +346,8 @@ body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible 
 .day-one-chip {
   display: inline-flex;
   align-items: center;
+  min-width: 44px;
+  min-height: 44px;
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid rgba(54, 43, 36, 0.16);
@@ -448,6 +450,12 @@ body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible 
   background: #FFFFFF;
 }
 
+.glossary-search-input:focus-visible {
+  outline: 3px solid var(--ss-green, #116A42);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
 .glossary-search-input::placeholder {
   color: rgba(79, 67, 60, 0.6);
 }
@@ -526,6 +534,8 @@ body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible 
 }
 
 .glossary-category-pill {
+  min-width: 44px;
+  min-height: 44px;
   padding: 7px 14px;
   border-radius: 999px;
   border: 1px solid rgba(54, 43, 36, 0.16);
@@ -576,8 +586,9 @@ body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible 
 }
 
 .glossary-az-letter {
-  min-width: 30px;
-  height: 30px;
+  min-width: 44px;
+  min-height: 44px;
+  height: auto;
   padding: 0 4px;
   display: inline-flex;
   align-items: center;
@@ -850,7 +861,8 @@ body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible 
 }
 
 .reader-nav-btn {
-  height: 38px;
+  min-height: 44px;
+  min-width: 44px;
   padding: 0 14px;
   border-radius: 10px;
   border: 1px solid rgba(54, 43, 36, 0.18);
@@ -1021,9 +1033,13 @@ body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible 
 }
 
 .reader-related-chip,
-.glossary-inline-chip {
+.glossary-inline-chip,
+#reader-related-chips button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid rgba(17, 106, 66, 0.25);
@@ -1036,12 +1052,27 @@ body.page-glossary-term.page-bjj-glossary .glossary-btn-secondary:focus-visible 
   text-decoration: none;
 }
 
+#reader-related-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
 .reader-related-chip:hover,
-.glossary-inline-chip:hover {
+.glossary-inline-chip:hover,
+#reader-related-chips button:hover {
   background: var(--ss-green, #116A42);
   border-color: var(--ss-green, #116A42);
   color: #FFFFFF;
   transform: translateY(-1px);
+}
+
+body.page-glossary.page-bjj-glossary :is(.glossary-az-letter, .glossary-category-pill, .day-one-chip, .reader-related-chip, .glossary-inline-chip, #reader-related-chips button):focus-visible {
+  outline: 3px solid var(--ss-teal, #289FA1);
+  outline-offset: 2px;
 }
 
 /* Reader CTA Card */
@@ -1260,7 +1291,7 @@ body.page-glossary.page-bjj-glossary .ss-path-link {
   text-decoration: none;
   font-size: 0.92rem;
   margin-bottom: 12px;
-}
+  display: inline-flex; align-items: center; min-height: 46px; }
 
 body.page-glossary.page-bjj-glossary .ss-path-link:hover {
   text-decoration: underline;
@@ -1352,6 +1383,9 @@ body.page-glossary.page-bjj-glossary .glossary-flywheel-step .step-asset {
 }
 
 body.page-glossary.page-bjj-glossary .glossary-flywheel-step .step-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--ss-green, #116A42);
@@ -1453,11 +1487,30 @@ body.page-glossary-term.page-bjj-glossary .glossary-term-return {
   margin-bottom: 24px;
 }
 
+body.page-glossary-term.page-bjj-glossary .glossary-term-return #copy-term-link {
+  min-height: 44px;
+}
+
 body.page-glossary-term.page-bjj-glossary #back-to-results {
   color: var(--ss-green, #116A42);
   font-weight: 700;
   text-decoration: none;
   font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+}
+
+body.page-glossary-term.page-bjj-glossary #open-interactive-dictionary,
+body.page-glossary-term.page-bjj-glossary #back-term-results,
+body.page-glossary-term.page-bjj-glossary #related-terms > a,
+body.page-glossary-term.page-bjj-glossary .ss-term-next-step > a,
+body.page-glossary-term.page-bjj-glossary .glossary-term-pagination a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 8px;
 }
 
 body.page-glossary-term.page-bjj-glossary #back-to-results:hover {
@@ -1548,16 +1601,16 @@ body.page-glossary-term.page-bjj-glossary section[id] li {
   line-height: 1.65;
 }
 
-body.page-glossary-term.page-bjj-glossary .glossary-card a,
-body.page-glossary-term.page-bjj-glossary .term-card a,
-body.page-glossary-term.page-bjj-glossary section[id] a {
+body.page-glossary-term.page-bjj-glossary .glossary-card a:not(.btn),
+body.page-glossary-term.page-bjj-glossary .term-card a:not(.btn),
+body.page-glossary-term.page-bjj-glossary section[id] a:not(.btn) {
   color: var(--ss-green, #116A42);
   font-weight: 600;
 }
 
-body.page-glossary-term.page-bjj-glossary .glossary-card a:hover,
-body.page-glossary-term.page-bjj-glossary .term-card a:hover,
-body.page-glossary-term.page-bjj-glossary section[id] a:hover {
+body.page-glossary-term.page-bjj-glossary .glossary-card a:not(.btn):hover,
+body.page-glossary-term.page-bjj-glossary .term-card a:not(.btn):hover,
+body.page-glossary-term.page-bjj-glossary section[id] a:not(.btn):hover {
   color: #0d5434;
   text-decoration: underline;
 }
@@ -1664,11 +1717,12 @@ body.page-glossary-term.page-bjj-glossary .glossary-term-faq-list details {
   box-shadow: none;
 }
 
-body.page-glossary-term.page-bjj-glossary .glossary-term-faq-list summary {
+body.page-glossary-term.page-bjj-glossary .glossary-term-section > details > summary {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--ss-text, #1F1712);
   cursor: pointer;
+  min-height: 44px;
 }
 
 body.page-glossary-term.page-bjj-glossary .glossary-term-faq-list details[open] summary {
@@ -1927,5 +1981,61 @@ body.page-glossary-term.page-bjj-glossary .glossary-term-pagination a:hover {
   }
   body.page-glossary.page-bjj-glossary .glossary-next-steps .glossary-btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.page-glossary.page-bjj-glossary .glossary-az-scroll {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+  body.page-glossary.page-bjj-glossary .glossary-az-letter {
+    height: auto;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  body.page-glossary.page-bjj-glossary .glossary-filter-categories {
+    flex-wrap: wrap;
+    max-width: 100%;
+    min-width: 0;
+    overflow: visible;
+  }
+  body.page-glossary.page-bjj-glossary .glossary-category-pill {
+    flex: 0 0 auto;
+    max-width: 100%;
+    min-height: 44px;
+    min-width: 44px;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  body.page-glossary.page-bjj-glossary .day-one-chip {
+    min-height: 44px;
+  }
+  body.page-glossary.page-bjj-glossary .reader-nav-btn,
+  body.page-glossary.page-bjj-glossary .reader-related-chip {
+    min-height: 44px;
+  }
+}
+
+body.page-glossary-term.page-bjj-glossary a.btn.btn-primary.ss-btn:hover {
+  background-color: var(--color-accent-strong, #0d5736);
+  border-color: var(--color-accent-strong, #0d5736);
+  color: var(--color-accent-ink, #fff);
+}
+
+/* Give glossary breadcrumbs and related-term links full mobile hit areas. */
+@media (max-width: 767.98px) {
+  body.page-glossary-term.page-bjj-glossary .glossary-term-breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.5rem;
+  }
+  body.page-glossary-term.page-bjj-glossary .glossary-term-breadcrumbs > a,
+  body.page-glossary-term.page-bjj-glossary .glossary-term-section ul > li > a {
+    display: inline-flex;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
   }
 }

@@ -71,6 +71,8 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/bjj-stretches.min.css',
     'src/assets/css/pages/partners-wellness.css',
     'src/assets/css/pages/alley-bootcamp.css',
+    'src/assets/css/bjj-glossary.css',
+    'src/assets/css/pages/glossary.css',
 }
 
 
@@ -492,6 +494,34 @@ def changed_outputs(commit, only=()):
     glossary_release = '.gitignore' in names and (ROOT / 'src' / 'bjj-glossary').is_dir()
     manifest_file = ROOT / 'src/assets/data/asset-hash-manifest.json'
     manifest = json.loads(manifest_file.read_text()).get('assets', {}) if manifest_file.is_file() else {}
+
+    # The shared glossary stylesheet is fingerprinted and consumed by many
+    # generated term routes. A source-only CSS change must include every fresh
+    # route that references the active fingerprint, not just edited term pages.
+    if 'src/assets/css/bjj-glossary.css' in names:
+        active_glossary_css = manifest.get('/assets/css/bjj-glossary.css')
+        if not active_glossary_css:
+            raise ValueError('Glossary CSS release requires its active manifest fingerprint')
+        glossary_routes = ROOT / 'dist' / 'bjj-glossary'
+        matched_routes = 0
+        if glossary_routes.is_dir():
+            for candidate in glossary_routes.rglob('index.html'):
+                if candidate.parent == glossary_routes:
+                    continue
+                html = candidate.read_text(encoding='utf-8', errors='ignore')
+                if active_glossary_css in html:
+                    outputs.add((candidate, candidate.relative_to(ROOT / 'dist').as_posix()))
+                    matched_routes += 1
+        if not matched_routes:
+            raise ValueError('Glossary CSS release found no generated term routes using the active fingerprint')
+
+    # The hub embeds its glossary delivery CSS inline, so a hub stylesheet
+    # source change must publish the generated hub page itself.
+    if 'src/assets/css/pages/glossary.css' in names:
+        candidate = ROOT / 'dist' / 'bjj-glossary' / 'index.html'
+        if not candidate.is_file():
+            raise ValueError('Glossary hub CSS release requires a fresh generated hub page')
+        outputs.add((candidate, 'bjj-glossary/index.html'))
 
     for name in names:
         if name.startswith('src/assets/calendar/') and name.endswith('.ics'):
