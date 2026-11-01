@@ -29,3 +29,7 @@ The independently audited `/tmp/style-swarm-20261027-control` remains a separate
 - **No current path is proven safe to remove.** Preserve all 17 until each unique source/evidence set is reconciled and its owner confirms disposal. A full checkout is not redundant merely because its base is old or it has no Git metadata.
 - Exact per-path owner, size, evidence, and review status are recorded in `docs/styling-workstreams/WORKSPACE-CLEANUP.md`. The separate active `/tmp/style-swarm-20261027-control` remains retained because its 51 differing dirty files have not been reconciled.
 - This audit deleted nothing. Do not infer deletion authority from the workspace script's heuristic candidate list.
+
+### Duplicate generated output: preserved
+
+The `dist/` trees under `/tmp/style-swarm-20261026-hub/` and `/tmp/style-swarm-20261026-controls/` have the same SHA-256 (`4598a05391e27564370763c423e733db7cba34817ca8977226e08693af95a7f3`), 128 files, and 7,347,510 content bytes. A fresh Git check shows all 128 files are tracked in each independent repository; `lsof` reports no open files. Production equivalence is not verified. Do not remove either tree: deleting one would create 128 tracked deletions in a checkout with unresolved unique source/evidence.

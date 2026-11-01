@@ -63,3 +63,5 @@ The coordinator will review all three reports, choose the next scoped work item,
 - The previously named Student Hub referral helper is already tracked in `d61471b4`; live page and asset are HTTP 200, so it is closed with no new code commit.
 - Footer partner rule movement was not released: it relocates the existing 44px rule without changing its behavior.
 - Workspace forensics found no safe-to-delete candidate. Seventeen exact paths totalling about 24.5 GiB remain preserved and need per-path ownership/source reconciliation. See the updated workspace inventory and `2026-11-01-large-checkout-cleanup-audit.md`.
+
+The only identical `dist/` pair found is the 128-file hub/controls pair. Both copies are tracked in their separate Git repositories, and neither is production-verified, so both remain preserved. The old workspaces also use dependency symlinks to the main checkout or `/tmp/style-active`; no standalone `.venv` or `venv` was found in the candidate list.
