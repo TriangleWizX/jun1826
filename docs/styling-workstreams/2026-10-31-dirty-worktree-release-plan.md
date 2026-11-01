@@ -295,3 +295,74 @@ The graph service returned `Transport closed`; discovery falls back to scoped lo
 - **Hospitality CSS:** Commit `40a7fc6` contains only the 8-line FAQ target and reduced-motion source change. The live route's main content and stylesheet references matched local generated HTML; the live fingerprinted stylesheet matched the local generated CSS byte for byte (26,285 bytes, SHA-256 `67fc90a160bdd59386a4914e4bffe608bafbca9099953821926e05c1a2fd9295`). Filtered deploy dry run for the route and exact fingerprint selected exactly those 2 paths. No upload was needed because both production files already matched. The source is committed and the redundant 1,012 MiB worktree was removed. Browser Use was not run because doctor found another active `near-css-20261031` session; no shared browser was disturbed.
 - **Wellness partner CSS:** No-go. The source change updates `.experience-card p` from `0.84rem` to `0.875rem`; local generated HTML points at `partners-wellness.b15594.css`, while live `/partners-wellness-pt-referrals` points at `partners-wellness.7b9342.css`. The local and live main text differ in the scope disclaimer and other copy. Do not replace the live route with dirty generated HTML or overwrite a fingerprinted CSS URL.
 - **BJJ Stretches CSS:** No-go. The 44px FAQ rule is present in a newly generated `bjj-stretches.min.156b62.css`, but both live and current local route HTML still reference the old `bjj-stretches.min.5c3602.css`. The local and live main content also differ in several phrases. Reconcile the route and CSS fingerprint from a clean source build before release.
+
+## Dirty route CSS triage wave — 2026-10-31
+
+### Persona & Expert Framework
+
+- **Coordinator:** AI SuperExpert Agent Specialist — Dr. Ada Turing, UUID `937a02cd-470a-4211-b880-b05bdf8bf585`, source `assets/indranet-prompt-exporter/exports/AI-SuperExpert-Agent-Specialist---Dr.-Ada-Turing/versions/v4.0.0/prompt.json`; active-goal source was previously read in full and remains the coordinator fit.
+- **Master instructions:** `Instructions - COMPETENCE`, UUID `e144b81f-10ea-41a6-a06c-03d69dfb738f`, source `assets/indranet-prompt-exporter/exports/index.json`; full source previously inspected for this goal. Apply evidence checking, risk assessment, and bounded integration.
+- **Selector result:** The router ranked `Static Site Generator (Markdown to HTML, Blog, Docs, etc.)`, UUID `10974975-0c53-4e27-bdca-e95e86ccb2e9`. Reject it for both workers: the previously inspected catalog source describes Markdown/blog generation and does not establish route-level CSS or Eleventy deployment mapping fit. Ordinary specialist fallbacks are used; no worker persona adoption or attachments are claimed.
+- **`CSS-SOURCE-COHORT-A-20261031` worker:** Ordinary route CSS selector/accessibility auditor; pair with ready `Instructions - CODE`, UUID `25a8fe8a-c164-4e8e-8236-3a6585bfa165`, source `assets/indranet-prompt-exporter/exports/index.json`. Its complete source was previously inspected. Fit: trace each selector to its owning route and active markup, assess the smallest supported behavior and accessibility risks.
+- **`CSS-OUTPUT-COHORT-B-20261031` worker:** Ordinary Eleventy generated-output/release-mapping auditor; pair with ready `Instructions - COMPETENCE`, UUID `e144b81f-10ea-41a6-a06c-03d69dfb738f`, source `assets/indranet-prompt-exporter/exports/index.json`. Its complete source was previously inspected. Fit: trace source-to-generated dependencies, fingerprints, current route references, and exact deploy mapping.
+- Both worktrees are detached at `ee3d8ff`, have no copied `dist` or dependencies, and are read-only audit environments. Actual size is 1,012 MiB each. Each worker's write paths are empty; reports return to the coordinator for independent review.
+
+### Bounded workstream contracts
+
+| DoD ID | Read scope | Write scope | Allowed work | Verification / stop condition |
+| --- | --- | --- | --- | --- |
+| `CSS-SOURCE-COHORT-A-20261031-1` | Dirty `src/assets/css/pages/{alley-bootcamp,bjj-stretches,core-culture-parent-guide,near,partners-wellness,shiney-ticket,show-up-kit}.css` plus their owning source routes | None | Read/search/compare only | Enumerate exact changed rules and paths; map each selector to active markup; return behavioral/accessibility risks. Stop before build, test, network, or edits. |
+| `CSS-OUTPUT-COHORT-B-20261031-1` | Dirty `src/assets/css/pages/{glossary,options-pricing-highend,source-record,spring-armor-drop,student-hub-premium,winter-armor-2027,winter-rank-drop}.css`, relevant source route consumers, `src/assets/data/asset-hash-manifest.json`, build scripts, `scripts/deploy-release.py`, and local generated references | None | Read/search/compare only | Identify route consumers, exact local generated fingerprints, build dependencies, mapper behavior, and dirty-output risks. Recommend go/no-go and the next required gate. Stop before build, test, network, or edits. |
+
+- **Wave:** Both read-only workstreams run concurrently; they have distinct role lenses and empty write paths. The coordinator independently validates each claimed selector, route consumer, fingerprint, and mapper path before selecting any implementation candidate.
+- **Global exclusions:** no Lighthouse/PageSpeed, site-wide contrast audit, physical-keyboard SOP, form submission, cleanup, commit, deploy, or use of root dirty `dist` as release bytes during these audits.
+
+## Schedule youth link placement release — 2026-10-31
+
+- Commit `95c48890` (`Move youth class links after schedule times`) contains only `src/schedule.html`, `scripts/qa-schedule.mjs`, and the five matching hunks in `dist/schedule/index.html`. Unrelated contact-card edits and the remaining dirty generated tree were excluded.
+- A clean build at `b8bc251` and `npm run qa:schedule` passed. The updated audit checks that each weekday youth row has Kids and Teens links immediately after its 5 PM time.
+- `deploy-release.py --dry-run --only schedule/index.html` listed exactly one path. Deployment verified a predeploy backup with 14,568 files and uploaded `schedule/index.html` (118,945 bytes).
+- Live `/schedule` returned HTTP 200 and had all five correctly placed youth link groups. Kids and Teens destinations each returned HTTP 200. The live HTML response is server-processed and larger than the uploaded file; no byte-for-byte full-page match is claimed. The deployed schedule JavaScript matched the clean build before release.
+- The 1.6 GiB isolated build worktree was removed after verification. No Lighthouse, contrast, keyboard SOP, Student Hub, or form checks were run.
+
+## Glossary runtime release audit — 2026-10-31
+
+### Persona & Expert Framework
+
+- The contextual selector returned `no_suitable_persona`; use an ordinary static-site runtime/release auditor fallback. No persona adoption or attachments are claimed.
+- Master instructions: `Instructions - COMPETENCE`, UUID `e144b81f-10ea-41a6-a06c-03d69dfb738f`, full source inspected. Apply critical thinking, evidence checks, risk assessment, and clear reporting.
+- The code knowledge graph returned `Transport closed`; scoped source reads are the fallback.
+
+### Bounded read-only workstream — `GLOSSARY-RUNTIME-MAP-1`
+
+- **Read paths:** copied dirty `js/glossary-filters.js`, `js/glossary-filters.min.js`, `tools/build-glossary-pages.mjs`, `src/bjj-glossary/` pages, and `src/assets/data/asset-hash-manifest.json`; clean `tools/fingerprint-assets.cjs`, `tools/ensure-glossary-asset-alias.cjs`, `scripts/deploy-release.py`, and `src/_data` dependencies in a sparse isolated checkout. Compare with main dirty `dist` by read-only access only.
+- **Write paths:** none. No build, test, network, browser, stage, commit, deploy, or cleanup by the worker.
+- **DoD:** identify the canonical runtime source, every name/alias transformation, route consumers, exact generated asset and output paths, deployment mapper behavior, and the narrow safe integration step. Keep unrelated dirty `aria-pressed`/route/CSS changes separate.
+
+## Glossary reduced-motion release — 2026-10-31
+
+### Persona and method
+
+- **Coordinator:** AI SuperExpert Agent Specialist — Dr. Ada Turing, UUID `937a02cd-470a-4211-b880-b05bdf8bf585`; source `assets/indranet-prompt-exporter/exports/AI-SuperExpert-Agent-Specialist---Dr.-Ada-Turing/versions/v4.0.0/prompt.json`; already adopted for the active goal.
+- **Master instructions:** `Instructions - COMPETENCE`, UUID `e144b81f-10ea-41a6-a06c-03d69dfb738f`; source `assets/indranet-prompt-exporter/exports/index.json`; full source previously inspected for this goal.
+- **Implementation worker:** no suitable ready catalog persona was available for this narrow JavaScript/accessibility change. Ordinary JavaScript/accessibility release specialist fallback, paired with `Instructions - CODE`, UUID `25a8fe8a-c164-4e8e-8236-3a6585bfa165`; full instruction source was previously inspected for this goal. Fit: inspect both runtime copies, make the same guarded scroll-behavior change, and keep unrelated changes out.
+- **Browser method:** user-level `browser-use` v0.1.13, `/home/twizss/.codex/skills/browser-use/SKILL.md`; doctor found the default daemon unavailable and port `9237` already occupied, so use a task-owned daemon/profile on `127.0.0.1:9241`, off-origin DNS blocked, AX-tree control targeting, and same-session teardown.
+
+### Implementation, build, and behavior evidence
+
+- In a sparse clean worktree at `95c4889`, changed only `js/glossary-filters.js` and `js/glossary-filters.min.js`. Both now use `getScrollBehavior()`: `auto` when `prefers-reduced-motion: reduce` matches and `smooth` otherwise.
+- The separate dirty main-checkout letter-filter edits (`aria-pressed` and disabled-letter click guard) were preserved unstaged. Live inspection confirmed those exact letter-filter changes were not in the current production runtime.
+- `npm run build` passed in the isolated worktree. `node --check` passed for both runtime files; the scoped source diff passed `git diff --check`. Browser Use on the locally built `/bjj-glossary/` at mobile width recorded `auto, auto` for two scroll calls under reduced motion and `smooth, smooth` under no preference. No form was submitted.
+- Clean generated routes and the live `/bjj-glossary/` and `/bjj-glossary/armbar/` both reference `/js/glossary-filters.min.js`. The helper's fixed `.min.82cb36.js` alias is not used by these routes and was excluded from the payload.
+
+### Commit and deployment
+
+- **Main commit:** `cecfa4c` (`Respect reduced motion in glossary navigation`), exactly two JS source files; commit tree `f73b4888541e2802ffb467f1f58eeb1ea102ff87` matches the isolated deployed commit tree `b780931`.
+- **Payload:** `scripts/deploy-release.py --dry-run --commit b780931 --only js/glossary-filters.min.js` selected exactly one file. Deployment uploaded that file after verifying a 14,568-file backup; backup rotation removed one older archive of 1,130,795,543 bytes.
+- **Live proof:** `/js/glossary-filters.min.js` returned HTTP 200, 27,229 bytes, SHA-256 `4bdef98ea36ab35d87609f6b3180f374bc7e77455c0c1e28e05cf61e93885289`, matching the isolated build byte for byte. `/bjj-glossary/` and `/bjj-glossary/armbar/` returned HTTP 200 and still reference the deployed runtime.
+- The dirty root `dist/js/glossary-filters.min.js` was not used or overwritten; it remains at SHA-256 `119fd5b754c52d3b3d5851ac143c4bde883693fd04379d6815d629658853fa7b`. The reduced-motion worktree, generated output, local server, Browser Use daemon, and profile were removed after verification.
+- No Lighthouse/PageSpeed, site-wide contrast review, or physical-keyboard SOP was run. The broad dirty-worktree goal remains open.
+
+## BJJ Stretches FAQ target-size release — 2026-10-31
+
+The source/CSS and deploy-mapping workstreams closed and the 44px FAQ target-size fix was committed and deployed. Full evidence, persona fit, exact payload, build/browser checks, live hashes, and workspace details are in [the BJJ Stretches release report](2026-10-31-bjj-stretches-faq-target-release.md). The overall dirty-worktree goal remains open.
