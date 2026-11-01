@@ -478,7 +478,7 @@ body {
 .page-blog .ss-article-meta-chip {
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 800;
 }
 
@@ -799,7 +799,7 @@ body {
   color: var(--ss-ink);
 }
 
-.page-blog .ss-prose a {
+.page-blog .ss-prose a:not(.btn) {
   color: var(--ss-green);
   font-weight: 700;
   text-decoration-thickness: 0.08em;
@@ -1555,7 +1555,7 @@ body {
 }
 
 .ss-featured-tag {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1579,7 +1579,7 @@ body {
 }
 
 .ss-featured-cta {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--ss-green);
   margin-top: auto;
@@ -1662,6 +1662,7 @@ body {
 
 .ss-pill {
   background: var(--ss-surface);
+  min-height: 44px;
   color: var(--ss-ink);
   border: 1px solid var(--ss-border);
   border-radius: 999px;
@@ -1685,7 +1686,7 @@ body {
 }
 
 .ss-search-feedback {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--ss-muted);
 }
@@ -1728,7 +1729,7 @@ body {
 }
 
 .ss-card-badge {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 750;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1739,7 +1740,7 @@ body {
 }
 
 .ss-card-read-time {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--ss-muted);
   font-weight: 600;
 }
@@ -1837,7 +1838,7 @@ body {
 
 .ss-schedule-mini-row span {
   color: var(--ss-muted);
-  font-size: 0.84rem;
+  font-size: 0.875rem;
 }
 
 .ss-sidebar-links {
