@@ -28,3 +28,7 @@ Release the already committed 14px supporting-text floor for the Options Pricing
 - No Lighthouse or PageSpeed checks, site-wide contrast audit, keyboard acceptance, form submission, or external action was performed.
 - The deployment helper output was compressed by the terminal transport, but its process exited 0; live HTTP and exact inline-CSS hash verification confirm the route now serves the candidate.
 - Root `dist/` and all unrelated dirty files were left untouched. The temporary isolated build checkout and local server were closed after preserving the release record and browser evidence.
+
+## Supplemental responsive checks
+
+A second set of local browser checks from the isolated release checkout covered 320px, 768px, and 992px in addition to the recorded 390px and 1440px checks. All four widths had zero horizontal overflow, zero visible text below 14px, and zero page errors. The 320px, 768px, and 992px screenshots plus the full viewport metrics are preserved in the evidence folder.
