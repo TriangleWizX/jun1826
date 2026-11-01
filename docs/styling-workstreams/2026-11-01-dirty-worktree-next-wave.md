@@ -102,3 +102,25 @@ Both reviews are read-only, use the shared checkout, and do not access owner-res
 - `docs/BROWSER-VERIFICATION.md` records the approved browser-use workflow and was committed separately as `0a728a7`; the remaining three modified docs stay local, including the owner keyboard SOP and the timestamp-only WS29 run report.
 - The root `--help/` directory is separate from that 529-path review: it has 140 untracked viewport PNGs totaling 190,095,477 bytes, dated 2026-10-27. None has an exact hash match among tracked files. Preserve the unique images; their provenance is not established well enough to delete them.
 - After commits `b87461c` and `0a728a7`, the current worktree has 852 dirty paths and no staged changes. `df -h` reports 91 GiB available. No temporary checkout or backup was deleted because none is proven redundant or already represented by committed evidence.
+
+## Current-state continuation — 2026-11-02
+
+- Workspace preflight passed. Current HEAD is `71f1278e`; no staged changes were present at inspection. A fresh status count found 52 dirty `src/` paths, 113 dirty generated paths, 4 modified docs, 7 script/tool paths, and 3 other tracked paths (179 total; this count excludes untracked files).
+- Codebase-memory MCP `list_projects` again failed with `Transport closed`. Repository code discovery used the prior exact path matrices, targeted `git status`, and scoped diffs; no graph-backed mapping is claimed.
+- Persona routing was rerun for the continuation. The selected `Ideaspace Connectome Explorer - ICE` (UUID `2e037526-b114-4238-94e9-f992135658bd`) was an ambiguous, poor fit for Git release reconciliation; no persona adoption is claimed. Use the existing coordinator and ordinary static-site release specialist lens recorded above. The current `Instructions - COMPETENCE` asset remains the relevant coordinator guidance, but its full source was reviewed earlier in this goal.
+- The Free Intro source cohort has dirty shared templates and CSS, while its two generated route files are among 113 changed outputs and share the unresolved dirty asset fingerprint set. Its proposed source edits do not form a sufficiently evidenced, isolated deliverable in this pass.
+- `src/waiver.html` has local `label[for]`/control `id` bindings and consent-label classes, but no open requirement in the styling plan maps to this diff. Existing route-wide control evidence records no missing labels in its sample. Do not commit the change solely because it appears beneficial; keep it in its current dirty state until a requirement or acceptance gap is tied to it.
+- Current output matrix remains unchanged: no route or asset has fresh source-to-output and fingerprint evidence that qualifies it for deployment from root `dist/`. No commit or deployment was made. Owner-reserved keyboard acceptance, contrast, and Lighthouse/PageSpeed were not run.
+
+### Isolated source/output map refresh — 2026-11-01
+
+- Registered `/tmp/dirty-source-output-map-20261101-0747/` in the workspace inventory before creating it. It was an isolated archive from current `HEAD` `f6e92c57` with 77 dirty production inputs overlaid; root `dist/` was excluded, and root `node_modules` was reused by symlink.
+- `npm run build` passed. The first isolated fingerprint check found 16 stale hashed siblings and a stale manifest. Running `node tools/fingerprint-assets.cjs --clean` only inside the candidate removed 15 stale hashed assets; the follow-up `--check` passed for 159 managed assets.
+- Compared with the retained clean `HEAD` baseline, the isolated candidate has 2,211 generated files versus 2,227; 541 paths differ: 459 changed, 33 added, and 49 removed. Full source input hashes and per-output before/after hashes are in [the output map evidence](evidence/2026-11-01/dirty-source-output-map.json).
+- The root asset manifest remained unchanged (SHA-256 `cb54ba3017cb9bd4cc5b1861c7448ca8cabd69bd4cad5d860f03d2b730119577`) and root `dist/` was not used or changed by the build. Its read-only fingerprint check still fails with 113 issues: 3 missing targets, 35 HTML rewrites required, 74 stale hashed siblings, and 1 stale manifest.
+- The current source-to-requirement review found no dirty cohort ready for release. The schedule Kids/Teens hotlinks are already committed/live; its remaining dirty change is separate video-session/calculator content. The remaining Blog, Free Intro, and waiver changes lack a fresh requirement-to-output release case. No commit or deployment was made from this broad candidate.
+- Closed the exact temporary build after preserving the comparison evidence; no process had files open there. Owner-reserved keyboard acceptance, site-wide contrast, and Lighthouse/PageSpeed remain untouched.
+
+### Next evidence needed
+
+Reconcile the shared fingerprint manifest and its CSS/JS references in an isolated build from a known source revision, then map each changed generated route to the exact source diff and release requirement. Until that evidence exists, preserve root `dist/` and the remaining dirty source cohorts; do not stage broadly.

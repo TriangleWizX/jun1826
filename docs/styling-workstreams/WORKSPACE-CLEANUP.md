@@ -242,6 +242,12 @@ Generated-output follow-up: `/tmp/style-swarm-20261026-hub/dist` and `/tmp/style
 | `DIRTY-SOURCE-OUTPUT-CANDIDATE-20261102` | Coordinator | `/tmp/dirty-source-output-candidate-20261102/` | Selective source/build archive; full build and comparison of 512 generated outputs against current-HEAD baseline | 2026-11-02 | ≤4 GiB | Preserve comparison disposition, then remove exact temporary candidate | removed; 2026-11-02; comparison output preserved in dirty-worktree continuation record |
 | `NEAR-BREADCRUMB-RELEASE-20261102` | Coordinator | `/tmp/near-breadcrumb-release-20261102/` | Isolated generated Near-route preview associated with commit `daf622f6`; live `/near/` routes redirect and canonical route does not render the breadcrumb selector, so release was held | 2026-11-02 | ≤3 GiB | Reconcile exact source/output ownership and process use before deciding whether unique preview artifacts can be closed | retained; review 2026-11-03 |
 
+## Dirty source output mapping refresh — 2026-11-01
+
+| Workstream ID | Owner | Exact path | Purpose / base | Creation date | Size budget | Closeout trigger | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `DIRTY-SOURCE-OUTPUT-MAP-20261101-0747` | Coordinator | `/tmp/dirty-source-output-map-20261101-0747/` | Isolated source archive at current `HEAD` `f6e92c57` plus 77 dirty production input paths; fresh full output compared with clean baseline. Root `dist` excluded; root `node_modules` symlinked. | 2026-11-01 | ≤4 GiB | Comparison saved in `docs/styling-workstreams/evidence/2026-11-01/dirty-source-output-map.json`; close exact path after process check | removed; 2026-11-01; measured 1,626,068,097 bytes |
+
 ## Inventory recovery note — 2026-11-02
 
 During a row update, the working copy of this inventory was replaced with a shortened file. The committed baseline was restored. Fourteen uncommitted lines from the pre-incident working copy could not be recovered from the remaining snapshots; this file now re-records only the current-turn workspaces and closeouts verified against release records. Do not infer missing ownership or closeout details from this note.
