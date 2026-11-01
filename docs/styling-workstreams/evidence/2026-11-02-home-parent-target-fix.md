@@ -17,5 +17,5 @@ The Home input declares `home.min.css`. Canonical `home.css` already had a mobil
 - Output-mapping commit: `2a2ed80 fix: map home styles to generated homepage`.
 - `deploy-release.py --dry-run --commit 3f877e0 --dist-dir /tmp/home-parent-target-fix-20261102/dist --only index.html` listed exactly one file: `index.html`.
 - Deployment uploaded only `index.html`, reporting 164,127 bytes. The tool verified a fresh backup at `/home/sensdapt/senseisandy-predeploy-20261101T090623Z.tar.gz` before upload.
-- Live `/` returned HTTP 200 at 320, 390, 767, and 768px. The link measured 44px at 320, 390, and 767px; it measured 26.39px at 768px as expected beyond the mobile rule boundary.
+- Live `/` returned HTTP 200 at 320, 390, 767, and 768px. The link measured 44px at 320, 390, and 767px; it measured 26.39px at 768px as expected beyond the mobile rule boundary. A separate 390px live pass found six stylesheet/script references and no HTTP error responses or failed requests.
 - Keyboard acceptance, contrast review, and Lighthouse/PageSpeed were not run.
