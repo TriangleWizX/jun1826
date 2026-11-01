@@ -69,6 +69,7 @@ ROUTE_SCOPED_CSS_INPUTS = {
     'src/assets/css/pages/partners-hospitality-hunter-windham.min.css',
     'src/assets/css/pages/bjj-stretches.css',
     'src/assets/css/pages/bjj-stretches.min.css',
+    'src/assets/css/pages/partners-wellness.css',
 }
 
 
@@ -226,6 +227,25 @@ def changed_outputs(commit, only=()):
             if not css_path.is_file():
                 raise ValueError(f'Missing Hospitality Partners stylesheet: {css_rel}')
             outputs.add((css_path, css_rel))
+    # Wellness Partners owns a root route and fingerprinted stylesheet.
+    if 'src/assets/css/pages/partners-wellness.css' in names:
+        page = ROOT / 'dist' / 'partners-wellness-pt-referrals.html'
+        if not page.is_file():
+            raise ValueError('Wellness Partners CSS release requires dist/partners-wellness-pt-referrals.html')
+        page_text = page.read_text(encoding='utf-8')
+        fingerprints = re.findall(
+            r'href="/?(assets/css/pages/partners-wellness\.[a-f0-9]+\.css)"',
+            page_text,
+        )
+        if len(fingerprints) != 1:
+            raise ValueError('Wellness Partners must reference exactly one fingerprinted stylesheet')
+        css_rel = fingerprints[0]
+        css_path = ROOT / 'dist' / css_rel
+        if not css_path.is_file():
+            raise ValueError(f'Missing Wellness Partners stylesheet: {css_rel}')
+        outputs.add((page, 'partners-wellness-pt-referrals.html'))
+        outputs.add((css_path, css_rel))
+
     # BJJ Stretches owns a root route and fingerprinted minified stylesheet.
     if any(name in names for name in (
         'src/assets/css/pages/bjj-stretches.css',
