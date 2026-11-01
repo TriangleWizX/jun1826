@@ -1208,3 +1208,11 @@ body.partner-page .hospitality-feature-ribbon-grid,
     gap: 1rem;
   }
 }
+#hospitalityFaq .accordion-button { min-height: 44px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp-gold-logo,
+  .stamp-gold-logo * {
+    animation: none;
+  }
+}
