@@ -549,6 +549,25 @@ def changed_outputs(commit, only=()):
         outputs.add((winter_css_path, winter_css_path.relative_to(DIST_ROOT).as_posix()))
         outputs.add((route_path, 'winter-rank-drop/index.html'))
 
+    if {
+        'src/assets/css/pages/show-up-kit.css',
+        'src/assets/css/pages/show-up-kit.min.css',
+    } & set(names):
+        active_showup_css = manifest.get('/assets/css/pages/show-up-kit.min.css')
+        if not active_showup_css:
+            raise ValueError('Show-Up Kit CSS release requires its active manifest fingerprint')
+        showup_css_path = DIST_ROOT / active_showup_css.lstrip('/')
+        if not showup_css_path.is_file():
+            raise ValueError(f'Show-Up Kit CSS release is missing active asset {active_showup_css}')
+        route_path = DIST_ROOT / 'show-up-kit.html'
+        if not route_path.is_file():
+            raise ValueError('Show-Up Kit CSS release requires its generated route')
+        route_html = route_path.read_text(encoding='utf-8', errors='ignore')
+        if active_showup_css not in route_html:
+            raise ValueError('Show-Up Kit route does not reference its active CSS fingerprint')
+        outputs.add((showup_css_path, showup_css_path.relative_to(DIST_ROOT).as_posix()))
+        outputs.add((route_path, 'show-up-kit.html'))
+
     # The shared Near stylesheet is fingerprinted and consumed by all nearby
     # town routes, the legacy nearby-towns page, and the BJJ classes hub's
     # inline delivery bundle. Use the manifest beside the selected build.
