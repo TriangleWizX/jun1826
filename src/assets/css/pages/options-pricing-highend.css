@@ -440,7 +440,7 @@ body.page-options-pricing .op-price-anchors__grid strong {
 
 body.page-options-pricing .op-price-anchors__grid span {
   color: var(--op-muted);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   line-height: 1.45;
 }
 
@@ -457,7 +457,7 @@ body.page-options-pricing .op-table-label {
 body.page-options-pricing .op-table-label span,
 body.page-options-pricing .op-table-col-note {
   color: var(--op-muted);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
@@ -841,7 +841,7 @@ body.page-options-pricing .op-terms a,
 body.page-options-pricing .op-proof-card > a,
 body.page-options-pricing .op-after-first__option a {
   color: var(--op-forest);
-  font-size: 0.79rem;
+  font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
   text-underline-offset: 0.25rem;
@@ -1034,7 +1034,7 @@ body.page-options-pricing .op-rate-list dd small {
   display: block;
   margin-top: 0.22rem;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
 }
 
 body.page-options-pricing .op-household-note {
@@ -1223,7 +1223,7 @@ body.page-options-pricing .op-assurance-facts strong {
 
 body.page-options-pricing .op-assurance-facts span {
   color: var(--op-muted);
-  font-size: 0.66rem;
+  font-size: 0.875rem;
 }
 
 body.page-options-pricing .op-terms {
@@ -1287,7 +1287,7 @@ body.page-options-pricing .op-proof-card blockquote p {
 
 body.page-options-pricing .op-proof-card__citation {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.74rem;
+  font-size: 0.875rem;
 }
 
 body.page-options-pricing .op-proof-card > a {
@@ -1608,7 +1608,7 @@ body.page-options-pricing .op-final-card__actions {
 
 body.page-options-pricing .op-final-card__text-link {
   color: rgba(255, 255, 255, 0.74);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   text-align: center;
   text-decoration-color: rgba(255, 255, 255, 0.34);
   text-underline-offset: 0.25rem;
@@ -2051,7 +2051,7 @@ body.page-options-pricing .op-stack-list li:last-child {
 body.page-options-pricing .op-stack-list li strong {
   color: var(--op-forest);
   white-space: nowrap;
-  font-size: 0.82rem;
+  font-size: 0.875rem;
 }
 
 body.page-options-pricing .op-timeline-grid {
@@ -2165,4 +2165,74 @@ body.page-options-pricing .op-card__actions .op-button__icon {
  body.page-options-pricing .op-actions { min-inline-size: 0; max-inline-size: 100%; }
  body.page-options-pricing .op-actions { align-items: stretch; flex-direction: column; }
  body.page-options-pricing .op-button { box-sizing: border-box; inline-size: 100%; min-inline-size: 0; }
+}
+
+@media (min-width: 768px) {
+  body.page-options-pricing .op-hero__caption p,
+  body.page-options-pricing .op-card__note,
+  body.page-options-pricing .op-card__kicker,
+  body.page-options-pricing .op-table-label {
+    font-size: 0.875rem;
+  }
+
+  body.page-options-pricing .op-community-card p:not(.op-card__kicker) {
+    font-size: 0.875rem;
+  }
+}
+
+/* Keep pricing explanations and term details readable at the 14px floor. */
+@media (min-width: 768px) {
+  body.page-options-pricing :is(
+    .op-eyebrow,
+    .op-household-note,
+    .op-household-card__body > p,
+    .op-section-note,
+    .op-inline-cta p,
+    .op-card--ink > p:not(.op-card__kicker, .op-private-price),
+    .op-after-first__heading p:last-child,
+    .op-after-first__copy,
+    .op-check-list li,
+    .op-community-card__benefits
+  ) {
+    font-size: 14px;
+  }
+
+  body.page-options-pricing main small {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-options-pricing .op-household-note small,
+  body.page-options-pricing .op-household-note .small,
+  body.page-options-pricing .op-community-card__price small,
+  body.page-options-pricing .op-household-card summary small,
+  body.page-options-pricing .op-household-card__from small,
+  body.page-options-pricing .op-pass-grid small,
+  body.page-options-pricing .op-after-first__option small {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-options-pricing main.op-main :is(span:not([aria-hidden="true"]), dt, dd) {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-options-pricing #laundry-support .op-private-price span,
+  body.page-options-pricing .op-terms summary {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.page-options-pricing main.op-main :is(span:not([aria-hidden="true"]), dt, dd, summary) {
+    font-size: 14px;
+  }
+
+  body.page-options-pricing #laundry-support .op-private-price span {
+    font-size: 14px;
+  }
 }
