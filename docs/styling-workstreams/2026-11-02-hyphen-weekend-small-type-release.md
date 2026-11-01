@@ -16,6 +16,7 @@ This closes the documented mobile text-floor gap for native `<small>` copy on `/
 ## Commit and live proof
 
 - Commit `19acddf4` — `fix: keep Hyphen Weekend small text readable on mobile`.
+- Follow-up commit `507b7bf` marks the stylesheet as route-scoped in the mapper, preventing it from being classified as shared audience CSS during later releases.
 - Upload completed for exactly the two dry-run files: CSS 19,600 bytes; route 17,354 bytes.
 - The deploy script verified a fresh rollback archive (`senseisandy-predeploy-20261101T102931Z.tar.gz`, 14,575 files), then rotated one older verified archive (1,127,715,782 bytes) under the configured retention rule.
 - Live `/hyphen-weekend/` returned HTTP 200 and references the active stylesheet. The live CSS returned HTTP 200, measured 19,600 bytes, and its SHA-256 matched the isolated candidate: `669fcae34a0d40c62ddd086f5d2b46286051d0fe22e88ae7630e31f562b9f516`.
