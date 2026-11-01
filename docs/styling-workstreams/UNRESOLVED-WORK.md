@@ -26,6 +26,8 @@ The local sales calculator, video-goal-session, welcome-primer pages, and relate
 
 ### 4. Reconcile remaining dirty source cohorts one requirement at a time
 
+- Winter text-floor item `WINTER-DESKTOP-TYPE-1` is stale: the committed runtime removes `.winter-summary` and renders no `.winter-product` elements. The isolated preview showed HTTP 200, no horizontal overflow, and no page errors at the planned widths, but the specified targets were absent. No CSS patch or deploy; see [review](2026-11-02-winter-desktop-type-release-plan.md). Reconcile the intended visible content and selectors before reopening.
+
 The Nov. 2 broad output comparison does not justify releasing the remaining changes. Select a concrete approved requirement, identify only its owned source paths, compare current source to the relevant plan/evidence, then create an isolated current-`HEAD` build and verify the exact route/output set. Preserve unrelated dirty files. Specific holds:
 
 - Blog typography, hit-area, and alert-layout changes remain outside the already committed Blog fixes; the old 53-route payload is stale and the current mixed `dist/` is unsuitable.

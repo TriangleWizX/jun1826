@@ -335,3 +335,9 @@ During a row update, the working copy inventory was replaced with a shortened fi
 | Workstream ID | Owner | Exact path | Purpose / base | Creation date / size budget | Closeout trigger | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | `BLOG-COMMITTED-FIX-RELEASE-20261101` | Coordinator; ordinary static-site release-integrity specialist fallback | `/tmp/blog-committed-fix-release-20261101/` | Clean detached worktree at committed `HEAD` `851b482`; `npm run build` passed; exact dry run for `71f1278` produced 99 paths. Report: `2026-11-01-blog-current-head-build-review.md`; exact path list preserved in evidence. Root `dist/` was not used. | 2026-11-01; 1,623,772,311 B before removal | Remove after build review or release decision | removed 2026-11-01 after hold decision and evidence preservation; exact worktree removed; 1,623,772,311 B reclaimed; no copied dependencies |
+
+## Winter Rank Drop type review — 2026-11-02
+
+| Workstream ID | Owner | Exact path | Purpose / base | Creation date | Size budget | Closeout trigger | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `WINTER-DESKTOP-TYPE-REVIEW-20261102` | Coordinator; independent read-only UI-UX review by `/root/winter_type_review` | `/tmp/winter-desktop-type-review-20261102/` | Detached worktree at `f1b018f2`; source/runtime/DOM review and isolated build. Viewport evidence: `evidence/2026-11-02/winter-desktop-type-release/browser-proof.json` | 2026-11-02 | ≤3 GiB including isolated generated output; no copied dependencies or browser profile | Same-session after stale selector finding recorded; stop preview and remove exact worktree | removed; required selectors absent at all seven widths; route returned 200 with no overflow/page errors; no CSS patch or deployment |
