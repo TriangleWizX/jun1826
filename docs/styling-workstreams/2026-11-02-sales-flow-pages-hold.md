@@ -21,7 +21,8 @@ The contextual persona router did not identify a suitable specialist. Its Static
 - All three pages declare extensionless canonical URLs, but the two explicit permalinks emit `.html` files. The welcome primer also emits `welcome-primer.html`, not an extensionless directory route.
 - Local files under `dist/` are ignored by `.gitignore`; they are not release evidence. No corresponding `dist/<route>/index.html` output was found.
 - `.htaccess` disables `MultiViews` and has no rewrite rule for these three paths. The current source and output do not establish that the extensionless links resolve.
-- A route-only correction would emit `/sales-calculator/index.html`, `/video-goal-session/index.html`, and `/welcome-primer/index.html`, then verify those outputs in an isolated build.
+- The source permalinks were corrected locally to emit `/sales-calculator/index.html`, `/video-goal-session/index.html`, and `/welcome-primer/index.html`; the extensionless canonical URLs and schedule links were left intact.
+- Eleventy 3.1.6 built to the registered temporary output directory. It wrote all three directory-index pages with the intended titles and extensionless canonical URLs. SHA-256: sales calculator `9db1840909603736798aa22e1441a6b192202f1a7f171a8d60bacba8a3ce2a50`; video session `70662cd3f3014f7dba589207bbf88330dc416f6794cd50379b44f0e96719af50`; welcome primer `0491e2bcffe51c60d3e2439744adac69147dd8daa9a15cfe11c345cef61de1ef`. The shared CSS reference also resolved in the isolated output. Root `dist/` was not used or changed.
 
 ## Claim findings
 
@@ -32,6 +33,6 @@ The contextual persona router did not identify a suitable specialist. Its Static
 
 ## Release decision and next evidence
 
-Do not commit or deploy this cohort yet. Keep the dirty source and ignored `dist/` outputs intact. Before release, obtain authoritative confirmation of the public offer values and video-session booking path, and provide the promised video or revise that claim. Then align the permalinks with the approved URLs, build in isolation, inspect the exact route payload, and verify the live routes after deployment.
+Do not commit or deploy this cohort yet. Keep the dirty source and ignored `dist/` outputs intact. Before release, obtain authoritative confirmation of the public offer values and video-session booking path, and provide the promised video or revise that claim. The local route correction remains uncommitted with the page content. After the facts are cleared, inspect the exact route payload and verify the live routes after deployment.
 
-No build, browser session, network check, or Lighthouse/PageSpeed check was run for this audit. The review is based on repository source and canonical data only.
+No browser session, network check, or Lighthouse/PageSpeed check was run. The temporary Eleventy output was removed after route verification; it occupied about 520 MiB. No public payload was deployed.
