@@ -80,7 +80,8 @@ const server = http.createServer(async (req, res) => {
       let upstreamStatus = null;
       try {
         const upstreamUrl = new URL(pathname, availabilityOrigin);
-        upstreamUrl.search = requestUrl.search;
+        const date = requestUrl.searchParams.get('date');
+        if (date !== null) upstreamUrl.searchParams.set('date', date);
         const upstream = await fetch(upstreamUrl, {
           headers: { Accept: 'application/json' },
           signal: AbortSignal.timeout(5000),
