@@ -27,7 +27,9 @@
     "ads:swipe": "python3 tools/ads/swipe.py",
     "ads:scaffold": "python3 tools/ads/scaffold.py",
     "ads:assets": "python3 tools/ads/post_assets.py",
-    "test:ads": "python3 -m unittest discover -s tools/ads -p 'test_*.py'"
+    "test:ads": "python3 -m unittest discover -s tools/ads -p 'test_*.py'",
+    "qa:workspace": "python3 tools/workspace-audit.py --root . --inventory docs/styling-workstreams/WORKSPACE-CLEANUP.md --temp-root /tmp",
+    "qa:workspace:preflight": "npm run qa:workspace -- --preflight"
   },
   "dependencies": {},
   "devDependencies": {

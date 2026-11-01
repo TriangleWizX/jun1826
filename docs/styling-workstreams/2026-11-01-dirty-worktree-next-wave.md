@@ -65,3 +65,31 @@ The coordinator will review all three reports, choose the next scoped work item,
 - Workspace forensics found no safe-to-delete candidate. Seventeen exact paths totalling about 24.5 GiB remain preserved and need per-path ownership/source reconciliation. See the updated workspace inventory and `2026-11-01-large-checkout-cleanup-audit.md`.
 
 The only identical `dist/` pair found is the 128-file hub/controls pair. Both copies are tracked in their separate Git repositories, and neither is production-verified, so both remain preserved. The old workspaces also use dependency symlinks to the main checkout or `/tmp/style-active`; no standalone `.venv` or `venv` was found in the candidate list.
+
+## Next read-only reconciliation wave
+
+Workspace preflight passed again before dispatch. These reviews create no checkout or build and share no write paths.
+
+| DoD | Specialist and source | Read scope | Write scope | Verification |
+| --- | --- | --- | --- | --- |
+| `DIRTY-SOURCE-PATH-MATRIX-20261101` | Web-Ninja — Arachnia, UUID `94fbf051-34eb-413f-b8c6-824430c3529a`, with `Instructions - CODE`, UUID `25a8fe8a-c164-4e8e-8236-3a6585bfa165`; sources and fit are recorded above | Every remaining modified/untracked `src/` and `scripts/`/`tools/` path; current goal and release plans | None | Classify each exact path as complete, owner-reserved, relevant but unverified, unrelated, or missing a requirement; cite the source plan and identify any smallest evidence-backed next fix. |
+| `DIRTY-GENERATED-PATH-MATRIX-20261101` | Debugger-Analyzer — Orko the Debugulator, UUID `3600aeb4-dd29-46dc-89b4-433b302b206f`, with the same ready `Instructions - CODE`; full prompt source and fit recorded above | Every remaining tracked `dist/` change/deletion, active manifest and changed-output mapper, associated source paths and release evidence | None | Classify generated paths by exact source/route mapping, stale or missing fingerprint, source ownership, and current release status. Do not use or modify root `dist`; report whether any exact route can be separately produced in a future isolated build. |
+
+Both reviews are read-only, use the shared checkout, and do not access owner-reserved keyboard, site-wide contrast, or Lighthouse/PageSpeed work.
+
+## Reconciled path matrices and lifecycle gate — 2026-11-01
+
+### Source and generated-output dispositions
+
+- `DIRTY-SOURCE-PATH-MATRIX-20261101` found no dirty website source path cleared for release. `src/partials/nav-include.html` and `src/hyphen-weekend.html` remain owner-reserved for the keyboard SOP. Contrast and Lighthouse runners remain owner-reserved. The broad responsive/availability proxy QA change is not in a release scope. Product/content work (`src/after-booking-promise.html`, `src/options-pricing.njk`, `src/schedule.html`, and the untracked video-session/calculator/welcome pages) remains separate from the styling goal. Other dirty CSS, form, and route edits lack requirement-to-output proof; keep them local.
+- `DIRTY-GENERATED-PATH-MATRIX-20261101` classified all 113 changed generated paths: 102 HTML/XML and 11 CSS/JS. No root `dist/` route is a release candidate because output freshness and active shared fingerprint references are not proven. The `mobile-foundation.d8c863.css` references are an alternate dirty build, and the deleted fingerprinted files lack live-reference evidence. The Near pages, source-record consumers, shared CSS fan-out, and Free Intro template mapping still need exact route mapping.
+- The Kids/Teens schedule-link requirement is closed: commits `95c48890` and `fecdcb25` place the `Kids` and `Teens` links immediately after the time, and a live read of `/schedule/` returned six links to each audience route. The current dirty `src/schedule.html` hunk only adds separate video-session and calculator links. The schedule output visible in the dirty root tree is not release evidence.
+- `scripts/deploy-release.py` had no current mapper change that safely resolves the remaining output gaps. F-01/F-02/F-03 reduced-motion fixes were already released in `e8659414`; they are not reopened by this audit.
+
+### Workspace audit correction and current disposition
+
+- The first audit invocation used the historical `2026-10-29-responsive-workstream-inventory.md`; the active inventory is `WORKSPACE-CLEANUP.md`. `tools/workspace-audit.py` also missed lifecycle cells beginning `active;` or `Preserve;`, and inspected only one nested level.
+- The audit now reads lifecycle status prefixes, checks every temporary path in a table row, recognizes retained review dates, and scans nested temp environments without following symlinks. `package.json` and this guide point to the active inventory.
+- The planned Schedule focus worktree was never created after keyboard behavior was shelved. The BJJ Stretches isolated build was closed after its recorded release. Both inventory rows now reflect their absent paths. The 2026-10-27 controls checkout remains retained because 51 differing files still need reconciliation.
+- Current `WORKSPACE-CLEANUP.md` preflight passes. Seventeen large paths totaling about 26.33 GB remain retained; the hub and controls `dist` trees are identical but tracked in both separate repositories. No path is proven disposable, so none was deleted. The full audit is heuristic and does not infer ownership from age or hashes.
+- Browser Use 0.1.13 is installed, but `browser-use --doctor` found no daemon or active connection. The live schedule check used a direct public-page fetch; no interactive browser was needed.
