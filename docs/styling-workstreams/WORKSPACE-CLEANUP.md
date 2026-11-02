@@ -385,10 +385,10 @@ Closeout: worktree and build/browser artifacts were removed after release verifi
 
 ## Stash cleanup status
 
-The reviewed stash entries are filtered. The remediation stash is `stash@{0}` at `f55134104b24f5d7767a56820d05547cee08eed4`; the hold stash is `stash@{1}` at `c1a827b9f5fee87c3d4b3a03d8c3ba070a81289d`.
+The reviewed stash entries are filtered. The hold stash is `stash@{0}` at `c568757303fc3bc2fd0c9aa1fddb996853a51eac`; the remediation workbook stash is `stash@{1}` at `f55134104b24f5d7767a56820d05547cee08eed4`.
 
-The hold stash no longer contains its 81 generated `dist/` changes, denied `package.json` and `scripts/deploy-release.py` edits, denied `mobile-foundation.css` and `styles.css` edits, denied workflow-document edits, or the two denied temporary/unreferenced CSS files.
+The hold stash no longer contains its 81 generated `dist/` changes, denied package and deploy script edits, denied CSS edits, or denied workflow-document edits. Thirty-one further tracked changes were removed after exact reverse-patch checks confirmed they are already in current `HEAD`. The remaining `src/assets/css/site-shell.css` edit is held for separate review.
 
-The remediation stash no longer contains the denied Community Partners page edit or the six denied video redirects. After the approved website edits were confirmed in the committed source, the user approved removing those seven tracked file changes from the stash too. The stash now retains only the three workbook exports: done (18,740 bytes), ignored (18,127 bytes), and todo (35,377 bytes).
+The hold stash still contains 688 untracked files totaling 368,652,495 bytes: 140 files under `--help/` (190,095,477 bytes), 533 under `docs/` (170,430,257 bytes), 9 under `assets/` (8,093,310 bytes), 3 under `scripts/` (12,271 bytes), 2 under `scratch/` (18,890 bytes), and one small root file. These artifacts remain for path review.
 
-Filtered tree checks confirmed the hold stash has no generated `dist/` changes, the remediation stash has no tracked changes, all three workbook exports remain, and the worktree was clean before the documentation update. The approved site release had already been deployed; this cleanup changed no live site files. Superseded stash commits were dropped from the stash list; Git may retain their unreachable objects until normal pruning.
+The remediation stash contains only three workbook exports: done (18,740 bytes), ignored (18,127 bytes), and todo (35,377 bytes). Superseded stash commits were dropped from the stash list; Git may retain their unreachable objects until normal pruning.
