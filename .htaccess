@@ -358,7 +358,7 @@ RewriteRule ^book-free-intro/adults(?:/index\.html|/)?$ https://senseisandy.com/
 RewriteRule ^adults(?:\.html)?/?$ https://senseisandy.com/bjj-classes/adults-tannersville-ny [L,R=301,NE,NC]
 RewriteRule ^options(?:\.html)?/?$ https://senseisandy.com/options-pricing [L,R=301,NE,NC]
 RewriteRule ^tannersville-bjj-video-library(?:\.html)?/?$ https://senseisandy.com/ [L,R=301,NE,NC]
-RewriteRule ^partners-schools-parents(?:\.html)?/?$ https://senseisandy.com/family-jiu-jitsu [L,R=301,NE,NC]
+RewriteRule ^partners-schools-parents(?:\.html)?/?$ https://senseisandy.com/bjj-classes/kids-tannersville-ny [L,R=301,NE,NC]
 
 # Serve calendar feed files directly and skip rewrite chains.
 RewriteRule ^calendar/private-4pm\.ics$ /assets/calendar/private-lessons-4pm.ics [L,NC]
