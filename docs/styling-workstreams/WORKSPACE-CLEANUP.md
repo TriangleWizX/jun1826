@@ -376,3 +376,19 @@ The old Blog CSS release worktree and candidate were already removed. A 16 KiB r
 | Workstream ID | Owner | Exact path | Purpose / base | Creation date / size budget | Closeout trigger | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | `A11Y-OUTPUT-MAP-20261103` | Coordinator; ordinary static-site release-integrity specialist fallback | `/tmp/a11y-release-output-map-20261103/` | Clean detached checkout at `62f818f`; overlaid A cohort, built baseline/candidate, temporary candidate commit `3ea2b39`; mapper report and exact generated deltas saved under `evidence/2026-11-03/a11y-release-output-map/` | 2026-11-03; peaked at 1.6 GiB; shared root `node_modules` symlink | No deployment; mapper gap documented; exact checkout removed; 1.6 GiB reclaimed | removed |
+## Near and Winter Armor scoped release — 2026-11-03
+
+Pre-creation registration: workstream `NEAR-WINTER-RELEASE-20261103`; owner Coordinator using ordinary static-site release specialist fallback because the selected persona source is unavailable; exact path `/tmp/near-winter-release-20261103/`; detached from current `HEAD`; shared `node_modules` symlink only; baseline and approved E3/E5 candidate builds; no browser profile; size cap 2 GiB; remove after exact output mapping and deploy verification in this session. The workspace audit treats any active/planned row as a blocker, so this registration remains prose until same-session closeout is recorded below.
+
+Closeout: worktree and build/browser artifacts were removed after release verification. Peak checkout size was 2.1 GiB; the separate shared `node_modules` target was retained. No temporary workspace remains.
+
+
+## Denied stash changes removed
+
+The two reviewed stash entries were replaced with filtered snapshots. The remediation stash is now `stash@{0}` at `5cc7bbe6c5afb9eea01661cf6d885cbf7f4f626c`; the hold stash is now `stash@{1}` at `c1a827b9f5fee87c3d4b3a03d8c3ba070a81289d`.
+
+The hold snapshot no longer contains its 81 generated `dist/` changes, denied `package.json` and `scripts/deploy-release.py` edits, denied `mobile-foundation.css` and `styles.css` edits, denied workflow-document edits, or the two denied temporary/unreferenced CSS files. Approved and unreviewed stash content remains.
+
+The remediation snapshot no longer contains the denied Community Partners page edit or the six denied video redirect changes. The approved Kids/family and Samurai Break redirect updates and other approved paths remain. Its three workbook exports remain outside the website source.
+
+The filtered trees were checked against their stash base commits for the denied paths and redirect values. The live website payload was not changed by this cleanup; its approved release had already been deployed. Superseded stash commits were dropped from the stash list; Git may retain their unreachable objects until normal pruning.
