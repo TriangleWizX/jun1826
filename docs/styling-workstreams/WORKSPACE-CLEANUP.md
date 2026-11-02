@@ -383,12 +383,12 @@ Pre-creation registration: workstream `NEAR-WINTER-RELEASE-20261103`; owner Coor
 Closeout: worktree and build/browser artifacts were removed after release verification. Peak checkout size was 2.1 GiB; the separate shared `node_modules` target was retained. No temporary workspace remains.
 
 
-## Denied stash changes removed
+## Stash cleanup status
 
-The two reviewed stash entries were replaced with filtered snapshots. The remediation stash is now `stash@{0}` at `5cc7bbe6c5afb9eea01661cf6d885cbf7f4f626c`; the hold stash is now `stash@{1}` at `c1a827b9f5fee87c3d4b3a03d8c3ba070a81289d`.
+The reviewed stash entries are filtered. The remediation stash is `stash@{0}` at `f55134104b24f5d7767a56820d05547cee08eed4`; the hold stash is `stash@{1}` at `c1a827b9f5fee87c3d4b3a03d8c3ba070a81289d`.
 
-The hold snapshot no longer contains its 81 generated `dist/` changes, denied `package.json` and `scripts/deploy-release.py` edits, denied `mobile-foundation.css` and `styles.css` edits, denied workflow-document edits, or the two denied temporary/unreferenced CSS files. Approved and unreviewed stash content remains.
+The hold stash no longer contains its 81 generated `dist/` changes, denied `package.json` and `scripts/deploy-release.py` edits, denied `mobile-foundation.css` and `styles.css` edits, denied workflow-document edits, or the two denied temporary/unreferenced CSS files.
 
-The remediation snapshot no longer contains the denied Community Partners page edit or the six denied video redirect changes. The approved Kids/family and Samurai Break redirect updates and other approved paths remain. Its three workbook exports remain outside the website source.
+The remediation stash no longer contains the denied Community Partners page edit or the six denied video redirects. After the approved website edits were confirmed in the committed source, the user approved removing those seven tracked file changes from the stash too. The stash now retains only the three workbook exports: done (18,740 bytes), ignored (18,127 bytes), and todo (35,377 bytes).
 
-The filtered trees were checked against their stash base commits for the denied paths and redirect values. The live website payload was not changed by this cleanup; its approved release had already been deployed. Superseded stash commits were dropped from the stash list; Git may retain their unreachable objects until normal pruning.
+Filtered tree checks confirmed the hold stash has no generated `dist/` changes, the remediation stash has no tracked changes, all three workbook exports remain, and the worktree was clean before the documentation update. The approved site release had already been deployed; this cleanup changed no live site files. Superseded stash commits were dropped from the stash list; Git may retain their unreachable objects until normal pruning.
