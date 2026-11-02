@@ -260,7 +260,24 @@ embed {
   box-sizing: border-box;
 }
 
+/* Page-scoped 44px controls approved for the focused accessibility cohort. */
+.page-tactical .btn-tactical {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.page-tactical .btn-tactical-secondary {
+  min-height: 44px;
+}
+
+.page-tactical .tactical-form .form-control:not(textarea),
+.page-tactical .tactical-form .form-select {
+  min-height: 44px;
+}
+
 /* Shared focus contract. */
+summary { min-height: 44px; }
 .ss-global-nav-wrapper a:focus-visible,
 .ss-global-nav-wrapper button:focus-visible,
 .ss-new-site-footer a:focus-visible,
@@ -271,7 +288,7 @@ embed {
 .desktop-sticky-cta button:focus-visible,
 .ss-mobile-actionbar a:focus-visible,
 .ss-mobile-actionbar button:focus-visible {
-  outline: var(--rule-fine) solid var(--color-focus);
+  outline: var(--rule-fine, 2px) solid var(--color-focus, var(--ss-green));
   outline-offset: var(--space-3xs);
 }
 
@@ -1053,7 +1070,7 @@ footer.ss-new-site-footer {
 
 .ss-btn:focus-visible,
 .ss-schedule-lead-close:focus-visible {
-  outline: var(--rule-fine) solid var(--color-focus);
+  outline: var(--rule-fine, 2px) solid var(--color-focus, var(--ss-green));
   outline-offset: var(--space-3xs);
 }
 
@@ -1881,6 +1898,12 @@ dialog#help-modal {
   .desktop-sticky-cta *,
   .ss-mobile-actionbar,
   .ss-mobile-actionbar * {
+    animation: none;
+    transition: none;
+  }
+
+  body.page-programs .prog-sticky-cta,
+  body.page-programs .prog-sticky-cta.is-visible {
     animation: none;
     transition: none;
   }
@@ -2857,9 +2880,142 @@ body .ss-global-nav-wrapper .ss-navbar .dropdown-menu {
   z-index: 2001;
 }
 
+@media (max-width: 767.98px) {
+  :is(.he-eyebrow, .badge, .phone-link, .quote-text, .breadcrumb-item, li) {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
 
-/* Page-scoped 44px controls approved for the focused accessibility cohort. */
-.page-tactical .btn-tactical { display: inline-flex; align-items: center; min-height: 44px; }
-.page-tactical .btn-tactical-secondary { min-height: 44px; }
-.page-tactical .tactical-form .form-control:not(textarea),
-.page-tactical .tactical-form .form-select { min-height: 44px; }
+  body .he-eyebrow,
+  body .phone-link {
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .he-eyebrow {
+    font-size: 14px;
+  }
+
+  .form-label,
+  .ff-form-label {
+    font-size: 14px;
+  }
+
+  .page-partners-schools .he-eyebrow,
+  .ss-page-rural-bjj .he-eyebrow,
+  .bjj-hero-content .he-eyebrow {
+    font-size: 14px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  body.ss-page-rural-bjj .rural-hero .he-eyebrow,
+  body.ss-page-rural-bjj .rural-section-header .he-eyebrow,
+  body .ss-near-hero .bjj-hero-content .he-eyebrow {
+    display: inline-block;
+    font-size: 14px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  body.page-bring-friend .ss-form-field label,
+  body.page-friday-fanatics .ff-form-label,
+  body.page-law-enforcement .form-label {
+    font-size: 14px;
+  }
+
+  body .ss-breadcrumbs-list li[aria-current="page"] {
+    max-width: 100%;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  body.page-how-class-works .badge {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .ig-shell .topbar {
+    flex-wrap: wrap;
+  }
+
+  .ig-shell .topbar .phone-link {
+    flex: 1 1 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .accordion-button,
+  .btn-sm,
+  #copyMatSnackBtn {
+    min-height: 44px;
+  }
+
+  .alert .d-flex.flex-wrap.gap-2 > .btn-sm {
+    flex: 1 1 100%;
+    justify-content: center;
+    min-width: 44px;
+    width: 100%;
+  }
+}
+
+/* The associated label supplies the touch target around native consent controls. */
+.ss-consent-label {
+  display: block;
+  min-width: 44px;
+  min-height: 46px;
+  cursor: pointer;
+}
+
+/* Keep standalone discovery and route-action links easy to tap. */
+a.ss-card-link,
+a.sr-card-link,
+a.ss-bridge-schedule-link,
+a.ss-path-link,
+a.ss-rail-link,
+a.ss-hero-mobile-avail {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+}
+
+a.badge[href] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+}
+
+body[class*="lane-"] .ss-section-premium .col-lg-7 > .d-flex.align-items-center a.text-decoration-none.text-muted {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+}
+
+.ss-global-nav-wrapper a.ss-topbar-availability,
+.ss-global-nav-wrapper a.ss-topbar-sms {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+}
+
+body footer.ss-new-site-footer .ss-new-footer-contact-link {
+  min-height: 46px;
+}
+
+.lane-mixed .db-card-inner a.badge[href] {
+  min-height: 46px;
+}
+
+#ss-lead-capture-form-inline input:not([type="hidden"]) {
+  box-sizing: border-box;
+  min-height: 46px;
+}
