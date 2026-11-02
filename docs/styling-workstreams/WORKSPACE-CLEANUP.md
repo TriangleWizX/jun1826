@@ -385,10 +385,12 @@ Closeout: worktree and build/browser artifacts were removed after release verifi
 
 ## Stash cleanup status
 
-The filtered hold stash is `stash@{0}` at `acb176af48924db5c06a342c8dcaa7286727774e`; the remediation workbook stash is `stash@{1}` at `f55134104b24f5d7767a56820d05547cee08eed4`.
+The filtered hold stash is `stash@{0}` at `65ff7e174c0086b6d7eab1ee29db099fc4eadd40`; the remediation workbook stash is `stash@{1}` at `f55134104b24f5d7767a56820d05547cee08eed4`.
 
-The hold stash has no tracked changes. All 32 reviewed A cohort, QA tooling, and workflow edits were removed from the stash after checks confirmed their changes were already in committed `HEAD`. The earlier denied `dist/`, package/deploy script, CSS, and workflow-document changes remain absent.
+The hold stash has no tracked website changes. The previously denied `dist/`, package/deploy script, CSS, and workflow-document changes are absent. The approved tracked source and QA changes already in committed `HEAD` are also absent from the stash.
 
-The hold stash retains 688 untracked files totaling 368,652,495 bytes: 140 viewport PNGs under `--help/` (190,095,477 bytes), 533 files under `docs/` (170,430,257 bytes), 9 photos under `assets/` (8,093,310 bytes), 3 scripts (12,271 bytes), 2 scratch files (18,890 bytes), and 1 test file. No untracked file has an exact blob duplicate in current `HEAD`. These files are held for a separate retention review.
+Following the user's retention choices, 261 files were removed from the hold stash: 140 PNG captures under `--help/`, 120 PNG captures under `docs/ws29/runs/`, and `scratch/jiu-jitsu-terms-test.html`. Their raw file-size sum is 316,895,994 bytes. The four retained internal records that reference these captures now state that the image files were removed.
 
-The remediation stash contains only three workbook exports: done (18,740 bytes), ignored (18,127 bytes), and todo (35,377 bytes). Superseded stash commits were dropped from the stash list; Git may retain their unreachable objects until normal pruning.
+The hold stash now contains 427 untracked files totaling 51,757,583 bytes: `docs/` 413 files (43,644,032 bytes), `assets/` 9 originals (8,093,310 bytes), `scratch/` 1 sales brief (5,680 bytes), `scripts/` 3 QA helpers (12,271 bytes), and `tests/` 1 test (2,290 bytes). The 114 WS29 JSON records and 142 styling evidence PNGs remain. The separate workbook stash retains its three exports totaling 72,244 bytes.
+
+Raw path totals are not guaranteed disk savings because Git packs and deduplicates blobs. Superseded stash commits were dropped from the stash list; no repository-wide garbage collection was run.
