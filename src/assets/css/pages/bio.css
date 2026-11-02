@@ -2042,3 +2042,624 @@ body.page-bio .ss-mobile-sticky a {
   border-radius: 999px;
   text-decoration: none;
 }
+
+/* =========================================================
+   Sensei Sandy Bio Page — Editorial Human Styling
+   ========================================================= */
+
+body.page-bio {
+  color: var(--ss-text, #1F1712);
+  background-color: var(--ss-bg, #FBFAF8);
+}
+
+/* Bio Button Styles */
+body.page-bio .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  min-height: 48px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+body.page-bio .btn-primary {
+  color: #FFFFFF !important;
+  background-color: var(--ss-green, #116A42);
+  border: 2px solid var(--ss-green, #116A42);
+  box-shadow: 0 4px 14px rgba(17, 106, 66, 0.25);
+}
+
+body.page-bio .btn-primary:hover,
+body.page-bio .btn-primary:focus-visible {
+  color: #FFFFFF !important;
+  background-color: #0d5434;
+  border-color: #0d5434;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(17, 106, 66, 0.35);
+}
+
+body.page-bio .btn-outline-secondary {
+  color: var(--ss-text, #1F1712) !important;
+  background-color: transparent;
+  border: 2px solid var(--ss-border, rgba(54, 43, 36, 0.25));
+}
+
+body.page-bio .btn-outline-secondary:hover,
+body.page-bio .btn-outline-secondary:focus-visible {
+  color: var(--ss-text, #1F1712) !important;
+  background-color: var(--ss-surface2, #F4F1ED);
+  border-color: rgba(54, 43, 36, 0.45);
+  transform: translateY(-1px);
+}
+
+body.page-bio .btn-lg {
+  padding: 0.875rem 1.85rem;
+  font-size: 1.0625rem;
+  min-height: 52px;
+}
+
+/* Sections */
+body.page-bio .bio-section {
+  padding: clamp(3.25rem, 6vw, 5.5rem) 0;
+  position: relative;
+}
+
+body.page-bio .bio-section--paper {
+  background-color: var(--ss-bg, #FBFAF8);
+}
+
+body.page-bio .bio-section--warm {
+  background-color: var(--ss-surface2, #F4F1ED);
+}
+
+body.page-bio .bio-section--white {
+  background-color: var(--ss-surface, #FFFFFF);
+}
+
+body.page-bio .bio-border-top {
+  border-top: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+}
+
+/* Editorial Typography */
+body.page-bio .bio-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ss-green, #116A42);
+  margin-bottom: 0.75rem;
+}
+
+body.page-bio .bio-kicker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ss-green, #116A42);
+  display: inline-block;
+}
+
+body.page-bio .bio-title {
+  font-family: var(--font-display, 'Instrument Serif', Georgia, serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.15;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+body.page-bio .bio-subtitle {
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  max-width: 64ch;
+}
+
+body.page-bio .bio-prose {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--ss-text, #1F1712);
+  margin-bottom: 1.25rem;
+  max-width: 68ch;
+}
+
+/* Trust Chips */
+body.page-bio .bio-trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+body.page-bio .bio-trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(17, 106, 66, 0.06);
+  border: 1px solid rgba(17, 106, 66, 0.18);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ss-green, #116A42);
+}
+
+body.page-bio .bio-trust-chip i {
+  font-size: 0.95rem;
+}
+
+/* Hero Portrait Styling */
+body.page-bio .bio-portrait-wrap {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  box-shadow: 0 16px 36px -12px rgba(54, 43, 36, 0.15);
+  background: var(--ss-surface2, #F4F1ED);
+}
+
+body.page-bio .bio-portrait-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(251, 250, 248, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 16px rgba(54, 43, 36, 0.08);
+}
+
+body.page-bio .bio-portrait-badge-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(17, 106, 66, 0.12);
+  color: var(--ss-green, #116A42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+body.page-bio .bio-portrait-badge-text {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--ss-ink, #362B24);
+  margin: 0;
+}
+
+body.page-bio .bio-portrait-badge-text strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--ss-text, #1F1712);
+}
+
+/* Verified Credentials Cards */
+body.page-bio .bio-credential-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.1);
+  border-radius: 1.125rem;
+  padding: 1.75rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 16px -4px rgba(54, 43, 36, 0.04);
+}
+
+body.page-bio .bio-credential-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(54, 43, 36, 0.09);
+  border-color: rgba(17, 106, 66, 0.28);
+}
+
+body.page-bio .bio-credential-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-green, #116A42);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+body.page-bio .bio-credential-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ss-brown, #8B522E);
+  margin-bottom: 0.35rem;
+}
+
+body.page-bio .bio-credential-title {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+body.page-bio .bio-credential-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  margin-bottom: 0;
+}
+
+/* Journey Timeline */
+body.page-bio .bio-timeline-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.1);
+  border-radius: 1.25rem;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 8px 24px -6px rgba(54, 43, 36, 0.06);
+}
+
+body.page-bio .bio-timeline-card-title {
+  font-family: var(--font-display, 'Instrument Serif', Georgia, serif);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ss-border, rgba(54, 43, 36, 0.12));
+}
+
+body.page-bio .bio-timeline {
+  position: relative;
+  padding-left: 2rem;
+  list-style: none;
+  margin: 0;
+}
+
+body.page-bio .bio-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.55rem;
+  width: 2px;
+  background: rgba(17, 106, 66, 0.2);
+}
+
+body.page-bio .bio-timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+body.page-bio .bio-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+body.page-bio .bio-timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ss-surface, #FFFFFF);
+  border: 3px solid var(--ss-green, #116A42);
+  box-shadow: 0 0 0 2px rgba(17, 106, 66, 0.15);
+}
+
+body.page-bio .bio-timeline-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ss-brown, #8B522E);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+body.page-bio .bio-timeline-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.25rem;
+}
+
+body.page-bio .bio-timeline-copy {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ss-muted, #4F433C);
+  margin: 0;
+}
+
+/* Lineage Chain Visual */
+body.page-bio .bio-lineage-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px -4px rgba(54, 43, 36, 0.04);
+}
+
+body.page-bio .bio-lineage-node {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ss-ink, #362B24);
+}
+
+body.page-bio .bio-lineage-node--active {
+  color: var(--ss-green, #116A42);
+  font-weight: 700;
+}
+
+body.page-bio .bio-lineage-arrow {
+  color: var(--ss-brown, #8B522E);
+  font-size: 0.875rem;
+}
+
+/* Archival Photo Frame */
+body.page-bio .bio-archival-frame {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 12px 32px -8px rgba(54, 43, 36, 0.1);
+  display: inline-block;
+  max-width: 100%;
+}
+
+body.page-bio .bio-archival-frame img {
+  border-radius: 0.875rem;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body.page-bio .bio-archival-caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ss-muted, #4F433C);
+  margin-top: 0.875rem;
+  padding-inline: 0.5rem;
+  text-align: center;
+}
+
+/* Highlight Vignettes & Spotlights */
+body.page-bio .bio-vignette {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.1);
+  border-left: 4px solid var(--ss-green, #116A42);
+  border-radius: 0.875rem;
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px -4px rgba(54, 43, 36, 0.04);
+}
+
+body.page-bio .bio-vignette-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.page-bio .bio-vignette-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ss-muted, #4F433C);
+  margin: 0;
+}
+
+/* Terrified Beginners Pull-Quote */
+body.page-bio .bio-pullquote {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(244, 241, 237, 0.7));
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  margin: 2.5rem 0;
+  box-shadow: 0 16px 36px -10px rgba(54, 43, 36, 0.08);
+  overflow: hidden;
+}
+
+body.page-bio .bio-pullquote::before {
+  content: "“";
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  font-family: var(--font-display, 'Instrument Serif', Georgia, serif);
+  font-size: 9rem;
+  line-height: 1;
+  color: rgba(139, 82, 46, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+body.page-bio .bio-pullquote-kicker {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ss-brown, #8B522E);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.page-bio .bio-pullquote-text {
+  font-family: var(--font-display, 'Instrument Serif', Georgia, serif);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.4;
+  color: var(--ss-ink, #362B24);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+body.page-bio .bio-pullquote-author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  position: relative;
+  z-index: 1;
+}
+
+body.page-bio .bio-pullquote-author-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ss-surface, #FFFFFF);
+  box-shadow: 0 2px 8px rgba(54, 43, 36, 0.12);
+}
+
+body.page-bio .bio-pullquote-author-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  line-height: 1.25;
+}
+
+body.page-bio .bio-pullquote-author-role {
+  font-size: 0.8125rem;
+  color: var(--ss-muted, #4F433C);
+  line-height: 1.25;
+}
+
+/* Philosophy Tenet Cards */
+body.page-bio .bio-tenet-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 10px rgba(54, 43, 36, 0.03);
+}
+
+body.page-bio .bio-tenet-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(17, 106, 66, 0.25);
+}
+
+body.page-bio .bio-tenet-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+body.page-bio .bio-tenet-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(17, 106, 66, 0.08);
+  color: var(--ss-green, #116A42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+body.page-bio .bio-tenet-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--ss-ink, #362B24);
+  margin: 0;
+}
+
+body.page-bio .bio-tenet-copy {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ss-muted, #4F433C);
+  margin: 0;
+}
+
+/* Closing Invitation Card */
+body.page-bio .bio-closing-card {
+  background: var(--ss-surface, #FFFFFF);
+  border: 1px solid rgba(54, 43, 36, 0.12);
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: 0 16px 40px -12px rgba(54, 43, 36, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+body.page-bio .bio-closing-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ss-green, #116A42), var(--ss-teal, #289FA1), var(--ss-brown, #8B522E));
+}
+
+body.page-bio .bio-reassurance-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+body.page-bio .bio-reassurance-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  color: var(--ss-muted, #4F433C);
+}
+
+body.page-bio .bio-reassurance-item i {
+  color: var(--ss-green, #116A42);
+}
+
+body.page-bio .bio-location-meta {
+  font-size: 0.875rem;
+  color: var(--ss-muted, #4F433C);
+  margin-top: 1.25rem;
+  line-height: 1.5;
+}
+
