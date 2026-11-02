@@ -67,13 +67,13 @@ for (const file of files) {
   // The giveaway rules must state their approved opening time. This exact
   // dated event is not a recurring class time; keep scanning all other times.
   if (file === "src/giveaway-rules.html" &&
-      (body.match(/Sunday, October 25, 2026 at 10:00 AM ET/g) || []).length !== 1) {
+      (body.match(/Monday, October 26, 2026 at 7:30 AM ET/g) || []).length !== 1) {
     fail("giveaway rules must state the approved opening date and time once");
   }
   // The approved bootcamp entries are the sole source allowed to carry these
   // early-morning times. Mask only those exact JSON fields before the global scan.
   const scanBody = file === "src/giveaway-rules.html"
-    ? body.replace("Sunday, October 25, 2026 at 10:00 AM ET", "GIVEAWAY_OPENING_TIME")
+    ? body.replace("Monday, October 26, 2026 at 7:30 AM ET", "GIVEAWAY_OPENING_TIME")
     : file === "src/_data/schedule.json"
     ? body.replace(/("id": "(?:tuesday|thursday)-alley-bootcamp"[\s\S]*?"active": true)/g, (entry) =>
         entry.replace(/"(?:time|endTime)": "(?:6:30 AM|7:10 AM)"/g, '"time": "BOOTCAMP_TIME"'))
