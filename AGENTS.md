@@ -294,12 +294,22 @@ Hardcoded secrets
 Breaking existing URLs
 Testing and Validation
 
-Use an isolated headless browser as the primary path for public-page browser
-verification. Run `rtk proxy node tools/browser-proof.mjs <url> <output-directory>`
-for mobile and desktop evidence; see `docs/BROWSER-VERIFICATION.md`. Use the
-interactive Chrome harness only when the task requires the user's existing
-signed-in session. Request required elevated approval for external network
-checks and browser socket restrictions before running them.
+Use an isolated headless browser as the primary path for repeatable public-page
+evidence. Run `rtk proxy node tools/browser-proof.mjs <url> <output-directory>`
+for mobile and desktop captures; see `docs/BROWSER-VERIFICATION.md`. Use the
+user-level `browser-use` skill and executable for interactive browser work,
+including local page state and visual inspection. Check setup with
+`browser-use --doctor`. For local previews, use a temporary profile, a unique
+`BU_NAME` for each concurrent workstream, and its explicit `BU_CDP_URL`; the URL
+alone can still reuse the shared default daemon. Never reload the default daemon
+while another workstream may be using it. Block off-origin requests for local
+previews. Use the user's profile only when the task specifically requires its
+signed-in session. Task-approved keyboard, scroll, and click interactions are
+allowed; do not submit real forms or trigger external side effects unless the
+task explicitly authorizes them. Do not add the CLI as a site dependency or
+enable recordings without the user's consent. Request required elevated
+approval for external network checks and browser socket restrictions before
+running them.
 
 After changes, run the most relevant available checks.
 
@@ -503,6 +513,10 @@ the ordinary-specialist fallback. The orchestrator remains accountable for
 reviewing every worker result and completing the Definition of Done.
 
 All assistant and agent interactions in this repository operate under the **Persona Studio & Auto Persona Tri-Tier Model** backed by `assets/indranet-prompt-exporter/` (catalog of 800+ specialized personas, `auto_persona.py`, `persona_quick.py`, and `persona_planner.py`).
+
+### Temporary workspace lifecycle
+
+For multi-agent styling work, every temporary checkout or environment needs an owner, workstream ID, purpose, creation date, base source, expected size, and closeout trigger recorded before creation. At the start, before dispatch, and at the end of each focused session, run `tools/workspace-audit.py` with the active inventory and `/tmp` as its temp root; reconcile exact paths, Git worktrees, and disk space, and do not start a new wave while prior entries are ownerless or overdue. The audit is read-only and its candidate discovery is heuristic. Do not copy virtual environments, `node_modules`, browser profiles/caches, or generated `dist` by default. Record an exception's reason, size, and closeout date. Prefer same-session closeout of environments and exact redundant paths after preserving accepted patches and evidence. Maintain the workspace inventory and follow `docs/styling-workstreams/WORKSPACE-CLEANUP.md`.
 
 ### 1. Goals (`/goal`): INSTRUCTIONS + Multi-Agent Persona Swarm
 - Autonomous, multi-step, or long-running goals MUST be handled using **specific INSTRUCTIONS** combined with a **swarm of agent personas**.
