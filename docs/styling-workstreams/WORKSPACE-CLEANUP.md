@@ -385,10 +385,10 @@ Closeout: worktree and build/browser artifacts were removed after release verifi
 
 ## Stash cleanup status
 
-The reviewed stash entries are filtered. The hold stash is `stash@{0}` at `c568757303fc3bc2fd0c9aa1fddb996853a51eac`; the remediation workbook stash is `stash@{1}` at `f55134104b24f5d7767a56820d05547cee08eed4`.
+The filtered hold stash is `stash@{0}` at `acb176af48924db5c06a342c8dcaa7286727774e`; the remediation workbook stash is `stash@{1}` at `f55134104b24f5d7767a56820d05547cee08eed4`.
 
-The hold stash no longer contains its 81 generated `dist/` changes, denied package and deploy script edits, denied CSS edits, or denied workflow-document edits. Thirty-one further tracked changes were removed after exact reverse-patch checks confirmed they are already in current `HEAD`. The remaining `src/assets/css/site-shell.css` edit is held for separate review.
+The hold stash has no tracked changes. All 32 reviewed A cohort, QA tooling, and workflow edits were removed from the stash after checks confirmed their changes were already in committed `HEAD`. The earlier denied `dist/`, package/deploy script, CSS, and workflow-document changes remain absent.
 
-The hold stash still contains 688 untracked files totaling 368,652,495 bytes: 140 files under `--help/` (190,095,477 bytes), 533 under `docs/` (170,430,257 bytes), 9 under `assets/` (8,093,310 bytes), 3 under `scripts/` (12,271 bytes), 2 under `scratch/` (18,890 bytes), and one small root file. These artifacts remain for path review.
+The hold stash retains 688 untracked files totaling 368,652,495 bytes: 140 viewport PNGs under `--help/` (190,095,477 bytes), 533 files under `docs/` (170,430,257 bytes), 9 photos under `assets/` (8,093,310 bytes), 3 scripts (12,271 bytes), 2 scratch files (18,890 bytes), and 1 test file. No untracked file has an exact blob duplicate in current `HEAD`. These files are held for a separate retention review.
 
 The remediation stash contains only three workbook exports: done (18,740 bytes), ignored (18,127 bytes), and todo (35,377 bytes). Superseded stash commits were dropped from the stash list; Git may retain their unreachable objects until normal pruning.
