@@ -13,32 +13,22 @@ let baseUrl = '';
 if (isLive) {
   baseUrl = 'https://senseisandy.com';
 } else {
-  // Obtain current availability fixture from live API if possible, with fallback
-  let liveAvailFixture = {
-    status: 'available',
-    timeframe: 'week',
-    timeframeLabel: 'this coming week',
-    availableSlotCount: 26,
-    nextAvailableLabel: 'Mon, Sep 14',
-    nextAvailableDaySpots: 8,
-    nextAvailableDayLabel: 'Mon, Sep 14',
-    spotsPerDayRange: '4–10',
-    spotsPerDayLabel: '4–10 spots left each day'
-  };
-
-  try {
-    const res = await fetch('https://senseisandy.com/api/first-visit-availability', { signal: AbortSignal.timeout(4000) });
-    if (res.ok) {
-      liveAvailFixture = await res.json();
-    }
-  } catch (_) {}
-
   server = createServer(async (req, res) => {
     try {
       const parsed = new URL(req.url, 'http://local');
       if (parsed.pathname === '/api/first-visit-availability') {
-        res.setHeader('Content-Type', 'application/json');
-        return res.end(JSON.stringify(liveAvailFixture));
+        const upstreamUrl = new URL(parsed.pathname, 'https://senseisandy.com');
+        upstreamUrl.search = parsed.search;
+        const upstream = await fetch(upstreamUrl, {
+          headers: { Accept: 'application/json' },
+          signal: AbortSignal.timeout(5000)
+        });
+        const body = await upstream.arrayBuffer();
+        res.writeHead(upstream.status, {
+          'Content-Type': upstream.headers.get('content-type') || 'application/json',
+          'Cache-Control': 'no-store'
+        });
+        return res.end(Buffer.from(body));
       }
       let rel = decodeURI(parsed.pathname).slice(1) || 'index.html';
       let file = path.join(root, rel);

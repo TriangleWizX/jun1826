@@ -204,22 +204,26 @@ const extractResult = (html) => {
 const shouldFallback = (error) => /listen EPERM|spawn .* ENOENT|snap-confine/i.test(String(error?.message || error));
 
 const runStaticAudit = async (reason) => {
-  console.warn(`Browser sticky overlap audit unavailable (${reason}). Running static sticky contract audit.`);
-  const navCandidates = [
-    path.join(ROOT, 'src/partials/nav-include.html'),
-    path.join(ROOT, 'dist/nav-include.html'),
-    path.join(ROOT, 'nav-include.html')
+  console.warn(`Browser sticky overlap audit unavailable (${reason}). Checking static source contracts only; rendered overlap remains unverified.`);
+  const footerCandidates = [
+    path.join(ROOT, 'src/_includes/components/footer.njk'),
+    path.join(ROOT, 'src/partials/footer-include.html'),
+    path.join(ROOT, 'dist/nav-include.html')
   ];
-  let navHtml = '';
-  for (const c of navCandidates) {
-    try { navHtml = await fs.readFile(c, 'utf8'); break; } catch {}
+  let footerHtml = '';
+  for (const candidate of footerCandidates) {
+    try { footerHtml = await fs.readFile(candidate, 'utf8'); break; } catch {}
   }
   const globalCss = await fs.readFile(path.join(ROOT, 'src/assets/css/global.css'), 'utf8');
+  const mobileCss = await fs.readFile(path.join(ROOT, 'src/assets/css/mobile-foundation.css'), 'utf8');
 
-  ensure(navHtml.includes('.ss-mobile-actions'), 'nav-include.html: expected mobile sticky actions class missing.');
-  ensure(/env\(safe-area-inset-bottom\)/.test(navHtml) || /env\(safe-area-inset-bottom\)/.test(globalCss), 'safe-area-inset-bottom guard missing from sticky/footer styles.');
-  ensure(/padding-bottom:\s*76px/.test(navHtml) || /padding-bottom:\s*calc\(76px \+ env\(safe-area-inset-bottom\)\)/.test(globalCss), 'body bottom padding guard for sticky controls missing.');
-  console.log('Static sticky overlap contract audit passed.');
+  ensure(footerHtml.includes('class="ss-mobile-actionbar"'), 'Footer component: .ss-mobile-actionbar markup missing.');
+  ensure(footerHtml.includes('class="ss-action-primary"') && footerHtml.includes('class="ss-action-reserve"'), 'Footer component: expected primary and reserve action links missing.');
+  ensure(/\.ss-mobile-actionbar[\s\S]*?position:\s*fixed;[\s\S]*?bottom:\s*0;/.test(globalCss), 'global.css: fixed bottom mobile action-bar contract missing.');
+  ensure(/env\(safe-area-inset-bottom/.test(globalCss) || /env\(safe-area-inset-bottom/.test(mobileCss), 'safe-area-inset-bottom guard missing from sticky styles.');
+  ensure(/body\[data-ws29-funnel\][^{]*\{[^}]*padding-block-end:\s*calc\(88px\s*\+\s*env\(safe-area-inset-bottom\)\)/s.test(mobileCss), 'mobile-foundation.css: funnel bottom clearance contract missing.');
+  ensure(/body\[data-ws29-funnel\]:has\(:focus-visible\)\s+\.ss-mobile-actionbar\s*\{[^}]*display:\s*none\s*!important/s.test(mobileCss), 'mobile-foundation.css: focused-control clearance rule missing.');
+  console.log('Static sticky source contracts passed; rendered overlap and device clearance are not established.');
 };
 
 let server;

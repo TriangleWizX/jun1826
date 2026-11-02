@@ -6,6 +6,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { evaluateContrastCandidates } from './lib/visibility-contrast.mjs';
 
 const root = process.cwd();
 const args = new Map(process.argv.slice(2).filter(a => a.startsWith('--')).map(a => {
@@ -15,6 +16,8 @@ const target = path.resolve(root, args.get('root') || 'dist');
 const reportPath = args.get('json') && path.resolve(root, args.get('json'));
 const strictSsi = Boolean(args.get('strict-ssi'));
 const failures = [], warnings = [], checks = [];
+const contrastSummary = { opaquePairsEvaluated: 0, notEvaluatedRules: 0 };
+const contrastNotEvaluated = [];
 const fail = (kind, file, detail) => { failures.push({ kind, file: rel(file), detail }); };
 const warn = (kind, file, detail) => { warnings.push({ kind, file: rel(file), detail }); };
 const pass = (kind, file, detail) => checks.push({ kind, file: rel(file), detail });
@@ -29,15 +32,6 @@ const files = fs.existsSync(target) ? walk(target) : [];
 const htmlFiles = files.filter(f => /\.html?$/i.test(f));
 const cssFiles = files.filter(f => /\.css$/i.test(f));
 const text = file => fs.readFileSync(file, 'utf8');
-const hex = value => {
-  const m = String(value).trim().match(/^#([0-9a-f]{3,8})$/i); if (!m) return null;
-  let h = m[1]; if (h.length === 3) h = h.split('').map(x => x + x).join('');
-  if (h.length < 6) return null;
-  return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16) / 255);
-};
-const luminance = rgb => rgb.reduce((sum, c, i) => sum + (c <= .03928 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4) * [0.2126, .7152, .0722][i], 0);
-const contrast = (a, b) => { const x = luminance(a), y = luminance(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
-
 if (!fs.existsSync(target)) fail('missing-target', target, 'Target directory does not exist');
 for (const file of files) {
   if (fs.statSync(file).size === 0 && /\.(html?|css|shtml)$/i.test(file)) {
@@ -74,25 +68,35 @@ for (const file of htmlFiles) {
 }
 for (const file of cssFiles) {
   const body = text(file);
+  const contrastResult = evaluateContrastCandidates(body, rel(file));
+  contrastSummary.opaquePairsEvaluated += contrastResult.summary.opaquePairsEvaluated;
+  contrastSummary.notEvaluatedRules += contrastResult.summary.notEvaluatedRules;
+  failures.push(...contrastResult.failures);
+  if (contrastNotEvaluated.length < 20) {
+    contrastNotEvaluated.push(...contrastResult.notEvaluated.slice(0, 20 - contrastNotEvaluated.length));
+  }
   const rules = [...body.matchAll(/([^{}]+)\{([^{}]*)\}/g)];
   const selectors = new Map();
   for (const [, selector, declarations] of rules) {
     const key = selector.trim().replace(/\s+/g, ' ');
-    const colors = [...declarations.matchAll(/\b(color|background(?:-color)?)\s*:\s*(#[0-9a-f]{3,8})\b/gi)];
-    if (colors.length) selectors.set(key, (selectors.get(key) || 0) + 1);
-    for (const [property, value] of colors) {
-      if (property.toLowerCase() === 'color') {
-        const fg = hex(value), bgMatch = declarations.match(/background(?:-color)?\s*:\s*(#[0-9a-f]{3,8})/i), bg = bgMatch && hex(bgMatch[1]);
-        if (fg && bg && contrast(fg, bg) < 4.5) fail('low-contrast-css', file, `${key}: ${value} on ${bgMatch[1]} has contrast ${contrast(fg, bg).toFixed(2)}:1`);
-      }
+    if (/\b(?:color|background(?:-color)?)\s*:/i.test(declarations)) {
+      selectors.set(key, (selectors.get(key) || 0) + 1);
     }
   }
   const duplicate = [...selectors.entries()].filter(([, count]) => count > 1).map(([key]) => key);
   if (duplicate.length) warn('duplicate-selector', file, `Repeated selectors may indicate cascade overlap: ${duplicate.slice(0, 5).join(' | ')}`);
   if (/\bsvg\s*\{[^}]*width\s*:\s*100%/is.test(body)) warn('svg-width-rule', file, 'Global SVG width:100% can stretch dimensionless inline icons');
-  pass('css-scanned', file, 'Color, duplicate-selector, and SVG cascade checks complete');
+  pass('css-scanned', file, 'CSS parser completed; contrast covers only same-rule explicit opaque-hex candidates, and unsupported declarations are counted as not evaluated. This is not rendered contrast coverage.');
 }
-const result = { generatedAt: new Date().toISOString(), target: rel(target), summary: { html: htmlFiles.length, css: cssFiles.length, checks: checks.length, warnings: warnings.length, failures: failures.length }, failures, warnings, checks };
+const result = {
+  generatedAt: new Date().toISOString(),
+  target: rel(target),
+  summary: { html: htmlFiles.length, css: cssFiles.length, checks: checks.length, warnings: warnings.length, failures: failures.length, contrast: contrastSummary },
+  contrastNotEvaluated,
+  failures,
+  warnings,
+  checks
+};
 if (reportPath) { fs.mkdirSync(path.dirname(reportPath), { recursive: true }); fs.writeFileSync(reportPath, JSON.stringify(result, null, 2) + '\n'); }
 console.log(JSON.stringify(result.summary));
 for (const item of failures) console.error(`FAIL ${item.kind} ${item.file}: ${item.detail}`);

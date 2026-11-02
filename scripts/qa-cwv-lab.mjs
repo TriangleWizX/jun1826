@@ -1,103 +1,73 @@
 #!/usr/bin/env node
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { access } from "node:fs/promises";
+import { constants } from "node:fs";
+import { isAbsolute, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
-const BASE_URL = process.env.CWV_BASE_URL || "http://127.0.0.1:8123";
-const OUT_DIR = process.env.CWV_OUT_DIR || "tmp/cwv-lab";
-const PAGES = [
+const projectRoot = process.cwd();
+const runner = resolve(projectRoot, ".agents/skills/web-performance-evidence/scripts/baseline.mjs");
+const siteInput = process.env.CWV_SITE_DIR;
+const siteDir = siteInput ? resolve(siteInput) : "";
+const outDir = process.env.CWV_OUT_DIR;
+const lighthouseBin = process.env.CWV_LIGHTHOUSE_BIN;
+const lighthouseVersion = process.env.CWV_LIGHTHOUSE_VERSION;
+const chromePath = process.env.CWV_CHROME_PATH;
+const performanceRoutes = process.env.CWV_ROUTES || [
   "/",
-  "/schedule",
   "/free-bjj-intro-tannersville-ny",
-  "/bjj-classes/adults-tannersville-ny/",
-  "/options-pricing"
+  "/schedule",
+  "/bjj-classes/kids-tannersville-ny",
+  "/bjj-classes/teens-tannersville-ny",
+  "/bjj-classes/adults-tannersville-ny",
+  "/options-pricing",
+  "/winter-armor-2027"
+].join(",");
+
+const required = [
+  ["CWV_SITE_DIR", siteInput],
+  ["CWV_OUT_DIR", outDir],
+  ["CWV_LIGHTHOUSE_BIN", lighthouseBin],
+  ["CWV_LIGHTHOUSE_VERSION", lighthouseVersion],
+  ["CWV_CHROME_PATH", chromePath]
 ];
-
-mkdirSync(OUT_DIR, { recursive: true });
-
-const directLighthouse = { command: "lighthouse", prefix: [] };
-const npxLighthouse = { command: "npx", prefix: ["--yes", "lighthouse"] };
-const canRun = ({ command, prefix }) => {
-  const probe = spawnSync(command, [...prefix, "--version"], { encoding: "utf8" });
-  return !probe.error && probe.status === 0;
-};
-const lighthouse = canRun(directLighthouse)
-  ? directLighthouse
-  : canRun(npxLighthouse)
-    ? npxLighthouse
-    : null;
-
-if (!lighthouse) {
-  console.error("qa:cwv:lab requires Lighthouse on PATH or runnable through npx.");
+const missing = required.filter(([, value]) => !value).map(([name]) => name);
+if (missing.length) {
+  console.error(`qa:cwv:lab requires ${missing.join(", ")}. See .agents/skills/web-performance-evidence/SKILL.md.`);
+  process.exit(2);
+}
+if (!isAbsolute(siteInput)) {
+  console.error("CWV_SITE_DIR must be an absolute path to a prebuilt isolated site snapshot.");
+  process.exit(2);
+}
+if (!isAbsolute(outDir)) {
+  console.error("CWV_OUT_DIR must be an absolute, fresh path; evidence runs are never overwritten.");
   process.exit(2);
 }
 
-const toMs = (value) => Math.round((Number(value) || 0) * 1000);
-const toNum = (value) => Math.round((Number(value) || 0) * 1000) / 1000;
-const now = new Date().toISOString();
-const runResults = [];
-
-for (const path of PAGES) {
-  const url = `${BASE_URL}${path}`;
-  const slug = path === "/" ? "home" : path.replace(/^\//, "").replace(/\//g, "-");
-  const reportPath = join(OUT_DIR, `${slug}.json`);
-
-  rmSync(reportPath, { force: true });
-
-  const run = spawnSync(
-    lighthouse.command,
-    [
-      ...lighthouse.prefix,
-      url,
-      "--only-categories=performance",
-      "--emulated-form-factor=mobile",
-      "--throttling-method=simulate",
-      "--output=json",
-      `--output-path=${reportPath}`,
-      "--quiet",
-      "--chrome-flags=--headless --no-sandbox --disable-gpu --disable-dev-shm-usage"
-    ],
-    { encoding: "utf8" }
-  );
-
-  if (run.status !== 0) {
-    throw new Error(`Lighthouse failed for ${url}\n${run.stderr || run.stdout}`);
+for (const [name, path, mode] of [["site", siteDir, constants.R_OK], ["Lighthouse", lighthouseBin, constants.X_OK], ["Chrome", chromePath, constants.X_OK], ["baseline runner", runner, constants.R_OK]]) {
+  try {
+    await access(path, mode);
+  } catch {
+    console.error(`Required local ${name} is unavailable at ${path}. No package install or download will be attempted.`);
+    process.exit(2);
   }
-
-  const report = JSON.parse(readFileSync(reportPath, "utf8"));
-  if (report.runtimeError || report.categories?.performance?.score == null) {
-    const detail = report.runtimeError?.message || "Lighthouse did not produce a performance score.";
-    throw new Error(`Lighthouse could not measure ${url}: ${detail}`);
-  }
-  const audits = report.audits || {};
-  const metrics = {
-    url: report.finalDisplayedUrl || url,
-    score: Math.round((report.categories?.performance?.score || 0) * 100),
-    lcp_ms: toMs(audits["largest-contentful-paint"]?.numericValue),
-    inp_ms: toMs(audits["interaction-to-next-paint"]?.numericValue),
-    cls: toNum(audits["cumulative-layout-shift"]?.numericValue)
-  };
-  runResults.push(metrics);
 }
 
-const summaryPath = join(OUT_DIR, "summary.json");
-writeFileSync(summaryPath, JSON.stringify({ generated_at: now, base_url: BASE_URL, pages: runResults }, null, 2));
+const args = [
+  runner,
+  "--phase", process.env.CWV_PHASE || "before",
+  "--out", outDir,
+  "--site-dir", siteDir,
+  "--project-root", projectRoot,
+  "--skip-build",
+  "--lighthouse-bin", lighthouseBin,
+  "--lighthouse-version", lighthouseVersion,
+  "--chrome-path", chromePath,
+  "--port", process.env.CWV_PORT || "0",
+  "--samples", process.env.CWV_SAMPLES || "3"
+];
+args.push("--routes", performanceRoutes);
 
-const rows = runResults
-  .map((r) => `| ${r.url} | ${r.score} | ${r.lcp_ms} | ${r.inp_ms} | ${r.cls} |`)
-  .join("\n");
-const md = [
-  "# CWV Lab Summary",
-  "",
-  `Generated: ${now}`,
-  `Base URL: ${BASE_URL}`,
-  "",
-  "| URL | Perf Score | LCP (ms) | INP (ms) | CLS |",
-  "| --- | ---: | ---: | ---: | ---: |",
-  rows,
-  ""
-].join("\n");
-writeFileSync(join(OUT_DIR, "summary.md"), md);
-
-console.log(`Wrote ${summaryPath}`);
-console.log(`Wrote ${join(OUT_DIR, "summary.md")}`);
+const run = spawnSync(process.execPath, args, { cwd: projectRoot, stdio: "inherit" });
+if (run.error) throw run.error;
+process.exit(run.status ?? 1);
