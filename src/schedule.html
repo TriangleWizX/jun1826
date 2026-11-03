@@ -47,13 +47,9 @@ permalink: "/schedule/"
 <section class="ss-next-class" aria-labelledby="ss-next-class-title" data-calendar-next-class><h3 id="ss-next-class-title">Next class</h3><div data-calendar-next-class-details></div></section>
 <table class="ss-month-grid" aria-labelledby="calendar-month"><thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead><tbody data-calendar-days></tbody></table>
 <div class="ss-month-mobile-days" data-calendar-mobile-days role="list" aria-labelledby="calendar-month"></div>
-<p class="ss-month-legend"><span><i class="ss-legend-youth"></i> Kids and teens</span><span><i class="ss-legend-adult"></i> Adult class</span><span><i class="ss-legend-foundations"></i> White Belt Foundations</span><span><i class="ss-legend-women"></i> Women's Foundations · dated pilot</span></p>
+<p class="ss-month-legend"><span><i class="ss-legend-youth"></i> Kids and teens</span><span><i class="ss-legend-adult"></i> Adult class</span><span><i class="ss-legend-foundations"></i> White Belt Foundations</span></p>
 <section class="ss-selected-day" aria-live="polite" aria-label="Classes on selected date" data-calendar-selected><h3 data-calendar-selected-title>Pick a day to see its classes</h3><div data-calendar-selected-list><p>Each week: kids and teens at 5 PM. Adults at 6 PM. Tuesday and Thursday at 6 PM are White Belt Foundations. Saturday adult No-Gi starts at 10:30 AM.</p></div></section>
-<div class="ss-month-static" aria-label="Women's Foundations class dates"><strong>Women's Foundations · 9 AM · No-Gi · Ages 18+</strong><div class="ss-month-static-dates">
-{% for class in schedule.datedClasses %}
-{% if class.audience == "Women" %}<button type="button" data-calendar-jump="{{ class.date }}">{{ class.date }}</button>{% endif %}
-{% endfor %}
-</div><small>Women only. Pick a date to see the class in the calendar.</small></div>
+</div>
 {% for closure in schedule.closures %}
 {% if closure.note %}
 <aside class="ss-selected-class is-special" aria-label="Class closure and invitation">
@@ -62,18 +58,7 @@ permalink: "/schedule/"
 </aside>
 {% endif %}
 {% endfor %}
-</div>
 <details class="ss-weekly-fallback" aria-label="Weekly class schedule"><summary>Weekly class times</summary>
-<noscript>
-{% for closure in schedule.closures %}
-{% if closure.note %}
-<aside class="ss-selected-class is-special my-3" aria-label="Class closure and invitation">
-<strong>Our classes are closed on <time datetime="{{ closure.date }}">{{ closure.dateLabel or closure.date }}</time>.</strong>
-<p>{{ closure.note }}</p>
-</aside>
-{% endif %}
-{% endfor %}
-</noscript>
 <div class="ss-calendar-bezel-outer">
 <div class="ss-calendar-bezel-inner">
 <!-- Monday -->
@@ -90,7 +75,7 @@ permalink: "/schedule/"
 <span class="ss-cal-slot-time">6:00–7:00 PM</span>
 <span class="ss-cal-slot-name">Adult Small-Group Class · Ages 18+ · Gi</span>
 </div>
-<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Youth first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
+<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Kids first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow">Teens first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
 <div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Tuesday -->
 <div class="ss-cal-day" data-schedule-day="Tuesday">
@@ -106,7 +91,7 @@ permalink: "/schedule/"
 <span class="ss-cal-slot-time">6:00–7:00 PM</span>
 <span class="ss-cal-slot-name">White Belt Foundations · Ages 18+ · Gi</span>
 </div>
-<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Youth first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
+<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Kids first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow">Teens first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
 <div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Wednesday -->
 <div class="ss-cal-day" data-schedule-day="Wednesday">
@@ -122,7 +107,7 @@ permalink: "/schedule/"
 <span class="ss-cal-slot-time">6:00–7:00 PM</span>
 <span class="ss-cal-slot-name">Adult Small-Group Class · Ages 18+ · Gi</span>
 </div>
-<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Youth first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
+<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Kids first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow">Teens first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
 <div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Thursday -->
 <div class="ss-cal-day" data-schedule-day="Thursday">
@@ -138,7 +123,7 @@ permalink: "/schedule/"
 <span class="ss-cal-slot-time">6:00–7:00 PM</span>
 <span class="ss-cal-slot-name">White Belt Foundations · Ages 18+ · Gi</span>
 </div>
-<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Youth first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
+<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Kids first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow">Teens first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
 <div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Friday -->
 <div class="ss-cal-day" data-schedule-day="Friday">
@@ -154,7 +139,7 @@ permalink: "/schedule/"
 <span class="ss-cal-slot-time">6:00–7:00 PM</span>
 <span class="ss-cal-slot-name">Adult Small-Group Class · Ages 18+ · Gi</span>
 </div>
-<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Youth first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
+<p class="d-flex flex-wrap gap-3 mt-3 mb-0"><a href="/free-bjj-intro-tannersville-ny?lane=kids#booking-flow">Kids first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=teens#booking-flow">Teens first visit</a><a href="/free-bjj-intro-tannersville-ny?lane=adult#booking-flow">Adult first visit</a></p>
 <div style="font-size: 0.75rem; color: var(--ss-muted); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--ss-border); text-align: center;"><span>Visitors: </span><a href="sms:+19177368649" style="color: var(--ss-green); text-decoration: none;">Text Before Attending</a></div></div>
 <!-- Saturday -->
 <div class="ss-cal-day" data-schedule-day="Saturday">
@@ -210,6 +195,7 @@ permalink: "/schedule/"
       <div class="col-md-4"><div class="p-4 rounded-4 border bg-white h-100 shadow-sm" style="border-color: var(--ss-border) !important;">
         <h3 class="h5 fw-bold">Kids and teens</h3>
         <p class="small text-muted">See what class may fit your child. Sandy can help you plan a first visit.</p>
+        <a href="/bjj-classes/kids-tannersville-ny">Kids classes</a> &middot; <a href="/bjj-classes/teens-tannersville-ny">Teen classes</a>
       </div></div>
       <div class="col-md-4"><div class="p-4 rounded-4 border bg-white h-100 shadow-sm" style="border-color: var(--ss-border) !important;">
         <h3 class="h5 fw-bold">Adults</h3>
@@ -228,7 +214,7 @@ permalink: "/schedule/"
       <h3 class="h4 fw-bold mb-3" style="font-family: var(--font-display);">Want help choosing?</h3>
       <p class="text-muted" style="max-width: 42rem; margin-inline: auto; font-size: 1rem; line-height: 1.6;">Tell Sandy who wants to train and what days may work. He can help you plan the next step.</p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a class="ss-btn ss-btn-primary" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny#booking-flow"><span>Plan a free first visit</span><div class="ss-btn-premium-icon"><i aria-hidden="true" class="bi bi-arrow-right"></i></div></a>
+        <a class="btn btn-primary ss-btn ss-btn-primary fw-bold" data-cta-target="intro" href="/free-bjj-intro-tannersville-ny#booking-flow"><span>Reserve Free First Visit</span><div class="ss-btn-premium-icon"><i aria-hidden="true" class="bi bi-arrow-right"></i></div></a>
         <a class="btn btn-outline-secondary ss-btn" href="sms:+19177368649">Text Sandy</a>
       </div>
     </div>

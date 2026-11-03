@@ -457,6 +457,7 @@ permalink: "/options-pricing/index.html"
             <div><span>{{ pricing.visitorAndSupport.twentyPack.name }}</span><strong>{{ pricing.visitorAndSupport.twentyPack.displayPrice }}</strong><small>Valid {{ pricing.visitorAndSupport.twentyPack.validity }} · ${{ (pricing.visitorAndSupport.twentyPack.price / pricing.visitorAndSupport.twentyPack.classCount) | round(2) }} per class</small></div>
           </div>
           <p class="op-card__note"><strong>{{ pricing.visitorAndSupport.skiSeasonVisitorPass.name }} ({{ pricing.visitorAndSupport.skiSeasonVisitorPass.season }}):</strong> {{ pricing.visitorAndSupport.skiSeasonVisitorPass.displayPrice }} for up to {{ pricing.visitorAndSupport.skiSeasonVisitorPass.maximumClasses }} classes within {{ pricing.visitorAndSupport.skiSeasonVisitorPass.validity }}. Includes a loaner gi reserved in your name when you book (deposit ${{ pricing.optionalAddOns.loanerGi.depositAmount }}, held until return) and a welcome text from Sandy when you book. {{ pricing.visitorAndSupport.skiSeasonVisitorPass.bookingRule }}.</p>
+          <p class="op-card__note"><strong>Vacation Week vs. Ski Season Pass:</strong> Both are $99 for up to 3 classes. The Vacation Week Pass is used within 7 consecutive days. The Ski Season Pass covers the full winter season and includes a reserved loaner gi plus a welcome text from Sandy.</p>
           <p class="op-card__note"><strong>Adult packs: ages {{ pricing.visitorAndSupport.tenPack.ageMin }} and up.</strong> Ask Sandy to book first. He checks space and partner fit. The 10-pack lasts {{ pricing.visitorAndSupport.tenPack.validity }}. The 20-pack lasts {{ pricing.visitorAndSupport.twentyPack.validity }}. Bring your gi. Kids and teens can pick a youth plan.</p>
         <p class="op-card__note">Train each week? Pick a Core plan. Visit on changing dates? Pick a pass or adult pack. Core plans set a weekly path. Packs pay for class visits.</p>
           <p class="op-card__note" data-free-intro-copy>New local students start with a Free First Visit.</p>
@@ -511,10 +512,8 @@ permalink: "/options-pricing/index.html"
         </div>
         <div class="op-after-first__option">
           <span>Adult Private Coaching Intensive</span>
-          <strong>{{ pricing.adultPrivateCoachingIntensive.displayPrice }}</strong>
-          <small>/ 12 weeks</small>
-          <p class="op-after-first__copy">For adults who finish Core Culture. Includes {{ pricing.adultPrivateCoachingIntensive.privateSessions }} private sessions. Each lasts {{ pricing.adultPrivateCoachingIntensive.privateSessionDurationMinutes }} minutes. Apply and review the schedule. No automatic 30-Day Training Fit Guarantee.</p>
-          <a data-ss-cta-type="private_coaching_intensive" href="/adult-private-coaching-intensive">Review Intensive <span aria-hidden="true">&rarr;</span></a>
+          <p class="op-after-first__copy mb-2">Private 1-on-1 coaching for adults following Core Culture.</p>
+          <a data-ss-cta-type="private_coaching_intensive" href="/adult-private-coaching-intensive">Review Intensive details and pricing ({{ pricing.adultPrivateCoachingIntensive.displayPrice }} / 12 weeks) <span aria-hidden="true">&rarr;</span></a>
         </div>
         <div id="annual-track" class="op-after-first__option op-after-first__option--accent">
           <span>Annual Track</span>

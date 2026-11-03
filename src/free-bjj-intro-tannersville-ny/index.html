@@ -124,21 +124,20 @@ bodyExtra: |
         <details class="pb-community">
           <summary>Community-service rates</summary>
           <p>Ask Sandy if you may qualify for a service rate.</p>
-          <button type="button" class="pb-back-btn" data-profile="leo">Ask about this rate</button>
+          <a class="pb-back-btn text-decoration-none d-inline-block" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20community-service%20rates.">Ask about this rate</a>
         </details>
         <noscript><p>Pick a day to meet Sandy. <a href="https://cal.com/senseisandy/first-visit">See dates</a> or <a href="{{ contact.smsHref }}">Text Sandy</a>.</p></noscript>
       </div>
       <!-- STEP 2: Choose a Time -->
-      <div class="pb-step pb-step-hidden" id="pb-step-2" hidden aria-hidden="true">
+      <div class="pb-step pb-step-hidden" id="pb-step-2" hidden aria-hidden="true" style="display: none;">
         <button type="button" class="pb-back-btn d-inline-flex align-items-center gap-2 mb-3" data-back-to="1">
           <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Change who’s starting
         </button>
         <h2 class="h3 mb-2" data-calendar-heading>Pick a time to meet Sandy</h2>
-        <p class="pb-intro" data-calendar-context data-adult-calendar-context="This is your 15-minute visit with Sandy. {{ freeIntro.publicCopy.adultTraining }}{% if freeIntro.firstClassFree %} Your first class is free.{% endif %}" data-youth-calendar-context="This is a visit for a child or teen. {{ freeIntro.publicCopy.youth }}" data-family-calendar-context="This visit is for your family. Sandy will help plan the next step." data-help-calendar-context="This is a 15-minute visit with Sandy. Talk about your goals and plan a first class.">Pick a time to meet Sandy.</p>
+        <p class="pb-intro" data-calendar-context data-adult-calendar-context="This is your 15-minute visit with Sandy. {{ freeIntro.publicCopy.adultTraining }}{% if freeIntro.firstClassFree %} Your first class is free.{% endif %}" data-youth-calendar-context="This is a visit for a child or teen. {{ freeIntro.publicCopy.youth }}" data-family-calendar-context="This visit is for your family. Sandy will help plan the next step." data-help-calendar-context="This is a 15-minute visit with Sandy. Talk about your goals and plan a first class."></p>
         <p class="fw-semibold mb-2" data-current-choice aria-live="polite"></p>
-        <p class="small text-muted mb-3">Pick a time to meet Sandy. Sandy gets your booking right away and reaches out by text before your visit. Need help with class times? <a href="/schedule">See class times</a> or <a data-booking-sms href="{{ contact.smsHref }}">Text Sandy</a>.</p>
-        <p><a data-calendar-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open visit times in a new tab <span class="visually-hidden">(opens in a new tab)</span></a></p>
+        <p class="small text-muted mb-3">Sandy gets your booking right away and reaches out by text before your visit. Need help with class times? <a href="/schedule">See class times</a> or <a data-booking-sms href="{{ contact.smsHref }}">Text Sandy</a>.</p>
         <p class="small text-muted" data-calendar-status role="status" aria-live="polite" hidden></p>
         <div class="d-flex flex-wrap gap-2" data-calendar-fallback hidden>
           <a class="btn btn-outline-dark" data-calendar-fallback-external href="https://cal.com/senseisandy/first-visit" target="_blank" rel="noopener">Open visit times in a new tab</a>
@@ -152,7 +151,7 @@ bodyExtra: |
         </div>
       </div>
       <!-- STEP 3: Show-Up Kit & Preparation -->
-      <div class="pb-step pb-step-hidden" id="pb-step-3" hidden aria-hidden="true">
+      <div class="pb-step pb-step-hidden" id="pb-step-3" hidden aria-hidden="true" style="display: none;">
         <div class="ss-bezel-shell mb-4">
           <div class="ss-bezel-core flex-column text-center p-4 p-md-5">
             <div>
@@ -329,12 +328,16 @@ bodyExtra: |
   <div class="container text-center">
     <div class="mt-4 mb-4 p-3 bg-white border rounded-3 text-center shadow-sm">
       <div class="mb-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-      <p class="fst-italic mb-2 text-dark">"A welcoming community with no big egos. That's rare in any martial art." - Adam M.</p>
+      <p class="fst-italic mb-2 text-dark">"A welcoming room and friendly partners. That's rare in any martial art." - Adam M.</p>
     </div>
   </div>
 </section>
 
-
+<section class="container text-center py-4">
+  <a class="btn btn-primary ss-btn ss-btn-primary btn-lg px-4 py-3 fw-bold" href="#booking-flow">
+    <span>Reserve Free First Visit</span>
+  </a>
+</section>
 
 <section class="container py-4" aria-labelledby="adult-first-day-options">
 <h2 id="adult-first-day-options">Adults: choose how to start</h2>

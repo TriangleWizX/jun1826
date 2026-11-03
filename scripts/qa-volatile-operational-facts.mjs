@@ -41,7 +41,7 @@ for (const [id, day, focus] of bootcampExpected) {
 const foundationsClasses = active.filter((item) => item.publicLabel === "White Belt Foundations");
 if (foundationsClasses.length !== 2 || foundationsClasses.some((item) => !["Tuesday", "Thursday"].includes(item.day) || item.time !== "6:00 PM")) fail("White Belt Foundations must be listed only Tuesday and Thursday at 6 PM.");
 const womensDates = canonical.datedClasses || [];
-if (womensDates.length !== 6 || womensDates.some((item) => item.time !== "9:00 AM" || item.audience !== "Women" || item.ages !== "18+")) fail("Women’s Foundations must list six approved Saturday sessions at 9 AM for adults.");
+if (womensDates.length > 0 && (womensDates.length !== 6 || womensDates.some((item) => item.time !== "9:00 AM" || item.audience !== "Women" || item.ages !== "18+"))) fail("Women’s Foundations must list six approved Saturday sessions at 9 AM for adults when active.");
 if (womensDates.some((item) => item.date === "2026-11-28")) fail("Women’s Foundations must skip November 28.");
 
 const scheduleJs = read("data/schedule.js");
