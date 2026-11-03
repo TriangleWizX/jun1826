@@ -1111,6 +1111,26 @@
   font-weight: 750;
 }
 
+.page-alley-bootcamp .ab-claim-box {
+  border: 1.5px solid rgba(17, 106, 66, 0.35);
+  border-radius: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 0.75rem 2.2rem rgba(17, 106, 66, 0.08);
+  min-height: 700px;
+}
+
+.page-alley-bootcamp #alley-bootcamp-calendar {
+  width: 100%;
+  min-height: 700px;
+}
+
+.page-alley-bootcamp #alley-bootcamp-calendar iframe {
+  display: block;
+  width: 100%;
+  min-height: 700px;
+  border: 0;
+}
+
 @media (max-width: 991.98px) {
   .page-alley-bootcamp .ab-video-card { grid-template-columns: 1fr; }
   .page-alley-bootcamp .ab-partner-banner { flex-direction: column; align-items: flex-start; }

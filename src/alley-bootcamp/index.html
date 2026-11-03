@@ -418,6 +418,27 @@ permalink: "/alley-bootcamp/index.html"
     </div>
   </section>
 
+  <section class="ab-section ab-claim" id="claim" aria-labelledby="claim-heading">
+    <div class="container">
+      <div class="ab-section-head">
+        <p class="ab-section-label">Reserve your spot</p>
+        <h2 id="claim-heading" class="ab-section-title h3 mb-2" data-calendar-heading>Pick a session time here</h2>
+        <p class="small text-muted mb-3">Need a different time, or booking for a partner? <a href="{{ smsHref }}">Text Sandy</a>. Partners each book their own spot — the cap counts heads.</p>
+      </div>
+      <p class="small text-muted" data-calendar-status role="status" aria-live="polite" hidden></p>
+      <div class="d-flex flex-wrap gap-2 mb-3" data-calendar-fallback hidden>
+        <a class="btn btn-outline-dark" data-calendar-fallback-external href="https://cal.com/senseisandy/alley-bootcamp" target="_blank" rel="noopener">Open session times in a new tab</a>
+        <a class="btn btn-outline-dark" href="{{ smsHref }}">Text Sandy</a>
+      </div>
+      <div class="ab-claim-box p-0 overflow-hidden">
+        <div id="alley-bootcamp-calendar" aria-label="Alley Bootcamp session calendar"></div>
+      </div>
+      <noscript>
+        <p class="mt-3">Pick a session time here. <a href="https://cal.com/senseisandy/alley-bootcamp">See dates</a> or <a href="{{ smsHref }}">Text Sandy</a>.</p>
+      </noscript>
+    </div>
+  </section>
+
   <section class="ab-section ab-faq" aria-labelledby="bootcamp-faq-title">
     <div class="container ab-faq__container">
       <div class="ab-section-head">
@@ -476,6 +497,113 @@ permalink: "/alley-bootcamp/index.html"
       bar.classList.remove('is-visible');
     }
   }, { passive: true });
+})();
+</script>
+<script>
+(function () {
+  'use strict';
+  var CAL_ORIGIN = 'https://cal.com';
+  var CAL_LINK = 'senseisandy/alley-bootcamp';
+  var CAL_NAMESPACE = 'alley-bootcamp';
+  var CAMPAIGNS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'campaign'];
+
+  function initAlleyCalendar() {
+    var mount = document.getElementById('alley-bootcamp-calendar');
+    if (!mount) return;
+
+    var fallback = document.querySelector('[data-calendar-fallback]');
+    var status = document.querySelector('[data-calendar-status]');
+
+    function showFallback() {
+      if (fallback) fallback.hidden = false;
+      if (status) {
+        status.textContent = 'Please pick a time using the link below, or text Sandy for help.';
+        status.hidden = false;
+      }
+    }
+
+    var loadTimer = window.setTimeout(function () {
+      if (!mount.querySelector('iframe')) {
+        showFallback();
+      }
+    }, 8000);
+
+    window.Cal = window.Cal || function () {
+      var cal = window.Cal;
+      var args = arguments;
+      cal.q = cal.q || [];
+      if (args[0] === 'init') {
+        var namespace = args[1];
+        var api = function () { api.q.push(arguments); };
+        api.q = [];
+        cal.ns = cal.ns || {};
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        cal.ns[namespace].q.push(args);
+        cal.q.push(['initNamespace', namespace]);
+        return;
+      }
+      cal.q.push(args);
+    };
+
+    window.Cal('init', CAL_NAMESPACE, { origin: CAL_ORIGIN });
+    var cal = window.Cal.ns[CAL_NAMESPACE];
+
+    var pageParams = new URLSearchParams(window.location.search);
+    var utmConfig = { theme: 'light', layout: 'month_view', useSlotsViewOnSmallScreen: true };
+    CAMPAIGNS.forEach(function (key) {
+      var val = pageParams.get(key);
+      if (val && /^[a-z0-9._-]{1,80}$/i.test(val)) utmConfig[key] = val;
+    });
+    utmConfig.utm_source = utmConfig.utm_source || 'onsite-bootcamp';
+
+    cal('on', {
+      action: 'linkReady',
+      callback: function () {
+        window.clearTimeout(loadTimer);
+        mount.classList.add('is-ready');
+        if (fallback) fallback.hidden = true;
+        if (status) status.hidden = true;
+      }
+    });
+
+    cal('on', {
+      action: 'linkFailed',
+      callback: function () {
+        window.clearTimeout(loadTimer);
+        showFallback();
+      }
+    });
+
+    cal('inline', {
+      elementOrSelector: '#alley-bootcamp-calendar',
+      calLink: CAL_LINK,
+      config: utmConfig
+    });
+
+    cal('ui', {
+      theme: 'light',
+      hideEventTypeDetails: true,
+      layout: 'month_view',
+      cssVarsPerTheme: { light: { 'cal-brand': '#116a42' } }
+    });
+
+    if (!document.querySelector('script[src*="cal.com/embed/embed.js"]')) {
+      var script = document.createElement('script');
+      script.src = 'https://app.cal.com/embed/embed.js';
+      script.async = true;
+      script.onerror = function () {
+        window.clearTimeout(loadTimer);
+        showFallback();
+      };
+      document.head.appendChild(script);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAlleyCalendar, { once: true });
+  } else {
+    initAlleyCalendar();
+  }
 })();
 </script>
 <script type="application/ld+json">
