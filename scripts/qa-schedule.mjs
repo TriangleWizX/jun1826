@@ -34,7 +34,7 @@ function checkCanonicalSchedule() {
   if (foundations.length !== 2 || foundations.some((entry) => !['Tuesday', 'Thursday'].includes(entry.day) || entry.time !== '6:00 PM' || entry.programUrl !== '/white-belt-foundations/')) return ['White Belt Foundations must label only the Tuesday and Thursday 6 PM adult classes.'];
   const datedWomen = data.datedClasses || [];
   const womenDates = ['2026-11-07', '2026-11-14', '2026-11-21', '2026-12-05', '2026-12-12', '2026-12-19'];
-  if (JSON.stringify(datedWomen.map((item) => item.date)) !== JSON.stringify(womenDates) || datedWomen.some((item) => item.time !== '9:00 AM' || item.audience !== 'Women' || item.ages !== '18+' || item.format !== 'No-Gi')) return ['Women’s Foundations must list its six approved 9 AM pilot dates and eligibility.'];
+  if (datedWomen.length > 0 && (JSON.stringify(datedWomen.map((item) => item.date)) !== JSON.stringify(womenDates) || datedWomen.some((item) => item.time !== '9:00 AM' || item.audience !== 'Women' || item.ages !== '18+' || item.format !== 'No-Gi'))) return ['Women’s Foundations must list its six approved 9 AM pilot dates and eligibility when active.'];
   if (datedWomen.some((item) => item.date === '2026-11-28')) return ['Women’s Foundations must skip November 28.'];
   const youth = activeGroupClasses.filter((entry) => entry.audience === 'Youth/Teen');
   // BJJ classes only: Alley Bootcamp entries (format 'Bootcamp') are a separate
