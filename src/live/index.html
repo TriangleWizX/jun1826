@@ -1,0 +1,96 @@
+---
+layout: layouts/base.njk
+title: "Watch Live Classes | Sensei Sandy BJJ"
+description: "Watch a live class from our Tannersville studio. See the room, the coaching, and the pace before your first visit."
+canonicalUrl: "https://senseisandy.com/live"
+bodyClass: "page-live"
+permalink: "/live/index.html"
+extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
+---
+
+<style>
+  .page-live { color: var(--ss-ink, #362b24); font-family: var(--font-body, "Lexend", sans-serif); background: var(--ss-bg, #fbfaf8); }
+  .live-content { max-width: 820px; margin-inline: auto; }
+  .live-card { background: #fff; border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)); border-radius: 20px; box-shadow: 0 8px 24px rgba(54, 43, 36, 0.05); overflow: hidden; }
+  .live-video-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #1a1a1a; }
+  .live-video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .live-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.85rem; font-weight: 700; background: rgba(17, 106, 66, 0.1); color: var(--ss-green, #116a42); }
+  .live-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #dc3545; display: inline-block; }
+  .live-btn-primary { background: var(--ss-green, #116a42); border-color: var(--ss-green, #116a42); color: #fff; font-weight: 700; border-radius: 999px; padding: 0.75rem 1.5rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+  .live-btn-primary:hover { background: #0d5736; border-color: #0d5736; color: #fff; }
+  .live-btn-secondary { background: transparent; border: 1.5px solid var(--ss-ink, #362b24); color: var(--ss-ink, #362b24); font-weight: 700; border-radius: 999px; padding: 0.75rem 1.5rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+  .live-btn-secondary:hover { background: var(--ss-surface2, #f4f1ed); color: var(--ss-ink, #362b24); }
+</style>
+
+<main class="ss-main page-live" id="main-content" role="main">
+  <!-- Hero Section -->
+  <section class="live-hero py-5" aria-labelledby="live-heading">
+    <div class="container ss-container">
+      <div class="live-content text-center">
+        <h1 id="live-heading" class="display-5 fw-bold mb-3">Watch a class live.</h1>
+        <p class="lead mb-4">See a real class from our Tannersville studio. Watch the room, the coaching, and the pace before your first visit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Stream Section -->
+  <section class="live-stream-section pb-5" aria-labelledby="live-now-heading">
+    <div class="container ss-container">
+      <div class="live-content">
+        <div class="live-card mb-4">
+          <div class="p-3 p-md-4 border-bottom d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <h2 id="live-now-heading" class="h3 fw-bold mb-0">Live now</h2>
+            <span class="live-badge"><span class="live-badge-dot"></span> YouTube Live</span>
+          </div>
+          <div class="live-video-embed ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/live_stream?channel=UCqqlbXuWACkQ_KudNxtjLSw" title="Sensei Sandy BJJ Live Stream" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="p-3 p-md-4 bg-white">
+            <p class="mb-0 text-muted">We stream our classes live on YouTube. When a class is live, it plays here. See class times on the <a href="/schedule" class="text-decoration-underline fw-semibold" style="color: var(--ss-green, #116a42);">schedule</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Past Streams Section -->
+  <section class="past-streams-section py-5 bg-light" aria-labelledby="past-streams-heading">
+    <div class="container ss-container">
+      <div class="live-content">
+        <div class="live-card mb-4">
+          <div class="p-3 p-md-4 border-bottom">
+            <h2 id="past-streams-heading" class="h3 fw-bold mb-1">Past streams</h2>
+            <p class="text-muted mb-0">Catch up on recent classes here.</p>
+          </div>
+          <div class="live-video-embed ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UUqqlbXuWACkQ_KudNxtjLSw" title="Sensei Sandy BJJ Past Streams" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="p-3 p-md-4 bg-white d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3">
+            <p class="mb-0 fw-medium">Youth and adult classes both stream.</p>
+            <p class="mb-0"><a href="https://www.youtube.com/@SenseiSandyBJJ" target="_blank" rel="noopener noreferrer" class="text-decoration-underline fw-semibold" style="color: var(--ss-green, #116a42);">Follow the channel for live alerts.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ready to try a class Close Section -->
+  <section class="live-close-section py-5 text-center" aria-labelledby="ready-heading">
+    <div class="container ss-container">
+      <div class="live-content">
+        <div class="card p-4 p-md-5 border-0 shadow-sm rounded-4 bg-white">
+          <h2 id="ready-heading" class="h3 fw-bold mb-3">Ready to try a class?</h2>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center mb-3">
+            <a class="btn live-btn-primary btn-lg" href="/free-bjj-intro-tannersville-ny#booking-flow" data-analytics-event="live_reserve_intro_click">Reserve Free Intro</a>
+            <a class="btn live-btn-secondary btn-lg" href="sms:+19177368649?body=Hi%20Sandy%2C%20I%20have%20a%20question%20about%20starting%20BJJ." data-analytics-event="live_text_sandy_click">
+              <i class="bi bi-chat-dots me-1" aria-hidden="true"></i>
+              Text Sandy
+            </a>
+          </div>
+          <p class="small text-muted mb-0">Start calm. Train smart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
