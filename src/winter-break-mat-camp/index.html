@@ -1,0 +1,68 @@
+---
+layout: layouts/base.njk
+title: "Winter Break Mat Camp | Sensei Sandy BJJ"
+description: "Three mornings of BJJ for ages 5 to 11. Dec 28, 29, and 30 in Tannersville. Learn to fall safe, then ski after lunch."
+canonicalUrl: "https://senseisandy.com/winter-break-mat-camp"
+bodyClass: "page-winter-break-mat-camp"
+permalink: "/winter-break-mat-camp/index.html"
+extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
+---
+
+<style>
+  .page-winter-break-mat-camp { color: var(--ss-ink, #362b24); font-family: var(--font-body, "Lexend", sans-serif); background: var(--ss-bg, #fbfaf8); }
+  .offer-content { max-width: 760px; margin-inline: auto; }
+  .offer-card { background: #fff; border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)); border-radius: 16px; box-shadow: 0 8px 24px rgba(54, 43, 36, 0.05); }
+</style>
+
+<main class="ss-main page-winter-break-mat-camp" id="main-content" role="main">
+  <section class="py-5" aria-labelledby="camp-heading">
+    <div class="container ss-container">
+      <div class="offer-content">
+        <h1 id="camp-heading" class="display-4 fw-bold mb-3">{{ winterOffers.camp.name }}.</h1>
+        <p class="lead mb-4">Three mornings with Sandy. {{ winterOffers.camp.datesDisplay }}. {{ winterOffers.camp.time }}. Ages {{ winterOffers.camp.ageMin }} to {{ winterOffers.camp.ageMax }}. Twelve spots.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a class="btn btn-primary btn-lg" href="sms:+19177368649?body={{ winterOffers.camp.keyword }}" data-cta-target="text" data-cta-placement="hero">
+            <i class="bi bi-chat-dots me-1" aria-hidden="true"></i>
+            Text {{ winterOffers.camp.keyword }} to 917-736-8649 to join the list.
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-4" aria-labelledby="camp-days-heading">
+    <div class="container ss-container">
+      <div class="offer-content">
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 id="camp-days-heading" class="h3 fw-bold mb-3">Three mornings, three skills</h2>
+          <ul class="fs-5 mb-0 ps-3">
+            <li class="mb-2">Day 1: learn to fall safe, then ski after lunch.</li>
+            <li class="mb-2">Day 2: hold-down games and balance.</li>
+            <li class="mb-0">Day 3: your child shows you one skill.</li>
+          </ul>
+        </div>
+
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 class="h3 fw-bold mb-3">What a morning looks like</h2>
+          <p class="fs-5 mb-3">Two classes on the class blueprint, with a snack between them. Parents watch at the end of every morning. Day 3 ends with a showcase, and each child takes home a skills card.</p>
+          <p class="fs-5 mb-0">Comfy clothes. Snack included. Tell Sandy about allergies when you sign up.</p>
+        </div>
+
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 class="h3 fw-bold mb-3">Prices</h2>
+          <p class="fs-5 fw-semibold mb-3">{{ winterOffers.camp.priceThreeMorningsDisplay }} for three mornings. {{ winterOffers.camp.priceMembersChildrenDisplay }} for members' children. {{ winterOffers.camp.priceSingleMorningDisplay }} for one morning.</p>
+          <p class="fs-5 mb-3">Six sign-ups by {{ winterOffers.camp.goNoGoDateDisplay }} and the camp runs. You pay only when it is confirmed.</p>
+          <p class="fs-5 text-muted mb-0">One day of ski school costs about $270 and buys a day on a crowded hill. Three mornings with Sandy cost {{ winterOffers.camp.priceThreeMorningsDisplay }} and buy a skill your child keeps.</p>
+        </div>
+
+        <div class="text-center py-3">
+          <a class="btn btn-primary btn-lg" href="sms:+19177368649?body={{ winterOffers.camp.keyword }}" data-cta-target="text" data-cta-placement="closing">
+            <i class="bi bi-chat-dots me-1" aria-hidden="true"></i>
+            Text {{ winterOffers.camp.keyword }} to 917-736-8649 to join the list.
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

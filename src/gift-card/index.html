@@ -1,0 +1,65 @@
+---
+layout: layouts/base.njk
+title: "Give the Mats Gift Card | Sensei Sandy BJJ"
+description: "A gift card for a first class with Sandy. One class, or three classes over seven days with a loaner gi ready."
+canonicalUrl: "https://senseisandy.com/gift-card"
+bodyClass: "page-gift-card"
+permalink: "/gift-card/index.html"
+extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
+---
+
+<style>
+  .page-gift-card { color: var(--ss-ink, #362b24); font-family: var(--font-body, "Lexend", sans-serif); background: var(--ss-bg, #fbfaf8); }
+  .offer-content { max-width: 760px; margin-inline: auto; }
+  .offer-card { background: #fff; border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)); border-radius: 16px; box-shadow: 0 8px 24px rgba(54, 43, 36, 0.05); }
+</style>
+
+<main class="ss-main page-gift-card" id="main-content" role="main">
+  <section class="py-5" aria-labelledby="gift-heading">
+    <div class="container ss-container">
+      <div class="offer-content">
+        <h1 id="gift-heading" class="display-4 fw-bold mb-3">{{ winterOffers.giftCard.name }}.</h1>
+        <p class="lead mb-4">A gift card for a first class with Sandy.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a class="btn btn-primary btn-lg" href="sms:+19177368649?body={{ winterOffers.giftCard.keyword }}" data-cta-target="text" data-cta-placement="hero">
+            <i class="bi bi-chat-dots me-1" aria-hidden="true"></i>
+            Text {{ winterOffers.giftCard.keyword }} to 917-736-8649.
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-4" aria-labelledby="gift-cards-heading">
+    <div class="container ss-container">
+      <div class="offer-content">
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 id="gift-cards-heading" class="h3 fw-bold mb-3">Two cards</h2>
+          <p class="fs-5 mb-3">One class, {{ pricing.visitorAndSupport.dayPass.displayPrice }}.</p>
+          <p class="fs-5 mb-3">Three classes over seven days, {{ pricing.visitorAndSupport.skiSeasonVisitorPass.displayPrice }}, with a loaner gi ready and a welcome text from Sandy.</p>
+          <p class="fs-5 mb-0">The {{ pricing.visitorAndSupport.skiSeasonVisitorPass.displayPrice }} card buys the Ski Season Pass through March. After the season, the card buys the Vacation Week Pass.</p>
+        </div>
+
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 class="h3 fw-bold mb-3">How it works</h2>
+          <p class="fs-5 mb-3">The card is paper, numbered, and written by hand. Buy it at the studio or by text.</p>
+          <p class="fs-5 mb-0">Pay by cash, check, card, Venmo, or Zelle.</p>
+        </div>
+
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 class="h3 fw-bold mb-3">Good to know</h2>
+          <p class="fs-5 mb-3">Good for nine years. Nothing extra to pay. Transferable. Give it to someone else if plans change. Lost? Text Sandy with the card number and he writes a new one, once.</p>
+          <p class="fs-5 text-muted mb-0">A gift card for the mountain can be spent anywhere, and Hunter charges $4.95 just to order one. {{ pricing.visitorAndSupport.dayPass.displayPrice }} buys one first class with Sandy, in a small room, with a loaner gi ready. The money stays in Tannersville.</p>
+        </div>
+
+        <div class="text-center py-3">
+          <a class="btn btn-primary btn-lg" href="sms:+19177368649?body={{ winterOffers.giftCard.keyword }}" data-cta-target="text" data-cta-placement="closing">
+            <i class="bi bi-chat-dots me-1" aria-hidden="true"></i>
+            Text {{ winterOffers.giftCard.keyword }} to 917-736-8649.
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

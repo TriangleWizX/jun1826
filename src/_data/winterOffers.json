@@ -1,0 +1,56 @@
+{
+  "camp": {
+    "name": "Winter Break Mat Camp",
+    "dates": ["2026-12-28", "2026-12-29", "2026-12-30"],
+    "datesDisplay": "Dec 28, 29, and 30",
+    "time": "9 AM to 12 PM",
+    "ageMin": 5,
+    "ageMax": 11,
+    "cap": 12,
+    "priceThreeMornings": 129,
+    "priceThreeMorningsDisplay": "$129",
+    "priceMembersChildren": 99,
+    "priceMembersChildrenDisplay": "$99",
+    "priceSingleMorning": 49,
+    "priceSingleMorningDisplay": "$49",
+    "goNoGoCount": 6,
+    "goNoGoDate": "2026-12-18",
+    "goNoGoDateDisplay": "Dec 18",
+    "keyword": "CAMP"
+  },
+  "parentsNightOut": {
+    "name": "Parents' Night Out",
+    "nights": ["2026-12-04", "2027-01-08", "2027-02-05", "2027-03-05"],
+    "nightsDisplay": "Dec 4, Jan 8, Feb 5, Mar 5",
+    "time": "7 to 9 PM",
+    "ageMin": 5,
+    "ageMax": 11,
+    "cap": 12,
+    "priceChild": 35,
+    "priceChildDisplay": "$35",
+    "priceMembersChildren": 25,
+    "priceMembersChildrenDisplay": "$25",
+    "priceSibling": 25,
+    "priceSiblingDisplay": "$25",
+    "goNoGoCount": 6,
+    "goNoGoDate": "2026-12-01",
+    "goNoGoDateDisplay": "Dec 1",
+    "keyword": "NIGHT",
+    "skills": [
+      { "night": "Dec 4", "skill": "falling safe" },
+      { "night": "Jan 8", "skill": "hold-downs" },
+      { "night": "Feb 5", "skill": "balance" },
+      { "night": "Mar 5", "skill": "escapes" }
+    ]
+  },
+  "giftCard": {
+    "name": "Give the Mats",
+    "dayPassPrice": 35,
+    "dayPassPriceDisplay": "$35",
+    "skiSeasonPassPrice": 99,
+    "skiSeasonPassPriceDisplay": "$99",
+    "validityYears": 9,
+    "firstPrintRun": 20,
+    "keyword": "GIFT"
+  }
+}

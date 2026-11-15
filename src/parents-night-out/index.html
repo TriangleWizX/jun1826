@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: "Parents' Night Out | Sensei Sandy BJJ"
+description: "First Fridays. Two hours with Sandy. BJJ games, pizza, and a movie. Ages 5 to 11 in Tannersville."
+canonicalUrl: "https://senseisandy.com/parents-night-out"
+bodyClass: "page-parents-night-out"
+permalink: "/parents-night-out/index.html"
+extraCss:
+  - "/assets/css/routes/site-18ac9c2704ce.min.css"
+---
+
+<style>
+  .page-parents-night-out { color: var(--ss-ink, #362b24); font-family: var(--font-body, "Lexend", sans-serif); background: var(--ss-bg, #fbfaf8); }
+  .offer-content { max-width: 760px; margin-inline: auto; }
+  .offer-card { background: #fff; border: 1px solid var(--ss-border, rgba(54, 43, 36, 0.14)); border-radius: 16px; box-shadow: 0 8px 24px rgba(54, 43, 36, 0.05); }
+</style>
+
+<main class="ss-main page-parents-night-out" id="main-content" role="main">
+  <section class="py-5" aria-labelledby="pno-heading">
+    <div class="container ss-container">
+      <div class="offer-content">
+        <h1 id="pno-heading" class="display-4 fw-bold mb-3">{{ winterOffers.parentsNightOut.name }}.</h1>
+        <p class="lead mb-4">First Fridays. {{ winterOffers.parentsNightOut.nightsDisplay }}. {{ winterOffers.parentsNightOut.time }}. Ages {{ winterOffers.parentsNightOut.ageMin }} to {{ winterOffers.parentsNightOut.ageMax }}. Twelve spots.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a class="btn btn-primary btn-lg" href="sms:+19177368649?body={{ winterOffers.parentsNightOut.keyword }}" data-cta-target="text" data-cta-placement="hero">
+            <i class="bi bi-chat-dots me-1" aria-hidden="true"></i>
+            Text {{ winterOffers.parentsNightOut.keyword }} to 917-736-8649 to book.
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-4" aria-labelledby="pno-evening-heading">
+    <div class="container ss-container">
+      <div class="offer-content">
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 id="pno-evening-heading" class="h3 fw-bold mb-3">Two hours with Sandy</h2>
+          <p class="fs-5 mb-0">BJJ games first, pizza, then a movie to wind down. Your child shows you one thing at pickup.</p>
+        </div>
+
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 class="h3 fw-bold mb-3">A new skill each month</h2>
+          <p class="fs-5 mb-0">{% for item in winterOffers.parentsNightOut.skills %}{{ item.night }} teaches {{ item.skill }}.{% if not loop.last %} {% endif %}{% endfor %}</p>
+        </div>
+
+        <div class="offer-card p-4 p-md-5 mb-4">
+          <h2 class="h3 fw-bold mb-3">Prices</h2>
+          <p class="fs-5 fw-semibold mb-3">{{ winterOffers.parentsNightOut.priceChildDisplay }} a child. {{ winterOffers.parentsNightOut.priceMembersChildrenDisplay }} for members' children. {{ winterOffers.parentsNightOut.priceSiblingDisplay }} for a second child from the same family. Pizza included.</p>
+          <p class="fs-5 mb-3">Pickup is 9 PM. That runs late for the youngest ones, so plan for it.</p>
+          <p class="fs-5 text-muted mb-3">A sitter costs about $40 for the evening and watches your child at home. {{ winterOffers.parentsNightOut.priceChildDisplay }} buys two hours of training, games, a movie, and pizza, with a coach you know.</p>
+          <p class="fs-5 mb-0">Six sign-ups by {{ winterOffers.parentsNightOut.goNoGoDateDisplay }} and the night runs. You pay only when it is confirmed.</p>
+        </div>
+
+        <div class="text-center py-3">
+          <a class="btn btn-primary btn-lg" href="sms:+19177368649?body={{ winterOffers.parentsNightOut.keyword }}" data-cta-target="text" data-cta-placement="closing">
+            <i class="bi bi-chat-dots me-1" aria-hidden="true"></i>
+            Text {{ winterOffers.parentsNightOut.keyword }} to 917-736-8649 to book.
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
